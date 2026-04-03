@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_http_version_response_result_meta_confidence_info.dart';import 'radar_get_http_top_ases_by_http_version_response_result_meta_date_range.dart';import 'radar_get_http_top_ases_by_http_version_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetHttpTopAsesByHttpVersionResponseResultMetaNormalization {const RadarGetHttpTopAsesByHttpVersionResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetHttpTopAsesByHttpVersionResponseResultMetaNormalization {const RadarGetHttpTopAsesByHttpVersionResponseResultMetaNormalization._(this.value);
 
 factory RadarGetHttpTopAsesByHttpVersionResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpTopAsesByHttpVersionResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetHttpTopAsesByHttpVersionResponseResultMeta {const RadarGetHttpTopAsesByHttpVersionResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetHttpTopAsesByHttpVersionResponseResultMeta {const RadarGetHttpTopAsesByHttpVersionResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetHttpTopAsesByHttpVersionResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByHttpVersionResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetHttpTopAsesByHttpVersionResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

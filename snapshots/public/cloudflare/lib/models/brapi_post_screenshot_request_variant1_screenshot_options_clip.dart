@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostScreenshotRequestVariant1ScreenshotOptionsClip {const BrapiPostScreenshotRequestVariant1ScreenshotOptionsClip({required this.height, this.scale, required this.width, required this.x, required this.y, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScreenshotRequestVariant1ScreenshotOptionsClip {const BrapiPostScreenshotRequestVariant1ScreenshotOptionsClip({required this.height, required this.width, required this.x, required this.y, this.scale, });
 
 factory BrapiPostScreenshotRequestVariant1ScreenshotOptionsClip.fromJson(Map<String, dynamic> json) { return BrapiPostScreenshotRequestVariant1ScreenshotOptionsClip(
   height: (json['height'] as num).toDouble(),

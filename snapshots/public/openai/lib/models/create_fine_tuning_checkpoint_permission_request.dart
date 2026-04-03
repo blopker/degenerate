@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateFineTuningCheckpointPermissionRequest {const CreateFineTuningCheckpointPermissionRequest({required this.projectIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateFineTuningCheckpointPermissionRequest {const CreateFineTuningCheckpointPermissionRequest({required this.projectIds});
 
 factory CreateFineTuningCheckpointPermissionRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningCheckpointPermissionRequest(
   projectIds: (json['project_ids'] as List<dynamic>).map((e) => e as String).toList(),

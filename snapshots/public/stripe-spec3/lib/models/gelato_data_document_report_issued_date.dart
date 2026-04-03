@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Point in Time
-final class GelatoDataDocumentReportIssuedDate {const GelatoDataDocumentReportIssuedDate({this.day, this.month, this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Point in Time
+@immutable final class GelatoDataDocumentReportIssuedDate {const GelatoDataDocumentReportIssuedDate({this.day, this.month, this.year, });
 
 factory GelatoDataDocumentReportIssuedDate.fromJson(Map<String, dynamic> json) { return GelatoDataDocumentReportIssuedDate(
   day: json['day'] != null ? (json['day'] as num).toInt() : null,

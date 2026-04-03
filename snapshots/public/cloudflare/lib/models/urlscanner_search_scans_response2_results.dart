@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_search_scans_response2_results_page.dart';import 'urlscanner_search_scans_response2_results_stats.dart';import 'urlscanner_search_scans_response2_results_task.dart';import 'urlscanner_search_scans_response2_results_verdicts.dart';final class UrlscannerSearchScansResponse2Results {const UrlscannerSearchScansResponse2Results({required this.id, required this.page, required this.result, required this.stats, required this.task, required this.verdicts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_search_scans_response2_results_page.dart';import 'urlscanner_search_scans_response2_results_stats.dart';import 'urlscanner_search_scans_response2_results_task.dart';import 'urlscanner_search_scans_response2_results_verdicts.dart';@immutable final class UrlscannerSearchScansResponse2Results {const UrlscannerSearchScansResponse2Results({required this.id, required this.page, required this.result, required this.stats, required this.task, required this.verdicts, });
 
 factory UrlscannerSearchScansResponse2Results.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse2Results(
   id: json['_id'] as String,

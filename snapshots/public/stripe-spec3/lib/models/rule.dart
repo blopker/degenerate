@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class Rule {const Rule({required this.action, required this.id, required this.predicate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class Rule {const Rule({required this.action, required this.id, required this.predicate, });
 
 factory Rule.fromJson(Map<String, dynamic> json) { return Rule(
   action: json['action'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSetupIntentsIntentRequest {const GetSetupIntentsIntentRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSetupIntentsIntentRequest {const GetSetupIntentsIntentRequest();
 
 factory GetSetupIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return GetSetupIntentsIntentRequest(
 

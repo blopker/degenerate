@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the Cloudflare account ID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the Cloudflare account ID.
 extension type const ZeroTrustGatewayCfAccountId(String value) {
 factory ZeroTrustGatewayCfAccountId.fromJson(String json) => ZeroTrustGatewayCfAccountId(json);
 
@@ -21,7 +21,7 @@ factory ZeroTrustGatewayProviderName.fromJson(String json) => ZeroTrustGatewayPr
 String toJson() => value;
 
 }
-final class ZeroTrustGatewayGatewayAccountResult {const ZeroTrustGatewayGatewayAccountResult({this.gatewayTag, this.id, this.providerName, });
+@immutable final class ZeroTrustGatewayGatewayAccountResult {const ZeroTrustGatewayGatewayAccountResult({this.gatewayTag, this.id, this.providerName, });
 
 factory ZeroTrustGatewayGatewayAccountResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountResult(
   gatewayTag: json['gateway_tag'] != null ? ZeroTrustGatewayGatewayTag.fromJson(json['gateway_tag'] as String) : null,

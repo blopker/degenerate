@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPassiveDnsByIpReverseRecords {const IntelPassiveDnsByIpReverseRecords({this.firstSeen, this.hostname, this.lastSeen, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPassiveDnsByIpReverseRecords {const IntelPassiveDnsByIpReverseRecords({this.firstSeen, this.hostname, this.lastSeen, });
 
 factory IntelPassiveDnsByIpReverseRecords.fromJson(Map<String, dynamic> json) { return IntelPassiveDnsByIpReverseRecords(
   firstSeen: json['first_seen'] as String?,

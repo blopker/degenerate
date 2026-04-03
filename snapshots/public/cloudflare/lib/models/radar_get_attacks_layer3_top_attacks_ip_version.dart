@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3TopAttacksIpVersion {const RadarGetAttacksLayer3TopAttacksIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopAttacksIpVersion {const RadarGetAttacksLayer3TopAttacksIpVersion._(this.value);
 
 factory RadarGetAttacksLayer3TopAttacksIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

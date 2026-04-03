@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookSecretScanningAlertResolvedAction {const WebhookSecretScanningAlertResolvedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertResolvedAction {const WebhookSecretScanningAlertResolvedAction._(this.value);
 
 factory WebhookSecretScanningAlertResolvedAction.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSecretScanningAlertResolvedAction($value)'; } 
  }
-final class WebhookSecretScanningAlertResolved {const WebhookSecretScanningAlertResolved({required this.action, required this.alert, this.enterprise, this.installation, this.organization, required this.repository, this.sender, });
+@immutable final class WebhookSecretScanningAlertResolved {const WebhookSecretScanningAlertResolved({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningAlertResolved.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertResolved(
   action: WebhookSecretScanningAlertResolvedAction.fromJson(json['action'] as String),

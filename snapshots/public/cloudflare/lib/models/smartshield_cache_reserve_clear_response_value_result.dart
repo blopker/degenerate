@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The time that the latest Cache Reserve Clear operation completed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The time that the latest Cache Reserve Clear operation completed.
 extension type SmartshieldCacheReserveClearEndTs(DateTime value) {
 factory SmartshieldCacheReserveClearEndTs.fromJson(String json) => SmartshieldCacheReserveClearEndTs(DateTime.parse(json));
 
@@ -15,7 +15,7 @@ String toJson() => value.toIso8601String();
 
 }
 /// The current state of the Cache Reserve Clear operation.
-final class SmartshieldCacheReserveClearState {const SmartshieldCacheReserveClearState._(this.value);
+@immutable final class SmartshieldCacheReserveClearState {const SmartshieldCacheReserveClearState._(this.value);
 
 factory SmartshieldCacheReserveClearState.fromJson(String json) { return switch (json) {
   'In-progress' => inProgress,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldCacheReserveClearState($value)'; } 
  }
-final class SmartshieldCacheReserveClearResponseValueResult {const SmartshieldCacheReserveClearResponseValueResult({this.endTs, required this.startTs, required this.state, });
+@immutable final class SmartshieldCacheReserveClearResponseValueResult {const SmartshieldCacheReserveClearResponseValueResult({required this.startTs, required this.state, this.endTs, });
 
 factory SmartshieldCacheReserveClearResponseValueResult.fromJson(Map<String, dynamic> json) { return SmartshieldCacheReserveClearResponseValueResult(
   endTs: json['end_ts'] != null ? SmartshieldCacheReserveClearEndTs.fromJson(json['end_ts'] as String) : null,

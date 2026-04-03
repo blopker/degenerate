@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The source of the runner image.
-final class ActionsCreateHostedRunnerForOrgRequestImageSource {const ActionsCreateHostedRunnerForOrgRequestImageSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the runner image.
+@immutable final class ActionsCreateHostedRunnerForOrgRequestImageSource {const ActionsCreateHostedRunnerForOrgRequestImageSource._(this.value);
 
 factory ActionsCreateHostedRunnerForOrgRequestImageSource.fromJson(String json) { return switch (json) {
   'github' => github,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActionsCreateHostedRunnerForOrgRequestImageSource($value)'; } 
  }
 /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
-final class ActionsCreateHostedRunnerForOrgRequestImage {const ActionsCreateHostedRunnerForOrgRequestImage({this.id, this.source, this.version, });
+@immutable final class ActionsCreateHostedRunnerForOrgRequestImage {const ActionsCreateHostedRunnerForOrgRequestImage({this.id, this.source, this.version, });
 
 factory ActionsCreateHostedRunnerForOrgRequestImage.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequestImage(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_request_payment_method_options_card_mandate_options.dart';import 'post_setup_intents_request_payment_method_options_card_three_d_secure.dart';final class PostSetupIntentsRequestPaymentMethodOptionsCardNetwork {const PostSetupIntentsRequestPaymentMethodOptionsCardNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_card_mandate_options.dart';import 'post_setup_intents_request_payment_method_options_card_three_d_secure.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardNetwork {const PostSetupIntentsRequestPaymentMethodOptionsCardNetwork._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardNetwork.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardNetwork($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure {const PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure {const PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCard {const PostSetupIntentsRequestPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, this.threeDSecure, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCard {const PostSetupIntentsRequestPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, this.threeDSecure, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCard(
   mandateOptions: json['mandate_options'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

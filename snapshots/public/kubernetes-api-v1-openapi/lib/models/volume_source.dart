@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'volume_file.dart';/// DownwardAPIVolumeSource represents a volume containing downward API info. Downward API volumes support ownership management and SELinux relabeling.
-final class VolumeSource {const VolumeSource({this.defaultMode, this.items, });
+@immutable final class VolumeSource {const VolumeSource({this.defaultMode, this.items, });
 
 factory VolumeSource.fromJson(Map<String, dynamic> json) { return VolumeSource(
   defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,

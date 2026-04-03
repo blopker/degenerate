@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_text_position_param12.dart';final class PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2 {const PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_text_position_param12.dart';@immutable final class PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2 {const PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

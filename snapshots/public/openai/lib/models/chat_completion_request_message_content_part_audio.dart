@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_request_message_content_part_audio_input_audio.dart';/// The type of the content part. Always `input_audio`.
-final class ChatCompletionRequestMessageContentPartAudioType {const ChatCompletionRequestMessageContentPartAudioType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_audio_input_audio.dart';/// The type of the content part. Always `input_audio`.
+@immutable final class ChatCompletionRequestMessageContentPartAudioType {const ChatCompletionRequestMessageContentPartAudioType._(this.value);
 
 factory ChatCompletionRequestMessageContentPartAudioType.fromJson(String json) { return switch (json) {
   'input_audio' => inputAudio,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Learn about [audio inputs](/docs/guides/audio).
 /// 
-final class ChatCompletionRequestMessageContentPartAudio {const ChatCompletionRequestMessageContentPartAudio({required this.type, required this.inputAudio, });
+@immutable final class ChatCompletionRequestMessageContentPartAudio {const ChatCompletionRequestMessageContentPartAudio({required this.type, required this.inputAudio, });
 
 factory ChatCompletionRequestMessageContentPartAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartAudio(
   type: ChatCompletionRequestMessageContentPartAudioType.fromJson(json['type'] as String),

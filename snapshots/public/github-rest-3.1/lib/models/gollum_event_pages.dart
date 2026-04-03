@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GollumEventPages {const GollumEventPages({this.pageName, this.title, this.summary, this.action, this.sha, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GollumEventPages {const GollumEventPages({this.pageName, this.title, this.summary, this.action, this.sha, this.htmlUrl, });
 
 factory GollumEventPages.fromJson(Map<String, dynamic> json) { return GollumEventPages(
   pageName: json['page_name'] as String?,

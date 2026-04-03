@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A call to a custom tool created by the model.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A call to a custom tool created by the model.
 /// 
-final class CustomToolCall {const CustomToolCall({required this.type, this.id, required this.callId, this.namespace, required this.name, required this.input, });
+@immutable final class CustomToolCall {const CustomToolCall({required this.type, required this.callId, required this.name, required this.input, this.id, this.namespace, });
 
 factory CustomToolCall.fromJson(Map<String, dynamic> json) { return CustomToolCall(
   type: json['type'] as String,

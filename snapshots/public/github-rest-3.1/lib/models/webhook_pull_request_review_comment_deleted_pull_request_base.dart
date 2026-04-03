@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_comment_deleted_pull_request_base_repo.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_base_user.dart';final class WebhookPullRequestReviewCommentDeletedPullRequestBase {const WebhookPullRequestReviewCommentDeletedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_base_repo.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_base_user.dart';@immutable final class WebhookPullRequestReviewCommentDeletedPullRequestBase {const WebhookPullRequestReviewCommentDeletedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestReviewCommentDeletedPullRequestBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentDeletedPullRequestBase(
   label: json['label'] as String,

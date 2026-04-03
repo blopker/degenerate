@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.output_text.annotation.added'.
-final class ResponseOutputTextAnnotationAddedEventType {const ResponseOutputTextAnnotationAddedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.output_text.annotation.added'.
+@immutable final class ResponseOutputTextAnnotationAddedEventType {const ResponseOutputTextAnnotationAddedEventType._(this.value);
 
 factory ResponseOutputTextAnnotationAddedEventType.fromJson(String json) { return switch (json) {
   'response.output_text.annotation.added' => responseOutputTextAnnotationAdded,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an annotation is added to output text content.
 /// 
-final class ResponseOutputTextAnnotationAddedEvent {const ResponseOutputTextAnnotationAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.annotationIndex, required this.sequenceNumber, required this.annotation, });
+@immutable final class ResponseOutputTextAnnotationAddedEvent {const ResponseOutputTextAnnotationAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.annotationIndex, required this.sequenceNumber, required this.annotation, });
 
 factory ResponseOutputTextAnnotationAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputTextAnnotationAddedEvent(
   type: ResponseOutputTextAnnotationAddedEventType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-final class ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+@immutable final class ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest._(this.value);
 
 factory ReposCreateReleaseRequestMakeLatest.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateReleaseRequestMakeLatest($value)'; } 
  }
-final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft = false, this.prerelease = false, this.discussionCategoryName, this.generateReleaseNotes = false, this.makeLatest = ReposCreateReleaseRequestMakeLatest.$true, });
+@immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft = false, this.prerelease = false, this.discussionCategoryName, this.generateReleaseNotes = false, this.makeLatest = ReposCreateReleaseRequestMakeLatest.$true, });
 
 factory ReposCreateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposCreateReleaseRequest(
   tagName: json['tag_name'] as String,

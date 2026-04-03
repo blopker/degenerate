@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_stats_tls_stats_protocols.dart';final class UrlscannerGetScanResponse2StatsTlsStats {const UrlscannerGetScanResponse2StatsTlsStats({required this.count, required this.countries, required this.encodedSize, required this.ips, required this.protocols, required this.securityState, required this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_stats_tls_stats_protocols.dart';@immutable final class UrlscannerGetScanResponse2StatsTlsStats {const UrlscannerGetScanResponse2StatsTlsStats({required this.count, required this.countries, required this.encodedSize, required this.ips, required this.protocols, required this.securityState, required this.size, });
 
 factory UrlscannerGetScanResponse2StatsTlsStats.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2StatsTlsStats(
   count: (json['count'] as num).toDouble(),

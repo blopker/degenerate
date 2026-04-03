@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of response format being defined. Always `python`.
-final class ResponseFormatTextPythonType {const ResponseFormatTextPythonType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `python`.
+@immutable final class ResponseFormatTextPythonType {const ResponseFormatTextPythonType._(this.value);
 
 factory ResponseFormatTextPythonType.fromJson(String json) { return switch (json) {
   'python' => python,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Configure the model to generate valid Python code. See the
 /// [custom grammars guide](/docs/guides/custom-grammars) for more details.
 /// 
-final class ResponseFormatTextPython {const ResponseFormatTextPython({required this.type});
+@immutable final class ResponseFormatTextPython {const ResponseFormatTextPython({required this.type});
 
 factory ResponseFormatTextPython.fromJson(Map<String, dynamic> json) { return ResponseFormatTextPython(
   type: ResponseFormatTextPythonType.fromJson(json['type'] as String),

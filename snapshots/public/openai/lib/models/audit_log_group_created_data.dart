@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the created group.
-final class AuditLogGroupCreatedData {const AuditLogGroupCreatedData({this.groupName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the created group.
+@immutable final class AuditLogGroupCreatedData {const AuditLogGroupCreatedData({this.groupName});
 
 factory AuditLogGroupCreatedData.fromJson(Map<String, dynamic> json) { return AuditLogGroupCreatedData(
   groupName: json['group_name'] as String?,

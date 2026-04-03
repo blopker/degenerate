@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'secret_scanning_alert_resolution.dart';import 'secret_scanning_alert_state.dart';import 'secret_scanning_first_detected_location.dart';import 'simple_user.dart';/// The token status as of the latest validity check.
-final class SecretScanningAlertValidity {const SecretScanningAlertValidity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'secret_scanning_alert_resolution.dart';import 'secret_scanning_alert_state.dart';import 'secret_scanning_first_detected_location.dart';import 'simple_user.dart';/// The token status as of the latest validity check.
+@immutable final class SecretScanningAlertValidity {const SecretScanningAlertValidity._(this.value);
 
 factory SecretScanningAlertValidity.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretScanningAlertValidity($value)'; } 
  }
-final class SecretScanningAlert {const SecretScanningAlert({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.state, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.secret, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.validity, this.publiclyLeaked, this.multiRepo, this.isBase64Encoded, this.firstLocationDetected, this.hasMoreLocations, this.assignedTo, });
+@immutable final class SecretScanningAlert {const SecretScanningAlert({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.state, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.secret, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.validity, this.publiclyLeaked, this.multiRepo, this.isBase64Encoded, this.firstLocationDetected, this.hasMoreLocations, this.assignedTo, });
 
 factory SecretScanningAlert.fromJson(Map<String, dynamic> json) { return SecretScanningAlert(
   number: json['number'] != null ? AlertNumber.fromJson(json['number'] as num) : null,

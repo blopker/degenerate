@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_entry_of_new_profile.dart';import 'dlp_new_custom_entry.dart';import 'dlp_new_shared_entry.dart';import 'dlp_new_word_list_entry.dart';final class DlpNewCustomProfile {const DlpNewCustomProfile({this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, required this.name, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_entry_of_new_profile.dart';import 'dlp_new_custom_entry.dart';import 'dlp_new_shared_entry.dart';import 'dlp_new_word_list_entry.dart';@immutable final class DlpNewCustomProfile {const DlpNewCustomProfile({required this.name, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 
 factory DlpNewCustomProfile.fromJson(Map<String, dynamic> json) { return DlpNewCustomProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,

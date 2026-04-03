@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval.dart';/// The type of this object. It is always set to "list".
 /// 
-final class EvalListObject {const EvalListObject._(this.value);
+@immutable final class EvalListObject {const EvalListObject._(this.value);
 
 factory EvalListObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An object representing a list of evals.
 /// 
-final class EvalList {const EvalList({this.object = EvalListObject.list, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class EvalList {const EvalList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = EvalListObject.list, });
 
 factory EvalList.fromJson(Map<String, dynamic> json) { return EvalList(
   object: EvalListObject.fromJson(json['object'] as String),

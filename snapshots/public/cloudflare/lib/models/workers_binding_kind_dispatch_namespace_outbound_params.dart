@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersBindingKindDispatchNamespaceOutboundParams {const WorkersBindingKindDispatchNamespaceOutboundParams({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersBindingKindDispatchNamespaceOutboundParams {const WorkersBindingKindDispatchNamespaceOutboundParams({required this.name});
 
 factory WorkersBindingKindDispatchNamespaceOutboundParams.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespaceOutboundParams(
   name: json['name'] as String,

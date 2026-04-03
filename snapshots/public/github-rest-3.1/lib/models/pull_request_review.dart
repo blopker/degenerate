@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'pull_request_review_links.dart';import 'simple_user.dart';/// Pull Request Reviews are reviews on pull requests.
-final class PullRequestReview {const PullRequestReview({required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, this.submittedAt, required this.commitId, this.bodyHtml, this.bodyText, required this.authorAssociation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'pull_request_review_links.dart';import 'simple_user.dart';/// Pull Request Reviews are reviews on pull requests.
+@immutable final class PullRequestReview {const PullRequestReview({required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.bodyHtml, this.bodyText, });
 
 factory PullRequestReview.fromJson(Map<String, dynamic> json) { return PullRequestReview(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NameCollectionParamsIndividual {const NameCollectionParamsIndividual({required this.enabled, this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NameCollectionParamsIndividual {const NameCollectionParamsIndividual({required this.enabled, this.optional, });
 
 factory NameCollectionParamsIndividual.fromJson(Map<String, dynamic> json) { return NameCollectionParamsIndividual(
   enabled: json['enabled'] as bool,

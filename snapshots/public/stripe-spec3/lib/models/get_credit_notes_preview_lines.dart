@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_tax_amounts_variant1.dart';import 'get_credit_notes_preview_lines_tax_rates.dart';final class GetCreditNotesPreviewLinesType {const GetCreditNotesPreviewLinesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_tax_amounts_variant1.dart';import 'get_credit_notes_preview_lines_tax_rates.dart';@immutable final class GetCreditNotesPreviewLinesType {const GetCreditNotesPreviewLinesType._(this.value);
 
 factory GetCreditNotesPreviewLinesType.fromJson(String json) { return switch (json) {
   'custom_line_item' => customLineItem,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetCreditNotesPreviewLinesType($value)'; } 
  }
-final class GetCreditNotesPreviewLines {const GetCreditNotesPreviewLines({this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, required this.type, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class GetCreditNotesPreviewLines {const GetCreditNotesPreviewLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
 factory GetCreditNotesPreviewLines.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

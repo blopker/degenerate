@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_check_suite_completed_check_suite_pull_requests_head_repo.dart';final class WebhookCheckSuiteCompletedCheckSuitePullRequestsHead {const WebhookCheckSuiteCompletedCheckSuitePullRequestsHead({required this.ref, required this.repo, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_completed_check_suite_pull_requests_head_repo.dart';@immutable final class WebhookCheckSuiteCompletedCheckSuitePullRequestsHead {const WebhookCheckSuiteCompletedCheckSuitePullRequestsHead({required this.ref, required this.repo, required this.sha, });
 
 factory WebhookCheckSuiteCompletedCheckSuitePullRequestsHead.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompletedCheckSuitePullRequestsHead(
   ref: json['ref'] as String,

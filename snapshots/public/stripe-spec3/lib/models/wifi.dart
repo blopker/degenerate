@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wifi_enterprise_eap_peap.dart';import 'wifi_enterprise_eap_tls.dart';import 'wifi_personal_psk.dart';final class WifiType {const WifiType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wifi_enterprise_eap_peap.dart';import 'wifi_enterprise_eap_tls.dart';import 'wifi_personal_psk.dart';@immutable final class WifiType {const WifiType._(this.value);
 
 factory WifiType.fromJson(String json) { return switch (json) {
   'enterprise_eap_peap' => enterpriseEapPeap,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WifiType($value)'; } 
  }
-final class Wifi {const Wifi({this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, required this.type, });
+@immutable final class Wifi {const Wifi({required this.type, this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, });
 
 factory Wifi.fromJson(Map<String, dynamic> json) { return Wifi(
   enterpriseEapPeap: json['enterprise_eap_peap'] != null ? WifiEnterpriseEapPeap.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTaxRegistrationsIdRequestExpiresAtVariant1 {const PostTaxRegistrationsIdRequestExpiresAtVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsIdRequestExpiresAtVariant1 {const PostTaxRegistrationsIdRequestExpiresAtVariant1._(this.value);
 
 factory PostTaxRegistrationsIdRequestExpiresAtVariant1.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsIdRequestExpiresAtVariant1($value)'; } 
  }
-final class PostTaxRegistrationsIdRequestExpiresAtVariant3 {const PostTaxRegistrationsIdRequestExpiresAtVariant3._(this.value);
+@immutable final class PostTaxRegistrationsIdRequestExpiresAtVariant3 {const PostTaxRegistrationsIdRequestExpiresAtVariant3._(this.value);
 
 factory PostTaxRegistrationsIdRequestExpiresAtVariant3.fromJson(String json) { return switch (json) {
   '' => $empty,

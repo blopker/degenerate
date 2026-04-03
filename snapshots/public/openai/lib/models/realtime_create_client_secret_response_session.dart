@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_session_create_response_ga.dart';import 'realtime_transcription_session_create_response_ga.dart';/// The session configuration for either a realtime or transcription session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_session_create_response_ga.dart';import 'realtime_transcription_session_create_response_ga.dart';/// The session configuration for either a realtime or transcription session.
 /// 
 sealed class RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSession();
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeCreateClientSecretResponseSession$Unknown; } 
  }
-final class RealtimeCreateClientSecretResponseSessionRealtime extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionRealtime(this.realtimeSessionCreateResponseGa);
+@immutable final class RealtimeCreateClientSecretResponseSessionRealtime extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionRealtime(this.realtimeSessionCreateResponseGa);
 
 factory RealtimeCreateClientSecretResponseSessionRealtime.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretResponseSessionRealtime(RealtimeSessionCreateResponseGa.fromJson(json)); }
 
@@ -30,7 +30,7 @@ final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 @override int get hashCode { return realtimeSessionCreateResponseGa.hashCode; } 
 @override String toString() { return 'RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa: $realtimeSessionCreateResponseGa)'; } 
  }
-final class RealtimeCreateClientSecretResponseSessionTranscription extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionTranscription(this.realtimeTranscriptionSessionCreateResponseGa);
+@immutable final class RealtimeCreateClientSecretResponseSessionTranscription extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionTranscription(this.realtimeTranscriptionSessionCreateResponseGa);
 
 factory RealtimeCreateClientSecretResponseSessionTranscription.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretResponseSessionTranscription(RealtimeTranscriptionSessionCreateResponseGa.fromJson(json)); }
 
@@ -45,7 +45,7 @@ final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionC
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class RealtimeCreateClientSecretResponseSession$Unknown extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSession$Unknown(this.json);
+@immutable final class RealtimeCreateClientSecretResponseSession$Unknown extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSession$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

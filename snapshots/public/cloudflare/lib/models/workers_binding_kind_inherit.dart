@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersBindingKindInherit {const WorkersBindingKindInherit({required this.name, this.oldName, required this.type, this.versionId = 'latest', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersBindingKindInherit {const WorkersBindingKindInherit({required this.name, required this.type, this.oldName, this.versionId = 'latest', });
 
 factory WorkersBindingKindInherit.fromJson(Map<String, dynamic> json) { return WorkersBindingKindInherit(
   name: json['name'] as String,

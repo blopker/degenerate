@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_web_search_options_variant1_user_location_approximate.dart';final class Messages51WebSearchOptionsVariant1UserLocationType {const Messages51WebSearchOptionsVariant1UserLocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_web_search_options_variant1_user_location_approximate.dart';@immutable final class Messages51WebSearchOptionsVariant1UserLocationType {const Messages51WebSearchOptionsVariant1UserLocationType._(this.value);
 
 factory Messages51WebSearchOptionsVariant1UserLocationType.fromJson(String json) { return switch (json) {
   'approximate' => approximate,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51WebSearchOptionsVariant1UserLocationType($value)'; } 
  }
-final class Messages51WebSearchOptionsVariant1UserLocation {const Messages51WebSearchOptionsVariant1UserLocation({required this.approximate, required this.type, });
+@immutable final class Messages51WebSearchOptionsVariant1UserLocation {const Messages51WebSearchOptionsVariant1UserLocation({required this.approximate, required this.type, });
 
 factory Messages51WebSearchOptionsVariant1UserLocation.fromJson(Map<String, dynamic> json) { return Messages51WebSearchOptionsVariant1UserLocation(
   approximate: Messages51WebSearchOptionsVariant1UserLocationApproximate.fromJson(json['approximate'] as Map<String, dynamic>),

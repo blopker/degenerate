@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_customer_balance_display_preference.dart';/// Uses a customer’s [cash balance](https://docs.stripe.com/payments/customer-balance) for the payment. The cash balance can be funded via a bank transfer. Check this [page](https://docs.stripe.com/payments/bank-transfers) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance {const PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_customer_balance_display_preference.dart';/// Uses a customer’s [cash balance](https://docs.stripe.com/payments/customer-balance) for the payment. The cash balance can be funded via a bank transfer. Check this [page](https://docs.stripe.com/payments/bank-transfers) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance {const PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCustomerBalanceDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

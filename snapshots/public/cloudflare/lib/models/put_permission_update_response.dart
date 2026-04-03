@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PutPermissionUpdateResponse {const PutPermissionUpdateResponse({this.message, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutPermissionUpdateResponse {const PutPermissionUpdateResponse({this.message, this.success, });
 
 factory PutPermissionUpdateResponse.fromJson(Map<String, dynamic> json) { return PutPermissionUpdateResponse(
   message: json['message'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of content tracked in a project item
-final class ItemContentType {const ItemContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of content tracked in a project item
+@immutable final class ItemContentType {const ItemContentType._(this.value);
 
 factory ItemContentType.fromJson(String json) { return switch (json) {
   'Issue' => issue,

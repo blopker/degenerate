@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method.dart';import 'setup_attempt_payment_method_details_sofort_generated_sepa_debit.dart';import 'setup_attempt_payment_method_details_sofort_generated_sepa_debit_mandate.dart';/// Preferred language of the Sofort authorization page that the customer is redirected to.
 /// Can be one of `en`, `de`, `fr`, or `nl`
-final class SetupAttemptPaymentMethodDetailsSofortPreferredLanguage {const SetupAttemptPaymentMethodDetailsSofortPreferredLanguage._(this.value);
+@immutable final class SetupAttemptPaymentMethodDetailsSofortPreferredLanguage {const SetupAttemptPaymentMethodDetailsSofortPreferredLanguage._(this.value);
 
 factory SetupAttemptPaymentMethodDetailsSofortPreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupAttemptPaymentMethodDetailsSofortPreferredLanguage($value)'; } 
  }
 /// 
-final class SetupAttemptPaymentMethodDetailsSofort {const SetupAttemptPaymentMethodDetailsSofort({this.bankCode, this.bankName, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.preferredLanguage, this.verifiedName, });
+@immutable final class SetupAttemptPaymentMethodDetailsSofort {const SetupAttemptPaymentMethodDetailsSofort({this.bankCode, this.bankName, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.preferredLanguage, this.verifiedName, });
 
 factory SetupAttemptPaymentMethodDetailsSofort.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsSofort(
   bankCode: json['bank_code'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.code_interpreter_call_code.done`.
-final class ResponseCodeInterpreterCallCodeDoneEventType {const ResponseCodeInterpreterCallCodeDoneEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.code_interpreter_call_code.done`.
+@immutable final class ResponseCodeInterpreterCallCodeDoneEventType {const ResponseCodeInterpreterCallCodeDoneEventType._(this.value);
 
 factory ResponseCodeInterpreterCallCodeDoneEventType.fromJson(String json) { return switch (json) {
   'response.code_interpreter_call_code.done' => responseCodeInterpreterCallCodeDone,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseCodeInterpreterCallCodeDoneEventType($value)'; } 
  }
 /// Emitted when the code snippet is finalized by the code interpreter.
-final class ResponseCodeInterpreterCallCodeDoneEvent {const ResponseCodeInterpreterCallCodeDoneEvent({required this.type, required this.outputIndex, required this.itemId, required this.code, required this.sequenceNumber, });
+@immutable final class ResponseCodeInterpreterCallCodeDoneEvent {const ResponseCodeInterpreterCallCodeDoneEvent({required this.type, required this.outputIndex, required this.itemId, required this.code, required this.sequenceNumber, });
 
 factory ResponseCodeInterpreterCallCodeDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallCodeDoneEvent(
   type: ResponseCodeInterpreterCallCodeDoneEventType.fromJson(json['type'] as String),

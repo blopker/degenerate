@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The merge method to use.
-final class PullsMergeRequestMergeMethod {const PullsMergeRequestMergeMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The merge method to use.
+@immutable final class PullsMergeRequestMergeMethod {const PullsMergeRequestMergeMethod._(this.value);
 
 factory PullsMergeRequestMergeMethod.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullsMergeRequestMergeMethod($value)'; } 
  }
-final class PullsMergeRequest {const PullsMergeRequest({this.commitTitle, this.commitMessage, this.sha, this.mergeMethod, });
+@immutable final class PullsMergeRequest {const PullsMergeRequest({this.commitTitle, this.commitMessage, this.sha, this.mergeMethod, });
 
 factory PullsMergeRequest.fromJson(Map<String, dynamic> json) { return PullsMergeRequest(
   commitTitle: json['commit_title'] as String?,

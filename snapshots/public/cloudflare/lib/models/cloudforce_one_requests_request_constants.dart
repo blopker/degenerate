@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_priority.dart';import 'cloudforce_one_requests_request_status.dart';import 'cloudforce_one_requests_tlp.dart';final class CloudforceOneRequestsRequestConstants {const CloudforceOneRequestsRequestConstants({this.priority, this.status, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_priority.dart';import 'cloudforce_one_requests_request_status.dart';import 'cloudforce_one_requests_tlp.dart';@immutable final class CloudforceOneRequestsRequestConstants {const CloudforceOneRequestsRequestConstants({this.priority, this.status, this.tlp, });
 
 factory CloudforceOneRequestsRequestConstants.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestConstants(
   priority: (json['priority'] as List<dynamic>?)?.map((e) => CloudforceOneRequestsPriority.fromJson(e as String)).toList(),

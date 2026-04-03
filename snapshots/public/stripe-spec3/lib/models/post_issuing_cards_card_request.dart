@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_card_request_metadata.dart';import 'post_issuing_cards_card_request_pin.dart';import 'post_issuing_cards_card_request_shipping.dart';import 'post_issuing_cards_card_request_spending_controls.dart';/// Reason why the `status` of this card is `canceled`.
-final class PostIssuingCardsCardRequestCancellationReason {const PostIssuingCardsCardRequestCancellationReason._(this.value);
+@immutable final class PostIssuingCardsCardRequestCancellationReason {const PostIssuingCardsCardRequestCancellationReason._(this.value);
 
 factory PostIssuingCardsCardRequestCancellationReason.fromJson(String json) { return switch (json) {
   'lost' => lost,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardsCardRequestCancellationReason($value)'; } 
  }
 /// Dictates whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`. If this card is being canceled because it was lost or stolen, this information should be provided as `cancellation_reason`.
-final class PostIssuingCardsCardRequestStatus {const PostIssuingCardsCardRequestStatus._(this.value);
+@immutable final class PostIssuingCardsCardRequestStatus {const PostIssuingCardsCardRequestStatus._(this.value);
 
 factory PostIssuingCardsCardRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardsCardRequestStatus($value)'; } 
  }
-final class PostIssuingCardsCardRequest {const PostIssuingCardsCardRequest({this.cancellationReason, this.expand, this.metadata, this.personalizationDesign, this.pin, this.shipping, this.spendingControls, this.status, });
+@immutable final class PostIssuingCardsCardRequest {const PostIssuingCardsCardRequest({this.cancellationReason, this.expand, this.metadata, this.personalizationDesign, this.pin, this.shipping, this.spendingControls, this.status, });
 
 factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostIssuingCardsCardRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,

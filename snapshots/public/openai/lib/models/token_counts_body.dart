@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation_param.dart';import 'conversation_param2.dart';import 'input_item.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'token_counts_body_input.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';final class TruncationEnum {const TruncationEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation_param.dart';import 'conversation_param2.dart';import 'input_item.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'token_counts_body_input.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';@immutable final class TruncationEnum {const TruncationEnum._(this.value);
 
 factory TruncationEnum.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TruncationEnum($value)'; } 
  }
-final class TokenCountsBody {const TokenCountsBody({this.model, this.input, this.previousResponseId, this.tools, this.text, this.reasoning, this.truncation, this.instructions, this.conversation, this.toolChoice, this.parallelToolCalls, });
+@immutable final class TokenCountsBody {const TokenCountsBody({this.model, this.input, this.previousResponseId, this.tools, this.text, this.reasoning, this.truncation, this.instructions, this.conversation, this.toolChoice, this.parallelToolCalls, });
 
 factory TokenCountsBody.fromJson(Map<String, dynamic> json) { return TokenCountsBody(
   model: json['model'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateDeploymentProtectionRuleRequest {const ReposCreateDeploymentProtectionRuleRequest({this.integrationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateDeploymentProtectionRuleRequest {const ReposCreateDeploymentProtectionRuleRequest({this.integrationId});
 
 factory ReposCreateDeploymentProtectionRuleRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentProtectionRuleRequest(
   integrationId: json['integration_id'] != null ? (json['integration_id'] as num).toInt() : null,

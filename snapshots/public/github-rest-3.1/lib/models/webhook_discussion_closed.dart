@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookDiscussionClosedAction {const WebhookDiscussionClosedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDiscussionClosedAction {const WebhookDiscussionClosedAction._(this.value);
 
 factory WebhookDiscussionClosedAction.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionClosedAction($value)'; } 
  }
-final class WebhookDiscussionClosed {const WebhookDiscussionClosed({required this.action, required this.discussion, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookDiscussionClosed {const WebhookDiscussionClosed({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionClosed.fromJson(Map<String, dynamic> json) { return WebhookDiscussionClosed(
   action: WebhookDiscussionClosedAction.fromJson(json['action'] as String),

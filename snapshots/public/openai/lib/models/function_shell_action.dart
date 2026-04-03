@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Execute a shell command.
-final class FunctionShellAction {const FunctionShellAction({required this.commands, required this.timeoutMs, required this.maxOutputLength, });
+@immutable final class FunctionShellAction {const FunctionShellAction({required this.commands, required this.timeoutMs, required this.maxOutputLength, });
 
 factory FunctionShellAction.fromJson(Map<String, dynamic> json) { return FunctionShellAction(
   commands: (json['commands'] as List<dynamic>).map((e) => e as String).toList(),

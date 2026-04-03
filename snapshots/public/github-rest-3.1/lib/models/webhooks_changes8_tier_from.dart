@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
-final class WebhooksChanges8TierFrom {const WebhooksChanges8TierFrom({required this.createdAt, required this.description, this.isCustomAmmount, this.isCustomAmount, required this.isOneTime, required this.monthlyPriceInCents, required this.monthlyPriceInDollars, required this.name, required this.nodeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
+@immutable final class WebhooksChanges8TierFrom {const WebhooksChanges8TierFrom({required this.createdAt, required this.description, required this.isOneTime, required this.monthlyPriceInCents, required this.monthlyPriceInDollars, required this.name, required this.nodeId, this.isCustomAmmount, this.isCustomAmount, });
 
 factory WebhooksChanges8TierFrom.fromJson(Map<String, dynamic> json) { return WebhooksChanges8TierFrom(
   createdAt: json['created_at'] as String,

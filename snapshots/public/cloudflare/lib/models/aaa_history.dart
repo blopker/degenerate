@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_policy_id.dart';import 'aaa_schemas_name.dart';import 'aaa_uuid.dart';/// Message body included in the notification sent.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_policy_id.dart';import 'aaa_schemas_name.dart';import 'aaa_uuid.dart';/// Message body included in the notification sent.
 extension type const AaaAlertBody(String value) {
 factory AaaAlertBody.fromJson(String json) => AaaAlertBody(json);
 
@@ -22,7 +22,7 @@ String toJson() => value;
 
 }
 /// The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.
-final class AaaMechanismType {const AaaMechanismType._(this.value);
+@immutable final class AaaMechanismType {const AaaMechanismType._(this.value);
 
 factory AaaMechanismType.fromJson(String json) { return switch (json) {
   'email' => email,
@@ -63,7 +63,7 @@ factory AaaSent.fromJson(String json) => AaaSent(DateTime.parse(json));
 String toJson() => value.toIso8601String();
 
 }
-final class AaaHistory {const AaaHistory({this.alertBody, this.alertType, this.description, this.id, this.mechanism, this.mechanismType, this.name, this.policyId, this.sent, });
+@immutable final class AaaHistory {const AaaHistory({this.alertBody, this.alertType, this.description, this.id, this.mechanism, this.mechanismType, this.name, this.policyId, this.sent, });
 
 factory AaaHistory.fromJson(Map<String, dynamic> json) { return AaaHistory(
   alertBody: json['alert_body'] != null ? AaaAlertBody.fromJson(json['alert_body'] as String) : null,

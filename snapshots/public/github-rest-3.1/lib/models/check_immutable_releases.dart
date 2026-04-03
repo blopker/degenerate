@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Check immutable releases
-final class CheckImmutableReleases {const CheckImmutableReleases({required this.enabled, required this.enforcedByOwner, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check immutable releases
+@immutable final class CheckImmutableReleases {const CheckImmutableReleases({required this.enabled, required this.enforcedByOwner, });
 
 factory CheckImmutableReleases.fromJson(Map<String, dynamic> json) { return CheckImmutableReleases(
   enabled: json['enabled'] as bool,

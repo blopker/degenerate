@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_messages2.dart';final class MagicAppsResponseObject {const MagicAppsResponseObject({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_messages2.dart';@immutable final class MagicAppsResponseObject {const MagicAppsResponseObject({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory MagicAppsResponseObject.fromJson(Map<String, dynamic> json) { return MagicAppsResponseObject(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),

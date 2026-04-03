@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_policy_with_id.dart';final class PageShieldListZonePoliciesResponse {const PageShieldListZonePoliciesResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_policy_with_id.dart';@immutable final class PageShieldListZonePoliciesResponse {const PageShieldListZonePoliciesResponse({required this.result});
 
 factory PageShieldListZonePoliciesResponse.fromJson(Map<String, dynamic> json) { return PageShieldListZonePoliciesResponse(
   result: (json['result'] as List<dynamic>).map((e) => PageShieldPolicyWithId.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_availabilities.dart';final class ObservatoryAvailabilitiesResponse {const ObservatoryAvailabilitiesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_availabilities.dart';@immutable final class ObservatoryAvailabilitiesResponse {const ObservatoryAvailabilitiesResponse({this.result});
 
 factory ObservatoryAvailabilitiesResponse.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesResponse(
   result: json['result'] != null ? ObservatoryAvailabilities.fromJson(json['result'] as Map<String, dynamic>) : null,

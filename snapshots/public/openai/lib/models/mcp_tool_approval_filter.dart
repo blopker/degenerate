@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcp_tool_filter.dart';/// Specify which of the MCP server's tools require approval. Can be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_filter.dart';/// Specify which of the MCP server's tools require approval. Can be
 /// `always`, `never`, or a filter object associated with tools
 /// that require approval.
 /// 
-final class McpToolApprovalFilter {const McpToolApprovalFilter({this.always, this.never, });
+@immutable final class McpToolApprovalFilter {const McpToolApprovalFilter({this.always, this.never, });
 
 factory McpToolApprovalFilter.fromJson(Map<String, dynamic> json) { return McpToolApprovalFilter(
   always: json['always'] != null ? McpToolFilter.fromJson(json['always'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostJsonRequestVariant1AddStyleTag {const BrapiPostJsonRequestVariant1AddStyleTag({this.content, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostJsonRequestVariant1AddStyleTag {const BrapiPostJsonRequestVariant1AddStyleTag({this.content, this.url, });
 
 factory BrapiPostJsonRequestVariant1AddStyleTag.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant1AddStyleTag(
   content: json['content'] as String?,

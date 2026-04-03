@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ShippingAddressCollectionParamsAllowedCountries {const ShippingAddressCollectionParamsAllowedCountries._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingAddressCollectionParamsAllowedCountries {const ShippingAddressCollectionParamsAllowedCountries._(this.value);
 
 factory ShippingAddressCollectionParamsAllowedCountries.fromJson(String json) { return switch (json) {
   'AC' => ac,
@@ -732,7 +732,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingAddressCollectionParamsAllowedCountries($value)'; } 
  }
-final class ShippingAddressCollectionParams {const ShippingAddressCollectionParams({required this.allowedCountries});
+@immutable final class ShippingAddressCollectionParams {const ShippingAddressCollectionParams({required this.allowedCountries});
 
 factory ShippingAddressCollectionParams.fromJson(Map<String, dynamic> json) { return ShippingAddressCollectionParams(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => ShippingAddressCollectionParamsAllowedCountries.fromJson(e as String)).toList(),

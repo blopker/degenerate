@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'fine_tuning_job_checkpoint_metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
-final class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_checkpoint_metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
+@immutable final class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject._(this.value);
 
 factory FineTuningJobCheckpointObject.fromJson(String json) { return switch (json) {
   'fine_tuning.job.checkpoint' => fineTuningJobCheckpoint,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.
 /// 
-final class FineTuningJobCheckpoint {const FineTuningJobCheckpoint({required this.id, required this.createdAt, required this.fineTunedModelCheckpoint, required this.stepNumber, required this.metrics, required this.fineTuningJobId, required this.object, });
+@immutable final class FineTuningJobCheckpoint {const FineTuningJobCheckpoint({required this.id, required this.createdAt, required this.fineTunedModelCheckpoint, required this.stepNumber, required this.metrics, required this.fineTuningJobId, required this.object, });
 
 factory FineTuningJobCheckpoint.fromJson(Map<String, dynamic> json) { return FineTuningJobCheckpoint(
   id: json['id'] as String,

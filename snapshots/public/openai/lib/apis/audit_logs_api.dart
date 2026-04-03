@@ -14,34 +14,34 @@ final class AuditLogsApi with ApiExecutor {const AuditLogsApi(this.apiConfig);
 Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (effectiveAt != null) {
-if (effectiveAt.gt case final gt$?) { queryParametersList.add(ApiQueryParameter(name: 'gt', value: gt$.toString(), allowReserved: false)); }
-if (effectiveAt.gte case final gte$?) { queryParametersList.add(ApiQueryParameter(name: 'gte', value: gte$.toString(), allowReserved: false)); }
-if (effectiveAt.lt case final lt$?) { queryParametersList.add(ApiQueryParameter(name: 'lt', value: lt$.toString(), allowReserved: false)); }
-if (effectiveAt.lte case final lte$?) { queryParametersList.add(ApiQueryParameter(name: 'lte', value: lte$.toString(), allowReserved: false)); }
+if (effectiveAt.gt case final gt$?) { queryParametersList.add(ApiQueryParameter(name: 'gt', value: gt$.toString())); }
+if (effectiveAt.gte case final gte$?) { queryParametersList.add(ApiQueryParameter(name: 'gte', value: gte$.toString())); }
+if (effectiveAt.lt case final lt$?) { queryParametersList.add(ApiQueryParameter(name: 'lt', value: lt$.toString())); }
+if (effectiveAt.lte case final lte$?) { queryParametersList.add(ApiQueryParameter(name: 'lte', value: lte$.toString())); }
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids[]', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids[]', value: item));
 }
 }
 if (eventTypes != null) {
 for (final item in eventTypes) {
-  queryParametersList.add(ApiQueryParameter(name: 'event_types[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'event_types[]', value: item.toJson()));
 }
 }
 if (actorIds != null) {
 for (final item in actorIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_ids[]', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_ids[]', value: item));
 }
 }
 if (actorEmails != null) {
 for (final item in actorEmails) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_emails[]', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_emails[]', value: item));
 }
 }
 if (resourceIds != null) {
 for (final item in resourceIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_ids[]', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_ids[]', value: item));
 }
 }
 if (limit != null) {

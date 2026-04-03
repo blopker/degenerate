@@ -1,7 +1,3 @@
-// Code-generating emitters use long string-interpolation templates
-// that inherently exceed 80 chars.
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
@@ -48,10 +44,11 @@ class ModelEmitter {
         (b) => b
           ..name = model.name
           ..modifier = ClassModifier.final$
+          ..annotations.add(refer('immutable'))
           ..docs.addAll(_buildDocs())
-          ..fields.addAll(_buildFields())
           ..constructors.add(_buildConstructor())
           ..constructors.add(_buildFromJson())
+          ..fields.addAll(_buildFields())
           ..methods.add(_buildToJson())
           ..methods.add(_buildCanParse())
           ..methods.add(_buildCopyWith())
@@ -95,20 +92,27 @@ class ModelEmitter {
   }
 
   Constructor _buildConstructor() {
+    final fieldParams = model.fields.map((f) {
+      return Parameter(
+        (p) => p
+          ..name = f.name
+          ..named = true
+          ..toThis = true
+          ..required = f.isRequired && !_hasDefault(f)
+          ..defaultTo = _defaultCode(f),
+      );
+    }).toList();
+    // Sort required named parameters before optional ones.
+    fieldParams.sort((a, b) {
+      final aReq = a.required ? 0 : 1;
+      final bReq = b.required ? 0 : 1;
+      return aReq.compareTo(bReq);
+    });
     return Constructor(
       (b) => b
         ..constant = true
         ..optionalParameters.addAll([
-          ...model.fields.map((f) {
-            return Parameter(
-              (p) => p
-                ..name = f.name
-                ..named = true
-                ..toThis = true
-                ..required = f.isRequired && !_hasDefault(f)
-                ..defaultTo = _defaultCode(f),
-            );
-          }),
+          ...fieldParams,
           if (model.additionalProperties != null)
             Parameter(
               (p) => p

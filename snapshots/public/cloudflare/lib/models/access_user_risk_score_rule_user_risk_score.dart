@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AccessUserRiskScoreRuleUserRiskScoreUserRiskScore {const AccessUserRiskScoreRuleUserRiskScoreUserRiskScore._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessUserRiskScoreRuleUserRiskScoreUserRiskScore {const AccessUserRiskScoreRuleUserRiskScoreUserRiskScore._(this.value);
 
 factory AccessUserRiskScoreRuleUserRiskScoreUserRiskScore.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessUserRiskScoreRuleUserRiskScoreUserRiskScore($value)'; } 
  }
-final class AccessUserRiskScoreRuleUserRiskScore {const AccessUserRiskScoreRuleUserRiskScore({required this.userRiskScore});
+@immutable final class AccessUserRiskScoreRuleUserRiskScore {const AccessUserRiskScoreRuleUserRiskScore({required this.userRiskScore});
 
 factory AccessUserRiskScoreRuleUserRiskScore.fromJson(Map<String, dynamic> json) { return AccessUserRiskScoreRuleUserRiskScore(
   userRiskScore: (json['user_risk_score'] as List<dynamic>).map((e) => AccessUserRiskScoreRuleUserRiskScoreUserRiskScore.fromJson(e as String)).toList(),

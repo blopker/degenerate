@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_item.dart';/// Pending Updates store the changes pending from a previous update that will be applied
 /// to the Subscription upon successful payment.
-final class SubscriptionsResourcePendingUpdate {const SubscriptionsResourcePendingUpdate({this.billingCycleAnchor, required this.expiresAt, this.subscriptionItems, this.trialEnd, this.trialFromPlan, });
+@immutable final class SubscriptionsResourcePendingUpdate {const SubscriptionsResourcePendingUpdate({required this.expiresAt, this.billingCycleAnchor, this.subscriptionItems, this.trialEnd, this.trialFromPlan, });
 
 factory SubscriptionsResourcePendingUpdate.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePendingUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? (json['billing_cycle_anchor'] as num).toInt() : null,

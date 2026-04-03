@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookPersonalAccessTokenRequestCreatedAction {const WebhookPersonalAccessTokenRequestCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestCreatedAction {const WebhookPersonalAccessTokenRequestCreatedAction._(this.value);
 
 factory WebhookPersonalAccessTokenRequestCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPersonalAccessTokenRequestCreatedAction($value)'; } 
  }
-final class WebhookPersonalAccessTokenRequestCreated {const WebhookPersonalAccessTokenRequestCreated({required this.action, required this.personalAccessTokenRequest, this.enterprise, required this.organization, required this.sender, this.installation, });
+@immutable final class WebhookPersonalAccessTokenRequestCreated {const WebhookPersonalAccessTokenRequestCreated({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, this.enterprise, this.installation, });
 
 factory WebhookPersonalAccessTokenRequestCreated.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestCreated(
   action: WebhookPersonalAccessTokenRequestCreatedAction.fromJson(json['action'] as String),

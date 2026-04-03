@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer({required this.coupon});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer({required this.coupon});
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer(
   coupon: json['coupon'] as String,

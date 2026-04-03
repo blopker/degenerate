@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param28_financial_connections_filters.dart';final class PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions {const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param28_financial_connections_filters.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions {const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch {const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch {const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam28FinancialConnections {const PaymentIntentPaymentMethodOptionsParam28FinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam28FinancialConnections {const PaymentIntentPaymentMethodOptionsParam28FinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory PaymentIntentPaymentMethodOptionsParam28FinancialConnections.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam28FinancialConnections(
   filters: json['filters'] != null ? PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

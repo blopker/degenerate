@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AaaAuditLogsAction {const AaaAuditLogsAction({this.result, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaAuditLogsAction {const AaaAuditLogsAction({this.result, this.type, });
 
 factory AaaAuditLogsAction.fromJson(Map<String, dynamic> json) { return AaaAuditLogsAction(
   result: json['result'] as bool?,

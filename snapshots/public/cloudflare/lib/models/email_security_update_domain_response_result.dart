@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delivery_mode.dart';import 'email_security_disposition_label.dart';import 'email_security_scannable_folder.dart';import 'email_security_update_domain_response_result_authorization.dart';import 'email_security_update_domain_response_result_emails_processed.dart';final class EmailSecurityUpdateDomainResponseResultDmarcStatus {const EmailSecurityUpdateDomainResponseResultDmarcStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delivery_mode.dart';import 'email_security_disposition_label.dart';import 'email_security_scannable_folder.dart';import 'email_security_update_domain_response_result_authorization.dart';import 'email_security_update_domain_response_result_emails_processed.dart';@immutable final class EmailSecurityUpdateDomainResponseResultDmarcStatus {const EmailSecurityUpdateDomainResponseResultDmarcStatus._(this.value);
 
 factory EmailSecurityUpdateDomainResponseResultDmarcStatus.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityUpdateDomainResponseResultDmarcStatus($value)'; } 
  }
-final class EmailSecurityUpdateDomainResponseResultInboxProvider {const EmailSecurityUpdateDomainResponseResultInboxProvider._(this.value);
+@immutable final class EmailSecurityUpdateDomainResponseResultInboxProvider {const EmailSecurityUpdateDomainResponseResultInboxProvider._(this.value);
 
 factory EmailSecurityUpdateDomainResponseResultInboxProvider.fromJson(String json) { return switch (json) {
   'Microsoft' => microsoft,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityUpdateDomainResponseResultInboxProvider($value)'; } 
  }
-final class EmailSecurityUpdateDomainResponseResultRegions {const EmailSecurityUpdateDomainResponseResultRegions._(this.value);
+@immutable final class EmailSecurityUpdateDomainResponseResultRegions {const EmailSecurityUpdateDomainResponseResultRegions._(this.value);
 
 factory EmailSecurityUpdateDomainResponseResultRegions.fromJson(String json) { return switch (json) {
   'GLOBAL' => global,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityUpdateDomainResponseResultRegions($value)'; } 
  }
-final class EmailSecurityUpdateDomainResponseResultSpfStatus {const EmailSecurityUpdateDomainResponseResultSpfStatus._(this.value);
+@immutable final class EmailSecurityUpdateDomainResponseResultSpfStatus {const EmailSecurityUpdateDomainResponseResultSpfStatus._(this.value);
 
 factory EmailSecurityUpdateDomainResponseResultSpfStatus.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -117,7 +117,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityUpdateDomainResponseResultSpfStatus($value)'; } 
  }
-final class EmailSecurityUpdateDomainResponseResult {const EmailSecurityUpdateDomainResponseResult({required this.allowedDeliveryModes, this.authorization, required this.createdAt, this.dmarcStatus, required this.domain, required this.dropDispositions, this.emailsProcessed, this.folder, required this.id, this.inboxProvider, this.integrationId, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, this.o365TenantId, required this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, required this.transport, });
+@immutable final class EmailSecurityUpdateDomainResponseResult {const EmailSecurityUpdateDomainResponseResult({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
 
 factory EmailSecurityUpdateDomainResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainResponseResult(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>).map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),

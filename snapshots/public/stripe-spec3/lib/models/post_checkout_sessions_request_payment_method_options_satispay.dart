@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSatispay {const PostCheckoutSessionsRequestPaymentMethodOptionsSatispay({this.captureMethod});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSatispay {const PostCheckoutSessionsRequestPaymentMethodOptionsSatispay({this.captureMethod});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSatispay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod.fromJson(json['capture_method'] as String) : null,

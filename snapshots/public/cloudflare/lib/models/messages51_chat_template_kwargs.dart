@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ChatTemplateKwargs {const Messages51ChatTemplateKwargs({this.clearThinking = false, this.enableThinking = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ChatTemplateKwargs {const Messages51ChatTemplateKwargs({this.clearThinking = false, this.enableThinking = true, });
 
 factory Messages51ChatTemplateKwargs.fromJson(Map<String, dynamic> json) { return Messages51ChatTemplateKwargs(
   clearThinking: json.containsKey('clear_thinking') ? json['clear_thinking'] as bool : false,

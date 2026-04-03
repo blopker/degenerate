@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Group of enterprise owners and/or members
-final class EnterpriseTeam {const EnterpriseTeam({required this.id, required this.name, this.description, required this.slug, required this.url, this.syncToOrganizations, this.organizationSelectionType, required this.groupId, this.groupName, required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Group of enterprise owners and/or members
+@immutable final class EnterpriseTeam {const EnterpriseTeam({required this.id, required this.name, required this.slug, required this.url, required this.groupId, required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, this.description, this.syncToOrganizations, this.organizationSelectionType, this.groupName, });
 
 factory EnterpriseTeam.fromJson(Map<String, dynamic> json) { return EnterpriseTeam(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateModerationResponseResultsCategoryAppliedInputTypesHate {const CreateModerationResponseResultsCategoryAppliedInputTypesHate._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHate {const CreateModerationResponseResultsCategoryAppliedInputTypesHate._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHate($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassment {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassment {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassment.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassment($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicit {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicit {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicit($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -150,7 +150,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -174,7 +174,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -198,7 +198,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesSexual {const CreateModerationResponseResultsCategoryAppliedInputTypesSexual._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSexual {const CreateModerationResponseResultsCategoryAppliedInputTypesSexual._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesSexual.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -222,7 +222,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexual($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors {const CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors {const CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -243,7 +243,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesViolence {const CreateModerationResponseResultsCategoryAppliedInputTypesViolence._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesViolence {const CreateModerationResponseResultsCategoryAppliedInputTypesViolence._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesViolence.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -267,7 +267,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolence($value)'; } 
  }
-final class CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic {const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._(this.value);
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic {const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._(this.value);
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -292,7 +292,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic($value)'; } 
  }
 /// A list of the categories along with the input type(s) that the score applies to.
-final class CreateModerationResponseResultsCategoryAppliedInputTypes {const CreateModerationResponseResultsCategoryAppliedInputTypes({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
+@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypes {const CreateModerationResponseResultsCategoryAppliedInputTypes({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
 factory CreateModerationResponseResultsCategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResultsCategoryAppliedInputTypes(
   hate: (json['hate'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(e as String)).toList(),

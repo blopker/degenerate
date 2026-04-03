@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param5.dart';final class PostSubscriptionItemsRequestBillingThresholdsVariant2 {const PostSubscriptionItemsRequestBillingThresholdsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param5.dart';@immutable final class PostSubscriptionItemsRequestBillingThresholdsVariant2 {const PostSubscriptionItemsRequestBillingThresholdsVariant2._(this.value);
 
 factory PostSubscriptionItemsRequestBillingThresholdsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

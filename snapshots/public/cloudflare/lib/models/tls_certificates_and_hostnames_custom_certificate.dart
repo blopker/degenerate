@@ -29,7 +29,7 @@ String toJson() => value;
 
 }
 /// Status of the zone's custom SSL.
-final class TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesStatus($value)'; } 
  }
-final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesAndHostnamesCustomCertificate({this.bundleMethod, this.expiresOn, this.geoRestrictions, this.hosts, required this.id, this.issuer, this.keylessServer, this.modifiedOn, this.policyRestrictions, this.priority, this.signature, this.status, this.uploadedOn, required this.zoneId, });
+@immutable final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesAndHostnamesCustomCertificate({required this.id, required this.zoneId, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.hosts, this.issuer, this.keylessServer, this.modifiedOn, this.policyRestrictions, this.priority, this.signature, this.status, this.uploadedOn, });
 
 factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomCertificate(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_leaked_credential_checks_timeseries_group_by_bot_class_response_result_meta.dart';import 'radar_get_leaked_credential_checks_timeseries_group_by_bot_class_response_result_serie0.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResult {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_by_bot_class_response_result_meta.dart';import 'radar_get_leaked_credential_checks_timeseries_group_by_bot_class_response_result_serie0.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResult {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResult(
   meta: RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

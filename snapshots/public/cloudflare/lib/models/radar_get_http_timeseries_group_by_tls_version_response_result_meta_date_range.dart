@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMetaDateRange {const RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMetaDateRange {const RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_update_branch_protection_request_required_pull_request_reviews_bypass_pull_request_allowances.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews_dismissal_restrictions.dart';/// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
-final class ReposUpdateBranchProtectionRequestRequiredPullRequestReviews {const ReposUpdateBranchProtectionRequestRequiredPullRequestReviews({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews_bypass_pull_request_allowances.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews_dismissal_restrictions.dart';/// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
+@immutable final class ReposUpdateBranchProtectionRequestRequiredPullRequestReviews {const ReposUpdateBranchProtectionRequestRequiredPullRequestReviews({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });
 
 factory ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequestRequiredPullRequestReviews(
   dismissalRestrictions: json['dismissal_restrictions'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the direction used to sort returned rule groups.
-final class WafRuleGroupsListWafRuleGroupsDirection {const WafRuleGroupsListWafRuleGroupsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the direction used to sort returned rule groups.
+@immutable final class WafRuleGroupsListWafRuleGroupsDirection {const WafRuleGroupsListWafRuleGroupsDirection._(this.value);
 
 factory WafRuleGroupsListWafRuleGroupsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_response400_errors.dart';final class AigConfigUpdateGatewayResponse400 {const AigConfigUpdateGatewayResponse400({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_response400_errors.dart';@immutable final class AigConfigUpdateGatewayResponse400 {const AigConfigUpdateGatewayResponse400({required this.errors, required this.success, });
 
 factory AigConfigUpdateGatewayResponse400.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigUpdateGatewayResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

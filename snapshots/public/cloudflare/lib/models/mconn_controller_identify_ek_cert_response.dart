@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_identify_ek_cert_result.dart';final class MconnControllerIdentifyEkCertResponse {const MconnControllerIdentifyEkCertResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_identify_ek_cert_result.dart';@immutable final class MconnControllerIdentifyEkCertResponse {const MconnControllerIdentifyEkCertResponse({this.result});
 
 factory MconnControllerIdentifyEkCertResponse.fromJson(Map<String, dynamic> json) { return MconnControllerIdentifyEkCertResponse(
   result: json['result'] != null ? MconnControllerIdentifyEkCertResult.fromJson(json['result'] as Map<String, dynamic>) : null,

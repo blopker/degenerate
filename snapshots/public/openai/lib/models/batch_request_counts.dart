@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The request counts for different statuses within the batch.
-final class BatchRequestCounts {const BatchRequestCounts({required this.total, required this.completed, required this.failed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The request counts for different statuses within the batch.
+@immutable final class BatchRequestCounts {const BatchRequestCounts({required this.total, required this.completed, required this.failed, });
 
 factory BatchRequestCounts.fromJson(Map<String, dynamic> json) { return BatchRequestCounts(
   total: (json['total'] as num).toInt(),

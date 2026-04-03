@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_slurper_jurisdiction.dart';import 'r2_slurper_s3_like_creds_schema.dart';final class R2SlurperR2TargetSchemaVendor {const R2SlurperR2TargetSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_jurisdiction.dart';import 'r2_slurper_s3_like_creds_schema.dart';@immutable final class R2SlurperR2TargetSchemaVendor {const R2SlurperR2TargetSchemaVendor._(this.value);
 
 factory R2SlurperR2TargetSchemaVendor.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperR2TargetSchemaVendor($value)'; } 
  }
-final class R2SlurperR2TargetSchema {const R2SlurperR2TargetSchema({required this.bucket, this.jurisdiction, required this.secret, required this.vendor, });
+@immutable final class R2SlurperR2TargetSchema {const R2SlurperR2TargetSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, });
 
 factory R2SlurperR2TargetSchema.fromJson(Map<String, dynamic> json) { return R2SlurperR2TargetSchema(
   bucket: json['bucket'] as String,

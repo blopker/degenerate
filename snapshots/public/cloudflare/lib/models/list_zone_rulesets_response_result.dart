@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';final class ListZoneRulesetsResponseResult {const ListZoneRulesetsResponseResult({this.description = '', required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';@immutable final class ListZoneRulesetsResponseResult {const ListZoneRulesetsResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, this.description = '', });
 
 factory ListZoneRulesetsResponseResult.fromJson(Map<String, dynamic> json) { return ListZoneRulesetsResponseResult(
   description: json.containsKey('description') ? json['description'] as String : '',

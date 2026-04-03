@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_analytics_report_bytime.dart';final class DnsAnalyticsByTimeResponse {const DnsAnalyticsByTimeResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_report_bytime.dart';@immutable final class DnsAnalyticsByTimeResponse {const DnsAnalyticsByTimeResponse({this.result});
 
 factory DnsAnalyticsByTimeResponse.fromJson(Map<String, dynamic> json) { return DnsAnalyticsByTimeResponse(
   result: json['result'] != null ? DnsAnalyticsReportBytime.fromJson(json['result'] as Map<String, dynamic>) : null,

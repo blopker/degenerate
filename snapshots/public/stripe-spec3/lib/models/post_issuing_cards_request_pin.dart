@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The desired PIN for this card.
-final class PostIssuingCardsRequestPin {const PostIssuingCardsRequestPin({this.encryptedNumber});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired PIN for this card.
+@immutable final class PostIssuingCardsRequestPin {const PostIssuingCardsRequestPin({this.encryptedNumber});
 
 factory PostIssuingCardsRequestPin.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequestPin(
   encryptedNumber: json['encrypted_number'] as String?,

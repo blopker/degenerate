@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'removed_from_project_issue_event_project_card.dart';import 'simple_user.dart';/// Removed from Project Issue Event
-final class RemovedFromProjectIssueEvent {const RemovedFromProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'removed_from_project_issue_event_project_card.dart';import 'simple_user.dart';/// Removed from Project Issue Event
+@immutable final class RemovedFromProjectIssueEvent {const RemovedFromProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
 
 factory RemovedFromProjectIssueEvent.fromJson(Map<String, dynamic> json) { return RemovedFromProjectIssueEvent(
   id: (json['id'] as num).toInt(),

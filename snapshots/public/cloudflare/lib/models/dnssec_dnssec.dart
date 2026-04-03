@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Algorithm key code.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Algorithm key code.
 extension type const DnssecAlgorithm(String value) {
 factory DnssecAlgorithm.fromJson(String json) => DnssecAlgorithm(json);
 
@@ -77,7 +77,7 @@ factory DnssecStatus.fromJson(dynamic json) => DnssecStatus(json);
 dynamic toJson() => value;
 
 }
-final class DnssecDnssec {const DnssecDnssec({this.algorithm, this.digest, this.digestAlgorithm, this.digestType, this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.ds, this.flags, this.keyTag, this.keyType, this.modifiedOn, this.publicKey, this.status, });
+@immutable final class DnssecDnssec {const DnssecDnssec({this.algorithm, this.digest, this.digestAlgorithm, this.digestType, this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.ds, this.flags, this.keyTag, this.keyType, this.modifiedOn, this.publicKey, this.status, });
 
 factory DnssecDnssec.fromJson(Map<String, dynamic> json) { return DnssecDnssec(
   algorithm: json['algorithm'] != null ? DnssecAlgorithm.fromJson(json['algorithm'] as String) : null,

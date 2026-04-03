@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod {const PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod {const PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod._(this.value);
 
 factory PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod($value)'; } 
  }
 /// 
-final class PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptions({this.captureMethod});
+@immutable final class PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptions({this.captureMethod});
 
 factory PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? PaymentFlowsPrivatePaymentMethodsPaycoPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

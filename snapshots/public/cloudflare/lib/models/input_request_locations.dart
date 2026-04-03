@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum._(this.value);
 
 factory TeamsDevicesTrustStoresEnum.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesTrustStoresEnum($value)'; } 
  }
-final class InputRequestLocations {const InputRequestLocations({this.paths, this.trustStores, });
+@immutable final class InputRequestLocations {const InputRequestLocations({this.paths, this.trustStores, });
 
 factory InputRequestLocations.fromJson(Map<String, dynamic> json) { return InputRequestLocations(
   paths: (json['paths'] as List<dynamic>?)?.map((e) => e as String).toList(),

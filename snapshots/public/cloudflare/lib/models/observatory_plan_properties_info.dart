@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Counts per account plan.
-final class ObservatoryPlanPropertiesInfo {const ObservatoryPlanPropertiesInfo({this.business, this.enterprise, this.free, this.pro, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Counts per account plan.
+@immutable final class ObservatoryPlanPropertiesInfo {const ObservatoryPlanPropertiesInfo({this.business, this.enterprise, this.free, this.pro, });
 
 factory ObservatoryPlanPropertiesInfo.fromJson(Map<String, dynamic> json) { return ObservatoryPlanPropertiesInfo(
   business: json['business'] != null ? (json['business'] as num).toInt() : null,

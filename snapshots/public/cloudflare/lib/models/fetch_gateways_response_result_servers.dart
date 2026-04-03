@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class FetchGatewaysResponseResultServersAuthType {const FetchGatewaysResponseResultServersAuthType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchGatewaysResponseResultServersAuthType {const FetchGatewaysResponseResultServersAuthType._(this.value);
 
 factory FetchGatewaysResponseResultServersAuthType.fromJson(String json) { return switch (json) {
   'oauth' => oauth,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FetchGatewaysResponseResultServersAuthType($value)'; } 
  }
-final class FetchGatewaysResponseResultServers {const FetchGatewaysResponseResultServers({required this.authType, this.createdAt, this.createdBy, this.defaultDisabled = false, this.description, this.error, required this.hostname, required this.id, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, required this.name, this.onBehalf = true, required this.prompts, this.status = 'waiting', required this.tools, required this.updatedPrompts, required this.updatedTools, });
+@immutable final class FetchGatewaysResponseResultServers {const FetchGatewaysResponseResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled = false, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf = true, this.status = 'waiting', });
 
 factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponseResultServers(
   authType: FetchGatewaysResponseResultServersAuthType.fromJson(json['auth_type'] as String),

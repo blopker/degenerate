@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_data_requests_request_initiator.dart';import 'urlscanner_get_scan_response2_data_requests_request_redirect_response.dart';import 'urlscanner_get_scan_response2_data_requests_request_request.dart';final class UrlscannerGetScanResponse2DataRequestsRequest {const UrlscannerGetScanResponse2DataRequestsRequest({required this.documentUrl, this.frameId, required this.hasUserGesture, required this.initiator, this.loaderId, this.primaryRequest, required this.redirectHasExtraInfo, this.redirectResponse, required this.request, required this.requestId, required this.type, required this.wallTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_request_initiator.dart';import 'urlscanner_get_scan_response2_data_requests_request_redirect_response.dart';import 'urlscanner_get_scan_response2_data_requests_request_request.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequest {const UrlscannerGetScanResponse2DataRequestsRequest({required this.documentUrl, required this.hasUserGesture, required this.initiator, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, this.frameId, this.loaderId, this.primaryRequest, this.redirectResponse, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequest(
   documentUrl: json['documentURL'] as String,

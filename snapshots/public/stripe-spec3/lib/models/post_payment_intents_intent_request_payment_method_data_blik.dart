@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataBlik {const PostPaymentIntentsIntentRequestPaymentMethodDataBlik();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataBlik {const PostPaymentIntentsIntentRequestPaymentMethodDataBlik();
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataBlik(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// NodeFeatures describes the set of features implemented by the CRI implementation. The features contained in the NodeFeatures should depend only on the cri implementation independent of runtime handlers.
-final class NodeFeatures {const NodeFeatures({this.supplementalGroupsPolicy});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeFeatures describes the set of features implemented by the CRI implementation. The features contained in the NodeFeatures should depend only on the cri implementation independent of runtime handlers.
+@immutable final class NodeFeatures {const NodeFeatures({this.supplementalGroupsPolicy});
 
 factory NodeFeatures.fromJson(Map<String, dynamic> json) { return NodeFeatures(
   supplementalGroupsPolicy: json['supplementalGroupsPolicy'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_app_enum_permission.dart';/// The HTTP method to use when calling `deauthorize_callback_url`.
-final class UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod._(this.value);
+@immutable final class UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod._(this.value);
 
 factory UpdateConnectAppRequestDeauthorizeCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateConnectAppRequestDeauthorizeCallbackMethod($value)'; } 
  }
-final class UpdateConnectAppRequest {const UpdateConnectAppRequest({this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, });
+@immutable final class UpdateConnectAppRequest {const UpdateConnectAppRequest({this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, });
 
 factory UpdateConnectAppRequest.fromJson(Map<String, dynamic> json) { return UpdateConnectAppRequest(
   authorizeRedirectUrl: json['AuthorizeRedirectUrl'] != null ? Uri.parse(json['AuthorizeRedirectUrl'] as String) : null,

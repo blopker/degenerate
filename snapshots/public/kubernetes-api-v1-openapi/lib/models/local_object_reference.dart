@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
-final class LocalObjectReference {const LocalObjectReference({this.name = ''});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
+@immutable final class LocalObjectReference {const LocalObjectReference({this.name = ''});
 
 factory LocalObjectReference.fromJson(Map<String, dynamic> json) { return LocalObjectReference(
   name: json.containsKey('name') ? json['name'] as String : '',

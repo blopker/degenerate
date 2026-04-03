@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_deleted_provider.dart';final class McnDeleteProviderResponse {const McnDeleteProviderResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_deleted_provider.dart';@immutable final class McnDeleteProviderResponse {const McnDeleteProviderResponse({this.result});
 
 factory McnDeleteProviderResponse.fromJson(Map<String, dynamic> json) { return McnDeleteProviderResponse(
   result: json['result'] != null ? McnDeletedProvider.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingCardholderUserTermsAcceptance {const IssuingCardholderUserTermsAcceptance({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingCardholderUserTermsAcceptance {const IssuingCardholderUserTermsAcceptance({this.date, this.ip, this.userAgent, });
 
 factory IssuingCardholderUserTermsAcceptance.fromJson(Map<String, dynamic> json) { return IssuingCardholderUserTermsAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

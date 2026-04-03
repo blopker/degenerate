@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountValidationRequest {const AccountValidationRequest({this.accountSid, this.callSid, this.friendlyName, this.phoneNumber, this.validationCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountValidationRequest {const AccountValidationRequest({this.accountSid, this.callSid, this.friendlyName, this.phoneNumber, this.validationCode, });
 
 factory AccountValidationRequest.fromJson(Map<String, dynamic> json) { return AccountValidationRequest(
   accountSid: json['account_sid'] as String?,

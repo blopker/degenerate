@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_name.dart';import 'stream_opacity.dart';import 'stream_padding.dart';import 'stream_position.dart';import 'stream_scale.dart';import 'stream_watermark_identifier.dart';/// The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_name.dart';import 'stream_opacity.dart';import 'stream_padding.dart';import 'stream_position.dart';import 'stream_scale.dart';import 'stream_watermark_identifier.dart';/// The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
 extension type const StreamDownloadedFrom(String value) {
 factory StreamDownloadedFrom.fromJson(String json) => StreamDownloadedFrom(json);
 
@@ -35,7 +35,7 @@ factory StreamWidth.fromJson(num json) => StreamWidth(json.toInt());
 num toJson() => value;
 
 }
-final class StreamWatermarks {const StreamWatermarks({this.created, this.downloadedFrom, this.height, this.name, this.opacity, this.padding, this.position, this.scale, this.size, this.uid, this.width, });
+@immutable final class StreamWatermarks {const StreamWatermarks({this.created, this.downloadedFrom, this.height, this.name, this.opacity, this.padding, this.position, this.scale, this.size, this.uid, this.width, });
 
 factory StreamWatermarks.fromJson(Map<String, dynamic> json) { return StreamWatermarks(
   created: json['created'] != null ? StreamWatermarkCreated.fromJson(json['created'] as String) : null,

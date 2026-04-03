@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to use labeled runners or standard GitHub runners.
-final class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to use labeled runners or standard GitHub runners.
+@immutable final class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType._(this.value);
 
 factory CodeScanningDefaultSetupOptionsRunnerType.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupOptionsRunnerType($value)'; } 
  }
 /// Feature options for code scanning default setup
-final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
+@immutable final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
 
 factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupOptions(
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null,

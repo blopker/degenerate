@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'runner_label.dart';final class ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse {const ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse({required this.totalCount, required this.labels, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'runner_label.dart';@immutable final class ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse {const ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse({required this.totalCount, required this.labels, });
 
 factory ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),

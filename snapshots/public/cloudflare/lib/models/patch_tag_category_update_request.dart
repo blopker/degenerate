@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchTagCategoryUpdateRequest {const PatchTagCategoryUpdateRequest({this.description, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchTagCategoryUpdateRequest {const PatchTagCategoryUpdateRequest({this.description, this.name, });
 
 factory PatchTagCategoryUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchTagCategoryUpdateRequest(
   description: json['description'] as String?,

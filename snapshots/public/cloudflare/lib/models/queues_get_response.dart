@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';import 'mq_queue.dart';final class QueuesGetResponse {const QueuesGetResponse({this.errors, this.messages, this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';import 'mq_queue.dart';@immutable final class QueuesGetResponse {const QueuesGetResponse({this.errors, this.messages, this.success, this.result, });
 
 factory QueuesGetResponse.fromJson(Map<String, dynamic> json) { return QueuesGetResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel22.fromJson(e as Map<String, dynamic>)).toList(),

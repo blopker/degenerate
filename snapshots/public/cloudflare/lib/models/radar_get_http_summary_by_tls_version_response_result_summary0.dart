@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByTlsVersionResponseResultSummary0 {const RadarGetHttpSummaryByTlsVersionResponseResultSummary0({required this.tls10, required this.tls11, required this.tls12, required this.tls13, required this.tlsQuic, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByTlsVersionResponseResultSummary0 {const RadarGetHttpSummaryByTlsVersionResponseResultSummary0({required this.tls10, required this.tls11, required this.tls12, required this.tls13, required this.tlsQuic, });
 
 factory RadarGetHttpSummaryByTlsVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByTlsVersionResponseResultSummary0(
   tls10: json['TLS 1.0'] as String,

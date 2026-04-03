@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazTimerRuleSettings {const ZarazTimerRuleSettings({required this.interval, required this.limit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazTimerRuleSettings {const ZarazTimerRuleSettings({required this.interval, required this.limit, });
 
 factory ZarazTimerRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazTimerRuleSettings(
   interval: (json['interval'] as num).toInt(),

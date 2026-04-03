@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_as112_timeseries_group_by_dnssec_response_result.dart';final class RadarGetDnsAs112TimeseriesGroupByDnssecResponse {const RadarGetDnsAs112TimeseriesGroupByDnssecResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_group_by_dnssec_response_result.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByDnssecResponse {const RadarGetDnsAs112TimeseriesGroupByDnssecResponse({required this.result, required this.success, });
 
 factory RadarGetDnsAs112TimeseriesGroupByDnssecResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByDnssecResponse(
   result: RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>),

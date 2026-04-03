@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations {const RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations({this.estimatedUsers, required this.locationAlpha2, required this.locationName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations {const RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations({required this.locationAlpha2, required this.locationName, this.estimatedUsers, });
 
 factory RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
   estimatedUsers: json['estimatedUsers'] != null ? (json['estimatedUsers'] as num).toInt() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeline_committed_event_author.dart';import 'timeline_committed_event_committer.dart';import 'timeline_committed_event_parents.dart';import 'timeline_committed_event_tree.dart';import 'timeline_committed_event_verification.dart';/// Timeline Committed Event
-final class TimelineCommittedEvent {const TimelineCommittedEvent({this.event, required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, });
+@immutable final class TimelineCommittedEvent {const TimelineCommittedEvent({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, this.event, });
 
 factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) { return TimelineCommittedEvent(
   event: json['event'] as String?,

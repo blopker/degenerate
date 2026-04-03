@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_history.dart';final class AaaHistoryComponentsSchemasResponseCollection {const AaaHistoryComponentsSchemasResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_history.dart';@immutable final class AaaHistoryComponentsSchemasResponseCollection {const AaaHistoryComponentsSchemasResponseCollection({this.result, this.resultInfo, });
 
 factory AaaHistoryComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AaaHistoryComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AaaHistory.fromJson(e as Map<String, dynamic>)).toList(),

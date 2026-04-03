@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Apply a specific host header.
-final class ZonesHostHeaderOverrideId {const ZonesHostHeaderOverrideId._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply a specific host header.
+@immutable final class ZonesHostHeaderOverrideId {const ZonesHostHeaderOverrideId._(this.value);
 
 factory ZonesHostHeaderOverrideId.fromJson(String json) { return switch (json) {
   'host_header_override' => hostHeaderOverride,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesHostHeaderOverrideId($value)'; } 
  }
-final class ZonesHostHeaderOverride {const ZonesHostHeaderOverride({this.id, this.value, });
+@immutable final class ZonesHostHeaderOverride {const ZonesHostHeaderOverride({this.id, this.value, });
 
 factory ZonesHostHeaderOverride.fromJson(Map<String, dynamic> json) { return ZonesHostHeaderOverride(
   id: json['id'] != null ? ZonesHostHeaderOverrideId.fromJson(json['id'] as String) : null,

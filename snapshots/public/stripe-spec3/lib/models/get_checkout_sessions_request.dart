@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCheckoutSessionsRequest {const GetCheckoutSessionsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCheckoutSessionsRequest {const GetCheckoutSessionsRequest();
 
 factory GetCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return GetCheckoutSessionsRequest(
 

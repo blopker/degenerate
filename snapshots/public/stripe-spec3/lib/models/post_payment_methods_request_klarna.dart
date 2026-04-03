@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_methods_request_klarna_dob.dart';/// If this is a `klarna` PaymentMethod, this hash contains details about the Klarna payment method.
-final class PostPaymentMethodsRequestKlarna {const PostPaymentMethodsRequestKlarna({this.dob});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_methods_request_klarna_dob.dart';/// If this is a `klarna` PaymentMethod, this hash contains details about the Klarna payment method.
+@immutable final class PostPaymentMethodsRequestKlarna {const PostPaymentMethodsRequestKlarna({this.dob});
 
 factory PostPaymentMethodsRequestKlarna.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestKlarna(
   dob: json['dob'] != null ? PostPaymentMethodsRequestKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,

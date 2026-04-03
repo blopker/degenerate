@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_realtime_call_incoming_data_sip_headers.dart';/// Event data payload.
 /// 
-final class WebhookRealtimeCallIncomingData {const WebhookRealtimeCallIncomingData({required this.callId, required this.sipHeaders, });
+@immutable final class WebhookRealtimeCallIncomingData {const WebhookRealtimeCallIncomingData({required this.callId, required this.sipHeaders, });
 
 factory WebhookRealtimeCallIncomingData.fromJson(Map<String, dynamic> json) { return WebhookRealtimeCallIncomingData(
   callId: json['call_id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxCalculationsRequestCustomerDetailsTaxIdsType {const PostTaxCalculationsRequestCustomerDetailsTaxIdsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxCalculationsRequestCustomerDetailsTaxIdsType {const PostTaxCalculationsRequestCustomerDetailsTaxIdsType._(this.value);
 
 factory PostTaxCalculationsRequestCustomerDetailsTaxIdsType.fromJson(String json) { return switch (json) {
   'ad_nrt' => adNrt,
@@ -354,7 +354,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxCalculationsRequestCustomerDetailsTaxIdsType($value)'; } 
  }
-final class PostTaxCalculationsRequestCustomerDetailsTaxIds {const PostTaxCalculationsRequestCustomerDetailsTaxIds({required this.type, required this.value, });
+@immutable final class PostTaxCalculationsRequestCustomerDetailsTaxIds {const PostTaxCalculationsRequestCustomerDetailsTaxIds({required this.type, required this.value, });
 
 factory PostTaxCalculationsRequestCustomerDetailsTaxIds.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetailsTaxIds(
   type: PostTaxCalculationsRequestCustomerDetailsTaxIdsType.fromJson(json['type'] as String),

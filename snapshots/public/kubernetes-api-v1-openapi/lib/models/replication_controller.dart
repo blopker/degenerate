@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'replication_controller_spec.dart';import 'replication_controller_status.dart';/// ReplicationController represents the configuration of a replication controller.
-final class ReplicationController {const ReplicationController({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'replication_controller_spec.dart';import 'replication_controller_status.dart';/// ReplicationController represents the configuration of a replication controller.
+@immutable final class ReplicationController {const ReplicationController({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory ReplicationController.fromJson(Map<String, dynamic> json) { return ReplicationController(
   apiVersion: json['apiVersion'] as String?,

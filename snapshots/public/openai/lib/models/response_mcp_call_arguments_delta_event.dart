@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_call_arguments.delta'.
-final class ResponseMcpCallArgumentsDeltaEventType {const ResponseMcpCallArgumentsDeltaEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_call_arguments.delta'.
+@immutable final class ResponseMcpCallArgumentsDeltaEventType {const ResponseMcpCallArgumentsDeltaEventType._(this.value);
 
 factory ResponseMcpCallArgumentsDeltaEventType.fromJson(String json) { return switch (json) {
   'response.mcp_call_arguments.delta' => responseMcpCallArgumentsDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
 /// 
-final class ResponseMcpCallArgumentsDeltaEvent {const ResponseMcpCallArgumentsDeltaEvent({required this.type, required this.outputIndex, required this.itemId, required this.delta, required this.sequenceNumber, });
+@immutable final class ResponseMcpCallArgumentsDeltaEvent {const ResponseMcpCallArgumentsDeltaEvent({required this.type, required this.outputIndex, required this.itemId, required this.delta, required this.sequenceNumber, });
 
 factory ResponseMcpCallArgumentsDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallArgumentsDeltaEvent(
   type: ResponseMcpCallArgumentsDeltaEventType.fromJson(json['type'] as String),

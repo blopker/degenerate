@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_ai_list_finetunes_response_result.dart';final class WorkersAiListFinetunesResponse {const WorkersAiListFinetunesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_list_finetunes_response_result.dart';@immutable final class WorkersAiListFinetunesResponse {const WorkersAiListFinetunesResponse({required this.result, required this.success, });
 
 factory WorkersAiListFinetunesResponse.fromJson(Map<String, dynamic> json) { return WorkersAiListFinetunesResponse(
   result: WorkersAiListFinetunesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

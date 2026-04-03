@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.getDocs();
 /// ```
 final class Spec10SpecExtensionsAndExternalDocsApi {
-  final ApiConfig _config;
-
   Spec10SpecExtensionsAndExternalDocsApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

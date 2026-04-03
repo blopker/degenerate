@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantQualityStats {const GetParticipantDataFromPeerIdResponseDataParticipantQualityStats({this.audioBandwidth, this.audioStats, this.averageQuality, this.end, this.firstAudioPacketReceived, this.firstVideoPacketReceived, this.lastAudioPacketReceived, this.lastVideoPacketReceived, this.peerIds, this.start, this.totalAudioPackets, this.totalAudioPacketsLost, this.totalVideoPackets, this.totalVideoPacketsLost, this.videoBandwidth, this.videoStats, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantQualityStats {const GetParticipantDataFromPeerIdResponseDataParticipantQualityStats({this.audioBandwidth, this.audioStats, this.averageQuality, this.end, this.firstAudioPacketReceived, this.firstVideoPacketReceived, this.lastAudioPacketReceived, this.lastVideoPacketReceived, this.peerIds, this.start, this.totalAudioPackets, this.totalAudioPacketsLost, this.totalVideoPackets, this.totalVideoPacketsLost, this.videoBandwidth, this.videoStats, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantQualityStats(
   audioBandwidth: json['audio_bandwidth'] != null ? (json['audio_bandwidth'] as num).toInt() : null,

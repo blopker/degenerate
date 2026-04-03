@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_scanning_analysis_tool_guid.dart';import 'code_scanning_analysis_tool_name.dart';/// The version of the tool used to generate the code scanning analysis.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_analysis_tool_guid.dart';import 'code_scanning_analysis_tool_name.dart';/// The version of the tool used to generate the code scanning analysis.
 extension type const CodeScanningAnalysisToolVersion(String value) {
 factory CodeScanningAnalysisToolVersion.fromJson(String json) => CodeScanningAnalysisToolVersion(json);
 
 String toJson() => value;
 
 }
-final class CodeScanningAnalysisTool {const CodeScanningAnalysisTool({this.name, this.version, this.guid, });
+@immutable final class CodeScanningAnalysisTool {const CodeScanningAnalysisTool({this.name, this.version, this.guid, });
 
 factory CodeScanningAnalysisTool.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysisTool(
   name: json['name'] != null ? CodeScanningAnalysisToolName.fromJson(json['name'] as String) : null,

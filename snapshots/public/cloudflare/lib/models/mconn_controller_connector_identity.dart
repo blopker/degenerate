@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_account_id.dart';import 'mconn_uuid.dart';final class MconnControllerConnectorIdentity {const MconnControllerConnectorIdentity({required this.accountId, required this.activated, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_account_id.dart';import 'mconn_uuid.dart';@immutable final class MconnControllerConnectorIdentity {const MconnControllerConnectorIdentity({required this.accountId, required this.activated, required this.id, });
 
 factory MconnControllerConnectorIdentity.fromJson(Map<String, dynamic> json) { return MconnControllerConnectorIdentity(
   accountId: MconnAccountId.fromJson(json['account_id'] as String),

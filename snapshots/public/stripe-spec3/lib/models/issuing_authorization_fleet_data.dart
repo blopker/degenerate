@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_fleet_cardholder_prompt_data.dart';import 'issuing_authorization_fleet_reported_breakdown.dart';/// The type of purchase.
-final class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_fleet_cardholder_prompt_data.dart';import 'issuing_authorization_fleet_reported_breakdown.dart';/// The type of purchase.
+@immutable final class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType._(this.value);
 
 factory IssuingAuthorizationFleetDataPurchaseType.fromJson(String json) { return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFleetDataPurchaseType($value)'; } 
  }
 /// The type of fuel service.
-final class IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType._(this.value);
+@immutable final class IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType._(this.value);
 
 factory IssuingAuthorizationFleetDataServiceType.fromJson(String json) { return switch (json) {
   'full_service' => fullService,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFleetDataServiceType($value)'; } 
  }
 /// 
-final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+@immutable final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory IssuingAuthorizationFleetData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetData(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,

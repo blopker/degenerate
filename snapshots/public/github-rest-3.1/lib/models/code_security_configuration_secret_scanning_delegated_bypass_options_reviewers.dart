@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the bypass reviewer
-final class CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersReviewerType {const CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersReviewerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the bypass reviewer
+@immutable final class CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersReviewerType {const CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersReviewerType._(this.value);
 
 factory CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersReviewerType.fromJson(String json) { return switch (json) {
   'TEAM' => team,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersReviewerType($value)'; } 
  }
-final class CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers {const CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers({required this.reviewerId, required this.reviewerType, this.securityConfigurationId, });
+@immutable final class CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers {const CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers({required this.reviewerId, required this.reviewerType, this.securityConfigurationId, });
 
 factory CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers(
   reviewerId: (json['reviewer_id'] as num).toInt(),

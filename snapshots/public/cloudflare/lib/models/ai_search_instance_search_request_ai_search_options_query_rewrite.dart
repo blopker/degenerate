@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options_query_rewrite_model.dart';final class AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite {const AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite({this.enabled, this.model, this.rewritePrompt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options_query_rewrite_model.dart';@immutable final class AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite {const AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite({this.enabled, this.model, this.rewritePrompt, });
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite(
   enabled: json['enabled'] as bool?,

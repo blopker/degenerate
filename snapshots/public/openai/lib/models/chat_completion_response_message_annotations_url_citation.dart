@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A URL citation when using web search.
-final class ChatCompletionResponseMessageAnnotationsUrlCitation {const ChatCompletionResponseMessageAnnotationsUrlCitation({required this.endIndex, required this.startIndex, required this.url, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URL citation when using web search.
+@immutable final class ChatCompletionResponseMessageAnnotationsUrlCitation {const ChatCompletionResponseMessageAnnotationsUrlCitation({required this.endIndex, required this.startIndex, required this.url, required this.title, });
 
 factory ChatCompletionResponseMessageAnnotationsUrlCitation.fromJson(Map<String, dynamic> json) { return ChatCompletionResponseMessageAnnotationsUrlCitation(
   endIndex: (json['end_index'] as num).toInt(),

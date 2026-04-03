@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_pattern_type.dart';final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({this.comments, required this.isRegex, required this.pattern, required this.patternType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments, });
 
 factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSender(
   comments: json['comments'] as String?,

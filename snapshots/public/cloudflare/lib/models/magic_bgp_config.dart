@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MagicBgpConfig {const MagicBgpConfig({required this.customerAsn, this.extraPrefixes, this.md5Key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicBgpConfig {const MagicBgpConfig({required this.customerAsn, this.extraPrefixes, this.md5Key, });
 
 factory MagicBgpConfig.fromJson(Map<String, dynamic> json) { return MagicBgpConfig(
   customerAsn: (json['customer_asn'] as num).toInt(),

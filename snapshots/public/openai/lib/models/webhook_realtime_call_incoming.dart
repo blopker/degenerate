@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_realtime_call_incoming_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_realtime_call_incoming_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookRealtimeCallIncomingObject {const WebhookRealtimeCallIncomingObject._(this.value);
+@immutable final class WebhookRealtimeCallIncomingObject {const WebhookRealtimeCallIncomingObject._(this.value);
 
 factory WebhookRealtimeCallIncomingObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `realtime.call.incoming`.
 /// 
-final class WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType._(this.value);
+@immutable final class WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType._(this.value);
 
 factory WebhookRealtimeCallIncomingType.fromJson(String json) { return switch (json) {
   'realtime.call.incoming' => realtimeCallIncoming,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when Realtime API Receives a incoming SIP call.
 /// 
-final class WebhookRealtimeCallIncoming {const WebhookRealtimeCallIncoming({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookRealtimeCallIncoming {const WebhookRealtimeCallIncoming({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookRealtimeCallIncoming.fromJson(Map<String, dynamic> json) { return WebhookRealtimeCallIncoming(
   createdAt: (json['created_at'] as num).toInt(),

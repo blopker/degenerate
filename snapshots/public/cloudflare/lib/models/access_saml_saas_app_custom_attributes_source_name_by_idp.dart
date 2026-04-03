@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSamlSaasAppCustomAttributesSourceNameByIdp {const AccessSamlSaasAppCustomAttributesSourceNameByIdp({this.idpId, this.sourceName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSamlSaasAppCustomAttributesSourceNameByIdp {const AccessSamlSaasAppCustomAttributesSourceNameByIdp({this.idpId, this.sourceName, });
 
 factory AccessSamlSaasAppCustomAttributesSourceNameByIdp.fromJson(Map<String, dynamic> json) { return AccessSamlSaasAppCustomAttributesSourceNameByIdp(
   idpId: json['idp_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FirewallMessages2 {const FirewallMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallMessages2 {const FirewallMessages2({required this.code, required this.message, });
 
 factory FirewallMessages2.fromJson(Map<String, dynamic> json) { return FirewallMessages2(
   code: (json['code'] as num).toInt(),

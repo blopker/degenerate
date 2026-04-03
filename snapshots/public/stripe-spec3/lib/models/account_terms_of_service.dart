@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountTermsOfService {const AccountTermsOfService({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountTermsOfService {const AccountTermsOfService({this.date, this.ip, this.userAgent, });
 
 factory AccountTermsOfService.fromJson(Map<String, dynamic> json) { return AccountTermsOfService(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

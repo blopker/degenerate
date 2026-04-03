@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_pipeline_graph.dart';import 'validate_sql_response_result_tables_value.dart';final class ValidateSqlResponseResult {const ValidateSqlResponseResult({this.graph, required this.tables, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_pipeline_graph.dart';import 'validate_sql_response_result_tables_value.dart';@immutable final class ValidateSqlResponseResult {const ValidateSqlResponseResult({required this.tables, this.graph, });
 
 factory ValidateSqlResponseResult.fromJson(Map<String, dynamic> json) { return ValidateSqlResponseResult(
   graph: json['graph'] != null ? CloudflarePipelinesPipelineGraph.fromJson(json['graph'] as Map<String, dynamic>) : null,

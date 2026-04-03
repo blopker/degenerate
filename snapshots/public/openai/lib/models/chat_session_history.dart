@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// History retention preferences returned for the session.
-final class ChatSessionHistory {const ChatSessionHistory({required this.enabled, required this.recentThreads, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// History retention preferences returned for the session.
+@immutable final class ChatSessionHistory {const ChatSessionHistory({required this.enabled, required this.recentThreads, });
 
 factory ChatSessionHistory.fromJson(Map<String, dynamic> json) { return ChatSessionHistory(
   enabled: json['enabled'] as bool,

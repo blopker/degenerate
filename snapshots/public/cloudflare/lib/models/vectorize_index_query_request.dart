@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class VectorizeIndexQueryRequest {const VectorizeIndexQueryRequest({this.filter, this.returnMetadata = false, this.returnValues = false, this.topK = 5.0, required this.vector, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorizeIndexQueryRequest {const VectorizeIndexQueryRequest({required this.vector, this.filter, this.returnMetadata = false, this.returnValues = false, this.topK = 5.0, });
 
 factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryRequest(
   filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

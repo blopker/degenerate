@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_interac_present_receipt.dart';/// How card details were read in this transaction.
-final class PaymentMethodDetailsInteracPresentReadMethod {const PaymentMethodDetailsInteracPresentReadMethod._(this.value);
+@immutable final class PaymentMethodDetailsInteracPresentReadMethod {const PaymentMethodDetailsInteracPresentReadMethod._(this.value);
 
 factory PaymentMethodDetailsInteracPresentReadMethod.fromJson(String json) { return switch (json) {
   'contact_emv' => contactEmv,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsInteracPresentReadMethod($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsInteracPresent {const PaymentMethodDetailsInteracPresent({this.brand, this.cardholderName, this.country, this.description, this.emvAuthData, required this.expMonth, required this.expYear, this.fingerprint, this.funding, this.generatedCard, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.preferredLocales, this.readMethod, this.reader, this.receipt, });
+@immutable final class PaymentMethodDetailsInteracPresent {const PaymentMethodDetailsInteracPresent({required this.expMonth, required this.expYear, this.brand, this.cardholderName, this.country, this.description, this.emvAuthData, this.fingerprint, this.funding, this.generatedCard, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.preferredLocales, this.readMethod, this.reader, this.receipt, });
 
 factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsInteracPresent(
   brand: json['brand'] as String?,

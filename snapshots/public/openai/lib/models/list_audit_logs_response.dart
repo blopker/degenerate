@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log.dart';final class ListAuditLogsResponseObject {const ListAuditLogsResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log.dart';@immutable final class ListAuditLogsResponseObject {const ListAuditLogsResponseObject._(this.value);
 
 factory ListAuditLogsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListAuditLogsResponseObject($value)'; } 
  }
-final class ListAuditLogsResponse {const ListAuditLogsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ListAuditLogsResponse {const ListAuditLogsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ListAuditLogsResponse.fromJson(Map<String, dynamic> json) { return ListAuditLogsResponse(
   object: ListAuditLogsResponseObject.fromJson(json['object'] as String),

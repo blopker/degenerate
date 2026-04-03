@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The person that committed the file. Default: the authenticated user.
-final class ReposCreateOrUpdateFileContentsRequestCommitter {const ReposCreateOrUpdateFileContentsRequestCommitter({required this.name, required this.email, this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The person that committed the file. Default: the authenticated user.
+@immutable final class ReposCreateOrUpdateFileContentsRequestCommitter {const ReposCreateOrUpdateFileContentsRequestCommitter({required this.name, required this.email, this.date, });
 
 factory ReposCreateOrUpdateFileContentsRequestCommitter.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateFileContentsRequestCommitter(
   name: json['name'] as String,

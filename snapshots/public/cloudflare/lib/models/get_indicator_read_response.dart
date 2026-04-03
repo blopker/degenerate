@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_read_response_related_events.dart';import 'get_indicator_read_response_tags.dart';final class GetIndicatorReadResponse {const GetIndicatorReadResponse({required this.createdAt, this.datasetId, required this.indicatorType, this.relatedEvents, this.tags, required this.updatedAt, required this.uuid, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_read_response_related_events.dart';import 'get_indicator_read_response_tags.dart';@immutable final class GetIndicatorReadResponse {const GetIndicatorReadResponse({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
 factory GetIndicatorReadResponse.fromJson(Map<String, dynamic> json) { return GetIndicatorReadResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The color of the issue type.
-final class IssueTypeColor {const IssueTypeColor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The color of the issue type.
+@immutable final class IssueTypeColor {const IssueTypeColor._(this.value);
 
 factory IssueTypeColor.fromJson(String json) { return switch (json) {
   'gray' => gray,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssueTypeColor($value)'; } 
  }
 /// The type of issue.
-final class IssueType {const IssueType({required this.id, required this.nodeId, required this.name, required this.description, this.color, this.createdAt, this.updatedAt, this.isEnabled, });
+@immutable final class IssueType {const IssueType({required this.id, required this.nodeId, required this.name, required this.description, this.color, this.createdAt, this.updatedAt, this.isEnabled, });
 
 factory IssueType.fromJson(Map<String, dynamic> json) { return IssueType(
   id: (json['id'] as num).toInt(),

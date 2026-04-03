@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_cursor_result_info.dart';final class RevokeRegistrationsResponse {const RevokeRegistrationsResponse({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_cursor_result_info.dart';@immutable final class RevokeRegistrationsResponse {const RevokeRegistrationsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory RevokeRegistrationsResponse.fromJson(Map<String, dynamic> json) { return RevokeRegistrationsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),

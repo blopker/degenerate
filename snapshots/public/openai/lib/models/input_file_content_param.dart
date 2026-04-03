@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileDetailEnum {const FileDetailEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileDetailEnum {const FileDetailEnum._(this.value);
 
 factory FileDetailEnum.fromJson(String json) { return switch (json) {
   'high' => high,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileDetailEnum($value)'; } 
  }
 /// The type of the input item. Always `input_file`.
-final class InputFileContentParamType {const InputFileContentParamType._(this.value);
+@immutable final class InputFileContentParamType {const InputFileContentParamType._(this.value);
 
 factory InputFileContentParamType.fromJson(String json) { return switch (json) {
   'input_file' => inputFile,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputFileContentParamType($value)'; } 
  }
 /// A file input to the model.
-final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
+@immutable final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
 
 factory InputFileContentParam.fromJson(Map<String, dynamic> json) { return InputFileContentParam(
   type: InputFileContentParamType.fromJson(json['type'] as String),

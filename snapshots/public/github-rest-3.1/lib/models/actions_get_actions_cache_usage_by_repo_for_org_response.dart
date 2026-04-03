@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_cache_usage_by_repository.dart';final class ActionsGetActionsCacheUsageByRepoForOrgResponse {const ActionsGetActionsCacheUsageByRepoForOrgResponse({required this.totalCount, required this.repositoryCacheUsages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_cache_usage_by_repository.dart';@immutable final class ActionsGetActionsCacheUsageByRepoForOrgResponse {const ActionsGetActionsCacheUsageByRepoForOrgResponse({required this.totalCount, required this.repositoryCacheUsages, });
 
 factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGetActionsCacheUsageByRepoForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),

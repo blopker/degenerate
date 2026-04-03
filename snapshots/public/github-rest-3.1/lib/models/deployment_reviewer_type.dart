@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of reviewer.
-final class DeploymentReviewerType {const DeploymentReviewerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of reviewer.
+@immutable final class DeploymentReviewerType {const DeploymentReviewerType._(this.value);
 
 factory DeploymentReviewerType.fromJson(String json) { return switch (json) {
   'User' => user,

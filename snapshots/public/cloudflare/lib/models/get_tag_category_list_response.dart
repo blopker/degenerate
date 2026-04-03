@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_category_list_response_categories.dart';final class GetTagCategoryListResponse {const GetTagCategoryListResponse({required this.categories});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_category_list_response_categories.dart';@immutable final class GetTagCategoryListResponse {const GetTagCategoryListResponse({required this.categories});
 
 factory GetTagCategoryListResponse.fromJson(Map<String, dynamic> json) { return GetTagCategoryListResponse(
   categories: (json['categories'] as List<dynamic>).map((e) => GetTagCategoryListResponseCategories.fromJson(e as Map<String, dynamic>)).toList(),

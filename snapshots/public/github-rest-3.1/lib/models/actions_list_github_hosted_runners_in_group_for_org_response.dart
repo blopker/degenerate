@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner.dart';final class ActionsListGithubHostedRunnersInGroupForOrgResponse {const ActionsListGithubHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner.dart';@immutable final class ActionsListGithubHostedRunnersInGroupForOrgResponse {const ActionsListGithubHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners, });
 
 factory ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListGithubHostedRunnersInGroupForOrgResponse(
   totalCount: (json['total_count'] as num).toDouble(),

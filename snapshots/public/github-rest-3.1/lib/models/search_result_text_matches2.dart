@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2_matches.dart';final class SearchResultTextMatches2 {const SearchResultTextMatches2({this.objectUrl, this.objectType, this.property, this.fragment, this.matches, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2_matches.dart';@immutable final class SearchResultTextMatches2 {const SearchResultTextMatches2({this.objectUrl, this.objectType, this.property, this.fragment, this.matches, });
 
 factory SearchResultTextMatches2.fromJson(Map<String, dynamic> json) { return SearchResultTextMatches2(
   objectUrl: json['object_url'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_radar_payment_evaluations_request_payment_details_money_movement_details.dart';import 'post_radar_payment_evaluations_request_payment_details_payment_method_details.dart';import 'post_radar_payment_evaluations_request_payment_details_shipping_details.dart';/// Details about the payment.
-final class PostRadarPaymentEvaluationsRequestPaymentDetails {const PostRadarPaymentEvaluationsRequestPaymentDetails({required this.amount, required this.currency, this.description, this.moneyMovementDetails, required this.paymentMethodDetails, this.shippingDetails, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_radar_payment_evaluations_request_payment_details_money_movement_details.dart';import 'post_radar_payment_evaluations_request_payment_details_payment_method_details.dart';import 'post_radar_payment_evaluations_request_payment_details_shipping_details.dart';/// Details about the payment.
+@immutable final class PostRadarPaymentEvaluationsRequestPaymentDetails {const PostRadarPaymentEvaluationsRequestPaymentDetails({required this.amount, required this.currency, required this.paymentMethodDetails, this.description, this.moneyMovementDetails, this.shippingDetails, this.statementDescriptor, });
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetails(
   amount: (json['amount'] as num).toInt(),

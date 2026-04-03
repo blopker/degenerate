@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ObjectDetectionVariant2 {const ObjectDetectionVariant2({this.image});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObjectDetectionVariant2 {const ObjectDetectionVariant2({this.image});
 
 factory ObjectDetectionVariant2.fromJson(Map<String, dynamic> json) { return ObjectDetectionVariant2(
   image: (json['image'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),

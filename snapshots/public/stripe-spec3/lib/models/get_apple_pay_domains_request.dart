@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetApplePayDomainsRequest {const GetApplePayDomainsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetApplePayDomainsRequest {const GetApplePayDomainsRequest();
 
 factory GetApplePayDomainsRequest.fromJson(Map<String, dynamic> json) { return GetApplePayDomainsRequest(
 

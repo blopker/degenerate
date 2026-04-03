@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookTeamEditedChangesNotificationSetting {const WebhookTeamEditedChangesNotificationSetting({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookTeamEditedChangesNotificationSetting {const WebhookTeamEditedChangesNotificationSetting({required this.from});
 
 factory WebhookTeamEditedChangesNotificationSetting.fromJson(Map<String, dynamic> json) { return WebhookTeamEditedChangesNotificationSetting(
   from: json['from'] as String,

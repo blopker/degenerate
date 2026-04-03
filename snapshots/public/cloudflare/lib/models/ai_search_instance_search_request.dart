@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options.dart';import 'ai_search_instance_search_request_messages.dart';final class AiSearchInstanceSearchRequest {const AiSearchInstanceSearchRequest({this.aiSearchOptions, required this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options.dart';import 'ai_search_instance_search_request_messages.dart';@immutable final class AiSearchInstanceSearchRequest {const AiSearchInstanceSearchRequest({required this.messages, this.aiSearchOptions, });
 
 factory AiSearchInstanceSearchRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequest(
   aiSearchOptions: json['ai_search_options'] != null ? AiSearchInstanceSearchRequestAiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,

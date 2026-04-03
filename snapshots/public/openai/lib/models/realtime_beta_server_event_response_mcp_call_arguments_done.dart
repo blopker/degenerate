@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.mcp_call_arguments.done`.
-final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.done`.
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType._(this.value);
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDoneType.fromJson(String json) { return switch (json) {
   'response.mcp_call_arguments.done' => responseMcpCallArgumentsDone,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDoneType($value)'; } 
  }
 /// Returned when MCP tool call arguments are finalized during response generation.
-final class RealtimeBetaServerEventResponseMcpCallArgumentsDone {const RealtimeBetaServerEventResponseMcpCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.arguments, });
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDone {const RealtimeBetaServerEventResponseMcpCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.arguments, });
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseMcpCallArgumentsDone(
   eventId: json['event_id'] as String,

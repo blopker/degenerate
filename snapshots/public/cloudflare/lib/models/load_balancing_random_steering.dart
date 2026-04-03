@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configures pool weights.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures pool weights.
 /// - `steering_policy="random"`: A random pool is selected with probability proportional to pool weights.
 /// - `steering_policy="least_outstanding_requests"`: Use pool weights to scale each pool's outstanding requests.
 /// - `steering_policy="least_connections"`: Use pool weights to scale each pool's open connections.
-final class LoadBalancingRandomSteering {const LoadBalancingRandomSteering({this.defaultWeight = 1.0, this.poolWeights, });
+@immutable final class LoadBalancingRandomSteering {const LoadBalancingRandomSteering({this.defaultWeight = 1.0, this.poolWeights, });
 
 factory LoadBalancingRandomSteering.fromJson(Map<String, dynamic> json) { return LoadBalancingRandomSteering(
   defaultWeight: json.containsKey('default_weight') ? (json['default_weight'] as num).toDouble() : 1.0,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The pricing information for the invoice item.
-final class PostInvoicesInvoiceLinesLineItemIdRequestPricing {const PostInvoicesInvoiceLinesLineItemIdRequestPricing({this.price});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pricing information for the invoice item.
+@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestPricing {const PostInvoicesInvoiceLinesLineItemIdRequestPricing({this.price});
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestPricing.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceLinesLineItemIdRequestPricing(
   price: json['price'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The system used to collect packet captures.
-final class MagicVisibilityPcapsPcapsSystem {const MagicVisibilityPcapsPcapsSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The system used to collect packet captures.
+@immutable final class MagicVisibilityPcapsPcapsSystem {const MagicVisibilityPcapsPcapsSystem._(this.value);
 
 factory MagicVisibilityPcapsPcapsSystem.fromJson(String json) { return switch (json) {
   'magic-transit' => magicTransit,

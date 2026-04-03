@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_session_resource_components_resource_buy_button.dart';import 'customer_session_resource_components_resource_customer_sheet.dart';import 'customer_session_resource_components_resource_mobile_payment_element.dart';import 'customer_session_resource_components_resource_payment_element.dart';import 'customer_session_resource_components_resource_pricing_table.dart';/// Configuration for the components supported by this Customer Session.
-final class CustomerSessionResourceComponents {const CustomerSessionResourceComponents({required this.buyButton, required this.customerSheet, required this.mobilePaymentElement, required this.paymentElement, required this.pricingTable, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_session_resource_components_resource_buy_button.dart';import 'customer_session_resource_components_resource_customer_sheet.dart';import 'customer_session_resource_components_resource_mobile_payment_element.dart';import 'customer_session_resource_components_resource_payment_element.dart';import 'customer_session_resource_components_resource_pricing_table.dart';/// Configuration for the components supported by this Customer Session.
+@immutable final class CustomerSessionResourceComponents {const CustomerSessionResourceComponents({required this.buyButton, required this.customerSheet, required this.mobilePaymentElement, required this.paymentElement, required this.pricingTable, });
 
 factory CustomerSessionResourceComponents.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponents(
   buyButton: CustomerSessionResourceComponentsResourceBuyButton.fromJson(json['buy_button'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanHarResponse2LogEntriesResponseContent {const UrlscannerGetScanHarResponse2LogEntriesResponseContent({this.compression, required this.mimeType, required this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponse2LogEntriesResponseContent {const UrlscannerGetScanHarResponse2LogEntriesResponseContent({required this.mimeType, required this.size, this.compression, });
 
 factory UrlscannerGetScanHarResponse2LogEntriesResponseContent.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogEntriesResponseContent(
   compression: json['compression'] != null ? (json['compression'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPackagePublishedPackagePackageVersionContainerMetadataTag {const WebhookPackagePublishedPackagePackageVersionContainerMetadataTag({this.digest, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionContainerMetadataTag {const WebhookPackagePublishedPackagePackageVersionContainerMetadataTag({this.digest, this.name, });
 
 factory WebhookPackagePublishedPackagePackageVersionContainerMetadataTag.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionContainerMetadataTag(
   digest: json['digest'] as String?,

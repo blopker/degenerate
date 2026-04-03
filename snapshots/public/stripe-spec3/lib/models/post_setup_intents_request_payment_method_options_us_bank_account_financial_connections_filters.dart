@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),

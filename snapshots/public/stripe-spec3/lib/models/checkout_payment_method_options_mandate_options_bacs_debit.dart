@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class CheckoutPaymentMethodOptionsMandateOptionsBacsDebit {const CheckoutPaymentMethodOptionsMandateOptionsBacsDebit({this.referencePrefix});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class CheckoutPaymentMethodOptionsMandateOptionsBacsDebit {const CheckoutPaymentMethodOptionsMandateOptionsBacsDebit({this.referencePrefix});
 
 factory CheckoutPaymentMethodOptionsMandateOptionsBacsDebit.fromJson(Map<String, dynamic> json) { return CheckoutPaymentMethodOptionsMandateOptionsBacsDebit(
   referencePrefix: json['reference_prefix'] as String?,

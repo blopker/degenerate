@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_update_gateway_dynamic_route_response_route_elements_start_outputs.dart';final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStartType {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStartType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_start_outputs.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStartType {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStartType._(this.value);
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStartType.fromJson(String json) { return switch (json) {
   'start' => start,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStartType($value)'; } 
  }
-final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStart {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStart({required this.id, required this.outputs, required this.type, });
+@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStart {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStart({required this.id, required this.outputs, required this.type, });
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStart.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsStart(
   id: json['id'] as String,

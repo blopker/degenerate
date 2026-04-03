@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Regional Tiered Cache zone setting.
-final class CacheRulesRegionalTieredCacheValue {const CacheRulesRegionalTieredCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Regional Tiered Cache zone setting.
+@immutable final class CacheRulesRegionalTieredCacheValue {const CacheRulesRegionalTieredCacheValue._(this.value);
 
 factory CacheRulesRegionalTieredCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestPaymentMethodDataRadarOptions {const PostPaymentIntentsRequestPaymentMethodDataRadarOptions({this.session});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataRadarOptions {const PostPaymentIntentsRequestPaymentMethodDataRadarOptions({this.session});
 
 factory PostPaymentIntentsRequestPaymentMethodDataRadarOptions.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataRadarOptions(
   session: json['session'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ProductMarketingFeature {const ProductMarketingFeature({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ProductMarketingFeature {const ProductMarketingFeature({this.name});
 
 factory ProductMarketingFeature.fromJson(Map<String, dynamic> json) { return ProductMarketingFeature(
   name: json['name'] as String?,

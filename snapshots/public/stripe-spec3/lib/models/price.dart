@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option.dart';import 'custom_unit_amount.dart';import 'deleted_product.dart';import 'price_product.dart';import 'price_tier.dart';import 'product.dart';import 'recurring.dart';import 'transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-final class PriceBillingScheme {const PriceBillingScheme._(this.value);
+@immutable final class PriceBillingScheme {const PriceBillingScheme._(this.value);
 
 factory PriceBillingScheme.fromJson(String json) { return switch (json) {
   'per_unit' => perUnit,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PriceBillingScheme($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class PriceObject {const PriceObject._(this.value);
+@immutable final class PriceObject {const PriceObject._(this.value);
 
 factory PriceObject.fromJson(String json) { return switch (json) {
   'price' => price,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PriceObject($value)'; } 
  }
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final class PriceTaxBehavior {const PriceTaxBehavior._(this.value);
+@immutable final class PriceTaxBehavior {const PriceTaxBehavior._(this.value);
 
 factory PriceTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PriceTaxBehavior($value)'; } 
  }
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-final class PriceTiersMode {const PriceTiersMode._(this.value);
+@immutable final class PriceTiersMode {const PriceTiersMode._(this.value);
 
 factory PriceTiersMode.fromJson(String json) { return switch (json) {
   'graduated' => graduated,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PriceTiersMode($value)'; } 
  }
 /// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
-final class PriceType {const PriceType._(this.value);
+@immutable final class PriceType {const PriceType._(this.value);
 
 factory PriceType.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
@@ -131,7 +131,7 @@ bool get isUnknown { return !values.contains(this); }
 /// For example, you might have a single "gold" product that has prices for $10/month, $100/year, and €9 once.
 /// 
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription), [create an invoice](https://docs.stripe.com/billing/invoices/create), and more about [products and prices](https://docs.stripe.com/products-prices/overview).
-final class Price {const Price({required this.active, required this.billingScheme, required this.created, required this.currency, this.currencyOptions, this.customUnitAmount, required this.id, required this.livemode, this.lookupKey, required this.metadata, this.nickname, required this.object, required this.product, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transformQuantity, required this.type, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class Price {const Price({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.product, required this.type, this.currencyOptions, this.customUnitAmount, this.lookupKey, this.nickname, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
 
 factory Price.fromJson(Map<String, dynamic> json) { return Price(
   active: json['active'] as bool,

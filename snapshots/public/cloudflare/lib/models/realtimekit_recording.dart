@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Current status of the recording.
-final class RealtimekitRecordingStatus {const RealtimekitRecordingStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the recording.
+@immutable final class RealtimekitRecordingStatus {const RealtimekitRecordingStatus._(this.value);
 
 factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) {
   'INVOKED' => invoked,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitRecordingStatus($value)'; } 
  }
-final class RealtimekitRecording {const RealtimekitRecording({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, this.recordingDuration, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, });
+@immutable final class RealtimekitRecording {const RealtimekitRecording({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, });
 
 factory RealtimekitRecording.fromJson(Map<String, dynamic> json) { return RealtimekitRecording(
   audioDownloadUrl: json['audio_download_url'] != null ? Uri.parse(json['audio_download_url'] as String) : null,

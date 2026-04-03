@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43WebSearchOptionsVariant1UserLocationApproximate {const Prompt43WebSearchOptionsVariant1UserLocationApproximate({this.city, this.country, this.region, this.timezone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43WebSearchOptionsVariant1UserLocationApproximate {const Prompt43WebSearchOptionsVariant1UserLocationApproximate({this.city, this.country, this.region, this.timezone, });
 
 factory Prompt43WebSearchOptionsVariant1UserLocationApproximate.fromJson(Map<String, dynamic> json) { return Prompt43WebSearchOptionsVariant1UserLocationApproximate(
   city: json['city'] as String?,

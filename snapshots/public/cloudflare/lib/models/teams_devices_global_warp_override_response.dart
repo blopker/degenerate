@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_global_warp_override.dart';final class TeamsDevicesGlobalWarpOverrideResponse {const TeamsDevicesGlobalWarpOverrideResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_global_warp_override.dart';@immutable final class TeamsDevicesGlobalWarpOverrideResponse {const TeamsDevicesGlobalWarpOverrideResponse({this.result});
 
 factory TeamsDevicesGlobalWarpOverrideResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesGlobalWarpOverrideResponse(
   result: json['result'] != null ? TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountNewSigningKey {const AccountNewSigningKey({this.sid, this.friendlyName, this.dateCreated, this.dateUpdated, this.secret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountNewSigningKey {const AccountNewSigningKey({this.sid, this.friendlyName, this.dateCreated, this.dateUpdated, this.secret, });
 
 factory AccountNewSigningKey.fromJson(Map<String, dynamic> json) { return AccountNewSigningKey(
   sid: json['sid'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule.dart';final class R2PutBucketLifecycleConfigurationRequest {const R2PutBucketLifecycleConfigurationRequest({this.rules});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule.dart';@immutable final class R2PutBucketLifecycleConfigurationRequest {const R2PutBucketLifecycleConfigurationRequest({this.rules});
 
 factory R2PutBucketLifecycleConfigurationRequest.fromJson(Map<String, dynamic> json) { return R2PutBucketLifecycleConfigurationRequest(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2LifecycleRule.fromJson(e as Map<String, dynamic>)).toList(),

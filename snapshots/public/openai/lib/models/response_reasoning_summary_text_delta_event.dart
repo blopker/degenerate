@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.reasoning_summary_text.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.reasoning_summary_text.delta`.
 /// 
-final class ResponseReasoningSummaryTextDeltaEventType {const ResponseReasoningSummaryTextDeltaEventType._(this.value);
+@immutable final class ResponseReasoningSummaryTextDeltaEventType {const ResponseReasoningSummaryTextDeltaEventType._(this.value);
 
 factory ResponseReasoningSummaryTextDeltaEventType.fromJson(String json) { return switch (json) {
   'response.reasoning_summary_text.delta' => responseReasoningSummaryTextDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseReasoningSummaryTextDeltaEventType($value)'; } 
  }
 /// Emitted when a delta is added to a reasoning summary text.
-final class ResponseReasoningSummaryTextDeltaEvent {const ResponseReasoningSummaryTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.delta, required this.sequenceNumber, });
+@immutable final class ResponseReasoningSummaryTextDeltaEvent {const ResponseReasoningSummaryTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.delta, required this.sequenceNumber, });
 
 factory ResponseReasoningSummaryTextDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryTextDeltaEvent(
   type: ResponseReasoningSummaryTextDeltaEventType.fromJson(json['type'] as String),

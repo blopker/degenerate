@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PublicDestinationType {const PublicDestinationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicDestinationType {const PublicDestinationType._(this.value);
 
 factory PublicDestinationType.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A public hostname that Access will secure. Public destinations support sub-domain and path. Wildcard '*' can be used in the definition.
 /// 
-final class PublicDestination {const PublicDestination({this.type, this.uri, });
+@immutable final class PublicDestination {const PublicDestination({this.type, this.uri, });
 
 factory PublicDestination.fromJson(Map<String, dynamic> json) { return PublicDestination(
   type: json['type'] != null ? PublicDestinationType.fromJson(json['type'] as String) : null,

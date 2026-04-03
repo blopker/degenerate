@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tool_search_execution_type.dart';final class FunctionCallStatus {const FunctionCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool_search_execution_type.dart';@immutable final class FunctionCallStatus {const FunctionCallStatus._(this.value);
 
 factory FunctionCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FunctionCallStatus($value)'; } 
  }
-final class ToolSearchCall {const ToolSearchCall({this.type = 'tool_search_call', required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.createdBy, });
+@immutable final class ToolSearchCall {const ToolSearchCall({required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.type = 'tool_search_call', this.createdBy, });
 
 factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCall(
   type: json['type'] as String,

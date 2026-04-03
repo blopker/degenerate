@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_gre_tunnel.dart';final class MagicTunnelsCollectionResponseResult {const MagicTunnelsCollectionResponseResult({this.greTunnels});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_gre_tunnel.dart';@immutable final class MagicTunnelsCollectionResponseResult {const MagicTunnelsCollectionResponseResult({this.greTunnels});
 
 factory MagicTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicTunnelsCollectionResponseResult(
   greTunnels: (json['gre_tunnels'] as List<dynamic>?)?.map((e) => MagicGreTunnel.fromJson(e as Map<String, dynamic>)).toList(),

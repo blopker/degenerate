@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_certificate_authority_details_response_result.dart';final class RadarGetCertificateAuthorityDetailsResponse {const RadarGetCertificateAuthorityDetailsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_authority_details_response_result.dart';@immutable final class RadarGetCertificateAuthorityDetailsResponse {const RadarGetCertificateAuthorityDetailsResponse({required this.result, required this.success, });
 
 factory RadarGetCertificateAuthorityDetailsResponse.fromJson(Map<String, dynamic> json) { return RadarGetCertificateAuthorityDetailsResponse(
   result: RadarGetCertificateAuthorityDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

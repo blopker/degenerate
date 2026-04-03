@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_messages2.dart';import 'calls_turn_key_object.dart';final class CallsTurnKeyResponseCollection {const CallsTurnKeyResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_messages2.dart';import 'calls_turn_key_object.dart';@immutable final class CallsTurnKeyResponseCollection {const CallsTurnKeyResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory CallsTurnKeyResponseCollection.fromJson(Map<String, dynamic> json) { return CallsTurnKeyResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => CallsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

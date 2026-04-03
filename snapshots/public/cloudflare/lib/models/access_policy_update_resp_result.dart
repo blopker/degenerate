@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_policy_test_id.dart';/// The percentage of (processed) users approved based on policy evaluation results.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policy_test_id.dart';/// The percentage of (processed) users approved based on policy evaluation results.
 extension type const AccessPercentApproved(int value) {
 factory AccessPercentApproved.fromJson(num json) => AccessPercentApproved(json.toInt());
 
@@ -36,7 +36,7 @@ num toJson() => value;
 
 }
 /// The status of the policy test.
-final class AccessUpdateStatus {const AccessUpdateStatus._(this.value);
+@immutable final class AccessUpdateStatus {const AccessUpdateStatus._(this.value);
 
 factory AccessUpdateStatus.fromJson(String json) { return switch (json) {
   'blocked' => blocked,
@@ -87,7 +87,7 @@ factory AccessUsersErrored.fromJson(num json) => AccessUsersErrored(json.toInt()
 num toJson() => value;
 
 }
-final class AccessPolicyUpdateRespResult {const AccessPolicyUpdateRespResult({this.id, this.percentApproved, this.percentBlocked, this.percentErrored, this.percentUsersProcessed, this.status, this.totalUsers, this.usersApproved, this.usersBlocked, this.usersErrored, });
+@immutable final class AccessPolicyUpdateRespResult {const AccessPolicyUpdateRespResult({this.id, this.percentApproved, this.percentBlocked, this.percentErrored, this.percentUsersProcessed, this.status, this.totalUsers, this.usersApproved, this.usersBlocked, this.usersErrored, });
 
 factory AccessPolicyUpdateRespResult.fromJson(Map<String, dynamic> json) { return AccessPolicyUpdateRespResult(
   id: json['id'] != null ? AccessPolicyTestId.fromJson(json['id'] as String) : null,

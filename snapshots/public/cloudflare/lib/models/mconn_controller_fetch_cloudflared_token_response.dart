@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-extension type const MconnControllerFetchCloudflaredTokenResult(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const MconnControllerFetchCloudflaredTokenResult(String value) {
 factory MconnControllerFetchCloudflaredTokenResult.fromJson(String json) => MconnControllerFetchCloudflaredTokenResult(json);
 
 String toJson() => value;
 
 }
-final class MconnControllerFetchCloudflaredTokenResponse {const MconnControllerFetchCloudflaredTokenResponse({this.result});
+@immutable final class MconnControllerFetchCloudflaredTokenResponse {const MconnControllerFetchCloudflaredTokenResponse({this.result});
 
 factory MconnControllerFetchCloudflaredTokenResponse.fromJson(Map<String, dynamic> json) { return MconnControllerFetchCloudflaredTokenResponse(
   result: json['result'] != null ? MconnControllerFetchCloudflaredTokenResult.fromJson(json['result'] as String) : null,

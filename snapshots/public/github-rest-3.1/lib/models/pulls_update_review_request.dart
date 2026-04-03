@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsUpdateReviewRequest {const PullsUpdateReviewRequest({required this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsUpdateReviewRequest {const PullsUpdateReviewRequest({required this.body});
 
 factory PullsUpdateReviewRequest.fromJson(Map<String, dynamic> json) { return PullsUpdateReviewRequest(
   body: json['body'] as String,

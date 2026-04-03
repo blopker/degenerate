@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_device_posture_rules.dart';final class TeamsDevicesSingleResponse {const TeamsDevicesSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_posture_rules.dart';@immutable final class TeamsDevicesSingleResponse {const TeamsDevicesSingleResponse({this.result});
 
 factory TeamsDevicesSingleResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesSingleResponse(
   result: json['result'] != null ? TeamsDevicesDevicePostureRules.fromJson(json['result'] as Map<String, dynamic>) : null,

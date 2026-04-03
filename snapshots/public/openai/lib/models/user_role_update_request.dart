@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// `owner` or `reader`
-final class UserRoleUpdateRequestRole {const UserRoleUpdateRequestRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// `owner` or `reader`
+@immutable final class UserRoleUpdateRequestRole {const UserRoleUpdateRequestRole._(this.value);
 
 factory UserRoleUpdateRequestRole.fromJson(String json) { return switch (json) {
   'owner' => owner,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UserRoleUpdateRequestRole($value)'; } 
  }
-final class UserRoleUpdateRequest {const UserRoleUpdateRequest({required this.role});
+@immutable final class UserRoleUpdateRequest {const UserRoleUpdateRequest({required this.role});
 
 factory UserRoleUpdateRequest.fromJson(Map<String, dynamic> json) { return UserRoleUpdateRequest(
   role: UserRoleUpdateRequestRole.fromJson(json['role'] as String),

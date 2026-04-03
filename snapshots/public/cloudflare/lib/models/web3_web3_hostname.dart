@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web3_description.dart';import 'web3_dnslink.dart';import 'web3_identifier.dart';import 'web3_name.dart';import 'web3_target.dart';import 'web3_timestamp.dart';/// Specifies the status of the hostname's activation.
-final class Web3Status {const Web3Status._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_description.dart';import 'web3_dnslink.dart';import 'web3_identifier.dart';import 'web3_name.dart';import 'web3_target.dart';import 'web3_timestamp.dart';/// Specifies the status of the hostname's activation.
+@immutable final class Web3Status {const Web3Status._(this.value);
 
 factory Web3Status.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Web3Status($value)'; } 
  }
-final class Web3Web3Hostname {const Web3Web3Hostname({this.createdOn, this.description, this.dnslink, this.id, this.modifiedOn, this.name, this.status, this.target, });
+@immutable final class Web3Web3Hostname {const Web3Web3Hostname({this.createdOn, this.description, this.dnslink, this.id, this.modifiedOn, this.name, this.status, this.target, });
 
 factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) { return Web3Web3Hostname(
   createdOn: json['created_on'] != null ? Web3Timestamp.fromJson(json['created_on'] as String) : null,

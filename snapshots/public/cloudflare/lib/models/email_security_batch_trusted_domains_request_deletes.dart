@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityBatchTrustedDomainsRequestDeletes {const EmailSecurityBatchTrustedDomainsRequestDeletes({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequestDeletes {const EmailSecurityBatchTrustedDomainsRequestDeletes({required this.id});
 
 factory EmailSecurityBatchTrustedDomainsRequestDeletes.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsRequestDeletes(
   id: (json['id'] as num).toInt(),

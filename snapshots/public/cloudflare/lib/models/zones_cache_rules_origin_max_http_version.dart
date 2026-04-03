@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_cache_rules_origin_max_http_version_value.dart';/// Value of the zone setting.
-final class ZonesCacheRulesOriginMaxHttpVersionId {const ZonesCacheRulesOriginMaxHttpVersionId._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';/// Value of the zone setting.
+@immutable final class ZonesCacheRulesOriginMaxHttpVersionId {const ZonesCacheRulesOriginMaxHttpVersionId._(this.value);
 
 factory ZonesCacheRulesOriginMaxHttpVersionId.fromJson(String json) { return switch (json) {
   'origin_max_http_version' => originMaxHttpVersion,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesCacheRulesOriginMaxHttpVersionId($value)'; } 
  }
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
-final class ZonesCacheRulesOriginMaxHttpVersion {const ZonesCacheRulesOriginMaxHttpVersion({required this.id, this.modifiedOn, this.value, });
+@immutable final class ZonesCacheRulesOriginMaxHttpVersion {const ZonesCacheRulesOriginMaxHttpVersion({required this.id, this.modifiedOn, this.value, });
 
 factory ZonesCacheRulesOriginMaxHttpVersion.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesOriginMaxHttpVersion(
   id: ZonesCacheRulesOriginMaxHttpVersionId.fromJson(json['id'] as String),

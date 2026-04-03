@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullRequestLabels {const PullRequestLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestLabels {const PullRequestLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
 
 factory PullRequestLabels.fromJson(Map<String, dynamic> json) { return PullRequestLabels(
   id: (json['id'] as num).toInt(),

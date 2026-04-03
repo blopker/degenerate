@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam83RoutingRequestedPriority {const PaymentMethodOptionsParam83RoutingRequestedPriority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam83RoutingRequestedPriority {const PaymentMethodOptionsParam83RoutingRequestedPriority._(this.value);
 
 factory PaymentMethodOptionsParam83RoutingRequestedPriority.fromJson(String json) { return switch (json) {
   'domestic' => domestic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam83RoutingRequestedPriority($value)'; } 
  }
-final class PaymentMethodOptionsParam83Routing {const PaymentMethodOptionsParam83Routing({this.requestedPriority});
+@immutable final class PaymentMethodOptionsParam83Routing {const PaymentMethodOptionsParam83Routing({this.requestedPriority});
 
 factory PaymentMethodOptionsParam83Routing.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam83Routing(
   requestedPriority: json['requested_priority'] != null ? PaymentMethodOptionsParam83RoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null,

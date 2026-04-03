@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_machine_spec.dart';final class ActionsGetHostedRunnersMachineSpecsForOrgResponse {const ActionsGetHostedRunnersMachineSpecsForOrgResponse({required this.totalCount, required this.machineSpecs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_machine_spec.dart';@immutable final class ActionsGetHostedRunnersMachineSpecsForOrgResponse {const ActionsGetHostedRunnersMachineSpecsForOrgResponse({required this.totalCount, required this.machineSpecs, });
 
 factory ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGetHostedRunnersMachineSpecsForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),

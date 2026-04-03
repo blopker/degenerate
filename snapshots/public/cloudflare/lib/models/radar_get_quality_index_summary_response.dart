@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_quality_index_summary_response_result.dart';final class RadarGetQualityIndexSummaryResponse {const RadarGetQualityIndexSummaryResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_index_summary_response_result.dart';@immutable final class RadarGetQualityIndexSummaryResponse {const RadarGetQualityIndexSummaryResponse({required this.result, required this.success, });
 
 factory RadarGetQualityIndexSummaryResponse.fromJson(Map<String, dynamic> json) { return RadarGetQualityIndexSummaryResponse(
   result: RadarGetQualityIndexSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>),

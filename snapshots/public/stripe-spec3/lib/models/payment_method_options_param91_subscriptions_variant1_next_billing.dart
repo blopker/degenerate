@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling {const PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling({required this.amount, required this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling {const PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling({required this.amount, required this.date, });
 
 factory PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling(
   amount: (json['amount'] as num).toInt(),

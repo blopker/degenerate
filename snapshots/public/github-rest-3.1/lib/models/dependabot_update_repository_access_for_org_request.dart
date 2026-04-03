@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DependabotUpdateRepositoryAccessForOrgRequest {const DependabotUpdateRepositoryAccessForOrgRequest({this.repositoryIdsToAdd, this.repositoryIdsToRemove, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotUpdateRepositoryAccessForOrgRequest {const DependabotUpdateRepositoryAccessForOrgRequest({this.repositoryIdsToAdd, this.repositoryIdsToRemove, });
 
 factory DependabotUpdateRepositoryAccessForOrgRequest.fromJson(Map<String, dynamic> json) { return DependabotUpdateRepositoryAccessForOrgRequest(
   repositoryIdsToAdd: (json['repository_ids_to_add'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

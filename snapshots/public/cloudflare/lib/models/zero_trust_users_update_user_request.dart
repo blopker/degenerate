@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_email.dart';import 'access_users_components_schemas_name.dart';final class ZeroTrustUsersUpdateUserRequest {const ZeroTrustUsersUpdateUserRequest({required this.email, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_email.dart';import 'access_users_components_schemas_name.dart';@immutable final class ZeroTrustUsersUpdateUserRequest {const ZeroTrustUsersUpdateUserRequest({required this.email, required this.name, });
 
 factory ZeroTrustUsersUpdateUserRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustUsersUpdateUserRequest(
   email: AccessSchemasEmail.fromJson(json['email'] as String),

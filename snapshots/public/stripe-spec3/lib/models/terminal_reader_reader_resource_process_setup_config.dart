@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a per-setup override of a reader configuration
-final class TerminalReaderReaderResourceProcessSetupConfig {const TerminalReaderReaderResourceProcessSetupConfig({this.enableCustomerCancellation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-setup override of a reader configuration
+@immutable final class TerminalReaderReaderResourceProcessSetupConfig {const TerminalReaderReaderResourceProcessSetupConfig({this.enableCustomerCancellation});
 
 factory TerminalReaderReaderResourceProcessSetupConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessSetupConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,

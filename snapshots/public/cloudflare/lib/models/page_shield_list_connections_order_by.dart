@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The field used to sort returned connections.
-final class PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned connections.
+@immutable final class PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy._(this.value);
 
 factory PageShieldListConnectionsOrderBy.fromJson(String json) { return switch (json) {
   'first_seen_at' => firstSeenAt,

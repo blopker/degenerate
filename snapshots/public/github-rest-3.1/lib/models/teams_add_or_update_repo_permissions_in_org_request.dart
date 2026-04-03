@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsAddOrUpdateRepoPermissionsInOrgRequest {const TeamsAddOrUpdateRepoPermissionsInOrgRequest({this.permission});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsAddOrUpdateRepoPermissionsInOrgRequest {const TeamsAddOrUpdateRepoPermissionsInOrgRequest({this.permission});
 
 factory TeamsAddOrUpdateRepoPermissionsInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateRepoPermissionsInOrgRequest(
   permission: json['permission'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_response_result_meta_confidence_info.dart';import 'radar_get_email_security_timeseries_group_response_result_meta_date_range.dart';import 'radar_get_email_security_timeseries_group_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetEmailSecurityTimeseriesGroupResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupResponseResultMetaNormalization._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetEmailSecurityTimeseriesGroupResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetEmailSecurityTimeseriesGroupResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetEmailSecurityTimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupResponseResultMeta(
   aggInterval: RadarGetEmailSecurityTimeseriesGroupResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

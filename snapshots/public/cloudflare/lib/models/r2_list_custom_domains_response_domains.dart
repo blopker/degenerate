@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_list_custom_domains_response_domains_status.dart';/// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
-final class R2ListCustomDomainsResponseDomainsMinTls {const R2ListCustomDomainsResponseDomainsMinTls._(this.value);
+@immutable final class R2ListCustomDomainsResponseDomainsMinTls {const R2ListCustomDomainsResponseDomainsMinTls._(this.value);
 
 factory R2ListCustomDomainsResponseDomainsMinTls.fromJson(String json) { return switch (json) {
   '1.0' => $10,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2ListCustomDomainsResponseDomainsMinTls($value)'; } 
  }
-final class R2ListCustomDomainsResponseDomains {const R2ListCustomDomainsResponseDomains({this.ciphers, required this.domain, required this.enabled, this.minTls, required this.status, this.zoneId, this.zoneName, });
+@immutable final class R2ListCustomDomainsResponseDomains {const R2ListCustomDomainsResponseDomains({required this.domain, required this.enabled, required this.status, this.ciphers, this.minTls, this.zoneId, this.zoneName, });
 
 factory R2ListCustomDomainsResponseDomains.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponseDomains(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),

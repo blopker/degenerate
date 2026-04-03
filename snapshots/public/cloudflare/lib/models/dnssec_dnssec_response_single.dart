@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dnssec_dnssec.dart';final class DnssecDnssecResponseSingle {const DnssecDnssecResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_dnssec.dart';@immutable final class DnssecDnssecResponseSingle {const DnssecDnssecResponseSingle({this.result});
 
 factory DnssecDnssecResponseSingle.fromJson(Map<String, dynamic> json) { return DnssecDnssecResponseSingle(
   result: json['result'] != null ? DnssecDnssec.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_raw_read_ds_response404_errors.dart';final class GetEventRawReadDsResponse404 {const GetEventRawReadDsResponse404({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_raw_read_ds_response404_errors.dart';@immutable final class GetEventRawReadDsResponse404 {const GetEventRawReadDsResponse404({required this.errors, required this.result, required this.success, });
 
 factory GetEventRawReadDsResponse404.fromJson(Map<String, dynamic> json) { return GetEventRawReadDsResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventRawReadDsResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

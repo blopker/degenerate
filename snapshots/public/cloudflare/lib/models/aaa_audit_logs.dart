@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_audit_logs_action.dart';import 'aaa_audit_logs_actor.dart';import 'aaa_audit_logs_owner.dart';import 'aaa_audit_logs_resource.dart';final class AaaAuditLogs {const AaaAuditLogs({this.action, this.actor, this.id, this.$interface, this.metadata, this.newValue, this.oldValue, this.owner, this.resource, this.when, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_audit_logs_action.dart';import 'aaa_audit_logs_actor.dart';import 'aaa_audit_logs_owner.dart';import 'aaa_audit_logs_resource.dart';@immutable final class AaaAuditLogs {const AaaAuditLogs({this.action, this.actor, this.id, this.$interface, this.metadata, this.newValue, this.oldValue, this.owner, this.resource, this.when, });
 
 factory AaaAuditLogs.fromJson(Map<String, dynamic> json) { return AaaAuditLogs(
   action: json['action'] != null ? AaaAuditLogsAction.fromJson(json['action'] as Map<String, dynamic>) : null,

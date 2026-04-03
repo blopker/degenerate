@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeEps {const SourceTypeEps({this.reference, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeEps {const SourceTypeEps({this.reference, this.statementDescriptor, });
 
 factory SourceTypeEps.fromJson(Map<String, dynamic> json) { return SourceTypeEps(
   reference: json['reference'] as String?,

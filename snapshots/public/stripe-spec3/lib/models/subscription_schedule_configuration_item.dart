@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_price.dart';import 'price.dart';import 'stackable_discount_with_discount_settings.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_schedule_configuration_item_price.dart';import 'tax_rate.dart';/// A phase item describes the price and quantity of a phase.
-final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({this.billingThresholds, required this.discounts, this.metadata, required this.price, this.quantity, this.taxRates, });
+@immutable final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({required this.discounts, required this.price, this.billingThresholds, this.metadata, this.quantity, this.taxRates, });
 
 factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleConfigurationItem(
   billingThresholds: json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,

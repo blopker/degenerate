@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalFlowsFlowSubscriptionUpdate {const PortalFlowsFlowSubscriptionUpdate({required this.subscription});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalFlowsFlowSubscriptionUpdate {const PortalFlowsFlowSubscriptionUpdate({required this.subscription});
 
 factory PortalFlowsFlowSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionUpdate(
   subscription: json['subscription'] as String,

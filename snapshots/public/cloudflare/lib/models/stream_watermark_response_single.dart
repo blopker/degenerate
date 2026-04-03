@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_watermarks.dart';final class StreamWatermarkResponseSingle {const StreamWatermarkResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_watermarks.dart';@immutable final class StreamWatermarkResponseSingle {const StreamWatermarkResponseSingle({this.result});
 
 factory StreamWatermarkResponseSingle.fromJson(Map<String, dynamic> json) { return StreamWatermarkResponseSingle(
   result: json['result'] != null ? StreamWatermarks.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersManifestValue {const WorkersManifestValue({required this.hash, required this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersManifestValue {const WorkersManifestValue({required this.hash, required this.size, });
 
 factory WorkersManifestValue.fromJson(Map<String, dynamic> json) { return WorkersManifestValue(
   hash: json['hash'] as String,

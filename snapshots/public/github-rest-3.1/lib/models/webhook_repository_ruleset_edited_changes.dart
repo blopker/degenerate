@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_repository_ruleset_edited_changes_conditions.dart';import 'webhook_repository_ruleset_edited_changes_enforcement.dart';import 'webhook_repository_ruleset_edited_changes_name.dart';import 'webhook_repository_ruleset_edited_changes_rules.dart';final class WebhookRepositoryRulesetEditedChanges {const WebhookRepositoryRulesetEditedChanges({this.name, this.enforcement, this.conditions, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_ruleset_edited_changes_conditions.dart';import 'webhook_repository_ruleset_edited_changes_enforcement.dart';import 'webhook_repository_ruleset_edited_changes_name.dart';import 'webhook_repository_ruleset_edited_changes_rules.dart';@immutable final class WebhookRepositoryRulesetEditedChanges {const WebhookRepositoryRulesetEditedChanges({this.name, this.enforcement, this.conditions, this.rules, });
 
 factory WebhookRepositoryRulesetEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChanges(
   name: json['name'] != null ? WebhookRepositoryRulesetEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,

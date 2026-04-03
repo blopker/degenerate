@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_lifecycle_age_condition.dart';/// Transition to abort ongoing multipart uploads.
-final class R2LifecycleRuleAbortMultipartUploadsTransition {const R2LifecycleRuleAbortMultipartUploadsTransition({this.condition});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_age_condition.dart';/// Transition to abort ongoing multipart uploads.
+@immutable final class R2LifecycleRuleAbortMultipartUploadsTransition {const R2LifecycleRuleAbortMultipartUploadsTransition({this.condition});
 
 factory R2LifecycleRuleAbortMultipartUploadsTransition.fromJson(Map<String, dynamic> json) { return R2LifecycleRuleAbortMultipartUploadsTransition(
   condition: json['condition'] != null ? R2LifecycleAgeCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,

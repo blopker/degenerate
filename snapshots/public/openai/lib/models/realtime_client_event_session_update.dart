@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_client_event_session_update_session.dart';import 'realtime_session_create_request_ga.dart';import 'realtime_transcription_session_create_request_ga.dart';/// The event type, must be `session.update`.
-final class RealtimeClientEventSessionUpdateType {const RealtimeClientEventSessionUpdateType._(this.value);
+@immutable final class RealtimeClientEventSessionUpdateType {const RealtimeClientEventSessionUpdateType._(this.value);
 
 factory RealtimeClientEventSessionUpdateType.fromJson(String json) { return switch (json) {
   'session.update' => sessionUpdate,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `instructions`, pass an empty string. To clear a field like `tools`, pass an empty array.
 /// To clear a field like `turn_detection`, pass `null`.
 /// 
-final class RealtimeClientEventSessionUpdate {const RealtimeClientEventSessionUpdate({this.eventId, required this.type, required this.session, });
+@immutable final class RealtimeClientEventSessionUpdate {const RealtimeClientEventSessionUpdate({required this.type, required this.session, this.eventId, });
 
 factory RealtimeClientEventSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventSessionUpdate(
   eventId: json['event_id'] as String?,

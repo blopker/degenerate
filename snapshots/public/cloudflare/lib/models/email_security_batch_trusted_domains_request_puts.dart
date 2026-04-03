@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_trusted_domain_id.dart';final class EmailSecurityBatchTrustedDomainsRequestPuts {const EmailSecurityBatchTrustedDomainsRequestPuts({this.comments, required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_trusted_domain_id.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequestPuts {const EmailSecurityBatchTrustedDomainsRequestPuts({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.id, this.comments, });
 
 factory EmailSecurityBatchTrustedDomainsRequestPuts.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsRequestPuts(
   comments: json['comments'] as String?,

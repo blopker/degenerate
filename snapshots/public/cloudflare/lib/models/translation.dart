@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Translation {const Translation({this.sourceLang = 'en', required this.targetLang, required this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Translation {const Translation({required this.targetLang, required this.text, this.sourceLang = 'en', });
 
 factory Translation.fromJson(Map<String, dynamic> json) { return Translation(
   sourceLang: json.containsKey('source_lang') ? json['source_lang'] as String : 'en',

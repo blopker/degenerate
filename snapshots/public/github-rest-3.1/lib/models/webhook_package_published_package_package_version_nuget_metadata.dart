@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value_variant4.dart';final class WebhookPackagePublishedPackagePackageVersionNugetMetadata {const WebhookPackagePublishedPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value_variant4.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionNugetMetadata {const WebhookPackagePublishedPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
 
 factory WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
   id: json['id'],

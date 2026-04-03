@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_gcs_like_creds_schema.dart';final class R2SlurperGcsSourceSchemaVendor {const R2SlurperGcsSourceSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_gcs_like_creds_schema.dart';@immutable final class R2SlurperGcsSourceSchemaVendor {const R2SlurperGcsSourceSchemaVendor._(this.value);
 
 factory R2SlurperGcsSourceSchemaVendor.fromJson(String json) { return switch (json) {
   'gcs' => gcs,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperGcsSourceSchemaVendor($value)'; } 
  }
-final class R2SlurperGcsSourceSchema {const R2SlurperGcsSourceSchema({required this.bucket, this.keys, this.pathPrefix, required this.secret, required this.vendor, });
+@immutable final class R2SlurperGcsSourceSchema {const R2SlurperGcsSourceSchema({required this.bucket, required this.secret, required this.vendor, this.keys, this.pathPrefix, });
 
 factory R2SlurperGcsSourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperGcsSourceSchema(
   bucket: json['bucket'] as String,

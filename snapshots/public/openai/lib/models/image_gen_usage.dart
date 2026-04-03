@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'image_gen_input_usage_details.dart';import 'image_gen_output_tokens_details.dart';/// For `gpt-image-1` only, the token usage information for the image generation.
-final class ImageGenUsage {const ImageGenUsage({required this.inputTokens, required this.totalTokens, required this.outputTokens, this.outputTokensDetails, required this.inputTokensDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_gen_input_usage_details.dart';import 'image_gen_output_tokens_details.dart';/// For `gpt-image-1` only, the token usage information for the image generation.
+@immutable final class ImageGenUsage {const ImageGenUsage({required this.inputTokens, required this.totalTokens, required this.outputTokens, required this.inputTokensDetails, this.outputTokensDetails, });
 
 factory ImageGenUsage.fromJson(Map<String, dynamic> json) { return ImageGenUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),

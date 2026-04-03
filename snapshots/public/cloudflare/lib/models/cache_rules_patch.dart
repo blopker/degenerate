@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enables Tiered Caching.
-final class CacheRulesValue {const CacheRulesValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables Tiered Caching.
+@immutable final class CacheRulesValue {const CacheRulesValue._(this.value);
 
 factory CacheRulesValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesValue($value)'; } 
  }
 /// Update enablement of Tiered Caching.
-final class CacheRulesPatch {const CacheRulesPatch({required this.value});
+@immutable final class CacheRulesPatch {const CacheRulesPatch({required this.value});
 
 factory CacheRulesPatch.fromJson(Map<String, dynamic> json) { return CacheRulesPatch(
   value: CacheRulesValue.fromJson(json['value'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
-final class SetupIntentPaymentMethodOptionsMandateOptionsPaytoAmountType {const SetupIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsPaytoAmountType {const SetupIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._(this.value);
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsPaytoAmountType($value)'; } 
  }
 /// The periodicity at which payments will be collected. Defaults to `adhoc`.
-final class SetupIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule {const SetupIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule {const SetupIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._(this.value);
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(String json) { return switch (json) {
   'adhoc' => adhoc,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule($value)'; } 
  }
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final class SetupIntentPaymentMethodOptionsMandateOptionsPaytoPurpose {const SetupIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsPaytoPurpose {const SetupIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._(this.value);
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(String json) { return switch (json) {
   'dependant_support' => dependantSupport,
@@ -121,7 +121,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsPaytoPurpose($value)'; } 
  }
 /// 
-final class SetupIntentPaymentMethodOptionsMandateOptionsPayto {const SetupIntentPaymentMethodOptionsMandateOptionsPayto({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsPayto {const SetupIntentPaymentMethodOptionsMandateOptionsPayto({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsMandateOptionsPayto(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

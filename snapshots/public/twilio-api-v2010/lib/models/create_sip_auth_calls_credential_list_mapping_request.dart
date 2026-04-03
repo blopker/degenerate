@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateSipAuthCallsCredentialListMappingRequest {const CreateSipAuthCallsCredentialListMappingRequest({required this.credentialListSid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipAuthCallsCredentialListMappingRequest {const CreateSipAuthCallsCredentialListMappingRequest({required this.credentialListSid});
 
 factory CreateSipAuthCallsCredentialListMappingRequest.fromJson(Map<String, dynamic> json) { return CreateSipAuthCallsCredentialListMappingRequest(
   credentialListSid: json['CredentialListSid'] as String,

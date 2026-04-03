@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_protection_rule.dart';final class ReposGetAllDeploymentProtectionRulesResponse {const ReposGetAllDeploymentProtectionRulesResponse({this.totalCount, this.customDeploymentProtectionRules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_protection_rule.dart';@immutable final class ReposGetAllDeploymentProtectionRulesResponse {const ReposGetAllDeploymentProtectionRulesResponse({this.totalCount, this.customDeploymentProtectionRules, });
 
 factory ReposGetAllDeploymentProtectionRulesResponse.fromJson(Map<String, dynamic> json) { return ReposGetAllDeploymentProtectionRulesResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

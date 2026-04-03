@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
-final class AaaAuditLogsActorType {const AaaAuditLogsActorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
+@immutable final class AaaAuditLogsActorType {const AaaAuditLogsActorType._(this.value);
 
 factory AaaAuditLogsActorType.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AaaAuditLogsActorType($value)'; } 
  }
-final class AaaAuditLogsActor {const AaaAuditLogsActor({this.email, this.id, this.ip, this.type, });
+@immutable final class AaaAuditLogsActor {const AaaAuditLogsActor({this.email, this.id, this.ip, this.type, });
 
 factory AaaAuditLogsActor.fromJson(Map<String, dynamic> json) { return AaaAuditLogsActor(
   email: json['email'] as String?,

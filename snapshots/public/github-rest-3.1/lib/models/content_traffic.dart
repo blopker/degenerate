@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Content Traffic
-final class ContentTraffic {const ContentTraffic({required this.path, required this.title, required this.count, required this.uniques, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Content Traffic
+@immutable final class ContentTraffic {const ContentTraffic({required this.path, required this.title, required this.count, required this.uniques, });
 
 factory ContentTraffic.fromJson(Map<String, dynamic> json) { return ContentTraffic(
   path: json['path'] as String,

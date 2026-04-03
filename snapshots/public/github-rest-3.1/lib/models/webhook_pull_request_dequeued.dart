@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_dequeued_pull_request.dart';final class WebhookPullRequestDequeuedAction {const WebhookPullRequestDequeuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_dequeued_pull_request.dart';@immutable final class WebhookPullRequestDequeuedAction {const WebhookPullRequestDequeuedAction._(this.value);
 
 factory WebhookPullRequestDequeuedAction.fromJson(String json) { return switch (json) {
   'dequeued' => dequeued,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestDequeuedAction($value)'; } 
  }
-final class WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason._(this.value);
+@immutable final class WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason._(this.value);
 
 factory WebhookPullRequestDequeuedReason.fromJson(String json) { return switch (json) {
   'UNKNOWN_REMOVAL_REASON' => unknownRemovalReason,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestDequeuedReason($value)'; } 
  }
-final class WebhookPullRequestDequeued {const WebhookPullRequestDequeued({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.reason, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestDequeued {const WebhookPullRequestDequeued({required this.action, required this.number, required this.pullRequest, required this.reason, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestDequeued.fromJson(Map<String, dynamic> json) { return WebhookPullRequestDequeued(
   action: WebhookPullRequestDequeuedAction.fromJson(json['action'] as String),

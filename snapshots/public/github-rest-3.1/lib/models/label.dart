@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Color-coded labels help you categorize and filter your issues (just like labels in Gmail).
-final class Label {const Label({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Color-coded labels help you categorize and filter your issues (just like labels in Gmail).
+@immutable final class Label {const Label({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
 
 factory Label.fromJson(Map<String, dynamic> json) { return Label(
   id: (json['id'] as num).toInt(),

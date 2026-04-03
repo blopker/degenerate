@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ParticipationStats {const ParticipationStats({required this.all, required this.owner, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParticipationStats {const ParticipationStats({required this.all, required this.owner, });
 
 factory ParticipationStats.fromJson(Map<String, dynamic> json) { return ParticipationStats(
   all: (json['all'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_hf_nousresearch_hermes2_pro_mistral7b_response400_errors.dart';final class WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400 {const WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_hf_nousresearch_hermes2_pro_mistral7b_response400_errors.dart';@immutable final class WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400 {const WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

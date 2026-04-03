@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'deployment_reviewer_type.dart';final class ReposCreateOrUpdateEnvironmentRequestReviewers {const ReposCreateOrUpdateEnvironmentRequestReviewers({this.type, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_reviewer_type.dart';@immutable final class ReposCreateOrUpdateEnvironmentRequestReviewers {const ReposCreateOrUpdateEnvironmentRequestReviewers({this.type, this.id, });
 
 factory ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateEnvironmentRequestReviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,

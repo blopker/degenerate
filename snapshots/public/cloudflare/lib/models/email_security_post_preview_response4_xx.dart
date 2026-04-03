@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';final class EmailSecurityPostPreviewResponse4Xx {const EmailSecurityPostPreviewResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';@immutable final class EmailSecurityPostPreviewResponse4Xx {const EmailSecurityPostPreviewResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory EmailSecurityPostPreviewResponse4Xx.fromJson(Map<String, dynamic> json) { return EmailSecurityPostPreviewResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

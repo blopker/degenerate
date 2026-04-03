@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'team_permissions.dart';import 'team_simple.dart';/// The ownership type of the team
-final class TeamType {const TeamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_permissions.dart';import 'team_simple.dart';/// The ownership type of the team
+@immutable final class TeamType {const TeamType._(this.value);
 
 factory TeamType.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamType($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class Team {const Team({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, this.privacy, this.notificationSetting, required this.permission, this.permissions, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.type, this.organizationId, this.enterpriseId, required this.parent, });
+@immutable final class Team {const Team({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.type, required this.parent, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
 factory Team.fromJson(Map<String, dynamic> json) { return Team(
   id: (json['id'] as num).toInt(),

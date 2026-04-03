@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the event type. For a computer screenshot, this property is
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the event type. For a computer screenshot, this property is
 /// always set to `computer_screenshot`.
 /// 
-final class ComputerScreenshotImageType {const ComputerScreenshotImageType._(this.value);
+@immutable final class ComputerScreenshotImageType {const ComputerScreenshotImageType._(this.value);
 
 factory ComputerScreenshotImageType.fromJson(String json) { return switch (json) {
   'computer_screenshot' => computerScreenshot,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A computer screenshot image used with the computer use tool.
 /// 
-final class ComputerScreenshotImage {const ComputerScreenshotImage({this.type = ComputerScreenshotImageType.computerScreenshot, this.imageUrl, this.fileId, });
+@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({this.type = ComputerScreenshotImageType.computerScreenshot, this.imageUrl, this.fileId, });
 
 factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) { return ComputerScreenshotImage(
   type: ComputerScreenshotImageType.fromJson(json['type'] as String),

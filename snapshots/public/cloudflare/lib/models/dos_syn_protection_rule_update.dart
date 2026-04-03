@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosSynProtectionRuleUpdate {const DosSynProtectionRuleUpdate({this.burstSensitivity, this.mitigationType, this.mode, this.rateSensitivity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosSynProtectionRuleUpdate {const DosSynProtectionRuleUpdate({this.burstSensitivity, this.mitigationType, this.mode, this.rateSensitivity, });
 
 factory DosSynProtectionRuleUpdate.fromJson(Map<String, dynamic> json) { return DosSynProtectionRuleUpdate(
   burstSensitivity: json['burst_sensitivity'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataPaypal {const PostPaymentIntentsIntentRequestPaymentMethodDataPaypal();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataPaypal {const PostPaymentIntentsIntentRequestPaymentMethodDataPaypal();
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataPaypal.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataPaypal(
 

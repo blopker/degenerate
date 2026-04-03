@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order DNS views in.
-final class DnsSettingsDirection {const DnsSettingsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order DNS views in.
+@immutable final class DnsSettingsDirection {const DnsSettingsDirection._(this.value);
 
 factory DnsSettingsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

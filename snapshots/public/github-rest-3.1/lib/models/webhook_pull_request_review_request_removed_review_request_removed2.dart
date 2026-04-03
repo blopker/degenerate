@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_pull_request.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_requested_team.dart';final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_pull_request.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_requested_team.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action.fromJson(String json) { return switch (json) {
   'review_request_removed' => reviewRequestRemoved,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action($value)'; } 
  }
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.requestedTeam, required this.sender, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2({required this.action, required this.number, required this.pullRequest, required this.repository, required this.requestedTeam, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(
   action: WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action.fromJson(json['action'] as String),

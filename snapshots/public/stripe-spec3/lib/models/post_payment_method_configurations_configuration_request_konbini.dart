@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_konbini_display_preference.dart';/// Konbini allows customers in Japan to pay for bills and online purchases at convenience stores with cash. Check this [page](https://docs.stripe.com/payments/konbini) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestKonbini {const PostPaymentMethodConfigurationsConfigurationRequestKonbini({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_konbini_display_preference.dart';/// Konbini allows customers in Japan to pay for bills and online purchases at convenience stores with cash. Check this [page](https://docs.stripe.com/payments/konbini) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestKonbini {const PostPaymentMethodConfigurationsConfigurationRequestKonbini({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestKonbini.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestKonbini(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKonbiniDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

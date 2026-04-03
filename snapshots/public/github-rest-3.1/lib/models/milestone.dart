@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// The state of the milestone.
-final class MilestoneState {const MilestoneState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The state of the milestone.
+@immutable final class MilestoneState {const MilestoneState._(this.value);
 
 factory MilestoneState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MilestoneState($value)'; } 
  }
 /// A collection of related issues and pull requests.
-final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, this.state = MilestoneState.open, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, });
+@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, this.state = MilestoneState.open, });
 
 factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   url: Uri.parse(json['url'] as String),

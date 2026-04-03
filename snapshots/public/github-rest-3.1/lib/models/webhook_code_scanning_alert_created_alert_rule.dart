@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
-final class WebhookCodeScanningAlertCreatedAlertRuleSeverity {const WebhookCodeScanningAlertCreatedAlertRuleSeverity._(this.value);
+@immutable final class WebhookCodeScanningAlertCreatedAlertRuleSeverity {const WebhookCodeScanningAlertCreatedAlertRuleSeverity._(this.value);
 
 factory WebhookCodeScanningAlertCreatedAlertRuleSeverity.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertCreatedAlertRuleSeverity($value)'; } 
  }
-final class WebhookCodeScanningAlertCreatedAlertRule {const WebhookCodeScanningAlertCreatedAlertRule({required this.description, this.fullDescription, this.help, this.helpUri, required this.id, this.name, required this.severity, this.tags, });
+@immutable final class WebhookCodeScanningAlertCreatedAlertRule {const WebhookCodeScanningAlertCreatedAlertRule({required this.description, required this.id, required this.severity, this.fullDescription, this.help, this.helpUri, this.name, this.tags, });
 
 factory WebhookCodeScanningAlertCreatedAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlertRule(
   description: json['description'] as String,

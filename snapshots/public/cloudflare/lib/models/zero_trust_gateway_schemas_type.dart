@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the list type.
-final class ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the list type.
+@immutable final class ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType._(this.value);
 
 factory ZeroTrustGatewaySchemasType.fromJson(String json) { return switch (json) {
   'SERIAL' => serial,

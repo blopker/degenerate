@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The IP versions supported for inbound connections on Spectrum anycast IPs.
-final class SpectrumConfigEdgeIpsDynamicConnectivity {const SpectrumConfigEdgeIpsDynamicConnectivity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The IP versions supported for inbound connections on Spectrum anycast IPs.
+@immutable final class SpectrumConfigEdgeIpsDynamicConnectivity {const SpectrumConfigEdgeIpsDynamicConnectivity._(this.value);
 
 factory SpectrumConfigEdgeIpsDynamicConnectivity.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpectrumConfigEdgeIpsDynamicConnectivity($value)'; } 
  }
 /// The type of edge IP configuration specified. Dynamically allocated edge IPs use Spectrum anycast IPs in accordance with the connectivity you specify. Only valid with CNAME DNS names.
-final class SpectrumConfigEdgeIpsDynamicType {const SpectrumConfigEdgeIpsDynamicType._(this.value);
+@immutable final class SpectrumConfigEdgeIpsDynamicType {const SpectrumConfigEdgeIpsDynamicType._(this.value);
 
 factory SpectrumConfigEdgeIpsDynamicType.fromJson(String json) { return switch (json) {
   'dynamic' => $dynamic,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpectrumConfigEdgeIpsDynamicType($value)'; } 
  }
-final class SpectrumConfigEdgeIpsDynamic {const SpectrumConfigEdgeIpsDynamic({this.connectivity, this.type, });
+@immutable final class SpectrumConfigEdgeIpsDynamic {const SpectrumConfigEdgeIpsDynamic({this.connectivity, this.type, });
 
 factory SpectrumConfigEdgeIpsDynamic.fromJson(Map<String, dynamic> json) { return SpectrumConfigEdgeIpsDynamic(
   connectivity: json['connectivity'] != null ? SpectrumConfigEdgeIpsDynamicConnectivity.fromJson(json['connectivity'] as String) : null,

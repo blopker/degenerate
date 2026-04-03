@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2 {const PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2 {const PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2._(this.value);
 
 factory PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

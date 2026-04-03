@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponse2TaskOptions {const UrlscannerGetScanResponse2TaskOptions({this.customHeaders, this.screenshotsResolutions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2TaskOptions {const UrlscannerGetScanResponse2TaskOptions({this.customHeaders, this.screenshotsResolutions, });
 
 factory UrlscannerGetScanResponse2TaskOptions.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2TaskOptions(
   customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_files_response404_errors.dart';final class AutoragConfigFilesResponse404 {const AutoragConfigFilesResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_files_response404_errors.dart';@immutable final class AutoragConfigFilesResponse404 {const AutoragConfigFilesResponse404({required this.errors, required this.success, });
 
 factory AutoragConfigFilesResponse404.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AutoragConfigFilesResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7TopOriginAsHttpVersion {const RadarGetAttacksLayer7TopOriginAsHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginAsHttpVersion {const RadarGetAttacksLayer7TopOriginAsHttpVersion._(this.value);
 
 factory RadarGetAttacksLayer7TopOriginAsHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,

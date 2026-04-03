@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item_message_user_content.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final class RealtimeConversationItemMessageUserObject {const RealtimeConversationItemMessageUserObject._(this.value);
+@immutable final class RealtimeConversationItemMessageUserObject {const RealtimeConversationItemMessageUserObject._(this.value);
 
 factory RealtimeConversationItemMessageUserObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageUserObject($value)'; } 
  }
 /// The type of the item. Always `message`.
-final class RealtimeConversationItemMessageUserType {const RealtimeConversationItemMessageUserType._(this.value);
+@immutable final class RealtimeConversationItemMessageUserType {const RealtimeConversationItemMessageUserType._(this.value);
 
 factory RealtimeConversationItemMessageUserType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageUserType($value)'; } 
  }
 /// The status of the item. Has no effect on the conversation.
-final class RealtimeConversationItemMessageUserStatus {const RealtimeConversationItemMessageUserStatus._(this.value);
+@immutable final class RealtimeConversationItemMessageUserStatus {const RealtimeConversationItemMessageUserStatus._(this.value);
 
 factory RealtimeConversationItemMessageUserStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageUserStatus($value)'; } 
  }
 /// The role of the message sender. Always `user`.
-final class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole._(this.value);
+@immutable final class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole._(this.value);
 
 factory RealtimeConversationItemMessageUserRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageUserRole($value)'; } 
  }
 /// A user message item in a Realtime conversation.
-final class RealtimeConversationItemMessageUser {const RealtimeConversationItemMessageUser({this.id, this.object, required this.type, this.status, required this.role, required this.content, });
+@immutable final class RealtimeConversationItemMessageUser {const RealtimeConversationItemMessageUser({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUser(
   id: json['id'] as String?,

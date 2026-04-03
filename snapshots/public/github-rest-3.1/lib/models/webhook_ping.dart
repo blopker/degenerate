@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_ping_hook.dart';final class WebhookPing {const WebhookPing({this.hook, this.hookId, this.organization, this.repository, this.sender, this.zen, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_ping_hook.dart';@immutable final class WebhookPing {const WebhookPing({this.hook, this.hookId, this.organization, this.repository, this.sender, this.zen, });
 
 factory WebhookPing.fromJson(Map<String, dynamic> json) { return WebhookPing(
   hook: json['hook'] != null ? WebhookPingHook.fromJson(json['hook'] as Map<String, dynamic>) : null,

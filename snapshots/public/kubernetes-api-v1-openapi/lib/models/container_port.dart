@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ContainerPort represents a network port in a single container.
-final class ContainerPort {const ContainerPort({this.containerPort = 0, this.hostIp, this.hostPort, this.name, this.protocol = 'TCP', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerPort represents a network port in a single container.
+@immutable final class ContainerPort {const ContainerPort({this.containerPort = 0, this.hostIp, this.hostPort, this.name, this.protocol = 'TCP', });
 
 factory ContainerPort.fromJson(Map<String, dynamic> json) { return ContainerPort(
   containerPort: (json['containerPort'] as num).toInt(),

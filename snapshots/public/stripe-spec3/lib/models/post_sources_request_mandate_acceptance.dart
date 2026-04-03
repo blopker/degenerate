@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_sources_request_mandate_acceptance_offline.dart';import 'post_sources_request_mandate_acceptance_online.dart';final class PostSourcesRequestMandateAcceptanceStatus {const PostSourcesRequestMandateAcceptanceStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate_acceptance_offline.dart';import 'post_sources_request_mandate_acceptance_online.dart';@immutable final class PostSourcesRequestMandateAcceptanceStatus {const PostSourcesRequestMandateAcceptanceStatus._(this.value);
 
 factory PostSourcesRequestMandateAcceptanceStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesRequestMandateAcceptanceStatus($value)'; } 
  }
-final class PostSourcesRequestMandateAcceptanceType {const PostSourcesRequestMandateAcceptanceType._(this.value);
+@immutable final class PostSourcesRequestMandateAcceptanceType {const PostSourcesRequestMandateAcceptanceType._(this.value);
 
 factory PostSourcesRequestMandateAcceptanceType.fromJson(String json) { return switch (json) {
   'offline' => offline,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesRequestMandateAcceptanceType($value)'; } 
  }
-final class PostSourcesRequestMandateAcceptance {const PostSourcesRequestMandateAcceptance({this.date, this.ip, this.offline, this.online, required this.status, this.type, this.userAgent, });
+@immutable final class PostSourcesRequestMandateAcceptance {const PostSourcesRequestMandateAcceptance({required this.status, this.date, this.ip, this.offline, this.online, this.type, this.userAgent, });
 
 factory PostSourcesRequestMandateAcceptance.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandateAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

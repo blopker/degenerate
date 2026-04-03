@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_disposition_label.dart';final class EmailSecuritySubmissionCustomerStatus {const EmailSecuritySubmissionCustomerStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecuritySubmissionCustomerStatus {const EmailSecuritySubmissionCustomerStatus._(this.value);
 
 factory EmailSecuritySubmissionCustomerStatus.fromJson(String json) { return switch (json) {
   'escalated' => escalated,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecuritySubmissionCustomerStatus($value)'; } 
  }
-final class EmailSecuritySubmission {const EmailSecuritySubmission({this.customerStatus, this.originalDisposition, this.originalEdfHash, this.outcome, this.outcomeDisposition, this.requestedBy, this.requestedDisposition, required this.requestedTs, this.status, this.subject, required this.submissionId, this.type, });
+@immutable final class EmailSecuritySubmission {const EmailSecuritySubmission({required this.requestedTs, required this.submissionId, this.customerStatus, this.originalDisposition, this.originalEdfHash, this.outcome, this.outcomeDisposition, this.requestedBy, this.requestedDisposition, this.status, this.subject, this.type, });
 
 factory EmailSecuritySubmission.fromJson(Map<String, dynamic> json) { return EmailSecuritySubmission(
   customerStatus: json['customer_status'] != null ? EmailSecuritySubmissionCustomerStatus.fromJson(json['customer_status'] as String) : null,

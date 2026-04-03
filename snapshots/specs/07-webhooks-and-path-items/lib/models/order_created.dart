@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrderCreated {const OrderCreated({required this.id, required this.amount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrderCreated {const OrderCreated({required this.id, required this.amount, });
 
 factory OrderCreated.fromJson(Map<String, dynamic> json) { return OrderCreated(
   id: json['id'] as String,

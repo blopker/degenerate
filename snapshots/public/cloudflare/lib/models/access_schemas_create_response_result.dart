@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_client_id.dart';import 'access_client_secret.dart';import 'access_schemas_duration.dart';import 'access_service_tokens_components_schemas_name.dart';import 'access_timestamp.dart';final class AccessSchemasCreateResponseResult {const AccessSchemasCreateResponseResult({this.clientId, this.clientSecret, this.createdAt, this.duration, this.id, this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_client_id.dart';import 'access_client_secret.dart';import 'access_schemas_duration.dart';import 'access_service_tokens_components_schemas_name.dart';import 'access_timestamp.dart';@immutable final class AccessSchemasCreateResponseResult {const AccessSchemasCreateResponseResult({this.clientId, this.clientSecret, this.createdAt, this.duration, this.id, this.name, this.updatedAt, });
 
 factory AccessSchemasCreateResponseResult.fromJson(Map<String, dynamic> json) { return AccessSchemasCreateResponseResult(
   clientId: json['client_id'] != null ? AccessClientId.fromJson(json['client_id'] as String) : null,

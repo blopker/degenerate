@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The GitHub App associated with the status check.
-final class RuleSuiteRequiredStatusChecksChecksApp {const RuleSuiteRequiredStatusChecksChecksApp({this.id, this.slug, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub App associated with the status check.
+@immutable final class RuleSuiteRequiredStatusChecksChecksApp {const RuleSuiteRequiredStatusChecksChecksApp({this.id, this.slug, this.name, });
 
 factory RuleSuiteRequiredStatusChecksChecksApp.fromJson(Map<String, dynamic> json) { return RuleSuiteRequiredStatusChecksChecksApp(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

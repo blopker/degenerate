@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Request payload for granting a group access to a project.
-final class InviteProjectGroupBody {const InviteProjectGroupBody({required this.groupId, required this.role, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for granting a group access to a project.
+@immutable final class InviteProjectGroupBody {const InviteProjectGroupBody({required this.groupId, required this.role, });
 
 factory InviteProjectGroupBody.fromJson(Map<String, dynamic> json) { return InviteProjectGroupBody(
   groupId: json['group_id'] as String,

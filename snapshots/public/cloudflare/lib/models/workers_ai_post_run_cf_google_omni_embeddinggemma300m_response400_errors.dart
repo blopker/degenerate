@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400Errors {const WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400Errors {const WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400Errors({required this.code, required this.message, });
 
 factory WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400Errors(
   code: json['code'] as String,

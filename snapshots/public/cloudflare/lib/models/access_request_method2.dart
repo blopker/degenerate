@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessRequestMethod2 {const AccessRequestMethod2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessRequestMethod2 {const AccessRequestMethod2._(this.value);
 
 factory AccessRequestMethod2.fromJson(String json) { return switch (json) {
   'DELETE' => delete,

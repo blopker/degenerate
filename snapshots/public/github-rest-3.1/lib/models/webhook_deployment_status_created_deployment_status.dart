@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_deployment_status_created_deployment_status_creator.dart';import 'webhook_deployment_status_created_deployment_status_performed_via_github_app.dart';/// The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
-final class WebhookDeploymentStatusCreatedDeploymentStatus {const WebhookDeploymentStatusCreatedDeploymentStatus({required this.createdAt, required this.creator, required this.deploymentUrl, required this.description, required this.environment, this.environmentUrl, required this.id, this.logUrl, required this.nodeId, this.performedViaGithubApp, required this.repositoryUrl, required this.state, required this.targetUrl, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_status_created_deployment_status_creator.dart';import 'webhook_deployment_status_created_deployment_status_performed_via_github_app.dart';/// The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
+@immutable final class WebhookDeploymentStatusCreatedDeploymentStatus {const WebhookDeploymentStatusCreatedDeploymentStatus({required this.createdAt, required this.creator, required this.deploymentUrl, required this.description, required this.environment, required this.id, required this.nodeId, required this.repositoryUrl, required this.state, required this.targetUrl, required this.updatedAt, required this.url, this.environmentUrl, this.logUrl, this.performedViaGithubApp, });
 
 factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedDeploymentStatus(
   createdAt: json['created_at'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options_variant1_value_custom_unit_amount.dart';import 'post_prices_price_request_currency_options_variant1_value_tiers.dart';final class PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior {const PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options_variant1_value_custom_unit_amount.dart';import 'post_prices_price_request_currency_options_variant1_value_tiers.dart';@immutable final class PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior {const PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior._(this.value);
 
 factory PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior($value)'; } 
  }
-final class PostPricesPriceRequestCurrencyOptionsVariant1Value {const PostPricesPriceRequestCurrencyOptionsVariant1Value({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostPricesPriceRequestCurrencyOptionsVariant1Value {const PostPricesPriceRequestCurrencyOptionsVariant1Value({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostPricesPriceRequestCurrencyOptionsVariant1Value.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequestCurrencyOptionsVariant1Value(
   customUnitAmount: json['custom_unit_amount'] != null ? PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,

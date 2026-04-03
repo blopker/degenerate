@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_dns.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_rank.dart';final class UrlscannerGetScanResponseResultScanDomainsExampleCom {const UrlscannerGetScanResponseResultScanDomainsExampleCom({required this.categories, required this.dns, required this.name, required this.rank, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_dns.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_rank.dart';@immutable final class UrlscannerGetScanResponseResultScanDomainsExampleCom {const UrlscannerGetScanResponseResultScanDomainsExampleCom({required this.categories, required this.dns, required this.name, required this.rank, required this.type, });
 
 factory UrlscannerGetScanResponseResultScanDomainsExampleCom.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanDomainsExampleCom(
   categories: UrlscannerGetScanResponseResultScanDomainsExampleComCategories.fromJson(json['categories'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetMandatesMandateRequest {const GetMandatesMandateRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetMandatesMandateRequest {const GetMandatesMandateRequest();
 
 factory GetMandatesMandateRequest.fromJson(Map<String, dynamic> json) { return GetMandatesMandateRequest(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// D1 binding.
-final class PagesDeploymentConfigValuesD1DatabasesValue {const PagesDeploymentConfigValuesD1DatabasesValue({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// D1 binding.
+@immutable final class PagesDeploymentConfigValuesD1DatabasesValue {const PagesDeploymentConfigValuesD1DatabasesValue({required this.id});
 
 factory PagesDeploymentConfigValuesD1DatabasesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesD1DatabasesValue(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InsightsTimeStats2 {const InsightsTimeStats2({this.timestamp, this.totalRequestCount, this.rateLimitedRequestCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsTimeStats2 {const InsightsTimeStats2({this.timestamp, this.totalRequestCount, this.rateLimitedRequestCount, });
 
 factory InsightsTimeStats2.fromJson(Map<String, dynamic> json) { return InsightsTimeStats2(
   timestamp: json['timestamp'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_file_object.dart';import 'message_content_image_url_object.dart';import 'message_content_refusal_object.dart';import 'message_content_text_object.dart';import 'message_object_attachments2.dart';import 'message_object_content.dart';import 'message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
-final class MessageObjectObject {const MessageObjectObject._(this.value);
+@immutable final class MessageObjectObject {const MessageObjectObject._(this.value);
 
 factory MessageObjectObject.fromJson(String json) { return switch (json) {
   'thread.message' => threadMessage,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageObjectObject($value)'; } 
  }
 /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
-final class MessageObjectStatus {const MessageObjectStatus._(this.value);
+@immutable final class MessageObjectStatus {const MessageObjectStatus._(this.value);
 
 factory MessageObjectStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageObjectStatus($value)'; } 
  }
 /// The entity that produced the message. One of `user` or `assistant`.
-final class MessageObjectRole {const MessageObjectRole._(this.value);
+@immutable final class MessageObjectRole {const MessageObjectRole._(this.value);
 
 factory MessageObjectRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageObjectRole($value)'; } 
  }
 /// Represents a message within a [thread](/docs/api-reference/threads).
-final class MessageObject {const MessageObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.status, required this.incompleteDetails, required this.completedAt, required this.incompleteAt, required this.role, required this.content, required this.assistantId, required this.runId, required this.attachments, required this.metadata, });
+@immutable final class MessageObject {const MessageObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.status, required this.incompleteDetails, required this.completedAt, required this.incompleteAt, required this.role, required this.content, required this.assistantId, required this.runId, required this.attachments, required this.metadata, });
 
 factory MessageObject.fromJson(Map<String, dynamic> json) { return MessageObject(
   id: json['id'] as String,

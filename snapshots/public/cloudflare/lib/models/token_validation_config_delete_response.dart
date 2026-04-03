@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'token_validation_config_delete_response_result.dart';final class TokenValidationConfigDeleteResponse {const TokenValidationConfigDeleteResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'token_validation_config_delete_response_result.dart';@immutable final class TokenValidationConfigDeleteResponse {const TokenValidationConfigDeleteResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory TokenValidationConfigDeleteResponse.fromJson(Map<String, dynamic> json) { return TokenValidationConfigDeleteResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

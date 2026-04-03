@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_summary_by_ip_version_response_result.dart';final class RadarGetDnsSummaryByIpVersionResponse {const RadarGetDnsSummaryByIpVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_ip_version_response_result.dart';@immutable final class RadarGetDnsSummaryByIpVersionResponse {const RadarGetDnsSummaryByIpVersionResponse({required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByIpVersionResponse(
   result: RadarGetDnsSummaryByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),

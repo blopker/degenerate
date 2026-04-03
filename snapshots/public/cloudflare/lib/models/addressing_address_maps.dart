@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_address_map_identifier.dart';import 'addressing_can_delete.dart';import 'addressing_can_modify_ips.dart';import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';import 'addressing_timestamp.dart';final class AddressingAddressMaps {const AddressingAddressMaps({this.canDelete, this.canModifyIps, this.createdAt, this.defaultSni, this.description, this.enabled, this.id, this.modifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_address_map_identifier.dart';import 'addressing_can_delete.dart';import 'addressing_can_modify_ips.dart';import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';import 'addressing_timestamp.dart';@immutable final class AddressingAddressMaps {const AddressingAddressMaps({this.canDelete, this.canModifyIps, this.createdAt, this.defaultSni, this.description, this.enabled, this.id, this.modifiedAt, });
 
 factory AddressingAddressMaps.fromJson(Map<String, dynamic> json) { return AddressingAddressMaps(
   canDelete: json['can_delete'] != null ? AddressingCanDelete.fromJson(json['can_delete'] as bool) : null,

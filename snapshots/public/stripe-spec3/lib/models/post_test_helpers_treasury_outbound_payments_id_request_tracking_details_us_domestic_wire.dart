@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire({this.chips, this.imad, this.omad, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire({this.chips, this.imad, this.omad, });
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire(
   chips: json['chips'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionItemsRequestPriceDataRecurringInterval {const PostSubscriptionItemsRequestPriceDataRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionItemsRequestPriceDataRecurringInterval {const PostSubscriptionItemsRequestPriceDataRecurringInterval._(this.value);
 
 factory PostSubscriptionItemsRequestPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionItemsRequestPriceDataRecurringInterval($value)'; } 
  }
-final class PostSubscriptionItemsRequestPriceDataRecurring {const PostSubscriptionItemsRequestPriceDataRecurring({required this.interval, this.intervalCount, });
+@immutable final class PostSubscriptionItemsRequestPriceDataRecurring {const PostSubscriptionItemsRequestPriceDataRecurring({required this.interval, this.intervalCount, });
 
 factory PostSubscriptionItemsRequestPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequestPriceDataRecurring(
   interval: PostSubscriptionItemsRequestPriceDataRecurringInterval.fromJson(json['interval'] as String),

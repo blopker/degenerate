@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The kind of the schema
-final class SchemaValidationCreateSchemaRequestKind {const SchemaValidationCreateSchemaRequestKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The kind of the schema
+@immutable final class SchemaValidationCreateSchemaRequestKind {const SchemaValidationCreateSchemaRequestKind._(this.value);
 
 factory SchemaValidationCreateSchemaRequestKind.fromJson(String json) { return switch (json) {
   'openapi_v3' => openapiV3,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SchemaValidationCreateSchemaRequestKind($value)'; } 
  }
-final class SchemaValidationCreateSchemaRequest {const SchemaValidationCreateSchemaRequest({required this.kind, required this.name, required this.source, required this.validationEnabled, });
+@immutable final class SchemaValidationCreateSchemaRequest {const SchemaValidationCreateSchemaRequest({required this.kind, required this.name, required this.source, required this.validationEnabled, });
 
 factory SchemaValidationCreateSchemaRequest.fromJson(Map<String, dynamic> json) { return SchemaValidationCreateSchemaRequest(
   kind: SchemaValidationCreateSchemaRequestKind.fromJson(json['kind'] as String),

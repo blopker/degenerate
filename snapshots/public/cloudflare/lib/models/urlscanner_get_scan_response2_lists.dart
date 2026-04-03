@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_lists_certificates.dart';final class UrlscannerGetScanResponse2Lists {const UrlscannerGetScanResponse2Lists({required this.asns, required this.certificates, required this.continents, required this.countries, required this.domains, required this.hashes, required this.ips, required this.linkDomains, required this.servers, required this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_lists_certificates.dart';@immutable final class UrlscannerGetScanResponse2Lists {const UrlscannerGetScanResponse2Lists({required this.asns, required this.certificates, required this.continents, required this.countries, required this.domains, required this.hashes, required this.ips, required this.linkDomains, required this.servers, required this.urls, });
 
 factory UrlscannerGetScanResponse2Lists.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Lists(
   asns: (json['asns'] as List<dynamic>).map((e) => e as String).toList(),

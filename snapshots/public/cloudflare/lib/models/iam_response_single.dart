@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IamResponseSingle {const IamResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamResponseSingle {const IamResponseSingle({this.result});
 
 factory IamResponseSingle.fromJson(Map<String, dynamic> json) { return IamResponseSingle(
   result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

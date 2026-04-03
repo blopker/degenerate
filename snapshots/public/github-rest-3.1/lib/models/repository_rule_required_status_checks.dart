@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_required_status_checks_parameters.dart';final class RepositoryRuleRequiredStatusChecksType {const RepositoryRuleRequiredStatusChecksType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_required_status_checks_parameters.dart';@immutable final class RepositoryRuleRequiredStatusChecksType {const RepositoryRuleRequiredStatusChecksType._(this.value);
 
 factory RepositoryRuleRequiredStatusChecksType.fromJson(String json) { return switch (json) {
   'required_status_checks' => requiredStatusChecks,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleRequiredStatusChecksType($value)'; } 
  }
 /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
-final class RepositoryRuleRequiredStatusChecks {const RepositoryRuleRequiredStatusChecks({required this.type, this.parameters, });
+@immutable final class RepositoryRuleRequiredStatusChecks {const RepositoryRuleRequiredStatusChecks({required this.type, this.parameters, });
 
 factory RepositoryRuleRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredStatusChecks(
   type: RepositoryRuleRequiredStatusChecksType.fromJson(json['type'] as String),

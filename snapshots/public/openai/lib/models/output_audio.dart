@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the output audio. Always `output_audio`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output audio. Always `output_audio`.
 /// 
-final class OutputAudioType {const OutputAudioType._(this.value);
+@immutable final class OutputAudioType {const OutputAudioType._(this.value);
 
 factory OutputAudioType.fromJson(String json) { return switch (json) {
   'output_audio' => outputAudio,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An audio output from the model.
 /// 
-final class OutputAudio {const OutputAudio({required this.type, required this.data, required this.transcript, });
+@immutable final class OutputAudio {const OutputAudio({required this.type, required this.data, required this.transcript, });
 
 factory OutputAudio.fromJson(Map<String, dynamic> json) { return OutputAudio(
   type: OutputAudioType.fromJson(json['type'] as String),

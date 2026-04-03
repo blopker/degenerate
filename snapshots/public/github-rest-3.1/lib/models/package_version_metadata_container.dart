@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PackageVersionMetadataContainer {const PackageVersionMetadataContainer({required this.tags});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackageVersionMetadataContainer {const PackageVersionMetadataContainer({required this.tags});
 
 factory PackageVersionMetadataContainer.fromJson(Map<String, dynamic> json) { return PackageVersionMetadataContainer(
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),

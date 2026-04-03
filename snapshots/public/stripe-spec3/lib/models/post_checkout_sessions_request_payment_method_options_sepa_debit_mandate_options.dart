@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_sepa_debit_mandate_options_reference_prefix.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions({this.referencePrefix});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_sepa_debit_mandate_options_reference_prefix.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions({this.referencePrefix});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions(
   referencePrefix: json['reference_prefix'] != null ? OneOf2.parse(json['reference_prefix'], fromA: (v) => v as String, fromB: (v) => PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2.fromJson(v as String),) : null,

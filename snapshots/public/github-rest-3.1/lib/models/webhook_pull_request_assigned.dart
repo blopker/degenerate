@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_assigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user.dart';final class WebhookPullRequestAssignedAction {const WebhookPullRequestAssignedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_assigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user.dart';@immutable final class WebhookPullRequestAssignedAction {const WebhookPullRequestAssignedAction._(this.value);
 
 factory WebhookPullRequestAssignedAction.fromJson(String json) { return switch (json) {
   'assigned' => assigned,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestAssignedAction($value)'; } 
  }
-final class WebhookPullRequestAssigned {const WebhookPullRequestAssigned({required this.action, required this.assignee, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestAssigned {const WebhookPullRequestAssigned({required this.action, required this.assignee, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssigned(
   action: WebhookPullRequestAssignedAction.fromJson(json['action'] as String),

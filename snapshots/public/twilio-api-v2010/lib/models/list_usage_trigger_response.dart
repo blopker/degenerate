@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_usage_usage_trigger.dart';final class ListUsageTriggerResponse {const ListUsageTriggerResponse({this.usageTriggers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_usage_usage_trigger.dart';@immutable final class ListUsageTriggerResponse {const ListUsageTriggerResponse({this.usageTriggers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListUsageTriggerResponse.fromJson(Map<String, dynamic> json) { return ListUsageTriggerResponse(
   usageTriggers: (json['usage_triggers'] as List<dynamic>?)?.map((e) => AccountUsageUsageTrigger.fromJson(e as Map<String, dynamic>)).toList(),

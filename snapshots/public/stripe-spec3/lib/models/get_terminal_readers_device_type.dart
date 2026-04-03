@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType._(this.value);
 
 factory GetTerminalReadersDeviceType.fromJson(String json) { return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,

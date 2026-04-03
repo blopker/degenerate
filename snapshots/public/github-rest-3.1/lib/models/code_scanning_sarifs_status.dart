@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
-final class CodeScanningSarifsStatusProcessingStatus {const CodeScanningSarifsStatusProcessingStatus._(this.value);
+@immutable final class CodeScanningSarifsStatusProcessingStatus {const CodeScanningSarifsStatusProcessingStatus._(this.value);
 
 factory CodeScanningSarifsStatusProcessingStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningSarifsStatusProcessingStatus($value)'; } 
  }
-final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl, this.errors, });
+@immutable final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl, this.errors, });
 
 factory CodeScanningSarifsStatus.fromJson(Map<String, dynamic> json) { return CodeScanningSarifsStatus(
   processingStatus: json['processing_status'] != null ? CodeScanningSarifsStatusProcessingStatus.fromJson(json['processing_status'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The metadata is presented in the form of ID3 tags.
-final class RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The metadata is presented in the form of ID3 tags.
+@immutable final class RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType._(this.value);
 
 factory RealtimekitInteractiveConfigType.fromJson(String json) { return switch (json) {
   'ID3' => id3,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitInteractiveConfigType($value)'; } 
  }
 /// Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.
-final class RealtimekitInteractiveConfig {const RealtimekitInteractiveConfig({this.type});
+@immutable final class RealtimekitInteractiveConfig {const RealtimekitInteractiveConfig({this.type});
 
 factory RealtimekitInteractiveConfig.fromJson(Map<String, dynamic> json) { return RealtimekitInteractiveConfig(
   type: json['type'] != null ? RealtimekitInteractiveConfigType.fromJson(json['type'] as String) : null,

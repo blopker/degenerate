@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeP24 {const SourceTypeP24({this.reference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeP24 {const SourceTypeP24({this.reference});
 
 factory SourceTypeP24.fromJson(Map<String, dynamic> json) { return SourceTypeP24(
   reference: json['reference'] as String?,

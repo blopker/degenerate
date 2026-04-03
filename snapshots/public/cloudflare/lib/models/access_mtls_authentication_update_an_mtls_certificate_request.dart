@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name.dart';final class AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest {const AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest({required this.associatedHostnames, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name.dart';@immutable final class AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest {const AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest({required this.associatedHostnames, this.name, });
 
 factory AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest.fromJson(Map<String, dynamic> json) { return AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>).map((e) => e as String).toList(),

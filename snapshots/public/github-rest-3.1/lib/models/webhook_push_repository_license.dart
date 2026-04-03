@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPushRepositoryLicense {const WebhookPushRepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPushRepositoryLicense {const WebhookPushRepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
 
 factory WebhookPushRepositoryLicense.fromJson(Map<String, dynamic> json) { return WebhookPushRepositoryLicense(
   key: json['key'] as String,

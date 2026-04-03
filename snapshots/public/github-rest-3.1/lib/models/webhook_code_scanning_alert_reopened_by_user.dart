@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_reopened_by_user_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';final class WebhookCodeScanningAlertReopenedByUserAction {const WebhookCodeScanningAlertReopenedByUserAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_reopened_by_user_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertReopenedByUserAction {const WebhookCodeScanningAlertReopenedByUserAction._(this.value);
 
 factory WebhookCodeScanningAlertReopenedByUserAction.fromJson(String json) { return switch (json) {
   'reopened_by_user' => reopenedByUser,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertReopenedByUserAction($value)'; } 
  }
-final class WebhookCodeScanningAlertReopenedByUser {const WebhookCodeScanningAlertReopenedByUser({required this.action, required this.alert, required this.commitOid, this.enterprise, this.installation, this.organization, required this.ref, required this.repository, required this.sender, });
+@immutable final class WebhookCodeScanningAlertReopenedByUser {const WebhookCodeScanningAlertReopenedByUser({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertReopenedByUser.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedByUser(
   action: WebhookCodeScanningAlertReopenedByUserAction.fromJson(json['action'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class LegalEntityUboDeclaration {const LegalEntityUboDeclaration({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class LegalEntityUboDeclaration {const LegalEntityUboDeclaration({this.date, this.ip, this.userAgent, });
 
 factory LegalEntityUboDeclaration.fromJson(Map<String, dynamic> json) { return LegalEntityUboDeclaration(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

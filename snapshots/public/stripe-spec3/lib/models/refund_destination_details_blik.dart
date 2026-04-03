@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RefundDestinationDetailsBlik {const RefundDestinationDetailsBlik({this.networkDeclineCode, this.reference, this.referenceStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RefundDestinationDetailsBlik {const RefundDestinationDetailsBlik({this.networkDeclineCode, this.reference, this.referenceStatus, });
 
 factory RefundDestinationDetailsBlik.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsBlik(
   networkDeclineCode: json['network_decline_code'] as String?,

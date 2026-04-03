@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_issuing_authorizations_request_risk_assessment_card_testing_risk.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_fraud_risk.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_merchant_dispute_risk.dart';/// Stripe’s assessment of the fraud risk for this authorization.
-final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessment {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessment({this.cardTestingRisk, this.fraudRisk, this.merchantDisputeRisk, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_card_testing_risk.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_fraud_risk.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_merchant_dispute_risk.dart';/// Stripe’s assessment of the fraud risk for this authorization.
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessment {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessment({this.cardTestingRisk, this.fraudRisk, this.merchantDisputeRisk, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessment(
   cardTestingRisk: json['card_testing_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk.fromJson(json['card_testing_risk'] as Map<String, dynamic>) : null,

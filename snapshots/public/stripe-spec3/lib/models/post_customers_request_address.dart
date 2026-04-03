@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'optional_fields_customer_address.dart';final class PostCustomersRequestAddressVariant2 {const PostCustomersRequestAddressVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'optional_fields_customer_address.dart';@immutable final class PostCustomersRequestAddressVariant2 {const PostCustomersRequestAddressVariant2._(this.value);
 
 factory PostCustomersRequestAddressVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

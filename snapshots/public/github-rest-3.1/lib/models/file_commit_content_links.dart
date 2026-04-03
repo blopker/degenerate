@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileCommitContentLinks {const FileCommitContentLinks({this.self, this.git, this.html, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitContentLinks {const FileCommitContentLinks({this.self, this.git, this.html, });
 
 factory FileCommitContentLinks.fromJson(Map<String, dynamic> json) { return FileCommitContentLinks(
   self: json['self'] as String?,

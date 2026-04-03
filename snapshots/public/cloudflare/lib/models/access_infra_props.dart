@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_target_criteria_infra_app.dart';import 'access_type.dart';final class AccessInfraProps {const AccessInfraProps({required this.targetCriteria, this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_target_criteria_infra_app.dart';import 'access_type.dart';@immutable final class AccessInfraProps {const AccessInfraProps({required this.targetCriteria, required this.type, this.name, });
 
 factory AccessInfraProps.fromJson(Map<String, dynamic> json) { return AccessInfraProps(
   targetCriteria: (json['target_criteria'] as List<dynamic>).map((e) => AccessTargetCriteriaInfraApp.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AddressingBgpPrefixUpdateAdvertisementOnDemand {const AddressingBgpPrefixUpdateAdvertisementOnDemand({this.advertised});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddressingBgpPrefixUpdateAdvertisementOnDemand {const AddressingBgpPrefixUpdateAdvertisementOnDemand({this.advertised});
 
 factory AddressingBgpPrefixUpdateAdvertisementOnDemand.fromJson(Map<String, dynamic> json) { return AddressingBgpPrefixUpdateAdvertisementOnDemand(
   advertised: json['advertised'] as bool?,

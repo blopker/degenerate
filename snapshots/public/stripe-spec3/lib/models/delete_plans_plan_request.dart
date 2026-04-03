@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeletePlansPlanRequest {const DeletePlansPlanRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePlansPlanRequest {const DeletePlansPlanRequest();
 
 factory DeletePlansPlanRequest.fromJson(Map<String, dynamic> json) { return DeletePlansPlanRequest(
 

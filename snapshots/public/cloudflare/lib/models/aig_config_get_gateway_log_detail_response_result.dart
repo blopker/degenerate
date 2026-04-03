@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigGetGatewayLogDetailResponseResult {const AigConfigGetGatewayLogDetailResponseResult({required this.cached, this.cost, required this.createdAt, this.customCost, required this.duration, required this.id, this.metadata, required this.model, this.modelType, required this.path, required this.provider, this.requestContentType, this.requestHead, this.requestHeadComplete, this.requestSize, this.requestType, this.responseContentType, this.responseHead, this.responseHeadComplete, this.responseSize, this.statusCode, this.step, required this.success, required this.tokensIn, required this.tokensOut, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayLogDetailResponseResult {const AigConfigGetGatewayLogDetailResponseResult({required this.cached, required this.createdAt, required this.duration, required this.id, required this.model, required this.path, required this.provider, required this.success, required this.tokensIn, required this.tokensOut, this.cost, this.customCost, this.metadata, this.modelType, this.requestContentType, this.requestHead, this.requestHeadComplete, this.requestSize, this.requestType, this.responseContentType, this.responseHead, this.responseHeadComplete, this.responseSize, this.statusCode, this.step, });
 
 factory AigConfigGetGatewayLogDetailResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayLogDetailResponseResult(
   cached: json['cached'] as bool,

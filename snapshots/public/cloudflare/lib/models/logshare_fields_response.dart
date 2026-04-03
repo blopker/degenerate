@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LogshareFieldsResponse {const LogshareFieldsResponse({this.key});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogshareFieldsResponse {const LogshareFieldsResponse({this.key});
 
 factory LogshareFieldsResponse.fromJson(Map<String, dynamic> json) { return LogshareFieldsResponse(
   key: json['key'] as String?,

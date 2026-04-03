@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of data source. Always `stored_completions`.
-final class EvalStoredCompletionsDataSourceConfigType {const EvalStoredCompletionsDataSourceConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `stored_completions`.
+@immutable final class EvalStoredCompletionsDataSourceConfigType {const EvalStoredCompletionsDataSourceConfigType._(this.value);
 
 factory EvalStoredCompletionsDataSourceConfigType.fromJson(String json) { return switch (json) {
   'stored_completions' => storedCompletions,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Deprecated in favor of LogsDataSourceConfig.
 /// 
-final class EvalStoredCompletionsDataSourceConfig {const EvalStoredCompletionsDataSourceConfig({this.type = EvalStoredCompletionsDataSourceConfigType.storedCompletions, this.metadata, required this.schema, });
+@immutable final class EvalStoredCompletionsDataSourceConfig {const EvalStoredCompletionsDataSourceConfig({required this.schema, this.type = EvalStoredCompletionsDataSourceConfigType.storedCompletions, this.metadata, });
 
 factory EvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsDataSourceConfig(
   type: EvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),

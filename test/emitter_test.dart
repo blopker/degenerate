@@ -849,7 +849,7 @@ void main() {
       expect(
         source,
         contains(
-          "ApiQueryParameter(name: 'tag', value: item, allowReserved: false)",
+          "ApiQueryParameter(name: 'tag', value: item)",
         ),
       );
     });
@@ -1944,13 +1944,13 @@ void main() {
       expect(
         securityFile,
         contains(
-          'static final globalRequirements = [ApiSecurityRequirement({\'ApiKeyAuth\': []})];',
+          'static final globalRequirements = [const ApiSecurityRequirement({\'ApiKeyAuth\': []})];',
         ),
       );
       expect(
         securityFile,
         contains(
-          'static final secureReadRequirements = [ApiSecurityRequirement({\'HttpBearer\': []})];',
+          'static final secureReadRequirements = [const ApiSecurityRequirement({\'HttpBearer\': []})];',
         ),
       );
       expect(

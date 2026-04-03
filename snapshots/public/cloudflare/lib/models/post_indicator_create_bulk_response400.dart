@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_response400_errors.dart';final class PostIndicatorCreateBulkResponse400 {const PostIndicatorCreateBulkResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_response400_errors.dart';@immutable final class PostIndicatorCreateBulkResponse400 {const PostIndicatorCreateBulkResponse400({required this.errors, required this.result, required this.success, });
 
 factory PostIndicatorCreateBulkResponse400.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateBulkResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostIndicatorCreateBulkResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

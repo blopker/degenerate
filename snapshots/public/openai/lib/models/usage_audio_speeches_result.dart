@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject._(this.value);
 
 factory UsageAudioSpeechesResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.audio_speeches.result' => organizationUsageAudioSpeechesResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageAudioSpeechesResultObject($value)'; } 
  }
 /// The aggregated audio speeches usage details of the specific time bucket.
-final class UsageAudioSpeechesResult {const UsageAudioSpeechesResult({required this.object, required this.characters, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
+@immutable final class UsageAudioSpeechesResult {const UsageAudioSpeechesResult({required this.object, required this.characters, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
 
 factory UsageAudioSpeechesResult.fromJson(Map<String, dynamic> json) { return UsageAudioSpeechesResult(
   object: UsageAudioSpeechesResultObject.fromJson(json['object'] as String),

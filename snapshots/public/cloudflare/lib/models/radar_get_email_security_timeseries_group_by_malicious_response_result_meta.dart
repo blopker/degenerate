@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response_result_meta_confidence_info.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response_result_meta_date_range.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaNormalization._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMeta(
   aggInterval: RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

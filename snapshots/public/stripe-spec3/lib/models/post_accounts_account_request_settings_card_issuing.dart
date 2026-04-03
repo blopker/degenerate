@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_request_settings_card_issuing_tos_acceptance.dart';final class PostAccountsAccountRequestSettingsCardIssuing {const PostAccountsAccountRequestSettingsCardIssuing({this.tosAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_card_issuing_tos_acceptance.dart';@immutable final class PostAccountsAccountRequestSettingsCardIssuing {const PostAccountsAccountRequestSettingsCardIssuing({this.tosAcceptance});
 
 factory PostAccountsAccountRequestSettingsCardIssuing.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsCardIssuing(
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestSettingsCardIssuingTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,

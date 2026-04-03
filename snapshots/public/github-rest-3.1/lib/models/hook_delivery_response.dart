@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HookDeliveryResponse {const HookDeliveryResponse({required this.headers, required this.payload, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HookDeliveryResponse {const HookDeliveryResponse({required this.headers, required this.payload, });
 
 factory HookDeliveryResponse.fromJson(Map<String, dynamic> json) { return HookDeliveryResponse(
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

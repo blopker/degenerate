@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RunnerGroupsOrg {const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.$default, this.selectedRepositoriesUrl, required this.runnersUrl, this.hostedRunnersUrl, this.networkConfigurationId, required this.inherited, this.inheritedAllowsPublicRepositories, required this.allowsPublicRepositories, this.workflowRestrictionsReadOnly = false, this.restrictedToWorkflows = false, this.selectedWorkflows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunnerGroupsOrg {const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.$default, required this.runnersUrl, required this.inherited, required this.allowsPublicRepositories, this.selectedRepositoriesUrl, this.hostedRunnersUrl, this.networkConfigurationId, this.inheritedAllowsPublicRepositories, this.workflowRestrictionsReadOnly = false, this.restrictedToWorkflows = false, this.selectedWorkflows, });
 
 factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroupsOrg(
   id: (json['id'] as num).toDouble(),

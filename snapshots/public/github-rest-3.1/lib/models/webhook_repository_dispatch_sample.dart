@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryDispatchSample {const WebhookRepositoryDispatchSample({required this.action, required this.branch, required this.clientPayload, this.enterprise, required this.installation, this.organization, required this.repository, required this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryDispatchSample {const WebhookRepositoryDispatchSample({required this.action, required this.branch, required this.clientPayload, required this.installation, required this.repository, required this.sender, this.enterprise, this.organization, });
 
 factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) { return WebhookRepositoryDispatchSample(
   action: json['action'] as String,

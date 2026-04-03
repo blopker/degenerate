@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus._(this.value);
 
 factory EmailSecuritySubmissionsCustomerStatus.fromJson(String json) { return switch (json) {
   'escalated' => escalated,

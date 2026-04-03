@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt28 {const Prompt28({this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, required this.prompt, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt28 {const Prompt28({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
 
 factory Prompt28.fromJson(Map<String, dynamic> json) { return Prompt28(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

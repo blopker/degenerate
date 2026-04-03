@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2EnableSippyGcsSourceProvider {const R2EnableSippyGcsSourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyGcsSourceProvider {const R2EnableSippyGcsSourceProvider._(this.value);
 
 factory R2EnableSippyGcsSourceProvider.fromJson(String json) { return switch (json) {
   'gcs' => gcs,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2EnableSippyGcsSourceProvider($value)'; } 
  }
 /// GCS bucket to copy objects from.
-final class R2EnableSippyGcsSource {const R2EnableSippyGcsSource({this.bucket, this.clientEmail, this.privateKey, this.provider, });
+@immutable final class R2EnableSippyGcsSource {const R2EnableSippyGcsSource({this.bucket, this.clientEmail, this.privateKey, this.provider, });
 
 factory R2EnableSippyGcsSource.fromJson(Map<String, dynamic> json) { return R2EnableSippyGcsSource(
   bucket: json['bucket'] as String?,

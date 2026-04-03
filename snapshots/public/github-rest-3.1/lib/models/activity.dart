@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// The type of the activity that was performed.
-final class ActivityActivityType {const ActivityActivityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The type of the activity that was performed.
+@immutable final class ActivityActivityType {const ActivityActivityType._(this.value);
 
 factory ActivityActivityType.fromJson(String json) { return switch (json) {
   'push' => push,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActivityActivityType($value)'; } 
  }
 /// Activity
-final class Activity {const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor, });
+@immutable final class Activity {const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor, });
 
 factory Activity.fromJson(Map<String, dynamic> json) { return Activity(
   id: (json['id'] as num).toInt(),

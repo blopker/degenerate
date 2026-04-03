@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_messages2.dart';import 'response_common33_result.dart';final class ResponseCommon33 {const ResponseCommon33({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_messages2.dart';import 'response_common33_result.dart';@immutable final class ResponseCommon33 {const ResponseCommon33({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon33.fromJson(Map<String, dynamic> json) { return ResponseCommon33(
   errors: (json['errors'] as List<dynamic>).map((e) => HealthchecksMessages2.fromJson(e as Map<String, dynamic>)).toList(),

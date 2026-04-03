@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_tool_choice_variant1_function_function.dart';final class Messages51ToolChoiceVariant1FunctionType {const Messages51ToolChoiceVariant1FunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_tool_choice_variant1_function_function.dart';@immutable final class Messages51ToolChoiceVariant1FunctionType {const Messages51ToolChoiceVariant1FunctionType._(this.value);
 
 factory Messages51ToolChoiceVariant1FunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Messages51ToolChoiceVariant1FunctionType($value)'; } 
  }
 /// Force a specific function tool.
-final class Messages51ToolChoiceVariant1Function {const Messages51ToolChoiceVariant1Function({required this.function, required this.type, });
+@immutable final class Messages51ToolChoiceVariant1Function {const Messages51ToolChoiceVariant1Function({required this.function, required this.type, });
 
 factory Messages51ToolChoiceVariant1Function.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1Function(
   function: Messages51ToolChoiceVariant1FunctionFunction.fromJson(json['function'] as Map<String, dynamic>),

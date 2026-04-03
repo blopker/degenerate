@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_next_action_konbini_stores.dart';/// 
-final class PaymentIntentNextActionKonbini {const PaymentIntentNextActionKonbini({required this.expiresAt, this.hostedVoucherUrl, required this.stores, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_konbini_stores.dart';/// 
+@immutable final class PaymentIntentNextActionKonbini {const PaymentIntentNextActionKonbini({required this.expiresAt, required this.stores, this.hostedVoucherUrl, });
 
 factory PaymentIntentNextActionKonbini.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbini(
   expiresAt: (json['expires_at'] as num).toInt(),

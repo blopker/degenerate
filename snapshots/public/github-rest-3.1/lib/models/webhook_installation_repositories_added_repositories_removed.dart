@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookInstallationRepositoriesAddedRepositoriesRemoved {const WebhookInstallationRepositoriesAddedRepositoriesRemoved({this.fullName, this.id, this.name, this.nodeId, this.private, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationRepositoriesAddedRepositoriesRemoved {const WebhookInstallationRepositoriesAddedRepositoriesRemoved({this.fullName, this.id, this.name, this.nodeId, this.private, });
 
 factory WebhookInstallationRepositoriesAddedRepositoriesRemoved.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesAddedRepositoriesRemoved(
   fullName: json['full_name'] as String?,

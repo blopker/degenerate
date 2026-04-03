@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposDeleteResponse403 {const ReposDeleteResponse403({this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposDeleteResponse403 {const ReposDeleteResponse403({this.message, this.documentationUrl, });
 
 factory ReposDeleteResponse403.fromJson(Map<String, dynamic> json) { return ReposDeleteResponse403(
   message: json['message'] as String?,

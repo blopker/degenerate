@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamCaptionBasicUpload {const StreamCaptionBasicUpload({required this.file});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamCaptionBasicUpload {const StreamCaptionBasicUpload({required this.file});
 
 factory StreamCaptionBasicUpload.fromJson(Map<String, dynamic> json) { return StreamCaptionBasicUpload(
   file: json['file'] as String,

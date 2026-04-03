@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';sealed class OutputContent {const OutputContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';sealed class OutputContent {const OutputContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutputContent$Unknown; } 
  }
-final class OutputContentOutputText extends OutputContent {const OutputContentOutputText(this.outputTextContent);
+@immutable final class OutputContentOutputText extends OutputContent {const OutputContentOutputText(this.outputTextContent);
 
 factory OutputContentOutputText.fromJson(Map<String, dynamic> json) { return OutputContentOutputText(OutputTextContent.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final OutputTextContent outputTextContent;
 @override int get hashCode { return outputTextContent.hashCode; } 
 @override String toString() { return 'OutputContentOutputText(outputTextContent: $outputTextContent)'; } 
  }
-final class OutputContentRefusal extends OutputContent {const OutputContentRefusal(this.refusalContent);
+@immutable final class OutputContentRefusal extends OutputContent {const OutputContentRefusal(this.refusalContent);
 
 factory OutputContentRefusal.fromJson(Map<String, dynamic> json) { return OutputContentRefusal(RefusalContent.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final RefusalContent refusalContent;
 @override int get hashCode { return refusalContent.hashCode; } 
 @override String toString() { return 'OutputContentRefusal(refusalContent: $refusalContent)'; } 
  }
-final class OutputContentReasoningText extends OutputContent {const OutputContentReasoningText(this.reasoningTextContent);
+@immutable final class OutputContentReasoningText extends OutputContent {const OutputContentReasoningText(this.reasoningTextContent);
 
 factory OutputContentReasoningText.fromJson(Map<String, dynamic> json) { return OutputContentReasoningText(ReasoningTextContent.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final ReasoningTextContent reasoningTextContent;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class OutputContent$Unknown extends OutputContent {const OutputContent$Unknown(this.json);
+@immutable final class OutputContent$Unknown extends OutputContent {const OutputContent$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

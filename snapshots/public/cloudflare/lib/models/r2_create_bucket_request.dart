@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_bucket_location.dart';import 'r2_bucket_name.dart';import 'r2_storage_class.dart';final class R2CreateBucketRequest {const R2CreateBucketRequest({this.locationHint, required this.name, this.storageClass, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket_location.dart';import 'r2_bucket_name.dart';import 'r2_storage_class.dart';@immutable final class R2CreateBucketRequest {const R2CreateBucketRequest({required this.name, this.locationHint, this.storageClass, });
 
 factory R2CreateBucketRequest.fromJson(Map<String, dynamic> json) { return R2CreateBucketRequest(
   locationHint: json['locationHint'] != null ? R2BucketLocation.fromJson(json['locationHint'] as String) : null,

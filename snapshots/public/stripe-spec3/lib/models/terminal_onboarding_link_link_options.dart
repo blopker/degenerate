@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_onboarding_link_apple_terms_and_conditions.dart';/// Link type options associated with the current onboarding link object.
-final class TerminalOnboardingLinkLinkOptions {const TerminalOnboardingLinkLinkOptions({this.appleTermsAndConditions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_onboarding_link_apple_terms_and_conditions.dart';/// Link type options associated with the current onboarding link object.
+@immutable final class TerminalOnboardingLinkLinkOptions {const TerminalOnboardingLinkLinkOptions({this.appleTermsAndConditions});
 
 factory TerminalOnboardingLinkLinkOptions.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLinkLinkOptions(
   appleTermsAndConditions: json['apple_terms_and_conditions'] != null ? TerminalOnboardingLinkAppleTermsAndConditions.fromJson(json['apple_terms_and_conditions'] as Map<String, dynamic>) : null,

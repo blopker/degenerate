@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The method used to process this payment method offline. Only deferred is allowed.
-final class PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method used to process this payment method offline. Only deferred is allowed.
+@immutable final class PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType._(this.value);
 
 factory PaymentMethodDetailsCardPresentOfflineType.fromJson(String json) { return switch (json) {
   'deferred' => $deferred,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardPresentOfflineType($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsCardPresentOffline {const PaymentMethodDetailsCardPresentOffline({this.storedAt, this.type, });
+@immutable final class PaymentMethodDetailsCardPresentOffline {const PaymentMethodDetailsCardPresentOffline({this.storedAt, this.type, });
 
 factory PaymentMethodDetailsCardPresentOffline.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresentOffline(
   storedAt: json['stored_at'] != null ? (json['stored_at'] as num).toInt() : null,

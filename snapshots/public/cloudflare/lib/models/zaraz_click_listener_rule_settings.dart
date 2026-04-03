@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazClickListenerRuleSettingsType {const ZarazClickListenerRuleSettingsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazClickListenerRuleSettingsType {const ZarazClickListenerRuleSettingsType._(this.value);
 
 factory ZarazClickListenerRuleSettingsType.fromJson(String json) { return switch (json) {
   'xpath' => xpath,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazClickListenerRuleSettingsType($value)'; } 
  }
-final class ZarazClickListenerRuleSettings {const ZarazClickListenerRuleSettings({required this.selector, required this.type, required this.waitForTags, });
+@immutable final class ZarazClickListenerRuleSettings {const ZarazClickListenerRuleSettings({required this.selector, required this.type, required this.waitForTags, });
 
 factory ZarazClickListenerRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazClickListenerRuleSettings(
   selector: json['selector'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';final class SecondaryDnsSingleRequestOutgoing {const SecondaryDnsSingleRequestOutgoing({required this.id, required this.name, required this.peers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';@immutable final class SecondaryDnsSingleRequestOutgoing {const SecondaryDnsSingleRequestOutgoing({required this.id, required this.name, required this.peers, });
 
 factory SecondaryDnsSingleRequestOutgoing.fromJson(Map<String, dynamic> json) { return SecondaryDnsSingleRequestOutgoing(
   id: SecondaryDnsIdentifier.fromJson(json['id'] as String),

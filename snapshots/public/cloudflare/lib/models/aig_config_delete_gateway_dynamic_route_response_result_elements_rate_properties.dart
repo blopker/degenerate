@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType._(this.value);
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType.fromJson(String json) { return switch (json) {
   'count' => count,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType($value)'; } 
  }
-final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsRateProperties {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsRateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
+@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsRateProperties {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsRateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsRateProperties.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsRateProperties(
   key: json['key'] as String,

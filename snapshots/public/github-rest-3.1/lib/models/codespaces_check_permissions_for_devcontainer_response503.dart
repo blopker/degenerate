@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodespacesCheckPermissionsForDevcontainerResponse503 {const CodespacesCheckPermissionsForDevcontainerResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesCheckPermissionsForDevcontainerResponse503 {const CodespacesCheckPermissionsForDevcontainerResponse503({this.code, this.message, this.documentationUrl, });
 
 factory CodespacesCheckPermissionsForDevcontainerResponse503.fromJson(Map<String, dynamic> json) { return CodespacesCheckPermissionsForDevcontainerResponse503(
   code: json['code'] as String?,

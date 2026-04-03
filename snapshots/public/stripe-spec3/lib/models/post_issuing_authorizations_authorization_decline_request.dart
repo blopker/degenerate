@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_authorizations_authorization_decline_request_metadata.dart';final class PostIssuingAuthorizationsAuthorizationDeclineRequest {const PostIssuingAuthorizationsAuthorizationDeclineRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_authorizations_authorization_decline_request_metadata.dart';@immutable final class PostIssuingAuthorizationsAuthorizationDeclineRequest {const PostIssuingAuthorizationsAuthorizationDeclineRequest({this.expand, this.metadata, });
 
 factory PostIssuingAuthorizationsAuthorizationDeclineRequest.fromJson(Map<String, dynamic> json) { return PostIssuingAuthorizationsAuthorizationDeclineRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

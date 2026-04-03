@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run.dart';final class ChecksListForSuiteResponse {const ChecksListForSuiteResponse({required this.totalCount, required this.checkRuns, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run.dart';@immutable final class ChecksListForSuiteResponse {const ChecksListForSuiteResponse({required this.totalCount, required this.checkRuns, });
 
 factory ChecksListForSuiteResponse.fromJson(Map<String, dynamic> json) { return ChecksListForSuiteResponse(
   totalCount: (json['total_count'] as num).toInt(),

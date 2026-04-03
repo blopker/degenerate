@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class EmailSent {const EmailSent({required this.emailSentAt, required this.emailSentTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class EmailSent {const EmailSent({required this.emailSentAt, required this.emailSentTo, });
 
 factory EmailSent.fromJson(Map<String, dynamic> json) { return EmailSent(
   emailSentAt: (json['email_sent_at'] as num).toInt(),

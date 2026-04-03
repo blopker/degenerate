@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'async_batch2_requests_response_format.dart';final class AsyncBatch2Requests {const AsyncBatch2Requests({this.externalReference, this.frequencyPenalty, this.maxTokens = 256, this.presencePenalty, this.prompt, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'async_batch2_requests_response_format.dart';@immutable final class AsyncBatch2Requests {const AsyncBatch2Requests({this.externalReference, this.frequencyPenalty, this.maxTokens = 256, this.presencePenalty, this.prompt, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topP, });
 
 factory AsyncBatch2Requests.fromJson(Map<String, dynamic> json) { return AsyncBatch2Requests(
   externalReference: json['external_reference'] as String?,

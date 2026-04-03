@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_settings_status_details_resource_active.dart';import 'tax_product_resource_tax_settings_status_details_resource_pending.dart';/// 
-final class TaxProductResourceTaxSettingsStatusDetails {const TaxProductResourceTaxSettingsStatusDetails({this.active, this.pending, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_settings_status_details_resource_active.dart';import 'tax_product_resource_tax_settings_status_details_resource_pending.dart';/// 
+@immutable final class TaxProductResourceTaxSettingsStatusDetails {const TaxProductResourceTaxSettingsStatusDetails({this.active, this.pending, });
 
 factory TaxProductResourceTaxSettingsStatusDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsStatusDetails(
   active: json['active'] != null ? TaxProductResourceTaxSettingsStatusDetailsResourceActive.fromJson(json['active'] as Map<String, dynamic>) : null,

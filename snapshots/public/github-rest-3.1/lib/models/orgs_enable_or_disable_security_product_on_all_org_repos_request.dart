@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.
 /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
-final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite {const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite._(this.value);
+@immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite {const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite._(this.value);
 
 factory OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite($value)'; } 
  }
-final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest {const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest({this.querySuite});
+@immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest {const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest({this.querySuite});
 
 factory OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest.fromJson(Map<String, dynamic> json) { return OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(
   querySuite: json['query_suite'] != null ? OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite.fromJson(json['query_suite'] as String) : null,

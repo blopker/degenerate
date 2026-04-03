@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_pattern.dart';final class DlpCustomEntryUpdate {const DlpCustomEntryUpdate({this.description, required this.name, required this.pattern, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpCustomEntryUpdate {const DlpCustomEntryUpdate({required this.name, required this.pattern, required this.enabled, this.description, });
 
 factory DlpCustomEntryUpdate.fromJson(Map<String, dynamic> json) { return DlpCustomEntryUpdate(
   description: json['description'] as String?,

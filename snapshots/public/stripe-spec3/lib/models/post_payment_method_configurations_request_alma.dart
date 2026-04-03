@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_alma_display_preference.dart';/// Alma is a Buy Now, Pay Later payment method that offers customers the ability to pay in 2, 3, or 4 installments.
-final class PostPaymentMethodConfigurationsRequestAlma {const PostPaymentMethodConfigurationsRequestAlma({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_alma_display_preference.dart';/// Alma is a Buy Now, Pay Later payment method that offers customers the ability to pay in 2, 3, or 4 installments.
+@immutable final class PostPaymentMethodConfigurationsRequestAlma {const PostPaymentMethodConfigurationsRequestAlma({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestAlma.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAlma(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestAlmaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

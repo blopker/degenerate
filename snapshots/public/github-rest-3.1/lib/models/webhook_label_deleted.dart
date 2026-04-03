@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';final class WebhookLabelDeletedAction {const WebhookLabelDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';@immutable final class WebhookLabelDeletedAction {const WebhookLabelDeletedAction._(this.value);
 
 factory WebhookLabelDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookLabelDeletedAction($value)'; } 
  }
-final class WebhookLabelDeleted {const WebhookLabelDeleted({required this.action, this.enterprise, this.installation, required this.label, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookLabelDeleted {const WebhookLabelDeleted({required this.action, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookLabelDeleted.fromJson(Map<String, dynamic> json) { return WebhookLabelDeleted(
   action: WebhookLabelDeletedAction.fromJson(json['action'] as String),

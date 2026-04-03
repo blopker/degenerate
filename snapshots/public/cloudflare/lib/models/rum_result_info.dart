@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RumResultInfo {const RumResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumResultInfo {const RumResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
 factory RumResultInfo.fromJson(Map<String, dynamic> json) { return RumResultInfo(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

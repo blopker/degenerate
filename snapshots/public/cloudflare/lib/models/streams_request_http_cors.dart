@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the CORS options for the HTTP endpoint.
-final class StreamsRequestHttpCors {const StreamsRequestHttpCors({this.origins});
+@immutable final class StreamsRequestHttpCors {const StreamsRequestHttpCors({this.origins});
 
 factory StreamsRequestHttpCors.fromJson(Map<String, dynamic> json) { return StreamsRequestHttpCors(
   origins: (json['origins'] as List<dynamic>?)?.map((e) => e as String).toList(),

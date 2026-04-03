@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_check_suite_requested_check_suite_head_commit_author.dart';import 'webhook_check_suite_requested_check_suite_head_commit_committer.dart';final class WebhookCheckSuiteRequestedCheckSuiteHeadCommit {const WebhookCheckSuiteRequestedCheckSuiteHeadCommit({required this.author, required this.committer, required this.id, required this.message, required this.timestamp, required this.treeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_requested_check_suite_head_commit_author.dart';import 'webhook_check_suite_requested_check_suite_head_commit_committer.dart';@immutable final class WebhookCheckSuiteRequestedCheckSuiteHeadCommit {const WebhookCheckSuiteRequestedCheckSuiteHeadCommit({required this.author, required this.committer, required this.id, required this.message, required this.timestamp, required this.treeId, });
 
 factory WebhookCheckSuiteRequestedCheckSuiteHeadCommit.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuiteHeadCommit(
   author: WebhookCheckSuiteRequestedCheckSuiteHeadCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),

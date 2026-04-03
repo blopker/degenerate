@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_messages2.dart';final class ResponseCommon18 {const ResponseCommon18({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_messages2.dart';@immutable final class ResponseCommon18 {const ResponseCommon18({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon18.fromJson(Map<String, dynamic> json) { return ResponseCommon18(
   errors: (json['errors'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),

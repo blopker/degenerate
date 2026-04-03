@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
-final class SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType {const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
+@immutable final class SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType {const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(this.value);
 
 factory SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(String json) { return switch (json) {
   'amounts' => amounts,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType($value)'; } 
  }
 /// 
-final class SetupIntentNextActionVerifyWithMicrodeposits {const SetupIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType, });
+@immutable final class SetupIntentNextActionVerifyWithMicrodeposits {const SetupIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType, });
 
 factory SetupIntentNextActionVerifyWithMicrodeposits.fromJson(Map<String, dynamic> json) { return SetupIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: (json['arrival_date'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A breakdown of requests by their SSL protocol.
-final class Bandwidth2SslProtocols {const Bandwidth2SslProtocols({this.tlSv1, this.tlSv11, this.tlSv12, this.tlSv13, this.none, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A breakdown of requests by their SSL protocol.
+@immutable final class Bandwidth2SslProtocols {const Bandwidth2SslProtocols({this.tlSv1, this.tlSv11, this.tlSv12, this.tlSv13, this.none, });
 
 factory Bandwidth2SslProtocols.fromJson(Map<String, dynamic> json) { return Bandwidth2SslProtocols(
   tlSv1: json['TLSv1'] != null ? (json['TLSv1'] as num).toInt() : null,

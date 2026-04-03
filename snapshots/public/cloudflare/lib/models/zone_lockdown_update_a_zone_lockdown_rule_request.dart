@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_schemas_cidr_configuration.dart';import 'firewall_schemas_ip_configuration.dart';final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_schemas_cidr_configuration.dart';import 'firewall_schemas_ip_configuration.dart';@immutable final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
 
 factory ZoneLockdownUpdateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic> json) { return ZoneLockdownUpdateAZoneLockdownRuleRequest(
   configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),

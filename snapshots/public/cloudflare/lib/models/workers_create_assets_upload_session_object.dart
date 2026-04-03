@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_manifest_value.dart';final class WorkersCreateAssetsUploadSessionObject {const WorkersCreateAssetsUploadSessionObject({required this.manifest});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_manifest_value.dart';@immutable final class WorkersCreateAssetsUploadSessionObject {const WorkersCreateAssetsUploadSessionObject({required this.manifest});
 
 factory WorkersCreateAssetsUploadSessionObject.fromJson(Map<String, dynamic> json) { return WorkersCreateAssetsUploadSessionObject(
   manifest: (json['manifest'] as Map<String, dynamic>).map((k, v) => MapEntry(k, WorkersManifestValue.fromJson(v as Map<String, dynamic>))),

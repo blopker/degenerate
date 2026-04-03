@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_message_custom_tool_call.dart';import 'chat_completion_message_tool_call.dart';sealed class ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_custom_tool_call.dart';import 'chat_completion_message_tool_call.dart';sealed class ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ChatCompletionMessageToolCalls2.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatCompletionMessageToolCalls2$Unknown; } 
  }
-final class ChatCompletionMessageToolCalls2Function extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Function(this.chatCompletionMessageToolCall);
+@immutable final class ChatCompletionMessageToolCalls2Function extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Function(this.chatCompletionMessageToolCall);
 
 factory ChatCompletionMessageToolCalls2Function.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCalls2Function(ChatCompletionMessageToolCall.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final ChatCompletionMessageToolCall chatCompletionMessageToolCall;
 @override int get hashCode { return chatCompletionMessageToolCall.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2Function(chatCompletionMessageToolCall: $chatCompletionMessageToolCall)'; } 
  }
-final class ChatCompletionMessageToolCalls2Custom extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Custom(this.chatCompletionMessageCustomToolCall);
+@immutable final class ChatCompletionMessageToolCalls2Custom extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Custom(this.chatCompletionMessageCustomToolCall);
 
 factory ChatCompletionMessageToolCalls2Custom.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCalls2Custom(ChatCompletionMessageCustomToolCall.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final ChatCompletionMessageCustomToolCall chatCompletionMessageCustomToolCall;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ChatCompletionMessageToolCalls2$Unknown extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2$Unknown(this.json);
+@immutable final class ChatCompletionMessageToolCalls2$Unknown extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

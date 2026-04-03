@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RepositoryRulesetConditionsRepositoryIdTargetRepositoryId {const RepositoryRulesetConditionsRepositoryIdTargetRepositoryId({this.repositoryIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRulesetConditionsRepositoryIdTargetRepositoryId {const RepositoryRulesetConditionsRepositoryIdTargetRepositoryId({this.repositoryIds});
 
 factory RepositoryRulesetConditionsRepositoryIdTargetRepositoryId.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
   repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

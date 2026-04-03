@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_description.dart';import 'teams_devices_expiration.dart';import 'teams_devices_input.dart';import 'teams_devices_match_item.dart';import 'teams_devices_name.dart';import 'teams_devices_schedule.dart';import 'teams_devices_type.dart';import 'teams_devices_uuid.dart';final class TeamsDevicesDevicePostureRules {const TeamsDevicesDevicePostureRules({this.description, this.expiration, this.id, this.input, this.match, this.name, this.schedule, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_description.dart';import 'teams_devices_expiration.dart';import 'teams_devices_input.dart';import 'teams_devices_match_item.dart';import 'teams_devices_name.dart';import 'teams_devices_schedule.dart';import 'teams_devices_type.dart';import 'teams_devices_uuid.dart';@immutable final class TeamsDevicesDevicePostureRules {const TeamsDevicesDevicePostureRules({this.description, this.expiration, this.id, this.input, this.match, this.name, this.schedule, this.type, });
 
 factory TeamsDevicesDevicePostureRules.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicePostureRules(
   description: json['description'] != null ? TeamsDevicesDescription.fromJson(json['description'] as String) : null,

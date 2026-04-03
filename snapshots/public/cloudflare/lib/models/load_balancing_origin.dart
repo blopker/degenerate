@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_header.dart';import 'load_balancing_schemas_name.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_header.dart';import 'load_balancing_schemas_name.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
 extension type LoadBalancingDisabledAt(DateTime value) {
 factory LoadBalancingDisabledAt.fromJson(String json) => LoadBalancingDisabledAt(DateTime.parse(json));
 
@@ -30,7 +30,7 @@ factory LoadBalancingWeight.fromJson(num json) => LoadBalancingWeight(json.toDou
 num toJson() => value;
 
 }
-final class LoadBalancingOrigin {const LoadBalancingOrigin({this.address, this.disabledAt, this.enabled, this.header, this.name, this.port, this.virtualNetworkId, this.weight, });
+@immutable final class LoadBalancingOrigin {const LoadBalancingOrigin({this.address, this.disabledAt, this.enabled, this.header, this.name, this.port, this.virtualNetworkId, this.weight, });
 
 factory LoadBalancingOrigin.fromJson(Map<String, dynamic> json) { return LoadBalancingOrigin(
   address: json['address'] != null ? LoadBalancingAddress.fromJson(json['address'] as String) : null,

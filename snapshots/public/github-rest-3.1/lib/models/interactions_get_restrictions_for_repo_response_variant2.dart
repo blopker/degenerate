@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InteractionsGetRestrictionsForRepoResponseVariant2 {const InteractionsGetRestrictionsForRepoResponseVariant2();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InteractionsGetRestrictionsForRepoResponseVariant2 {const InteractionsGetRestrictionsForRepoResponseVariant2();
 
 factory InteractionsGetRestrictionsForRepoResponseVariant2.fromJson(Map<String, dynamic> json) { return InteractionsGetRestrictionsForRepoResponseVariant2(
 

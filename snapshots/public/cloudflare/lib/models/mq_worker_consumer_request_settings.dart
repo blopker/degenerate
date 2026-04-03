@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_batch_size.dart';import 'mq_max_concurrency.dart';import 'mq_max_retries.dart';import 'mq_max_wait_time.dart';import 'mq_retry_delay.dart';final class MqWorkerConsumerRequestSettings {const MqWorkerConsumerRequestSettings({this.batchSize, this.maxConcurrency, this.maxRetries, this.maxWaitTimeMs, this.retryDelay, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_batch_size.dart';import 'mq_max_concurrency.dart';import 'mq_max_retries.dart';import 'mq_max_wait_time.dart';import 'mq_retry_delay.dart';@immutable final class MqWorkerConsumerRequestSettings {const MqWorkerConsumerRequestSettings({this.batchSize, this.maxConcurrency, this.maxRetries, this.maxWaitTimeMs, this.retryDelay, });
 
 factory MqWorkerConsumerRequestSettings.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerRequestSettings(
   batchSize: json['batch_size'] != null ? MqBatchSize.fromJson(json['batch_size'] as num) : null,

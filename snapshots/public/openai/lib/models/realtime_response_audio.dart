@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_response_audio_output.dart';/// Configuration for audio output.
-final class RealtimeResponseAudio {const RealtimeResponseAudio({this.output});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response_audio_output.dart';/// Configuration for audio output.
+@immutable final class RealtimeResponseAudio {const RealtimeResponseAudio({this.output});
 
 factory RealtimeResponseAudio.fromJson(Map<String, dynamic> json) { return RealtimeResponseAudio(
   output: json['output'] != null ? RealtimeResponseAudioOutput.fromJson(json['output'] as Map<String, dynamic>) : null,

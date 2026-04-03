@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_name.dart';final class IntelWhois {const IntelWhois({this.createdDate, this.domain, this.nameservers, this.registrant, this.registrantCountry, this.registrantEmail, this.registrantOrg, this.registrar, this.updatedDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_name.dart';@immutable final class IntelWhois {const IntelWhois({this.createdDate, this.domain, this.nameservers, this.registrant, this.registrantCountry, this.registrantEmail, this.registrantOrg, this.registrar, this.updatedDate, });
 
 factory IntelWhois.fromJson(Map<String, dynamic> json) { return IntelWhois(
   createdDate: json['created_date'] as String?,

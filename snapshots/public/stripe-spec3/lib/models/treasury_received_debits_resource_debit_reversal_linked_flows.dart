@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TreasuryReceivedDebitsResourceDebitReversalLinkedFlows {const TreasuryReceivedDebitsResourceDebitReversalLinkedFlows({this.issuingDispute});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TreasuryReceivedDebitsResourceDebitReversalLinkedFlows {const TreasuryReceivedDebitsResourceDebitReversalLinkedFlows({this.issuingDispute});
 
 factory TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(Map<String, dynamic> json) { return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
   issuingDispute: json['issuing_dispute'] as String?,

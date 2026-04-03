@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_tool_param_format.dart';/// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
-final class CustomToolParam {const CustomToolParam({this.type = 'custom', required this.name, this.description, this.format, this.deferLoading, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_param_format.dart';/// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
+@immutable final class CustomToolParam {const CustomToolParam({required this.name, this.type = 'custom', this.description, this.format, this.deferLoading, });
 
 factory CustomToolParam.fromJson(Map<String, dynamic> json) { return CustomToolParam(
   type: json['type'] as String,

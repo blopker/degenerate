@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_traffic_stats_traffic_stats.dart';final class ShieldTrafficStats {const ShieldTrafficStats({this.trafficStats});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_traffic_stats_traffic_stats.dart';@immutable final class ShieldTrafficStats {const ShieldTrafficStats({this.trafficStats});
 
 factory ShieldTrafficStats.fromJson(Map<String, dynamic> json) { return ShieldTrafficStats(
   trafficStats: json['traffic_stats'] != null ? ShieldTrafficStatsTrafficStats.fromJson(json['traffic_stats'] as Map<String, dynamic>) : null,

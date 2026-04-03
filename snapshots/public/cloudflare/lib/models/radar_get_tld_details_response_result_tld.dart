@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTldDetailsResponseResultTld {const RadarGetTldDetailsResponseResultTld({required this.manager, required this.tld, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTldDetailsResponseResultTld {const RadarGetTldDetailsResponseResultTld({required this.manager, required this.tld, required this.type, });
 
 factory RadarGetTldDetailsResponseResultTld.fromJson(Map<String, dynamic> json) { return RadarGetTldDetailsResponseResultTld(
   manager: json['manager'] as String,

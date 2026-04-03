@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_timeseries_group_by_ip_version_response_result_meta.dart';import 'radar_get_dns_timeseries_group_by_ip_version_response_result_serie0.dart';final class RadarGetDnsTimeseriesGroupByIpVersionResponseResult {const RadarGetDnsTimeseriesGroupByIpVersionResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_ip_version_response_result_meta.dart';import 'radar_get_dns_timeseries_group_by_ip_version_response_result_serie0.dart';@immutable final class RadarGetDnsTimeseriesGroupByIpVersionResponseResult {const RadarGetDnsTimeseriesGroupByIpVersionResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetDnsTimeseriesGroupByIpVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByIpVersionResponseResult(
   meta: RadarGetDnsTimeseriesGroupByIpVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

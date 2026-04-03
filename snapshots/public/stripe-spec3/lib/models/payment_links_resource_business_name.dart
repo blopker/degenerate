@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourceBusinessName {const PaymentLinksResourceBusinessName({required this.enabled, required this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourceBusinessName {const PaymentLinksResourceBusinessName({required this.enabled, required this.optional, });
 
 factory PaymentLinksResourceBusinessName.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceBusinessName(
   enabled: json['enabled'] as bool,

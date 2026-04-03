@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';final class PredefinedProfileType {const PredefinedProfileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class PredefinedProfileType {const PredefinedProfileType._(this.value);
 
 factory PredefinedProfileType.fromJson(String json) { return switch (json) {
   'predefined' => predefined,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PredefinedProfileType($value)'; } 
  }
-final class PredefinedProfile {const PredefinedProfile({this.aiContextEnabled = false, required this.allowedMatchCount, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, required this.entries, required this.id, required this.name, this.ocrEnabled = false, this.openAccess, required this.type, });
+@immutable final class PredefinedProfile {const PredefinedProfile({required this.allowedMatchCount, required this.entries, required this.id, required this.name, required this.type, this.aiContextEnabled = false, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.ocrEnabled = false, this.openAccess, });
 
 factory PredefinedProfile.fromJson(Map<String, dynamic> json) { return PredefinedProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,

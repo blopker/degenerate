@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_zaraz_config_return_settings_context_enricher.dart';/// General Zaraz settings.
-final class ZarazZarazConfigReturnSettings {const ZarazZarazConfigReturnSettings({required this.autoInjectScript, this.contextEnricher, this.cookieDomain, this.ecommerce, this.eventsApiPath, this.hideExternalReferer, this.hideIpAddress, this.hideQueryParams, this.hideUserAgent, this.initPath, this.injectIframes, this.mcRootPath, this.scriptPath, this.trackPath, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_return_settings_context_enricher.dart';/// General Zaraz settings.
+@immutable final class ZarazZarazConfigReturnSettings {const ZarazZarazConfigReturnSettings({required this.autoInjectScript, this.contextEnricher, this.cookieDomain, this.ecommerce, this.eventsApiPath, this.hideExternalReferer, this.hideIpAddress, this.hideQueryParams, this.hideUserAgent, this.initPath, this.injectIframes, this.mcRootPath, this.scriptPath, this.trackPath, });
 
 factory ZarazZarazConfigReturnSettings.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturnSettings(
   autoInjectScript: json['autoInjectScript'] as bool,

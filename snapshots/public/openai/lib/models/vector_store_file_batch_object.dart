@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vector_store_file_batch_object_file_counts.dart';/// The object type, which is always `vector_store.file_batch`.
-final class VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_file_batch_object_file_counts.dart';/// The object type, which is always `vector_store.file_batch`.
+@immutable final class VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject._(this.value);
 
 factory VectorStoreFileBatchObjectObject.fromJson(String json) { return switch (json) {
   'vector_store.files_batch' => vectorStoreFilesBatch,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileBatchObjectObject($value)'; } 
  }
 /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
-final class VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus._(this.value);
+@immutable final class VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus._(this.value);
 
 factory VectorStoreFileBatchObjectStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileBatchObjectStatus($value)'; } 
  }
 /// A batch of files attached to a vector store.
-final class VectorStoreFileBatchObject {const VectorStoreFileBatchObject({required this.id, required this.object, required this.createdAt, required this.vectorStoreId, required this.status, required this.fileCounts, });
+@immutable final class VectorStoreFileBatchObject {const VectorStoreFileBatchObject({required this.id, required this.object, required this.createdAt, required this.vectorStoreId, required this.status, required this.fileCounts, });
 
 factory VectorStoreFileBatchObject.fromJson(Map<String, dynamic> json) { return VectorStoreFileBatchObject(
   id: json['id'] as String,

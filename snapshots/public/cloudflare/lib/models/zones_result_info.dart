@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZonesResultInfo {const ZonesResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesResultInfo {const ZonesResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
 factory ZonesResultInfo.fromJson(Map<String, dynamic> json) { return ZonesResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

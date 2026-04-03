@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The custom tool that the model called.
-final class ChatCompletionMessageCustomToolCallCustom {const ChatCompletionMessageCustomToolCallCustom({required this.name, required this.input, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The custom tool that the model called.
+@immutable final class ChatCompletionMessageCustomToolCallCustom {const ChatCompletionMessageCustomToolCallCustom({required this.name, required this.input, });
 
 factory ChatCompletionMessageCustomToolCallCustom.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageCustomToolCallCustom(
   name: json['name'] as String,

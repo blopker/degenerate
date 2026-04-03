@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_fleet_reported_breakdown.dart';final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetPurchaseType {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetPurchaseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_fleet_reported_breakdown.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetPurchaseType {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetPurchaseType._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetPurchaseType.fromJson(String json) { return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetPurchaseType($value)'; } 
  }
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetServiceType {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetServiceType._(this.value);
+@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetServiceType {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetServiceType._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetServiceType.fromJson(String json) { return switch (json) {
   'full_service' => fullService,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetServiceType($value)'; } 
  }
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,

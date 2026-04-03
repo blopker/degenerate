@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';/// (Deprecated) Please use the `/zones/{zone_id}/subscription` API
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';/// (Deprecated) Please use the `/zones/{zone_id}/subscription` API
 /// to update a zone's plan. Changing this value will create/cancel
 /// associated subscriptions. To view available plans for this zone,
 /// see Zone Plans.
 /// 
-final class Zones0PatchRequestPlan {const Zones0PatchRequestPlan({this.id});
+@immutable final class Zones0PatchRequestPlan {const Zones0PatchRequestPlan({this.id});
 
 factory Zones0PatchRequestPlan.fromJson(Map<String, dynamic> json) { return Zones0PatchRequestPlan(
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,

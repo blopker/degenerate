@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_details_passthrough_card.dart';/// funding type of the underlying payment method.
-final class RevolutPayUnderlyingPaymentMethodFundingDetailsType {const RevolutPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_passthrough_card.dart';/// funding type of the underlying payment method.
+@immutable final class RevolutPayUnderlyingPaymentMethodFundingDetailsType {const RevolutPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
 
 factory RevolutPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RevolutPayUnderlyingPaymentMethodFundingDetailsType($value)'; } 
  }
 /// 
-final class RevolutPayUnderlyingPaymentMethodFundingDetails {const RevolutPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
+@immutable final class RevolutPayUnderlyingPaymentMethodFundingDetails {const RevolutPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
 
 factory RevolutPayUnderlyingPaymentMethodFundingDetails.fromJson(Map<String, dynamic> json) { return RevolutPayUnderlyingPaymentMethodFundingDetails(
   card: json['card'] != null ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>) : null,

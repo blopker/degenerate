@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The new status of the CodeQL variant analysis repository task.
-final class CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The new status of the CodeQL variant analysis repository task.
+@immutable final class CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus._(this.value);
 
 factory CodeScanningVariantAnalysisStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,

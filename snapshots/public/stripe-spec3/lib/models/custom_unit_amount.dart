@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class CustomUnitAmount {const CustomUnitAmount({this.maximum, this.minimum, this.preset, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class CustomUnitAmount {const CustomUnitAmount({this.maximum, this.minimum, this.preset, });
 
 factory CustomUnitAmount.fromJson(Map<String, dynamic> json) { return CustomUnitAmount(
   maximum: json['maximum'] != null ? (json['maximum'] as num).toInt() : null,

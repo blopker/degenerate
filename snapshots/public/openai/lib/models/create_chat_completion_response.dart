@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage.dart';import 'create_chat_completion_response_choices.dart';import 'service_tier.dart';/// The object type, which is always `chat.completion`.
-final class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject._(this.value);
+@immutable final class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject._(this.value);
 
 factory CreateChatCompletionResponseObject.fromJson(String json) { return switch (json) {
   'chat.completion' => chatCompletion,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateChatCompletionResponseObject($value)'; } 
  }
 /// Represents a chat completion response returned by model, based on the provided input.
-final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, this.serviceTier, this.systemFingerprint, required this.object, this.usage, });
+@immutable final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier, this.systemFingerprint, this.usage, });
 
 factory CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponse(
   id: json['id'] as String,

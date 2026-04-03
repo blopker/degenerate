@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.dtmf_event_received`.
-final class RealtimeServerEventInputAudioBufferDtmfEventReceivedType {const RealtimeServerEventInputAudioBufferDtmfEventReceivedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.dtmf_event_received`.
+@immutable final class RealtimeServerEventInputAudioBufferDtmfEventReceivedType {const RealtimeServerEventInputAudioBufferDtmfEventReceivedType._(this.value);
 
 factory RealtimeServerEventInputAudioBufferDtmfEventReceivedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.dtmf_event_received' => inputAudioBufferDtmfEventReceived,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// is the keypad that the user press. The `received_at` is the UTC Unix Timestamp
 /// that the server received the event.
 /// 
-final class RealtimeServerEventInputAudioBufferDtmfEventReceived {const RealtimeServerEventInputAudioBufferDtmfEventReceived({required this.type, required this.event, required this.receivedAt, });
+@immutable final class RealtimeServerEventInputAudioBufferDtmfEventReceived {const RealtimeServerEventInputAudioBufferDtmfEventReceived({required this.type, required this.event, required this.receivedAt, });
 
 factory RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferDtmfEventReceived(
   type: RealtimeServerEventInputAudioBufferDtmfEventReceivedType.fromJson(json['type'] as String),

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_hyperparameters_batch_size.dart';import 'create_fine_tuning_job_request_hyperparameters_learning_rate_multiplier.dart';import 'create_fine_tuning_job_request_hyperparameters_n_epochs.dart';/// The hyperparameters used for the fine-tuning job.
 /// This value is now deprecated in favor of `method`, and should be passed in under the `method` parameter.
 /// 
-final class CreateFineTuningJobRequestHyperparameters {const CreateFineTuningJobRequestHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
+@immutable final class CreateFineTuningJobRequestHyperparameters {const CreateFineTuningJobRequestHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory CreateFineTuningJobRequestHyperparameters.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequestHyperparameters(
   batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => CreateFineTuningJobRequestHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,

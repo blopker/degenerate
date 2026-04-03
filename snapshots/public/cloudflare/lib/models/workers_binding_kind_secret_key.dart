@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';/// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
-final class WorkersBindingKindSecretKeyFormat {const WorkersBindingKindSecretKeyFormat._(this.value);
+@immutable final class WorkersBindingKindSecretKeyFormat {const WorkersBindingKindSecretKeyFormat._(this.value);
 
 factory WorkersBindingKindSecretKeyFormat.fromJson(String json) { return switch (json) {
   'raw' => raw,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersBindingKindSecretKeyFormat($value)'; } 
  }
-final class WorkersBindingKindSecretKeyUsages {const WorkersBindingKindSecretKeyUsages._(this.value);
+@immutable final class WorkersBindingKindSecretKeyUsages {const WorkersBindingKindSecretKeyUsages._(this.value);
 
 factory WorkersBindingKindSecretKeyUsages.fromJson(String json) { return switch (json) {
   'encrypt' => encrypt,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersBindingKindSecretKeyUsages($value)'; } 
  }
-final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, this.keyBase64, this.keyJwk, required this.name, required this.type, required this.usages, });
+@immutable final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, required this.name, required this.type, required this.usages, this.keyBase64, this.keyJwk, });
 
 factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretKey(
   algorithm: (json['algorithm'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

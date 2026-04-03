@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Exactly one of id, serial_number, or provision_license must be provided.
-final class MconnCustomerDeviceOptions {const MconnCustomerDeviceOptions({this.id, this.provisionLicense, this.serialNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Exactly one of id, serial_number, or provision_license must be provided.
+@immutable final class MconnCustomerDeviceOptions {const MconnCustomerDeviceOptions({this.id, this.provisionLicense, this.serialNumber, });
 
 factory MconnCustomerDeviceOptions.fromJson(Map<String, dynamic> json) { return MconnCustomerDeviceOptions(
   id: json['id'] as String?,

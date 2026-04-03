@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkerScriptPostSubdomainRequest {const WorkerScriptPostSubdomainRequest({required this.enabled, this.previewsEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkerScriptPostSubdomainRequest {const WorkerScriptPostSubdomainRequest({required this.enabled, this.previewsEnabled, });
 
 factory WorkerScriptPostSubdomainRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptPostSubdomainRequest(
   enabled: json['enabled'] as bool,

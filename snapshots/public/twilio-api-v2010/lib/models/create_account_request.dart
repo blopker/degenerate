@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateAccountRequest {const CreateAccountRequest({this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAccountRequest {const CreateAccountRequest({this.friendlyName});
 
 factory CreateAccountRequest.fromJson(Map<String, dynamic> json) { return CreateAccountRequest(
   friendlyName: json['FriendlyName'] as String?,

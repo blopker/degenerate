@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringGetCommandsResponseCommands {const DigitalExperienceMonitoringGetCommandsResponseCommands({this.completedDate, this.createdDate, this.deviceId, this.filename, this.id, this.registrationId, this.status, this.type, this.userEmail, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringGetCommandsResponseCommands {const DigitalExperienceMonitoringGetCommandsResponseCommands({this.completedDate, this.createdDate, this.deviceId, this.filename, this.id, this.registrationId, this.status, this.type, this.userEmail, });
 
 factory DigitalExperienceMonitoringGetCommandsResponseCommands.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringGetCommandsResponseCommands(
   completedDate: json['completed_date'] != null ? DateTime.parse(json['completed_date'] as String) : null,

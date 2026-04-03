@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'source_transaction_ach_credit_transfer_data.dart';import 'source_transaction_chf_credit_transfer_data.dart';import 'source_transaction_gbp_credit_transfer_data.dart';import 'source_transaction_paper_check_data.dart';import 'source_transaction_sepa_credit_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class SourceTransactionObject {const SourceTransactionObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source_transaction_ach_credit_transfer_data.dart';import 'source_transaction_chf_credit_transfer_data.dart';import 'source_transaction_gbp_credit_transfer_data.dart';import 'source_transaction_paper_check_data.dart';import 'source_transaction_sepa_credit_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class SourceTransactionObject {const SourceTransactionObject._(this.value);
 
 factory SourceTransactionObject.fromJson(String json) { return switch (json) {
   'source_transaction' => sourceTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SourceTransactionObject($value)'; } 
  }
 /// The type of source this transaction is attached to.
-final class SourceTransactionType {const SourceTransactionType._(this.value);
+@immutable final class SourceTransactionType {const SourceTransactionType._(this.value);
 
 factory SourceTransactionType.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Customers can be instructed to send any amount, and it can be made up of
 /// multiple transactions. As such, sources can have multiple associated
 /// transactions.
-final class SourceTransaction {const SourceTransaction({this.achCreditTransfer, required this.amount, this.chfCreditTransfer, required this.created, required this.currency, this.gbpCreditTransfer, required this.id, required this.livemode, required this.object, this.paperCheck, this.sepaCreditTransfer, required this.source, required this.status, required this.type, });
+@immutable final class SourceTransaction {const SourceTransaction({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.source, required this.status, required this.type, this.achCreditTransfer, this.chfCreditTransfer, this.gbpCreditTransfer, this.paperCheck, this.sepaCreditTransfer, });
 
 factory SourceTransaction.fromJson(Map<String, dynamic> json) { return SourceTransaction(
   achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTransactionAchCreditTransferData.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,

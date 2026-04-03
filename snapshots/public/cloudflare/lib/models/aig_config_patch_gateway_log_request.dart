@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogRequest({this.feedback, this.metadata, this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogRequest({this.feedback, this.metadata, this.score, });
 
 factory AigConfigPatchGatewayLogRequest.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogRequest(
   feedback: json['feedback'] != null ? (json['feedback'] as num).toDouble() : null,

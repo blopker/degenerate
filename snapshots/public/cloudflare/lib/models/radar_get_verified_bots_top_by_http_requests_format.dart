@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetVerifiedBotsTopByHttpRequestsFormat {const RadarGetVerifiedBotsTopByHttpRequestsFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetVerifiedBotsTopByHttpRequestsFormat {const RadarGetVerifiedBotsTopByHttpRequestsFormat._(this.value);
 
 factory RadarGetVerifiedBotsTopByHttpRequestsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

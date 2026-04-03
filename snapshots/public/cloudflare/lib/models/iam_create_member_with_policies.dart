@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_create_member_policy.dart';import 'iam_email.dart';import 'iam_member_invitation_status.dart';final class IamCreateMemberWithPolicies {const IamCreateMemberWithPolicies({required this.email, required this.policies, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_create_member_policy.dart';import 'iam_email.dart';import 'iam_member_invitation_status.dart';@immutable final class IamCreateMemberWithPolicies {const IamCreateMemberWithPolicies({required this.email, required this.policies, this.status, });
 
 factory IamCreateMemberWithPolicies.fromJson(Map<String, dynamic> json) { return IamCreateMemberWithPolicies(
   email: IamEmail.fromJson(json['email'] as String),

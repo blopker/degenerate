@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_ip_response_result_asn_estimated_users_locations.dart';final class RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers {const RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers({this.estimatedUsers, required this.locations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_ip_response_result_asn_estimated_users_locations.dart';@immutable final class RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers {const RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers({required this.locations, this.estimatedUsers, });
 
 factory RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers(
   estimatedUsers: json['estimatedUsers'] != null ? (json['estimatedUsers'] as num).toInt() : null,

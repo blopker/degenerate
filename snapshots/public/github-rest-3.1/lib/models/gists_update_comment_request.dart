@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GistsUpdateCommentRequest {const GistsUpdateCommentRequest({required this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistsUpdateCommentRequest {const GistsUpdateCommentRequest({required this.body});
 
 factory GistsUpdateCommentRequest.fromJson(Map<String, dynamic> json) { return GistsUpdateCommentRequest(
   body: json['body'] as String,

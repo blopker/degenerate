@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookDiscussionEditedChangesBody {const WebhookDiscussionEditedChangesBody({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDiscussionEditedChangesBody {const WebhookDiscussionEditedChangesBody({required this.from});
 
 factory WebhookDiscussionEditedChangesBody.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEditedChangesBody(
   from: json['from'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this session and resulting payments, invoices, and subscriptions.
-final class PostCheckoutSessionsRequestAutomaticTax {const PostCheckoutSessionsRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this session and resulting payments, invoices, and subscriptions.
+@immutable final class PostCheckoutSessionsRequestAutomaticTax {const PostCheckoutSessionsRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostCheckoutSessionsRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestAutomaticTax(
   enabled: json['enabled'] as bool,

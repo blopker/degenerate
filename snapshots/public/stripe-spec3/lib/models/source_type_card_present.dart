@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeCardPresent {const SourceTypeCardPresent({this.applicationCryptogram, this.applicationPreferredName, this.authorizationCode, this.authorizationResponseCode, this.brand, this.country, this.cvmType, this.dataType, this.dedicatedFileName, this.emvAuthData, this.evidenceCustomerSignature, this.evidenceTransactionCertificate, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.posDeviceId, this.posEntryMode, this.readMethod, this.reader, this.terminalVerificationResults, this.transactionStatusInformation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeCardPresent {const SourceTypeCardPresent({this.applicationCryptogram, this.applicationPreferredName, this.authorizationCode, this.authorizationResponseCode, this.brand, this.country, this.cvmType, this.dataType, this.dedicatedFileName, this.emvAuthData, this.evidenceCustomerSignature, this.evidenceTransactionCertificate, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.posDeviceId, this.posEntryMode, this.readMethod, this.reader, this.terminalVerificationResults, this.transactionStatusInformation, });
 
 factory SourceTypeCardPresent.fromJson(Map<String, dynamic> json) { return SourceTypeCardPresent(
   applicationCryptogram: json['application_cryptogram'] as String?,

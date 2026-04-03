@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones0_hold_delete_response_result.dart';final class Zones0HoldDeleteResponse {const Zones0HoldDeleteResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones0_hold_delete_response_result.dart';@immutable final class Zones0HoldDeleteResponse {const Zones0HoldDeleteResponse({this.result});
 
 factory Zones0HoldDeleteResponse.fromJson(Map<String, dynamic> json) { return Zones0HoldDeleteResponse(
   result: json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

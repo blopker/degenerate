@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCountrySpecsCountryRequest {const GetCountrySpecsCountryRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCountrySpecsCountryRequest {const GetCountrySpecsCountryRequest();
 
 factory GetCountrySpecsCountryRequest.fromJson(Map<String, dynamic> json) { return GetCountrySpecsCountryRequest(
 

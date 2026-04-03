@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_business_profile.dart';import 'post_accounts_account_request_capabilities.dart';import 'post_accounts_account_request_company.dart';import 'post_accounts_account_request_documents.dart';import 'post_accounts_account_request_groups.dart';import 'post_accounts_account_request_individual.dart';import 'post_accounts_account_request_metadata.dart';import 'post_accounts_account_request_settings.dart';import 'post_accounts_account_request_tos_acceptance.dart';/// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
-final class PostAccountsAccountRequestBusinessType {const PostAccountsAccountRequestBusinessType._(this.value);
+@immutable final class PostAccountsAccountRequestBusinessType {const PostAccountsAccountRequestBusinessType._(this.value);
 
 factory PostAccountsAccountRequestBusinessType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestBusinessType($value)'; } 
  }
-final class PostAccountsAccountRequest {const PostAccountsAccountRequest({this.accountToken, this.businessProfile, this.businessType, this.capabilities, this.company, this.defaultCurrency, this.documents, this.email, this.expand, this.externalAccount, this.groups, this.individual, this.metadata, this.settings, this.tosAcceptance, });
+@immutable final class PostAccountsAccountRequest {const PostAccountsAccountRequest({this.accountToken, this.businessProfile, this.businessType, this.capabilities, this.company, this.defaultCurrency, this.documents, this.email, this.expand, this.externalAccount, this.groups, this.individual, this.metadata, this.settings, this.tosAcceptance, });
 
 factory PostAccountsAccountRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequest(
   accountToken: json['account_token'] as String?,

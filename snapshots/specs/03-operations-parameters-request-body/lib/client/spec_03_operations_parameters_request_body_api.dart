@@ -10,9 +10,9 @@ import '../apis/items_api.dart';
 /// sdk.items.getItem();
 /// ```
 final class Spec03OperationsParametersRequestBodyApi {
-  final ApiConfig _config;
-
   Spec03OperationsParametersRequestBodyApi(this._config);
+
+  final ApiConfig _config;
 
   late final ItemsApi items = ItemsApi(_config);
 }

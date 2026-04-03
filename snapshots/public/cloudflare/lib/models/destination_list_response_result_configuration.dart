@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'destination_list_response_result_configuration_job_status.dart';final class DestinationListResponseResultConfigurationLogpushDataset {const DestinationListResponseResultConfigurationLogpushDataset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_list_response_result_configuration_job_status.dart';@immutable final class DestinationListResponseResultConfigurationLogpushDataset {const DestinationListResponseResultConfigurationLogpushDataset._(this.value);
 
 factory DestinationListResponseResultConfigurationLogpushDataset.fromJson(String json) { return switch (json) {
   'opentelemetry-traces' => opentelemetryTraces,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationListResponseResultConfigurationLogpushDataset($value)'; } 
  }
-final class DestinationListResponseResultConfigurationType {const DestinationListResponseResultConfigurationType._(this.value);
+@immutable final class DestinationListResponseResultConfigurationType {const DestinationListResponseResultConfigurationType._(this.value);
 
 factory DestinationListResponseResultConfigurationType.fromJson(String json) { return switch (json) {
   'logpush' => logpush,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationListResponseResultConfigurationType($value)'; } 
  }
-final class DestinationListResponseResultConfiguration {const DestinationListResponseResultConfiguration({required this.destinationConf, required this.headers, required this.jobStatus, required this.logpushDataset, required this.type, required this.url, });
+@immutable final class DestinationListResponseResultConfiguration {const DestinationListResponseResultConfiguration({required this.destinationConf, required this.headers, required this.jobStatus, required this.logpushDataset, required this.type, required this.url, });
 
 factory DestinationListResponseResultConfiguration.fromJson(Map<String, dynamic> json) { return DestinationListResponseResultConfiguration(
   destinationConf: json['destination_conf'] as String,

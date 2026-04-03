@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_rate_limits_updated_rate_limits.dart';/// The event type, must be `rate_limits.updated`.
-final class RealtimeServerEventRateLimitsUpdatedType {const RealtimeServerEventRateLimitsUpdatedType._(this.value);
+@immutable final class RealtimeServerEventRateLimitsUpdatedType {const RealtimeServerEventRateLimitsUpdatedType._(this.value);
 
 factory RealtimeServerEventRateLimitsUpdatedType.fromJson(String json) { return switch (json) {
   'rate_limits.updated' => rateLimitsUpdated,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// tokens, the rate limits shown here reflect that reservation, which is then
 /// adjusted accordingly once the Response is completed.
 /// 
-final class RealtimeServerEventRateLimitsUpdated {const RealtimeServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits, });
+@immutable final class RealtimeServerEventRateLimitsUpdated {const RealtimeServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits, });
 
 factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdated(
   eventId: json['event_id'] as String,

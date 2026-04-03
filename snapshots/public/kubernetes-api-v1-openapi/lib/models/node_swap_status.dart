@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// NodeSwapStatus represents swap memory information.
-final class NodeSwapStatus {const NodeSwapStatus({this.capacity});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeSwapStatus represents swap memory information.
+@immutable final class NodeSwapStatus {const NodeSwapStatus({this.capacity});
 
 factory NodeSwapStatus.fromJson(Map<String, dynamic> json) { return NodeSwapStatus(
   capacity: json['capacity'] != null ? (json['capacity'] as num).toInt() : null,

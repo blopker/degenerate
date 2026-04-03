@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'content_tree_entries_links.dart';final class ContentTreeEntries {const ContentTreeEntries({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_tree_entries_links.dart';@immutable final class ContentTreeEntries {const ContentTreeEntries({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
 factory ContentTreeEntries.fromJson(Map<String, dynamic> json) { return ContentTreeEntries(
   type: json['type'] as String,

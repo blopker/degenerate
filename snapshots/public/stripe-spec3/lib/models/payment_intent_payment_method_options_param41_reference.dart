@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentPaymentMethodOptionsParam41ReferenceVariant2 {const PaymentIntentPaymentMethodOptionsParam41ReferenceVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam41ReferenceVariant2 {const PaymentIntentPaymentMethodOptionsParam41ReferenceVariant2._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam41ReferenceVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

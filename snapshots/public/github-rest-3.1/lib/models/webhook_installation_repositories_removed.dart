@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_installation_repositories_removed_repositories_removed.dart';import 'webhooks_repositories_added2.dart';import 'webhooks_repository_selection.dart';import 'webhooks_user.dart';final class WebhookInstallationRepositoriesRemovedAction {const WebhookInstallationRepositoriesRemovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_installation_repositories_removed_repositories_removed.dart';import 'webhooks_repositories_added2.dart';import 'webhooks_repository_selection.dart';import 'webhooks_user.dart';@immutable final class WebhookInstallationRepositoriesRemovedAction {const WebhookInstallationRepositoriesRemovedAction._(this.value);
 
 factory WebhookInstallationRepositoriesRemovedAction.fromJson(String json) { return switch (json) {
   'removed' => removed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookInstallationRepositoriesRemovedAction($value)'; } 
  }
-final class WebhookInstallationRepositoriesRemoved {const WebhookInstallationRepositoriesRemoved({required this.action, this.enterprise, required this.installation, this.organization, required this.repositoriesAdded, required this.repositoriesRemoved, this.repository, required this.repositorySelection, required this.requester, required this.sender, });
+@immutable final class WebhookInstallationRepositoriesRemoved {const WebhookInstallationRepositoriesRemoved({required this.action, required this.installation, required this.repositoriesAdded, required this.repositoriesRemoved, required this.repositorySelection, required this.requester, required this.sender, this.enterprise, this.organization, this.repository, });
 
 factory WebhookInstallationRepositoriesRemoved.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesRemoved(
   action: WebhookInstallationRepositoriesRemovedAction.fromJson(json['action'] as String),

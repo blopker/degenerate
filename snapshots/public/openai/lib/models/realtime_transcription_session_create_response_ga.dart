@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_response_ga_audio.dart';/// The type of session. Always `transcription` for transcription sessions.
 /// 
-final class RealtimeTranscriptionSessionCreateResponseGaType {const RealtimeTranscriptionSessionCreateResponseGaType._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateResponseGaType {const RealtimeTranscriptionSessionCreateResponseGaType._(this.value);
 
 factory RealtimeTranscriptionSessionCreateResponseGaType.fromJson(String json) { return switch (json) {
   'transcription' => transcription,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeTranscriptionSessionCreateResponseGaType($value)'; } 
  }
-final class RealtimeTranscriptionSessionCreateResponseGaInclude {const RealtimeTranscriptionSessionCreateResponseGaInclude._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateResponseGaInclude {const RealtimeTranscriptionSessionCreateResponseGaInclude._(this.value);
 
 factory RealtimeTranscriptionSessionCreateResponseGaInclude.fromJson(String json) { return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Realtime transcription session configuration object.
 /// 
-final class RealtimeTranscriptionSessionCreateResponseGa {const RealtimeTranscriptionSessionCreateResponseGa({required this.type, required this.id, required this.object, this.expiresAt, this.include, this.audio, });
+@immutable final class RealtimeTranscriptionSessionCreateResponseGa {const RealtimeTranscriptionSessionCreateResponseGa({required this.type, required this.id, required this.object, this.expiresAt, this.include, this.audio, });
 
 factory RealtimeTranscriptionSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponseGa(
   type: RealtimeTranscriptionSessionCreateResponseGaType.fromJson(json['type'] as String),

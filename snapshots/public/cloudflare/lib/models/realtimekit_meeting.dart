@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
-final class RealtimekitMeetingStatus {const RealtimekitMeetingStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
+@immutable final class RealtimekitMeetingStatus {const RealtimekitMeetingStatus._(this.value);
 
 factory RealtimekitMeetingStatus.fromJson(String json) { return switch (json) {
   'ACTIVE' => active,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitMeetingStatus($value)'; } 
  }
-final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd, this.title, required this.updatedAt, });
+@immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd, this.title, });
 
 factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return RealtimekitMeeting(
   createdAt: DateTime.parse(json['created_at'] as String),

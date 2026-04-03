@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosSynProtectionRule {const DosSynProtectionRule({required this.burstSensitivity, required this.createdOn, required this.id, required this.mitigationType, required this.mode, required this.modifiedOn, required this.name, required this.rateSensitivity, required this.scope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosSynProtectionRule {const DosSynProtectionRule({required this.burstSensitivity, required this.createdOn, required this.id, required this.mitigationType, required this.mode, required this.modifiedOn, required this.name, required this.rateSensitivity, required this.scope, });
 
 factory DosSynProtectionRule.fromJson(Map<String, dynamic> json) { return DosSynProtectionRule(
   burstSensitivity: json['burst_sensitivity'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContentDirectory2Links {const ContentDirectory2Links({required this.git, required this.html, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentDirectory2Links {const ContentDirectory2Links({required this.git, required this.html, required this.self, });
 
 factory ContentDirectory2Links.fromJson(Map<String, dynamic> json) { return ContentDirectory2Links(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,

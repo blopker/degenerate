@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'environment_protection_rules_variant2_reviewers.dart';final class EnvironmentProtectionRulesVariant2 {const EnvironmentProtectionRulesVariant2({required this.id, required this.nodeId, this.preventSelfReview, required this.type, this.reviewers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'environment_protection_rules_variant2_reviewers.dart';@immutable final class EnvironmentProtectionRulesVariant2 {const EnvironmentProtectionRulesVariant2({required this.id, required this.nodeId, required this.type, this.preventSelfReview, this.reviewers, });
 
 factory EnvironmentProtectionRulesVariant2.fromJson(Map<String, dynamic> json) { return EnvironmentProtectionRulesVariant2(
   id: (json['id'] as num).toInt(),

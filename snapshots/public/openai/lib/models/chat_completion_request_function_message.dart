@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatCompletionRequestFunctionMessage {const ChatCompletionRequestFunctionMessage({required this.role, required this.content, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionRequestFunctionMessage {const ChatCompletionRequestFunctionMessage({required this.role, required this.content, required this.name, });
 
 factory ChatCompletionRequestFunctionMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestFunctionMessage(
   role: json['role'] as String,

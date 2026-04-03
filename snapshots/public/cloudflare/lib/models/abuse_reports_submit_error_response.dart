@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'abuse_reports_error_code.dart';import 'abuse_reports_submit_error_response_request.dart';final class AbuseReportsSubmitErrorResponse {const AbuseReportsSubmitErrorResponse({required this.errorCode, required this.msg, required this.request, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_error_code.dart';import 'abuse_reports_submit_error_response_request.dart';@immutable final class AbuseReportsSubmitErrorResponse {const AbuseReportsSubmitErrorResponse({required this.errorCode, required this.msg, required this.request, required this.result, });
 
 factory AbuseReportsSubmitErrorResponse.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitErrorResponse(
   errorCode: AbuseReportsErrorCode.fromJson(json['error_code'] as Map<String, dynamic>),

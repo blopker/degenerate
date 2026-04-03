@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_messages2.dart';final class ResponseCommonFailure67 {const ResponseCommonFailure67({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_messages2.dart';@immutable final class ResponseCommonFailure67 {const ResponseCommonFailure67({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure67.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure67(
   errors: (json['errors'] as List<dynamic>).map((e) => SpectrumConfigMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_search_engine_crawler_bypass.dart';final class WaitingroomZoneSettings {const WaitingroomZoneSettings({this.searchEngineCrawlerBypass});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_search_engine_crawler_bypass.dart';@immutable final class WaitingroomZoneSettings {const WaitingroomZoneSettings({this.searchEngineCrawlerBypass});
 
 factory WaitingroomZoneSettings.fromJson(Map<String, dynamic> json) { return WaitingroomZoneSettings(
   searchEngineCrawlerBypass: json['search_engine_crawler_bypass'] != null ? WaitingroomSearchEngineCrawlerBypass.fromJson(json['search_engine_crawler_bypass'] as bool) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'item_edited_changes_variant1_field_value.dart';final class ItemEditedChangesVariant1 {const ItemEditedChangesVariant1({required this.fieldValue});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_edited_changes_variant1_field_value.dart';@immutable final class ItemEditedChangesVariant1 {const ItemEditedChangesVariant1({required this.fieldValue});
 
 factory ItemEditedChangesVariant1.fromJson(Map<String, dynamic> json) { return ItemEditedChangesVariant1(
   fieldValue: ItemEditedChangesVariant1FieldValue.fromJson(json['field_value'] as Map<String, dynamic>),

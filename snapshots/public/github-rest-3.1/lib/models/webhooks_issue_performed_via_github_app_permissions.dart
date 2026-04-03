@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksIssuePerformedViaGithubAppPermissionsActions {const WebhooksIssuePerformedViaGithubAppPermissionsActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsActions {const WebhooksIssuePerformedViaGithubAppPermissionsActions._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsActions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsActions($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsAdministration {const WebhooksIssuePerformedViaGithubAppPermissionsAdministration._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsAdministration {const WebhooksIssuePerformedViaGithubAppPermissionsAdministration._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsAdministration.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsAdministration($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsChecks {const WebhooksIssuePerformedViaGithubAppPermissionsChecks._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsChecks {const WebhooksIssuePerformedViaGithubAppPermissionsChecks._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsChecks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsChecks($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsContentReferences {const WebhooksIssuePerformedViaGithubAppPermissionsContentReferences._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsContentReferences {const WebhooksIssuePerformedViaGithubAppPermissionsContentReferences._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsContentReferences.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsContentReferences($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsContents {const WebhooksIssuePerformedViaGithubAppPermissionsContents._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsContents {const WebhooksIssuePerformedViaGithubAppPermissionsContents._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsContents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -120,7 +120,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsContents($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsDeployments {const WebhooksIssuePerformedViaGithubAppPermissionsDeployments._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsDeployments {const WebhooksIssuePerformedViaGithubAppPermissionsDeployments._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsDeployments.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsDeployments($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsDiscussions {const WebhooksIssuePerformedViaGithubAppPermissionsDiscussions._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsDiscussions {const WebhooksIssuePerformedViaGithubAppPermissionsDiscussions._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsDiscussions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -168,7 +168,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsDiscussions($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsEmails {const WebhooksIssuePerformedViaGithubAppPermissionsEmails._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsEmails {const WebhooksIssuePerformedViaGithubAppPermissionsEmails._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsEmails.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -192,7 +192,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsEmails($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsEnvironments {const WebhooksIssuePerformedViaGithubAppPermissionsEnvironments._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsEnvironments {const WebhooksIssuePerformedViaGithubAppPermissionsEnvironments._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsEnvironments.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -216,7 +216,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsEnvironments($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsIssues {const WebhooksIssuePerformedViaGithubAppPermissionsIssues._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsIssues {const WebhooksIssuePerformedViaGithubAppPermissionsIssues._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsIssues.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -240,7 +240,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsIssues($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsKeys {const WebhooksIssuePerformedViaGithubAppPermissionsKeys._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsKeys {const WebhooksIssuePerformedViaGithubAppPermissionsKeys._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsKeys.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -264,7 +264,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsKeys($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsMembers {const WebhooksIssuePerformedViaGithubAppPermissionsMembers._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsMembers {const WebhooksIssuePerformedViaGithubAppPermissionsMembers._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsMembers.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -288,7 +288,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsMembers($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsMetadata {const WebhooksIssuePerformedViaGithubAppPermissionsMetadata._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsMetadata {const WebhooksIssuePerformedViaGithubAppPermissionsMetadata._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsMetadata.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -312,7 +312,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsMetadata($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationAdministration {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationAdministration._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationAdministration {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationAdministration._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationAdministration.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -336,7 +336,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationAdministration($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationHooks {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationHooks._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationHooks {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationHooks._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationHooks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -360,7 +360,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationHooks($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPackages {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPackages._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPackages {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPackages._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPackages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -384,7 +384,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPackages($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPlan {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPlan._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPlan {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPlan._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -408,7 +408,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationPlan($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationProjects {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationProjects._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationProjects {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationProjects._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -435,7 +435,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationProjects($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSecrets {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSecrets._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSecrets {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSecrets._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -459,7 +459,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSecrets($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -483,7 +483,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking {const WebhooksIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -507,7 +507,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsPackages {const WebhooksIssuePerformedViaGithubAppPermissionsPackages._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsPackages {const WebhooksIssuePerformedViaGithubAppPermissionsPackages._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsPackages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -531,7 +531,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsPackages($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsPages {const WebhooksIssuePerformedViaGithubAppPermissionsPages._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsPages {const WebhooksIssuePerformedViaGithubAppPermissionsPages._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsPages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -555,7 +555,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsPages($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsPullRequests {const WebhooksIssuePerformedViaGithubAppPermissionsPullRequests._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsPullRequests {const WebhooksIssuePerformedViaGithubAppPermissionsPullRequests._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsPullRequests.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -579,7 +579,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsPullRequests($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks {const WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks {const WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -603,7 +603,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects {const WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects {const WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -627,7 +627,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {const WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {const WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -651,7 +651,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecrets {const WebhooksIssuePerformedViaGithubAppPermissionsSecrets._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsSecrets {const WebhooksIssuePerformedViaGithubAppPermissionsSecrets._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -675,7 +675,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsSecrets($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents {const WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents {const WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -699,7 +699,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {const WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {const WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -723,7 +723,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsSingleFile {const WebhooksIssuePerformedViaGithubAppPermissionsSingleFile._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsSingleFile {const WebhooksIssuePerformedViaGithubAppPermissionsSingleFile._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -747,7 +747,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsSingleFile($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsStatuses {const WebhooksIssuePerformedViaGithubAppPermissionsStatuses._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsStatuses {const WebhooksIssuePerformedViaGithubAppPermissionsStatuses._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsStatuses.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -771,7 +771,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsStatuses($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {const WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {const WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -795,7 +795,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts($value)'; } 
  }
-final class WebhooksIssuePerformedViaGithubAppPermissionsWorkflows {const WebhooksIssuePerformedViaGithubAppPermissionsWorkflows._(this.value);
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissionsWorkflows {const WebhooksIssuePerformedViaGithubAppPermissionsWorkflows._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppPermissionsWorkflows.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -820,7 +820,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppPermissionsWorkflows($value)'; } 
  }
 /// The set of permissions for the GitHub app
-final class WebhooksIssuePerformedViaGithubAppPermissions {const WebhooksIssuePerformedViaGithubAppPermissions({this.actions, this.administration, this.checks, this.contentReferences, this.contents, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.keys, this.members, this.metadata, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.packages, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, });
+@immutable final class WebhooksIssuePerformedViaGithubAppPermissions {const WebhooksIssuePerformedViaGithubAppPermissions({this.members, this.administration, this.checks, this.contentReferences, this.contents, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.keys, this.actions, this.metadata, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.workflows, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.packages, });
 
 factory WebhooksIssuePerformedViaGithubAppPermissions.fromJson(Map<String, dynamic> json) { return WebhooksIssuePerformedViaGithubAppPermissions(
   actions: json['actions'] != null ? WebhooksIssuePerformedViaGithubAppPermissionsActions.fromJson(json['actions'] as String) : null,

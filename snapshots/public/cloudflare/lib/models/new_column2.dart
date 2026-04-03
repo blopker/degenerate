@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NewColumn2 {const NewColumn2({required this.entryName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NewColumn2 {const NewColumn2({required this.entryName});
 
 factory NewColumn2.fromJson(Map<String, dynamic> json) { return NewColumn2(
   entryName: json['entry_name'] as String,

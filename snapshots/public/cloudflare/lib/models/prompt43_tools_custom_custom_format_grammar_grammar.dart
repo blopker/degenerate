@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ToolsCustomCustomFormatGrammarGrammarSyntax {const Prompt43ToolsCustomCustomFormatGrammarGrammarSyntax._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ToolsCustomCustomFormatGrammarGrammarSyntax {const Prompt43ToolsCustomCustomFormatGrammarGrammarSyntax._(this.value);
 
 factory Prompt43ToolsCustomCustomFormatGrammarGrammarSyntax.fromJson(String json) { return switch (json) {
   'lark' => lark,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ToolsCustomCustomFormatGrammarGrammarSyntax($value)'; } 
  }
-final class Prompt43ToolsCustomCustomFormatGrammarGrammar {const Prompt43ToolsCustomCustomFormatGrammarGrammar({required this.definition, required this.syntax, });
+@immutable final class Prompt43ToolsCustomCustomFormatGrammarGrammar {const Prompt43ToolsCustomCustomFormatGrammarGrammar({required this.definition, required this.syntax, });
 
 factory Prompt43ToolsCustomCustomFormatGrammarGrammar.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustomCustomFormatGrammarGrammar(
   definition: json['definition'] as String,

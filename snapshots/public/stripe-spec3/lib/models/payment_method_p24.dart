@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The customer's bank, if provided.
-final class PaymentMethodP24Bank {const PaymentMethodP24Bank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank, if provided.
+@immutable final class PaymentMethodP24Bank {const PaymentMethodP24Bank._(this.value);
 
 factory PaymentMethodP24Bank.fromJson(String json) { return switch (json) {
   'alior_bank' => aliorBank,
@@ -98,7 +98,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodP24Bank($value)'; } 
  }
 /// 
-final class PaymentMethodP24 {const PaymentMethodP24({this.bank});
+@immutable final class PaymentMethodP24 {const PaymentMethodP24({this.bank});
 
 factory PaymentMethodP24.fromJson(Map<String, dynamic> json) { return PaymentMethodP24(
   bank: json['bank'] != null ? PaymentMethodP24Bank.fromJson(json['bank'] as String) : null,

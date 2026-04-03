@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'inline_skill_source_param.dart';/// Defines an inline skill for this request.
-final class InlineSkillParamType {const InlineSkillParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_source_param.dart';/// Defines an inline skill for this request.
+@immutable final class InlineSkillParamType {const InlineSkillParamType._(this.value);
 
 factory InlineSkillParamType.fromJson(String json) { return switch (json) {
   'inline' => inline,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InlineSkillParamType($value)'; } 
  }
-final class InlineSkillParam {const InlineSkillParam({this.type = InlineSkillParamType.inline, required this.name, required this.description, required this.source, });
+@immutable final class InlineSkillParam {const InlineSkillParam({required this.name, required this.description, required this.source, this.type = InlineSkillParamType.inline, });
 
 factory InlineSkillParam.fromJson(Map<String, dynamic> json) { return InlineSkillParam(
   type: InlineSkillParamType.fromJson(json['type'] as String),

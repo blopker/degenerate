@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls how invoices and invoice items display proration amounts and discount amounts.
-final class SubscriptionsResourceBillingModeFlexibleProrationDiscounts {const SubscriptionsResourceBillingModeFlexibleProrationDiscounts._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how invoices and invoice items display proration amounts and discount amounts.
+@immutable final class SubscriptionsResourceBillingModeFlexibleProrationDiscounts {const SubscriptionsResourceBillingModeFlexibleProrationDiscounts._(this.value);
 
 factory SubscriptionsResourceBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
   'included' => included,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionsResourceBillingModeFlexibleProrationDiscounts($value)'; } 
  }
 /// 
-final class SubscriptionsResourceBillingModeFlexible {const SubscriptionsResourceBillingModeFlexible({this.prorationDiscounts});
+@immutable final class SubscriptionsResourceBillingModeFlexible {const SubscriptionsResourceBillingModeFlexible({this.prorationDiscounts});
 
 factory SubscriptionsResourceBillingModeFlexible.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingModeFlexible(
   prorationDiscounts: json['proration_discounts'] != null ? SubscriptionsResourceBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodDataPix {const PostSetupIntentsRequestPaymentMethodDataPix();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataPix {const PostSetupIntentsRequestPaymentMethodDataPix();
 
 factory PostSetupIntentsRequestPaymentMethodDataPix.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataPix(
 

@@ -40,7 +40,7 @@ if (containingOrganization != null) {
   queryParameters['containing.organization'] = containingOrganization;
 }
 if (parentId != null) {
-queryParametersList.add(ApiQueryParameter(name: 'parent.id', value: parentId.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'parent.id', value: parentId.toString()));
 }
 if (pageToken != null) {
   queryParameters['page_token'] = pageToken;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentRequestPaymentMethodDataBoleto {const PostSetupIntentsIntentRequestPaymentMethodDataBoleto({required this.taxId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataBoleto {const PostSetupIntentsIntentRequestPaymentMethodDataBoleto({required this.taxId});
 
 factory PostSetupIntentsIntentRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataBoleto(
   taxId: json['tax_id'] as String,

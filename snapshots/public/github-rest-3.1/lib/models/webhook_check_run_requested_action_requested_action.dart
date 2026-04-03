@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action requested by the user.
-final class WebhookCheckRunRequestedActionRequestedAction {const WebhookCheckRunRequestedActionRequestedAction({this.identifier});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action requested by the user.
+@immutable final class WebhookCheckRunRequestedActionRequestedAction {const WebhookCheckRunRequestedActionRequestedAction({this.identifier});
 
 factory WebhookCheckRunRequestedActionRequestedAction.fromJson(Map<String, dynamic> json) { return WebhookCheckRunRequestedActionRequestedAction(
   identifier: json['identifier'] as String?,

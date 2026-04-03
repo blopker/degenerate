@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesMessages2Source {const TlsCertificatesAndHostnamesMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesMessages2Source {const TlsCertificatesAndHostnamesMessages2Source({this.pointer});
 
 factory TlsCertificatesAndHostnamesMessages2Source.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesMessages2Source(
   pointer: json['pointer'] as String?,

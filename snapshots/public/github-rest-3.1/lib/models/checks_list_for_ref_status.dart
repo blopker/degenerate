@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChecksListForRefStatus {const ChecksListForRefStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksListForRefStatus {const ChecksListForRefStatus._(this.value);
 
 factory ChecksListForRefStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsCreateRepoVariableRequest {const ActionsCreateRepoVariableRequest({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateRepoVariableRequest {const ActionsCreateRepoVariableRequest({required this.name, required this.value, });
 
 factory ActionsCreateRepoVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateRepoVariableRequest(
   name: json['name'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_rate_flat_amount.dart';/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
-final class TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_rate_flat_amount.dart';/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
+@immutable final class TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel._(this.value);
 
 factory TaxRateJurisdictionLevel.fromJson(String json) { return switch (json) {
   'city' => city,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxRateJurisdictionLevel($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TaxRateObject {const TaxRateObject._(this.value);
+@immutable final class TaxRateObject {const TaxRateObject._(this.value);
 
 factory TaxRateObject.fromJson(String json) { return switch (json) {
   'tax_rate' => taxRate,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxRateObject($value)'; } 
  }
 /// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
-final class TaxRateRateType {const TaxRateRateType._(this.value);
+@immutable final class TaxRateRateType {const TaxRateRateType._(this.value);
 
 factory TaxRateRateType.fromJson(String json) { return switch (json) {
   'flat_amount' => flatAmount,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxRateRateType($value)'; } 
  }
 /// The high-level tax type, such as `vat` or `sales_tax`.
-final class TaxRateTaxType {const TaxRateTaxType._(this.value);
+@immutable final class TaxRateTaxType {const TaxRateTaxType._(this.value);
 
 factory TaxRateTaxType.fromJson(String json) { return switch (json) {
   'amusement_tax' => amusementTax,
@@ -148,7 +148,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Tax rates can be applied to [invoices](/invoicing/taxes/tax-rates), [subscriptions](/billing/taxes/tax-rates) and [Checkout Sessions](/payments/checkout/use-manual-tax-rates) to collect tax.
 /// 
 /// Related guide: [Tax rates](/billing/taxes/tax-rates)
-final class TaxRate {const TaxRate({required this.active, this.country, required this.created, this.description, required this.displayName, this.effectivePercentage, this.flatAmount, required this.id, required this.inclusive, this.jurisdiction, this.jurisdictionLevel, required this.livemode, this.metadata, required this.object, required this.percentage, this.rateType, this.state, this.taxType, });
+@immutable final class TaxRate {const TaxRate({required this.active, required this.created, required this.displayName, required this.id, required this.inclusive, required this.livemode, required this.object, required this.percentage, this.country, this.description, this.effectivePercentage, this.flatAmount, this.jurisdiction, this.jurisdictionLevel, this.metadata, this.rateType, this.state, this.taxType, });
 
 factory TaxRate.fromJson(Map<String, dynamic> json) { return TaxRate(
   active: json['active'] as bool,

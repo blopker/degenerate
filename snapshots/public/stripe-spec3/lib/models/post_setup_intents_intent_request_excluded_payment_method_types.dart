@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1 {const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1 {const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1._(this.value);
 
 factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -165,7 +165,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1($value)'; } 
  }
-final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2 {const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2._(this.value);
+@immutable final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2 {const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2._(this.value);
 
 factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

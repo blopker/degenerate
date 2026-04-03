@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_transaction_entries.dart';import 'treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow that created the Transaction.
-final class TreasuryTransactionFlowType {const TreasuryTransactionFlowType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_transaction_entries.dart';import 'treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow that created the Transaction.
+@immutable final class TreasuryTransactionFlowType {const TreasuryTransactionFlowType._(this.value);
 
 factory TreasuryTransactionFlowType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionFlowType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryTransactionObject {const TreasuryTransactionObject._(this.value);
+@immutable final class TreasuryTransactionObject {const TreasuryTransactionObject._(this.value);
 
 factory TreasuryTransactionObject.fromJson(String json) { return switch (json) {
   'treasury.transaction' => treasuryTransaction,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionObject($value)'; } 
  }
 /// Status of the Transaction.
-final class TreasuryTransactionStatus {const TreasuryTransactionStatus._(this.value);
+@immutable final class TreasuryTransactionStatus {const TreasuryTransactionStatus._(this.value);
 
 factory TreasuryTransactionStatus.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -97,7 +97,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionStatus($value)'; } 
  }
 /// Transactions represent changes to a [FinancialAccount's](https://api.stripe.com#financial_accounts) balance.
-final class TreasuryTransaction {const TreasuryTransaction({required this.amount, required this.balanceImpact, required this.created, required this.currency, required this.description, this.entries, required this.financialAccount, this.flow, this.flowDetails, required this.flowType, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, });
+@immutable final class TreasuryTransaction {const TreasuryTransaction({required this.amount, required this.balanceImpact, required this.created, required this.currency, required this.description, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, this.entries, this.flow, this.flowDetails, });
 
 factory TreasuryTransaction.fromJson(Map<String, dynamic> json) { return TreasuryTransaction(
   amount: (json['amount'] as num).toInt(),

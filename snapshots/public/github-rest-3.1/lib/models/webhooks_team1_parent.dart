@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksTeam1ParentPrivacy {const WebhooksTeam1ParentPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksTeam1ParentPrivacy {const WebhooksTeam1ParentPrivacy._(this.value);
 
 factory WebhooksTeam1ParentPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksTeam1ParentPrivacy($value)'; } 
  }
 /// Whether team members will receive notifications when their team is @mentioned
-final class WebhooksTeam1ParentNotificationSetting {const WebhooksTeam1ParentNotificationSetting._(this.value);
+@immutable final class WebhooksTeam1ParentNotificationSetting {const WebhooksTeam1ParentNotificationSetting._(this.value);
 
 factory WebhooksTeam1ParentNotificationSetting.fromJson(String json) { return switch (json) {
   'notifications_enabled' => notificationsEnabled,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksTeam1ParentNotificationSetting($value)'; } 
  }
 /// The ownership type of the team
-final class WebhooksTeam1ParentType {const WebhooksTeam1ParentType._(this.value);
+@immutable final class WebhooksTeam1ParentType {const WebhooksTeam1ParentType._(this.value);
 
 factory WebhooksTeam1ParentType.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksTeam1ParentType($value)'; } 
  }
-final class WebhooksTeam1Parent {const WebhooksTeam1Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.notificationSetting, required this.repositoriesUrl, required this.slug, required this.url, required this.type, this.organizationId, this.enterpriseId, });
+@immutable final class WebhooksTeam1Parent {const WebhooksTeam1Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.notificationSetting, required this.repositoriesUrl, required this.slug, required this.url, required this.type, this.organizationId, this.enterpriseId, });
 
 factory WebhooksTeam1Parent.fromJson(Map<String, dynamic> json) { return WebhooksTeam1Parent(
   description: json['description'] as String?,

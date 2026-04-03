@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'refund_next_action_display_details.dart';/// 
-final class RefundNextAction {const RefundNextAction({this.displayDetails, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'refund_next_action_display_details.dart';/// 
+@immutable final class RefundNextAction {const RefundNextAction({required this.type, this.displayDetails, });
 
 factory RefundNextAction.fromJson(Map<String, dynamic> json) { return RefundNextAction(
   displayDetails: json['display_details'] != null ? RefundNextActionDisplayDetails.fromJson(json['display_details'] as Map<String, dynamic>) : null,

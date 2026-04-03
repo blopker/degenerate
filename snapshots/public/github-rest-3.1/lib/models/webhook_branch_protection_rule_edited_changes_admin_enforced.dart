@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookBranchProtectionRuleEditedChangesAdminEnforced {const WebhookBranchProtectionRuleEditedChangesAdminEnforced({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesAdminEnforced {const WebhookBranchProtectionRuleEditedChangesAdminEnforced({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesAdminEnforced(
   from: json['from'] as bool?,

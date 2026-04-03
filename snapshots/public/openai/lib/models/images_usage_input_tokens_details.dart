@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The input tokens detailed information for the image generation.
-final class ImagesUsageInputTokensDetails {const ImagesUsageInputTokensDetails({required this.textTokens, required this.imageTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The input tokens detailed information for the image generation.
+@immutable final class ImagesUsageInputTokensDetails {const ImagesUsageInputTokensDetails({required this.textTokens, required this.imageTokens, });
 
 factory ImagesUsageInputTokensDetails.fromJson(Map<String, dynamic> json) { return ImagesUsageInputTokensDetails(
   textTokens: (json['text_tokens'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_workflow_file_reference.dart';final class RepositoryRuleWorkflowsParameters {const RepositoryRuleWorkflowsParameters({this.doNotEnforceOnCreate, required this.workflows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_workflow_file_reference.dart';@immutable final class RepositoryRuleWorkflowsParameters {const RepositoryRuleWorkflowsParameters({required this.workflows, this.doNotEnforceOnCreate, });
 
 factory RepositoryRuleWorkflowsParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleWorkflowsParameters(
   doNotEnforceOnCreate: json['do_not_enforce_on_create'] as bool?,

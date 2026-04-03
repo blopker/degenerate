@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `group.deleted`.
-final class GroupDeletedResourceObject {const GroupDeletedResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.deleted`.
+@immutable final class GroupDeletedResourceObject {const GroupDeletedResourceObject._(this.value);
 
 factory GroupDeletedResourceObject.fromJson(String json) { return switch (json) {
   'group.deleted' => groupDeleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GroupDeletedResourceObject($value)'; } 
  }
 /// Confirmation payload returned after deleting a group.
-final class GroupDeletedResource {const GroupDeletedResource({required this.object, required this.id, required this.deleted, });
+@immutable final class GroupDeletedResource {const GroupDeletedResource({required this.object, required this.id, required this.deleted, });
 
 factory GroupDeletedResource.fromJson(Map<String, dynamic> json) { return GroupDeletedResource(
   object: GroupDeletedResourceObject.fromJson(json['object'] as String),

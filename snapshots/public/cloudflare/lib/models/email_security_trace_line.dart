@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityTraceLine {const EmailSecurityTraceLine({required this.lineno, required this.message, required this.ts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityTraceLine {const EmailSecurityTraceLine({required this.lineno, required this.message, required this.ts, });
 
 factory EmailSecurityTraceLine.fromJson(Map<String, dynamic> json) { return EmailSecurityTraceLine(
   lineno: (json['lineno'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_request_servers_updated_prompts.dart';import 'create_portals_request_servers_updated_tools.dart';final class CreatePortalsRequestServers {const CreatePortalsRequestServers({this.defaultDisabled = false, this.onBehalf = true, required this.serverId, this.updatedPrompts, this.updatedTools, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_request_servers_updated_prompts.dart';import 'create_portals_request_servers_updated_tools.dart';@immutable final class CreatePortalsRequestServers {const CreatePortalsRequestServers({required this.serverId, this.defaultDisabled = false, this.onBehalf = true, this.updatedPrompts, this.updatedTools, });
 
 factory CreatePortalsRequestServers.fromJson(Map<String, dynamic> json) { return CreatePortalsRequestServers(
   defaultDisabled: json.containsKey('default_disabled') ? json['default_disabled'] as bool : false,

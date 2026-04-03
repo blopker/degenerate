@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTerminalLocationsRequest {const GetTerminalLocationsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalLocationsRequest {const GetTerminalLocationsRequest();
 
 factory GetTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { return GetTerminalLocationsRequest(
 

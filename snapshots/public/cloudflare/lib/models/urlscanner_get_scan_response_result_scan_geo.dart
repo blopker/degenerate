@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponseResultScanGeo {const UrlscannerGetScanResponseResultScanGeo({required this.continents, required this.locations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanGeo {const UrlscannerGetScanResponseResultScanGeo({required this.continents, required this.locations, });
 
 factory UrlscannerGetScanResponseResultScanGeo.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanGeo(
   continents: (json['continents'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_id.dart';final class DeleteAccountsAccountIdLogpushJobsJobIdResponseResult {const DeleteAccountsAccountIdLogpushJobsJobIdResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_id.dart';@immutable final class DeleteAccountsAccountIdLogpushJobsJobIdResponseResult {const DeleteAccountsAccountIdLogpushJobsJobIdResponseResult({this.id});
 
 factory DeleteAccountsAccountIdLogpushJobsJobIdResponseResult.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountIdLogpushJobsJobIdResponseResult(
   id: json['id'] != null ? LogpushId.fromJson(json['id'] as num) : null,

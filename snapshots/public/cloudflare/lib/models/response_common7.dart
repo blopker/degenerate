@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_analytics_messages2.dart';import 'response_common7_result.dart';final class ResponseCommon7 {const ResponseCommon7({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_analytics_messages2.dart';import 'response_common7_result.dart';@immutable final class ResponseCommon7 {const ResponseCommon7({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon7.fromJson(Map<String, dynamic> json) { return ResponseCommon7(
   errors: (json['errors'] as List<dynamic>).map((e) => ArgoAnalyticsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

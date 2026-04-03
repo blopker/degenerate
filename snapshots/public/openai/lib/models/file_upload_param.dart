@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls whether users can upload files.
-final class FileUploadParam {const FileUploadParam({this.enabled, this.maxFileSize, this.maxFiles, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether users can upload files.
+@immutable final class FileUploadParam {const FileUploadParam({this.enabled, this.maxFileSize, this.maxFiles, });
 
 factory FileUploadParam.fromJson(Map<String, dynamic> json) { return FileUploadParam(
   enabled: json['enabled'] as bool?,

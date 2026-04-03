@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'global_advisory_credits.dart';import 'global_advisory_cvss.dart';import 'global_advisory_cwes.dart';import 'global_advisory_identifiers.dart';import 'security_advisory_epss.dart';import 'vulnerability.dart';/// The type of advisory.
-final class GlobalAdvisoryType {const GlobalAdvisoryType._(this.value);
+@immutable final class GlobalAdvisoryType {const GlobalAdvisoryType._(this.value);
 
 factory GlobalAdvisoryType.fromJson(String json) { return switch (json) {
   'reviewed' => reviewed,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GlobalAdvisoryType($value)'; } 
  }
 /// The severity of the advisory.
-final class GlobalAdvisorySeverity {const GlobalAdvisorySeverity._(this.value);
+@immutable final class GlobalAdvisorySeverity {const GlobalAdvisorySeverity._(this.value);
 
 factory GlobalAdvisorySeverity.fromJson(String json) { return switch (json) {
   'critical' => critical,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GlobalAdvisorySeverity($value)'; } 
  }
 /// A GitHub Security Advisory.
-final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, this.cvssSeverities, this.epss, required this.cwes, required this.credits, });
+@immutable final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, required this.cwes, required this.credits, this.cvssSeverities, this.epss, });
 
 factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdvisory(
   ghsaId: json['ghsa_id'] as String,

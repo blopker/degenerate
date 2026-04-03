@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
-final class LogpushDataset {const LogpushDataset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
+@immutable final class LogpushDataset {const LogpushDataset._(this.value);
 
 factory LogpushDataset.fromJson(String json) { return switch (json) {
   'access_requests' => accessRequests,

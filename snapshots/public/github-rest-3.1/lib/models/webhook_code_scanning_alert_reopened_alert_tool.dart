@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookCodeScanningAlertReopenedAlertTool {const WebhookCodeScanningAlertReopenedAlertTool({this.guid, required this.name, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertReopenedAlertTool {const WebhookCodeScanningAlertReopenedAlertTool({required this.name, required this.version, this.guid, });
 
 factory WebhookCodeScanningAlertReopenedAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedAlertTool(
   guid: json['guid'] as String?,

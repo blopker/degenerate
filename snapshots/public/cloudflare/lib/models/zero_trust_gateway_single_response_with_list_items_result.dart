@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_description.dart';import 'zero_trust_gateway_items2.dart';import 'zero_trust_gateway_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_type.dart';import 'zero_trust_gateway_schemas_uuid.dart';final class ZeroTrustGatewaySingleResponseWithListItemsResult {const ZeroTrustGatewaySingleResponseWithListItemsResult({this.createdAt, this.description, this.id, this.items, this.name, this.type, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_description.dart';import 'zero_trust_gateway_items2.dart';import 'zero_trust_gateway_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_type.dart';import 'zero_trust_gateway_schemas_uuid.dart';@immutable final class ZeroTrustGatewaySingleResponseWithListItemsResult {const ZeroTrustGatewaySingleResponseWithListItemsResult({this.createdAt, this.description, this.id, this.items, this.name, this.type, this.updatedAt, });
 
 factory ZeroTrustGatewaySingleResponseWithListItemsResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySingleResponseWithListItemsResult(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,

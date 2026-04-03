@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_read_replication_mode.dart';/// Configuration for D1 read replication.
-final class D1DatabaseUpdatePartialRequestBodyReadReplication {const D1DatabaseUpdatePartialRequestBodyReadReplication({required this.mode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_read_replication_mode.dart';/// Configuration for D1 read replication.
+@immutable final class D1DatabaseUpdatePartialRequestBodyReadReplication {const D1DatabaseUpdatePartialRequestBodyReadReplication({required this.mode});
 
 factory D1DatabaseUpdatePartialRequestBodyReadReplication.fromJson(Map<String, dynamic> json) { return D1DatabaseUpdatePartialRequestBodyReadReplication(
   mode: D1ReadReplicationMode.fromJson(json['mode'] as String),

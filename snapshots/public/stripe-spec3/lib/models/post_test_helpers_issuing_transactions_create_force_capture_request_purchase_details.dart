@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_fleet.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_flight.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_fuel.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_lodging.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_receipt.dart';/// Additional purchase information that is optionally provided by the merchant.
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
+@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails(
   fleet: json['fleet'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,

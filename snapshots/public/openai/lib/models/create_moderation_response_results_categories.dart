@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A list of the categories, and whether they are flagged or not.
-final class CreateModerationResponseResultsCategories {const CreateModerationResponseResultsCategories({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of the categories, and whether they are flagged or not.
+@immutable final class CreateModerationResponseResultsCategories {const CreateModerationResponseResultsCategories({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
 factory CreateModerationResponseResultsCategories.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResultsCategories(
   hate: json['hate'] as bool,

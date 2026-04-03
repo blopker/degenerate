@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.clear`.
-final class RealtimeClientEventInputAudioBufferClearType {const RealtimeClientEventInputAudioBufferClearType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.clear`.
+@immutable final class RealtimeClientEventInputAudioBufferClearType {const RealtimeClientEventInputAudioBufferClearType._(this.value);
 
 factory RealtimeClientEventInputAudioBufferClearType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.clear' => inputAudioBufferClear,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Send this event to clear the audio bytes in the buffer. The server will
 /// respond with an `input_audio_buffer.cleared` event.
 /// 
-final class RealtimeClientEventInputAudioBufferClear {const RealtimeClientEventInputAudioBufferClear({this.eventId, required this.type, });
+@immutable final class RealtimeClientEventInputAudioBufferClear {const RealtimeClientEventInputAudioBufferClear({required this.type, this.eventId, });
 
 factory RealtimeClientEventInputAudioBufferClear.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferClear(
   eventId: json['event_id'] as String?,

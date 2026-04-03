@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration overrides for this refund, such as customer cancellation settings.
-final class PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig {const PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig({this.enableCustomerCancellation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this refund, such as customer cancellation settings.
+@immutable final class PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig {const PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig({this.enableCustomerCancellation});
 
 factory PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,

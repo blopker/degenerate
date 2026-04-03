@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountUsageUsageRecordUsageRecordToday {const AccountUsageUsageRecordUsageRecordToday({this.accountSid, this.apiVersion, this.asOf, this.category, this.count, this.countUnit, this.description, this.endDate, this.price, this.priceUnit, this.startDate, this.subresourceUris, this.uri, this.usage, this.usageUnit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountUsageUsageRecordUsageRecordToday {const AccountUsageUsageRecordUsageRecordToday({this.accountSid, this.apiVersion, this.asOf, this.category, this.count, this.countUnit, this.description, this.endDate, this.price, this.priceUnit, this.startDate, this.subresourceUris, this.uri, this.usage, this.usageUnit, });
 
 factory AccountUsageUsageRecordUsageRecordToday.fromJson(Map<String, dynamic> json) { return AccountUsageUsageRecordUsageRecordToday(
   accountSid: json['account_sid'] as String?,

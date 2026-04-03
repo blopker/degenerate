@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaUnits {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaUnits {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaUnits(
   name: json['name'] as String,

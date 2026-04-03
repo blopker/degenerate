@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user_search_result_item.dart';final class SearchUsersResponse {const SearchUsersResponse({required this.totalCount, required this.incompleteResults, required this.items, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user_search_result_item.dart';@immutable final class SearchUsersResponse {const SearchUsersResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 
 factory SearchUsersResponse.fromJson(Map<String, dynamic> json) { return SearchUsersResponse(
   totalCount: (json['total_count'] as num).toInt(),

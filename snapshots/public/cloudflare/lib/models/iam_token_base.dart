@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_issued_on.dart';import 'iam_last_used_on.dart';import 'iam_modified_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';import 'iam_token_identifier.dart';import 'iam_token_status.dart';final class IamTokenBase {const IamTokenBase({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_issued_on.dart';import 'iam_last_used_on.dart';import 'iam_modified_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';import 'iam_token_identifier.dart';import 'iam_token_status.dart';@immutable final class IamTokenBase {const IamTokenBase({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, });
 
 factory IamTokenBase.fromJson(Map<String, dynamic> json) { return IamTokenBase(
   condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,

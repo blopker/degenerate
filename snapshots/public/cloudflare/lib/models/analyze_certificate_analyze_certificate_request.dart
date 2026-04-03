@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_certificate.dart';final class AnalyzeCertificateAnalyzeCertificateRequest {const AnalyzeCertificateAnalyzeCertificateRequest({this.bundleMethod, this.certificate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_certificate.dart';@immutable final class AnalyzeCertificateAnalyzeCertificateRequest {const AnalyzeCertificateAnalyzeCertificateRequest({this.bundleMethod, this.certificate, });
 
 factory AnalyzeCertificateAnalyzeCertificateRequest.fromJson(Map<String, dynamic> json) { return AnalyzeCertificateAnalyzeCertificateRequest(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,

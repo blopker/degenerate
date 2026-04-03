@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not Early Hints is enabled.
-final class TlsCertificatesAndHostnamesSslsettingsEarlyHints {const TlsCertificatesAndHostnamesSslsettingsEarlyHints._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslsettingsEarlyHints {const TlsCertificatesAndHostnamesSslsettingsEarlyHints._(this.value);
 
 factory TlsCertificatesAndHostnamesSslsettingsEarlyHints.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsEarlyHints($value)'; } 
  }
 /// Whether or not HTTP2 is enabled.
-final class TlsCertificatesAndHostnamesSslsettingsHttp2 {const TlsCertificatesAndHostnamesSslsettingsHttp2._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslsettingsHttp2 {const TlsCertificatesAndHostnamesSslsettingsHttp2._(this.value);
 
 factory TlsCertificatesAndHostnamesSslsettingsHttp2.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsHttp2($value)'; } 
  }
 /// The minimum TLS version supported.
-final class TlsCertificatesAndHostnamesSslsettingsMinTlsVersion {const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslsettingsMinTlsVersion {const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._(this.value);
 
 factory TlsCertificatesAndHostnamesSslsettingsMinTlsVersion.fromJson(String json) { return switch (json) {
   '1.0' => $10,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsMinTlsVersion($value)'; } 
  }
 /// Whether or not TLS 1.3 is enabled.
-final class TlsCertificatesAndHostnamesSslsettingsTls13 {const TlsCertificatesAndHostnamesSslsettingsTls13._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslsettingsTls13 {const TlsCertificatesAndHostnamesSslsettingsTls13._(this.value);
 
 factory TlsCertificatesAndHostnamesSslsettingsTls13.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -107,7 +107,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsTls13($value)'; } 
  }
 /// SSL specific settings.
-final class TlsCertificatesAndHostnamesSslsettings {const TlsCertificatesAndHostnamesSslsettings({this.ciphers, this.earlyHints, this.http2, this.minTlsVersion, this.tls13, });
+@immutable final class TlsCertificatesAndHostnamesSslsettings {const TlsCertificatesAndHostnamesSslsettings({this.ciphers, this.earlyHints, this.http2, this.minTlsVersion, this.tls13, });
 
 factory TlsCertificatesAndHostnamesSslsettings.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslsettings(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),

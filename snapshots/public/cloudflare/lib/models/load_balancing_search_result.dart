@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_search.dart';final class LoadBalancingSearchResult {const LoadBalancingSearchResult({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_search.dart';@immutable final class LoadBalancingSearchResult {const LoadBalancingSearchResult({this.result});
 
 factory LoadBalancingSearchResult.fromJson(Map<String, dynamic> json) { return LoadBalancingSearchResult(
   result: json['result'] != null ? LoadBalancingSearch.fromJson(json['result'] as Map<String, dynamic>) : null,

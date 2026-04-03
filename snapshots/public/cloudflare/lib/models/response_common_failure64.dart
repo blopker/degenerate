@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_messages2.dart';final class ResponseCommonFailure64 {const ResponseCommonFailure64({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_messages2.dart';@immutable final class ResponseCommonFailure64 {const ResponseCommonFailure64({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure64.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure64(
   errors: (json['errors'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),

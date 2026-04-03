@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metaproperties for Git author/committer information.
-final class WebhookPushCommitsAuthor {const WebhookPushCommitsAuthor({this.date, required this.email, required this.name, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
+@immutable final class WebhookPushCommitsAuthor {const WebhookPushCommitsAuthor({required this.email, required this.name, this.date, this.username, });
 
 factory WebhookPushCommitsAuthor.fromJson(Map<String, dynamic> json) { return WebhookPushCommitsAuthor(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,

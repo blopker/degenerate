@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent._(this.value);
 
 factory PullsDismissReviewRequestEvent.fromJson(String json) { return switch (json) {
   'DISMISS' => dismiss,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullsDismissReviewRequestEvent($value)'; } 
  }
-final class PullsDismissReviewRequest {const PullsDismissReviewRequest({required this.message, this.event, });
+@immutable final class PullsDismissReviewRequest {const PullsDismissReviewRequest({required this.message, this.event, });
 
 factory PullsDismissReviewRequest.fromJson(Map<String, dynamic> json) { return PullsDismissReviewRequest(
   message: json['message'] as String,

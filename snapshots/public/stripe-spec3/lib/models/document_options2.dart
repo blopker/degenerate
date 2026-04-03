@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DocumentOptions2AllowedTypes {const DocumentOptions2AllowedTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DocumentOptions2AllowedTypes {const DocumentOptions2AllowedTypes._(this.value);
 
 factory DocumentOptions2AllowedTypes.fromJson(String json) { return switch (json) {
   'driving_license' => drivingLicense,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DocumentOptions2AllowedTypes($value)'; } 
  }
-final class DocumentOptions2 {const DocumentOptions2({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
+@immutable final class DocumentOptions2 {const DocumentOptions2({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
 factory DocumentOptions2.fromJson(Map<String, dynamic> json) { return DocumentOptions2(
   allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => DocumentOptions2AllowedTypes.fromJson(e as String)).toList(),

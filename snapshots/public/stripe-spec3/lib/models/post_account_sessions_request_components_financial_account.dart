@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_financial_account_features.dart';final class PostAccountSessionsRequestComponentsFinancialAccount {const PostAccountSessionsRequestComponentsFinancialAccount({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_financial_account_features.dart';@immutable final class PostAccountSessionsRequestComponentsFinancialAccount {const PostAccountSessionsRequestComponentsFinancialAccount({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsFinancialAccount.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsFinancialAccount(
   enabled: json['enabled'] as bool,

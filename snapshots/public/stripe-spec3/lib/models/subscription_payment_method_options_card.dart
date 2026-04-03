@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_mandate_options_card.dart';/// Selected network to process this Subscription on. Depends on the available networks of the card attached to the Subscription. Can be only set confirm-time.
-final class SubscriptionPaymentMethodOptionsCardNetwork {const SubscriptionPaymentMethodOptionsCardNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_mandate_options_card.dart';/// Selected network to process this Subscription on. Depends on the available networks of the card attached to the Subscription. Can be only set confirm-time.
+@immutable final class SubscriptionPaymentMethodOptionsCardNetwork {const SubscriptionPaymentMethodOptionsCardNetwork._(this.value);
 
 factory SubscriptionPaymentMethodOptionsCardNetwork.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionPaymentMethodOptionsCardNetwork($value)'; } 
  }
 /// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-final class SubscriptionPaymentMethodOptionsCardRequestThreeDSecure {const SubscriptionPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
+@immutable final class SubscriptionPaymentMethodOptionsCardRequestThreeDSecure {const SubscriptionPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
 
 factory SubscriptionPaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionPaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
 /// 
-final class SubscriptionPaymentMethodOptionsCard {const SubscriptionPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
+@immutable final class SubscriptionPaymentMethodOptionsCard {const SubscriptionPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
 factory SubscriptionPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsCard(
   mandateOptions: json['mandate_options'] != null ? InvoiceMandateOptionsCard.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

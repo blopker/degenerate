@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'status_update.dart';import 'status_update_edited_changes.dart';final class StatusUpdateEditedAction {const StatusUpdateEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'status_update.dart';import 'status_update_edited_changes.dart';@immutable final class StatusUpdateEditedAction {const StatusUpdateEditedAction._(this.value);
 
 factory StatusUpdateEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StatusUpdateEditedAction($value)'; } 
  }
-final class StatusUpdateEdited {const StatusUpdateEdited({required this.action, this.changes, this.installation, required this.organization, required this.projectsV2StatusUpdate, required this.sender, });
+@immutable final class StatusUpdateEdited {const StatusUpdateEdited({required this.action, required this.organization, required this.projectsV2StatusUpdate, required this.sender, this.changes, this.installation, });
 
 factory StatusUpdateEdited.fromJson(Map<String, dynamic> json) { return StatusUpdateEdited(
   action: StatusUpdateEditedAction.fromJson(json['action'] as String),

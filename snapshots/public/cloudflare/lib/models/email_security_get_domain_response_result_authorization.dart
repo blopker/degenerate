@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityGetDomainResponseResultAuthorization {const EmailSecurityGetDomainResponseResultAuthorization({required this.authorized, this.statusMessage, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityGetDomainResponseResultAuthorization {const EmailSecurityGetDomainResponseResultAuthorization({required this.authorized, required this.timestamp, this.statusMessage, });
 
 factory EmailSecurityGetDomainResponseResultAuthorization.fromJson(Map<String, dynamic> json) { return EmailSecurityGetDomainResponseResultAuthorization(
   authorized: json['authorized'] as bool,

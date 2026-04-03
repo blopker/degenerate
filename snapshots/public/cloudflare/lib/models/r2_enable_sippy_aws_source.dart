@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider._(this.value);
 
 factory R2EnableSippyAwsSourceProvider.fromJson(String json) { return switch (json) {
   'aws' => aws,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2EnableSippyAwsSourceProvider($value)'; } 
  }
 /// AWS S3 bucket to copy objects from.
-final class R2EnableSippyAwsSource {const R2EnableSippyAwsSource({this.accessKeyId, this.bucket, this.provider, this.region, this.secretAccessKey, });
+@immutable final class R2EnableSippyAwsSource {const R2EnableSippyAwsSource({this.accessKeyId, this.bucket, this.provider, this.region, this.secretAccessKey, });
 
 factory R2EnableSippyAwsSource.fromJson(Map<String, dynamic> json) { return R2EnableSippyAwsSource(
   accessKeyId: json['accessKeyId'] as String?,

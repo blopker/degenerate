@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsTimeseriesGroupProduct {const RadarGetNetflowsTimeseriesGroupProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsTimeseriesGroupProduct {const RadarGetNetflowsTimeseriesGroupProduct._(this.value);
 
 factory RadarGetNetflowsTimeseriesGroupProduct.fromJson(String json) { return switch (json) {
   'HTTP' => http,

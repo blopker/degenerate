@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the image input. Always `input_image`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the image input. Always `input_image`.
 /// 
-final class EvalItemInputImageType {const EvalItemInputImageType._(this.value);
+@immutable final class EvalItemInputImageType {const EvalItemInputImageType._(this.value);
 
 factory EvalItemInputImageType.fromJson(String json) { return switch (json) {
   'input_image' => inputImage,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EvalItemInputImageType($value)'; } 
  }
 /// An image input block used within EvalItem content arrays.
-final class EvalItemInputImage {const EvalItemInputImage({required this.type, required this.imageUrl, this.detail, });
+@immutable final class EvalItemInputImage {const EvalItemInputImage({required this.type, required this.imageUrl, this.detail, });
 
 factory EvalItemInputImage.fromJson(Map<String, dynamic> json) { return EvalItemInputImage(
   type: EvalItemInputImageType.fromJson(json['type'] as String),

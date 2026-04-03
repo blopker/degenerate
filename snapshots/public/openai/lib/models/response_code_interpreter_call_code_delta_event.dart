@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.code_interpreter_call_code.delta`.
-final class ResponseCodeInterpreterCallCodeDeltaEventType {const ResponseCodeInterpreterCallCodeDeltaEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.code_interpreter_call_code.delta`.
+@immutable final class ResponseCodeInterpreterCallCodeDeltaEventType {const ResponseCodeInterpreterCallCodeDeltaEventType._(this.value);
 
 factory ResponseCodeInterpreterCallCodeDeltaEventType.fromJson(String json) { return switch (json) {
   'response.code_interpreter_call_code.delta' => responseCodeInterpreterCallCodeDelta,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseCodeInterpreterCallCodeDeltaEventType($value)'; } 
  }
 /// Emitted when a partial code snippet is streamed by the code interpreter.
-final class ResponseCodeInterpreterCallCodeDeltaEvent {const ResponseCodeInterpreterCallCodeDeltaEvent({required this.type, required this.outputIndex, required this.itemId, required this.delta, required this.sequenceNumber, });
+@immutable final class ResponseCodeInterpreterCallCodeDeltaEvent {const ResponseCodeInterpreterCallCodeDeltaEvent({required this.type, required this.outputIndex, required this.itemId, required this.delta, required this.sequenceNumber, });
 
 factory ResponseCodeInterpreterCallCodeDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallCodeDeltaEvent(
   type: ResponseCodeInterpreterCallCodeDeltaEventType.fromJson(json['type'] as String),

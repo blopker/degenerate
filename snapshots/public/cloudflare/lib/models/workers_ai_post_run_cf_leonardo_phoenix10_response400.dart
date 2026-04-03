@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_leonardo_phoenix10_response400_errors.dart';final class WorkersAiPostRunCfLeonardoPhoenix10Response400 {const WorkersAiPostRunCfLeonardoPhoenix10Response400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_leonardo_phoenix10_response400_errors.dart';@immutable final class WorkersAiPostRunCfLeonardoPhoenix10Response400 {const WorkersAiPostRunCfLeonardoPhoenix10Response400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfLeonardoPhoenix10Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoPhoenix10Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfLeonardoPhoenix10Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),

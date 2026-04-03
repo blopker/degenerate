@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_schedule.dart';final class ObservatoryScheduleResponseSingle {const ObservatoryScheduleResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_schedule.dart';@immutable final class ObservatoryScheduleResponseSingle {const ObservatoryScheduleResponseSingle({this.result});
 
 factory ObservatoryScheduleResponseSingle.fromJson(Map<String, dynamic> json) { return ObservatoryScheduleResponseSingle(
   result: json['result'] != null ? ObservatorySchedule.fromJson(json['result'] as Map<String, dynamic>) : null,

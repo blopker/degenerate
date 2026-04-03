@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIndicatorTypesListResponseItems {const GetIndicatorTypesListResponseItems({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorTypesListResponseItems {const GetIndicatorTypesListResponseItems({required this.type});
 
 factory GetIndicatorTypesListResponseItems.fromJson(Map<String, dynamic> json) { return GetIndicatorTypesListResponseItems(
   type: json['type'] as String,

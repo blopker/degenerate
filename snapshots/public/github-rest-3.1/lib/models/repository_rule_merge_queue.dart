@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_merge_queue_parameters.dart';final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_merge_queue_parameters.dart';@immutable final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
 
 factory RepositoryRuleMergeQueueType.fromJson(String json) { return switch (json) {
   'merge_queue' => mergeQueue,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleMergeQueueType($value)'; } 
  }
 /// Merges must be performed via a merge queue.
-final class RepositoryRuleMergeQueue {const RepositoryRuleMergeQueue({required this.type, this.parameters, });
+@immutable final class RepositoryRuleMergeQueue {const RepositoryRuleMergeQueue({required this.type, this.parameters, });
 
 factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) { return RepositoryRuleMergeQueue(
   type: RepositoryRuleMergeQueueType.fromJson(json['type'] as String),

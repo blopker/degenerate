@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details for the advisory pertaining to the Common Vulnerability Scoring System.
-final class DependabotAlertSecurityAdvisoryCvss {const DependabotAlertSecurityAdvisoryCvss({required this.score, required this.vectorString, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details for the advisory pertaining to the Common Vulnerability Scoring System.
+@immutable final class DependabotAlertSecurityAdvisoryCvss {const DependabotAlertSecurityAdvisoryCvss({required this.score, required this.vectorString, });
 
 factory DependabotAlertSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryCvss(
   score: (json['score'] as num).toDouble(),

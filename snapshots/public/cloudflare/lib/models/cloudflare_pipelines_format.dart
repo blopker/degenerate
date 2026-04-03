@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'json2.dart';import 'parquet.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'json2.dart';import 'parquet.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesFormat$Unknown; } 
  }
-final class CloudflarePipelinesFormatJson2 extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatJson2(this.json2);
+@immutable final class CloudflarePipelinesFormatJson2 extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatJson2(this.json2);
 
 factory CloudflarePipelinesFormatJson2.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFormatJson2(Json2.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final Json2 json2;
 @override int get hashCode { return json2.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesFormatJson2(json2: $json2)'; } 
  }
-final class CloudflarePipelinesFormatParquet extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatParquet(this.parquet);
+@immutable final class CloudflarePipelinesFormatParquet extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatParquet(this.parquet);
 
 factory CloudflarePipelinesFormatParquet.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFormatParquet(Parquet.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final Parquet parquet;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CloudflarePipelinesFormat$Unknown extends CloudflarePipelinesFormat {const CloudflarePipelinesFormat$Unknown(this.json);
+@immutable final class CloudflarePipelinesFormat$Unknown extends CloudflarePipelinesFormat {const CloudflarePipelinesFormat$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

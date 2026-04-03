@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Determines if the amount includes the IOF tax.
-final class PaymentMethodOptionsPixAmountIncludesIof {const PaymentMethodOptionsPixAmountIncludesIof._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the amount includes the IOF tax.
+@immutable final class PaymentMethodOptionsPixAmountIncludesIof {const PaymentMethodOptionsPixAmountIncludesIof._(this.value);
 
 factory PaymentMethodOptionsPixAmountIncludesIof.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentMethodOptionsPixSetupFutureUsage {const PaymentMethodOptionsPixSetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsPixSetupFutureUsage {const PaymentMethodOptionsPixSetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsPixSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsPixSetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsPix {const PaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsPix {const PaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsPix(
   amountIncludesIof: json['amount_includes_iof'] != null ? PaymentMethodOptionsPixAmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,

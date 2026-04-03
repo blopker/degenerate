@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'destination_create_request_configuration.dart';final class DestinationCreateRequest {const DestinationCreateRequest({required this.configuration, required this.enabled, required this.name, this.skipPreflightCheck, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_create_request_configuration.dart';@immutable final class DestinationCreateRequest {const DestinationCreateRequest({required this.configuration, required this.enabled, required this.name, this.skipPreflightCheck, });
 
 factory DestinationCreateRequest.fromJson(Map<String, dynamic> json) { return DestinationCreateRequest(
   configuration: DestinationCreateRequestConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),

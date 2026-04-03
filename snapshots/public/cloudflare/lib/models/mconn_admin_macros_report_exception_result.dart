@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnAdminMacrosReportExceptionResult {const MconnAdminMacrosReportExceptionResult({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnAdminMacrosReportExceptionResult {const MconnAdminMacrosReportExceptionResult({required this.message});
 
 factory MconnAdminMacrosReportExceptionResult.fromJson(Map<String, dynamic> json) { return MconnAdminMacrosReportExceptionResult(
   message: json['message'] as String,

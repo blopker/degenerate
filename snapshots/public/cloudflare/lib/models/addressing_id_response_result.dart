@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_delegation_identifier.dart';final class AddressingIdResponseResult {const AddressingIdResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_delegation_identifier.dart';@immutable final class AddressingIdResponseResult {const AddressingIdResponseResult({this.id});
 
 factory AddressingIdResponseResult.fromJson(Map<String, dynamic> json) { return AddressingIdResponseResult(
   id: json['id'] != null ? AddressingDelegationIdentifier.fromJson(json['id'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_meters_request_customer_mapping.dart';import 'post_billing_meters_request_default_aggregation.dart';import 'post_billing_meters_request_value_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
-final class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow._(this.value);
+@immutable final class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow._(this.value);
 
 factory PostBillingMetersRequestEventTimeWindow.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingMetersRequestEventTimeWindow($value)'; } 
  }
-final class PostBillingMetersRequest {const PostBillingMetersRequest({this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, this.eventTimeWindow, this.expand, this.valueSettings, });
+@immutable final class PostBillingMetersRequest {const PostBillingMetersRequest({required this.defaultAggregation, required this.displayName, required this.eventName, this.customerMapping, this.eventTimeWindow, this.expand, this.valueSettings, });
 
 factory PostBillingMetersRequest.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequest(
   customerMapping: json['customer_mapping'] != null ? PostBillingMetersRequestCustomerMapping.fromJson(json['customer_mapping'] as Map<String, dynamic>) : null,

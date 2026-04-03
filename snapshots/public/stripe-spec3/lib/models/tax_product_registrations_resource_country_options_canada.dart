@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_registrations_resource_country_options_ca_province_standard.dart';/// Type of registration in Canada.
-final class TaxProductRegistrationsResourceCountryOptionsCanadaType {const TaxProductRegistrationsResourceCountryOptionsCanadaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_ca_province_standard.dart';/// Type of registration in Canada.
+@immutable final class TaxProductRegistrationsResourceCountryOptionsCanadaType {const TaxProductRegistrationsResourceCountryOptionsCanadaType._(this.value);
 
 factory TaxProductRegistrationsResourceCountryOptionsCanadaType.fromJson(String json) { return switch (json) {
   'province_standard' => provinceStandard,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsCanadaType($value)'; } 
  }
 /// 
-final class TaxProductRegistrationsResourceCountryOptionsCanada {const TaxProductRegistrationsResourceCountryOptionsCanada({this.provinceStandard, required this.type, });
+@immutable final class TaxProductRegistrationsResourceCountryOptionsCanada {const TaxProductRegistrationsResourceCountryOptionsCanada({required this.type, this.provinceStandard, });
 
 factory TaxProductRegistrationsResourceCountryOptionsCanada.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsCanada(
   provinceStandard: json['province_standard'] != null ? TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard.fromJson(json['province_standard'] as Map<String, dynamic>) : null,

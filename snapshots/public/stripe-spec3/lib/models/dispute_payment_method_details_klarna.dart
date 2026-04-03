@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class DisputePaymentMethodDetailsKlarna {const DisputePaymentMethodDetailsKlarna({this.chargebackLossReasonCode, this.reasonCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class DisputePaymentMethodDetailsKlarna {const DisputePaymentMethodDetailsKlarna({this.chargebackLossReasonCode, this.reasonCode, });
 
 factory DisputePaymentMethodDetailsKlarna.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsKlarna(
   chargebackLossReasonCode: json['chargeback_loss_reason_code'] as String?,

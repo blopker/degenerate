@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'actions_enabled.dart';import 'allowed_actions.dart';import 'sha_pinning_required.dart';final class ActionsSetGithubActionsPermissionsRepositoryRequest {const ActionsSetGithubActionsPermissionsRepositoryRequest({required this.enabled, this.allowedActions, this.shaPinningRequired, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_enabled.dart';import 'allowed_actions.dart';import 'sha_pinning_required.dart';@immutable final class ActionsSetGithubActionsPermissionsRepositoryRequest {const ActionsSetGithubActionsPermissionsRepositoryRequest({required this.enabled, this.allowedActions, this.shaPinningRequired, });
 
 factory ActionsSetGithubActionsPermissionsRepositoryRequest.fromJson(Map<String, dynamic> json) { return ActionsSetGithubActionsPermissionsRepositoryRequest(
   enabled: ActionsEnabled.fromJson(json['enabled'] as bool),

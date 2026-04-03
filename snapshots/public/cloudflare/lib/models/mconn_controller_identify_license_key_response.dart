@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_identify_license_key_result.dart';final class MconnControllerIdentifyLicenseKeyResponse {const MconnControllerIdentifyLicenseKeyResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_identify_license_key_result.dart';@immutable final class MconnControllerIdentifyLicenseKeyResponse {const MconnControllerIdentifyLicenseKeyResponse({this.result});
 
 factory MconnControllerIdentifyLicenseKeyResponse.fromJson(Map<String, dynamic> json) { return MconnControllerIdentifyLicenseKeyResponse(
   result: json['result'] != null ? MconnControllerIdentifyLicenseKeyResult.fromJson(json['result'] as Map<String, dynamic>) : null,

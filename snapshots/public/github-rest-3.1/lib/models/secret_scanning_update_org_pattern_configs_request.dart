@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_row_version.dart';import 'secret_scanning_update_org_pattern_configs_request_custom_pattern_settings.dart';import 'secret_scanning_update_org_pattern_configs_request_provider_pattern_settings.dart';final class SecretScanningUpdateOrgPatternConfigsRequest {const SecretScanningUpdateOrgPatternConfigsRequest({this.patternConfigVersion, this.providerPatternSettings, this.customPatternSettings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_row_version.dart';import 'secret_scanning_update_org_pattern_configs_request_custom_pattern_settings.dart';import 'secret_scanning_update_org_pattern_configs_request_provider_pattern_settings.dart';@immutable final class SecretScanningUpdateOrgPatternConfigsRequest {const SecretScanningUpdateOrgPatternConfigsRequest({this.patternConfigVersion, this.providerPatternSettings, this.customPatternSettings, });
 
 factory SecretScanningUpdateOrgPatternConfigsRequest.fromJson(Map<String, dynamic> json) { return SecretScanningUpdateOrgPatternConfigsRequest(
   patternConfigVersion: json['pattern_config_version'] != null ? SecretScanningRowVersion.fromJson(json['pattern_config_version'] as String) : null,

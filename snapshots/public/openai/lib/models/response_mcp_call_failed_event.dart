@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_call.failed'.
-final class ResponseMcpCallFailedEventType {const ResponseMcpCallFailedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_call.failed'.
+@immutable final class ResponseMcpCallFailedEventType {const ResponseMcpCallFailedEventType._(this.value);
 
 factory ResponseMcpCallFailedEventType.fromJson(String json) { return switch (json) {
   'response.mcp_call.failed' => responseMcpCallFailed,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an MCP  tool call has failed.
 /// 
-final class ResponseMcpCallFailedEvent {const ResponseMcpCallFailedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
+@immutable final class ResponseMcpCallFailedEvent {const ResponseMcpCallFailedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
 
 factory ResponseMcpCallFailedEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallFailedEvent(
   type: ResponseMcpCallFailedEventType.fromJson(json['type'] as String),

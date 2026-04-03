@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_team_edited_changes_repository_permissions_from.dart';final class WebhookTeamEditedChangesRepositoryPermissions {const WebhookTeamEditedChangesRepositoryPermissions({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_team_edited_changes_repository_permissions_from.dart';@immutable final class WebhookTeamEditedChangesRepositoryPermissions {const WebhookTeamEditedChangesRepositoryPermissions({required this.from});
 
 factory WebhookTeamEditedChangesRepositoryPermissions.fromJson(Map<String, dynamic> json) { return WebhookTeamEditedChangesRepositoryPermissions(
   from: WebhookTeamEditedChangesRepositoryPermissionsFrom.fromJson(json['from'] as Map<String, dynamic>),

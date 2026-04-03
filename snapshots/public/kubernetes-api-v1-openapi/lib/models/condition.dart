@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// Condition contains details for one aspect of the current state of this API Resource.
-final class Condition {const Condition({required this.lastTransitionTime, this.message = '', this.observedGeneration, this.reason = '', this.status = '', this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// Condition contains details for one aspect of the current state of this API Resource.
+@immutable final class Condition {const Condition({required this.lastTransitionTime, this.message = '', this.observedGeneration, this.reason = '', this.status = '', this.type = '', });
 
 factory Condition.fromJson(Map<String, dynamic> json) { return Condition(
   lastTransitionTime: Time.fromJson(json['lastTransitionTime'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesOs {const RadarGetHttpTimeseriesOs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesOs {const RadarGetHttpTimeseriesOs._(this.value);
 
 factory RadarGetHttpTimeseriesOs.fromJson(String json) { return switch (json) {
   'WINDOWS' => windows,

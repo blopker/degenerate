@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The phase of the lifecycle that the job is currently in.
-final class JobStepsStatus {const JobStepsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the lifecycle that the job is currently in.
+@immutable final class JobStepsStatus {const JobStepsStatus._(this.value);
 
 factory JobStepsStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'JobStepsStatus($value)'; } 
  }
-final class JobSteps {const JobSteps({required this.status, required this.conclusion, required this.name, required this.number, this.startedAt, this.completedAt, });
+@immutable final class JobSteps {const JobSteps({required this.status, required this.conclusion, required this.name, required this.number, this.startedAt, this.completedAt, });
 
 factory JobSteps.fromJson(Map<String, dynamic> json) { return JobSteps(
   status: JobStepsStatus.fromJson(json['status'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_auto_param_network_policy.dart';import 'container_auto_param_skills.dart';import 'container_memory_limit.dart';/// Automatically creates a container for this request
-final class ContainerAutoParamType {const ContainerAutoParamType._(this.value);
+@immutable final class ContainerAutoParamType {const ContainerAutoParamType._(this.value);
 
 factory ContainerAutoParamType.fromJson(String json) { return switch (json) {
   'container_auto' => containerAuto,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerAutoParamType($value)'; } 
  }
-final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit, this.networkPolicy, this.skills, });
+@immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit, this.networkPolicy, this.skills, });
 
 factory ContainerAutoParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParam(
   type: ContainerAutoParamType.fromJson(json['type'] as String),

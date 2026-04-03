@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vector_store_expiration_after.dart';final class UpdateVectorStoreRequest {const UpdateVectorStoreRequest({this.name, this.expiresAfter, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_expiration_after.dart';@immutable final class UpdateVectorStoreRequest {const UpdateVectorStoreRequest({this.name, this.expiresAfter, this.metadata, });
 
 factory UpdateVectorStoreRequest.fromJson(Map<String, dynamic> json) { return UpdateVectorStoreRequest(
   name: json['name'] as String?,

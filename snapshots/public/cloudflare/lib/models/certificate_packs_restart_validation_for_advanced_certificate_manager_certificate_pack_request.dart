@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_cloudflare_branding.dart';final class CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest({this.cloudflareBranding});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';@immutable final class CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest({this.cloudflareBranding});
 
 factory CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest.fromJson(Map<String, dynamic> json) { return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
   cloudflareBranding: json['cloudflare_branding'] != null ? TlsCertificatesAndHostnamesCloudflareBranding.fromJson(json['cloudflare_branding'] as bool) : null,

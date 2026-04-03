@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment {const WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment {const WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment({required this.href});
 
 factory WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment(
   href: json['href'] as String,

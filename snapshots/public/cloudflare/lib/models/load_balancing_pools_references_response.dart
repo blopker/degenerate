@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_messages2.dart';import 'load_balancing_pools_references_response_result.dart';final class LoadBalancingPoolsReferencesResponse {const LoadBalancingPoolsReferencesResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_messages2.dart';import 'load_balancing_pools_references_response_result.dart';@immutable final class LoadBalancingPoolsReferencesResponse {const LoadBalancingPoolsReferencesResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory LoadBalancingPoolsReferencesResponse.fromJson(Map<String, dynamic> json) { return LoadBalancingPoolsReferencesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),

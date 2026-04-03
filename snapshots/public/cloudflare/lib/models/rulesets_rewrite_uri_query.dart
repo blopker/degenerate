@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A URI query rewrite.
-final class RulesetsRewriteUriQuery {const RulesetsRewriteUriQuery({this.expression, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URI query rewrite.
+@immutable final class RulesetsRewriteUriQuery {const RulesetsRewriteUriQuery({this.expression, this.value, });
 
 factory RulesetsRewriteUriQuery.fromJson(Map<String, dynamic> json) { return RulesetsRewriteUriQuery(
   expression: json['expression'] as String?,

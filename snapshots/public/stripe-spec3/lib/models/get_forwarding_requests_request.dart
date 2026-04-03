@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetForwardingRequestsRequest {const GetForwardingRequestsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetForwardingRequestsRequest {const GetForwardingRequestsRequest();
 
 factory GetForwardingRequestsRequest.fromJson(Map<String, dynamic> json) { return GetForwardingRequestsRequest(
 

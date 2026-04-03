@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_radar_payment_evaluations_request_payment_details_money_movement_details_card.dart';final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_radar_payment_evaluations_request_payment_details_money_movement_details_card.dart';@immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType._(this.value);
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType($value)'; } 
  }
-final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails({this.card, required this.moneyMovementType, });
+@immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails({required this.moneyMovementType, this.card, });
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
   card: json['card'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,

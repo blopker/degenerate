@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options_variant1_value.dart';final class PostPricesPriceRequestCurrencyOptionsVariant2 {const PostPricesPriceRequestCurrencyOptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options_variant1_value.dart';@immutable final class PostPricesPriceRequestCurrencyOptionsVariant2 {const PostPricesPriceRequestCurrencyOptionsVariant2._(this.value);
 
 factory PostPricesPriceRequestCurrencyOptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

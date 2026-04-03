@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reason why the response is incomplete.
-final class ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason why the response is incomplete.
+@immutable final class ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason._(this.value);
 
 factory ResponseIncompleteDetailsReason.fromJson(String json) { return switch (json) {
   'max_output_tokens' => maxOutputTokens,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Details about why the response is incomplete.
 /// 
-final class ResponseIncompleteDetails {const ResponseIncompleteDetails({this.reason});
+@immutable final class ResponseIncompleteDetails {const ResponseIncompleteDetails({this.reason});
 
 factory ResponseIncompleteDetails.fromJson(Map<String, dynamic> json) { return ResponseIncompleteDetails(
   reason: json['reason'] != null ? ResponseIncompleteDetailsReason.fromJson(json['reason'] as String) : null,

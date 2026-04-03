@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a SMIMEA record.
-final class DnsRecordsSmimeaRecordData {const DnsRecordsSmimeaRecordData({this.certificate, this.matchingType, this.selector, this.usage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a SMIMEA record.
+@immutable final class DnsRecordsSmimeaRecordData {const DnsRecordsSmimeaRecordData({this.certificate, this.matchingType, this.selector, this.usage, });
 
 factory DnsRecordsSmimeaRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsSmimeaRecordData(
   certificate: json['certificate'] as String?,

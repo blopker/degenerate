@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_discussion_edited_changes_body.dart';import 'webhook_discussion_edited_changes_title.dart';final class WebhookDiscussionEditedChanges {const WebhookDiscussionEditedChanges({this.body, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_discussion_edited_changes_body.dart';import 'webhook_discussion_edited_changes_title.dart';@immutable final class WebhookDiscussionEditedChanges {const WebhookDiscussionEditedChanges({this.body, this.title, });
 
 factory WebhookDiscussionEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEditedChanges(
   body: json['body'] != null ? WebhookDiscussionEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

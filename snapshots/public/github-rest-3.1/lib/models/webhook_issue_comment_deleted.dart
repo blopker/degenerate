@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_deleted_issue.dart';import 'webhooks_issue_comment.dart';final class WebhookIssueCommentDeletedAction {const WebhookIssueCommentDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_deleted_issue.dart';import 'webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentDeletedAction {const WebhookIssueCommentDeletedAction._(this.value);
 
 factory WebhookIssueCommentDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssueCommentDeletedAction($value)'; } 
  }
-final class WebhookIssueCommentDeleted {const WebhookIssueCommentDeleted({required this.action, required this.comment, this.enterprise, this.installation, required this.issue, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookIssueCommentDeleted {const WebhookIssueCommentDeleted({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssueCommentDeleted.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentDeleted(
   action: WebhookIssueCommentDeletedAction.fromJson(json['action'] as String),

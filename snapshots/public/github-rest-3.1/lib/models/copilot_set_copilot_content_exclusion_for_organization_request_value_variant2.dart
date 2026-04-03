@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2 {const CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2({required this.ifAnyMatch});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2 {const CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2({required this.ifAnyMatch});
 
 factory CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2.fromJson(Map<String, dynamic> json) { return CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2(
   ifAnyMatch: (json['ifAnyMatch'] as List<dynamic>).map((e) => e as String).toList(),

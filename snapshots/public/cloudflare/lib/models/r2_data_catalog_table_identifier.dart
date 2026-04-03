@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies a unique table identifier within a catalog.
-final class R2DataCatalogTableIdentifier {const R2DataCatalogTableIdentifier({required this.name, required this.namespace, });
+@immutable final class R2DataCatalogTableIdentifier {const R2DataCatalogTableIdentifier({required this.name, required this.namespace, });
 
 factory R2DataCatalogTableIdentifier.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableIdentifier(
   name: json['name'] as String,

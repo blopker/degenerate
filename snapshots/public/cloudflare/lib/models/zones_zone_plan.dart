@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';/// A Zones subscription information.
-final class ZonesZonePlan {const ZonesZonePlan({this.canSubscribe, this.currency, this.externallyManaged, this.frequency, this.id, this.isSubscribed, this.legacyDiscount, this.legacyId, this.name, this.price, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';/// A Zones subscription information.
+@immutable final class ZonesZonePlan {const ZonesZonePlan({this.canSubscribe, this.currency, this.externallyManaged, this.frequency, this.id, this.isSubscribed, this.legacyDiscount, this.legacyId, this.name, this.price, });
 
 factory ZonesZonePlan.fromJson(Map<String, dynamic> json) { return ZonesZonePlan(
   canSubscribe: json['can_subscribe'] as bool?,

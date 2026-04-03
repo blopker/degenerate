@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks {const OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks {const OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks._(this.value);
 
 factory OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks.fromJson(String json) { return switch (json) {
   'critical-resource' => criticalResource,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks($value)'; } 
  }
 /// The deployment status of the artifact.
-final class OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus {const OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus._(this.value);
+@immutable final class OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus {const OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus._(this.value);
 
 factory OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus.fromJson(String json) { return switch (json) {
   'deployed' => deployed,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus($value)'; } 
  }
-final class OrgsSetClusterDeploymentRecordsRequestDeployments {const OrgsSetClusterDeploymentRecordsRequestDeployments({required this.name, required this.digest, this.version, this.status, required this.deploymentName, this.githubRepository, this.tags, this.runtimeRisks, });
+@immutable final class OrgsSetClusterDeploymentRecordsRequestDeployments {const OrgsSetClusterDeploymentRecordsRequestDeployments({required this.name, required this.digest, required this.deploymentName, this.version, this.status, this.githubRepository, this.tags, this.runtimeRisks, });
 
 factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, dynamic> json) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
   name: json['name'] as String,

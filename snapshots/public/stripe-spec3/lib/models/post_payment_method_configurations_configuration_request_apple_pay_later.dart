@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_apple_pay_later_display_preference.dart';/// Apple Pay Later, a payment method for customers to buy now and pay later, gives your customers a way to split purchases into four installments across six weeks.
-final class PostPaymentMethodConfigurationsConfigurationRequestApplePayLater {const PostPaymentMethodConfigurationsConfigurationRequestApplePayLater({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_apple_pay_later_display_preference.dart';/// Apple Pay Later, a payment method for customers to buy now and pay later, gives your customers a way to split purchases into four installments across six weeks.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestApplePayLater {const PostPaymentMethodConfigurationsConfigurationRequestApplePayLater({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestApplePayLater.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestApplePayLater(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

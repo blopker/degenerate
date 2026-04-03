@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cluster_trust_bundle_projection.dart';import 'config_map_projection.dart';import 'pod_certificate_projection.dart';import 'projection.dart';import 'secret_projection.dart';import 'service_account_token_projection.dart';/// Projection that may be projected along with other supported volume types. Exactly one of these fields must be set.
-final class VolumeProjection {const VolumeProjection({this.clusterTrustBundle, this.configMap, this.downwardApi, this.podCertificate, this.secret, this.serviceAccountToken, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cluster_trust_bundle_projection.dart';import 'config_map_projection.dart';import 'pod_certificate_projection.dart';import 'projection.dart';import 'secret_projection.dart';import 'service_account_token_projection.dart';/// Projection that may be projected along with other supported volume types. Exactly one of these fields must be set.
+@immutable final class VolumeProjection {const VolumeProjection({this.clusterTrustBundle, this.configMap, this.downwardApi, this.podCertificate, this.secret, this.serviceAccountToken, });
 
 factory VolumeProjection.fromJson(Map<String, dynamic> json) { return VolumeProjection(
   clusterTrustBundle: json['clusterTrustBundle'] != null ? ClusterTrustBundleProjection.fromJson(json['clusterTrustBundle'] as Map<String, dynamic>) : null,

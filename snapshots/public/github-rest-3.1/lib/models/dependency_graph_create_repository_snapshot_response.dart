@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependencyGraphCreateRepositorySnapshotResponse {const DependencyGraphCreateRepositorySnapshotResponse({required this.id, required this.createdAt, required this.result, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphCreateRepositorySnapshotResponse {const DependencyGraphCreateRepositorySnapshotResponse({required this.id, required this.createdAt, required this.result, required this.message, });
 
 factory DependencyGraphCreateRepositorySnapshotResponse.fromJson(Map<String, dynamic> json) { return DependencyGraphCreateRepositorySnapshotResponse(
   id: (json['id'] as num).toInt(),

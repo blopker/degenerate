@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesCreatePreviewRequestOnBehalfOfVariant2 {const PostInvoicesCreatePreviewRequestOnBehalfOfVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestOnBehalfOfVariant2 {const PostInvoicesCreatePreviewRequestOnBehalfOfVariant2._(this.value);
 
 factory PostInvoicesCreatePreviewRequestOnBehalfOfVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

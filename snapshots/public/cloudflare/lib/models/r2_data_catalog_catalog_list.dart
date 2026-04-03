@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog.dart';/// Contains the list of catalogs.
-final class R2DataCatalogCatalogList {const R2DataCatalogCatalogList({required this.warehouses});
+@immutable final class R2DataCatalogCatalogList {const R2DataCatalogCatalogList({required this.warehouses});
 
 factory R2DataCatalogCatalogList.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogList(
   warehouses: (json['warehouses'] as List<dynamic>).map((e) => R2DataCatalogCatalog.fromJson(e as Map<String, dynamic>)).toList(),

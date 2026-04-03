@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateLink {const MandateLink();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateLink {const MandateLink();
 
 factory MandateLink.fromJson(Map<String, dynamic> json) { return MandateLink(
 

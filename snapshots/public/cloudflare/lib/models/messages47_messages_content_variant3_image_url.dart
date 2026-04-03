@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages47MessagesContentVariant3ImageUrl {const Messages47MessagesContentVariant3ImageUrl({this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages47MessagesContentVariant3ImageUrl {const Messages47MessagesContentVariant3ImageUrl({this.url});
 
 factory Messages47MessagesContentVariant3ImageUrl.fromJson(Map<String, dynamic> json) { return Messages47MessagesContentVariant3ImageUrl(
   url: json['url'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestRestrictionsCompletedSessions {const PostPaymentLinksRequestRestrictionsCompletedSessions({required this.limit});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestRestrictionsCompletedSessions {const PostPaymentLinksRequestRestrictionsCompletedSessions({required this.limit});
 
 factory PostPaymentLinksRequestRestrictionsCompletedSessions.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestRestrictionsCompletedSessions(
   limit: (json['limit'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the processing type used for serving the request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the processing type used for serving the request.
 ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.
 ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.
 ///   - If set to '[flex](/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.
@@ -8,7 +8,7 @@
 /// 
 ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.
 /// 
-final class ServiceTier {const ServiceTier._(this.value);
+@immutable final class ServiceTier {const ServiceTier._(this.value);
 
 factory ServiceTier.fromJson(String json) { return switch (json) {
   'auto' => auto,

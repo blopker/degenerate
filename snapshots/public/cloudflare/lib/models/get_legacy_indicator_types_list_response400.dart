@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_legacy_indicator_types_list_response400_errors.dart';final class GetLegacyIndicatorTypesListResponse400 {const GetLegacyIndicatorTypesListResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_legacy_indicator_types_list_response400_errors.dart';@immutable final class GetLegacyIndicatorTypesListResponse400 {const GetLegacyIndicatorTypesListResponse400({required this.errors, required this.result, required this.success, });
 
 factory GetLegacyIndicatorTypesListResponse400.fromJson(Map<String, dynamic> json) { return GetLegacyIndicatorTypesListResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetLegacyIndicatorTypesListResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

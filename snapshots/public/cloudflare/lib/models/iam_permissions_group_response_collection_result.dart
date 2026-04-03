@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class IamPermissionsGroupResponseCollectionResultScopes {const IamPermissionsGroupResponseCollectionResultScopes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamPermissionsGroupResponseCollectionResultScopes {const IamPermissionsGroupResponseCollectionResultScopes._(this.value);
 
 factory IamPermissionsGroupResponseCollectionResultScopes.fromJson(String json) { return switch (json) {
   'com.cloudflare.api.account' => comCloudflareApiAccount,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IamPermissionsGroupResponseCollectionResultScopes($value)'; } 
  }
-final class IamPermissionsGroupResponseCollectionResult {const IamPermissionsGroupResponseCollectionResult({this.id, this.name, this.scopes, });
+@immutable final class IamPermissionsGroupResponseCollectionResult {const IamPermissionsGroupResponseCollectionResult({this.id, this.name, this.scopes, });
 
 factory IamPermissionsGroupResponseCollectionResult.fromJson(Map<String, dynamic> json) { return IamPermissionsGroupResponseCollectionResult(
   id: json['id'] as String?,

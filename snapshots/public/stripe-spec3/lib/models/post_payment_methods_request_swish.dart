@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `swish` PaymentMethod, this hash contains details about the Swish payment method.
-final class PostPaymentMethodsRequestSwish {const PostPaymentMethodsRequestSwish();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `swish` PaymentMethod, this hash contains details about the Swish payment method.
+@immutable final class PostPaymentMethodsRequestSwish {const PostPaymentMethodsRequestSwish();
 
 factory PostPaymentMethodsRequestSwish.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSwish(
 

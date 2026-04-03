@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_prefixes_response_result_meta.dart';import 'radar_get_bgp_top_prefixes_response_result_top0.dart';final class RadarGetBgpTopPrefixesResponseResult {const RadarGetBgpTopPrefixesResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_prefixes_response_result_meta.dart';import 'radar_get_bgp_top_prefixes_response_result_top0.dart';@immutable final class RadarGetBgpTopPrefixesResponseResult {const RadarGetBgpTopPrefixesResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetBgpTopPrefixesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopPrefixesResponseResult(
   meta: RadarGetBgpTopPrefixesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

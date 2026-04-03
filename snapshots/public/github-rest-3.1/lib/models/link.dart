@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Hypermedia Link
-final class Link {const Link({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Hypermedia Link
+@immutable final class Link {const Link({required this.href});
 
 factory Link.fromJson(Map<String, dynamic> json) { return Link(
   href: json['href'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestSubscriptionDataTransferData {const PostCheckoutSessionsRequestSubscriptionDataTransferData({this.amountPercent, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataTransferData {const PostCheckoutSessionsRequestSubscriptionDataTransferData({required this.destination, this.amountPercent, });
 
 factory PostCheckoutSessionsRequestSubscriptionDataTransferData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataTransferData(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,

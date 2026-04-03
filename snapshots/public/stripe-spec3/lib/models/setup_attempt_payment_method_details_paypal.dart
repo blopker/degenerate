@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupAttemptPaymentMethodDetailsPaypal {const SetupAttemptPaymentMethodDetailsPaypal();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupAttemptPaymentMethodDetailsPaypal {const SetupAttemptPaymentMethodDetailsPaypal();
 
 factory SetupAttemptPaymentMethodDetailsPaypal.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsPaypal(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataLink(
 

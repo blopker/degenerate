@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_comment_created_comment.dart';import 'webhook_pull_request_review_comment_created_pull_request.dart';final class WebhookPullRequestReviewCommentCreatedAction {const WebhookPullRequestReviewCommentCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_comment_created_comment.dart';import 'webhook_pull_request_review_comment_created_pull_request.dart';@immutable final class WebhookPullRequestReviewCommentCreatedAction {const WebhookPullRequestReviewCommentCreatedAction._(this.value);
 
 factory WebhookPullRequestReviewCommentCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewCommentCreatedAction($value)'; } 
  }
-final class WebhookPullRequestReviewCommentCreated {const WebhookPullRequestReviewCommentCreated({required this.action, required this.comment, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestReviewCommentCreated {const WebhookPullRequestReviewCommentCreated({required this.action, required this.comment, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewCommentCreated.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentCreated(
   action: WebhookPullRequestReviewCommentCreatedAction.fromJson(json['action'] as String),

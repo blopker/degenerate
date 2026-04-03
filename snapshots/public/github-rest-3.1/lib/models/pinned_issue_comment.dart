@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// Context around who pinned an issue comment and when it was pinned.
-final class PinnedIssueComment {const PinnedIssueComment({required this.pinnedAt, required this.pinnedBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// Context around who pinned an issue comment and when it was pinned.
+@immutable final class PinnedIssueComment {const PinnedIssueComment({required this.pinnedAt, required this.pinnedBy, });
 
 factory PinnedIssueComment.fromJson(Map<String, dynamic> json) { return PinnedIssueComment(
   pinnedAt: DateTime.parse(json['pinned_at'] as String),

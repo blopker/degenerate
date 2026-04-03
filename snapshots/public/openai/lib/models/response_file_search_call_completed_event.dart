@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.file_search_call.completed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.file_search_call.completed`.
 /// 
-final class ResponseFileSearchCallCompletedEventType {const ResponseFileSearchCallCompletedEventType._(this.value);
+@immutable final class ResponseFileSearchCallCompletedEventType {const ResponseFileSearchCallCompletedEventType._(this.value);
 
 factory ResponseFileSearchCallCompletedEventType.fromJson(String json) { return switch (json) {
   'response.file_search_call.completed' => responseFileSearchCallCompleted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseFileSearchCallCompletedEventType($value)'; } 
  }
 /// Emitted when a file search call is completed (results found).
-final class ResponseFileSearchCallCompletedEvent {const ResponseFileSearchCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseFileSearchCallCompletedEvent {const ResponseFileSearchCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseFileSearchCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseFileSearchCallCompletedEvent(
   type: ResponseFileSearchCallCompletedEventType.fromJson(json['type'] as String),

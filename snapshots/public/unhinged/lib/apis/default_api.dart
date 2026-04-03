@@ -158,17 +158,11 @@ final class DefaultApi with ApiExecutor {
     };
     final queryParametersList = <ApiQueryParameter>[];
     if (topic.$await case final $await$?) {
-      queryParametersList.add(
-        ApiQueryParameter(name: 'await', value: $await$, allowReserved: false),
-      );
+      queryParametersList.add(ApiQueryParameter(name: 'await', value: $await$));
     }
     if (topic.$async case final $async$?) {
       queryParametersList.add(
-        ApiQueryParameter(
-          name: 'async',
-          value: $async$.toString(),
-          allowReserved: false,
-        ),
+        ApiQueryParameter(name: 'async', value: $async$.toString()),
       );
     }
 
@@ -230,17 +224,11 @@ final class DefaultApi with ApiExecutor {
     };
     final queryParametersList = <ApiQueryParameter>[];
     if (topic.$await case final $await$?) {
-      queryParametersList.add(
-        ApiQueryParameter(name: 'await', value: $await$, allowReserved: false),
-      );
+      queryParametersList.add(ApiQueryParameter(name: 'await', value: $await$));
     }
     if (topic.$async case final $async$?) {
       queryParametersList.add(
-        ApiQueryParameter(
-          name: 'async',
-          value: $async$.toString(),
-          allowReserved: false,
-        ),
+        ApiQueryParameter(name: 'async', value: $async$.toString()),
       );
     }
 

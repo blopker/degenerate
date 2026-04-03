@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'task_group_task.dart';/// Type discriminator that is always `chatkit.thread_item`.
-final class TaskGroupItemObject {const TaskGroupItemObject._(this.value);
+@immutable final class TaskGroupItemObject {const TaskGroupItemObject._(this.value);
 
 factory TaskGroupItemObject.fromJson(String json) { return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaskGroupItemObject($value)'; } 
  }
 /// Collection of workflow tasks grouped together in the thread.
-final class TaskGroupItem {const TaskGroupItem({required this.id, this.object = TaskGroupItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.task_group', required this.tasks, });
+@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.createdAt, required this.threadId, required this.tasks, this.object = TaskGroupItemObject.chatkitThreadItem, this.type = 'chatkit.task_group', });
 
 factory TaskGroupItem.fromJson(Map<String, dynamic> json) { return TaskGroupItem(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateOutgoingCallerIdRequest {const UpdateOutgoingCallerIdRequest({this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateOutgoingCallerIdRequest {const UpdateOutgoingCallerIdRequest({this.friendlyName});
 
 factory UpdateOutgoingCallerIdRequest.fromJson(Map<String, dynamic> json) { return UpdateOutgoingCallerIdRequest(
   friendlyName: json['FriendlyName'] as String?,

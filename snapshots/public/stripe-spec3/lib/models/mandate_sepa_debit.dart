@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateSepaDebit {const MandateSepaDebit({required this.reference, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateSepaDebit {const MandateSepaDebit({required this.reference, required this.url, });
 
 factory MandateSepaDebit.fromJson(Map<String, dynamic> json) { return MandateSepaDebit(
   reference: json['reference'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings_account_tax_ids.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings_issuer.dart';final class PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings {const PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings_account_tax_ids.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings_issuer.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings {const PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings(
   accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2.fromJson(v as String),) : null,

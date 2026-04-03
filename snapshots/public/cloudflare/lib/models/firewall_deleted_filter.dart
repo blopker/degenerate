@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_filters_components_schemas_id.dart';/// When true, indicates that the firewall rule was deleted.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filters_components_schemas_id.dart';/// When true, indicates that the firewall rule was deleted.
 extension type const FirewallDeleted(bool value) {
 factory FirewallDeleted.fromJson(bool json) => FirewallDeleted(json);
 
 bool toJson() => value;
 
 }
-final class FirewallDeletedFilter {const FirewallDeletedFilter({required this.deleted, required this.id, });
+@immutable final class FirewallDeletedFilter {const FirewallDeletedFilter({required this.deleted, required this.id, });
 
 factory FirewallDeletedFilter.fromJson(Map<String, dynamic> json) { return FirewallDeletedFilter(
   deleted: FirewallDeleted.fromJson(json['deleted'] as bool),

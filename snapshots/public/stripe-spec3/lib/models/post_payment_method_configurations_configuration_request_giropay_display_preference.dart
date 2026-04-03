@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGiropayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

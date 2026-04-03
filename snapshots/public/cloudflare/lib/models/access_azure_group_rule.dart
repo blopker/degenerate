@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_azure_group_rule_azure_ad.dart';/// Matches an Azure group.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_azure_group_rule_azure_ad.dart';/// Matches an Azure group.
 /// Requires an Azure identity provider.
-final class AccessAzureGroupRule {const AccessAzureGroupRule({required this.azureAd});
+@immutable final class AccessAzureGroupRule {const AccessAzureGroupRule({required this.azureAd});
 
 factory AccessAzureGroupRule.fromJson(Map<String, dynamic> json) { return AccessAzureGroupRule(
   azureAd: AccessAzureGroupRuleAzureAd.fromJson(json['azureAD'] as Map<String, dynamic>),

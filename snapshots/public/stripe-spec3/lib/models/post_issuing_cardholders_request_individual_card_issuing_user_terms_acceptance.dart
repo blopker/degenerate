@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_individual_card_issuing_user_terms_acceptance_user_agent.dart';final class PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance {const PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_individual_card_issuing_user_terms_acceptance_user_agent.dart';@immutable final class PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance {const PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance({this.date, this.ip, this.userAgent, });
 
 factory PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

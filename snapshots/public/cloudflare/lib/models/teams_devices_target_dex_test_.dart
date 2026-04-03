@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesTargetDexTest {const TeamsDevicesTargetDexTest({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTargetDexTest {const TeamsDevicesTargetDexTest({this.id, this.name, });
 
 factory TeamsDevicesTargetDexTest.fromJson(Map<String, dynamic> json) { return TeamsDevicesTargetDexTest(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'page_shield_update_zone_settings_response.dart';final class PageShieldUpdateSettingsResponse {const PageShieldUpdateSettingsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_update_zone_settings_response.dart';@immutable final class PageShieldUpdateSettingsResponse {const PageShieldUpdateSettingsResponse({this.result});
 
 factory PageShieldUpdateSettingsResponse.fromJson(Map<String, dynamic> json) { return PageShieldUpdateSettingsResponse(
   result: json['result'] != null ? PageShieldUpdateZoneSettingsResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

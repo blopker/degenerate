@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRegistryPackagePublishedRegistryPackageRegistry {const WebhookRegistryPackagePublishedRegistryPackageRegistry({this.aboutUrl, this.name, this.type, this.url, this.vendor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackageRegistry {const WebhookRegistryPackagePublishedRegistryPackageRegistry({this.aboutUrl, this.name, this.type, this.url, this.vendor, });
 
 factory WebhookRegistryPackagePublishedRegistryPackageRegistry.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackageRegistry(
   aboutUrl: json['about_url'] as String?,

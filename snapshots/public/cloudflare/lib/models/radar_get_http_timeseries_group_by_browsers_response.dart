@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_timeseries_group_by_browsers_response_result.dart';final class RadarGetHttpTimeseriesGroupByBrowsersResponse {const RadarGetHttpTimeseriesGroupByBrowsersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_browsers_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowsersResponse {const RadarGetHttpTimeseriesGroupByBrowsersResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesGroupByBrowsersResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBrowsersResponse(
   result: RadarGetHttpTimeseriesGroupByBrowsersResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment_log_data.dart';final class PagesDeploymentLog {const PagesDeploymentLog({required this.data, required this.includesContainerLogs, required this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment_log_data.dart';@immutable final class PagesDeploymentLog {const PagesDeploymentLog({required this.data, required this.includesContainerLogs, required this.total, });
 
 factory PagesDeploymentLog.fromJson(Map<String, dynamic> json) { return PagesDeploymentLog(
   data: (json['data'] as List<dynamic>).map((e) => PagesDeploymentLogData.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionReceiptData {const IssuingTransactionReceiptData({this.description, this.quantity, this.total, this.unitCost, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionReceiptData {const IssuingTransactionReceiptData({this.description, this.quantity, this.total, this.unitCost, });
 
 factory IssuingTransactionReceiptData.fromJson(Map<String, dynamic> json) { return IssuingTransactionReceiptData(
   description: json['description'] as String?,

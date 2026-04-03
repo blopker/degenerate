@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PageShieldZoneSettingsResponseSingle {const PageShieldZoneSettingsResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageShieldZoneSettingsResponseSingle {const PageShieldZoneSettingsResponseSingle({this.result});
 
 factory PageShieldZoneSettingsResponseSingle.fromJson(Map<String, dynamic> json) { return PageShieldZoneSettingsResponseSingle(
   result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

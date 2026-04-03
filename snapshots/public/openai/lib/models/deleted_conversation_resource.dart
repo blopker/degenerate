@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeletedConversationResourceObject {const DeletedConversationResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletedConversationResourceObject {const DeletedConversationResourceObject._(this.value);
 
 factory DeletedConversationResourceObject.fromJson(String json) { return switch (json) {
   'conversation.deleted' => conversationDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeletedConversationResourceObject($value)'; } 
  }
-final class DeletedConversationResource {const DeletedConversationResource({this.object = DeletedConversationResourceObject.conversationDeleted, required this.deleted, required this.id, });
+@immutable final class DeletedConversationResource {const DeletedConversationResource({required this.deleted, required this.id, this.object = DeletedConversationResourceObject.conversationDeleted, });
 
 factory DeletedConversationResource.fromJson(Map<String, dynamic> json) { return DeletedConversationResource(
   object: DeletedConversationResourceObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIndicatorListResponsePropertiesPaginationPropertiesCount {const GetIndicatorListResponsePropertiesPaginationPropertiesCount({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorListResponsePropertiesPaginationPropertiesCount {const GetIndicatorListResponsePropertiesPaginationPropertiesCount({required this.type});
 
 factory GetIndicatorListResponsePropertiesPaginationPropertiesCount.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponsePropertiesPaginationPropertiesCount(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// Sort Code Records contain U.K. bank account details per the sort code format.
-final class FundingInstructionsBankTransferSortCodeRecord {const FundingInstructionsBankTransferSortCodeRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.bankAddress, required this.sortCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// Sort Code Records contain U.K. bank account details per the sort code format.
+@immutable final class FundingInstructionsBankTransferSortCodeRecord {const FundingInstructionsBankTransferSortCodeRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.bankAddress, required this.sortCode, });
 
 factory FundingInstructionsBankTransferSortCodeRecord.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferSortCodeRecord(
   accountHolderAddress: Address.fromJson(json['account_holder_address'] as Map<String, dynamic>),

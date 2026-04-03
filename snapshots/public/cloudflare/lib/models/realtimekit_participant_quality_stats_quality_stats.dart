@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_quality_stats_quality_stats_audio_stats.dart';import 'realtimekit_participant_quality_stats_quality_stats_video_stats.dart';final class RealtimekitParticipantQualityStatsQualityStats {const RealtimekitParticipantQualityStatsQualityStats({this.audioBandwidth, this.audioPacketLoss, this.audioStats, this.averageQuality, this.end, this.peerId, this.start, this.videoBandwidth, this.videoPacketLoss, this.videoStats, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_quality_stats_quality_stats_audio_stats.dart';import 'realtimekit_participant_quality_stats_quality_stats_video_stats.dart';@immutable final class RealtimekitParticipantQualityStatsQualityStats {const RealtimekitParticipantQualityStatsQualityStats({this.audioBandwidth, this.audioPacketLoss, this.audioStats, this.averageQuality, this.end, this.peerId, this.start, this.videoBandwidth, this.videoPacketLoss, this.videoStats, });
 
 factory RealtimekitParticipantQualityStatsQualityStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStatsQualityStats(
   audioBandwidth: json['audio_bandwidth'] != null ? (json['audio_bandwidth'] as num).toDouble() : null,

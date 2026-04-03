@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies invoicing frequency. Either `day`, `week`, `month` or `year`.
-final class SubscriptionPendingInvoiceItemIntervalInterval {const SubscriptionPendingInvoiceItemIntervalInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies invoicing frequency. Either `day`, `week`, `month` or `year`.
+@immutable final class SubscriptionPendingInvoiceItemIntervalInterval {const SubscriptionPendingInvoiceItemIntervalInterval._(this.value);
 
 factory SubscriptionPendingInvoiceItemIntervalInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionPendingInvoiceItemIntervalInterval($value)'; } 
  }
 /// 
-final class SubscriptionPendingInvoiceItemInterval {const SubscriptionPendingInvoiceItemInterval({required this.interval, required this.intervalCount, });
+@immutable final class SubscriptionPendingInvoiceItemInterval {const SubscriptionPendingInvoiceItemInterval({required this.interval, required this.intervalCount, });
 
 factory SubscriptionPendingInvoiceItemInterval.fromJson(Map<String, dynamic> json) { return SubscriptionPendingInvoiceItemInterval(
   interval: SubscriptionPendingInvoiceItemIntervalInterval.fromJson(json['interval'] as String),

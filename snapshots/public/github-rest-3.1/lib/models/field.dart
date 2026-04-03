@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'field_configuration.dart';import 'single_select_options.dart';/// The field's data type.
-final class FieldDataType {const FieldDataType._(this.value);
+@immutable final class FieldDataType {const FieldDataType._(this.value);
 
 factory FieldDataType.fromJson(String json) { return switch (json) {
   'assignees' => assignees,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FieldDataType($value)'; } 
  }
 /// A field inside a projects v2 project
-final class Field {const Field({required this.id, this.nodeId, required this.projectUrl, required this.name, required this.dataType, this.options, this.configuration, required this.createdAt, required this.updatedAt, });
+@immutable final class Field {const Field({required this.id, required this.projectUrl, required this.name, required this.dataType, required this.createdAt, required this.updatedAt, this.nodeId, this.options, this.configuration, });
 
 factory Field.fromJson(Map<String, dynamic> json) { return Field(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2LockRuleAgeConditionType {const R2LockRuleAgeConditionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LockRuleAgeConditionType {const R2LockRuleAgeConditionType._(this.value);
 
 factory R2LockRuleAgeConditionType.fromJson(String json) { return switch (json) {
   'Age' => age,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2LockRuleAgeConditionType($value)'; } 
  }
 /// Condition to apply a lock rule to an object for how long in seconds.
-final class R2LockRuleAgeCondition {const R2LockRuleAgeCondition({required this.maxAgeSeconds, required this.type, });
+@immutable final class R2LockRuleAgeCondition {const R2LockRuleAgeCondition({required this.maxAgeSeconds, required this.type, });
 
 factory R2LockRuleAgeCondition.fromJson(Map<String, dynamic> json) { return R2LockRuleAgeCondition(
   maxAgeSeconds: (json['maxAgeSeconds'] as num).toInt(),

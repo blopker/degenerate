@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Started PKI rotation
-final class MconnEventStartRotatePkiK {const MconnEventStartRotatePkiK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started PKI rotation
+@immutable final class MconnEventStartRotatePkiK {const MconnEventStartRotatePkiK._(this.value);
 
 factory MconnEventStartRotatePkiK.fromJson(String json) { return switch (json) {
   'StartRotatePki' => startRotatePki,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventStartRotatePkiK($value)'; } 
  }
-final class MconnEventStartRotatePki {const MconnEventStartRotatePki({required this.k});
+@immutable final class MconnEventStartRotatePki {const MconnEventStartRotatePki({required this.k});
 
 factory MconnEventStartRotatePki.fromJson(Map<String, dynamic> json) { return MconnEventStartRotatePki(
   k: MconnEventStartRotatePkiK.fromJson(json['k'] as String),

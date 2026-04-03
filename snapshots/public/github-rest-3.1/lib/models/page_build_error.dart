@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PageBuildError {const PageBuildError({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageBuildError {const PageBuildError({required this.message});
 
 factory PageBuildError.fromJson(Map<String, dynamic> json) { return PageBuildError(
   message: json['message'] as String?,

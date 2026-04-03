@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrlVariant2 {const PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrlVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrlVariant2 {const PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrlVariant2._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrlVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

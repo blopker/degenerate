@@ -6,7 +6,7 @@ factory LoadBalancingComponentsSchemasZoneName.fromJson(String json) => LoadBala
 String toJson() => value;
 
 }
-final class LoadBalancingLoadBalancer {const LoadBalancingLoadBalancer({this.adaptiveRouting, this.countryPools, this.createdOn, this.defaultPools, this.description, this.enabled, this.fallbackPool, this.id, this.locationStrategy, this.modifiedOn, this.name, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, this.zoneName, });
+@immutable final class LoadBalancingLoadBalancer {const LoadBalancingLoadBalancer({this.adaptiveRouting, this.countryPools, this.createdOn, this.defaultPools, this.description, this.enabled, this.fallbackPool, this.id, this.locationStrategy, this.modifiedOn, this.name, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, this.zoneName, });
 
 factory LoadBalancingLoadBalancer.fromJson(Map<String, dynamic> json) { return LoadBalancingLoadBalancer(
   adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,

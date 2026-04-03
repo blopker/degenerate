@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class KickPartcipantsRequest {const KickPartcipantsRequest({required this.customParticipantIds, required this.participantIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KickPartcipantsRequest {const KickPartcipantsRequest({required this.customParticipantIds, required this.participantIds, });
 
 factory KickPartcipantsRequest.fromJson(Map<String, dynamic> json) { return KickPartcipantsRequest(
   customParticipantIds: (json['custom_participant_ids'] as List<dynamic>).map((e) => e as String).toList(),

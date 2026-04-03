@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CommitSearchResultItemCommitTree {const CommitSearchResultItemCommitTree({required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitSearchResultItemCommitTree {const CommitSearchResultItemCommitTree({required this.sha, required this.url, });
 
 factory CommitSearchResultItemCommitTree.fromJson(Map<String, dynamic> json) { return CommitSearchResultItemCommitTree(
   sha: json['sha'] as String,

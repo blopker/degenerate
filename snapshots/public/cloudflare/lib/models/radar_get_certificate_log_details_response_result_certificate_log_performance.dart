@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_log_details_response_result_certificate_log_performance_endpoints.dart';/// Log performance metrics, including averages and per-endpoint details.
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance({required this.endpoints, required this.responseTime, required this.uptime, });
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance({required this.endpoints, required this.responseTime, required this.uptime, });
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance(
   endpoints: (json['endpoints'] as List<dynamic>).map((e) => RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints.fromJson(e as Map<String, dynamic>)).toList(),

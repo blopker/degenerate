@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_machine_spec.dart';import 'actions_hosted_runner_pool_image.dart';import 'public_ip.dart';/// The status of the runner.
-final class ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus._(this.value);
+@immutable final class ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus._(this.value);
 
 factory ActionsHostedRunnerStatus.fromJson(String json) { return switch (json) {
   'Ready' => ready,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActionsHostedRunnerStatus($value)'; } 
  }
 /// A Github-hosted hosted runner.
-final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, this.runnerGroupId, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, this.maximumRunners = 10, required this.publicIpEnabled, this.publicIps, this.lastActiveOn, this.imageGen, });
+@immutable final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, required this.publicIpEnabled, this.runnerGroupId, this.maximumRunners = 10, this.publicIps, this.lastActiveOn, this.imageGen, });
 
 factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return ActionsHostedRunner(
   id: (json['id'] as num).toInt(),

@@ -200,7 +200,7 @@ Future<ApiResult<DigitalExperienceMonitoringHttpDetailsResponse?, Never>> dexEnd
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item));
 }
 }
 queryParameters['from'] = from;
@@ -238,7 +238,7 @@ Future<ApiResult<DigitalExperienceMonitoringHttpDetailsPercentilesResponse?, Nev
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item));
 }
 }
 queryParameters['from'] = from;
@@ -281,7 +281,7 @@ if (testName != null) {
 }
 if (deviceId != null) {
 for (final item in deviceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item));
 }
 }
 if (page != null) {
@@ -325,7 +325,7 @@ if (testName != null) {
 }
 if (deviceId != null) {
 for (final item in deviceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item));
 }
 }
 
@@ -379,7 +379,7 @@ Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsResponse?, Never>> 
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item));
 }
 }
 queryParameters['from'] = from;
@@ -448,7 +448,7 @@ Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'deviceId', value: item));
 }
 }
 queryParameters['from'] = from;

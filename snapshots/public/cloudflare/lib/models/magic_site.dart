@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_connector_id.dart';import 'magic_identifier.dart';import 'magic_secondary_connector_id.dart';import 'magic_site_location.dart';import 'magic_site_name.dart';final class MagicSite {const MagicSite({this.connectorId, this.description, this.haMode, this.id, this.location, this.name, this.secondaryConnectorId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_connector_id.dart';import 'magic_identifier.dart';import 'magic_secondary_connector_id.dart';import 'magic_site_location.dart';import 'magic_site_name.dart';@immutable final class MagicSite {const MagicSite({this.connectorId, this.description, this.haMode, this.id, this.location, this.name, this.secondaryConnectorId, });
 
 factory MagicSite.fromJson(Map<String, dynamic> json) { return MagicSite(
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,

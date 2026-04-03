@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_include_split_tunnel_description.dart';/// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_include_split_tunnel_description.dart';/// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
 extension type const TeamsDevicesIncludeSplitTunnelHost(String value) {
 factory TeamsDevicesIncludeSplitTunnelHost.fromJson(String json) => TeamsDevicesIncludeSplitTunnelHost(json);
 
 String toJson() => value;
 
 }
-final class TeamsDevicesIncludeSplitTunnelWithHost {const TeamsDevicesIncludeSplitTunnelWithHost({this.description, required this.host, });
+@immutable final class TeamsDevicesIncludeSplitTunnelWithHost {const TeamsDevicesIncludeSplitTunnelWithHost({required this.host, this.description, });
 
 factory TeamsDevicesIncludeSplitTunnelWithHost.fromJson(Map<String, dynamic> json) { return TeamsDevicesIncludeSplitTunnelWithHost(
   description: json['description'] != null ? TeamsDevicesIncludeSplitTunnelDescription.fromJson(json['description'] as String) : null,

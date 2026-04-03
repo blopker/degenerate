@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer {const PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer({required this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer {const PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer({required this.country});
 
 factory PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer(
   country: json['country'] as String,

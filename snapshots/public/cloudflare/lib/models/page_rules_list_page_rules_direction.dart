@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The direction used to sort returned Page Rules.
-final class PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned Page Rules.
+@immutable final class PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection._(this.value);
 
 factory PageRulesListPageRulesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpTopAsesUpdateType {const RadarGetBgpTopAsesUpdateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsesUpdateType {const RadarGetBgpTopAsesUpdateType._(this.value);
 
 factory RadarGetBgpTopAsesUpdateType.fromJson(String json) { return switch (json) {
   'ANNOUNCEMENT' => announcement,

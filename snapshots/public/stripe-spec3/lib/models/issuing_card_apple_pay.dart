@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reason the card is ineligible for Apple Pay
-final class IssuingCardApplePayIneligibleReason {const IssuingCardApplePayIneligibleReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason the card is ineligible for Apple Pay
+@immutable final class IssuingCardApplePayIneligibleReason {const IssuingCardApplePayIneligibleReason._(this.value);
 
 factory IssuingCardApplePayIneligibleReason.fromJson(String json) { return switch (json) {
   'missing_agreement' => missingAgreement,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardApplePayIneligibleReason($value)'; } 
  }
 /// 
-final class IssuingCardApplePay {const IssuingCardApplePay({required this.eligible, this.ineligibleReason, });
+@immutable final class IssuingCardApplePay {const IssuingCardApplePay({required this.eligible, this.ineligibleReason, });
 
 factory IssuingCardApplePay.fromJson(Map<String, dynamic> json) { return IssuingCardApplePay(
   eligible: json['eligible'] as bool,

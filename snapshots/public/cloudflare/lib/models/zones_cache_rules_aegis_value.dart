@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesCacheRulesAegisValue {const ZonesCacheRulesAegisValue({this.enabled, this.poolId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesCacheRulesAegisValue {const ZonesCacheRulesAegisValue({this.enabled, this.poolId, });
 
 factory ZonesCacheRulesAegisValue.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesAegisValue(
   enabled: json['enabled'] as bool?,

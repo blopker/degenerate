@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// URL(s) to filter submissions results by.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// URL(s) to filter submissions results by.
 extension type IntelUrl(Uri value) {
 factory IntelUrl.fromJson(String json) => IntelUrl(Uri.parse(json));
 
 String toJson() => value.toString();
 
 }
-final class IntelUrlParam {const IntelUrlParam({this.url});
+@immutable final class IntelUrlParam {const IntelUrlParam({this.url});
 
 factory IntelUrlParam.fromJson(Map<String, dynamic> json) { return IntelUrlParam(
   url: json['url'] != null ? IntelUrl.fromJson(json['url'] as String) : null,

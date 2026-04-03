@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// WorkloadReference identifies the Workload object and PodGroup membership that a Pod belongs to. The scheduler uses this information to apply workload-aware scheduling semantics.
-final class WorkloadReference {const WorkloadReference({this.name = '', this.podGroup = '', this.podGroupReplicaKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// WorkloadReference identifies the Workload object and PodGroup membership that a Pod belongs to. The scheduler uses this information to apply workload-aware scheduling semantics.
+@immutable final class WorkloadReference {const WorkloadReference({this.name = '', this.podGroup = '', this.podGroupReplicaKey, });
 
 factory WorkloadReference.fromJson(Map<String, dynamic> json) { return WorkloadReference(
   name: json['name'] as String,

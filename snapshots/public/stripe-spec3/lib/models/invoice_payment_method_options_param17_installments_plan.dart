@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installment_plan.dart';final class InvoicePaymentMethodOptionsParam17InstallmentsPlanVariant2 {const InvoicePaymentMethodOptionsParam17InstallmentsPlanVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installment_plan.dart';@immutable final class InvoicePaymentMethodOptionsParam17InstallmentsPlanVariant2 {const InvoicePaymentMethodOptionsParam17InstallmentsPlanVariant2._(this.value);
 
 factory InvoicePaymentMethodOptionsParam17InstallmentsPlanVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

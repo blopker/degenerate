@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostScreenshotRequestVariant1CookiesPriority {const BrapiPostScreenshotRequestVariant1CookiesPriority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScreenshotRequestVariant1CookiesPriority {const BrapiPostScreenshotRequestVariant1CookiesPriority._(this.value);
 
 factory BrapiPostScreenshotRequestVariant1CookiesPriority.fromJson(String json) { return switch (json) {
   'Low' => low,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScreenshotRequestVariant1CookiesPriority($value)'; } 
  }
-final class BrapiPostScreenshotRequestVariant1CookiesSameSite {const BrapiPostScreenshotRequestVariant1CookiesSameSite._(this.value);
+@immutable final class BrapiPostScreenshotRequestVariant1CookiesSameSite {const BrapiPostScreenshotRequestVariant1CookiesSameSite._(this.value);
 
 factory BrapiPostScreenshotRequestVariant1CookiesSameSite.fromJson(String json) { return switch (json) {
   'Strict' => strict,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScreenshotRequestVariant1CookiesSameSite($value)'; } 
  }
-final class BrapiPostScreenshotRequestVariant1CookiesSourceScheme {const BrapiPostScreenshotRequestVariant1CookiesSourceScheme._(this.value);
+@immutable final class BrapiPostScreenshotRequestVariant1CookiesSourceScheme {const BrapiPostScreenshotRequestVariant1CookiesSourceScheme._(this.value);
 
 factory BrapiPostScreenshotRequestVariant1CookiesSourceScheme.fromJson(String json) { return switch (json) {
   'Unset' => unset,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScreenshotRequestVariant1CookiesSourceScheme($value)'; } 
  }
-final class BrapiPostScreenshotRequestVariant1Cookies {const BrapiPostScreenshotRequestVariant1Cookies({this.domain, this.expires, this.httpOnly, required this.name, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, required this.value, });
+@immutable final class BrapiPostScreenshotRequestVariant1Cookies {const BrapiPostScreenshotRequestVariant1Cookies({required this.name, required this.value, this.domain, this.expires, this.httpOnly, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, });
 
 factory BrapiPostScreenshotRequestVariant1Cookies.fromJson(Map<String, dynamic> json) { return BrapiPostScreenshotRequestVariant1Cookies(
   domain: json['domain'] as String?,

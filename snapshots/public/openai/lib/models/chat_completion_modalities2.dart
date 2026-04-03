@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatCompletionModalities2 {const ChatCompletionModalities2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionModalities2 {const ChatCompletionModalities2._(this.value);
 
 factory ChatCompletionModalities2.fromJson(String json) { return switch (json) {
   'text' => text,

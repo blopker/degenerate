@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';/// `auto` is the default value
 /// 
-final class ResponseFormatOptionVariant1 {const ResponseFormatOptionVariant1._(this.value);
+@immutable final class ResponseFormatOptionVariant1 {const ResponseFormatOptionVariant1._(this.value);
 
 factory ResponseFormatOptionVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,

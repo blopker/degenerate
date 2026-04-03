@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudforceOneWhoisSchemasMessages2Source {const CloudforceOneWhoisSchemasMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneWhoisSchemasMessages2Source {const CloudforceOneWhoisSchemasMessages2Source({this.pointer});
 
 factory CloudforceOneWhoisSchemasMessages2Source.fromJson(Map<String, dynamic> json) { return CloudforceOneWhoisSchemasMessages2Source(
   pointer: json['pointer'] as String?,

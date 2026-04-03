@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response_usage_input_tokens_details.dart';import 'response_usage_output_tokens_details.dart';/// Represents token usage details including input tokens, output tokens,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_usage_input_tokens_details.dart';import 'response_usage_output_tokens_details.dart';/// Represents token usage details including input tokens, output tokens,
 /// a breakdown of output tokens, and the total tokens used.
 /// 
-final class ResponseUsage {const ResponseUsage({required this.inputTokens, required this.inputTokensDetails, required this.outputTokens, required this.outputTokensDetails, required this.totalTokens, });
+@immutable final class ResponseUsage {const ResponseUsage({required this.inputTokens, required this.inputTokensDetails, required this.outputTokens, required this.outputTokensDetails, required this.totalTokens, });
 
 factory ResponseUsage.fromJson(Map<String, dynamic> json) { return ResponseUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),

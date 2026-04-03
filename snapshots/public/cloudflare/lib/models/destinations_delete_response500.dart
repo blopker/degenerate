@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response500_errors.dart';import 'destinations_delete_response500_messages.dart';final class DestinationsDeleteResponse500 {const DestinationsDeleteResponse500({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response500_errors.dart';import 'destinations_delete_response500_messages.dart';@immutable final class DestinationsDeleteResponse500 {const DestinationsDeleteResponse500({required this.errors, required this.messages, required this.success, });
 
 factory DestinationsDeleteResponse500.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => DestinationsDeleteResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),

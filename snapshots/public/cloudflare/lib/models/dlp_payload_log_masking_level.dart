@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Masking level for payload logs.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Masking level for payload logs.
 /// 
 /// - `full`: The entire payload is masked.
 /// - `partial`: Only partial payload content is masked.
 /// - `clear`: No masking is applied to the payload content.
 /// - `default`: DLP uses its default masking behavior.
-final class DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel._(this.value);
+@immutable final class DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel._(this.value);
 
 factory DlpPayloadLogMaskingLevel.fromJson(String json) { return switch (json) {
   'full' => full,

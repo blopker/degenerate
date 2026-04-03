@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls diagnostic tracing during the session.
-final class WorkflowTracingParam {const WorkflowTracingParam({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls diagnostic tracing during the session.
+@immutable final class WorkflowTracingParam {const WorkflowTracingParam({this.enabled});
 
 factory WorkflowTracingParam.fromJson(Map<String, dynamic> json) { return WorkflowTracingParam(
   enabled: json['enabled'] as bool?,

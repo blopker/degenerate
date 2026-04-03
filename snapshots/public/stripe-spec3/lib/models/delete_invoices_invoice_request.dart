@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteInvoicesInvoiceRequest {const DeleteInvoicesInvoiceRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteInvoicesInvoiceRequest {const DeleteInvoicesInvoiceRequest();
 
 factory DeleteInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return DeleteInvoicesInvoiceRequest(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_merchandise_not_as_described_evidence_additional_documentation.dart';/// Result of cardholder's attempt to return the product.
-final class IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus {const IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus._(this.value);
+@immutable final class IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus {const IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus._(this.value);
 
 factory IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus.fromJson(String json) { return switch (json) {
   'merchant_rejected' => merchantRejected,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus($value)'; } 
  }
 /// 
-final class IssuingDisputeMerchandiseNotAsDescribedEvidence {const IssuingDisputeMerchandiseNotAsDescribedEvidence({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
+@immutable final class IssuingDisputeMerchandiseNotAsDescribedEvidence {const IssuingDisputeMerchandiseNotAsDescribedEvidence({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
 
 factory IssuingDisputeMerchandiseNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeMerchandiseNotAsDescribedEvidence(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

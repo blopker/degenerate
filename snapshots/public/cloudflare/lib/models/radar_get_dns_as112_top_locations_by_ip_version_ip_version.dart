@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// IP version.
-final class RadarGetDnsAs112TopLocationsByIpVersionIpVersion {const RadarGetDnsAs112TopLocationsByIpVersionIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// IP version.
+@immutable final class RadarGetDnsAs112TopLocationsByIpVersionIpVersion {const RadarGetDnsAs112TopLocationsByIpVersionIpVersion._(this.value);
 
 factory RadarGetDnsAs112TopLocationsByIpVersionIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

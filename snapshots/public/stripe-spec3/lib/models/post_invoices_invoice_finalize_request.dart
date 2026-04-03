@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceFinalizeRequest {const PostInvoicesInvoiceFinalizeRequest({this.autoAdvance, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceFinalizeRequest {const PostInvoicesInvoiceFinalizeRequest({this.autoAdvance, this.expand, });
 
 factory PostInvoicesInvoiceFinalizeRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceFinalizeRequest(
   autoAdvance: json['auto_advance'] as bool?,

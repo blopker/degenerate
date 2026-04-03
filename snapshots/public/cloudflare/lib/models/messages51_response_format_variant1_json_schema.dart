@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_response_format_variant1_json_schema_json_schema.dart';final class Messages51ResponseFormatVariant1JsonSchemaType {const Messages51ResponseFormatVariant1JsonSchemaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_response_format_variant1_json_schema_json_schema.dart';@immutable final class Messages51ResponseFormatVariant1JsonSchemaType {const Messages51ResponseFormatVariant1JsonSchemaType._(this.value);
 
 factory Messages51ResponseFormatVariant1JsonSchemaType.fromJson(String json) { return switch (json) {
   'json_schema' => jsonSchema,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ResponseFormatVariant1JsonSchemaType($value)'; } 
  }
-final class Messages51ResponseFormatVariant1JsonSchema {const Messages51ResponseFormatVariant1JsonSchema({required this.jsonSchema, required this.type, });
+@immutable final class Messages51ResponseFormatVariant1JsonSchema {const Messages51ResponseFormatVariant1JsonSchema({required this.jsonSchema, required this.type, });
 
 factory Messages51ResponseFormatVariant1JsonSchema.fromJson(Map<String, dynamic> json) { return Messages51ResponseFormatVariant1JsonSchema(
   jsonSchema: Messages51ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(json['json_schema'] as Map<String, dynamic>),

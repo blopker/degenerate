@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessResourceType2 {const AccessResourceType2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessResourceType2 {const AccessResourceType2._(this.value);
 
 factory AccessResourceType2.fromJson(String json) { return switch (json) {
   'USER' => user,

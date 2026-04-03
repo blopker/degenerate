@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Certificate deployment status for the given service.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate deployment status for the given service.
 extension type const TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus(String value) {
 factory TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus.fromJson(String json) => TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasStatus(json);
 
@@ -14,7 +14,7 @@ factory TlsCertificatesAndHostnamesService.fromJson(String json) => TlsCertifica
 String toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesAssociationObject {const TlsCertificatesAndHostnamesAssociationObject({this.service, this.status, });
+@immutable final class TlsCertificatesAndHostnamesAssociationObject {const TlsCertificatesAndHostnamesAssociationObject({this.service, this.status, });
 
 factory TlsCertificatesAndHostnamesAssociationObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesAssociationObject(
   service: json['service'] != null ? TlsCertificatesAndHostnamesService.fromJson(json['service'] as String) : null,

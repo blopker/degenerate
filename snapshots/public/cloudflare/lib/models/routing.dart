@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'routing_routing.dart';final class Routing {const Routing({this.apiRouting});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'routing_routing.dart';@immutable final class Routing {const Routing({this.apiRouting});
 
 factory Routing.fromJson(Map<String, dynamic> json) { return Routing(
   apiRouting: json['api_routing'] != null ? RoutingRouting.fromJson(json['api_routing'] as Map<String, dynamic>) : null,

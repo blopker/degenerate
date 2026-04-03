@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaymentMethodOptionsParam6 {const InvoicePaymentMethodOptionsParam6();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam6 {const InvoicePaymentMethodOptionsParam6();
 
 factory InvoicePaymentMethodOptionsParam6.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam6(
 

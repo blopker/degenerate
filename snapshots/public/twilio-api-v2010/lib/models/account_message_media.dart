@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountMessageMedia {const AccountMessageMedia({this.accountSid, this.contentType, this.dateCreated, this.dateUpdated, this.parentSid, this.sid, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountMessageMedia {const AccountMessageMedia({this.accountSid, this.contentType, this.dateCreated, this.dateUpdated, this.parentSid, this.sid, this.uri, });
 
 factory AccountMessageMedia.fromJson(Map<String, dynamic> json) { return AccountMessageMedia(
   accountSid: json['account_sid'] as String?,

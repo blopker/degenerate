@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_leaked_credential_checks_timeseries_group_by_compromised_response_result.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_by_compromised_response_result.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse({required this.result, required this.success, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse(
   result: RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResult.fromJson(json['result'] as Map<String, dynamic>),

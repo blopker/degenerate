@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_dependencies_summary.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issue_comment_edited_issue_assignee.dart';import 'webhook_issue_comment_edited_issue_labels.dart';import 'webhook_issue_comment_edited_issue_pull_request.dart';import 'webhook_issue_comment_edited_issue_reactions.dart';import 'webhook_issue_comment_edited_issue_user.dart';/// State of the issue; either 'open' or 'closed'
-final class WebhookIssueCommentEditedIssueState {const WebhookIssueCommentEditedIssueState._(this.value);
+@immutable final class WebhookIssueCommentEditedIssueState {const WebhookIssueCommentEditedIssueState._(this.value);
 
 factory WebhookIssueCommentEditedIssueState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssueCommentEditedIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final class WebhookIssueCommentEditedIssue {const WebhookIssueCommentEditedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, required this.reactions, required this.repositoryUrl, this.subIssuesSummary, this.issueDependenciesSummary, required this.state, this.stateReason, this.timelineUrl, required this.title, this.type, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookIssueCommentEditedIssue {const WebhookIssueCommentEditedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, required this.reactions, required this.repositoryUrl, required this.state, required this.title, required this.updatedAt, required this.url, required this.user, this.draft, this.performedViaGithubApp, this.pullRequest, this.subIssuesSummary, this.issueDependenciesSummary, this.stateReason, this.timelineUrl, this.type, });
 
 factory WebhookIssueCommentEditedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentEditedIssue(
   activeLockReason: json['active_lock_reason'] as String?,

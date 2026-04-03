@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestApplePayLaterDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of source
-final class MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
+@immutable final class MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType._(this.value);
 
 factory MqEventSourceWorkersBuildsWorkerType.fromJson(String json) { return switch (json) {
   'workersBuilds.worker' => workersBuildsWorker,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventSourceWorkersBuildsWorkerType($value)'; } 
  }
-final class MqEventSourceWorkersBuildsWorker {const MqEventSourceWorkersBuildsWorker({this.type, this.workerName, });
+@immutable final class MqEventSourceWorkersBuildsWorker {const MqEventSourceWorkersBuildsWorker({this.type, this.workerName, });
 
 factory MqEventSourceWorkersBuildsWorker.fromJson(Map<String, dynamic> json) { return MqEventSourceWorkersBuildsWorker(
   type: json['type'] != null ? MqEventSourceWorkersBuildsWorkerType.fromJson(json['type'] as String) : null,

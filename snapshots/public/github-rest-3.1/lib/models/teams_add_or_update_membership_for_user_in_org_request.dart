@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The role that this user should have in the team.
-final class TeamsAddOrUpdateMembershipForUserInOrgRequestRole {const TeamsAddOrUpdateMembershipForUserInOrgRequestRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role that this user should have in the team.
+@immutable final class TeamsAddOrUpdateMembershipForUserInOrgRequestRole {const TeamsAddOrUpdateMembershipForUserInOrgRequestRole._(this.value);
 
 factory TeamsAddOrUpdateMembershipForUserInOrgRequestRole.fromJson(String json) { return switch (json) {
   'member' => member,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsAddOrUpdateMembershipForUserInOrgRequestRole($value)'; } 
  }
-final class TeamsAddOrUpdateMembershipForUserInOrgRequest {const TeamsAddOrUpdateMembershipForUserInOrgRequest({this.role = TeamsAddOrUpdateMembershipForUserInOrgRequestRole.member});
+@immutable final class TeamsAddOrUpdateMembershipForUserInOrgRequest {const TeamsAddOrUpdateMembershipForUserInOrgRequest({this.role = TeamsAddOrUpdateMembershipForUserInOrgRequestRole.member});
 
 factory TeamsAddOrUpdateMembershipForUserInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
   role: json.containsKey('role') ? TeamsAddOrUpdateMembershipForUserInOrgRequestRole.fromJson(json['role'] as String) : TeamsAddOrUpdateMembershipForUserInOrgRequestRole.member,

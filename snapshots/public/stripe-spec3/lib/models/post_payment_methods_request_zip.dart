@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `zip` PaymentMethod, this hash contains details about the Zip payment method.
-final class PostPaymentMethodsRequestZip {const PostPaymentMethodsRequestZip();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `zip` PaymentMethod, this hash contains details about the Zip payment method.
+@immutable final class PostPaymentMethodsRequestZip {const PostPaymentMethodsRequestZip();
 
 factory PostPaymentMethodsRequestZip.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestZip(
 

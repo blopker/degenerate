@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependency.dart';import 'manifest_file.dart';final class Manifest {const Manifest({required this.name, this.file, this.metadata, this.resolved, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency.dart';import 'manifest_file.dart';@immutable final class Manifest {const Manifest({required this.name, this.file, this.metadata, this.resolved, });
 
 factory Manifest.fromJson(Map<String, dynamic> json) { return Manifest(
   name: json['name'] as String,

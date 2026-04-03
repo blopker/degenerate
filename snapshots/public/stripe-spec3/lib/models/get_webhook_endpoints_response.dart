@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_endpoint.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetWebhookEndpointsResponseObject {const GetWebhookEndpointsResponseObject._(this.value);
+@immutable final class GetWebhookEndpointsResponseObject {const GetWebhookEndpointsResponseObject._(this.value);
 
 factory GetWebhookEndpointsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetWebhookEndpointsResponseObject($value)'; } 
  }
 /// 
-final class GetWebhookEndpointsResponse {const GetWebhookEndpointsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetWebhookEndpointsResponse {const GetWebhookEndpointsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetWebhookEndpointsResponse.fromJson(Map<String, dynamic> json) { return GetWebhookEndpointsResponse(
   data: (json['data'] as List<dynamic>).map((e) => WebhookEndpoint.fromJson(e as Map<String, dynamic>)).toList(),

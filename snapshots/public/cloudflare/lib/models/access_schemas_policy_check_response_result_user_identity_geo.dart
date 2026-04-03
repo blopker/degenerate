@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSchemasPolicyCheckResponseResultUserIdentityGeo {const AccessSchemasPolicyCheckResponseResultUserIdentityGeo({this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasPolicyCheckResponseResultUserIdentityGeo {const AccessSchemasPolicyCheckResponseResultUserIdentityGeo({this.country});
 
 factory AccessSchemasPolicyCheckResponseResultUserIdentityGeo.fromJson(Map<String, dynamic> json) { return AccessSchemasPolicyCheckResponseResultUserIdentityGeo(
   country: json['country'] as String?,

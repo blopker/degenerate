@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
-final class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
+@immutable final class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod._(this.value);
 
 factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountUsageUsageTriggerCallbackMethod($value)'; } 
  }
-final class AccountUsageUsageTrigger {const AccountUsageUsageTrigger({this.accountSid, this.apiVersion, this.callbackMethod, this.callbackUrl, this.currentValue, this.dateCreated, this.dateFired, this.dateUpdated, this.friendlyName, this.recurring, this.sid, this.triggerBy, this.triggerValue, this.uri, this.usageCategory, this.usageRecordUri, });
+@immutable final class AccountUsageUsageTrigger {const AccountUsageUsageTrigger({this.accountSid, this.apiVersion, this.callbackMethod, this.callbackUrl, this.currentValue, this.dateCreated, this.dateFired, this.dateUpdated, this.friendlyName, this.recurring, this.sid, this.triggerBy, this.triggerValue, this.uri, this.usageCategory, this.usageRecordUri, });
 
 factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) { return AccountUsageUsageTrigger(
   accountSid: json['account_sid'] as String?,

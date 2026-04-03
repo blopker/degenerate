@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_flows_amount_details_client_resource_tip.dart';/// 
-final class PaymentFlowsAmountDetailsClient {const PaymentFlowsAmountDetailsClient({this.tip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_amount_details_client_resource_tip.dart';/// 
+@immutable final class PaymentFlowsAmountDetailsClient {const PaymentFlowsAmountDetailsClient({this.tip});
 
 factory PaymentFlowsAmountDetailsClient.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsClient(
   tip: json['tip'] != null ? PaymentFlowsAmountDetailsClientResourceTip.fromJson(json['tip'] as Map<String, dynamic>) : null,

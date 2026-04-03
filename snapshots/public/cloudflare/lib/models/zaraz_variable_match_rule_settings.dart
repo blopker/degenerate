@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazVariableMatchRuleSettings {const ZarazVariableMatchRuleSettings({required this.match, required this.variable, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazVariableMatchRuleSettings {const ZarazVariableMatchRuleSettings({required this.match, required this.variable, });
 
 factory ZarazVariableMatchRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazVariableMatchRuleSettings(
   match: json['match'] as String,

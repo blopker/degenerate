@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order memberships by.
-final class UserSAccountMembershipsListMembershipsOrder {const UserSAccountMembershipsListMembershipsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order memberships by.
+@immutable final class UserSAccountMembershipsListMembershipsOrder {const UserSAccountMembershipsListMembershipsOrder._(this.value);
 
 factory UserSAccountMembershipsListMembershipsOrder.fromJson(String json) { return switch (json) {
   'id' => id,

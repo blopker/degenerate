@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If specified, the funds from the subscription's invoices will be transferred to the destination and the ID of the resulting transfers will be found on the resulting charges.
-final class PostCustomersCustomerSubscriptionsRequestTransferData {const PostCustomersCustomerSubscriptionsRequestTransferData({this.amountPercent, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If specified, the funds from the subscription's invoices will be transferred to the destination and the ID of the resulting transfers will be found on the resulting charges.
+@immutable final class PostCustomersCustomerSubscriptionsRequestTransferData {const PostCustomersCustomerSubscriptionsRequestTransferData({required this.destination, this.amountPercent, });
 
 factory PostCustomersCustomerSubscriptionsRequestTransferData.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestTransferData(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,

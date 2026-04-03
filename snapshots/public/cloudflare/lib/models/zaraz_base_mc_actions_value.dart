@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZarazBaseMcActionsValue {const ZarazBaseMcActionsValue({required this.actionType, required this.blockingTriggers, required this.data, required this.firingTriggers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazBaseMcActionsValue {const ZarazBaseMcActionsValue({required this.actionType, required this.blockingTriggers, required this.data, required this.firingTriggers, });
 
 factory ZarazBaseMcActionsValue.fromJson(Map<String, dynamic> json) { return ZarazBaseMcActionsValue(
   actionType: json['actionType'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateAuBecsDebit {const MandateAuBecsDebit({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateAuBecsDebit {const MandateAuBecsDebit({required this.url});
 
 factory MandateAuBecsDebit.fromJson(Map<String, dynamic> json) { return MandateAuBecsDebit(
   url: json['url'] as String,

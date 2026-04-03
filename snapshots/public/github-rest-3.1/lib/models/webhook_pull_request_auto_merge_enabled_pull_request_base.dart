@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_auto_merge_enabled_pull_request_base_repo.dart';import 'webhook_pull_request_auto_merge_enabled_pull_request_base_user.dart';final class WebhookPullRequestAutoMergeEnabledPullRequestBase {const WebhookPullRequestAutoMergeEnabledPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_auto_merge_enabled_pull_request_base_repo.dart';import 'webhook_pull_request_auto_merge_enabled_pull_request_base_user.dart';@immutable final class WebhookPullRequestAutoMergeEnabledPullRequestBase {const WebhookPullRequestAutoMergeEnabledPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestAutoMergeEnabledPullRequestBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeEnabledPullRequestBase(
   label: json['label'] as String,

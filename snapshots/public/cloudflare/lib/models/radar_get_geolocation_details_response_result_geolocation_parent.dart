@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_geolocation_details_response_result_geolocation_parent_parent.dart';/// The type of the geolocation.
-final class RadarGetGeolocationDetailsResponseResultGeolocationParentType {const RadarGetGeolocationDetailsResponseResultGeolocationParentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_geolocation_details_response_result_geolocation_parent_parent.dart';/// The type of the geolocation.
+@immutable final class RadarGetGeolocationDetailsResponseResultGeolocationParentType {const RadarGetGeolocationDetailsResponseResultGeolocationParentType._(this.value);
 
 factory RadarGetGeolocationDetailsResponseResultGeolocationParentType.fromJson(String json) { return switch (json) {
   'CONTINENT' => continent,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetGeolocationDetailsResponseResultGeolocationParentType($value)'; } 
  }
-final class RadarGetGeolocationDetailsResponseResultGeolocationParent {const RadarGetGeolocationDetailsResponseResultGeolocationParent({this.code, required this.geoId, required this.latitude, required this.longitude, required this.name, required this.parent, required this.type, });
+@immutable final class RadarGetGeolocationDetailsResponseResultGeolocationParent {const RadarGetGeolocationDetailsResponseResultGeolocationParent({required this.geoId, required this.latitude, required this.longitude, required this.name, required this.parent, required this.type, this.code, });
 
 factory RadarGetGeolocationDetailsResponseResultGeolocationParent.fromJson(Map<String, dynamic> json) { return RadarGetGeolocationDetailsResponseResultGeolocationParent(
   code: json['code'] as String?,

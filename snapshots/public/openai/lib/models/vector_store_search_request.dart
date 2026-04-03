@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'compound_filter.dart';import 'vector_store_search_request_filters.dart';import 'vector_store_search_request_query.dart';import 'vector_store_search_request_ranking_options.dart';final class VectorStoreSearchRequest {const VectorStoreSearchRequest({required this.query, this.rewriteQuery = false, this.maxNumResults = 10, this.filters, this.rankingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'compound_filter.dart';import 'vector_store_search_request_filters.dart';import 'vector_store_search_request_query.dart';import 'vector_store_search_request_ranking_options.dart';@immutable final class VectorStoreSearchRequest {const VectorStoreSearchRequest({required this.query, this.rewriteQuery = false, this.maxNumResults = 10, this.filters, this.rankingOptions, });
 
 factory VectorStoreSearchRequest.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequest(
   query: OneOf2.parse(json['query'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `country` when specifying a country code in the rule.
-final class FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `country` when specifying a country code in the rule.
+@immutable final class FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget._(this.value);
 
 factory FirewallCountryConfigurationTarget.fromJson(String json) { return switch (json) {
   'country' => country,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallCountryConfigurationTarget($value)'; } 
  }
-final class FirewallCountryConfiguration {const FirewallCountryConfiguration({this.target, this.value, });
+@immutable final class FirewallCountryConfiguration {const FirewallCountryConfiguration({this.target, this.value, });
 
 factory FirewallCountryConfiguration.fromJson(Map<String, dynamic> json) { return FirewallCountryConfiguration(
   target: json['target'] != null ? FirewallCountryConfigurationTarget.fromJson(json['target'] as String) : null,

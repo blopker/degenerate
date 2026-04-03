@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetDnsAs112TimeseriesByEdnsResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

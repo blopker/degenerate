@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_zonelockdown.dart';final class FirewallZonelockdownResponseCollection {const FirewallZonelockdownResponseCollection({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_zonelockdown.dart';@immutable final class FirewallZonelockdownResponseCollection {const FirewallZonelockdownResponseCollection({required this.result});
 
 factory FirewallZonelockdownResponseCollection.fromJson(Map<String, dynamic> json) { return FirewallZonelockdownResponseCollection(
   result: (json['result'] as List<dynamic>).map((e) => FirewallZonelockdown.fromJson(e as Map<String, dynamic>)).toList(),

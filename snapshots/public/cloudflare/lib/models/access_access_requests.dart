@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_components_schemas_email.dart';import 'access_timestamp.dart';/// The event that occurred, such as a login attempt.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_email.dart';import 'access_timestamp.dart';/// The event that occurred, such as a login attempt.
 extension type const AccessAction(String value) {
 factory AccessAction.fromJson(String json) => AccessAction(json);
 
@@ -49,7 +49,7 @@ factory AccessRayId.fromJson(String json) => AccessRayId(json);
 String toJson() => value;
 
 }
-final class AccessAccessRequests {const AccessAccessRequests({this.action, this.allowed, this.appDomain, this.appUid, this.connection, this.createdAt, this.ipAddress, this.rayId, this.userEmail, });
+@immutable final class AccessAccessRequests {const AccessAccessRequests({this.action, this.allowed, this.appDomain, this.appUid, this.connection, this.createdAt, this.ipAddress, this.rayId, this.userEmail, });
 
 factory AccessAccessRequests.fromJson(Map<String, dynamic> json) { return AccessAccessRequests(
   action: json['action'] != null ? AccessAction.fromJson(json['action'] as String) : null,

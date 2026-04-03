@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'environment.dart';final class ReposGetAllEnvironmentsResponse {const ReposGetAllEnvironmentsResponse({this.totalCount, this.environments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'environment.dart';@immutable final class ReposGetAllEnvironmentsResponse {const ReposGetAllEnvironmentsResponse({this.totalCount, this.environments, });
 
 factory ReposGetAllEnvironmentsResponse.fromJson(Map<String, dynamic> json) { return ReposGetAllEnvironmentsResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_au_becs_debit_display_preference.dart';/// Stripe users in Australia can accept Bulk Electronic Clearing System (BECS) direct debit payments from customers with an Australian bank account. Check this [page](https://docs.stripe.com/payments/au-becs-debit) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_au_becs_debit_display_preference.dart';/// Stripe users in Australia can accept Bulk Electronic Clearing System (BECS) direct debit payments from customers with an Australian bank account. Check this [page](https://docs.stripe.com/payments/au-becs-debit) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetShippingRatesShippingRateTokenRequest {const GetShippingRatesShippingRateTokenRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetShippingRatesShippingRateTokenRequest {const GetShippingRatesShippingRateTokenRequest();
 
 factory GetShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) { return GetShippingRatesShippingRateTokenRequest(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'amazon_pay_underlying_payment_method_funding_details.dart';/// 
-final class PaymentMethodDetailsAmazonPay {const PaymentMethodDetailsAmazonPay({this.funding, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amazon_pay_underlying_payment_method_funding_details.dart';/// 
+@immutable final class PaymentMethodDetailsAmazonPay {const PaymentMethodDetailsAmazonPay({this.funding, this.transactionId, });
 
 factory PaymentMethodDetailsAmazonPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAmazonPay(
   funding: json['funding'] != null ? AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>) : null,

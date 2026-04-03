@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_modify_rules_request_rules.dart';import 'rum_rule_identifier.dart';final class RumModifyRulesRequest {const RumModifyRulesRequest({this.deleteRules, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_modify_rules_request_rules.dart';import 'rum_rule_identifier.dart';@immutable final class RumModifyRulesRequest {const RumModifyRulesRequest({this.deleteRules, this.rules, });
 
 factory RumModifyRulesRequest.fromJson(Map<String, dynamic> json) { return RumModifyRulesRequest(
   deleteRules: (json['delete_rules'] as List<dynamic>?)?.map((e) => RumRuleIdentifier.fromJson(e as String)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_resource.dart';/// The type of object returned, must be `list`.
-final class ResponseItemListObject {const ResponseItemListObject._(this.value);
+@immutable final class ResponseItemListObject {const ResponseItemListObject._(this.value);
 
 factory ResponseItemListObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseItemListObject($value)'; } 
  }
 /// A list of Response items.
-final class ResponseItemList {const ResponseItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
+@immutable final class ResponseItemList {const ResponseItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
 
 factory ResponseItemList.fromJson(Map<String, dynamic> json) { return ResponseItemList(
   object: ResponseItemListObject.fromJson(json['object'] as String),

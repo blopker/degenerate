@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestCapabilitiesTransfers {const PostAccountsRequestCapabilitiesTransfers({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestCapabilitiesTransfers {const PostAccountsRequestCapabilitiesTransfers({this.requested});
 
 factory PostAccountsRequestCapabilitiesTransfers.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesTransfers(
   requested: json['requested'] as bool?,

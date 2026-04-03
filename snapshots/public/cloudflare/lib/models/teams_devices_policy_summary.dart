@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The device settings profile assigned to this registration.
-final class TeamsDevicesPolicySummary {const TeamsDevicesPolicySummary({required this.$default, required this.deleted, required this.id, required this.name, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The device settings profile assigned to this registration.
+@immutable final class TeamsDevicesPolicySummary {const TeamsDevicesPolicySummary({required this.$default, required this.deleted, required this.id, required this.name, required this.updatedAt, });
 
 factory TeamsDevicesPolicySummary.fromJson(Map<String, dynamic> json) { return TeamsDevicesPolicySummary(
   $default: json['default'] as bool,

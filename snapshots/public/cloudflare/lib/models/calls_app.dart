@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_created.dart';import 'calls_identifier.dart';import 'calls_modified.dart';import 'calls_name.dart';final class CallsApp {const CallsApp({this.created, this.modified, this.name, this.uid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_created.dart';import 'calls_identifier.dart';import 'calls_modified.dart';import 'calls_name.dart';@immutable final class CallsApp {const CallsApp({this.created, this.modified, this.name, this.uid, });
 
 factory CallsApp.fromJson(Map<String, dynamic> json) { return CallsApp(
   created: json['created'] != null ? CallsCreated.fromJson(json['created'] as String) : null,

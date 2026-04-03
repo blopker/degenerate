@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_check_suite.dart';import 'check_run_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';/// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
-final class CheckRunStatus {const CheckRunStatus._(this.value);
+@immutable final class CheckRunStatus {const CheckRunStatus._(this.value);
 
 factory CheckRunStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CheckRunStatus($value)'; } 
  }
-final class CheckRunConclusion {const CheckRunConclusion._(this.value);
+@immutable final class CheckRunConclusion {const CheckRunConclusion._(this.value);
 
 factory CheckRunConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckRunConclusion($value)'; } 
  }
 /// A check performed on the code of a given code change
-final class CheckRun {const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment, });
+@immutable final class CheckRun {const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment, });
 
 factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
   id: (json['id'] as num).toInt(),

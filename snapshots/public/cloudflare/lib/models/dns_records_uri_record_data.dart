@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a URI record.
-final class DnsRecordsUriRecordData {const DnsRecordsUriRecordData({this.target, this.weight, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a URI record.
+@immutable final class DnsRecordsUriRecordData {const DnsRecordsUriRecordData({this.target, this.weight, });
 
 factory DnsRecordsUriRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsUriRecordData(
   target: json['target'] as String?,

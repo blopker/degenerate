@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transc
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
 /// single channel (mono), and little-endian byte order.
 /// 
-final class RealtimeTranscriptionSessionCreateRequestInputAudioFormat {const RealtimeTranscriptionSessionCreateRequestInputAudioFormat._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateRequestInputAudioFormat {const RealtimeTranscriptionSessionCreateRequestInputAudioFormat._(this.value);
 
 factory RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(String json) { return switch (json) {
   'pcm16' => pcm16,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInputAudioFormat($value)'; } 
  }
-final class RealtimeTranscriptionSessionCreateRequestInclude {const RealtimeTranscriptionSessionCreateRequestInclude._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateRequestInclude {const RealtimeTranscriptionSessionCreateRequestInclude._(this.value);
 
 factory RealtimeTranscriptionSessionCreateRequestInclude.fromJson(String json) { return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInclude($value)'; } 
  }
 /// Realtime transcription session object configuration.
-final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });
+@immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });
 
 factory RealtimeTranscriptionSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,

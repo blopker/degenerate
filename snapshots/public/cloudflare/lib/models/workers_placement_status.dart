@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
-final class WorkersPlacementStatus {const WorkersPlacementStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
+@immutable final class WorkersPlacementStatus {const WorkersPlacementStatus._(this.value);
 
 factory WorkersPlacementStatus.fromJson(String json) { return switch (json) {
   'SUCCESS' => success,

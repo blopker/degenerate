@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default mitigation action used when there is no mitigation action defined on the operation
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default mitigation action used when there is no mitigation action defined on the operation
 /// Mitigation actions are as follows:
 /// 
 ///   * `log` - log request when request does not conform to schema
@@ -10,7 +10,7 @@
 /// 
 /// `null` will have no effect.
 /// 
-final class ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch._(this.value);
+@immutable final class ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch._(this.value);
 
 factory ShieldOldValidationDefaultMitigationActionPatch.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// `null` will have no effect.
 /// 
-final class ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch._(this.value);
+@immutable final class ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch._(this.value);
 
 factory ShieldOldValidationOverrideMitigationActionPatch.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldOldValidationOverrideMitigationActionPatch($value)'; } 
  }
-final class ShieldOldZoneSchemaValidationSettingsPatch {const ShieldOldZoneSchemaValidationSettingsPatch({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
+@immutable final class ShieldOldZoneSchemaValidationSettingsPatch {const ShieldOldZoneSchemaValidationSettingsPatch({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
 factory ShieldOldZoneSchemaValidationSettingsPatch.fromJson(Map<String, dynamic> json) { return ShieldOldZoneSchemaValidationSettingsPatch(
   validationDefaultMitigationAction: json['validation_default_mitigation_action'] != null ? ShieldOldValidationDefaultMitigationActionPatch.fromJson(json['validation_default_mitigation_action'] as String) : null,

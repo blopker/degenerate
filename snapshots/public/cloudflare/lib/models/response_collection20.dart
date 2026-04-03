@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_messages2.dart';import 'hyperdrive_result_info.dart';final class ResponseCollection20 {const ResponseCollection20({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_messages2.dart';import 'hyperdrive_result_info.dart';@immutable final class ResponseCollection20 {const ResponseCollection20({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseCollection20.fromJson(Map<String, dynamic> json) { return ResponseCollection20(
   errors: (json['errors'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),

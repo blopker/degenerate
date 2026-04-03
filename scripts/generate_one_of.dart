@@ -86,7 +86,7 @@ void _writeOneOf(StringBuffer buf, int n) {
   buf.writeln('  static $cls parse<$parseTypeParams>(');
   buf.writeln('    Object? json, {');
   for (var i = 0; i < n; i++) {
-    buf.writeln('    required ${letters[i]} Function(Object?) from${letters[i]},');
+    buf.writeln('    required ${letters[i]} Function(Object) from${letters[i]},');
   }
   buf.writeln('  }) {');
   for (var i = 0; i < n; i++) {
@@ -95,7 +95,7 @@ void _writeOneOf(StringBuffer buf, int n) {
   buf.writeln('    final errors = <(String, Object)>[];');
   for (var i = 0; i < n; i++) {
     buf.writeln('    try {');
-    buf.writeln('      return OneOf$n._(from${letters[i]}(json));');
+    buf.writeln('      return OneOf$n._(from${letters[i]}(json!));');
     buf.writeln('    } on Exception catch (e) {');
     buf.writeln("      errors.add(('\$${letters[i]}', e));");
     buf.writeln('    }');

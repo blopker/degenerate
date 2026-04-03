@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType._(this.value);
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'shield_old_kind.dart';/// Flag whether schema is enabled for validation.
-final class ShieldSchemaValidationPostSchemaRequestValidationEnabled {const ShieldSchemaValidationPostSchemaRequestValidationEnabled._(this.value);
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_kind.dart';/// Flag whether schema is enabled for validation.
+@immutable final class ShieldSchemaValidationPostSchemaRequestValidationEnabled {const ShieldSchemaValidationPostSchemaRequestValidationEnabled._(this.value);
 
 factory ShieldSchemaValidationPostSchemaRequestValidationEnabled.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldSchemaValidationPostSchemaRequestValidationEnabled($value)'; } 
  }
-final class ShieldSchemaValidationPostSchemaRequest {const ShieldSchemaValidationPostSchemaRequest({required this.file, required this.kind, this.name, this.validationEnabled, });
+@immutable final class ShieldSchemaValidationPostSchemaRequest {const ShieldSchemaValidationPostSchemaRequest({required this.file, required this.kind, this.name, this.validationEnabled, });
 
 factory ShieldSchemaValidationPostSchemaRequest.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationPostSchemaRequest(
   file: base64Decode(json['file'] as String),

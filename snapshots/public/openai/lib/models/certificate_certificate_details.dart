@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CertificateCertificateDetails {const CertificateCertificateDetails({this.validAt, this.expiresAt, this.content, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CertificateCertificateDetails {const CertificateCertificateDetails({this.validAt, this.expiresAt, this.content, });
 
 factory CertificateCertificateDetails.fromJson(Map<String, dynamic> json) { return CertificateCertificateDetails(
   validAt: json['valid_at'] != null ? (json['valid_at'] as num).toInt() : null,

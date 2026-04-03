@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookSecretScanningAlertLocationCreatedFormEncoded {const WebhookSecretScanningAlertLocationCreatedFormEncoded({required this.payload});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookSecretScanningAlertLocationCreatedFormEncoded {const WebhookSecretScanningAlertLocationCreatedFormEncoded({required this.payload});
 
 factory WebhookSecretScanningAlertLocationCreatedFormEncoded.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertLocationCreatedFormEncoded(
   payload: json['payload'] as String,

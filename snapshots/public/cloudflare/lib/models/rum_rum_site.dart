@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-extension type const RumEditable(bool value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const RumEditable(bool value) {
 factory RumEditable.fromJson(bool json) => RumEditable(json);
 
 bool toJson() => value;
@@ -19,7 +19,7 @@ factory RumValue.fromJson(String json) => RumValue(json);
 String toJson() => value;
 
 }
-final class RumRumSite {const RumRumSite({this.editable, this.id, this.value, });
+@immutable final class RumRumSite {const RumRumSite({this.editable, this.id, this.value, });
 
 factory RumRumSite.fromJson(Map<String, dynamic> json) { return RumRumSite(
   editable: json['editable'] != null ? RumEditable.fromJson(json['editable'] as bool) : null,

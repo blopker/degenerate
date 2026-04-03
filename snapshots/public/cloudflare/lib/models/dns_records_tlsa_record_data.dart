@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a TLSA record.
-final class DnsRecordsTlsaRecordData {const DnsRecordsTlsaRecordData({this.certificate, this.matchingType, this.selector, this.usage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a TLSA record.
+@immutable final class DnsRecordsTlsaRecordData {const DnsRecordsTlsaRecordData({this.certificate, this.matchingType, this.selector, this.usage, });
 
 factory DnsRecordsTlsaRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsTlsaRecordData(
   certificate: json['certificate'] as String?,

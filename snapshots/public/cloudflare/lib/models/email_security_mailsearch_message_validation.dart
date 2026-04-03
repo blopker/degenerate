@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_validation_status.dart';final class EmailSecurityMailsearchMessageValidation {const EmailSecurityMailsearchMessageValidation({this.comment, this.dkim, this.dmarc, this.spf, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_validation_status.dart';@immutable final class EmailSecurityMailsearchMessageValidation {const EmailSecurityMailsearchMessageValidation({this.comment, this.dkim, this.dmarc, this.spf, });
 
 factory EmailSecurityMailsearchMessageValidation.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessageValidation(
   comment: json['comment'] as String?,

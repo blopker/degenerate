@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_observability.dart';import 'workers_worker_references.dart';import 'workers_worker_subdomain.dart';import 'workers_worker_tail_consumers.dart';final class WorkersWorker {const WorkersWorker({required this.createdOn, this.deployedOn, required this.id, this.logpush = false, required this.name, required this.observability, required this.references, required this.subdomain, this.tags = const [], this.tailConsumers = const [], required this.updatedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_observability.dart';import 'workers_worker_references.dart';import 'workers_worker_subdomain.dart';import 'workers_worker_tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn, this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
 
 factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),

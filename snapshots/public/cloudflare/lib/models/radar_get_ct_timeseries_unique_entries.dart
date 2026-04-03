@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtTimeseriesUniqueEntries {const RadarGetCtTimeseriesUniqueEntries._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesUniqueEntries {const RadarGetCtTimeseriesUniqueEntries._(this.value);
 
 factory RadarGetCtTimeseriesUniqueEntries.fromJson(String json) { return switch (json) {
   'true' => $true,

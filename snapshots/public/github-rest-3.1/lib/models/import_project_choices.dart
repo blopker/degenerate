@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImportProjectChoices {const ImportProjectChoices({this.vcs, this.tfvcProject, this.humanName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImportProjectChoices {const ImportProjectChoices({this.vcs, this.tfvcProject, this.humanName, });
 
 factory ImportProjectChoices.fromJson(Map<String, dynamic> json) { return ImportProjectChoices(
   vcs: json['vcs'] as String?,

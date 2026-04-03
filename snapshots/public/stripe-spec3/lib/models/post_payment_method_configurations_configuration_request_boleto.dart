@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_boleto_display_preference.dart';/// Boleto is an official (regulated by the Central Bank of Brazil) payment method in Brazil. Check this [page](https://docs.stripe.com/payments/boleto) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestBoleto {const PostPaymentMethodConfigurationsConfigurationRequestBoleto({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_boleto_display_preference.dart';/// Boleto is an official (regulated by the Central Bank of Brazil) payment method in Brazil. Check this [page](https://docs.stripe.com/payments/boleto) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestBoleto {const PostPaymentMethodConfigurationsConfigurationRequestBoleto({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestBoleto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestBoleto(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBoletoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

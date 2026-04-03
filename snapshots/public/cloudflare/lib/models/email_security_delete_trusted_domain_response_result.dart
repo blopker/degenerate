@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityDeleteTrustedDomainResponseResult {const EmailSecurityDeleteTrustedDomainResponseResult({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDeleteTrustedDomainResponseResult {const EmailSecurityDeleteTrustedDomainResponseResult({required this.id});
 
 factory EmailSecurityDeleteTrustedDomainResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteTrustedDomainResponseResult(
   id: (json['id'] as num).toInt(),

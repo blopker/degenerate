@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoicePaymentMethodOptionsSepaDebit {const InvoicePaymentMethodOptionsSepaDebit();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoicePaymentMethodOptionsSepaDebit {const InvoicePaymentMethodOptionsSepaDebit();
 
 factory InvoicePaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsSepaDebit(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
-final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
+@immutable final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name = '', });
 
 factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandler(
   features: json['features'] != null ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,

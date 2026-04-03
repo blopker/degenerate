@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delete_domain_response_result.dart';import 'email_security_message.dart';final class EmailSecurityDeleteDomainResponse {const EmailSecurityDeleteDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delete_domain_response_result.dart';import 'email_security_message.dart';@immutable final class EmailSecurityDeleteDomainResponse {const EmailSecurityDeleteDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory EmailSecurityDeleteDomainResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteDomainResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_webhook_endpoints_webhook_endpoint_request_description.dart';import 'post_webhook_endpoints_webhook_endpoint_request_metadata.dart';final class PostWebhookEndpointsWebhookEndpointRequestEnabledEvents {const PostWebhookEndpointsWebhookEndpointRequestEnabledEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_webhook_endpoints_webhook_endpoint_request_description.dart';import 'post_webhook_endpoints_webhook_endpoint_request_metadata.dart';@immutable final class PostWebhookEndpointsWebhookEndpointRequestEnabledEvents {const PostWebhookEndpointsWebhookEndpointRequestEnabledEvents._(this.value);
 
 factory PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(String json) { return switch (json) {
   '*' => $empty,
@@ -783,7 +783,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostWebhookEndpointsWebhookEndpointRequestEnabledEvents($value)'; } 
  }
-final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
+@immutable final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
 
 factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsWebhookEndpointRequest(
   description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.fromJson(v as String),) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant1 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant1 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant1._(this.value);
 
 factory BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant1.fromJson(String json) { return switch (json) {
   'load' => load,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant1($value)'; } 
  }
-final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant2 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant2._(this.value);
+@immutable final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant2 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant2._(this.value);
 
 factory BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant2.fromJson(String json) { return switch (json) {
   'domcontentloaded' => domcontentloaded,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant2($value)'; } 
  }
-final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant3 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant3._(this.value);
+@immutable final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant3 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant3._(this.value);
 
 factory BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant3.fromJson(String json) { return switch (json) {
   'networkidle0' => networkidle0,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant3($value)'; } 
  }
-final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant4 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant4._(this.value);
+@immutable final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant4 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant4._(this.value);
 
 factory BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant4.fromJson(String json) { return switch (json) {
   'networkidle2' => networkidle2,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant4($value)'; } 
  }
-final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant5 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant5._(this.value);
+@immutable final class BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant5 {const BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant5._(this.value);
 
 factory BrapiPostScrapeRequestVariant1GotoOptionsWaitUntilVariant5.fromJson(String json) { return switch (json) {
   'load' => load,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CheckoutRenderingOptionsParamAmountTaxDisplay {const CheckoutRenderingOptionsParamAmountTaxDisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckoutRenderingOptionsParamAmountTaxDisplay {const CheckoutRenderingOptionsParamAmountTaxDisplay._(this.value);
 
 factory CheckoutRenderingOptionsParamAmountTaxDisplay.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CheckoutRenderingOptionsParamAmountTaxDisplay($value)'; } 
  }
-final class CheckoutRenderingOptionsParam {const CheckoutRenderingOptionsParam({this.amountTaxDisplay, this.template, });
+@immutable final class CheckoutRenderingOptionsParam {const CheckoutRenderingOptionsParam({this.amountTaxDisplay, this.template, });
 
 factory CheckoutRenderingOptionsParam.fromJson(Map<String, dynamic> json) { return CheckoutRenderingOptionsParam(
   amountTaxDisplay: json['amount_tax_display'] != null ? CheckoutRenderingOptionsParamAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,

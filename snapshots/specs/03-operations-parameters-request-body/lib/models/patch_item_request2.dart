@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchItemRequest2 {const PatchItemRequest2({this.name, this.avatar, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchItemRequest2 {const PatchItemRequest2({this.name, this.avatar, });
 
 factory PatchItemRequest2.fromJson(Map<String, dynamic> json) { return PatchItemRequest2(
   name: json['name'] as String?,

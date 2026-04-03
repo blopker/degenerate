@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sort order.
-final class RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
+@immutable final class RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder._(this.value);
 
 factory RadarGetBgpRoutesAsnsSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,

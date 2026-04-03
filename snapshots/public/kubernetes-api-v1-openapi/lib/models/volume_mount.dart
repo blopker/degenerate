@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// VolumeMount describes a mounting of a Volume within a container.
-final class VolumeMount {const VolumeMount({this.mountPath = '', this.mountPropagation, this.name = '', this.readOnly, this.recursiveReadOnly, this.subPath, this.subPathExpr, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// VolumeMount describes a mounting of a Volume within a container.
+@immutable final class VolumeMount {const VolumeMount({this.mountPath = '', this.mountPropagation, this.name = '', this.readOnly, this.recursiveReadOnly, this.subPath, this.subPathExpr, });
 
 factory VolumeMount.fromJson(Map<String, dynamic> json) { return VolumeMount(
   mountPath: json['mountPath'] as String,

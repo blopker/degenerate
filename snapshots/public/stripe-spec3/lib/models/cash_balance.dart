@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_balance_customer_balance_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CashBalanceObject {const CashBalanceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_customer_balance_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class CashBalanceObject {const CashBalanceObject._(this.value);
 
 factory CashBalanceObject.fromJson(String json) { return switch (json) {
   'cash_balance' => cashBalance,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CashBalanceObject($value)'; } 
  }
 /// A customer's `Cash balance` represents real funds. Customers can add funds to their cash balance by sending a bank transfer. These funds can be used for payment and can eventually be paid out to your bank account.
-final class CashBalance {const CashBalance({this.available, required this.customer, this.customerAccount, required this.livemode, required this.object, required this.settings, });
+@immutable final class CashBalance {const CashBalance({required this.customer, required this.livemode, required this.object, required this.settings, this.available, this.customerAccount, });
 
 factory CashBalance.fromJson(Map<String, dynamic> json) { return CashBalance(
   available: (json['available'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),

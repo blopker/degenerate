@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `bancontact` PaymentMethod, this hash contains details about the Bancontact payment method.
-final class PostPaymentMethodsRequestBancontact {const PostPaymentMethodsRequestBancontact();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `bancontact` PaymentMethod, this hash contains details about the Bancontact payment method.
+@immutable final class PostPaymentMethodsRequestBancontact {const PostPaymentMethodsRequestBancontact();
 
 factory PostPaymentMethodsRequestBancontact.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBancontact(
 

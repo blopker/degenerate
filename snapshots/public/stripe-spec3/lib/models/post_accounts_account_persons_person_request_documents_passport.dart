@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_person_request_documents_passport_files.dart';final class PostAccountsAccountPersonsPersonRequestDocumentsPassport {const PostAccountsAccountPersonsPersonRequestDocumentsPassport({this.files});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_person_request_documents_passport_files.dart';@immutable final class PostAccountsAccountPersonsPersonRequestDocumentsPassport {const PostAccountsAccountPersonsPersonRequestDocumentsPassport({this.files});
 
 factory PostAccountsAccountPersonsPersonRequestDocumentsPassport.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsPersonRequestDocumentsPassport(
   files: (json['files'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2.fromJson(v as String),)).toList(),

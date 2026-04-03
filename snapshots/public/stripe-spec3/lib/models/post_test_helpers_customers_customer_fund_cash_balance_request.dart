@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersCustomersCustomerFundCashBalanceRequest {const PostTestHelpersCustomersCustomerFundCashBalanceRequest({required this.amount, required this.currency, this.expand, this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersCustomersCustomerFundCashBalanceRequest {const PostTestHelpersCustomersCustomerFundCashBalanceRequest({required this.amount, required this.currency, this.expand, this.reference, });
 
 factory PostTestHelpersCustomersCustomerFundCashBalanceRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersCustomersCustomerFundCashBalanceRequest(
   amount: (json['amount'] as num).toInt(),

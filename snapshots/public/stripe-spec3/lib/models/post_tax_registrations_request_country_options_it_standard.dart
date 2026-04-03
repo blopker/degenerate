@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme {const PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme {const PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme._(this.value);
 
 factory PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme.fromJson(String json) { return switch (json) {
   'inbound_goods' => inboundGoods,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme($value)'; } 
  }
-final class PostTaxRegistrationsRequestCountryOptionsItStandard {const PostTaxRegistrationsRequestCountryOptionsItStandard({required this.placeOfSupplyScheme});
+@immutable final class PostTaxRegistrationsRequestCountryOptionsItStandard {const PostTaxRegistrationsRequestCountryOptionsItStandard({required this.placeOfSupplyScheme});
 
 factory PostTaxRegistrationsRequestCountryOptionsItStandard.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsItStandard(
   placeOfSupplyScheme: PostTaxRegistrationsRequestCountryOptionsItStandardPlaceOfSupplyScheme.fromJson(json['place_of_supply_scheme'] as String),

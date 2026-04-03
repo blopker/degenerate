@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_moderation_response_results_categories.dart';import 'create_moderation_response_results_category_applied_input_types.dart';import 'create_moderation_response_results_category_scores.dart';final class CreateModerationResponseResults {const CreateModerationResponseResults({required this.flagged, required this.categories, required this.categoryScores, required this.categoryAppliedInputTypes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_response_results_categories.dart';import 'create_moderation_response_results_category_applied_input_types.dart';import 'create_moderation_response_results_category_scores.dart';@immutable final class CreateModerationResponseResults {const CreateModerationResponseResults({required this.flagged, required this.categories, required this.categoryScores, required this.categoryAppliedInputTypes, });
 
 factory CreateModerationResponseResults.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResults(
   flagged: json['flagged'] as bool,

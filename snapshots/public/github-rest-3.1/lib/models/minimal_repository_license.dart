@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url, this.nodeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url, this.nodeId, });
 
 factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) { return MinimalRepositoryLicense(
   key: json['key'] as String?,

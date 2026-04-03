@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `other`.
-final class OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `other`.
+@immutable final class OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType._(this.value);
 
 factory OtherChunkingStrategyResponseParamType.fromJson(String json) { return switch (json) {
   'other' => $other,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OtherChunkingStrategyResponseParamType($value)'; } 
  }
 /// This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.
-final class OtherChunkingStrategyResponseParam {const OtherChunkingStrategyResponseParam({required this.type});
+@immutable final class OtherChunkingStrategyResponseParam {const OtherChunkingStrategyResponseParam({required this.type});
 
 factory OtherChunkingStrategyResponseParam.fromJson(Map<String, dynamic> json) { return OtherChunkingStrategyResponseParam(
   type: OtherChunkingStrategyResponseParamType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SlurperGcsLikeCredsSchema {const R2SlurperGcsLikeCredsSchema({required this.clientEmail, required this.privateKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperGcsLikeCredsSchema {const R2SlurperGcsLikeCredsSchema({required this.clientEmail, required this.privateKey, });
 
 factory R2SlurperGcsLikeCredsSchema.fromJson(Map<String, dynamic> json) { return R2SlurperGcsLikeCredsSchema(
   clientEmail: json['clientEmail'] as String,

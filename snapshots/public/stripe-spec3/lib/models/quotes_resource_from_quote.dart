@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quote.dart';import 'quotes_resource_from_quote_quote.dart';/// 
-final class QuotesResourceFromQuote {const QuotesResourceFromQuote({required this.isRevision, required this.quote, });
+@immutable final class QuotesResourceFromQuote {const QuotesResourceFromQuote({required this.isRevision, required this.quote, });
 
 factory QuotesResourceFromQuote.fromJson(Map<String, dynamic> json) { return QuotesResourceFromQuote(
   isRevision: json['is_revision'] as bool,

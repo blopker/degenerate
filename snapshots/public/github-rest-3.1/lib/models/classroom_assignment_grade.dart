@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Grade for a student or groups GitHub Classroom assignment
-final class ClassroomAssignmentGrade {const ClassroomAssignmentGrade({required this.assignmentName, required this.assignmentUrl, required this.starterCodeUrl, required this.githubUsername, required this.rosterIdentifier, required this.studentRepositoryName, required this.studentRepositoryUrl, required this.submissionTimestamp, required this.pointsAwarded, required this.pointsAvailable, this.groupName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Grade for a student or groups GitHub Classroom assignment
+@immutable final class ClassroomAssignmentGrade {const ClassroomAssignmentGrade({required this.assignmentName, required this.assignmentUrl, required this.starterCodeUrl, required this.githubUsername, required this.rosterIdentifier, required this.studentRepositoryName, required this.studentRepositoryUrl, required this.submissionTimestamp, required this.pointsAwarded, required this.pointsAvailable, this.groupName, });
 
 factory ClassroomAssignmentGrade.fromJson(Map<String, dynamic> json) { return ClassroomAssignmentGrade(
   assignmentName: json['assignment_name'] as String,

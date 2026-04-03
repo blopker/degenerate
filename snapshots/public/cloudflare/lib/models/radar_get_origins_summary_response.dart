@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_origins_summary_response_result.dart';final class RadarGetOriginsSummaryResponse {const RadarGetOriginsSummaryResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_summary_response_result.dart';@immutable final class RadarGetOriginsSummaryResponse {const RadarGetOriginsSummaryResponse({required this.result, required this.success, });
 
 factory RadarGetOriginsSummaryResponse.fromJson(Map<String, dynamic> json) { return RadarGetOriginsSummaryResponse(
   result: RadarGetOriginsSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>),

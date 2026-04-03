@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'healthchecks_id_response_result.dart';final class HealthchecksIdResponse {const HealthchecksIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_id_response_result.dart';@immutable final class HealthchecksIdResponse {const HealthchecksIdResponse({this.result});
 
 factory HealthchecksIdResponse.fromJson(Map<String, dynamic> json) { return HealthchecksIdResponse(
   result: json['result'] != null ? HealthchecksIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

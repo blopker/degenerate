@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_speed_top_ases_response_result_meta_confidence_info_annotations.dart';final class RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfo {const RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_speed_top_ases_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfo {const RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetQualitySpeedTopAsesResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

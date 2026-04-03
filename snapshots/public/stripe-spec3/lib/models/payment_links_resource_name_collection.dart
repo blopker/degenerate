@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_business_name.dart';import 'payment_links_resource_individual_name.dart';/// 
-final class PaymentLinksResourceNameCollection {const PaymentLinksResourceNameCollection({this.business, this.individual, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_business_name.dart';import 'payment_links_resource_individual_name.dart';/// 
+@immutable final class PaymentLinksResourceNameCollection {const PaymentLinksResourceNameCollection({this.business, this.individual, });
 
 factory PaymentLinksResourceNameCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceNameCollection(
   business: json['business'] != null ? PaymentLinksResourceBusinessName.fromJson(json['business'] as Map<String, dynamic>) : null,

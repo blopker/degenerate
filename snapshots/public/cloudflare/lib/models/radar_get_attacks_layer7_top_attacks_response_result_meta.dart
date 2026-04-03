@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_top_attacks_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer7_top_attacks_response_result_meta_date_range.dart';import 'radar_get_attacks_layer7_top_attacks_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer7TopAttacksResponseResultMetaNormalization {const RadarGetAttacksLayer7TopAttacksResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAttacksLayer7TopAttacksResponseResultMetaNormalization {const RadarGetAttacksLayer7TopAttacksResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAttacksLayer7TopAttacksResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7TopAttacksResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAttacksLayer7TopAttacksResponseResultMeta {const RadarGetAttacksLayer7TopAttacksResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAttacksLayer7TopAttacksResponseResultMeta {const RadarGetAttacksLayer7TopAttacksResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer7TopAttacksResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopAttacksResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

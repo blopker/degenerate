@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enable features for Organizations.
-final class OrganizationFlags {const OrganizationFlags({required this.accountCreation, required this.accountDeletion, required this.accountMigration, required this.accountMobility, required this.subOrgCreation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable features for Organizations.
+@immutable final class OrganizationFlags {const OrganizationFlags({required this.accountCreation, required this.accountDeletion, required this.accountMigration, required this.accountMobility, required this.subOrgCreation, });
 
 factory OrganizationFlags.fromJson(Map<String, dynamic> json) { return OrganizationFlags(
   accountCreation: json['account_creation'] as String,

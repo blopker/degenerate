@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataZip {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataZip();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataZip {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataZip();
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataZip(
 

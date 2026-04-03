@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 {const WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4({this.url, this.branch, this.commit, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 {const WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4({this.url, this.branch, this.commit, this.type, });
 
 factory WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(
   url: json['url'] as String?,

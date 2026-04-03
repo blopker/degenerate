@@ -7,7 +7,7 @@ factory SecretsStoreValue.fromJson(String json) => SecretsStoreValue(json);
 String toJson() => value;
 
 }
-final class SecretsStoreCreateSecretObject {const SecretsStoreCreateSecretObject({this.comment, required this.name, required this.scopes, required this.value, });
+@immutable final class SecretsStoreCreateSecretObject {const SecretsStoreCreateSecretObject({required this.name, required this.scopes, required this.value, this.comment, });
 
 factory SecretsStoreCreateSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreCreateSecretObject(
   comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,

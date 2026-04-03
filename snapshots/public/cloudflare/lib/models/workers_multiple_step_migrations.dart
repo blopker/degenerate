@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_migration_step.dart';final class WorkersMultipleStepMigrations {const WorkersMultipleStepMigrations({this.newTag, this.oldTag, this.steps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_migration_step.dart';@immutable final class WorkersMultipleStepMigrations {const WorkersMultipleStepMigrations({this.newTag, this.oldTag, this.steps, });
 
 factory WorkersMultipleStepMigrations.fromJson(Map<String, dynamic> json) { return WorkersMultipleStepMigrations(
   newTag: json['new_tag'] as String?,

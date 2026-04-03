@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_usage.dart';/// The type of the event. Always `image_edit.completed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage.dart';/// The type of the event. Always `image_edit.completed`.
 /// 
-final class ImageEditCompletedEventType {const ImageEditCompletedEventType._(this.value);
+@immutable final class ImageEditCompletedEventType {const ImageEditCompletedEventType._(this.value);
 
 factory ImageEditCompletedEventType.fromJson(String json) { return switch (json) {
   'image_edit.completed' => imageEditCompleted,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The size of the edited image.
 /// 
-final class ImageEditCompletedEventSize {const ImageEditCompletedEventSize._(this.value);
+@immutable final class ImageEditCompletedEventSize {const ImageEditCompletedEventSize._(this.value);
 
 factory ImageEditCompletedEventSize.fromJson(String json) { return switch (json) {
   '1024x1024' => $1024x1024,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The quality setting for the edited image.
 /// 
-final class ImageEditCompletedEventQuality {const ImageEditCompletedEventQuality._(this.value);
+@immutable final class ImageEditCompletedEventQuality {const ImageEditCompletedEventQuality._(this.value);
 
 factory ImageEditCompletedEventQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The background setting for the edited image.
 /// 
-final class ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground._(this.value);
+@immutable final class ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground._(this.value);
 
 factory ImageEditCompletedEventBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output format for the edited image.
 /// 
-final class ImageEditCompletedEventOutputFormat {const ImageEditCompletedEventOutputFormat._(this.value);
+@immutable final class ImageEditCompletedEventOutputFormat {const ImageEditCompletedEventOutputFormat._(this.value);
 
 factory ImageEditCompletedEventOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -147,7 +147,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when image editing has completed and the final image is available.
 /// 
-final class ImageEditCompletedEvent {const ImageEditCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
+@immutable final class ImageEditCompletedEvent {const ImageEditCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
 
 factory ImageEditCompletedEvent.fromJson(Map<String, dynamic> json) { return ImageEditCompletedEvent(
   type: ImageEditCompletedEventType.fromJson(json['type'] as String),

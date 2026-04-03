@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shipping_cost_shipping_rate_data_delivery_estimate.dart';import 'shipping_cost_shipping_rate_data_fixed_amount.dart';final class ShippingCostShippingRateDataTaxBehavior {const ShippingCostShippingRateDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_cost_shipping_rate_data_delivery_estimate.dart';import 'shipping_cost_shipping_rate_data_fixed_amount.dart';@immutable final class ShippingCostShippingRateDataTaxBehavior {const ShippingCostShippingRateDataTaxBehavior._(this.value);
 
 factory ShippingCostShippingRateDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingCostShippingRateDataTaxBehavior($value)'; } 
  }
-final class ShippingCostShippingRateDataType {const ShippingCostShippingRateDataType._(this.value);
+@immutable final class ShippingCostShippingRateDataType {const ShippingCostShippingRateDataType._(this.value);
 
 factory ShippingCostShippingRateDataType.fromJson(String json) { return switch (json) {
   'fixed_amount' => fixedAmount,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingCostShippingRateDataType($value)'; } 
  }
-final class ShippingCostShippingRateData {const ShippingCostShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
+@immutable final class ShippingCostShippingRateData {const ShippingCostShippingRateData({required this.displayName, this.deliveryEstimate, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory ShippingCostShippingRateData.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateData(
   deliveryEstimate: json['delivery_estimate'] != null ? ShippingCostShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,

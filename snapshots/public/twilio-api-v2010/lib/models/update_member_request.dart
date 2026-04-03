@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// How to pass the update request data. Can be `GET` or `POST` and the default is `POST`. `POST` sends the data as encoded form data and `GET` sends the data as query parameters.
-final class UpdateMemberRequestMethod {const UpdateMemberRequestMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// How to pass the update request data. Can be `GET` or `POST` and the default is `POST`. `POST` sends the data as encoded form data and `GET` sends the data as query parameters.
+@immutable final class UpdateMemberRequestMethod {const UpdateMemberRequestMethod._(this.value);
 
 factory UpdateMemberRequestMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateMemberRequestMethod($value)'; } 
  }
-final class UpdateMemberRequest {const UpdateMemberRequest({required this.url, this.method, });
+@immutable final class UpdateMemberRequest {const UpdateMemberRequest({required this.url, this.method, });
 
 factory UpdateMemberRequest.fromJson(Map<String, dynamic> json) { return UpdateMemberRequest(
   url: Uri.parse(json['Url'] as String),

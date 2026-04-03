@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_id.dart';final class RateLimitsForAZoneDeleteARateLimitResponseResult {const RateLimitsForAZoneDeleteARateLimitResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_id.dart';@immutable final class RateLimitsForAZoneDeleteARateLimitResponseResult {const RateLimitsForAZoneDeleteARateLimitResponseResult({this.id});
 
 factory RateLimitsForAZoneDeleteARateLimitResponseResult.fromJson(Map<String, dynamic> json) { return RateLimitsForAZoneDeleteARateLimitResponseResult(
   id: json['id'] != null ? FirewallId.fromJson(json['id'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_is_default_network.dart';import 'tunnel_virtual_network_comment.dart';import 'tunnel_virtual_network_id.dart';import 'tunnel_virtual_network_name.dart';final class TunnelVirtualNetwork {const TunnelVirtualNetwork({required this.comment, required this.createdAt, this.deletedAt, required this.id, required this.isDefaultNetwork, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_is_default_network.dart';import 'tunnel_virtual_network_comment.dart';import 'tunnel_virtual_network_id.dart';import 'tunnel_virtual_network_name.dart';@immutable final class TunnelVirtualNetwork {const TunnelVirtualNetwork({required this.comment, required this.createdAt, required this.id, required this.isDefaultNetwork, required this.name, this.deletedAt, });
 
 factory TunnelVirtualNetwork.fromJson(Map<String, dynamic> json) { return TunnelVirtualNetwork(
   comment: TunnelVirtualNetworkComment.fromJson(json['comment'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodSofort {const PaymentMethodSofort({this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodSofort {const PaymentMethodSofort({this.country});
 
 factory PaymentMethodSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodSofort(
   country: json['country'] as String?,

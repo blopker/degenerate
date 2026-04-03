@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PublicIpMessages2Source {const PublicIpMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicIpMessages2Source {const PublicIpMessages2Source({this.pointer});
 
 factory PublicIpMessages2Source.fromJson(Map<String, dynamic> json) { return PublicIpMessages2Source(
   pointer: json['pointer'] as String?,

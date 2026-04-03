@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingCreditGrantsResourceMonetaryAmount {const BillingCreditGrantsResourceMonetaryAmount({required this.currency, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingCreditGrantsResourceMonetaryAmount {const BillingCreditGrantsResourceMonetaryAmount({required this.currency, required this.value, });
 
 factory BillingCreditGrantsResourceMonetaryAmount.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceMonetaryAmount(
   currency: json['currency'] as String,

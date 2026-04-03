@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_status_created_workflow_run_actor.dart';import 'webhook_deployment_status_created_workflow_run_head_repository.dart';import 'webhook_deployment_status_created_workflow_run_pull_requests.dart';import 'webhook_deployment_status_created_workflow_run_referenced_workflows.dart';import 'webhook_deployment_status_created_workflow_run_repository.dart';import 'webhook_deployment_status_created_workflow_run_triggering_actor.dart';final class WebhookDeploymentStatusCreatedWorkflowRunConclusion {const WebhookDeploymentStatusCreatedWorkflowRunConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_status_created_workflow_run_actor.dart';import 'webhook_deployment_status_created_workflow_run_head_repository.dart';import 'webhook_deployment_status_created_workflow_run_pull_requests.dart';import 'webhook_deployment_status_created_workflow_run_referenced_workflows.dart';import 'webhook_deployment_status_created_workflow_run_repository.dart';import 'webhook_deployment_status_created_workflow_run_triggering_actor.dart';@immutable final class WebhookDeploymentStatusCreatedWorkflowRunConclusion {const WebhookDeploymentStatusCreatedWorkflowRunConclusion._(this.value);
 
 factory WebhookDeploymentStatusCreatedWorkflowRunConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentStatusCreatedWorkflowRunConclusion($value)'; } 
  }
-final class WebhookDeploymentStatusCreatedWorkflowRunStatus {const WebhookDeploymentStatusCreatedWorkflowRunStatus._(this.value);
+@immutable final class WebhookDeploymentStatusCreatedWorkflowRunStatus {const WebhookDeploymentStatusCreatedWorkflowRunStatus._(this.value);
 
 factory WebhookDeploymentStatusCreatedWorkflowRunStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentStatusCreatedWorkflowRunStatus($value)'; } 
  }
-final class WebhookDeploymentStatusCreatedWorkflowRun {const WebhookDeploymentStatusCreatedWorkflowRun({required this.actor, this.artifactsUrl, this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, this.headCommit, this.headRepository, required this.headSha, required this.htmlUrl, required this.id, this.jobsUrl, this.logsUrl, required this.name, required this.nodeId, required this.path, this.previousAttemptUrl, required this.pullRequests, this.referencedWorkflows, this.repository, this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.triggeringActor, required this.updatedAt, required this.url, required this.workflowId, this.workflowUrl, });
+@immutable final class WebhookDeploymentStatusCreatedWorkflowRun {const WebhookDeploymentStatusCreatedWorkflowRun({required this.status, required this.checkSuiteId, required this.checkSuiteNodeId, required this.pullRequests, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.triggeringActor, required this.runStartedAt, required this.url, required this.updatedAt, required this.workflowId, required this.runNumber, required this.runAttempt, this.referencedWorkflows, this.repository, this.rerunUrl, this.workflowUrl, this.previousAttemptUrl, this.logsUrl, this.headRepository, this.jobsUrl, this.headCommit, this.cancelUrl, this.artifactsUrl, this.checkSuiteUrl, });
 
 factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedWorkflowRun(
   actor: json['actor'] != null ? WebhookDeploymentStatusCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,

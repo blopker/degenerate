@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
-final class AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection {const AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
+@immutable final class AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection {const AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy {const AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy({this.direction, required this.field, });
+@immutable final class AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy {const AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy({required this.field, this.direction, });
 
 factory AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy(
   direction: json['direction'] != null ? AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostByDirection.fromJson(json['direction'] as String) : null,

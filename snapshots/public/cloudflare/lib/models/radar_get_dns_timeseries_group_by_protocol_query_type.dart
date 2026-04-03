@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByProtocolQueryType.fromJson(String json) { return switch (json) {
   'A' => a,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_enabled.dart';import 'iam_account.dart';import 'iam_list_member_policy.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_permissions.dart';import 'iam_schemas_status.dart';final class IamMembershipWithPolicies {const IamMembershipWithPolicies({this.account, this.apiAccessEnabled, this.id, this.permissions, this.policies, this.roles, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_enabled.dart';import 'iam_account.dart';import 'iam_list_member_policy.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_permissions.dart';import 'iam_schemas_status.dart';@immutable final class IamMembershipWithPolicies {const IamMembershipWithPolicies({this.account, this.apiAccessEnabled, this.id, this.permissions, this.policies, this.roles, this.status, });
 
 factory IamMembershipWithPolicies.fromJson(Map<String, dynamic> json) { return IamMembershipWithPolicies(
   account: json['account'] != null ? IamAccount.fromJson(json['account'] as Map<String, dynamic>) : null,

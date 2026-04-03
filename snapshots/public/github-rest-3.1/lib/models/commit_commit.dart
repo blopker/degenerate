@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'commit_commit_tree.dart';import 'git_user.dart';import 'verification.dart';final class CommitCommit {const CommitCommit({required this.url, required this.author, required this.committer, required this.message, required this.commentCount, required this.tree, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_commit_tree.dart';import 'git_user.dart';import 'verification.dart';@immutable final class CommitCommit {const CommitCommit({required this.url, required this.author, required this.committer, required this.message, required this.commentCount, required this.tree, this.verification, });
 
 factory CommitCommit.fromJson(Map<String, dynamic> json) { return CommitCommit(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountRequestCapabilitiesSamsungPayPayments {const PostAccountsAccountRequestCapabilitiesSamsungPayPayments({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesSamsungPayPayments {const PostAccountsAccountRequestCapabilitiesSamsungPayPayments({this.requested});
 
 factory PostAccountsAccountRequestCapabilitiesSamsungPayPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesSamsungPayPayments(
   requested: json['requested'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_request_message_content_part_text.dart';/// A value that is one of: `ChatCompletionRequestMessageContentPartText`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_text.dart';/// A value that is one of: `ChatCompletionRequestMessageContentPartText`.
 sealed class ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPart();
 
 factory ChatCompletionRequestSystemMessageContentPart.fromJson(Map<String, dynamic> json) {   if (ChatCompletionRequestMessageContentPartText.canParse(json)) {
@@ -12,7 +12,7 @@ factory ChatCompletionRequestSystemMessageContentPart.fromJson(Map<String, dynam
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText extends ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText(this._value);
+@immutable final class ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText extends ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText(this._value);
 
 final ChatCompletionRequestMessageContentPartText _value;
 
@@ -23,7 +23,7 @@ final ChatCompletionRequestMessageContentPartText _value;
 @override String toString() { return 'ChatCompletionRequestSystemMessageContentPart.chatCompletionRequestMessageContentPartText($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class ChatCompletionRequestSystemMessageContentPart$Unknown extends ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPart$Unknown(this._value);
+@immutable final class ChatCompletionRequestSystemMessageContentPart$Unknown extends ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPart$Unknown(this._value);
 
 final dynamic _value;
 

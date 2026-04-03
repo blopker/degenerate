@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';import 'issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
+@immutable final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
 
 factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
   'issuing.personalization_design' => issuingPersonalizationDesign,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPersonalizationDesignObject($value)'; } 
  }
 /// Whether this personalization design can be used to create cards.
-final class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus._(this.value);
+@immutable final class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus._(this.value);
 
 factory IssuingPersonalizationDesignStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPersonalizationDesignStatus($value)'; } 
  }
 /// A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
-final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({this.cardLogo, this.carrierText, required this.created, required this.id, required this.livemode, this.lookupKey, required this.metadata, this.name, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, });
+@immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo, this.carrierText, this.lookupKey, this.name, });
 
 factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
   cardLogo: json['card_logo'] != null ? OneOf2.parse(json['card_logo'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

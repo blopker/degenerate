@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigation_list_item.dart';final class ListMitigationsResponseResult {const ListMitigationsResponseResult({required this.mitigations});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigation_list_item.dart';@immutable final class ListMitigationsResponseResult {const ListMitigationsResponseResult({required this.mitigations});
 
 factory ListMitigationsResponseResult.fromJson(Map<String, dynamic> json) { return ListMitigationsResponseResult(
   mitigations: (json['mitigations'] as List<dynamic>).map((e) => AbuseReportsMitigationListItem.fromJson(e as Map<String, dynamic>)).toList(),

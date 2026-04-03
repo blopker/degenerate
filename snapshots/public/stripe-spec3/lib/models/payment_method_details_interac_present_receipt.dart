@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of account being debited or credited
-final class PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account being debited or credited
+@immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType._(this.value);
 
 factory PaymentMethodDetailsInteracPresentReceiptAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsInteracPresentReceiptAccountType($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsInteracPresentReceipt {const PaymentMethodDetailsInteracPresentReceipt({this.accountType, this.applicationCryptogram, this.applicationPreferredName, this.authorizationCode, this.authorizationResponseCode, this.cardholderVerificationMethod, this.dedicatedFileName, this.terminalVerificationResults, this.transactionStatusInformation, });
+@immutable final class PaymentMethodDetailsInteracPresentReceipt {const PaymentMethodDetailsInteracPresentReceipt({this.accountType, this.applicationCryptogram, this.applicationPreferredName, this.authorizationCode, this.authorizationResponseCode, this.cardholderVerificationMethod, this.dedicatedFileName, this.terminalVerificationResults, this.transactionStatusInformation, });
 
 factory PaymentMethodDetailsInteracPresentReceipt.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsInteracPresentReceipt(
   accountType: json['account_type'] != null ? PaymentMethodDetailsInteracPresentReceiptAccountType.fromJson(json['account_type'] as String) : null,

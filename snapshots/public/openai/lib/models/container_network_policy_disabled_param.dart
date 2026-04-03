@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Disable outbound network access. Always `disabled`.
-final class ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Disable outbound network access. Always `disabled`.
+@immutable final class ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType._(this.value);
 
 factory ContainerNetworkPolicyDisabledParamType.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerNetworkPolicyDisabledParamType($value)'; } 
  }
-final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({this.type = ContainerNetworkPolicyDisabledParamType.disabled});
+@immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({this.type = ContainerNetworkPolicyDisabledParamType.disabled});
 
 factory ContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return ContainerNetworkPolicyDisabledParam(
   type: ContainerNetworkPolicyDisabledParamType.fromJson(json['type'] as String),

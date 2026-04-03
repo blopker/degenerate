@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The period associated with this invoice item. When set to different values, the period will be rendered on the invoice. If you have [Stripe Revenue Recognition](https://docs.stripe.com/revenue-recognition) enabled, the period will be used to recognize and defer revenue. See the [Revenue Recognition documentation](https://docs.stripe.com/revenue-recognition/methodology/subscriptions-and-invoicing) for details.
-final class PostInvoiceitemsInvoiceitemRequestPeriod {const PostInvoiceitemsInvoiceitemRequestPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The period associated with this invoice item. When set to different values, the period will be rendered on the invoice. If you have [Stripe Revenue Recognition](https://docs.stripe.com/revenue-recognition) enabled, the period will be used to recognize and defer revenue. See the [Revenue Recognition documentation](https://docs.stripe.com/revenue-recognition/methodology/subscriptions-and-invoicing) for details.
+@immutable final class PostInvoiceitemsInvoiceitemRequestPeriod {const PostInvoiceitemsInvoiceitemRequestPeriod({required this.end, required this.start, });
 
 factory PostInvoiceitemsInvoiceitemRequestPeriod.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsInvoiceitemRequestPeriod(
   end: (json['end'] as num).toInt(),

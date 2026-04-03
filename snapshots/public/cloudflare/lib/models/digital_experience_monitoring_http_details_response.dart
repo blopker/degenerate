@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_http_details_response_http_stats.dart';import 'digital_experience_monitoring_http_details_response_http_stats_by_colo.dart';import 'digital_experience_monitoring_http_details_response_target_policies.dart';final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats, this.httpStatsByColo, this.interval, this.kind, this.method, this.name, this.targetPolicies, this.targeted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_http_details_response_http_stats.dart';import 'digital_experience_monitoring_http_details_response_http_stats_by_colo.dart';import 'digital_experience_monitoring_http_details_response_target_policies.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats, this.httpStatsByColo, this.interval, this.kind, this.method, this.name, this.targetPolicies, this.targeted, });
 
 factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: json['host'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_association_object.dart';final class TlsCertificatesAndHostnamesAssociationResponseCollection {const TlsCertificatesAndHostnamesAssociationResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_association_object.dart';@immutable final class TlsCertificatesAndHostnamesAssociationResponseCollection {const TlsCertificatesAndHostnamesAssociationResponseCollection({this.result});
 
 factory TlsCertificatesAndHostnamesAssociationResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesAssociationResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesAssociationObject.fromJson(e as Map<String, dynamic>)).toList(),

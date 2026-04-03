@@ -17,48 +17,48 @@ Future<ApiResult<RadarGetDnsAs112SummaryResponseResult, RadarGetDnsAs112SummaryR
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (limitPerGroup != null) {
@@ -102,48 +102,48 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (format != null) {
@@ -184,48 +184,48 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (limitPerGroup != null) {
@@ -269,32 +269,32 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (format != null) {
@@ -335,32 +335,32 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (format != null) {
@@ -401,32 +401,32 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (format != null) {
@@ -467,32 +467,32 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (format != null) {

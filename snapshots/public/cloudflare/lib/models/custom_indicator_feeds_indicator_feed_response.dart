@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_indicator_feeds_indicator_feed_item.dart';import 'custom_indicator_feeds_schemas_messages2.dart';final class CustomIndicatorFeedsIndicatorFeedResponse {const CustomIndicatorFeedsIndicatorFeedResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_indicator_feeds_indicator_feed_item.dart';import 'custom_indicator_feeds_schemas_messages2.dart';@immutable final class CustomIndicatorFeedsIndicatorFeedResponse {const CustomIndicatorFeedsIndicatorFeedResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory CustomIndicatorFeedsIndicatorFeedResponse.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CustomIndicatorFeedsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

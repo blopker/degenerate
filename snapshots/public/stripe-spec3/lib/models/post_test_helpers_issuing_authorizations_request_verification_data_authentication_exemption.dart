@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy.fromJson(String json) { return switch (json) {
   'acquirer' => acquirer,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType.fromJson(String json) { return switch (json) {
   'low_value_transaction' => lowValueTransaction,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption({required this.claimedBy, required this.type, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption({required this.claimedBy, required this.type, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(
   claimedBy: PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy.fromJson(json['claimed_by'] as String),

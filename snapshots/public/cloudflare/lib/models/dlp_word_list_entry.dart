@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpWordListEntry {const DlpWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, this.profileId, required this.updatedAt, required this.wordList, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpWordListEntry {const DlpWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, this.profileId, });
 
 factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

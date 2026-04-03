@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_transaction.dart';import 'treasury_transaction_entry_transaction.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow associated with the TransactionEntry.
-final class TreasuryTransactionEntryFlowType {const TreasuryTransactionEntryFlowType._(this.value);
+@immutable final class TreasuryTransactionEntryFlowType {const TreasuryTransactionEntryFlowType._(this.value);
 
 factory TreasuryTransactionEntryFlowType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionEntryFlowType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject._(this.value);
+@immutable final class TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject._(this.value);
 
 factory TreasuryTransactionEntryObject.fromJson(String json) { return switch (json) {
   'treasury.transaction_entry' => treasuryTransactionEntry,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionEntryObject($value)'; } 
  }
 /// The specific money movement that generated the TransactionEntry.
-final class TreasuryTransactionEntryType {const TreasuryTransactionEntryType._(this.value);
+@immutable final class TreasuryTransactionEntryType {const TreasuryTransactionEntryType._(this.value);
 
 factory TreasuryTransactionEntryType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -148,7 +148,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionEntryType($value)'; } 
  }
 /// TransactionEntries represent individual units of money movements within a single [Transaction](https://api.stripe.com#transactions).
-final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, this.flow, this.flowDetails, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, });
+@immutable final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, this.flow, this.flowDetails, });
 
 factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return TreasuryTransactionEntry(
   balanceImpact: TreasuryTransactionsResourceBalanceImpact.fromJson(json['balance_impact'] as Map<String, dynamic>),

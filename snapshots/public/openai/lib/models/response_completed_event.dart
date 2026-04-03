@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response.dart';/// The type of the event. Always `response.completed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always `response.completed`.
 /// 
-final class ResponseCompletedEventType {const ResponseCompletedEventType._(this.value);
+@immutable final class ResponseCompletedEventType {const ResponseCompletedEventType._(this.value);
 
 factory ResponseCompletedEventType.fromJson(String json) { return switch (json) {
   'response.completed' => responseCompleted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseCompletedEventType($value)'; } 
  }
 /// Emitted when the model response is complete.
-final class ResponseCompletedEvent {const ResponseCompletedEvent({required this.type, required this.response, required this.sequenceNumber, });
+@immutable final class ResponseCompletedEvent {const ResponseCompletedEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseCompletedEvent(
   type: ResponseCompletedEventType.fromJson(json['type'] as String),

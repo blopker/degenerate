@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';import 'validate_grader_response_grader.dart';final class ValidateGraderResponse {const ValidateGraderResponse({this.grader});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';import 'validate_grader_response_grader.dart';@immutable final class ValidateGraderResponse {const ValidateGraderResponse({this.grader});
 
 factory ValidateGraderResponse.fromJson(Map<String, dynamic> json) { return ValidateGraderResponse(
   grader: json['grader'] != null ? OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),) : null,

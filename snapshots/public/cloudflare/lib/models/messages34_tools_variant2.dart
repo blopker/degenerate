@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages34_tools_variant2_function.dart';final class Messages34ToolsVariant2 {const Messages34ToolsVariant2({required this.function, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages34_tools_variant2_function.dart';@immutable final class Messages34ToolsVariant2 {const Messages34ToolsVariant2({required this.function, required this.type, });
 
 factory Messages34ToolsVariant2.fromJson(Map<String, dynamic> json) { return Messages34ToolsVariant2(
   function: Messages34ToolsVariant2Function.fromJson(json['function'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_identifier.dart';final class LoadBalancingPreviewResponseResult {const LoadBalancingPreviewResponseResult({this.pools, this.previewId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_identifier.dart';@immutable final class LoadBalancingPreviewResponseResult {const LoadBalancingPreviewResponseResult({this.pools, this.previewId, });
 
 factory LoadBalancingPreviewResponseResult.fromJson(Map<String, dynamic> json) { return LoadBalancingPreviewResponseResult(
   pools: (json['pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

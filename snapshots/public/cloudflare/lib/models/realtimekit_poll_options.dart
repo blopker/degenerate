@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_poll_options_votes.dart';final class RealtimekitPollOptions {const RealtimekitPollOptions({required this.count, required this.text, required this.votes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_poll_options_votes.dart';@immutable final class RealtimekitPollOptions {const RealtimekitPollOptions({required this.count, required this.text, required this.votes, });
 
 factory RealtimekitPollOptions.fromJson(Map<String, dynamic> json) { return RealtimekitPollOptions(
   count: (json['count'] as num).toDouble(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfers_id_reversals_request_metadata.dart';final class PostTransfersIdReversalsRequest {const PostTransfersIdReversalsRequest({this.amount, this.description, this.expand, this.metadata, this.refundApplicationFee, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfers_id_reversals_request_metadata.dart';@immutable final class PostTransfersIdReversalsRequest {const PostTransfersIdReversalsRequest({this.amount, this.description, this.expand, this.metadata, this.refundApplicationFee, });
 
 factory PostTransfersIdReversalsRequest.fromJson(Map<String, dynamic> json) { return PostTransfersIdReversalsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

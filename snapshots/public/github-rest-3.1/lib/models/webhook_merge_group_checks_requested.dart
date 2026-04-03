@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'merge_group.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merge_group.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction._(this.value);
 
 factory WebhookMergeGroupChecksRequestedAction.fromJson(String json) { return switch (json) {
   'checks_requested' => checksRequested,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMergeGroupChecksRequestedAction($value)'; } 
  }
-final class WebhookMergeGroupChecksRequested {const WebhookMergeGroupChecksRequested({required this.action, this.installation, required this.mergeGroup, this.organization, this.repository, this.sender, });
+@immutable final class WebhookMergeGroupChecksRequested {const WebhookMergeGroupChecksRequested({required this.action, required this.mergeGroup, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookMergeGroupChecksRequested.fromJson(Map<String, dynamic> json) { return WebhookMergeGroupChecksRequested(
   action: WebhookMergeGroupChecksRequestedAction.fromJson(json['action'] as String),

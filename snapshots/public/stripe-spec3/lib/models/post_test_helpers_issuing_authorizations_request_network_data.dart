@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the authorization, such as identifiers, set by the card network.
-final class PostTestHelpersIssuingAuthorizationsRequestNetworkData {const PostTestHelpersIssuingAuthorizationsRequestNetworkData({this.acquiringInstitutionId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the authorization, such as identifiers, set by the card network.
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestNetworkData {const PostTestHelpersIssuingAuthorizationsRequestNetworkData({this.acquiringInstitutionId});
 
 factory PostTestHelpersIssuingAuthorizationsRequestNetworkData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestNetworkData(
   acquiringInstitutionId: json['acquiring_institution_id'] as String?,

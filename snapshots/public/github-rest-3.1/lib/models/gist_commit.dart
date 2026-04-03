@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gist_commit_change_status.dart';import 'simple_user.dart';/// Gist Commit
-final class GistCommit {const GistCommit({required this.url, required this.version, required this.user, required this.changeStatus, required this.committedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_commit_change_status.dart';import 'simple_user.dart';/// Gist Commit
+@immutable final class GistCommit {const GistCommit({required this.url, required this.version, required this.user, required this.changeStatus, required this.committedAt, });
 
 factory GistCommit.fromJson(Map<String, dynamic> json) { return GistCommit(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_validation_status.dart';final class EmailSecurityGetMessageDetectionsResponseResultValidation {const EmailSecurityGetMessageDetectionsResponseResultValidation({this.comment, this.dkim, this.dmarc, this.spf, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_validation_status.dart';@immutable final class EmailSecurityGetMessageDetectionsResponseResultValidation {const EmailSecurityGetMessageDetectionsResponseResultValidation({this.comment, this.dkim, this.dmarc, this.spf, });
 
 factory EmailSecurityGetMessageDetectionsResponseResultValidation.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageDetectionsResponseResultValidation(
   comment: json['comment'] as String?,

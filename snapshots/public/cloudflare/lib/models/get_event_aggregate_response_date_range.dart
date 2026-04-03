@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Date range used for filtering
-final class GetEventAggregateResponseDateRange {const GetEventAggregateResponseDateRange({this.endDate, this.startDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Date range used for filtering
+@immutable final class GetEventAggregateResponseDateRange {const GetEventAggregateResponseDateRange({this.endDate, this.startDate, });
 
 factory GetEventAggregateResponseDateRange.fromJson(Map<String, dynamic> json) { return GetEventAggregateResponseDateRange(
   endDate: json['endDate'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_top_verticals_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer7_top_verticals_response_result_meta_date_range.dart';import 'radar_get_attacks_layer7_top_verticals_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer7TopVerticalsResponseResultMetaNormalization {const RadarGetAttacksLayer7TopVerticalsResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAttacksLayer7TopVerticalsResponseResultMetaNormalization {const RadarGetAttacksLayer7TopVerticalsResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAttacksLayer7TopVerticalsResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7TopVerticalsResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAttacksLayer7TopVerticalsResponseResultMeta {const RadarGetAttacksLayer7TopVerticalsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAttacksLayer7TopVerticalsResponseResultMeta {const RadarGetAttacksLayer7TopVerticalsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer7TopVerticalsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopVerticalsResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetAttacksLayer7TopVerticalsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

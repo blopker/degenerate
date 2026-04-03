@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityPostMessageMoveRequestDestination {const EmailSecurityPostMessageMoveRequestDestination._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostMessageMoveRequestDestination {const EmailSecurityPostMessageMoveRequestDestination._(this.value);
 
 factory EmailSecurityPostMessageMoveRequestDestination.fromJson(String json) { return switch (json) {
   'Inbox' => inbox,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityPostMessageMoveRequestDestination($value)'; } 
  }
-final class EmailSecurityPostMessageMoveRequest {const EmailSecurityPostMessageMoveRequest({required this.destination});
+@immutable final class EmailSecurityPostMessageMoveRequest {const EmailSecurityPostMessageMoveRequest({required this.destination});
 
 factory EmailSecurityPostMessageMoveRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostMessageMoveRequest(
   destination: EmailSecurityPostMessageMoveRequestDestination.fromJson(json['destination'] as String),

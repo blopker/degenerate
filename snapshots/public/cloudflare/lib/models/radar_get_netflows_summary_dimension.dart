@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the NetFlows attribute by which to group the results.
-final class RadarGetNetflowsSummaryDimension {const RadarGetNetflowsSummaryDimension._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the NetFlows attribute by which to group the results.
+@immutable final class RadarGetNetflowsSummaryDimension {const RadarGetNetflowsSummaryDimension._(this.value);
 
 factory RadarGetNetflowsSummaryDimension.fromJson(String json) { return switch (json) {
   'ADM1' => adm1,

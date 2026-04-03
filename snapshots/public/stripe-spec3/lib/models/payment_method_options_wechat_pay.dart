@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The client type that the end customer will pay from
-final class PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The client type that the end customer will pay from
+@immutable final class PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient._(this.value);
 
 factory PaymentMethodOptionsWechatPayClient.fromJson(String json) { return switch (json) {
   'android' => android,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentMethodOptionsWechatPaySetupFutureUsage {const PaymentMethodOptionsWechatPaySetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsWechatPaySetupFutureUsage {const PaymentMethodOptionsWechatPaySetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsWechatPaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsWechatPaySetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsWechatPay {const PaymentMethodOptionsWechatPay({this.appId, this.client, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsWechatPay {const PaymentMethodOptionsWechatPay({this.appId, this.client, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsWechatPay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsWechatPay(
   appId: json['app_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status of the most recent scan found.
-final class IntelPhishingUrlInfoScanStatus {const IntelPhishingUrlInfoScanStatus({this.lastProcessed, this.scanComplete, this.statusCode, this.submissionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the most recent scan found.
+@immutable final class IntelPhishingUrlInfoScanStatus {const IntelPhishingUrlInfoScanStatus({this.lastProcessed, this.scanComplete, this.statusCode, this.submissionId, });
 
 factory IntelPhishingUrlInfoScanStatus.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfoScanStatus(
   lastProcessed: json['last_processed'] as String?,

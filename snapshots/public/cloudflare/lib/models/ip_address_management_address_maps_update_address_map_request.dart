@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';final class IpAddressManagementAddressMapsUpdateAddressMapRequest {const IpAddressManagementAddressMapsUpdateAddressMapRequest({this.defaultSni, this.description, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';@immutable final class IpAddressManagementAddressMapsUpdateAddressMapRequest {const IpAddressManagementAddressMapsUpdateAddressMapRequest({this.defaultSni, this.description, this.enabled, });
 
 factory IpAddressManagementAddressMapsUpdateAddressMapRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementAddressMapsUpdateAddressMapRequest(
   defaultSni: json['default_sni'] != null ? AddressingDefaultSni.fromJson(json['default_sni'] as String) : null,

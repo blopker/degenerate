@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource.dart';/// APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.
-final class ResourceList {const ResourceList({this.apiVersion, this.groupVersion = '', this.kind, required this.resources, });
+@immutable final class ResourceList {const ResourceList({required this.resources, this.apiVersion, this.groupVersion = '', this.kind, });
 
 factory ResourceList.fromJson(Map<String, dynamic> json) { return ResourceList(
   apiVersion: json['apiVersion'] as String?,

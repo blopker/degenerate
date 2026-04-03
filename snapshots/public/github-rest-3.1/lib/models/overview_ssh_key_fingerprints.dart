@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OverviewSshKeyFingerprints {const OverviewSshKeyFingerprints({this.sha256Rsa, this.sha256Dsa, this.sha256Ecdsa, this.sha256Ed25519, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OverviewSshKeyFingerprints {const OverviewSshKeyFingerprints({this.sha256Rsa, this.sha256Dsa, this.sha256Ecdsa, this.sha256Ed25519, });
 
 factory OverviewSshKeyFingerprints.fromJson(Map<String, dynamic> json) { return OverviewSshKeyFingerprints(
   sha256Rsa: json['SHA256_RSA'] as String?,

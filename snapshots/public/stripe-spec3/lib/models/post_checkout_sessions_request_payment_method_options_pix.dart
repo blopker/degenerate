@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof {const PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof {const PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPix {const PostCheckoutSessionsRequestPaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPix {const PostCheckoutSessionsRequestPaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPix(
   amountIncludesIof: json['amount_includes_iof'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rum_auto_install.dart';import 'rum_host.dart';import 'rum_zone_tag.dart';final class RumCreateSiteRequest {const RumCreateSiteRequest({this.autoInstall, this.host, this.zoneTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_auto_install.dart';import 'rum_host.dart';import 'rum_zone_tag.dart';@immutable final class RumCreateSiteRequest {const RumCreateSiteRequest({this.autoInstall, this.host, this.zoneTag, });
 
 factory RumCreateSiteRequest.fromJson(Map<String, dynamic> json) { return RumCreateSiteRequest(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The role of the user in the team.
-final class TeamMembershipRole {const TeamMembershipRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the user in the team.
+@immutable final class TeamMembershipRole {const TeamMembershipRole._(this.value);
 
 factory TeamMembershipRole.fromJson(String json) { return switch (json) {
   'member' => member,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamMembershipRole($value)'; } 
  }
 /// The state of the user's membership in the team.
-final class TeamMembershipState {const TeamMembershipState._(this.value);
+@immutable final class TeamMembershipState {const TeamMembershipState._(this.value);
 
 factory TeamMembershipState.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamMembershipState($value)'; } 
  }
 /// Team Membership
-final class TeamMembership {const TeamMembership({required this.url, this.role = TeamMembershipRole.member, required this.state, });
+@immutable final class TeamMembership {const TeamMembership({required this.url, required this.state, this.role = TeamMembershipRole.member, });
 
 factory TeamMembership.fromJson(Map<String, dynamic> json) { return TeamMembership(
   url: Uri.parse(json['url'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// IP address family, either `v4` (IPv4) or `v6` (IPv6)
-final class TunnelAddressFamily {const TunnelAddressFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// IP address family, either `v4` (IPv4) or `v6` (IPv6)
+@immutable final class TunnelAddressFamily {const TunnelAddressFamily._(this.value);
 
 factory TunnelAddressFamily.fromJson(String json) { return switch (json) {
   'v4' => v4,

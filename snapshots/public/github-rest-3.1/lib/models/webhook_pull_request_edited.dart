@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_edited_changes.dart';import 'webhooks_number.dart';final class WebhookPullRequestEditedAction {const WebhookPullRequestEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_edited_changes.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestEditedAction {const WebhookPullRequestEditedAction._(this.value);
 
 factory WebhookPullRequestEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestEditedAction($value)'; } 
  }
-final class WebhookPullRequestEdited {const WebhookPullRequestEdited({required this.action, required this.changes, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, this.sender, });
+@immutable final class WebhookPullRequestEdited {const WebhookPullRequestEdited({required this.action, required this.changes, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookPullRequestEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEdited(
   action: WebhookPullRequestEditedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_response409_result_tasks.dart';final class UrlscannerCreateScanResponse409Result {const UrlscannerCreateScanResponse409Result({required this.tasks});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_response409_result_tasks.dart';@immutable final class UrlscannerCreateScanResponse409Result {const UrlscannerCreateScanResponse409Result({required this.tasks});
 
 factory UrlscannerCreateScanResponse409Result.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409Result(
   tasks: (json['tasks'] as List<dynamic>).map((e) => UrlscannerCreateScanResponse409ResultTasks.fromJson(e as Map<String, dynamic>)).toList(),

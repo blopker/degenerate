@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the enablement value of Regional Tiered Cache.
-final class SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue {const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Regional Tiered Cache.
+@immutable final class SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue {const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue._(this.value);
 
 factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue($value)'; } 
  }
-final class SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache {const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache({this.value});
+@immutable final class SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache {const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache({this.value});
 
 factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(
   value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue.fromJson(json['value'] as String) : null,

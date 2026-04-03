@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_rubygems_metadata_version_info.dart';final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_rubygems_metadata_version_info.dart';@immutable final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
 
 factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) { return WebhookRubygemsMetadata(
   name: json['name'] as String?,

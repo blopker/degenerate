@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_message_request.dart';import 'create_thread_request_tool_resources.dart';/// Options to create a new thread. If no thread is provided when running a
 /// request, an empty thread will be created.
 /// 
-final class CreateThreadRequest {const CreateThreadRequest({this.messages, this.toolResources, this.metadata, });
+@immutable final class CreateThreadRequest {const CreateThreadRequest({this.messages, this.toolResources, this.metadata, });
 
 factory CreateThreadRequest.fromJson(Map<String, dynamic> json) { return CreateThreadRequest(
   messages: (json['messages'] as List<dynamic>?)?.map((e) => CreateMessageRequest.fromJson(e as Map<String, dynamic>)).toList(),

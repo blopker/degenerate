@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping3.dart';final class PostCustomersCustomerRequestShippingVariant2 {const PostCustomersCustomerRequestShippingVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping3.dart';@immutable final class PostCustomersCustomerRequestShippingVariant2 {const PostCustomersCustomerRequestShippingVariant2._(this.value);
 
 factory PostCustomersCustomerRequestShippingVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages62Functions {const Messages62Functions({required this.code, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages62Functions {const Messages62Functions({required this.code, required this.name, });
 
 factory Messages62Functions.fromJson(Map<String, dynamic> json) { return Messages62Functions(
   code: json['code'] as String,

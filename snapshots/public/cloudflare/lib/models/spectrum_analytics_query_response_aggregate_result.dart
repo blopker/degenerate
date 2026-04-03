@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'spectrum_analytics_identifier.dart';final class SpectrumAnalyticsQueryResponseAggregateResult {const SpectrumAnalyticsQueryResponseAggregateResult({required this.appId, required this.bytesEgress, required this.bytesIngress, required this.connections, required this.durationAvg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_identifier.dart';@immutable final class SpectrumAnalyticsQueryResponseAggregateResult {const SpectrumAnalyticsQueryResponseAggregateResult({required this.appId, required this.bytesEgress, required this.bytesIngress, required this.connections, required this.durationAvg, });
 
 factory SpectrumAnalyticsQueryResponseAggregateResult.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQueryResponseAggregateResult(
   appId: SpectrumAnalyticsIdentifier.fromJson(json['appID'] as String),

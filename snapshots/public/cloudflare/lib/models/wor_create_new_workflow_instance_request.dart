@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wor_create_new_workflow_instance_request_instance_retention.dart';final class WorCreateNewWorkflowInstanceRequest {const WorCreateNewWorkflowInstanceRequest({this.instanceId, this.instanceRetention, this.params, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_create_new_workflow_instance_request_instance_retention.dart';@immutable final class WorCreateNewWorkflowInstanceRequest {const WorCreateNewWorkflowInstanceRequest({this.instanceId, this.instanceRetention, this.params, });
 
 factory WorCreateNewWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceRequest(
   instanceId: json['instance_id'] as String?,

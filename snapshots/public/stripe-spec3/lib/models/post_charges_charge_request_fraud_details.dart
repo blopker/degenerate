@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostChargesChargeRequestFraudDetailsUserReport {const PostChargesChargeRequestFraudDetailsUserReport._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostChargesChargeRequestFraudDetailsUserReport {const PostChargesChargeRequestFraudDetailsUserReport._(this.value);
 
 factory PostChargesChargeRequestFraudDetailsUserReport.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostChargesChargeRequestFraudDetailsUserReport($value)'; } 
  }
 /// A set of key-value pairs you can attach to a charge giving information about its riskiness. If you believe a charge is fraudulent, include a `user_report` key with a value of `fraudulent`. If you believe a charge is safe, include a `user_report` key with a value of `safe`. Stripe will use the information you send to improve our fraud detection algorithms.
-final class PostChargesChargeRequestFraudDetails {const PostChargesChargeRequestFraudDetails({required this.userReport});
+@immutable final class PostChargesChargeRequestFraudDetails {const PostChargesChargeRequestFraudDetails({required this.userReport});
 
 factory PostChargesChargeRequestFraudDetails.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequestFraudDetails(
   userReport: PostChargesChargeRequestFraudDetailsUserReport.fromJson(json['user_report'] as String),

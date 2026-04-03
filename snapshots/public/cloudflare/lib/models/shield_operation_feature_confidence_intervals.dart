@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_operation_feature_confidence_intervals_confidence_intervals.dart';final class ShieldOperationFeatureConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervals({this.confidenceIntervals});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation_feature_confidence_intervals_confidence_intervals.dart';@immutable final class ShieldOperationFeatureConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervals({this.confidenceIntervals});
 
 factory ShieldOperationFeatureConfidenceIntervals.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureConfidenceIntervals(
   confidenceIntervals: json['confidence_intervals'] != null ? ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals.fromJson(json['confidence_intervals'] as Map<String, dynamic>) : null,

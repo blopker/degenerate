@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_code_scanning_tool.dart';final class RepositoryRuleCodeScanningParameters {const RepositoryRuleCodeScanningParameters({required this.codeScanningTools});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_code_scanning_tool.dart';@immutable final class RepositoryRuleCodeScanningParameters {const RepositoryRuleCodeScanningParameters({required this.codeScanningTools});
 
 factory RepositoryRuleCodeScanningParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleCodeScanningParameters(
   codeScanningTools: (json['code_scanning_tools'] as List<dynamic>).map((e) => RepositoryRuleParamsCodeScanningTool.fromJson(e as Map<String, dynamic>)).toList(),

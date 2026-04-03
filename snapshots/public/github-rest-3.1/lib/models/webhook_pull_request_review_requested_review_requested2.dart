@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_requested_review_requested2_pull_request.dart';import 'webhook_pull_request_review_requested_review_requested2_requested_team.dart';final class WebhookPullRequestReviewRequestedReviewRequested2Action {const WebhookPullRequestReviewRequestedReviewRequested2Action._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_requested_review_requested2_pull_request.dart';import 'webhook_pull_request_review_requested_review_requested2_requested_team.dart';@immutable final class WebhookPullRequestReviewRequestedReviewRequested2Action {const WebhookPullRequestReviewRequestedReviewRequested2Action._(this.value);
 
 factory WebhookPullRequestReviewRequestedReviewRequested2Action.fromJson(String json) { return switch (json) {
   'review_requested' => reviewRequested,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestedReviewRequested2Action($value)'; } 
  }
-final class WebhookPullRequestReviewRequestedReviewRequested2 {const WebhookPullRequestReviewRequestedReviewRequested2({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.requestedTeam, required this.sender, });
+@immutable final class WebhookPullRequestReviewRequestedReviewRequested2 {const WebhookPullRequestReviewRequestedReviewRequested2({required this.action, required this.number, required this.pullRequest, required this.repository, required this.requestedTeam, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewRequestedReviewRequested2.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestedReviewRequested2(
   action: WebhookPullRequestReviewRequestedReviewRequested2Action.fromJson(json['action'] as String),

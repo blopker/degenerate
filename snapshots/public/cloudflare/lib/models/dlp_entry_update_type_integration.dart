@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpEntryUpdateTypeIntegrationType {const DlpEntryUpdateTypeIntegrationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryUpdateTypeIntegrationType {const DlpEntryUpdateTypeIntegrationType._(this.value);
 
 factory DlpEntryUpdateTypeIntegrationType.fromJson(String json) { return switch (json) {
   'integration' => integration,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEntryUpdateTypeIntegrationType($value)'; } 
  }
-final class DlpEntryUpdateTypeIntegration {const DlpEntryUpdateTypeIntegration({required this.type});
+@immutable final class DlpEntryUpdateTypeIntegration {const DlpEntryUpdateTypeIntegration({required this.type});
 
 factory DlpEntryUpdateTypeIntegration.fromJson(Map<String, dynamic> json) { return DlpEntryUpdateTypeIntegration(
   type: DlpEntryUpdateTypeIntegrationType.fromJson(json['type'] as String),

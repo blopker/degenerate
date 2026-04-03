@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
-final class TreasuryFinancialAccountsResourceAbaToggleSettingsStatus {const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._(this.value);
+@immutable final class TreasuryFinancialAccountsResourceAbaToggleSettingsStatus {const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._(this.value);
 
 factory TreasuryFinancialAccountsResourceAbaToggleSettingsStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceAbaToggleSettingsStatus($value)'; } 
  }
 /// Toggle settings for enabling/disabling the ABA address feature
-final class TreasuryFinancialAccountsResourceAbaToggleSettings {const TreasuryFinancialAccountsResourceAbaToggleSettings({required this.requested, required this.status, required this.statusDetails, });
+@immutable final class TreasuryFinancialAccountsResourceAbaToggleSettings {const TreasuryFinancialAccountsResourceAbaToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
 factory TreasuryFinancialAccountsResourceAbaToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceAbaToggleSettings(
   requested: json['requested'] as bool,

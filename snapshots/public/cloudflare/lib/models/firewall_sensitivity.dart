@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The sensitivity of the WAF package.
-final class FirewallSensitivity {const FirewallSensitivity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The sensitivity of the WAF package.
+@immutable final class FirewallSensitivity {const FirewallSensitivity._(this.value);
 
 factory FirewallSensitivity.fromJson(String json) { return switch (json) {
   'high' => high,

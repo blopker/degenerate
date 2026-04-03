@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Order results by creation time, ascending or descending.
-final class KeysListOrder {const KeysListOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order results by creation time, ascending or descending.
+@immutable final class KeysListOrder {const KeysListOrder._(this.value);
 
 factory KeysListOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

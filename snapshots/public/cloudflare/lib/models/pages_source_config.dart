@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether commits to preview branches trigger a preview deployment.
-final class PagesSourceConfigPreviewDeploymentSetting {const PagesSourceConfigPreviewDeploymentSetting._(this.value);
+@immutable final class PagesSourceConfigPreviewDeploymentSetting {const PagesSourceConfigPreviewDeploymentSetting._(this.value);
 
 factory PagesSourceConfigPreviewDeploymentSetting.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesSourceConfigPreviewDeploymentSetting($value)'; } 
  }
-final class PagesSourceConfig {const PagesSourceConfig({required this.deploymentsEnabled, required this.owner, required this.ownerId, required this.pathExcludes, required this.pathIncludes, required this.prCommentsEnabled, required this.previewBranchExcludes, required this.previewBranchIncludes, required this.previewDeploymentSetting, required this.productionBranch, required this.productionDeploymentsEnabled, required this.repoId, required this.repoName, });
+@immutable final class PagesSourceConfig {const PagesSourceConfig({required this.deploymentsEnabled, required this.owner, required this.ownerId, required this.pathExcludes, required this.pathIncludes, required this.prCommentsEnabled, required this.previewBranchExcludes, required this.previewBranchIncludes, required this.previewDeploymentSetting, required this.productionBranch, required this.productionDeploymentsEnabled, required this.repoId, required this.repoName, });
 
 factory PagesSourceConfig.fromJson(Map<String, dynamic> json) { return PagesSourceConfig(
   deploymentsEnabled: json['deployments_enabled'] as bool,

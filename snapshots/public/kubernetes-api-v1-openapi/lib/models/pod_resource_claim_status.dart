@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// PodResourceClaimStatus is stored in the PodStatus for each PodResourceClaim which references a ResourceClaimTemplate. It stores the generated name for the corresponding ResourceClaim.
-final class PodResourceClaimStatus {const PodResourceClaimStatus({this.name = '', this.resourceClaimName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodResourceClaimStatus is stored in the PodStatus for each PodResourceClaim which references a ResourceClaimTemplate. It stores the generated name for the corresponding ResourceClaim.
+@immutable final class PodResourceClaimStatus {const PodResourceClaimStatus({this.name = '', this.resourceClaimName, });
 
 factory PodResourceClaimStatus.fromJson(Map<String, dynamic> json) { return PodResourceClaimStatus(
   name: json['name'] as String,

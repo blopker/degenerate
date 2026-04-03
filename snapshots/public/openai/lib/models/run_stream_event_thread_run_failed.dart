@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunFailedEvent {const RunStreamEventThreadRunFailedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunFailedEvent {const RunStreamEventThreadRunFailedEvent._(this.value);
 
 factory RunStreamEventThreadRunFailedEvent.fromJson(String json) { return switch (json) {
   'thread.run.failed' => threadRunFailed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunFailedEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) fails.
-final class RunStreamEventThreadRunFailed {const RunStreamEventThreadRunFailed({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunFailed {const RunStreamEventThreadRunFailed({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunFailed.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunFailed(
   event: RunStreamEventThreadRunFailedEvent.fromJson(json['event'] as String),

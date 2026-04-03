@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerSearchScansResponse4002Errors {const UrlscannerSearchScansResponse4002Errors({required this.detail, required this.status, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerSearchScansResponse4002Errors {const UrlscannerSearchScansResponse4002Errors({required this.detail, required this.status, required this.title, });
 
 factory UrlscannerSearchScansResponse4002Errors.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse4002Errors(
   detail: json['detail'] as String,

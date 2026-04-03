@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_merchant_data.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details.dart';final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_merchant_data.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(
   amount: (json['amount'] as num).toInt(),

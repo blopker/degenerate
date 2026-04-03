@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuerType {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuerType {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuerType._(this.value);
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuerType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuerType($value)'; } 
  }
-final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer({this.account, required this.type, });
+@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer({required this.type, this.account, });
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer(
   account: json['account'] as String?,

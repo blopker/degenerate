@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_file_extension_restriction_parameters.dart';final class RepositoryRuleFileExtensionRestrictionType {const RepositoryRuleFileExtensionRestrictionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_file_extension_restriction_parameters.dart';@immutable final class RepositoryRuleFileExtensionRestrictionType {const RepositoryRuleFileExtensionRestrictionType._(this.value);
 
 factory RepositoryRuleFileExtensionRestrictionType.fromJson(String json) { return switch (json) {
   'file_extension_restriction' => fileExtensionRestriction,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleFileExtensionRestrictionType($value)'; } 
  }
 /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
-final class RepositoryRuleFileExtensionRestriction {const RepositoryRuleFileExtensionRestriction({required this.type, this.parameters, });
+@immutable final class RepositoryRuleFileExtensionRestriction {const RepositoryRuleFileExtensionRestriction({required this.type, this.parameters, });
 
 factory RepositoryRuleFileExtensionRestriction.fromJson(Map<String, dynamic> json) { return RepositoryRuleFileExtensionRestriction(
   type: RepositoryRuleFileExtensionRestrictionType.fromJson(json['type'] as String),

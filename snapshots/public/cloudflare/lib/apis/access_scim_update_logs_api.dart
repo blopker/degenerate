@@ -28,21 +28,21 @@ if (until != null) {
   queryParameters['until'] = until.toString();
 }
 for (final item in idpId) {
-  queryParametersList.add(ApiQueryParameter(name: 'idp_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'idp_id', value: item));
 }
 if (status != null) {
 for (final item in status) {
-  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson()));
 }
 }
 if (resourceType != null) {
 for (final item in resourceType) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson()));
 }
 }
 if (requestMethod != null) {
 for (final item in requestMethod) {
-  queryParametersList.add(ApiQueryParameter(name: 'request_method', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'request_method', value: item.toJson()));
 }
 }
 if (resourceUserEmail != null) {

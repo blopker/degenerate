@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_created_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';final class WebhookCodeScanningAlertCreatedAction {const WebhookCodeScanningAlertCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_created_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertCreatedAction {const WebhookCodeScanningAlertCreatedAction._(this.value);
 
 factory WebhookCodeScanningAlertCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertCreatedAction($value)'; } 
  }
-final class WebhookCodeScanningAlertCreated {const WebhookCodeScanningAlertCreated({required this.action, required this.alert, required this.commitOid, this.enterprise, this.installation, this.organization, required this.ref, required this.repository, required this.sender, });
+@immutable final class WebhookCodeScanningAlertCreated {const WebhookCodeScanningAlertCreated({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertCreated.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreated(
   action: WebhookCodeScanningAlertCreatedAction.fromJson(json['action'] as String),

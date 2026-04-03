@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_checkpoint.dart';final class ListFineTuningJobCheckpointsResponseObject {const ListFineTuningJobCheckpointsResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponseObject {const ListFineTuningJobCheckpointsResponseObject._(this.value);
 
 factory ListFineTuningJobCheckpointsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListFineTuningJobCheckpointsResponseObject($value)'; } 
  }
-final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, this.firstId, this.lastId, required this.hasMore, });
+@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
 
 factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobCheckpointsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobCheckpoint.fromJson(e as Map<String, dynamic>)).toList(),

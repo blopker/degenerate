@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'simple_user.dart';import 'unlabeled_issue_event_label.dart';/// Unlabeled Issue Event
-final class UnlabeledIssueEvent {const UnlabeledIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.label, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'unlabeled_issue_event_label.dart';/// Unlabeled Issue Event
+@immutable final class UnlabeledIssueEvent {const UnlabeledIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.label, });
 
 factory UnlabeledIssueEvent.fromJson(Map<String, dynamic> json) { return UnlabeledIssueEvent(
   id: (json['id'] as num).toInt(),

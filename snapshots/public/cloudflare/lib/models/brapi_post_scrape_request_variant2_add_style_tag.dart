@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostScrapeRequestVariant2AddStyleTag {const BrapiPostScrapeRequestVariant2AddStyleTag({this.content, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeRequestVariant2AddStyleTag {const BrapiPostScrapeRequestVariant2AddStyleTag({this.content, this.url, });
 
 factory BrapiPostScrapeRequestVariant2AddStyleTag.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant2AddStyleTag(
   content: json['content'] as String?,

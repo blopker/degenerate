@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class Fraudulent2AdditionalDocumentationVariant2 {const Fraudulent2AdditionalDocumentationVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Fraudulent2AdditionalDocumentationVariant2 {const Fraudulent2AdditionalDocumentationVariant2._(this.value);
 
 factory Fraudulent2AdditionalDocumentationVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

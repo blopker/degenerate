@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls phone number collection settings during checkout.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls phone number collection settings during checkout.
 /// 
 /// We recommend that you review your privacy policy and check with your legal contacts.
-final class PostPaymentLinksPaymentLinkRequestPhoneNumberCollection {const PostPaymentLinksPaymentLinkRequestPhoneNumberCollection({required this.enabled});
+@immutable final class PostPaymentLinksPaymentLinkRequestPhoneNumberCollection {const PostPaymentLinksPaymentLinkRequestPhoneNumberCollection({required this.enabled});
 
 factory PostPaymentLinksPaymentLinkRequestPhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPhoneNumberCollection(
   enabled: json['enabled'] as bool,

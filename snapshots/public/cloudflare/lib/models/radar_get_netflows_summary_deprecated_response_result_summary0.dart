@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsSummaryDeprecatedResponseResultSummary0 {const RadarGetNetflowsSummaryDeprecatedResponseResultSummary0({required this.http, required this.other, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsSummaryDeprecatedResponseResultSummary0 {const RadarGetNetflowsSummaryDeprecatedResponseResultSummary0({required this.http, required this.other, });
 
 factory RadarGetNetflowsSummaryDeprecatedResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryDeprecatedResponseResultSummary0(
   http: json['HTTP'] as String,

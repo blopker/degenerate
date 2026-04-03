@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'credit_card_specs_networks.dart';final class CreditCardSpecs {const CreditCardSpecs({this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.currency, this.cvc, required this.expMonth, required this.expYear, this.name, this.networks, required this.number, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs_networks.dart';@immutable final class CreditCardSpecs {const CreditCardSpecs({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.currency, this.cvc, this.name, this.networks, });
 
 factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardSpecs(
   addressCity: json['address_city'] as String?,

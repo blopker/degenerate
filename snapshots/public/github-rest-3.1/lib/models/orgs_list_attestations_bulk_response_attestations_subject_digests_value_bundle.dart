@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value_bundle_dsse_envelope.dart';import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value_bundle_verification_material.dart';/// The bundle of the attestation.
-final class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle {const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value_bundle_dsse_envelope.dart';import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value_bundle_verification_material.dart';/// The bundle of the attestation.
+@immutable final class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle {const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
 
 factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle(
   mediaType: json['mediaType'] as String?,

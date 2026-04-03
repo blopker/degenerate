@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'line_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class InvoiceLinesObject {const InvoiceLinesObject._(this.value);
+@immutable final class InvoiceLinesObject {const InvoiceLinesObject._(this.value);
 
 factory InvoiceLinesObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceLinesObject($value)'; } 
  }
 /// The individual line items that make up the invoice. `lines` is sorted as follows: (1) pending invoice items (including prorations) in reverse chronological order, (2) subscription items in reverse chronological order, and (3) invoice items added after invoice creation in chronological order.
-final class InvoiceLines {const InvoiceLines({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class InvoiceLines {const InvoiceLines({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory InvoiceLines.fromJson(Map<String, dynamic> json) { return InvoiceLines(
   data: (json['data'] as List<dynamic>).map((e) => LineItem.fromJson(e as Map<String, dynamic>)).toList(),

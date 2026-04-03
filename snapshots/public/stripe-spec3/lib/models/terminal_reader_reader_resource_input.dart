@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_custom_text.dart';import 'terminal_reader_reader_resource_email.dart';import 'terminal_reader_reader_resource_numeric.dart';import 'terminal_reader_reader_resource_phone.dart';import 'terminal_reader_reader_resource_selection.dart';import 'terminal_reader_reader_resource_signature.dart';import 'terminal_reader_reader_resource_text.dart';import 'terminal_reader_reader_resource_toggle.dart';/// Type of input being collected.
-final class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType._(this.value);
+@immutable final class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType._(this.value);
 
 factory TerminalReaderReaderResourceInputType.fromJson(String json) { return switch (json) {
   'email' => email,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceInputType($value)'; } 
  }
 /// Represents an input to be collected using the reader
-final class TerminalReaderReaderResourceInput {const TerminalReaderReaderResourceInput({this.customText, this.email, this.numeric, this.phone, this.$required, this.selection, this.signature, this.skipped, this.text, this.toggles, required this.type, });
+@immutable final class TerminalReaderReaderResourceInput {const TerminalReaderReaderResourceInput({required this.type, this.customText, this.email, this.numeric, this.phone, this.$required, this.selection, this.signature, this.skipped, this.text, this.toggles, });
 
 factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceInput(
   customText: json['custom_text'] != null ? TerminalReaderReaderResourceCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,

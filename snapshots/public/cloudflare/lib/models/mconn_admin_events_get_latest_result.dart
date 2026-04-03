@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_recorded_event.dart';final class MconnAdminEventsGetLatestResult {const MconnAdminEventsGetLatestResult({required this.count, required this.items, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_recorded_event.dart';@immutable final class MconnAdminEventsGetLatestResult {const MconnAdminEventsGetLatestResult({required this.count, required this.items, });
 
 factory MconnAdminEventsGetLatestResult.fromJson(Map<String, dynamic> json) { return MconnAdminEventsGetLatestResult(
   count: (json['count'] as num).toDouble(),

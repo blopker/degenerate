@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';final class PostCheckoutSessionsSessionRequestShippingOptionsVariant2 {const PostCheckoutSessionsSessionRequestShippingOptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant2 {const PostCheckoutSessionsSessionRequestShippingOptionsVariant2._(this.value);
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

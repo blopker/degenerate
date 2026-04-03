@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),

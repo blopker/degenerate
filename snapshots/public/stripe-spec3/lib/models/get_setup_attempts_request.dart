@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSetupAttemptsRequest {const GetSetupAttemptsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSetupAttemptsRequest {const GetSetupAttemptsRequest();
 
 factory GetSetupAttemptsRequest.fromJson(Map<String, dynamic> json) { return GetSetupAttemptsRequest(
 

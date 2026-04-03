@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookStatusCommitCommitTree {const WebhookStatusCommitCommitTree({required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusCommitCommitTree {const WebhookStatusCommitCommitTree({required this.sha, required this.url, });
 
 factory WebhookStatusCommitCommitTree.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitCommitTree(
   sha: json['sha'] as String,

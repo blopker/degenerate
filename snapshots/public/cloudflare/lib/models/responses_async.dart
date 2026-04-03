@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_async_requests.dart';final class ResponsesAsync {const ResponsesAsync({required this.requests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_async_requests.dart';@immutable final class ResponsesAsync {const ResponsesAsync({required this.requests});
 
 factory ResponsesAsync.fromJson(Map<String, dynamic> json) { return ResponsesAsync(
   requests: (json['requests'] as List<dynamic>).map((e) => ResponsesAsyncRequests.fromJson(e as Map<String, dynamic>)).toList(),

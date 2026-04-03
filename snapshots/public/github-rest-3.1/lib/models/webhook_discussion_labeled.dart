@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';final class WebhookDiscussionLabeledAction {const WebhookDiscussionLabeledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';@immutable final class WebhookDiscussionLabeledAction {const WebhookDiscussionLabeledAction._(this.value);
 
 factory WebhookDiscussionLabeledAction.fromJson(String json) { return switch (json) {
   'labeled' => labeled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionLabeledAction($value)'; } 
  }
-final class WebhookDiscussionLabeled {const WebhookDiscussionLabeled({required this.action, required this.discussion, this.enterprise, this.installation, required this.label, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookDiscussionLabeled {const WebhookDiscussionLabeled({required this.action, required this.discussion, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionLabeled.fromJson(Map<String, dynamic> json) { return WebhookDiscussionLabeled(
   action: WebhookDiscussionLabeledAction.fromJson(json['action'] as String),

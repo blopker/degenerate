@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_common_components_schemas_identifier.dart';import 'iam_email.dart';import 'iam_first_name.dart';import 'iam_last_name.dart';import 'iam_two_factor_authentication_enabled.dart';/// Details of the user associated to the membership.
-final class IamMemberWithPoliciesUser {const IamMemberWithPoliciesUser({required this.email, this.firstName, this.id, this.lastName, this.twoFactorAuthenticationEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';import 'iam_email.dart';import 'iam_first_name.dart';import 'iam_last_name.dart';import 'iam_two_factor_authentication_enabled.dart';/// Details of the user associated to the membership.
+@immutable final class IamMemberWithPoliciesUser {const IamMemberWithPoliciesUser({required this.email, this.firstName, this.id, this.lastName, this.twoFactorAuthenticationEnabled, });
 
 factory IamMemberWithPoliciesUser.fromJson(Map<String, dynamic> json) { return IamMemberWithPoliciesUser(
   email: IamEmail.fromJson(json['email'] as String),

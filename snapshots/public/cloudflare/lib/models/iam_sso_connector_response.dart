@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_sso_connector.dart';final class IamSsoConnectorResponse {const IamSsoConnectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_sso_connector.dart';@immutable final class IamSsoConnectorResponse {const IamSsoConnectorResponse({this.result});
 
 factory IamSsoConnectorResponse.fromJson(Map<String, dynamic> json) { return IamSsoConnectorResponse(
   result: json['result'] != null ? IamSsoConnector.fromJson(json['result'] as Map<String, dynamic>) : null,

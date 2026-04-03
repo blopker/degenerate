@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.audio.transcript.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.audio.transcript.done`.
 /// 
-final class ResponseAudioTranscriptDoneEventType {const ResponseAudioTranscriptDoneEventType._(this.value);
+@immutable final class ResponseAudioTranscriptDoneEventType {const ResponseAudioTranscriptDoneEventType._(this.value);
 
 factory ResponseAudioTranscriptDoneEventType.fromJson(String json) { return switch (json) {
   'response.audio.transcript.done' => responseAudioTranscriptDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseAudioTranscriptDoneEventType($value)'; } 
  }
 /// Emitted when the full audio transcript is completed.
-final class ResponseAudioTranscriptDoneEvent {const ResponseAudioTranscriptDoneEvent({required this.type, required this.sequenceNumber, });
+@immutable final class ResponseAudioTranscriptDoneEvent {const ResponseAudioTranscriptDoneEvent({required this.type, required this.sequenceNumber, });
 
 factory ResponseAudioTranscriptDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseAudioTranscriptDoneEvent(
   type: ResponseAudioTranscriptDoneEventType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_region.dart';/// A test region with a label.
-final class ObservatoryLabeledRegion {const ObservatoryLabeledRegion({this.label, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_region.dart';/// A test region with a label.
+@immutable final class ObservatoryLabeledRegion {const ObservatoryLabeledRegion({this.label, this.value, });
 
 factory ObservatoryLabeledRegion.fromJson(Map<String, dynamic> json) { return ObservatoryLabeledRegion(
   label: json['label'] as String?,

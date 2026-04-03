@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestControllerFeesPayer {const PostAccountsRequestControllerFeesPayer._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestControllerFeesPayer {const PostAccountsRequestControllerFeesPayer._(this.value);
 
 factory PostAccountsRequestControllerFeesPayer.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestControllerFeesPayer($value)'; } 
  }
-final class PostAccountsRequestControllerFees {const PostAccountsRequestControllerFees({this.payer});
+@immutable final class PostAccountsRequestControllerFees {const PostAccountsRequestControllerFees({this.payer});
 
 factory PostAccountsRequestControllerFees.fromJson(Map<String, dynamic> json) { return PostAccountsRequestControllerFees(
   payer: json['payer'] != null ? PostAccountsRequestControllerFeesPayer.fromJson(json['payer'] as String) : null,

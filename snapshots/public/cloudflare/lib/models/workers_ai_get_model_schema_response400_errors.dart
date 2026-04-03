@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiGetModelSchemaResponse400Errors {const WorkersAiGetModelSchemaResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiGetModelSchemaResponse400Errors {const WorkersAiGetModelSchemaResponse400Errors({required this.message});
 
 factory WorkersAiGetModelSchemaResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiGetModelSchemaResponse400Errors(
   message: json['message'] as String,

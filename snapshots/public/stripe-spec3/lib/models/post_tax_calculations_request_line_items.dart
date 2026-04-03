@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxCalculationsRequestLineItemsTaxBehavior {const PostTaxCalculationsRequestLineItemsTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxCalculationsRequestLineItemsTaxBehavior {const PostTaxCalculationsRequestLineItemsTaxBehavior._(this.value);
 
 factory PostTaxCalculationsRequestLineItemsTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxCalculationsRequestLineItemsTaxBehavior($value)'; } 
  }
-final class PostTaxCalculationsRequestLineItems {const PostTaxCalculationsRequestLineItems({required this.amount, this.metadata, this.product, this.quantity, this.reference, this.taxBehavior, this.taxCode, });
+@immutable final class PostTaxCalculationsRequestLineItems {const PostTaxCalculationsRequestLineItems({required this.amount, this.metadata, this.product, this.quantity, this.reference, this.taxBehavior, this.taxCode, });
 
 factory PostTaxCalculationsRequestLineItems.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestLineItems(
   amount: (json['amount'] as num).toInt(),

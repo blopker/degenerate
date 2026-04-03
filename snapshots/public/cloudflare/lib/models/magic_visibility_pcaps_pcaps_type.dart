@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of packet capture. `Simple` captures sampled packets, and `full` captures entire payloads and non-sampled packets.
-final class MagicVisibilityPcapsPcapsType {const MagicVisibilityPcapsPcapsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of packet capture. `Simple` captures sampled packets, and `full` captures entire payloads and non-sampled packets.
+@immutable final class MagicVisibilityPcapsPcapsType {const MagicVisibilityPcapsPcapsType._(this.value);
 
 factory MagicVisibilityPcapsPcapsType.fromJson(String json) { return switch (json) {
   'simple' => simple,

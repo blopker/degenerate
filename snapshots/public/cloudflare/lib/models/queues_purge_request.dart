@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class QueuesPurgeRequest {const QueuesPurgeRequest({this.deleteMessagesPermanently});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QueuesPurgeRequest {const QueuesPurgeRequest({this.deleteMessagesPermanently});
 
 factory QueuesPurgeRequest.fromJson(Map<String, dynamic> json) { return QueuesPurgeRequest(
   deleteMessagesPermanently: json['delete_messages_permanently'] as bool?,

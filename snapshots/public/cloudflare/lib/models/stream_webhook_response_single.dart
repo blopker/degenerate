@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamWebhookResponseSingle {const StreamWebhookResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamWebhookResponseSingle {const StreamWebhookResponseSingle({this.result});
 
 factory StreamWebhookResponseSingle.fromJson(Map<String, dynamic> json) { return StreamWebhookResponseSingle(
   result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

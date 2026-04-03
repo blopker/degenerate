@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ShieldOldSchemaUploadLogEvent {const ShieldOldSchemaUploadLogEvent({required this.code, this.locations, this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldOldSchemaUploadLogEvent {const ShieldOldSchemaUploadLogEvent({required this.code, this.locations, this.message, });
 
 factory ShieldOldSchemaUploadLogEvent.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadLogEvent(
   code: (json['code'] as num).toInt(),

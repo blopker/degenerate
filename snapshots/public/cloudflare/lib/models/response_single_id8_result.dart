@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';final class ResponseSingleId8Result {const ResponseSingleId8Result({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';@immutable final class ResponseSingleId8Result {const ResponseSingleId8Result({required this.id});
 
 factory ResponseSingleId8Result.fromJson(Map<String, dynamic> json) { return ResponseSingleId8Result(
   id: ZonesIdentifier.fromJson(json['id'] as String),

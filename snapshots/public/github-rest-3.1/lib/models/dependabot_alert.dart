@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_auto_dismissed_at.dart';import 'alert_created_at.dart';import 'alert_dismissed_at.dart';import 'alert_fixed_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'dependabot_alert_dependency.dart';import 'dependabot_alert_dismissal_request_simple.dart';import 'dependabot_alert_security_advisory.dart';import 'dependabot_alert_security_vulnerability.dart';import 'simple_user.dart';/// The state of the Dependabot alert.
-final class DependabotAlertState {const DependabotAlertState._(this.value);
+@immutable final class DependabotAlertState {const DependabotAlertState._(this.value);
 
 factory DependabotAlertState.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertState($value)'; } 
  }
 /// The reason that the alert was dismissed.
-final class DependabotAlertDismissedReason {const DependabotAlertDismissedReason._(this.value);
+@immutable final class DependabotAlertDismissedReason {const DependabotAlertDismissedReason._(this.value);
 
 factory DependabotAlertDismissedReason.fromJson(String json) { return switch (json) {
   'fix_started' => fixStarted,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertDismissedReason($value)'; } 
  }
 /// A Dependabot alert.
-final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt, this.dismissalRequest, this.assignees, });
+@immutable final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt, this.dismissalRequest, this.assignees, });
 
 factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotAlert(
   number: AlertNumber.fromJson(json['number'] as num),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation.dart';final class ShieldMultipleOperationResponsePaginated {const ShieldMultipleOperationResponsePaginated({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation.dart';@immutable final class ShieldMultipleOperationResponsePaginated {const ShieldMultipleOperationResponsePaginated({required this.result});
 
 factory ShieldMultipleOperationResponsePaginated.fromJson(Map<String, dynamic> json) { return ShieldMultipleOperationResponsePaginated(
   result: (json['result'] as List<dynamic>).map((e) => ShieldOperation.fromJson(e as Map<String, dynamic>)).toList(),

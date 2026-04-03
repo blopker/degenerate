@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_reusable_policy_resp.dart';final class AccessReusablePoliciesComponentsSchemasSingleResponse {const AccessReusablePoliciesComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_reusable_policy_resp.dart';@immutable final class AccessReusablePoliciesComponentsSchemasSingleResponse {const AccessReusablePoliciesComponentsSchemasSingleResponse({this.result});
 
 factory AccessReusablePoliciesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessReusablePoliciesComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessReusablePolicyResp.fromJson(json['result'] as Map<String, dynamic>) : null,

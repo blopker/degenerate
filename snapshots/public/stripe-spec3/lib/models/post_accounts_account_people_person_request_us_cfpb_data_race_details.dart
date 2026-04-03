@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace {const PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace {const PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace._(this.value);
 
 factory PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace.fromJson(String json) { return switch (json) {
   'african_american' => africanAmerican,
@@ -90,7 +90,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace($value)'; } 
  }
-final class PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetails {const PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetails({this.race, this.raceOther, });
+@immutable final class PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetails {const PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetails({this.race, this.raceOther, });
 
 factory PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetails(
   race: (json['race'] as List<dynamic>?)?.map((e) => PostAccountsAccountPeoplePersonRequestUsCfpbDataRaceDetailsRace.fromJson(e as String)).toList(),

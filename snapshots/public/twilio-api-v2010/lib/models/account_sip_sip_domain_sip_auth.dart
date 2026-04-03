@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSipSipDomainSipAuth {const AccountSipSipDomainSipAuth();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipAuth {const AccountSipSipDomainSipAuth();
 
 factory AccountSipSipDomainSipAuth.fromJson(Map<String, dynamic> json) { return AccountSipSipDomainSipAuth(
 

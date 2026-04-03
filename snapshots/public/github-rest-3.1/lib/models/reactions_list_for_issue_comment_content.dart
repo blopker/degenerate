@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReactionsListForIssueCommentContent {const ReactionsListForIssueCommentContent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReactionsListForIssueCommentContent {const ReactionsListForIssueCommentContent._(this.value);
 
 factory ReactionsListForIssueCommentContent.fromJson(String json) { return switch (json) {
   '+1' => plus1,

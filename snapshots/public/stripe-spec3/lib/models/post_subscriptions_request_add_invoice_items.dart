@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_add_invoice_items_discounts.dart';import 'post_subscriptions_request_add_invoice_items_period.dart';import 'post_subscriptions_request_add_invoice_items_price_data.dart';import 'post_subscriptions_request_add_invoice_items_tax_rates.dart';final class PostSubscriptionsRequestAddInvoiceItems {const PostSubscriptionsRequestAddInvoiceItems({this.discounts, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_add_invoice_items_discounts.dart';import 'post_subscriptions_request_add_invoice_items_period.dart';import 'post_subscriptions_request_add_invoice_items_price_data.dart';import 'post_subscriptions_request_add_invoice_items_tax_rates.dart';@immutable final class PostSubscriptionsRequestAddInvoiceItems {const PostSubscriptionsRequestAddInvoiceItems({this.discounts, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostSubscriptionsRequestAddInvoiceItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItems(
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostSubscriptionsRequestAddInvoiceItemsDiscounts.fromJson(e as Map<String, dynamic>)).toList(),

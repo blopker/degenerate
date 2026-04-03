@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ip_address.dart';final class MagicLanDhcpServer {const MagicLanDhcpServer({this.dhcpPoolEnd, this.dhcpPoolStart, this.dnsServer, this.dnsServers, this.reservations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ip_address.dart';@immutable final class MagicLanDhcpServer {const MagicLanDhcpServer({this.dhcpPoolEnd, this.dhcpPoolStart, this.dnsServer, this.dnsServers, this.reservations, });
 
 factory MagicLanDhcpServer.fromJson(Map<String, dynamic> json) { return MagicLanDhcpServer(
   dhcpPoolEnd: json['dhcp_pool_end'] != null ? MagicIpAddress.fromJson(json['dhcp_pool_end'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesAddSubIssueRequest {const IssuesAddSubIssueRequest({required this.subIssueId, this.replaceParent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesAddSubIssueRequest {const IssuesAddSubIssueRequest({required this.subIssueId, this.replaceParent, });
 
 factory IssuesAddSubIssueRequest.fromJson(Map<String, dynamic> json) { return IssuesAddSubIssueRequest(
   subIssueId: (json['sub_issue_id'] as num).toInt(),

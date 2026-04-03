@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_setting_custom_field.dart';import 'invoice_setting_customer_rendering_options.dart';import 'invoice_setting_customer_setting_default_payment_method.dart';import 'payment_method.dart';/// 
-final class InvoiceSettingCustomerSetting {const InvoiceSettingCustomerSetting({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
+@immutable final class InvoiceSettingCustomerSetting {const InvoiceSettingCustomerSetting({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
 
 factory InvoiceSettingCustomerSetting.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomerSetting(
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),

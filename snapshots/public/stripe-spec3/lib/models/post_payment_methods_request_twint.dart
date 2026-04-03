@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a TWINT PaymentMethod, this hash contains details about the TWINT payment method.
-final class PostPaymentMethodsRequestTwint {const PostPaymentMethodsRequestTwint();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a TWINT PaymentMethod, this hash contains details about the TWINT payment method.
+@immutable final class PostPaymentMethodsRequestTwint {const PostPaymentMethodsRequestTwint();
 
 factory PostPaymentMethodsRequestTwint.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestTwint(
 

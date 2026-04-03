@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiGetToMarkdownSupportedResponseResult {const WorkersAiGetToMarkdownSupportedResponseResult({required this.$extension, required this.mimeType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiGetToMarkdownSupportedResponseResult {const WorkersAiGetToMarkdownSupportedResponseResult({required this.$extension, required this.mimeType, });
 
 factory WorkersAiGetToMarkdownSupportedResponseResult.fromJson(Map<String, dynamic> json) { return WorkersAiGetToMarkdownSupportedResponseResult(
   $extension: json['extension'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventCreateBulkResponse202Errors {const PostEventCreateBulkResponse202Errors({required this.error, required this.eventIndex, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventCreateBulkResponse202Errors {const PostEventCreateBulkResponse202Errors({required this.error, required this.eventIndex, });
 
 factory PostEventCreateBulkResponse202Errors.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkResponse202Errors(
   error: json['error'] as String,

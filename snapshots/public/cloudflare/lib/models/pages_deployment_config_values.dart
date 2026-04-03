@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment_config_values_ai_bindings_value.dart';import 'pages_deployment_config_values_analytics_engine_datasets_value.dart';import 'pages_deployment_config_values_d1_databases_value.dart';import 'pages_deployment_config_values_durable_object_namespaces_value.dart';import 'pages_deployment_config_values_hyperdrive_bindings_value.dart';import 'pages_deployment_config_values_kv_namespaces_value.dart';import 'pages_deployment_config_values_limits.dart';import 'pages_deployment_config_values_mtls_certificates_value.dart';import 'pages_deployment_config_values_placement.dart';import 'pages_deployment_config_values_queue_producers_value.dart';import 'pages_deployment_config_values_r2_buckets_value.dart';import 'pages_deployment_config_values_services_value.dart';import 'pages_deployment_config_values_vectorize_bindings_value.dart';import 'pages_env_vars_value.dart';/// The usage model for Pages Functions.
-final class PagesDeploymentConfigValuesUsageModel {const PagesDeploymentConfigValuesUsageModel._(this.value);
+@immutable final class PagesDeploymentConfigValuesUsageModel {const PagesDeploymentConfigValuesUsageModel._(this.value);
 
 factory PagesDeploymentConfigValuesUsageModel.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesUsageModel($value)'; } 
  }
-final class PagesDeploymentConfigValues {const PagesDeploymentConfigValues({this.aiBindings, required this.alwaysUseLatestCompatibilityDate, this.analyticsEngineDatasets, this.browsers, required this.buildImageMajorVersion, required this.compatibilityDate, required this.compatibilityFlags, this.d1Databases, this.durableObjectNamespaces, required this.envVars, required this.failOpen, this.hyperdriveBindings, this.kvNamespaces, this.limits, this.mtlsCertificates, this.placement, this.queueProducers, this.r2Buckets, this.services, required this.usageModel, this.vectorizeBindings, this.wranglerConfigHash, });
+@immutable final class PagesDeploymentConfigValues {const PagesDeploymentConfigValues({required this.alwaysUseLatestCompatibilityDate, required this.buildImageMajorVersion, required this.compatibilityDate, required this.compatibilityFlags, required this.envVars, required this.failOpen, required this.usageModel, this.aiBindings, this.analyticsEngineDatasets, this.browsers, this.d1Databases, this.durableObjectNamespaces, this.hyperdriveBindings, this.kvNamespaces, this.limits, this.mtlsCertificates, this.placement, this.queueProducers, this.r2Buckets, this.services, this.vectorizeBindings, this.wranglerConfigHash, });
 
 factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValues(
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesAiBindingsValue.fromJson(v as Map<String, dynamic>))),

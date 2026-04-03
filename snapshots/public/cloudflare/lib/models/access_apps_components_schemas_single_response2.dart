@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps.dart';import 'access_schemas_basic_app_response_props.dart';final class AccessAppsComponentsSchemasSingleResponse2 {const AccessAppsComponentsSchemasSingleResponse2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps.dart';import 'access_schemas_basic_app_response_props.dart';@immutable final class AccessAppsComponentsSchemasSingleResponse2 {const AccessAppsComponentsSchemasSingleResponse2({this.result});
 
 factory AccessAppsComponentsSchemasSingleResponse2.fromJson(Map<String, dynamic> json) { return AccessAppsComponentsSchemasSingleResponse2(
   result: json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessSchemasBasicAppResponseProps.fromJson(v as Map<String, dynamic>),) : null,

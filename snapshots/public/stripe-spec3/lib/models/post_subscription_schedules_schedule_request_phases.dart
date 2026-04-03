@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param7.dart';import 'post_subscription_schedules_schedule_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_schedule_request_phases_automatic_tax.dart';import 'post_subscription_schedules_schedule_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_schedule_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_schedule_request_phases_description.dart';import 'post_subscription_schedules_schedule_request_phases_discounts.dart';import 'post_subscription_schedules_schedule_request_phases_discounts_variant1.dart';import 'post_subscription_schedules_schedule_request_phases_duration.dart';import 'post_subscription_schedules_schedule_request_phases_end_date.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings.dart';import 'post_subscription_schedules_schedule_request_phases_items.dart';import 'post_subscription_schedules_schedule_request_phases_start_date.dart';import 'post_subscription_schedules_schedule_request_phases_transfer_data.dart';import 'post_subscription_schedules_schedule_request_phases_trial_end.dart';final class PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param7.dart';import 'post_subscription_schedules_schedule_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_schedule_request_phases_automatic_tax.dart';import 'post_subscription_schedules_schedule_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_schedule_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_schedule_request_phases_description.dart';import 'post_subscription_schedules_schedule_request_phases_discounts.dart';import 'post_subscription_schedules_schedule_request_phases_discounts_variant1.dart';import 'post_subscription_schedules_schedule_request_phases_duration.dart';import 'post_subscription_schedules_schedule_request_phases_end_date.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings.dart';import 'post_subscription_schedules_schedule_request_phases_items.dart';import 'post_subscription_schedules_schedule_request_phases_start_date.dart';import 'post_subscription_schedules_schedule_request_phases_transfer_data.dart';import 'post_subscription_schedules_schedule_request_phases_trial_end.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor($value)'; } 
  }
-final class PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod {const PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod._(this.value);
+@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod {const PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod($value)'; } 
  }
-final class PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior {const PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior._(this.value);
+@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior {const PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior($value)'; } 
  }
-final class PostSubscriptionSchedulesScheduleRequestPhases {const PostSubscriptionSchedulesScheduleRequestPhases({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, required this.items, this.metadata, this.onBehalfOf, this.prorationBehavior, this.startDate, this.transferData, this.trial, this.trialEnd, });
+@immutable final class PostSubscriptionSchedulesScheduleRequestPhases {const PostSubscriptionSchedulesScheduleRequestPhases({required this.items, this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.startDate, this.transferData, this.trial, this.trialEnd, });
 
 factory PostSubscriptionSchedulesScheduleRequestPhases.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesScheduleRequestPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),

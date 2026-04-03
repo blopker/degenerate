@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_single_user_response_result.dart';final class IamSingleUserResponse {const IamSingleUserResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_single_user_response_result.dart';@immutable final class IamSingleUserResponse {const IamSingleUserResponse({this.result});
 
 factory IamSingleUserResponse.fromJson(Map<String, dynamic> json) { return IamSingleUserResponse(
   result: json['result'] != null ? IamSingleUserResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

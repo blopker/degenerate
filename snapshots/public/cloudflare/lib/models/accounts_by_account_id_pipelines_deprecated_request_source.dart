@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';sealed class AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSource();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';sealed class AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSource();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory AccountsByAccountIdPipelinesDeprecatedRequestSource.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown; } 
  }
-final class AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding(this.cloudflarePipelinesWorkersPipelinesBindingSource);
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding(this.cloudflarePipelinesWorkersPipelinesBindingSource);
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding(CloudflarePipelinesWorkersPipelinesBindingSource.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorker
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource: $cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
  }
-final class AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp(this.cloudflarePipelinesWorkersPipelinesHttpSource);
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp(this.cloudflarePipelinesWorkersPipelinesHttpSource);
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp(CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPi
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown(this.json);
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_telemetry_event_source.dart';import 'workers_observability_telemetry_eventmetadata.dart';import 'workers_observability_telemetry_eventworkers.dart';import 'workers_observability_telemetry_eventworkers_variant1.dart';import 'workers_observability_telemetry_eventworkers_variant2.dart';/// The data structure of a telemetry event
-final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTelemetryEvent({this.$containers, required this.$metadata, this.$workers, required this.dataset, required this.source, required this.timestamp, });
+@immutable final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTelemetryEvent({required this.$metadata, required this.dataset, required this.source, required this.timestamp, this.$containers, this.$workers, });
 
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
   $containers: (json['\$containers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

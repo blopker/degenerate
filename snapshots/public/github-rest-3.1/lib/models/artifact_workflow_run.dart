@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ArtifactWorkflowRun {const ArtifactWorkflowRun({this.id, this.repositoryId, this.headRepositoryId, this.headBranch, this.headSha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactWorkflowRun {const ArtifactWorkflowRun({this.id, this.repositoryId, this.headRepositoryId, this.headBranch, this.headSha, });
 
 factory ArtifactWorkflowRun.fromJson(Map<String, dynamic> json) { return ArtifactWorkflowRun(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

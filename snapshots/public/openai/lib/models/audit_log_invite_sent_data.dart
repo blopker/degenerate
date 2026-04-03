@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to create the invite.
-final class AuditLogInviteSentData {const AuditLogInviteSentData({this.email, this.role, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the invite.
+@immutable final class AuditLogInviteSentData {const AuditLogInviteSentData({this.email, this.role, });
 
 factory AuditLogInviteSentData.fromJson(Map<String, dynamic> json) { return AuditLogInviteSentData(
   email: json['email'] as String?,

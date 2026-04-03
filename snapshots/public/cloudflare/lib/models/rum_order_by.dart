@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The property used to sort the list of results.
-final class RumOrderBy {const RumOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The property used to sort the list of results.
+@immutable final class RumOrderBy {const RumOrderBy._(this.value);
 
 factory RumOrderBy.fromJson(String json) { return switch (json) {
   'host' => host,

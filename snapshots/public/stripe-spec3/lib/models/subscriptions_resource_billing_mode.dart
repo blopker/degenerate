@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'subscriptions_resource_billing_mode_flexible.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
-final class SubscriptionsResourceBillingModeType {const SubscriptionsResourceBillingModeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_billing_mode_flexible.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
+@immutable final class SubscriptionsResourceBillingModeType {const SubscriptionsResourceBillingModeType._(this.value);
 
 factory SubscriptionsResourceBillingModeType.fromJson(String json) { return switch (json) {
   'classic' => classic,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionsResourceBillingModeType($value)'; } 
  }
 /// The billing mode of the subscription.
-final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({this.flexible, required this.type, this.updatedAt, });
+@immutable final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({required this.type, this.flexible, this.updatedAt, });
 
 factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingMode(
   flexible: json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,

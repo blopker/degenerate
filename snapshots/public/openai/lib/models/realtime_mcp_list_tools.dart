@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_list_tools_tool.dart';/// The type of the item. Always `mcp_list_tools`.
-final class RealtimeMcpListToolsType {const RealtimeMcpListToolsType._(this.value);
+@immutable final class RealtimeMcpListToolsType {const RealtimeMcpListToolsType._(this.value);
 
 factory RealtimeMcpListToolsType.fromJson(String json) { return switch (json) {
   'mcp_list_tools' => mcpListTools,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Realtime item listing tools available on an MCP server.
 /// 
-final class RealtimeMcpListTools {const RealtimeMcpListTools({required this.type, this.id, required this.serverLabel, required this.tools, });
+@immutable final class RealtimeMcpListTools {const RealtimeMcpListTools({required this.type, required this.serverLabel, required this.tools, this.id, });
 
 factory RealtimeMcpListTools.fromJson(Map<String, dynamic> json) { return RealtimeMcpListTools(
   type: RealtimeMcpListToolsType.fromJson(json['type'] as String),

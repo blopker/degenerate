@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payments_primitives_payment_records_resource_processor_details_resource_custom_details.dart';/// The processor used for this payment attempt.
-final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsType {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_processor_details_resource_custom_details.dart';/// The processor used for this payment attempt.
+@immutable final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsType {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsType._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsType($value)'; } 
  }
 /// Processor information associated with this payment.
-final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetails {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetails({this.custom, required this.type, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetails {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetails({required this.type, this.custom, });
 
 factory PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetails(
   custom: json['custom'] != null ? PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails.fromJson(json['custom'] as Map<String, dynamic>) : null,

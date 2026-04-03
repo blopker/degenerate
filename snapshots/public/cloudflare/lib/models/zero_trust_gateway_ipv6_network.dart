@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZeroTrustGatewayIpv6Network {const ZeroTrustGatewayIpv6Network({required this.network});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayIpv6Network {const ZeroTrustGatewayIpv6Network({required this.network});
 
 factory ZeroTrustGatewayIpv6Network.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayIpv6Network(
   network: json['network'] as String,

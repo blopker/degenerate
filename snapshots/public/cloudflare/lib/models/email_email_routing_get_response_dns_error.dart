@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_dns_record.dart';final class EmailEmailRoutingGetResponseDnsError {const EmailEmailRoutingGetResponseDnsError({this.code, this.missing, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record.dart';@immutable final class EmailEmailRoutingGetResponseDnsError {const EmailEmailRoutingGetResponseDnsError({this.code, this.missing, });
 
 factory EmailEmailRoutingGetResponseDnsError.fromJson(Map<String, dynamic> json) { return EmailEmailRoutingGetResponseDnsError(
   code: json['code'] as String?,

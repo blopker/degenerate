@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion_answer_chosen_by.dart';import 'discussion_category.dart';import 'discussion_reactions.dart';import 'discussion_user.dart';import 'label.dart';/// How the author is associated with the repository.
-final class DiscussionAuthorAssociation {const DiscussionAuthorAssociation._(this.value);
+@immutable final class DiscussionAuthorAssociation {const DiscussionAuthorAssociation._(this.value);
 
 factory DiscussionAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The current state of the discussion.
 /// `converting` means that the discussion is being converted from an issue.
 /// `transferring` means that the discussion is being transferred from another repository.
-final class DiscussionState {const DiscussionState._(this.value);
+@immutable final class DiscussionState {const DiscussionState._(this.value);
 
 factory DiscussionState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DiscussionState($value)'; } 
  }
 /// The reason for the current state
-final class DiscussionStateReason {const DiscussionStateReason._(this.value);
+@immutable final class DiscussionStateReason {const DiscussionStateReason._(this.value);
 
 factory DiscussionStateReason.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -114,7 +114,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DiscussionStateReason($value)'; } 
  }
 /// A Discussion in a repository.
-final class Discussion {const Discussion({required this.activeLockReason, required this.answerChosenAt, required this.answerChosenBy, required this.answerHtmlUrl, this.authorAssociation, required this.body, required this.category, required this.comments, required this.createdAt, required this.htmlUrl, required this.id, required this.locked, required this.nodeId, required this.number, this.reactions, required this.repositoryUrl, required this.state, required this.stateReason, this.timelineUrl, required this.title, required this.updatedAt, required this.user, this.labels, });
+@immutable final class Discussion {const Discussion({required this.activeLockReason, required this.answerChosenAt, required this.answerChosenBy, required this.answerHtmlUrl, required this.body, required this.category, required this.comments, required this.createdAt, required this.htmlUrl, required this.id, required this.locked, required this.nodeId, required this.number, required this.repositoryUrl, required this.state, required this.stateReason, required this.title, required this.updatedAt, required this.user, this.authorAssociation, this.reactions, this.timelineUrl, this.labels, });
 
 factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
   activeLockReason: json['active_lock_reason'] as String?,

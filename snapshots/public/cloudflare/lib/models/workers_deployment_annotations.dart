@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersDeploymentAnnotations {const WorkersDeploymentAnnotations({this.workersMessage, this.workersTriggeredBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersDeploymentAnnotations {const WorkersDeploymentAnnotations({this.workersMessage, this.workersTriggeredBy, });
 
 factory WorkersDeploymentAnnotations.fromJson(Map<String, dynamic> json) { return WorkersDeploymentAnnotations(
   workersMessage: json['workers/message'] as String?,

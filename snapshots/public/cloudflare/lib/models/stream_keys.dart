@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_schemas_identifier.dart';import 'stream_signing_key_created.dart';/// The signing key in JWK format.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_schemas_identifier.dart';import 'stream_signing_key_created.dart';/// The signing key in JWK format.
 extension type const StreamJwk(String value) {
 factory StreamJwk.fromJson(String json) => StreamJwk(json);
 
@@ -14,7 +14,7 @@ factory StreamPem.fromJson(String json) => StreamPem(json);
 String toJson() => value;
 
 }
-final class StreamKeys {const StreamKeys({this.created, this.id, this.jwk, this.pem, });
+@immutable final class StreamKeys {const StreamKeys({this.created, this.id, this.jwk, this.pem, });
 
 factory StreamKeys.fromJson(Map<String, dynamic> json) { return StreamKeys(
   created: json['created'] != null ? StreamSigningKeyCreated.fromJson(json['created'] as String) : null,

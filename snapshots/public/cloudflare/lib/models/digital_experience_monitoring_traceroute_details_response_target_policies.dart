@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies {const DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies({required this.$default, required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies {const DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies({required this.$default, required this.id, required this.name, });
 
 factory DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies(
   $default: json['default'] as bool,

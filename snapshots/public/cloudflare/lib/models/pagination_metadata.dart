@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaginationMetadata {const PaginationMetadata({this.firstPage, this.lastPage, this.nextPage, this.page, this.previousPage, this.total, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaginationMetadata {const PaginationMetadata({this.firstPage, this.lastPage, this.nextPage, this.page, this.previousPage, this.total, this.totalPages, });
 
 factory PaginationMetadata.fromJson(Map<String, dynamic> json) { return PaginationMetadata(
   firstPage: json['first_page'] != null ? (json['first_page'] as num).toInt() : null,

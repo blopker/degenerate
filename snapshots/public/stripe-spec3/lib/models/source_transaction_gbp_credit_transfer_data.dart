@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceTransactionGbpCreditTransferData {const SourceTransactionGbpCreditTransferData({this.fingerprint, this.fundingMethod, this.last4, this.reference, this.senderAccountNumber, this.senderName, this.senderSortCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceTransactionGbpCreditTransferData {const SourceTransactionGbpCreditTransferData({this.fingerprint, this.fundingMethod, this.last4, this.reference, this.senderAccountNumber, this.senderName, this.senderSortCode, });
 
 factory SourceTransactionGbpCreditTransferData.fromJson(Map<String, dynamic> json) { return SourceTransactionGbpCreditTransferData(
   fingerprint: json['fingerprint'] as String?,

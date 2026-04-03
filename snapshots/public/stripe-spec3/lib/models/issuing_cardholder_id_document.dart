@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_cardholder_id_document_back.dart';import 'issuing_cardholder_id_document_front.dart';/// 
-final class IssuingCardholderIdDocument {const IssuingCardholderIdDocument({this.back, this.front, });
+@immutable final class IssuingCardholderIdDocument {const IssuingCardholderIdDocument({this.back, this.front, });
 
 factory IssuingCardholderIdDocument.fromJson(Map<String, dynamic> json) { return IssuingCardholderIdDocument(
   back: json['back'] != null ? OneOf2.parse(json['back'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

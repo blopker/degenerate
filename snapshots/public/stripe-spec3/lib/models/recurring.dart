@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-final class RecurringInterval {const RecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
+@immutable final class RecurringInterval {const RecurringInterval._(this.value);
 
 factory RecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RecurringInterval($value)'; } 
  }
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
-final class RecurringUsageType {const RecurringUsageType._(this.value);
+@immutable final class RecurringUsageType {const RecurringUsageType._(this.value);
 
 factory RecurringUsageType.fromJson(String json) { return switch (json) {
   'licensed' => licensed,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RecurringUsageType($value)'; } 
  }
 /// 
-final class Recurring {const Recurring({required this.interval, required this.intervalCount, this.meter, required this.usageType, });
+@immutable final class Recurring {const Recurring({required this.interval, required this.intervalCount, required this.usageType, this.meter, });
 
 factory Recurring.fromJson(Map<String, dynamic> json) { return Recurring(
   interval: RecurringInterval.fromJson(json['interval'] as String),

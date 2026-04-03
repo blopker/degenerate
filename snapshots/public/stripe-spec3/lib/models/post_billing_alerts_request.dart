@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_alerts_request_usage_threshold.dart';/// The type of alert to create.
-final class PostBillingAlertsRequestAlertType {const PostBillingAlertsRequestAlertType._(this.value);
+@immutable final class PostBillingAlertsRequestAlertType {const PostBillingAlertsRequestAlertType._(this.value);
 
 factory PostBillingAlertsRequestAlertType.fromJson(String json) { return switch (json) {
   'usage_threshold' => usageThreshold,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingAlertsRequestAlertType($value)'; } 
  }
-final class PostBillingAlertsRequest {const PostBillingAlertsRequest({required this.alertType, this.expand, required this.title, this.usageThreshold, });
+@immutable final class PostBillingAlertsRequest {const PostBillingAlertsRequest({required this.alertType, required this.title, this.expand, this.usageThreshold, });
 
 factory PostBillingAlertsRequest.fromJson(Map<String, dynamic> json) { return PostBillingAlertsRequest(
   alertType: PostBillingAlertsRequestAlertType.fromJson(json['alert_type'] as String),

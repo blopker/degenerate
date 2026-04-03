@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_address.dart';/// The method used for tokenizing a card.
-final class IssuingNetworkTokenWalletProviderCardNumberSource {const IssuingNetworkTokenWalletProviderCardNumberSource._(this.value);
+@immutable final class IssuingNetworkTokenWalletProviderCardNumberSource {const IssuingNetworkTokenWalletProviderCardNumberSource._(this.value);
 
 factory IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(String json) { return switch (json) {
   'app' => app,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingNetworkTokenWalletProviderCardNumberSource($value)'; } 
  }
-final class IssuingNetworkTokenWalletProviderReasonCodes {const IssuingNetworkTokenWalletProviderReasonCodes._(this.value);
+@immutable final class IssuingNetworkTokenWalletProviderReasonCodes {const IssuingNetworkTokenWalletProviderReasonCodes._(this.value);
 
 factory IssuingNetworkTokenWalletProviderReasonCodes.fromJson(String json) { return switch (json) {
   'account_card_too_new' => accountCardTooNew,
@@ -134,7 +134,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingNetworkTokenWalletProviderReasonCodes($value)'; } 
  }
 /// The recommendation on responding to the tokenization request.
-final class IssuingNetworkTokenWalletProviderSuggestedDecision {const IssuingNetworkTokenWalletProviderSuggestedDecision._(this.value);
+@immutable final class IssuingNetworkTokenWalletProviderSuggestedDecision {const IssuingNetworkTokenWalletProviderSuggestedDecision._(this.value);
 
 factory IssuingNetworkTokenWalletProviderSuggestedDecision.fromJson(String json) { return switch (json) {
   'approve' => approve,
@@ -162,7 +162,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingNetworkTokenWalletProviderSuggestedDecision($value)'; } 
  }
 /// 
-final class IssuingNetworkTokenWalletProvider {const IssuingNetworkTokenWalletProvider({this.accountId, this.accountTrustScore, this.cardNumberSource, this.cardholderAddress, this.cardholderName, this.deviceTrustScore, this.hashedAccountEmailAddress, this.reasonCodes, this.suggestedDecision, this.suggestedDecisionVersion, });
+@immutable final class IssuingNetworkTokenWalletProvider {const IssuingNetworkTokenWalletProvider({this.accountId, this.accountTrustScore, this.cardNumberSource, this.cardholderAddress, this.cardholderName, this.deviceTrustScore, this.hashedAccountEmailAddress, this.reasonCodes, this.suggestedDecision, this.suggestedDecisionVersion, });
 
 factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenWalletProvider(
   accountId: json['account_id'] as String?,

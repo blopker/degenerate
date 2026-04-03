@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_cfd_tunnel.dart';import 'tunnel_tunnel_response_collection_result.dart';import 'tunnel_warp_connector_tunnel.dart';final class TunnelTunnelResponseCollection {const TunnelTunnelResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_cfd_tunnel.dart';import 'tunnel_tunnel_response_collection_result.dart';import 'tunnel_warp_connector_tunnel.dart';@immutable final class TunnelTunnelResponseCollection {const TunnelTunnelResponseCollection({this.result});
 
 factory TunnelTunnelResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelTunnelResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TunnelCfdTunnel.fromJson(v as Map<String, dynamic>), fromB: (v) => TunnelWarpConnectorTunnel.fromJson(v as Map<String, dynamic>),)).toList(),

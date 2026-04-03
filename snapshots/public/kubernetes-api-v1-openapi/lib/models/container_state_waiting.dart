@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ContainerStateWaiting is a waiting state of a container.
-final class ContainerStateWaiting {const ContainerStateWaiting({this.message, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerStateWaiting is a waiting state of a container.
+@immutable final class ContainerStateWaiting {const ContainerStateWaiting({this.message, this.reason, });
 
 factory ContainerStateWaiting.fromJson(Map<String, dynamic> json) { return ContainerStateWaiting(
   message: json['message'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FullRepositoryPermissions {const FullRepositoryPermissions({required this.admin, this.maintain, required this.push, this.triage, required this.pull, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FullRepositoryPermissions {const FullRepositoryPermissions({required this.admin, required this.push, required this.pull, this.maintain, this.triage, });
 
 factory FullRepositoryPermissions.fromJson(Map<String, dynamic> json) { return FullRepositoryPermissions(
   admin: json['admin'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data_currency_options_value_tiers_up_to.dart';final class PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers {const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, required this.upTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data_currency_options_value_tiers_up_to.dart';@immutable final class PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers {const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers({required this.upTo, this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers.fromJson(Map<String, dynamic> json) { return PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers(
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,

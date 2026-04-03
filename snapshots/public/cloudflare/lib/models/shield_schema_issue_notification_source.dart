@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ShieldSchemaIssueNotificationSource {const ShieldSchemaIssueNotificationSource({this.locations});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldSchemaIssueNotificationSource {const ShieldSchemaIssueNotificationSource({this.locations});
 
 factory ShieldSchemaIssueNotificationSource.fromJson(Map<String, dynamic> json) { return ShieldSchemaIssueNotificationSource(
   locations: (json['locations'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetBotsResponseResultBots {const RadarGetBotsResponseResultBots({required this.category, required this.description, required this.kind, required this.name, required this.$operator, required this.slug, required this.userAgentPatterns, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotsResponseResultBots {const RadarGetBotsResponseResultBots({required this.category, required this.description, required this.kind, required this.name, required this.$operator, required this.slug, required this.userAgentPatterns, });
 
 factory RadarGetBotsResponseResultBots.fromJson(Map<String, dynamic> json) { return RadarGetBotsResponseResultBots(
   category: json['category'] as String,

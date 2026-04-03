@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesWorkspaceOneConfigRequest {const TeamsDevicesWorkspaceOneConfigRequest({required this.apiUrl, required this.authUrl, required this.clientId, required this.clientSecret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesWorkspaceOneConfigRequest {const TeamsDevicesWorkspaceOneConfigRequest({required this.apiUrl, required this.authUrl, required this.clientId, required this.clientSecret, });
 
 factory TeamsDevicesWorkspaceOneConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesWorkspaceOneConfigRequest(
   apiUrl: json['api_url'] as String,

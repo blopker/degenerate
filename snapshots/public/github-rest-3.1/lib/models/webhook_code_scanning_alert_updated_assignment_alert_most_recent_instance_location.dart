@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation {const WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation({this.endColumn, this.endLine, this.path, this.startColumn, this.startLine, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation {const WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation({this.endColumn, this.endLine, this.path, this.startColumn, this.startLine, });
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation(
   endColumn: json['end_column'] != null ? (json['end_column'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesPreviewLinesReason {const GetCreditNotesPreviewLinesReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesReason {const GetCreditNotesPreviewLinesReason._(this.value);
 
 factory GetCreditNotesPreviewLinesReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,

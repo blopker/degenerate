@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SubscriptionsResourceBillingCycleAnchorConfig {const SubscriptionsResourceBillingCycleAnchorConfig({required this.dayOfMonth, this.hour, this.minute, this.month, this.second, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SubscriptionsResourceBillingCycleAnchorConfig {const SubscriptionsResourceBillingCycleAnchorConfig({required this.dayOfMonth, this.hour, this.minute, this.month, this.second, });
 
 factory SubscriptionsResourceBillingCycleAnchorConfig.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingCycleAnchorConfig(
   dayOfMonth: (json['day_of_month'] as num).toInt(),

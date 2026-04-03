@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DiffEntryStatus {const DiffEntryStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DiffEntryStatus {const DiffEntryStatus._(this.value);
 
 factory DiffEntryStatus.fromJson(String json) { return switch (json) {
   'added' => added,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DiffEntryStatus($value)'; } 
  }
 /// Diff Entry
-final class DiffEntry {const DiffEntry({required this.sha, required this.filename, required this.status, required this.additions, required this.deletions, required this.changes, required this.blobUrl, required this.rawUrl, required this.contentsUrl, this.patch, this.previousFilename, });
+@immutable final class DiffEntry {const DiffEntry({required this.sha, required this.filename, required this.status, required this.additions, required this.deletions, required this.changes, required this.blobUrl, required this.rawUrl, required this.contentsUrl, this.patch, this.previousFilename, });
 
 factory DiffEntry.fromJson(Map<String, dynamic> json) { return DiffEntry(
   sha: json['sha'] as String?,

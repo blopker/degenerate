@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_topups_topup_request_metadata.dart';final class PostTopupsTopupRequest {const PostTopupsTopupRequest({this.description, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_topups_topup_request_metadata.dart';@immutable final class PostTopupsTopupRequest {const PostTopupsTopupRequest({this.description, this.expand, this.metadata, });
 
 factory PostTopupsTopupRequest.fromJson(Map<String, dynamic> json) { return PostTopupsTopupRequest(
   description: json['description'] as String?,

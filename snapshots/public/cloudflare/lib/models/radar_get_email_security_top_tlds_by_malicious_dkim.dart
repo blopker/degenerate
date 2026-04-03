@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTopTldsByMaliciousDkim {const RadarGetEmailSecurityTopTldsByMaliciousDkim._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsByMaliciousDkim {const RadarGetEmailSecurityTopTldsByMaliciousDkim._(this.value);
 
 factory RadarGetEmailSecurityTopTldsByMaliciousDkim.fromJson(String json) { return switch (json) {
   'PASS' => pass,

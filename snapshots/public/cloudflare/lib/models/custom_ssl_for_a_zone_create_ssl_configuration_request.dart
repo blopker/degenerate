@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_certificate.dart';import 'tls_certificates_and_hostnames_deploy.dart';import 'tls_certificates_and_hostnames_geo_restrictions.dart';import 'tls_certificates_and_hostnames_policy.dart';import 'tls_certificates_and_hostnames_private_key.dart';/// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
-final class TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_certificate.dart';import 'tls_certificates_and_hostnames_deploy.dart';import 'tls_certificates_and_hostnames_geo_restrictions.dart';import 'tls_certificates_and_hostnames_policy.dart';import 'tls_certificates_and_hostnames_private_key.dart';/// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
+@immutable final class TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType._(this.value);
 
 factory TlsCertificatesAndHostnamesType.fromJson(String json) { return switch (json) {
   'legacy_custom' => legacyCustom,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesType($value)'; } 
  }
-final class CustomSslForAZoneCreateSslConfigurationRequest {const CustomSslForAZoneCreateSslConfigurationRequest({this.bundleMethod, required this.certificate, this.deploy, this.geoRestrictions, this.policy, required this.privateKey, this.type, });
+@immutable final class CustomSslForAZoneCreateSslConfigurationRequest {const CustomSslForAZoneCreateSslConfigurationRequest({required this.certificate, required this.privateKey, this.bundleMethod, this.deploy, this.geoRestrictions, this.policy, this.type, });
 
 factory CustomSslForAZoneCreateSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return CustomSslForAZoneCreateSslConfigurationRequest(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,

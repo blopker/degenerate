@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type identifier.
-final class ResponseCustomToolCallInputDeltaEventType {const ResponseCustomToolCallInputDeltaEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type identifier.
+@immutable final class ResponseCustomToolCallInputDeltaEventType {const ResponseCustomToolCallInputDeltaEventType._(this.value);
 
 factory ResponseCustomToolCallInputDeltaEventType.fromJson(String json) { return switch (json) {
   'response.custom_tool_call_input.delta' => responseCustomToolCallInputDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Event representing a delta (partial update) to the input of a custom tool call.
 /// 
-final class ResponseCustomToolCallInputDeltaEvent {const ResponseCustomToolCallInputDeltaEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, required this.delta, });
+@immutable final class ResponseCustomToolCallInputDeltaEvent {const ResponseCustomToolCallInputDeltaEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, required this.delta, });
 
 factory ResponseCustomToolCallInputDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseCustomToolCallInputDeltaEvent(
   type: ResponseCustomToolCallInputDeltaEventType.fromJson(json['type'] as String),

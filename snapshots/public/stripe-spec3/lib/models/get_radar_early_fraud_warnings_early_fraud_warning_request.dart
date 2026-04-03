@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetRadarEarlyFraudWarningsEarlyFraudWarningRequest {const GetRadarEarlyFraudWarningsEarlyFraudWarningRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRadarEarlyFraudWarningsEarlyFraudWarningRequest {const GetRadarEarlyFraudWarningsEarlyFraudWarningRequest();
 
 factory GetRadarEarlyFraudWarningsEarlyFraudWarningRequest.fromJson(Map<String, dynamic> json) { return GetRadarEarlyFraudWarningsEarlyFraudWarningRequest(
 

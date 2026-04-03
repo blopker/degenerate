@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the Page Rule.
-final class PageRulesListPageRulesStatus {const PageRulesListPageRulesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Page Rule.
+@immutable final class PageRulesListPageRulesStatus {const PageRulesListPageRulesStatus._(this.value);
 
 factory PageRulesListPageRulesStatus.fromJson(String json) { return switch (json) {
   'active' => active,

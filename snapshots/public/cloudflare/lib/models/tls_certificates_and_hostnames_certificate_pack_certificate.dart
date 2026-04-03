@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_pack_certificate_geo_restrictions.dart';import 'tls_certificates_and_hostnames_identifier.dart';/// An individual certificate within a certificate pack.
-final class TlsCertificatesAndHostnamesCertificatePackCertificate {const TlsCertificatesAndHostnamesCertificatePackCertificate({this.bundleMethod, this.expiresOn, this.geoRestrictions, required this.hosts, required this.id, this.issuer, this.modifiedOn, this.priority, this.signature, required this.status, this.uploadedOn, this.zoneId, });
+@immutable final class TlsCertificatesAndHostnamesCertificatePackCertificate {const TlsCertificatesAndHostnamesCertificatePackCertificate({required this.hosts, required this.id, required this.status, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.issuer, this.modifiedOn, this.priority, this.signature, this.uploadedOn, this.zoneId, });
 
 factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: json['bundle_method'] as String?,

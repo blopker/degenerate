@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_cashapp_display_preference.dart';/// Cash App is a popular consumer app in the US that allows customers to bank, invest, send, and receive money using their digital wallet. Check this [page](https://docs.stripe.com/payments/cash-app-pay) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestCashapp {const PostPaymentMethodConfigurationsConfigurationRequestCashapp({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_cashapp_display_preference.dart';/// Cash App is a popular consumer app in the US that allows customers to bank, invest, send, and receive money using their digital wallet. Check this [page](https://docs.stripe.com/payments/cash-app-pay) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestCashapp {const PostPaymentMethodConfigurationsConfigurationRequestCashapp({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestCashapp.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestCashapp(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCashappDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

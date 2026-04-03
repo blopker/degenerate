@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_ship_from_details.dart';import 'tax_product_resource_tax_transaction_resource_reversal.dart';import 'tax_product_resource_tax_transaction_shipping_cost.dart';import 'tax_transaction_line_items.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxTransactionObject {const TaxTransactionObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_ship_from_details.dart';import 'tax_product_resource_tax_transaction_resource_reversal.dart';import 'tax_product_resource_tax_transaction_shipping_cost.dart';import 'tax_transaction_line_items.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TaxTransactionObject {const TaxTransactionObject._(this.value);
 
 factory TaxTransactionObject.fromJson(String json) { return switch (json) {
   'tax.transaction' => taxTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxTransactionObject($value)'; } 
  }
 /// If `reversal`, this transaction reverses an earlier transaction.
-final class TaxTransactionType {const TaxTransactionType._(this.value);
+@immutable final class TaxTransactionType {const TaxTransactionType._(this.value);
 
 factory TaxTransactionType.fromJson(String json) { return switch (json) {
   'reversal' => reversal,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A Tax Transaction records the tax collected from or refunded to your customer.
 /// 
 /// Related guide: [Calculate tax in your custom payment flow](https://docs.stripe.com/tax/custom#tax-transaction)
-final class TaxTransaction {const TaxTransaction({required this.created, required this.currency, this.customer, required this.customerDetails, required this.id, this.lineItems, required this.livemode, this.metadata, required this.object, required this.postedAt, required this.reference, this.reversal, this.shipFromDetails, this.shippingCost, required this.taxDate, required this.type, });
+@immutable final class TaxTransaction {const TaxTransaction({required this.created, required this.currency, required this.customerDetails, required this.id, required this.livemode, required this.object, required this.postedAt, required this.reference, required this.taxDate, required this.type, this.customer, this.lineItems, this.metadata, this.reversal, this.shipFromDetails, this.shippingCost, });
 
 factory TaxTransaction.fromJson(Map<String, dynamic> json) { return TaxTransaction(
   created: (json['created'] as num).toInt(),

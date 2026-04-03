@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BaseEntity {const BaseEntity({required this.id, this.createdAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseEntity {const BaseEntity({required this.id, this.createdAt, });
 
 factory BaseEntity.fromJson(Map<String, dynamic> json) { return BaseEntity(
   id: json['id'] as String,

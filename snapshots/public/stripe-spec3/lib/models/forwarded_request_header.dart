@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Header data.
-final class ForwardedRequestHeader {const ForwardedRequestHeader({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Header data.
+@immutable final class ForwardedRequestHeader {const ForwardedRequestHeader({required this.name, required this.value, });
 
 factory ForwardedRequestHeader.fromJson(Map<String, dynamic> json) { return ForwardedRequestHeader(
   name: json['name'] as String,

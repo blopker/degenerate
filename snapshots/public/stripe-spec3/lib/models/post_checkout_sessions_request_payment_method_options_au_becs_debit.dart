@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit({this.setupFutureUsage, this.targetDate, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit({this.setupFutureUsage, this.targetDate, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

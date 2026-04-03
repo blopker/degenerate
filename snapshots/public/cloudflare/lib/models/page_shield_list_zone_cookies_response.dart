@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_cookie.dart';final class PageShieldListZoneCookiesResponse {const PageShieldListZoneCookiesResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_cookie.dart';@immutable final class PageShieldListZoneCookiesResponse {const PageShieldListZoneCookiesResponse({required this.result});
 
 factory PageShieldListZoneCookiesResponse.fromJson(Map<String, dynamic> json) { return PageShieldListZoneCookiesResponse(
   result: (json['result'] as List<dynamic>).map((e) => PageShieldCookie.fromJson(e as Map<String, dynamic>)).toList(),

@@ -20,7 +20,7 @@ if (cursor != null) {
 }
 if (search != null) {
 for (final item in search) {
-  queryParametersList.add(ApiQueryParameter(name: 'search', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'search', value: item.toString()));
 }
 }
 if (page != null) {
@@ -37,7 +37,7 @@ if (order != null) {
 }
 if (datasetId != null) {
 for (final item in datasetId) {
-  queryParametersList.add(ApiQueryParameter(name: 'datasetId', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'datasetId', value: item));
 }
 }
 if (forceRefresh != null) {
@@ -75,7 +75,7 @@ return execute(
 Future<ApiResult<double, DeleteEventDeleteResponse400>> deleteEventDelete({required String accountId, required String datasetId, required List<String> eventIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in eventIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'eventIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'eventIds', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -255,11 +255,11 @@ if (maxDepth != null) {
   queryParameters['maxDepth'] = maxDepth.toString();
 }
 if (relationshipTypes != null) {
-queryParametersList.add(ApiQueryParameter(name: 'relationshipTypes', value: relationshipTypes.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'relationshipTypes', value: relationshipTypes.toString()));
 }
 if (indicatorTypeIds != null) {
 for (final item in indicatorTypeIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'indicatorTypeIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'indicatorTypeIds', value: item));
 }
 }
 queryParameters['datasetId'] = datasetId;
@@ -304,7 +304,7 @@ Future<ApiResult<GetEventAggregateResponse, GetEventAggregateResponse400>> getEv
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['aggregateBy'] = aggregateBy;
 if (datasetId != null) {
-queryParametersList.add(ApiQueryParameter(name: 'datasetId', value: datasetId.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'datasetId', value: datasetId.toString()));
 }
 if (startDate != null) {
   queryParameters['startDate'] = startDate;

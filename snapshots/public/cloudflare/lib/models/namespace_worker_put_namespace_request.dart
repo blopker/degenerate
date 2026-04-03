@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_trusted_workers.dart';final class NamespaceWorkerPutNamespaceRequest {const NamespaceWorkerPutNamespaceRequest({this.name, this.trustedWorkers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_trusted_workers.dart';@immutable final class NamespaceWorkerPutNamespaceRequest {const NamespaceWorkerPutNamespaceRequest({this.name, this.trustedWorkers, });
 
 factory NamespaceWorkerPutNamespaceRequest.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPutNamespaceRequest(
   name: json['name'] as String?,

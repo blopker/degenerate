@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_provider_account_id.dart';import 'builds_provider_account_name.dart';import 'builds_repo_id.dart';import 'builds_repo_name.dart';import 'builds_scm_provider_type.dart';final class BuildsUpsertRepoConnectionRequest {const BuildsUpsertRepoConnectionRequest({required this.providerAccountId, required this.providerAccountName, required this.providerType, required this.repoId, required this.repoName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_provider_account_id.dart';import 'builds_provider_account_name.dart';import 'builds_repo_id.dart';import 'builds_repo_name.dart';import 'builds_scm_provider_type.dart';@immutable final class BuildsUpsertRepoConnectionRequest {const BuildsUpsertRepoConnectionRequest({required this.providerAccountId, required this.providerAccountName, required this.providerType, required this.repoId, required this.repoName, });
 
 factory BuildsUpsertRepoConnectionRequest.fromJson(Map<String, dynamic> json) { return BuildsUpsertRepoConnectionRequest(
   providerAccountId: BuildsProviderAccountId.fromJson(json['provider_account_id'] as String),

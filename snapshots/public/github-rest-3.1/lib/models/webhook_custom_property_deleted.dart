@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_custom_property_deleted_definition.dart';final class WebhookCustomPropertyDeletedAction {const WebhookCustomPropertyDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_custom_property_deleted_definition.dart';@immutable final class WebhookCustomPropertyDeletedAction {const WebhookCustomPropertyDeletedAction._(this.value);
 
 factory WebhookCustomPropertyDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCustomPropertyDeletedAction($value)'; } 
  }
-final class WebhookCustomPropertyDeleted {const WebhookCustomPropertyDeleted({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
+@immutable final class WebhookCustomPropertyDeleted {const WebhookCustomPropertyDeleted({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookCustomPropertyDeleted.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyDeleted(
   action: WebhookCustomPropertyDeletedAction.fromJson(json['action'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'local_object_reference.dart';/// ScaleIOVolumeSource represents a persistent ScaleIO volume
-final class ScaleIoVolumeSource {const ScaleIoVolumeSource({this.fsType = 'xfs', this.gateway = '', this.protectionDomain, this.readOnly, required this.secretRef, this.sslEnabled, this.storageMode = 'ThinProvisioned', this.storagePool, this.system = '', this.volumeName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';/// ScaleIOVolumeSource represents a persistent ScaleIO volume
+@immutable final class ScaleIoVolumeSource {const ScaleIoVolumeSource({required this.secretRef, this.fsType = 'xfs', this.gateway = '', this.protectionDomain, this.readOnly, this.sslEnabled, this.storageMode = 'ThinProvisioned', this.storagePool, this.system = '', this.volumeName, });
 
 factory ScaleIoVolumeSource.fromJson(Map<String, dynamic> json) { return ScaleIoVolumeSource(
   fsType: json.containsKey('fsType') ? json['fsType'] as String : 'xfs',

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The full address of the location. You can't change the location's `country`. If you need to modify the `country` field, create a new `Location` object and re-register any existing readers to that location.
-final class PostTerminalLocationsLocationRequestAddress {const PostTerminalLocationsLocationRequestAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The full address of the location. You can't change the location's `country`. If you need to modify the `country` field, create a new `Location` object and re-register any existing readers to that location.
+@immutable final class PostTerminalLocationsLocationRequestAddress {const PostTerminalLocationsLocationRequestAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory PostTerminalLocationsLocationRequestAddress.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsLocationRequestAddress(
   city: json['city'] as String?,

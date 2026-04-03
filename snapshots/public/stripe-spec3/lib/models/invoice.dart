@@ -9,7 +9,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart
 /// * `subscription_threshold`: A subscription reached a billing threshold.
 /// * `subscription_update`: A subscription was updated.
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
-final class InvoiceBillingReason {const InvoiceBillingReason._(this.value);
+@immutable final class InvoiceBillingReason {const InvoiceBillingReason._(this.value);
 
 factory InvoiceBillingReason.fromJson(String json) { return switch (json) {
   'automatic_pending_invoice_item_invoice' => automaticPendingInvoiceItemInvoice,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceBillingReason($value)'; } 
  }
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Stripe will email this invoice to the customer with payment instructions.
-final class InvoiceCollectionMethod {const InvoiceCollectionMethod._(this.value);
+@immutable final class InvoiceCollectionMethod {const InvoiceCollectionMethod._(this.value);
 
 factory InvoiceCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceCollectionMethod($value)'; } 
  }
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
-final class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt._(this.value);
+@immutable final class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt._(this.value);
 
 factory InvoiceCustomerTaxExempt.fromJson(String json) { return switch (json) {
   'exempt' => exempt,
@@ -108,7 +108,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceCustomerTaxExempt($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class InvoiceObject {const InvoiceObject._(this.value);
+@immutable final class InvoiceObject {const InvoiceObject._(this.value);
 
 factory InvoiceObject.fromJson(String json) { return switch (json) {
   'invoice' => invoice,
@@ -130,7 +130,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceObject($value)'; } 
  }
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
-final class InvoiceStatus {const InvoiceStatus._(this.value);
+@immutable final class InvoiceStatus {const InvoiceStatus._(this.value);
 
 factory InvoiceStatus.fromJson(String json) { return switch (json) {
   'draft' => draft,
@@ -195,7 +195,7 @@ bool get isUnknown { return !values.contains(this); }
 /// [here](https://docs.stripe.com/billing/customer/balance).
 /// 
 /// Related guide: [Send invoices to customers](https://docs.stripe.com/billing/invoices/sending)
-final class Invoice {const Invoice({this.accountCountry, this.accountName, this.accountTaxIds, required this.amountDue, required this.amountOverpaid, required this.amountPaid, required this.amountRemaining, required this.amountShipping, this.application, required this.attemptCount, required this.attempted, required this.autoAdvance, required this.automaticTax, this.automaticallyFinalizesAt, this.billingReason, required this.collectionMethod, this.confirmationSecret, required this.created, required this.currency, this.customFields, required this.customer, this.customerAccount, this.customerAddress, this.customerEmail, this.customerName, this.customerPhone, this.customerShipping, this.customerTaxExempt, this.customerTaxIds, this.defaultPaymentMethod, this.defaultSource, required this.defaultTaxRates, this.description, required this.discounts, this.dueDate, this.effectiveAt, this.endingBalance, this.footer, this.fromInvoice, this.hostedInvoiceUrl, required this.id, this.invoicePdf, required this.issuer, this.lastFinalizationError, this.latestRevision, required this.lines, required this.livemode, this.metadata, this.nextPaymentAttempt, this.number, required this.object, this.onBehalfOf, this.parent, required this.paymentSettings, this.payments, required this.periodEnd, required this.periodStart, required this.postPaymentCreditNotesAmount, required this.prePaymentCreditNotesAmount, this.receiptNumber, this.rendering, this.shippingCost, this.shippingDetails, required this.startingBalance, this.statementDescriptor, this.status, required this.statusTransitions, required this.subtotal, this.subtotalExcludingTax, this.testClock, this.thresholdReason, required this.total, this.totalDiscountAmounts, this.totalExcludingTax, this.totalPretaxCreditAmounts, this.totalTaxes, this.webhooksDeliveredAt, });
+@immutable final class Invoice {const Invoice({required this.object, required this.amountDue, required this.amountOverpaid, required this.amountPaid, required this.amountRemaining, required this.amountShipping, required this.attemptCount, required this.attempted, required this.autoAdvance, required this.automaticTax, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.prePaymentCreditNotesAmount, required this.total, required this.postPaymentCreditNotesAmount, required this.statusTransitions, required this.subtotal, required this.periodStart, required this.startingBalance, required this.periodEnd, required this.paymentSettings, required this.livemode, required this.lines, required this.issuer, required this.id, required this.discounts, required this.defaultTaxRates, this.defaultPaymentMethod, this.defaultSource, this.customerTaxIds, this.description, this.customerTaxExempt, this.dueDate, this.effectiveAt, this.endingBalance, this.footer, this.customerShipping, this.hostedInvoiceUrl, this.accountCountry, this.invoicePdf, this.customerPhone, this.lastFinalizationError, this.latestRevision, this.customerName, this.customerEmail, this.metadata, this.nextPaymentAttempt, this.number, this.webhooksDeliveredAt, this.onBehalfOf, this.parent, this.customerAddress, this.payments, this.customerAccount, this.customFields, this.confirmationSecret, this.billingReason, this.receiptNumber, this.rendering, this.shippingCost, this.shippingDetails, this.automaticallyFinalizesAt, this.statementDescriptor, this.status, this.application, this.accountTaxIds, this.subtotalExcludingTax, this.testClock, this.thresholdReason, this.accountName, this.totalDiscountAmounts, this.totalExcludingTax, this.totalPretaxCreditAmounts, this.totalTaxes, this.fromInvoice, });
 
 factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   accountCountry: json['account_country'] as String?,

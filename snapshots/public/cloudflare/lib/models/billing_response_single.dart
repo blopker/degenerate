@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_response_single_result.dart';final class BillingResponseSingle {const BillingResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_response_single_result.dart';@immutable final class BillingResponseSingle {const BillingResponseSingle({this.result});
 
 factory BillingResponseSingle.fromJson(Map<String, dynamic> json) { return BillingResponseSingle(
   result: json['result'] != null ? BillingResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null,

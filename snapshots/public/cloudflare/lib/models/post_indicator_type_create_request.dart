@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIndicatorTypeCreateRequest {const PostIndicatorTypeCreateRequest({this.description, required this.indicatorType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorTypeCreateRequest {const PostIndicatorTypeCreateRequest({required this.indicatorType, this.description, });
 
 factory PostIndicatorTypeCreateRequest.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateRequest(
   description: json['description'] as String?,

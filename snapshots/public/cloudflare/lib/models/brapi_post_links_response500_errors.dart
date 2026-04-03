@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostLinksResponse500Errors {const BrapiPostLinksResponse500Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostLinksResponse500Errors {const BrapiPostLinksResponse500Errors({required this.code, required this.message, });
 
 factory BrapiPostLinksResponse500Errors.fromJson(Map<String, dynamic> json) { return BrapiPostLinksResponse500Errors(
   code: (json['code'] as num).toDouble(),

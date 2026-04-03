@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigCreateGatewayResponseResultDlpVariant2PoliciesCheck {const AigConfigCreateGatewayResponseResultDlpVariant2PoliciesCheck._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateGatewayResponseResultDlpVariant2PoliciesCheck {const AigConfigCreateGatewayResponseResultDlpVariant2PoliciesCheck._(this.value);
 
 factory AigConfigCreateGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(String json) { return switch (json) {
   'REQUEST' => request,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateGatewayResponseResultDlpVariant2PoliciesCheck($value)'; } 
  }
-final class AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction {const AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction._(this.value);
+@immutable final class AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction {const AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction._(this.value);
 
 factory AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction.fromJson(String json) { return switch (json) {
   'FLAG' => flag,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction($value)'; } 
  }
-final class AigConfigCreateGatewayResponseResultDlpVariant2Policies {const AigConfigCreateGatewayResponseResultDlpVariant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
+@immutable final class AigConfigCreateGatewayResponseResultDlpVariant2Policies {const AigConfigCreateGatewayResponseResultDlpVariant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
 
 factory AigConfigCreateGatewayResponseResultDlpVariant2Policies.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayResponseResultDlpVariant2Policies(
   action: AigConfigCreateGatewayResponseResultDlpVariant2PoliciesAction.fromJson(json['action'] as String),

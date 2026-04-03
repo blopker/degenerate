@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnResourcesCatalogPolicyPreviewRequest {const McnResourcesCatalogPolicyPreviewRequest({required this.policy});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnResourcesCatalogPolicyPreviewRequest {const McnResourcesCatalogPolicyPreviewRequest({required this.policy});
 
 factory McnResourcesCatalogPolicyPreviewRequest.fromJson(Map<String, dynamic> json) { return McnResourcesCatalogPolicyPreviewRequest(
   policy: json['policy'] as String,

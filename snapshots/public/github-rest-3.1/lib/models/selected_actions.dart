@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class SelectedActions {const SelectedActions({this.githubOwnedAllowed, this.verifiedAllowed, this.patternsAllowed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SelectedActions {const SelectedActions({this.githubOwnedAllowed, this.verifiedAllowed, this.patternsAllowed, });
 
 factory SelectedActions.fromJson(Map<String, dynamic> json) { return SelectedActions(
   githubOwnedAllowed: json['github_owned_allowed'] as bool?,

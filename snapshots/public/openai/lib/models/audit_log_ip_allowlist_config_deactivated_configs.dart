@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AuditLogIpAllowlistConfigDeactivatedConfigs {const AuditLogIpAllowlistConfigDeactivatedConfigs({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuditLogIpAllowlistConfigDeactivatedConfigs {const AuditLogIpAllowlistConfigDeactivatedConfigs({this.id, this.name, });
 
 factory AuditLogIpAllowlistConfigDeactivatedConfigs.fromJson(Map<String, dynamic> json) { return AuditLogIpAllowlistConfigDeactivatedConfigs(
   id: json['id'] as String?,

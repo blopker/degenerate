@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration to use for matched data logging.
-final class RulesetsExecuteMatchedData {const RulesetsExecuteMatchedData({required this.publicKey});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration to use for matched data logging.
+@immutable final class RulesetsExecuteMatchedData {const RulesetsExecuteMatchedData({required this.publicKey});
 
 factory RulesetsExecuteMatchedData.fromJson(Map<String, dynamic> json) { return RulesetsExecuteMatchedData(
   publicKey: json['public_key'] as String,

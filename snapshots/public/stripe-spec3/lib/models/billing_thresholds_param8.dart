@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BillingThresholdsParam8 {const BillingThresholdsParam8({this.amountGte, this.resetBillingCycleAnchor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingThresholdsParam8 {const BillingThresholdsParam8({this.amountGte, this.resetBillingCycleAnchor, });
 
 factory BillingThresholdsParam8.fromJson(Map<String, dynamic> json) { return BillingThresholdsParam8(
   amountGte: json['amount_gte'] != null ? (json['amount_gte'] as num).toInt() : null,

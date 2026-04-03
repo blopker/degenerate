@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_review_rejected_workflow_job_runs.dart';import 'webhook_deployment_review_rejected_workflow_run.dart';import 'webhooks_approver.dart';import 'webhooks_reviewers2.dart';import 'webhooks_workflow_job_run.dart';final class WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_review_rejected_workflow_job_runs.dart';import 'webhook_deployment_review_rejected_workflow_run.dart';import 'webhooks_approver.dart';import 'webhooks_reviewers2.dart';import 'webhooks_workflow_job_run.dart';@immutable final class WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction._(this.value);
 
 factory WebhookDeploymentReviewRejectedAction.fromJson(String json) { return switch (json) {
   'rejected' => rejected,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentReviewRejectedAction($value)'; } 
  }
-final class WebhookDeploymentReviewRejected {const WebhookDeploymentReviewRejected({required this.action, this.approver, this.comment, this.enterprise, this.installation, required this.organization, required this.repository, this.reviewers, required this.sender, required this.since, this.workflowJobRun, this.workflowJobRuns, required this.workflowRun, });
+@immutable final class WebhookDeploymentReviewRejected {const WebhookDeploymentReviewRejected({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
 
 factory WebhookDeploymentReviewRejected.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRejected(
   action: WebhookDeploymentReviewRejectedAction.fromJson(json['action'] as String),

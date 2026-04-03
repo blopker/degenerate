@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_app
 /// `never`. When set to `always`, all tools will require approval. When
 /// set to `never`, all tools will not require approval.
 /// 
-final class McpToolApprovalSetting {const McpToolApprovalSetting._(this.value);
+@immutable final class McpToolApprovalSetting {const McpToolApprovalSetting._(this.value);
 
 factory McpToolApprovalSetting.fromJson(String json) { return switch (json) {
   'always' => always,

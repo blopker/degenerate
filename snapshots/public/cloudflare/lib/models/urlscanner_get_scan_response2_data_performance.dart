@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataPerformance {const UrlscannerGetScanResponse2DataPerformance({required this.duration, required this.entryType, required this.name, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataPerformance {const UrlscannerGetScanResponse2DataPerformance({required this.duration, required this.entryType, required this.name, required this.startTime, });
 
 factory UrlscannerGetScanResponse2DataPerformance.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataPerformance(
   duration: (json['duration'] as num).toDouble(),

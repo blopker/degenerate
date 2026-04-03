@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_enable_sippy_s3_destination.dart';import 'r2_enable_sippy_s3_source.dart';final class R2EnableSippyS3 {const R2EnableSippyS3({this.destination, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_enable_sippy_s3_destination.dart';import 'r2_enable_sippy_s3_source.dart';@immutable final class R2EnableSippyS3 {const R2EnableSippyS3({this.destination, this.source, });
 
 factory R2EnableSippyS3.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3(
   destination: json['destination'] != null ? R2EnableSippyS3Destination.fromJson(json['destination'] as Map<String, dynamic>) : null,

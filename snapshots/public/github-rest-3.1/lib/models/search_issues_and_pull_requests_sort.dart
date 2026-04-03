@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SearchIssuesAndPullRequestsSort {const SearchIssuesAndPullRequestsSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchIssuesAndPullRequestsSort {const SearchIssuesAndPullRequestsSort._(this.value);
 
 factory SearchIssuesAndPullRequestsSort.fromJson(String json) { return switch (json) {
   'comments' => comments,

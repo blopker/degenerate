@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposGetCommitResponse503 {const ReposGetCommitResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetCommitResponse503 {const ReposGetCommitResponse503({this.code, this.message, this.documentationUrl, });
 
 factory ReposGetCommitResponse503.fromJson(Map<String, dynamic> json) { return ReposGetCommitResponse503(
   code: json['code'] as String?,

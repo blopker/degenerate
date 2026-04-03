@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the type of indexed metadata property.
-final class VectorizeListMetadataIndexResponseMetadataIndexesIndexType {const VectorizeListMetadataIndexResponseMetadataIndexesIndexType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of indexed metadata property.
+@immutable final class VectorizeListMetadataIndexResponseMetadataIndexesIndexType {const VectorizeListMetadataIndexResponseMetadataIndexesIndexType._(this.value);
 
 factory VectorizeListMetadataIndexResponseMetadataIndexesIndexType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorizeListMetadataIndexResponseMetadataIndexesIndexType($value)'; } 
  }
-final class VectorizeListMetadataIndexResponseMetadataIndexes {const VectorizeListMetadataIndexResponseMetadataIndexes({this.indexType, this.propertyName, });
+@immutable final class VectorizeListMetadataIndexResponseMetadataIndexes {const VectorizeListMetadataIndexResponseMetadataIndexes({this.indexType, this.propertyName, });
 
 factory VectorizeListMetadataIndexResponseMetadataIndexes.fromJson(Map<String, dynamic> json) { return VectorizeListMetadataIndexResponseMetadataIndexes(
   indexType: json['indexType'] != null ? VectorizeListMetadataIndexResponseMetadataIndexesIndexType.fromJson(json['indexType'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'start_livestreaming_response_data.dart';final class StartLivestreamingResponse {const StartLivestreamingResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_livestreaming_response_data.dart';@immutable final class StartLivestreamingResponse {const StartLivestreamingResponse({this.data, this.success, });
 
 factory StartLivestreamingResponse.fromJson(Map<String, dynamic> json) { return StartLivestreamingResponse(
   data: json['data'] != null ? StartLivestreamingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'job_steps.dart';/// The phase of the lifecycle that the job is currently in.
-final class JobStatus {const JobStatus._(this.value);
+@immutable final class JobStatus {const JobStatus._(this.value);
 
 factory JobStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'JobStatus($value)'; } 
  }
 /// The outcome of the job.
-final class JobConclusion {const JobConclusion._(this.value);
+@immutable final class JobConclusion {const JobConclusion._(this.value);
 
 factory JobConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'JobConclusion($value)'; } 
  }
 /// Information of a job execution in a workflow run
-final class Job {const Job({required this.id, required this.runId, required this.runUrl, this.runAttempt, required this.nodeId, required this.headSha, required this.url, required this.htmlUrl, required this.status, required this.conclusion, required this.createdAt, required this.startedAt, required this.completedAt, required this.name, this.steps, required this.checkRunUrl, required this.labels, required this.runnerId, required this.runnerName, required this.runnerGroupId, required this.runnerGroupName, required this.workflowName, required this.headBranch, });
+@immutable final class Job {const Job({required this.id, required this.runId, required this.runUrl, required this.nodeId, required this.headSha, required this.url, required this.htmlUrl, required this.status, required this.conclusion, required this.createdAt, required this.startedAt, required this.completedAt, required this.name, required this.checkRunUrl, required this.labels, required this.runnerId, required this.runnerName, required this.runnerGroupId, required this.runnerGroupName, required this.workflowName, required this.headBranch, this.runAttempt, this.steps, });
 
 factory Job.fromJson(Map<String, dynamic> json) { return Job(
   id: (json['id'] as num).toInt(),

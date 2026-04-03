@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workflow_run_usage_billable_macos.dart';import 'workflow_run_usage_billable_ubuntu.dart';import 'workflow_run_usage_billable_windows.dart';final class WorkflowRunUsageBillable {const WorkflowRunUsageBillable({this.ubuntu, this.macos, this.windows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_run_usage_billable_macos.dart';import 'workflow_run_usage_billable_ubuntu.dart';import 'workflow_run_usage_billable_windows.dart';@immutable final class WorkflowRunUsageBillable {const WorkflowRunUsageBillable({this.ubuntu, this.macos, this.windows, });
 
 factory WorkflowRunUsageBillable.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillable(
   ubuntu: json['UBUNTU'] != null ? WorkflowRunUsageBillableUbuntu.fromJson(json['UBUNTU'] as Map<String, dynamic>) : null,

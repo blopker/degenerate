@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class DestinationDetailsUnimplemented {const DestinationDetailsUnimplemented();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class DestinationDetailsUnimplemented {const DestinationDetailsUnimplemented();
 
 factory DestinationDetailsUnimplemented.fromJson(Map<String, dynamic> json) { return DestinationDetailsUnimplemented(
 

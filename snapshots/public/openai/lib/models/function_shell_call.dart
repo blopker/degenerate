@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'function_shell_action.dart';import 'function_shell_call_environment.dart';final class LocalShellCallStatus {const LocalShellCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_action.dart';import 'function_shell_call_environment.dart';@immutable final class LocalShellCallStatus {const LocalShellCallStatus._(this.value);
 
 factory LocalShellCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LocalShellCallStatus($value)'; } 
  }
 /// A tool call that executes one or more shell commands in a managed environment.
-final class FunctionShellCall {const FunctionShellCall({this.type = 'shell_call', required this.id, required this.callId, required this.action, required this.status, required this.environment, this.createdBy, });
+@immutable final class FunctionShellCall {const FunctionShellCall({required this.id, required this.callId, required this.action, required this.status, required this.environment, this.type = 'shell_call', this.createdBy, });
 
 factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionShellCall(
   type: json['type'] as String,

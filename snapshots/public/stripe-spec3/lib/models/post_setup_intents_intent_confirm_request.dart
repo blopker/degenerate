@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param2.dart';import 'post_setup_intents_intent_confirm_request_mandate_data.dart';import 'post_setup_intents_intent_confirm_request_payment_method_data.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options.dart';import 'secret_key_param4.dart';final class PostSetupIntentsIntentConfirmRequest {const PostSetupIntentsIntentConfirmRequest({this.clientSecret, this.confirmationToken, this.expand, this.mandateData, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.useStripeSdk, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param2.dart';import 'post_setup_intents_intent_confirm_request_mandate_data.dart';import 'post_setup_intents_intent_confirm_request_payment_method_data.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options.dart';import 'secret_key_param4.dart';@immutable final class PostSetupIntentsIntentConfirmRequest {const PostSetupIntentsIntentConfirmRequest({this.clientSecret, this.confirmationToken, this.expand, this.mandateData, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.useStripeSdk, });
 
 factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequest(
   clientSecret: json['client_secret'] as String?,

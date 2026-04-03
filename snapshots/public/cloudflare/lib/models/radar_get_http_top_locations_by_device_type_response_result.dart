@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_device_type_response_result_meta.dart';import 'radar_get_http_top_locations_by_device_type_response_result_top0.dart';final class RadarGetHttpTopLocationsByDeviceTypeResponseResult {const RadarGetHttpTopLocationsByDeviceTypeResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_device_type_response_result_meta.dart';import 'radar_get_http_top_locations_by_device_type_response_result_top0.dart';@immutable final class RadarGetHttpTopLocationsByDeviceTypeResponseResult {const RadarGetHttpTopLocationsByDeviceTypeResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetHttpTopLocationsByDeviceTypeResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByDeviceTypeResponseResult(
   meta: RadarGetHttpTopLocationsByDeviceTypeResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

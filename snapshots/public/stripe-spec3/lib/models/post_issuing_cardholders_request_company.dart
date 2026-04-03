@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Additional information about a `company` cardholder.
-final class PostIssuingCardholdersRequestCompany {const PostIssuingCardholdersRequestCompany({this.taxId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional information about a `company` cardholder.
+@immutable final class PostIssuingCardholdersRequestCompany {const PostIssuingCardholdersRequestCompany({this.taxId});
 
 factory PostIssuingCardholdersRequestCompany.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestCompany(
   taxId: json['tax_id'] as String?,

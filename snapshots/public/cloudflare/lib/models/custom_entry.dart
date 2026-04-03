@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_pattern.dart';final class CustomEntryType {const CustomEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class CustomEntryType {const CustomEntryType._(this.value);
 
 factory CustomEntryType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomEntryType($value)'; } 
  }
-final class CustomEntry {const CustomEntry({required this.createdAt, this.description, required this.enabled, required this.id, required this.name, required this.pattern, this.profileId, required this.updatedAt, required this.type, });
+@immutable final class CustomEntry {const CustomEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.pattern, required this.updatedAt, required this.type, this.description, this.profileId, });
 
 factory CustomEntry.fromJson(Map<String, dynamic> json) { return CustomEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

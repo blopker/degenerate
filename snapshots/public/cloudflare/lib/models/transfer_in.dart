@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Form of authorization has been accepted by the registrant.
-final class TransferInAcceptFoa {const TransferInAcceptFoa._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Form of authorization has been accepted by the registrant.
+@immutable final class TransferInAcceptFoa {const TransferInAcceptFoa._(this.value);
 
 factory TransferInAcceptFoa.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransferInAcceptFoa($value)'; } 
  }
 /// Shows transfer status with the registry.
-final class TransferInApproveTransfer {const TransferInApproveTransfer._(this.value);
+@immutable final class TransferInApproveTransfer {const TransferInApproveTransfer._(this.value);
 
 factory TransferInApproveTransfer.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransferInApproveTransfer($value)'; } 
  }
 /// Privacy guards are disabled at the foreign registrar.
-final class TransferInDisablePrivacy {const TransferInDisablePrivacy._(this.value);
+@immutable final class TransferInDisablePrivacy {const TransferInDisablePrivacy._(this.value);
 
 factory TransferInDisablePrivacy.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -91,7 +91,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransferInDisablePrivacy($value)'; } 
  }
 /// Auth code has been entered and verified.
-final class TransferInEnterAuthCode {const TransferInEnterAuthCode._(this.value);
+@immutable final class TransferInEnterAuthCode {const TransferInEnterAuthCode._(this.value);
 
 factory TransferInEnterAuthCode.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransferInEnterAuthCode($value)'; } 
  }
 /// Domain is unlocked at the foreign registrar.
-final class TransferInUnlockDomain {const TransferInUnlockDomain._(this.value);
+@immutable final class TransferInUnlockDomain {const TransferInUnlockDomain._(this.value);
 
 factory TransferInUnlockDomain.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -159,7 +159,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransferInUnlockDomain($value)'; } 
  }
 /// Statuses for domain transfers into Cloudflare Registrar.
-final class TransferIn {const TransferIn({this.acceptFoa, this.approveTransfer, this.canCancelTransfer, this.disablePrivacy, this.enterAuthCode, this.unlockDomain, });
+@immutable final class TransferIn {const TransferIn({this.acceptFoa, this.approveTransfer, this.canCancelTransfer, this.disablePrivacy, this.enterAuthCode, this.unlockDomain, });
 
 factory TransferIn.fromJson(Map<String, dynamic> json) { return TransferIn(
   acceptFoa: json['accept_foa'] != null ? TransferInAcceptFoa.fromJson(json['accept_foa'] as String) : null,

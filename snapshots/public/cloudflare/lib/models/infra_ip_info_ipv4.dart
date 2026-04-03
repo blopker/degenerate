@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The target's IPv4 address
-final class InfraIpInfoIpv4 {const InfraIpInfoIpv4({this.ipAddr, this.virtualNetworkId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target's IPv4 address
+@immutable final class InfraIpInfoIpv4 {const InfraIpInfoIpv4({this.ipAddr, this.virtualNetworkId, });
 
 factory InfraIpInfoIpv4.fromJson(Map<String, dynamic> json) { return InfraIpInfoIpv4(
   ipAddr: json['ip_addr'] as String?,

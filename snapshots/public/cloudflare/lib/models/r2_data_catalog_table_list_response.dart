@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_table_details.dart';import 'r2_data_catalog_table_identifier.dart';/// Contains the list of tables with optional pagination.
-final class R2DataCatalogTableListResponse {const R2DataCatalogTableListResponse({this.details, required this.identifiers, this.nextPageToken, this.tableUuids, });
+@immutable final class R2DataCatalogTableListResponse {const R2DataCatalogTableListResponse({required this.identifiers, this.details, this.nextPageToken, this.tableUuids, });
 
 factory R2DataCatalogTableListResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableListResponse(
   details: (json['details'] as List<dynamic>?)?.map((e) => R2DataCatalogTableDetails.fromJson(e as Map<String, dynamic>)).toList(),

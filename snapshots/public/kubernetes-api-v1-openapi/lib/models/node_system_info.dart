@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'node_swap_status.dart';/// NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
-final class NodeSystemInfo {const NodeSystemInfo({this.architecture = '', this.bootId = '', this.containerRuntimeVersion = '', this.kernelVersion = '', this.kubeProxyVersion = '', this.kubeletVersion = '', this.machineId = '', this.operatingSystem = '', this.osImage = '', this.swap, this.systemUuid = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_swap_status.dart';/// NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
+@immutable final class NodeSystemInfo {const NodeSystemInfo({this.architecture = '', this.bootId = '', this.containerRuntimeVersion = '', this.kernelVersion = '', this.kubeProxyVersion = '', this.kubeletVersion = '', this.machineId = '', this.operatingSystem = '', this.osImage = '', this.swap, this.systemUuid = '', });
 
 factory NodeSystemInfo.fromJson(Map<String, dynamic> json) { return NodeSystemInfo(
   architecture: json['architecture'] as String,

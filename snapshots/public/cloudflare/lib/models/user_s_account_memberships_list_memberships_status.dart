@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status of this membership.
-final class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this membership.
+@immutable final class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus._(this.value);
 
 factory UserSAccountMembershipsListMembershipsStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,

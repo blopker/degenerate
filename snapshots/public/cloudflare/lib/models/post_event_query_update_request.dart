@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventQueryUpdateRequest {const PostEventQueryUpdateRequest({this.alertEnabled, this.alertRollupEnabled, this.name, this.queryJson, this.ruleEnabled, this.ruleScope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryUpdateRequest {const PostEventQueryUpdateRequest({this.alertEnabled, this.alertRollupEnabled, this.name, this.queryJson, this.ruleEnabled, this.ruleScope, });
 
 factory PostEventQueryUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventQueryUpdateRequest(
   alertEnabled: json['alert_enabled'] as bool?,

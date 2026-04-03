@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
-final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
+@immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry._(this.value);
 
 factory InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry.fromJson(String json) { return switch (json) {
   'BE' => be,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer({required this.country});
+@immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer({required this.country});
 
 factory InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer(
   country: InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry.fromJson(json['country'] as String),

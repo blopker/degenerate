@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_security_advisory_withdrawn_security_advisory.dart';final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_security_advisory_withdrawn_security_advisory.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
 
 factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) { return switch (json) {
   'withdrawn' => withdrawn,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSecurityAdvisoryWithdrawnAction($value)'; } 
  }
-final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, this.enterprise, this.installation, this.organization, this.repository, required this.securityAdvisory, this.sender, });
+@immutable final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawn(
   action: WebhookSecurityAdvisoryWithdrawnAction.fromJson(json['action'] as String),

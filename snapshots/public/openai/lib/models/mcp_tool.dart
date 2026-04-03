@@ -15,7 +15,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_all
 /// - Outlook Email: `connector_outlookemail`
 /// - SharePoint: `connector_sharepoint`
 /// 
-final class McpToolConnectorId {const McpToolConnectorId._(this.value);
+@immutable final class McpToolConnectorId {const McpToolConnectorId._(this.value);
 
 factory McpToolConnectorId.fromJson(String json) { return switch (json) {
   'connector_dropbox' => connectorDropbox,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Give the model access to additional tools via remote Model Context Protocol
 /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
 /// 
-final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers, this.allowedTools, this.requireApproval, this.deferLoading, });
+@immutable final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers, this.allowedTools, this.requireApproval, this.deferLoading, });
 
 factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
   type: json['type'] as String,

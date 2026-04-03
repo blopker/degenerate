@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CampaignsGetCampaignSummaryResponse503 {const CampaignsGetCampaignSummaryResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignsGetCampaignSummaryResponse503 {const CampaignsGetCampaignSummaryResponse503({this.code, this.message, this.documentationUrl, });
 
 factory CampaignsGetCampaignSummaryResponse503.fromJson(Map<String, dynamic> json) { return CampaignsGetCampaignSummaryResponse503(
   code: json['code'] as String?,

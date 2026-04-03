@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_item_comment.dart';final class ListsItemCommentObject {const ListsItemCommentObject({this.comment});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_item_comment.dart';@immutable final class ListsItemCommentObject {const ListsItemCommentObject({this.comment});
 
 factory ListsItemCommentObject.fromJson(Map<String, dynamic> json) { return ListsItemCommentObject(
   comment: json['comment'] != null ? ListsItemComment.fromJson(json['comment'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_customer_sessions_request_components_customer_sheet_features.dart';final class PostCustomerSessionsRequestComponentsCustomerSheet {const PostCustomerSessionsRequestComponentsCustomerSheet({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components_customer_sheet_features.dart';@immutable final class PostCustomerSessionsRequestComponentsCustomerSheet {const PostCustomerSessionsRequestComponentsCustomerSheet({required this.enabled, this.features, });
 
 factory PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsCustomerSheet(
   enabled: json['enabled'] as bool,

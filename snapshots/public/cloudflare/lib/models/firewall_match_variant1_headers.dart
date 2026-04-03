@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The name of the response header to match.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the response header to match.
 extension type const FirewallHeaderName(String value) {
 factory FirewallHeaderName.fromJson(String json) => FirewallHeaderName(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// The operator used when matching: `eq` means "equal" and `ne` means "not equal".
-final class FirewallHeaderOp {const FirewallHeaderOp._(this.value);
+@immutable final class FirewallHeaderOp {const FirewallHeaderOp._(this.value);
 
 factory FirewallHeaderOp.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -39,7 +39,7 @@ factory FirewallHeaderValue.fromJson(String json) => FirewallHeaderValue(json);
 String toJson() => value;
 
 }
-final class FirewallMatchVariant1Headers {const FirewallMatchVariant1Headers({this.name, this.op, this.value, });
+@immutable final class FirewallMatchVariant1Headers {const FirewallMatchVariant1Headers({this.name, this.op, this.value, });
 
 factory FirewallMatchVariant1Headers.fromJson(Map<String, dynamic> json) { return FirewallMatchVariant1Headers(
   name: json['name'] != null ? FirewallHeaderName.fromJson(json['name'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpTopAsesResponseResultTop0 {const RadarGetBgpTopAsesResponseResultTop0({required this.asName, required this.asn, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsesResponseResultTop0 {const RadarGetBgpTopAsesResponseResultTop0({required this.asName, required this.asn, required this.value, });
 
 factory RadarGetBgpTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsesResponseResultTop0(
   asName: json['ASName'] as String,

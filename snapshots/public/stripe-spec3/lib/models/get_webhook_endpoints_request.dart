@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetWebhookEndpointsRequest {const GetWebhookEndpointsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetWebhookEndpointsRequest {const GetWebhookEndpointsRequest();
 
 factory GetWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return GetWebhookEndpointsRequest(
 

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A filter object to specify which tools are allowed.
 /// 
-final class McpToolFilter {const McpToolFilter({this.toolNames, this.readOnly, });
+@immutable final class McpToolFilter {const McpToolFilter({this.toolNames, this.readOnly, });
 
 factory McpToolFilter.fromJson(Map<String, dynamic> json) { return McpToolFilter(
   toolNames: (json['tool_names'] as List<dynamic>?)?.map((e) => e as String).toList(),

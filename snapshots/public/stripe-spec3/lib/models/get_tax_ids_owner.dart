@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTaxIdsOwnerType {const GetTaxIdsOwnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTaxIdsOwnerType {const GetTaxIdsOwnerType._(this.value);
 
 factory GetTaxIdsOwnerType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetTaxIdsOwnerType($value)'; } 
  }
-final class GetTaxIdsOwner {const GetTaxIdsOwner({this.account, this.customer, this.customerAccount, required this.type, });
+@immutable final class GetTaxIdsOwner {const GetTaxIdsOwner({required this.type, this.account, this.customer, this.customerAccount, });
 
 factory GetTaxIdsOwner.fromJson(Map<String, dynamic> json) { return GetTaxIdsOwner(
   account: json['account'] as String?,

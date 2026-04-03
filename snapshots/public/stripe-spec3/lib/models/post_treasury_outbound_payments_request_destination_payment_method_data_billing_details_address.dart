@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address11.dart';final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddressVariant2 {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address11.dart';@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddressVariant2 {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

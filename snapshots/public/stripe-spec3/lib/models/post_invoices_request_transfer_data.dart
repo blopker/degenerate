@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If specified, the funds from the invoice will be transferred to the destination and the ID of the resulting transfer will be found on the invoice's charge.
-final class PostInvoicesRequestTransferData {const PostInvoicesRequestTransferData({this.amount, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If specified, the funds from the invoice will be transferred to the destination and the ID of the resulting transfer will be found on the invoice's charge.
+@immutable final class PostInvoicesRequestTransferData {const PostInvoicesRequestTransferData({required this.destination, this.amount, });
 
 factory PostInvoicesRequestTransferData.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

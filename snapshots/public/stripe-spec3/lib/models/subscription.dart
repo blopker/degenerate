@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'bank_account.dart';import 'cancellation_details.dart';import 'card.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'payment_method.dart';import 'setup_intent.dart';import 'source.dart';import 'subscription_application.dart';import 'subscription_automatic_tax.dart';import 'subscription_billing_thresholds.dart';import 'subscription_customer.dart';import 'subscription_default_payment_method.dart';import 'subscription_default_source.dart';import 'subscription_discounts.dart';import 'subscription_items.dart';import 'subscription_latest_invoice.dart';import 'subscription_on_behalf_of.dart';import 'subscription_pending_invoice_item_interval.dart';import 'subscription_pending_setup_intent.dart';import 'subscription_schedule.dart';import 'subscription_schedule2.dart';import 'subscription_test_clock.dart';import 'subscription_transfer_data.dart';import 'subscriptions_resource_billing_cycle_anchor_config.dart';import 'subscriptions_resource_billing_mode.dart';import 'subscriptions_resource_pause_collection.dart';import 'subscriptions_resource_payment_settings.dart';import 'subscriptions_resource_pending_update.dart';import 'subscriptions_resource_subscription_invoice_settings.dart';import 'subscriptions_resource_trial_settings_trial_settings.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
-final class SubscriptionCollectionMethod {const SubscriptionCollectionMethod._(this.value);
+@immutable final class SubscriptionCollectionMethod {const SubscriptionCollectionMethod._(this.value);
 
 factory SubscriptionCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionCollectionMethod($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class SubscriptionObject {const SubscriptionObject._(this.value);
+@immutable final class SubscriptionObject {const SubscriptionObject._(this.value);
 
 factory SubscriptionObject.fromJson(String json) { return switch (json) {
   'subscription' => subscription,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If subscription `collection_method=charge_automatically`, it becomes `past_due` when payment is required but cannot be paid (due to failed payment or awaiting additional user actions). Once Stripe has exhausted all payment retry attempts, the subscription will become `canceled` or `unpaid` (depending on your subscriptions settings).
 /// 
 /// If subscription `collection_method=send_invoice` it becomes `past_due` when its invoice is not paid by the due date, and `canceled` or `unpaid` if it is still not paid by an additional deadline after that. Note that when a subscription has a status of `unpaid`, no subsequent invoices will be attempted (invoices will be created, but then immediately automatically closed). After receiving updated payment information from a customer, you may choose to reopen and pay their closed invoices.
-final class SubscriptionStatus {const SubscriptionStatus._(this.value);
+@immutable final class SubscriptionStatus {const SubscriptionStatus._(this.value);
 
 factory SubscriptionStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -103,7 +103,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Subscriptions allow you to charge a customer on a recurring basis.
 /// 
 /// Related guide: [Creating subscriptions](https://docs.stripe.com/billing/subscriptions/creating)
-final class Subscription {const Subscription({this.application, this.applicationFeePercent, required this.automaticTax, required this.billingCycleAnchor, this.billingCycleAnchorConfig, required this.billingMode, this.billingThresholds, this.cancelAt, required this.cancelAtPeriodEnd, this.canceledAt, this.cancellationDetails, required this.collectionMethod, required this.created, required this.currency, required this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, required this.discounts, this.endedAt, required this.id, required this.invoiceSettings, required this.items, this.latestInvoice, required this.livemode, required this.metadata, this.nextPendingInvoiceItemInvoice, required this.object, this.onBehalfOf, this.pauseCollection, this.paymentSettings, this.pendingInvoiceItemInterval, this.pendingSetupIntent, this.pendingUpdate, this.schedule, required this.startDate, required this.status, this.testClock, this.transferData, this.trialEnd, this.trialSettings, this.trialStart, });
+@immutable final class Subscription {const Subscription({required this.status, required this.automaticTax, required this.billingCycleAnchor, required this.billingMode, required this.cancelAtPeriodEnd, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.discounts, required this.id, required this.invoiceSettings, required this.items, required this.livemode, required this.metadata, required this.object, required this.startDate, this.customerAccount, this.defaultSource, this.defaultTaxRates, this.description, this.canceledAt, this.endedAt, this.cancellationDetails, this.applicationFeePercent, this.billingThresholds, this.latestInvoice, this.cancelAt, this.billingCycleAnchorConfig, this.trialStart, this.application, this.onBehalfOf, this.pauseCollection, this.paymentSettings, this.pendingInvoiceItemInterval, this.pendingSetupIntent, this.pendingUpdate, this.schedule, this.daysUntilDue, this.defaultPaymentMethod, this.testClock, this.transferData, this.trialEnd, this.trialSettings, this.nextPendingInvoiceItemInvoice, });
 
 factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,

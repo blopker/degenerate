@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class TaxProductResourceTaxSettingsHeadOffice {const TaxProductResourceTaxSettingsHeadOffice({required this.address});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class TaxProductResourceTaxSettingsHeadOffice {const TaxProductResourceTaxSettingsHeadOffice({required this.address});
 
 factory TaxProductResourceTaxSettingsHeadOffice.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsHeadOffice(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

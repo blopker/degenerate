@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_request_tracer_request_trace_request_context_geoloc.dart';/// Additional request parameters
-final class AccountRequestTracerRequestTraceRequestContext {const AccountRequestTracerRequestTraceRequestContext({this.botScore, this.geoloc, this.skipChallenge, this.threatScore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_request_tracer_request_trace_request_context_geoloc.dart';/// Additional request parameters
+@immutable final class AccountRequestTracerRequestTraceRequestContext {const AccountRequestTracerRequestTraceRequestContext({this.botScore, this.geoloc, this.skipChallenge, this.threatScore, });
 
 factory AccountRequestTracerRequestTraceRequestContext.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestContext(
   botScore: json['bot_score'] != null ? (json['bot_score'] as num).toInt() : null,

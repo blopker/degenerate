@@ -33,13 +33,13 @@ if (severity != null) {
   queryParameters['severity'] = severity.toJson();
 }
 if (cwes != null) {
-queryParametersList.add(ApiQueryParameter(name: 'cwes', value: cwes.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'cwes', value: cwes.toString()));
 }
 if (isWithdrawn != null) {
   queryParameters['is_withdrawn'] = isWithdrawn.toString();
 }
 if (affects != null) {
-queryParametersList.add(ApiQueryParameter(name: 'affects', value: affects.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'affects', value: affects.toString()));
 }
 if (published != null) {
   queryParameters['published'] = published;

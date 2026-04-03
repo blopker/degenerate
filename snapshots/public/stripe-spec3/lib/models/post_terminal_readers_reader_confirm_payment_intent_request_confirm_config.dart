@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration overrides for this confirmation, such as surcharge settings and return URL.
-final class PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig {const PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig({this.returnUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this confirmation, such as surcharge settings and return URL.
+@immutable final class PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig {const PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig({this.returnUrl});
 
 factory PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig(
   returnUrl: json['return_url'] as String?,

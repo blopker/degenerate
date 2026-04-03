@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTaxAssociationsFindRequest {const GetTaxAssociationsFindRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTaxAssociationsFindRequest {const GetTaxAssociationsFindRequest();
 
 factory GetTaxAssociationsFindRequest.fromJson(Map<String, dynamic> json) { return GetTaxAssociationsFindRequest(
 

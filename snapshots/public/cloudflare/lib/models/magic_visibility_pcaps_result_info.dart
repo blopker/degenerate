@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MagicVisibilityPcapsResultInfo {const MagicVisibilityPcapsResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicVisibilityPcapsResultInfo {const MagicVisibilityPcapsResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory MagicVisibilityPcapsResultInfo.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

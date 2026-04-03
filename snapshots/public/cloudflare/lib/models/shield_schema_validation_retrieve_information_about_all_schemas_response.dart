@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_public_schema.dart';final class ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse {const ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_public_schema.dart';@immutable final class ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse {const ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse({required this.result});
 
 factory ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse(
   result: (json['result'] as List<dynamic>).map((e) => ShieldOldPublicSchema.fromJson(e as Map<String, dynamic>)).toList(),

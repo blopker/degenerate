@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_intent_increment_authorization_request_hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
-final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooks {const PostPaymentIntentsIntentIncrementAuthorizationRequestHooks({this.inputs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_increment_authorization_request_hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
+@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooks {const PostPaymentIntentsIntentIncrementAuthorizationRequestHooks({this.inputs});
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(
   inputs: json['inputs'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,

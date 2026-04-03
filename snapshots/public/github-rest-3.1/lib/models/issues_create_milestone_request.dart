@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The state of the milestone. Either `open` or `closed`.
-final class IssuesCreateMilestoneRequestState {const IssuesCreateMilestoneRequestState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the milestone. Either `open` or `closed`.
+@immutable final class IssuesCreateMilestoneRequestState {const IssuesCreateMilestoneRequestState._(this.value);
 
 factory IssuesCreateMilestoneRequestState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuesCreateMilestoneRequestState($value)'; } 
  }
-final class IssuesCreateMilestoneRequest {const IssuesCreateMilestoneRequest({required this.title, this.state = IssuesCreateMilestoneRequestState.open, this.description, this.dueOn, });
+@immutable final class IssuesCreateMilestoneRequest {const IssuesCreateMilestoneRequest({required this.title, this.state = IssuesCreateMilestoneRequestState.open, this.description, this.dueOn, });
 
 factory IssuesCreateMilestoneRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateMilestoneRequest(
   title: json['title'] as String,

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';/// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,
 /// `opus`, or `pcm16`.
 /// 
-final class CreateChatCompletionRequestAudioFormat {const CreateChatCompletionRequestAudioFormat._(this.value);
+@immutable final class CreateChatCompletionRequestAudioFormat {const CreateChatCompletionRequestAudioFormat._(this.value);
 
 factory CreateChatCompletionRequestAudioFormat.fromJson(String json) { return switch (json) {
   'wav' => wav,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Parameters for audio output. Required when audio output is requested with
 /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
 /// 
-final class CreateChatCompletionRequestAudio {const CreateChatCompletionRequestAudio({required this.voice, required this.format, });
+@immutable final class CreateChatCompletionRequestAudio {const CreateChatCompletionRequestAudio({required this.voice, required this.format, });
 
 factory CreateChatCompletionRequestAudio.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestAudio(
   voice: OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),),

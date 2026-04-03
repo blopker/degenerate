@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnProviderDiscoveryStatus {const McnProviderDiscoveryStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnProviderDiscoveryStatus {const McnProviderDiscoveryStatus._(this.value);
 
 factory McnProviderDiscoveryStatus.fromJson(String json) { return switch (json) {
   'UNSPECIFIED' => unspecified,

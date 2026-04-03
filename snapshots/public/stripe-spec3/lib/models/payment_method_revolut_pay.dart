@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodRevolutPay {const PaymentMethodRevolutPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodRevolutPay {const PaymentMethodRevolutPay();
 
 factory PaymentMethodRevolutPay.fromJson(Map<String, dynamic> json) { return PaymentMethodRevolutPay(
 

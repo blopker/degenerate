@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_card_wallet_amex_express_checkout.dart';import 'payment_method_card_wallet_apple_pay.dart';import 'payment_method_card_wallet_google_pay.dart';import 'payment_method_card_wallet_link.dart';import 'payment_method_card_wallet_masterpass.dart';import 'payment_method_card_wallet_samsung_pay.dart';import 'payment_method_card_wallet_visa_checkout.dart';/// The type of the card wallet, one of `amex_express_checkout`, `apple_pay`, `google_pay`, `masterpass`, `samsung_pay`, `visa_checkout`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
-final class PaymentMethodCardWalletType {const PaymentMethodCardWalletType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_card_wallet_amex_express_checkout.dart';import 'payment_method_card_wallet_apple_pay.dart';import 'payment_method_card_wallet_google_pay.dart';import 'payment_method_card_wallet_link.dart';import 'payment_method_card_wallet_masterpass.dart';import 'payment_method_card_wallet_samsung_pay.dart';import 'payment_method_card_wallet_visa_checkout.dart';/// The type of the card wallet, one of `amex_express_checkout`, `apple_pay`, `google_pay`, `masterpass`, `samsung_pay`, `visa_checkout`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
+@immutable final class PaymentMethodCardWalletType {const PaymentMethodCardWalletType._(this.value);
 
 factory PaymentMethodCardWalletType.fromJson(String json) { return switch (json) {
   'amex_express_checkout' => amexExpressCheckout,
@@ -41,7 +41,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodCardWalletType($value)'; } 
  }
 /// 
-final class PaymentMethodCardWallet {const PaymentMethodCardWallet({this.amexExpressCheckout, this.applePay, this.dynamicLast4, this.googlePay, this.link, this.masterpass, this.samsungPay, required this.type, this.visaCheckout, });
+@immutable final class PaymentMethodCardWallet {const PaymentMethodCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4, this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });
 
 factory PaymentMethodCardWallet.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWallet(
   amexExpressCheckout: json['amex_express_checkout'] != null ? PaymentMethodCardWalletAmexExpressCheckout.fromJson(json['amex_express_checkout'] as Map<String, dynamic>) : null,

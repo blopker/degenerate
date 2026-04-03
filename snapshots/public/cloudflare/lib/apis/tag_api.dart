@@ -26,7 +26,7 @@ if (indicatorType != null) {
 }
 if (relatedEvent != null) {
 for (final item in relatedEvent) {
-  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item));
 }
 }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_realtime_response_result_meta_asn_info.dart';import 'radar_get_bgp_routes_realtime_response_result_meta_collectors.dart';import 'radar_get_bgp_routes_realtime_response_result_meta_prefix_origins.dart';final class RadarGetBgpRoutesRealtimeResponseResultMeta {const RadarGetBgpRoutesRealtimeResponseResultMeta({required this.asnInfo, required this.collectors, required this.dataTime, required this.prefixOrigins, required this.queryTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_realtime_response_result_meta_asn_info.dart';import 'radar_get_bgp_routes_realtime_response_result_meta_collectors.dart';import 'radar_get_bgp_routes_realtime_response_result_meta_prefix_origins.dart';@immutable final class RadarGetBgpRoutesRealtimeResponseResultMeta {const RadarGetBgpRoutesRealtimeResponseResultMeta({required this.asnInfo, required this.collectors, required this.dataTime, required this.prefixOrigins, required this.queryTime, });
 
 factory RadarGetBgpRoutesRealtimeResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponseResultMeta(
   asnInfo: (json['asn_info'] as List<dynamic>).map((e) => RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo.fromJson(e as Map<String, dynamic>)).toList(),

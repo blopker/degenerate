@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param109.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param109.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

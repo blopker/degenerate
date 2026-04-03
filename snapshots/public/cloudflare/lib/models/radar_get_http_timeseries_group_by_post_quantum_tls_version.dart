@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion.fromJson(String json) { return switch (json) {
   'TLSv1_0' => tlSv10,

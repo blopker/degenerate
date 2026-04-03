@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'endpoints.dart';import 'list_meta.dart';/// EndpointsList is a list of endpoints. Deprecated: This API is deprecated in v1.33+.
-final class EndpointsList {const EndpointsList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class EndpointsList {const EndpointsList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory EndpointsList.fromJson(Map<String, dynamic> json) { return EndpointsList(
   apiVersion: json['apiVersion'] as String?,

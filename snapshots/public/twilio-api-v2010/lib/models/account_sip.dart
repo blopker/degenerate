@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSip {const AccountSip();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSip {const AccountSip();
 
 factory AccountSip.fromJson(Map<String, dynamic> json) { return AccountSip(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_domain_timeseries_response_result_meta_confidence_info.dart';import 'radar_get_ranking_domain_timeseries_response_result_meta_date_range.dart';import 'radar_get_ranking_domain_timeseries_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval {const RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval {const RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetRankingDomainTimeseriesResponseResultMetaNormalization {const RadarGetRankingDomainTimeseriesResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetRankingDomainTimeseriesResponseResultMetaNormalization {const RadarGetRankingDomainTimeseriesResponseResultMetaNormalization._(this.value);
 
 factory RadarGetRankingDomainTimeseriesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetRankingDomainTimeseriesResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetRankingDomainTimeseriesResponseResultMeta {const RadarGetRankingDomainTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetRankingDomainTimeseriesResponseResultMeta {const RadarGetRankingDomainTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetRankingDomainTimeseriesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainTimeseriesResponseResultMeta(
   aggInterval: RadarGetRankingDomainTimeseriesResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

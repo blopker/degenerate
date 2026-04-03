@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CommunityHealthFile {const CommunityHealthFile({required this.url, required this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommunityHealthFile {const CommunityHealthFile({required this.url, required this.htmlUrl, });
 
 factory CommunityHealthFile.fromJson(Map<String, dynamic> json) { return CommunityHealthFile(
   url: Uri.parse(json['url'] as String),

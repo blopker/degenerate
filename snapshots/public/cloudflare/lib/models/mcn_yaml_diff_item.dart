@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_yaml_diff.dart';final class McnYamlDiffItem {const McnYamlDiffItem({required this.itemType, required this.yamlDiff, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_yaml_diff.dart';@immutable final class McnYamlDiffItem {const McnYamlDiffItem({required this.itemType, required this.yamlDiff, });
 
 factory McnYamlDiffItem.fromJson(Map<String, dynamic> json) { return McnYamlDiffItem(
   itemType: json['item_type'] as String,

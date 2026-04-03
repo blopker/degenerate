@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_request_filters.dart';import 'autorag_config_search_request_filters_variant1.dart';import 'autorag_config_search_request_filters_variant2.dart';import 'autorag_config_search_request_ranking_options.dart';import 'autorag_config_search_request_reranking.dart';final class AutoragConfigSearchRequest {const AutoragConfigSearchRequest({this.filters, this.maxNumResults = 10, required this.query, this.rankingOptions, this.reranking, this.rewriteQuery = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_request_filters.dart';import 'autorag_config_search_request_filters_variant1.dart';import 'autorag_config_search_request_filters_variant2.dart';import 'autorag_config_search_request_ranking_options.dart';import 'autorag_config_search_request_reranking.dart';@immutable final class AutoragConfigSearchRequest {const AutoragConfigSearchRequest({required this.query, this.filters, this.maxNumResults = 10, this.rankingOptions, this.reranking, this.rewriteQuery = false, });
 
 factory AutoragConfigSearchRequest.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequest(
   filters: json['filters'] != null ? OneOf2.parse(json['filters'], fromA: (v) => AutoragConfigSearchRequestFiltersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => AutoragConfigSearchRequestFiltersVariant2.fromJson(v as Map<String, dynamic>),) : null,

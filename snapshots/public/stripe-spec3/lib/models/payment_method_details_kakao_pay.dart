@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsKakaoPay {const PaymentMethodDetailsKakaoPay({this.buyerId, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsKakaoPay {const PaymentMethodDetailsKakaoPay({this.buyerId, this.transactionId, });
 
 factory PaymentMethodDetailsKakaoPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKakaoPay(
   buyerId: json['buyer_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
-final class UpdateUsageTriggerRequestCallbackMethod {const UpdateUsageTriggerRequestCallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
+@immutable final class UpdateUsageTriggerRequestCallbackMethod {const UpdateUsageTriggerRequestCallbackMethod._(this.value);
 
 factory UpdateUsageTriggerRequestCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateUsageTriggerRequestCallbackMethod($value)'; } 
  }
-final class UpdateUsageTriggerRequest {const UpdateUsageTriggerRequest({this.callbackMethod, this.callbackUrl, this.friendlyName, });
+@immutable final class UpdateUsageTriggerRequest {const UpdateUsageTriggerRequest({this.callbackMethod, this.callbackUrl, this.friendlyName, });
 
 factory UpdateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return UpdateUsageTriggerRequest(
   callbackMethod: json['CallbackMethod'] != null ? UpdateUsageTriggerRequestCallbackMethod.fromJson(json['CallbackMethod'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A text input to the model.
-final class InputTextContent {const InputTextContent({this.type = 'input_text', required this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A text input to the model.
+@immutable final class InputTextContent {const InputTextContent({required this.text, this.type = 'input_text', });
 
 factory InputTextContent.fromJson(Map<String, dynamic> json) { return InputTextContent(
   type: json['type'] as String,

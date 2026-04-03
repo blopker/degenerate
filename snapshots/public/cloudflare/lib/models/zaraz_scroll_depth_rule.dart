@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_scroll_depth_rule_settings.dart';final class ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_scroll_depth_rule_settings.dart';@immutable final class ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction._(this.value);
 
 factory ZarazScrollDepthRuleAction.fromJson(String json) { return switch (json) {
   'scrollDepth' => scrollDepth,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazScrollDepthRuleAction($value)'; } 
  }
-final class ZarazScrollDepthRule {const ZarazScrollDepthRule({required this.action, required this.id, required this.settings, });
+@immutable final class ZarazScrollDepthRule {const ZarazScrollDepthRule({required this.action, required this.id, required this.settings, });
 
 factory ZarazScrollDepthRule.fromJson(Map<String, dynamic> json) { return ZarazScrollDepthRule(
   action: ZarazScrollDepthRuleAction.fromJson(json['action'] as String),

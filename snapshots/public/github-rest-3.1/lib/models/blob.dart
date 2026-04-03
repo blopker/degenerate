@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Blob
-final class Blob {const Blob({required this.content, required this.encoding, required this.url, required this.sha, required this.size, required this.nodeId, this.highlightedContent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Blob
+@immutable final class Blob {const Blob({required this.content, required this.encoding, required this.url, required this.sha, required this.size, required this.nodeId, this.highlightedContent, });
 
 factory Blob.fromJson(Map<String, dynamic> json) { return Blob(
   content: json['content'] as String,

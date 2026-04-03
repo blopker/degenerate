@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow specific users, teams, or apps to bypass pull request requirements.
-final class ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances {const ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances({this.users, this.teams, this.apps, });
+@immutable final class ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances {const ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances({this.users, this.teams, this.apps, });
 
 factory ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) { return ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances(
   users: (json['users'] as List<dynamic>?)?.map((e) => e as String).toList(),

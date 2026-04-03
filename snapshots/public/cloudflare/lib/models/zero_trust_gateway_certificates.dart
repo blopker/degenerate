@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_uuid.dart';/// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
-final class ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_uuid.dart';/// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
+@immutable final class ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus._(this.value);
 
 factory ZeroTrustGatewayBindingStatus.fromJson(String json) { return switch (json) {
   'pending_deployment' => pendingDeployment,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayBindingStatus($value)'; } 
  }
 /// Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.
-final class ZeroTrustGatewayType {const ZeroTrustGatewayType._(this.value);
+@immutable final class ZeroTrustGatewayType {const ZeroTrustGatewayType._(this.value);
 
 factory ZeroTrustGatewayType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZeroTrustGatewayType($value)'; } 
  }
-final class ZeroTrustGatewayCertificates {const ZeroTrustGatewayCertificates({this.bindingStatus, this.certificate, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.inUse, this.issuerOrg, this.issuerRaw, this.type, this.updatedAt, this.uploadedOn, });
+@immutable final class ZeroTrustGatewayCertificates {const ZeroTrustGatewayCertificates({this.bindingStatus, this.certificate, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.inUse, this.issuerOrg, this.issuerRaw, this.type, this.updatedAt, this.uploadedOn, });
 
 factory ZeroTrustGatewayCertificates.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCertificates(
   bindingStatus: json['binding_status'] != null ? ZeroTrustGatewayBindingStatus.fromJson(json['binding_status'] as String) : null,

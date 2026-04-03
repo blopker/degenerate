@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'resource_tagging_tagged_resource_object_account_level_base.dart';import 'resource_tagging_tagged_resource_object_worker_version_base.dart';import 'resource_tagging_tagged_resource_object_zone_level_base.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'resource_tagging_tagged_resource_object_account_level_base.dart';import 'resource_tagging_tagged_resource_object_worker_version_base.dart';import 'resource_tagging_tagged_resource_object_zone_level_base.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ResourceTaggingTaggedResourceObject.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingTaggedResourceObject$Unknown; } 
  }
-final class ResourceTaggingTaggedResourceObjectAccessApplication extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplication(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAccessApplication extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplication(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectAccessApplication.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessApplication(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -53,7 +53,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplication(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectAccessApplicationPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(this.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAccessApplicationPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(this.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase);
 
 factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.fromJson(json)); }
 
@@ -66,7 +66,7 @@ final ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase resourceTag
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase: $resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectAccessGroup extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessGroup(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAccessGroup extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessGroup(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectAccessGroup.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessGroup(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -79,7 +79,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessGroup(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectAccount extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccount(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAccount extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccount(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectAccount.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccount(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -92,7 +92,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccount(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectAiGateway extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAiGateway(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAiGateway extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAiGateway(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectAiGateway.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAiGateway(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -105,7 +105,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAiGateway(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectAlertingPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingPolicy(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAlertingPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingPolicy(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectAlertingPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAlertingPolicy(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -118,7 +118,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAlertingPolicy(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectAlertingWebhook extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingWebhook(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectAlertingWebhook extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingWebhook(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectAlertingWebhook.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAlertingWebhook(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -131,7 +131,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAlertingWebhook(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectGatewayOperation extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayOperation(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectGatewayOperation extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayOperation(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectGatewayOperation.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectGatewayOperation(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
 
@@ -144,7 +144,7 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayOperation(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectCloudflaredTunnel extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCloudflaredTunnel(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectCloudflaredTunnel extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCloudflaredTunnel(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectCloudflaredTunnel.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectCloudflaredTunnel(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -157,7 +157,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectCloudflaredTunnel(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectCustomCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectCustomCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectCustomCertificate.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectCustomCertificate(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
 
@@ -170,7 +170,7 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectCustomCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectCustomHostname extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomHostname(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectCustomHostname extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomHostname(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectCustomHostname.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectCustomHostname(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
 
@@ -183,7 +183,7 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectCustomHostname(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectD1Database extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectD1Database(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectD1Database extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectD1Database(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectD1Database.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectD1Database(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -196,7 +196,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectD1Database(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectDnsRecord extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDnsRecord(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectDnsRecord extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDnsRecord(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectDnsRecord.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectDnsRecord(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
 
@@ -209,7 +209,7 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectDnsRecord(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectDurableObjectNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDurableObjectNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectDurableObjectNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDurableObjectNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectDurableObjectNamespace(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -222,7 +222,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectDurableObjectNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectGatewayList extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayList(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectGatewayList extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayList(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectGatewayList.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectGatewayList(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -235,7 +235,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayList(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectGatewayRule extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayRule(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectGatewayRule extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayRule(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectGatewayRule.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectGatewayRule(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -248,7 +248,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayRule(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectImage extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectImage(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectImage extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectImage(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectImage.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectImage(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -261,7 +261,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectImage(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectKvNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectKvNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectKvNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectKvNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectKvNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectKvNamespace(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -274,7 +274,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectKvNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectManagedClientCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectManagedClientCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectManagedClientCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectManagedClientCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectManagedClientCertificate.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectManagedClientCertificate(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
 
@@ -287,7 +287,7 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectManagedClientCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectQueue extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectQueue(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectQueue extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectQueue(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectQueue.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectQueue(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -300,7 +300,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectQueue(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectR2Bucket extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectR2Bucket(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectR2Bucket extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectR2Bucket(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectR2Bucket.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectR2Bucket(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -313,7 +313,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectR2Bucket(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectResourceShare extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectResourceShare(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectResourceShare extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectResourceShare(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectResourceShare.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectResourceShare(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -326,7 +326,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectResourceShare(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectStreamLiveInput extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamLiveInput(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectStreamLiveInput extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamLiveInput(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectStreamLiveInput.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectStreamLiveInput(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -339,7 +339,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectStreamLiveInput(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectStreamVideo extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamVideo(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectStreamVideo extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamVideo(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectStreamVideo.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectStreamVideo(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -352,7 +352,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectStreamVideo(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectWorker extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorker(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectWorker extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorker(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectWorker.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectWorker(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
 
@@ -365,7 +365,7 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectWorker(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectWorkerVersion extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorkerVersion(this.resourceTaggingTaggedResourceObjectWorkerVersionBase);
+@immutable final class ResourceTaggingTaggedResourceObjectWorkerVersion extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorkerVersion(this.resourceTaggingTaggedResourceObjectWorkerVersionBase);
 
 factory ResourceTaggingTaggedResourceObjectWorkerVersion.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectWorkerVersion(ResourceTaggingTaggedResourceObjectWorkerVersionBase.fromJson(json)); }
 
@@ -378,7 +378,7 @@ final ResourceTaggingTaggedResourceObjectWorkerVersionBase resourceTaggingTagged
 @override int get hashCode { return resourceTaggingTaggedResourceObjectWorkerVersionBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectWorkerVersion(resourceTaggingTaggedResourceObjectWorkerVersionBase: $resourceTaggingTaggedResourceObjectWorkerVersionBase)'; } 
  }
-final class ResourceTaggingTaggedResourceObjectZone extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectZone(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
+@immutable final class ResourceTaggingTaggedResourceObjectZone extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectZone(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
 factory ResourceTaggingTaggedResourceObjectZone.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectZone(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
 
@@ -393,7 +393,7 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ResourceTaggingTaggedResourceObject$Unknown extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject$Unknown(this.json);
+@immutable final class ResourceTaggingTaggedResourceObject$Unknown extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

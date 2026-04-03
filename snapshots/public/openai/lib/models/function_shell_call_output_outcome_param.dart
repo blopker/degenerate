@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'function_shell_call_output_exit_outcome_param.dart';import 'function_shell_call_output_timeout_outcome_param.dart';/// The exit or timeout outcome associated with this shell call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_exit_outcome_param.dart';import 'function_shell_call_output_timeout_outcome_param.dart';/// The exit or timeout outcome associated with this shell call.
 sealed class FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellCallOutputOutcomeParam$Unknown; } 
  }
-final class FunctionShellCallOutputOutcomeParamTimeout extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamTimeout(this.functionShellCallOutputTimeoutOutcomeParam);
+@immutable final class FunctionShellCallOutputOutcomeParamTimeout extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamTimeout(this.functionShellCallOutputTimeoutOutcomeParam);
 
 factory FunctionShellCallOutputOutcomeParamTimeout.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputOutcomeParamTimeout(FunctionShellCallOutputTimeoutOutcomeParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final FunctionShellCallOutputTimeoutOutcomeParam functionShellCallOutputTimeoutO
 @override int get hashCode { return functionShellCallOutputTimeoutOutcomeParam.hashCode; } 
 @override String toString() { return 'FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam: $functionShellCallOutputTimeoutOutcomeParam)'; } 
  }
-final class FunctionShellCallOutputOutcomeParamExit extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamExit(this.functionShellCallOutputExitOutcomeParam);
+@immutable final class FunctionShellCallOutputOutcomeParamExit extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamExit(this.functionShellCallOutputExitOutcomeParam);
 
 factory FunctionShellCallOutputOutcomeParamExit.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputOutcomeParamExit(FunctionShellCallOutputExitOutcomeParam.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final FunctionShellCallOutputExitOutcomeParam functionShellCallOutputExitOutcome
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class FunctionShellCallOutputOutcomeParam$Unknown extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParam$Unknown(this.json);
+@immutable final class FunctionShellCallOutputOutcomeParam$Unknown extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParam$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

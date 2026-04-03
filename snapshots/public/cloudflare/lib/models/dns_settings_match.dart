@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to match all search requirements or at least one (any). If set to `all`, acts like a logical AND between filters. If set to `any`, acts like a logical OR instead.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match all search requirements or at least one (any). If set to `all`, acts like a logical AND between filters. If set to `any`, acts like a logical OR instead.
 /// 
-final class DnsSettingsMatch {const DnsSettingsMatch._(this.value);
+@immutable final class DnsSettingsMatch {const DnsSettingsMatch._(this.value);
 
 factory DnsSettingsMatch.fromJson(String json) { return switch (json) {
   'any' => any,

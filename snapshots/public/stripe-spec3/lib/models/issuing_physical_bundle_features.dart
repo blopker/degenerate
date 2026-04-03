@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The policy for how to use card logo images in a card design with this physical bundle.
-final class IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy for how to use card logo images in a card design with this physical bundle.
+@immutable final class IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo._(this.value);
 
 factory IssuingPhysicalBundleFeaturesCardLogo.fromJson(String json) { return switch (json) {
   'optional' => optional,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPhysicalBundleFeaturesCardLogo($value)'; } 
  }
 /// The policy for how to use carrier letter text in a card design with this physical bundle.
-final class IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText._(this.value);
+@immutable final class IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText._(this.value);
 
 factory IssuingPhysicalBundleFeaturesCarrierText.fromJson(String json) { return switch (json) {
   'optional' => optional,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPhysicalBundleFeaturesCarrierText($value)'; } 
  }
 /// The policy for how to use a second line on a card with this physical bundle.
-final class IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine._(this.value);
+@immutable final class IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine._(this.value);
 
 factory IssuingPhysicalBundleFeaturesSecondLine.fromJson(String json) { return switch (json) {
   'optional' => optional,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPhysicalBundleFeaturesSecondLine($value)'; } 
  }
 /// 
-final class IssuingPhysicalBundleFeatures {const IssuingPhysicalBundleFeatures({required this.cardLogo, required this.carrierText, required this.secondLine, });
+@immutable final class IssuingPhysicalBundleFeatures {const IssuingPhysicalBundleFeatures({required this.cardLogo, required this.carrierText, required this.secondLine, });
 
 factory IssuingPhysicalBundleFeatures.fromJson(Map<String, dynamic> json) { return IssuingPhysicalBundleFeatures(
   cardLogo: IssuingPhysicalBundleFeaturesCardLogo.fromJson(json['card_logo'] as String),

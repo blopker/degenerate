@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';final class ResponseCommonFailure41 {const ResponseCommonFailure41({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';@immutable final class ResponseCommonFailure41 {const ResponseCommonFailure41({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure41.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure41(
   errors: (json['errors'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),

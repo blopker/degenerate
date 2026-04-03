@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_meter_event_adjustments_request_cancel.dart';/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
-final class PostBillingMeterEventAdjustmentsRequestType {const PostBillingMeterEventAdjustmentsRequestType._(this.value);
+@immutable final class PostBillingMeterEventAdjustmentsRequestType {const PostBillingMeterEventAdjustmentsRequestType._(this.value);
 
 factory PostBillingMeterEventAdjustmentsRequestType.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingMeterEventAdjustmentsRequestType($value)'; } 
  }
-final class PostBillingMeterEventAdjustmentsRequest {const PostBillingMeterEventAdjustmentsRequest({this.cancel, required this.eventName, this.expand, required this.type, });
+@immutable final class PostBillingMeterEventAdjustmentsRequest {const PostBillingMeterEventAdjustmentsRequest({required this.eventName, required this.type, this.cancel, this.expand, });
 
 factory PostBillingMeterEventAdjustmentsRequest.fromJson(Map<String, dynamic> json) { return PostBillingMeterEventAdjustmentsRequest(
   cancel: json['cancel'] != null ? PostBillingMeterEventAdjustmentsRequestCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,

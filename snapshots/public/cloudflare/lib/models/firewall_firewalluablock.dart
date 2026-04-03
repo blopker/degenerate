@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_components_ua_rule_id.dart';import 'firewall_schemas_configuration.dart';import 'firewall_schemas_paused.dart';/// The action to apply to a matched request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_ua_rule_id.dart';import 'firewall_schemas_configuration.dart';import 'firewall_schemas_paused.dart';/// The action to apply to a matched request.
 extension type FirewallComponentsSchemasMode(dynamic value) {
 factory FirewallComponentsSchemasMode.fromJson(dynamic json) => FirewallComponentsSchemasMode(json);
 
@@ -14,7 +14,7 @@ factory FirewallFirewalluablockComponentsSchemasDescription.fromJson(String json
 String toJson() => value;
 
 }
-final class FirewallFirewalluablock {const FirewallFirewalluablock({this.configuration, this.description, this.id, this.mode, this.paused, });
+@immutable final class FirewallFirewalluablock {const FirewallFirewalluablock({this.configuration, this.description, this.id, this.mode, this.paused, });
 
 factory FirewallFirewalluablock.fromJson(Map<String, dynamic> json) { return FirewallFirewalluablock(
   configuration: json['configuration'] != null ? FirewallSchemasConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,

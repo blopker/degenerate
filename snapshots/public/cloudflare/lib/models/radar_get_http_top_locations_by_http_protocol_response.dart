@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_top_locations_by_http_protocol_response_result.dart';final class RadarGetHttpTopLocationsByHttpProtocolResponse {const RadarGetHttpTopLocationsByHttpProtocolResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_http_protocol_response_result.dart';@immutable final class RadarGetHttpTopLocationsByHttpProtocolResponse {const RadarGetHttpTopLocationsByHttpProtocolResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTopLocationsByHttpProtocolResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByHttpProtocolResponse(
   result: RadarGetHttpTopLocationsByHttpProtocolResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 /// Token for connecting to a LiveKit room.
+@immutable
 final class JoinResponse {
   const JoinResponse({required this.token, required this.isAlreadyPresent});
 

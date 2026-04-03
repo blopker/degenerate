@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_push_commits_author.dart';import 'webhook_push_commits_committer.dart';final class WebhookPushCommits {const WebhookPushCommits({this.added, required this.author, required this.committer, required this.distinct, required this.id, required this.message, this.modified, this.removed, required this.timestamp, required this.treeId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_push_commits_author.dart';import 'webhook_push_commits_committer.dart';@immutable final class WebhookPushCommits {const WebhookPushCommits({required this.author, required this.committer, required this.distinct, required this.id, required this.message, required this.timestamp, required this.treeId, required this.url, this.added, this.modified, this.removed, });
 
 factory WebhookPushCommits.fromJson(Map<String, dynamic> json) { return WebhookPushCommits(
   added: (json['added'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response.dart';/// The type of the event. Always 'response.queued'.
-final class ResponseQueuedEventType {const ResponseQueuedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always 'response.queued'.
+@immutable final class ResponseQueuedEventType {const ResponseQueuedEventType._(this.value);
 
 factory ResponseQueuedEventType.fromJson(String json) { return switch (json) {
   'response.queued' => responseQueued,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when a response is queued and waiting to be processed.
 /// 
-final class ResponseQueuedEvent {const ResponseQueuedEvent({required this.type, required this.response, required this.sequenceNumber, });
+@immutable final class ResponseQueuedEvent {const ResponseQueuedEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseQueuedEvent.fromJson(Map<String, dynamic> json) { return ResponseQueuedEvent(
   type: ResponseQueuedEventType.fromJson(json['type'] as String),

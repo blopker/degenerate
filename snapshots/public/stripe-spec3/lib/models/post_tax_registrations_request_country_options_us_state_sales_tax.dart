@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_country_options_us_state_sales_tax_elections.dart';final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax({required this.elections});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_country_options_us_state_sales_tax_elections.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax({required this.elections});
 
 factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsUsStateSalesTax(
   elections: (json['elections'] as List<dynamic>).map((e) => PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTransfersIdReversalsRequest {const GetTransfersIdReversalsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTransfersIdReversalsRequest {const GetTransfersIdReversalsRequest();
 
 factory GetTransfersIdReversalsRequest.fromJson(Map<String, dynamic> json) { return GetTransfersIdReversalsRequest(
 

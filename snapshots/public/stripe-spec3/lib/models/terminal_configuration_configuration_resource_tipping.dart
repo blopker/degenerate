@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_configuration_configuration_resource_currency_specific_config.dart';/// 
-final class TerminalConfigurationConfigurationResourceTipping {const TerminalConfigurationConfigurationResourceTipping({this.aed, this.aud, this.cad, this.chf, this.czk, this.dkk, this.eur, this.gbp, this.gip, this.hkd, this.huf, this.jpy, this.mxn, this.myr, this.nok, this.nzd, this.pln, this.ron, this.sek, this.sgd, this.usd, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_currency_specific_config.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourceTipping {const TerminalConfigurationConfigurationResourceTipping({this.aed, this.aud, this.cad, this.chf, this.czk, this.dkk, this.eur, this.gbp, this.gip, this.hkd, this.huf, this.jpy, this.mxn, this.myr, this.nok, this.nzd, this.pln, this.ron, this.sek, this.sgd, this.usd, });
 
 factory TerminalConfigurationConfigurationResourceTipping.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceTipping(
   aed: json['aed'] != null ? TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(json['aed'] as Map<String, dynamic>) : null,

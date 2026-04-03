@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_intent_confirm_request_payment_method_options_payto_mandate_options.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto({this.mandateOptions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_payto_mandate_options.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto({this.mandateOptions});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto(
   mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

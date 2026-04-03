@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A representation of a physical address.
-final class PaymentsPrimitivesPaymentRecordsResourceAddress {const PaymentsPrimitivesPaymentRecordsResourceAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A representation of a physical address.
+@immutable final class PaymentsPrimitivesPaymentRecordsResourceAddress {const PaymentsPrimitivesPaymentRecordsResourceAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory PaymentsPrimitivesPaymentRecordsResourceAddress.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourceAddress(
   city: json['city'] as String?,

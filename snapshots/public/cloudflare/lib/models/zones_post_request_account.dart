@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';final class ZonesPostRequestAccount {const ZonesPostRequestAccount({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';@immutable final class ZonesPostRequestAccount {const ZonesPostRequestAccount({this.id});
 
 factory ZonesPostRequestAccount.fromJson(Map<String, dynamic> json) { return ZonesPostRequestAccount(
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,

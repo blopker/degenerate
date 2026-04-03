@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCustomersCustomerRequest {const GetCustomersCustomerRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerRequest {const GetCustomersCustomerRequest();
 
 factory GetCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerRequest(
 

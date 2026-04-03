@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_membership_with_policies.dart';final class IamSingleMembershipResponseWithPolicies {const IamSingleMembershipResponseWithPolicies({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_with_policies.dart';@immutable final class IamSingleMembershipResponseWithPolicies {const IamSingleMembershipResponseWithPolicies({this.result});
 
 factory IamSingleMembershipResponseWithPolicies.fromJson(Map<String, dynamic> json) { return IamSingleMembershipResponseWithPolicies(
   result: json['result'] != null ? IamMembershipWithPolicies.fromJson(json['result'] as Map<String, dynamic>) : null,

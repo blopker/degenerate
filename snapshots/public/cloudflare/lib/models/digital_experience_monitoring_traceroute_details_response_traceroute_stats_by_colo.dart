@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_test_stat_over_time.dart';import 'digital_experience_monitoring_test_stat_pct_over_time.dart';final class DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo {const DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo({required this.availabilityPct, required this.colo, required this.hopsCount, required this.packetLossPct, required this.roundTripTimeMs, required this.uniqueDevicesTotal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_test_stat_over_time.dart';import 'digital_experience_monitoring_test_stat_pct_over_time.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo {const DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo({required this.availabilityPct, required this.colo, required this.hopsCount, required this.packetLossPct, required this.roundTripTimeMs, required this.uniqueDevicesTotal, });
 
 factory DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo(
   availabilityPct: DigitalExperienceMonitoringTestStatPctOverTime.fromJson(json['availabilityPct'] as Map<String, dynamic>),

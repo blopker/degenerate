@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param97.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param97.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

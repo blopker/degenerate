@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `speech.audio.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `speech.audio.delta`.
 /// 
-final class SpeechAudioDeltaEventType {const SpeechAudioDeltaEventType._(this.value);
+@immutable final class SpeechAudioDeltaEventType {const SpeechAudioDeltaEventType._(this.value);
 
 factory SpeechAudioDeltaEventType.fromJson(String json) { return switch (json) {
   'speech.audio.delta' => speechAudioDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpeechAudioDeltaEventType($value)'; } 
  }
 /// Emitted for each chunk of audio data generated during speech synthesis.
-final class SpeechAudioDeltaEvent {const SpeechAudioDeltaEvent({required this.type, required this.audio, });
+@immutable final class SpeechAudioDeltaEvent {const SpeechAudioDeltaEvent({required this.type, required this.audio, });
 
 factory SpeechAudioDeltaEvent.fromJson(Map<String, dynamic> json) { return SpeechAudioDeltaEvent(
   type: SpeechAudioDeltaEventType.fromJson(json['type'] as String),

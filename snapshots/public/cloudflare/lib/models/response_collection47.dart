@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_messages2.dart';import 'workers_kv_result_info.dart';final class ResponseCollection47 {const ResponseCollection47({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_messages2.dart';import 'workers_kv_result_info.dart';@immutable final class ResponseCollection47 {const ResponseCollection47({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection47.fromJson(Map<String, dynamic> json) { return ResponseCollection47(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),

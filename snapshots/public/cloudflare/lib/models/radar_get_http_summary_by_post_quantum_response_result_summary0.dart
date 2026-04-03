@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByPostQuantumResponseResultSummary0 {const RadarGetHttpSummaryByPostQuantumResponseResultSummary0({required this.notSupported, required this.supported, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByPostQuantumResponseResultSummary0 {const RadarGetHttpSummaryByPostQuantumResponseResultSummary0({required this.notSupported, required this.supported, });
 
 factory RadarGetHttpSummaryByPostQuantumResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByPostQuantumResponseResultSummary0(
   notSupported: json['NOT_SUPPORTED'] as String,

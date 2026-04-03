@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'modify_volume_status.dart';import 'persistent_volume_claim_condition.dart';import 'resource_quantity.dart';/// PersistentVolumeClaimStatus is the current status of a persistent volume claim.
-final class PersistentVolumeClaimStatus {const PersistentVolumeClaimStatus({this.accessModes, this.allocatedResourceStatuses, this.allocatedResources, this.capacity, this.conditions, this.currentVolumeAttributesClassName, this.modifyVolumeStatus, this.phase, });
+@immutable final class PersistentVolumeClaimStatus {const PersistentVolumeClaimStatus({this.accessModes, this.allocatedResourceStatuses, this.allocatedResources, this.capacity, this.conditions, this.currentVolumeAttributesClassName, this.modifyVolumeStatus, this.phase, });
 
 factory PersistentVolumeClaimStatus.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimStatus(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),

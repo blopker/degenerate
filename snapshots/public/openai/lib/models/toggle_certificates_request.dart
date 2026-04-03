@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ToggleCertificatesRequest {const ToggleCertificatesRequest({required this.certificateIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToggleCertificatesRequest {const ToggleCertificatesRequest({required this.certificateIds});
 
 factory ToggleCertificatesRequest.fromJson(Map<String, dynamic> json) { return ToggleCertificatesRequest(
   certificateIds: (json['certificate_ids'] as List<dynamic>).map((e) => e as String).toList(),

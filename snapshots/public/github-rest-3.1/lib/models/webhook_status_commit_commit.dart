@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_status_commit_commit_author.dart';import 'webhook_status_commit_commit_committer.dart';import 'webhook_status_commit_commit_tree.dart';import 'webhook_status_commit_commit_verification.dart';final class WebhookStatusCommitCommit {const WebhookStatusCommitCommit({required this.author, required this.commentCount, required this.committer, required this.message, required this.tree, required this.url, required this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_status_commit_commit_author.dart';import 'webhook_status_commit_commit_committer.dart';import 'webhook_status_commit_commit_tree.dart';import 'webhook_status_commit_commit_verification.dart';@immutable final class WebhookStatusCommitCommit {const WebhookStatusCommitCommit({required this.author, required this.commentCount, required this.committer, required this.message, required this.tree, required this.url, required this.verification, });
 
 factory WebhookStatusCommitCommit.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitCommit(
   author: WebhookStatusCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),

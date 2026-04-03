@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_intent_confirm_request_payment_method_options_sepa_debit_mandate_options.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebit {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebit({this.mandateOptions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_sepa_debit_mandate_options.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebit {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebit({this.mandateOptions});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebit(
   mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_completed_sessions.dart';/// 
-final class PaymentLinksResourceRestrictions {const PaymentLinksResourceRestrictions({required this.completedSessions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_completed_sessions.dart';/// 
+@immutable final class PaymentLinksResourceRestrictions {const PaymentLinksResourceRestrictions({required this.completedSessions});
 
 factory PaymentLinksResourceRestrictions.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceRestrictions(
   completedSessions: PaymentLinksResourceCompletedSessions.fromJson(json['completed_sessions'] as Map<String, dynamic>),

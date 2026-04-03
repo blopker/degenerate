@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Response returned after updating a group.
-final class GroupResourceWithSuccess {const GroupResourceWithSuccess({required this.id, required this.name, required this.createdAt, required this.isScimManaged, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Response returned after updating a group.
+@immutable final class GroupResourceWithSuccess {const GroupResourceWithSuccess({required this.id, required this.name, required this.createdAt, required this.isScimManaged, });
 
 factory GroupResourceWithSuccess.fromJson(Map<String, dynamic> json) { return GroupResourceWithSuccess(
   id: json['id'] as String,

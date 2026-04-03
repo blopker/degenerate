@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'session_list_schema.dart';final class PagedSessionListSchema {const PagedSessionListSchema({required this.items, required this.count, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'session_list_schema.dart';@immutable final class PagedSessionListSchema {const PagedSessionListSchema({required this.items, required this.count, });
 
 factory PagedSessionListSchema.fromJson(Map<String, dynamic> json) { return PagedSessionListSchema(
   items: (json['items'] as List<dynamic>).map((e) => SessionListSchema.fromJson(e as Map<String, dynamic>)).toList(),

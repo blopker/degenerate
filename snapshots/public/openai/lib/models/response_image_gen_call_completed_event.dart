@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.image_generation_call.completed'.
-final class ResponseImageGenCallCompletedEventType {const ResponseImageGenCallCompletedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.image_generation_call.completed'.
+@immutable final class ResponseImageGenCallCompletedEventType {const ResponseImageGenCallCompletedEventType._(this.value);
 
 factory ResponseImageGenCallCompletedEventType.fromJson(String json) { return switch (json) {
   'response.image_generation_call.completed' => responseImageGenerationCallCompleted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an image generation tool call has completed and the final image is available.
 /// 
-final class ResponseImageGenCallCompletedEvent {const ResponseImageGenCallCompletedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.itemId, });
+@immutable final class ResponseImageGenCallCompletedEvent {const ResponseImageGenCallCompletedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.itemId, });
 
 factory ResponseImageGenCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallCompletedEvent(
   type: ResponseImageGenCallCompletedEventType.fromJson(json['type'] as String),

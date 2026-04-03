@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesDeploymentLogData {const PagesDeploymentLogData({required this.line, required this.ts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesDeploymentLogData {const PagesDeploymentLogData({required this.line, required this.ts, });
 
 factory PagesDeploymentLogData.fromJson(Map<String, dynamic> json) { return PagesDeploymentLogData(
   line: json['line'] as String,

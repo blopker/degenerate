@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_components_schemas_enabled.dart';/// The validity period in days for the certificates ordered via Total TLS.
-final class TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_components_schemas_enabled.dart';/// The validity period in days for the certificates ordered via Total TLS.
+@immutable final class TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod._(this.value);
 
 factory TlsCertificatesAndHostnamesValidityPeriod.fromJson(int json) { return switch (json) {
   90 => $90,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesValidityPeriod($value)'; } 
  }
-final class TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult {const TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult({this.certificateAuthority, this.enabled, this.validityPeriod, });
+@immutable final class TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult {const TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult({this.certificateAuthority, this.enabled, this.validityPeriod, });
 
 factory TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult(
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Severity of a code scanning alert.
-final class CodeScanningAlertSeverity {const CodeScanningAlertSeverity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Severity of a code scanning alert.
+@immutable final class CodeScanningAlertSeverity {const CodeScanningAlertSeverity._(this.value);
 
 factory CodeScanningAlertSeverity.fromJson(String json) { return switch (json) {
   'critical' => critical,

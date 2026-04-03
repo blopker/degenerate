@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_risk_score_integration.dart';final class DlpZtRiskScoreIntegrationGetByReferenceIdResponse {const DlpZtRiskScoreIntegrationGetByReferenceIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_score_integration.dart';@immutable final class DlpZtRiskScoreIntegrationGetByReferenceIdResponse {const DlpZtRiskScoreIntegrationGetByReferenceIdResponse({this.result});
 
 factory DlpZtRiskScoreIntegrationGetByReferenceIdResponse.fromJson(Map<String, dynamic> json) { return DlpZtRiskScoreIntegrationGetByReferenceIdResponse(
   result: json['result'] != null ? DlpRiskScoreIntegration.fromJson(json['result'] as Map<String, dynamic>) : null,

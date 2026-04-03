@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_queue_pull_batch2.dart';final class QueuesPullMessagesResponseResult {const QueuesPullMessagesResponseResult({this.messageBacklogCount, this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_queue_pull_batch2.dart';@immutable final class QueuesPullMessagesResponseResult {const QueuesPullMessagesResponseResult({this.messageBacklogCount, this.messages, });
 
 factory QueuesPullMessagesResponseResult.fromJson(Map<String, dynamic> json) { return QueuesPullMessagesResponseResult(
   messageBacklogCount: json['message_backlog_count'] != null ? (json['message_backlog_count'] as num).toDouble() : null,

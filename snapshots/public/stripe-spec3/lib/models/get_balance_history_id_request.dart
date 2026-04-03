@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBalanceHistoryIdRequest {const GetBalanceHistoryIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBalanceHistoryIdRequest {const GetBalanceHistoryIdRequest();
 
 factory GetBalanceHistoryIdRequest.fromJson(Map<String, dynamic> json) { return GetBalanceHistoryIdRequest(
 

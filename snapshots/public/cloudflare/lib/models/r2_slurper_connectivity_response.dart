@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SlurperConnectivityResponseConnectivityStatus {const R2SlurperConnectivityResponseConnectivityStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperConnectivityResponseConnectivityStatus {const R2SlurperConnectivityResponseConnectivityStatus._(this.value);
 
 factory R2SlurperConnectivityResponseConnectivityStatus.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperConnectivityResponseConnectivityStatus($value)'; } 
  }
-final class R2SlurperConnectivityResponse {const R2SlurperConnectivityResponse({this.connectivityStatus});
+@immutable final class R2SlurperConnectivityResponse {const R2SlurperConnectivityResponse({this.connectivityStatus});
 
 factory R2SlurperConnectivityResponse.fromJson(Map<String, dynamic> json) { return R2SlurperConnectivityResponse(
   connectivityStatus: json['connectivityStatus'] != null ? R2SlurperConnectivityResponseConnectivityStatus.fromJson(json['connectivityStatus'] as String) : null,

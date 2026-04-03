@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// mTLS binding.
-final class PagesDeploymentConfigValuesRequestMtlsCertificatesValue {const PagesDeploymentConfigValuesRequestMtlsCertificatesValue({required this.certificateId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// mTLS binding.
+@immutable final class PagesDeploymentConfigValuesRequestMtlsCertificatesValue {const PagesDeploymentConfigValuesRequestMtlsCertificatesValue({required this.certificateId});
 
 factory PagesDeploymentConfigValuesRequestMtlsCertificatesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestMtlsCertificatesValue(
   certificateId: json['certificate_id'] as String,

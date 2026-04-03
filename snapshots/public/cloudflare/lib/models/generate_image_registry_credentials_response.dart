@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_account_registry_token.dart';import 'cc_messages2.dart';final class GenerateImageRegistryCredentialsResponse {const GenerateImageRegistryCredentialsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_account_registry_token.dart';import 'cc_messages2.dart';@immutable final class GenerateImageRegistryCredentialsResponse {const GenerateImageRegistryCredentialsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory GenerateImageRegistryCredentialsResponse.fromJson(Map<String, dynamic> json) { return GenerateImageRegistryCredentialsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CcMessages2.fromJson(e as Map<String, dynamic>)).toList(),

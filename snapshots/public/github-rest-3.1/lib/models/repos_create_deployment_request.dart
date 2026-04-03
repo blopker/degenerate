@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_deployment_request_payload.dart';final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task = 'deploy', this.autoMerge = true, this.requiredContexts, this.payload, this.environment = 'production', this.description = '', this.transientEnvironment = false, this.productionEnvironment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_deployment_request_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task = 'deploy', this.autoMerge = true, this.requiredContexts, this.payload, this.environment = 'production', this.description = '', this.transientEnvironment = false, this.productionEnvironment, });
 
 factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentRequest(
   ref: json['ref'] as String,

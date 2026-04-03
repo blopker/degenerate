@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetInvoicesStatus {const GetInvoicesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicesStatus {const GetInvoicesStatus._(this.value);
 
 factory GetInvoicesStatus.fromJson(String json) { return switch (json) {
   'draft' => draft,

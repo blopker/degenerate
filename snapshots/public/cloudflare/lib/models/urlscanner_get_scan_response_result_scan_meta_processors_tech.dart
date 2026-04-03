@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_categories.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_evidence.dart';final class UrlscannerGetScanResponseResultScanMetaProcessorsTech {const UrlscannerGetScanResponseResultScanMetaProcessorsTech({required this.categories, required this.confidence, this.description, required this.evidence, required this.icon, required this.name, required this.slug, required this.website, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_categories.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_evidence.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsTech {const UrlscannerGetScanResponseResultScanMetaProcessorsTech({required this.categories, required this.confidence, required this.evidence, required this.icon, required this.name, required this.slug, required this.website, this.description, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessorsTech.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsTech(
   categories: (json['categories'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_suite_preference_preferences_auto_trigger_checks.dart';final class CheckSuitePreferencePreferences {const CheckSuitePreferencePreferences({this.autoTriggerChecks});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_suite_preference_preferences_auto_trigger_checks.dart';@immutable final class CheckSuitePreferencePreferences {const CheckSuitePreferencePreferences({this.autoTriggerChecks});
 
 factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) { return CheckSuitePreferencePreferences(
   autoTriggerChecks: (json['auto_trigger_checks'] as List<dynamic>?)?.map((e) => CheckSuitePreferencePreferencesAutoTriggerChecks.fromJson(e as Map<String, dynamic>)).toList(),

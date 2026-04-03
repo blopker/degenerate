@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param87.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsGrabpayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsGrabpayVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param87.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsGrabpayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsGrabpayVariant2._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsGrabpayVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

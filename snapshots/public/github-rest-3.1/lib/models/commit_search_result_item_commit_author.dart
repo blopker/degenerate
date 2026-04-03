@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CommitSearchResultItemCommitAuthor {const CommitSearchResultItemCommitAuthor({required this.name, required this.email, required this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitSearchResultItemCommitAuthor {const CommitSearchResultItemCommitAuthor({required this.name, required this.email, required this.date, });
 
 factory CommitSearchResultItemCommitAuthor.fromJson(Map<String, dynamic> json) { return CommitSearchResultItemCommitAuthor(
   name: json['name'] as String,

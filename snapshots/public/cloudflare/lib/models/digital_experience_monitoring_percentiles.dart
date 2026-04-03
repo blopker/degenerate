@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringPercentiles {const DigitalExperienceMonitoringPercentiles({this.p50, this.p90, this.p95, this.p99, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringPercentiles {const DigitalExperienceMonitoringPercentiles({this.p50, this.p90, this.p95, this.p99, });
 
 factory DigitalExperienceMonitoringPercentiles.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringPercentiles(
   p50: json['p50'] != null ? (json['p50'] as num).toDouble() : null,

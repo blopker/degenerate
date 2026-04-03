@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MultimodalEmbeddings2 {const MultimodalEmbeddings2({this.data, this.shape, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MultimodalEmbeddings2 {const MultimodalEmbeddings2({this.data, this.shape, });
 
 factory MultimodalEmbeddings2.fromJson(Map<String, dynamic> json) { return MultimodalEmbeddings2(
   data: (json['data'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList()).toList(),

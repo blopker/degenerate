@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'micro_time.dart';/// EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
-final class EventSeries {const EventSeries({this.count, this.lastObservedTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'micro_time.dart';/// EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
+@immutable final class EventSeries {const EventSeries({this.count, this.lastObservedTime, });
 
 factory EventSeries.fromJson(Map<String, dynamic> json) { return EventSeries(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

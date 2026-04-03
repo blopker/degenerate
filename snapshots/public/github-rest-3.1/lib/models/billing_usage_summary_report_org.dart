@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_usage_summary_report_org_time_period.dart';import 'billing_usage_summary_report_org_usage_items.dart';final class BillingUsageSummaryReportOrg {const BillingUsageSummaryReportOrg({required this.timePeriod, required this.organization, this.repository, this.product, this.sku, required this.usageItems, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_usage_summary_report_org_time_period.dart';import 'billing_usage_summary_report_org_usage_items.dart';@immutable final class BillingUsageSummaryReportOrg {const BillingUsageSummaryReportOrg({required this.timePeriod, required this.organization, required this.usageItems, this.repository, this.product, this.sku, });
 
 factory BillingUsageSummaryReportOrg.fromJson(Map<String, dynamic> json) { return BillingUsageSummaryReportOrg(
   timePeriod: BillingUsageSummaryReportOrgTimePeriod.fromJson(json['timePeriod'] as Map<String, dynamic>),

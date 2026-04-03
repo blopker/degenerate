@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'branch_protection.dart';import 'short_branch_commit.dart';/// Short Branch
-final class ShortBranch {const ShortBranch({required this.name, required this.commit, required this.protected, this.protection, this.protectionUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_protection.dart';import 'short_branch_commit.dart';/// Short Branch
+@immutable final class ShortBranch {const ShortBranch({required this.name, required this.commit, required this.protected, this.protection, this.protectionUrl, });
 
 factory ShortBranch.fromJson(Map<String, dynamic> json) { return ShortBranch(
   name: json['name'] as String,

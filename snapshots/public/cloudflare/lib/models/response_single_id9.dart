@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single_id9_result.dart';import 'zones_schemas_messages2.dart';final class ResponseSingleId9 {const ResponseSingleId9({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single_id9_result.dart';import 'zones_schemas_messages2.dart';@immutable final class ResponseSingleId9 {const ResponseSingleId9({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseSingleId9.fromJson(Map<String, dynamic> json) { return ResponseSingleId9(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

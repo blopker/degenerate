@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'name_collection_params.dart';final class PostPaymentLinksPaymentLinkRequestNameCollectionVariant2 {const PostPaymentLinksPaymentLinkRequestNameCollectionVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'name_collection_params.dart';@immutable final class PostPaymentLinksPaymentLinkRequestNameCollectionVariant2 {const PostPaymentLinksPaymentLinkRequestNameCollectionVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestNameCollectionVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityListTrustedDomainsOrder {const EmailSecurityListTrustedDomainsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityListTrustedDomainsOrder {const EmailSecurityListTrustedDomainsOrder._(this.value);
 
 factory EmailSecurityListTrustedDomainsOrder.fromJson(String json) { return switch (json) {
   'pattern' => pattern,

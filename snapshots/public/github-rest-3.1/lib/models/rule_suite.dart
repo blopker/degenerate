@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_rule_evaluations.dart';/// The result of the rule evaluations for rules with the `active` enforcement status.
-final class RuleSuiteResult {const RuleSuiteResult._(this.value);
+@immutable final class RuleSuiteResult {const RuleSuiteResult._(this.value);
 
 factory RuleSuiteResult.fromJson(String json) { return switch (json) {
   'pass' => pass,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RuleSuiteResult($value)'; } 
  }
 /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
-final class RuleSuiteEvaluationResult {const RuleSuiteEvaluationResult._(this.value);
+@immutable final class RuleSuiteEvaluationResult {const RuleSuiteEvaluationResult._(this.value);
 
 factory RuleSuiteEvaluationResult.fromJson(String json) { return switch (json) {
   'pass' => pass,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RuleSuiteEvaluationResult($value)'; } 
  }
 /// Response
-final class RuleSuite {const RuleSuite({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, this.ruleEvaluations, });
+@immutable final class RuleSuite {const RuleSuite({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, this.ruleEvaluations, });
 
 factory RuleSuite.fromJson(Map<String, dynamic> json) { return RuleSuite(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

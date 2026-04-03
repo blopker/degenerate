@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_subnet_comment.dart';import 'tunnel_subnet_ip_network.dart';import 'tunnel_subnet_is_default_network.dart';import 'tunnel_subnet_name.dart';final class ZeroTrustNetworksSubnetCreateWarpRequest {const ZeroTrustNetworksSubnetCreateWarpRequest({this.comment, this.isDefaultNetwork, required this.name, required this.network, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_subnet_comment.dart';import 'tunnel_subnet_ip_network.dart';import 'tunnel_subnet_is_default_network.dart';import 'tunnel_subnet_name.dart';@immutable final class ZeroTrustNetworksSubnetCreateWarpRequest {const ZeroTrustNetworksSubnetCreateWarpRequest({required this.name, required this.network, this.comment, this.isDefaultNetwork, });
 
 factory ZeroTrustNetworksSubnetCreateWarpRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustNetworksSubnetCreateWarpRequest(
   comment: json['comment'] != null ? TunnelSubnetComment.fromJson(json['comment'] as String) : null,

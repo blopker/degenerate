@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerCreateScanResponse409ResultTasksScannedFrom {const UrlscannerCreateScanResponse409ResultTasksScannedFrom({required this.colo});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerCreateScanResponse409ResultTasksScannedFrom {const UrlscannerCreateScanResponse409ResultTasksScannedFrom({required this.colo});
 
 factory UrlscannerCreateScanResponse409ResultTasksScannedFrom.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409ResultTasksScannedFrom(
   colo: json['colo'] as String,

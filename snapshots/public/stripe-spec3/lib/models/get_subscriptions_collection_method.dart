@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSubscriptionsCollectionMethod {const GetSubscriptionsCollectionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSubscriptionsCollectionMethod {const GetSubscriptionsCollectionMethod._(this.value);
 
 factory GetSubscriptionsCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,

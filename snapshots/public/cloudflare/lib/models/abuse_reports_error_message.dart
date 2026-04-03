@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AbuseReportsErrorMessage {const AbuseReportsErrorMessage({this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AbuseReportsErrorMessage {const AbuseReportsErrorMessage({required this.message, this.code, });
 
 factory AbuseReportsErrorMessage.fromJson(Map<String, dynamic> json) { return AbuseReportsErrorMessage(
   code: json['code'],

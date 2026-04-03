@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_create_request_labels.dart';import 'issues_create_request_labels_variant2.dart';final class IssuesCreateRequest {const IssuesCreateRequest({required this.title, this.body, this.assignee, this.milestone, this.labels, this.assignees, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_create_request_labels.dart';import 'issues_create_request_labels_variant2.dart';@immutable final class IssuesCreateRequest {const IssuesCreateRequest({required this.title, this.body, this.assignee, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesCreateRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateRequest(
   title: json['title'],

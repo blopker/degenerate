@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class FineTuneReinforcementHyperparametersComputeMultiplierVariant1 {const FineTuneReinforcementHyperparametersComputeMultiplierVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FineTuneReinforcementHyperparametersComputeMultiplierVariant1 {const FineTuneReinforcementHyperparametersComputeMultiplierVariant1._(this.value);
 
 factory FineTuneReinforcementHyperparametersComputeMultiplierVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorBatchTerminateWorkflowInstancesResponse400Errors {const WorBatchTerminateWorkflowInstancesResponse400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorBatchTerminateWorkflowInstancesResponse400Errors {const WorBatchTerminateWorkflowInstancesResponse400Errors({required this.code, required this.message, });
 
 factory WorBatchTerminateWorkflowInstancesResponse400Errors.fromJson(Map<String, dynamic> json) { return WorBatchTerminateWorkflowInstancesResponse400Errors(
   code: (json['code'] as num).toDouble(),

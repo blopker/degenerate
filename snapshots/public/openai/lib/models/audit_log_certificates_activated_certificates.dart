@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AuditLogCertificatesActivatedCertificates {const AuditLogCertificatesActivatedCertificates({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuditLogCertificatesActivatedCertificates {const AuditLogCertificatesActivatedCertificates({this.id, this.name, });
 
 factory AuditLogCertificatesActivatedCertificates.fromJson(Map<String, dynamic> json) { return AuditLogCertificatesActivatedCertificates(
   id: json['id'] as String?,

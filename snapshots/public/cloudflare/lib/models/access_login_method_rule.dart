@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_login_method_rule_login_method.dart';/// Matches a specific identity provider id.
-final class AccessLoginMethodRule {const AccessLoginMethodRule({required this.loginMethod});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_login_method_rule_login_method.dart';/// Matches a specific identity provider id.
+@immutable final class AccessLoginMethodRule {const AccessLoginMethodRule({required this.loginMethod});
 
 factory AccessLoginMethodRule.fromJson(Map<String, dynamic> json) { return AccessLoginMethodRule(
   loginMethod: AccessLoginMethodRuleLoginMethod.fromJson(json['login_method'] as Map<String, dynamic>),

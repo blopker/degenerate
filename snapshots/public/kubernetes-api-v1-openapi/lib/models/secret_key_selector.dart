@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// SecretKeySelector selects a key of a Secret.
-final class SecretKeySelector {const SecretKeySelector({this.key = '', this.name = '', this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretKeySelector selects a key of a Secret.
+@immutable final class SecretKeySelector {const SecretKeySelector({this.key = '', this.name = '', this.optional, });
 
 factory SecretKeySelector.fromJson(Map<String, dynamic> json) { return SecretKeySelector(
   key: json['key'] as String,

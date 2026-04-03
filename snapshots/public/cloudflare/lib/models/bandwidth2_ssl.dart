@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A break down of bytes served over HTTPS.
-final class Bandwidth2Ssl {const Bandwidth2Ssl({this.encrypted, this.unencrypted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A break down of bytes served over HTTPS.
+@immutable final class Bandwidth2Ssl {const Bandwidth2Ssl({this.encrypted, this.unencrypted, });
 
 factory Bandwidth2Ssl.fromJson(Map<String, dynamic> json) { return Bandwidth2Ssl(
   encrypted: json['encrypted'] != null ? (json['encrypted'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodDataAlma {const PostSetupIntentsRequestPaymentMethodDataAlma();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataAlma {const PostSetupIntentsRequestPaymentMethodDataAlma();
 
 factory PostSetupIntentsRequestPaymentMethodDataAlma.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataAlma(
 

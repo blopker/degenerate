@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_accounts_account_id_logpush_jobs_job_id_response_result.dart';import 'logpush_messages2.dart';final class DeleteAccountsAccountIdLogpushJobsJobIdResponse {const DeleteAccountsAccountIdLogpushJobsJobIdResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_accounts_account_id_logpush_jobs_job_id_response_result.dart';import 'logpush_messages2.dart';@immutable final class DeleteAccountsAccountIdLogpushJobsJobIdResponse {const DeleteAccountsAccountIdLogpushJobsJobIdResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DeleteAccountsAccountIdLogpushJobsJobIdResponse.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountIdLogpushJobsJobIdResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),

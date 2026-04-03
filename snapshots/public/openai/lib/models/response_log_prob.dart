@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log
 /// a particular token at a given position in the sequence. Less-negative (higher)
 /// logprob values indicate greater model confidence in that token choice.
 /// 
-final class ResponseLogProb {const ResponseLogProb({required this.token, required this.logprob, this.topLogprobs, });
+@immutable final class ResponseLogProb {const ResponseLogProb({required this.token, required this.logprob, this.topLogprobs, });
 
 factory ResponseLogProb.fromJson(Map<String, dynamic> json) { return ResponseLogProb(
   token: json['token'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_billing.dart';import 'post_issuing_cardholders_request_company.dart';import 'post_issuing_cardholders_request_individual.dart';import 'post_issuing_cardholders_request_spending_controls.dart';final class PostIssuingCardholdersRequestPreferredLocales {const PostIssuingCardholdersRequestPreferredLocales._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_billing.dart';import 'post_issuing_cardholders_request_company.dart';import 'post_issuing_cardholders_request_individual.dart';import 'post_issuing_cardholders_request_spending_controls.dart';@immutable final class PostIssuingCardholdersRequestPreferredLocales {const PostIssuingCardholdersRequestPreferredLocales._(this.value);
 
 factory PostIssuingCardholdersRequestPreferredLocales.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardholdersRequestPreferredLocales($value)'; } 
  }
 /// Specifies whether to permit authorizations on this cardholder's cards. Defaults to `active`.
-final class PostIssuingCardholdersRequestStatus {const PostIssuingCardholdersRequestStatus._(this.value);
+@immutable final class PostIssuingCardholdersRequestStatus {const PostIssuingCardholdersRequestStatus._(this.value);
 
 factory PostIssuingCardholdersRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardholdersRequestStatus($value)'; } 
  }
 /// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
-final class PostIssuingCardholdersRequestType {const PostIssuingCardholdersRequestType._(this.value);
+@immutable final class PostIssuingCardholdersRequestType {const PostIssuingCardholdersRequestType._(this.value);
 
 factory PostIssuingCardholdersRequestType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardholdersRequestType($value)'; } 
  }
-final class PostIssuingCardholdersRequest {const PostIssuingCardholdersRequest({required this.billing, this.company, this.email, this.expand, this.individual, this.metadata, required this.name, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, this.type, });
+@immutable final class PostIssuingCardholdersRequest {const PostIssuingCardholdersRequest({required this.billing, required this.name, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, this.type, });
 
 factory PostIssuingCardholdersRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequest(
   billing: PostIssuingCardholdersRequestBilling.fromJson(json['billing'] as Map<String, dynamic>),

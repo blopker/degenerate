@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_routing_summary_by_dkim_response_result.dart';final class RadarGetEmailRoutingSummaryByDkimResponse {const RadarGetEmailRoutingSummaryByDkimResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_dkim_response_result.dart';@immutable final class RadarGetEmailRoutingSummaryByDkimResponse {const RadarGetEmailRoutingSummaryByDkimResponse({required this.result, required this.success, });
 
 factory RadarGetEmailRoutingSummaryByDkimResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByDkimResponse(
   result: RadarGetEmailRoutingSummaryByDkimResponseResult.fromJson(json['result'] as Map<String, dynamic>),

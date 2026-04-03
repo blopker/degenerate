@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice.dart';import 'invoices_resource_from_invoice_invoice.dart';/// 
-final class InvoicesResourceFromInvoice {const InvoicesResourceFromInvoice({required this.action, required this.invoice, });
+@immutable final class InvoicesResourceFromInvoice {const InvoicesResourceFromInvoice({required this.action, required this.invoice, });
 
 factory InvoicesResourceFromInvoice.fromJson(Map<String, dynamic> json) { return InvoicesResourceFromInvoice(
   action: json['action'] as String,

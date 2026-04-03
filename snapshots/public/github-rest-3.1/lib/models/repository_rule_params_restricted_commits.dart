@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Restricted commit
-final class RepositoryRuleParamsRestrictedCommits {const RepositoryRuleParamsRestrictedCommits({required this.oid, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restricted commit
+@immutable final class RepositoryRuleParamsRestrictedCommits {const RepositoryRuleParamsRestrictedCommits({required this.oid, this.reason, });
 
 factory RepositoryRuleParamsRestrictedCommits.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsRestrictedCommits(
   oid: json['oid'] as String,

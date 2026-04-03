@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanHarResponse4042Task {const UrlscannerGetScanHarResponse4042Task({required this.status, required this.time, required this.url, required this.uuid, required this.visibility, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponse4042Task {const UrlscannerGetScanHarResponse4042Task({required this.status, required this.time, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerGetScanHarResponse4042Task.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse4042Task(
   status: json['status'] as String,

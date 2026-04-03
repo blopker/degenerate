@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ToolChoiceVariant1CustomCustom {const Prompt43ToolChoiceVariant1CustomCustom({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ToolChoiceVariant1CustomCustom {const Prompt43ToolChoiceVariant1CustomCustom({required this.name});
 
 factory Prompt43ToolChoiceVariant1CustomCustom.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1CustomCustom(
   name: json['name'] as String,

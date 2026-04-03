@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dls_messages2_source.dart';final class DlsMessages2 {const DlsMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_messages2_source.dart';@immutable final class DlsMessages2 {const DlsMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DlsMessages2.fromJson(Map<String, dynamic> json) { return DlsMessages2(
   code: (json['code'] as num).toInt(),

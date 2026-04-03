@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_request_controller_fees.dart';import 'post_accounts_request_controller_losses.dart';import 'post_accounts_request_controller_stripe_dashboard.dart';final class PostAccountsRequestControllerRequirementCollection {const PostAccountsRequestControllerRequirementCollection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_controller_fees.dart';import 'post_accounts_request_controller_losses.dart';import 'post_accounts_request_controller_stripe_dashboard.dart';@immutable final class PostAccountsRequestControllerRequirementCollection {const PostAccountsRequestControllerRequirementCollection._(this.value);
 
 factory PostAccountsRequestControllerRequirementCollection.fromJson(String json) { return switch (json) {
   'application' => application,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAccountsRequestControllerRequirementCollection($value)'; } 
  }
 /// A hash of configuration describing the account controller's attributes.
-final class PostAccountsRequestController {const PostAccountsRequestController({this.fees, this.losses, this.requirementCollection, this.stripeDashboard, });
+@immutable final class PostAccountsRequestController {const PostAccountsRequestController({this.fees, this.losses, this.requirementCollection, this.stripeDashboard, });
 
 factory PostAccountsRequestController.fromJson(Map<String, dynamic> json) { return PostAccountsRequestController(
   fees: json['fees'] != null ? PostAccountsRequestControllerFees.fromJson(json['fees'] as Map<String, dynamic>) : null,

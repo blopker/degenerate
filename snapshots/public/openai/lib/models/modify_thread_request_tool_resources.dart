@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'modify_thread_request_tool_resources_code_interpreter.dart';import 'modify_thread_request_tool_resources_file_search.dart';/// A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'modify_thread_request_tool_resources_code_interpreter.dart';import 'modify_thread_request_tool_resources_file_search.dart';/// A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
-final class ModifyThreadRequestToolResources {const ModifyThreadRequestToolResources({this.codeInterpreter, this.fileSearch, });
+@immutable final class ModifyThreadRequestToolResources {const ModifyThreadRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory ModifyThreadRequestToolResources.fromJson(Map<String, dynamic> json) { return ModifyThreadRequestToolResources(
   codeInterpreter: json['code_interpreter'] != null ? ModifyThreadRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,

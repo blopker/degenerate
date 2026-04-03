@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dls_hostname.dart';import 'dls_region_key.dart';import 'dls_routing.dart';final class DlsAccountRegionalHostnamesAccountCreateHostnameRequest {const DlsAccountRegionalHostnamesAccountCreateHostnameRequest({required this.hostname, required this.regionKey, this.routing, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_hostname.dart';import 'dls_region_key.dart';import 'dls_routing.dart';@immutable final class DlsAccountRegionalHostnamesAccountCreateHostnameRequest {const DlsAccountRegionalHostnamesAccountCreateHostnameRequest({required this.hostname, required this.regionKey, this.routing, });
 
 factory DlsAccountRegionalHostnamesAccountCreateHostnameRequest.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
   hostname: DlsHostname.fromJson(json['hostname'] as String),

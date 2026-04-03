@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Order By Direction
-final class AiSearchListInstancesOrderByDirection {const AiSearchListInstancesOrderByDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Direction
+@immutable final class AiSearchListInstancesOrderByDirection {const AiSearchListInstancesOrderByDirection._(this.value);
 
 factory AiSearchListInstancesOrderByDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

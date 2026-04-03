@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_query_alert_list_response500_errors.dart';final class GetEventQueryAlertListResponse500 {const GetEventQueryAlertListResponse500({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_query_alert_list_response500_errors.dart';@immutable final class GetEventQueryAlertListResponse500 {const GetEventQueryAlertListResponse500({required this.errors, required this.result, required this.success, });
 
 factory GetEventQueryAlertListResponse500.fromJson(Map<String, dynamic> json) { return GetEventQueryAlertListResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventQueryAlertListResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),

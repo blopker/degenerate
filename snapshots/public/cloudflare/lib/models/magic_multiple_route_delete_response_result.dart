@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route.dart';final class MagicMultipleRouteDeleteResponseResult {const MagicMultipleRouteDeleteResponseResult({this.deleted, this.deletedRoutes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route.dart';@immutable final class MagicMultipleRouteDeleteResponseResult {const MagicMultipleRouteDeleteResponseResult({this.deleted, this.deletedRoutes, });
 
 factory MagicMultipleRouteDeleteResponseResult.fromJson(Map<String, dynamic> json) { return MagicMultipleRouteDeleteResponseResult(
   deleted: json['deleted'] as bool?,

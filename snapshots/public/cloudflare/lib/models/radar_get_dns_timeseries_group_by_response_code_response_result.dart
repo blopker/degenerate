@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_timeseries_group_by_response_code_response_result_meta.dart';import 'radar_get_dns_timeseries_group_by_response_code_response_result_serie0.dart';final class RadarGetDnsTimeseriesGroupByResponseCodeResponseResult {const RadarGetDnsTimeseriesGroupByResponseCodeResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_response_code_response_result_meta.dart';import 'radar_get_dns_timeseries_group_by_response_code_response_result_serie0.dart';@immutable final class RadarGetDnsTimeseriesGroupByResponseCodeResponseResult {const RadarGetDnsTimeseriesGroupByResponseCodeResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetDnsTimeseriesGroupByResponseCodeResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByResponseCodeResponseResult(
   meta: RadarGetDnsTimeseriesGroupByResponseCodeResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

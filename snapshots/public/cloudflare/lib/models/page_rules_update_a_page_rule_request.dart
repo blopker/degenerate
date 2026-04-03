@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_actions2.dart';import 'zones_priority.dart';import 'zones_status.dart';import 'zones_target.dart';final class PageRulesUpdateAPageRuleRequest {const PageRulesUpdateAPageRuleRequest({required this.actions, this.priority, this.status, required this.targets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_actions2.dart';import 'zones_priority.dart';import 'zones_status.dart';import 'zones_target.dart';@immutable final class PageRulesUpdateAPageRuleRequest {const PageRulesUpdateAPageRuleRequest({required this.actions, required this.targets, this.priority, this.status, });
 
 factory PageRulesUpdateAPageRuleRequest.fromJson(Map<String, dynamic> json) { return PageRulesUpdateAPageRuleRequest(
   actions: (json['actions'] as List<dynamic>).map((e) => ZonesActions2.fromJson(e as Map<String, dynamic>)).toList(),

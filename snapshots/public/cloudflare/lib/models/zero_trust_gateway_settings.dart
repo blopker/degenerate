@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_public_key.dart';import 'zero_trust_gateway_read_only_timestamp.dart';/// Identify the seed ID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_public_key.dart';import 'zero_trust_gateway_read_only_timestamp.dart';/// Identify the seed ID.
 extension type const ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid(String value) {
 factory ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid.fromJson(String json) => ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid(json);
 
 String toJson() => value;
 
 }
-final class ZeroTrustGatewaySettings {const ZeroTrustGatewaySettings({this.createdAt, this.publicKey, this.seedId, this.updatedAt, });
+@immutable final class ZeroTrustGatewaySettings {const ZeroTrustGatewaySettings({this.createdAt, this.publicKey, this.seedId, this.updatedAt, });
 
 factory ZeroTrustGatewaySettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySettings(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,

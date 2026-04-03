@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the type of certificate in the trust chain.
-final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of certificate in the trust chain.
+@immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType._(this.value);
 
 factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType.fromJson(String json) { return switch (json) {
   'ROOT_CERTIFICATE' => rootCertificate,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType($value)'; } 
  }
 /// The current revocation status of a Certificate Authority (CA) certificate.
-final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus._(this.value);
+@immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus._(this.value);
 
 factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus.fromJson(String json) { return switch (json) {
   'NOT_REVOKED' => notRevoked,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus($value)'; } 
  }
-final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated({required this.certificateRecordType, required this.name, required this.revocationStatus, required this.sha256Fingerprint, });
+@immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated({required this.certificateRecordType, required this.name, required this.revocationStatus, required this.sha256Fingerprint, });
 
 factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated.fromJson(Map<String, dynamic> json) { return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(
   certificateRecordType: RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType.fromJson(json['certificateRecordType'] as String),

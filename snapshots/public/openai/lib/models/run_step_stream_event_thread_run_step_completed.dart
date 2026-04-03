@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_object.dart';final class RunStepStreamEventThreadRunStepCompletedEvent {const RunStepStreamEventThreadRunStepCompletedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepCompletedEvent {const RunStepStreamEventThreadRunStepCompletedEvent._(this.value);
 
 factory RunStepStreamEventThreadRunStepCompletedEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.completed' => threadRunStepCompleted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepStreamEventThreadRunStepCompletedEvent($value)'; } 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
-final class RunStepStreamEventThreadRunStepCompleted {const RunStepStreamEventThreadRunStepCompleted({required this.event, required this.data, });
+@immutable final class RunStepStreamEventThreadRunStepCompleted {const RunStepStreamEventThreadRunStepCompleted({required this.event, required this.data, });
 
 factory RunStepStreamEventThreadRunStepCompleted.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepCompleted(
   event: RunStepStreamEventThreadRunStepCompletedEvent.fromJson(json['event'] as String),

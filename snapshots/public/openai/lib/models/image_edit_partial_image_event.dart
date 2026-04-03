@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `image_edit.partial_image`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `image_edit.partial_image`.
 /// 
-final class ImageEditPartialImageEventType {const ImageEditPartialImageEventType._(this.value);
+@immutable final class ImageEditPartialImageEventType {const ImageEditPartialImageEventType._(this.value);
 
 factory ImageEditPartialImageEventType.fromJson(String json) { return switch (json) {
   'image_edit.partial_image' => imageEditPartialImage,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The size of the requested edited image.
 /// 
-final class ImageEditPartialImageEventSize {const ImageEditPartialImageEventSize._(this.value);
+@immutable final class ImageEditPartialImageEventSize {const ImageEditPartialImageEventSize._(this.value);
 
 factory ImageEditPartialImageEventSize.fromJson(String json) { return switch (json) {
   '1024x1024' => $1024x1024,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The quality setting for the requested edited image.
 /// 
-final class ImageEditPartialImageEventQuality {const ImageEditPartialImageEventQuality._(this.value);
+@immutable final class ImageEditPartialImageEventQuality {const ImageEditPartialImageEventQuality._(this.value);
 
 factory ImageEditPartialImageEventQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The background setting for the requested edited image.
 /// 
-final class ImageEditPartialImageEventBackground {const ImageEditPartialImageEventBackground._(this.value);
+@immutable final class ImageEditPartialImageEventBackground {const ImageEditPartialImageEventBackground._(this.value);
 
 factory ImageEditPartialImageEventBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output format for the requested edited image.
 /// 
-final class ImageEditPartialImageEventOutputFormat {const ImageEditPartialImageEventOutputFormat._(this.value);
+@immutable final class ImageEditPartialImageEventOutputFormat {const ImageEditPartialImageEventOutputFormat._(this.value);
 
 factory ImageEditPartialImageEventOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -147,7 +147,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when a partial image is available during image editing streaming.
 /// 
-final class ImageEditPartialImageEvent {const ImageEditPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
+@immutable final class ImageEditPartialImageEvent {const ImageEditPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
 
 factory ImageEditPartialImageEvent.fromJson(Map<String, dynamic> json) { return ImageEditPartialImageEvent(
   type: ImageEditPartialImageEventType.fromJson(json['type'] as String),

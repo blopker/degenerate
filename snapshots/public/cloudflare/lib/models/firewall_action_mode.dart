@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default action performed by the rules in the WAF package.
-final class FirewallActionMode {const FirewallActionMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default action performed by the rules in the WAF package.
+@immutable final class FirewallActionMode {const FirewallActionMode._(this.value);
 
 factory FirewallActionMode.fromJson(String json) { return switch (json) {
   'simulate' => simulate,

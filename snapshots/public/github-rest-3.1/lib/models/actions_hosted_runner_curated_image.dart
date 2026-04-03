@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The image provider.
-final class ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image provider.
+@immutable final class ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource._(this.value);
 
 factory ActionsHostedRunnerCuratedImageSource.fromJson(String json) { return switch (json) {
   'github' => github,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActionsHostedRunnerCuratedImageSource($value)'; } 
  }
 /// Provides details of a hosted runner image
-final class ActionsHostedRunnerCuratedImage {const ActionsHostedRunnerCuratedImage({required this.id, required this.platform, required this.sizeGb, required this.displayName, required this.source, });
+@immutable final class ActionsHostedRunnerCuratedImage {const ActionsHostedRunnerCuratedImage({required this.id, required this.platform, required this.sizeGb, required this.displayName, required this.source, });
 
 factory ActionsHostedRunnerCuratedImage.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerCuratedImage(
   id: json['id'] as String,

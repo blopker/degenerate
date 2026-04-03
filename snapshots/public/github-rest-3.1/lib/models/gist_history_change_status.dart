@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GistHistoryChangeStatus {const GistHistoryChangeStatus({this.total, this.additions, this.deletions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistHistoryChangeStatus {const GistHistoryChangeStatus({this.total, this.additions, this.deletions, });
 
 factory GistHistoryChangeStatus.fromJson(Map<String, dynamic> json) { return GistHistoryChangeStatus(
   total: json['total'] != null ? (json['total'] as num).toInt() : null,

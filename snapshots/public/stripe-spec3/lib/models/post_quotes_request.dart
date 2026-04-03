@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_request_application_fee_amount.dart';import 'post_quotes_request_application_fee_percent.dart';import 'post_quotes_request_automatic_tax.dart';import 'post_quotes_request_default_tax_rates.dart';import 'post_quotes_request_description.dart';import 'post_quotes_request_discounts.dart';import 'post_quotes_request_discounts_variant1.dart';import 'post_quotes_request_footer.dart';import 'post_quotes_request_from_quote.dart';import 'post_quotes_request_header.dart';import 'post_quotes_request_invoice_settings.dart';import 'post_quotes_request_line_items.dart';import 'post_quotes_request_on_behalf_of.dart';import 'post_quotes_request_subscription_data.dart';import 'post_quotes_request_transfer_data.dart';import 'transfer_data_specs3.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay invoices at the end of the subscription cycle or at invoice finalization using the default payment method attached to the subscription or customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-final class PostQuotesRequestCollectionMethod {const PostQuotesRequestCollectionMethod._(this.value);
+@immutable final class PostQuotesRequestCollectionMethod {const PostQuotesRequestCollectionMethod._(this.value);
 
 factory PostQuotesRequestCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestCollectionMethod($value)'; } 
  }
-final class PostQuotesRequest {const PostQuotesRequest({this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.collectionMethod, this.customer, this.customerAccount, this.defaultTaxRates, this.description, this.discounts, this.expand, this.expiresAt, this.footer, this.fromQuote, this.header, this.invoiceSettings, this.lineItems, this.metadata, this.onBehalfOf, this.subscriptionData, this.testClock, this.transferData, });
+@immutable final class PostQuotesRequest {const PostQuotesRequest({this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.collectionMethod, this.customer, this.customerAccount, this.defaultTaxRates, this.description, this.discounts, this.expand, this.expiresAt, this.footer, this.fromQuote, this.header, this.invoiceSettings, this.lineItems, this.metadata, this.onBehalfOf, this.subscriptionData, this.testClock, this.transferData, });
 
 factory PostQuotesRequest.fromJson(Map<String, dynamic> json) { return PostQuotesRequest(
   applicationFeeAmount: json['application_fee_amount'] != null ? OneOf2.parse(json['application_fee_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostQuotesRequestApplicationFeeAmountVariant2.fromJson(v as String),) : null,

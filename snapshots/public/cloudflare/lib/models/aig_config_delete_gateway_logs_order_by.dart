@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayLogsOrderBy {const AigConfigDeleteGatewayLogsOrderBy._(this.value);
 
 factory AigConfigDeleteGatewayLogsOrderBy.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,

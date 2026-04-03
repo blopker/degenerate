@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_flags.dart';final class OrganizationMeta {const OrganizationMeta({this.flags, this.managedBy, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_flags.dart';@immutable final class OrganizationMeta {const OrganizationMeta({this.flags, this.managedBy, this.additionalProperties = const {}, });
 
 factory OrganizationMeta.fromJson(Map<String, dynamic> json) { return OrganizationMeta(
   flags: json['flags'] != null ? OrganizationFlags.fromJson(json['flags'] as Map<String, dynamic>) : null,

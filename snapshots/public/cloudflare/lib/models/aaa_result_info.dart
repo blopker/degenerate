@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides information about the result of the request, including count and cursor.
-final class AaaResultInfo {const AaaResultInfo({this.count, this.cursor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides information about the result of the request, including count and cursor.
+@immutable final class AaaResultInfo {const AaaResultInfo({this.count, this.cursor, });
 
 factory AaaResultInfo.fromJson(Map<String, dynamic> json) { return AaaResultInfo(
   count: json['count'] as String?,

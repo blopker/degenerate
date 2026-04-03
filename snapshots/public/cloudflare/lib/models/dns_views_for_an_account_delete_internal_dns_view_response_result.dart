@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_settings_identifier.dart';final class DnsViewsForAnAccountDeleteInternalDnsViewResponseResult {const DnsViewsForAnAccountDeleteInternalDnsViewResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_identifier.dart';@immutable final class DnsViewsForAnAccountDeleteInternalDnsViewResponseResult {const DnsViewsForAnAccountDeleteInternalDnsViewResponseResult({this.id});
 
 factory DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(Map<String, dynamic> json) { return DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(
   id: json['id'] != null ? DnsSettingsIdentifier.fromJson(json['id'] as String) : null,

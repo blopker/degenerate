@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetPostQuantumTlsSupportResponseResult {const RadarGetPostQuantumTlsSupportResponseResult({required this.host, required this.kex, required this.kexName, required this.pq, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetPostQuantumTlsSupportResponseResult {const RadarGetPostQuantumTlsSupportResponseResult({required this.host, required this.kex, required this.kexName, required this.pq, });
 
 factory RadarGetPostQuantumTlsSupportResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetPostQuantumTlsSupportResponseResult(
   host: json['host'] as String,

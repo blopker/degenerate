@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityCenterIssuePayload {const SecurityCenterIssuePayload({this.detectionMethod, this.zoneTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterIssuePayload {const SecurityCenterIssuePayload({this.detectionMethod, this.zoneTag, });
 
 factory SecurityCenterIssuePayload.fromJson(Map<String, dynamic> json) { return SecurityCenterIssuePayload(
   detectionMethod: json['detection_method'] as String?,

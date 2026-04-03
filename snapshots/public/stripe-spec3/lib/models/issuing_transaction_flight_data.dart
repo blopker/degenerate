@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_transaction_flight_data_leg.dart';/// 
-final class IssuingTransactionFlightData {const IssuingTransactionFlightData({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });
+@immutable final class IssuingTransactionFlightData {const IssuingTransactionFlightData({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });
 
 factory IssuingTransactionFlightData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFlightData(
   departureAt: json['departure_at'] != null ? (json['departure_at'] as num).toInt() : null,

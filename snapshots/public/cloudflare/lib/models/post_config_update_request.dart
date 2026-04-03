@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';final class PostConfigUpdateRequest {const PostConfigUpdateRequest({this.frequency, this.ips, this.ports, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';@immutable final class PostConfigUpdateRequest {const PostConfigUpdateRequest({this.frequency, this.ips, this.ports, });
 
 factory PostConfigUpdateRequest.fromJson(Map<String, dynamic> json) { return PostConfigUpdateRequest(
   frequency: json['frequency'] != null ? Frequency2.fromJson(json['frequency'] as num) : null,

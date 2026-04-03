@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline.dart';final class AccountsByAccountIdPipelinesDeprecatedResponse2 {const AccountsByAccountIdPipelinesDeprecatedResponse2({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedResponse2 {const AccountsByAccountIdPipelinesDeprecatedResponse2({required this.result, required this.success, });
 
 factory AccountsByAccountIdPipelinesDeprecatedResponse2.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedResponse2(
   result: CloudflarePipelinesWorkersPipelinesPipeline.fromJson(json['result'] as Map<String, dynamic>),

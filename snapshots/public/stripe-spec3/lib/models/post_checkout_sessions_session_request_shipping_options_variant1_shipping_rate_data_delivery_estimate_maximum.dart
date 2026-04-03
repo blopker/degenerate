@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit._(this.value);
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit.fromJson(String json) { return switch (json) {
   'business_day' => businessDay,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit($value)'; } 
  }
-final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum({required this.unit, required this.value, });
+@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum({required this.unit, required this.value, });
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum(
   unit: PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximumUnit.fromJson(json['unit'] as String),

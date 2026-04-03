@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnEventMetadata {const MconnEventMetadata({required this.a, required this.k, required this.n, required this.t, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnEventMetadata {const MconnEventMetadata({required this.a, required this.k, required this.n, required this.t, });
 
 factory MconnEventMetadata.fromJson(Map<String, dynamic> json) { return MconnEventMetadata(
   a: (json['a'] as num).toDouble(),

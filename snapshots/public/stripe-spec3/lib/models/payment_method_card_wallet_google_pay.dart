@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodCardWalletGooglePay {const PaymentMethodCardWalletGooglePay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodCardWalletGooglePay {const PaymentMethodCardWalletGooglePay();
 
 factory PaymentMethodCardWalletGooglePay.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWalletGooglePay(
 

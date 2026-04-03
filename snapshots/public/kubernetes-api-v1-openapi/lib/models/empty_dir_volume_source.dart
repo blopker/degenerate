@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// Represents an empty directory for a pod. Empty directory volumes support ownership management and SELinux relabeling.
-final class EmptyDirVolumeSource {const EmptyDirVolumeSource({this.medium, this.sizeLimit, });
+@immutable final class EmptyDirVolumeSource {const EmptyDirVolumeSource({this.medium, this.sizeLimit, });
 
 factory EmptyDirVolumeSource.fromJson(Map<String, dynamic> json) { return EmptyDirVolumeSource(
   medium: json['medium'] as String?,

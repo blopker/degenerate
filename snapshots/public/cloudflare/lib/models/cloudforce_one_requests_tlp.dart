@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The CISA defined Traffic Light Protocol (TLP).
-final class CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The CISA defined Traffic Light Protocol (TLP).
+@immutable final class CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp._(this.value);
 
 factory CloudforceOneRequestsTlp.fromJson(String json) { return switch (json) {
   'clear' => clear,

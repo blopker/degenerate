@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindD1 {const WorkersBindingKindD1({required this.id, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindD1 {const WorkersBindingKindD1({required this.id, required this.name, required this.type, });
 
 factory WorkersBindingKindD1.fromJson(Map<String, dynamic> json) { return WorkersBindingKindD1(
   id: json['id'] as String,

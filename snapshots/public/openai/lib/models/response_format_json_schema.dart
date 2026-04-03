@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response_format_json_schema_json_schema.dart';/// The type of response format being defined. Always `json_schema`.
-final class ResponseFormatJsonSchemaType {const ResponseFormatJsonSchemaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_schema_json_schema.dart';/// The type of response format being defined. Always `json_schema`.
+@immutable final class ResponseFormatJsonSchemaType {const ResponseFormatJsonSchemaType._(this.value);
 
 factory ResponseFormatJsonSchemaType.fromJson(String json) { return switch (json) {
   'json_schema' => jsonSchema,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
 /// 
-final class ResponseFormatJsonSchema {const ResponseFormatJsonSchema({required this.type, required this.jsonSchema, });
+@immutable final class ResponseFormatJsonSchema {const ResponseFormatJsonSchema({required this.type, required this.jsonSchema, });
 
 factory ResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return ResponseFormatJsonSchema(
   type: ResponseFormatJsonSchemaType.fromJson(json['type'] as String),

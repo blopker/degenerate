@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages.dart';final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({this.frequencyPenalty, this.ignoreEos, required this.image, this.maxTokens = 512, required this.messages, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages.dart';@immutable final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({required this.image, required this.messages, this.frequencyPenalty, this.ignoreEos, this.maxTokens = 512, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
 factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

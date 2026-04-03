@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(String json) { return switch (json) {
   'digital_goods' => digitalGoods,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory($value)'; } 
  }
-final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
+@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
   category: json['category'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(json['category'] as String) : null,

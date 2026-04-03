@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of source
-final class MqEventSourceVectorizeType {const MqEventSourceVectorizeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
+@immutable final class MqEventSourceVectorizeType {const MqEventSourceVectorizeType._(this.value);
 
 factory MqEventSourceVectorizeType.fromJson(String json) { return switch (json) {
   'vectorize' => vectorize,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventSourceVectorizeType($value)'; } 
  }
-final class MqEventSourceVectorize {const MqEventSourceVectorize({this.type});
+@immutable final class MqEventSourceVectorize {const MqEventSourceVectorize({this.type});
 
 factory MqEventSourceVectorize.fromJson(Map<String, dynamic> json) { return MqEventSourceVectorize(
   type: json['type'] != null ? MqEventSourceVectorizeType.fromJson(json['type'] as String) : null,

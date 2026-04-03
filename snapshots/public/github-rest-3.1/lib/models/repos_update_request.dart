@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_update_request_security_and_analysis.dart';/// The visibility of the repository.
-final class ReposUpdateRequestVisibility {const ReposUpdateRequestVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_request_security_and_analysis.dart';/// The visibility of the repository.
+@immutable final class ReposUpdateRequestVisibility {const ReposUpdateRequestVisibility._(this.value);
 
 factory ReposUpdateRequestVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class ReposUpdateRequestSquashMergeCommitTitle {const ReposUpdateRequestSquashMergeCommitTitle._(this.value);
+@immutable final class ReposUpdateRequestSquashMergeCommitTitle {const ReposUpdateRequestSquashMergeCommitTitle._(this.value);
 
 factory ReposUpdateRequestSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final class ReposUpdateRequestSquashMergeCommitMessage {const ReposUpdateRequestSquashMergeCommitMessage._(this.value);
+@immutable final class ReposUpdateRequestSquashMergeCommitMessage {const ReposUpdateRequestSquashMergeCommitMessage._(this.value);
 
 factory ReposUpdateRequestSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class ReposUpdateRequestMergeCommitTitle {const ReposUpdateRequestMergeCommitTitle._(this.value);
+@immutable final class ReposUpdateRequestMergeCommitTitle {const ReposUpdateRequestMergeCommitTitle._(this.value);
 
 factory ReposUpdateRequestMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -122,7 +122,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final class ReposUpdateRequestMergeCommitMessage {const ReposUpdateRequestMergeCommitMessage._(this.value);
+@immutable final class ReposUpdateRequestMergeCommitMessage {const ReposUpdateRequestMergeCommitMessage._(this.value);
 
 factory ReposUpdateRequestMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -149,7 +149,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposUpdateRequestMergeCommitMessage($value)'; } 
  }
-final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private = false, this.visibility, this.securityAndAnalysis, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.isTemplate = false, this.defaultBranch, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived = false, this.allowForking = false, this.webCommitSignoffRequired = false, });
+@immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private = false, this.visibility, this.securityAndAnalysis, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.isTemplate = false, this.defaultBranch, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived = false, this.allowForking = false, this.webCommitSignoffRequired = false, });
 
 factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRequest(
   name: json['name'] as String?,

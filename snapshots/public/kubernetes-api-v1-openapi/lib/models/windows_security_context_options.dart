@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// WindowsSecurityContextOptions contain Windows-specific options and credentials.
-final class WindowsSecurityContextOptions {const WindowsSecurityContextOptions({this.gmsaCredentialSpec, this.gmsaCredentialSpecName, this.hostProcess, this.runAsUserName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// WindowsSecurityContextOptions contain Windows-specific options and credentials.
+@immutable final class WindowsSecurityContextOptions {const WindowsSecurityContextOptions({this.gmsaCredentialSpec, this.gmsaCredentialSpecName, this.hostProcess, this.runAsUserName, });
 
 factory WindowsSecurityContextOptions.fromJson(Map<String, dynamic> json) { return WindowsSecurityContextOptions(
   gmsaCredentialSpec: json['gmsaCredentialSpec'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazFormSubmissionRuleSettings {const ZarazFormSubmissionRuleSettings({required this.selector, required this.validate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazFormSubmissionRuleSettings {const ZarazFormSubmissionRuleSettings({required this.selector, required this.validate, });
 
 factory ZarazFormSubmissionRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazFormSubmissionRuleSettings(
   selector: json['selector'] as String,

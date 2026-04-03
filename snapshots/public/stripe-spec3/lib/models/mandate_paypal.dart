@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandatePaypal {const MandatePaypal({this.billingAgreementId, this.payerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandatePaypal {const MandatePaypal({this.billingAgreementId, this.payerId, });
 
 factory MandatePaypal.fromJson(Map<String, dynamic> json) { return MandatePaypal(
   billingAgreementId: json['billing_agreement_id'] as String?,

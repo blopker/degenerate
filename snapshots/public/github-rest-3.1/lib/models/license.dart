@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// License
-final class License {const License({required this.key, required this.name, required this.spdxId, required this.url, required this.nodeId, required this.htmlUrl, required this.description, required this.implementation, required this.permissions, required this.conditions, required this.limitations, required this.body, required this.featured, });
+@immutable final class License {const License({required this.key, required this.name, required this.spdxId, required this.url, required this.nodeId, required this.htmlUrl, required this.description, required this.implementation, required this.permissions, required this.conditions, required this.limitations, required this.body, required this.featured, });
 
 factory License.fromJson(Map<String, dynamic> json) { return License(
   key: json['key'] as String,

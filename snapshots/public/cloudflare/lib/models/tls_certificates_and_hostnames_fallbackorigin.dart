@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_origin.dart';/// Status of the fallback origin's activation.
-final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -51,7 +51,7 @@ factory TlsCertificatesAndHostnamesUpdatedAt.fromJson(String json) => TlsCertifi
 String toJson() => value.toIso8601String();
 
 }
-final class TlsCertificatesAndHostnamesFallbackorigin {const TlsCertificatesAndHostnamesFallbackorigin({this.createdAt, this.errors, this.origin, this.status, this.updatedAt, });
+@immutable final class TlsCertificatesAndHostnamesFallbackorigin {const TlsCertificatesAndHostnamesFallbackorigin({this.createdAt, this.errors, this.origin, this.status, this.updatedAt, });
 
 factory TlsCertificatesAndHostnamesFallbackorigin.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesFallbackorigin(
   createdAt: json['created_at'] != null ? TlsCertificatesAndHostnamesSchemasCreatedAt.fromJson(json['created_at'] as String) : null,

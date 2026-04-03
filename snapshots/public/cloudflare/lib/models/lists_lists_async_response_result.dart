@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_operation_id.dart';final class ListsListsAsyncResponseResult {const ListsListsAsyncResponseResult({required this.operationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_operation_id.dart';@immutable final class ListsListsAsyncResponseResult {const ListsListsAsyncResponseResult({required this.operationId});
 
 factory ListsListsAsyncResponseResult.fromJson(Map<String, dynamic> json) { return ListsListsAsyncResponseResult(
   operationId: ListsOperationId.fromJson(json['operation_id'] as String),

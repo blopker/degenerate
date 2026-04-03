@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pod_affinity_term.dart';/// The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
-final class WeightedPodAffinityTerm {const WeightedPodAffinityTerm({required this.podAffinityTerm, this.weight = 0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_affinity_term.dart';/// The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
+@immutable final class WeightedPodAffinityTerm {const WeightedPodAffinityTerm({required this.podAffinityTerm, this.weight = 0, });
 
 factory WeightedPodAffinityTerm.fromJson(Map<String, dynamic> json) { return WeightedPodAffinityTerm(
   podAffinityTerm: PodAffinityTerm.fromJson(json['podAffinityTerm'] as Map<String, dynamic>),

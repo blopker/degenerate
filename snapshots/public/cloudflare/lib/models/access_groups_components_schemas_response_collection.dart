@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_groups.dart';final class AccessGroupsComponentsSchemasResponseCollection {const AccessGroupsComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_groups.dart';@immutable final class AccessGroupsComponentsSchemasResponseCollection {const AccessGroupsComponentsSchemasResponseCollection({this.result});
 
 factory AccessGroupsComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessGroupsComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessComponentsSchemasGroups.fromJson(e as Map<String, dynamic>)).toList(),

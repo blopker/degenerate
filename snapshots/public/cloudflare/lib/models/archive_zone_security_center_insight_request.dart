@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ArchiveZoneSecurityCenterInsightRequest {const ArchiveZoneSecurityCenterInsightRequest({this.dismiss = true});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArchiveZoneSecurityCenterInsightRequest {const ArchiveZoneSecurityCenterInsightRequest({this.dismiss = true});
 
 factory ArchiveZoneSecurityCenterInsightRequest.fromJson(Map<String, dynamic> json) { return ArchiveZoneSecurityCenterInsightRequest(
   dismiss: json.containsKey('dismiss') ? json['dismiss'] as bool : true,

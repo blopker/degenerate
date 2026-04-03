@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the type of metadata property to index.
-final class VectorizeCreateMetadataIndexRequestIndexType {const VectorizeCreateMetadataIndexRequestIndexType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of metadata property to index.
+@immutable final class VectorizeCreateMetadataIndexRequestIndexType {const VectorizeCreateMetadataIndexRequestIndexType._(this.value);
 
 factory VectorizeCreateMetadataIndexRequestIndexType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorizeCreateMetadataIndexRequestIndexType($value)'; } 
  }
-final class VectorizeCreateMetadataIndexRequest {const VectorizeCreateMetadataIndexRequest({required this.indexType, required this.propertyName, });
+@immutable final class VectorizeCreateMetadataIndexRequest {const VectorizeCreateMetadataIndexRequest({required this.indexType, required this.propertyName, });
 
 factory VectorizeCreateMetadataIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeCreateMetadataIndexRequest(
   indexType: VectorizeCreateMetadataIndexRequestIndexType.fromJson(json['indexType'] as String),

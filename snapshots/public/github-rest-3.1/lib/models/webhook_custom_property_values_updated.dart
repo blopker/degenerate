@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookCustomPropertyValuesUpdatedAction {const WebhookCustomPropertyValuesUpdatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyValuesUpdatedAction {const WebhookCustomPropertyValuesUpdatedAction._(this.value);
 
 factory WebhookCustomPropertyValuesUpdatedAction.fromJson(String json) { return switch (json) {
   'updated' => updated,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCustomPropertyValuesUpdatedAction($value)'; } 
  }
-final class WebhookCustomPropertyValuesUpdated {const WebhookCustomPropertyValuesUpdated({required this.action, this.enterprise, this.installation, required this.repository, required this.organization, this.sender, required this.newPropertyValues, required this.oldPropertyValues, });
+@immutable final class WebhookCustomPropertyValuesUpdated {const WebhookCustomPropertyValuesUpdated({required this.action, required this.repository, required this.organization, required this.newPropertyValues, required this.oldPropertyValues, this.enterprise, this.installation, this.sender, });
 
 factory WebhookCustomPropertyValuesUpdated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyValuesUpdated(
   action: WebhookCustomPropertyValuesUpdatedAction.fromJson(json['action'] as String),

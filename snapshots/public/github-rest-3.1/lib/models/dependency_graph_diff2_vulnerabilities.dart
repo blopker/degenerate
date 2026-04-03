@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependencyGraphDiff2Vulnerabilities {const DependencyGraphDiff2Vulnerabilities({required this.severity, required this.advisoryGhsaId, required this.advisorySummary, required this.advisoryUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphDiff2Vulnerabilities {const DependencyGraphDiff2Vulnerabilities({required this.severity, required this.advisoryGhsaId, required this.advisorySummary, required this.advisoryUrl, });
 
 factory DependencyGraphDiff2Vulnerabilities.fromJson(Map<String, dynamic> json) { return DependencyGraphDiff2Vulnerabilities(
   severity: json['severity'] as String,

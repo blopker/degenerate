@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this PaymentIntent. Possible values are: `duplicate`, `fraudulent`, `requested_by_customer`, or `abandoned`
-final class PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason._(this.value);
+@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason._(this.value);
 
 factory PostPaymentIntentsIntentCancelRequestCancellationReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentCancelRequestCancellationReason($value)'; } 
  }
-final class PostPaymentIntentsIntentCancelRequest {const PostPaymentIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
+@immutable final class PostPaymentIntentsIntentCancelRequest {const PostPaymentIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
 
 factory PostPaymentIntentsIntentCancelRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCancelRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostPaymentIntentsIntentCancelRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,

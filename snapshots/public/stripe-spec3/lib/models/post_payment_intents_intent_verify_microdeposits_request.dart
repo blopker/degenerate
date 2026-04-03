@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentIntentsIntentVerifyMicrodepositsRequest {const PostPaymentIntentsIntentVerifyMicrodepositsRequest({this.amounts, this.clientSecret, this.descriptorCode, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentVerifyMicrodepositsRequest {const PostPaymentIntentsIntentVerifyMicrodepositsRequest({this.amounts, this.clientSecret, this.descriptorCode, this.expand, });
 
 factory PostPaymentIntentsIntentVerifyMicrodepositsRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentVerifyMicrodepositsRequest(
   amounts: (json['amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

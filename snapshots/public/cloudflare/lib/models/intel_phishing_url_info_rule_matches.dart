@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPhishingUrlInfoRuleMatches {const IntelPhishingUrlInfoRuleMatches({this.banning, this.blocking, this.description, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlInfoRuleMatches {const IntelPhishingUrlInfoRuleMatches({this.banning, this.blocking, this.description, this.name, });
 
 factory IntelPhishingUrlInfoRuleMatches.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfoRuleMatches(
   banning: json['banning'] as bool?,

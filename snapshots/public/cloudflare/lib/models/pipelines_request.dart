@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PipelinesRequest {const PipelinesRequest({required this.name, required this.sql, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PipelinesRequest {const PipelinesRequest({required this.name, required this.sql, });
 
 factory PipelinesRequest.fromJson(Map<String, dynamic> json) { return PipelinesRequest(
   name: json['name'] as String,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response.dart';/// The type of the event. Always `response.incomplete`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always `response.incomplete`.
 /// 
-final class ResponseIncompleteEventType {const ResponseIncompleteEventType._(this.value);
+@immutable final class ResponseIncompleteEventType {const ResponseIncompleteEventType._(this.value);
 
 factory ResponseIncompleteEventType.fromJson(String json) { return switch (json) {
   'response.incomplete' => responseIncomplete,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An event that is emitted when a response finishes as incomplete.
 /// 
-final class ResponseIncompleteEvent {const ResponseIncompleteEvent({required this.type, required this.response, required this.sequenceNumber, });
+@immutable final class ResponseIncompleteEvent {const ResponseIncompleteEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseIncompleteEvent.fromJson(Map<String, dynamic> json) { return ResponseIncompleteEvent(
   type: ResponseIncompleteEventType.fromJson(json['type'] as String),

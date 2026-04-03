@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The pod this Toleration is attached to tolerates any taint that matches the triple `<key,value,effect>` using the matching operator `<operator>`.
-final class Toleration {const Toleration({this.effect, this.key, this.$operator, this.tolerationSeconds, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pod this Toleration is attached to tolerates any taint that matches the triple `<key,value,effect>` using the matching operator `<operator>`.
+@immutable final class Toleration {const Toleration({this.effect, this.key, this.$operator, this.tolerationSeconds, this.value, });
 
 factory Toleration.fromJson(Map<String, dynamic> json) { return Toleration(
   effect: json['effect'] as String?,

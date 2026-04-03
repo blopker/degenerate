@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigFilesResponse503Errors {const AutoragConfigFilesResponse503Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesResponse503Errors {const AutoragConfigFilesResponse503Errors({required this.code, required this.message, });
 
 factory AutoragConfigFilesResponse503Errors.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponse503Errors(
   code: (json['code'] as num).toDouble(),

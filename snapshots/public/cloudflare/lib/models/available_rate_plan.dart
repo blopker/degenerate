@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'currency.dart';import 'identifier.dart';import 'schemas_frequency.dart';import 'schemas_name.dart';/// Indicates whether you can subscribe to this plan.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency.dart';import 'identifier.dart';import 'schemas_frequency.dart';import 'schemas_name.dart';/// Indicates whether you can subscribe to this plan.
 extension type const CanSubscribe(bool value) {
 factory CanSubscribe.fromJson(bool json) => CanSubscribe(json);
 
@@ -42,7 +42,7 @@ factory SchemasPrice.fromJson(num json) => SchemasPrice(json.toDouble());
 num toJson() => value;
 
 }
-final class AvailableRatePlan {const AvailableRatePlan({this.canSubscribe, this.currency, this.externallyManaged, this.frequency, this.id, this.isSubscribed, this.legacyDiscount, this.legacyId, this.name, this.price, });
+@immutable final class AvailableRatePlan {const AvailableRatePlan({this.canSubscribe, this.currency, this.externallyManaged, this.frequency, this.id, this.isSubscribed, this.legacyDiscount, this.legacyId, this.name, this.price, });
 
 factory AvailableRatePlan.fromJson(Map<String, dynamic> json) { return AvailableRatePlan(
   canSubscribe: json['can_subscribe'] != null ? CanSubscribe.fromJson(json['can_subscribe'] as bool) : null,

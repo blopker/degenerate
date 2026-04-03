@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'actor.dart';import 'event_payload.dart';import 'event_repo.dart';/// Event
-final class Event {const Event({required this.id, required this.type, required this.actor, required this.repo, this.org, required this.payload, required this.public, required this.createdAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actor.dart';import 'event_payload.dart';import 'event_repo.dart';/// Event
+@immutable final class Event {const Event({required this.id, required this.type, required this.actor, required this.repo, required this.payload, required this.public, required this.createdAt, this.org, });
 
 factory Event.fromJson(Map<String, dynamic> json) { return Event(
   id: json['id'] as String,

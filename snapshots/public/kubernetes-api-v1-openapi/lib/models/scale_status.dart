@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ScaleStatus represents the current status of a scale subresource.
-final class ScaleStatus {const ScaleStatus({this.replicas = 0, this.selector, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ScaleStatus represents the current status of a scale subresource.
+@immutable final class ScaleStatus {const ScaleStatus({this.replicas = 0, this.selector, });
 
 factory ScaleStatus.fromJson(Map<String, dynamic> json) { return ScaleStatus(
   replicas: (json['replicas'] as num).toInt(),

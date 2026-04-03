@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_release_edited_changes_body.dart';import 'webhook_release_edited_changes_make_latest.dart';import 'webhook_release_edited_changes_name.dart';import 'webhook_release_edited_changes_tag_name.dart';final class WebhookReleaseEditedChanges {const WebhookReleaseEditedChanges({this.body, this.name, this.tagName, this.makeLatest, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_release_edited_changes_body.dart';import 'webhook_release_edited_changes_make_latest.dart';import 'webhook_release_edited_changes_name.dart';import 'webhook_release_edited_changes_tag_name.dart';@immutable final class WebhookReleaseEditedChanges {const WebhookReleaseEditedChanges({this.body, this.name, this.tagName, this.makeLatest, });
 
 factory WebhookReleaseEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookReleaseEditedChanges(
   body: json['body'] != null ? WebhookReleaseEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

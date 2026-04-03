@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_
 /// low TTL (using `max-age`/`s-maxage`) increases requests to origin
 /// web servers and decreases performance.
 /// 
-final class ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId._(this.value);
+@immutable final class ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId._(this.value);
 
 factory ZonesCacheTtlByStatusId.fromJson(String json) { return switch (json) {
   'cache_ttl_by_status' => cacheTtlByStatus,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheTtlByStatusId($value)'; } 
  }
-final class ZonesCacheTtlByStatus {const ZonesCacheTtlByStatus({this.id, this.value, });
+@immutable final class ZonesCacheTtlByStatus {const ZonesCacheTtlByStatus({this.id, this.value, });
 
 factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) { return ZonesCacheTtlByStatus(
   id: json['id'] != null ? ZonesCacheTtlByStatusId.fromJson(json['id'] as String) : null,

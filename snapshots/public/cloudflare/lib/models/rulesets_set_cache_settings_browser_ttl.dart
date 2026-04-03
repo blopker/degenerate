@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The browser TTL mode.
-final class RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The browser TTL mode.
+@immutable final class RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode._(this.value);
 
 factory RulesetsSetCacheSettingsBrowserTtlMode.fromJson(String json) { return switch (json) {
   'respect_origin' => respectOrigin,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RulesetsSetCacheSettingsBrowserTtlMode($value)'; } 
  }
 /// How long client browsers should cache the response. Cloudflare cache purge will not purge content cached on client browsers, so high browser TTLs may lead to stale content.
-final class RulesetsSetCacheSettingsBrowserTtl {const RulesetsSetCacheSettingsBrowserTtl({this.$default, required this.mode, });
+@immutable final class RulesetsSetCacheSettingsBrowserTtl {const RulesetsSetCacheSettingsBrowserTtl({required this.mode, this.$default, });
 
 factory RulesetsSetCacheSettingsBrowserTtl.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsBrowserTtl(
   $default: json['default'] != null ? (json['default'] as num).toInt() : null,

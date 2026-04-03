@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for updating an existing role.
-final class PublicUpdateOrganizationRoleBody {const PublicUpdateOrganizationRoleBody({this.permissions, this.description, this.roleName, });
+@immutable final class PublicUpdateOrganizationRoleBody {const PublicUpdateOrganizationRoleBody({this.permissions, this.description, this.roleName, });
 
 factory PublicUpdateOrganizationRoleBody.fromJson(Map<String, dynamic> json) { return PublicUpdateOrganizationRoleBody(
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => e as String).toList(),

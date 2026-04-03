@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_spam_response_result_meta.dart';import 'radar_get_email_security_top_tlds_by_spam_response_result_top0.dart';final class RadarGetEmailSecurityTopTldsBySpamResponseResult {const RadarGetEmailSecurityTopTldsBySpamResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_spam_response_result_meta.dart';import 'radar_get_email_security_top_tlds_by_spam_response_result_top0.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpamResponseResult {const RadarGetEmailSecurityTopTldsBySpamResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetEmailSecurityTopTldsBySpamResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpamResponseResult(
   meta: RadarGetEmailSecurityTopTldsBySpamResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

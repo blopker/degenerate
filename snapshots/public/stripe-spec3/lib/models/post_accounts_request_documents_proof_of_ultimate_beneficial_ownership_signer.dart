@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner {const PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner({this.person});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner {const PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner({this.person});
 
 factory PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner.fromJson(Map<String, dynamic> json) { return PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(
   person: json['person'] as String?,

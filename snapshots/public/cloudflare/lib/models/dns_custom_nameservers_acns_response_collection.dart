@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_custom_ns.dart';final class DnsCustomNameserversAcnsResponseCollection {const DnsCustomNameserversAcnsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_custom_ns.dart';@immutable final class DnsCustomNameserversAcnsResponseCollection {const DnsCustomNameserversAcnsResponseCollection({this.result});
 
 factory DnsCustomNameserversAcnsResponseCollection.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversAcnsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => DnsCustomNameserversCustomNs.fromJson(e as Map<String, dynamic>)).toList(),

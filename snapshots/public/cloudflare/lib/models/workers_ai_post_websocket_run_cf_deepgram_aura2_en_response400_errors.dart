@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors {const WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors {const WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors({required this.message});
 
 factory WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400Errors(
   message: json['message'] as String,

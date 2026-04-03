@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_patch_pools_notification_email.dart';final class LoadBalancerPoolsPatchPoolsRequest {const LoadBalancerPoolsPatchPoolsRequest({this.notificationEmail});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_patch_pools_notification_email.dart';@immutable final class LoadBalancerPoolsPatchPoolsRequest {const LoadBalancerPoolsPatchPoolsRequest({this.notificationEmail});
 
 factory LoadBalancerPoolsPatchPoolsRequest.fromJson(Map<String, dynamic> json) { return LoadBalancerPoolsPatchPoolsRequest(
   notificationEmail: json['notification_email'] != null ? LoadBalancingPatchPoolsNotificationEmail.fromJson(json['notification_email'] as String) : null,

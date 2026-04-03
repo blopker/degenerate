@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
 sealed class ConversationItem {const ConversationItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConversationItem$Unknown; } 
  }
-final class ConversationItemMessage extends ConversationItem {const ConversationItemMessage(this.message);
+@immutable final class ConversationItemMessage extends ConversationItem {const ConversationItemMessage(this.message);
 
 factory ConversationItemMessage.fromJson(Map<String, dynamic> json) { return ConversationItemMessage(Message.fromJson(json)); }
 
@@ -51,7 +51,7 @@ final Message message;
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ConversationItemMessage(message: $message)'; } 
  }
-final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCall);
+@immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCall);
 
 factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallResource(FunctionToolCall.fromJson(json)); }
 
@@ -64,7 +64,7 @@ final FunctionToolCall functionToolCall;
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallResource(functionToolCall: $functionToolCall)'; } 
  }
-final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutput);
+@immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutput);
 
 factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutput.fromJson(json)); }
 
@@ -77,7 +77,7 @@ final FunctionToolCallOutput functionToolCallOutput;
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallOutputResource(functionToolCallOutput: $functionToolCallOutput)'; } 
  }
-final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
+@immutable final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
 factory ConversationItemFileSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemFileSearchCall(FileSearchToolCall.fromJson(json)); }
 
@@ -90,7 +90,7 @@ final FileSearchToolCall fileSearchToolCall;
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
  }
-final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
+@immutable final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
 
 factory ConversationItemWebSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemWebSearchCall(WebSearchToolCall.fromJson(json)); }
 
@@ -103,7 +103,7 @@ final WebSearchToolCall webSearchToolCall;
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
  }
-final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
+@immutable final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
 
 factory ConversationItemImageGenerationCall.fromJson(Map<String, dynamic> json) { return ConversationItemImageGenerationCall(ImageGenToolCall.fromJson(json)); }
 
@@ -116,7 +116,7 @@ final ImageGenToolCall imageGenToolCall;
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
  }
-final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
+@immutable final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
 
 factory ConversationItemComputerCall.fromJson(Map<String, dynamic> json) { return ConversationItemComputerCall(ComputerToolCall.fromJson(json)); }
 
@@ -129,7 +129,7 @@ final ComputerToolCall computerToolCall;
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemComputerCall(computerToolCall: $computerToolCall)'; } 
  }
-final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
+@immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
 
 factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutput.fromJson(json)); }
 
@@ -142,7 +142,7 @@ final ComputerToolCallOutput computerToolCallOutput;
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
  }
-final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
+@immutable final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
 
 factory ConversationItemToolSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemToolSearchCall(ToolSearchCall.fromJson(json)); }
 
@@ -155,7 +155,7 @@ final ToolSearchCall toolSearchCall;
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchCall(toolSearchCall: $toolSearchCall)'; } 
  }
-final class ConversationItemToolSearchOutput extends ConversationItem {const ConversationItemToolSearchOutput(this.toolSearchOutput);
+@immutable final class ConversationItemToolSearchOutput extends ConversationItem {const ConversationItemToolSearchOutput(this.toolSearchOutput);
 
 factory ConversationItemToolSearchOutput.fromJson(Map<String, dynamic> json) { return ConversationItemToolSearchOutput(ToolSearchOutput.fromJson(json)); }
 
@@ -168,7 +168,7 @@ final ToolSearchOutput toolSearchOutput;
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
  }
-final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
+@immutable final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
 
 factory ConversationItemReasoning.fromJson(Map<String, dynamic> json) { return ConversationItemReasoning(ReasoningItem.fromJson(json)); }
 
@@ -181,7 +181,7 @@ final ReasoningItem reasoningItem;
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ConversationItemReasoning(reasoningItem: $reasoningItem)'; } 
  }
-final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
+@immutable final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
 factory ConversationItemCodeInterpreterCall.fromJson(Map<String, dynamic> json) { return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall.fromJson(json)); }
 
@@ -194,7 +194,7 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
  }
-final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
+@immutable final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
 
 factory ConversationItemLocalShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellCall(LocalShellToolCall.fromJson(json)); }
 
@@ -207,7 +207,7 @@ final LocalShellToolCall localShellToolCall;
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
  }
-final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
+@immutable final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
 
 factory ConversationItemLocalShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput.fromJson(json)); }
 
@@ -220,7 +220,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
  }
-final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
+@immutable final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
 
 factory ConversationItemShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemShellCall(FunctionShellCall.fromJson(json)); }
 
@@ -233,7 +233,7 @@ final FunctionShellCall functionShellCall;
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ConversationItemShellCall(functionShellCall: $functionShellCall)'; } 
  }
-final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
+@immutable final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
 
 factory ConversationItemShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemShellCallOutput(FunctionShellCallOutput.fromJson(json)); }
 
@@ -246,7 +246,7 @@ final FunctionShellCallOutput functionShellCallOutput;
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
  }
-final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
+@immutable final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
 
 factory ConversationItemApplyPatchCall.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchCall(ApplyPatchToolCall.fromJson(json)); }
 
@@ -259,7 +259,7 @@ final ApplyPatchToolCall applyPatchToolCall;
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
  }
-final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
+@immutable final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
 factory ConversationItemApplyPatchCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput.fromJson(json)); }
 
@@ -272,7 +272,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
  }
-final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
+@immutable final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
 
 factory ConversationItemMcpListTools.fromJson(Map<String, dynamic> json) { return ConversationItemMcpListTools(McpListTools.fromJson(json)); }
 
@@ -285,7 +285,7 @@ final McpListTools mcpListTools;
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ConversationItemMcpListTools(mcpListTools: $mcpListTools)'; } 
  }
-final class ConversationItemMcpApprovalRequest extends ConversationItem {const ConversationItemMcpApprovalRequest(this.mcpApprovalRequest);
+@immutable final class ConversationItemMcpApprovalRequest extends ConversationItem {const ConversationItemMcpApprovalRequest(this.mcpApprovalRequest);
 
 factory ConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return ConversationItemMcpApprovalRequest(McpApprovalRequest.fromJson(json)); }
 
@@ -298,7 +298,7 @@ final McpApprovalRequest mcpApprovalRequest;
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
  }
-final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
+@immutable final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
 
 factory ConversationItemMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return ConversationItemMcpApprovalResponse(McpApprovalResponseResource.fromJson(json)); }
 
@@ -311,7 +311,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalResponse(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
  }
-final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
+@immutable final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
 
 factory ConversationItemMcpCall.fromJson(Map<String, dynamic> json) { return ConversationItemMcpCall(McpToolCall.fromJson(json)); }
 
@@ -324,7 +324,7 @@ final McpToolCall mcpToolCall;
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemMcpCall(mcpToolCall: $mcpToolCall)'; } 
  }
-final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
+@immutable final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
 
 factory ConversationItemCustomToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemCustomToolCall(CustomToolCall.fromJson(json)); }
 
@@ -337,7 +337,7 @@ final CustomToolCall customToolCall;
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemCustomToolCall(customToolCall: $customToolCall)'; } 
  }
-final class ConversationItemCustomToolCallOutput extends ConversationItem {const ConversationItemCustomToolCallOutput(this.customToolCallOutput);
+@immutable final class ConversationItemCustomToolCallOutput extends ConversationItem {const ConversationItemCustomToolCallOutput(this.customToolCallOutput);
 
 factory ConversationItemCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemCustomToolCallOutput(CustomToolCallOutput.fromJson(json)); }
 
@@ -352,7 +352,7 @@ final CustomToolCallOutput customToolCallOutput;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ConversationItem$Unknown extends ConversationItem {const ConversationItem$Unknown(this.json);
+@immutable final class ConversationItem$Unknown extends ConversationItem {const ConversationItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

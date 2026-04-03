@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class FinancialConnectionsAccountOwnerObject {const FinancialConnectionsAccountOwnerObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class FinancialConnectionsAccountOwnerObject {const FinancialConnectionsAccountOwnerObject._(this.value);
 
 factory FinancialConnectionsAccountOwnerObject.fromJson(String json) { return switch (json) {
   'financial_connections.account_owner' => financialConnectionsAccountOwner,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountOwnerObject($value)'; } 
  }
 /// Describes an owner of an account.
-final class FinancialConnectionsAccountOwner {const FinancialConnectionsAccountOwner({this.email, required this.id, required this.name, required this.object, required this.ownership, this.phone, this.rawAddress, this.refreshedAt, });
+@immutable final class FinancialConnectionsAccountOwner {const FinancialConnectionsAccountOwner({required this.id, required this.name, required this.object, required this.ownership, this.email, this.phone, this.rawAddress, this.refreshedAt, });
 
 factory FinancialConnectionsAccountOwner.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccountOwner(
   email: json['email'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TranscriptionWord {const TranscriptionWord({required this.word, required this.start, required this.end, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptionWord {const TranscriptionWord({required this.word, required this.start, required this.end, });
 
 factory TranscriptionWord.fromJson(Map<String, dynamic> json) { return TranscriptionWord(
   word: json['word'] as String,

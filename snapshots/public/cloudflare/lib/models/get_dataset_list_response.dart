@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetDatasetListResponse {const GetDatasetListResponse({required this.isPublic, required this.name, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetDatasetListResponse {const GetDatasetListResponse({required this.isPublic, required this.name, required this.uuid, });
 
 factory GetDatasetListResponse.fromJson(Map<String, dynamic> json) { return GetDatasetListResponse(
   isPublic: json['isPublic'] as bool,

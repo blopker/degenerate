@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestAfterCompletionHostedConfirmation {const PostPaymentLinksRequestAfterCompletionHostedConfirmation({this.customMessage});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestAfterCompletionHostedConfirmation {const PostPaymentLinksRequestAfterCompletionHostedConfirmation({this.customMessage});
 
 factory PostPaymentLinksRequestAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestAfterCompletionHostedConfirmation(
   customMessage: json['custom_message'] as String?,

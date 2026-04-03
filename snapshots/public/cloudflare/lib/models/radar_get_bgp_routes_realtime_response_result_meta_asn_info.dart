@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo {const RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo({required this.asName, required this.asn, required this.countryCode, required this.orgId, required this.orgName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo {const RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo({required this.asName, required this.asn, required this.countryCode, required this.orgId, required this.orgName, });
 
 factory RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponseResultMetaAsnInfo(
   asName: json['as_name'] as String,

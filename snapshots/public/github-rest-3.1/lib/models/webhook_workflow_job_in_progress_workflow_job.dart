@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_job_in_progress_workflow_job_steps.dart';final class WebhookWorkflowJobInProgressWorkflowJobStatus {const WebhookWorkflowJobInProgressWorkflowJobStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_job_in_progress_workflow_job_steps.dart';@immutable final class WebhookWorkflowJobInProgressWorkflowJobStatus {const WebhookWorkflowJobInProgressWorkflowJobStatus._(this.value);
 
 factory WebhookWorkflowJobInProgressWorkflowJobStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookWorkflowJobInProgressWorkflowJobStatus($value)'; } 
  }
 /// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.
-final class WebhookWorkflowJobInProgressWorkflowJob {const WebhookWorkflowJobInProgressWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
+@immutable final class WebhookWorkflowJobInProgressWorkflowJob {const WebhookWorkflowJobInProgressWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
 
 factory WebhookWorkflowJobInProgressWorkflowJob.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobInProgressWorkflowJob(
   checkRunUrl: json['check_run_url'] as String,

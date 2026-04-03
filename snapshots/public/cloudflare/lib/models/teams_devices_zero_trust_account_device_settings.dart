@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesZeroTrustAccountDeviceSettings {const TeamsDevicesZeroTrustAccountDeviceSettings({this.disableForTime, this.externalEmergencySignalEnabled, this.externalEmergencySignalFingerprint, this.externalEmergencySignalInterval, this.externalEmergencySignalUrl, this.gatewayProxyEnabled, this.gatewayUdpProxyEnabled, this.rootCertificateInstallationEnabled, this.useZtVirtualIp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesZeroTrustAccountDeviceSettings {const TeamsDevicesZeroTrustAccountDeviceSettings({this.disableForTime, this.externalEmergencySignalEnabled, this.externalEmergencySignalFingerprint, this.externalEmergencySignalInterval, this.externalEmergencySignalUrl, this.gatewayProxyEnabled, this.gatewayUdpProxyEnabled, this.rootCertificateInstallationEnabled, this.useZtVirtualIp, });
 
 factory TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(Map<String, dynamic> json) { return TeamsDevicesZeroTrustAccountDeviceSettings(
   disableForTime: json['disable_for_time'] != null ? (json['disable_for_time'] as num).toDouble() : null,

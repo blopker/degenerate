@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7TopOriginLocationResponse404 {const RadarGetAttacksLayer7TopOriginLocationResponse404({required this.error});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginLocationResponse404 {const RadarGetAttacksLayer7TopOriginLocationResponse404({required this.error});
 
 factory RadarGetAttacksLayer7TopOriginLocationResponse404.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginLocationResponse404(
   error: json['error'] as String,

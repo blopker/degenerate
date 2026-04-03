@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
 /// on an enterprise account or an organization that's part of an enterprise account. For more information,
 /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-final class EnterpriseWebhooks {const EnterpriseWebhooks({this.description, required this.htmlUrl, this.websiteUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, });
+@immutable final class EnterpriseWebhooks {const EnterpriseWebhooks({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description, this.websiteUrl, });
 
 factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) { return EnterpriseWebhooks(
   description: json['description'] as String?,

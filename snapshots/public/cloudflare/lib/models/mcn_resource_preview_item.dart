@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_resource_preview.dart';final class McnResourcePreviewItem {const McnResourcePreviewItem({required this.itemType, required this.resourcePreview, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_preview.dart';@immutable final class McnResourcePreviewItem {const McnResourcePreviewItem({required this.itemType, required this.resourcePreview, });
 
 factory McnResourcePreviewItem.fromJson(Map<String, dynamic> json) { return McnResourcePreviewItem(
   itemType: json['item_type'] as String,

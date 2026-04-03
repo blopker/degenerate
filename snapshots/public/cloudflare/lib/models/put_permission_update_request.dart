@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PutPermissionUpdateRequestRole {const PutPermissionUpdateRequestRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutPermissionUpdateRequestRole {const PutPermissionUpdateRequestRole._(this.value);
 
 factory PutPermissionUpdateRequestRole.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PutPermissionUpdateRequestRole($value)'; } 
  }
-final class PutPermissionUpdateRequest {const PutPermissionUpdateRequest({required this.role});
+@immutable final class PutPermissionUpdateRequest {const PutPermissionUpdateRequest({required this.role});
 
 factory PutPermissionUpdateRequest.fromJson(Map<String, dynamic> json) { return PutPermissionUpdateRequest(
   role: PutPermissionUpdateRequestRole.fromJson(json['role'] as String),

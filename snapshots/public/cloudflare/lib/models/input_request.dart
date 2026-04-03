@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_request_locations.dart';final class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_request_locations.dart';@immutable final class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum._(this.value);
 
 factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) { return switch (json) {
   'clientAuth' => clientAuth,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesExtendedKeyUsageEnum($value)'; } 
  }
 /// Operating System.
-final class InputRequestOperatingSystem {const InputRequestOperatingSystem._(this.value);
+@immutable final class InputRequestOperatingSystem {const InputRequestOperatingSystem._(this.value);
 
 factory InputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InputRequestOperatingSystem($value)'; } 
  }
-final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, this.cn, this.extendedKeyUsage, this.locations, required this.operatingSystem, this.subjectAlternativeNames, });
+@immutable final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, required this.operatingSystem, this.cn, this.extendedKeyUsage, this.locations, this.subjectAlternativeNames, });
 
 factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
   certificateId: json['certificate_id'] as String,

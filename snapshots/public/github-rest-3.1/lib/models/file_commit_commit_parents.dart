@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileCommitCommitParents {const FileCommitCommitParents({this.url, this.htmlUrl, this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitParents {const FileCommitCommitParents({this.url, this.htmlUrl, this.sha, });
 
 factory FileCommitCommitParents.fromJson(Map<String, dynamic> json) { return FileCommitCommitParents(
   url: json['url'] as String?,

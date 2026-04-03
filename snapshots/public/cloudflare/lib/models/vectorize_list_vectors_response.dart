@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_index_list_vectors_response.dart';final class VectorizeListVectorsResponse {const VectorizeListVectorsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_list_vectors_response.dart';@immutable final class VectorizeListVectorsResponse {const VectorizeListVectorsResponse({this.result});
 
 factory VectorizeListVectorsResponse.fromJson(Map<String, dynamic> json) { return VectorizeListVectorsResponse(
   result: json['result'] != null ? VectorizeIndexListVectorsResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

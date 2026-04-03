@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which headers to include in the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKeyHeader {const RulesetsSetCacheSettingsCustomCacheKeyHeader({this.checkPresence, this.contains, this.excludeOrigin, this.include, });
+@immutable final class RulesetsSetCacheSettingsCustomCacheKeyHeader {const RulesetsSetCacheSettingsCustomCacheKeyHeader({this.checkPresence, this.contains, this.excludeOrigin, this.include, });
 
 factory RulesetsSetCacheSettingsCustomCacheKeyHeader.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_deleted_onramp.dart';final class McnDeleteOnrampResponse {const McnDeleteOnrampResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_deleted_onramp.dart';@immutable final class McnDeleteOnrampResponse {const McnDeleteOnrampResponse({this.result});
 
 factory McnDeleteOnrampResponse.fromJson(Map<String, dynamic> json) { return McnDeleteOnrampResponse(
   result: json['result'] != null ? McnDeletedOnramp.fromJson(json['result'] as Map<String, dynamic>) : null,

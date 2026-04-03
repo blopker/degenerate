@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_cash_balance_request_settings.dart';final class PostCustomersCustomerCashBalanceRequest {const PostCustomersCustomerCashBalanceRequest({this.expand, this.settings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_cash_balance_request_settings.dart';@immutable final class PostCustomersCustomerCashBalanceRequest {const PostCustomersCustomerCashBalanceRequest({this.expand, this.settings, });
 
 factory PostCustomersCustomerCashBalanceRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerCashBalanceRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

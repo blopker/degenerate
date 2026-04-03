@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The policy that controls whether self-hosted runners can be used by repositories in the organization
-final class SelfHostedRunnersSettingsEnabledRepositories {const SelfHostedRunnersSettingsEnabledRepositories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls whether self-hosted runners can be used by repositories in the organization
+@immutable final class SelfHostedRunnersSettingsEnabledRepositories {const SelfHostedRunnersSettingsEnabledRepositories._(this.value);
 
 factory SelfHostedRunnersSettingsEnabledRepositories.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SelfHostedRunnersSettingsEnabledRepositories($value)'; } 
  }
-final class SelfHostedRunnersSettings {const SelfHostedRunnersSettings({required this.enabledRepositories, this.selectedRepositoriesUrl, });
+@immutable final class SelfHostedRunnersSettings {const SelfHostedRunnersSettings({required this.enabledRepositories, this.selectedRepositoriesUrl, });
 
 factory SelfHostedRunnersSettings.fromJson(Map<String, dynamic> json) { return SelfHostedRunnersSettings(
   enabledRepositories: SelfHostedRunnersSettingsEnabledRepositories.fromJson(json['enabled_repositories'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwnerType {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwnerType {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwnerType._(this.value);
 
 factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwnerType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwnerType($value)'; } 
  }
-final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwner {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwner({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwner {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwner({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwner.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestedReviewRequested2PullRequestHeadRepoOwner(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

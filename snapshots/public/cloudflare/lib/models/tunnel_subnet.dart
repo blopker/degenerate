@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_subnet_comment.dart';import 'tunnel_subnet_id.dart';import 'tunnel_subnet_ip_network.dart';import 'tunnel_subnet_is_default_network.dart';import 'tunnel_subnet_name.dart';/// The type of subnet.
-final class TunnelSubnetType {const TunnelSubnetType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_subnet_comment.dart';import 'tunnel_subnet_id.dart';import 'tunnel_subnet_ip_network.dart';import 'tunnel_subnet_is_default_network.dart';import 'tunnel_subnet_name.dart';/// The type of subnet.
+@immutable final class TunnelSubnetType {const TunnelSubnetType._(this.value);
 
 factory TunnelSubnetType.fromJson(String json) { return switch (json) {
   'cloudflare_source' => cloudflareSource,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TunnelSubnetType($value)'; } 
  }
-final class TunnelSubnet {const TunnelSubnet({this.comment, this.createdAt, this.deletedAt, this.id, this.isDefaultNetwork, this.name, this.network, this.subnetType, });
+@immutable final class TunnelSubnet {const TunnelSubnet({this.comment, this.createdAt, this.deletedAt, this.id, this.isDefaultNetwork, this.name, this.network, this.subnetType, });
 
 factory TunnelSubnet.fromJson(Map<String, dynamic> json) { return TunnelSubnet(
   comment: json['comment'] != null ? TunnelSubnetComment.fromJson(json['comment'] as String) : null,

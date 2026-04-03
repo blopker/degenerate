@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_indicator_type_create_response500_content_application_json_schema.dart';final class PostIndicatorTypeCreateResponse500ContentApplicationJson {const PostIndicatorTypeCreateResponse500ContentApplicationJson({required this.schema});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_type_create_response500_content_application_json_schema.dart';@immutable final class PostIndicatorTypeCreateResponse500ContentApplicationJson {const PostIndicatorTypeCreateResponse500ContentApplicationJson({required this.schema});
 
 factory PostIndicatorTypeCreateResponse500ContentApplicationJson.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse500ContentApplicationJson(
   schema: PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema.fromJson(json['schema'] as Map<String, dynamic>),

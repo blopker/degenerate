@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Current content categories.
-final class IntelContentCategories2 {const IntelContentCategories2({this.id, this.name, this.superCategoryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current content categories.
+@immutable final class IntelContentCategories2 {const IntelContentCategories2({this.id, this.name, this.superCategoryId, });
 
 factory IntelContentCategories2.fromJson(Map<String, dynamic> json) { return IntelContentCategories2(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

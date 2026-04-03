@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_asns_as_set_response_result.dart';final class RadarGetAsnsAsSetResponse {const RadarGetAsnsAsSetResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_asns_as_set_response_result.dart';@immutable final class RadarGetAsnsAsSetResponse {const RadarGetAsnsAsSetResponse({required this.result, required this.success, });
 
 factory RadarGetAsnsAsSetResponse.fromJson(Map<String, dynamic> json) { return RadarGetAsnsAsSetResponse(
   result: RadarGetAsnsAsSetResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the usage object. Always `duration` for this variant.
-final class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the usage object. Always `duration` for this variant.
+@immutable final class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType._(this.value);
 
 factory TranscriptTextUsageDurationType.fromJson(String json) { return switch (json) {
   'duration' => duration,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TranscriptTextUsageDurationType($value)'; } 
  }
 /// Usage statistics for models billed by audio input duration.
-final class TranscriptTextUsageDuration {const TranscriptTextUsageDuration({required this.type, required this.seconds, });
+@immutable final class TranscriptTextUsageDuration {const TranscriptTextUsageDuration({required this.type, required this.seconds, });
 
 factory TranscriptTextUsageDuration.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageDuration(
   type: TranscriptTextUsageDurationType.fromJson(json['type'] as String),

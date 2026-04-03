@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
-final class AppPermissionsActions {const AppPermissionsActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
+@immutable final class AppPermissionsActions {const AppPermissionsActions._(this.value);
 
 factory AppPermissionsActions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsActions($value)'; } 
  }
 /// The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
-final class AppPermissionsAdministration {const AppPermissionsAdministration._(this.value);
+@immutable final class AppPermissionsAdministration {const AppPermissionsAdministration._(this.value);
 
 factory AppPermissionsAdministration.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsAdministration($value)'; } 
  }
 /// The level of permission to grant the access token to create and retrieve build artifact metadata records.
-final class AppPermissionsArtifactMetadata {const AppPermissionsArtifactMetadata._(this.value);
+@immutable final class AppPermissionsArtifactMetadata {const AppPermissionsArtifactMetadata._(this.value);
 
 factory AppPermissionsArtifactMetadata.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsArtifactMetadata($value)'; } 
  }
 /// The level of permission to create and retrieve the access token for repository attestations.
-final class AppPermissionsAttestations {const AppPermissionsAttestations._(this.value);
+@immutable final class AppPermissionsAttestations {const AppPermissionsAttestations._(this.value);
 
 factory AppPermissionsAttestations.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsAttestations($value)'; } 
  }
 /// The level of permission to grant the access token for checks on code.
-final class AppPermissionsChecks {const AppPermissionsChecks._(this.value);
+@immutable final class AppPermissionsChecks {const AppPermissionsChecks._(this.value);
 
 factory AppPermissionsChecks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsChecks($value)'; } 
  }
 /// The level of permission to grant the access token to create, edit, delete, and list Codespaces.
-final class AppPermissionsCodespaces {const AppPermissionsCodespaces._(this.value);
+@immutable final class AppPermissionsCodespaces {const AppPermissionsCodespaces._(this.value);
 
 factory AppPermissionsCodespaces.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -151,7 +151,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsCodespaces($value)'; } 
  }
 /// The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
-final class AppPermissionsContents {const AppPermissionsContents._(this.value);
+@immutable final class AppPermissionsContents {const AppPermissionsContents._(this.value);
 
 factory AppPermissionsContents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -176,7 +176,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsContents($value)'; } 
  }
 /// The level of permission to grant the access token to manage Dependabot secrets.
-final class AppPermissionsDependabotSecrets {const AppPermissionsDependabotSecrets._(this.value);
+@immutable final class AppPermissionsDependabotSecrets {const AppPermissionsDependabotSecrets._(this.value);
 
 factory AppPermissionsDependabotSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -201,7 +201,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsDependabotSecrets($value)'; } 
  }
 /// The level of permission to grant the access token for deployments and deployment statuses.
-final class AppPermissionsDeployments {const AppPermissionsDeployments._(this.value);
+@immutable final class AppPermissionsDeployments {const AppPermissionsDeployments._(this.value);
 
 factory AppPermissionsDeployments.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -226,7 +226,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsDeployments($value)'; } 
  }
 /// The level of permission to grant the access token for discussions and related comments and labels.
-final class AppPermissionsDiscussions {const AppPermissionsDiscussions._(this.value);
+@immutable final class AppPermissionsDiscussions {const AppPermissionsDiscussions._(this.value);
 
 factory AppPermissionsDiscussions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -251,7 +251,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsDiscussions($value)'; } 
  }
 /// The level of permission to grant the access token for managing repository environments.
-final class AppPermissionsEnvironments {const AppPermissionsEnvironments._(this.value);
+@immutable final class AppPermissionsEnvironments {const AppPermissionsEnvironments._(this.value);
 
 factory AppPermissionsEnvironments.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -276,7 +276,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsEnvironments($value)'; } 
  }
 /// The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
-final class AppPermissionsIssues {const AppPermissionsIssues._(this.value);
+@immutable final class AppPermissionsIssues {const AppPermissionsIssues._(this.value);
 
 factory AppPermissionsIssues.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -301,7 +301,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsIssues($value)'; } 
  }
 /// The level of permission to grant the access token to manage the merge queues for a repository.
-final class AppPermissionsMergeQueues {const AppPermissionsMergeQueues._(this.value);
+@immutable final class AppPermissionsMergeQueues {const AppPermissionsMergeQueues._(this.value);
 
 factory AppPermissionsMergeQueues.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -326,7 +326,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsMergeQueues($value)'; } 
  }
 /// The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
-final class AppPermissionsMetadata {const AppPermissionsMetadata._(this.value);
+@immutable final class AppPermissionsMetadata {const AppPermissionsMetadata._(this.value);
 
 factory AppPermissionsMetadata.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -351,7 +351,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsMetadata($value)'; } 
  }
 /// The level of permission to grant the access token for packages published to GitHub Packages.
-final class AppPermissionsPackages {const AppPermissionsPackages._(this.value);
+@immutable final class AppPermissionsPackages {const AppPermissionsPackages._(this.value);
 
 factory AppPermissionsPackages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -376,7 +376,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsPackages($value)'; } 
  }
 /// The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
-final class AppPermissionsPages {const AppPermissionsPages._(this.value);
+@immutable final class AppPermissionsPages {const AppPermissionsPages._(this.value);
 
 factory AppPermissionsPages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -401,7 +401,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsPages($value)'; } 
  }
 /// The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
-final class AppPermissionsPullRequests {const AppPermissionsPullRequests._(this.value);
+@immutable final class AppPermissionsPullRequests {const AppPermissionsPullRequests._(this.value);
 
 factory AppPermissionsPullRequests.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -426,7 +426,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsPullRequests($value)'; } 
  }
 /// The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
-final class AppPermissionsRepositoryCustomProperties {const AppPermissionsRepositoryCustomProperties._(this.value);
+@immutable final class AppPermissionsRepositoryCustomProperties {const AppPermissionsRepositoryCustomProperties._(this.value);
 
 factory AppPermissionsRepositoryCustomProperties.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -451,7 +451,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsRepositoryCustomProperties($value)'; } 
  }
 /// The level of permission to grant the access token to manage the post-receive hooks for a repository.
-final class AppPermissionsRepositoryHooks {const AppPermissionsRepositoryHooks._(this.value);
+@immutable final class AppPermissionsRepositoryHooks {const AppPermissionsRepositoryHooks._(this.value);
 
 factory AppPermissionsRepositoryHooks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -476,7 +476,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsRepositoryHooks($value)'; } 
  }
 /// The level of permission to grant the access token to manage repository projects, columns, and cards.
-final class AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects._(this.value);
+@immutable final class AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects._(this.value);
 
 factory AppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -504,7 +504,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsRepositoryProjects($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage secret scanning alerts.
-final class AppPermissionsSecretScanningAlerts {const AppPermissionsSecretScanningAlerts._(this.value);
+@immutable final class AppPermissionsSecretScanningAlerts {const AppPermissionsSecretScanningAlerts._(this.value);
 
 factory AppPermissionsSecretScanningAlerts.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -529,7 +529,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsSecretScanningAlerts($value)'; } 
  }
 /// The level of permission to grant the access token to manage repository secrets.
-final class AppPermissionsSecrets {const AppPermissionsSecrets._(this.value);
+@immutable final class AppPermissionsSecrets {const AppPermissionsSecrets._(this.value);
 
 factory AppPermissionsSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -554,7 +554,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsSecrets($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage security events like code scanning alerts.
-final class AppPermissionsSecurityEvents {const AppPermissionsSecurityEvents._(this.value);
+@immutable final class AppPermissionsSecurityEvents {const AppPermissionsSecurityEvents._(this.value);
 
 factory AppPermissionsSecurityEvents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -579,7 +579,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsSecurityEvents($value)'; } 
  }
 /// The level of permission to grant the access token to manage just a single file.
-final class AppPermissionsSingleFile {const AppPermissionsSingleFile._(this.value);
+@immutable final class AppPermissionsSingleFile {const AppPermissionsSingleFile._(this.value);
 
 factory AppPermissionsSingleFile.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -604,7 +604,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsSingleFile($value)'; } 
  }
 /// The level of permission to grant the access token for commit statuses.
-final class AppPermissionsStatuses {const AppPermissionsStatuses._(this.value);
+@immutable final class AppPermissionsStatuses {const AppPermissionsStatuses._(this.value);
 
 factory AppPermissionsStatuses.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -629,7 +629,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsStatuses($value)'; } 
  }
 /// The level of permission to grant the access token to manage Dependabot alerts.
-final class AppPermissionsVulnerabilityAlerts {const AppPermissionsVulnerabilityAlerts._(this.value);
+@immutable final class AppPermissionsVulnerabilityAlerts {const AppPermissionsVulnerabilityAlerts._(this.value);
 
 factory AppPermissionsVulnerabilityAlerts.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -654,7 +654,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsVulnerabilityAlerts($value)'; } 
  }
 /// The level of permission to grant the access token to update GitHub Actions workflow files.
-final class AppPermissionsWorkflows {const AppPermissionsWorkflows._(this.value);
+@immutable final class AppPermissionsWorkflows {const AppPermissionsWorkflows._(this.value);
 
 factory AppPermissionsWorkflows.fromJson(String json) { return switch (json) {
   'write' => write,
@@ -676,7 +676,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsWorkflows($value)'; } 
  }
 /// The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
-final class AppPermissionsCustomPropertiesForOrganizations {const AppPermissionsCustomPropertiesForOrganizations._(this.value);
+@immutable final class AppPermissionsCustomPropertiesForOrganizations {const AppPermissionsCustomPropertiesForOrganizations._(this.value);
 
 factory AppPermissionsCustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -701,7 +701,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsCustomPropertiesForOrganizations($value)'; } 
  }
 /// The level of permission to grant the access token for organization teams and members.
-final class AppPermissionsMembers {const AppPermissionsMembers._(this.value);
+@immutable final class AppPermissionsMembers {const AppPermissionsMembers._(this.value);
 
 factory AppPermissionsMembers.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -726,7 +726,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsMembers($value)'; } 
  }
 /// The level of permission to grant the access token to manage access to an organization.
-final class AppPermissionsOrganizationAdministration {const AppPermissionsOrganizationAdministration._(this.value);
+@immutable final class AppPermissionsOrganizationAdministration {const AppPermissionsOrganizationAdministration._(this.value);
 
 factory AppPermissionsOrganizationAdministration.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -751,7 +751,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationAdministration($value)'; } 
  }
 /// The level of permission to grant the access token for custom repository roles management.
-final class AppPermissionsOrganizationCustomRoles {const AppPermissionsOrganizationCustomRoles._(this.value);
+@immutable final class AppPermissionsOrganizationCustomRoles {const AppPermissionsOrganizationCustomRoles._(this.value);
 
 factory AppPermissionsOrganizationCustomRoles.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -776,7 +776,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationCustomRoles($value)'; } 
  }
 /// The level of permission to grant the access token for custom organization roles management.
-final class AppPermissionsOrganizationCustomOrgRoles {const AppPermissionsOrganizationCustomOrgRoles._(this.value);
+@immutable final class AppPermissionsOrganizationCustomOrgRoles {const AppPermissionsOrganizationCustomOrgRoles._(this.value);
 
 factory AppPermissionsOrganizationCustomOrgRoles.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -801,7 +801,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationCustomOrgRoles($value)'; } 
  }
 /// The level of permission to grant the access token for repository custom properties management at the organization level.
-final class AppPermissionsOrganizationCustomProperties {const AppPermissionsOrganizationCustomProperties._(this.value);
+@immutable final class AppPermissionsOrganizationCustomProperties {const AppPermissionsOrganizationCustomProperties._(this.value);
 
 factory AppPermissionsOrganizationCustomProperties.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -829,7 +829,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationCustomProperties($value)'; } 
  }
 /// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
-final class AppPermissionsOrganizationCopilotSeatManagement {const AppPermissionsOrganizationCopilotSeatManagement._(this.value);
+@immutable final class AppPermissionsOrganizationCopilotSeatManagement {const AppPermissionsOrganizationCopilotSeatManagement._(this.value);
 
 factory AppPermissionsOrganizationCopilotSeatManagement.fromJson(String json) { return switch (json) {
   'write' => write,
@@ -851,7 +851,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationCopilotSeatManagement($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage announcement banners for an organization.
-final class AppPermissionsOrganizationAnnouncementBanners {const AppPermissionsOrganizationAnnouncementBanners._(this.value);
+@immutable final class AppPermissionsOrganizationAnnouncementBanners {const AppPermissionsOrganizationAnnouncementBanners._(this.value);
 
 factory AppPermissionsOrganizationAnnouncementBanners.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -876,7 +876,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationAnnouncementBanners($value)'; } 
  }
 /// The level of permission to grant the access token to view events triggered by an activity in an organization.
-final class AppPermissionsOrganizationEvents {const AppPermissionsOrganizationEvents._(this.value);
+@immutable final class AppPermissionsOrganizationEvents {const AppPermissionsOrganizationEvents._(this.value);
 
 factory AppPermissionsOrganizationEvents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -898,7 +898,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationEvents($value)'; } 
  }
 /// The level of permission to grant the access token to manage the post-receive hooks for an organization.
-final class AppPermissionsOrganizationHooks {const AppPermissionsOrganizationHooks._(this.value);
+@immutable final class AppPermissionsOrganizationHooks {const AppPermissionsOrganizationHooks._(this.value);
 
 factory AppPermissionsOrganizationHooks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -923,7 +923,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationHooks($value)'; } 
  }
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
-final class AppPermissionsOrganizationPersonalAccessTokens {const AppPermissionsOrganizationPersonalAccessTokens._(this.value);
+@immutable final class AppPermissionsOrganizationPersonalAccessTokens {const AppPermissionsOrganizationPersonalAccessTokens._(this.value);
 
 factory AppPermissionsOrganizationPersonalAccessTokens.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -948,7 +948,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationPersonalAccessTokens($value)'; } 
  }
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
-final class AppPermissionsOrganizationPersonalAccessTokenRequests {const AppPermissionsOrganizationPersonalAccessTokenRequests._(this.value);
+@immutable final class AppPermissionsOrganizationPersonalAccessTokenRequests {const AppPermissionsOrganizationPersonalAccessTokenRequests._(this.value);
 
 factory AppPermissionsOrganizationPersonalAccessTokenRequests.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -973,7 +973,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationPersonalAccessTokenRequests($value)'; } 
  }
 /// The level of permission to grant the access token for viewing an organization's plan.
-final class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan._(this.value);
+@immutable final class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan._(this.value);
 
 factory AppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -995,7 +995,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationPlan($value)'; } 
  }
 /// The level of permission to grant the access token to manage organization projects and projects public preview (where available).
-final class AppPermissionsOrganizationProjects {const AppPermissionsOrganizationProjects._(this.value);
+@immutable final class AppPermissionsOrganizationProjects {const AppPermissionsOrganizationProjects._(this.value);
 
 factory AppPermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1023,7 +1023,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationProjects($value)'; } 
  }
 /// The level of permission to grant the access token for organization packages published to GitHub Packages.
-final class AppPermissionsOrganizationPackages {const AppPermissionsOrganizationPackages._(this.value);
+@immutable final class AppPermissionsOrganizationPackages {const AppPermissionsOrganizationPackages._(this.value);
 
 factory AppPermissionsOrganizationPackages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1048,7 +1048,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationPackages($value)'; } 
  }
 /// The level of permission to grant the access token to manage organization secrets.
-final class AppPermissionsOrganizationSecrets {const AppPermissionsOrganizationSecrets._(this.value);
+@immutable final class AppPermissionsOrganizationSecrets {const AppPermissionsOrganizationSecrets._(this.value);
 
 factory AppPermissionsOrganizationSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1073,7 +1073,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationSecrets($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
-final class AppPermissionsOrganizationSelfHostedRunners {const AppPermissionsOrganizationSelfHostedRunners._(this.value);
+@immutable final class AppPermissionsOrganizationSelfHostedRunners {const AppPermissionsOrganizationSelfHostedRunners._(this.value);
 
 factory AppPermissionsOrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1098,7 +1098,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationSelfHostedRunners($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage users blocked by the organization.
-final class AppPermissionsOrganizationUserBlocking {const AppPermissionsOrganizationUserBlocking._(this.value);
+@immutable final class AppPermissionsOrganizationUserBlocking {const AppPermissionsOrganizationUserBlocking._(this.value);
 
 factory AppPermissionsOrganizationUserBlocking.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1123,7 +1123,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsOrganizationUserBlocking($value)'; } 
  }
 /// The level of permission to grant the access token to manage the email addresses belonging to a user.
-final class AppPermissionsEmailAddresses {const AppPermissionsEmailAddresses._(this.value);
+@immutable final class AppPermissionsEmailAddresses {const AppPermissionsEmailAddresses._(this.value);
 
 factory AppPermissionsEmailAddresses.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1148,7 +1148,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsEmailAddresses($value)'; } 
  }
 /// The level of permission to grant the access token to manage the followers belonging to a user.
-final class AppPermissionsFollowers {const AppPermissionsFollowers._(this.value);
+@immutable final class AppPermissionsFollowers {const AppPermissionsFollowers._(this.value);
 
 factory AppPermissionsFollowers.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1173,7 +1173,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsFollowers($value)'; } 
  }
 /// The level of permission to grant the access token to manage git SSH keys.
-final class AppPermissionsGitSshKeys {const AppPermissionsGitSshKeys._(this.value);
+@immutable final class AppPermissionsGitSshKeys {const AppPermissionsGitSshKeys._(this.value);
 
 factory AppPermissionsGitSshKeys.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1198,7 +1198,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsGitSshKeys($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
-final class AppPermissionsGpgKeys {const AppPermissionsGpgKeys._(this.value);
+@immutable final class AppPermissionsGpgKeys {const AppPermissionsGpgKeys._(this.value);
 
 factory AppPermissionsGpgKeys.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1223,7 +1223,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsGpgKeys($value)'; } 
  }
 /// The level of permission to grant the access token to view and manage interaction limits on a repository.
-final class AppPermissionsInteractionLimits {const AppPermissionsInteractionLimits._(this.value);
+@immutable final class AppPermissionsInteractionLimits {const AppPermissionsInteractionLimits._(this.value);
 
 factory AppPermissionsInteractionLimits.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1248,7 +1248,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsInteractionLimits($value)'; } 
  }
 /// The level of permission to grant the access token to manage the profile settings belonging to a user.
-final class AppPermissionsProfile {const AppPermissionsProfile._(this.value);
+@immutable final class AppPermissionsProfile {const AppPermissionsProfile._(this.value);
 
 factory AppPermissionsProfile.fromJson(String json) { return switch (json) {
   'write' => write,
@@ -1270,7 +1270,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsProfile($value)'; } 
  }
 /// The level of permission to grant the access token to list and manage repositories a user is starring.
-final class AppPermissionsStarring {const AppPermissionsStarring._(this.value);
+@immutable final class AppPermissionsStarring {const AppPermissionsStarring._(this.value);
 
 factory AppPermissionsStarring.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1295,7 +1295,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsStarring($value)'; } 
  }
 /// The level of permission to grant the access token for organization custom properties management at the enterprise level.
-final class AppPermissionsEnterpriseCustomPropertiesForOrganizations {const AppPermissionsEnterpriseCustomPropertiesForOrganizations._(this.value);
+@immutable final class AppPermissionsEnterpriseCustomPropertiesForOrganizations {const AppPermissionsEnterpriseCustomPropertiesForOrganizations._(this.value);
 
 factory AppPermissionsEnterpriseCustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -1323,7 +1323,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AppPermissionsEnterpriseCustomPropertiesForOrganizations($value)'; } 
  }
 /// The permissions granted to the user access token.
-final class AppPermissions {const AppPermissions({this.actions, this.administration, this.artifactMetadata, this.attestations, this.checks, this.codespaces, this.contents, this.dependabotSecrets, this.deployments, this.discussions, this.environments, this.issues, this.mergeQueues, this.metadata, this.packages, this.pages, this.pullRequests, this.repositoryCustomProperties, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, this.customPropertiesForOrganizations, this.members, this.organizationAdministration, this.organizationCustomRoles, this.organizationCustomOrgRoles, this.organizationCustomProperties, this.organizationCopilotSeatManagement, this.organizationAnnouncementBanners, this.organizationEvents, this.organizationHooks, this.organizationPersonalAccessTokens, this.organizationPersonalAccessTokenRequests, this.organizationPlan, this.organizationProjects, this.organizationPackages, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.emailAddresses, this.followers, this.gitSshKeys, this.gpgKeys, this.interactionLimits, this.profile, this.starring, this.enterpriseCustomPropertiesForOrganizations, });
+@immutable final class AppPermissions {const AppPermissions({this.repositoryHooks, this.administration, this.artifactMetadata, this.attestations, this.checks, this.codespaces, this.contents, this.dependabotSecrets, this.deployments, this.discussions, this.environments, this.issues, this.mergeQueues, this.metadata, this.packages, this.pages, this.pullRequests, this.repositoryCustomProperties, this.actions, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, this.customPropertiesForOrganizations, this.members, this.organizationAdministration, this.organizationCustomRoles, this.organizationCustomOrgRoles, this.organizationCustomProperties, this.organizationCopilotSeatManagement, this.enterpriseCustomPropertiesForOrganizations, this.organizationEvents, this.organizationHooks, this.organizationPersonalAccessTokens, this.organizationPersonalAccessTokenRequests, this.organizationPlan, this.organizationProjects, this.organizationPackages, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.emailAddresses, this.followers, this.gitSshKeys, this.gpgKeys, this.interactionLimits, this.profile, this.starring, this.organizationAnnouncementBanners, });
 
 factory AppPermissions.fromJson(Map<String, dynamic> json) { return AppPermissions(
   actions: json['actions'] != null ? AppPermissionsActions.fromJson(json['actions'] as String) : null,

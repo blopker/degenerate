@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_waf_value.dart';/// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_waf_value.dart';/// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
 /// You cannot enable or disable individual WAF managed rules via Page Rules.
 /// 
-final class ZonesWafId {const ZonesWafId._(this.value);
+@immutable final class ZonesWafId {const ZonesWafId._(this.value);
 
 factory ZonesWafId.fromJson(String json) { return switch (json) {
   'waf' => waf,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesWafId($value)'; } 
  }
-final class ZonesWaf {const ZonesWaf({this.id, this.value, });
+@immutable final class ZonesWaf {const ZonesWaf({this.id, this.value, });
 
 factory ZonesWaf.fromJson(Map<String, dynamic> json) { return ZonesWaf(
   id: json['id'] != null ? ZonesWafId.fromJson(json['id'] as String) : null,

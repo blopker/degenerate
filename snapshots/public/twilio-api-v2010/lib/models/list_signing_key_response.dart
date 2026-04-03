@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_signing_key.dart';final class ListSigningKeyResponse {const ListSigningKeyResponse({this.signingKeys, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_signing_key.dart';@immutable final class ListSigningKeyResponse {const ListSigningKeyResponse({this.signingKeys, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListSigningKeyResponse.fromJson(Map<String, dynamic> json) { return ListSigningKeyResponse(
   signingKeys: (json['signing_keys'] as List<dynamic>?)?.map((e) => AccountSigningKey.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target.dart';final class InfraTargetsPutBatchResponse {const InfraTargetsPutBatchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target.dart';@immutable final class InfraTargetsPutBatchResponse {const InfraTargetsPutBatchResponse({this.result});
 
 factory InfraTargetsPutBatchResponse.fromJson(Map<String, dynamic> json) { return InfraTargetsPutBatchResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => InfraTarget.fromJson(e as Map<String, dynamic>)).toList(),

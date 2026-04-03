@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'page_shield_policy_with_id.dart';final class PageShieldGetZonePolicyResponse {const PageShieldGetZonePolicyResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_policy_with_id.dart';@immutable final class PageShieldGetZonePolicyResponse {const PageShieldGetZonePolicyResponse({required this.result});
 
 factory PageShieldGetZonePolicyResponse.fromJson(Map<String, dynamic> json) { return PageShieldGetZonePolicyResponse(
   result: PageShieldPolicyWithId.fromJson(json['result'] as Map<String, dynamic>),

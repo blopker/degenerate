@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GistsCheckIsStarredResponse404 {const GistsCheckIsStarredResponse404();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistsCheckIsStarredResponse404 {const GistsCheckIsStarredResponse404();
 
 factory GistsCheckIsStarredResponse404.fromJson(Map<String, dynamic> json) { return GistsCheckIsStarredResponse404(
 

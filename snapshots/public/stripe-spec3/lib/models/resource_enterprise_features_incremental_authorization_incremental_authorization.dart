@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether or not the incremental authorization feature is supported.
-final class ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus {const ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether or not the incremental authorization feature is supported.
+@immutable final class ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus {const ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus._(this.value);
 
 factory ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus.fromJson(String json) { return switch (json) {
   'available' => available,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus($value)'; } 
  }
 /// 
-final class ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization {const ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization({required this.status});
+@immutable final class ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization {const ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization({required this.status});
 
 factory ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization.fromJson(Map<String, dynamic> json) { return ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization(
   status: ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus.fromJson(json['status'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_completed.dart';import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
-final class ListsBulkOperationCompletedStatus {const ListsBulkOperationCompletedStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_completed.dart';import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
+@immutable final class ListsBulkOperationCompletedStatus {const ListsBulkOperationCompletedStatus._(this.value);
 
 factory ListsBulkOperationCompletedStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListsBulkOperationCompletedStatus($value)'; } 
  }
-final class ListsBulkOperationCompleted {const ListsBulkOperationCompleted({required this.completed, required this.id, required this.status, });
+@immutable final class ListsBulkOperationCompleted {const ListsBulkOperationCompleted({required this.completed, required this.id, required this.status, });
 
 factory ListsBulkOperationCompleted.fromJson(Map<String, dynamic> json) { return ListsBulkOperationCompleted(
   completed: ListsCompleted.fromJson(json['completed'] as String),

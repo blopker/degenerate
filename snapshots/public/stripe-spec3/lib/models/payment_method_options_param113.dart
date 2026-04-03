@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam113Network {const PaymentMethodOptionsParam113Network._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam113Network {const PaymentMethodOptionsParam113Network._(this.value);
 
 factory PaymentMethodOptionsParam113Network.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam113Network($value)'; } 
  }
-final class PaymentMethodOptionsParam113 {const PaymentMethodOptionsParam113({this.network});
+@immutable final class PaymentMethodOptionsParam113 {const PaymentMethodOptionsParam113({this.network});
 
 factory PaymentMethodOptionsParam113.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam113(
   network: json['network'] != null ? PaymentMethodOptionsParam113Network.fromJson(json['network'] as String) : null,

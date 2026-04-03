@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_base_mc_actions_value.dart';import 'zaraz_base_mc_neo_events.dart';final class ZarazBaseMc {const ZarazBaseMc({required this.blockingTriggers, required this.defaultFields, this.defaultPurpose, required this.enabled, required this.name, this.vendorName, this.vendorPolicyUrl, this.actions, required this.component, this.neoEvents, required this.permissions, required this.settings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_base_mc_actions_value.dart';import 'zaraz_base_mc_neo_events.dart';@immutable final class ZarazBaseMc {const ZarazBaseMc({required this.blockingTriggers, required this.defaultFields, required this.enabled, required this.name, required this.component, required this.permissions, required this.settings, this.defaultPurpose, this.vendorName, this.vendorPolicyUrl, this.actions, this.neoEvents, });
 
 factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),

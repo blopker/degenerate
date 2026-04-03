@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';import 'dlp_dataset_upload.dart';import 'dlp_dataset_upload_status.dart';final class DlpDataset {const DlpDataset({this.caseSensitive, required this.columns, required this.createdAt, this.description, required this.encodingVersion, required this.id, required this.name, required this.numCells, required this.secret, required this.status, required this.updatedAt, required this.uploads, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';import 'dlp_dataset_upload.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpDataset {const DlpDataset({required this.columns, required this.createdAt, required this.encodingVersion, required this.id, required this.name, required this.numCells, required this.secret, required this.status, required this.updatedAt, required this.uploads, this.caseSensitive, this.description, });
 
 factory DlpDataset.fromJson(Map<String, dynamic> json) { return DlpDataset(
   caseSensitive: json['case_sensitive'] as bool?,

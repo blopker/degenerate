@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class BillingBillResourceInvoicingLinesCommonCreditedItems {const BillingBillResourceInvoicingLinesCommonCreditedItems({required this.invoice, required this.invoiceLineItems, });
+@immutable final class BillingBillResourceInvoicingLinesCommonCreditedItems {const BillingBillResourceInvoicingLinesCommonCreditedItems({required this.invoice, required this.invoiceLineItems, });
 
 factory BillingBillResourceInvoicingLinesCommonCreditedItems.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesCommonCreditedItems(
   invoice: json['invoice'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_domain.dart';final class ListSipDomainResponse {const ListSipDomainResponse({this.domains, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_domain.dart';@immutable final class ListSipDomainResponse {const ListSipDomainResponse({this.domains, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListSipDomainResponse.fromJson(Map<String, dynamic> json) { return ListSipDomainResponse(
   domains: (json['domains'] as List<dynamic>?)?.map((e) => AccountSipSipDomain.fromJson(e as Map<String, dynamic>)).toList(),

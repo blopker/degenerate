@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accountsaccount_id_realtime_kitapp_id_livestreams_response_data.dart';final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accountsaccount_id_realtime_kitapp_id_livestreams_response_data.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse({this.data, this.success, });
 
 factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(
   data: json['data'] != null ? PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

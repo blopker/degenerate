@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessOidcSaasAppCustomClaimsSource {const AccessOidcSaasAppCustomClaimsSource({this.name, this.nameByIdp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcSaasAppCustomClaimsSource {const AccessOidcSaasAppCustomClaimsSource({this.name, this.nameByIdp, });
 
 factory AccessOidcSaasAppCustomClaimsSource.fromJson(Map<String, dynamic> json) { return AccessOidcSaasAppCustomClaimsSource(
   name: json['name'] as String?,

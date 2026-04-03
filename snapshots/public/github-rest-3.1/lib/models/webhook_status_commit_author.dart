@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookStatusCommitAuthorType {const WebhookStatusCommitAuthorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusCommitAuthorType {const WebhookStatusCommitAuthorType._(this.value);
 
 factory WebhookStatusCommitAuthorType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookStatusCommitAuthorType($value)'; } 
  }
-final class WebhookStatusCommitAuthor {const WebhookStatusCommitAuthor({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
+@immutable final class WebhookStatusCommitAuthor {const WebhookStatusCommitAuthor({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
 factory WebhookStatusCommitAuthor.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitAuthor(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

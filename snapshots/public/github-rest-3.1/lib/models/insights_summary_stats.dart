@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// API Insights usage summary stats for an organization
-final class InsightsSummaryStats {const InsightsSummaryStats({this.totalRequestCount, this.rateLimitedRequestCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// API Insights usage summary stats for an organization
+@immutable final class InsightsSummaryStats {const InsightsSummaryStats({this.totalRequestCount, this.rateLimitedRequestCount, });
 
 factory InsightsSummaryStats.fromJson(Map<String, dynamic> json) { return InsightsSummaryStats(
   totalRequestCount: json['total_request_count'] != null ? (json['total_request_count'] as num).toInt() : null,

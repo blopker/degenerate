@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'base_gist_files_value.dart';import 'simple_user.dart';/// Base Gist
-final class BaseGist {const BaseGist({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, this.commentsEnabled, required this.user, required this.commentsUrl, this.owner, this.truncated, this.forks, this.history, });
+@immutable final class BaseGist {const BaseGist({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, required this.user, required this.commentsUrl, this.commentsEnabled, this.owner, this.truncated, this.forks, this.history, });
 
 factory BaseGist.fromJson(Map<String, dynamic> json) { return BaseGist(
   url: Uri.parse(json['url'] as String),

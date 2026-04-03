@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessLinkedAppTokenRuleLinkedAppToken {const AccessLinkedAppTokenRuleLinkedAppToken({required this.appUid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessLinkedAppTokenRuleLinkedAppToken {const AccessLinkedAppTokenRuleLinkedAppToken({required this.appUid});
 
 factory AccessLinkedAppTokenRuleLinkedAppToken.fromJson(Map<String, dynamic> json) { return AccessLinkedAppTokenRuleLinkedAppToken(
   appUid: json['app_uid'] as String,

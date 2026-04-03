@@ -12,7 +12,7 @@ factory McnConduitTunnelId.fromJson(String json) => McnConduitTunnelId(json);
 String toJson() => value;
 
 }
-final class McnOnrampLifecycleState {const McnOnrampLifecycleState._(this.value);
+@immutable final class McnOnrampLifecycleState {const McnOnrampLifecycleState._(this.value);
 
 factory McnOnrampLifecycleState.fromJson(String json) { return switch (json) {
   'OnrampNeedsApply' => onrampNeedsApply,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'McnOnrampLifecycleState($value)'; } 
  }
-final class McnOnrampStatus {const McnOnrampStatus({required this.applyProgress, this.lifecycleErrors, required this.lifecycleState, required this.planProgress, required this.routes, required this.tunnels, });
+@immutable final class McnOnrampStatus {const McnOnrampStatus({required this.applyProgress, required this.lifecycleState, required this.planProgress, required this.routes, required this.tunnels, this.lifecycleErrors, });
 
 factory McnOnrampStatus.fromJson(Map<String, dynamic> json) { return McnOnrampStatus(
   applyProgress: McnApplyProgress.fromJson(json['apply_progress'] as Map<String, dynamic>),

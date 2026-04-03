@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_gen_tool_input_image_mask.dart';import 'image_gen_tool_model.dart';import 'input_fidelity.dart';final class ImageGenActionEnum {const ImageGenActionEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_gen_tool_input_image_mask.dart';import 'image_gen_tool_model.dart';import 'input_fidelity.dart';@immutable final class ImageGenActionEnum {const ImageGenActionEnum._(this.value);
 
 factory ImageGenActionEnum.fromJson(String json) { return switch (json) {
   'generate' => generate,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The quality of the generated image. One of `low`, `medium`, `high`,
 /// or `auto`. Default: `auto`.
 /// 
-final class ImageGenToolQuality {const ImageGenToolQuality._(this.value);
+@immutable final class ImageGenToolQuality {const ImageGenToolQuality._(this.value);
 
 factory ImageGenToolQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The size of the generated image. One of `1024x1024`, `1024x1536`,
 /// `1536x1024`, or `auto`. Default: `auto`.
 /// 
-final class ImageGenToolSize {const ImageGenToolSize._(this.value);
+@immutable final class ImageGenToolSize {const ImageGenToolSize._(this.value);
 
 factory ImageGenToolSize.fromJson(String json) { return switch (json) {
   '1024x1024' => $1024x1024,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The output format of the generated image. One of `png`, `webp`, or
 /// `jpeg`. Default: `png`.
 /// 
-final class ImageGenToolOutputFormat {const ImageGenToolOutputFormat._(this.value);
+@immutable final class ImageGenToolOutputFormat {const ImageGenToolOutputFormat._(this.value);
 
 factory ImageGenToolOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Moderation level for the generated image. Default: `auto`.
 /// 
-final class ImageGenToolModeration {const ImageGenToolModeration._(this.value);
+@immutable final class ImageGenToolModeration {const ImageGenToolModeration._(this.value);
 
 factory ImageGenToolModeration.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -152,7 +152,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Background type for the generated image. One of `transparent`,
 /// `opaque`, or `auto`. Default: `auto`.
 /// 
-final class ImageGenToolBackground {const ImageGenToolBackground._(this.value);
+@immutable final class ImageGenToolBackground {const ImageGenToolBackground._(this.value);
 
 factory ImageGenToolBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -181,7 +181,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A tool that generates images using the GPT image models.
 /// 
-final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageGenToolQuality.auto, this.size = ImageGenToolSize.auto, this.outputFormat = ImageGenToolOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageGenToolBackground.auto, this.inputFidelity, this.inputImageMask, this.partialImages = 0, this.action, });
+@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageGenToolQuality.auto, this.size = ImageGenToolSize.auto, this.outputFormat = ImageGenToolOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageGenToolBackground.auto, this.inputFidelity, this.inputImageMask, this.partialImages = 0, this.action, });
 
 factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   type: json['type'] as String,

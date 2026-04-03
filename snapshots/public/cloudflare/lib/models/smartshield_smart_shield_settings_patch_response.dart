@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_smart_shield_settings_patch_response_smart_tiered_cache.dart';/// A consolidated object containing settings from multiple APIs for partial updates.
-final class SmartshieldSmartShieldSettingsPatchResponse {const SmartshieldSmartShieldSettingsPatchResponse({required this.smartTieredCache});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_smart_shield_settings_patch_response_smart_tiered_cache.dart';/// A consolidated object containing settings from multiple APIs for partial updates.
+@immutable final class SmartshieldSmartShieldSettingsPatchResponse {const SmartshieldSmartShieldSettingsPatchResponse({required this.smartTieredCache});
 
 factory SmartshieldSmartShieldSettingsPatchResponse.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchResponse(
   smartTieredCache: SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache.fromJson(json['smart_tiered_cache'] as Map<String, dynamic>),

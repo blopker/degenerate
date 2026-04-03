@@ -1,7 +1,3 @@
-// Code-generating emitters use StringBuffer chains and long string templates
-// that inherently exceed 80 chars and resist cascading.
-// ignore_for_file: cascade_invocations, lines_longer_than_80_chars
-
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
@@ -51,15 +47,6 @@ class ApiEmitter {
           ..modifier = ClassModifier.final$
           ..mixins.add(refer('ApiExecutor'))
           ..docs.addAll(_buildDocs())
-          ..fields.add(
-            Field(
-              (f) => f
-                ..name = 'apiConfig'
-                ..modifier = FieldModifier.final$
-                ..annotations.add(refer('override'))
-                ..type = refer('ApiConfig'),
-            ),
-          )
           ..constructors.add(
             Constructor(
               (c) => c
@@ -71,6 +58,15 @@ class ApiEmitter {
                       ..toThis = true,
                   ),
                 ),
+            ),
+          )
+          ..fields.add(
+            Field(
+              (f) => f
+                ..name = 'apiConfig'
+                ..modifier = FieldModifier.final$
+                ..annotations.add(refer('override'))
+                ..type = refer('ApiConfig'),
             ),
           )
           ..methods.addAll(api.operations.map(_buildOperation))
@@ -608,7 +604,7 @@ class ApiEmitter {
   ) {
     final sanitizedName = _sanitizeParameterName(p.name);
     buf.writeln(
-      "queryParametersList.add(ApiQueryParameter(name: '$sanitizedName', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+      "queryParametersList.add(ApiQueryParameter(name: '$sanitizedName', value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
     );
   }
 
@@ -628,7 +624,7 @@ class ApiEmitter {
         buf.writeln('  if (item == null) continue;');
       }
       buf.writeln(
-        "  queryParametersList.add(ApiQueryParameter(name: '$name', value: $itemExpr, allowReserved: ${p.allowReserved}));",
+        "  queryParametersList.add(ApiQueryParameter(name: '$name', value: $itemExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
       );
       buf.writeln('}');
       return;
@@ -685,7 +681,7 @@ class ApiEmitter {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved})); }",
+            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
@@ -693,7 +689,7 @@ class ApiEmitter {
             '$accessor.${field.name}',
           );
           buf.writeln(
-            "queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+            "queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
           );
         }
       }
@@ -734,7 +730,7 @@ class ApiEmitter {
     if (style == 'form' && explode) {
       buf.writeln('for (final entry in $accessor.entries) {');
       buf.writeln(
-        '  queryParametersList.add(ApiQueryParameter(name: entry.key, value: $valueExpr, allowReserved: ${p.allowReserved}));',
+        '  queryParametersList.add(ApiQueryParameter(name: entry.key, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));',
       );
       buf.writeln('}');
       return;

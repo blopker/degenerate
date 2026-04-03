@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TurboResponse400Errors {const TurboResponse400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TurboResponse400Errors {const TurboResponse400Errors({required this.code, required this.message, });
 
 factory TurboResponse400Errors.fromJson(Map<String, dynamic> json) { return TurboResponse400Errors(
   code: json['code'] as String,

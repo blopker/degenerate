@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_fields.dart';import 'logpush_sample.dart';import 'logpush_schemas_filter.dart';final class PostZonesZoneIdLogpushEdgeJobsRequest {const PostZonesZoneIdLogpushEdgeJobsRequest({this.fields, this.filter, this.sample, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_fields.dart';import 'logpush_sample.dart';import 'logpush_schemas_filter.dart';@immutable final class PostZonesZoneIdLogpushEdgeJobsRequest {const PostZonesZoneIdLogpushEdgeJobsRequest({this.fields, this.filter, this.sample, });
 
 factory PostZonesZoneIdLogpushEdgeJobsRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushEdgeJobsRequest(
   fields: json['fields'] != null ? LogpushFields.fromJson(json['fields'] as String) : null,

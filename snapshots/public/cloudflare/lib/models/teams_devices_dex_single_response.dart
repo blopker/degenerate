@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_device_dex_test_schemas_http.dart';final class TeamsDevicesDexSingleResponse {const TeamsDevicesDexSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_dex_test_schemas_http.dart';@immutable final class TeamsDevicesDexSingleResponse {const TeamsDevicesDexSingleResponse({this.result});
 
 factory TeamsDevicesDexSingleResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesDexSingleResponse(
   result: json['result'] != null ? TeamsDevicesDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null,

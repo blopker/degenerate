@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'codespaces_create_for_authenticated_user_request_variant2_pull_request.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-final class CodespacesCreateForAuthenticatedUserRequestVariant2Geo {const CodespacesCreateForAuthenticatedUserRequestVariant2Geo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespaces_create_for_authenticated_user_request_variant2_pull_request.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+@immutable final class CodespacesCreateForAuthenticatedUserRequestVariant2Geo {const CodespacesCreateForAuthenticatedUserRequestVariant2Geo._(this.value);
 
 factory CodespacesCreateForAuthenticatedUserRequestVariant2Geo.fromJson(String json) { return switch (json) {
   'EuropeWest' => europeWest,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant2Geo($value)'; } 
  }
-final class CodespacesCreateForAuthenticatedUserRequestVariant2 {const CodespacesCreateForAuthenticatedUserRequestVariant2({required this.pullRequest, this.location, this.geo, this.machine, this.devcontainerPath, this.workingDirectory, this.idleTimeoutMinutes, });
+@immutable final class CodespacesCreateForAuthenticatedUserRequestVariant2 {const CodespacesCreateForAuthenticatedUserRequestVariant2({required this.pullRequest, this.location, this.geo, this.machine, this.devcontainerPath, this.workingDirectory, this.idleTimeoutMinutes, });
 
 factory CodespacesCreateForAuthenticatedUserRequestVariant2.fromJson(Map<String, dynamic> json) { return CodespacesCreateForAuthenticatedUserRequestVariant2(
   pullRequest: CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),

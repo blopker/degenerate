@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_dimensions_specs.dart';final class PostProductsIdRequestPackageDimensionsVariant2 {const PostProductsIdRequestPackageDimensionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_dimensions_specs.dart';@immutable final class PostProductsIdRequestPackageDimensionsVariant2 {const PostProductsIdRequestPackageDimensionsVariant2._(this.value);
 
 factory PostProductsIdRequestPackageDimensionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

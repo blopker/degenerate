@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesInvoiceAddLinesRequestLinesPeriod {const PostInvoicesInvoiceAddLinesRequestLinesPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceAddLinesRequestLinesPeriod {const PostInvoicesInvoiceAddLinesRequestLinesPeriod({required this.end, required this.start, });
 
 factory PostInvoicesInvoiceAddLinesRequestLinesPeriod.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequestLinesPeriod(
   end: (json['end'] as num).toInt(),

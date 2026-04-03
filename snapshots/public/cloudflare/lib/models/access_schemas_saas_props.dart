@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_oidc_saas_app.dart';import 'access_schemas_saas_props_saas_app.dart';import 'access_schemas_saml_saas_app.dart';final class AccessSchemasSaasProps {const AccessSchemasSaasProps({this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.logoUrl, this.name, this.saasApp, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_oidc_saas_app.dart';import 'access_schemas_saas_props_saas_app.dart';import 'access_schemas_saml_saas_app.dart';@immutable final class AccessSchemasSaasProps {const AccessSchemasSaasProps({this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.logoUrl, this.name, this.saasApp, this.type, });
 
 factory AccessSchemasSaasProps.fromJson(Map<String, dynamic> json) { return AccessSchemasSaasProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),

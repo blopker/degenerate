@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Select how to calculate the end of the invoice item period.
-final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Select how to calculate the end of the invoice item period.
+@immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._(this.value);
 
 factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType.fromJson(String json) { return switch (json) {
   'min_item_period_end' => minItemPeriodEnd,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType($value)'; } 
  }
 /// 
-final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd({this.timestamp, required this.type, });
+@immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd({required this.type, this.timestamp, });
 
 factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,

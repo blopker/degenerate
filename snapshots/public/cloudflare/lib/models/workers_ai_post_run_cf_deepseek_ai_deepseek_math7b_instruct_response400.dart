@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepseek_ai_deepseek_math7b_instruct_response400_errors.dart';final class WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400 {const WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepseek_ai_deepseek_math7b_instruct_response400_errors.dart';@immutable final class WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400 {const WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingMetersIdEventSummariesRequest {const GetBillingMetersIdEventSummariesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingMetersIdEventSummariesRequest {const GetBillingMetersIdEventSummariesRequest();
 
 factory GetBillingMetersIdEventSummariesRequest.fromJson(Map<String, dynamic> json) { return GetBillingMetersIdEventSummariesRequest(
 

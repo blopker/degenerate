@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Coordinates defining the bounding box around the detected object
-final class ObjectDetection2Box {const ObjectDetection2Box({this.xmax, this.xmin, this.ymax, this.ymin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Coordinates defining the bounding box around the detected object
+@immutable final class ObjectDetection2Box {const ObjectDetection2Box({this.xmax, this.xmin, this.ymax, this.ymin, });
 
 factory ObjectDetection2Box.fromJson(Map<String, dynamic> json) { return ObjectDetection2Box(
   xmax: json['xmax'] != null ? (json['xmax'] as num).toDouble() : null,

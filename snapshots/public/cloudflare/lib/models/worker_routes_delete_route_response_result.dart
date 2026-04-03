@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_identifier.dart';final class WorkerRoutesDeleteRouteResponseResult {const WorkerRoutesDeleteRouteResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_identifier.dart';@immutable final class WorkerRoutesDeleteRouteResponseResult {const WorkerRoutesDeleteRouteResponseResult({this.id});
 
 factory WorkerRoutesDeleteRouteResponseResult.fromJson(Map<String, dynamic> json) { return WorkerRoutesDeleteRouteResponseResult(
   id: json['id'] != null ? WorkersIdentifier.fromJson(json['id'] as String) : null,

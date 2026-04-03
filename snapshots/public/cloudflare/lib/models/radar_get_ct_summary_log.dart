@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryLog {const RadarGetCtSummaryLog._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryLog {const RadarGetCtSummaryLog._(this.value);
 
 factory RadarGetCtSummaryLog.fromJson(String json) { return switch (json) {
   'RFC6962' => rfc6962,

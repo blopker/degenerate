@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Durable object configuration using a namespace ID
-final class CcDurableObjectsConfigurationNamespaceId {const CcDurableObjectsConfigurationNamespaceId({required this.namespaceId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Durable object configuration using a namespace ID
+@immutable final class CcDurableObjectsConfigurationNamespaceId {const CcDurableObjectsConfigurationNamespaceId({required this.namespaceId});
 
 factory CcDurableObjectsConfigurationNamespaceId.fromJson(Map<String, dynamic> json) { return CcDurableObjectsConfigurationNamespaceId(
   namespaceId: json['namespace_id'] as String,

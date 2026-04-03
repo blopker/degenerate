@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateSpeechRequestModelVariant2 {const CreateSpeechRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSpeechRequestModelVariant2 {const CreateSpeechRequestModelVariant2._(this.value);
 
 factory CreateSpeechRequestModelVariant2.fromJson(String json) { return switch (json) {
   'tts-1' => tts1,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_treasury_received_credits_request_initiating_payment_method_details_us_bank_account.dart';final class PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType {const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_received_credits_request_initiating_payment_method_details_us_bank_account.dart';@immutable final class PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType {const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType._(this.value);
 
 factory PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'us_bank_account' => usBankAccount,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType($value)'; } 
  }
 /// Initiating payment method details for the object.
-final class PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails {const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails({required this.type, this.usBankAccount, });
+@immutable final class PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails {const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails({required this.type, this.usBankAccount, });
 
 factory PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails(
   type: PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType.fromJson(json['type'] as String),

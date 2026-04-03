@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SubscriptionPaymentMethodOptionsParam3MandateOptionsAmountType {const SubscriptionPaymentMethodOptionsParam3MandateOptionsAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubscriptionPaymentMethodOptionsParam3MandateOptionsAmountType {const SubscriptionPaymentMethodOptionsParam3MandateOptionsAmountType._(this.value);
 
 factory SubscriptionPaymentMethodOptionsParam3MandateOptionsAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SubscriptionPaymentMethodOptionsParam3MandateOptionsAmountType($value)'; } 
  }
-final class SubscriptionPaymentMethodOptionsParam3MandateOptions {const SubscriptionPaymentMethodOptionsParam3MandateOptions({this.amount, this.amountType, this.description, });
+@immutable final class SubscriptionPaymentMethodOptionsParam3MandateOptions {const SubscriptionPaymentMethodOptionsParam3MandateOptions({this.amount, this.amountType, this.description, });
 
 factory SubscriptionPaymentMethodOptionsParam3MandateOptions.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsParam3MandateOptions(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

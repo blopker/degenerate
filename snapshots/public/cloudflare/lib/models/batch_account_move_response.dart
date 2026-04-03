@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'batch_account_move_response_statuses.dart';final class BatchAccountMoveResponse {const BatchAccountMoveResponse({required this.statuses});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_account_move_response_statuses.dart';@immutable final class BatchAccountMoveResponse {const BatchAccountMoveResponse({required this.statuses});
 
 factory BatchAccountMoveResponse.fromJson(Map<String, dynamic> json) { return BatchAccountMoveResponse(
   statuses: BatchAccountMoveResponseStatuses.fromJson(json['statuses'] as Map<String, dynamic>),

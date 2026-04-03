@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_messages2.dart';import 'response_collection13_result_info.dart';final class ResponseCollection13 {const ResponseCollection13({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_messages2.dart';import 'response_collection13_result_info.dart';@immutable final class ResponseCollection13 {const ResponseCollection13({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection13.fromJson(Map<String, dynamic> json) { return ResponseCollection13(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsFirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),

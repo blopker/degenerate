@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Nameserver type
-final class DnsSettingsDnsSettingsAccountResponseNameserversType {const DnsSettingsDnsSettingsAccountResponseNameserversType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Nameserver type
+@immutable final class DnsSettingsDnsSettingsAccountResponseNameserversType {const DnsSettingsDnsSettingsAccountResponseNameserversType._(this.value);
 
 factory DnsSettingsDnsSettingsAccountResponseNameserversType.fromJson(String json) { return switch (json) {
   'cloudflare.standard' => cloudflareStandard,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DnsSettingsDnsSettingsAccountResponseNameserversType($value)'; } 
  }
 /// Settings determining the nameservers through which the zone should be available.
-final class DnsSettingsDnsSettingsAccountResponseNameservers {const DnsSettingsDnsSettingsAccountResponseNameservers({required this.type});
+@immutable final class DnsSettingsDnsSettingsAccountResponseNameservers {const DnsSettingsDnsSettingsAccountResponseNameservers({required this.type});
 
 factory DnsSettingsDnsSettingsAccountResponseNameservers.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsAccountResponseNameservers(
   type: DnsSettingsDnsSettingsAccountResponseNameserversType.fromJson(json['type'] as String),

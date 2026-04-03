@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_transcription_response_json_logprobs.dart';import 'create_transcription_response_json_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// Represents a transcription response returned by model, based on the provided input.
-final class CreateTranscriptionResponseJson {const CreateTranscriptionResponseJson({required this.text, this.logprobs, this.usage, });
+@immutable final class CreateTranscriptionResponseJson {const CreateTranscriptionResponseJson({required this.text, this.logprobs, this.usage, });
 
 factory CreateTranscriptionResponseJson.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseJson(
   text: json['text'] as String,

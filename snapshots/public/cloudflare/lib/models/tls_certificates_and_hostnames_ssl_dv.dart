@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_authority.dart';import 'tls_certificates_and_hostnames_ssl_dv_validation_errors.dart';import 'tls_certificates_and_hostnames_sslsettings.dart';import 'tls_certificates_and_hostnames_validation_record.dart';/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
-final class TlsCertificatesAndHostnamesSslDvBundleMethod {const TlsCertificatesAndHostnamesSslDvBundleMethod._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslDvBundleMethod {const TlsCertificatesAndHostnamesSslDvBundleMethod._(this.value);
 
 factory TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(String json) { return switch (json) {
   'ubiquitous' => ubiquitous,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslDvBundleMethod($value)'; } 
  }
 /// Domain control validation (DCV) method used for this hostname.
-final class TlsCertificatesAndHostnamesSslDvMethod {const TlsCertificatesAndHostnamesSslDvMethod._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslDvMethod {const TlsCertificatesAndHostnamesSslDvMethod._(this.value);
 
 factory TlsCertificatesAndHostnamesSslDvMethod.fromJson(String json) { return switch (json) {
   'http' => http,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslDvMethod($value)'; } 
  }
 /// Status of the hostname's SSL certificates.
-final class TlsCertificatesAndHostnamesSslDvStatus {const TlsCertificatesAndHostnamesSslDvStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslDvStatus {const TlsCertificatesAndHostnamesSslDvStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesSslDvStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -139,7 +139,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSslDvStatus($value)'; } 
  }
 /// Level of validation to be used for this hostname. Domain validation (dv) must be used.
-final class TlsCertificatesAndHostnamesSslDvType {const TlsCertificatesAndHostnamesSslDvType._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSslDvType {const TlsCertificatesAndHostnamesSslDvType._(this.value);
 
 factory TlsCertificatesAndHostnamesSslDvType.fromJson(String json) { return switch (json) {
   'dv' => dv,
@@ -160,7 +160,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesSslDvType($value)'; } 
  }
-final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod = TlsCertificatesAndHostnamesSslDvBundleMethod.ubiquitous, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
+@immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod = TlsCertificatesAndHostnamesSslDvBundleMethod.ubiquitous, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
 
 factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslDv(
   bundleMethod: json.containsKey('bundle_method') ? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(json['bundle_method'] as String) : TlsCertificatesAndHostnamesSslDvBundleMethod.ubiquitous,

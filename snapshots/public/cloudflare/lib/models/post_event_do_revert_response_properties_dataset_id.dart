@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventDoRevertResponsePropertiesDatasetId {const PostEventDoRevertResponsePropertiesDatasetId({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventDoRevertResponsePropertiesDatasetId {const PostEventDoRevertResponsePropertiesDatasetId({required this.type});
 
 factory PostEventDoRevertResponsePropertiesDatasetId.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponsePropertiesDatasetId(
   type: json['type'] as String,

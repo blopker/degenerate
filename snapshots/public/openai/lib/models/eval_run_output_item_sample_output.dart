@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EvalRunOutputItemSampleOutput {const EvalRunOutputItemSampleOutput({this.role, this.content, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EvalRunOutputItemSampleOutput {const EvalRunOutputItemSampleOutput({this.role, this.content, });
 
 factory EvalRunOutputItemSampleOutput.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemSampleOutput(
   role: json['role'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEventsRequest {const GetEventsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventsRequest {const GetEventsRequest();
 
 factory GetEventsRequest.fromJson(Map<String, dynamic> json) { return GetEventsRequest(
 

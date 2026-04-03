@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependabot_alert_package.dart';/// The execution scope of the vulnerable dependency.
-final class DependabotAlertWithRepositoryDependencyScope {const DependabotAlertWithRepositoryDependencyScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert_package.dart';/// The execution scope of the vulnerable dependency.
+@immutable final class DependabotAlertWithRepositoryDependencyScope {const DependabotAlertWithRepositoryDependencyScope._(this.value);
 
 factory DependabotAlertWithRepositoryDependencyScope.fromJson(String json) { return switch (json) {
   'development' => development,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// > [!NOTE]
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
-final class DependabotAlertWithRepositoryDependencyRelationship {const DependabotAlertWithRepositoryDependencyRelationship._(this.value);
+@immutable final class DependabotAlertWithRepositoryDependencyRelationship {const DependabotAlertWithRepositoryDependencyRelationship._(this.value);
 
 factory DependabotAlertWithRepositoryDependencyRelationship.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertWithRepositoryDependencyRelationship($value)'; } 
  }
 /// Details for the vulnerable dependency.
-final class DependabotAlertWithRepositoryDependency {const DependabotAlertWithRepositoryDependency({this.package, this.manifestPath, this.scope, this.relationship, });
+@immutable final class DependabotAlertWithRepositoryDependency {const DependabotAlertWithRepositoryDependency({this.package, this.manifestPath, this.scope, this.relationship, });
 
 factory DependabotAlertWithRepositoryDependency.fromJson(Map<String, dynamic> json) { return DependabotAlertWithRepositoryDependency(
   package: json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null,

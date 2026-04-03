@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_start_outputs_next.dart';final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs({required this.next});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_start_outputs_next.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs({required this.next});
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs(
   next: AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputsNext.fromJson(json['next'] as Map<String, dynamic>),

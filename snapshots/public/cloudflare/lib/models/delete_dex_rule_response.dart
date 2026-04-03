@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteDexRuleResponse {const DeleteDexRuleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteDexRuleResponse {const DeleteDexRuleResponse({this.result});
 
 factory DeleteDexRuleResponse.fromJson(Map<String, dynamic> json) { return DeleteDexRuleResponse(
   result: json['result'] as bool?,

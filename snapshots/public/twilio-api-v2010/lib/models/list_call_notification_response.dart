@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_call_call_notification.dart';final class ListCallNotificationResponse {const ListCallNotificationResponse({this.notifications, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_call_call_notification.dart';@immutable final class ListCallNotificationResponse {const ListCallNotificationResponse({this.notifications, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListCallNotificationResponse.fromJson(Map<String, dynamic> json) { return ListCallNotificationResponse(
   notifications: (json['notifications'] as List<dynamic>?)?.map((e) => AccountCallCallNotification.fromJson(e as Map<String, dynamic>)).toList(),

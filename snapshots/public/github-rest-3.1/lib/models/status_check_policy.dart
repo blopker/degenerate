@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'status_check_policy_checks.dart';/// Status Check Policy
-final class StatusCheckPolicy {const StatusCheckPolicy({required this.url, required this.strict, required this.contexts, required this.checks, required this.contextsUrl, });
+@immutable final class StatusCheckPolicy {const StatusCheckPolicy({required this.url, required this.strict, required this.contexts, required this.checks, required this.contextsUrl, });
 
 factory StatusCheckPolicy.fromJson(Map<String, dynamic> json) { return StatusCheckPolicy(
   url: Uri.parse(json['url'] as String),

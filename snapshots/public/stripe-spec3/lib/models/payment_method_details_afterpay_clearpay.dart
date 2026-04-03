@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsAfterpayClearpay {const PaymentMethodDetailsAfterpayClearpay({this.orderId, this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsAfterpayClearpay {const PaymentMethodDetailsAfterpayClearpay({this.orderId, this.reference, });
 
 factory PaymentMethodDetailsAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAfterpayClearpay(
   orderId: json['order_id'] as String?,

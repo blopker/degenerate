@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fetch_gateways_response_result_servers.dart';final class FetchGatewaysResponseResult {const FetchGatewaysResponseResult({this.createdAt, this.createdBy, this.description, required this.hostname, required this.id, this.modifiedAt, this.modifiedBy, required this.name, this.secureWebGateway, required this.servers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fetch_gateways_response_result_servers.dart';@immutable final class FetchGatewaysResponseResult {const FetchGatewaysResponseResult({required this.hostname, required this.id, required this.name, required this.servers, this.createdAt, this.createdBy, this.description, this.modifiedAt, this.modifiedBy, this.secureWebGateway, });
 
 factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponseResult(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryReceivedDebitsRequest {const GetTreasuryReceivedDebitsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryReceivedDebitsRequest {const GetTreasuryReceivedDebitsRequest();
 
 factory GetTreasuryReceivedDebitsRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryReceivedDebitsRequest(
 

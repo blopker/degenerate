@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class CheckoutKakaoPayPaymentMethodOptionsCaptureMethod {const CheckoutKakaoPayPaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class CheckoutKakaoPayPaymentMethodOptionsCaptureMethod {const CheckoutKakaoPayPaymentMethodOptionsCaptureMethod._(this.value);
 
 factory CheckoutKakaoPayPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class CheckoutKakaoPayPaymentMethodOptionsSetupFutureUsage {const CheckoutKakaoPayPaymentMethodOptionsSetupFutureUsage._(this.value);
+@immutable final class CheckoutKakaoPayPaymentMethodOptionsSetupFutureUsage {const CheckoutKakaoPayPaymentMethodOptionsSetupFutureUsage._(this.value);
 
 factory CheckoutKakaoPayPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutKakaoPayPaymentMethodOptionsSetupFutureUsage($value)'; } 
  }
 /// 
-final class CheckoutKakaoPayPaymentMethodOptions {const CheckoutKakaoPayPaymentMethodOptions({this.captureMethod, this.setupFutureUsage, });
+@immutable final class CheckoutKakaoPayPaymentMethodOptions {const CheckoutKakaoPayPaymentMethodOptions({this.captureMethod, this.setupFutureUsage, });
 
 factory CheckoutKakaoPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutKakaoPayPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutKakaoPayPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

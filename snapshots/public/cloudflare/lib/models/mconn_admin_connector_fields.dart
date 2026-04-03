@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';final class MconnAdminConnectorFields {const MconnAdminConnectorFields({this.accountId, this.activated, this.cloudflaredTunnelId, this.cloudflaredTunnelToken, this.cohortId, this.desiredVersion, this.deviceId, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.lastHeartbeat, this.lastSeenVersion, this.lastUpdated, this.notes, this.timezone, this.upgradeAsap, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';@immutable final class MconnAdminConnectorFields {const MconnAdminConnectorFields({this.accountId, this.activated, this.cloudflaredTunnelId, this.cloudflaredTunnelToken, this.cohortId, this.desiredVersion, this.deviceId, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.lastHeartbeat, this.lastSeenVersion, this.lastUpdated, this.notes, this.timezone, this.upgradeAsap, });
 
 factory MconnAdminConnectorFields.fromJson(Map<String, dynamic> json) { return MconnAdminConnectorFields(
   accountId: json['account_id'] != null ? (json['account_id'] as num).toDouble() : null,

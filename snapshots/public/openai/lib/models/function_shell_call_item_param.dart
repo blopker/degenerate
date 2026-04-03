@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'function_shell_action_param.dart';import 'function_shell_call_item_param_environment.dart';import 'function_shell_call_item_status.dart';/// A tool representing a request to execute one or more shell commands.
-final class FunctionShellCallItemParam {const FunctionShellCallItemParam({this.id, required this.callId, this.type = 'shell_call', required this.action, this.status, this.environment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_action_param.dart';import 'function_shell_call_item_param_environment.dart';import 'function_shell_call_item_status.dart';/// A tool representing a request to execute one or more shell commands.
+@immutable final class FunctionShellCallItemParam {const FunctionShellCallItemParam({required this.callId, required this.action, this.id, this.type = 'shell_call', this.status, this.environment, });
 
 factory FunctionShellCallItemParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallItemParam(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListsItemsListResponseCollectionResultInfoCursors {const ListsItemsListResponseCollectionResultInfoCursors({this.after, this.before, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsItemsListResponseCollectionResultInfoCursors {const ListsItemsListResponseCollectionResultInfoCursors({this.after, this.before, });
 
 factory ListsItemsListResponseCollectionResultInfoCursors.fromJson(Map<String, dynamic> json) { return ListsItemsListResponseCollectionResultInfoCursors(
   after: json['after'] as String?,

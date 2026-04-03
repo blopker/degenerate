@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataCashapp {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataCashapp();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataCashapp {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataCashapp();
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataCashapp.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataCashapp(
 

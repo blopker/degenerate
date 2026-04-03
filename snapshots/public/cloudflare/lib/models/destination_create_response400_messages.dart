@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationCreateResponse400Messages {const DestinationCreateResponse400Messages({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponse400Messages {const DestinationCreateResponse400Messages({required this.message});
 
 factory DestinationCreateResponse400Messages.fromJson(Map<String, dynamic> json) { return DestinationCreateResponse400Messages(
   message: json['message'] as String,

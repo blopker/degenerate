@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metrics on number of objects/amount of storage used.
-final class R2ObjectSizeMetrics {const R2ObjectSizeMetrics({this.metadataSize, this.objects, this.payloadSize, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics on number of objects/amount of storage used.
+@immutable final class R2ObjectSizeMetrics {const R2ObjectSizeMetrics({this.metadataSize, this.objects, this.payloadSize, });
 
 factory R2ObjectSizeMetrics.fromJson(Map<String, dynamic> json) { return R2ObjectSizeMetrics(
   metadataSize: json['metadataSize'] != null ? (json['metadataSize'] as num).toDouble() : null,

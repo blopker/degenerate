@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// APIResource specifies the name of a resource and whether it is namespaced.
-final class Resource {const Resource({this.categories, this.group, this.kind = '', this.name = '', this.namespaced = false, this.shortNames, this.singularName = '', this.storageVersionHash, required this.verbs, this.version, });
+@immutable final class Resource {const Resource({required this.verbs, this.categories, this.group, this.kind = '', this.name = '', this.namespaced = false, this.shortNames, this.singularName = '', this.storageVersionHash, this.version, });
 
 factory Resource.fromJson(Map<String, dynamic> json) { return Resource(
   categories: (json['categories'] as List<dynamic>?)?.map((e) => e as String).toList(),

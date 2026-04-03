@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_id_response_result_asn_estimated_users.dart';import 'radar_get_entities_asn_by_id_response_result_asn_related.dart';final class RadarGetEntitiesAsnByIdResponseResultAsn {const RadarGetEntitiesAsnByIdResponseResultAsn({this.aka, required this.asn, required this.confidenceLevel, required this.country, required this.countryName, required this.estimatedUsers, required this.name, required this.orgName, required this.related, required this.source, required this.website, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_id_response_result_asn_estimated_users.dart';import 'radar_get_entities_asn_by_id_response_result_asn_related.dart';@immutable final class RadarGetEntitiesAsnByIdResponseResultAsn {const RadarGetEntitiesAsnByIdResponseResultAsn({required this.asn, required this.confidenceLevel, required this.country, required this.countryName, required this.estimatedUsers, required this.name, required this.orgName, required this.related, required this.source, required this.website, this.aka, });
 
 factory RadarGetEntitiesAsnByIdResponseResultAsn.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResultAsn(
   aka: json['aka'] as String?,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Learn about [text inputs](/docs/guides/text-generation).
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Learn about [text inputs](/docs/guides/text-generation).
 /// 
-final class ChatCompletionRequestMessageContentPartText {const ChatCompletionRequestMessageContentPartText({required this.type, required this.text, });
+@immutable final class ChatCompletionRequestMessageContentPartText {const ChatCompletionRequestMessageContentPartText({required this.type, required this.text, });
 
 factory ChatCompletionRequestMessageContentPartText.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartText(
   type: json['type'] as String,

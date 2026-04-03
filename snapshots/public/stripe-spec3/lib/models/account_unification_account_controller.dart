@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_unification_account_controller_fees.dart';import 'account_unification_account_controller_losses.dart';import 'account_unification_account_controller_stripe_dashboard.dart';/// A value indicating responsibility for collecting requirements on this account. Only returned when the Connect application retrieving the resource controls the account.
-final class AccountUnificationAccountControllerRequirementCollection {const AccountUnificationAccountControllerRequirementCollection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_unification_account_controller_fees.dart';import 'account_unification_account_controller_losses.dart';import 'account_unification_account_controller_stripe_dashboard.dart';/// A value indicating responsibility for collecting requirements on this account. Only returned when the Connect application retrieving the resource controls the account.
+@immutable final class AccountUnificationAccountControllerRequirementCollection {const AccountUnificationAccountControllerRequirementCollection._(this.value);
 
 factory AccountUnificationAccountControllerRequirementCollection.fromJson(String json) { return switch (json) {
   'application' => application,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountUnificationAccountControllerRequirementCollection($value)'; } 
  }
 /// The controller type. Can be `application`, if a Connect application controls the account, or `account`, if the account controls itself.
-final class AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType._(this.value);
+@immutable final class AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType._(this.value);
 
 factory AccountUnificationAccountControllerType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountUnificationAccountControllerType($value)'; } 
  }
 /// 
-final class AccountUnificationAccountController {const AccountUnificationAccountController({this.fees, this.isController, this.losses, this.requirementCollection, this.stripeDashboard, required this.type, });
+@immutable final class AccountUnificationAccountController {const AccountUnificationAccountController({required this.type, this.fees, this.isController, this.losses, this.requirementCollection, this.stripeDashboard, });
 
 factory AccountUnificationAccountController.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountController(
   fees: json['fees'] != null ? AccountUnificationAccountControllerFees.fromJson(json['fees'] as Map<String, dynamic>) : null,

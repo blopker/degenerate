@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details2.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentDetailsVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentDetailsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details2.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentDetailsVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentDetailsVariant2._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentDetailsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

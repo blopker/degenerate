@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_branch_name_pattern.dart';import 'repository_rule_code_scanning.dart';import 'repository_rule_commit_author_email_pattern.dart';import 'repository_rule_commit_message_pattern.dart';import 'repository_rule_committer_email_pattern.dart';import 'repository_rule_copilot_code_review.dart';import 'repository_rule_creation.dart';import 'repository_rule_deletion.dart';import 'repository_rule_file_extension_restriction.dart';import 'repository_rule_file_path_restriction.dart';import 'repository_rule_max_file_path_length.dart';import 'repository_rule_max_file_size.dart';import 'repository_rule_non_fast_forward.dart';import 'repository_rule_pull_request.dart';import 'repository_rule_required_deployments.dart';import 'repository_rule_required_linear_history.dart';import 'repository_rule_required_signatures.dart';import 'repository_rule_required_status_checks.dart';import 'repository_rule_tag_name_pattern.dart';import 'repository_rule_update.dart';import 'repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_branch_name_pattern.dart';import 'repository_rule_code_scanning.dart';import 'repository_rule_commit_author_email_pattern.dart';import 'repository_rule_commit_message_pattern.dart';import 'repository_rule_committer_email_pattern.dart';import 'repository_rule_copilot_code_review.dart';import 'repository_rule_creation.dart';import 'repository_rule_deletion.dart';import 'repository_rule_file_extension_restriction.dart';import 'repository_rule_file_path_restriction.dart';import 'repository_rule_max_file_path_length.dart';import 'repository_rule_max_file_size.dart';import 'repository_rule_non_fast_forward.dart';import 'repository_rule_pull_request.dart';import 'repository_rule_required_deployments.dart';import 'repository_rule_required_linear_history.dart';import 'repository_rule_required_signatures.dart';import 'repository_rule_required_status_checks.dart';import 'repository_rule_tag_name_pattern.dart';import 'repository_rule_update.dart';import 'repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
 sealed class OrgRules {const OrgRules();
 
 factory OrgRules.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreation.canParse(json)) {
@@ -72,7 +72,7 @@ factory OrgRules.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreat
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class OrgRulesRepositoryRuleCreation extends OrgRules {const OrgRulesRepositoryRuleCreation(this._value);
+@immutable final class OrgRulesRepositoryRuleCreation extends OrgRules {const OrgRulesRepositoryRuleCreation(this._value);
 
 final RepositoryRuleCreation _value;
 
@@ -82,7 +82,7 @@ final RepositoryRuleCreation _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleCreation($_value)'; } 
  }
-final class OrgRulesRepositoryRuleUpdate extends OrgRules {const OrgRulesRepositoryRuleUpdate(this._value);
+@immutable final class OrgRulesRepositoryRuleUpdate extends OrgRules {const OrgRulesRepositoryRuleUpdate(this._value);
 
 final RepositoryRuleUpdate _value;
 
@@ -92,7 +92,7 @@ final RepositoryRuleUpdate _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleUpdate($_value)'; } 
  }
-final class OrgRulesRepositoryRuleDeletion extends OrgRules {const OrgRulesRepositoryRuleDeletion(this._value);
+@immutable final class OrgRulesRepositoryRuleDeletion extends OrgRules {const OrgRulesRepositoryRuleDeletion(this._value);
 
 final RepositoryRuleDeletion _value;
 
@@ -102,7 +102,7 @@ final RepositoryRuleDeletion _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleDeletion($_value)'; } 
  }
-final class OrgRulesRepositoryRuleRequiredLinearHistory extends OrgRules {const OrgRulesRepositoryRuleRequiredLinearHistory(this._value);
+@immutable final class OrgRulesRepositoryRuleRequiredLinearHistory extends OrgRules {const OrgRulesRepositoryRuleRequiredLinearHistory(this._value);
 
 final RepositoryRuleRequiredLinearHistory _value;
 
@@ -112,7 +112,7 @@ final RepositoryRuleRequiredLinearHistory _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleRequiredLinearHistory($_value)'; } 
  }
-final class OrgRulesRepositoryRuleRequiredDeployments extends OrgRules {const OrgRulesRepositoryRuleRequiredDeployments(this._value);
+@immutable final class OrgRulesRepositoryRuleRequiredDeployments extends OrgRules {const OrgRulesRepositoryRuleRequiredDeployments(this._value);
 
 final RepositoryRuleRequiredDeployments _value;
 
@@ -122,7 +122,7 @@ final RepositoryRuleRequiredDeployments _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleRequiredDeployments($_value)'; } 
  }
-final class OrgRulesRepositoryRuleRequiredSignatures extends OrgRules {const OrgRulesRepositoryRuleRequiredSignatures(this._value);
+@immutable final class OrgRulesRepositoryRuleRequiredSignatures extends OrgRules {const OrgRulesRepositoryRuleRequiredSignatures(this._value);
 
 final RepositoryRuleRequiredSignatures _value;
 
@@ -132,7 +132,7 @@ final RepositoryRuleRequiredSignatures _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleRequiredSignatures($_value)'; } 
  }
-final class OrgRulesRepositoryRulePullRequest extends OrgRules {const OrgRulesRepositoryRulePullRequest(this._value);
+@immutable final class OrgRulesRepositoryRulePullRequest extends OrgRules {const OrgRulesRepositoryRulePullRequest(this._value);
 
 final RepositoryRulePullRequest _value;
 
@@ -142,7 +142,7 @@ final RepositoryRulePullRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRulePullRequest($_value)'; } 
  }
-final class OrgRulesRepositoryRuleRequiredStatusChecks extends OrgRules {const OrgRulesRepositoryRuleRequiredStatusChecks(this._value);
+@immutable final class OrgRulesRepositoryRuleRequiredStatusChecks extends OrgRules {const OrgRulesRepositoryRuleRequiredStatusChecks(this._value);
 
 final RepositoryRuleRequiredStatusChecks _value;
 
@@ -152,7 +152,7 @@ final RepositoryRuleRequiredStatusChecks _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleRequiredStatusChecks($_value)'; } 
  }
-final class OrgRulesRepositoryRuleNonFastForward extends OrgRules {const OrgRulesRepositoryRuleNonFastForward(this._value);
+@immutable final class OrgRulesRepositoryRuleNonFastForward extends OrgRules {const OrgRulesRepositoryRuleNonFastForward(this._value);
 
 final RepositoryRuleNonFastForward _value;
 
@@ -162,7 +162,7 @@ final RepositoryRuleNonFastForward _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleNonFastForward($_value)'; } 
  }
-final class OrgRulesRepositoryRuleCommitMessagePattern extends OrgRules {const OrgRulesRepositoryRuleCommitMessagePattern(this._value);
+@immutable final class OrgRulesRepositoryRuleCommitMessagePattern extends OrgRules {const OrgRulesRepositoryRuleCommitMessagePattern(this._value);
 
 final RepositoryRuleCommitMessagePattern _value;
 
@@ -172,7 +172,7 @@ final RepositoryRuleCommitMessagePattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleCommitMessagePattern($_value)'; } 
  }
-final class OrgRulesRepositoryRuleCommitAuthorEmailPattern extends OrgRules {const OrgRulesRepositoryRuleCommitAuthorEmailPattern(this._value);
+@immutable final class OrgRulesRepositoryRuleCommitAuthorEmailPattern extends OrgRules {const OrgRulesRepositoryRuleCommitAuthorEmailPattern(this._value);
 
 final RepositoryRuleCommitAuthorEmailPattern _value;
 
@@ -182,7 +182,7 @@ final RepositoryRuleCommitAuthorEmailPattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleCommitAuthorEmailPattern($_value)'; } 
  }
-final class OrgRulesRepositoryRuleCommitterEmailPattern extends OrgRules {const OrgRulesRepositoryRuleCommitterEmailPattern(this._value);
+@immutable final class OrgRulesRepositoryRuleCommitterEmailPattern extends OrgRules {const OrgRulesRepositoryRuleCommitterEmailPattern(this._value);
 
 final RepositoryRuleCommitterEmailPattern _value;
 
@@ -192,7 +192,7 @@ final RepositoryRuleCommitterEmailPattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleCommitterEmailPattern($_value)'; } 
  }
-final class OrgRulesRepositoryRuleBranchNamePattern extends OrgRules {const OrgRulesRepositoryRuleBranchNamePattern(this._value);
+@immutable final class OrgRulesRepositoryRuleBranchNamePattern extends OrgRules {const OrgRulesRepositoryRuleBranchNamePattern(this._value);
 
 final RepositoryRuleBranchNamePattern _value;
 
@@ -202,7 +202,7 @@ final RepositoryRuleBranchNamePattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleBranchNamePattern($_value)'; } 
  }
-final class OrgRulesRepositoryRuleTagNamePattern extends OrgRules {const OrgRulesRepositoryRuleTagNamePattern(this._value);
+@immutable final class OrgRulesRepositoryRuleTagNamePattern extends OrgRules {const OrgRulesRepositoryRuleTagNamePattern(this._value);
 
 final RepositoryRuleTagNamePattern _value;
 
@@ -212,7 +212,7 @@ final RepositoryRuleTagNamePattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleTagNamePattern($_value)'; } 
  }
-final class OrgRulesRepositoryRuleFilePathRestriction extends OrgRules {const OrgRulesRepositoryRuleFilePathRestriction(this._value);
+@immutable final class OrgRulesRepositoryRuleFilePathRestriction extends OrgRules {const OrgRulesRepositoryRuleFilePathRestriction(this._value);
 
 final RepositoryRuleFilePathRestriction _value;
 
@@ -222,7 +222,7 @@ final RepositoryRuleFilePathRestriction _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleFilePathRestriction($_value)'; } 
  }
-final class OrgRulesRepositoryRuleMaxFilePathLength extends OrgRules {const OrgRulesRepositoryRuleMaxFilePathLength(this._value);
+@immutable final class OrgRulesRepositoryRuleMaxFilePathLength extends OrgRules {const OrgRulesRepositoryRuleMaxFilePathLength(this._value);
 
 final RepositoryRuleMaxFilePathLength _value;
 
@@ -232,7 +232,7 @@ final RepositoryRuleMaxFilePathLength _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleMaxFilePathLength($_value)'; } 
  }
-final class OrgRulesRepositoryRuleFileExtensionRestriction extends OrgRules {const OrgRulesRepositoryRuleFileExtensionRestriction(this._value);
+@immutable final class OrgRulesRepositoryRuleFileExtensionRestriction extends OrgRules {const OrgRulesRepositoryRuleFileExtensionRestriction(this._value);
 
 final RepositoryRuleFileExtensionRestriction _value;
 
@@ -242,7 +242,7 @@ final RepositoryRuleFileExtensionRestriction _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleFileExtensionRestriction($_value)'; } 
  }
-final class OrgRulesRepositoryRuleMaxFileSize extends OrgRules {const OrgRulesRepositoryRuleMaxFileSize(this._value);
+@immutable final class OrgRulesRepositoryRuleMaxFileSize extends OrgRules {const OrgRulesRepositoryRuleMaxFileSize(this._value);
 
 final RepositoryRuleMaxFileSize _value;
 
@@ -252,7 +252,7 @@ final RepositoryRuleMaxFileSize _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleMaxFileSize($_value)'; } 
  }
-final class OrgRulesRepositoryRuleWorkflows extends OrgRules {const OrgRulesRepositoryRuleWorkflows(this._value);
+@immutable final class OrgRulesRepositoryRuleWorkflows extends OrgRules {const OrgRulesRepositoryRuleWorkflows(this._value);
 
 final RepositoryRuleWorkflows _value;
 
@@ -262,7 +262,7 @@ final RepositoryRuleWorkflows _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleWorkflows($_value)'; } 
  }
-final class OrgRulesRepositoryRuleCodeScanning extends OrgRules {const OrgRulesRepositoryRuleCodeScanning(this._value);
+@immutable final class OrgRulesRepositoryRuleCodeScanning extends OrgRules {const OrgRulesRepositoryRuleCodeScanning(this._value);
 
 final RepositoryRuleCodeScanning _value;
 
@@ -272,7 +272,7 @@ final RepositoryRuleCodeScanning _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'OrgRules.repositoryRuleCodeScanning($_value)'; } 
  }
-final class OrgRulesRepositoryRuleCopilotCodeReview extends OrgRules {const OrgRulesRepositoryRuleCopilotCodeReview(this._value);
+@immutable final class OrgRulesRepositoryRuleCopilotCodeReview extends OrgRules {const OrgRulesRepositoryRuleCopilotCodeReview(this._value);
 
 final RepositoryRuleCopilotCodeReview _value;
 
@@ -283,7 +283,7 @@ final RepositoryRuleCopilotCodeReview _value;
 @override String toString() { return 'OrgRules.repositoryRuleCopilotCodeReview($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class OrgRules$Unknown extends OrgRules {const OrgRules$Unknown(this._value);
+@immutable final class OrgRules$Unknown extends OrgRules {const OrgRules$Unknown(this._value);
 
 final dynamic _value;
 

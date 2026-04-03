@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PageTokenResultInfo {const PageTokenResultInfo({this.nextPageToken, this.totalSize, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageTokenResultInfo {const PageTokenResultInfo({this.nextPageToken, this.totalSize, });
 
 factory PageTokenResultInfo.fromJson(Map<String, dynamic> json) { return PageTokenResultInfo(
   nextPageToken: json['next_page_token'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupAttemptPaymentMethodDetailsBacsDebit {const SetupAttemptPaymentMethodDetailsBacsDebit();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupAttemptPaymentMethodDetailsBacsDebit {const SetupAttemptPaymentMethodDetailsBacsDebit();
 
 factory SetupAttemptPaymentMethodDetailsBacsDebit.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsBacsDebit(
 

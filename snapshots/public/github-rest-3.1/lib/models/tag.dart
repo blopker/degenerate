@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tag_commit.dart';/// Tag
-final class Tag {const Tag({required this.name, required this.commit, required this.zipballUrl, required this.tarballUrl, required this.nodeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tag_commit.dart';/// Tag
+@immutable final class Tag {const Tag({required this.name, required this.commit, required this.zipballUrl, required this.tarballUrl, required this.nodeId, });
 
 factory Tag.fromJson(Map<String, dynamic> json) { return Tag(
   name: json['name'] as String,

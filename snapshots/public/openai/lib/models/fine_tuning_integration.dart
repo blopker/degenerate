@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'fine_tuning_integration_wandb.dart';/// The type of the integration being enabled for the fine-tuning job
-final class FineTuningIntegrationType {const FineTuningIntegrationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_integration_wandb.dart';/// The type of the integration being enabled for the fine-tuning job
+@immutable final class FineTuningIntegrationType {const FineTuningIntegrationType._(this.value);
 
 factory FineTuningIntegrationType.fromJson(String json) { return switch (json) {
   'wandb' => wandb,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FineTuningIntegrationType($value)'; } 
  }
-final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
+@immutable final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
 
 factory FineTuningIntegration.fromJson(Map<String, dynamic> json) { return FineTuningIntegration(
   type: FineTuningIntegrationType.fromJson(json['type'] as String),

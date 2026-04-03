@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// This hash contains whether the buy button is enabled.
-final class CustomerSessionResourceComponentsResourceBuyButton {const CustomerSessionResourceComponentsResourceBuyButton({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains whether the buy button is enabled.
+@immutable final class CustomerSessionResourceComponentsResourceBuyButton {const CustomerSessionResourceComponentsResourceBuyButton({required this.enabled});
 
 factory CustomerSessionResourceComponentsResourceBuyButton.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceBuyButton(
   enabled: json['enabled'] as bool,

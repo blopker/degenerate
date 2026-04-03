@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A workflow referenced/reused by the initial caller workflow
-final class ReferencedWorkflow {const ReferencedWorkflow({required this.path, required this.sha, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A workflow referenced/reused by the initial caller workflow
+@immutable final class ReferencedWorkflow {const ReferencedWorkflow({required this.path, required this.sha, this.ref, });
 
 factory ReferencedWorkflow.fromJson(Map<String, dynamic> json) { return ReferencedWorkflow(
   path: json['path'] as String,

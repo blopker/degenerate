@@ -40,19 +40,19 @@ final class OneOf2<A, B> {
   /// Deserializes from JSON using typed parsers.
   static OneOf2<A, B> parse<A, B>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
   }) {
     if (json is A) return OneOf2._(json);
     if (json is B) return OneOf2._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf2._(fromA(json));
+      return OneOf2._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf2._(fromB(json));
+      return OneOf2._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
@@ -105,26 +105,26 @@ final class OneOf3<A, B, C> {
   /// Deserializes from JSON using typed parsers.
   static OneOf3<A, B, C> parse<A, B, C>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
   }) {
     if (json is A) return OneOf3._(json);
     if (json is B) return OneOf3._(json);
     if (json is C) return OneOf3._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf3._(fromA(json));
+      return OneOf3._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf3._(fromB(json));
+      return OneOf3._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf3._(fromC(json));
+      return OneOf3._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
@@ -181,10 +181,10 @@ final class OneOf4<A, B, C, D> {
   /// Deserializes from JSON using typed parsers.
   static OneOf4<A, B, C, D> parse<A, B, C, D>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
-    required D Function(Object?) fromD,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
+    required D Function(Object) fromD,
   }) {
     if (json is A) return OneOf4._(json);
     if (json is B) return OneOf4._(json);
@@ -192,22 +192,22 @@ final class OneOf4<A, B, C, D> {
     if (json is D) return OneOf4._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf4._(fromA(json));
+      return OneOf4._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf4._(fromB(json));
+      return OneOf4._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf4._(fromC(json));
+      return OneOf4._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf4._(fromD(json));
+      return OneOf4._(fromD(json!));
     } on Exception catch (e) {
       errors.add(('$D', e));
     }
@@ -267,11 +267,11 @@ final class OneOf5<A, B, C, D, E> {
   /// Deserializes from JSON using typed parsers.
   static OneOf5<A, B, C, D, E> parse<A, B, C, D, E>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
-    required D Function(Object?) fromD,
-    required E Function(Object?) fromE,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
+    required D Function(Object) fromD,
+    required E Function(Object) fromE,
   }) {
     if (json is A) return OneOf5._(json);
     if (json is B) return OneOf5._(json);
@@ -280,27 +280,27 @@ final class OneOf5<A, B, C, D, E> {
     if (json is E) return OneOf5._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf5._(fromA(json));
+      return OneOf5._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf5._(fromB(json));
+      return OneOf5._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf5._(fromC(json));
+      return OneOf5._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf5._(fromD(json));
+      return OneOf5._(fromD(json!));
     } on Exception catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf5._(fromE(json));
+      return OneOf5._(fromE(json!));
     } on Exception catch (e) {
       errors.add(('$E', e));
     }
@@ -363,12 +363,12 @@ final class OneOf6<A, B, C, D, E, F> {
   /// Deserializes from JSON using typed parsers.
   static OneOf6<A, B, C, D, E, F> parse<A, B, C, D, E, F>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
-    required D Function(Object?) fromD,
-    required E Function(Object?) fromE,
-    required F Function(Object?) fromF,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
+    required D Function(Object) fromD,
+    required E Function(Object) fromE,
+    required F Function(Object) fromF,
   }) {
     if (json is A) return OneOf6._(json);
     if (json is B) return OneOf6._(json);
@@ -378,32 +378,32 @@ final class OneOf6<A, B, C, D, E, F> {
     if (json is F) return OneOf6._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf6._(fromA(json));
+      return OneOf6._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf6._(fromB(json));
+      return OneOf6._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf6._(fromC(json));
+      return OneOf6._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf6._(fromD(json));
+      return OneOf6._(fromD(json!));
     } on Exception catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf6._(fromE(json));
+      return OneOf6._(fromE(json!));
     } on Exception catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf6._(fromF(json));
+      return OneOf6._(fromF(json!));
     } on Exception catch (e) {
       errors.add(('$F', e));
     }
@@ -469,13 +469,13 @@ final class OneOf7<A, B, C, D, E, F, G> {
   /// Deserializes from JSON using typed parsers.
   static OneOf7<A, B, C, D, E, F, G> parse<A, B, C, D, E, F, G>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
-    required D Function(Object?) fromD,
-    required E Function(Object?) fromE,
-    required F Function(Object?) fromF,
-    required G Function(Object?) fromG,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
+    required D Function(Object) fromD,
+    required E Function(Object) fromE,
+    required F Function(Object) fromF,
+    required G Function(Object) fromG,
   }) {
     if (json is A) return OneOf7._(json);
     if (json is B) return OneOf7._(json);
@@ -486,37 +486,37 @@ final class OneOf7<A, B, C, D, E, F, G> {
     if (json is G) return OneOf7._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf7._(fromA(json));
+      return OneOf7._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf7._(fromB(json));
+      return OneOf7._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf7._(fromC(json));
+      return OneOf7._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf7._(fromD(json));
+      return OneOf7._(fromD(json!));
     } on Exception catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf7._(fromE(json));
+      return OneOf7._(fromE(json!));
     } on Exception catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf7._(fromF(json));
+      return OneOf7._(fromF(json!));
     } on Exception catch (e) {
       errors.add(('$F', e));
     }
     try {
-      return OneOf7._(fromG(json));
+      return OneOf7._(fromG(json!));
     } on Exception catch (e) {
       errors.add(('$G', e));
     }
@@ -587,14 +587,14 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
   /// Deserializes from JSON using typed parsers.
   static OneOf8<A, B, C, D, E, F, G, H> parse<A, B, C, D, E, F, G, H>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
-    required D Function(Object?) fromD,
-    required E Function(Object?) fromE,
-    required F Function(Object?) fromF,
-    required G Function(Object?) fromG,
-    required H Function(Object?) fromH,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
+    required D Function(Object) fromD,
+    required E Function(Object) fromE,
+    required F Function(Object) fromF,
+    required G Function(Object) fromG,
+    required H Function(Object) fromH,
   }) {
     if (json is A) return OneOf8._(json);
     if (json is B) return OneOf8._(json);
@@ -606,42 +606,42 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     if (json is H) return OneOf8._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf8._(fromA(json));
+      return OneOf8._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf8._(fromB(json));
+      return OneOf8._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf8._(fromC(json));
+      return OneOf8._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf8._(fromD(json));
+      return OneOf8._(fromD(json!));
     } on Exception catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf8._(fromE(json));
+      return OneOf8._(fromE(json!));
     } on Exception catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf8._(fromF(json));
+      return OneOf8._(fromF(json!));
     } on Exception catch (e) {
       errors.add(('$F', e));
     }
     try {
-      return OneOf8._(fromG(json));
+      return OneOf8._(fromG(json!));
     } on Exception catch (e) {
       errors.add(('$G', e));
     }
     try {
-      return OneOf8._(fromH(json));
+      return OneOf8._(fromH(json!));
     } on Exception catch (e) {
       errors.add(('$H', e));
     }
@@ -715,15 +715,15 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
   /// Deserializes from JSON using typed parsers.
   static OneOf9<A, B, C, D, E, F, G, H, I> parse<A, B, C, D, E, F, G, H, I>(
     Object? json, {
-    required A Function(Object?) fromA,
-    required B Function(Object?) fromB,
-    required C Function(Object?) fromC,
-    required D Function(Object?) fromD,
-    required E Function(Object?) fromE,
-    required F Function(Object?) fromF,
-    required G Function(Object?) fromG,
-    required H Function(Object?) fromH,
-    required I Function(Object?) fromI,
+    required A Function(Object) fromA,
+    required B Function(Object) fromB,
+    required C Function(Object) fromC,
+    required D Function(Object) fromD,
+    required E Function(Object) fromE,
+    required F Function(Object) fromF,
+    required G Function(Object) fromG,
+    required H Function(Object) fromH,
+    required I Function(Object) fromI,
   }) {
     if (json is A) return OneOf9._(json);
     if (json is B) return OneOf9._(json);
@@ -736,47 +736,47 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     if (json is I) return OneOf9._(json);
     final errors = <(String, Object)>[];
     try {
-      return OneOf9._(fromA(json));
+      return OneOf9._(fromA(json!));
     } on Exception catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf9._(fromB(json));
+      return OneOf9._(fromB(json!));
     } on Exception catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf9._(fromC(json));
+      return OneOf9._(fromC(json!));
     } on Exception catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf9._(fromD(json));
+      return OneOf9._(fromD(json!));
     } on Exception catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf9._(fromE(json));
+      return OneOf9._(fromE(json!));
     } on Exception catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf9._(fromF(json));
+      return OneOf9._(fromF(json!));
     } on Exception catch (e) {
       errors.add(('$F', e));
     }
     try {
-      return OneOf9._(fromG(json));
+      return OneOf9._(fromG(json!));
     } on Exception catch (e) {
       errors.add(('$G', e));
     }
     try {
-      return OneOf9._(fromH(json));
+      return OneOf9._(fromH(json!));
     } on Exception catch (e) {
       errors.add(('$H', e));
     }
     try {
-      return OneOf9._(fromI(json));
+      return OneOf9._(fromI(json!));
     } on Exception catch (e) {
       errors.add(('$I', e));
     }

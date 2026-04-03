@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorSendEventWorkflowInstanceResponseErrors {const WorSendEventWorkflowInstanceResponseErrors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorSendEventWorkflowInstanceResponseErrors {const WorSendEventWorkflowInstanceResponseErrors({required this.code, required this.message, });
 
 factory WorSendEventWorkflowInstanceResponseErrors.fromJson(Map<String, dynamic> json) { return WorSendEventWorkflowInstanceResponseErrors(
   code: (json['code'] as num).toDouble(),

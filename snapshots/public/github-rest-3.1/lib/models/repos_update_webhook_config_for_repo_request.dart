@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';final class ReposUpdateWebhookConfigForRepoRequest {const ReposUpdateWebhookConfigForRepoRequest({this.url, this.contentType, this.secret, this.insecureSsl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';@immutable final class ReposUpdateWebhookConfigForRepoRequest {const ReposUpdateWebhookConfigForRepoRequest({this.url, this.contentType, this.secret, this.insecureSsl, });
 
 factory ReposUpdateWebhookConfigForRepoRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateWebhookConfigForRepoRequest(
   url: json['url'] != null ? WebhookConfigUrl.fromJson(json['url'] as String) : null,

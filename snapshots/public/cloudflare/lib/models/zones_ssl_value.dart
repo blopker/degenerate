@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 /// Notes: Depends on the zone's plan level
-final class ZonesSslValue {const ZonesSslValue._(this.value);
+@immutable final class ZonesSslValue {const ZonesSslValue._(this.value);
 
 factory ZonesSslValue.fromJson(String json) { return switch (json) {
   'off' => off,

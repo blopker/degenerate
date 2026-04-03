@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The format of the audio data. Currently supported formats are `mp3` and
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of the audio data. Currently supported formats are `mp3` and
 /// `wav`.
 /// 
-final class InputAudioInputAudioFormat {const InputAudioInputAudioFormat._(this.value);
+@immutable final class InputAudioInputAudioFormat {const InputAudioInputAudioFormat._(this.value);
 
 factory InputAudioInputAudioFormat.fromJson(String json) { return switch (json) {
   'mp3' => mp3,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InputAudioInputAudioFormat($value)'; } 
  }
-final class InputAudioInputAudio {const InputAudioInputAudio({required this.data, required this.format, });
+@immutable final class InputAudioInputAudio {const InputAudioInputAudio({required this.data, required this.format, });
 
 factory InputAudioInputAudio.fromJson(Map<String, dynamic> json) { return InputAudioInputAudio(
   data: json['data'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataOxxo {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataOxxo();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataOxxo {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataOxxo();
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataOxxo.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataOxxo(
 

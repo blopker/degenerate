@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'destination_update_request_configuration.dart';final class DestinationUpdateRequest {const DestinationUpdateRequest({required this.configuration, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_update_request_configuration.dart';@immutable final class DestinationUpdateRequest {const DestinationUpdateRequest({required this.configuration, required this.enabled, });
 
 factory DestinationUpdateRequest.fromJson(Map<String, dynamic> json) { return DestinationUpdateRequest(
   configuration: DestinationUpdateRequestConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),

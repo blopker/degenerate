@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tag_category_create_response400_errors.dart';final class PostTagCategoryCreateResponse400 {const PostTagCategoryCreateResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tag_category_create_response400_errors.dart';@immutable final class PostTagCategoryCreateResponse400 {const PostTagCategoryCreateResponse400({required this.errors, required this.result, required this.success, });
 
 factory PostTagCategoryCreateResponse400.fromJson(Map<String, dynamic> json) { return PostTagCategoryCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostTagCategoryCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

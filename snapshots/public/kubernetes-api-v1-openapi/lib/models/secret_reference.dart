@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-final class SecretReference {const SecretReference({this.name, this.namespace, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
+@immutable final class SecretReference {const SecretReference({this.name, this.namespace, });
 
 factory SecretReference.fromJson(Map<String, dynamic> json) { return SecretReference(
   name: json['name'] as String?,

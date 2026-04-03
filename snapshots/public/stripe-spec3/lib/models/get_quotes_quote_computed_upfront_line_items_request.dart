@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetQuotesQuoteComputedUpfrontLineItemsRequest {const GetQuotesQuoteComputedUpfrontLineItemsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetQuotesQuoteComputedUpfrontLineItemsRequest {const GetQuotesQuoteComputedUpfrontLineItemsRequest();
 
 factory GetQuotesQuoteComputedUpfrontLineItemsRequest.fromJson(Map<String, dynamic> json) { return GetQuotesQuoteComputedUpfrontLineItemsRequest(
 

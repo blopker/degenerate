@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of the zone's SOA record.
-final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname, this.refresh, this.retry, this.rname, this.ttl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of the zone's SOA record.
+@immutable final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname, this.refresh, this.retry, this.rname, this.ttl, });
 
 factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) { return DnsSettingsSoaBase(
   expire: json['expire'] != null ? (json['expire'] as num).toDouble() : null,

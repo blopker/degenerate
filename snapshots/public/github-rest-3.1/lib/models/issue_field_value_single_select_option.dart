@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the selected option (only present for single_select fields)
-final class IssueFieldValueSingleSelectOption {const IssueFieldValueSingleSelectOption({required this.id, required this.name, required this.color, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the selected option (only present for single_select fields)
+@immutable final class IssueFieldValueSingleSelectOption {const IssueFieldValueSingleSelectOption({required this.id, required this.name, required this.color, });
 
 factory IssueFieldValueSingleSelectOption.fromJson(Map<String, dynamic> json) { return IssueFieldValueSingleSelectOption(
   id: (json['id'] as num).toInt(),

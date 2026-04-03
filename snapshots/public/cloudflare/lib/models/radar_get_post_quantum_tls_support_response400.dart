@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_post_quantum_tls_support_response400_errors.dart';final class RadarGetPostQuantumTlsSupportResponse400 {const RadarGetPostQuantumTlsSupportResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_post_quantum_tls_support_response400_errors.dart';@immutable final class RadarGetPostQuantumTlsSupportResponse400 {const RadarGetPostQuantumTlsSupportResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetPostQuantumTlsSupportResponse400.fromJson(Map<String, dynamic> json) { return RadarGetPostQuantumTlsSupportResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetPostQuantumTlsSupportResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'errors_source.dart';import 'payment_intent.dart';import 'payment_method.dart';import 'setup_intent.dart';import 'source.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
-final class ErrorsType {const ErrorsType._(this.value);
+@immutable final class ErrorsType {const ErrorsType._(this.value);
 
 factory ErrorsType.fromJson(String json) { return switch (json) {
   'api_error' => apiError,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ErrorsType($value)'; } 
  }
 /// 
-final class Errors {const Errors({this.adviceCode, this.charge, this.code, this.declineCode, this.docUrl, this.message, this.networkAdviceCode, this.networkDeclineCode, this.param, this.paymentIntent, this.paymentMethod, this.paymentMethodType, this.requestLogUrl, this.setupIntent, this.source, required this.type, });
+@immutable final class Errors {const Errors({required this.type, this.adviceCode, this.charge, this.code, this.declineCode, this.docUrl, this.message, this.networkAdviceCode, this.networkDeclineCode, this.param, this.paymentIntent, this.paymentMethod, this.paymentMethodType, this.requestLogUrl, this.setupIntent, this.source, });
 
 factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
   adviceCode: json['advice_code'] as String?,

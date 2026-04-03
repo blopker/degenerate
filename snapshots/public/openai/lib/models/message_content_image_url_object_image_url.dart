@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`. Default value is `auto`
-final class MessageContentImageUrlObjectImageUrlDetail {const MessageContentImageUrlObjectImageUrlDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`. Default value is `auto`
+@immutable final class MessageContentImageUrlObjectImageUrlDetail {const MessageContentImageUrlObjectImageUrlDetail._(this.value);
 
 factory MessageContentImageUrlObjectImageUrlDetail.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageContentImageUrlObjectImageUrlDetail($value)'; } 
  }
-final class MessageContentImageUrlObjectImageUrl {const MessageContentImageUrlObjectImageUrl({required this.url, this.detail = MessageContentImageUrlObjectImageUrlDetail.auto, });
+@immutable final class MessageContentImageUrlObjectImageUrl {const MessageContentImageUrlObjectImageUrl({required this.url, this.detail = MessageContentImageUrlObjectImageUrlDetail.auto, });
 
 factory MessageContentImageUrlObjectImageUrl.fromJson(Map<String, dynamic> json) { return MessageContentImageUrlObjectImageUrl(
   url: Uri.parse(json['url'] as String),

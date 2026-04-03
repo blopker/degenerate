@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_us_bank_account_blocked.dart';/// 
-final class PaymentMethodUsBankAccountStatusDetails {const PaymentMethodUsBankAccountStatusDetails({this.blocked});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_us_bank_account_blocked.dart';/// 
+@immutable final class PaymentMethodUsBankAccountStatusDetails {const PaymentMethodUsBankAccountStatusDetails({this.blocked});
 
 factory PaymentMethodUsBankAccountStatusDetails.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccountStatusDetails(
   blocked: json['blocked'] != null ? PaymentMethodUsBankAccountBlocked.fromJson(json['blocked'] as Map<String, dynamic>) : null,

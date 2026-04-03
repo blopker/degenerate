@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PetStatus {const PetStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PetStatus {const PetStatus._(this.value);
 
 factory PetStatus.fromJson(String json) { return switch (json) {
   'active' => active,

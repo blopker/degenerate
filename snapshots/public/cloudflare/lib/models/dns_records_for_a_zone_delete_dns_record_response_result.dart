@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_records_identifier.dart';final class DnsRecordsForAZoneDeleteDnsRecordResponseResult {const DnsRecordsForAZoneDeleteDnsRecordResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsForAZoneDeleteDnsRecordResponseResult {const DnsRecordsForAZoneDeleteDnsRecordResponseResult({this.id});
 
 factory DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
   id: json['id'] != null ? DnsRecordsIdentifier.fromJson(json['id'] as String) : null,

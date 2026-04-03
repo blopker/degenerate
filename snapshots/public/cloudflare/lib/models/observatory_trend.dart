@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ObservatoryTrend {const ObservatoryTrend({this.cls, this.fcp, this.lcp, this.performanceScore, this.si, this.tbt, this.ttfb, this.tti, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryTrend {const ObservatoryTrend({this.cls, this.fcp, this.lcp, this.performanceScore, this.si, this.tbt, this.ttfb, this.tti, });
 
 factory ObservatoryTrend.fromJson(Map<String, dynamic> json) { return ObservatoryTrend(
   cls: (json['cls'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),

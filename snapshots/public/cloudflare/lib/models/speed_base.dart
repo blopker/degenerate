@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Current value of the zone setting.
-final class SpeedBaseValue {const SpeedBaseValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current value of the zone setting.
+@immutable final class SpeedBaseValue {const SpeedBaseValue._(this.value);
 
 factory SpeedBaseValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpeedBaseValue($value)'; } 
  }
-final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn, this.value, });
+@immutable final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn, this.value, });
 
 factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
   editable: json.containsKey('editable') ? json['editable'] as bool : true,

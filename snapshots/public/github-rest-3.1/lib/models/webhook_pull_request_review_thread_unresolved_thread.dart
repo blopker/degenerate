@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments.dart';final class WebhookPullRequestReviewThreadUnresolvedThread {const WebhookPullRequestReviewThreadUnresolvedThread({required this.comments, required this.nodeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedThread {const WebhookPullRequestReviewThreadUnresolvedThread({required this.comments, required this.nodeId, });
 
 factory WebhookPullRequestReviewThreadUnresolvedThread.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolvedThread(
   comments: (json['comments'] as List<dynamic>).map((e) => WebhookPullRequestReviewThreadUnresolvedThreadComments.fromJson(e as Map<String, dynamic>)).toList(),

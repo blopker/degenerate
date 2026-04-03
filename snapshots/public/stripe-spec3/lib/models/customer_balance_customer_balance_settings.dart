@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration for how funds that land in the customer cash balance are reconciled.
-final class CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration for how funds that land in the customer cash balance are reconciled.
+@immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode._(this.value);
 
 factory CustomerBalanceCustomerBalanceSettingsReconciliationMode.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)'; } 
  }
 /// 
-final class CustomerBalanceCustomerBalanceSettings {const CustomerBalanceCustomerBalanceSettings({required this.reconciliationMode, required this.usingMerchantDefault, });
+@immutable final class CustomerBalanceCustomerBalanceSettings {const CustomerBalanceCustomerBalanceSettings({required this.reconciliationMode, required this.usingMerchantDefault, });
 
 factory CustomerBalanceCustomerBalanceSettings.fromJson(Map<String, dynamic> json) { return CustomerBalanceCustomerBalanceSettings(
   reconciliationMode: CustomerBalanceCustomerBalanceSettingsReconciliationMode.fromJson(json['reconciliation_mode'] as String),

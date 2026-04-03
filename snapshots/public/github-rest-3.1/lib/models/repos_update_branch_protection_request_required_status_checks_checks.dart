@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks {const ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks({required this.context, this.appId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks {const ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks({required this.context, this.appId, });
 
 factory ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks(
   context: json['context'] as String,

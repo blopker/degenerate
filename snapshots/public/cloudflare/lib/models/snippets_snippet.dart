@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'snippets_snippet_name.dart';/// Define a snippet.
-final class SnippetsSnippet {const SnippetsSnippet({required this.createdOn, this.modifiedOn, required this.snippetName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'snippets_snippet_name.dart';/// Define a snippet.
+@immutable final class SnippetsSnippet {const SnippetsSnippet({required this.createdOn, required this.snippetName, this.modifiedOn, });
 
 factory SnippetsSnippet.fromJson(Map<String, dynamic> json) { return SnippetsSnippet(
   createdOn: DateTime.parse(json['created_on'] as String),

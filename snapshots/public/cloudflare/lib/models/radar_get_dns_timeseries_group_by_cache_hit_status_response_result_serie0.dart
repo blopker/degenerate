@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0({required this.negative, required this.positive, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0({required this.negative, required this.positive, });
 
 factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(
   negative: (json['NEGATIVE'] as List<dynamic>).map((e) => e as String).toList(),

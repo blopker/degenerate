@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the codespace's git repository.
-final class CodespaceWithFullRepositoryGitStatus {const CodespaceWithFullRepositoryGitStatus({this.ahead, this.behind, this.hasUnpushedChanges, this.hasUncommittedChanges, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the codespace's git repository.
+@immutable final class CodespaceWithFullRepositoryGitStatus {const CodespaceWithFullRepositoryGitStatus({this.ahead, this.behind, this.hasUnpushedChanges, this.hasUncommittedChanges, this.ref, });
 
 factory CodespaceWithFullRepositoryGitStatus.fromJson(Map<String, dynamic> json) { return CodespaceWithFullRepositoryGitStatus(
   ahead: json['ahead'] != null ? (json['ahead'] as num).toInt() : null,

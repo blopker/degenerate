@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AssistantsNamedToolChoiceFunction {const AssistantsNamedToolChoiceFunction({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantsNamedToolChoiceFunction {const AssistantsNamedToolChoiceFunction({required this.name});
 
 factory AssistantsNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) { return AssistantsNamedToolChoiceFunction(
   name: json['name'] as String,

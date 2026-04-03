@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_user.dart';final class WebhookOrgBlockUnblockedAction {const WebhookOrgBlockUnblockedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_user.dart';@immutable final class WebhookOrgBlockUnblockedAction {const WebhookOrgBlockUnblockedAction._(this.value);
 
 factory WebhookOrgBlockUnblockedAction.fromJson(String json) { return switch (json) {
   'unblocked' => unblocked,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookOrgBlockUnblockedAction($value)'; } 
  }
-final class WebhookOrgBlockUnblocked {const WebhookOrgBlockUnblocked({required this.action, required this.blockedUser, this.enterprise, this.installation, required this.organization, this.repository, required this.sender, });
+@immutable final class WebhookOrgBlockUnblocked {const WebhookOrgBlockUnblocked({required this.action, required this.blockedUser, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });
 
 factory WebhookOrgBlockUnblocked.fromJson(Map<String, dynamic> json) { return WebhookOrgBlockUnblocked(
   action: WebhookOrgBlockUnblockedAction.fromJson(json['action'] as String),

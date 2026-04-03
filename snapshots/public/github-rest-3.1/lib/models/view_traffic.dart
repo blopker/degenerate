@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'traffic.dart';/// View Traffic
-final class ViewTraffic {const ViewTraffic({required this.count, required this.uniques, required this.views, });
+@immutable final class ViewTraffic {const ViewTraffic({required this.count, required this.uniques, required this.views, });
 
 factory ViewTraffic.fromJson(Map<String, dynamic> json) { return ViewTraffic(
   count: (json['count'] as num).toInt(),

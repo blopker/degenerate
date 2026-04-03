@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dos_event_create_bulk_with_relationships_response_errors.dart';/// Result of bulk relationship creation operation
-final class PostDosEventCreateBulkWithRelationshipsResponse {const PostDosEventCreateBulkWithRelationshipsResponse({required this.createdEventsCount, required this.createdIndicatorsCount, required this.createdRelationshipsCount, required this.errorCount, this.errors, });
+@immutable final class PostDosEventCreateBulkWithRelationshipsResponse {const PostDosEventCreateBulkWithRelationshipsResponse({required this.createdEventsCount, required this.createdIndicatorsCount, required this.createdRelationshipsCount, required this.errorCount, this.errors, });
 
 factory PostDosEventCreateBulkWithRelationshipsResponse.fromJson(Map<String, dynamic> json) { return PostDosEventCreateBulkWithRelationshipsResponse(
   createdEventsCount: (json['createdEventsCount'] as num).toDouble(),

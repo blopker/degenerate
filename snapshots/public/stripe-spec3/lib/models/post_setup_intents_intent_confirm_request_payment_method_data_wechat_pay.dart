@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataWechatPay {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataWechatPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataWechatPay {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataWechatPay();
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataWechatPay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataWechatPay(
 

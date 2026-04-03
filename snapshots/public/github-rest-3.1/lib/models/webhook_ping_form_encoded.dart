@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The webhooks ping payload encoded with URL encoding.
-final class WebhookPingFormEncoded {const WebhookPingFormEncoded({required this.payload});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The webhooks ping payload encoded with URL encoding.
+@immutable final class WebhookPingFormEncoded {const WebhookPingFormEncoded({required this.payload});
 
 factory WebhookPingFormEncoded.fromJson(Map<String, dynamic> json) { return WebhookPingFormEncoded(
   payload: json['payload'] as String,

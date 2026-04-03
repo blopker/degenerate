@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_workers_pipelines_http_source_cors.dart';/// Specifies the format of source data.
-final class CloudflarePipelinesWorkersPipelinesHttpSourceFormat {const CloudflarePipelinesWorkersPipelinesHttpSourceFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_http_source_cors.dart';/// Specifies the format of source data.
+@immutable final class CloudflarePipelinesWorkersPipelinesHttpSourceFormat {const CloudflarePipelinesWorkersPipelinesHttpSourceFormat._(this.value);
 
 factory CloudflarePipelinesWorkersPipelinesHttpSourceFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesHttpSourceFormat($value)'; } 
  }
 /// [DEPRECATED] HTTP source configuration. Use the new streams API instead.
-final class CloudflarePipelinesWorkersPipelinesHttpSource {const CloudflarePipelinesWorkersPipelinesHttpSource({this.authentication, this.cors, required this.format, required this.type, });
+@immutable final class CloudflarePipelinesWorkersPipelinesHttpSource {const CloudflarePipelinesWorkersPipelinesHttpSource({required this.format, required this.type, this.authentication, this.cors, });
 
 factory CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesHttpSource(
   authentication: json['authentication'] as bool?,

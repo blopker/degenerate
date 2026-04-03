@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
-final class DeploymentBranchPolicySettings {const DeploymentBranchPolicySettings({required this.protectedBranches, required this.customBranchPolicies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+@immutable final class DeploymentBranchPolicySettings {const DeploymentBranchPolicySettings({required this.protectedBranches, required this.customBranchPolicies, });
 
 factory DeploymentBranchPolicySettings.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicySettings(
   protectedBranches: json['protected_branches'] as bool,

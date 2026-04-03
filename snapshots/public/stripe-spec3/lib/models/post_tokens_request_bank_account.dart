@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTokensRequestBankAccountAccountHolderType {const PostTokensRequestBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestBankAccountAccountHolderType {const PostTokensRequestBankAccountAccountHolderType._(this.value);
 
 factory PostTokensRequestBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestBankAccountAccountHolderType($value)'; } 
  }
-final class PostTokensRequestBankAccountAccountType {const PostTokensRequestBankAccountAccountType._(this.value);
+@immutable final class PostTokensRequestBankAccountAccountType {const PostTokensRequestBankAccountAccountType._(this.value);
 
 factory PostTokensRequestBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTokensRequestBankAccountAccountType($value)'; } 
  }
 /// The bank account this token will represent.
-final class PostTokensRequestBankAccount {const PostTokensRequestBankAccount({this.accountHolderName, this.accountHolderType, required this.accountNumber, this.accountType, required this.country, this.currency, this.paymentMethod, this.routingNumber, });
+@immutable final class PostTokensRequestBankAccount {const PostTokensRequestBankAccount({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.accountType, this.currency, this.paymentMethod, this.routingNumber, });
 
 factory PostTokensRequestBankAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestBankAccount(
   accountHolderName: json['account_holder_name'] as String?,

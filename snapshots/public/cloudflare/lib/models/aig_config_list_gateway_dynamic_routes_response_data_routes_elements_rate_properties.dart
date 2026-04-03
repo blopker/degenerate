@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRatePropertiesLimitType {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRatePropertiesLimitType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRatePropertiesLimitType {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRatePropertiesLimitType._(this.value);
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRatePropertiesLimitType.fromJson(String json) { return switch (json) {
   'count' => count,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRatePropertiesLimitType($value)'; } 
  }
-final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRateProperties {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
+@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRateProperties {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRateProperties.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsRateProperties(
   key: json['key'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_har_response2_log_entries_request.dart';import 'urlscanner_get_scan_har_response2_log_entries_response.dart';final class UrlscannerGetScanHarResponse2LogEntries {const UrlscannerGetScanHarResponse2LogEntries({required this.initialPriority, required this.initiatorType, required this.priority, required this.requestId, required this.requestTime, required this.resourceType, required this.cache, required this.connection, required this.pageref, required this.request, required this.response, required this.serverIpAddress, required this.startedDateTime, required this.time, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_entries_request.dart';import 'urlscanner_get_scan_har_response2_log_entries_response.dart';@immutable final class UrlscannerGetScanHarResponse2LogEntries {const UrlscannerGetScanHarResponse2LogEntries({required this.initialPriority, required this.initiatorType, required this.priority, required this.requestId, required this.requestTime, required this.resourceType, required this.cache, required this.connection, required this.pageref, required this.request, required this.response, required this.serverIpAddress, required this.startedDateTime, required this.time, });
 
 factory UrlscannerGetScanHarResponse2LogEntries.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogEntries(
   initialPriority: json['_initialPriority'] as String,

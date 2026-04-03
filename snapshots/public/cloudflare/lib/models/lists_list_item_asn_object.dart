@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines a non-negative 32 bit integer.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines a non-negative 32 bit integer.
 extension type const ListsItemAsn(int value) {
 factory ListsItemAsn.fromJson(num json) => ListsItemAsn(json.toInt());
 
 num toJson() => value;
 
 }
-final class ListsListItemAsnObject {const ListsListItemAsnObject({required this.asn});
+@immutable final class ListsListItemAsnObject {const ListsListItemAsnObject({required this.asn});
 
 factory ListsListItemAsnObject.fromJson(Map<String, dynamic> json) { return ListsListItemAsnObject(
   asn: ListsItemAsn.fromJson(json['asn'] as num),

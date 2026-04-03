@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'renamed_issue_event_rename.dart';import 'simple_user.dart';/// Renamed Issue Event
-final class RenamedIssueEvent {const RenamedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.rename, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'renamed_issue_event_rename.dart';import 'simple_user.dart';/// Renamed Issue Event
+@immutable final class RenamedIssueEvent {const RenamedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.rename, });
 
 factory RenamedIssueEvent.fromJson(Map<String, dynamic> json) { return RenamedIssueEvent(
   id: (json['id'] as num).toInt(),

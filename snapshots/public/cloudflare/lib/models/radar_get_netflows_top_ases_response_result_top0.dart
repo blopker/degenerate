@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsTopAsesResponseResultTop0 {const RadarGetNetflowsTopAsesResponseResultTop0({required this.clientAsn, required this.clientAsName, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsTopAsesResponseResultTop0 {const RadarGetNetflowsTopAsesResponseResultTop0({required this.clientAsn, required this.clientAsName, required this.value, });
 
 factory RadarGetNetflowsTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTopAsesResponseResultTop0(
   clientAsn: (json['clientASN'] as num).toDouble(),

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the output text. Always `output_text`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output text. Always `output_text`.
 /// 
-final class EvalItemContentOutputTextType {const EvalItemContentOutputTextType._(this.value);
+@immutable final class EvalItemContentOutputTextType {const EvalItemContentOutputTextType._(this.value);
 
 factory EvalItemContentOutputTextType.fromJson(String json) { return switch (json) {
   'output_text' => outputText,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A text output from the model.
 /// 
-final class EvalItemContentOutputText {const EvalItemContentOutputText({required this.type, required this.text, });
+@immutable final class EvalItemContentOutputText {const EvalItemContentOutputText({required this.type, required this.text, });
 
 factory EvalItemContentOutputText.fromJson(Map<String, dynamic> json) { return EvalItemContentOutputText(
   type: EvalItemContentOutputTextType.fromJson(json['type'] as String),

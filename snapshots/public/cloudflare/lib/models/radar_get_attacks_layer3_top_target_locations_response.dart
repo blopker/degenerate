@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer3_top_target_locations_response_result.dart';final class RadarGetAttacksLayer3TopTargetLocationsResponse {const RadarGetAttacksLayer3TopTargetLocationsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_top_target_locations_response_result.dart';@immutable final class RadarGetAttacksLayer3TopTargetLocationsResponse {const RadarGetAttacksLayer3TopTargetLocationsResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer3TopTargetLocationsResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopTargetLocationsResponse(
   result: RadarGetAttacksLayer3TopTargetLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

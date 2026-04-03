@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tokens_request_account_company_verification_document.dart';final class PostTokensRequestAccountCompanyVerification {const PostTokensRequestAccountCompanyVerification({this.document});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company_verification_document.dart';@immutable final class PostTokensRequestAccountCompanyVerification {const PostTokensRequestAccountCompanyVerification({this.document});
 
 factory PostTokensRequestAccountCompanyVerification.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountCompanyVerification(
   document: json['document'] != null ? PostTokensRequestAccountCompanyVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,

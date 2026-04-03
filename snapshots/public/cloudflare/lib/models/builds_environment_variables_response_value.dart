@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_created_on.dart';import 'builds_is_secret.dart';final class BuildsEnvironmentVariablesResponseValue {const BuildsEnvironmentVariablesResponseValue({required this.createdOn, required this.isSecret, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_created_on.dart';import 'builds_is_secret.dart';@immutable final class BuildsEnvironmentVariablesResponseValue {const BuildsEnvironmentVariablesResponseValue({required this.createdOn, required this.isSecret, this.value, });
 
 factory BuildsEnvironmentVariablesResponseValue.fromJson(Map<String, dynamic> json) { return BuildsEnvironmentVariablesResponseValue(
   createdOn: BuildsCreatedOn.fromJson(json['created_on'] as String),

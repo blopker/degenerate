@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultMetaUnits {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultMetaUnits {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultMetaUnits(
   name: json['name'] as String,

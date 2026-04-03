@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_batch_failed_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batch_failed_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookBatchFailedObject {const WebhookBatchFailedObject._(this.value);
+@immutable final class WebhookBatchFailedObject {const WebhookBatchFailedObject._(this.value);
 
 factory WebhookBatchFailedObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `batch.failed`.
 /// 
-final class WebhookBatchFailedType {const WebhookBatchFailedType._(this.value);
+@immutable final class WebhookBatchFailedType {const WebhookBatchFailedType._(this.value);
 
 factory WebhookBatchFailedType.fromJson(String json) { return switch (json) {
   'batch.failed' => batchFailed,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a batch API request has failed.
 /// 
-final class WebhookBatchFailed {const WebhookBatchFailed({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookBatchFailed {const WebhookBatchFailed({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookBatchFailed.fromJson(Map<String, dynamic> json) { return WebhookBatchFailed(
   createdAt: (json['created_at'] as num).toInt(),

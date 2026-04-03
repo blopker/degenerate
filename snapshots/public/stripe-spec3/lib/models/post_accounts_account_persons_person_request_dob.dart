@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs6.dart';final class PostAccountsAccountPersonsPersonRequestDobVariant2 {const PostAccountsAccountPersonsPersonRequestDobVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs6.dart';@immutable final class PostAccountsAccountPersonsPersonRequestDobVariant2 {const PostAccountsAccountPersonsPersonRequestDobVariant2._(this.value);
 
 factory PostAccountsAccountPersonsPersonRequestDobVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

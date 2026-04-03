@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_identifier.dart';final class WorkersRoute {const WorkersRoute({required this.id, required this.pattern, this.script, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_identifier.dart';@immutable final class WorkersRoute {const WorkersRoute({required this.id, required this.pattern, this.script, });
 
 factory WorkersRoute.fromJson(Map<String, dynamic> json) { return WorkersRoute(
   id: WorkersIdentifier.fromJson(json['id'] as String),

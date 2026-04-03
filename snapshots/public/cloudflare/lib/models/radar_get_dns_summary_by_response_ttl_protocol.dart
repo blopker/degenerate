@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByResponseTtlProtocol {const RadarGetDnsSummaryByResponseTtlProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByResponseTtlProtocol {const RadarGetDnsSummaryByResponseTtlProtocol._(this.value);
 
 factory RadarGetDnsSummaryByResponseTtlProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,

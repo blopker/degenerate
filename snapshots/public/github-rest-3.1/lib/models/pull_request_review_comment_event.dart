@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pull_request_minimal.dart';import 'pull_request_review_comment_event_comment.dart';final class PullRequestReviewCommentEvent {const PullRequestReviewCommentEvent({required this.action, required this.pullRequest, required this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_minimal.dart';import 'pull_request_review_comment_event_comment.dart';@immutable final class PullRequestReviewCommentEvent {const PullRequestReviewCommentEvent({required this.action, required this.pullRequest, required this.comment, });
 
 factory PullRequestReviewCommentEvent.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentEvent(
   action: json['action'] as String,

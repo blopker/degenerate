@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodDataCrypto {const PostSetupIntentsRequestPaymentMethodDataCrypto();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataCrypto {const PostSetupIntentsRequestPaymentMethodDataCrypto();
 
 factory PostSetupIntentsRequestPaymentMethodDataCrypto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataCrypto(
 

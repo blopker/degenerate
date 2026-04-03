@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryOutboundPaymentsIdCancelRequest {const PostTreasuryOutboundPaymentsIdCancelRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryOutboundPaymentsIdCancelRequest {const PostTreasuryOutboundPaymentsIdCancelRequest({this.expand});
 
 factory PostTreasuryOutboundPaymentsIdCancelRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsIdCancelRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

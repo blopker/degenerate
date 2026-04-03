@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_delta_step_details_tool_calls_function_object_function.dart';/// The type of tool call. This is always going to be `function` for this type of tool call.
-final class RunStepDeltaStepDetailsToolCallsFunctionObjectType {const RunStepDeltaStepDetailsToolCallsFunctionObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_function_object_function.dart';/// The type of tool call. This is always going to be `function` for this type of tool call.
+@immutable final class RunStepDeltaStepDetailsToolCallsFunctionObjectType {const RunStepDeltaStepDetailsToolCallsFunctionObjectType._(this.value);
 
 factory RunStepDeltaStepDetailsToolCallsFunctionObjectType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RunStepDeltaStepDetailsToolCallsFunctionObjectType($value)'; } 
  }
-final class RunStepDeltaStepDetailsToolCallsFunctionObject {const RunStepDeltaStepDetailsToolCallsFunctionObject({required this.index, this.id, required this.type, this.function, });
+@immutable final class RunStepDeltaStepDetailsToolCallsFunctionObject {const RunStepDeltaStepDetailsToolCallsFunctionObject({required this.index, required this.type, this.id, this.function, });
 
 factory RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsFunctionObject(
   index: (json['index'] as num).toInt(),

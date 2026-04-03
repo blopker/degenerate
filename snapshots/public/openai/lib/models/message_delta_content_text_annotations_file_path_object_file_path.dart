@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MessageDeltaContentTextAnnotationsFilePathObjectFilePath {const MessageDeltaContentTextAnnotationsFilePathObjectFilePath({this.fileId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageDeltaContentTextAnnotationsFilePathObjectFilePath {const MessageDeltaContentTextAnnotationsFilePathObjectFilePath({this.fileId});
 
 factory MessageDeltaContentTextAnnotationsFilePathObjectFilePath.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFilePathObjectFilePath(
   fileId: json['file_id'] as String?,

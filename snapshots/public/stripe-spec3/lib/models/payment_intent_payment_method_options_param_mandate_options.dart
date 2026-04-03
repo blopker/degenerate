@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param_mandate_options_custom_mandate_url.dart';final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param_mandate_options_custom_mandate_url.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType {const PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType {const PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParamMandateOptions {const PaymentIntentPaymentMethodOptionsParamMandateOptions({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptions {const PaymentIntentPaymentMethodOptionsParamMandateOptions({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PaymentIntentPaymentMethodOptionsParamMandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParamMandateOptions(
   customMandateUrl: json['custom_mandate_url'] != null ? OneOf2.parse(json['custom_mandate_url'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2.fromJson(v as String),) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_as112_top_locations_by_edns_response_result.dart';final class RadarGetDnsAs112TopLocationsByEdnsResponse {const RadarGetDnsAs112TopLocationsByEdnsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_top_locations_by_edns_response_result.dart';@immutable final class RadarGetDnsAs112TopLocationsByEdnsResponse {const RadarGetDnsAs112TopLocationsByEdnsResponse({required this.result, required this.success, });
 
 factory RadarGetDnsAs112TopLocationsByEdnsResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsByEdnsResponse(
   result: RadarGetDnsAs112TopLocationsByEdnsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject._(this.value);
 
 factory TaxDeductedAtSourceObject.fromJson(String json) { return switch (json) {
   'tax_deducted_at_source' => taxDeductedAtSource,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxDeductedAtSourceObject($value)'; } 
  }
 /// 
-final class TaxDeductedAtSource {const TaxDeductedAtSource({required this.id, required this.object, required this.periodEnd, required this.periodStart, required this.taxDeductionAccountNumber, });
+@immutable final class TaxDeductedAtSource {const TaxDeductedAtSource({required this.id, required this.object, required this.periodEnd, required this.periodStart, required this.taxDeductionAccountNumber, });
 
 factory TaxDeductedAtSource.fromJson(Map<String, dynamic> json) { return TaxDeductedAtSource(
   id: json['id'] as String,

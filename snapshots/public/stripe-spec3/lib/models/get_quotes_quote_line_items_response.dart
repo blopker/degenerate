@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetQuotesQuoteLineItemsResponseObject {const GetQuotesQuoteLineItemsResponseObject._(this.value);
+@immutable final class GetQuotesQuoteLineItemsResponseObject {const GetQuotesQuoteLineItemsResponseObject._(this.value);
 
 factory GetQuotesQuoteLineItemsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetQuotesQuoteLineItemsResponseObject($value)'; } 
  }
 /// 
-final class GetQuotesQuoteLineItemsResponse {const GetQuotesQuoteLineItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetQuotesQuoteLineItemsResponse {const GetQuotesQuoteLineItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetQuotesQuoteLineItemsResponse.fromJson(Map<String, dynamic> json) { return GetQuotesQuoteLineItemsResponse(
   data: (json['data'] as List<dynamic>).map((e) => Item.fromJson(e as Map<String, dynamic>)).toList(),

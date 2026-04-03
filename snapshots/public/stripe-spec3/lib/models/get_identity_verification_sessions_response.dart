@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'identity_verification_session.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetIdentityVerificationSessionsResponseObject {const GetIdentityVerificationSessionsResponseObject._(this.value);
+@immutable final class GetIdentityVerificationSessionsResponseObject {const GetIdentityVerificationSessionsResponseObject._(this.value);
 
 factory GetIdentityVerificationSessionsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetIdentityVerificationSessionsResponseObject($value)'; } 
  }
 /// 
-final class GetIdentityVerificationSessionsResponse {const GetIdentityVerificationSessionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetIdentityVerificationSessionsResponse {const GetIdentityVerificationSessionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetIdentityVerificationSessionsResponse.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationSessionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IdentityVerificationSession.fromJson(e as Map<String, dynamic>)).toList(),

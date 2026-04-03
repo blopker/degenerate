@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0({required this.fail, required this.none, required this.pass, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0({required this.fail, required this.none, required this.pass, });
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0(
   fail: (json['FAIL'] as List<dynamic>).map((e) => e as String).toList(),

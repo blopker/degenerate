@@ -1,10 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 /// Keeper lifts a ban, allowing the participant to rejoin.
+@immutable
 final class UnbanParticipantEvent {
   const UnbanParticipantEvent({
-    this.type = 'unban_participant',
     required this.participantSlug,
+    this.type = 'unban_participant',
   });
 
   factory UnbanParticipantEvent.fromJson(Map<String, dynamic> json) {

@@ -21,7 +21,7 @@ if (page != null) {
 }
 if (tokenConfiguration != null) {
 for (final item in tokenConfiguration) {
-  queryParametersList.add(ApiQueryParameter(name: 'token_configuration', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'token_configuration', value: item.toJson()));
 }
 }
 if (action != null) {
@@ -231,27 +231,27 @@ if (page != null) {
 }
 if (state != null) {
 for (final item in state) {
-  queryParametersList.add(ApiQueryParameter(name: 'state', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'state', value: item.toJson()));
 }
 }
 if (host != null) {
 for (final item in host) {
-  queryParametersList.add(ApiQueryParameter(name: 'host', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item.toJson()));
 }
 }
 if (hostname != null) {
 for (final item in hostname) {
-  queryParametersList.add(ApiQueryParameter(name: 'hostname', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hostname', value: item.toJson()));
 }
 }
 if (method != null) {
 for (final item in method) {
-  queryParametersList.add(ApiQueryParameter(name: 'method', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item.toJson()));
 }
 }
 if (endpoint != null) {
 for (final item in endpoint) {
-  queryParametersList.add(ApiQueryParameter(name: 'endpoint', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'endpoint', value: item.toJson()));
 }
 }
 

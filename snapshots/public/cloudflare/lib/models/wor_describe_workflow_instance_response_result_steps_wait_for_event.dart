@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event_error.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event_output.dart';final class WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType {const WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event_error.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event_output.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType {const WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType.fromJson(String json) { return switch (json) {
   'waitForEvent' => waitForEvent,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent {const WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent({required this.end, required this.error, required this.finished, required this.name, required this.output, required this.start, required this.type, });
+@immutable final class WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent {const WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent({required this.end, required this.error, required this.finished, required this.name, required this.output, required this.start, required this.type, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent(
   end: DateTime.parse(json['end'] as String),

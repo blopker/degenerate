@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_message_tool_call_function.dart';/// The type of the tool. Currently, only `function` is supported.
-final class ChatCompletionMessageToolCallType {const ChatCompletionMessageToolCallType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_call_function.dart';/// The type of the tool. Currently, only `function` is supported.
+@immutable final class ChatCompletionMessageToolCallType {const ChatCompletionMessageToolCallType._(this.value);
 
 factory ChatCompletionMessageToolCallType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A call to a function tool created by the model.
 /// 
-final class ChatCompletionMessageToolCall {const ChatCompletionMessageToolCall({required this.id, required this.type, required this.function, });
+@immutable final class ChatCompletionMessageToolCall {const ChatCompletionMessageToolCall({required this.id, required this.type, required this.function, });
 
 factory ChatCompletionMessageToolCall.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCall(
   id: json['id'] as String,

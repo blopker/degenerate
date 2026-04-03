@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_update_instances_request_source_params_web_crawler_crawl_options.dart';import 'ai_search_update_instances_request_source_params_web_crawler_parse_options.dart';import 'ai_search_update_instances_request_source_params_web_crawler_store_options.dart';final class AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType {const AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_request_source_params_web_crawler_crawl_options.dart';import 'ai_search_update_instances_request_source_params_web_crawler_parse_options.dart';import 'ai_search_update_instances_request_source_params_web_crawler_store_options.dart';@immutable final class AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType {const AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._(this.value);
 
 factory AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson(String json) { return switch (json) {
   'sitemap' => sitemap,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType($value)'; } 
  }
-final class AiSearchUpdateInstancesRequestSourceParamsWebCrawler {const AiSearchUpdateInstancesRequestSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
+@immutable final class AiSearchUpdateInstancesRequestSourceParamsWebCrawler {const AiSearchUpdateInstancesRequestSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
 
 factory AiSearchUpdateInstancesRequestSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
   crawlOptions: json['crawl_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,

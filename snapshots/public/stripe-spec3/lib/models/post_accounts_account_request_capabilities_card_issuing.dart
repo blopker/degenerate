@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountRequestCapabilitiesCardIssuing {const PostAccountsAccountRequestCapabilitiesCardIssuing({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesCardIssuing {const PostAccountsAccountRequestCapabilitiesCardIssuing({this.requested});
 
 factory PostAccountsAccountRequestCapabilitiesCardIssuing.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesCardIssuing(
   requested: json['requested'] as bool?,

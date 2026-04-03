@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'line_items_adjustable_quantity.dart';import 'line_items_discount_amount.dart';import 'line_items_tax_amount.dart';import 'price.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ItemObject {const ItemObject._(this.value);
+@immutable final class ItemObject {const ItemObject._(this.value);
 
 factory ItemObject.fromJson(String json) { return switch (json) {
   'item' => item,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ItemObject($value)'; } 
  }
 /// A line item.
-final class Item {const Item({this.adjustableQuantity, required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, this.description, this.discounts, required this.id, this.metadata, required this.object, this.price, this.quantity, this.taxes, });
+@immutable final class Item {const Item({required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, required this.id, required this.object, this.adjustableQuantity, this.description, this.discounts, this.metadata, this.price, this.quantity, this.taxes, });
 
 factory Item.fromJson(Map<String, dynamic> json) { return Item(
   adjustableQuantity: json['adjustable_quantity'] != null ? LineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,

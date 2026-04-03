@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_admin_connector.dart';final class MconnCreateConnectorResponse {const MconnCreateConnectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_connector.dart';@immutable final class MconnCreateConnectorResponse {const MconnCreateConnectorResponse({this.result});
 
 factory MconnCreateConnectorResponse.fromJson(Map<String, dynamic> json) { return MconnCreateConnectorResponse(
   result: json['result'] != null ? MconnAdminConnector.fromJson(json['result'] as Map<String, dynamic>) : null,

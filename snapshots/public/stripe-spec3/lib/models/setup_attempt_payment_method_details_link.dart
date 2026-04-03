@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupAttemptPaymentMethodDetailsLink {const SetupAttemptPaymentMethodDetailsLink();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupAttemptPaymentMethodDetailsLink {const SetupAttemptPaymentMethodDetailsLink();
 
 factory SetupAttemptPaymentMethodDetailsLink.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsLink(
 

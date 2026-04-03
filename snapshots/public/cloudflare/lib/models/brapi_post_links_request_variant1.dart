@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_links_request_variant1_add_script_tag.dart';import 'brapi_post_links_request_variant1_add_style_tag.dart';import 'brapi_post_links_request_variant1_authenticate.dart';import 'brapi_post_links_request_variant1_cookies.dart';import 'brapi_post_links_request_variant1_goto_options.dart';import 'brapi_post_links_request_variant1_viewport.dart';import 'brapi_post_links_request_variant1_wait_for_selector.dart';final class BrapiPostLinksRequestVariant1AllowResourceTypes {const BrapiPostLinksRequestVariant1AllowResourceTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_links_request_variant1_add_script_tag.dart';import 'brapi_post_links_request_variant1_add_style_tag.dart';import 'brapi_post_links_request_variant1_authenticate.dart';import 'brapi_post_links_request_variant1_cookies.dart';import 'brapi_post_links_request_variant1_goto_options.dart';import 'brapi_post_links_request_variant1_viewport.dart';import 'brapi_post_links_request_variant1_wait_for_selector.dart';@immutable final class BrapiPostLinksRequestVariant1AllowResourceTypes {const BrapiPostLinksRequestVariant1AllowResourceTypes._(this.value);
 
 factory BrapiPostLinksRequestVariant1AllowResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostLinksRequestVariant1AllowResourceTypes($value)'; } 
  }
-final class BrapiPostLinksRequestVariant1RejectResourceTypes {const BrapiPostLinksRequestVariant1RejectResourceTypes._(this.value);
+@immutable final class BrapiPostLinksRequestVariant1RejectResourceTypes {const BrapiPostLinksRequestVariant1RejectResourceTypes._(this.value);
 
 factory BrapiPostLinksRequestVariant1RejectResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostLinksRequestVariant1RejectResourceTypes($value)'; } 
  }
-final class BrapiPostLinksRequestVariant1 {const BrapiPostLinksRequestVariant1({this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.excludeExternalLinks = false, this.gotoOptions, required this.html, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.visibleLinksOnly = false, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostLinksRequestVariant1 {const BrapiPostLinksRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.excludeExternalLinks = false, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.visibleLinksOnly = false, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostLinksRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostLinksRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,

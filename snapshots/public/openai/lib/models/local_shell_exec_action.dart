@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the local shell action. Always `exec`.
-final class LocalShellExecActionType {const LocalShellExecActionType._(this.value);
+@immutable final class LocalShellExecActionType {const LocalShellExecActionType._(this.value);
 
 factory LocalShellExecActionType.fromJson(String json) { return switch (json) {
   'exec' => exec,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LocalShellExecActionType($value)'; } 
  }
 /// Execute a shell command on the server.
-final class LocalShellExecAction {const LocalShellExecAction({this.type = LocalShellExecActionType.exec, required this.command, this.timeoutMs, this.workingDirectory, required this.env, this.user, });
+@immutable final class LocalShellExecAction {const LocalShellExecAction({required this.command, required this.env, this.type = LocalShellExecActionType.exec, this.timeoutMs, this.workingDirectory, this.user, });
 
 factory LocalShellExecAction.fromJson(Map<String, dynamic> json) { return LocalShellExecAction(
   type: LocalShellExecActionType.fromJson(json['type'] as String),

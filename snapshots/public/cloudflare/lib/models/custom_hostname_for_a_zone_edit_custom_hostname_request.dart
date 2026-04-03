@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_sslpost.dart';final class CustomHostnameForAZoneEditCustomHostnameRequest {const CustomHostnameForAZoneEditCustomHostnameRequest({this.customMetadata, this.customOriginServer, this.customOriginSni, this.ssl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_sslpost.dart';@immutable final class CustomHostnameForAZoneEditCustomHostnameRequest {const CustomHostnameForAZoneEditCustomHostnameRequest({this.customMetadata, this.customOriginServer, this.customOriginSni, this.ssl, });
 
 factory CustomHostnameForAZoneEditCustomHostnameRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneEditCustomHostnameRequest(
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

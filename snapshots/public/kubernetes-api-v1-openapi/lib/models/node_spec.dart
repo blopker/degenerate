@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_config_source.dart';import 'taint.dart';/// NodeSpec describes the attributes that a node is created with.
-final class NodeSpec {const NodeSpec({this.configSource, this.externalId, this.podCidr, this.podCidRs, this.providerId, this.taints, this.unschedulable, });
+@immutable final class NodeSpec {const NodeSpec({this.configSource, this.externalId, this.podCidr, this.podCidRs, this.providerId, this.taints, this.unschedulable, });
 
 factory NodeSpec.fromJson(Map<String, dynamic> json) { return NodeSpec(
   configSource: json['configSource'] != null ? NodeConfigSource.fromJson(json['configSource'] as Map<String, dynamic>) : null,

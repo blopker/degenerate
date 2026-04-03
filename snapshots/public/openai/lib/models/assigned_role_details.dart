@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Detailed information about a role assignment entry returned when listing assignments.
-final class AssignedRoleDetails {const AssignedRoleDetails({required this.id, required this.name, required this.permissions, required this.resourceType, required this.predefinedRole, required this.description, required this.createdAt, required this.updatedAt, required this.createdBy, required this.createdByUserObj, required this.metadata, });
+@immutable final class AssignedRoleDetails {const AssignedRoleDetails({required this.id, required this.name, required this.permissions, required this.resourceType, required this.predefinedRole, required this.description, required this.createdAt, required this.updatedAt, required this.createdBy, required this.createdByUserObj, required this.metadata, });
 
 factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return AssignedRoleDetails(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory {const PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory {const PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -901,7 +901,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory($value)'; } 
  }
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
-final class PostTestHelpersIssuingAuthorizationsRequestMerchantData {const PostTestHelpersIssuingAuthorizationsRequestMerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestMerchantData {const PostTestHelpersIssuingAuthorizationsRequestMerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestMerchantData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestMerchantData(
   category: json['category'] != null ? PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory.fromJson(json['category'] as String) : null,

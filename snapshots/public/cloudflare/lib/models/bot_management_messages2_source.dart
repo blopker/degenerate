@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BotManagementMessages2Source {const BotManagementMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotManagementMessages2Source {const BotManagementMessages2Source({this.pointer});
 
 factory BotManagementMessages2Source.fromJson(Map<String, dynamic> json) { return BotManagementMessages2Source(
   pointer: json['pointer'] as String?,

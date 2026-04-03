@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListsDeleteListItemsRequestItems {const ListsDeleteListItemsRequestItems({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsDeleteListItemsRequestItems {const ListsDeleteListItemsRequestItems({required this.id});
 
 factory ListsDeleteListItemsRequestItems.fromJson(Map<String, dynamic> json) { return ListsDeleteListItemsRequestItems(
   id: json['id'] as String,

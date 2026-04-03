@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43FunctionCallVariant2 {const Prompt43FunctionCallVariant2({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43FunctionCallVariant2 {const Prompt43FunctionCallVariant2({required this.name});
 
 factory Prompt43FunctionCallVariant2.fromJson(Map<String, dynamic> json) { return Prompt43FunctionCallVariant2(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIdentityVerificationReportsReportRequest {const GetIdentityVerificationReportsReportRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIdentityVerificationReportsReportRequest {const GetIdentityVerificationReportsReportRequest();
 
 factory GetIdentityVerificationReportsReportRequest.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationReportsReportRequest(
 

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration for input audio transcription, defaults to off and can be
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for input audio transcription, defaults to off and can be
 /// set to `null` to turn off once on. Input audio transcription is not native
 /// to the model, since the model consumes audio directly. Transcription runs
 /// asynchronously and should be treated as rough guidance
 /// rather than the representation understood by the model.
 /// 
-final class RealtimeSessionCreateRequestInputAudioTranscription {const RealtimeSessionCreateRequestInputAudioTranscription({this.model});
+@immutable final class RealtimeSessionCreateRequestInputAudioTranscription {const RealtimeSessionCreateRequestInputAudioTranscription({this.model});
 
 factory RealtimeSessionCreateRequestInputAudioTranscription.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestInputAudioTranscription(
   model: json['model'] as String?,

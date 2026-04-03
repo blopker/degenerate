@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_claim.dart';import 'resource_quantity.dart';/// ResourceRequirements describes the compute resource requirements.
-final class ResourceRequirements {const ResourceRequirements({this.claims, this.limits, this.requests, });
+@immutable final class ResourceRequirements {const ResourceRequirements({this.claims, this.limits, this.requests, });
 
 factory ResourceRequirements.fromJson(Map<String, dynamic> json) { return ResourceRequirements(
   claims: (json['claims'] as List<dynamic>?)?.map((e) => ResourceClaim.fromJson(e as Map<String, dynamic>)).toList(),

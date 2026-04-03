@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_list_job_logs_response_result.dart';import 'autorag_config_list_job_logs_response_result_info.dart';final class AutoragConfigListJobLogsResponse {const AutoragConfigListJobLogsResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_list_job_logs_response_result.dart';import 'autorag_config_list_job_logs_response_result_info.dart';@immutable final class AutoragConfigListJobLogsResponse {const AutoragConfigListJobLogsResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory AutoragConfigListJobLogsResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigListJobLogsResponse(
   result: (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

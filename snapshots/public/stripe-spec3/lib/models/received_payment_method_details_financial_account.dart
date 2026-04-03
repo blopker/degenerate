@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The rails the ReceivedCredit was sent over. A FinancialAccount can only send funds over `stripe`.
-final class ReceivedPaymentMethodDetailsFinancialAccountNetwork {const ReceivedPaymentMethodDetailsFinancialAccountNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rails the ReceivedCredit was sent over. A FinancialAccount can only send funds over `stripe`.
+@immutable final class ReceivedPaymentMethodDetailsFinancialAccountNetwork {const ReceivedPaymentMethodDetailsFinancialAccountNetwork._(this.value);
 
 factory ReceivedPaymentMethodDetailsFinancialAccountNetwork.fromJson(String json) { return switch (json) {
   'stripe' => stripe,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReceivedPaymentMethodDetailsFinancialAccountNetwork($value)'; } 
  }
 /// 
-final class ReceivedPaymentMethodDetailsFinancialAccount {const ReceivedPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
+@immutable final class ReceivedPaymentMethodDetailsFinancialAccount {const ReceivedPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
 
 factory ReceivedPaymentMethodDetailsFinancialAccount.fromJson(Map<String, dynamic> json) { return ReceivedPaymentMethodDetailsFinancialAccount(
   id: json['id'] as String,

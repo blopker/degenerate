@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage._(this.value);
 
 factory DestinationCreateResponse400ErrorsMessage.fromJson(String json) { return switch (json) {
   'Bad Request' => badRequest,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationCreateResponse400ErrorsMessage($value)'; } 
  }
-final class DestinationCreateResponse400Errors {const DestinationCreateResponse400Errors({this.detail, required this.message, });
+@immutable final class DestinationCreateResponse400Errors {const DestinationCreateResponse400Errors({required this.message, this.detail, });
 
 factory DestinationCreateResponse400Errors.fromJson(Map<String, dynamic> json) { return DestinationCreateResponse400Errors(
   detail: json['detail'] as String?,

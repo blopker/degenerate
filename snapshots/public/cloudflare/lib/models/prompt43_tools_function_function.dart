@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ToolsFunctionFunction {const Prompt43ToolsFunctionFunction({this.description, required this.name, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ToolsFunctionFunction {const Prompt43ToolsFunctionFunction({required this.name, this.description, this.parameters, this.strict, });
 
 factory Prompt43ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Prompt43ToolsFunctionFunction(
   description: json['description'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_firewalluablock.dart';final class FirewallFirewalluablockResponseCollection {const FirewallFirewalluablockResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_firewalluablock.dart';@immutable final class FirewallFirewalluablockResponseCollection {const FirewallFirewalluablockResponseCollection({this.result});
 
 factory FirewallFirewalluablockResponseCollection.fromJson(Map<String, dynamic> json) { return FirewallFirewalluablockResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => FirewallFirewalluablock.fromJson(e as Map<String, dynamic>)).toList(),

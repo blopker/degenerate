@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action that was performed on the page. Can be `created` or `edited`.
-final class WebhookGollumPagesAction {const WebhookGollumPagesAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed on the page. Can be `created` or `edited`.
+@immutable final class WebhookGollumPagesAction {const WebhookGollumPagesAction._(this.value);
 
 factory WebhookGollumPagesAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookGollumPagesAction($value)'; } 
  }
-final class WebhookGollumPages {const WebhookGollumPages({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title, });
+@immutable final class WebhookGollumPages {const WebhookGollumPages({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title, });
 
 factory WebhookGollumPages.fromJson(Map<String, dynamic> json) { return WebhookGollumPages(
   action: WebhookGollumPagesAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType {const RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType {const RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType.fromJson(String json) { return switch (json) {
   'A' => a,

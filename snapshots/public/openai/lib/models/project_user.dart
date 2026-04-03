@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `organization.project.user`
-final class ProjectUserObject {const ProjectUserObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.user`
+@immutable final class ProjectUserObject {const ProjectUserObject._(this.value);
 
 factory ProjectUserObject.fromJson(String json) { return switch (json) {
   'organization.project.user' => organizationProjectUser,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectUserObject($value)'; } 
  }
 /// `owner` or `member`
-final class ProjectUserRole {const ProjectUserRole._(this.value);
+@immutable final class ProjectUserRole {const ProjectUserRole._(this.value);
 
 factory ProjectUserRole.fromJson(String json) { return switch (json) {
   'owner' => owner,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectUserRole($value)'; } 
  }
 /// Represents an individual user in a project.
-final class ProjectUser {const ProjectUser({required this.object, required this.id, required this.name, required this.email, required this.role, required this.addedAt, });
+@immutable final class ProjectUser {const ProjectUser({required this.object, required this.id, required this.name, required this.email, required this.role, required this.addedAt, });
 
 factory ProjectUser.fromJson(Map<String, dynamic> json) { return ProjectUser(
   object: ProjectUserObject.fromJson(json['object'] as String),

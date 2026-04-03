@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_deployment_review_requested_reviewers_reviewer.dart';final class WebhookDeploymentReviewRequestedReviewersType {const WebhookDeploymentReviewRequestedReviewersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_review_requested_reviewers_reviewer.dart';@immutable final class WebhookDeploymentReviewRequestedReviewersType {const WebhookDeploymentReviewRequestedReviewersType._(this.value);
 
 factory WebhookDeploymentReviewRequestedReviewersType.fromJson(String json) { return switch (json) {
   'User' => user,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentReviewRequestedReviewersType($value)'; } 
  }
-final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer, this.type, });
+@immutable final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer, this.type, });
 
 factory WebhookDeploymentReviewRequestedReviewers.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedReviewers(
   reviewer: json['reviewer'] != null ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,

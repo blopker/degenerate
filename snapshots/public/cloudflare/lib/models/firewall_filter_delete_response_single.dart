@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_filter_delete_response_single_result.dart';final class FirewallFilterDeleteResponseSingle {const FirewallFilterDeleteResponseSingle({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filter_delete_response_single_result.dart';@immutable final class FirewallFilterDeleteResponseSingle {const FirewallFilterDeleteResponseSingle({required this.result});
 
 factory FirewallFilterDeleteResponseSingle.fromJson(Map<String, dynamic> json) { return FirewallFilterDeleteResponseSingle(
   result: FirewallFilterDeleteResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>),

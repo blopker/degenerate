@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of dispute opened. Different case types may have varying fees and financial impact.
-final class DisputePaymentMethodDetailsCardCaseType {const DisputePaymentMethodDetailsCardCaseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of dispute opened. Different case types may have varying fees and financial impact.
+@immutable final class DisputePaymentMethodDetailsCardCaseType {const DisputePaymentMethodDetailsCardCaseType._(this.value);
 
 factory DisputePaymentMethodDetailsCardCaseType.fromJson(String json) { return switch (json) {
   'block' => block,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputePaymentMethodDetailsCardCaseType($value)'; } 
  }
 /// 
-final class DisputePaymentMethodDetailsCard {const DisputePaymentMethodDetailsCard({required this.brand, required this.caseType, this.networkReasonCode, });
+@immutable final class DisputePaymentMethodDetailsCard {const DisputePaymentMethodDetailsCard({required this.brand, required this.caseType, this.networkReasonCode, });
 
 factory DisputePaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsCard(
   brand: json['brand'] as String,

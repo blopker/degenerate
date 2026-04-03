@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The operation to perform on the cache tags.
-final class RulesetsSetCacheTagsOperation {const RulesetsSetCacheTagsOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache tags.
+@immutable final class RulesetsSetCacheTagsOperation {const RulesetsSetCacheTagsOperation._(this.value);
 
 factory RulesetsSetCacheTagsOperation.fromJson(String json) { return switch (json) {
   'add' => add,

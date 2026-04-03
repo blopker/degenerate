@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AppsResetTokenRequest {const AppsResetTokenRequest({required this.accessToken});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsResetTokenRequest {const AppsResetTokenRequest({required this.accessToken});
 
 factory AppsResetTokenRequest.fromJson(Map<String, dynamic> json) { return AppsResetTokenRequest(
   accessToken: json['access_token'] as String,

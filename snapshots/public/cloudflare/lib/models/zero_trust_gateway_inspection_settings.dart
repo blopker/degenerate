@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Define the proxy inspection mode.   1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443).   2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.
-final class ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define the proxy inspection mode.   1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443).   2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.
+@immutable final class ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode._(this.value);
 
 factory ZeroTrustGatewayInspectionSettingsMode.fromJson(String json) { return switch (json) {
   'static' => $static,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayInspectionSettingsMode($value)'; } 
  }
 /// Define the proxy inspection mode.
-final class ZeroTrustGatewayInspectionSettings {const ZeroTrustGatewayInspectionSettings({this.mode});
+@immutable final class ZeroTrustGatewayInspectionSettings {const ZeroTrustGatewayInspectionSettings({this.mode});
 
 factory ZeroTrustGatewayInspectionSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayInspectionSettings(
   mode: json['mode'] != null ? ZeroTrustGatewayInspectionSettingsMode.fromJson(json['mode'] as String) : null,

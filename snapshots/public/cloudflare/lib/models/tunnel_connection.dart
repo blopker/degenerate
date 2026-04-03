@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_colo_name.dart';import 'tunnel_connection_id.dart';import 'tunnel_is_pending_reconnect.dart';final class TunnelConnection {const TunnelConnection({this.coloName, this.isPendingReconnect, this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_colo_name.dart';import 'tunnel_connection_id.dart';import 'tunnel_is_pending_reconnect.dart';@immutable final class TunnelConnection {const TunnelConnection({this.coloName, this.isPendingReconnect, this.uuid, });
 
 factory TunnelConnection.fromJson(Map<String, dynamic> json) { return TunnelConnection(
   coloName: json['colo_name'] != null ? TunnelColoName.fromJson(json['colo_name'] as String) : null,

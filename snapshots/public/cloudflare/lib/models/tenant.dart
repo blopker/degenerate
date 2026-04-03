@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_contacts.dart';import 'tenant_tenant_metadata.dart';import 'tenant_unit.dart';final class Tenant {const Tenant({required this.cdate, this.customerId, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_contacts.dart';import 'tenant_tenant_metadata.dart';import 'tenant_unit.dart';@immutable final class Tenant {const Tenant({required this.cdate, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, this.customerId, });
 
 factory Tenant.fromJson(Map<String, dynamic> json) { return Tenant(
   cdate: DateTime.parse(json['cdate'] as String),

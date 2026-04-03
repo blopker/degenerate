@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
-final class MigrationsStartForAuthenticatedUserRequestExclude {const MigrationsStartForAuthenticatedUserRequestExclude._(this.value);
+@immutable final class MigrationsStartForAuthenticatedUserRequestExclude {const MigrationsStartForAuthenticatedUserRequestExclude._(this.value);
 
 factory MigrationsStartForAuthenticatedUserRequestExclude.fromJson(String json) { return switch (json) {
   'repositories' => repositories,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MigrationsStartForAuthenticatedUserRequestExclude($value)'; } 
  }
-final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly = false, this.exclude, required this.repositories, });
+@immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly = false, this.exclude, });
 
 factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: json['lock_repositories'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `url` parameter's value. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final class CreateCallRequestMethod {const CreateCallRequestMethod._(this.value);
+@immutable final class CreateCallRequestMethod {const CreateCallRequestMethod._(this.value);
 
 factory CreateCallRequestMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateCallRequestMethod($value)'; } 
  }
 /// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final class CreateCallRequestFallbackMethod {const CreateCallRequestFallbackMethod._(this.value);
+@immutable final class CreateCallRequestFallbackMethod {const CreateCallRequestFallbackMethod._(this.value);
 
 factory CreateCallRequestFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateCallRequestFallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when calling the `status_callback` URL. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final class CreateCallRequestStatusCallbackMethod {const CreateCallRequestStatusCallbackMethod._(this.value);
+@immutable final class CreateCallRequestStatusCallbackMethod {const CreateCallRequestStatusCallbackMethod._(this.value);
 
 factory CreateCallRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateCallRequestStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when calling the `recording_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-final class CreateCallRequestRecordingStatusCallbackMethod {const CreateCallRequestRecordingStatusCallbackMethod._(this.value);
+@immutable final class CreateCallRequestRecordingStatusCallbackMethod {const CreateCallRequestRecordingStatusCallbackMethod._(this.value);
 
 factory CreateCallRequestRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateCallRequestRecordingStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when calling the `async_amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-final class CreateCallRequestAsyncAmdStatusCallbackMethod {const CreateCallRequestAsyncAmdStatusCallbackMethod._(this.value);
+@immutable final class CreateCallRequestAsyncAmdStatusCallbackMethod {const CreateCallRequestAsyncAmdStatusCallbackMethod._(this.value);
 
 factory CreateCallRequestAsyncAmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateCallRequestAsyncAmdStatusCallbackMethod($value)'; } 
  }
-final class CreateCallRequest {const CreateCallRequest({required this.to, required this.from, this.method, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackEvent, this.statusCallbackMethod, this.sendDigits, this.timeout, this.record, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.machineDetection, this.machineDetectionTimeout, this.recordingStatusCallbackEvent, this.trim, this.callerId, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.asyncAmd, this.asyncAmdStatusCallback, this.asyncAmdStatusCallbackMethod, this.byoc, this.callReason, this.callToken, this.recordingTrack, this.timeLimit, this.clientNotificationUrl, this.url, this.twiml, this.applicationSid, });
+@immutable final class CreateCallRequest {const CreateCallRequest({required this.to, required this.from, this.recordingChannels, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackEvent, this.statusCallbackMethod, this.sendDigits, this.timeout, this.record, this.method, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.machineDetection, this.machineDetectionTimeout, this.recordingStatusCallbackEvent, this.trim, this.callerId, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.applicationSid, this.asyncAmd, this.asyncAmdStatusCallback, this.asyncAmdStatusCallbackMethod, this.byoc, this.callReason, this.callToken, this.recordingTrack, this.timeLimit, this.clientNotificationUrl, this.url, this.twiml, this.machineDetectionSilenceTimeout, });
 
 factory CreateCallRequest.fromJson(Map<String, dynamic> json) { return CreateCallRequest(
   to: json['To'] as String,

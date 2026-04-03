@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_storage_config.dart';/// The type of output destination this layer is being exported to.
-final class RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_storage_config.dart';/// The type of output destination this layer is being exported to.
+@immutable final class RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType._(this.value);
 
 factory RealtimekitTrackLayerOutputType.fromJson(String json) { return switch (json) {
   'REALTIMEKIT_BUCKET' => realtimekitBucket,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitTrackLayerOutputType($value)'; } 
  }
-final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });
+@immutable final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });
 
 factory RealtimekitTrackLayerOutput.fromJson(Map<String, dynamic> json) { return RealtimekitTrackLayerOutput(
   storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,

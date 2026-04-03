@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_base_repo.dart';final class WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase {const WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase({required this.ref, required this.repo, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_base_repo.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase {const WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase({required this.ref, required this.repo, required this.sha, });
 
 factory WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase(
   ref: json['ref'] as String,

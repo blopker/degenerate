@@ -15,7 +15,7 @@ String toJson() => value.toIso8601String();
 
 }
 /// How often the subscription is renewed automatically.
-final class Frequency {const Frequency._(this.value);
+@immutable final class Frequency {const Frequency._(this.value);
 
 factory Frequency.fromJson(String json) { return switch (json) {
   'weekly' => weekly,
@@ -53,7 +53,7 @@ num toJson() => value;
 
 }
 /// The state that the subscription is in.
-final class State {const State._(this.value);
+@immutable final class State {const State._(this.value);
 
 factory State.fromJson(String json) { return switch (json) {
   'Trial' => trial,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'State($value)'; } 
  }
-final class Subscription2 {const Subscription2({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });
+@immutable final class Subscription2 {const Subscription2({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });
 
 factory Subscription2.fromJson(Map<String, dynamic> json) { return Subscription2(
   app: json['app'] != null ? Subscription2App.fromJson(json['app'] as Map<String, dynamic>) : null,

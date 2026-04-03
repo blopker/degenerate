@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.refusal.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.refusal.delta`.
 /// 
-final class ResponseRefusalDeltaEventType {const ResponseRefusalDeltaEventType._(this.value);
+@immutable final class ResponseRefusalDeltaEventType {const ResponseRefusalDeltaEventType._(this.value);
 
 factory ResponseRefusalDeltaEventType.fromJson(String json) { return switch (json) {
   'response.refusal.delta' => responseRefusalDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseRefusalDeltaEventType($value)'; } 
  }
 /// Emitted when there is a partial refusal text.
-final class ResponseRefusalDeltaEvent {const ResponseRefusalDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, });
+@immutable final class ResponseRefusalDeltaEvent {const ResponseRefusalDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, });
 
 factory ResponseRefusalDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseRefusalDeltaEvent(
   type: ResponseRefusalDeltaEventType.fromJson(json['type'] as String),

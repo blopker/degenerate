@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_meta_deleted_hook_config.dart';final class WebhookMetaDeletedHookEvents {const WebhookMetaDeletedHookEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_meta_deleted_hook_config.dart';@immutable final class WebhookMetaDeletedHookEvents {const WebhookMetaDeletedHookEvents._(this.value);
 
 factory WebhookMetaDeletedHookEvents.fromJson(String json) { return switch (json) {
   '*' => $empty,
@@ -175,7 +175,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookMetaDeletedHookEvents($value)'; } 
  }
 /// The deleted webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
-final class WebhookMetaDeletedHook {const WebhookMetaDeletedHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, });
+@immutable final class WebhookMetaDeletedHook {const WebhookMetaDeletedHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, });
 
 factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) { return WebhookMetaDeletedHook(
   active: json['active'] as bool,

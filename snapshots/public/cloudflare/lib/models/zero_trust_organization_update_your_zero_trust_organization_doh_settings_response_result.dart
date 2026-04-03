@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_doh_jwt_duration.dart';final class ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult {const ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult({this.dohJwtDuration});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_doh_jwt_duration.dart';@immutable final class ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult {const ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult({this.dohJwtDuration});
 
 factory ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(Map<String, dynamic> json) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult(
   dohJwtDuration: json['doh_jwt_duration'] != null ? AccessDohJwtDuration.fromJson(json['doh_jwt_duration'] as String) : null,

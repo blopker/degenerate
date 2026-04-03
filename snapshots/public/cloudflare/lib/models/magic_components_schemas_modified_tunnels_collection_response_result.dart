@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_interconnect.dart';final class MagicComponentsSchemasModifiedTunnelsCollectionResponseResult {const MagicComponentsSchemasModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedInterconnects, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_interconnect.dart';@immutable final class MagicComponentsSchemasModifiedTunnelsCollectionResponseResult {const MagicComponentsSchemasModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedInterconnects, });
 
 factory MagicComponentsSchemasModifiedTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicComponentsSchemasModifiedTunnelsCollectionResponseResult(
   modified: json['modified'] as bool?,

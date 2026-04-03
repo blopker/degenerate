@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
 /// 
-final class ZonesMirageId {const ZonesMirageId._(this.value);
+@immutable final class ZonesMirageId {const ZonesMirageId._(this.value);
 
 factory ZonesMirageId.fromJson(String json) { return switch (json) {
   'mirage' => mirage,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesMirageId($value)'; } 
  }
-final class ZonesMirage {const ZonesMirage({this.id, this.value, });
+@immutable final class ZonesMirage {const ZonesMirage({this.id, this.value, });
 
 factory ZonesMirage.fromJson(Map<String, dynamic> json) { return ZonesMirage(
   id: json['id'] != null ? ZonesMirageId.fromJson(json['id'] as String) : null,

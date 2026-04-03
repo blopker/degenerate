@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_completion_behavior_confirmation_page.dart';import 'payment_links_resource_completion_behavior_redirect.dart';/// The specified behavior after the purchase is complete.
-final class PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_completion_behavior_confirmation_page.dart';import 'payment_links_resource_completion_behavior_redirect.dart';/// The specified behavior after the purchase is complete.
+@immutable final class PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType._(this.value);
 
 factory PaymentLinksResourceAfterCompletionType.fromJson(String json) { return switch (json) {
   'hosted_confirmation' => hostedConfirmation,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceAfterCompletionType($value)'; } 
  }
 /// 
-final class PaymentLinksResourceAfterCompletion {const PaymentLinksResourceAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
+@immutable final class PaymentLinksResourceAfterCompletion {const PaymentLinksResourceAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });
 
 factory PaymentLinksResourceAfterCompletion.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceAfterCompletion(
   hostedConfirmation: json['hosted_confirmation'] != null ? PaymentLinksResourceCompletionBehaviorConfirmationPage.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,

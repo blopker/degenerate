@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersWorkerReferencesDispatchNamespaceOutbounds {const WorkersWorkerReferencesDispatchNamespaceOutbounds({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersWorkerReferencesDispatchNamespaceOutbounds {const WorkersWorkerReferencesDispatchNamespaceOutbounds({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
 
 factory WorkersWorkerReferencesDispatchNamespaceOutbounds.fromJson(Map<String, dynamic> json) { return WorkersWorkerReferencesDispatchNamespaceOutbounds(
   namespaceId: json['namespace_id'] as String,

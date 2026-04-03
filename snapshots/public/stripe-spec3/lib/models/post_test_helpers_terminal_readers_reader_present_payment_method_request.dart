@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_terminal_readers_reader_present_payment_method_request_card.dart';import 'post_test_helpers_terminal_readers_reader_present_payment_method_request_card_present.dart';import 'post_test_helpers_terminal_readers_reader_present_payment_method_request_interac_present.dart';/// Simulated payment type.
-final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._(this.value);
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._(this.value);
 
 factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType($value)'; } 
  }
-final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest({this.amountTip, this.card, this.cardPresent, this.expand, this.interacPresent, this.type, });
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest({this.amountTip, this.card, this.cardPresent, this.expand, this.interacPresent, this.type, });
 
 factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest(
   amountTip: json['amount_tip'] != null ? (json['amount_tip'] as num).toInt() : null,

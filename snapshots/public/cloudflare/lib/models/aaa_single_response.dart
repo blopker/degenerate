@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_policies.dart';final class AaaSingleResponse {const AaaSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_policies.dart';@immutable final class AaaSingleResponse {const AaaSingleResponse({this.result});
 
 factory AaaSingleResponse.fromJson(Map<String, dynamic> json) { return AaaSingleResponse(
   result: json['result'] != null ? AaaPolicies.fromJson(json['result'] as Map<String, dynamic>) : null,

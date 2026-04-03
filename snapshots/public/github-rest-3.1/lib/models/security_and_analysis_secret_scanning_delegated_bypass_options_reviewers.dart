@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the bypass reviewer
-final class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType {const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the bypass reviewer
+@immutable final class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType {const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType._(this.value);
 
 factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType.fromJson(String json) { return switch (json) {
   'TEAM' => team,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType($value)'; } 
  }
-final class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers {const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers({required this.reviewerId, required this.reviewerType, });
+@immutable final class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers {const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers({required this.reviewerId, required this.reviewerType, });
 
 factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(
   reviewerId: (json['reviewer_id'] as num).toInt(),

@@ -28,7 +28,7 @@ factory IamSchemasExpiresOn.fromJson(String json) => IamSchemasExpiresOn(DateTim
 String toJson() => value.toIso8601String();
 
 }
-final class IamUserInvite {const IamUserInvite({this.expiresOn, this.id, this.invitedBy, this.invitedMemberEmail, required this.invitedMemberId, this.invitedOn, required this.organizationId, this.organizationIsEnforcingTwofactor, this.organizationName, this.roles, this.status, });
+@immutable final class IamUserInvite {const IamUserInvite({required this.invitedMemberId, required this.organizationId, this.expiresOn, this.id, this.invitedBy, this.invitedMemberEmail, this.invitedOn, this.organizationIsEnforcingTwofactor, this.organizationName, this.roles, this.status, });
 
 factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite(
   expiresOn: json['expires_on'] != null ? IamSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,

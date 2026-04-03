@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_settings_policy.dart';final class TeamsDevicesDeviceSettingsResponseCollection {const TeamsDevicesDeviceSettingsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_settings_policy.dart';@immutable final class TeamsDevicesDeviceSettingsResponseCollection {const TeamsDevicesDeviceSettingsResponseCollection({this.result});
 
 factory TeamsDevicesDeviceSettingsResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceSettingsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesDeviceSettingsPolicy.fromJson(e as Map<String, dynamic>)).toList(),

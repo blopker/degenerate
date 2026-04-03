@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode {const Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode {const Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode._(this.value);
 
 factory Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode($value)'; } 
  }
-final class Prompt43ToolChoiceVariant1AllowedToolsAllowedTools {const Prompt43ToolChoiceVariant1AllowedToolsAllowedTools({required this.mode, required this.tools, });
+@immutable final class Prompt43ToolChoiceVariant1AllowedToolsAllowedTools {const Prompt43ToolChoiceVariant1AllowedToolsAllowedTools({required this.mode, required this.tools, });
 
 factory Prompt43ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1AllowedToolsAllowedTools(
   mode: Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode.fromJson(json['mode'] as String),

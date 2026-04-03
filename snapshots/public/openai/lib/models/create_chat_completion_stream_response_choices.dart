@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_stream_response_delta.dart';import 'create_chat_completion_stream_response_choices_logprobs.dart';/// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_stream_response_delta.dart';import 'create_chat_completion_stream_response_choices_logprobs.dart';/// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
 /// `length` if the maximum number of tokens specified in the request was reached,
 /// `content_filter` if content was omitted due to a flag from our content filters,
 /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
 /// 
-final class CreateChatCompletionStreamResponseChoicesFinishReason {const CreateChatCompletionStreamResponseChoicesFinishReason._(this.value);
+@immutable final class CreateChatCompletionStreamResponseChoicesFinishReason {const CreateChatCompletionStreamResponseChoicesFinishReason._(this.value);
 
 factory CreateChatCompletionStreamResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
   'stop' => stop,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateChatCompletionStreamResponseChoicesFinishReason($value)'; } 
  }
-final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletionStreamResponseChoices({required this.delta, this.logprobs, required this.finishReason, required this.index, });
+@immutable final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletionStreamResponseChoices({required this.delta, required this.finishReason, required this.index, this.logprobs, });
 
 factory CreateChatCompletionStreamResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponseChoices(
   delta: ChatCompletionStreamResponseDelta.fromJson(json['delta'] as Map<String, dynamic>),

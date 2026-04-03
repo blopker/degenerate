@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PageShieldResultInfo {const PageShieldResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageShieldResultInfo {const PageShieldResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
 
 factory PageShieldResultInfo.fromJson(Map<String, dynamic> json) { return PageShieldResultInfo(
   count: (json['count'] as num).toDouble(),

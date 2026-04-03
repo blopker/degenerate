@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
-final class ProjectCreateRequestGeography {const ProjectCreateRequestGeography._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
+@immutable final class ProjectCreateRequestGeography {const ProjectCreateRequestGeography._(this.value);
 
 factory ProjectCreateRequestGeography.fromJson(String json) { return switch (json) {
   'US' => us,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectCreateRequestGeography($value)'; } 
  }
-final class ProjectCreateRequest {const ProjectCreateRequest({required this.name, this.geography, });
+@immutable final class ProjectCreateRequest {const ProjectCreateRequest({required this.name, this.geography, });
 
 factory ProjectCreateRequest.fromJson(Map<String, dynamic> json) { return ProjectCreateRequest(
   name: json['name'] as String,

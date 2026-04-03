@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems({required this.id, this.price, this.quantity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems({required this.id, this.price, this.quantity, });
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
   id: json['id'] as String,

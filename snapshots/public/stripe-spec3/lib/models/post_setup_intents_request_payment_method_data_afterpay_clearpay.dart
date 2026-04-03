@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay {const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay {const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay();
 
 factory PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay(
 

@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.createJob();
 /// ```
 final class Spec04ResponsesLinksCallbacksApi {
-  final ApiConfig _config;
-
   Spec04ResponsesLinksCallbacksApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

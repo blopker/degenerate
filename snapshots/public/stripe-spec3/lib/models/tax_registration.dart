@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_registrations_resource_country_options.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxRegistrationObject {const TaxRegistrationObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TaxRegistrationObject {const TaxRegistrationObject._(this.value);
 
 factory TaxRegistrationObject.fromJson(String json) { return switch (json) {
   'tax.registration' => taxRegistration,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxRegistrationObject($value)'; } 
  }
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
-final class TaxRegistrationStatus {const TaxRegistrationStatus._(this.value);
+@immutable final class TaxRegistrationStatus {const TaxRegistrationStatus._(this.value);
 
 factory TaxRegistrationStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe doesn't register on your behalf with the relevant authorities when you create a Tax `Registration` object. For more information on how to register to collect tax, see [our guide](https://docs.stripe.com/tax/registering).
 /// 
 /// Related guide: [Using the Registrations API](https://docs.stripe.com/tax/registrations-api)
-final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, this.expiresAt, required this.id, required this.livemode, required this.object, required this.status, });
+@immutable final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, required this.id, required this.livemode, required this.object, required this.status, this.expiresAt, });
 
 factory TaxRegistration.fromJson(Map<String, dynamic> json) { return TaxRegistration(
   activeFrom: (json['active_from'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor._(this.value);
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor.fromJson(String json) { return switch (json) {
   'invoice' => invoice,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor($value)'; } 
  }
 /// Payment schedule for the mandate.
-final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(this.value);
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule($value)'; } 
  }
 /// Transaction type of the mandate.
-final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(this.value);
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType($value)'; } 
  }
 /// 
-final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: json['custom_mandate_url'] as String?,

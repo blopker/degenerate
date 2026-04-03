@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_schemas_group.dart';final class WafManagedRulesRuleGroupResponseCollection {const WafManagedRulesRuleGroupResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_schemas_group.dart';@immutable final class WafManagedRulesRuleGroupResponseCollection {const WafManagedRulesRuleGroupResponseCollection({this.result});
 
 factory WafManagedRulesRuleGroupResponseCollection.fromJson(Map<String, dynamic> json) { return WafManagedRulesRuleGroupResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => WafManagedRulesSchemasGroup.fromJson(e as Map<String, dynamic>)).toList(),

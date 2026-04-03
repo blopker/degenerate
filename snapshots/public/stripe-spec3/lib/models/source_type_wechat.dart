@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeWechat {const SourceTypeWechat({this.prepayId, this.qrCodeUrl, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeWechat {const SourceTypeWechat({this.prepayId, this.qrCodeUrl, this.statementDescriptor, });
 
 factory SourceTypeWechat.fromJson(Map<String, dynamic> json) { return SourceTypeWechat(
   prepayId: json['prepay_id'] as String?,

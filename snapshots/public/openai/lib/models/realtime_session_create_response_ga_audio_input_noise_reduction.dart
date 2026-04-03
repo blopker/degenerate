@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'noise_reduction_type.dart';/// Configuration for input audio noise reduction. This can be set to `null` to turn off.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'noise_reduction_type.dart';/// Configuration for input audio noise reduction. This can be set to `null` to turn off.
 /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.
 /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
 /// 
-final class RealtimeSessionCreateResponseGaAudioInputNoiseReduction {const RealtimeSessionCreateResponseGaAudioInputNoiseReduction({this.type});
+@immutable final class RealtimeSessionCreateResponseGaAudioInputNoiseReduction {const RealtimeSessionCreateResponseGaAudioInputNoiseReduction({this.type});
 
 factory RealtimeSessionCreateResponseGaAudioInputNoiseReduction.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseGaAudioInputNoiseReduction(
   type: json['type'] != null ? NoiseReductionType.fromJson(json['type'] as String) : null,

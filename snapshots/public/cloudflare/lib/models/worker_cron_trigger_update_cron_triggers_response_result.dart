@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_schedule.dart';final class WorkerCronTriggerUpdateCronTriggersResponseResult {const WorkerCronTriggerUpdateCronTriggersResponseResult({required this.schedules});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_schedule.dart';@immutable final class WorkerCronTriggerUpdateCronTriggersResponseResult {const WorkerCronTriggerUpdateCronTriggersResponseResult({required this.schedules});
 
 factory WorkerCronTriggerUpdateCronTriggersResponseResult.fromJson(Map<String, dynamic> json) { return WorkerCronTriggerUpdateCronTriggersResponseResult(
   schedules: (json['schedules'] as List<dynamic>).map((e) => WorkersSchedule.fromJson(e as Map<String, dynamic>)).toList(),

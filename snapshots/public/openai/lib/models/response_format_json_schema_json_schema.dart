@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Structured Outputs configuration options, including a JSON Schema.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Structured Outputs configuration options, including a JSON Schema.
 /// 
-final class ResponseFormatJsonSchemaJsonSchema {const ResponseFormatJsonSchemaJsonSchema({this.description, required this.name, this.schema, this.strict, });
+@immutable final class ResponseFormatJsonSchemaJsonSchema {const ResponseFormatJsonSchemaJsonSchema({required this.name, this.description, this.schema, this.strict, });
 
 factory ResponseFormatJsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return ResponseFormatJsonSchemaJsonSchema(
   description: json['description'] as String?,

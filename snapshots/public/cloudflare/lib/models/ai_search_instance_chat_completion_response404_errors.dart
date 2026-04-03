@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceChatCompletionResponse404Errors {const AiSearchInstanceChatCompletionResponse404Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionResponse404Errors {const AiSearchInstanceChatCompletionResponse404Errors({required this.code, required this.message, });
 
 factory AiSearchInstanceChatCompletionResponse404Errors.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponse404Errors(
   code: (json['code'] as num).toDouble(),

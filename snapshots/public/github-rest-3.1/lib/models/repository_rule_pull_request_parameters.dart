@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_required_reviewer_configuration.dart';final class RepositoryRulePullRequestParametersAllowedMergeMethods {const RepositoryRulePullRequestParametersAllowedMergeMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_required_reviewer_configuration.dart';@immutable final class RepositoryRulePullRequestParametersAllowedMergeMethods {const RepositoryRulePullRequestParametersAllowedMergeMethods._(this.value);
 
 factory RepositoryRulePullRequestParametersAllowedMergeMethods.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryRulePullRequestParametersAllowedMergeMethods($value)'; } 
  }
-final class RepositoryRulePullRequestParameters {const RepositoryRulePullRequestParameters({this.allowedMergeMethods, required this.dismissStaleReviewsOnPush, required this.requireCodeOwnerReview, required this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredReviewThreadResolution, this.requiredReviewers, });
+@immutable final class RepositoryRulePullRequestParameters {const RepositoryRulePullRequestParameters({required this.dismissStaleReviewsOnPush, required this.requireCodeOwnerReview, required this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredReviewThreadResolution, this.allowedMergeMethods, this.requiredReviewers, });
 
 factory RepositoryRulePullRequestParameters.fromJson(Map<String, dynamic> json) { return RepositoryRulePullRequestParameters(
   allowedMergeMethods: (json['allowed_merge_methods'] as List<dynamic>?)?.map((e) => RepositoryRulePullRequestParametersAllowedMergeMethods.fromJson(e as String)).toList(),

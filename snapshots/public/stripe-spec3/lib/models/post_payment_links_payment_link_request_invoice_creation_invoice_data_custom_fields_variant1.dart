@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant1 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant1({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant1 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant1({required this.name, required this.value, });
 
 factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant1.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant1(
   name: json['name'] as String,

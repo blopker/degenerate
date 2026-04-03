@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class TaxCodeObject {const TaxCodeObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TaxCodeObject {const TaxCodeObject._(this.value);
 
 factory TaxCodeObject.fromJson(String json) { return switch (json) {
   'tax_code' => taxCode,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxCodeObject($value)'; } 
  }
 /// [Tax codes](https://stripe.com/docs/tax/tax-categories) classify goods and services for tax purposes.
-final class TaxCode {const TaxCode({required this.description, required this.id, required this.name, required this.object, });
+@immutable final class TaxCode {const TaxCode({required this.description, required this.id, required this.name, required this.object, });
 
 factory TaxCode.fromJson(Map<String, dynamic> json) { return TaxCode(
   description: json['description'] as String,

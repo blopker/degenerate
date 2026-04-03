@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_hijacks_events_response_result_asn_info.dart';import 'radar_get_bgp_hijacks_events_response_result_events.dart';final class RadarGetBgpHijacksEventsResponseResult {const RadarGetBgpHijacksEventsResponseResult({required this.asnInfo, required this.events, required this.totalMonitors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_hijacks_events_response_result_asn_info.dart';import 'radar_get_bgp_hijacks_events_response_result_events.dart';@immutable final class RadarGetBgpHijacksEventsResponseResult {const RadarGetBgpHijacksEventsResponseResult({required this.asnInfo, required this.events, required this.totalMonitors, });
 
 factory RadarGetBgpHijacksEventsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpHijacksEventsResponseResult(
   asnInfo: (json['asn_info'] as List<dynamic>).map((e) => RadarGetBgpHijacksEventsResponseResultAsnInfo.fromJson(e as Map<String, dynamic>)).toList(),

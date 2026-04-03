@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data_currency_options_value_custom_unit_amount.dart';import 'post_products_request_default_price_data_currency_options_value_tiers.dart';final class PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior {const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data_currency_options_value_custom_unit_amount.dart';import 'post_products_request_default_price_data_currency_options_value_tiers.dart';@immutable final class PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior {const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior._(this.value);
 
 factory PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior($value)'; } 
  }
-final class PostProductsRequestDefaultPriceDataCurrencyOptionsValue {const PostProductsRequestDefaultPriceDataCurrencyOptionsValue({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostProductsRequestDefaultPriceDataCurrencyOptionsValue {const PostProductsRequestDefaultPriceDataCurrencyOptionsValue({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostProductsRequestDefaultPriceDataCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostProductsRequestDefaultPriceDataCurrencyOptionsValue(
   customUnitAmount: json['custom_unit_amount'] != null ? PostProductsRequestDefaultPriceDataCurrencyOptionsValueCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,

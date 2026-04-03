@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of this conference. Can be: `init`, `in-progress`, or `completed`.
-final class ConferenceEnumStatus {const ConferenceEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of this conference. Can be: `init`, `in-progress`, or `completed`.
+@immutable final class ConferenceEnumStatus {const ConferenceEnumStatus._(this.value);
 
 factory ConferenceEnumStatus.fromJson(String json) { return switch (json) {
   'init' => init,

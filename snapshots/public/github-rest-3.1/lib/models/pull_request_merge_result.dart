@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Pull Request Merge Result
-final class PullRequestMergeResult {const PullRequestMergeResult({required this.sha, required this.merged, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Pull Request Merge Result
+@immutable final class PullRequestMergeResult {const PullRequestMergeResult({required this.sha, required this.merged, required this.message, });
 
 factory PullRequestMergeResult.fromJson(Map<String, dynamic> json) { return PullRequestMergeResult(
   sha: json['sha'] as String,

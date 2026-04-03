@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTerminalConfigurationsRequestBbposWiseposESplashscreenVariant2 {const PostTerminalConfigurationsRequestBbposWiseposESplashscreenVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalConfigurationsRequestBbposWiseposESplashscreenVariant2 {const PostTerminalConfigurationsRequestBbposWiseposESplashscreenVariant2._(this.value);
 
 factory PostTerminalConfigurationsRequestBbposWiseposESplashscreenVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

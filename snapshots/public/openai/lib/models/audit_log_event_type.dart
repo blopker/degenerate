@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type.
-final class AuditLogEventType {const AuditLogEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type.
+@immutable final class AuditLogEventType {const AuditLogEventType._(this.value);
 
 factory AuditLogEventType.fromJson(String json) { return switch (json) {
   'api_key.created' => apiKeyCreated,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages13_functions.dart';import 'messages13_messages.dart';import 'messages13_tools.dart';import 'messages13_tools_variant1.dart';import 'messages13_tools_variant2.dart';final class Messages13 {const Messages13({this.frequencyPenalty, this.functions, this.guidedJson, this.maxTokens = 256, required this.messages, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages13_functions.dart';import 'messages13_messages.dart';import 'messages13_tools.dart';import 'messages13_tools_variant1.dart';import 'messages13_tools_variant2.dart';@immutable final class Messages13 {const Messages13({required this.messages, this.frequencyPenalty, this.functions, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
 
 factory Messages13.fromJson(Map<String, dynamic> json) { return Messages13(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

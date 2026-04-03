@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountRequestCapabilitiesCartesBancairesPayments {const PostAccountsAccountRequestCapabilitiesCartesBancairesPayments({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesCartesBancairesPayments {const PostAccountsAccountRequestCapabilitiesCartesBancairesPayments({this.requested});
 
 factory PostAccountsAccountRequestCapabilitiesCartesBancairesPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesCartesBancairesPayments(
   requested: json['requested'] as bool?,

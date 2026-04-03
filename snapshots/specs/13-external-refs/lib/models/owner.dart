@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pet.dart';final class Owner {const Owner({required this.name, this.email, this.pets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pet.dart';@immutable final class Owner {const Owner({required this.name, this.email, this.pets, });
 
 factory Owner.fromJson(Map<String, dynamic> json) { return Owner(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param25_mandate_options_amount.dart';import 'payment_intent_payment_method_options_param25_mandate_options_end_date.dart';import 'payment_intent_payment_method_options_param25_mandate_options_payments_per_period.dart';final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountType {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param25_mandate_options_amount.dart';import 'payment_intent_payment_method_options_param25_mandate_options_end_date.dart';import 'payment_intent_payment_method_options_param25_mandate_options_payments_per_period.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountType {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountType._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountType($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentSchedule {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentSchedule._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentSchedule {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentSchedule._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentSchedule($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsPurpose._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsPurpose._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam25MandateOptionsPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam25MandateOptionsPurpose($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam25MandateOptions {const PaymentIntentPaymentMethodOptionsParam25MandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam25MandateOptions {const PaymentIntentPaymentMethodOptionsParam25MandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, });
 
 factory PaymentIntentPaymentMethodOptionsParam25MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam25MandateOptions(
   amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PaymentIntentPaymentMethodOptionsParam25MandateOptionsAmountVariant2.fromJson(v as String),) : null,

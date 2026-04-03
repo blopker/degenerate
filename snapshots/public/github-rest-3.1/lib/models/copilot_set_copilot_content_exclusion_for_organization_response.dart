@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CopilotSetCopilotContentExclusionForOrganizationResponse {const CopilotSetCopilotContentExclusionForOrganizationResponse({this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotSetCopilotContentExclusionForOrganizationResponse {const CopilotSetCopilotContentExclusionForOrganizationResponse({this.message});
 
 factory CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(Map<String, dynamic> json) { return CopilotSetCopilotContentExclusionForOrganizationResponse(
   message: json['message'] as String?,

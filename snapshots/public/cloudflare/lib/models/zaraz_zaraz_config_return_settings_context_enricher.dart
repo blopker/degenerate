@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details of the worker that receives and edits Zaraz Context object.
-final class ZarazZarazConfigReturnSettingsContextEnricher {const ZarazZarazConfigReturnSettingsContextEnricher({required this.escapedWorkerName, required this.workerTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the worker that receives and edits Zaraz Context object.
+@immutable final class ZarazZarazConfigReturnSettingsContextEnricher {const ZarazZarazConfigReturnSettingsContextEnricher({required this.escapedWorkerName, required this.workerTag, });
 
 factory ZarazZarazConfigReturnSettingsContextEnricher.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturnSettingsContextEnricher(
   escapedWorkerName: json['escapedWorkerName'] as String,

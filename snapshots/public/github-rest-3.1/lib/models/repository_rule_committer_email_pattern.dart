@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_committer_email_pattern_parameters.dart';final class RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_committer_email_pattern_parameters.dart';@immutable final class RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType._(this.value);
 
 factory RepositoryRuleCommitterEmailPatternType.fromJson(String json) { return switch (json) {
   'committer_email_pattern' => committerEmailPattern,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleCommitterEmailPatternType($value)'; } 
  }
 /// Parameters to be used for the committer_email_pattern rule
-final class RepositoryRuleCommitterEmailPattern {const RepositoryRuleCommitterEmailPattern({required this.type, this.parameters, });
+@immutable final class RepositoryRuleCommitterEmailPattern {const RepositoryRuleCommitterEmailPattern({required this.type, this.parameters, });
 
 factory RepositoryRuleCommitterEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitterEmailPattern(
   type: RepositoryRuleCommitterEmailPatternType.fromJson(json['type'] as String),

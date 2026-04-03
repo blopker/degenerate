@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order DNS records by.
-final class DnsRecordsOrder {const DnsRecordsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order DNS records by.
+@immutable final class DnsRecordsOrder {const DnsRecordsOrder._(this.value);
 
 factory DnsRecordsOrder.fromJson(String json) { return switch (json) {
   'type' => type,

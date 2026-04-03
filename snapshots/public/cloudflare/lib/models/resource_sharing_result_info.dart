@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResourceSharingResultInfo {const ResourceSharingResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingResultInfo {const ResourceSharingResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
 factory ResourceSharingResultInfo.fromJson(Map<String, dynamic> json) { return ResourceSharingResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

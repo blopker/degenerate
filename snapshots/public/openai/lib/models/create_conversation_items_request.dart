@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_item.dart';final class CreateConversationItemsRequest {const CreateConversationItemsRequest({required this.items});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_item.dart';@immutable final class CreateConversationItemsRequest {const CreateConversationItemsRequest({required this.items});
 
 factory CreateConversationItemsRequest.fromJson(Map<String, dynamic> json) { return CreateConversationItemsRequest(
   items: (json['items'] as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),

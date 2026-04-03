@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessFailedLoginResponseResult {const AccessFailedLoginResponseResult({this.expiration, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessFailedLoginResponseResult {const AccessFailedLoginResponseResult({this.expiration, this.metadata, });
 
 factory AccessFailedLoginResponseResult.fromJson(Map<String, dynamic> json) { return AccessFailedLoginResponseResult(
   expiration: json['expiration'] != null ? (json['expiration'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_ip_network.dart';import 'tunnel_route_comment.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_virtual_network_id_computed_optional.dart';final class TunnelRouteUpdateATunnelRouteRequest {const TunnelRouteUpdateATunnelRouteRequest({this.comment, this.network, this.tunnelId, this.virtualNetworkId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_ip_network.dart';import 'tunnel_route_comment.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_virtual_network_id_computed_optional.dart';@immutable final class TunnelRouteUpdateATunnelRouteRequest {const TunnelRouteUpdateATunnelRouteRequest({this.comment, this.network, this.tunnelId, this.virtualNetworkId, });
 
 factory TunnelRouteUpdateATunnelRouteRequest.fromJson(Map<String, dynamic> json) { return TunnelRouteUpdateATunnelRouteRequest(
   comment: json['comment'] != null ? TunnelRouteComment.fromJson(json['comment'] as String) : null,

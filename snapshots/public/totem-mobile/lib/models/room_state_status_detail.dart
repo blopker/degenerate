@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'active_detail.dart';
 import 'ended_detail.dart';
 import 'waiting_room_detail.dart';
@@ -27,6 +28,7 @@ sealed class RoomStateStatusDetail {
   }
 }
 
+@immutable
 final class RoomStateStatusDetailActive extends RoomStateStatusDetail {
   const RoomStateStatusDetailActive(this.activeDetail);
 
@@ -64,6 +66,7 @@ final class RoomStateStatusDetailActive extends RoomStateStatusDetail {
   }
 }
 
+@immutable
 final class RoomStateStatusDetailEnded extends RoomStateStatusDetail {
   const RoomStateStatusDetailEnded(this.endedDetail);
 
@@ -100,6 +103,7 @@ final class RoomStateStatusDetailEnded extends RoomStateStatusDetail {
   }
 }
 
+@immutable
 final class RoomStateStatusDetailWaitingRoom extends RoomStateStatusDetail {
   const RoomStateStatusDetailWaitingRoom(this.waitingRoomDetail);
 
@@ -139,6 +143,7 @@ final class RoomStateStatusDetailWaitingRoom extends RoomStateStatusDetail {
 
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
+@immutable
 final class RoomStateStatusDetail$Unknown extends RoomStateStatusDetail {
   const RoomStateStatusDetail$Unknown(this.json);
 

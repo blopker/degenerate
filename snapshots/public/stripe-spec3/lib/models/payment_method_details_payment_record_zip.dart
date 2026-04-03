@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsPaymentRecordZip {const PaymentMethodDetailsPaymentRecordZip();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsPaymentRecordZip {const PaymentMethodDetailsPaymentRecordZip();
 
 factory PaymentMethodDetailsPaymentRecordZip.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordZip(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Contains additional details about the status of a payment method for a specific payment method domain.
-final class PaymentMethodDomainResourcePaymentMethodStatusDetails {const PaymentMethodDomainResourcePaymentMethodStatusDetails({required this.errorMessage});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains additional details about the status of a payment method for a specific payment method domain.
+@immutable final class PaymentMethodDomainResourcePaymentMethodStatusDetails {const PaymentMethodDomainResourcePaymentMethodStatusDetails({required this.errorMessage});
 
 factory PaymentMethodDomainResourcePaymentMethodStatusDetails.fromJson(Map<String, dynamic> json) { return PaymentMethodDomainResourcePaymentMethodStatusDetails(
   errorMessage: json['error_message'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InsightsGetSubjectStatsDirection {const InsightsGetSubjectStatsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetSubjectStatsDirection {const InsightsGetSubjectStatsDirection._(this.value);
 
 factory InsightsGetSubjectStatsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

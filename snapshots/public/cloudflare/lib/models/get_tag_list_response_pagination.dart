@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTagListResponsePagination {const GetTagListResponsePagination({required this.page, required this.pageSize, required this.totalCount, required this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTagListResponsePagination {const GetTagListResponsePagination({required this.page, required this.pageSize, required this.totalCount, required this.totalPages, });
 
 factory GetTagListResponsePagination.fromJson(Map<String, dynamic> json) { return GetTagListResponsePagination(
   page: (json['page'] as num).toDouble(),

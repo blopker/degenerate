@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestPaymentMethodDataGiropay {const PostPaymentIntentsRequestPaymentMethodDataGiropay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataGiropay {const PostPaymentIntentsRequestPaymentMethodDataGiropay();
 
 factory PostPaymentIntentsRequestPaymentMethodDataGiropay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataGiropay(
 

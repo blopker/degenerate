@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_applicability_config_scope_prices.dart';final class PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType {const PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_applicability_config_scope_prices.dart';@immutable final class PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType {const PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType._(this.value);
 
 factory PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType.fromJson(String json) { return switch (json) {
   'metered' => metered,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType($value)'; } 
  }
-final class PostBillingCreditGrantsRequestApplicabilityConfigScope {const PostBillingCreditGrantsRequestApplicabilityConfigScope({this.priceType, this.prices, });
+@immutable final class PostBillingCreditGrantsRequestApplicabilityConfigScope {const PostBillingCreditGrantsRequestApplicabilityConfigScope({this.priceType, this.prices, });
 
 factory PostBillingCreditGrantsRequestApplicabilityConfigScope.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestApplicabilityConfigScope(
   priceType: json['price_type'] != null ? PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType.fromJson(json['price_type'] as String) : null,

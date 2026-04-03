@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType {const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType {const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._(this.value);
 
 factory GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType($value)'; } 
  }
-final class GetTreasuryReceivedCreditsLinkedFlows {const GetTreasuryReceivedCreditsLinkedFlows({required this.sourceFlowType});
+@immutable final class GetTreasuryReceivedCreditsLinkedFlows {const GetTreasuryReceivedCreditsLinkedFlows({required this.sourceFlowType});
 
 factory GetTreasuryReceivedCreditsLinkedFlows.fromJson(Map<String, dynamic> json) { return GetTreasuryReceivedCreditsLinkedFlows(
   sourceFlowType: GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType.fromJson(json['source_flow_type'] as String),

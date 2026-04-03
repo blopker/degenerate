@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_subscription_data_billing_mode_flexible.dart';final class PostCheckoutSessionsRequestSubscriptionDataBillingModeType {const PostCheckoutSessionsRequestSubscriptionDataBillingModeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_billing_mode_flexible.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataBillingModeType {const PostCheckoutSessionsRequestSubscriptionDataBillingModeType._(this.value);
 
 factory PostCheckoutSessionsRequestSubscriptionDataBillingModeType.fromJson(String json) { return switch (json) {
   'classic' => classic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataBillingModeType($value)'; } 
  }
-final class PostCheckoutSessionsRequestSubscriptionDataBillingMode {const PostCheckoutSessionsRequestSubscriptionDataBillingMode({this.flexible, required this.type, });
+@immutable final class PostCheckoutSessionsRequestSubscriptionDataBillingMode {const PostCheckoutSessionsRequestSubscriptionDataBillingMode({required this.type, this.flexible, });
 
 factory PostCheckoutSessionsRequestSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataBillingMode(
   flexible: json['flexible'] != null ? PostCheckoutSessionsRequestSubscriptionDataBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,

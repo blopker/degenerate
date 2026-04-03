@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookMilestoneEditedChangesDescription {const WebhookMilestoneEditedChangesDescription({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMilestoneEditedChangesDescription {const WebhookMilestoneEditedChangesDescription({required this.from});
 
 factory WebhookMilestoneEditedChangesDescription.fromJson(Map<String, dynamic> json) { return WebhookMilestoneEditedChangesDescription(
   from: json['from'] as String,

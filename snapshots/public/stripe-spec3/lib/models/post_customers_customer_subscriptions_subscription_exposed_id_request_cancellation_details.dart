@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_cancellation_details_comment.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_cancellation_details_comment.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(this.value);
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)'; } 
  }
 /// Details about why this subscription was cancelled
-final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
+@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
   comment: json['comment'] != null ? OneOf2.parse(json['comment'], fromA: (v) => v as String, fromB: (v) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.fromJson(v as String),) : null,

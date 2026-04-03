@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_list_workflows_response400_errors.dart';final class WorListWorkflowsResponse400 {const WorListWorkflowsResponse400({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_list_workflows_response400_errors.dart';@immutable final class WorListWorkflowsResponse400 {const WorListWorkflowsResponse400({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorListWorkflowsResponse400.fromJson(Map<String, dynamic> json) { return WorListWorkflowsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorListWorkflowsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

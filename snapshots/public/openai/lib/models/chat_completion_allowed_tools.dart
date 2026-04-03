@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains the t
 /// 
 /// `required` requires the model to call one or more of the allowed tools.
 /// 
-final class ChatCompletionAllowedToolsMode {const ChatCompletionAllowedToolsMode._(this.value);
+@immutable final class ChatCompletionAllowedToolsMode {const ChatCompletionAllowedToolsMode._(this.value);
 
 factory ChatCompletionAllowedToolsMode.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Constrains the tools available to the model to a pre-defined set.
 /// 
-final class ChatCompletionAllowedTools {const ChatCompletionAllowedTools({required this.mode, required this.tools, });
+@immutable final class ChatCompletionAllowedTools {const ChatCompletionAllowedTools({required this.mode, required this.tools, });
 
 factory ChatCompletionAllowedTools.fromJson(Map<String, dynamic> json) { return ChatCompletionAllowedTools(
   mode: ChatCompletionAllowedToolsMode.fromJson(json['mode'] as String),

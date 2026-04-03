@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of source
-final class MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
+@immutable final class MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType._(this.value);
 
 factory MqEventSourceWorkflowsWorkflowType.fromJson(String json) { return switch (json) {
   'workflows.workflow' => workflowsWorkflow,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventSourceWorkflowsWorkflowType($value)'; } 
  }
-final class MqEventSourceWorkflowsWorkflow {const MqEventSourceWorkflowsWorkflow({this.type, this.workflowName, });
+@immutable final class MqEventSourceWorkflowsWorkflow {const MqEventSourceWorkflowsWorkflow({this.type, this.workflowName, });
 
 factory MqEventSourceWorkflowsWorkflow.fromJson(Map<String, dynamic> json) { return MqEventSourceWorkflowsWorkflow(
   type: json['type'] != null ? MqEventSourceWorkflowsWorkflowType.fromJson(json['type'] as String) : null,

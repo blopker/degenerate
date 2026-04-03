@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoiceLineItemPeriod {const InvoiceLineItemPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoiceLineItemPeriod {const InvoiceLineItemPeriod({required this.end, required this.start, });
 
 factory InvoiceLineItemPeriod.fromJson(Map<String, dynamic> json) { return InvoiceLineItemPeriod(
   end: (json['end'] as num).toInt(),

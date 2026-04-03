@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchInstanceChatCompletionResponseChoicesMessageRole {const AiSearchInstanceChatCompletionResponseChoicesMessageRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionResponseChoicesMessageRole {const AiSearchInstanceChatCompletionResponseChoicesMessageRole._(this.value);
 
 factory AiSearchInstanceChatCompletionResponseChoicesMessageRole.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionResponseChoicesMessageRole($value)'; } 
  }
-final class AiSearchInstanceChatCompletionResponseChoicesMessage {const AiSearchInstanceChatCompletionResponseChoicesMessage({required this.content, required this.role, this.additionalProperties = const {}, });
+@immutable final class AiSearchInstanceChatCompletionResponseChoicesMessage {const AiSearchInstanceChatCompletionResponseChoicesMessage({required this.content, required this.role, this.additionalProperties = const {}, });
 
 factory AiSearchInstanceChatCompletionResponseChoicesMessage.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponseChoicesMessage(
   content: json['content'] as String?,

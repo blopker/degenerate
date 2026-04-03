@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_per_hostname_settings_response_collection_result.dart';import 'tls_certificates_and_hostnames_per_hostname_settings_response_collection_result_info.dart';final class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection {const TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_per_hostname_settings_response_collection_result.dart';import 'tls_certificates_and_hostnames_per_hostname_settings_response_collection_result_info.dart';@immutable final class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection {const TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection({this.result, this.resultInfo, });
 
 factory TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList(),

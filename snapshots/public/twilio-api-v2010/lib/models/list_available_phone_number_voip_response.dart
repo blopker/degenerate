@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_voip.dart';final class ListAvailablePhoneNumberVoipResponse {const ListAvailablePhoneNumberVoipResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_voip.dart';@immutable final class ListAvailablePhoneNumberVoipResponse {const ListAvailablePhoneNumberVoipResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListAvailablePhoneNumberVoipResponse.fromJson(Map<String, dynamic> json) { return ListAvailablePhoneNumberVoipResponse(
   availablePhoneNumbers: (json['available_phone_numbers'] as List<dynamic>?)?.map((e) => AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip.fromJson(e as Map<String, dynamic>)).toList(),

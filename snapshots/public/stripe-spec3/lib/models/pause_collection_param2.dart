@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PauseCollectionParam2Behavior {const PauseCollectionParam2Behavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PauseCollectionParam2Behavior {const PauseCollectionParam2Behavior._(this.value);
 
 factory PauseCollectionParam2Behavior.fromJson(String json) { return switch (json) {
   'keep_as_draft' => keepAsDraft,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PauseCollectionParam2Behavior($value)'; } 
  }
-final class PauseCollectionParam2 {const PauseCollectionParam2({required this.behavior, this.resumesAt, });
+@immutable final class PauseCollectionParam2 {const PauseCollectionParam2({required this.behavior, this.resumesAt, });
 
 factory PauseCollectionParam2.fromJson(Map<String, dynamic> json) { return PauseCollectionParam2(
   behavior: PauseCollectionParam2Behavior.fromJson(json['behavior'] as String),

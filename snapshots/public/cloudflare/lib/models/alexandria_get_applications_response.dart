@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_application.dart';final class AlexandriaGetApplicationsResponse {const AlexandriaGetApplicationsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_application.dart';@immutable final class AlexandriaGetApplicationsResponse {const AlexandriaGetApplicationsResponse({this.result});
 
 factory AlexandriaGetApplicationsResponse.fromJson(Map<String, dynamic> json) { return AlexandriaGetApplicationsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => AlexandriaApplication.fromJson(e as Map<String, dynamic>)).toList(),

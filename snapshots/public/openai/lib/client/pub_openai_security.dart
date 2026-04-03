@@ -6,10 +6,10 @@ final class PubOpenaiSecurity {
   const PubOpenaiSecurity._();
 
   static final securitySchemes = <String, ApiSecurityScheme>{
-    'ApiKeyAuth': ApiSecurityScheme(name: 'ApiKeyAuth', type: ApiSecuritySchemeType.http, scheme: 'bearer', bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: null, flows: []),
+    'ApiKeyAuth': const ApiSecurityScheme(name: 'ApiKeyAuth', type: ApiSecuritySchemeType.http, scheme: 'bearer'),
   };
 
-  static final globalRequirements = [ApiSecurityRequirement({'ApiKeyAuth': []})];
+  static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': []})];
 
   static ApiConfig applyApiKeyAuth(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'streams_by_stream_id_response_result_http_cors.dart';final class StreamsByStreamIdResponseResultHttp {const StreamsByStreamIdResponseResultHttp({required this.authentication, this.cors, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'streams_by_stream_id_response_result_http_cors.dart';@immutable final class StreamsByStreamIdResponseResultHttp {const StreamsByStreamIdResponseResultHttp({required this.authentication, required this.enabled, this.cors, });
 
 factory StreamsByStreamIdResponseResultHttp.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdResponseResultHttp(
   authentication: json['authentication'] as bool,

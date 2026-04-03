@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits {const RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits {const RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits(
   name: json['name'] as String,

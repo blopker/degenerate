@@ -7,7 +7,7 @@ factory AccessAppCount.fromJson(num json) => AccessAppCount(json.toInt());
 num toJson() => value;
 
 }
-final class AccessReusablePolicyResp {const AccessReusablePolicyResp({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.appCount, this.reusable, });
+@immutable final class AccessReusablePolicyResp {const AccessReusablePolicyResp({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.appCount, this.reusable, });
 
 factory AccessReusablePolicyResp.fromJson(Map<String, dynamic> json) { return AccessReusablePolicyResp(
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),

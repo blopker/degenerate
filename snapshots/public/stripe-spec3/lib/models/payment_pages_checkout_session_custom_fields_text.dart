@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionCustomFieldsText {const PaymentPagesCheckoutSessionCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsText {const PaymentPagesCheckoutSessionCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, this.value, });
 
 factory PaymentPagesCheckoutSessionCustomFieldsText.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsText(
   defaultValue: json['default_value'] as String?,

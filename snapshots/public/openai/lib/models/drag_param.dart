@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coord_param.dart';/// A drag action.
-final class DragParam {const DragParam({this.type = 'drag', required this.path, });
+@immutable final class DragParam {const DragParam({required this.path, this.type = 'drag', });
 
 factory DragParam.fromJson(Map<String, dynamic> json) { return DragParam(
   type: json['type'] as String,

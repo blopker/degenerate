@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_public_schema.dart';final class SchemaValidationListSchemasPaginatedResponse {const SchemaValidationListSchemasPaginatedResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_public_schema.dart';@immutable final class SchemaValidationListSchemasPaginatedResponse {const SchemaValidationListSchemasPaginatedResponse({required this.result});
 
 factory SchemaValidationListSchemasPaginatedResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationListSchemasPaginatedResponse(
   result: (json['result'] as List<dynamic>).map((e) => ShieldPublicSchema.fromJson(e as Map<String, dynamic>)).toList(),

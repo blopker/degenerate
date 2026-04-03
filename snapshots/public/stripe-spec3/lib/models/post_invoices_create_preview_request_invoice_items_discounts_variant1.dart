@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1 {const PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1({this.coupon, this.discount, this.promotionCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1 {const PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1({this.coupon, this.discount, this.promotionCode, });
 
 factory PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1(
   coupon: json['coupon'] as String?,

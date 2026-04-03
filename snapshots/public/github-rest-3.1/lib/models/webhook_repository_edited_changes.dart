@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_repository_edited_changes_default_branch.dart';import 'webhook_repository_edited_changes_description.dart';import 'webhook_repository_edited_changes_homepage.dart';import 'webhook_repository_edited_changes_topics.dart';final class WebhookRepositoryEditedChanges {const WebhookRepositoryEditedChanges({this.defaultBranch, this.description, this.homepage, this.topics, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_edited_changes_default_branch.dart';import 'webhook_repository_edited_changes_description.dart';import 'webhook_repository_edited_changes_homepage.dart';import 'webhook_repository_edited_changes_topics.dart';@immutable final class WebhookRepositoryEditedChanges {const WebhookRepositoryEditedChanges({this.defaultBranch, this.description, this.homepage, this.topics, });
 
 factory WebhookRepositoryEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryEditedChanges(
   defaultBranch: json['default_branch'] != null ? WebhookRepositoryEditedChangesDefaultBranch.fromJson(json['default_branch'] as Map<String, dynamic>) : null,

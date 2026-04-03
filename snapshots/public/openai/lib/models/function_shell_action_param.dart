@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Commands and limits describing how to run the shell tool call.
-final class FunctionShellActionParam {const FunctionShellActionParam({required this.commands, this.timeoutMs, this.maxOutputLength, });
+@immutable final class FunctionShellActionParam {const FunctionShellActionParam({required this.commands, this.timeoutMs, this.maxOutputLength, });
 
 factory FunctionShellActionParam.fromJson(Map<String, dynamic> json) { return FunctionShellActionParam(
   commands: (json['commands'] as List<dynamic>).map((e) => e as String).toList(),

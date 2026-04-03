@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteServersResponse404Errors {const DeleteServersResponse404Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteServersResponse404Errors {const DeleteServersResponse404Errors({required this.code, required this.message, });
 
 factory DeleteServersResponse404Errors.fromJson(Map<String, dynamic> json) { return DeleteServersResponse404Errors(
   code: (json['code'] as num).toDouble(),

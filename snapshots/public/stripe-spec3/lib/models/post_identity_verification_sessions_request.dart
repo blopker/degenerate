@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_identity_verification_sessions_request_options.dart';import 'post_identity_verification_sessions_request_provided_details.dart';import 'post_identity_verification_sessions_request_related_person.dart';/// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed. You must provide a `type` if not passing `verification_flow`.
-final class PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType._(this.value);
+@immutable final class PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType._(this.value);
 
 factory PostIdentityVerificationSessionsRequestType.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIdentityVerificationSessionsRequestType($value)'; } 
  }
-final class PostIdentityVerificationSessionsRequest {const PostIdentityVerificationSessionsRequest({this.clientReferenceId, this.expand, this.metadata, this.options, this.providedDetails, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, this.returnUrl, this.type, this.verificationFlow, });
+@immutable final class PostIdentityVerificationSessionsRequest {const PostIdentityVerificationSessionsRequest({this.clientReferenceId, this.expand, this.metadata, this.options, this.providedDetails, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, this.returnUrl, this.type, this.verificationFlow, });
 
 factory PostIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequest(
   clientReferenceId: json['client_reference_id'] as String?,

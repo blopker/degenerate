@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The direction used to sort returned cookies.'
-final class PageShieldListCookiesDirection {const PageShieldListCookiesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned cookies.'
+@immutable final class PageShieldListCookiesDirection {const PageShieldListCookiesDirection._(this.value);
 
 factory PageShieldListCookiesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_protocol_response400_errors.dart';final class RadarGetDnsTimeseriesGroupByProtocolResponse400 {const RadarGetDnsTimeseriesGroupByProtocolResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_protocol_response400_errors.dart';@immutable final class RadarGetDnsTimeseriesGroupByProtocolResponse400 {const RadarGetDnsTimeseriesGroupByProtocolResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetDnsTimeseriesGroupByProtocolResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByProtocolResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsTimeseriesGroupByProtocolResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

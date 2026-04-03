@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_identifier.dart';final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';@immutable final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202({this.id});
 
 factory CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,

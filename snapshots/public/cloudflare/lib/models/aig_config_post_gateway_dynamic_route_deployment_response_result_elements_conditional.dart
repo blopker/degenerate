@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_conditional_properties.dart';final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_conditional_properties.dart';@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditionalType._(this.value);
 
 factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditionalType($value)'; } 
  }
-final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsConditional(
   id: json['id'] as String,

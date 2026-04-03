@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The hosted login page for this configuration. Learn more about the portal login page in our [integration docs](https://stripe.com/docs/billing/subscriptions/integrating-customer-portal#share).
-final class PostBillingPortalConfigurationsConfigurationRequestLoginPage {const PostBillingPortalConfigurationsConfigurationRequestLoginPage({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted login page for this configuration. Learn more about the portal login page in our [integration docs](https://stripe.com/docs/billing/subscriptions/integrating-customer-portal#share).
+@immutable final class PostBillingPortalConfigurationsConfigurationRequestLoginPage {const PostBillingPortalConfigurationsConfigurationRequestLoginPage({required this.enabled});
 
 factory PostBillingPortalConfigurationsConfigurationRequestLoginPage.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestLoginPage(
   enabled: json['enabled'] as bool,

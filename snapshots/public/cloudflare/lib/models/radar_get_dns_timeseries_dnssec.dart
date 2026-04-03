@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesDnssec {const RadarGetDnsTimeseriesDnssec._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesDnssec {const RadarGetDnsTimeseriesDnssec._(this.value);
 
 factory RadarGetDnsTimeseriesDnssec.fromJson(String json) { return switch (json) {
   'INVALID' => invalid,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat._(this.value);
 
 factory CloudflarePipelinesTimestampFormat.fromJson(String json) { return switch (json) {
   'rfc3339' => rfc3339,

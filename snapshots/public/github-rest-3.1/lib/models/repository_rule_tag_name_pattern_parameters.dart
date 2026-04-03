@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The operator to use for matching.
-final class RepositoryRuleTagNamePatternParametersOperator {const RepositoryRuleTagNamePatternParametersOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operator to use for matching.
+@immutable final class RepositoryRuleTagNamePatternParametersOperator {const RepositoryRuleTagNamePatternParametersOperator._(this.value);
 
 factory RepositoryRuleTagNamePatternParametersOperator.fromJson(String json) { return switch (json) {
   'starts_with' => startsWith,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryRuleTagNamePatternParametersOperator($value)'; } 
  }
-final class RepositoryRuleTagNamePatternParameters {const RepositoryRuleTagNamePatternParameters({this.name, this.negate, required this.$operator, required this.pattern, });
+@immutable final class RepositoryRuleTagNamePatternParameters {const RepositoryRuleTagNamePatternParameters({required this.$operator, required this.pattern, this.name, this.negate, });
 
 factory RepositoryRuleTagNamePatternParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleTagNamePatternParameters(
   name: json['name'] as String?,

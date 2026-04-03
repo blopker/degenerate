@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch {const CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch({this.maxBytes = 100000000, this.maxDurationS = 300.0, this.maxRows = 10000000, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch {const CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch({this.maxBytes = 100000000, this.maxDurationS = 300.0, this.maxRows = 10000000, });
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(
   maxBytes: (json['max_bytes'] as num).toInt(),

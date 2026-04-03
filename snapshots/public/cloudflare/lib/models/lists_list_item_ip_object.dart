@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
 extension type const ListsItemIp(String value) {
 factory ListsItemIp.fromJson(String json) => ListsItemIp(json);
 
 String toJson() => value;
 
 }
-final class ListsListItemIpObject {const ListsListItemIpObject({required this.ip});
+@immutable final class ListsListItemIpObject {const ListsListItemIpObject({required this.ip});
 
 factory ListsListItemIpObject.fromJson(Map<String, dynamic> json) { return ListsListItemIpObject(
   ip: ListsItemIp.fromJson(json['ip'] as String),

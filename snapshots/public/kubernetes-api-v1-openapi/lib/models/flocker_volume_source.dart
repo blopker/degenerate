@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.
-final class FlockerVolumeSource {const FlockerVolumeSource({this.datasetName, this.datasetUuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.
+@immutable final class FlockerVolumeSource {const FlockerVolumeSource({this.datasetName, this.datasetUuid, });
 
 factory FlockerVolumeSource.fromJson(Map<String, dynamic> json) { return FlockerVolumeSource(
   datasetName: json['datasetName'] as String?,

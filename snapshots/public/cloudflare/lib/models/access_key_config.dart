@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_key_rotation_interval_days.dart';/// The number of days until the next key rotation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_key_rotation_interval_days.dart';/// The number of days until the next key rotation.
 extension type const AccessDaysUntilNextRotation(double value) {
 factory AccessDaysUntilNextRotation.fromJson(num json) => AccessDaysUntilNextRotation(json.toDouble());
 
@@ -14,7 +14,7 @@ factory AccessLastKeyRotationAt.fromJson(String json) => AccessLastKeyRotationAt
 String toJson() => value.toIso8601String();
 
 }
-final class AccessKeyConfig {const AccessKeyConfig({this.daysUntilNextRotation, this.keyRotationIntervalDays, this.lastKeyRotationAt, });
+@immutable final class AccessKeyConfig {const AccessKeyConfig({this.daysUntilNextRotation, this.keyRotationIntervalDays, this.lastKeyRotationAt, });
 
 factory AccessKeyConfig.fromJson(Map<String, dynamic> json) { return AccessKeyConfig(
   daysUntilNextRotation: json['days_until_next_rotation'] != null ? AccessDaysUntilNextRotation.fromJson(json['days_until_next_rotation'] as num) : null,

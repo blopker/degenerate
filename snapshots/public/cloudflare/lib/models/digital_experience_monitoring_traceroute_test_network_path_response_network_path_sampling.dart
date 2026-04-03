@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the sampling applied, if any, to the slots response. When sampled, results shown represent the first test run to the start of each sampling interval.
-final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling({required this.unit, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the sampling applied, if any, to the slots response. When sampled, results shown represent the first test run to the start of each sampling interval.
+@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling({required this.unit, required this.value, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
   unit: json['unit'],

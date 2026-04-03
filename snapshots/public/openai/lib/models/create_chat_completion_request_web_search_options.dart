@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_chat_completion_request_web_search_options_user_location.dart';/// High level guidance for the amount of context window space to use for the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_chat_completion_request_web_search_options_user_location.dart';/// High level guidance for the amount of context window space to use for the
 /// search. One of `low`, `medium`, or `high`. `medium` is the default.
 /// 
-final class WebSearchContextSize {const WebSearchContextSize._(this.value);
+@immutable final class WebSearchContextSize {const WebSearchContextSize._(this.value);
 
 factory WebSearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// This tool searches the web for relevant results to use in a response.
 /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
 /// 
-final class CreateChatCompletionRequestWebSearchOptions {const CreateChatCompletionRequestWebSearchOptions({this.userLocation, this.searchContextSize, });
+@immutable final class CreateChatCompletionRequestWebSearchOptions {const CreateChatCompletionRequestWebSearchOptions({this.userLocation, this.searchContextSize, });
 
 factory CreateChatCompletionRequestWebSearchOptions.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestWebSearchOptions(
   userLocation: json['user_location'] != null ? CreateChatCompletionRequestWebSearchOptionsUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,

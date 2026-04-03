@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_invoice_settings.dart';/// 
-final class PaymentLinksResourceInvoiceCreation {const PaymentLinksResourceInvoiceCreation({required this.enabled, this.invoiceData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_invoice_settings.dart';/// 
+@immutable final class PaymentLinksResourceInvoiceCreation {const PaymentLinksResourceInvoiceCreation({required this.enabled, this.invoiceData, });
 
 factory PaymentLinksResourceInvoiceCreation.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceInvoiceCreation(
   enabled: json['enabled'] as bool,

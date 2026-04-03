@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_items_input2.dart';import 'zero_trust_gateway_value.dart';final class ZeroTrustListsPatchZeroTrustListRequest {const ZeroTrustListsPatchZeroTrustListRequest({this.append, this.remove, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_items_input2.dart';import 'zero_trust_gateway_value.dart';@immutable final class ZeroTrustListsPatchZeroTrustListRequest {const ZeroTrustListsPatchZeroTrustListRequest({this.append, this.remove, });
 
 factory ZeroTrustListsPatchZeroTrustListRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustListsPatchZeroTrustListRequest(
   append: (json['append'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayItemsInput2.fromJson(e as Map<String, dynamic>)).toList(),

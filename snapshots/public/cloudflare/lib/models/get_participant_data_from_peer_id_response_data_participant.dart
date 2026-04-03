@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_participant_data_from_peer_id_response_data_participant_peer_report.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats.dart';import 'get_participant_data_from_peer_id_response_data_participant_quality_stats.dart';final class GetParticipantDataFromPeerIdResponseDataParticipant {const GetParticipantDataFromPeerIdResponseDataParticipant({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.peerReport, this.peerStats, this.qualityStats, this.role, this.updatedAt, this.userId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats.dart';import 'get_participant_data_from_peer_id_response_data_participant_quality_stats.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipant {const GetParticipantDataFromPeerIdResponseDataParticipant({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.peerReport, this.peerStats, this.qualityStats, this.role, this.updatedAt, this.userId, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipant(
   createdAt: json['created_at'] as String?,

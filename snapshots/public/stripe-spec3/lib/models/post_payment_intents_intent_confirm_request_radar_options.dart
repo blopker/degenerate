@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Options to configure Radar. Learn more about [Radar Sessions](https://docs.stripe.com/radar/radar-session).
-final class PostPaymentIntentsIntentConfirmRequestRadarOptions {const PostPaymentIntentsIntentConfirmRequestRadarOptions({this.session});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options to configure Radar. Learn more about [Radar Sessions](https://docs.stripe.com/radar/radar-session).
+@immutable final class PostPaymentIntentsIntentConfirmRequestRadarOptions {const PostPaymentIntentsIntentConfirmRequestRadarOptions({this.session});
 
 factory PostPaymentIntentsIntentConfirmRequestRadarOptions.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestRadarOptions(
   session: json['session'] as String?,

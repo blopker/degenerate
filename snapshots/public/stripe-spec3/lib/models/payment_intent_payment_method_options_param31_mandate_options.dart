@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param31_mandate_options_reference_prefix.dart';final class PaymentIntentPaymentMethodOptionsParam31MandateOptions {const PaymentIntentPaymentMethodOptionsParam31MandateOptions({this.referencePrefix});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param31_mandate_options_reference_prefix.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam31MandateOptions {const PaymentIntentPaymentMethodOptionsParam31MandateOptions({this.referencePrefix});
 
 factory PaymentIntentPaymentMethodOptionsParam31MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam31MandateOptions(
   referencePrefix: json['reference_prefix'] != null ? OneOf2.parse(json['reference_prefix'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2.fromJson(v as String),) : null,

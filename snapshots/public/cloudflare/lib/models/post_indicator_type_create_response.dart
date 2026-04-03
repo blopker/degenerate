@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIndicatorTypeCreateResponse {const PostIndicatorTypeCreateResponse({required this.durableObjectId, required this.indicatorType, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorTypeCreateResponse {const PostIndicatorTypeCreateResponse({required this.durableObjectId, required this.indicatorType, required this.message, });
 
 factory PostIndicatorTypeCreateResponse.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse(
   durableObjectId: json['durableObjectId'] as String,

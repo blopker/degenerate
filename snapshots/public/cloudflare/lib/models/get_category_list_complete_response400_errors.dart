@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCategoryListCompleteResponse400Errors {const GetCategoryListCompleteResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCategoryListCompleteResponse400Errors {const GetCategoryListCompleteResponse400Errors({required this.message});
 
 factory GetCategoryListCompleteResponse400Errors.fromJson(Map<String, dynamic> json) { return GetCategoryListCompleteResponse400Errors(
   message: json['message'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_timestamp.dart';import 'shield_uuid.dart';/// The kind of the schema
-final class ShieldPublicSchemaKind {const ShieldPublicSchemaKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';/// The kind of the schema
+@immutable final class ShieldPublicSchemaKind {const ShieldPublicSchemaKind._(this.value);
 
 factory ShieldPublicSchemaKind.fromJson(String json) { return switch (json) {
   'openapi_v3' => openapiV3,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldPublicSchemaKind($value)'; } 
  }
 /// A schema used in schema validation
-final class ShieldPublicSchema {const ShieldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, required this.source, this.validationEnabled, });
+@immutable final class ShieldPublicSchema {const ShieldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, required this.source, this.validationEnabled, });
 
 factory ShieldPublicSchema.fromJson(Map<String, dynamic> json) { return ShieldPublicSchema(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),

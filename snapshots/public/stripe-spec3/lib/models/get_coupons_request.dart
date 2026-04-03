@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCouponsRequest {const GetCouponsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCouponsRequest {const GetCouponsRequest();
 
 factory GetCouponsRequest.fromJson(Map<String, dynamic> json) { return GetCouponsRequest(
 

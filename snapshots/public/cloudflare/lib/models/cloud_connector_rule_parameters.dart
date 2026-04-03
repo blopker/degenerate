@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Parameters of Cloud Connector Rule
-final class CloudConnectorRuleParameters {const CloudConnectorRuleParameters({this.host});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters of Cloud Connector Rule
+@immutable final class CloudConnectorRuleParameters {const CloudConnectorRuleParameters({this.host});
 
 factory CloudConnectorRuleParameters.fromJson(Map<String, dynamic> json) { return CloudConnectorRuleParameters(
   host: json['host'] as String?,

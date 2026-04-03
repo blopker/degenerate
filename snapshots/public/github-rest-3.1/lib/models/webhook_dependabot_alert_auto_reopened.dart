@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookDependabotAlertAutoReopenedAction {const WebhookDependabotAlertAutoReopenedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertAutoReopenedAction {const WebhookDependabotAlertAutoReopenedAction._(this.value);
 
 factory WebhookDependabotAlertAutoReopenedAction.fromJson(String json) { return switch (json) {
   'auto_reopened' => autoReopened,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDependabotAlertAutoReopenedAction($value)'; } 
  }
-final class WebhookDependabotAlertAutoReopened {const WebhookDependabotAlertAutoReopened({required this.action, required this.alert, this.installation, this.organization, this.enterprise, required this.repository, required this.sender, });
+@immutable final class WebhookDependabotAlertAutoReopened {const WebhookDependabotAlertAutoReopened({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
 factory WebhookDependabotAlertAutoReopened.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertAutoReopened(
   action: WebhookDependabotAlertAutoReopenedAction.fromJson(json['action'] as String),

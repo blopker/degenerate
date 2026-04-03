@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `output_audio_buffer.cleared`.
-final class RealtimeServerEventOutputAudioBufferClearedType {const RealtimeServerEventOutputAudioBufferClearedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `output_audio_buffer.cleared`.
+@immutable final class RealtimeServerEventOutputAudioBufferClearedType {const RealtimeServerEventOutputAudioBufferClearedType._(this.value);
 
 factory RealtimeServerEventOutputAudioBufferClearedType.fromJson(String json) { return switch (json) {
   'output_audio_buffer.cleared' => outputAudioBufferCleared,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// cut off the current audio response.
 /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
 /// 
-final class RealtimeServerEventOutputAudioBufferCleared {const RealtimeServerEventOutputAudioBufferCleared({required this.eventId, required this.type, required this.responseId, });
+@immutable final class RealtimeServerEventOutputAudioBufferCleared {const RealtimeServerEventOutputAudioBufferCleared({required this.eventId, required this.type, required this.responseId, });
 
 factory RealtimeServerEventOutputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeServerEventOutputAudioBufferCleared(
   eventId: json['event_id'] as String,

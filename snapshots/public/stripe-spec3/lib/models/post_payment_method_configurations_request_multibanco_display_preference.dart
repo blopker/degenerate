@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference {const PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference {const PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestMultibancoDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

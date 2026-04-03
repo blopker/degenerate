@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTerminalConfigurationsConfigurationRequest {const GetTerminalConfigurationsConfigurationRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalConfigurationsConfigurationRequest {const GetTerminalConfigurationsConfigurationRequest();
 
 factory GetTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return GetTerminalConfigurationsConfigurationRequest(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'security_advisory_credit_types.dart';import 'simple_user.dart';final class GlobalAdvisoryCredits {const GlobalAdvisoryCredits({required this.user, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_credit_types.dart';import 'simple_user.dart';@immutable final class GlobalAdvisoryCredits {const GlobalAdvisoryCredits({required this.user, required this.type, });
 
 factory GlobalAdvisoryCredits.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryCredits(
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),

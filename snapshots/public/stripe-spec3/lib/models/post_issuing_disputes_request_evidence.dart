@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'canceled.dart';import 'duplicate.dart';import 'fraudulent.dart';import 'merchandise_not_as_described.dart';import 'no_valid_authorization.dart';import 'not_received.dart';import 'other.dart';import 'post_issuing_disputes_request_evidence_canceled.dart';import 'post_issuing_disputes_request_evidence_duplicate.dart';import 'post_issuing_disputes_request_evidence_fraudulent.dart';import 'post_issuing_disputes_request_evidence_merchandise_not_as_described.dart';import 'post_issuing_disputes_request_evidence_no_valid_authorization.dart';import 'post_issuing_disputes_request_evidence_not_received.dart';import 'post_issuing_disputes_request_evidence_other.dart';import 'post_issuing_disputes_request_evidence_service_not_as_described.dart';import 'service_not_as_described.dart';final class PostIssuingDisputesRequestEvidenceReason {const PostIssuingDisputesRequestEvidenceReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'canceled.dart';import 'duplicate.dart';import 'fraudulent.dart';import 'merchandise_not_as_described.dart';import 'no_valid_authorization.dart';import 'not_received.dart';import 'other.dart';import 'post_issuing_disputes_request_evidence_canceled.dart';import 'post_issuing_disputes_request_evidence_duplicate.dart';import 'post_issuing_disputes_request_evidence_fraudulent.dart';import 'post_issuing_disputes_request_evidence_merchandise_not_as_described.dart';import 'post_issuing_disputes_request_evidence_no_valid_authorization.dart';import 'post_issuing_disputes_request_evidence_not_received.dart';import 'post_issuing_disputes_request_evidence_other.dart';import 'post_issuing_disputes_request_evidence_service_not_as_described.dart';import 'service_not_as_described.dart';@immutable final class PostIssuingDisputesRequestEvidenceReason {const PostIssuingDisputesRequestEvidenceReason._(this.value);
 
 factory PostIssuingDisputesRequestEvidenceReason.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingDisputesRequestEvidenceReason($value)'; } 
  }
 /// Evidence provided for the dispute.
-final class PostIssuingDisputesRequestEvidence {const PostIssuingDisputesRequestEvidence({this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, this.reason, this.serviceNotAsDescribed, });
+@immutable final class PostIssuingDisputesRequestEvidence {const PostIssuingDisputesRequestEvidence({this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, this.reason, this.serviceNotAsDescribed, });
 
 factory PostIssuingDisputesRequestEvidence.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesRequestEvidence(
   canceled: json['canceled'] != null ? OneOf2.parse(json['canceled'], fromA: (v) => Canceled.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesRequestEvidenceCanceledVariant2.fromJson(v as String),) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventCreateRequestRaw {const PostEventCreateRequestRaw({required this.data, this.source, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventCreateRequestRaw {const PostEventCreateRequestRaw({required this.data, this.source, this.tlp, });
 
 factory PostEventCreateRequestRaw.fromJson(Map<String, dynamic> json) { return PostEventCreateRequestRaw(
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a SSHFP record.
-final class DnsRecordsSshfpRecordData {const DnsRecordsSshfpRecordData({this.algorithm, this.fingerprint, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a SSHFP record.
+@immutable final class DnsRecordsSshfpRecordData {const DnsRecordsSshfpRecordData({this.algorithm, this.fingerprint, this.type, });
 
 factory DnsRecordsSshfpRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsSshfpRecordData(
   algorithm: json['algorithm'] != null ? (json['algorithm'] as num).toDouble() : null,

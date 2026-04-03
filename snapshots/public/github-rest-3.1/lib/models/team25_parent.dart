@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Team25ParentPrivacy {const Team25ParentPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Team25ParentPrivacy {const Team25ParentPrivacy._(this.value);
 
 factory Team25ParentPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Team25ParentPrivacy($value)'; } 
  }
-final class Team25Parent {const Team25Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class Team25Parent {const Team25Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory Team25Parent.fromJson(Map<String, dynamic> json) { return Team25Parent(
   description: json['description'] as String?,

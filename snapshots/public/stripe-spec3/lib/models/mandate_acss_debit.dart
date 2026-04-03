@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MandateAcssDebitDefaultFor {const MandateAcssDebitDefaultFor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MandateAcssDebitDefaultFor {const MandateAcssDebitDefaultFor._(this.value);
 
 factory MandateAcssDebitDefaultFor.fromJson(String json) { return switch (json) {
   'invoice' => invoice,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateAcssDebitDefaultFor($value)'; } 
  }
 /// Payment schedule for the mandate.
-final class MandateAcssDebitPaymentSchedule {const MandateAcssDebitPaymentSchedule._(this.value);
+@immutable final class MandateAcssDebitPaymentSchedule {const MandateAcssDebitPaymentSchedule._(this.value);
 
 factory MandateAcssDebitPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateAcssDebitPaymentSchedule($value)'; } 
  }
 /// Transaction type of the mandate.
-final class MandateAcssDebitTransactionType {const MandateAcssDebitTransactionType._(this.value);
+@immutable final class MandateAcssDebitTransactionType {const MandateAcssDebitTransactionType._(this.value);
 
 factory MandateAcssDebitTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateAcssDebitTransactionType($value)'; } 
  }
 /// 
-final class MandateAcssDebit {const MandateAcssDebit({this.defaultFor, this.intervalDescription, required this.paymentSchedule, required this.transactionType, });
+@immutable final class MandateAcssDebit {const MandateAcssDebit({required this.paymentSchedule, required this.transactionType, this.defaultFor, this.intervalDescription, });
 
 factory MandateAcssDebit.fromJson(Map<String, dynamic> json) { return MandateAcssDebit(
   defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => MandateAcssDebitDefaultFor.fromJson(e as String)).toList(),

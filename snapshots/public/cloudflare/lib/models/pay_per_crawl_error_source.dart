@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PayPerCrawlErrorSource {const PayPerCrawlErrorSource({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlErrorSource {const PayPerCrawlErrorSource({this.pointer});
 
 factory PayPerCrawlErrorSource.fromJson(Map<String, dynamic> json) { return PayPerCrawlErrorSource(
   pointer: json['pointer'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_object.dart';final class ListVectorStoresResponse {const ListVectorStoresResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_object.dart';@immutable final class ListVectorStoresResponse {const ListVectorStoresResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ListVectorStoresResponse.fromJson(Map<String, dynamic> json) { return ListVectorStoresResponse(
   object: json['object'] as String,

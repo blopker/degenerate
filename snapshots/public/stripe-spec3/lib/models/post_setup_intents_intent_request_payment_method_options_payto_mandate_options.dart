@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_amount.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_end_date.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_payments_per_period.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_start_date.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountType {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_amount.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_end_date.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_payments_per_period.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options_start_date.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountType {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountType($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(this.value);
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPurpose {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(this.value);
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPurpose {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsPurpose($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.fromJson(v as String),) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issue_field_value_single_select_option.dart';/// The data type of the issue field
-final class IssueFieldValueDataType {const IssueFieldValueDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_field_value_single_select_option.dart';/// The data type of the issue field
+@immutable final class IssueFieldValueDataType {const IssueFieldValueDataType._(this.value);
 
 factory IssueFieldValueDataType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssueFieldValueDataType($value)'; } 
  }
 /// A value assigned to an issue field
-final class IssueFieldValue {const IssueFieldValue({required this.issueFieldId, required this.nodeId, required this.dataType, required this.value, this.singleSelectOption, });
+@immutable final class IssueFieldValue {const IssueFieldValue({required this.issueFieldId, required this.nodeId, required this.dataType, required this.value, this.singleSelectOption, });
 
 factory IssueFieldValue.fromJson(Map<String, dynamic> json) { return IssueFieldValue(
   issueFieldId: (json['issue_field_id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_websocket_run_cf_deepgram_flux_response400_errors.dart';final class WorkersAiPostWebsocketRunCfDeepgramFluxResponse400 {const WorkersAiPostWebsocketRunCfDeepgramFluxResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_websocket_run_cf_deepgram_flux_response400_errors.dart';@immutable final class WorkersAiPostWebsocketRunCfDeepgramFluxResponse400 {const WorkersAiPostWebsocketRunCfDeepgramFluxResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostWebsocketRunCfDeepgramFluxResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfDeepgramFluxResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostWebsocketRunCfDeepgramFluxResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base10_response400_errors.dart';final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400 {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base10_response400_errors.dart';@immutable final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400 {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),

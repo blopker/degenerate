@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto.dart';import 'mcp_tool.dart';import 'prompt.dart';import 'realtime_function_tool.dart';import 'realtime_session_create_response_ga_audio.dart';import 'realtime_session_create_response_ga_client_secret.dart';import 'realtime_session_create_response_ga_max_output_tokens.dart';import 'realtime_session_create_response_ga_model.dart';import 'realtime_session_create_response_ga_tool_choice.dart';import 'realtime_session_create_response_ga_tools.dart';import 'realtime_session_create_response_ga_tracing.dart';import 'realtime_truncation.dart';import 'retention_ratio_truncation.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tracing_configuration5.dart';/// The type of session to create. Always `realtime` for the Realtime API.
 /// 
-final class RealtimeSessionCreateResponseGaType {const RealtimeSessionCreateResponseGaType._(this.value);
+@immutable final class RealtimeSessionCreateResponseGaType {const RealtimeSessionCreateResponseGaType._(this.value);
 
 factory RealtimeSessionCreateResponseGaType.fromJson(String json) { return switch (json) {
   'realtime' => realtime,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeSessionCreateResponseGaType($value)'; } 
  }
-final class RealtimeSessionCreateResponseGaOutputModalities {const RealtimeSessionCreateResponseGaOutputModalities._(this.value);
+@immutable final class RealtimeSessionCreateResponseGaOutputModalities {const RealtimeSessionCreateResponseGaOutputModalities._(this.value);
 
 factory RealtimeSessionCreateResponseGaOutputModalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeSessionCreateResponseGaOutputModalities($value)'; } 
  }
-final class RealtimeSessionCreateResponseGaInclude {const RealtimeSessionCreateResponseGaInclude._(this.value);
+@immutable final class RealtimeSessionCreateResponseGaInclude {const RealtimeSessionCreateResponseGaInclude._(this.value);
 
 factory RealtimeSessionCreateResponseGaInclude.fromJson(String json) { return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
-final class RealtimeSessionCreateResponseGa {const RealtimeSessionCreateResponseGa({required this.clientSecret, required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing, this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateResponseGa {const RealtimeSessionCreateResponseGa({required this.clientSecret, required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing, this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
 
 factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseGa(
   clientSecret: RealtimeSessionCreateResponseGaClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),

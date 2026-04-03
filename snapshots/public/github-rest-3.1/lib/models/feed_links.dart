@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link_with_type.dart';final class FeedLinks {const FeedLinks({required this.timeline, required this.user, this.securityAdvisories, this.currentUser, this.currentUserPublic, this.currentUserActor, this.currentUserOrganization, this.currentUserOrganizations, this.repositoryDiscussions, this.repositoryDiscussionsCategory, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link_with_type.dart';@immutable final class FeedLinks {const FeedLinks({required this.timeline, required this.user, this.securityAdvisories, this.currentUser, this.currentUserPublic, this.currentUserActor, this.currentUserOrganization, this.currentUserOrganizations, this.repositoryDiscussions, this.repositoryDiscussionsCategory, });
 
 factory FeedLinks.fromJson(Map<String, dynamic> json) { return FeedLinks(
   timeline: LinkWithType.fromJson(json['timeline'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ResponseFormatVariant1JsonSchemaJsonSchema {const Prompt43ResponseFormatVariant1JsonSchemaJsonSchema({this.description, required this.name, this.schema, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ResponseFormatVariant1JsonSchemaJsonSchema {const Prompt43ResponseFormatVariant1JsonSchemaJsonSchema({required this.name, this.description, this.schema, this.strict, });
 
 factory Prompt43ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1JsonSchemaJsonSchema(
   description: json['description'] as String?,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Event data payload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data payload.
 /// 
-final class WebhookFineTuningJobCancelledData {const WebhookFineTuningJobCancelledData({required this.id});
+@immutable final class WebhookFineTuningJobCancelledData {const WebhookFineTuningJobCancelledData({required this.id});
 
 factory WebhookFineTuningJobCancelledData.fromJson(Map<String, dynamic> json) { return WebhookFineTuningJobCancelledData(
   id: json['id'] as String,

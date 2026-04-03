@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupIntentPaymentMethodOptionsKlarna {const SetupIntentPaymentMethodOptionsKlarna({this.currency, this.preferredLocale, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupIntentPaymentMethodOptionsKlarna {const SetupIntentPaymentMethodOptionsKlarna({this.currency, this.preferredLocale, });
 
 factory SetupIntentPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsKlarna(
   currency: json['currency'] as String?,

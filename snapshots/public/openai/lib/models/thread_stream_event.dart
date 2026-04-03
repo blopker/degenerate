@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'thread_stream_event_thread_created.dart';/// A value that is one of: `ThreadStreamEventThreadCreated`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_stream_event_thread_created.dart';/// A value that is one of: `ThreadStreamEventThreadCreated`.
 sealed class ThreadStreamEvent {const ThreadStreamEvent();
 
 factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadStreamEventThreadCreated.canParse(json)) {
@@ -12,7 +12,7 @@ factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadStre
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class ThreadStreamEventThreadStreamEventThreadCreated extends ThreadStreamEvent {const ThreadStreamEventThreadStreamEventThreadCreated(this._value);
+@immutable final class ThreadStreamEventThreadStreamEventThreadCreated extends ThreadStreamEvent {const ThreadStreamEventThreadStreamEventThreadCreated(this._value);
 
 final ThreadStreamEventThreadCreated _value;
 
@@ -23,7 +23,7 @@ final ThreadStreamEventThreadCreated _value;
 @override String toString() { return 'ThreadStreamEvent.threadStreamEventThreadCreated($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class ThreadStreamEvent$Unknown extends ThreadStreamEvent {const ThreadStreamEvent$Unknown(this._value);
+@immutable final class ThreadStreamEvent$Unknown extends ThreadStreamEvent {const ThreadStreamEvent$Unknown(this._value);
 
 final dynamic _value;
 

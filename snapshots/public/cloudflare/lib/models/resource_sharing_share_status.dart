@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResourceSharingShareStatus {const ResourceSharingShareStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingShareStatus {const ResourceSharingShareStatus._(this.value);
 
 factory ResourceSharingShareStatus.fromJson(String json) { return switch (json) {
   'active' => active,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class OverviewDomainsArtifactAttestations {const OverviewDomainsArtifactAttestations({this.trustDomain, this.services, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OverviewDomainsArtifactAttestations {const OverviewDomainsArtifactAttestations({this.trustDomain, this.services, });
 
 factory OverviewDomainsArtifactAttestations.fromJson(Map<String, dynamic> json) { return OverviewDomainsArtifactAttestations(
   trustDomain: json['trust_domain'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of content.
-final class VectorStoreSearchResultContentObjectType {const VectorStoreSearchResultContentObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of content.
+@immutable final class VectorStoreSearchResultContentObjectType {const VectorStoreSearchResultContentObjectType._(this.value);
 
 factory VectorStoreSearchResultContentObjectType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorStoreSearchResultContentObjectType($value)'; } 
  }
-final class VectorStoreSearchResultContentObject {const VectorStoreSearchResultContentObject({required this.type, required this.text, });
+@immutable final class VectorStoreSearchResultContentObject {const VectorStoreSearchResultContentObject({required this.type, required this.text, });
 
 factory VectorStoreSearchResultContentObject.fromJson(Map<String, dynamic> json) { return VectorStoreSearchResultContentObject(
   type: VectorStoreSearchResultContentObjectType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `interac_present` PaymentMethod, this hash contains details about the Interac Present payment method.
-final class PostPaymentMethodsRequestInteracPresent {const PostPaymentMethodsRequestInteracPresent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `interac_present` PaymentMethod, this hash contains details about the Interac Present payment method.
+@immutable final class PostPaymentMethodsRequestInteracPresent {const PostPaymentMethodsRequestInteracPresent();
 
 factory PostPaymentMethodsRequestInteracPresent.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestInteracPresent(
 

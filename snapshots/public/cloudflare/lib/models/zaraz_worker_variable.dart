@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_worker_variable_value.dart';final class ZarazWorkerVariableType {const ZarazWorkerVariableType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_worker_variable_value.dart';@immutable final class ZarazWorkerVariableType {const ZarazWorkerVariableType._(this.value);
 
 factory ZarazWorkerVariableType.fromJson(String json) { return switch (json) {
   'worker' => worker,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazWorkerVariableType($value)'; } 
  }
-final class ZarazWorkerVariable {const ZarazWorkerVariable({required this.name, required this.type, required this.value, });
+@immutable final class ZarazWorkerVariable {const ZarazWorkerVariable({required this.name, required this.type, required this.value, });
 
 factory ZarazWorkerVariable.fromJson(Map<String, dynamic> json) { return ZarazWorkerVariable(
   name: json['name'] as String,

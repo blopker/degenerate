@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response_result_scan_ips_ip.dart';final class UrlscannerGetScanResponseResultScanIps {const UrlscannerGetScanResponseResultScanIps({this.ip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_ips_ip.dart';@immutable final class UrlscannerGetScanResponseResultScanIps {const UrlscannerGetScanResponseResultScanIps({this.ip});
 
 factory UrlscannerGetScanResponseResultScanIps.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanIps(
   ip: json['ip'] != null ? UrlscannerGetScanResponseResultScanIpsIp.fromJson(json['ip'] as Map<String, dynamic>) : null,

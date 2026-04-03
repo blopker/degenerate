@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_comment.dart';/// Timeline Commit Commented Event
-final class TimelineCommitCommentedEvent {const TimelineCommitCommentedEvent({this.event, this.nodeId, this.commitId, this.comments, });
+@immutable final class TimelineCommitCommentedEvent {const TimelineCommitCommentedEvent({this.event, this.nodeId, this.commitId, this.comments, });
 
 factory TimelineCommitCommentedEvent.fromJson(Map<String, dynamic> json) { return TimelineCommitCommentedEvent(
   event: json['event'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_prefix.dart';final class DosPrefixListResponse {const DosPrefixListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_prefix.dart';@immutable final class DosPrefixListResponse {const DosPrefixListResponse({this.result});
 
 factory DosPrefixListResponse.fromJson(Map<String, dynamic> json) { return DosPrefixListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DosPrefix.fromJson(e as Map<String, dynamic>)).toList(),

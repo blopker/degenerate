@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by TLD category.
-final class RadarGetEmailSecurityTopTldsByMaliciousTldCategory {const RadarGetEmailSecurityTopTldsByMaliciousTldCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD category.
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousTldCategory {const RadarGetEmailSecurityTopTldsByMaliciousTldCategory._(this.value);
 
 factory RadarGetEmailSecurityTopTldsByMaliciousTldCategory.fromJson(String json) { return switch (json) {
   'CLASSIC' => classic,

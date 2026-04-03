@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'client_key_param2_customer_acceptance_online.dart';final class ClientKeyParam2CustomerAcceptanceType {const ClientKeyParam2CustomerAcceptanceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param2_customer_acceptance_online.dart';@immutable final class ClientKeyParam2CustomerAcceptanceType {const ClientKeyParam2CustomerAcceptanceType._(this.value);
 
 factory ClientKeyParam2CustomerAcceptanceType.fromJson(String json) { return switch (json) {
   'online' => online,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ClientKeyParam2CustomerAcceptanceType($value)'; } 
  }
-final class ClientKeyParam2CustomerAcceptance {const ClientKeyParam2CustomerAcceptance({required this.online, required this.type, });
+@immutable final class ClientKeyParam2CustomerAcceptance {const ClientKeyParam2CustomerAcceptance({required this.online, required this.type, });
 
 factory ClientKeyParam2CustomerAcceptance.fromJson(Map<String, dynamic> json) { return ClientKeyParam2CustomerAcceptance(
   online: ClientKeyParam2CustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>),

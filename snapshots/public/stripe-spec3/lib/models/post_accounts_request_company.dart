@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_company_address.dart';import 'post_accounts_request_company_address_kana.dart';import 'post_accounts_request_company_address_kanji.dart';import 'post_accounts_request_company_directorship_declaration.dart';import 'post_accounts_request_company_ownership_declaration.dart';import 'post_accounts_request_company_registration_date.dart';import 'post_accounts_request_company_representative_declaration.dart';import 'post_accounts_request_company_verification.dart';import 'registration_date_specs.dart';final class PostAccountsRequestCompanyOwnershipExemptionReason {const PostAccountsRequestCompanyOwnershipExemptionReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_company_address.dart';import 'post_accounts_request_company_address_kana.dart';import 'post_accounts_request_company_address_kanji.dart';import 'post_accounts_request_company_directorship_declaration.dart';import 'post_accounts_request_company_ownership_declaration.dart';import 'post_accounts_request_company_registration_date.dart';import 'post_accounts_request_company_representative_declaration.dart';import 'post_accounts_request_company_verification.dart';import 'registration_date_specs.dart';@immutable final class PostAccountsRequestCompanyOwnershipExemptionReason {const PostAccountsRequestCompanyOwnershipExemptionReason._(this.value);
 
 factory PostAccountsRequestCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestCompanyOwnershipExemptionReason($value)'; } 
  }
-final class PostAccountsRequestCompanyStructure {const PostAccountsRequestCompanyStructure._(this.value);
+@immutable final class PostAccountsRequestCompanyStructure {const PostAccountsRequestCompanyStructure._(this.value);
 
 factory PostAccountsRequestCompanyStructure.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAccountsRequestCompanyStructure($value)'; } 
  }
 /// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
-final class PostAccountsRequestCompany {const PostAccountsRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
+@immutable final class PostAccountsRequestCompany {const PostAccountsRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
 factory PostAccountsRequestCompany.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCompany(
   address: json['address'] != null ? PostAccountsRequestCompanyAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

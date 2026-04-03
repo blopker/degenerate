@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_ipam_delegations.dart';final class AddressingSchemasSingleResponse {const AddressingSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_delegations.dart';@immutable final class AddressingSchemasSingleResponse {const AddressingSchemasSingleResponse({this.result});
 
 factory AddressingSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AddressingSchemasSingleResponse(
   result: json['result'] != null ? AddressingIpamDelegations.fromJson(json['result'] as Map<String, dynamic>) : null,

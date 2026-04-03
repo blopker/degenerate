@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_cache_rules_aegis_value.dart';/// ID of the zone setting.
-final class ZonesCacheRulesAegisId {const ZonesCacheRulesAegisId._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_rules_aegis_value.dart';/// ID of the zone setting.
+@immutable final class ZonesCacheRulesAegisId {const ZonesCacheRulesAegisId._(this.value);
 
 factory ZonesCacheRulesAegisId.fromJson(String json) { return switch (json) {
   'aegis' => aegis,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesCacheRulesAegisId($value)'; } 
  }
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
-final class ZonesCacheRulesAegis {const ZonesCacheRulesAegis({required this.id, this.modifiedOn, this.value, });
+@immutable final class ZonesCacheRulesAegis {const ZonesCacheRulesAegis({required this.id, this.modifiedOn, this.value, });
 
 factory ZonesCacheRulesAegis.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesAegis(
   id: ZonesCacheRulesAegisId.fromJson(json['id'] as String),

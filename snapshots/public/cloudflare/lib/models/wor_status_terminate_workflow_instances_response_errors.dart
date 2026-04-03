@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorStatusTerminateWorkflowInstancesResponseErrors {const WorStatusTerminateWorkflowInstancesResponseErrors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorStatusTerminateWorkflowInstancesResponseErrors {const WorStatusTerminateWorkflowInstancesResponseErrors({required this.code, required this.message, });
 
 factory WorStatusTerminateWorkflowInstancesResponseErrors.fromJson(Map<String, dynamic> json) { return WorStatusTerminateWorkflowInstancesResponseErrors(
   code: (json['code'] as num).toDouble(),

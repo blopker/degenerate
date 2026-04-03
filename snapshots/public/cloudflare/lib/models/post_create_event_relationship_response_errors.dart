@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCreateEventRelationshipResponseErrors {const PostCreateEventRelationshipResponseErrors({required this.childId, required this.error, this.errorType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreateEventRelationshipResponseErrors {const PostCreateEventRelationshipResponseErrors({required this.childId, required this.error, this.errorType, });
 
 factory PostCreateEventRelationshipResponseErrors.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponseErrors(
   childId: json['childId'] as String,

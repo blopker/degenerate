@@ -24,12 +24,12 @@ if (limitPerGroup != null) {
 queryParameters['query'] = query;
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 if (exclude != null) {
 for (final item in exclude) {
-  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson()));
 }
 }
 if (format != null) {

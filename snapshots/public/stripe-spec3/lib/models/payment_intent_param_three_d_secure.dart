@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_param_three_d_secure_network_options.dart';final class PaymentIntentParamThreeDSecureAresTransStatus {const PaymentIntentParamThreeDSecureAresTransStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param_three_d_secure_network_options.dart';@immutable final class PaymentIntentParamThreeDSecureAresTransStatus {const PaymentIntentParamThreeDSecureAresTransStatus._(this.value);
 
 factory PaymentIntentParamThreeDSecureAresTransStatus.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParamThreeDSecureAresTransStatus($value)'; } 
  }
-final class PaymentIntentParamThreeDSecureElectronicCommerceIndicator {const PaymentIntentParamThreeDSecureElectronicCommerceIndicator._(this.value);
+@immutable final class PaymentIntentParamThreeDSecureElectronicCommerceIndicator {const PaymentIntentParamThreeDSecureElectronicCommerceIndicator._(this.value);
 
 factory PaymentIntentParamThreeDSecureElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
   '01' => $01,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParamThreeDSecureElectronicCommerceIndicator($value)'; } 
  }
-final class PaymentIntentParamThreeDSecureExemptionIndicator {const PaymentIntentParamThreeDSecureExemptionIndicator._(this.value);
+@immutable final class PaymentIntentParamThreeDSecureExemptionIndicator {const PaymentIntentParamThreeDSecureExemptionIndicator._(this.value);
 
 factory PaymentIntentParamThreeDSecureExemptionIndicator.fromJson(String json) { return switch (json) {
   'low_risk' => lowRisk,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParamThreeDSecureExemptionIndicator($value)'; } 
  }
-final class PaymentIntentParamThreeDSecureVersion {const PaymentIntentParamThreeDSecureVersion._(this.value);
+@immutable final class PaymentIntentParamThreeDSecureVersion {const PaymentIntentParamThreeDSecureVersion._(this.value);
 
 factory PaymentIntentParamThreeDSecureVersion.fromJson(String json) { return switch (json) {
   '1.0.2' => $102,
@@ -129,7 +129,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParamThreeDSecureVersion($value)'; } 
  }
-final class PaymentIntentParamThreeDSecure {const PaymentIntentParamThreeDSecure({this.aresTransStatus, required this.cryptogram, this.electronicCommerceIndicator, this.exemptionIndicator, this.networkOptions, this.requestorChallengeIndicator, required this.transactionId, required this.version, });
+@immutable final class PaymentIntentParamThreeDSecure {const PaymentIntentParamThreeDSecure({required this.cryptogram, required this.transactionId, required this.version, this.aresTransStatus, this.electronicCommerceIndicator, this.exemptionIndicator, this.networkOptions, this.requestorChallengeIndicator, });
 
 factory PaymentIntentParamThreeDSecure.fromJson(Map<String, dynamic> json) { return PaymentIntentParamThreeDSecure(
   aresTransStatus: json['ares_trans_status'] != null ? PaymentIntentParamThreeDSecureAresTransStatus.fromJson(json['ares_trans_status'] as String) : null,

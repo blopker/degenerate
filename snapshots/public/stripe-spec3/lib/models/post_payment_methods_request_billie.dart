@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `billie` PaymentMethod, this hash contains details about the Billie payment method.
-final class PostPaymentMethodsRequestBillie {const PostPaymentMethodsRequestBillie();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `billie` PaymentMethod, this hash contains details about the Billie payment method.
+@immutable final class PostPaymentMethodsRequestBillie {const PostPaymentMethodsRequestBillie();
 
 factory PostPaymentMethodsRequestBillie.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBillie(
 

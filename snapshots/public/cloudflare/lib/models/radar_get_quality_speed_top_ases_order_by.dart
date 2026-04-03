@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the metric to order the results by.
-final class RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the results by.
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy._(this.value);
 
 factory RadarGetQualitySpeedTopAsesOrderBy.fromJson(String json) { return switch (json) {
   'BANDWIDTH_DOWNLOAD' => bandwidthDownload,

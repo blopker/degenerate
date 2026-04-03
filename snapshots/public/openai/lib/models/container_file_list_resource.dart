@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_file_resource.dart';/// The type of object returned, must be 'list'.
-final class ContainerFileListResourceObject {const ContainerFileListResourceObject._(this.value);
+@immutable final class ContainerFileListResourceObject {const ContainerFileListResourceObject._(this.value);
 
 factory ContainerFileListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerFileListResourceObject($value)'; } 
  }
-final class ContainerFileListResource {const ContainerFileListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ContainerFileListResource {const ContainerFileListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ContainerFileListResource.fromJson(Map<String, dynamic> json) { return ContainerFileListResource(
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),

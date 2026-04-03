@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_captions.dart';import 'stream_messages2.dart';final class StreamLanguageResponseCollection {const StreamLanguageResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_captions.dart';import 'stream_messages2.dart';@immutable final class StreamLanguageResponseCollection {const StreamLanguageResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamLanguageResponseCollection.fromJson(Map<String, dynamic> json) { return StreamLanguageResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),

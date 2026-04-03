@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Spam classification.
-final class RadarGetEmailSecurityTopTldsBySpamSpam {const RadarGetEmailSecurityTopTldsBySpamSpam._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Spam classification.
+@immutable final class RadarGetEmailSecurityTopTldsBySpamSpam {const RadarGetEmailSecurityTopTldsBySpamSpam._(this.value);
 
 factory RadarGetEmailSecurityTopTldsBySpamSpam.fromJson(String json) { return switch (json) {
   'SPAM' => spam,

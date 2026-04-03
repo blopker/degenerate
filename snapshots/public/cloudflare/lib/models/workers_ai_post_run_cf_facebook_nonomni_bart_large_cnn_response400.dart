@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_response400_errors.dart';final class WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400 {const WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_response400_errors.dart';@immutable final class WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400 {const WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

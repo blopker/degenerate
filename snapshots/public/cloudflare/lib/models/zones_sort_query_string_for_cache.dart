@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_sort_query_string_for_cache_value.dart';/// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_sort_query_string_for_cache_value.dart';/// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
 /// 
-final class ZonesSortQueryStringForCacheId {const ZonesSortQueryStringForCacheId._(this.value);
+@immutable final class ZonesSortQueryStringForCacheId {const ZonesSortQueryStringForCacheId._(this.value);
 
 factory ZonesSortQueryStringForCacheId.fromJson(String json) { return switch (json) {
   'sort_query_string_for_cache' => sortQueryStringForCache,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesSortQueryStringForCacheId($value)'; } 
  }
-final class ZonesSortQueryStringForCache {const ZonesSortQueryStringForCache({this.id, this.value, });
+@immutable final class ZonesSortQueryStringForCache {const ZonesSortQueryStringForCache({this.id, this.value, });
 
 factory ZonesSortQueryStringForCache.fromJson(Map<String, dynamic> json) { return ZonesSortQueryStringForCache(
   id: json['id'] != null ? ZonesSortQueryStringForCacheId.fromJson(json['id'] as String) : null,

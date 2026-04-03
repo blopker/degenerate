@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discovery_origin.dart';import 'discovery_state.dart';import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';import 'shield_timestamp.dart';import 'shield_traffic_stats.dart';import 'shield_uuid.dart';final class ShieldDiscoveryOperation {const ShieldDiscoveryOperation({required this.endpoint, required this.host, required this.method, this.features, required this.id, required this.lastUpdated, required this.origin, required this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discovery_origin.dart';import 'discovery_state.dart';import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';import 'shield_timestamp.dart';import 'shield_traffic_stats.dart';import 'shield_uuid.dart';@immutable final class ShieldDiscoveryOperation {const ShieldDiscoveryOperation({required this.endpoint, required this.host, required this.method, required this.id, required this.lastUpdated, required this.origin, required this.state, this.features, });
 
 factory ShieldDiscoveryOperation.fromJson(Map<String, dynamic> json) { return ShieldDiscoveryOperation(
   endpoint: ShieldEndpoint.fromJson(json['endpoint'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The ranking type.
-final class RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranking type.
+@immutable final class RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType._(this.value);
 
 factory RadarGetRankingTopDomainsRankingType.fromJson(String json) { return switch (json) {
   'POPULAR' => popular,

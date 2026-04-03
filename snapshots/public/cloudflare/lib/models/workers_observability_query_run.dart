@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_observability_query.dart';import 'workers_observability_query_run_statistics.dart';import 'workers_observability_query_run_timeframe.dart';final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query.dart';import 'workers_observability_query_run_statistics.dart';import 'workers_observability_query_run_timeframe.dart';@immutable final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
 
 factory WorkersObservabilityQueryRunStatus.fromJson(String json) { return switch (json) {
   'STARTED' => started,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersObservabilityQueryRunStatus($value)'; } 
  }
 /// A Workers Observability Query Object
-final class WorkersObservabilityQueryRun {const WorkersObservabilityQueryRun({required this.accountId, this.created, required this.dry, required this.environmentId, required this.granularity, required this.id, required this.query, this.statistics, required this.status, required this.timeframe, this.updated, required this.userId, required this.workspaceId, });
+@immutable final class WorkersObservabilityQueryRun {const WorkersObservabilityQueryRun({required this.accountId, required this.dry, required this.environmentId, required this.granularity, required this.id, required this.query, required this.status, required this.timeframe, required this.userId, required this.workspaceId, this.created, this.statistics, this.updated, });
 
 factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryRun(
   accountId: json['accountId'] as String,

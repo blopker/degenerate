@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The name of the rate limit (`requests`, `tokens`).
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the rate limit (`requests`, `tokens`).
 /// 
-final class RealtimeServerEventRateLimitsUpdatedRateLimitsName {const RealtimeServerEventRateLimitsUpdatedRateLimitsName._(this.value);
+@immutable final class RealtimeServerEventRateLimitsUpdatedRateLimitsName {const RealtimeServerEventRateLimitsUpdatedRateLimitsName._(this.value);
 
 factory RealtimeServerEventRateLimitsUpdatedRateLimitsName.fromJson(String json) { return switch (json) {
   'requests' => requests,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeServerEventRateLimitsUpdatedRateLimitsName($value)'; } 
  }
-final class RealtimeServerEventRateLimitsUpdatedRateLimits {const RealtimeServerEventRateLimitsUpdatedRateLimits({this.name, this.limit, this.remaining, this.resetSeconds, });
+@immutable final class RealtimeServerEventRateLimitsUpdatedRateLimits {const RealtimeServerEventRateLimitsUpdatedRateLimits({this.name, this.limit, this.remaining, this.resetSeconds, });
 
 factory RealtimeServerEventRateLimitsUpdatedRateLimits.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdatedRateLimits(
   name: json['name'] != null ? RealtimeServerEventRateLimitsUpdatedRateLimitsName.fromJson(json['name'] as String) : null,

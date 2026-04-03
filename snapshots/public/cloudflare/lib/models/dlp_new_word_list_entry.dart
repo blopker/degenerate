@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DlpNewWordListEntry {const DlpNewWordListEntry({required this.enabled, required this.name, required this.words, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewWordListEntry {const DlpNewWordListEntry({required this.enabled, required this.name, required this.words, });
 
 factory DlpNewWordListEntry.fromJson(Map<String, dynamic> json) { return DlpNewWordListEntry(
   enabled: json['enabled'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The AmazonPay dispute type, chargeback or claim
-final class DisputePaymentMethodDetailsAmazonPayDisputeType {const DisputePaymentMethodDetailsAmazonPayDisputeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The AmazonPay dispute type, chargeback or claim
+@immutable final class DisputePaymentMethodDetailsAmazonPayDisputeType {const DisputePaymentMethodDetailsAmazonPayDisputeType._(this.value);
 
 factory DisputePaymentMethodDetailsAmazonPayDisputeType.fromJson(String json) { return switch (json) {
   'chargeback' => chargeback,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputePaymentMethodDetailsAmazonPayDisputeType($value)'; } 
  }
 /// 
-final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType});
+@immutable final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType});
 
 factory DisputePaymentMethodDetailsAmazonPay.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsAmazonPay(
   disputeType: json['dispute_type'] != null ? DisputePaymentMethodDetailsAmazonPayDisputeType.fromJson(json['dispute_type'] as String) : null,

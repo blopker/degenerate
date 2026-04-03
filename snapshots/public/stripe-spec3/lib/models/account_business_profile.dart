@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_annual_revenue.dart';import 'account_monthly_estimated_revenue.dart';import 'address.dart';final class AccountBusinessProfileMinorityOwnedBusinessDesignation {const AccountBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_annual_revenue.dart';import 'account_monthly_estimated_revenue.dart';import 'address.dart';@immutable final class AccountBusinessProfileMinorityOwnedBusinessDesignation {const AccountBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
 
 factory AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) { return switch (json) {
   'lgbtqi_owned_business' => lgbtqiOwnedBusiness,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountBusinessProfileMinorityOwnedBusinessDesignation($value)'; } 
  }
 /// 
-final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
+@immutable final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
 factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
   annualRevenue: json['annual_revenue'] != null ? AccountAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,

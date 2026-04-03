@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'static_chunking_strategy.dart';/// Always `static`.
-final class StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'static_chunking_strategy.dart';/// Always `static`.
+@immutable final class StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType._(this.value);
 
 factory StaticChunkingStrategyResponseParamType.fromJson(String json) { return switch (json) {
   'static' => $static,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StaticChunkingStrategyResponseParamType($value)'; } 
  }
-final class StaticChunkingStrategyResponseParam {const StaticChunkingStrategyResponseParam({required this.type, required this.$static, });
+@immutable final class StaticChunkingStrategyResponseParam {const StaticChunkingStrategyResponseParam({required this.type, required this.$static, });
 
 factory StaticChunkingStrategyResponseParam.fromJson(Map<String, dynamic> json) { return StaticChunkingStrategyResponseParam(
   type: StaticChunkingStrategyResponseParamType.fromJson(json['type'] as String),

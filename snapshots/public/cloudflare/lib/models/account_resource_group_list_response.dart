@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_resource_group.dart';import 'iam_schemas_messages2.dart';final class AccountResourceGroupListResponse {const AccountResourceGroupListResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_resource_group.dart';import 'iam_schemas_messages2.dart';@immutable final class AccountResourceGroupListResponse {const AccountResourceGroupListResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory AccountResourceGroupListResponse.fromJson(Map<String, dynamic> json) { return AccountResourceGroupListResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => IamSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

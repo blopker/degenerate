@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListWorkersOrderBy {const ListWorkersOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListWorkersOrderBy {const ListWorkersOrderBy._(this.value);
 
 factory ListWorkersOrderBy.fromJson(String json) { return switch (json) {
   'deployed_on' => deployedOn,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The direction to traverse the graph. Defaults to 'both' to search all.
-final class GetEventRelationshipsDirection {const GetEventRelationshipsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction to traverse the graph. Defaults to 'both' to search all.
+@immutable final class GetEventRelationshipsDirection {const GetEventRelationshipsDirection._(this.value);
 
 factory GetEventRelationshipsDirection.fromJson(String json) { return switch (json) {
   'ancestors' => ancestors,

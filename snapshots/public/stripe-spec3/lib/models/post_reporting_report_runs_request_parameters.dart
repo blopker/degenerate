@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostReportingReportRunsRequestParametersReportingCategory {const PostReportingReportRunsRequestParametersReportingCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostReportingReportRunsRequestParametersReportingCategory {const PostReportingReportRunsRequestParametersReportingCategory._(this.value);
 
 factory PostReportingReportRunsRequestParametersReportingCategory.fromJson(String json) { return switch (json) {
   'advance' => advance,
@@ -129,7 +129,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostReportingReportRunsRequestParametersReportingCategory($value)'; } 
  }
-final class PostReportingReportRunsRequestParametersTimezone {const PostReportingReportRunsRequestParametersTimezone._(this.value);
+@immutable final class PostReportingReportRunsRequestParametersTimezone {const PostReportingReportRunsRequestParametersTimezone._(this.value);
 
 factory PostReportingReportRunsRequestParametersTimezone.fromJson(String json) { return switch (json) {
   'Africa/Abidjan' => africaAbidjan,
@@ -1945,7 +1945,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostReportingReportRunsRequestParametersTimezone($value)'; } 
  }
 /// Parameters specifying how the report should be run. Different Report Types have different required and optional parameters, listed in the [API Access to Reports](https://docs.stripe.com/reporting/statements/api) documentation.
-final class PostReportingReportRunsRequestParameters {const PostReportingReportRunsRequestParameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
+@immutable final class PostReportingReportRunsRequestParameters {const PostReportingReportRunsRequestParameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
 
 factory PostReportingReportRunsRequestParameters.fromJson(Map<String, dynamic> json) { return PostReportingReportRunsRequestParameters(
   columns: (json['columns'] as List<dynamic>?)?.map((e) => e as String).toList(),

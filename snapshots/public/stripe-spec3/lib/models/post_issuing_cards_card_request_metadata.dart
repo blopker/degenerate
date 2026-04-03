@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingCardsCardRequestMetadataVariant2 {const PostIssuingCardsCardRequestMetadataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardsCardRequestMetadataVariant2 {const PostIssuingCardsCardRequestMetadataVariant2._(this.value);
 
 factory PostIssuingCardsCardRequestMetadataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

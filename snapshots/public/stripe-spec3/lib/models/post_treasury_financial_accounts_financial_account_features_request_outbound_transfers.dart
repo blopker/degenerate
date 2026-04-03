@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_treasury_financial_accounts_financial_account_features_request_outbound_transfers_ach.dart';import 'post_treasury_financial_accounts_financial_account_features_request_outbound_transfers_us_domestic_wire.dart';/// Contains a Feature and settings related to moving money out of the FinancialAccount into another Account with the same owner.
-final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers({this.ach, this.usDomesticWire, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_features_request_outbound_transfers_ach.dart';import 'post_treasury_financial_accounts_financial_account_features_request_outbound_transfers_us_domestic_wire.dart';/// Contains a Feature and settings related to moving money out of the FinancialAccount into another Account with the same owner.
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers({this.ach, this.usDomesticWire, });
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers(
   ach: json['ach'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_by_query_type_response_result_meta_confidence_info.dart';import 'radar_get_dns_as112_timeseries_by_query_type_response_result_meta_date_range.dart';import 'radar_get_dns_as112_timeseries_by_query_type_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaNormalization {const RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaNormalization {const RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaNormalization._(this.value);
 
 factory RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMeta {const RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMeta {const RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMeta(
   confidenceInfo: RadarGetDnsAs112TimeseriesByQueryTypeResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),

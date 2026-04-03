@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow.dart';final class ActionsListRepoWorkflowsResponse {const ActionsListRepoWorkflowsResponse({required this.totalCount, required this.workflows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow.dart';@immutable final class ActionsListRepoWorkflowsResponse {const ActionsListRepoWorkflowsResponse({required this.totalCount, required this.workflows, });
 
 factory ActionsListRepoWorkflowsResponse.fromJson(Map<String, dynamic> json) { return ActionsListRepoWorkflowsResponse(
   totalCount: (json['total_count'] as num).toInt(),

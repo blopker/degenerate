@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Stopped process
-final class MconnEventLeaveK {const MconnEventLeaveK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Stopped process
+@immutable final class MconnEventLeaveK {const MconnEventLeaveK._(this.value);
 
 factory MconnEventLeaveK.fromJson(String json) { return switch (json) {
   'Leave' => leave,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventLeaveK($value)'; } 
  }
-final class MconnEventLeave {const MconnEventLeave({required this.k});
+@immutable final class MconnEventLeave {const MconnEventLeave({required this.k});
 
 factory MconnEventLeave.fromJson(Map<String, dynamic> json) { return MconnEventLeave(
   k: MconnEventLeaveK.fromJson(json['k'] as String),

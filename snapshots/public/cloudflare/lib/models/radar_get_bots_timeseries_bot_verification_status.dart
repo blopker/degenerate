@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The category of the bot.
-final class RadarGetBotsTimeseriesBotVerificationStatus {const RadarGetBotsTimeseriesBotVerificationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The category of the bot.
+@immutable final class RadarGetBotsTimeseriesBotVerificationStatus {const RadarGetBotsTimeseriesBotVerificationStatus._(this.value);
 
 factory RadarGetBotsTimeseriesBotVerificationStatus.fromJson(String json) { return switch (json) {
   'VERIFIED' => verified,

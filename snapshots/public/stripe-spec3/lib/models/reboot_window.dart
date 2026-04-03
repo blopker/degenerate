@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RebootWindow {const RebootWindow({required this.endHour, required this.startHour, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RebootWindow {const RebootWindow({required this.endHour, required this.startHour, });
 
 factory RebootWindow.fromJson(Map<String, dynamic> json) { return RebootWindow(
   endHour: (json['end_hour'] as num).toInt(),

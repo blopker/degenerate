@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnAdminSite {const MconnAdminSite({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnAdminSite {const MconnAdminSite({required this.id});
 
 factory MconnAdminSite.fromJson(Map<String, dynamic> json) { return MconnAdminSite(
   id: MconnUuid.fromJson(json['id'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchStatsResponseResult {const AiSearchStatsResponseResult({this.completed, this.error, this.fileEmbedErrors, this.indexSourceErrors, this.lastActivity, this.queued, this.running, this.skipped, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchStatsResponseResult {const AiSearchStatsResponseResult({this.completed, this.error, this.fileEmbedErrors, this.indexSourceErrors, this.lastActivity, this.queued, this.running, this.skipped, });
 
 factory AiSearchStatsResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchStatsResponseResult(
   completed: json['completed'] != null ? (json['completed'] as num).toInt() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of a mitigation
-final class AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of a mitigation
+@immutable final class AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus._(this.value);
 
 factory AbuseReportsMitigationStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,

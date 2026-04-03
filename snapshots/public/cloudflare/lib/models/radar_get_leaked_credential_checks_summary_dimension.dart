@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the attribute by which to group the results.
-final class RadarGetLeakedCredentialChecksSummaryDimension {const RadarGetLeakedCredentialChecksSummaryDimension._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
+@immutable final class RadarGetLeakedCredentialChecksSummaryDimension {const RadarGetLeakedCredentialChecksSummaryDimension._(this.value);
 
 factory RadarGetLeakedCredentialChecksSummaryDimension.fromJson(String json) { return switch (json) {
   'COMPROMISED' => compromised,

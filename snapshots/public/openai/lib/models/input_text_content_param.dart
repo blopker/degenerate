@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the input item. Always `input_text`.
-final class InputTextContentParamType {const InputTextContentParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the input item. Always `input_text`.
+@immutable final class InputTextContentParamType {const InputTextContentParamType._(this.value);
 
 factory InputTextContentParamType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputTextContentParamType($value)'; } 
  }
 /// A text input to the model.
-final class InputTextContentParam {const InputTextContentParam({this.type = InputTextContentParamType.inputText, required this.text, });
+@immutable final class InputTextContentParam {const InputTextContentParam({required this.text, this.type = InputTextContentParamType.inputText, });
 
 factory InputTextContentParam.fromJson(Map<String, dynamic> json) { return InputTextContentParam(
   type: InputTextContentParamType.fromJson(json['type'] as String),

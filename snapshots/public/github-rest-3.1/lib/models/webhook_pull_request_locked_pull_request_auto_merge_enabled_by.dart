@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestLockedPullRequestAutoMergeEnabledByType {const WebhookPullRequestLockedPullRequestAutoMergeEnabledByType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestLockedPullRequestAutoMergeEnabledByType {const WebhookPullRequestLockedPullRequestAutoMergeEnabledByType._(this.value);
 
 factory WebhookPullRequestLockedPullRequestAutoMergeEnabledByType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestLockedPullRequestAutoMergeEnabledByType($value)'; } 
  }
-final class WebhookPullRequestLockedPullRequestAutoMergeEnabledBy {const WebhookPullRequestLockedPullRequestAutoMergeEnabledBy({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookPullRequestLockedPullRequestAutoMergeEnabledBy {const WebhookPullRequestLockedPullRequestAutoMergeEnabledBy({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookPullRequestLockedPullRequestAutoMergeEnabledBy.fromJson(Map<String, dynamic> json) { return WebhookPullRequestLockedPullRequestAutoMergeEnabledBy(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

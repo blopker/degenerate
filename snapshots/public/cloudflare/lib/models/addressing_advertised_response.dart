@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_advertised_response_result.dart';final class AddressingAdvertisedResponse {const AddressingAdvertisedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_advertised_response_result.dart';@immutable final class AddressingAdvertisedResponse {const AddressingAdvertisedResponse({this.result});
 
 factory AddressingAdvertisedResponse.fromJson(Map<String, dynamic> json) { return AddressingAdvertisedResponse(
   result: json['result'] != null ? AddressingAdvertisedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_identifier.dart';final class AaaAuditLogsOwner {const AaaAuditLogsOwner({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_identifier.dart';@immutable final class AaaAuditLogsOwner {const AaaAuditLogsOwner({this.id});
 
 factory AaaAuditLogsOwner.fromJson(Map<String, dynamic> json) { return AaaAuditLogsOwner(
   id: json['id'] != null ? AaaIdentifier.fromJson(json['id'] as String) : null,

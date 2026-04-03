@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_cursor_result_info.dart';import 'workers_kv_key.dart';import 'workers_kv_messages2.dart';final class WorkersKvNamespaceListANamespaceSKeysResponse {const WorkersKvNamespaceListANamespaceSKeysResponse({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_cursor_result_info.dart';import 'workers_kv_key.dart';import 'workers_kv_messages2.dart';@immutable final class WorkersKvNamespaceListANamespaceSKeysResponse {const WorkersKvNamespaceListANamespaceSKeysResponse({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 
 factory WorkersKvNamespaceListANamespaceSKeysResponse.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceListANamespaceSKeysResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'compaction_body.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// An item representing a message, tool call, tool output, reasoning, or other response element.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'compaction_body.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// An item representing a message, tool call, tool output, reasoning, or other response element.
 sealed class ItemField {const ItemField();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ItemField$Unknown; } 
  }
-final class ItemFieldMessage extends ItemField {const ItemFieldMessage(this.message);
+@immutable final class ItemFieldMessage extends ItemField {const ItemFieldMessage(this.message);
 
 factory ItemFieldMessage.fromJson(Map<String, dynamic> json) { return ItemFieldMessage(Message.fromJson(json)); }
 
@@ -52,7 +52,7 @@ final Message message;
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ItemFieldMessage(message: $message)'; } 
  }
-final class ItemFieldFunctionCall extends ItemField {const ItemFieldFunctionCall(this.functionToolCall);
+@immutable final class ItemFieldFunctionCall extends ItemField {const ItemFieldFunctionCall(this.functionToolCall);
 
 factory ItemFieldFunctionCall.fromJson(Map<String, dynamic> json) { return ItemFieldFunctionCall(FunctionToolCall.fromJson(json)); }
 
@@ -65,7 +65,7 @@ final FunctionToolCall functionToolCall;
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldFunctionCall(functionToolCall: $functionToolCall)'; } 
  }
-final class ItemFieldToolSearchCall extends ItemField {const ItemFieldToolSearchCall(this.toolSearchCall);
+@immutable final class ItemFieldToolSearchCall extends ItemField {const ItemFieldToolSearchCall(this.toolSearchCall);
 
 factory ItemFieldToolSearchCall.fromJson(Map<String, dynamic> json) { return ItemFieldToolSearchCall(ToolSearchCall.fromJson(json)); }
 
@@ -78,7 +78,7 @@ final ToolSearchCall toolSearchCall;
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ItemFieldToolSearchCall(toolSearchCall: $toolSearchCall)'; } 
  }
-final class ItemFieldToolSearchOutput extends ItemField {const ItemFieldToolSearchOutput(this.toolSearchOutput);
+@immutable final class ItemFieldToolSearchOutput extends ItemField {const ItemFieldToolSearchOutput(this.toolSearchOutput);
 
 factory ItemFieldToolSearchOutput.fromJson(Map<String, dynamic> json) { return ItemFieldToolSearchOutput(ToolSearchOutput.fromJson(json)); }
 
@@ -91,7 +91,7 @@ final ToolSearchOutput toolSearchOutput;
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ItemFieldToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
  }
-final class ItemFieldFunctionCallOutput extends ItemField {const ItemFieldFunctionCallOutput(this.functionToolCallOutput);
+@immutable final class ItemFieldFunctionCallOutput extends ItemField {const ItemFieldFunctionCallOutput(this.functionToolCallOutput);
 
 factory ItemFieldFunctionCallOutput.fromJson(Map<String, dynamic> json) { return ItemFieldFunctionCallOutput(FunctionToolCallOutput.fromJson(json)); }
 
@@ -104,7 +104,7 @@ final FunctionToolCallOutput functionToolCallOutput;
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldFunctionCallOutput(functionToolCallOutput: $functionToolCallOutput)'; } 
  }
-final class ItemFieldFileSearchCall extends ItemField {const ItemFieldFileSearchCall(this.fileSearchToolCall);
+@immutable final class ItemFieldFileSearchCall extends ItemField {const ItemFieldFileSearchCall(this.fileSearchToolCall);
 
 factory ItemFieldFileSearchCall.fromJson(Map<String, dynamic> json) { return ItemFieldFileSearchCall(FileSearchToolCall.fromJson(json)); }
 
@@ -117,7 +117,7 @@ final FileSearchToolCall fileSearchToolCall;
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
  }
-final class ItemFieldWebSearchCall extends ItemField {const ItemFieldWebSearchCall(this.webSearchToolCall);
+@immutable final class ItemFieldWebSearchCall extends ItemField {const ItemFieldWebSearchCall(this.webSearchToolCall);
 
 factory ItemFieldWebSearchCall.fromJson(Map<String, dynamic> json) { return ItemFieldWebSearchCall(WebSearchToolCall.fromJson(json)); }
 
@@ -130,7 +130,7 @@ final WebSearchToolCall webSearchToolCall;
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
  }
-final class ItemFieldImageGenerationCall extends ItemField {const ItemFieldImageGenerationCall(this.imageGenToolCall);
+@immutable final class ItemFieldImageGenerationCall extends ItemField {const ItemFieldImageGenerationCall(this.imageGenToolCall);
 
 factory ItemFieldImageGenerationCall.fromJson(Map<String, dynamic> json) { return ItemFieldImageGenerationCall(ImageGenToolCall.fromJson(json)); }
 
@@ -143,7 +143,7 @@ final ImageGenToolCall imageGenToolCall;
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
  }
-final class ItemFieldComputerCall extends ItemField {const ItemFieldComputerCall(this.computerToolCall);
+@immutable final class ItemFieldComputerCall extends ItemField {const ItemFieldComputerCall(this.computerToolCall);
 
 factory ItemFieldComputerCall.fromJson(Map<String, dynamic> json) { return ItemFieldComputerCall(ComputerToolCall.fromJson(json)); }
 
@@ -156,7 +156,7 @@ final ComputerToolCall computerToolCall;
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldComputerCall(computerToolCall: $computerToolCall)'; } 
  }
-final class ItemFieldComputerToolCallOutputResource extends ItemField {const ItemFieldComputerToolCallOutputResource(this.computerToolCallOutput);
+@immutable final class ItemFieldComputerToolCallOutputResource extends ItemField {const ItemFieldComputerToolCallOutputResource(this.computerToolCallOutput);
 
 factory ItemFieldComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutput.fromJson(json)); }
 
@@ -169,7 +169,7 @@ final ComputerToolCallOutput computerToolCallOutput;
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
  }
-final class ItemFieldReasoning extends ItemField {const ItemFieldReasoning(this.reasoningItem);
+@immutable final class ItemFieldReasoning extends ItemField {const ItemFieldReasoning(this.reasoningItem);
 
 factory ItemFieldReasoning.fromJson(Map<String, dynamic> json) { return ItemFieldReasoning(ReasoningItem.fromJson(json)); }
 
@@ -182,7 +182,7 @@ final ReasoningItem reasoningItem;
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ItemFieldReasoning(reasoningItem: $reasoningItem)'; } 
  }
-final class ItemFieldCompaction extends ItemField {const ItemFieldCompaction(this.compactionBody);
+@immutable final class ItemFieldCompaction extends ItemField {const ItemFieldCompaction(this.compactionBody);
 
 factory ItemFieldCompaction.fromJson(Map<String, dynamic> json) { return ItemFieldCompaction(CompactionBody.fromJson(json)); }
 
@@ -195,7 +195,7 @@ final CompactionBody compactionBody;
 @override int get hashCode { return compactionBody.hashCode; } 
 @override String toString() { return 'ItemFieldCompaction(compactionBody: $compactionBody)'; } 
  }
-final class ItemFieldCodeInterpreterCall extends ItemField {const ItemFieldCodeInterpreterCall(this.codeInterpreterToolCall);
+@immutable final class ItemFieldCodeInterpreterCall extends ItemField {const ItemFieldCodeInterpreterCall(this.codeInterpreterToolCall);
 
 factory ItemFieldCodeInterpreterCall.fromJson(Map<String, dynamic> json) { return ItemFieldCodeInterpreterCall(CodeInterpreterToolCall.fromJson(json)); }
 
@@ -208,7 +208,7 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
  }
-final class ItemFieldLocalShellCall extends ItemField {const ItemFieldLocalShellCall(this.localShellToolCall);
+@immutable final class ItemFieldLocalShellCall extends ItemField {const ItemFieldLocalShellCall(this.localShellToolCall);
 
 factory ItemFieldLocalShellCall.fromJson(Map<String, dynamic> json) { return ItemFieldLocalShellCall(LocalShellToolCall.fromJson(json)); }
 
@@ -221,7 +221,7 @@ final LocalShellToolCall localShellToolCall;
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
  }
-final class ItemFieldLocalShellCallOutput extends ItemField {const ItemFieldLocalShellCallOutput(this.localShellToolCallOutput);
+@immutable final class ItemFieldLocalShellCallOutput extends ItemField {const ItemFieldLocalShellCallOutput(this.localShellToolCallOutput);
 
 factory ItemFieldLocalShellCallOutput.fromJson(Map<String, dynamic> json) { return ItemFieldLocalShellCallOutput(LocalShellToolCallOutput.fromJson(json)); }
 
@@ -234,7 +234,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
  }
-final class ItemFieldShellCall extends ItemField {const ItemFieldShellCall(this.functionShellCall);
+@immutable final class ItemFieldShellCall extends ItemField {const ItemFieldShellCall(this.functionShellCall);
 
 factory ItemFieldShellCall.fromJson(Map<String, dynamic> json) { return ItemFieldShellCall(FunctionShellCall.fromJson(json)); }
 
@@ -247,7 +247,7 @@ final FunctionShellCall functionShellCall;
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ItemFieldShellCall(functionShellCall: $functionShellCall)'; } 
  }
-final class ItemFieldShellCallOutput extends ItemField {const ItemFieldShellCallOutput(this.functionShellCallOutput);
+@immutable final class ItemFieldShellCallOutput extends ItemField {const ItemFieldShellCallOutput(this.functionShellCallOutput);
 
 factory ItemFieldShellCallOutput.fromJson(Map<String, dynamic> json) { return ItemFieldShellCallOutput(FunctionShellCallOutput.fromJson(json)); }
 
@@ -260,7 +260,7 @@ final FunctionShellCallOutput functionShellCallOutput;
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
  }
-final class ItemFieldApplyPatchCall extends ItemField {const ItemFieldApplyPatchCall(this.applyPatchToolCall);
+@immutable final class ItemFieldApplyPatchCall extends ItemField {const ItemFieldApplyPatchCall(this.applyPatchToolCall);
 
 factory ItemFieldApplyPatchCall.fromJson(Map<String, dynamic> json) { return ItemFieldApplyPatchCall(ApplyPatchToolCall.fromJson(json)); }
 
@@ -273,7 +273,7 @@ final ApplyPatchToolCall applyPatchToolCall;
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
  }
-final class ItemFieldApplyPatchCallOutput extends ItemField {const ItemFieldApplyPatchCallOutput(this.applyPatchToolCallOutput);
+@immutable final class ItemFieldApplyPatchCallOutput extends ItemField {const ItemFieldApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
 factory ItemFieldApplyPatchCallOutput.fromJson(Map<String, dynamic> json) { return ItemFieldApplyPatchCallOutput(ApplyPatchToolCallOutput.fromJson(json)); }
 
@@ -286,7 +286,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
  }
-final class ItemFieldMcpListTools extends ItemField {const ItemFieldMcpListTools(this.mcpListTools);
+@immutable final class ItemFieldMcpListTools extends ItemField {const ItemFieldMcpListTools(this.mcpListTools);
 
 factory ItemFieldMcpListTools.fromJson(Map<String, dynamic> json) { return ItemFieldMcpListTools(McpListTools.fromJson(json)); }
 
@@ -299,7 +299,7 @@ final McpListTools mcpListTools;
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ItemFieldMcpListTools(mcpListTools: $mcpListTools)'; } 
  }
-final class ItemFieldMcpApprovalRequest extends ItemField {const ItemFieldMcpApprovalRequest(this.mcpApprovalRequest);
+@immutable final class ItemFieldMcpApprovalRequest extends ItemField {const ItemFieldMcpApprovalRequest(this.mcpApprovalRequest);
 
 factory ItemFieldMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return ItemFieldMcpApprovalRequest(McpApprovalRequest.fromJson(json)); }
 
@@ -312,7 +312,7 @@ final McpApprovalRequest mcpApprovalRequest;
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ItemFieldMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
  }
-final class ItemFieldMcpApprovalResponse extends ItemField {const ItemFieldMcpApprovalResponse(this.mcpApprovalResponseResource);
+@immutable final class ItemFieldMcpApprovalResponse extends ItemField {const ItemFieldMcpApprovalResponse(this.mcpApprovalResponseResource);
 
 factory ItemFieldMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return ItemFieldMcpApprovalResponse(McpApprovalResponseResource.fromJson(json)); }
 
@@ -325,7 +325,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ItemFieldMcpApprovalResponse(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
  }
-final class ItemFieldMcpCall extends ItemField {const ItemFieldMcpCall(this.mcpToolCall);
+@immutable final class ItemFieldMcpCall extends ItemField {const ItemFieldMcpCall(this.mcpToolCall);
 
 factory ItemFieldMcpCall.fromJson(Map<String, dynamic> json) { return ItemFieldMcpCall(McpToolCall.fromJson(json)); }
 
@@ -338,7 +338,7 @@ final McpToolCall mcpToolCall;
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldMcpCall(mcpToolCall: $mcpToolCall)'; } 
  }
-final class ItemFieldCustomToolCall extends ItemField {const ItemFieldCustomToolCall(this.customToolCall);
+@immutable final class ItemFieldCustomToolCall extends ItemField {const ItemFieldCustomToolCall(this.customToolCall);
 
 factory ItemFieldCustomToolCall.fromJson(Map<String, dynamic> json) { return ItemFieldCustomToolCall(CustomToolCall.fromJson(json)); }
 
@@ -351,7 +351,7 @@ final CustomToolCall customToolCall;
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldCustomToolCall(customToolCall: $customToolCall)'; } 
  }
-final class ItemFieldCustomToolCallOutput extends ItemField {const ItemFieldCustomToolCallOutput(this.customToolCallOutput);
+@immutable final class ItemFieldCustomToolCallOutput extends ItemField {const ItemFieldCustomToolCallOutput(this.customToolCallOutput);
 
 factory ItemFieldCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return ItemFieldCustomToolCallOutput(CustomToolCallOutput.fromJson(json)); }
 
@@ -366,7 +366,7 @@ final CustomToolCallOutput customToolCallOutput;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ItemField$Unknown extends ItemField {const ItemField$Unknown(this.json);
+@immutable final class ItemField$Unknown extends ItemField {const ItemField$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

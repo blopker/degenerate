@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_dimensions.dart';import 'price.dart';import 'product_default_price.dart';import 'product_marketing_feature.dart';import 'product_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ProductObject {const ProductObject._(this.value);
+@immutable final class ProductObject {const ProductObject._(this.value);
 
 factory ProductObject.fromJson(String json) { return switch (json) {
   'product' => product,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// [share a Payment Link](https://docs.stripe.com/payment-links),
 /// [accept payments with Checkout](https://docs.stripe.com/payments/accept-a-payment#create-product-prices-upfront),
 /// and more about [Products and Prices](https://docs.stripe.com/products-prices/overview)
-final class Product {const Product({required this.active, required this.created, this.defaultPrice, this.description, required this.id, required this.images, required this.livemode, required this.marketingFeatures, required this.metadata, required this.name, required this.object, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, required this.updated, this.url, });
+@immutable final class Product {const Product({required this.active, required this.created, required this.id, required this.images, required this.livemode, required this.marketingFeatures, required this.metadata, required this.name, required this.object, required this.updated, this.defaultPrice, this.description, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
 factory Product.fromJson(Map<String, dynamic> json) { return Product(
   active: json['active'] as bool,

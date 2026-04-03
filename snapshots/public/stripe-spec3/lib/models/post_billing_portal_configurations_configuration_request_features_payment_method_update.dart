@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_payment_method_update_payment_method_configuration.dart';final class PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate({required this.enabled, this.paymentMethodConfiguration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_payment_method_update_payment_method_configuration.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate({required this.enabled, this.paymentMethodConfiguration, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate(
   enabled: json['enabled'] as bool,

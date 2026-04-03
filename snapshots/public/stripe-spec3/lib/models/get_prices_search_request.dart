@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPricesSearchRequest {const GetPricesSearchRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPricesSearchRequest {const GetPricesSearchRequest();
 
 factory GetPricesSearchRequest.fromJson(Map<String, dynamic> json) { return GetPricesSearchRequest(
 

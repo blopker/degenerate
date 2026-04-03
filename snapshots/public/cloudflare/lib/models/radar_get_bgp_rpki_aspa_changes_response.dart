@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_rpki_aspa_changes_response_result.dart';final class RadarGetBgpRpkiAspaChangesResponse {const RadarGetBgpRpkiAspaChangesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponse {const RadarGetBgpRpkiAspaChangesResponse({required this.result, required this.success, });
 
 factory RadarGetBgpRpkiAspaChangesResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponse(
   result: RadarGetBgpRpkiAspaChangesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

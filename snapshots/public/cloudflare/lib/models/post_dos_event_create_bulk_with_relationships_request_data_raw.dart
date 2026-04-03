@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDosEventCreateBulkWithRelationshipsRequestDataRaw {const PostDosEventCreateBulkWithRelationshipsRequestDataRaw({required this.data, this.source, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsRequestDataRaw {const PostDosEventCreateBulkWithRelationshipsRequestDataRaw({required this.data, this.source, this.tlp, });
 
 factory PostDosEventCreateBulkWithRelationshipsRequestDataRaw.fromJson(Map<String, dynamic> json) { return PostDosEventCreateBulkWithRelationshipsRequestDataRaw(
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

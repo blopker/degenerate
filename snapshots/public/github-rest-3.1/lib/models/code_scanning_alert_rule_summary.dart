@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
-final class CodeScanningAlertRuleSummarySeverity {const CodeScanningAlertRuleSummarySeverity._(this.value);
+@immutable final class CodeScanningAlertRuleSummarySeverity {const CodeScanningAlertRuleSummarySeverity._(this.value);
 
 factory CodeScanningAlertRuleSummarySeverity.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningAlertRuleSummarySeverity($value)'; } 
  }
 /// The security severity of the alert.
-final class CodeScanningAlertRuleSummarySecuritySeverityLevel {const CodeScanningAlertRuleSummarySecuritySeverityLevel._(this.value);
+@immutable final class CodeScanningAlertRuleSummarySecuritySeverityLevel {const CodeScanningAlertRuleSummarySecuritySeverityLevel._(this.value);
 
 factory CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -68,7 +68,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningAlertRuleSummarySecuritySeverityLevel($value)'; } 
  }
-final class CodeScanningAlertRuleSummary {const CodeScanningAlertRuleSummary({this.id, this.name, this.severity, this.securitySeverityLevel, this.description, this.fullDescription, this.tags, this.help, this.helpUri, });
+@immutable final class CodeScanningAlertRuleSummary {const CodeScanningAlertRuleSummary({this.id, this.name, this.severity, this.securitySeverityLevel, this.description, this.fullDescription, this.tags, this.help, this.helpUri, });
 
 factory CodeScanningAlertRuleSummary.fromJson(Map<String, dynamic> json) { return CodeScanningAlertRuleSummary(
   id: json['id'] as String?,

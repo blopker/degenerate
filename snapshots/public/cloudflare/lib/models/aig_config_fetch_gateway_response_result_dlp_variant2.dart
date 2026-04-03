@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result_dlp_variant2_policies.dart';final class AigConfigFetchGatewayResponseResultDlpVariant2 {const AigConfigFetchGatewayResponseResultDlpVariant2({required this.enabled, required this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result_dlp_variant2_policies.dart';@immutable final class AigConfigFetchGatewayResponseResultDlpVariant2 {const AigConfigFetchGatewayResponseResultDlpVariant2({required this.enabled, required this.policies, });
 
 factory AigConfigFetchGatewayResponseResultDlpVariant2.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResultDlpVariant2(
   enabled: json['enabled'] as bool,

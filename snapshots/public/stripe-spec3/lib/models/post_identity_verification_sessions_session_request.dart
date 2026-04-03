@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_identity_verification_sessions_session_request_options.dart';import 'post_identity_verification_sessions_session_request_provided_details.dart';/// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed.
-final class PostIdentityVerificationSessionsSessionRequestType {const PostIdentityVerificationSessionsSessionRequestType._(this.value);
+@immutable final class PostIdentityVerificationSessionsSessionRequestType {const PostIdentityVerificationSessionsSessionRequestType._(this.value);
 
 factory PostIdentityVerificationSessionsSessionRequestType.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIdentityVerificationSessionsSessionRequestType($value)'; } 
  }
-final class PostIdentityVerificationSessionsSessionRequest {const PostIdentityVerificationSessionsSessionRequest({this.expand, this.metadata, this.options, this.providedDetails, this.type, });
+@immutable final class PostIdentityVerificationSessionsSessionRequest {const PostIdentityVerificationSessionsSessionRequest({this.expand, this.metadata, this.options, this.providedDetails, this.type, });
 
 factory PostIdentityVerificationSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsSessionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the customer associated with the payment evaluation.
-final class PostRadarPaymentEvaluationsRequestCustomerDetails {const PostRadarPaymentEvaluationsRequestCustomerDetails({this.customer, this.customerAccount, this.email, this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the customer associated with the payment evaluation.
+@immutable final class PostRadarPaymentEvaluationsRequestCustomerDetails {const PostRadarPaymentEvaluationsRequestCustomerDetails({this.customer, this.customerAccount, this.email, this.name, this.phone, });
 
 factory PostRadarPaymentEvaluationsRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestCustomerDetails(
   customer: json['customer'] as String?,

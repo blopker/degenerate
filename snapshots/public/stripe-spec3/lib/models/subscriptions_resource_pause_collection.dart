@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payment collection behavior for this subscription while paused. One of `keep_as_draft`, `mark_uncollectible`, or `void`.
-final class SubscriptionsResourcePauseCollectionBehavior {const SubscriptionsResourcePauseCollectionBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payment collection behavior for this subscription while paused. One of `keep_as_draft`, `mark_uncollectible`, or `void`.
+@immutable final class SubscriptionsResourcePauseCollectionBehavior {const SubscriptionsResourcePauseCollectionBehavior._(this.value);
 
 factory SubscriptionsResourcePauseCollectionBehavior.fromJson(String json) { return switch (json) {
   'keep_as_draft' => keepAsDraft,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The Pause Collection settings determine how we will pause collection for this subscription and for how long the subscription
 /// should be paused.
-final class SubscriptionsResourcePauseCollection {const SubscriptionsResourcePauseCollection({required this.behavior, this.resumesAt, });
+@immutable final class SubscriptionsResourcePauseCollection {const SubscriptionsResourcePauseCollection({required this.behavior, this.resumesAt, });
 
 factory SubscriptionsResourcePauseCollection.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePauseCollection(
   behavior: SubscriptionsResourcePauseCollectionBehavior.fromJson(json['behavior'] as String),

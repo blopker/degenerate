@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_dotcom_chat.dart';import 'copilot_dotcom_pull_requests.dart';import 'copilot_ide_chat.dart';import 'copilot_ide_code_completions.dart';/// Copilot usage metrics for a given day.
-final class CopilotUsageMetricsDay {const CopilotUsageMetricsDay({required this.date, this.totalActiveUsers, this.totalEngagedUsers, this.copilotIdeCodeCompletions, this.copilotIdeChat, this.copilotDotcomChat, this.copilotDotcomPullRequests, this.additionalProperties = const {}, });
+@immutable final class CopilotUsageMetricsDay {const CopilotUsageMetricsDay({required this.date, this.totalActiveUsers, this.totalEngagedUsers, this.copilotIdeCodeCompletions, this.copilotIdeChat, this.copilotDotcomChat, this.copilotDotcomPullRequests, this.additionalProperties = const {}, });
 
 factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) { return CopilotUsageMetricsDay(
   date: json['date'] as String,

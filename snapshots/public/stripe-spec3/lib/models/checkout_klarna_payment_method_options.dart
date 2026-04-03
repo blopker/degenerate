@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class CheckoutKlarnaPaymentMethodOptionsCaptureMethod {const CheckoutKlarnaPaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class CheckoutKlarnaPaymentMethodOptionsCaptureMethod {const CheckoutKlarnaPaymentMethodOptionsCaptureMethod._(this.value);
 
 factory CheckoutKlarnaPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage {const CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage._(this.value);
+@immutable final class CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage {const CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage._(this.value);
 
 factory CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage($value)'; } 
  }
 /// 
-final class CheckoutKlarnaPaymentMethodOptions {const CheckoutKlarnaPaymentMethodOptions({this.captureMethod, this.setupFutureUsage, });
+@immutable final class CheckoutKlarnaPaymentMethodOptions {const CheckoutKlarnaPaymentMethodOptions({this.captureMethod, this.setupFutureUsage, });
 
 factory CheckoutKlarnaPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutKlarnaPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutKlarnaPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

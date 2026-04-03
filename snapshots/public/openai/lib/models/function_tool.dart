@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://platform.openai.com/docs/guides/function-calling).
-final class FunctionTool {const FunctionTool({this.type = 'function', required this.name, this.description, required this.parameters, required this.strict, this.deferLoading, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://platform.openai.com/docs/guides/function-calling).
+@immutable final class FunctionTool {const FunctionTool({required this.name, required this.parameters, required this.strict, this.type = 'function', this.description, this.deferLoading, });
 
 factory FunctionTool.fromJson(Map<String, dynamic> json) { return FunctionTool(
   type: json['type'] as String,

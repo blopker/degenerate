@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTransfersRequest {const GetTransfersRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTransfersRequest {const GetTransfersRequest();
 
 factory GetTransfersRequest.fromJson(Map<String, dynamic> json) { return GetTransfersRequest(
 

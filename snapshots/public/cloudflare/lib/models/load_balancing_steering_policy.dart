@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Steering Policy for this load balancer.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Steering Policy for this load balancer.
 /// - `"off"`: Use `default_pools`.
 /// - `"geo"`: Use `region_pools`/`country_pools`/`pop_pools`. For non-proxied requests, the country for `country_pools` is determined by `location_strategy`.
 /// - `"random"`: Select a pool randomly.
@@ -9,7 +9,7 @@
 /// - `"least_outstanding_requests"`: Select a pool by taking into consideration `random_steering` weights, as well as each pool's number of outstanding requests. Pools with more pending requests are weighted proportionately less relative to others.
 /// - `"least_connections"`: Select a pool by taking into consideration `random_steering` weights, as well as each pool's number of open connections. Pools with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.
 /// - `""`: Will map to `"geo"` if you use `region_pools`/`country_pools`/`pop_pools` otherwise `"off"`.
-final class LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy._(this.value);
+@immutable final class LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy._(this.value);
 
 factory LoadBalancingSteeringPolicy.fromJson(String json) { return switch (json) {
   'off' => off,

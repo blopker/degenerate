@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BuildsScmProviderType {const BuildsScmProviderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsScmProviderType {const BuildsScmProviderType._(this.value);
 
 factory BuildsScmProviderType.fromJson(String json) { return switch (json) {
   'github' => github,

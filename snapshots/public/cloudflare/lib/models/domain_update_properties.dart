@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'locked.dart';/// Auto-renew controls whether subscription is automatically renewed upon domain expiration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'locked.dart';/// Auto-renew controls whether subscription is automatically renewed upon domain expiration.
 extension type const AutoRenew(bool value) {
 factory AutoRenew.fromJson(bool json) => AutoRenew(json);
 
@@ -14,7 +14,7 @@ factory Privacy.fromJson(bool json) => Privacy(json);
 bool toJson() => value;
 
 }
-final class DomainUpdateProperties {const DomainUpdateProperties({this.autoRenew, this.locked, this.privacy, });
+@immutable final class DomainUpdateProperties {const DomainUpdateProperties({this.autoRenew, this.locked, this.privacy, });
 
 factory DomainUpdateProperties.fromJson(Map<String, dynamic> json) { return DomainUpdateProperties(
   autoRenew: json['auto_renew'] != null ? AutoRenew.fromJson(json['auto_renew'] as bool) : null,

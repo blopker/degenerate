@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_plain_text_env_var.dart';import 'pages_secret_text_env_var.dart';sealed class PagesEnvVarsValue {const PagesEnvVarsValue();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_plain_text_env_var.dart';import 'pages_secret_text_env_var.dart';sealed class PagesEnvVarsValue {const PagesEnvVarsValue();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory PagesEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesEnvVarsValue$Unknown; } 
  }
-final class PagesEnvVarsValuePlainText extends PagesEnvVarsValue {const PagesEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
+@immutable final class PagesEnvVarsValuePlainText extends PagesEnvVarsValue {const PagesEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
 
 factory PagesEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final PagesPlainTextEnvVar pagesPlainTextEnvVar;
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValuePlainText(pagesPlainTextEnvVar: $pagesPlainTextEnvVar)'; } 
  }
-final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
+@immutable final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
 factory PagesEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final PagesSecretTextEnvVar pagesSecretTextEnvVar;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class PagesEnvVarsValue$Unknown extends PagesEnvVarsValue {const PagesEnvVarsValue$Unknown(this.json);
+@immutable final class PagesEnvVarsValue$Unknown extends PagesEnvVarsValue {const PagesEnvVarsValue$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

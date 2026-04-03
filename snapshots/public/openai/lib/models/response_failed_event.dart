@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response.dart';/// The type of the event. Always `response.failed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always `response.failed`.
 /// 
-final class ResponseFailedEventType {const ResponseFailedEventType._(this.value);
+@immutable final class ResponseFailedEventType {const ResponseFailedEventType._(this.value);
 
 factory ResponseFailedEventType.fromJson(String json) { return switch (json) {
   'response.failed' => responseFailed,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An event that is emitted when a response fails.
 /// 
-final class ResponseFailedEvent {const ResponseFailedEvent({required this.type, required this.sequenceNumber, required this.response, });
+@immutable final class ResponseFailedEvent {const ResponseFailedEvent({required this.type, required this.sequenceNumber, required this.response, });
 
 factory ResponseFailedEvent.fromJson(Map<String, dynamic> json) { return ResponseFailedEvent(
   type: ResponseFailedEventType.fromJson(json['type'] as String),

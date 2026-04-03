@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetTreasuryReceivedCreditsResponseObject {const GetTreasuryReceivedCreditsResponseObject._(this.value);
+@immutable final class GetTreasuryReceivedCreditsResponseObject {const GetTreasuryReceivedCreditsResponseObject._(this.value);
 
 factory GetTreasuryReceivedCreditsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetTreasuryReceivedCreditsResponseObject($value)'; } 
  }
 /// 
-final class GetTreasuryReceivedCreditsResponse {const GetTreasuryReceivedCreditsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetTreasuryReceivedCreditsResponse {const GetTreasuryReceivedCreditsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetTreasuryReceivedCreditsResponse.fromJson(Map<String, dynamic> json) { return GetTreasuryReceivedCreditsResponse(
   data: (json['data'] as List<dynamic>).map((e) => TreasuryReceivedCredit.fromJson(e as Map<String, dynamic>)).toList(),

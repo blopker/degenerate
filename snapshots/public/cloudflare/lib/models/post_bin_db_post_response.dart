@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBinDbPostResponse {const PostBinDbPostResponse({required this.contentType, required this.md5, required this.sha1, required this.sha256, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBinDbPostResponse {const PostBinDbPostResponse({required this.contentType, required this.md5, required this.sha1, required this.sha256, });
 
 factory PostBinDbPostResponse.fromJson(Map<String, dynamic> json) { return PostBinDbPostResponse(
   contentType: json['content_type'] as String,

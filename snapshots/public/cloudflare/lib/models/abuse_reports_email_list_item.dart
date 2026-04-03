@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An email sent to the customer for an abuse report.
-final class AbuseReportsEmailListItem {const AbuseReportsEmailListItem({required this.body, required this.id, required this.recipient, required this.sentAt, required this.subject, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An email sent to the customer for an abuse report.
+@immutable final class AbuseReportsEmailListItem {const AbuseReportsEmailListItem({required this.body, required this.id, required this.recipient, required this.sentAt, required this.subject, });
 
 factory AbuseReportsEmailListItem.fromJson(Map<String, dynamic> json) { return AbuseReportsEmailListItem(
   body: json['body'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_custom_page.dart';final class AccessCustomPagesComponentsSchemasSingleResponse {const AccessCustomPagesComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_page.dart';@immutable final class AccessCustomPagesComponentsSchemasSingleResponse {const AccessCustomPagesComponentsSchemasSingleResponse({this.result});
 
 factory AccessCustomPagesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessCustomPagesComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessCustomPage.fromJson(json['result'] as Map<String, dynamic>) : null,

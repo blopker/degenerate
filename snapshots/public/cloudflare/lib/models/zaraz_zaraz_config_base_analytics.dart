@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Cloudflare Monitoring settings.
-final class ZarazZarazConfigBaseAnalytics {const ZarazZarazConfigBaseAnalytics({this.defaultPurpose, this.enabled, this.sessionExpTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Cloudflare Monitoring settings.
+@immutable final class ZarazZarazConfigBaseAnalytics {const ZarazZarazConfigBaseAnalytics({this.defaultPurpose, this.enabled, this.sessionExpTime, });
 
 factory ZarazZarazConfigBaseAnalytics.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseAnalytics(
   defaultPurpose: json['defaultPurpose'] as String?,

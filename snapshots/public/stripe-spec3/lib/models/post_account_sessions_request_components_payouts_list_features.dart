@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsPayoutsListFeatures {const PostAccountSessionsRequestComponentsPayoutsListFeatures();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsPayoutsListFeatures {const PostAccountSessionsRequestComponentsPayoutsListFeatures();
 
 factory PostAccountSessionsRequestComponentsPayoutsListFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsPayoutsListFeatures(
 

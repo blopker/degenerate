@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_policy_check_response_result.dart';final class AccessSchemasPolicyCheckResponse {const AccessSchemasPolicyCheckResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_policy_check_response_result.dart';@immutable final class AccessSchemasPolicyCheckResponse {const AccessSchemasPolicyCheckResponse({this.result});
 
 factory AccessSchemasPolicyCheckResponse.fromJson(Map<String, dynamic> json) { return AccessSchemasPolicyCheckResponse(
   result: json['result'] != null ? AccessSchemasPolicyCheckResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

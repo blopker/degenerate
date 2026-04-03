@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly {const WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly {const WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly(
   from: json['from'] as bool?,

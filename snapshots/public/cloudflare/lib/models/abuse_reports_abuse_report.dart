@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigation_summary.dart';import 'abuse_reports_report_status.dart';import 'abuse_reports_report_type.dart';import 'abuse_reports_submitter_details.dart';final class AbuseReportsAbuseReport {const AbuseReportsAbuseReport({required this.cdate, required this.domain, required this.id, this.justification, required this.mitigationSummary, this.originalWork, required this.status, this.submitter, required this.type, this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigation_summary.dart';import 'abuse_reports_report_status.dart';import 'abuse_reports_report_type.dart';import 'abuse_reports_submitter_details.dart';@immutable final class AbuseReportsAbuseReport {const AbuseReportsAbuseReport({required this.cdate, required this.domain, required this.id, required this.mitigationSummary, required this.status, required this.type, this.justification, this.originalWork, this.submitter, this.urls, });
 
 factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return AbuseReportsAbuseReport(
   cdate: json['cdate'] as String,

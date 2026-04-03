@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Account settings
-final class IamAccountSettings {const IamAccountSettings({this.abuseContactEmail, this.enforceTwofactor = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Account settings
+@immutable final class IamAccountSettings {const IamAccountSettings({this.abuseContactEmail, this.enforceTwofactor = false, });
 
 factory IamAccountSettings.fromJson(Map<String, dynamic> json) { return IamAccountSettings(
   abuseContactEmail: json['abuse_contact_email'] as String?,

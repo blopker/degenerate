@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_update_request_labels.dart';import 'issues_update_request_labels_variant2.dart';/// The open or closed state of the issue.
-final class IssuesUpdateRequestState {const IssuesUpdateRequestState._(this.value);
+@immutable final class IssuesUpdateRequestState {const IssuesUpdateRequestState._(this.value);
 
 factory IssuesUpdateRequestState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuesUpdateRequestState($value)'; } 
  }
 /// The reason for the state change. Ignored unless `state` is changed.
-final class IssuesUpdateRequestStateReason {const IssuesUpdateRequestStateReason._(this.value);
+@immutable final class IssuesUpdateRequestStateReason {const IssuesUpdateRequestStateReason._(this.value);
 
 factory IssuesUpdateRequestStateReason.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuesUpdateRequestStateReason($value)'; } 
  }
-final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
+@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequest(
   title: json['title'],

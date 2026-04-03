@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param59.dart';final class PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2 {const PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param59.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2 {const PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2._(this.value);
 
 factory PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

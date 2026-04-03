@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides information about the action performed.
-final class AaaAuditLogs2Action {const AaaAuditLogs2Action({this.description, this.result, this.time, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides information about the action performed.
+@immutable final class AaaAuditLogs2Action {const AaaAuditLogs2Action({this.description, this.result, this.time, this.type, });
 
 factory AaaAuditLogs2Action.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Action(
   description: json['description'] as String?,

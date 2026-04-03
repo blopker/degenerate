@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_reusable_policies_components_schemas_id_response_result.dart';final class AccessReusablePoliciesComponentsSchemasIdResponse {const AccessReusablePoliciesComponentsSchemasIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_reusable_policies_components_schemas_id_response_result.dart';@immutable final class AccessReusablePoliciesComponentsSchemasIdResponse {const AccessReusablePoliciesComponentsSchemasIdResponse({this.result});
 
 factory AccessReusablePoliciesComponentsSchemasIdResponse.fromJson(Map<String, dynamic> json) { return AccessReusablePoliciesComponentsSchemasIdResponse(
   result: json['result'] != null ? AccessReusablePoliciesComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

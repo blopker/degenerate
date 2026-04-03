@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_messages2.dart';final class ResponseCommonFailure52 {const ResponseCommonFailure52({required this.errors, this.messages, this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_messages2.dart';@immutable final class ResponseCommonFailure52 {const ResponseCommonFailure52({required this.errors, required this.success, this.messages, this.result, });
 
 factory ResponseCommonFailure52.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure52(
   errors: (json['errors'] as List<dynamic>).map((e) => PageShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

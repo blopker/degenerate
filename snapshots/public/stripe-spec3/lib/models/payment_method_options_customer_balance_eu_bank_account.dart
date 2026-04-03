@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
-final class PaymentMethodOptionsCustomerBalanceEuBankAccountCountry {const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
+@immutable final class PaymentMethodOptionsCustomerBalanceEuBankAccountCountry {const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._(this.value);
 
 factory PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(String json) { return switch (json) {
   'BE' => be,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCustomerBalanceEuBankAccountCountry($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsCustomerBalanceEuBankAccount {const PaymentMethodOptionsCustomerBalanceEuBankAccount({required this.country});
+@immutable final class PaymentMethodOptionsCustomerBalanceEuBankAccount {const PaymentMethodOptionsCustomerBalanceEuBankAccount({required this.country});
 
 factory PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalanceEuBankAccount(
   country: PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(json['country'] as String),

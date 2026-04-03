@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsAmountDetailsResourceShipping {const PaymentFlowsAmountDetailsResourceShipping({this.amount, this.fromPostalCode, this.toPostalCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsAmountDetailsResourceShipping {const PaymentFlowsAmountDetailsResourceShipping({this.amount, this.fromPostalCode, this.toPostalCode, });
 
 factory PaymentFlowsAmountDetailsResourceShipping.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceShipping(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

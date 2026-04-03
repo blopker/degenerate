@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Returns the category creation time.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returns the category creation time.
 extension type const AlexandriaCategoryCreatedAt(String value) {
 factory AlexandriaCategoryCreatedAt.fromJson(String json) => AlexandriaCategoryCreatedAt(json);
 
@@ -28,7 +28,7 @@ factory AlexandriaCategoryName.fromJson(String json) => AlexandriaCategoryName(j
 String toJson() => value;
 
 }
-final class AlexandriaCategory {const AlexandriaCategory({required this.createdAt, required this.description, required this.id, required this.name, });
+@immutable final class AlexandriaCategory {const AlexandriaCategory({required this.createdAt, required this.description, required this.id, required this.name, });
 
 factory AlexandriaCategory.fromJson(Map<String, dynamic> json) { return AlexandriaCategory(
   createdAt: AlexandriaCategoryCreatedAt.fromJson(json['created_at'] as String),

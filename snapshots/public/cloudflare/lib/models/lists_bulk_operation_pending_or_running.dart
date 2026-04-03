@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
-final class ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
+@immutable final class ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus._(this.value);
 
 factory ListsBulkOperationPendingOrRunningStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListsBulkOperationPendingOrRunningStatus($value)'; } 
  }
-final class ListsBulkOperationPendingOrRunning {const ListsBulkOperationPendingOrRunning({required this.id, required this.status, });
+@immutable final class ListsBulkOperationPendingOrRunning {const ListsBulkOperationPendingOrRunning({required this.id, required this.status, });
 
 factory ListsBulkOperationPendingOrRunning.fromJson(Map<String, dynamic> json) { return ListsBulkOperationPendingOrRunning(
   id: ListsOperationId.fromJson(json['id'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_domain_resource_payment_method_status_details.dart';/// The status of the payment method on the domain.
-final class PaymentMethodDomainResourcePaymentMethodStatusStatus {const PaymentMethodDomainResourcePaymentMethodStatusStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_domain_resource_payment_method_status_details.dart';/// The status of the payment method on the domain.
+@immutable final class PaymentMethodDomainResourcePaymentMethodStatusStatus {const PaymentMethodDomainResourcePaymentMethodStatusStatus._(this.value);
 
 factory PaymentMethodDomainResourcePaymentMethodStatusStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDomainResourcePaymentMethodStatusStatus($value)'; } 
  }
 /// Indicates the status of a specific payment method on a payment method domain.
-final class PaymentMethodDomainResourcePaymentMethodStatus {const PaymentMethodDomainResourcePaymentMethodStatus({required this.status, this.statusDetails, });
+@immutable final class PaymentMethodDomainResourcePaymentMethodStatus {const PaymentMethodDomainResourcePaymentMethodStatus({required this.status, this.statusDetails, });
 
 factory PaymentMethodDomainResourcePaymentMethodStatus.fromJson(Map<String, dynamic> json) { return PaymentMethodDomainResourcePaymentMethodStatus(
   status: PaymentMethodDomainResourcePaymentMethodStatusStatus.fromJson(json['status'] as String),

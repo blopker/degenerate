@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DetailEnum {const DetailEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DetailEnum {const DetailEnum._(this.value);
 
 factory DetailEnum.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DetailEnum($value)'; } 
  }
 /// The type of the input item. Always `input_image`.
-final class InputImageContentParamAutoParamType {const InputImageContentParamAutoParamType._(this.value);
+@immutable final class InputImageContentParamAutoParamType {const InputImageContentParamAutoParamType._(this.value);
 
 factory InputImageContentParamAutoParamType.fromJson(String json) { return switch (json) {
   'input_image' => inputImage,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputImageContentParamAutoParamType($value)'; } 
  }
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
-final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = InputImageContentParamAutoParamType.inputImage, this.imageUrl, this.fileId, this.detail, });
+@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = InputImageContentParamAutoParamType.inputImage, this.imageUrl, this.fileId, this.detail, });
 
 factory InputImageContentParamAutoParam.fromJson(Map<String, dynamic> json) { return InputImageContentParamAutoParam(
   type: InputImageContentParamAutoParamType.fromJson(json['type'] as String),

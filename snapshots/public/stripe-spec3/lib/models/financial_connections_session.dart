@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_link_account_session_filters.dart';import 'financial_connections_session_accounts.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject._(this.value);
+@immutable final class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject._(this.value);
 
 factory FinancialConnectionsSessionObject.fromJson(String json) { return switch (json) {
   'financial_connections.session' => financialConnectionsSession,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FinancialConnectionsSessionObject($value)'; } 
  }
-final class FinancialConnectionsSessionPermissions {const FinancialConnectionsSessionPermissions._(this.value);
+@immutable final class FinancialConnectionsSessionPermissions {const FinancialConnectionsSessionPermissions._(this.value);
 
 factory FinancialConnectionsSessionPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FinancialConnectionsSessionPermissions($value)'; } 
  }
-final class FinancialConnectionsSessionPrefetch {const FinancialConnectionsSessionPrefetch._(this.value);
+@immutable final class FinancialConnectionsSessionPrefetch {const FinancialConnectionsSessionPrefetch._(this.value);
 
 factory FinancialConnectionsSessionPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsSessionPrefetch($value)'; } 
  }
 /// A Financial Connections Session is the secure way to programmatically launch the client-side Stripe.js modal that lets your users link their accounts.
-final class FinancialConnectionsSession {const FinancialConnectionsSession({this.accountHolder, required this.accounts, this.clientSecret, this.filters, required this.id, required this.livemode, required this.object, required this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class FinancialConnectionsSession {const FinancialConnectionsSession({required this.accounts, required this.id, required this.livemode, required this.object, required this.permissions, this.accountHolder, this.clientSecret, this.filters, this.prefetch, this.returnUrl, });
 
 factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) { return FinancialConnectionsSession(
   accountHolder: json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,

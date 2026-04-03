@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
-final class UpdateApplicationRequestVoiceMethod {const UpdateApplicationRequestVoiceMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
+@immutable final class UpdateApplicationRequestVoiceMethod {const UpdateApplicationRequestVoiceMethod._(this.value);
 
 factory UpdateApplicationRequestVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateApplicationRequestVoiceMethod($value)'; } 
  }
 /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final class UpdateApplicationRequestVoiceFallbackMethod {const UpdateApplicationRequestVoiceFallbackMethod._(this.value);
+@immutable final class UpdateApplicationRequestVoiceFallbackMethod {const UpdateApplicationRequestVoiceFallbackMethod._(this.value);
 
 factory UpdateApplicationRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateApplicationRequestVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`.
-final class UpdateApplicationRequestStatusCallbackMethod {const UpdateApplicationRequestStatusCallbackMethod._(this.value);
+@immutable final class UpdateApplicationRequestStatusCallbackMethod {const UpdateApplicationRequestStatusCallbackMethod._(this.value);
 
 factory UpdateApplicationRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateApplicationRequestStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use to call `sms_url`. Can be: `GET` or `POST`.
-final class UpdateApplicationRequestSmsMethod {const UpdateApplicationRequestSmsMethod._(this.value);
+@immutable final class UpdateApplicationRequestSmsMethod {const UpdateApplicationRequestSmsMethod._(this.value);
 
 factory UpdateApplicationRequestSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateApplicationRequestSmsMethod($value)'; } 
  }
 /// The HTTP method we should use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-final class UpdateApplicationRequestSmsFallbackMethod {const UpdateApplicationRequestSmsFallbackMethod._(this.value);
+@immutable final class UpdateApplicationRequestSmsFallbackMethod {const UpdateApplicationRequestSmsFallbackMethod._(this.value);
 
 factory UpdateApplicationRequestSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateApplicationRequestSmsFallbackMethod($value)'; } 
  }
-final class UpdateApplicationRequest {const UpdateApplicationRequest({this.friendlyName, this.apiVersion, this.voiceUrl, this.voiceMethod, this.voiceFallbackUrl, this.voiceFallbackMethod, this.statusCallback, this.statusCallbackMethod, this.voiceCallerIdLookup, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, this.smsStatusCallback, this.messageStatusCallback, this.publicApplicationConnectEnabled, });
+@immutable final class UpdateApplicationRequest {const UpdateApplicationRequest({this.friendlyName, this.apiVersion, this.voiceUrl, this.voiceMethod, this.voiceFallbackUrl, this.voiceFallbackMethod, this.statusCallback, this.statusCallbackMethod, this.voiceCallerIdLookup, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, this.smsStatusCallback, this.messageStatusCallback, this.publicApplicationConnectEnabled, });
 
 factory UpdateApplicationRequest.fromJson(Map<String, dynamic> json) { return UpdateApplicationRequest(
   friendlyName: json['FriendlyName'] as String?,

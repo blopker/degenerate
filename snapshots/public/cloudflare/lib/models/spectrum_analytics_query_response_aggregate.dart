@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_query_response_aggregate_result.dart';final class SpectrumAnalyticsQueryResponseAggregate {const SpectrumAnalyticsQueryResponseAggregate({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_query_response_aggregate_result.dart';@immutable final class SpectrumAnalyticsQueryResponseAggregate {const SpectrumAnalyticsQueryResponseAggregate({this.result});
 
 factory SpectrumAnalyticsQueryResponseAggregate.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQueryResponseAggregate(
   result: (json['result'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsQueryResponseAggregateResult.fromJson(e as Map<String, dynamic>)).toList(),

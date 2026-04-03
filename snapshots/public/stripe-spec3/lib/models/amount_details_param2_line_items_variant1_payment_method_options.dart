@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'amount_details_param2_line_items_variant1_payment_method_options_card.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_card_present.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_klarna.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_paypal.dart';final class AmountDetailsParam2LineItemsVariant1PaymentMethodOptions {const AmountDetailsParam2LineItemsVariant1PaymentMethodOptions({this.card, this.cardPresent, this.klarna, this.paypal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_card.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_card_present.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_klarna.dart';import 'amount_details_param2_line_items_variant1_payment_method_options_paypal.dart';@immutable final class AmountDetailsParam2LineItemsVariant1PaymentMethodOptions {const AmountDetailsParam2LineItemsVariant1PaymentMethodOptions({this.card, this.cardPresent, this.klarna, this.paypal, });
 
 factory AmountDetailsParam2LineItemsVariant1PaymentMethodOptions.fromJson(Map<String, dynamic> json) { return AmountDetailsParam2LineItemsVariant1PaymentMethodOptions(
   card: json['card'] != null ? AmountDetailsParam2LineItemsVariant1PaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,

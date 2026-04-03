@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure DLP payload logging. Settable only for `http` rules.
-final class ZeroTrustGatewayRuleSettingsPayloadLog {const ZeroTrustGatewayRuleSettingsPayloadLog({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure DLP payload logging. Settable only for `http` rules.
+@immutable final class ZeroTrustGatewayRuleSettingsPayloadLog {const ZeroTrustGatewayRuleSettingsPayloadLog({this.enabled});
 
 factory ZeroTrustGatewayRuleSettingsPayloadLog.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsPayloadLog(
   enabled: json['enabled'] as bool?,

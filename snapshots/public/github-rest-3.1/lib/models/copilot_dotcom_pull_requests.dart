@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_dotcom_pull_requests_repositories.dart';/// Usage metrics for Copilot for pull requests.
-final class CopilotDotcomPullRequests {const CopilotDotcomPullRequests({this.totalEngagedUsers, this.repositories, this.additionalProperties = const {}, });
+@immutable final class CopilotDotcomPullRequests {const CopilotDotcomPullRequests({this.totalEngagedUsers, this.repositories, this.additionalProperties = const {}, });
 
 factory CopilotDotcomPullRequests.fromJson(Map<String, dynamic> json) { return CopilotDotcomPullRequests(
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,

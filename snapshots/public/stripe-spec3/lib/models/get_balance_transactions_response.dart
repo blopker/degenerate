@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetBalanceTransactionsResponseObject {const GetBalanceTransactionsResponseObject._(this.value);
+@immutable final class GetBalanceTransactionsResponseObject {const GetBalanceTransactionsResponseObject._(this.value);
 
 factory GetBalanceTransactionsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetBalanceTransactionsResponseObject($value)'; } 
  }
 /// 
-final class GetBalanceTransactionsResponse {const GetBalanceTransactionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetBalanceTransactionsResponse {const GetBalanceTransactionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetBalanceTransactionsResponse.fromJson(Map<String, dynamic> json) { return GetBalanceTransactionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),

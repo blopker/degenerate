@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The severity of the alert.
-final class WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity {const WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity {const WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity._(this.value);
 
 factory WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity($value)'; } 
  }
-final class WebhookCodeScanningAlertAppearedInBranchAlertRule {const WebhookCodeScanningAlertAppearedInBranchAlertRule({required this.description, required this.id, required this.severity, });
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertRule {const WebhookCodeScanningAlertAppearedInBranchAlertRule({required this.description, required this.id, required this.severity, });
 
 factory WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertRule(
   description: json['description'] as String,

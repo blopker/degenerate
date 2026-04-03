@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodSamsungPay {const PaymentMethodSamsungPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodSamsungPay {const PaymentMethodSamsungPay();
 
 factory PaymentMethodSamsungPay.fromJson(Map<String, dynamic> json) { return PaymentMethodSamsungPay(
 

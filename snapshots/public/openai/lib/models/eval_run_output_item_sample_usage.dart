@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Token usage details for the sample.
-final class EvalRunOutputItemSampleUsage {const EvalRunOutputItemSampleUsage({required this.totalTokens, required this.completionTokens, required this.promptTokens, required this.cachedTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Token usage details for the sample.
+@immutable final class EvalRunOutputItemSampleUsage {const EvalRunOutputItemSampleUsage({required this.totalTokens, required this.completionTokens, required this.promptTokens, required this.cachedTokens, });
 
 factory EvalRunOutputItemSampleUsage.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemSampleUsage(
   totalTokens: (json['total_tokens'] as num).toInt(),

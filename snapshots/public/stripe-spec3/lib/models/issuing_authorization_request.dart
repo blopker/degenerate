@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
-final class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
+@immutable final class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason._(this.value);
 
 factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch (json) {
   'account_disabled' => accountDisabled,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationRequestReason($value)'; } 
  }
 /// 
-final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({required this.amount, this.amountDetails, required this.approved, this.authorizationCode, required this.created, required this.currency, required this.merchantAmount, required this.merchantCurrency, this.networkRiskScore, required this.reason, this.reasonMessage, this.requestedAt, });
+@immutable final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({required this.amount, required this.approved, required this.created, required this.currency, required this.merchantAmount, required this.merchantCurrency, required this.reason, this.amountDetails, this.authorizationCode, this.networkRiskScore, this.reasonMessage, this.requestedAt, });
 
 factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),

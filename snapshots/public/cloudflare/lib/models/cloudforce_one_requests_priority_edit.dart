@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_tlp.dart';final class CloudforceOneRequestsPriorityEdit {const CloudforceOneRequestsPriorityEdit({required this.labels, required this.priority, required this.requirement, required this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_tlp.dart';@immutable final class CloudforceOneRequestsPriorityEdit {const CloudforceOneRequestsPriorityEdit({required this.labels, required this.priority, required this.requirement, required this.tlp, });
 
 factory CloudforceOneRequestsPriorityEdit.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsPriorityEdit(
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),

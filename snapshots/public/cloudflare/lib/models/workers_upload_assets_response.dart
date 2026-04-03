@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';final class WorkersUploadAssetsResponse {const WorkersUploadAssetsResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';@immutable final class WorkersUploadAssetsResponse {const WorkersUploadAssetsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory WorkersUploadAssetsResponse.fromJson(Map<String, dynamic> json) { return WorkersUploadAssetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),

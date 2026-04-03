@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_intent_data_shipping.dart';import 'post_checkout_sessions_request_payment_intent_data_transfer_data.dart';final class PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod {const PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_intent_data_shipping.dart';import 'post_checkout_sessions_request_payment_intent_data_transfer_data.dart';@immutable final class PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod {const PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage {const PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage {const PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage($value)'; } 
  }
 /// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
-final class PostCheckoutSessionsRequestPaymentIntentData {const PostCheckoutSessionsRequestPaymentIntentData({this.applicationFeeAmount, this.captureMethod, this.description, this.metadata, this.onBehalfOf, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+@immutable final class PostCheckoutSessionsRequestPaymentIntentData {const PostCheckoutSessionsRequestPaymentIntentData({this.applicationFeeAmount, this.captureMethod, this.description, this.metadata, this.onBehalfOf, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentIntentData(
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A detailed breakdown of the output tokens.
-final class ResponseUsageOutputTokensDetails {const ResponseUsageOutputTokensDetails({required this.reasoningTokens});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A detailed breakdown of the output tokens.
+@immutable final class ResponseUsageOutputTokensDetails {const ResponseUsageOutputTokensDetails({required this.reasoningTokens});
 
 factory ResponseUsageOutputTokensDetails.fromJson(Map<String, dynamic> json) { return ResponseUsageOutputTokensDetails(
   reasoningTokens: (json['reasoning_tokens'] as num).toInt(),

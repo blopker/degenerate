@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_build_token_uuid.dart';import 'builds_deploy_command.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';final class BuildsUpdateTriggerRequest {const BuildsUpdateTriggerRequest({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.buildTokenUuid, this.deployCommand, this.pathExcludes, this.pathIncludes, this.rootDirectory, this.triggerName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_build_token_uuid.dart';import 'builds_deploy_command.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';@immutable final class BuildsUpdateTriggerRequest {const BuildsUpdateTriggerRequest({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.buildTokenUuid, this.deployCommand, this.pathExcludes, this.pathIncludes, this.rootDirectory, this.triggerName, });
 
 factory BuildsUpdateTriggerRequest.fromJson(Map<String, dynamic> json) { return BuildsUpdateTriggerRequest(
   branchExcludes: (json['branch_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),

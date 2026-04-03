@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the output. Always `logs`.
-final class CodeInterpreterOutputLogsType {const CodeInterpreterOutputLogsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output. Always `logs`.
+@immutable final class CodeInterpreterOutputLogsType {const CodeInterpreterOutputLogsType._(this.value);
 
 factory CodeInterpreterOutputLogsType.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeInterpreterOutputLogsType($value)'; } 
  }
 /// The logs output from the code interpreter.
-final class CodeInterpreterOutputLogs {const CodeInterpreterOutputLogs({this.type = CodeInterpreterOutputLogsType.logs, required this.logs, });
+@immutable final class CodeInterpreterOutputLogs {const CodeInterpreterOutputLogs({required this.logs, this.type = CodeInterpreterOutputLogsType.logs, });
 
 factory CodeInterpreterOutputLogs.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputLogs(
   type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),

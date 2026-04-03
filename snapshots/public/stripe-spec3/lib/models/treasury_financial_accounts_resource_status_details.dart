@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_financial_accounts_resource_closed_status_details.dart';/// 
-final class TreasuryFinancialAccountsResourceStatusDetails {const TreasuryFinancialAccountsResourceStatusDetails({this.closed});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_closed_status_details.dart';/// 
+@immutable final class TreasuryFinancialAccountsResourceStatusDetails {const TreasuryFinancialAccountsResourceStatusDetails({this.closed});
 
 factory TreasuryFinancialAccountsResourceStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceStatusDetails(
   closed: json['closed'] != null ? TreasuryFinancialAccountsResourceClosedStatusDetails.fromJson(json['closed'] as Map<String, dynamic>) : null,

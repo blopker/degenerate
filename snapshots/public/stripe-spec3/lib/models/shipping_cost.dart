@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shipping_cost_shipping_rate_data.dart';final class ShippingCost {const ShippingCost({this.shippingRate, this.shippingRateData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_cost_shipping_rate_data.dart';@immutable final class ShippingCost {const ShippingCost({this.shippingRate, this.shippingRateData, });
 
 factory ShippingCost.fromJson(Map<String, dynamic> json) { return ShippingCost(
   shippingRate: json['shipping_rate'] as String?,

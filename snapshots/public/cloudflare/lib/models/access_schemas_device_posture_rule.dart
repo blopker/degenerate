@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_device_posture_check.dart';final class AccessSchemasDevicePostureRule {const AccessSchemasDevicePostureRule({this.check, this.data, this.description, this.error, this.id, this.ruleName, this.success, this.timestamp, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_device_posture_check.dart';@immutable final class AccessSchemasDevicePostureRule {const AccessSchemasDevicePostureRule({this.check, this.data, this.description, this.error, this.id, this.ruleName, this.success, this.timestamp, this.type, });
 
 factory AccessSchemasDevicePostureRule.fromJson(Map<String, dynamic> json) { return AccessSchemasDevicePostureRule(
   check: json['check'] != null ? AccessDevicePostureCheck.fromJson(json['check'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';import 'mq_event_subscription.dart';import 'subscriptions_list_response_result_info.dart';final class SubscriptionsListResponse {const SubscriptionsListResponse({this.errors, this.messages, this.success, this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';import 'mq_event_subscription.dart';import 'subscriptions_list_response_result_info.dart';@immutable final class SubscriptionsListResponse {const SubscriptionsListResponse({this.errors, this.messages, this.success, this.result, this.resultInfo, });
 
 factory SubscriptionsListResponse.fromJson(Map<String, dynamic> json) { return SubscriptionsListResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel22.fromJson(e as Map<String, dynamic>)).toList(),

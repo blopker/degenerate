@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_treasury_tos_acceptance_user_agent.dart';final class PostAccountsAccountRequestSettingsTreasuryTosAcceptance {const PostAccountsAccountRequestSettingsTreasuryTosAcceptance({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_treasury_tos_acceptance_user_agent.dart';@immutable final class PostAccountsAccountRequestSettingsTreasuryTosAcceptance {const PostAccountsAccountRequestSettingsTreasuryTosAcceptance({this.date, this.ip, this.userAgent, });
 
 factory PostAccountsAccountRequestSettingsTreasuryTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsTreasuryTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

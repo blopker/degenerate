@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `AfterpayClearpay` PaymentMethod, this hash contains details about the AfterpayClearpay payment method.
-final class PostPaymentMethodsRequestAfterpayClearpay {const PostPaymentMethodsRequestAfterpayClearpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `AfterpayClearpay` PaymentMethod, this hash contains details about the AfterpayClearpay payment method.
+@immutable final class PostPaymentMethodsRequestAfterpayClearpay {const PostPaymentMethodsRequestAfterpayClearpay();
 
 factory PostPaymentMethodsRequestAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestAfterpayClearpay(
 

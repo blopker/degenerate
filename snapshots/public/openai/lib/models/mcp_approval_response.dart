@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A response to an MCP approval request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A response to an MCP approval request.
 /// 
-final class McpApprovalResponse {const McpApprovalResponse({required this.type, this.id, required this.approvalRequestId, required this.approve, this.reason, });
+@immutable final class McpApprovalResponse {const McpApprovalResponse({required this.type, required this.approvalRequestId, required this.approve, this.id, this.reason, });
 
 factory McpApprovalResponse.fromJson(Map<String, dynamic> json) { return McpApprovalResponse(
   type: json['type'] as String,

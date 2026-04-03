@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_clocks_resource_status_details_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TestHelpersTestClockObject {const TestHelpersTestClockObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_clocks_resource_status_details_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TestHelpersTestClockObject {const TestHelpersTestClockObject._(this.value);
 
 factory TestHelpersTestClockObject.fromJson(String json) { return switch (json) {
   'test_helpers.test_clock' => testHelpersTestClock,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TestHelpersTestClockObject($value)'; } 
  }
 /// The status of the Test Clock.
-final class TestHelpersTestClockStatus {const TestHelpersTestClockStatus._(this.value);
+@immutable final class TestHelpersTestClockStatus {const TestHelpersTestClockStatus._(this.value);
 
 factory TestHelpersTestClockStatus.fromJson(String json) { return switch (json) {
   'advancing' => advancing,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A test clock enables deterministic control over objects in testmode. With a test clock, you can create
 /// objects at a frozen time in the past or future, and advance to a specific future time to observe webhooks and state changes. After the clock advances,
 /// you can either validate the current state of your scenario (and test your assumptions), change the current state of your scenario (and test more complex scenarios), or keep advancing forward in time.
-final class TestHelpersTestClock {const TestHelpersTestClock({required this.created, required this.deletesAfter, required this.frozenTime, required this.id, required this.livemode, this.name, required this.object, required this.status, required this.statusDetails, });
+@immutable final class TestHelpersTestClock {const TestHelpersTestClock({required this.created, required this.deletesAfter, required this.frozenTime, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, this.name, });
 
 factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) { return TestHelpersTestClock(
   created: (json['created'] as num).toInt(),

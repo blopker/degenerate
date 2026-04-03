@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_messages2_source.dart';final class EmailMessages2 {const EmailMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_messages2_source.dart';@immutable final class EmailMessages2 {const EmailMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory EmailMessages2.fromJson(Map<String, dynamic> json) { return EmailMessages2(
   code: (json['code'] as num).toInt(),

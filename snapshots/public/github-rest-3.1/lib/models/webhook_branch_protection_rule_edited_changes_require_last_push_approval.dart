@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval {const WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval {const WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval(
   from: json['from'] as bool?,

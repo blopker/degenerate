@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'source_code_verification_flow.dart';import 'source_order.dart';import 'source_owner.dart';import 'source_receiver_flow.dart';import 'source_redirect_flow.dart';import 'source_type_ach_credit_transfer.dart';import 'source_type_ach_debit.dart';import 'source_type_acss_debit.dart';import 'source_type_alipay.dart';import 'source_type_au_becs_debit.dart';import 'source_type_bancontact.dart';import 'source_type_card.dart';import 'source_type_card_present.dart';import 'source_type_eps.dart';import 'source_type_giropay.dart';import 'source_type_ideal.dart';import 'source_type_klarna.dart';import 'source_type_multibanco.dart';import 'source_type_p24.dart';import 'source_type_sepa_debit.dart';import 'source_type_sofort.dart';import 'source_type_three_d_secure.dart';import 'source_type_wechat.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-final class SourceAllowRedisplay {const SourceAllowRedisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source_code_verification_flow.dart';import 'source_order.dart';import 'source_owner.dart';import 'source_receiver_flow.dart';import 'source_redirect_flow.dart';import 'source_type_ach_credit_transfer.dart';import 'source_type_ach_debit.dart';import 'source_type_acss_debit.dart';import 'source_type_alipay.dart';import 'source_type_au_becs_debit.dart';import 'source_type_bancontact.dart';import 'source_type_card.dart';import 'source_type_card_present.dart';import 'source_type_eps.dart';import 'source_type_giropay.dart';import 'source_type_ideal.dart';import 'source_type_klarna.dart';import 'source_type_multibanco.dart';import 'source_type_p24.dart';import 'source_type_sepa_debit.dart';import 'source_type_sofort.dart';import 'source_type_three_d_secure.dart';import 'source_type_wechat.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
+@immutable final class SourceAllowRedisplay {const SourceAllowRedisplay._(this.value);
 
 factory SourceAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SourceAllowRedisplay($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class SourceObject {const SourceObject._(this.value);
+@immutable final class SourceObject {const SourceObject._(this.value);
 
 factory SourceObject.fromJson(String json) { return switch (json) {
   'source' => source,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SourceObject($value)'; } 
  }
 /// The `type` of the source. The `type` is a payment method, one of `ach_credit_transfer`, `ach_debit`, `alipay`, `bancontact`, `card`, `card_present`, `eps`, `giropay`, `ideal`, `multibanco`, `klarna`, `p24`, `sepa_debit`, `sofort`, `three_d_secure`, or `wechat`. An additional hash is included on the source with a name matching this value. It contains additional information specific to the [payment method](https://docs.stripe.com/sources) used.
-final class SourceType {const SourceType._(this.value);
+@immutable final class SourceType {const SourceType._(this.value);
 
 factory SourceType.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -133,7 +133,7 @@ bool get isUnknown { return !values.contains(this); }
 /// This newer API provides access to our latest features and payment method types.
 /// 
 /// Related guides: [Sources API](https://docs.stripe.com/sources) and [Sources & Customers](https://docs.stripe.com/sources/customers).
-final class Source {const Source({this.achCreditTransfer, this.achDebit, this.acssDebit, this.alipay, this.allowRedisplay, this.amount, this.auBecsDebit, this.bancontact, this.card, this.cardPresent, required this.clientSecret, this.codeVerification, required this.created, this.currency, this.customer, this.eps, required this.flow, this.giropay, required this.id, this.ideal, this.klarna, required this.livemode, this.metadata, this.multibanco, required this.object, this.owner, this.p24, this.receiver, this.redirect, this.sepaDebit, this.sofort, this.sourceOrder, this.statementDescriptor, required this.status, this.threeDSecure, required this.type, this.usage, this.wechat, });
+@immutable final class Source {const Source({required this.id, required this.created, required this.status, required this.livemode, required this.object, required this.flow, required this.type, required this.clientSecret, this.card, this.cardPresent, this.bancontact, this.codeVerification, this.achCreditTransfer, this.currency, this.customer, this.eps, this.amount, this.giropay, this.allowRedisplay, this.ideal, this.klarna, this.alipay, this.metadata, this.multibanco, this.wechat, this.owner, this.p24, this.receiver, this.redirect, this.sepaDebit, this.sofort, this.sourceOrder, this.statementDescriptor, this.acssDebit, this.threeDSecure, this.achDebit, this.usage, this.auBecsDebit, });
 
 factory Source.fromJson(Map<String, dynamic> json) { return Source(
   achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTypeAchCreditTransfer.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,

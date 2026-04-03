@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_title.dart';import 'shield_token_type.dart';final class TokenValidationConfigCreateRequest {const TokenValidationConfigCreateRequest({required this.credentials, required this.description, required this.title, required this.tokenSources, required this.tokenType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_title.dart';import 'shield_token_type.dart';@immutable final class TokenValidationConfigCreateRequest {const TokenValidationConfigCreateRequest({required this.credentials, required this.description, required this.title, required this.tokenSources, required this.tokenType, });
 
 factory TokenValidationConfigCreateRequest.fromJson(Map<String, dynamic> json) { return TokenValidationConfigCreateRequest(
   credentials: ShieldCredentials.fromJson(json['credentials'] as Map<String, dynamic>),

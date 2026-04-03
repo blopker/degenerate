@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSigmaScheduledQueryRunsRequest {const GetSigmaScheduledQueryRunsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSigmaScheduledQueryRunsRequest {const GetSigmaScheduledQueryRunsRequest();
 
 factory GetSigmaScheduledQueryRunsRequest.fromJson(Map<String, dynamic> json) { return GetSigmaScheduledQueryRunsRequest(
 

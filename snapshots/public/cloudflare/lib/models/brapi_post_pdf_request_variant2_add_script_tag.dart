@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostPdfRequestVariant2AddScriptTag {const BrapiPostPdfRequestVariant2AddScriptTag({this.content, this.id, this.type, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostPdfRequestVariant2AddScriptTag {const BrapiPostPdfRequestVariant2AddScriptTag({this.content, this.id, this.type, this.url, });
 
 factory BrapiPostPdfRequestVariant2AddScriptTag.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant2AddScriptTag(
   content: json['content'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'streams_request_http.dart';import 'streams_request_worker_binding.dart';final class StreamsRequest {const StreamsRequest({this.format, this.http, required this.name, this.schema, this.workerBinding, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'streams_request_http.dart';import 'streams_request_worker_binding.dart';@immutable final class StreamsRequest {const StreamsRequest({required this.name, this.format, this.http, this.schema, this.workerBinding, });
 
 factory StreamsRequest.fromJson(Map<String, dynamic> json) { return StreamsRequest(
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,

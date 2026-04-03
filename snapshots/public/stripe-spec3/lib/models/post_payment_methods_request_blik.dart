@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `blik` PaymentMethod, this hash contains details about the BLIK payment method.
-final class PostPaymentMethodsRequestBlik {const PostPaymentMethodsRequestBlik();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `blik` PaymentMethod, this hash contains details about the BLIK payment method.
+@immutable final class PostPaymentMethodsRequestBlik {const PostPaymentMethodsRequestBlik();
 
 factory PostPaymentMethodsRequestBlik.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBlik(
 

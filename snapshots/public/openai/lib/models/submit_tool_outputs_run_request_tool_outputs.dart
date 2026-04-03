@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SubmitToolOutputsRunRequestToolOutputs {const SubmitToolOutputsRunRequestToolOutputs({this.toolCallId, this.output, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubmitToolOutputsRunRequestToolOutputs {const SubmitToolOutputsRunRequestToolOutputs({this.toolCallId, this.output, });
 
 factory SubmitToolOutputsRunRequestToolOutputs.fromJson(Map<String, dynamic> json) { return SubmitToolOutputsRunRequestToolOutputs(
   toolCallId: json['tool_call_id'] as String?,

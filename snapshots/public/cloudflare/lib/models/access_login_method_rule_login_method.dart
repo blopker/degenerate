@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessLoginMethodRuleLoginMethod {const AccessLoginMethodRuleLoginMethod({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessLoginMethodRuleLoginMethod {const AccessLoginMethodRuleLoginMethod({required this.id});
 
 factory AccessLoginMethodRuleLoginMethod.fromJson(Map<String, dynamic> json) { return AccessLoginMethodRuleLoginMethod(
   id: json['id'] as String,

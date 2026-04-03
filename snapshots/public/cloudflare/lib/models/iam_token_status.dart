@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status of the token.
-final class IamTokenStatus {const IamTokenStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the token.
+@immutable final class IamTokenStatus {const IamTokenStatus._(this.value);
 
 factory IamTokenStatus.fromJson(String json) { return switch (json) {
   'active' => active,

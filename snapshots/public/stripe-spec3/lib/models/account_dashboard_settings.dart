@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountDashboardSettings {const AccountDashboardSettings({this.displayName, this.timezone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountDashboardSettings {const AccountDashboardSettings({this.displayName, this.timezone, });
 
 factory AccountDashboardSettings.fromJson(Map<String, dynamic> json) { return AccountDashboardSettings(
   displayName: json['display_name'] as String?,

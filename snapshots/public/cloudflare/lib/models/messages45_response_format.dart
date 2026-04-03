@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages45ResponseFormatType {const Messages45ResponseFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages45ResponseFormatType {const Messages45ResponseFormatType._(this.value);
 
 factory Messages45ResponseFormatType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages45ResponseFormatType($value)'; } 
  }
-final class Messages45ResponseFormat {const Messages45ResponseFormat({this.jsonSchema, this.type, });
+@immutable final class Messages45ResponseFormat {const Messages45ResponseFormat({this.jsonSchema, this.type, });
 
 factory Messages45ResponseFormat.fromJson(Map<String, dynamic> json) { return Messages45ResponseFormat(
   jsonSchema: json['json_schema'],

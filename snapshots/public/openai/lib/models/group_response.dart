@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about an organization group.
-final class GroupResponse {const GroupResponse({required this.id, required this.name, required this.createdAt, required this.isScimManaged, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about an organization group.
+@immutable final class GroupResponse {const GroupResponse({required this.id, required this.name, required this.createdAt, required this.isScimManaged, });
 
 factory GroupResponse.fromJson(Map<String, dynamic> json) { return GroupResponse(
   id: json['id'] as String,

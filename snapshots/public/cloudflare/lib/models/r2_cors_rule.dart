@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_cors_rule_allowed.dart';final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_cors_rule_allowed.dart';@immutable final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
 
 factory R2CorsRule.fromJson(Map<String, dynamic> json) { return R2CorsRule(
   allowed: R2CorsRuleAllowed.fromJson(json['allowed'] as Map<String, dynamic>),

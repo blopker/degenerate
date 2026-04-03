@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_server_event_conversation_created_conversation.dart';/// The event type, must be `conversation.created`.
-final class RealtimeServerEventConversationCreatedType {const RealtimeServerEventConversationCreatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_conversation_created_conversation.dart';/// The event type, must be `conversation.created`.
+@immutable final class RealtimeServerEventConversationCreatedType {const RealtimeServerEventConversationCreatedType._(this.value);
 
 factory RealtimeServerEventConversationCreatedType.fromJson(String json) { return switch (json) {
   'conversation.created' => conversationCreated,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Returned when a conversation is created. Emitted right after session creation.
 /// 
-final class RealtimeServerEventConversationCreated {const RealtimeServerEventConversationCreated({required this.eventId, required this.type, required this.conversation, });
+@immutable final class RealtimeServerEventConversationCreated {const RealtimeServerEventConversationCreated({required this.eventId, required this.type, required this.conversation, });
 
 factory RealtimeServerEventConversationCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationCreated(
   eventId: json['event_id'] as String,

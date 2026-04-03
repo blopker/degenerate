@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanPageConsole {const UrlscannerGetScanResponseResultScanPageConsole({required this.category, required this.text, required this.type, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanPageConsole {const UrlscannerGetScanResponseResultScanPageConsole({required this.category, required this.text, required this.type, this.url, });
 
 factory UrlscannerGetScanResponseResultScanPageConsole.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPageConsole(
   category: json['category'] as String,

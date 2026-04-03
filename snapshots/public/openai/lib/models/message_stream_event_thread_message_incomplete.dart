@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_object.dart';final class MessageStreamEventThreadMessageIncompleteEvent {const MessageStreamEventThreadMessageIncompleteEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';@immutable final class MessageStreamEventThreadMessageIncompleteEvent {const MessageStreamEventThreadMessageIncompleteEvent._(this.value);
 
 factory MessageStreamEventThreadMessageIncompleteEvent.fromJson(String json) { return switch (json) {
   'thread.message.incomplete' => threadMessageIncomplete,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageStreamEventThreadMessageIncompleteEvent($value)'; } 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
-final class MessageStreamEventThreadMessageIncomplete {const MessageStreamEventThreadMessageIncomplete({required this.event, required this.data, });
+@immutable final class MessageStreamEventThreadMessageIncomplete {const MessageStreamEventThreadMessageIncomplete({required this.event, required this.data, });
 
 factory MessageStreamEventThreadMessageIncomplete.fromJson(Map<String, dynamic> json) { return MessageStreamEventThreadMessageIncomplete(
   event: MessageStreamEventThreadMessageIncompleteEvent.fromJson(json['event'] as String),

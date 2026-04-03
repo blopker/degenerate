@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `satispay` PaymentMethod, this hash contains details about the Satispay payment method.
-final class PostPaymentMethodsRequestSatispay {const PostPaymentMethodsRequestSatispay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `satispay` PaymentMethod, this hash contains details about the Satispay payment method.
+@immutable final class PostPaymentMethodsRequestSatispay {const PostPaymentMethodsRequestSatispay();
 
 factory PostPaymentMethodsRequestSatispay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSatispay(
 

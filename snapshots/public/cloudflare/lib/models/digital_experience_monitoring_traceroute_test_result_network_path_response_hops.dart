@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_traceroute_test_result_network_path_response_hops_location.dart';final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_result_network_path_response_hops_location.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile._(this.value);
 
 factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile.fromJson(String json) { return switch (json) {
   'client-to-app' => clientToApp,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile($value)'; } 
  }
-final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops({this.asn, this.aso, this.ipAddress, this.location, this.mile, this.name, this.packetLossPct, this.rttMs, required this.ttl, });
+@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops({required this.ttl, this.asn, this.aso, this.ipAddress, this.location, this.mile, this.name, this.packetLossPct, this.rttMs, });
 
 factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(
   asn: json['asn'] != null ? (json['asn'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeScanningAlertInstanceMessage {const CodeScanningAlertInstanceMessage({this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningAlertInstanceMessage {const CodeScanningAlertInstanceMessage({this.text});
 
 factory CodeScanningAlertInstanceMessage.fromJson(Map<String, dynamic> json) { return CodeScanningAlertInstanceMessage(
   text: json['text'] as String?,

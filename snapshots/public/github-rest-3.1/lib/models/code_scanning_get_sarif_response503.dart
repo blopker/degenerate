@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeScanningGetSarifResponse503 {const CodeScanningGetSarifResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningGetSarifResponse503 {const CodeScanningGetSarifResponse503({this.code, this.message, this.documentationUrl, });
 
 factory CodeScanningGetSarifResponse503.fromJson(Map<String, dynamic> json) { return CodeScanningGetSarifResponse503(
   code: json['code'] as String?,

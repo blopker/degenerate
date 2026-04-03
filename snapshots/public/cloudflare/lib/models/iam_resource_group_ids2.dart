@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_common_components_schemas_identifier.dart';/// A group of scoped resources.
-final class IamResourceGroupIds2 {const IamResourceGroupIds2({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';/// A group of scoped resources.
+@immutable final class IamResourceGroupIds2 {const IamResourceGroupIds2({required this.id});
 
 factory IamResourceGroupIds2.fromJson(Map<String, dynamic> json) { return IamResourceGroupIds2(
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),

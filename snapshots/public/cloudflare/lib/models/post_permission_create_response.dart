@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPermissionCreateResponseResourceType {const PostPermissionCreateResponseResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPermissionCreateResponseResourceType {const PostPermissionCreateResponseResourceType._(this.value);
 
 factory PostPermissionCreateResponseResourceType.fromJson(String json) { return switch (json) {
   'dataset' => dataset,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPermissionCreateResponseResourceType($value)'; } 
  }
-final class PostPermissionCreateResponseRole {const PostPermissionCreateResponseRole._(this.value);
+@immutable final class PostPermissionCreateResponseRole {const PostPermissionCreateResponseRole._(this.value);
 
 factory PostPermissionCreateResponseRole.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPermissionCreateResponseRole($value)'; } 
  }
-final class PostPermissionCreateResponseSubjectType {const PostPermissionCreateResponseSubjectType._(this.value);
+@immutable final class PostPermissionCreateResponseSubjectType {const PostPermissionCreateResponseSubjectType._(this.value);
 
 factory PostPermissionCreateResponseSubjectType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPermissionCreateResponseSubjectType($value)'; } 
  }
-final class PostPermissionCreateResponse {const PostPermissionCreateResponse({required this.createdAt, this.resourceId, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, });
+@immutable final class PostPermissionCreateResponse {const PostPermissionCreateResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
 
 factory PostPermissionCreateResponse.fromJson(Map<String, dynamic> json) { return PostPermissionCreateResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param91_on_demand.dart';import 'payment_method_options_param91_subscriptions.dart';import 'payment_method_options_param91_subscriptions_variant1.dart';final class PaymentMethodOptionsParam91CaptureMethod {const PaymentMethodOptionsParam91CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param91_on_demand.dart';import 'payment_method_options_param91_subscriptions.dart';import 'payment_method_options_param91_subscriptions_variant1.dart';@immutable final class PaymentMethodOptionsParam91CaptureMethod {const PaymentMethodOptionsParam91CaptureMethod._(this.value);
 
 factory PaymentMethodOptionsParam91CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam91CaptureMethod($value)'; } 
  }
-final class PaymentMethodOptionsParam91PreferredLocale {const PaymentMethodOptionsParam91PreferredLocale._(this.value);
+@immutable final class PaymentMethodOptionsParam91PreferredLocale {const PaymentMethodOptionsParam91PreferredLocale._(this.value);
 
 factory PaymentMethodOptionsParam91PreferredLocale.fromJson(String json) { return switch (json) {
   'cs-CZ' => csCz,
@@ -180,7 +180,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam91PreferredLocale($value)'; } 
  }
-final class PaymentMethodOptionsParam91SetupFutureUsage {const PaymentMethodOptionsParam91SetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsParam91SetupFutureUsage {const PaymentMethodOptionsParam91SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam91SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -207,7 +207,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam91SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam91 {const PaymentMethodOptionsParam91({this.captureMethod, this.onDemand, this.preferredLocale, this.setupFutureUsage, this.subscriptions, });
+@immutable final class PaymentMethodOptionsParam91 {const PaymentMethodOptionsParam91({this.captureMethod, this.onDemand, this.preferredLocale, this.setupFutureUsage, this.subscriptions, });
 
 factory PaymentMethodOptionsParam91.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam91(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam91CaptureMethod.fromJson(json['capture_method'] as String) : null,

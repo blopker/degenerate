@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_access_rules.dart';final class StreamSignedTokenRequest {const StreamSignedTokenRequest({this.accessRules, this.downloadable = false, this.exp, this.id, this.nbf, this.pem, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_access_rules.dart';@immutable final class StreamSignedTokenRequest {const StreamSignedTokenRequest({this.accessRules, this.downloadable = false, this.exp, this.id, this.nbf, this.pem, });
 
 factory StreamSignedTokenRequest.fromJson(Map<String, dynamic> json) { return StreamSignedTokenRequest(
   accessRules: (json['accessRules'] as List<dynamic>?)?.map((e) => StreamAccessRules.fromJson(e as Map<String, dynamic>)).toList(),

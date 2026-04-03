@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostJsonRequestVariant2CustomAi {const BrapiPostJsonRequestVariant2CustomAi({required this.authorization, required this.model, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostJsonRequestVariant2CustomAi {const BrapiPostJsonRequestVariant2CustomAi({required this.authorization, required this.model, });
 
 factory BrapiPostJsonRequestVariant2CustomAi.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant2CustomAi(
   authorization: json['authorization'] as String,

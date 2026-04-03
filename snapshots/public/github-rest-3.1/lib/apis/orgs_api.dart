@@ -962,7 +962,7 @@ if (direction != null) {
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson()));
 }
 }
 if (apiRouteSubstring != null) {
@@ -1010,7 +1010,7 @@ if (direction != null) {
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson()));
 }
 }
 if (subjectNameSubstring != null) {
@@ -1244,7 +1244,7 @@ if (direction != null) {
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson()));
 }
 }
 if (actorNameSubstring != null) {
@@ -2107,7 +2107,7 @@ if (direction != null) {
 }
 if (owner != null) {
 for (final item in owner) {
-  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item));
 }
 }
 if (repository != null) {
@@ -2124,7 +2124,7 @@ if (lastUsedAfter != null) {
 }
 if (tokenId != null) {
 for (final item in tokenId) {
-  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item));
 }
 }
 
@@ -2265,7 +2265,7 @@ if (direction != null) {
 }
 if (owner != null) {
 for (final item in owner) {
-  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item));
 }
 }
 if (repository != null) {
@@ -2282,7 +2282,7 @@ if (lastUsedAfter != null) {
 }
 if (tokenId != null) {
 for (final item in tokenId) {
-  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item));
 }
 }
 

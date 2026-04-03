@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestRevolutPayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

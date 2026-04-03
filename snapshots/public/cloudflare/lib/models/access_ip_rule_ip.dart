@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessIpRuleIp {const AccessIpRuleIp({required this.ip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessIpRuleIp {const AccessIpRuleIp({required this.ip});
 
 factory AccessIpRuleIp.fromJson(Map<String, dynamic> json) { return AccessIpRuleIp(
   ip: json['ip'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetLegacyIndicatorTypesListResponseItems {const GetLegacyIndicatorTypesListResponseItems({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLegacyIndicatorTypesListResponseItems {const GetLegacyIndicatorTypesListResponseItems({required this.type});
 
 factory GetLegacyIndicatorTypesListResponseItems.fromJson(Map<String, dynamic> json) { return GetLegacyIndicatorTypesListResponseItems(
   type: json['type'] as String,

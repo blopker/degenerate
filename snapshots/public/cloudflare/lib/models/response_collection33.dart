@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_result_info.dart';import 'resource_sharing_v4error.dart';final class ResponseCollection33 {const ResponseCollection33({required this.errors, this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_result_info.dart';import 'resource_sharing_v4error.dart';@immutable final class ResponseCollection33 {const ResponseCollection33({required this.errors, required this.success, this.result, this.resultInfo, });
 
 factory ResponseCollection33.fromJson(Map<String, dynamic> json) { return ResponseCollection33(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),

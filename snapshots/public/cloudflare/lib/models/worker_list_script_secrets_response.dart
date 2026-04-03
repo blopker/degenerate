@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_secret.dart';final class WorkerListScriptSecretsResponse {const WorkerListScriptSecretsResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_secret.dart';@immutable final class WorkerListScriptSecretsResponse {const WorkerListScriptSecretsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory WorkerListScriptSecretsResponse.fromJson(Map<String, dynamic> json) { return WorkerListScriptSecretsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),

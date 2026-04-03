@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryBySpfResponseResultSummary0 {const RadarGetEmailRoutingSummaryBySpfResponseResultSummary0({required this.fail, required this.none, required this.pass, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryBySpfResponseResultSummary0 {const RadarGetEmailRoutingSummaryBySpfResponseResultSummary0({required this.fail, required this.none, required this.pass, });
 
 factory RadarGetEmailRoutingSummaryBySpfResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryBySpfResponseResultSummary0(
   fail: json['FAIL'] as String,

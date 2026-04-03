@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot Bond
-final class MconnSnapshotBond {const MconnSnapshotBond({required this.name, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Bond
+@immutable final class MconnSnapshotBond {const MconnSnapshotBond({required this.name, required this.status, });
 
 factory MconnSnapshotBond.fromJson(Map<String, dynamic> json) { return MconnSnapshotBond(
   name: json['name'] as String,

@@ -94,9 +94,9 @@ return execute(
 Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsReceived({required LogshareIdentifier zoneId, LogshareStart? start, required LogshareEnd end, LogshareFields? fields, LogshareSample? sample, LogshareCount? count, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
-queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString()));
 }
-queryParametersList.add(ApiQueryParameter(name: 'end', value: end.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'end', value: end.toString()));
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
 }

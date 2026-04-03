@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposUpdateCommitCommentRequest {const ReposUpdateCommitCommentRequest({required this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposUpdateCommitCommentRequest {const ReposUpdateCommitCommentRequest({required this.body});
 
 factory ReposUpdateCommitCommentRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateCommitCommentRequest(
   body: json['body'] as String,

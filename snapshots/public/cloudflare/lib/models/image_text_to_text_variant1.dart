@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImageTextToTextVariant1 {const ImageTextToTextVariant1({this.frequencyPenalty, this.ignoreEos, required this.image, this.maxTokens = 512, this.presencePenalty, required this.prompt, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageTextToTextVariant1 {const ImageTextToTextVariant1({required this.image, required this.prompt, this.frequencyPenalty, this.ignoreEos, this.maxTokens = 512, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
 factory ImageTextToTextVariant1.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant1(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

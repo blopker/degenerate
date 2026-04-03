@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_complet
 /// messages sent by the user. With o1 models and newer, use `developer` messages
 /// for this purpose instead.
 /// 
-final class ChatCompletionRequestSystemMessage {const ChatCompletionRequestSystemMessage({required this.content, required this.role, this.name, });
+@immutable final class ChatCompletionRequestSystemMessage {const ChatCompletionRequestSystemMessage({required this.content, required this.role, this.name, });
 
 factory ChatCompletionRequestSystemMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestSystemMessage(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestSystemMessageContentPart.fromJson(e as Map<String, dynamic>)).toList(),),

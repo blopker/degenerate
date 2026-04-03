@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'errors.dart';/// An error response from the Stripe API
-final class ErrorModel {const ErrorModel({required this.error});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors.dart';/// An error response from the Stripe API
+@immutable final class ErrorModel {const ErrorModel({required this.error});
 
 factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
   error: Errors.fromJson(json['error'] as Map<String, dynamic>),

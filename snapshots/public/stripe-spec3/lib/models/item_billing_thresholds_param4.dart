@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ItemBillingThresholdsParam4 {const ItemBillingThresholdsParam4({required this.usageGte});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemBillingThresholdsParam4 {const ItemBillingThresholdsParam4({required this.usageGte});
 
 factory ItemBillingThresholdsParam4.fromJson(Map<String, dynamic> json) { return ItemBillingThresholdsParam4(
   usageGte: (json['usage_gte'] as num).toInt(),

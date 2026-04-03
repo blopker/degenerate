@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_groups_payments_pricing.dart';/// A hash of account group type to tokens. These are account groups this account should be added to.
-final class PostAccountsRequestGroups {const PostAccountsRequestGroups({this.paymentsPricing});
+@immutable final class PostAccountsRequestGroups {const PostAccountsRequestGroups({this.paymentsPricing});
 
 factory PostAccountsRequestGroups.fromJson(Map<String, dynamic> json) { return PostAccountsRequestGroups(
   paymentsPricing: json['payments_pricing'] != null ? OneOf2.parse(json['payments_pricing'], fromA: (v) => v as String, fromB: (v) => PostAccountsRequestGroupsPaymentsPricingVariant2.fromJson(v as String),) : null,

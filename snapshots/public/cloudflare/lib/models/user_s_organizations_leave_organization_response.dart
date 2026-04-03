@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_common_components_schemas_identifier.dart';final class UserSOrganizationsLeaveOrganizationResponse {const UserSOrganizationsLeaveOrganizationResponse({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';@immutable final class UserSOrganizationsLeaveOrganizationResponse {const UserSOrganizationsLeaveOrganizationResponse({this.id});
 
 factory UserSOrganizationsLeaveOrganizationResponse.fromJson(Map<String, dynamic> json) { return UserSOrganizationsLeaveOrganizationResponse(
   id: json['id'] != null ? IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,

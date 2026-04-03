@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';final class DlpPredefinedProfileConfig {const DlpPredefinedProfileConfig({this.aiContextEnabled = false, required this.allowedMatchCount, this.confidenceThreshold = 'low', required this.enabledEntries, required this.entries, required this.id, required this.name, this.ocrEnabled = false, this.openAccess, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class DlpPredefinedProfileConfig {const DlpPredefinedProfileConfig({required this.allowedMatchCount, required this.enabledEntries, required this.entries, required this.id, required this.name, this.aiContextEnabled = false, this.confidenceThreshold = 'low', this.ocrEnabled = false, this.openAccess, });
 
 factory DlpPredefinedProfileConfig.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfileConfig(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,

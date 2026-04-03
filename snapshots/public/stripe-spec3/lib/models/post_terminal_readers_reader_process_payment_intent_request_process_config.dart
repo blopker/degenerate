@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_terminal_readers_reader_process_payment_intent_request_process_config_tipping.dart';final class PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay {const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_process_payment_intent_request_process_config_tipping.dart';@immutable final class PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay {const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay._(this.value);
 
 factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay($value)'; } 
  }
 /// Configuration overrides for this transaction, such as tipping and customer cancellation settings.
-final class PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig {const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig({this.allowRedisplay, this.enableCustomerCancellation, this.returnUrl, this.skipTipping, this.tipping, });
+@immutable final class PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig {const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig({this.allowRedisplay, this.enableCustomerCancellation, this.returnUrl, this.skipTipping, this.tipping, });
 
 factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
   allowRedisplay: json['allow_redisplay'] != null ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,

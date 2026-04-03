@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'get_customers_customer_sources_response_data.dart';import 'source.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetCustomersCustomerSourcesResponseObject {const GetCustomersCustomerSourcesResponseObject._(this.value);
+@immutable final class GetCustomersCustomerSourcesResponseObject {const GetCustomersCustomerSourcesResponseObject._(this.value);
 
 factory GetCustomersCustomerSourcesResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetCustomersCustomerSourcesResponseObject($value)'; } 
  }
 /// 
-final class GetCustomersCustomerSourcesResponse {const GetCustomersCustomerSourcesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetCustomersCustomerSourcesResponse {const GetCustomersCustomerSourcesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetCustomersCustomerSourcesResponse.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerSourcesResponse(
   data: (json['data'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),)).toList(),

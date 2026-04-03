@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksProjectChangesArchivedAt {const WebhooksProjectChangesArchivedAt({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectChangesArchivedAt {const WebhooksProjectChangesArchivedAt({this.from, this.to, });
 
 factory WebhooksProjectChangesArchivedAt.fromJson(Map<String, dynamic> json) { return WebhooksProjectChangesArchivedAt(
   from: json['from'] != null ? DateTime.parse(json['from'] as String) : null,

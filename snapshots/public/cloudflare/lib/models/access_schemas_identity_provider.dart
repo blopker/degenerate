@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_components_schemas_name.dart';import 'access_schemas_identity_provider_scim_config.dart';import 'access_uuid.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
-final class AccessSchemasIdentityProviderType {const AccessSchemasIdentityProviderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_name.dart';import 'access_schemas_identity_provider_scim_config.dart';import 'access_uuid.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+@immutable final class AccessSchemasIdentityProviderType {const AccessSchemasIdentityProviderType._(this.value);
 
 factory AccessSchemasIdentityProviderType.fromJson(String json) { return switch (json) {
   'onetimepin' => onetimepin,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSchemasIdentityProviderType($value)'; } 
  }
-final class AccessSchemasIdentityProvider {const AccessSchemasIdentityProvider({required this.config, this.id, required this.name, this.scimConfig, required this.type, });
+@immutable final class AccessSchemasIdentityProvider {const AccessSchemasIdentityProvider({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
 factory AccessSchemasIdentityProvider.fromJson(Map<String, dynamic> json) { return AccessSchemasIdentityProvider(
   config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

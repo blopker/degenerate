@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_re
 /// - `disabled` (default): If the input size will exceed the context window
 ///   size for a model, the request will fail with a 400 error.
 /// 
-final class ResponsePropertiesTruncation {const ResponsePropertiesTruncation._(this.value);
+@immutable final class ResponsePropertiesTruncation {const ResponsePropertiesTruncation._(this.value);
 
 factory ResponsePropertiesTruncation.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponsePropertiesTruncation($value)'; } 
  }
-final class ResponseProperties {const ResponseProperties({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, });
+@immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, });
 
 factory ResponseProperties.fromJson(Map<String, dynamic> json) { return ResponseProperties(
   previousResponseId: json['previous_response_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEndType {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEndType {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEndType._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEndType.fromJson(String json) { return switch (json) {
   'min_item_period_end' => minItemPeriodEnd,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEndType($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd({this.timestamp, required this.type, });
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd({required this.type, this.timestamp, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,

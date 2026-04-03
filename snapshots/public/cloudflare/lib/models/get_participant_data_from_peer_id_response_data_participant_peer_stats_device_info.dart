@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(
   browser: json['browser'] as String?,

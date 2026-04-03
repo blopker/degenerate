@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MarketplaceListingPlanPriceModel {const MarketplaceListingPlanPriceModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceListingPlanPriceModel {const MarketplaceListingPlanPriceModel._(this.value);
 
 factory MarketplaceListingPlanPriceModel.fromJson(String json) { return switch (json) {
   'FREE' => free,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MarketplaceListingPlanPriceModel($value)'; } 
  }
 /// Marketplace Listing Plan
-final class MarketplaceListingPlan {const MarketplaceListingPlan({required this.url, required this.accountsUrl, required this.id, required this.number, required this.name, required this.description, required this.monthlyPriceInCents, required this.yearlyPriceInCents, required this.priceModel, required this.hasFreeTrial, required this.unitName, required this.state, required this.bullets, });
+@immutable final class MarketplaceListingPlan {const MarketplaceListingPlan({required this.url, required this.accountsUrl, required this.id, required this.number, required this.name, required this.description, required this.monthlyPriceInCents, required this.yearlyPriceInCents, required this.priceModel, required this.hasFreeTrial, required this.unitName, required this.state, required this.bullets, });
 
 factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return MarketplaceListingPlan(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_defog_sqlcoder7b2_response400_errors.dart';final class WorkersAiPostRunCfDefogSqlcoder7b2Response400 {const WorkersAiPostRunCfDefogSqlcoder7b2Response400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_defog_sqlcoder7b2_response400_errors.dart';@immutable final class WorkersAiPostRunCfDefogSqlcoder7b2Response400 {const WorkersAiPostRunCfDefogSqlcoder7b2Response400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfDefogSqlcoder7b2Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDefogSqlcoder7b2Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfDefogSqlcoder7b2Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),

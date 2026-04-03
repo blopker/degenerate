@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionKonbiniLawson {const PaymentIntentNextActionKonbiniLawson({this.confirmationNumber, required this.paymentCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionKonbiniLawson {const PaymentIntentNextActionKonbiniLawson({required this.paymentCode, this.confirmationNumber, });
 
 factory PaymentIntentNextActionKonbiniLawson.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniLawson(
   confirmationNumber: json['confirmation_number'] as String?,

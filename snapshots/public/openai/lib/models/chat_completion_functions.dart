@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatCompletionFunctions {const ChatCompletionFunctions({this.description, required this.name, this.parameters, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionFunctions {const ChatCompletionFunctions({required this.name, this.description, this.parameters, });
 
 factory ChatCompletionFunctions.fromJson(Map<String, dynamic> json) { return ChatCompletionFunctions(
   description: json['description'] as String?,

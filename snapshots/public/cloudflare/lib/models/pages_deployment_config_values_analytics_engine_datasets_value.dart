@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Analytics Engine binding.
-final class PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue {const PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue({required this.dataset});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Analytics Engine binding.
+@immutable final class PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue {const PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue({required this.dataset});
 
 factory PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(
   dataset: json['dataset'] as String,

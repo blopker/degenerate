@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZarazBaseTool {const ZarazBaseTool({required this.blockingTriggers, required this.defaultFields, this.defaultPurpose, required this.enabled, required this.name, this.vendorName, this.vendorPolicyUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazBaseTool {const ZarazBaseTool({required this.blockingTriggers, required this.defaultFields, required this.enabled, required this.name, this.defaultPurpose, this.vendorName, this.vendorPolicyUrl, });
 
 factory ZarazBaseTool.fromJson(Map<String, dynamic> json) { return ZarazBaseTool(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),

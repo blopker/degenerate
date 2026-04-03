@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Tag {const Tag({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Tag {const Tag({this.id, this.name, });
 
 factory Tag.fromJson(Map<String, dynamic> json) { return Tag(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

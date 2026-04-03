@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'profile_avatar_type_enum.dart';final class AvatarUpdate {const AvatarUpdate({required this.avatarType, required this.updateAvatarSeed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'profile_avatar_type_enum.dart';@immutable final class AvatarUpdate {const AvatarUpdate({required this.avatarType, required this.updateAvatarSeed, });
 
 factory AvatarUpdate.fromJson(Map<String, dynamic> json) { return AvatarUpdate(
   avatarType: json['avatar_type'] != null ? ProfileAvatarTypeEnum.fromJson(json['avatar_type'] as String) : null,

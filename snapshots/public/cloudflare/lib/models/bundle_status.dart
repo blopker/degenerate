@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the overall status for Leaked Credential Checks.
-final class BundleStatus {const BundleStatus({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the overall status for Leaked Credential Checks.
+@immutable final class BundleStatus {const BundleStatus({this.enabled});
 
 factory BundleStatus.fromJson(Map<String, dynamic> json) { return BundleStatus(
   enabled: json['enabled'] as bool?,

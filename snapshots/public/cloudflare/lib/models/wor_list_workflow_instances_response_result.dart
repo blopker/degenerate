@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorListWorkflowInstancesResponseResultStatus {const WorListWorkflowInstancesResponseResultStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorListWorkflowInstancesResponseResultStatus {const WorListWorkflowInstancesResponseResultStatus._(this.value);
 
 factory WorListWorkflowInstancesResponseResultStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorListWorkflowInstancesResponseResultStatus($value)'; } 
  }
-final class WorListWorkflowInstancesResponseResult {const WorListWorkflowInstancesResponseResult({required this.createdOn, required this.endedOn, required this.id, required this.modifiedOn, required this.startedOn, required this.status, required this.versionId, required this.workflowId, });
+@immutable final class WorListWorkflowInstancesResponseResult {const WorListWorkflowInstancesResponseResult({required this.createdOn, required this.endedOn, required this.id, required this.modifiedOn, required this.startedOn, required this.status, required this.versionId, required this.workflowId, });
 
 factory WorListWorkflowInstancesResponseResult.fromJson(Map<String, dynamic> json) { return WorListWorkflowInstancesResponseResult(
   createdOn: DateTime.parse(json['created_on'] as String),

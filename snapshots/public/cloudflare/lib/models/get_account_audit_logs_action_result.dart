@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAccountAuditLogsActionResult {const GetAccountAuditLogsActionResult._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActionResult {const GetAccountAuditLogsActionResult._(this.value);
 
 factory GetAccountAuditLogsActionResult.fromJson(String json) { return switch (json) {
   'success' => success,

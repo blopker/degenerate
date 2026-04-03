@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0 {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0({required this.negative, required this.positive, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0 {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0({required this.negative, required this.positive, });
 
 factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(
   negative: json['NEGATIVE'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesGroupByResponseTtlProtocol {const RadarGetDnsTimeseriesGroupByResponseTtlProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByResponseTtlProtocol {const RadarGetDnsTimeseriesGroupByResponseTtlProtocol._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByResponseTtlProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,

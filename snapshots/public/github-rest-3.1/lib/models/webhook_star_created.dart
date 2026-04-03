@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookStarCreatedAction {const WebhookStarCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookStarCreatedAction {const WebhookStarCreatedAction._(this.value);
 
 factory WebhookStarCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookStarCreatedAction($value)'; } 
  }
-final class WebhookStarCreated {const WebhookStarCreated({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.starredAt, });
+@immutable final class WebhookStarCreated {const WebhookStarCreated({required this.action, required this.repository, required this.sender, required this.starredAt, this.enterprise, this.installation, this.organization, });
 
 factory WebhookStarCreated.fromJson(Map<String, dynamic> json) { return WebhookStarCreated(
   action: WebhookStarCreatedAction.fromJson(json['action'] as String),

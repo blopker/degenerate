@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_lease.dart';final class AddressingLeasesComponentsSchemasResponseCollection {const AddressingLeasesComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_lease.dart';@immutable final class AddressingLeasesComponentsSchemasResponseCollection {const AddressingLeasesComponentsSchemasResponseCollection({this.result});
 
 factory AddressingLeasesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AddressingLeasesComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AddressingLease.fromJson(e as Map<String, dynamic>)).toList(),

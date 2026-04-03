@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BatchErrorsData {const BatchErrorsData({this.code, this.message, this.param, this.line, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BatchErrorsData {const BatchErrorsData({this.code, this.message, this.param, this.line, });
 
 factory BatchErrorsData.fromJson(Map<String, dynamic> json) { return BatchErrorsData(
   code: json['code'] as String?,

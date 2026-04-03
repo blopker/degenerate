@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of destination
-final class MqEventDestinationQueueType {const MqEventDestinationQueueType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of destination
+@immutable final class MqEventDestinationQueueType {const MqEventDestinationQueueType._(this.value);
 
 factory MqEventDestinationQueueType.fromJson(String json) { return switch (json) {
   'queues.queue' => queuesQueue,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventDestinationQueueType($value)'; } 
  }
-final class MqEventDestinationQueue {const MqEventDestinationQueue({required this.queueId, required this.type, });
+@immutable final class MqEventDestinationQueue {const MqEventDestinationQueue({required this.queueId, required this.type, });
 
 factory MqEventDestinationQueue.fromJson(Map<String, dynamic> json) { return MqEventDestinationQueue(
   queueId: json['queue_id'] as String,

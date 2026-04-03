@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsAs112TimeseriesGroupByEdnsResponseCode {const RadarGetDnsAs112TimeseriesGroupByEdnsResponseCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByEdnsResponseCode {const RadarGetDnsAs112TimeseriesGroupByEdnsResponseCode._(this.value);
 
 factory RadarGetDnsAs112TimeseriesGroupByEdnsResponseCode.fromJson(String json) { return switch (json) {
   'NOERROR' => noerror,

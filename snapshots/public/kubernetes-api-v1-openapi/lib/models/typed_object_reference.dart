@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// TypedObjectReference contains enough information to let you locate the typed referenced object
-final class TypedObjectReference {const TypedObjectReference({this.apiGroup, this.kind = '', this.name = '', this.namespace, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// TypedObjectReference contains enough information to let you locate the typed referenced object
+@immutable final class TypedObjectReference {const TypedObjectReference({this.apiGroup, this.kind = '', this.name = '', this.namespace, });
 
 factory TypedObjectReference.fromJson(Map<String, dynamic> json) { return TypedObjectReference(
   apiGroup: json['apiGroup'] as String?,

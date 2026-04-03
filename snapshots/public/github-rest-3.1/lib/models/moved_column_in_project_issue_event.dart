@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'moved_column_in_project_issue_event_project_card.dart';import 'simple_user.dart';/// Moved Column in Project Issue Event
-final class MovedColumnInProjectIssueEvent {const MovedColumnInProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'moved_column_in_project_issue_event_project_card.dart';import 'simple_user.dart';/// Moved Column in Project Issue Event
+@immutable final class MovedColumnInProjectIssueEvent {const MovedColumnInProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
 
 factory MovedColumnInProjectIssueEvent.fromJson(Map<String, dynamic> json) { return MovedColumnInProjectIssueEvent(
   id: (json['id'] as num).toInt(),

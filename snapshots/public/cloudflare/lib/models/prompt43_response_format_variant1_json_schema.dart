@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_response_format_variant1_json_schema_json_schema.dart';final class Prompt43ResponseFormatVariant1JsonSchemaType {const Prompt43ResponseFormatVariant1JsonSchemaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_response_format_variant1_json_schema_json_schema.dart';@immutable final class Prompt43ResponseFormatVariant1JsonSchemaType {const Prompt43ResponseFormatVariant1JsonSchemaType._(this.value);
 
 factory Prompt43ResponseFormatVariant1JsonSchemaType.fromJson(String json) { return switch (json) {
   'json_schema' => jsonSchema,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ResponseFormatVariant1JsonSchemaType($value)'; } 
  }
-final class Prompt43ResponseFormatVariant1JsonSchema {const Prompt43ResponseFormatVariant1JsonSchema({required this.jsonSchema, required this.type, });
+@immutable final class Prompt43ResponseFormatVariant1JsonSchema {const Prompt43ResponseFormatVariant1JsonSchema({required this.jsonSchema, required this.type, });
 
 factory Prompt43ResponseFormatVariant1JsonSchema.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1JsonSchema(
   jsonSchema: Prompt43ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(json['json_schema'] as Map<String, dynamic>),

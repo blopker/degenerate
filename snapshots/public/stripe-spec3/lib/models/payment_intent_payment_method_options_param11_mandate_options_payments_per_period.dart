@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentPaymentMethodOptionsParam11MandateOptionsPaymentsPerPeriodVariant2 {const PaymentIntentPaymentMethodOptionsParam11MandateOptionsPaymentsPerPeriodVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam11MandateOptionsPaymentsPerPeriodVariant2 {const PaymentIntentPaymentMethodOptionsParam11MandateOptionsPaymentsPerPeriodVariant2._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam11MandateOptionsPaymentsPerPeriodVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

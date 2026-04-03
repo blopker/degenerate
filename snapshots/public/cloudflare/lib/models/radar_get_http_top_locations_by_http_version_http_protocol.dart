@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopLocationsByHttpVersionHttpProtocol {const RadarGetHttpTopLocationsByHttpVersionHttpProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByHttpVersionHttpProtocol {const RadarGetHttpTopLocationsByHttpVersionHttpProtocol._(this.value);
 
 factory RadarGetHttpTopLocationsByHttpVersionHttpProtocol.fromJson(String json) { return switch (json) {
   'HTTP' => http,

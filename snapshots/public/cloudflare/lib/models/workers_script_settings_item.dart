@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_logpush.dart';import 'workers_observability.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';final class WorkersScriptSettingsItem {const WorkersScriptSettingsItem({this.logpush, this.observability, this.tags, this.tailConsumers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_logpush.dart';import 'workers_observability.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';@immutable final class WorkersScriptSettingsItem {const WorkersScriptSettingsItem({this.logpush, this.observability, this.tags, this.tailConsumers, });
 
 factory WorkersScriptSettingsItem.fromJson(Map<String, dynamic> json) { return WorkersScriptSettingsItem(
   logpush: json['logpush'] != null ? WorkersLogpush.fromJson(json['logpush'] as bool) : null,

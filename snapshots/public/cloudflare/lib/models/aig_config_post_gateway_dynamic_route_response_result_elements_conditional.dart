@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_post_gateway_dynamic_route_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_conditional_properties.dart';final class AigConfigPostGatewayDynamicRouteResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteResponseResultElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_conditional_properties.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteResponseResultElementsConditionalType._(this.value);
 
 factory AigConfigPostGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultElementsConditionalType($value)'; } 
  }
-final class AigConfigPostGatewayDynamicRouteResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigPostGatewayDynamicRouteResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigPostGatewayDynamicRouteResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResultElementsConditional(
   id: json['id'] as String,

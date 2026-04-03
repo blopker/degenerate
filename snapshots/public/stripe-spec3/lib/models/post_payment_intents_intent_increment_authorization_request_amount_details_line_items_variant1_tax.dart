@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1Tax {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1Tax({required this.totalTaxAmount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1Tax {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1Tax({required this.totalTaxAmount});
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1Tax.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1Tax(
   totalTaxAmount: (json['total_tax_amount'] as num).toInt(),

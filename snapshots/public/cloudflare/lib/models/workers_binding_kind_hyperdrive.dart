@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindHyperdrive {const WorkersBindingKindHyperdrive({required this.id, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindHyperdrive {const WorkersBindingKindHyperdrive({required this.id, required this.name, required this.type, });
 
 factory WorkersBindingKindHyperdrive.fromJson(Map<String, dynamic> json) { return WorkersBindingKindHyperdrive(
   id: json['id'] as String,

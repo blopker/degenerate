@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoiceSettingCustomerRenderingOptions {const InvoiceSettingCustomerRenderingOptions({this.amountTaxDisplay, this.template, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoiceSettingCustomerRenderingOptions {const InvoiceSettingCustomerRenderingOptions({this.amountTaxDisplay, this.template, });
 
 factory InvoiceSettingCustomerRenderingOptions.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomerRenderingOptions(
   amountTaxDisplay: json['amount_tax_display'] as String?,

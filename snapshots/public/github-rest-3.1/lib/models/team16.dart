@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'team16_parent.dart';final class Team16Privacy {const Team16Privacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team16_parent.dart';@immutable final class Team16Privacy {const Team16Privacy._(this.value);
 
 factory Team16Privacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Team16Privacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class Team16 {const Team16({this.deleted, required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, this.parent, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class Team16 {const Team16({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
 
 factory Team16.fromJson(Map<String, dynamic> json) { return Team16(
   deleted: json['deleted'] as bool?,

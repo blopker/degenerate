@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataKrCard(
 

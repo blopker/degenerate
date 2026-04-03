@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank {const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank {const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank();
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxTransactionsCreateReversalRequestLineItems {const PostTaxTransactionsCreateReversalRequestLineItems({required this.amount, required this.amountTax, this.metadata, required this.originalLineItem, this.quantity, required this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxTransactionsCreateReversalRequestLineItems {const PostTaxTransactionsCreateReversalRequestLineItems({required this.amount, required this.amountTax, required this.originalLineItem, required this.reference, this.metadata, this.quantity, });
 
 factory PostTaxTransactionsCreateReversalRequestLineItems.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateReversalRequestLineItems(
   amount: (json['amount'] as num).toInt(),

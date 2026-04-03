@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'exec_action.dart';import 'http_get_action.dart';import 'sleep_action.dart';import 'tcp_socket_action.dart';/// LifecycleHandler defines a specific action that should be taken in a lifecycle hook. One and only one of the fields, except TCPSocket must be specified.
-final class LifecycleHandler {const LifecycleHandler({this.exec, this.httpGet, this.sleep, this.tcpSocket, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'exec_action.dart';import 'http_get_action.dart';import 'sleep_action.dart';import 'tcp_socket_action.dart';/// LifecycleHandler defines a specific action that should be taken in a lifecycle hook. One and only one of the fields, except TCPSocket must be specified.
+@immutable final class LifecycleHandler {const LifecycleHandler({this.exec, this.httpGet, this.sleep, this.tcpSocket, });
 
 factory LifecycleHandler.fromJson(Map<String, dynamic> json) { return LifecycleHandler(
   exec: json['exec'] != null ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>) : null,

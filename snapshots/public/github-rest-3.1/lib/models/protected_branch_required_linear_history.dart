@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProtectedBranchRequiredLinearHistory {const ProtectedBranchRequiredLinearHistory({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchRequiredLinearHistory {const ProtectedBranchRequiredLinearHistory({required this.enabled});
 
 factory ProtectedBranchRequiredLinearHistory.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredLinearHistory(
   enabled: json['enabled'] as bool,

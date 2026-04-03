@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsConvertMemberToOutsideCollaboratorResponse202 {const OrgsConvertMemberToOutsideCollaboratorResponse202();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsConvertMemberToOutsideCollaboratorResponse202 {const OrgsConvertMemberToOutsideCollaboratorResponse202();
 
 factory OrgsConvertMemberToOutsideCollaboratorResponse202.fromJson(Map<String, dynamic> json) { return OrgsConvertMemberToOutsideCollaboratorResponse202(
 

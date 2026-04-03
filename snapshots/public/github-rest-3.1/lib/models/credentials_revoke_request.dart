@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CredentialsRevokeRequest {const CredentialsRevokeRequest({required this.credentials});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CredentialsRevokeRequest {const CredentialsRevokeRequest({required this.credentials});
 
 factory CredentialsRevokeRequest.fromJson(Map<String, dynamic> json) { return CredentialsRevokeRequest(
   credentials: (json['credentials'] as List<dynamic>).map((e) => e as String).toList(),

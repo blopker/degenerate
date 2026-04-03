@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the object. Always `summary_text`.
-final class SummaryTextContentType {const SummaryTextContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the object. Always `summary_text`.
+@immutable final class SummaryTextContentType {const SummaryTextContentType._(this.value);
 
 factory SummaryTextContentType.fromJson(String json) { return switch (json) {
   'summary_text' => summaryText,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SummaryTextContentType($value)'; } 
  }
 /// A summary text from the model.
-final class SummaryTextContent {const SummaryTextContent({this.type = SummaryTextContentType.summaryText, required this.text, });
+@immutable final class SummaryTextContent {const SummaryTextContent({required this.text, this.type = SummaryTextContentType.summaryText, });
 
 factory SummaryTextContent.fromJson(Map<String, dynamic> json) { return SummaryTextContent(
   type: SummaryTextContentType.fromJson(json['type'] as String),

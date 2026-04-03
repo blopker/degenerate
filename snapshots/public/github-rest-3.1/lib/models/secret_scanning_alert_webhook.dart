@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'simple_user.dart';/// The reason for resolving the alert.
-final class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'simple_user.dart';/// The reason for resolving the alert.
+@immutable final class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook._(this.value);
 
 factory SecretScanningAlertResolutionWebhook.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,
@@ -41,7 +41,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SecretScanningAlertResolutionWebhook($value)'; } 
  }
 /// The token status as of the latest validity check.
-final class SecretScanningAlertWebhookValidity {const SecretScanningAlertWebhookValidity._(this.value);
+@immutable final class SecretScanningAlertWebhookValidity {const SecretScanningAlertWebhookValidity._(this.value);
 
 factory SecretScanningAlertWebhookValidity.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -68,7 +68,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretScanningAlertWebhookValidity($value)'; } 
  }
-final class SecretScanningAlertWebhook {const SecretScanningAlertWebhook({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.validity, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.publiclyLeaked, this.multiRepo, this.assignedTo, });
+@immutable final class SecretScanningAlertWebhook {const SecretScanningAlertWebhook({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.validity, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.publiclyLeaked, this.multiRepo, this.assignedTo, });
 
 factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return SecretScanningAlertWebhook(
   number: json['number'] != null ? AlertNumber.fromJson(json['number'] as num) : null,

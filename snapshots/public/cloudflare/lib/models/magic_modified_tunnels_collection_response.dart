@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_modified_tunnels_collection_response_result.dart';final class MagicModifiedTunnelsCollectionResponse {const MagicModifiedTunnelsCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_modified_tunnels_collection_response_result.dart';@immutable final class MagicModifiedTunnelsCollectionResponse {const MagicModifiedTunnelsCollectionResponse({this.result});
 
 factory MagicModifiedTunnelsCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicModifiedTunnelsCollectionResponse(
   result: json['result'] != null ? MagicModifiedTunnelsCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

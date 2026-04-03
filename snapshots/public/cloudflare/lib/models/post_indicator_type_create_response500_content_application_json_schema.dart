@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_type_create_response500_content_application_json_schema_errors.dart';final class PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema {const PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_type_create_response500_content_application_json_schema_errors.dart';@immutable final class PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema {const PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema({required this.errors, required this.result, required this.success, });
 
 factory PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema(
   errors: (json['errors'] as List<dynamic>).map((e) => PostIndicatorTypeCreateResponse500ContentApplicationJsonSchemaErrors.fromJson(e as Map<String, dynamic>)).toList(),

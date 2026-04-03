@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamInput {const StreamInput({this.height, this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamInput {const StreamInput({this.height, this.width, });
 
 factory StreamInput.fromJson(Map<String, dynamic> json) { return StreamInput(
   height: json['height'] != null ? (json['height'] as num).toInt() : null,

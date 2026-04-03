@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_list_tools.failed'.
-final class ResponseMcpListToolsFailedEventType {const ResponseMcpListToolsFailedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_list_tools.failed'.
+@immutable final class ResponseMcpListToolsFailedEventType {const ResponseMcpListToolsFailedEventType._(this.value);
 
 factory ResponseMcpListToolsFailedEventType.fromJson(String json) { return switch (json) {
   'response.mcp_list_tools.failed' => responseMcpListToolsFailed,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when the attempt to list available MCP tools has failed.
 /// 
-final class ResponseMcpListToolsFailedEvent {const ResponseMcpListToolsFailedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
+@immutable final class ResponseMcpListToolsFailedEvent {const ResponseMcpListToolsFailedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
 
 factory ResponseMcpListToolsFailedEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpListToolsFailedEvent(
   type: ResponseMcpListToolsFailedEventType.fromJson(json['type'] as String),

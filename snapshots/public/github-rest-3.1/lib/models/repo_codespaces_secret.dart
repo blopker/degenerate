@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set repository secrets for GitHub Codespaces.
-final class RepoCodespacesSecret {const RepoCodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set repository secrets for GitHub Codespaces.
+@immutable final class RepoCodespacesSecret {const RepoCodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, });
 
 factory RepoCodespacesSecret.fromJson(Map<String, dynamic> json) { return RepoCodespacesSecret(
   name: json['name'] as String,

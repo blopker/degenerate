@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_operation_feature_confidence_intervals_confidence_intervals_suggested_threshold.dart';import 'shield_timestamp.dart';final class ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals({this.lastUpdated, this.suggestedThreshold, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation_feature_confidence_intervals_confidence_intervals_suggested_threshold.dart';import 'shield_timestamp.dart';@immutable final class ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals({this.lastUpdated, this.suggestedThreshold, });
 
 factory ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,

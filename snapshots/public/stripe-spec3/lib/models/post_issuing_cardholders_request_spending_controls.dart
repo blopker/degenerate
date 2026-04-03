@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_spending_controls_spending_limits.dart';final class PostIssuingCardholdersRequestSpendingControlsAllowedCategories {const PostIssuingCardholdersRequestSpendingControlsAllowedCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_spending_controls_spending_limits.dart';@immutable final class PostIssuingCardholdersRequestSpendingControlsAllowedCategories {const PostIssuingCardholdersRequestSpendingControlsAllowedCategories._(this.value);
 
 factory PostIssuingCardholdersRequestSpendingControlsAllowedCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -903,7 +903,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsAllowedCategories($value)'; } 
  }
-final class PostIssuingCardholdersRequestSpendingControlsBlockedCategories {const PostIssuingCardholdersRequestSpendingControlsBlockedCategories._(this.value);
+@immutable final class PostIssuingCardholdersRequestSpendingControlsBlockedCategories {const PostIssuingCardholdersRequestSpendingControlsBlockedCategories._(this.value);
 
 factory PostIssuingCardholdersRequestSpendingControlsBlockedCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -1807,7 +1807,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsBlockedCategories($value)'; } 
  }
 /// Rules that control spending across this cardholder's cards. Refer to our [documentation](https://docs.stripe.com/issuing/controls/spending-controls) for more details.
-final class PostIssuingCardholdersRequestSpendingControls {const PostIssuingCardholdersRequestSpendingControls({this.allowedCategories, this.allowedMerchantCountries, this.blockedCategories, this.blockedMerchantCountries, this.spendingLimits, this.spendingLimitsCurrency, });
+@immutable final class PostIssuingCardholdersRequestSpendingControls {const PostIssuingCardholdersRequestSpendingControls({this.allowedCategories, this.allowedMerchantCountries, this.blockedCategories, this.blockedMerchantCountries, this.spendingLimits, this.spendingLimitsCurrency, });
 
 factory PostIssuingCardholdersRequestSpendingControls.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestSpendingControls(
   allowedCategories: (json['allowed_categories'] as List<dynamic>?)?.map((e) => PostIssuingCardholdersRequestSpendingControlsAllowedCategories.fromJson(e as String)).toList(),

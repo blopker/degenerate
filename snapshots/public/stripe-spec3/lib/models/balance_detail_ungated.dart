@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount.dart';/// 
-final class BalanceDetailUngated {const BalanceDetailUngated({required this.available, required this.pending, });
+@immutable final class BalanceDetailUngated {const BalanceDetailUngated({required this.available, required this.pending, });
 
 factory BalanceDetailUngated.fromJson(Map<String, dynamic> json) { return BalanceDetailUngated(
   available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),

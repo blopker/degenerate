@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Export the list of scripts as a file, limited to 50000 entries.
-final class PageShieldListScriptsExport {const PageShieldListScriptsExport._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of scripts as a file, limited to 50000 entries.
+@immutable final class PageShieldListScriptsExport {const PageShieldListScriptsExport._(this.value);
 
 factory PageShieldListScriptsExport.fromJson(String json) { return switch (json) {
   'csv' => csv,

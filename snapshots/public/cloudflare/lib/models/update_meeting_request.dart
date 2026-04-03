@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_ai_config.dart';/// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
-final class UpdateMeetingRequestStatus {const UpdateMeetingRequestStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_ai_config.dart';/// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
+@immutable final class UpdateMeetingRequestStatus {const UpdateMeetingRequestStatus._(this.value);
 
 factory UpdateMeetingRequestStatus.fromJson(String json) { return switch (json) {
   'ACTIVE' => active,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateMeetingRequestStatus($value)'; } 
  }
-final class UpdateMeetingRequest {const UpdateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd = false, this.title, });
+@immutable final class UpdateMeetingRequest {const UpdateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd = false, this.title, });
 
 factory UpdateMeetingRequest.fromJson(Map<String, dynamic> json) { return UpdateMeetingRequest(
   aiConfig: json['ai_config'] != null ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>) : null,

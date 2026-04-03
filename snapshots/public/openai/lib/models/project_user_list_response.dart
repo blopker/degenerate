@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_user.dart';final class ProjectUserListResponse {const ProjectUserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_user.dart';@immutable final class ProjectUserListResponse {const ProjectUserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ProjectUserListResponse.fromJson(Map<String, dynamic> json) { return ProjectUserListResponse(
   object: json['object'] as String,

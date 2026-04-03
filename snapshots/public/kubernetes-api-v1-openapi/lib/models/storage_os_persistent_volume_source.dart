@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_reference.dart';/// Represents a StorageOS persistent volume resource.
-final class StorageOsPersistentVolumeSource {const StorageOsPersistentVolumeSource({this.fsType, this.readOnly, this.secretRef, this.volumeName, this.volumeNamespace, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_reference.dart';/// Represents a StorageOS persistent volume resource.
+@immutable final class StorageOsPersistentVolumeSource {const StorageOsPersistentVolumeSource({this.fsType, this.readOnly, this.secretRef, this.volumeName, this.volumeNamespace, });
 
 factory StorageOsPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return StorageOsPersistentVolumeSource(
   fsType: json['fsType'] as String?,

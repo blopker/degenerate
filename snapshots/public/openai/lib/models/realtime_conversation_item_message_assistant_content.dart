@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
-final class RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
+@immutable final class RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType._(this.value);
 
 factory RealtimeConversationItemMessageAssistantContentType.fromJson(String json) { return switch (json) {
   'output_text' => outputText,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessageAssistantContentType($value)'; } 
  }
-final class RealtimeConversationItemMessageAssistantContent {const RealtimeConversationItemMessageAssistantContent({this.type, this.text, this.audio, this.transcript, });
+@immutable final class RealtimeConversationItemMessageAssistantContent {const RealtimeConversationItemMessageAssistantContent({this.type, this.text, this.audio, this.transcript, });
 
 factory RealtimeConversationItemMessageAssistantContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageAssistantContent(
   type: json['type'] != null ? RealtimeConversationItemMessageAssistantContentType.fromJson(json['type'] as String) : null,

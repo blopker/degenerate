@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_gcs_source_schema.dart';import 'r2_slurper_r2_source_schema.dart';import 'r2_slurper_r2_target_schema.dart';import 'r2_slurper_s3_source_schema.dart';import 'r2_slurper_source_job_schema.dart';final class R2SlurperCreateJobRequest {const R2SlurperCreateJobRequest({this.overwrite = true, this.source, this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_gcs_source_schema.dart';import 'r2_slurper_r2_source_schema.dart';import 'r2_slurper_r2_target_schema.dart';import 'r2_slurper_s3_source_schema.dart';import 'r2_slurper_source_job_schema.dart';@immutable final class R2SlurperCreateJobRequest {const R2SlurperCreateJobRequest({this.overwrite = true, this.source, this.target, });
 
 factory R2SlurperCreateJobRequest.fromJson(Map<String, dynamic> json) { return R2SlurperCreateJobRequest(
   overwrite: json.containsKey('overwrite') ? json['overwrite'] as bool : true,

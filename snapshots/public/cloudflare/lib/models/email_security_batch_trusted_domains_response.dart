@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_trusted_domains_response_result.dart';import 'email_security_message.dart';final class EmailSecurityBatchTrustedDomainsResponse {const EmailSecurityBatchTrustedDomainsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_trusted_domains_response_result.dart';import 'email_security_message.dart';@immutable final class EmailSecurityBatchTrustedDomainsResponse {const EmailSecurityBatchTrustedDomainsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory EmailSecurityBatchTrustedDomainsResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

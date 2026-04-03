@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTopTldsByMaliciousResponse404 {const RadarGetEmailSecurityTopTldsByMaliciousResponse404({required this.error});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsByMaliciousResponse404 {const RadarGetEmailSecurityTopTldsByMaliciousResponse404({required this.error});
 
 factory RadarGetEmailSecurityTopTldsByMaliciousResponse404.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsByMaliciousResponse404(
   error: json['error'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageModerationsResultObject {const UsageModerationsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageModerationsResultObject {const UsageModerationsResultObject._(this.value);
 
 factory UsageModerationsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.moderations.result' => organizationUsageModerationsResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageModerationsResultObject($value)'; } 
  }
 /// The aggregated moderations usage details of the specific time bucket.
-final class UsageModerationsResult {const UsageModerationsResult({required this.object, required this.inputTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
+@immutable final class UsageModerationsResult {const UsageModerationsResult({required this.object, required this.inputTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
 
 factory UsageModerationsResult.fromJson(Map<String, dynamic> json) { return UsageModerationsResult(
   object: UsageModerationsResultObject.fromJson(json['object'] as String),

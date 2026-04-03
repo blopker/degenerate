@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Network settings for an application
-final class CcApplicationNetwork {const CcApplicationNetwork({required this.bandwidthLimitMbps});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Network settings for an application
+@immutable final class CcApplicationNetwork {const CcApplicationNetwork({required this.bandwidthLimitMbps});
 
 factory CcApplicationNetwork.fromJson(Map<String, dynamic> json) { return CcApplicationNetwork(
   bandwidthLimitMbps: (json['bandwidth_limit_mbps'] as num).toInt(),

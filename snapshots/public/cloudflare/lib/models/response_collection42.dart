@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_messages2.dart';import 'waf_managed_rules_result_info.dart';final class ResponseCollection42 {const ResponseCollection42({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_messages2.dart';import 'waf_managed_rules_result_info.dart';@immutable final class ResponseCollection42 {const ResponseCollection42({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection42.fromJson(Map<String, dynamic> json) { return ResponseCollection42(
   errors: (json['errors'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

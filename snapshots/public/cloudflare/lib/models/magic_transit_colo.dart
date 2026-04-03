@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Source colo city.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Source colo city.
 extension type const MagicTransitColoCity(String value) {
 factory MagicTransitColoCity.fromJson(String json) => MagicTransitColoCity(json);
 
@@ -14,7 +14,7 @@ factory MagicTransitColoName.fromJson(String json) => MagicTransitColoName(json)
 String toJson() => value;
 
 }
-final class MagicTransitColo {const MagicTransitColo({this.city, this.name, });
+@immutable final class MagicTransitColo {const MagicTransitColo({this.city, this.name, });
 
 factory MagicTransitColo.fromJson(Map<String, dynamic> json) { return MagicTransitColo(
   city: json['city'] != null ? MagicTransitColoCity.fromJson(json['city'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_onboarding_link_link_options.dart';/// The type of link being generated.
-final class TerminalOnboardingLinkLinkType {const TerminalOnboardingLinkLinkType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_onboarding_link_link_options.dart';/// The type of link being generated.
+@immutable final class TerminalOnboardingLinkLinkType {const TerminalOnboardingLinkLinkType._(this.value);
 
 factory TerminalOnboardingLinkLinkType.fromJson(String json) { return switch (json) {
   'apple_terms_and_conditions' => appleTermsAndConditions,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TerminalOnboardingLinkLinkType($value)'; } 
  }
-final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
+@immutable final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
 
 factory TerminalOnboardingLinkObject.fromJson(String json) { return switch (json) {
   'terminal.onboarding_link' => terminalOnboardingLink,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalOnboardingLinkObject($value)'; } 
  }
 /// Returns redirect links used for onboarding onto Tap to Pay on iPhone.
-final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, this.onBehalfOf, required this.redirectUrl, });
+@immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf, });
 
 factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLink(
   linkOptions: TerminalOnboardingLinkLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),

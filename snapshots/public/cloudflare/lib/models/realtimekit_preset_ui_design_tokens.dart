@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_ui_design_tokens_colors.dart';final class RealtimekitPresetUiDesignTokensBorderRadius {const RealtimekitPresetUiDesignTokensBorderRadius._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_ui_design_tokens_colors.dart';@immutable final class RealtimekitPresetUiDesignTokensBorderRadius {const RealtimekitPresetUiDesignTokensBorderRadius._(this.value);
 
 factory RealtimekitPresetUiDesignTokensBorderRadius.fromJson(String json) { return switch (json) {
   'rounded' => rounded,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPresetUiDesignTokensBorderRadius($value)'; } 
  }
-final class RealtimekitPresetUiDesignTokensBorderWidth {const RealtimekitPresetUiDesignTokensBorderWidth._(this.value);
+@immutable final class RealtimekitPresetUiDesignTokensBorderWidth {const RealtimekitPresetUiDesignTokensBorderWidth._(this.value);
 
 factory RealtimekitPresetUiDesignTokensBorderWidth.fromJson(String json) { return switch (json) {
   'thin' => thin,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPresetUiDesignTokensBorderWidth($value)'; } 
  }
-final class RealtimekitPresetUiDesignTokensTheme {const RealtimekitPresetUiDesignTokensTheme._(this.value);
+@immutable final class RealtimekitPresetUiDesignTokensTheme {const RealtimekitPresetUiDesignTokensTheme._(this.value);
 
 factory RealtimekitPresetUiDesignTokensTheme.fromJson(String json) { return switch (json) {
   'dark' => dark,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPresetUiDesignTokensTheme($value)'; } 
  }
-final class RealtimekitPresetUiDesignTokens {const RealtimekitPresetUiDesignTokens({required this.borderRadius, required this.borderWidth, required this.colors, required this.logo, this.spacingBase = 4.0, required this.theme, });
+@immutable final class RealtimekitPresetUiDesignTokens {const RealtimekitPresetUiDesignTokens({required this.borderRadius, required this.borderWidth, required this.colors, required this.logo, required this.theme, this.spacingBase = 4.0, });
 
 factory RealtimekitPresetUiDesignTokens.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUiDesignTokens(
   borderRadius: RealtimekitPresetUiDesignTokensBorderRadius.fromJson(json['border_radius'] as String),

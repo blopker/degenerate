@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_update_credits.dart';import 'repository_advisory_update_vulnerabilities.dart';/// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
-final class RepositoryAdvisoryUpdateSeverity {const RepositoryAdvisoryUpdateSeverity._(this.value);
+@immutable final class RepositoryAdvisoryUpdateSeverity {const RepositoryAdvisoryUpdateSeverity._(this.value);
 
 factory RepositoryAdvisoryUpdateSeverity.fromJson(String json) { return switch (json) {
   'critical' => critical,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryAdvisoryUpdateSeverity($value)'; } 
  }
 /// The state of the advisory.
-final class RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState._(this.value);
+@immutable final class RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState._(this.value);
 
 factory RepositoryAdvisoryUpdateState.fromJson(String json) { return switch (json) {
   'published' => published,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryAdvisoryUpdateState($value)'; } 
  }
-final class RepositoryAdvisoryUpdate {const RepositoryAdvisoryUpdate({this.summary, this.description, this.cveId, this.vulnerabilities, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.state, this.collaboratingUsers, this.collaboratingTeams, });
+@immutable final class RepositoryAdvisoryUpdate {const RepositoryAdvisoryUpdate({this.summary, this.description, this.cveId, this.vulnerabilities, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.state, this.collaboratingUsers, this.collaboratingTeams, });
 
 factory RepositoryAdvisoryUpdate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryUpdate(
   summary: json['summary'] as String?,

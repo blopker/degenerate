@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteEvalRunResponse {const DeleteEvalRunResponse({this.object, this.deleted, this.runId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEvalRunResponse {const DeleteEvalRunResponse({this.object, this.deleted, this.runId, });
 
 factory DeleteEvalRunResponse.fromJson(Map<String, dynamic> json) { return DeleteEvalRunResponse(
   object: json['object'] as String?,

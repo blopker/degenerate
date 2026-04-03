@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'key4.dart';final class ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key4.dart';@immutable final class ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject._(this.value);
 
 factory ProjectServiceAccountCreateResponseObject.fromJson(String json) { return switch (json) {
   'organization.project.service_account' => organizationProjectServiceAccount,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectServiceAccountCreateResponseObject($value)'; } 
  }
 /// Service accounts can only have one role of type `member`
-final class ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole._(this.value);
+@immutable final class ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole._(this.value);
 
 factory ProjectServiceAccountCreateResponseRole.fromJson(String json) { return switch (json) {
   'member' => member,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectServiceAccountCreateResponseRole($value)'; } 
  }
-final class ProjectServiceAccountCreateResponse {const ProjectServiceAccountCreateResponse({required this.object, required this.id, required this.name, required this.role, required this.createdAt, required this.apiKey, });
+@immutable final class ProjectServiceAccountCreateResponse {const ProjectServiceAccountCreateResponse({required this.object, required this.id, required this.name, required this.role, required this.createdAt, required this.apiKey, });
 
 factory ProjectServiceAccountCreateResponse.fromJson(Map<String, dynamic> json) { return ProjectServiceAccountCreateResponse(
   object: ProjectServiceAccountCreateResponseObject.fromJson(json['object'] as String),

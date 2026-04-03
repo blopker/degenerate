@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SyncServerResponse {const SyncServerResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SyncServerResponse {const SyncServerResponse({required this.result, required this.success, });
 
 factory SyncServerResponse.fromJson(Map<String, dynamic> json) { return SyncServerResponse(
   result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

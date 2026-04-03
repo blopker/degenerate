@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_update_parameters.dart';final class RepositoryRuleUpdateType {const RepositoryRuleUpdateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_update_parameters.dart';@immutable final class RepositoryRuleUpdateType {const RepositoryRuleUpdateType._(this.value);
 
 factory RepositoryRuleUpdateType.fromJson(String json) { return switch (json) {
   'update' => update,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleUpdateType($value)'; } 
  }
 /// Only allow users with bypass permission to update matching refs.
-final class RepositoryRuleUpdate {const RepositoryRuleUpdate({required this.type, this.parameters, });
+@immutable final class RepositoryRuleUpdate {const RepositoryRuleUpdate({required this.type, this.parameters, });
 
 factory RepositoryRuleUpdate.fromJson(Map<String, dynamic> json) { return RepositoryRuleUpdate(
   type: RepositoryRuleUpdateType.fromJson(json['type'] as String),

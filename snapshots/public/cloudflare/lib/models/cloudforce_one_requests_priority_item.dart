@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';import 'cloudforce_one_requests_tlp.dart';import 'cloudforce_one_requests_uuid.dart';final class CloudforceOneRequestsPriorityItem {const CloudforceOneRequestsPriorityItem({required this.created, required this.id, required this.labels, required this.priority, required this.requirement, required this.tlp, required this.updated, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';import 'cloudforce_one_requests_tlp.dart';import 'cloudforce_one_requests_uuid.dart';@immutable final class CloudforceOneRequestsPriorityItem {const CloudforceOneRequestsPriorityItem({required this.created, required this.id, required this.labels, required this.priority, required this.requirement, required this.tlp, required this.updated, });
 
 factory CloudforceOneRequestsPriorityItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsPriorityItem(
   created: CloudforceOneRequestsTime.fromJson(json['created'] as String),

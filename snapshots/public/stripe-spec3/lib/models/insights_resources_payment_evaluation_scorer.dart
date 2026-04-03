@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Recommended action based on the risk score. Possible values are `block` and `continue`.
-final class InsightsResourcesPaymentEvaluationScorerRecommendedAction {const InsightsResourcesPaymentEvaluationScorerRecommendedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Recommended action based on the risk score. Possible values are `block` and `continue`.
+@immutable final class InsightsResourcesPaymentEvaluationScorerRecommendedAction {const InsightsResourcesPaymentEvaluationScorerRecommendedAction._(this.value);
 
 factory InsightsResourcesPaymentEvaluationScorerRecommendedAction.fromJson(String json) { return switch (json) {
   'block' => block,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationScorerRecommendedAction($value)'; } 
  }
 /// Scores, insights and recommended action for one scorer for this PaymentEvaluation.
-final class InsightsResourcesPaymentEvaluationScorer {const InsightsResourcesPaymentEvaluationScorer({required this.recommendedAction, required this.riskScore, });
+@immutable final class InsightsResourcesPaymentEvaluationScorer {const InsightsResourcesPaymentEvaluationScorer({required this.recommendedAction, required this.riskScore, });
 
 factory InsightsResourcesPaymentEvaluationScorer.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationScorer(
   recommendedAction: InsightsResourcesPaymentEvaluationScorerRecommendedAction.fromJson(json['recommended_action'] as String),

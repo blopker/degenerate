@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_instances_response_result_source_params_web_crawler.dart';final class AiSearchFetchInstancesResponseResultSourceParams {const AiSearchFetchInstancesResponseResultSourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction = 'default', this.webCrawler, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_instances_response_result_source_params_web_crawler.dart';@immutable final class AiSearchFetchInstancesResponseResultSourceParams {const AiSearchFetchInstancesResponseResultSourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction = 'default', this.webCrawler, });
 
 factory AiSearchFetchInstancesResponseResultSourceParams.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultSourceParams(
   excludeItems: (json['exclude_items'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories {const UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories({required this.name, required this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories {const UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories({required this.name, required this.priority, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories(
   name: json['name'] as String,

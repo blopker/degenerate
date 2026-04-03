@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the transcription. Can be: `in-progress`, `completed`, `failed`.
-final class RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the transcription. Can be: `in-progress`, `completed`, `failed`.
+@immutable final class RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus._(this.value);
 
 factory RecordingTranscriptionEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RecordingTranscriptionEnumStatus($value)'; } 
  }
-final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.duration, this.price, this.priceUnit, this.recordingSid, this.sid, this.status, this.transcriptionText, this.type, this.uri, });
+@immutable final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.duration, this.price, this.priceUnit, this.recordingSid, this.sid, this.status, this.transcriptionText, this.type, this.uri, });
 
 factory AccountRecordingRecordingTranscription.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingTranscription(
   accountSid: json['account_sid'] as String?,

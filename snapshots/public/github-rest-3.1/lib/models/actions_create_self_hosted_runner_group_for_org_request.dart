@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories.
-final class ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility {const ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility._(this.value);
+@immutable final class ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility {const ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility._(this.value);
 
 factory ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.fromJson(String json) { return switch (json) {
   'selected' => selected,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility($value)'; } 
  }
-final class ActionsCreateSelfHostedRunnerGroupForOrgRequest {const ActionsCreateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility = ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.all, this.selectedRepositoryIds, this.runners, this.allowsPublicRepositories = false, this.restrictedToWorkflows = false, this.selectedWorkflows, this.networkConfigurationId, });
+@immutable final class ActionsCreateSelfHostedRunnerGroupForOrgRequest {const ActionsCreateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility = ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.all, this.selectedRepositoryIds, this.runners, this.allowsPublicRepositories = false, this.restrictedToWorkflows = false, this.selectedWorkflows, this.networkConfigurationId, });
 
 factory ActionsCreateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
   name: json['name'] as String,

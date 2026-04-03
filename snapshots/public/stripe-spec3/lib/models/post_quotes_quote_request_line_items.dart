@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_quote_request_line_items_discounts.dart';import 'post_quotes_quote_request_line_items_discounts_variant1.dart';import 'post_quotes_quote_request_line_items_price_data.dart';import 'post_quotes_quote_request_line_items_tax_rates.dart';final class PostQuotesQuoteRequestLineItems {const PostQuotesQuoteRequestLineItems({this.discounts, this.id, this.price, this.priceData, this.quantity, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_quote_request_line_items_discounts.dart';import 'post_quotes_quote_request_line_items_discounts_variant1.dart';import 'post_quotes_quote_request_line_items_price_data.dart';import 'post_quotes_quote_request_line_items_tax_rates.dart';@immutable final class PostQuotesQuoteRequestLineItems {const PostQuotesQuoteRequestLineItems({this.discounts, this.id, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostQuotesQuoteRequestLineItems.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestLineItems(
   discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostQuotesQuoteRequestLineItemsDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostQuotesQuoteRequestLineItemsDiscountsVariant2.fromJson(v as String),) : null,

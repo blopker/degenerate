@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunRequiresActionEvent {const RunStreamEventThreadRunRequiresActionEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunRequiresActionEvent {const RunStreamEventThreadRunRequiresActionEvent._(this.value);
 
 factory RunStreamEventThreadRunRequiresActionEvent.fromJson(String json) { return switch (json) {
   'thread.run.requires_action' => threadRunRequiresAction,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunRequiresActionEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
-final class RunStreamEventThreadRunRequiresAction {const RunStreamEventThreadRunRequiresAction({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunRequiresAction {const RunStreamEventThreadRunRequiresAction({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunRequiresAction.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunRequiresAction(
   event: RunStreamEventThreadRunRequiresActionEvent.fromJson(json['event'] as String),

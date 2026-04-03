@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_update_preset_ui_design_tokens_colors_background.dart';import 'realtimekit_update_preset_ui_design_tokens_colors_brand.dart';final class RealtimekitUpdatePresetUiDesignTokensColors {const RealtimekitUpdatePresetUiDesignTokensColors({this.background, this.brand, this.danger = '#FF2D2D', this.success = '#62A504', this.text = '#EEEEEE', this.textOnBrand = '#EEEEEE', this.videoBg = '#191919', this.warning = '#FFCD07', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_update_preset_ui_design_tokens_colors_background.dart';import 'realtimekit_update_preset_ui_design_tokens_colors_brand.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColors {const RealtimekitUpdatePresetUiDesignTokensColors({this.background, this.brand, this.danger = '#FF2D2D', this.success = '#62A504', this.text = '#EEEEEE', this.textOnBrand = '#EEEEEE', this.videoBg = '#191919', this.warning = '#FFCD07', });
 
 factory RealtimekitUpdatePresetUiDesignTokensColors.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColors(
   background: json['background'] != null ? RealtimekitUpdatePresetUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_devices_policy_certificates.dart';final class TeamsDevicesDevicesPolicyCertificatesSingle {const TeamsDevicesDevicesPolicyCertificatesSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_devices_policy_certificates.dart';@immutable final class TeamsDevicesDevicesPolicyCertificatesSingle {const TeamsDevicesDevicesPolicyCertificatesSingle({this.result});
 
 factory TeamsDevicesDevicesPolicyCertificatesSingle.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicesPolicyCertificatesSingle(
   result: json['result'] != null ? TeamsDevicesDevicesPolicyCertificates.fromJson(json['result'] as Map<String, dynamic>) : null,

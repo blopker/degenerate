@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPromotionCodesRequest {const GetPromotionCodesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPromotionCodesRequest {const GetPromotionCodesRequest();
 
 factory GetPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return GetPromotionCodesRequest(
 

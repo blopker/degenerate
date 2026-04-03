@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// EventSource contains information for an event.
-final class EventSource {const EventSource({this.component, this.host, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// EventSource contains information for an event.
+@immutable final class EventSource {const EventSource({this.component, this.host, });
 
 factory EventSource.fromJson(Map<String, dynamic> json) { return EventSource(
   component: json['component'] as String?,

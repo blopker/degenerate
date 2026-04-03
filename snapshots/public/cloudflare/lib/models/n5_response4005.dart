@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_response4005_errors.dart';final class $5Response4005 {const $5Response4005({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_response4005_errors.dart';@immutable final class $5Response4005 {const $5Response4005({required this.errors, required this.result, required this.success, });
 
 factory $5Response4005.fromJson(Map<String, dynamic> json) { return $5Response4005(
   errors: (json['errors'] as List<dynamic>).map((e) => $5Response4005Errors.fromJson(e as Map<String, dynamic>)).toList(),

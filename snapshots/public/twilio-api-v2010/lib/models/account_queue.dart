@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountQueue {const AccountQueue({this.dateUpdated, this.currentSize = 0, this.friendlyName, this.uri, this.accountSid, this.averageWaitTime = 0, this.sid, this.dateCreated, this.maxSize = 0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueue {const AccountQueue({this.dateUpdated, this.currentSize = 0, this.friendlyName, this.uri, this.accountSid, this.averageWaitTime = 0, this.sid, this.dateCreated, this.maxSize = 0, });
 
 factory AccountQueue.fromJson(Map<String, dynamic> json) { return AccountQueue(
   dateUpdated: json['date_updated'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData({this.amountPercent, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData({required this.destination, this.amountPercent, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,

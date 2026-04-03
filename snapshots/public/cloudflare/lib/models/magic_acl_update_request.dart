@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_forward_locally.dart';import 'magic_lan_acl_configuration.dart';import 'magic_unidirectional.dart';/// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
-final class MagicAclUpdateRequestProtocols {const MagicAclUpdateRequestProtocols._(this.value);
+@immutable final class MagicAclUpdateRequestProtocols {const MagicAclUpdateRequestProtocols._(this.value);
 
 factory MagicAclUpdateRequestProtocols.fromJson(String json) { return switch (json) {
   'tcp' => tcp,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicAclUpdateRequestProtocols($value)'; } 
  }
-final class MagicAclUpdateRequest {const MagicAclUpdateRequest({this.description, this.forwardLocally, this.lan1, this.lan2, this.name, this.protocols, this.unidirectional, });
+@immutable final class MagicAclUpdateRequest {const MagicAclUpdateRequest({this.description, this.forwardLocally, this.lan1, this.lan2, this.name, this.protocols, this.unidirectional, });
 
 factory MagicAclUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicAclUpdateRequest(
   description: json['description'] as String?,

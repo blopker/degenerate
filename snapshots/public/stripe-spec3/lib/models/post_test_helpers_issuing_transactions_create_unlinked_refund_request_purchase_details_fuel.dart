@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType($value)'; } 
  }
-final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._(this.value);
+@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit.fromJson(String json) { return switch (json) {
   'charging_minute' => chargingMinute,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit($value)'; } 
  }
-final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
+@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
   industryProductCode: json['industry_product_code'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
-final class ResponsesAsyncRequestsReasoningEffort {const ResponsesAsyncRequestsReasoningEffort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+@immutable final class ResponsesAsyncRequestsReasoningEffort {const ResponsesAsyncRequestsReasoningEffort._(this.value);
 
 factory ResponsesAsyncRequestsReasoningEffort.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponsesAsyncRequestsReasoningEffort($value)'; } 
  }
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
-final class ResponsesAsyncRequestsReasoningSummary {const ResponsesAsyncRequestsReasoningSummary._(this.value);
+@immutable final class ResponsesAsyncRequestsReasoningSummary {const ResponsesAsyncRequestsReasoningSummary._(this.value);
 
 factory ResponsesAsyncRequestsReasoningSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponsesAsyncRequestsReasoningSummary($value)'; } 
  }
-final class ResponsesAsyncRequestsReasoning {const ResponsesAsyncRequestsReasoning({this.effort, this.summary, });
+@immutable final class ResponsesAsyncRequestsReasoning {const ResponsesAsyncRequestsReasoning({this.effort, this.summary, });
 
 factory ResponsesAsyncRequestsReasoning.fromJson(Map<String, dynamic> json) { return ResponsesAsyncRequestsReasoning(
   effort: json['effort'] != null ? ResponsesAsyncRequestsReasoningEffort.fromJson(json['effort'] as String) : null,

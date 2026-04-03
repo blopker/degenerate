@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_origin_max_http_version_value.dart';final class ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest {const ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_max_http_version_value.dart';@immutable final class ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest {const ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest(
   value: CacheRulesOriginMaxHttpVersionValue.fromJson(json['value'] as String),

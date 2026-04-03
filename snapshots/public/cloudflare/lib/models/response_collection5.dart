@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_messages2.dart';import 'response_collection5_result_info.dart';final class ResponseCollection5 {const ResponseCollection5({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_messages2.dart';import 'response_collection5_result_info.dart';@immutable final class ResponseCollection5 {const ResponseCollection5({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection5.fromJson(Map<String, dynamic> json) { return ResponseCollection5(
   errors: (json['errors'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),

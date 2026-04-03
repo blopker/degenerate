@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Limits for Pages Functions.
-final class PagesDeploymentConfigValuesLimits {const PagesDeploymentConfigValuesLimits({required this.cpuMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Limits for Pages Functions.
+@immutable final class PagesDeploymentConfigValuesLimits {const PagesDeploymentConfigValuesLimits({required this.cpuMs});
 
 factory PagesDeploymentConfigValuesLimits.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesLimits(
   cpuMs: (json['cpu_ms'] as num).toInt(),

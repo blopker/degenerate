@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always "fine_tuning.job.event".
-final class FineTuningJobEventObject {const FineTuningJobEventObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "fine_tuning.job.event".
+@immutable final class FineTuningJobEventObject {const FineTuningJobEventObject._(this.value);
 
 factory FineTuningJobEventObject.fromJson(String json) { return switch (json) {
   'fine_tuning.job.event' => fineTuningJobEvent,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuningJobEventObject($value)'; } 
  }
 /// The log level of the event.
-final class FineTuningJobEventLevel {const FineTuningJobEventLevel._(this.value);
+@immutable final class FineTuningJobEventLevel {const FineTuningJobEventLevel._(this.value);
 
 factory FineTuningJobEventLevel.fromJson(String json) { return switch (json) {
   'info' => info,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuningJobEventLevel($value)'; } 
  }
 /// The type of event.
-final class FineTuningJobEventType {const FineTuningJobEventType._(this.value);
+@immutable final class FineTuningJobEventType {const FineTuningJobEventType._(this.value);
 
 factory FineTuningJobEventType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuningJobEventType($value)'; } 
  }
 /// Fine-tuning job event object
-final class FineTuningJobEvent {const FineTuningJobEvent({required this.object, required this.id, required this.createdAt, required this.level, required this.message, this.type, this.data, });
+@immutable final class FineTuningJobEvent {const FineTuningJobEvent({required this.object, required this.id, required this.createdAt, required this.level, required this.message, this.type, this.data, });
 
 factory FineTuningJobEvent.fromJson(Map<String, dynamic> json) { return FineTuningJobEvent(
   object: FineTuningJobEventObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_lockdowns_components_schemas_id.dart';final class ZoneLockdownDeleteAZoneLockdownRuleResponseResult {const ZoneLockdownDeleteAZoneLockdownRuleResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_lockdowns_components_schemas_id.dart';@immutable final class ZoneLockdownDeleteAZoneLockdownRuleResponseResult {const ZoneLockdownDeleteAZoneLockdownRuleResponseResult({this.id});
 
 factory ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(Map<String, dynamic> json) { return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
   id: json['id'] != null ? FirewallLockdownsComponentsSchemasId.fromJson(json['id'] as String) : null,

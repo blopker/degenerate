@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._(this.value);
 
 factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus($value)'; } 
  }
-final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData({this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, });
+@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData({this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, });
 
 factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
   disabled: json['disabled'] as bool?,

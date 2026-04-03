@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_availabilities_quota.dart';import 'observatory_availabilities_regions_per_plan.dart';import 'observatory_labeled_region.dart';final class ObservatoryAvailabilities {const ObservatoryAvailabilities({this.quota, this.regions, this.regionsPerPlan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_availabilities_quota.dart';import 'observatory_availabilities_regions_per_plan.dart';import 'observatory_labeled_region.dart';@immutable final class ObservatoryAvailabilities {const ObservatoryAvailabilities({this.quota, this.regions, this.regionsPerPlan, });
 
 factory ObservatoryAvailabilities.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilities(
   quota: json['quota'] != null ? ObservatoryAvailabilitiesQuota.fromJson(json['quota'] as Map<String, dynamic>) : null,

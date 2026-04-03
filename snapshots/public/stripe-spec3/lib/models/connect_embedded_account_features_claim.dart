@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedAccountFeaturesClaim {const ConnectEmbeddedAccountFeaturesClaim({required this.disableStripeUserAuthentication, required this.externalAccountCollection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedAccountFeaturesClaim {const ConnectEmbeddedAccountFeaturesClaim({required this.disableStripeUserAuthentication, required this.externalAccountCollection, });
 
 factory ConnectEmbeddedAccountFeaturesClaim.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedAccountFeaturesClaim(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool,

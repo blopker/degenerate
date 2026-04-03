@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
-final class NfsVolumeSource {const NfsVolumeSource({this.path = '', this.readOnly, this.server = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
+@immutable final class NfsVolumeSource {const NfsVolumeSource({this.path = '', this.readOnly, this.server = '', });
 
 factory NfsVolumeSource.fromJson(Map<String, dynamic> json) { return NfsVolumeSource(
   path: json['path'] as String,

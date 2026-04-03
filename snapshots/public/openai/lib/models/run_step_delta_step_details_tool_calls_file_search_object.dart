@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of tool call. This is always going to be `file_search` for this type of tool call.
-final class RunStepDeltaStepDetailsToolCallsFileSearchObjectType {const RunStepDeltaStepDetailsToolCallsFileSearchObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool call. This is always going to be `file_search` for this type of tool call.
+@immutable final class RunStepDeltaStepDetailsToolCallsFileSearchObjectType {const RunStepDeltaStepDetailsToolCallsFileSearchObjectType._(this.value);
 
 factory RunStepDeltaStepDetailsToolCallsFileSearchObjectType.fromJson(String json) { return switch (json) {
   'file_search' => fileSearch,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RunStepDeltaStepDetailsToolCallsFileSearchObjectType($value)'; } 
  }
-final class RunStepDeltaStepDetailsToolCallsFileSearchObject {const RunStepDeltaStepDetailsToolCallsFileSearchObject({required this.index, this.id, required this.type, required this.fileSearch, });
+@immutable final class RunStepDeltaStepDetailsToolCallsFileSearchObject {const RunStepDeltaStepDetailsToolCallsFileSearchObject({required this.index, required this.type, required this.fileSearch, this.id, });
 
 factory RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
   index: (json['index'] as num).toInt(),

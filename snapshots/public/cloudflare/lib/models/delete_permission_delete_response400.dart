@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_permission_delete_response400_errors.dart';final class DeletePermissionDeleteResponse400 {const DeletePermissionDeleteResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_permission_delete_response400_errors.dart';@immutable final class DeletePermissionDeleteResponse400 {const DeletePermissionDeleteResponse400({required this.errors, required this.result, required this.success, });
 
 factory DeletePermissionDeleteResponse400.fromJson(Map<String, dynamic> json) { return DeletePermissionDeleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DeletePermissionDeleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

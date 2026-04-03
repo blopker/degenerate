@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The visibility of the repository.
-final class ReposCreateInOrgRequestVisibility {const ReposCreateInOrgRequestVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The visibility of the repository.
+@immutable final class ReposCreateInOrgRequestVisibility {const ReposCreateInOrgRequestVisibility._(this.value);
 
 factory ReposCreateInOrgRequestVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class ReposCreateInOrgRequestSquashMergeCommitTitle {const ReposCreateInOrgRequestSquashMergeCommitTitle._(this.value);
+@immutable final class ReposCreateInOrgRequestSquashMergeCommitTitle {const ReposCreateInOrgRequestSquashMergeCommitTitle._(this.value);
 
 factory ReposCreateInOrgRequestSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final class ReposCreateInOrgRequestSquashMergeCommitMessage {const ReposCreateInOrgRequestSquashMergeCommitMessage._(this.value);
+@immutable final class ReposCreateInOrgRequestSquashMergeCommitMessage {const ReposCreateInOrgRequestSquashMergeCommitMessage._(this.value);
 
 factory ReposCreateInOrgRequestSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class ReposCreateInOrgRequestMergeCommitTitle {const ReposCreateInOrgRequestMergeCommitTitle._(this.value);
+@immutable final class ReposCreateInOrgRequestMergeCommitTitle {const ReposCreateInOrgRequestMergeCommitTitle._(this.value);
 
 factory ReposCreateInOrgRequestMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -122,7 +122,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final class ReposCreateInOrgRequestMergeCommitMessage {const ReposCreateInOrgRequestMergeCommitMessage._(this.value);
+@immutable final class ReposCreateInOrgRequestMergeCommitMessage {const ReposCreateInOrgRequestMergeCommitMessage._(this.value);
 
 factory ReposCreateInOrgRequestMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -149,7 +149,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateInOrgRequestMergeCommitMessage($value)'; } 
  }
-final class ReposCreateInOrgRequest {const ReposCreateInOrgRequest({required this.name, this.description, this.homepage, this.private = false, this.visibility, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDownloads = true, this.isTemplate = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.customProperties, });
+@immutable final class ReposCreateInOrgRequest {const ReposCreateInOrgRequest({required this.name, this.description, this.homepage, this.private = false, this.visibility, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDownloads = true, this.isTemplate = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.customProperties, });
 
 factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return ReposCreateInOrgRequest(
   name: json['name'] as String,

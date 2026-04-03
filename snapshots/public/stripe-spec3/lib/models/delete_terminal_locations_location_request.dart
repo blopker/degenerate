@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteTerminalLocationsLocationRequest {const DeleteTerminalLocationsLocationRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTerminalLocationsLocationRequest {const DeleteTerminalLocationsLocationRequest();
 
 factory DeleteTerminalLocationsLocationRequest.fromJson(Map<String, dynamic> json) { return DeleteTerminalLocationsLocationRequest(
 

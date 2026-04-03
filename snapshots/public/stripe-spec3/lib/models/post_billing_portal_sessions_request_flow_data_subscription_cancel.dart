@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_portal_sessions_request_flow_data_subscription_cancel_retention.dart';final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancel {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancel({this.retention, required this.subscription, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_cancel_retention.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancel {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancel({required this.subscription, this.retention, });
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionCancel(
   retention: json['retention'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>) : null,

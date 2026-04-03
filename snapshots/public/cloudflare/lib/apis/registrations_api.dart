@@ -17,7 +17,7 @@ Future<ApiResult<List<TeamsDevicesRegistration>, Never>> listRegistrations({requ
 final queryParametersList = <ApiQueryParameter>[];
 if (userId != null) {
 for (final item in userId) {
-  queryParametersList.add(ApiQueryParameter(name: 'user.id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user.id', value: item));
 }
 }
 if (seenAfter != null) {
@@ -46,7 +46,7 @@ if (cursor != null) {
 }
 if (id != null) {
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 }
 if (deviceId != null) {
@@ -135,7 +135,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, Never>> revokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -165,7 +165,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, Never>> unrevokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

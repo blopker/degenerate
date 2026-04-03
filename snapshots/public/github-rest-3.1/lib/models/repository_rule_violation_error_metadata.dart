@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_violation_error_metadata_secret_scanning.dart';final class RepositoryRuleViolationErrorMetadata {const RepositoryRuleViolationErrorMetadata({this.secretScanning});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_violation_error_metadata_secret_scanning.dart';@immutable final class RepositoryRuleViolationErrorMetadata {const RepositoryRuleViolationErrorMetadata({this.secretScanning});
 
 factory RepositoryRuleViolationErrorMetadata.fromJson(Map<String, dynamic> json) { return RepositoryRuleViolationErrorMetadata(
   secretScanning: json['secret_scanning'] != null ? RepositoryRuleViolationErrorMetadataSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null,

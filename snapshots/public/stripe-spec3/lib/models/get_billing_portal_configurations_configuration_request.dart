@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingPortalConfigurationsConfigurationRequest {const GetBillingPortalConfigurationsConfigurationRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingPortalConfigurationsConfigurationRequest {const GetBillingPortalConfigurationsConfigurationRequest();
 
 factory GetBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return GetBillingPortalConfigurationsConfigurationRequest(
 

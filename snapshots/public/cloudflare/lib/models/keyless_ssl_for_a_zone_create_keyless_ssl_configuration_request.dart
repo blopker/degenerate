@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// The zone's SSL certificate or SSL certificate and intermediate(s).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// The zone's SSL certificate or SSL certificate and intermediate(s).
 extension type const TlsCertificatesAndHostnamesSchemasCertificate(String value) {
 factory TlsCertificatesAndHostnamesSchemasCertificate.fromJson(String json) => TlsCertificatesAndHostnamesSchemasCertificate(json);
 
 String toJson() => value;
 
 }
-final class KeylessSslForAZoneCreateKeylessSslConfigurationRequest {const KeylessSslForAZoneCreateKeylessSslConfigurationRequest({this.bundleMethod, required this.certificate, required this.host, this.name, required this.port, this.tunnel, });
+@immutable final class KeylessSslForAZoneCreateKeylessSslConfigurationRequest {const KeylessSslForAZoneCreateKeylessSslConfigurationRequest({required this.certificate, required this.host, required this.port, this.bundleMethod, this.name, this.tunnel, });
 
 factory KeylessSslForAZoneCreateKeylessSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_reviewer.dart';/// A reviewing team, and file patterns describing which files they must approve changes to.
-final class RepositoryRuleParamsRequiredReviewerConfiguration {const RepositoryRuleParamsRequiredReviewerConfiguration({required this.filePatterns, required this.minimumApprovals, required this.reviewer, });
+@immutable final class RepositoryRuleParamsRequiredReviewerConfiguration {const RepositoryRuleParamsRequiredReviewerConfiguration({required this.filePatterns, required this.minimumApprovals, required this.reviewer, });
 
 factory RepositoryRuleParamsRequiredReviewerConfiguration.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsRequiredReviewerConfiguration(
   filePatterns: (json['file_patterns'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories._(this.value);
 
 factory BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories($value)'; } 
  }
 /// 
-final class BankConnectionsResourceLinkAccountSessionFilters {const BankConnectionsResourceLinkAccountSessionFilters({this.accountSubcategories, this.countries, });
+@immutable final class BankConnectionsResourceLinkAccountSessionFilters {const BankConnectionsResourceLinkAccountSessionFilters({this.accountSubcategories, this.countries, });
 
 factory BankConnectionsResourceLinkAccountSessionFilters.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceLinkAccountSessionFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories.fromJson(e as String)).toList(),

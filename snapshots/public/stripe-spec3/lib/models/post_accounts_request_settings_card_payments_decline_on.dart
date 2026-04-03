@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestSettingsCardPaymentsDeclineOn {const PostAccountsRequestSettingsCardPaymentsDeclineOn({this.avsFailure, this.cvcFailure, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestSettingsCardPaymentsDeclineOn {const PostAccountsRequestSettingsCardPaymentsDeclineOn({this.avsFailure, this.cvcFailure, });
 
 factory PostAccountsRequestSettingsCardPaymentsDeclineOn.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsCardPaymentsDeclineOn(
   avsFailure: json['avs_failure'] as bool?,

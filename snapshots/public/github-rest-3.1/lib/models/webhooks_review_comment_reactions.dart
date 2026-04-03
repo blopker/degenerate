@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksReviewCommentReactions {const WebhooksReviewCommentReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksReviewCommentReactions {const WebhooksReviewCommentReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url, });
 
 factory WebhooksReviewCommentReactions.fromJson(Map<String, dynamic> json) { return WebhooksReviewCommentReactions(
   plus1: (json['+1'] as num).toInt(),

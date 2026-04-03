@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection._(this.value);
 
 factory CampaignsListOrgCampaignsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

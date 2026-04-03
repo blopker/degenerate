@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChecksCreateSuiteRequest {const ChecksCreateSuiteRequest({required this.headSha});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksCreateSuiteRequest {const ChecksCreateSuiteRequest({required this.headSha});
 
 factory ChecksCreateSuiteRequest.fromJson(Map<String, dynamic> json) { return ChecksCreateSuiteRequest(
   headSha: json['head_sha'] as String,

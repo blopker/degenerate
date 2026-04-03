@@ -44,7 +44,7 @@ if (activeRegistrations != null) {
 }
 if (id != null) {
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 }
 if (include != null) {
@@ -152,7 +152,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, Never>> deleteRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_openai_gpt_oss20b_response400_errors.dart';final class WorkersAiPostRunCfOpenaiGptOss20bResponse400 {const WorkersAiPostRunCfOpenaiGptOss20bResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_openai_gpt_oss20b_response400_errors.dart';@immutable final class WorkersAiPostRunCfOpenaiGptOss20bResponse400 {const WorkersAiPostRunCfOpenaiGptOss20bResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfOpenaiGptOss20bResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfOpenaiGptOss20bResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfOpenaiGptOss20bResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -37,7 +37,7 @@ if (epssPercentage != null) {
   queryParameters['epss_percentage'] = epssPercentage;
 }
 if (has != null) {
-queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString()));
 }
 if (assignee != null) {
   queryParameters['assignee'] = assignee;
@@ -220,7 +220,7 @@ if (artifactRegistry != null) {
   queryParameters['artifact_registry'] = artifactRegistry;
 }
 if (has != null) {
-queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString()));
 }
 if (assignee != null) {
   queryParameters['assignee'] = assignee;
@@ -530,7 +530,7 @@ if (epssPercentage != null) {
   queryParameters['epss_percentage'] = epssPercentage;
 }
 if (has != null) {
-queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString()));
 }
 if (assignee != null) {
   queryParameters['assignee'] = assignee;

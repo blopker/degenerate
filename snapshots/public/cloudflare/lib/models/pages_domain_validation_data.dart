@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesDomainValidationDataMethod {const PagesDomainValidationDataMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesDomainValidationDataMethod {const PagesDomainValidationDataMethod._(this.value);
 
 factory PagesDomainValidationDataMethod.fromJson(String json) { return switch (json) {
   'http' => http,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDomainValidationDataMethod($value)'; } 
  }
-final class PagesDomainValidationDataStatus {const PagesDomainValidationDataStatus._(this.value);
+@immutable final class PagesDomainValidationDataStatus {const PagesDomainValidationDataStatus._(this.value);
 
 factory PagesDomainValidationDataStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDomainValidationDataStatus($value)'; } 
  }
-final class PagesDomainValidationData {const PagesDomainValidationData({this.errorMessage, required this.method, required this.status, this.txtName, this.txtValue, });
+@immutable final class PagesDomainValidationData {const PagesDomainValidationData({required this.method, required this.status, this.errorMessage, this.txtName, this.txtValue, });
 
 factory PagesDomainValidationData.fromJson(Map<String, dynamic> json) { return PagesDomainValidationData(
   errorMessage: json['error_message'] as String?,

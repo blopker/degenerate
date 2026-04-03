@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_firewall_messages2_source.dart';final class DnsFirewallMessages2 {const DnsFirewallMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_messages2_source.dart';@immutable final class DnsFirewallMessages2 {const DnsFirewallMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DnsFirewallMessages2.fromJson(Map<String, dynamic> json) { return DnsFirewallMessages2(
   code: (json['code'] as num).toInt(),

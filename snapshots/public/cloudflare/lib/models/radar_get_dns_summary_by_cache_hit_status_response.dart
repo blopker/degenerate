@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_summary_by_cache_hit_status_response_result.dart';final class RadarGetDnsSummaryByCacheHitStatusResponse {const RadarGetDnsSummaryByCacheHitStatusResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_cache_hit_status_response_result.dart';@immutable final class RadarGetDnsSummaryByCacheHitStatusResponse {const RadarGetDnsSummaryByCacheHitStatusResponse({required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByCacheHitStatusResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByCacheHitStatusResponse(
   result: RadarGetDnsSummaryByCacheHitStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),

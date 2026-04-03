@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaDateRange {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaDateRange {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

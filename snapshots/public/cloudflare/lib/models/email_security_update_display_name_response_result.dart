@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityUpdateDisplayNameResponseResult {const EmailSecurityUpdateDisplayNameResponseResult({required this.email, required this.isEmailRegex, required this.name, this.comments, required this.createdAt, this.directoryId, this.directoryNodeId, this.externalDirectoryNodeId, required this.id, required this.lastModified, this.provenance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateDisplayNameResponseResult {const EmailSecurityUpdateDisplayNameResponseResult({required this.email, required this.isEmailRegex, required this.name, required this.createdAt, required this.id, required this.lastModified, this.comments, this.directoryId, this.directoryNodeId, this.externalDirectoryNodeId, this.provenance, });
 
 factory EmailSecurityUpdateDisplayNameResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDisplayNameResponseResult(
   email: json['email'] as String,

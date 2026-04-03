@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_wallet_options_link.dart';/// Wallet-specific configuration.
-final class PostCheckoutSessionsRequestWalletOptions {const PostCheckoutSessionsRequestWalletOptions({this.link});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_wallet_options_link.dart';/// Wallet-specific configuration.
+@immutable final class PostCheckoutSessionsRequestWalletOptions {const PostCheckoutSessionsRequestWalletOptions({this.link});
 
 factory PostCheckoutSessionsRequestWalletOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestWalletOptions(
   link: json['link'] != null ? PostCheckoutSessionsRequestWalletOptionsLink.fromJson(json['link'] as Map<String, dynamic>) : null,

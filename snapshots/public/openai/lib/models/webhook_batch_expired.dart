@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_batch_expired_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batch_expired_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookBatchExpiredObject {const WebhookBatchExpiredObject._(this.value);
+@immutable final class WebhookBatchExpiredObject {const WebhookBatchExpiredObject._(this.value);
 
 factory WebhookBatchExpiredObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `batch.expired`.
 /// 
-final class WebhookBatchExpiredType {const WebhookBatchExpiredType._(this.value);
+@immutable final class WebhookBatchExpiredType {const WebhookBatchExpiredType._(this.value);
 
 factory WebhookBatchExpiredType.fromJson(String json) { return switch (json) {
   'batch.expired' => batchExpired,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a batch API request has expired.
 /// 
-final class WebhookBatchExpired {const WebhookBatchExpired({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookBatchExpired {const WebhookBatchExpired({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookBatchExpired.fromJson(Map<String, dynamic> json) { return WebhookBatchExpired(
   createdAt: (json['created_at'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_info_categorizations.dart';import 'intel_phishing_url_info_model_results.dart';import 'intel_phishing_url_info_rule_matches.dart';import 'intel_phishing_url_info_scan_status.dart';final class IntelPhishingUrlInfo {const IntelPhishingUrlInfo({this.categorizations, this.modelResults, this.ruleMatches, this.scanStatus, this.screenshotDownloadSignature, this.screenshotPath, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_info_categorizations.dart';import 'intel_phishing_url_info_model_results.dart';import 'intel_phishing_url_info_rule_matches.dart';import 'intel_phishing_url_info_scan_status.dart';@immutable final class IntelPhishingUrlInfo {const IntelPhishingUrlInfo({this.categorizations, this.modelResults, this.ruleMatches, this.scanStatus, this.screenshotDownloadSignature, this.screenshotPath, this.url, });
 
 factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfo(
   categorizations: (json['categorizations'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoCategorizations.fromJson(e as Map<String, dynamic>)).toList(),

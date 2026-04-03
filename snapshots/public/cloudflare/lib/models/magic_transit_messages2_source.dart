@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MagicTransitMessages2Source {const MagicTransitMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicTransitMessages2Source {const MagicTransitMessages2Source({this.pointer});
 
 factory MagicTransitMessages2Source.fromJson(Map<String, dynamic> json) { return MagicTransitMessages2Source(
   pointer: json['pointer'] as String?,

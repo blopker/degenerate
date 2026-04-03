@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_created.dart';import 'teams_devices_deleted.dart';import 'teams_devices_ip.dart';import 'teams_devices_key.dart';import 'teams_devices_last_seen.dart';import 'teams_devices_mac_address.dart';import 'teams_devices_model.dart';import 'teams_devices_os_version.dart';import 'teams_devices_platform.dart';import 'teams_devices_registration_id.dart';import 'teams_devices_schemas_name.dart';import 'teams_devices_serial_number.dart';import 'teams_devices_updated.dart';import 'teams_devices_user.dart';import 'teams_devices_version.dart';/// The device manufacturer name.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_created.dart';import 'teams_devices_deleted.dart';import 'teams_devices_ip.dart';import 'teams_devices_key.dart';import 'teams_devices_last_seen.dart';import 'teams_devices_mac_address.dart';import 'teams_devices_model.dart';import 'teams_devices_os_version.dart';import 'teams_devices_platform.dart';import 'teams_devices_registration_id.dart';import 'teams_devices_schemas_name.dart';import 'teams_devices_serial_number.dart';import 'teams_devices_updated.dart';import 'teams_devices_user.dart';import 'teams_devices_version.dart';/// The device manufacturer name.
 extension type const TeamsDevicesManufacturer(String value) {
 factory TeamsDevicesManufacturer.fromJson(String json) => TeamsDevicesManufacturer(json);
 
@@ -35,7 +35,7 @@ factory TeamsDevicesRevokedAt.fromJson(String json) => TeamsDevicesRevokedAt(Dat
 String toJson() => value.toIso8601String();
 
 }
-final class TeamsDevicesDevices {const TeamsDevicesDevices({this.created, this.deleted, this.deviceType, this.id, this.ip, this.key, this.lastSeen, this.macAddress, this.manufacturer, this.model, this.name, this.osDistroName, this.osDistroRevision, this.osVersion, this.osVersionExtra, this.revokedAt, this.serialNumber, this.updated, this.user, this.version, });
+@immutable final class TeamsDevicesDevices {const TeamsDevicesDevices({this.created, this.deleted, this.deviceType, this.id, this.ip, this.key, this.lastSeen, this.macAddress, this.manufacturer, this.model, this.name, this.osDistroName, this.osDistroRevision, this.osVersion, this.osVersionExtra, this.revokedAt, this.serialNumber, this.updated, this.user, this.version, });
 
 factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevices(
   created: json['created'] != null ? TeamsDevicesCreated.fromJson(json['created'] as String) : null,

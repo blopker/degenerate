@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_delete_dataset_response_result.dart';final class AigConfigDeleteDatasetResponse {const AigConfigDeleteDatasetResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_dataset_response_result.dart';@immutable final class AigConfigDeleteDatasetResponse {const AigConfigDeleteDatasetResponse({required this.result, required this.success, });
 
 factory AigConfigDeleteDatasetResponse.fromJson(Map<String, dynamic> json) { return AigConfigDeleteDatasetResponse(
   result: AigConfigDeleteDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),

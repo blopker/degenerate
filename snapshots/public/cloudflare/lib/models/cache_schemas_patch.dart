@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls enablement of Automatic SSL/TLS.
-final class CacheSchemasValue {const CacheSchemasValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls enablement of Automatic SSL/TLS.
+@immutable final class CacheSchemasValue {const CacheSchemasValue._(this.value);
 
 factory CacheSchemasValue.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheSchemasValue($value)'; } 
  }
 /// Update enablement of Automatic SSL/TLS.
-final class CacheSchemasPatch {const CacheSchemasPatch({required this.value});
+@immutable final class CacheSchemasPatch {const CacheSchemasPatch({required this.value});
 
 factory CacheSchemasPatch.fromJson(Map<String, dynamic> json) { return CacheSchemasPatch(
   value: CacheSchemasValue.fromJson(json['value'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'assistants_named_tool_choice_function.dart';/// The type of the tool. If type is `function`, the function name must be set
-final class AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistants_named_tool_choice_function.dart';/// The type of the tool. If type is `function`, the function name must be set
+@immutable final class AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType._(this.value);
 
 factory AssistantsNamedToolChoiceType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AssistantsNamedToolChoiceType($value)'; } 
  }
 /// Specifies a tool the model should use. Use to force the model to call a specific tool.
-final class AssistantsNamedToolChoice {const AssistantsNamedToolChoice({required this.type, this.function, });
+@immutable final class AssistantsNamedToolChoice {const AssistantsNamedToolChoice({required this.type, this.function, });
 
 factory AssistantsNamedToolChoice.fromJson(Map<String, dynamic> json) { return AssistantsNamedToolChoice(
   type: AssistantsNamedToolChoiceType.fromJson(json['type'] as String),

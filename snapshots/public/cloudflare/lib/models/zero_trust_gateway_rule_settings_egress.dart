@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.
-final class ZeroTrustGatewayRuleSettingsEgress {const ZeroTrustGatewayRuleSettingsEgress({this.ipv4, this.ipv4Fallback, this.ipv6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.
+@immutable final class ZeroTrustGatewayRuleSettingsEgress {const ZeroTrustGatewayRuleSettingsEgress({this.ipv4, this.ipv4Fallback, this.ipv6, });
 
 factory ZeroTrustGatewayRuleSettingsEgress.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsEgress(
   ipv4: json['ipv4'] as String?,

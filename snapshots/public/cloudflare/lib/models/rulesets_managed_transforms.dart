@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_managed_transform.dart';/// A Managed Transforms object.
-final class RulesetsManagedTransforms {const RulesetsManagedTransforms({required this.managedRequestHeaders, required this.managedResponseHeaders, });
+@immutable final class RulesetsManagedTransforms {const RulesetsManagedTransforms({required this.managedRequestHeaders, required this.managedResponseHeaders, });
 
 factory RulesetsManagedTransforms.fromJson(Map<String, dynamic> json) { return RulesetsManagedTransforms(
   managedRequestHeaders: (json['managed_request_headers'] as List<dynamic>).map((e) => RulesetsManagedTransform.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo {const TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo {const TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
 factory TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo(
   count: json['count'],

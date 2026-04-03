@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The error code for the response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The error code for the response.
 /// 
-final class ResponseErrorCode {const ResponseErrorCode._(this.value);
+@immutable final class ResponseErrorCode {const ResponseErrorCode._(this.value);
 
 factory ResponseErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An error object returned when the model fails to generate a Response.
 /// 
-final class ResponseError {const ResponseError({required this.code, required this.message, });
+@immutable final class ResponseError {const ResponseError({required this.code, required this.message, });
 
 factory ResponseError.fromJson(Map<String, dynamic> json) { return ResponseError(
   code: ResponseErrorCode.fromJson(json['code'] as String),

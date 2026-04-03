@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpRegexValidationResult {const DlpRegexValidationResult({required this.valid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRegexValidationResult {const DlpRegexValidationResult({required this.valid});
 
 factory DlpRegexValidationResult.fromJson(Map<String, dynamic> json) { return DlpRegexValidationResult(
   valid: json['valid'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_pages_custom_page.dart';final class CustomPagesCustomPageResult {const CustomPagesCustomPageResult({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_custom_page.dart';@immutable final class CustomPagesCustomPageResult {const CustomPagesCustomPageResult({this.result});
 
 factory CustomPagesCustomPageResult.fromJson(Map<String, dynamic> json) { return CustomPagesCustomPageResult(
   result: json['result'] != null ? CustomPagesCustomPage.fromJson(json['result'] as Map<String, dynamic>) : null,

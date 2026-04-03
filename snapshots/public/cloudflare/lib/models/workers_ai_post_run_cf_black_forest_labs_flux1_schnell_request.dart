@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest({required this.prompt, this.steps = 4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest({required this.prompt, this.steps = 4, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
   prompt: json['prompt'] as String,

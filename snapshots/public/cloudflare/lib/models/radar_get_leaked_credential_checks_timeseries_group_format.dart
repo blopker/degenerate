@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetLeakedCredentialChecksTimeseriesGroupFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupFormat._(this.value);
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

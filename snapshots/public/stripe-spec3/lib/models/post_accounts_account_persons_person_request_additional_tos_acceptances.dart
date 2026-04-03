@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_persons_person_request_additional_tos_acceptances_account.dart';/// Details on the legal guardian's or authorizer's acceptance of the required Stripe agreements.
-final class PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances {const PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances({this.account});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_person_request_additional_tos_acceptances_account.dart';/// Details on the legal guardian's or authorizer's acceptance of the required Stripe agreements.
+@immutable final class PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances {const PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances({this.account});
 
 factory PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances(
   account: json['account'] != null ? PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptancesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,

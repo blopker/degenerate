@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'accounts_by_account_id_pipelines_deprecated_response4_xx2_errors.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';final class AccountsByAccountIdPipelinesDeprecatedResponse4Xx2 {const AccountsByAccountIdPipelinesDeprecatedResponse4Xx2({required this.errors, required this.results, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'accounts_by_account_id_pipelines_deprecated_response4_xx2_errors.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedResponse4Xx2 {const AccountsByAccountIdPipelinesDeprecatedResponse4Xx2({required this.errors, required this.results, required this.success, });
 
 factory AccountsByAccountIdPipelinesDeprecatedResponse4Xx2.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedResponse4Xx2(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors.fromJson(e as Map<String, dynamic>)).toList(),

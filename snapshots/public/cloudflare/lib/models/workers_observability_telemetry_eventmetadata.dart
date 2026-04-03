@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityTelemetryEvent$metadata {const WorkersObservabilityTelemetryEvent$metadata({this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, required this.id, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityTelemetryEvent$metadata {const WorkersObservabilityTelemetryEvent$metadata({required this.id, this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
 
 factory WorkersObservabilityTelemetryEvent$metadata.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$metadata(
   account: json['account'] as String?,

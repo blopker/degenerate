@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBancontact(
 

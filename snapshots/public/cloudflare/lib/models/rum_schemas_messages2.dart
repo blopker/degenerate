@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rum_schemas_messages2_source.dart';final class RumSchemasMessages2 {const RumSchemasMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_schemas_messages2_source.dart';@immutable final class RumSchemasMessages2 {const RumSchemasMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory RumSchemasMessages2.fromJson(Map<String, dynamic> json) { return RumSchemasMessages2(
   code: (json['code'] as num).toInt(),

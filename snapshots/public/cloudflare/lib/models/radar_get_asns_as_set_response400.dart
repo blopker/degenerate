@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_asns_as_set_response400_errors.dart';final class RadarGetAsnsAsSetResponse400 {const RadarGetAsnsAsSetResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_asns_as_set_response400_errors.dart';@immutable final class RadarGetAsnsAsSetResponse400 {const RadarGetAsnsAsSetResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAsnsAsSetResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAsnsAsSetResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAsnsAsSetResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -35,7 +35,7 @@ if (status != null) {
 }
 if (type != null) {
 for (final item in type) {
-  queryParametersList.add(ApiQueryParameter(name: 'type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'type', value: item.toJson()));
 }
 }
 if (asn != null) {

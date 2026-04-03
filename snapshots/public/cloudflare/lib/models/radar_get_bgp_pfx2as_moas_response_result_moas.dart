@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_pfx2as_moas_response_result_moas_origins.dart';final class RadarGetBgpPfx2asMoasResponseResultMoas {const RadarGetBgpPfx2asMoasResponseResultMoas({required this.origins, required this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_pfx2as_moas_response_result_moas_origins.dart';@immutable final class RadarGetBgpPfx2asMoasResponseResultMoas {const RadarGetBgpPfx2asMoasResponseResultMoas({required this.origins, required this.prefix, });
 
 factory RadarGetBgpPfx2asMoasResponseResultMoas.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asMoasResponseResultMoas(
   origins: (json['origins'] as List<dynamic>).map((e) => RadarGetBgpPfx2asMoasResponseResultMoasOrigins.fromJson(e as Map<String, dynamic>)).toList(),

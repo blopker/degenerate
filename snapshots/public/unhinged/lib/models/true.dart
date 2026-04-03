@@ -2,6 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
+@immutable
 final class TrueNull {
   const TrueNull._(this.value);
 
@@ -73,6 +74,7 @@ final class TrueNull {
   }
 }
 
+@immutable
 final class True0 {
   const True0._(this.value);
 
@@ -139,13 +141,14 @@ final class True0 {
   }
 }
 
+@immutable
 final class True {
   const True({
-    this.$false = true,
     required this.none,
-    this.$null = TrueNull.$null,
     required this.$0,
     required this.$empty,
+    this.$false = true,
+    this.$null = TrueNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,

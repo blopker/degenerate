@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DnsRecordsTtlVariant2 {const DnsRecordsTtlVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsTtlVariant2 {const DnsRecordsTtlVariant2._(this.value);
 
 factory DnsRecordsTtlVariant2.fromJson(double json) { return switch (json) {
   1 => $1,

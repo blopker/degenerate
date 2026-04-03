@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the desired compression algorithm and format.
-final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the desired compression algorithm and format.
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType._(this.value);
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType($value)'; } 
  }
-final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression({this.type = AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType.gzip});
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression({this.type = AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType.gzip});
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression(
   type: json.containsKey('type') ? AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType.fromJson(json['type'] as String) : AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompressionType.gzip,

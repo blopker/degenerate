@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestNameCollectionIndividual {const PostPaymentLinksRequestNameCollectionIndividual({required this.enabled, this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestNameCollectionIndividual {const PostPaymentLinksRequestNameCollectionIndividual({required this.enabled, this.optional, });
 
 factory PostPaymentLinksRequestNameCollectionIndividual.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestNameCollectionIndividual(
   enabled: json['enabled'] as bool,

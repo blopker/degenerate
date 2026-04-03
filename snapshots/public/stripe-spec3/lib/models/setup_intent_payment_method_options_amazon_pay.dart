@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupIntentPaymentMethodOptionsAmazonPay {const SetupIntentPaymentMethodOptionsAmazonPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupIntentPaymentMethodOptionsAmazonPay {const SetupIntentPaymentMethodOptionsAmazonPay();
 
 factory SetupIntentPaymentMethodOptionsAmazonPay.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAmazonPay(
 

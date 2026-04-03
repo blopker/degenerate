@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_tiers_up_to.dart';final class PostPricesRequestTiers {const PostPricesRequestTiers({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, required this.upTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_tiers_up_to.dart';@immutable final class PostPricesRequestTiers {const PostPricesRequestTiers({required this.upTo, this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostPricesRequestTiers.fromJson(Map<String, dynamic> json) { return PostPricesRequestTiers(
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.permissions, this.prefetch, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.permissions, this.prefetch, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(e as String)).toList(),

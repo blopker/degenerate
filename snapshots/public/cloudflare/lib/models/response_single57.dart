@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single57_result.dart';import 'response_single57_result_info.dart';import 'web3_messages2.dart';final class ResponseSingle57 {const ResponseSingle57({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single57_result.dart';import 'response_single57_result_info.dart';import 'web3_messages2.dart';@immutable final class ResponseSingle57 {const ResponseSingle57({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseSingle57.fromJson(Map<String, dynamic> json) { return ResponseSingle57(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),

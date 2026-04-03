@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_group.dart';/// Always `list`.
-final class ProjectGroupListResourceObject {const ProjectGroupListResourceObject._(this.value);
+@immutable final class ProjectGroupListResourceObject {const ProjectGroupListResourceObject._(this.value);
 
 factory ProjectGroupListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectGroupListResourceObject($value)'; } 
  }
 /// Paginated list of groups that have access to a project.
-final class ProjectGroupListResource {const ProjectGroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
+@immutable final class ProjectGroupListResource {const ProjectGroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory ProjectGroupListResource.fromJson(Map<String, dynamic> json) { return ProjectGroupListResource(
   object: ProjectGroupListResourceObject.fromJson(json['object'] as String),

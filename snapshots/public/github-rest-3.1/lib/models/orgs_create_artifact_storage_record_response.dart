@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_create_artifact_storage_record_response_storage_records.dart';final class OrgsCreateArtifactStorageRecordResponse {const OrgsCreateArtifactStorageRecordResponse({this.totalCount, this.storageRecords, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_create_artifact_storage_record_response_storage_records.dart';@immutable final class OrgsCreateArtifactStorageRecordResponse {const OrgsCreateArtifactStorageRecordResponse({this.totalCount, this.storageRecords, });
 
 factory OrgsCreateArtifactStorageRecordResponse.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

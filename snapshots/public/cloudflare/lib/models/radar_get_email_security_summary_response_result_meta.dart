@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_summary_response_result_meta_confidence_info.dart';import 'radar_get_email_security_summary_response_result_meta_date_range.dart';import 'radar_get_email_security_summary_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetEmailSecuritySummaryResponseResultMetaNormalization {const RadarGetEmailSecuritySummaryResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetEmailSecuritySummaryResponseResultMetaNormalization {const RadarGetEmailSecuritySummaryResponseResultMetaNormalization._(this.value);
 
 factory RadarGetEmailSecuritySummaryResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecuritySummaryResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetEmailSecuritySummaryResponseResultMeta {const RadarGetEmailSecuritySummaryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetEmailSecuritySummaryResponseResultMeta {const RadarGetEmailSecuritySummaryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetEmailSecuritySummaryResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryResponseResultMeta(
   confidenceInfo: RadarGetEmailSecuritySummaryResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),

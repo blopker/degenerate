@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchEventQueryUpdateResponse404Errors {const PatchEventQueryUpdateResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchEventQueryUpdateResponse404Errors {const PatchEventQueryUpdateResponse404Errors({required this.message});
 
 factory PatchEventQueryUpdateResponse404Errors.fromJson(Map<String, dynamic> json) { return PatchEventQueryUpdateResponse404Errors(
   message: json['message'] as String,

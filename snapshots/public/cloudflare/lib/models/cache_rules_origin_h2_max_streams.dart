@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_origin_h2_max_streams_value.dart';/// Value of the zone setting.
-final class CacheRulesOriginH2MaxStreamsId {const CacheRulesOriginH2MaxStreamsId._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_h2_max_streams_value.dart';/// Value of the zone setting.
+@immutable final class CacheRulesOriginH2MaxStreamsId {const CacheRulesOriginH2MaxStreamsId._(this.value);
 
 factory CacheRulesOriginH2MaxStreamsId.fromJson(String json) { return switch (json) {
   'origin_h2_max_streams' => originH2MaxStreams,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesOriginH2MaxStreamsId($value)'; } 
  }
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
-final class CacheRulesOriginH2MaxStreams {const CacheRulesOriginH2MaxStreams({required this.id, this.modifiedOn, this.value, });
+@immutable final class CacheRulesOriginH2MaxStreams {const CacheRulesOriginH2MaxStreams({required this.id, this.modifiedOn, this.value, });
 
 factory CacheRulesOriginH2MaxStreams.fromJson(Map<String, dynamic> json) { return CacheRulesOriginH2MaxStreams(
   id: CacheRulesOriginH2MaxStreamsId.fromJson(json['id'] as String),

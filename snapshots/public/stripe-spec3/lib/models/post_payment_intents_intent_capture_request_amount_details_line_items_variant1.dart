@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1_payment_method_options.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1_tax.dart';final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 {const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1({this.discountAmount, this.paymentMethodOptions, this.productCode, required this.productName, required this.quantity, this.tax, required this.unitCost, this.unitOfMeasure, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1_payment_method_options.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1_tax.dart';@immutable final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 {const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1({required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
 
 factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,

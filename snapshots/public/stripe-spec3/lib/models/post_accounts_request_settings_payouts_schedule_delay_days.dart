@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsRequestSettingsPayoutsScheduleDelayDaysVariant1 {const PostAccountsRequestSettingsPayoutsScheduleDelayDaysVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestSettingsPayoutsScheduleDelayDaysVariant1 {const PostAccountsRequestSettingsPayoutsScheduleDelayDaysVariant1._(this.value);
 
 factory PostAccountsRequestSettingsPayoutsScheduleDelayDaysVariant1.fromJson(String json) { return switch (json) {
   'minimum' => minimum,

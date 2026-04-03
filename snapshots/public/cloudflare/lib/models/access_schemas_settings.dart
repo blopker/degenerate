@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSchemasSettings {const AccessSchemasSettings({required this.chinaNetwork, required this.clientCertificateForwarding, required this.hostname, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasSettings {const AccessSchemasSettings({required this.chinaNetwork, required this.clientCertificateForwarding, required this.hostname, });
 
 factory AccessSchemasSettings.fromJson(Map<String, dynamic> json) { return AccessSchemasSettings(
   chinaNetwork: json['china_network'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodAffirm {const PaymentMethodAffirm();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodAffirm {const PaymentMethodAffirm();
 
 factory PaymentMethodAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodAffirm(
 

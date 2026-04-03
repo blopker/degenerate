@@ -50,12 +50,12 @@ Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAn
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
-  queryParametersList.add(ApiQueryParameter(name: 'dimensions', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dimensions', value: item.toJson()));
 }
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item));
 }
 }
 if (until != null) {
@@ -63,7 +63,7 @@ if (until != null) {
 }
 if (metrics != null) {
 for (final item in metrics) {
-  queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson()));
 }
 }
 if (filters != null) {
@@ -102,12 +102,12 @@ Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAn
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
-  queryParametersList.add(ApiQueryParameter(name: 'dimensions', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dimensions', value: item.toJson()));
 }
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item));
 }
 }
 if (until != null) {
@@ -115,7 +115,7 @@ if (until != null) {
 }
 if (metrics != null) {
 for (final item in metrics) {
-  queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson()));
 }
 }
 if (filters != null) {

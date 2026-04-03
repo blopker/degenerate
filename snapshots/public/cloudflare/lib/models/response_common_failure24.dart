@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_messages2.dart';final class ResponseCommonFailure24 {const ResponseCommonFailure24({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_messages2.dart';@immutable final class ResponseCommonFailure24 {const ResponseCommonFailure24({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure24.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure24(
   errors: (json['errors'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),

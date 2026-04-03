@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents whether this FinancialAccount is eligible for deposit insurance. Various factors determine the insurance amount.
-final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance({required this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents whether this FinancialAccount is eligible for deposit insurance. Various factors determine the insurance amount.
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance({required this.requested});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance(
   requested: json['requested'] as bool,

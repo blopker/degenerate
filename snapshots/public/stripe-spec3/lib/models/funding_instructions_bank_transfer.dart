@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_financial_address.dart';/// The bank_transfer type
-final class FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType._(this.value);
+@immutable final class FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType._(this.value);
 
 factory FundingInstructionsBankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FundingInstructionsBankTransferType($value)'; } 
  }
 /// 
-final class FundingInstructionsBankTransfer {const FundingInstructionsBankTransfer({required this.country, required this.financialAddresses, required this.type, });
+@immutable final class FundingInstructionsBankTransfer {const FundingInstructionsBankTransfer({required this.country, required this.financialAddresses, required this.type, });
 
 factory FundingInstructionsBankTransfer.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransfer(
   country: json['country'] as String,

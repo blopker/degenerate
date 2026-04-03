@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify FIPS settings.
-final class ZeroTrustGatewayFipsSettings {const ZeroTrustGatewayFipsSettings({this.tls});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify FIPS settings.
+@immutable final class ZeroTrustGatewayFipsSettings {const ZeroTrustGatewayFipsSettings({this.tls});
 
 factory ZeroTrustGatewayFipsSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayFipsSettings(
   tls: json['tls'] as bool?,

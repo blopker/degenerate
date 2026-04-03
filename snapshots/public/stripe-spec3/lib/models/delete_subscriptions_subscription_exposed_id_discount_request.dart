@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteSubscriptionsSubscriptionExposedIdDiscountRequest {const DeleteSubscriptionsSubscriptionExposedIdDiscountRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteSubscriptionsSubscriptionExposedIdDiscountRequest {const DeleteSubscriptionsSubscriptionExposedIdDiscountRequest();
 
 factory DeleteSubscriptionsSubscriptionExposedIdDiscountRequest.fromJson(Map<String, dynamic> json) { return DeleteSubscriptionsSubscriptionExposedIdDiscountRequest(
 

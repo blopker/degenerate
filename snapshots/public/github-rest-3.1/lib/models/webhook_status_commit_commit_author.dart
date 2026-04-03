@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metaproperties for Git author/committer information.
-final class WebhookStatusCommitCommitAuthor {const WebhookStatusCommitCommitAuthor({required this.date, required this.email, required this.name, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
+@immutable final class WebhookStatusCommitCommitAuthor {const WebhookStatusCommitCommitAuthor({required this.date, required this.email, required this.name, this.username, });
 
 factory WebhookStatusCommitCommitAuthor.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitCommitAuthor(
   date: json['date'] as String,

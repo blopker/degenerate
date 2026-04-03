@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'assistant_message_item.dart';import 'client_tool_call_item.dart';import 'task_group_item.dart';import 'task_item.dart';import 'user_message_item.dart';import 'widget_message_item.dart';sealed class ThreadItem {const ThreadItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_message_item.dart';import 'client_tool_call_item.dart';import 'task_group_item.dart';import 'task_item.dart';import 'user_message_item.dart';import 'widget_message_item.dart';sealed class ThreadItem {const ThreadItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ThreadItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreadItem$Unknown; } 
  }
-final class ThreadItemChatkitUserMessage extends ThreadItem {const ThreadItemChatkitUserMessage(this.userMessageItem);
+@immutable final class ThreadItemChatkitUserMessage extends ThreadItem {const ThreadItemChatkitUserMessage(this.userMessageItem);
 
 factory ThreadItemChatkitUserMessage.fromJson(Map<String, dynamic> json) { return ThreadItemChatkitUserMessage(UserMessageItem.fromJson(json)); }
 
@@ -32,7 +32,7 @@ final UserMessageItem userMessageItem;
 @override int get hashCode { return userMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitUserMessage(userMessageItem: $userMessageItem)'; } 
  }
-final class ThreadItemChatkitAssistantMessage extends ThreadItem {const ThreadItemChatkitAssistantMessage(this.assistantMessageItem);
+@immutable final class ThreadItemChatkitAssistantMessage extends ThreadItem {const ThreadItemChatkitAssistantMessage(this.assistantMessageItem);
 
 factory ThreadItemChatkitAssistantMessage.fromJson(Map<String, dynamic> json) { return ThreadItemChatkitAssistantMessage(AssistantMessageItem.fromJson(json)); }
 
@@ -45,7 +45,7 @@ final AssistantMessageItem assistantMessageItem;
 @override int get hashCode { return assistantMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitAssistantMessage(assistantMessageItem: $assistantMessageItem)'; } 
  }
-final class ThreadItemChatkitWidget extends ThreadItem {const ThreadItemChatkitWidget(this.widgetMessageItem);
+@immutable final class ThreadItemChatkitWidget extends ThreadItem {const ThreadItemChatkitWidget(this.widgetMessageItem);
 
 factory ThreadItemChatkitWidget.fromJson(Map<String, dynamic> json) { return ThreadItemChatkitWidget(WidgetMessageItem.fromJson(json)); }
 
@@ -58,7 +58,7 @@ final WidgetMessageItem widgetMessageItem;
 @override int get hashCode { return widgetMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitWidget(widgetMessageItem: $widgetMessageItem)'; } 
  }
-final class ThreadItemChatkitClientToolCall extends ThreadItem {const ThreadItemChatkitClientToolCall(this.clientToolCallItem);
+@immutable final class ThreadItemChatkitClientToolCall extends ThreadItem {const ThreadItemChatkitClientToolCall(this.clientToolCallItem);
 
 factory ThreadItemChatkitClientToolCall.fromJson(Map<String, dynamic> json) { return ThreadItemChatkitClientToolCall(ClientToolCallItem.fromJson(json)); }
 
@@ -71,7 +71,7 @@ final ClientToolCallItem clientToolCallItem;
 @override int get hashCode { return clientToolCallItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitClientToolCall(clientToolCallItem: $clientToolCallItem)'; } 
  }
-final class ThreadItemChatkitTask extends ThreadItem {const ThreadItemChatkitTask(this.taskItem);
+@immutable final class ThreadItemChatkitTask extends ThreadItem {const ThreadItemChatkitTask(this.taskItem);
 
 factory ThreadItemChatkitTask.fromJson(Map<String, dynamic> json) { return ThreadItemChatkitTask(TaskItem.fromJson(json)); }
 
@@ -84,7 +84,7 @@ final TaskItem taskItem;
 @override int get hashCode { return taskItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitTask(taskItem: $taskItem)'; } 
  }
-final class ThreadItemChatkitTaskGroup extends ThreadItem {const ThreadItemChatkitTaskGroup(this.taskGroupItem);
+@immutable final class ThreadItemChatkitTaskGroup extends ThreadItem {const ThreadItemChatkitTaskGroup(this.taskGroupItem);
 
 factory ThreadItemChatkitTaskGroup.fromJson(Map<String, dynamic> json) { return ThreadItemChatkitTaskGroup(TaskGroupItem.fromJson(json)); }
 
@@ -99,7 +99,7 @@ final TaskGroupItem taskGroupItem;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ThreadItem$Unknown extends ThreadItem {const ThreadItem$Unknown(this.json);
+@immutable final class ThreadItem$Unknown extends ThreadItem {const ThreadItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_priority.dart';import 'waf_managed_rules_rule_components_schemas_identifier.dart';import 'waf_managed_rules_schemas_description.dart';import 'waf_managed_rules_traditional_allow_rule_group.dart';/// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
-final class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional._(this.value);
+@immutable final class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional._(this.value);
 
 factory WafManagedRulesModeAllowTraditional.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WafManagedRulesModeAllowTraditional($value)'; } 
  }
 /// When triggered, traditional WAF rules cause the firewall to immediately act on the request based on the rule configuration. An 'allow' rule will immediately allow the request and no other rules will be processed.
-final class WafManagedRulesTraditionalAllowRule {const WafManagedRulesTraditionalAllowRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.mode, });
+@immutable final class WafManagedRulesTraditionalAllowRule {const WafManagedRulesTraditionalAllowRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.mode, });
 
 factory WafManagedRulesTraditionalAllowRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalAllowRule(
   description: WafManagedRulesSchemasDescription.fromJson(json['description'] as String),

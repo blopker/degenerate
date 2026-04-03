@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_deleted_catalog_sync.dart';final class McnDeleteCatalogSyncResponse {const McnDeleteCatalogSyncResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_deleted_catalog_sync.dart';@immutable final class McnDeleteCatalogSyncResponse {const McnDeleteCatalogSyncResponse({this.result});
 
 factory McnDeleteCatalogSyncResponse.fromJson(Map<String, dynamic> json) { return McnDeleteCatalogSyncResponse(
   result: json['result'] != null ? McnDeletedCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null,

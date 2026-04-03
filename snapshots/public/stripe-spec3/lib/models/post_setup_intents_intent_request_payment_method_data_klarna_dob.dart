@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentRequestPaymentMethodDataKlarnaDob {const PostSetupIntentsIntentRequestPaymentMethodDataKlarnaDob({required this.day, required this.month, required this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataKlarnaDob {const PostSetupIntentsIntentRequestPaymentMethodDataKlarnaDob({required this.day, required this.month, required this.year, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodDataKlarnaDob.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataKlarnaDob(
   day: (json['day'] as num).toInt(),

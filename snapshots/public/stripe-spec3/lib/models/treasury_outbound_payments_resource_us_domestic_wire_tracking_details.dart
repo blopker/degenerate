@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails {const TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails({this.chips, this.imad, this.omad, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails {const TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails({this.chips, this.imad, this.omad, });
 
 factory TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails(
   chips: json['chips'] as String?,

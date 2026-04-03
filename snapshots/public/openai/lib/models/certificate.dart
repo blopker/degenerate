@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'certificate_certificate_details.dart';/// The object type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'certificate_certificate_details.dart';/// The object type.
 /// 
 /// - If creating, updating, or getting a specific certificate, the object type is `certificate`.
 /// - If listing, activating, or deactivating certificates for the organization, the object type is `organization.certificate`.
 /// - If listing, activating, or deactivating certificates for a project, the object type is `organization.project.certificate`.
 /// 
-final class CertificateObject {const CertificateObject._(this.value);
+@immutable final class CertificateObject {const CertificateObject._(this.value);
 
 factory CertificateObject.fromJson(String json) { return switch (json) {
   'certificate' => certificate,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CertificateObject($value)'; } 
  }
 /// Represents an individual `certificate` uploaded to the organization.
-final class Certificate {const Certificate({required this.object, required this.id, required this.name, required this.createdAt, required this.certificateDetails, this.active, });
+@immutable final class Certificate {const Certificate({required this.object, required this.id, required this.name, required this.createdAt, required this.certificateDetails, this.active, });
 
 factory Certificate.fromJson(Map<String, dynamic> json) { return Certificate(
   object: CertificateObject.fromJson(json['object'] as String),

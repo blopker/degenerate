@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_email.dart';import 'access_timestamp.dart';import 'access_users_components_schemas_name.dart';import 'access_uuid.dart';/// The number of active devices registered to the user.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_email.dart';import 'access_timestamp.dart';import 'access_users_components_schemas_name.dart';import 'access_uuid.dart';/// The number of active devices registered to the user.
 extension type const AccessActiveDeviceCount(double value) {
 factory AccessActiveDeviceCount.fromJson(num json) => AccessActiveDeviceCount(json.toDouble());
 
@@ -42,7 +42,7 @@ factory AccessUid.fromJson(String json) => AccessUid(json);
 String toJson() => value;
 
 }
-final class AccessSchemasUsers {const AccessSchemasUsers({this.accessSeat, this.activeDeviceCount, this.createdAt, this.email, this.gatewaySeat, this.id, this.lastSuccessfulLogin, this.name, this.seatUid, this.uid, this.updatedAt, });
+@immutable final class AccessSchemasUsers {const AccessSchemasUsers({this.accessSeat, this.activeDeviceCount, this.createdAt, this.email, this.gatewaySeat, this.id, this.lastSuccessfulLogin, this.name, this.seatUid, this.uid, this.updatedAt, });
 
 factory AccessSchemasUsers.fromJson(Map<String, dynamic> json) { return AccessSchemasUsers(
   accessSeat: json['access_seat'] != null ? AccessSchemasAccessSeat.fromJson(json['access_seat'] as bool) : null,

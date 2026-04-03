@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_timing_aggregates.dart';final class DigitalExperienceMonitoringTestsResponseTestsTracerouteResults {const DigitalExperienceMonitoringTestsResponseTestsTracerouteResults({required this.roundTripTime});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timing_aggregates.dart';@immutable final class DigitalExperienceMonitoringTestsResponseTestsTracerouteResults {const DigitalExperienceMonitoringTestsResponseTestsTracerouteResults({required this.roundTripTime});
 
 factory DigitalExperienceMonitoringTestsResponseTestsTracerouteResults.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponseTestsTracerouteResults(
   roundTripTime: DigitalExperienceMonitoringTimingAggregates.fromJson(json['roundTripTime'] as Map<String, dynamic>),

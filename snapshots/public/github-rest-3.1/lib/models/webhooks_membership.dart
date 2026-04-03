@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_membership_user.dart';/// The membership between the user and the organization. Not present when the action is `member_invited`.
-final class WebhooksMembership {const WebhooksMembership({required this.organizationUrl, required this.role, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, required this.state, required this.url, required this.user, });
+@immutable final class WebhooksMembership {const WebhooksMembership({required this.organizationUrl, required this.role, required this.state, required this.url, required this.user, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, });
 
 factory WebhooksMembership.fromJson(Map<String, dynamic> json) { return WebhooksMembership(
   organizationUrl: Uri.parse(json['organization_url'] as String),

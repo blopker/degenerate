@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_rule.dart';final class R2PutEventNotificationConfigRequest {const R2PutEventNotificationConfigRequest({required this.rules});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_rule.dart';@immutable final class R2PutEventNotificationConfigRequest {const R2PutEventNotificationConfigRequest({required this.rules});
 
 factory R2PutEventNotificationConfigRequest.fromJson(Map<String, dynamic> json) { return R2PutEventNotificationConfigRequest(
   rules: (json['rules'] as List<dynamic>).map((e) => R2Rule.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_delegations.dart';final class AddressingSchemasResponseCollection {const AddressingSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_delegations.dart';@immutable final class AddressingSchemasResponseCollection {const AddressingSchemasResponseCollection({this.result});
 
 factory AddressingSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AddressingSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AddressingIpamDelegations.fromJson(e as Map<String, dynamic>)).toList(),

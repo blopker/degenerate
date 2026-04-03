@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_subscription_exposed_id_request_add_invoice_items_period_end.dart';import 'post_subscriptions_subscription_exposed_id_request_add_invoice_items_period_start.dart';final class PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod {const PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_add_invoice_items_period_end.dart';import 'post_subscriptions_subscription_exposed_id_request_add_invoice_items_period_start.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod {const PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriod(
   end: PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),

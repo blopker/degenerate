@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_return_request_returned_details.dart';final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest({this.expand, this.returnedDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_return_request_returned_details.dart';@immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest({this.expand, this.returnedDetails, });
 
 factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

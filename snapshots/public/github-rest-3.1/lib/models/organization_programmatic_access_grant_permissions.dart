@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Permissions requested, categorized by type of permission.
-final class OrganizationProgrammaticAccessGrantPermissions {const OrganizationProgrammaticAccessGrantPermissions({this.organization, this.repository, this.other, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions requested, categorized by type of permission.
+@immutable final class OrganizationProgrammaticAccessGrantPermissions {const OrganizationProgrammaticAccessGrantPermissions({this.organization, this.repository, this.other, });
 
 factory OrganizationProgrammaticAccessGrantPermissions.fromJson(Map<String, dynamic> json) { return OrganizationProgrammaticAccessGrantPermissions(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

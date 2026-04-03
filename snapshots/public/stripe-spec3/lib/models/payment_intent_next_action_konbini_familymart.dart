@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionKonbiniFamilymart {const PaymentIntentNextActionKonbiniFamilymart({this.confirmationNumber, required this.paymentCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionKonbiniFamilymart {const PaymentIntentNextActionKonbiniFamilymart({required this.paymentCode, this.confirmationNumber, });
 
 factory PaymentIntentNextActionKonbiniFamilymart.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniFamilymart(
   confirmationNumber: json['confirmation_number'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_response_message_annotations_url_citation.dart';/// The type of the URL citation. Always `url_citation`.
-final class ChatCompletionResponseMessageAnnotationsType {const ChatCompletionResponseMessageAnnotationsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_response_message_annotations_url_citation.dart';/// The type of the URL citation. Always `url_citation`.
+@immutable final class ChatCompletionResponseMessageAnnotationsType {const ChatCompletionResponseMessageAnnotationsType._(this.value);
 
 factory ChatCompletionResponseMessageAnnotationsType.fromJson(String json) { return switch (json) {
   'url_citation' => urlCitation,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A URL citation when using web search.
 /// 
-final class ChatCompletionResponseMessageAnnotations {const ChatCompletionResponseMessageAnnotations({required this.type, required this.urlCitation, });
+@immutable final class ChatCompletionResponseMessageAnnotations {const ChatCompletionResponseMessageAnnotations({required this.type, required this.urlCitation, });
 
 factory ChatCompletionResponseMessageAnnotations.fromJson(Map<String, dynamic> json) { return ChatCompletionResponseMessageAnnotations(
   type: ChatCompletionResponseMessageAnnotationsType.fromJson(json['type'] as String),

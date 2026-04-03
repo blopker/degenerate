@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_failure_details.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
+@immutable final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
 
 factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
   'treasury.inbound_transfer' => treasuryInboundTransfer,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryInboundTransferObject($value)'; } 
  }
 /// Status of the InboundTransfer: `processing`, `succeeded`, `failed`, and `canceled`. An InboundTransfer is `processing` if it is created and pending. The status changes to `succeeded` once the funds have been "confirmed" and a `transaction` is created and posted. The status changes to `failed` if the transfer fails.
-final class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus._(this.value);
+@immutable final class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus._(this.value);
 
 factory TreasuryInboundTransferStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Use [InboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers) to add funds to your [FinancialAccount](https://api.stripe.com#financial_accounts) via a PaymentMethod that is owned by you. The funds will be transferred via an ACH debit.
 /// 
 /// Related guide: [Moving money with Treasury using InboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers)
-final class TreasuryInboundTransfer {const TreasuryInboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, this.description, this.failureDetails, required this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, required this.linkedFlows, required this.livemode, required this.metadata, required this.object, this.originPaymentMethod, this.originPaymentMethodDetails, this.returned, required this.statementDescriptor, required this.status, required this.statusTransitions, this.transaction, });
+@immutable final class TreasuryInboundTransfer {const TreasuryInboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.financialAccount, required this.id, required this.linkedFlows, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, this.description, this.failureDetails, this.hostedRegulatoryReceiptUrl, this.originPaymentMethod, this.originPaymentMethodDetails, this.returned, this.transaction, });
 
 factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfer(
   amount: (json['amount'] as num).toInt(),

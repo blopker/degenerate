@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookIssueCommentCreatedIssuePullRequest {const WebhookIssueCommentCreatedIssuePullRequest({this.diffUrl, this.htmlUrl, this.mergedAt, this.patchUrl, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentCreatedIssuePullRequest {const WebhookIssueCommentCreatedIssuePullRequest({this.diffUrl, this.htmlUrl, this.mergedAt, this.patchUrl, this.url, });
 
 factory WebhookIssueCommentCreatedIssuePullRequest.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreatedIssuePullRequest(
   diffUrl: json['diff_url'] != null ? Uri.parse(json['diff_url'] as String) : null,

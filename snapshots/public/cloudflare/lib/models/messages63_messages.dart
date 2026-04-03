@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages63_messages_content.dart';import 'messages63_messages_content_variant2.dart';final class Messages63Messages {const Messages63Messages({required this.content, required this.role, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages63_messages_content.dart';import 'messages63_messages_content_variant2.dart';@immutable final class Messages63Messages {const Messages63Messages({required this.content, required this.role, });
 
 factory Messages63Messages.fromJson(Map<String, dynamic> json) { return Messages63Messages(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages63MessagesContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),

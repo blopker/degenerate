@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates the level of the jurisdiction imposing the tax.
-final class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the level of the jurisdiction imposing the tax.
+@immutable final class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel._(this.value);
 
 factory TaxProductResourceJurisdictionLevel.fromJson(String json) { return switch (json) {
   'city' => city,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceJurisdictionLevel($value)'; } 
  }
 /// 
-final class TaxProductResourceJurisdiction {const TaxProductResourceJurisdiction({required this.country, required this.displayName, required this.level, this.state, });
+@immutable final class TaxProductResourceJurisdiction {const TaxProductResourceJurisdiction({required this.country, required this.displayName, required this.level, this.state, });
 
 factory TaxProductResourceJurisdiction.fromJson(Map<String, dynamic> json) { return TaxProductResourceJurisdiction(
   country: json['country'] as String,

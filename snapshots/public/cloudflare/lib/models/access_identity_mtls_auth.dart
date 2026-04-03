@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessIdentityMtlsAuth {const AccessIdentityMtlsAuth({this.authStatus, this.certIssuerDn, this.certIssuerSki, this.certPresented, this.certSerial, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessIdentityMtlsAuth {const AccessIdentityMtlsAuth({this.authStatus, this.certIssuerDn, this.certIssuerSki, this.certPresented, this.certSerial, });
 
 factory AccessIdentityMtlsAuth.fromJson(Map<String, dynamic> json) { return AccessIdentityMtlsAuth(
   authStatus: json['auth_status'] as String?,

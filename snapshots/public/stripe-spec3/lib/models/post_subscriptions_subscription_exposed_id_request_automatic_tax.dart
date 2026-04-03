@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_subscription_exposed_id_request_automatic_tax_liability.dart';/// Automatic tax settings for this subscription. We recommend you only include this parameter when the existing value is being changed.
-final class PostSubscriptionsSubscriptionExposedIdRequestAutomaticTax {const PostSubscriptionsSubscriptionExposedIdRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_automatic_tax_liability.dart';/// Automatic tax settings for this subscription. We recommend you only include this parameter when the existing value is being changed.
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestAutomaticTax {const PostSubscriptionsSubscriptionExposedIdRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestAutomaticTax(
   enabled: json['enabled'] as bool,

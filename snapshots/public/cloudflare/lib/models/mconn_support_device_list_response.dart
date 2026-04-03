@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_device.dart';final class MconnSupportDeviceListResponse {const MconnSupportDeviceListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_device.dart';@immutable final class MconnSupportDeviceListResponse {const MconnSupportDeviceListResponse({this.result});
 
 factory MconnSupportDeviceListResponse.fromJson(Map<String, dynamic> json) { return MconnSupportDeviceListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MconnSupportDevice.fromJson(e as Map<String, dynamic>)).toList(),

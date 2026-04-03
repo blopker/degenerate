@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ChecksCreateRequestVariant1 {const ChecksCreateRequestVariant1({required this.status, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksCreateRequestVariant1 {const ChecksCreateRequestVariant1({required this.status, this.additionalProperties = const {}, });
 
 factory ChecksCreateRequestVariant1.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestVariant1(
   status: json['status'],

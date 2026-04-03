@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCommandsRequestCommandsCommandArgsInterfaces {const PostCommandsRequestCommandsCommandArgsInterfaces._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCommandsRequestCommandsCommandArgsInterfaces {const PostCommandsRequestCommandsCommandArgsInterfaces._(this.value);
 
 factory PostCommandsRequestCommandsCommandArgsInterfaces.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCommandsRequestCommandsCommandArgsInterfaces($value)'; } 
  }
-final class PostCommandsRequestCommandsCommandArgs {const PostCommandsRequestCommandsCommandArgs({this.interfaces, this.maxFileSizeMb = 5.0, this.packetSizeBytes = 160.0, this.testAllRoutes = true, this.timeLimitMin = 5.0, });
+@immutable final class PostCommandsRequestCommandsCommandArgs {const PostCommandsRequestCommandsCommandArgs({this.interfaces, this.maxFileSizeMb = 5.0, this.packetSizeBytes = 160.0, this.testAllRoutes = true, this.timeLimitMin = 5.0, });
 
 factory PostCommandsRequestCommandsCommandArgs.fromJson(Map<String, dynamic> json) { return PostCommandsRequestCommandsCommandArgs(
   interfaces: (json['interfaces'] as List<dynamic>?)?.map((e) => PostCommandsRequestCommandsCommandArgsInterfaces.fromJson(e as String)).toList(),

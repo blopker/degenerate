@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListFilesInVectorStoreBatchFilter {const ListFilesInVectorStoreBatchFilter._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListFilesInVectorStoreBatchFilter {const ListFilesInVectorStoreBatchFilter._(this.value);
 
 factory ListFilesInVectorStoreBatchFilter.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

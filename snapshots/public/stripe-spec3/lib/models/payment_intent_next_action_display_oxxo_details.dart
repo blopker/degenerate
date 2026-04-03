@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionDisplayOxxoDetails {const PaymentIntentNextActionDisplayOxxoDetails({this.expiresAfter, this.hostedVoucherUrl, this.number, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionDisplayOxxoDetails {const PaymentIntentNextActionDisplayOxxoDetails({this.expiresAfter, this.hostedVoucherUrl, this.number, });
 
 factory PaymentIntentNextActionDisplayOxxoDetails.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionDisplayOxxoDetails(
   expiresAfter: json['expires_after'] != null ? (json['expires_after'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_ips_timeseries_response_result_meta_delay_country_data_latest.dart';final class RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryData {const RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryData({required this.delaySecs, required this.delayStr, required this.healthy, required this.latest, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_ips_timeseries_response_result_meta_delay_country_data_latest.dart';@immutable final class RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryData {const RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryData({required this.delaySecs, required this.delayStr, required this.healthy, required this.latest, });
 
 factory RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryData.fromJson(Map<String, dynamic> json) { return RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryData(
   delaySecs: (json['delaySecs'] as num).toDouble(),

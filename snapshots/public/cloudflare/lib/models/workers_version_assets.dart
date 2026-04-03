@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_version_assets_config.dart';/// Configuration for assets within a Worker.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_assets_config.dart';/// Configuration for assets within a Worker.
 /// 
 /// [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and
 /// [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files should be
 /// included as modules named `_headers` and `_redirects` with content type `text/plain`.
 /// 
-final class WorkersVersionAssets {const WorkersVersionAssets({this.config, this.jwt, });
+@immutable final class WorkersVersionAssets {const WorkersVersionAssets({this.config, this.jwt, });
 
 factory WorkersVersionAssets.fromJson(Map<String, dynamic> json) { return WorkersVersionAssets(
   config: json['config'] != null ? WorkersVersionAssetsConfig.fromJson(json['config'] as Map<String, dynamic>) : null,

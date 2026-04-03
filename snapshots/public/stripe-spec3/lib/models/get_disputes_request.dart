@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetDisputesRequest {const GetDisputesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetDisputesRequest {const GetDisputesRequest();
 
 factory GetDisputesRequest.fromJson(Map<String, dynamic> json) { return GetDisputesRequest(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxSettingsRequestDefaultsTaxBehavior {const PostTaxSettingsRequestDefaultsTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxSettingsRequestDefaultsTaxBehavior {const PostTaxSettingsRequestDefaultsTaxBehavior._(this.value);
 
 factory PostTaxSettingsRequestDefaultsTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTaxSettingsRequestDefaultsTaxBehavior($value)'; } 
  }
 /// Default configuration to be used on Stripe Tax calculations.
-final class PostTaxSettingsRequestDefaults {const PostTaxSettingsRequestDefaults({this.taxBehavior, this.taxCode, });
+@immutable final class PostTaxSettingsRequestDefaults {const PostTaxSettingsRequestDefaults({this.taxBehavior, this.taxCode, });
 
 factory PostTaxSettingsRequestDefaults.fromJson(Map<String, dynamic> json) { return PostTaxSettingsRequestDefaults(
   taxBehavior: json['tax_behavior'] != null ? PostTaxSettingsRequestDefaultsTaxBehavior.fromJson(json['tax_behavior'] as String) : null,

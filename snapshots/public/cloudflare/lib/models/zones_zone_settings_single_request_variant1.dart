@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_ssl_recommender_enabled.dart';final class ZonesZoneSettingsSingleRequestVariant1 {const ZonesZoneSettingsSingleRequestVariant1({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_ssl_recommender_enabled.dart';@immutable final class ZonesZoneSettingsSingleRequestVariant1 {const ZonesZoneSettingsSingleRequestVariant1({this.enabled});
 
 factory ZonesZoneSettingsSingleRequestVariant1.fromJson(Map<String, dynamic> json) { return ZonesZoneSettingsSingleRequestVariant1(
   enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,

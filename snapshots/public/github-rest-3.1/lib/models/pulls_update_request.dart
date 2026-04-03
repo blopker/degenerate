@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// State of this Pull Request. Either `open` or `closed`.
-final class PullsUpdateRequestState {const PullsUpdateRequestState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of this Pull Request. Either `open` or `closed`.
+@immutable final class PullsUpdateRequestState {const PullsUpdateRequestState._(this.value);
 
 factory PullsUpdateRequestState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullsUpdateRequestState($value)'; } 
  }
-final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
+@immutable final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
 
 factory PullsUpdateRequest.fromJson(Map<String, dynamic> json) { return PullsUpdateRequest(
   title: json['title'] as String?,

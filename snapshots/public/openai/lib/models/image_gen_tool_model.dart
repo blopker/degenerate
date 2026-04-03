@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image generation model to use. Default: `gpt-image-1`.
 /// 
-final class ImageGenToolModelVariant2 {const ImageGenToolModelVariant2._(this.value);
+@immutable final class ImageGenToolModelVariant2 {const ImageGenToolModelVariant2._(this.value);
 
 factory ImageGenToolModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-image-1' => gptImage1,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostFinancialConnectionsAccountsAccountUnsubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountUnsubscribeRequestFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsAccountsAccountUnsubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountUnsubscribeRequestFeatures._(this.value);
 
 factory PostFinancialConnectionsAccountsAccountUnsubscribeRequestFeatures.fromJson(String json) { return switch (json) {
   'transactions' => transactions,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostFinancialConnectionsAccountsAccountUnsubscribeRequestFeatures($value)'; } 
  }
-final class PostFinancialConnectionsAccountsAccountUnsubscribeRequest {const PostFinancialConnectionsAccountsAccountUnsubscribeRequest({this.expand, required this.features, });
+@immutable final class PostFinancialConnectionsAccountsAccountUnsubscribeRequest {const PostFinancialConnectionsAccountsAccountUnsubscribeRequest({required this.features, this.expand, });
 
 factory PostFinancialConnectionsAccountsAccountUnsubscribeRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsAccountsAccountUnsubscribeRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

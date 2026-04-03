@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_project_create_project_request_source_config.dart';/// The source control management provider.
-final class PagesProjectCreateProjectRequestSourceType {const PagesProjectCreateProjectRequestSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project_create_project_request_source_config.dart';/// The source control management provider.
+@immutable final class PagesProjectCreateProjectRequestSourceType {const PagesProjectCreateProjectRequestSourceType._(this.value);
 
 factory PagesProjectCreateProjectRequestSourceType.fromJson(String json) { return switch (json) {
   'github' => github,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesProjectCreateProjectRequestSourceType($value)'; } 
  }
 /// Configs for the project source control.
-final class PagesProjectCreateProjectRequestSource {const PagesProjectCreateProjectRequestSource({required this.config, required this.type, });
+@immutable final class PagesProjectCreateProjectRequestSource {const PagesProjectCreateProjectRequestSource({required this.config, required this.type, });
 
 factory PagesProjectCreateProjectRequestSource.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectRequestSource(
   config: PagesProjectCreateProjectRequestSourceConfig.fromJson(json['config'] as Map<String, dynamic>),

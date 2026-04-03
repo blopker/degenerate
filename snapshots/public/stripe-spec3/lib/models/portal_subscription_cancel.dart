@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_subscription_cancellation_reason.dart';/// Whether to cancel subscriptions immediately or at the end of the billing period.
-final class PortalSubscriptionCancelMode {const PortalSubscriptionCancelMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_subscription_cancellation_reason.dart';/// Whether to cancel subscriptions immediately or at the end of the billing period.
+@immutable final class PortalSubscriptionCancelMode {const PortalSubscriptionCancelMode._(this.value);
 
 factory PortalSubscriptionCancelMode.fromJson(String json) { return switch (json) {
   'at_period_end' => atPeriodEnd,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionCancelMode($value)'; } 
  }
 /// Whether to create prorations when canceling subscriptions. Possible values are `none` and `create_prorations`.
-final class PortalSubscriptionCancelProrationBehavior {const PortalSubscriptionCancelProrationBehavior._(this.value);
+@immutable final class PortalSubscriptionCancelProrationBehavior {const PortalSubscriptionCancelProrationBehavior._(this.value);
 
 factory PortalSubscriptionCancelProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionCancelProrationBehavior($value)'; } 
  }
 /// 
-final class PortalSubscriptionCancel {const PortalSubscriptionCancel({required this.cancellationReason, required this.enabled, required this.mode, required this.prorationBehavior, });
+@immutable final class PortalSubscriptionCancel {const PortalSubscriptionCancel({required this.cancellationReason, required this.enabled, required this.mode, required this.prorationBehavior, });
 
 factory PortalSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PortalSubscriptionCancel(
   cancellationReason: PortalSubscriptionCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>),

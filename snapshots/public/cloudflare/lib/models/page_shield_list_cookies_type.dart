@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters the returned cookies that match the specified type attribute
-final class PageShieldListCookiesType {const PageShieldListCookiesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters the returned cookies that match the specified type attribute
+@immutable final class PageShieldListCookiesType {const PageShieldListCookiesType._(this.value);
 
 factory PageShieldListCookiesType.fromJson(String json) { return switch (json) {
   'first_party' => firstParty,

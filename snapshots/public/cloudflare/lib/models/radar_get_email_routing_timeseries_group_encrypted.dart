@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingTimeseriesGroupEncrypted {const RadarGetEmailRoutingTimeseriesGroupEncrypted._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupEncrypted {const RadarGetEmailRoutingTimeseriesGroupEncrypted._(this.value);
 
 factory RadarGetEmailRoutingTimeseriesGroupEncrypted.fromJson(String json) { return switch (json) {
   'ENCRYPTED' => encrypted,

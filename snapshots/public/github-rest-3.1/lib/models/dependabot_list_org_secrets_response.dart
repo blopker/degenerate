@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_dependabot_secret.dart';final class DependabotListOrgSecretsResponse {const DependabotListOrgSecretsResponse({required this.totalCount, required this.secrets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_dependabot_secret.dart';@immutable final class DependabotListOrgSecretsResponse {const DependabotListOrgSecretsResponse({required this.totalCount, required this.secrets, });
 
 factory DependabotListOrgSecretsResponse.fromJson(Map<String, dynamic> json) { return DependabotListOrgSecretsResponse(
   totalCount: (json['total_count'] as num).toInt(),

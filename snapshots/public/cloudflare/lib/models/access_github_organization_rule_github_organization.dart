@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessGithubOrganizationRuleGithubOrganization {const AccessGithubOrganizationRuleGithubOrganization({required this.identityProviderId, required this.name, this.team, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessGithubOrganizationRuleGithubOrganization {const AccessGithubOrganizationRuleGithubOrganization({required this.identityProviderId, required this.name, this.team, });
 
 factory AccessGithubOrganizationRuleGithubOrganization.fromJson(Map<String, dynamic> json) { return AccessGithubOrganizationRuleGithubOrganization(
   identityProviderId: json['identity_provider_id'] as String,

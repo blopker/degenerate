@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3SummaryByDurationResponse400Errors {const RadarGetAttacksLayer3SummaryByDurationResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByDurationResponse400Errors {const RadarGetAttacksLayer3SummaryByDurationResponse400Errors({required this.message});
 
 factory RadarGetAttacksLayer3SummaryByDurationResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByDurationResponse400Errors(
   message: json['message'] as String,

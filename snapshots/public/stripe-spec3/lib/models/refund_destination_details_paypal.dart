@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RefundDestinationDetailsPaypal {const RefundDestinationDetailsPaypal({this.networkDeclineCode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RefundDestinationDetailsPaypal {const RefundDestinationDetailsPaypal({this.networkDeclineCode});
 
 factory RefundDestinationDetailsPaypal.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsPaypal(
   networkDeclineCode: json['network_decline_code'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_session_resource_components_resource_payment_element_resource_features.dart';/// This hash contains whether the Payment Element is enabled and the features it supports.
-final class CustomerSessionResourceComponentsResourcePaymentElement {const CustomerSessionResourceComponentsResourcePaymentElement({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_session_resource_components_resource_payment_element_resource_features.dart';/// This hash contains whether the Payment Element is enabled and the features it supports.
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElement {const CustomerSessionResourceComponentsResourcePaymentElement({required this.enabled, this.features, });
 
 factory CustomerSessionResourceComponentsResourcePaymentElement.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourcePaymentElement(
   enabled: json['enabled'] as bool,

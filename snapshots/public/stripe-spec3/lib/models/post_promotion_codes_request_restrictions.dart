@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_promotion_codes_request_restrictions_currency_options_value.dart';/// Settings that restrict the redemption of the promotion code.
-final class PostPromotionCodesRequestRestrictions {const PostPromotionCodesRequestRestrictions({this.currencyOptions, this.firstTimeTransaction, this.minimumAmount, this.minimumAmountCurrency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_request_restrictions_currency_options_value.dart';/// Settings that restrict the redemption of the promotion code.
+@immutable final class PostPromotionCodesRequestRestrictions {const PostPromotionCodesRequestRestrictions({this.currencyOptions, this.firstTimeTransaction, this.minimumAmount, this.minimumAmountCurrency, });
 
 factory PostPromotionCodesRequestRestrictions.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequestRestrictions(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostPromotionCodesRequestRestrictionsCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),

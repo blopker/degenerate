@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_tax_settings_features.dart';final class PostAccountSessionsRequestComponentsTaxSettings {const PostAccountSessionsRequestComponentsTaxSettings({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_tax_settings_features.dart';@immutable final class PostAccountSessionsRequestComponentsTaxSettings {const PostAccountSessionsRequestComponentsTaxSettings({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsTaxSettings.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsTaxSettings(
   enabled: json['enabled'] as bool,

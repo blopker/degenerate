@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'radar_review_resource_location.dart';import 'radar_review_resource_session.dart';import 'review_charge.dart';import 'review_payment_intent.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
-final class ReviewClosedReason {const ReviewClosedReason._(this.value);
+@immutable final class ReviewClosedReason {const ReviewClosedReason._(this.value);
 
 factory ReviewClosedReason.fromJson(String json) { return switch (json) {
   'acknowledged' => acknowledged,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReviewClosedReason($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class ReviewObject {const ReviewObject._(this.value);
+@immutable final class ReviewObject {const ReviewObject._(this.value);
 
 factory ReviewObject.fromJson(String json) { return switch (json) {
   'review' => review,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReviewObject($value)'; } 
  }
 /// The reason the review was opened. One of `rule` or `manual`.
-final class ReviewOpenedReason {const ReviewOpenedReason._(this.value);
+@immutable final class ReviewOpenedReason {const ReviewOpenedReason._(this.value);
 
 factory ReviewOpenedReason.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Learn more about [Radar](/radar) and reviewing payments
 /// [here](https://docs.stripe.com/radar/reviews).
-final class Review {const Review({this.billingZip, this.charge, this.closedReason, required this.created, required this.id, this.ipAddress, this.ipAddressLocation, required this.livemode, required this.object, required this.open, required this.openedReason, this.paymentIntent, required this.reason, this.session, });
+@immutable final class Review {const Review({required this.created, required this.id, required this.livemode, required this.object, required this.open, required this.openedReason, required this.reason, this.billingZip, this.charge, this.closedReason, this.ipAddress, this.ipAddressLocation, this.paymentIntent, this.session, });
 
 factory Review.fromJson(Map<String, dynamic> json) { return Review(
   billingZip: json['billing_zip'] as String?,

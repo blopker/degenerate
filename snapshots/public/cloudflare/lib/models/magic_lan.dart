@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_bond_id.dart';import 'magic_identifier.dart';import 'magic_lan_static_addressing.dart';import 'magic_nat.dart';import 'magic_port.dart';import 'magic_routed_subnet.dart';import 'magic_vlan_tag.dart';final class MagicLan {const MagicLan({this.bondId, this.haLink, this.id, this.isBreakout, this.isPrioritized, this.name, this.nat, this.physport, this.routedSubnets, this.siteId, this.staticAddressing, this.vlanTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_bond_id.dart';import 'magic_identifier.dart';import 'magic_lan_static_addressing.dart';import 'magic_nat.dart';import 'magic_port.dart';import 'magic_routed_subnet.dart';import 'magic_vlan_tag.dart';@immutable final class MagicLan {const MagicLan({this.bondId, this.haLink, this.id, this.isBreakout, this.isPrioritized, this.name, this.nat, this.physport, this.routedSubnets, this.siteId, this.staticAddressing, this.vlanTag, });
 
 factory MagicLan.fromJson(Map<String, dynamic> json) { return MagicLan(
   bondId: json['bond_id'] != null ? MagicBondId.fromJson(json['bond_id'] as num) : null,

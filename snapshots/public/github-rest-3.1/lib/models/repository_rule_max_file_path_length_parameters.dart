@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleMaxFilePathLengthParameters {const RepositoryRuleMaxFilePathLengthParameters({required this.maxFilePathLength});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleMaxFilePathLengthParameters {const RepositoryRuleMaxFilePathLengthParameters({required this.maxFilePathLength});
 
 factory RepositoryRuleMaxFilePathLengthParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFilePathLengthParameters(
   maxFilePathLength: (json['max_file_path_length'] as num).toInt(),

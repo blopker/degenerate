@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivityMarkRepoNotificationsAsReadResponse202 {const ActivityMarkRepoNotificationsAsReadResponse202({this.message, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityMarkRepoNotificationsAsReadResponse202 {const ActivityMarkRepoNotificationsAsReadResponse202({this.message, this.url, });
 
 factory ActivityMarkRepoNotificationsAsReadResponse202.fromJson(Map<String, dynamic> json) { return ActivityMarkRepoNotificationsAsReadResponse202(
   message: json['message'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ConvertedNoteToIssueIssueEventProjectCard {const ConvertedNoteToIssueIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConvertedNoteToIssueIssueEventProjectCard {const ConvertedNoteToIssueIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
 
 factory ConvertedNoteToIssueIssueEventProjectCard.fromJson(Map<String, dynamic> json) { return ConvertedNoteToIssueIssueEventProjectCard(
   id: (json['id'] as num).toInt(),

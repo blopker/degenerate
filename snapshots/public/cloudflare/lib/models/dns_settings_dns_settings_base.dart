@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_settings_internal_dns_base.dart';import 'dns_settings_soa_base.dart';/// Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_internal_dns_base.dart';import 'dns_settings_soa_base.dart';/// Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.
 extension type const DnsSettingsFlattenAllCnames(bool value) {
 factory DnsSettingsFlattenAllCnames.fromJson(bool json) => DnsSettingsFlattenAllCnames(json);
 
@@ -36,7 +36,7 @@ bool toJson() => value;
 
 }
 /// Whether the zone mode is a regular or CDN/DNS only zone.
-final class DnsSettingsZoneMode {const DnsSettingsZoneMode._(this.value);
+@immutable final class DnsSettingsZoneMode {const DnsSettingsZoneMode._(this.value);
 
 factory DnsSettingsZoneMode.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsSettingsZoneMode($value)'; } 
  }
-final class DnsSettingsDnsSettingsBase {const DnsSettingsDnsSettingsBase({this.flattenAllCnames, this.foundationDns, this.internalDns, this.multiProvider, this.nsTtl, this.secondaryOverrides, this.soa, this.zoneMode, });
+@immutable final class DnsSettingsDnsSettingsBase {const DnsSettingsDnsSettingsBase({this.flattenAllCnames, this.foundationDns, this.internalDns, this.multiProvider, this.nsTtl, this.secondaryOverrides, this.soa, this.zoneMode, });
 
 factory DnsSettingsDnsSettingsBase.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsBase(
   flattenAllCnames: json['flatten_all_cnames'] != null ? DnsSettingsFlattenAllCnames.fromJson(json['flatten_all_cnames'] as bool) : null,

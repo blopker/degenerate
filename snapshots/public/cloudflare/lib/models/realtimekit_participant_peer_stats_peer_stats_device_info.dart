@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantPeerStatsPeerStatsDeviceInfo {const RealtimekitParticipantPeerStatsPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.memory, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsDeviceInfo {const RealtimekitParticipantPeerStatsPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.memory, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
 
 factory RealtimekitParticipantPeerStatsPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsDeviceInfo(
   browser: json['browser'] as String?,

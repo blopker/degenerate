@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'fraud_messages2_source.dart';final class FraudMessages2 {const FraudMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraud_messages2_source.dart';@immutable final class FraudMessages2 {const FraudMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory FraudMessages2.fromJson(Map<String, dynamic> json) { return FraudMessages2(
   code: (json['code'] as num).toInt(),

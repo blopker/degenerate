@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Separate cached content based on the visitor's device type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Separate cached content based on the visitor's device type.
 /// 
-final class ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId._(this.value);
+@immutable final class ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId._(this.value);
 
 factory ZonesCacheByDeviceTypeId.fromJson(String json) { return switch (json) {
   'cache_by_device_type' => cacheByDeviceType,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The status of Cache By Device Type.
 /// 
-final class ZonesCacheByDeviceTypeValue {const ZonesCacheByDeviceTypeValue._(this.value);
+@immutable final class ZonesCacheByDeviceTypeValue {const ZonesCacheByDeviceTypeValue._(this.value);
 
 factory ZonesCacheByDeviceTypeValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheByDeviceTypeValue($value)'; } 
  }
-final class ZonesCacheByDeviceType {const ZonesCacheByDeviceType({this.id, this.value, });
+@immutable final class ZonesCacheByDeviceType {const ZonesCacheByDeviceType({this.id, this.value, });
 
 factory ZonesCacheByDeviceType.fromJson(Map<String, dynamic> json) { return ZonesCacheByDeviceType(
   id: json['id'] != null ? ZonesCacheByDeviceTypeId.fromJson(json['id'] as String) : null,

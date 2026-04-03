@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_blik_display_preference.dart';/// BLIK is a [single use](https://docs.stripe.com/payments/payment-methods#usage) payment method that requires customers to authenticate their payments. When customers want to pay online using BLIK, they request a six-digit code from their banking application and enter it into the payment collection form. Check this [page](https://docs.stripe.com/payments/blik) for more details.
-final class PostPaymentMethodConfigurationsRequestBlik {const PostPaymentMethodConfigurationsRequestBlik({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_blik_display_preference.dart';/// BLIK is a [single use](https://docs.stripe.com/payments/payment-methods#usage) payment method that requires customers to authenticate their payments. When customers want to pay online using BLIK, they request a six-digit code from their banking application and enter it into the payment collection form. Check this [page](https://docs.stripe.com/payments/blik) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestBlik {const PostPaymentMethodConfigurationsRequestBlik({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestBlik.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBlik(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestBlikDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_provider.dart';final class McnReadAccountProvidersResponse {const McnReadAccountProvidersResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_provider.dart';@immutable final class McnReadAccountProvidersResponse {const McnReadAccountProvidersResponse({this.result});
 
 factory McnReadAccountProvidersResponse.fromJson(Map<String, dynamic> json) { return McnReadAccountProvidersResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => McnProvider.fromJson(e as Map<String, dynamic>)).toList(),

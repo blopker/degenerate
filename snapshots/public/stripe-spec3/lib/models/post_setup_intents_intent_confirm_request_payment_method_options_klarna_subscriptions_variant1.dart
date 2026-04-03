@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1_next_billing.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1_next_billing.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1({required this.interval, this.intervalCount, this.name, required this.nextBilling, required this.reference, });
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1({required this.interval, required this.nextBilling, required this.reference, this.intervalCount, this.name, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(
   interval: PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(json['interval'] as String),

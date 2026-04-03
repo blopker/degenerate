@@ -271,7 +271,7 @@ Future<ApiResult<RunObject, Never>> createRun({required String threadId, List<Cr
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson()));
 }
 }
 
@@ -373,7 +373,7 @@ if (before != null) {
 }
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson()));
 }
 }
 
@@ -402,7 +402,7 @@ Future<ApiResult<RunStepObject, Never>> getRunStep({required String threadId, re
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson()));
 }
 }
 

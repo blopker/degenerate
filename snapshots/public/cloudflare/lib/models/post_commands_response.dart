@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_post_commands_response.dart';final class PostCommandsResponse {const PostCommandsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_post_commands_response.dart';@immutable final class PostCommandsResponse {const PostCommandsResponse({this.result});
 
 factory PostCommandsResponse.fromJson(Map<String, dynamic> json) { return PostCommandsResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringPostCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

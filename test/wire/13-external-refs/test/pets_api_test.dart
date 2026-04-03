@@ -49,33 +49,33 @@ void main() {
   group('createPet', () {
     test('sends POST with JSON body', () async {
       await api.createPet(
-        body: Pet(id: 1, name: 'Buddy'),
+        body: const Pet(id: 1, name: 'Buddy'),
       );
 
       expect(client.lastRequest!.method, equals('POST'));
       expect(client.lastRequest!.path, equals('/pets'));
 
-      final body = jsonDecode(client.lastRequest!.body as String);
+      final body = jsonDecode(client.lastRequest!.body! as String);
       expect(body['id'], equals(1));
       expect(body['name'], equals('Buddy'));
     });
 
     test('includes owner from chained external ref', () async {
       await api.createPet(
-        body: Pet(
+        body: const Pet(
           id: 1,
           name: 'Buddy',
           owner: Owner(name: 'Alice', email: 'alice@example.com'),
         ),
       );
 
-      final body = jsonDecode(client.lastRequest!.body as String);
+      final body = jsonDecode(client.lastRequest!.body! as String);
       expect(body['owner']['name'], equals('Alice'));
       expect(body['owner']['email'], equals('alice@example.com'));
     });
 
     test('circular ref: owner with pets round-trips', () async {
-      final pet = Pet(
+      const pet = Pet(
         id: 1,
         name: 'Buddy',
         owner: Owner(
@@ -89,7 +89,7 @@ void main() {
 
       await api.createPet(body: pet);
 
-      final body = jsonDecode(client.lastRequest!.body as String);
+      final body = jsonDecode(client.lastRequest!.body! as String);
       expect(body['owner']['pets'], hasLength(2));
       expect(body['owner']['pets'][0]['name'], equals('Buddy'));
       expect(body['owner']['pets'][1]['name'], equals('Whiskers'));
@@ -167,7 +167,7 @@ void main() {
   group('RequestOptions', () {
     test('extra headers are merged into request', () async {
       await api.listPets(
-        options: RequestOptions(
+        options: const RequestOptions(
           extraHeaders: {'X-Request-Id': 'abc-123'},
         ),
       );

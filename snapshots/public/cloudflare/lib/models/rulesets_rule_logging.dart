@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An object configuring the rule's logging behavior.
-final class RulesetsRuleLogging {const RulesetsRuleLogging({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object configuring the rule's logging behavior.
+@immutable final class RulesetsRuleLogging {const RulesetsRuleLogging({required this.enabled});
 
 factory RulesetsRuleLogging.fromJson(Map<String, dynamic> json) { return RulesetsRuleLogging(
   enabled: json['enabled'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the Zone Lockdown rule.
-final class FirewallSchemasCidrConfigurationTarget {const FirewallSchemasCidrConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the Zone Lockdown rule.
+@immutable final class FirewallSchemasCidrConfigurationTarget {const FirewallSchemasCidrConfigurationTarget._(this.value);
 
 factory FirewallSchemasCidrConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip_range' => ipRange,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallSchemasCidrConfigurationTarget($value)'; } 
  }
-final class FirewallSchemasCidrConfiguration {const FirewallSchemasCidrConfiguration({this.target, this.value, });
+@immutable final class FirewallSchemasCidrConfiguration {const FirewallSchemasCidrConfiguration({this.target, this.value, });
 
 factory FirewallSchemasCidrConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasCidrConfiguration(
   target: json['target'] != null ? FirewallSchemasCidrConfigurationTarget.fromJson(json['target'] as String) : null,

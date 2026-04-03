@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_messages2.dart';final class BaseErrorResponse {const BaseErrorResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_messages2.dart';@immutable final class BaseErrorResponse {const BaseErrorResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory BaseErrorResponse.fromJson(Map<String, dynamic> json) { return BaseErrorResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CcMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_gre_tunnel.dart';final class MagicModifiedTunnelsCollectionResponseResult {const MagicModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedGreTunnels, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_gre_tunnel.dart';@immutable final class MagicModifiedTunnelsCollectionResponseResult {const MagicModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedGreTunnels, });
 
 factory MagicModifiedTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicModifiedTunnelsCollectionResponseResult(
   modified: json['modified'] as bool?,

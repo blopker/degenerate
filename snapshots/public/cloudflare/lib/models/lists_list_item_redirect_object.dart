@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_item_redirect.dart';final class ListsListItemRedirectObject {const ListsListItemRedirectObject({required this.redirect});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_item_redirect.dart';@immutable final class ListsListItemRedirectObject {const ListsListItemRedirectObject({required this.redirect});
 
 factory ListsListItemRedirectObject.fromJson(Map<String, dynamic> json) { return ListsListItemRedirectObject(
   redirect: ListsItemRedirect.fromJson(json['redirect'] as Map<String, dynamic>),

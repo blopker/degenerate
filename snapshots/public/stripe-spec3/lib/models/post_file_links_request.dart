@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_file_links_request_metadata.dart';final class PostFileLinksRequest {const PostFileLinksRequest({this.expand, this.expiresAt, required this.file, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_file_links_request_metadata.dart';@immutable final class PostFileLinksRequest {const PostFileLinksRequest({required this.file, this.expand, this.expiresAt, this.metadata, });
 
 factory PostFileLinksRequest.fromJson(Map<String, dynamic> json) { return PostFileLinksRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

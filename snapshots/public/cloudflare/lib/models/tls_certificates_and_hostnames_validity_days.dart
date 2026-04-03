@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Validity Days selected for the order.
-final class TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validity Days selected for the order.
+@immutable final class TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays._(this.value);
 
 factory TlsCertificatesAndHostnamesValidityDays.fromJson(int json) { return switch (json) {
   14 => $14,

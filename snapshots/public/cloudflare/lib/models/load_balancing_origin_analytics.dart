@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_name.dart';/// Whether the origin has changed health status.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_name.dart';/// Whether the origin has changed health status.
 extension type const LoadBalancingOriginChanged(bool value) {
 factory LoadBalancingOriginChanged.fromJson(bool json) => LoadBalancingOriginChanged(json);
 
@@ -28,7 +28,7 @@ factory LoadBalancingOriginIp.fromJson(String json) => LoadBalancingOriginIp(jso
 String toJson() => value;
 
 }
-final class LoadBalancingOriginAnalytics {const LoadBalancingOriginAnalytics({this.address, this.changed, this.enabled, this.failureReason, this.healthy, this.ip, this.name, });
+@immutable final class LoadBalancingOriginAnalytics {const LoadBalancingOriginAnalytics({this.address, this.changed, this.enabled, this.failureReason, this.healthy, this.ip, this.name, });
 
 factory LoadBalancingOriginAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginAnalytics(
   address: json['address'] != null ? LoadBalancingAddress.fromJson(json['address'] as String) : null,

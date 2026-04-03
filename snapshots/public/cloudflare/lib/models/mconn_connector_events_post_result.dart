@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnConnectorEventsPostResult {const MconnConnectorEventsPostResult({required this.count});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnConnectorEventsPostResult {const MconnConnectorEventsPostResult({required this.count});
 
 factory MconnConnectorEventsPostResult.fromJson(Map<String, dynamic> json) { return MconnConnectorEventsPostResult(
   count: (json['count'] as num).toDouble(),

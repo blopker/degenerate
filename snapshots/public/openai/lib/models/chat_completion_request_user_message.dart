@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_audio.dart';import 'chat_completion_request_message_content_part_file.dart';import 'chat_completion_request_message_content_part_image.dart';import 'chat_completion_request_message_content_part_text.dart';import 'chat_completion_request_user_message_content.dart';/// Messages sent by an end user, containing prompts or additional context
 /// information.
 /// 
-final class ChatCompletionRequestUserMessage {const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name, });
+@immutable final class ChatCompletionRequestUserMessage {const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name, });
 
 factory ChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestUserMessage(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => ChatCompletionRequestMessageContentPartText.fromJson(v as Map<String, dynamic>), fromB: (v) => ChatCompletionRequestMessageContentPartImage.fromJson(v as Map<String, dynamic>), fromC: (v) => ChatCompletionRequestMessageContentPartAudio.fromJson(v as Map<String, dynamic>), fromD: (v) => ChatCompletionRequestMessageContentPartFile.fromJson(v as Map<String, dynamic>),)).toList(),),

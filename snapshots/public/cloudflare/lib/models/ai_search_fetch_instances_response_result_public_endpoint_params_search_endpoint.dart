@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint {const AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint({this.disabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint {const AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint({this.disabled = false});
 
 factory AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsSearchEndpoint(
   disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,

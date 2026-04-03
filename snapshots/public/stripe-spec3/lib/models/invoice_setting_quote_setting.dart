@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// 
-final class InvoiceSettingQuoteSetting {const InvoiceSettingQuoteSetting({this.daysUntilDue, required this.issuer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// 
+@immutable final class InvoiceSettingQuoteSetting {const InvoiceSettingQuoteSetting({required this.issuer, this.daysUntilDue, });
 
 factory InvoiceSettingQuoteSetting.fromJson(Map<String, dynamic> json) { return InvoiceSettingQuoteSetting(
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,

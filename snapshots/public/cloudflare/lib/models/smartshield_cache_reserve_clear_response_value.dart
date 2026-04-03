@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_cache_reserve_clear_response_value_result.dart';final class SmartshieldCacheReserveClearResponseValue {const SmartshieldCacheReserveClearResponseValue({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_cache_reserve_clear_response_value_result.dart';@immutable final class SmartshieldCacheReserveClearResponseValue {const SmartshieldCacheReserveClearResponseValue({this.result});
 
 factory SmartshieldCacheReserveClearResponseValue.fromJson(Map<String, dynamic> json) { return SmartshieldCacheReserveClearResponseValue(
   result: json['result'] != null ? SmartshieldCacheReserveClearResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'field_single_select_option.dart';/// The field's data type.
-final class ProjectsAddFieldForOrgRequestSingleSelectDataType {const ProjectsAddFieldForOrgRequestSingleSelectDataType._(this.value);
+@immutable final class ProjectsAddFieldForOrgRequestSingleSelectDataType {const ProjectsAddFieldForOrgRequestSingleSelectDataType._(this.value);
 
 factory ProjectsAddFieldForOrgRequestSingleSelectDataType.fromJson(String json) { return switch (json) {
   'single_select' => singleSelect,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectsAddFieldForOrgRequestSingleSelectDataType($value)'; } 
  }
-final class ProjectsAddFieldForOrgRequestSingleSelect {const ProjectsAddFieldForOrgRequestSingleSelect({required this.name, required this.dataType, required this.singleSelectOptions, });
+@immutable final class ProjectsAddFieldForOrgRequestSingleSelect {const ProjectsAddFieldForOrgRequestSingleSelect({required this.name, required this.dataType, required this.singleSelectOptions, });
 
 factory ProjectsAddFieldForOrgRequestSingleSelect.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForOrgRequestSingleSelect(
   name: json['name'] as String,

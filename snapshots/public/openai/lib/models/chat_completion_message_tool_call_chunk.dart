@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_message_tool_call_chunk_function.dart';/// The type of the tool. Currently, only `function` is supported.
-final class ChatCompletionMessageToolCallChunkType {const ChatCompletionMessageToolCallChunkType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_call_chunk_function.dart';/// The type of the tool. Currently, only `function` is supported.
+@immutable final class ChatCompletionMessageToolCallChunkType {const ChatCompletionMessageToolCallChunkType._(this.value);
 
 factory ChatCompletionMessageToolCallChunkType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCallChunkType($value)'; } 
  }
-final class ChatCompletionMessageToolCallChunk {const ChatCompletionMessageToolCallChunk({required this.index, this.id, this.type, this.function, });
+@immutable final class ChatCompletionMessageToolCallChunk {const ChatCompletionMessageToolCallChunk({required this.index, this.id, this.type, this.function, });
 
 factory ChatCompletionMessageToolCallChunk.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCallChunk(
   index: (json['index'] as num).toInt(),

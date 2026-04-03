@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_response_result_retrieval_options_boost_by.dart';/// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
-final class AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode {const AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode._(this.value);
+@immutable final class AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode {const AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson(String json) { return switch (json) {
   'exact_match' => exactMatch,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResultRetrievalOptions {const AiSearchUpdateInstancesResponseResultRetrievalOptions({this.boostBy, this.keywordMatchMode = AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.exactMatch, });
+@immutable final class AiSearchUpdateInstancesResponseResultRetrievalOptions {const AiSearchUpdateInstancesResponseResultRetrievalOptions({this.boostBy, this.keywordMatchMode = AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.exactMatch, });
 
 factory AiSearchUpdateInstancesResponseResultRetrievalOptions.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResultRetrievalOptions(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy.fromJson(e as Map<String, dynamic>)).toList(),

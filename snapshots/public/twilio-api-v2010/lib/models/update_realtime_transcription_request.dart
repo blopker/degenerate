@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimeTranscriptionEnumUpdateStatus {const RealtimeTranscriptionEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeTranscriptionEnumUpdateStatus {const RealtimeTranscriptionEnumUpdateStatus._(this.value);
 
 factory RealtimeTranscriptionEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'stopped' => stopped,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeTranscriptionEnumUpdateStatus($value)'; } 
  }
-final class UpdateRealtimeTranscriptionRequest {const UpdateRealtimeTranscriptionRequest({required this.status});
+@immutable final class UpdateRealtimeTranscriptionRequest {const UpdateRealtimeTranscriptionRequest({required this.status});
 
 factory UpdateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) { return UpdateRealtimeTranscriptionRequest(
   status: RealtimeTranscriptionEnumUpdateStatus.fromJson(json['Status'] as String),

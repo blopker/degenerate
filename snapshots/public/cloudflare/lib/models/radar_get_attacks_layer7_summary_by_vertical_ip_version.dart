@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7SummaryByVerticalIpVersion {const RadarGetAttacksLayer7SummaryByVerticalIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByVerticalIpVersion {const RadarGetAttacksLayer7SummaryByVerticalIpVersion._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByVerticalIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

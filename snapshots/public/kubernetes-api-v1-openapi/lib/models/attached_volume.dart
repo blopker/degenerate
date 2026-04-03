@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// AttachedVolume describes a volume attached to a node
-final class AttachedVolume {const AttachedVolume({this.devicePath = '', this.name = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// AttachedVolume describes a volume attached to a node
+@immutable final class AttachedVolume {const AttachedVolume({this.devicePath = '', this.name = '', });
 
 factory AttachedVolume.fromJson(Map<String, dynamic> json) { return AttachedVolume(
   devicePath: json['devicePath'] as String,

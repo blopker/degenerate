@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_filter_options.dart';/// Filter pool and origin health notifications by resource type or health status. Use null to reset.
-final class LoadBalancingNotificationFilter {const LoadBalancingNotificationFilter({this.origin, this.pool, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_filter_options.dart';/// Filter pool and origin health notifications by resource type or health status. Use null to reset.
+@immutable final class LoadBalancingNotificationFilter {const LoadBalancingNotificationFilter({this.origin, this.pool, });
 
 factory LoadBalancingNotificationFilter.fromJson(Map<String, dynamic> json) { return LoadBalancingNotificationFilter(
   origin: json['origin'] != null ? LoadBalancingFilterOptions.fromJson(json['origin'] as Map<String, dynamic>) : null,

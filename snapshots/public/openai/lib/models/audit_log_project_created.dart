@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_project_created_data.dart';/// The details for events with this `type`.
-final class AuditLogProjectCreated {const AuditLogProjectCreated({this.id, this.data, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_project_created_data.dart';/// The details for events with this `type`.
+@immutable final class AuditLogProjectCreated {const AuditLogProjectCreated({this.id, this.data, });
 
 factory AuditLogProjectCreated.fromJson(Map<String, dynamic> json) { return AuditLogProjectCreated(
   id: json['id'] as String?,

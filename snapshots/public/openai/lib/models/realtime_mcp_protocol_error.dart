@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimeMcpProtocolErrorType {const RealtimeMcpProtocolErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcpProtocolErrorType {const RealtimeMcpProtocolErrorType._(this.value);
 
 factory RealtimeMcpProtocolErrorType.fromJson(String json) { return switch (json) {
   'protocol_error' => protocolError,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeMcpProtocolErrorType($value)'; } 
  }
-final class RealtimeMcpProtocolError {const RealtimeMcpProtocolError({required this.type, required this.code, required this.message, });
+@immutable final class RealtimeMcpProtocolError {const RealtimeMcpProtocolError({required this.type, required this.code, required this.message, });
 
 factory RealtimeMcpProtocolError.fromJson(Map<String, dynamic> json) { return RealtimeMcpProtocolError(
   type: RealtimeMcpProtocolErrorType.fromJson(json['type'] as String),

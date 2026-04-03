@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_list_tools.completed'.
-final class ResponseMcpListToolsCompletedEventType {const ResponseMcpListToolsCompletedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_list_tools.completed'.
+@immutable final class ResponseMcpListToolsCompletedEventType {const ResponseMcpListToolsCompletedEventType._(this.value);
 
 factory ResponseMcpListToolsCompletedEventType.fromJson(String json) { return switch (json) {
   'response.mcp_list_tools.completed' => responseMcpListToolsCompleted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when the list of available MCP tools has been successfully retrieved.
 /// 
-final class ResponseMcpListToolsCompletedEvent {const ResponseMcpListToolsCompletedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
+@immutable final class ResponseMcpListToolsCompletedEvent {const ResponseMcpListToolsCompletedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
 
 factory ResponseMcpListToolsCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpListToolsCompletedEvent(
   type: ResponseMcpListToolsCompletedEventType.fromJson(json['type'] as String),

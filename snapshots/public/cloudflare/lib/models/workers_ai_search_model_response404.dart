@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersAiSearchModelResponse404 {const WorkersAiSearchModelResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiSearchModelResponse404 {const WorkersAiSearchModelResponse404({required this.errors, required this.success, });
 
 factory WorkersAiSearchModelResponse404.fromJson(Map<String, dynamic> json) { return WorkersAiSearchModelResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),

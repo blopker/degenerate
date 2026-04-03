@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_summary_by_vertical_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer7_summary_by_vertical_response_result_meta_date_range.dart';import 'radar_get_attacks_layer7_summary_by_vertical_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaNormalization {const RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaNormalization {const RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta {const RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta {const RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta(
   confidenceInfo: RadarGetAttacksLayer7SummaryByVerticalResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_policy_summary.dart';import 'teams_devices_registration_device_details.dart';import 'teams_devices_user.dart';/// A WARP configuration tied to a single user. Multiple registrations can be created from a single WARP device.
-final class TeamsDevicesRegistration {const TeamsDevicesRegistration({required this.createdAt, this.deletedAt, required this.device, required this.id, required this.key, this.keyType, required this.lastSeenAt, this.policy, this.revokedAt, this.tunnelType, required this.updatedAt, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_policy_summary.dart';import 'teams_devices_registration_device_details.dart';import 'teams_devices_user.dart';/// A WARP configuration tied to a single user. Multiple registrations can be created from a single WARP device.
+@immutable final class TeamsDevicesRegistration {const TeamsDevicesRegistration({required this.createdAt, required this.device, required this.id, required this.key, required this.lastSeenAt, required this.updatedAt, this.deletedAt, this.keyType, this.policy, this.revokedAt, this.tunnelType, this.user, });
 
 factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistration(
   createdAt: json['created_at'] as String,

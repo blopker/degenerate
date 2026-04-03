@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposCreateAttestationRequestBundleDsseEnvelope {const ReposCreateAttestationRequestBundleDsseEnvelope({this.additionalProperties = const {}});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAttestationRequestBundleDsseEnvelope {const ReposCreateAttestationRequestBundleDsseEnvelope({this.additionalProperties = const {}});
 
 factory ReposCreateAttestationRequestBundleDsseEnvelope.fromJson(Map<String, dynamic> json) { return ReposCreateAttestationRequestBundleDsseEnvelope(
 

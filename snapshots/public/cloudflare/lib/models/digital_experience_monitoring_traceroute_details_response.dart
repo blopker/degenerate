@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_details_response_target_policies.dart';import 'digital_experience_monitoring_traceroute_details_response_traceroute_stats.dart';import 'digital_experience_monitoring_traceroute_details_response_traceroute_stats_by_colo.dart';final class DigitalExperienceMonitoringTracerouteDetailsResponse {const DigitalExperienceMonitoringTracerouteDetailsResponse({required this.host, required this.interval, required this.kind, required this.name, this.targetPolicies, this.targeted, this.tracerouteStats, this.tracerouteStatsByColo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_details_response_target_policies.dart';import 'digital_experience_monitoring_traceroute_details_response_traceroute_stats.dart';import 'digital_experience_monitoring_traceroute_details_response_traceroute_stats_by_colo.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsResponse {const DigitalExperienceMonitoringTracerouteDetailsResponse({required this.host, required this.interval, required this.kind, required this.name, this.targetPolicies, this.targeted, this.tracerouteStats, this.tracerouteStatsByColo, });
 
 factory DigitalExperienceMonitoringTracerouteDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: json['host'] as String,

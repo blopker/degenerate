@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent.dart';import 'terminal_reader_reader_resource_process_setup_config.dart';import 'terminal_reader_reader_resource_process_setup_intent_action_setup_intent.dart';/// Represents a reader action to process a setup intent
-final class TerminalReaderReaderResourceProcessSetupIntentAction {const TerminalReaderReaderResourceProcessSetupIntentAction({this.generatedCard, this.processConfig, required this.setupIntent, });
+@immutable final class TerminalReaderReaderResourceProcessSetupIntentAction {const TerminalReaderReaderResourceProcessSetupIntentAction({required this.setupIntent, this.generatedCard, this.processConfig, });
 
 factory TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessSetupIntentAction(
   generatedCard: json['generated_card'] as String?,

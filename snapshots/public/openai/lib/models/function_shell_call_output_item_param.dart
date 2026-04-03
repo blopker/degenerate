@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_item_status.dart';import 'function_shell_call_output_content_param.dart';/// The streamed output items emitted by a shell tool call.
-final class FunctionShellCallOutputItemParam {const FunctionShellCallOutputItemParam({this.id, required this.callId, this.type = 'shell_call_output', required this.output, this.status, this.maxOutputLength, });
+@immutable final class FunctionShellCallOutputItemParam {const FunctionShellCallOutputItemParam({required this.callId, required this.output, this.id, this.type = 'shell_call_output', this.status, this.maxOutputLength, });
 
 factory FunctionShellCallOutputItemParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputItemParam(
   id: json['id'] as String?,

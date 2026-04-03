@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_key_fields_value_query_string_exclude.dart';import 'zones_cache_key_fields_value_query_string_include.dart';/// Controls which URL query string parameters go into the Cache
 /// Key. Exactly one of `include` or `exclude` is expected.
 /// 
-final class ZonesCacheKeyFieldsValueQueryString {const ZonesCacheKeyFieldsValueQueryString({this.exclude, this.include, });
+@immutable final class ZonesCacheKeyFieldsValueQueryString {const ZonesCacheKeyFieldsValueQueryString({this.exclude, this.include, });
 
 factory ZonesCacheKeyFieldsValueQueryString.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueQueryString(
   exclude: json['exclude'] != null ? OneOf2.parse(json['exclude'], fromA: (v) => ZonesCacheKeyFieldsValueQueryStringExcludeVariant1.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,

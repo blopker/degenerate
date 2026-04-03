@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_id_request_active_from.dart';import 'post_tax_registrations_id_request_expires_at.dart';final class PostTaxRegistrationsIdRequest {const PostTaxRegistrationsIdRequest({this.activeFrom, this.expand, this.expiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_id_request_active_from.dart';import 'post_tax_registrations_id_request_expires_at.dart';@immutable final class PostTaxRegistrationsIdRequest {const PostTaxRegistrationsIdRequest({this.activeFrom, this.expand, this.expiresAt, });
 
 factory PostTaxRegistrationsIdRequest.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsIdRequest(
   activeFrom: json['active_from'] != null ? OneOf2.parse(json['active_from'], fromA: (v) => PostTaxRegistrationsIdRequestActiveFromVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,

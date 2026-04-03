@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to updated the service account.
-final class AuditLogServiceAccountUpdatedChangesRequested {const AuditLogServiceAccountUpdatedChangesRequested({this.role});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to updated the service account.
+@immutable final class AuditLogServiceAccountUpdatedChangesRequested {const AuditLogServiceAccountUpdatedChangesRequested({this.role});
 
 factory AuditLogServiceAccountUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogServiceAccountUpdatedChangesRequested(
   role: json['role'] as String?,

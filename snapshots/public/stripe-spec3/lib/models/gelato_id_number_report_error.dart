@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A short machine-readable string giving the reason for the verification failure.
-final class GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
+@immutable final class GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode._(this.value);
 
 factory GelatoIdNumberReportErrorCode.fromJson(String json) { return switch (json) {
   'id_number_insufficient_document_data' => idNumberInsufficientDocumentData,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoIdNumberReportErrorCode($value)'; } 
  }
 /// 
-final class GelatoIdNumberReportError {const GelatoIdNumberReportError({this.code, this.reason, });
+@immutable final class GelatoIdNumberReportError {const GelatoIdNumberReportError({this.code, this.reason, });
 
 factory GelatoIdNumberReportError.fromJson(Map<String, dynamic> json) { return GelatoIdNumberReportError(
   code: json['code'] != null ? GelatoIdNumberReportErrorCode.fromJson(json['code'] as String) : null,

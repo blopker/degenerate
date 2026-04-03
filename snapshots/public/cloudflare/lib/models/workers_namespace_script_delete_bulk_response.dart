@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_namespace_script_delete_bulk_response_deleted.dart';/// Detail about bulk deletion of scripts in a namespace.
-final class WorkersNamespaceScriptDeleteBulkResponse {const WorkersNamespaceScriptDeleteBulkResponse({this.deleted, this.deletedCount, this.hasMore, });
+@immutable final class WorkersNamespaceScriptDeleteBulkResponse {const WorkersNamespaceScriptDeleteBulkResponse({this.deleted, this.deletedCount, this.hasMore, });
 
 factory WorkersNamespaceScriptDeleteBulkResponse.fromJson(Map<String, dynamic> json) { return WorkersNamespaceScriptDeleteBulkResponse(
   deleted: (json['deleted'] as List<dynamic>?)?.map((e) => WorkersNamespaceScriptDeleteBulkResponseDeleted.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_uuid.dart';final class AaaMechanismsPagerduty {const AaaMechanismsPagerduty({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_uuid.dart';@immutable final class AaaMechanismsPagerduty {const AaaMechanismsPagerduty({this.id});
 
 factory AaaMechanismsPagerduty.fromJson(Map<String, dynamic> json) { return AaaMechanismsPagerduty(
   id: json['id'] != null ? AaaUuid.fromJson(json['id'] as String) : null,

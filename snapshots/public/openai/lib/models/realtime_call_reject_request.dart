@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Parameters used to decline an incoming SIP call handled by the Realtime API.
-final class RealtimeCallRejectRequest {const RealtimeCallRejectRequest({this.statusCode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters used to decline an incoming SIP call handled by the Realtime API.
+@immutable final class RealtimeCallRejectRequest {const RealtimeCallRejectRequest({this.statusCode});
 
 factory RealtimeCallRejectRequest.fromJson(Map<String, dynamic> json) { return RealtimeCallRejectRequest(
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,

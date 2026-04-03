@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_added_to_repository_repository.dart';import 'webhooks_team1.dart';final class WebhookTeamAddedToRepositoryAction {const WebhookTeamAddedToRepositoryAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_added_to_repository_repository.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamAddedToRepositoryAction {const WebhookTeamAddedToRepositoryAction._(this.value);
 
 factory WebhookTeamAddedToRepositoryAction.fromJson(String json) { return switch (json) {
   'added_to_repository' => addedToRepository,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookTeamAddedToRepositoryAction($value)'; } 
  }
-final class WebhookTeamAddedToRepository {const WebhookTeamAddedToRepository({required this.action, this.enterprise, this.installation, required this.organization, this.repository, this.sender, required this.team, });
+@immutable final class WebhookTeamAddedToRepository {const WebhookTeamAddedToRepository({required this.action, required this.organization, required this.team, this.enterprise, this.installation, this.repository, this.sender, });
 
 factory WebhookTeamAddedToRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamAddedToRepository(
   action: WebhookTeamAddedToRepositoryAction.fromJson(json['action'] as String),

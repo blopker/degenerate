@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_branch_name_pattern_parameters.dart';final class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType._(this.value);
 
 factory RepositoryRuleBranchNamePatternType.fromJson(String json) { return switch (json) {
   'branch_name_pattern' => branchNamePattern,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleBranchNamePatternType($value)'; } 
  }
 /// Parameters to be used for the branch_name_pattern rule
-final class RepositoryRuleBranchNamePattern {const RepositoryRuleBranchNamePattern({required this.type, this.parameters, });
+@immutable final class RepositoryRuleBranchNamePattern {const RepositoryRuleBranchNamePattern({required this.type, this.parameters, });
 
 factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleBranchNamePattern(
   type: RepositoryRuleBranchNamePatternType.fromJson(json['type'] as String),

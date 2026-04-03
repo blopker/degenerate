@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7TopOriginLocationHttpMethod {const RadarGetAttacksLayer7TopOriginLocationHttpMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginLocationHttpMethod {const RadarGetAttacksLayer7TopOriginLocationHttpMethod._(this.value);
 
 factory RadarGetAttacksLayer7TopOriginLocationHttpMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesUserContentVariant2File {const Messages51MessagesUserContentVariant2File({this.fileData, this.fileId, this.filename, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesUserContentVariant2File {const Messages51MessagesUserContentVariant2File({this.fileData, this.fileId, this.filename, });
 
 factory Messages51MessagesUserContentVariant2File.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2File(
   fileData: json['file_data'] as String?,

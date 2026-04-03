@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentMethodsPaymentMethodAttachRequest {const PostPaymentMethodsPaymentMethodAttachRequest({this.customer, this.customerAccount, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodAttachRequest {const PostPaymentMethodsPaymentMethodAttachRequest({this.customer, this.customerAccount, this.expand, });
 
 factory PostPaymentMethodsPaymentMethodAttachRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodAttachRequest(
   customer: json['customer'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider._(this.value);
 
 factory R2EnableSippyS3SourceProvider.fromJson(String json) { return switch (json) {
   's3' => s3,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2EnableSippyS3SourceProvider($value)'; } 
  }
 /// General S3-compatible provider to copy objects from.
-final class R2EnableSippyS3Source {const R2EnableSippyS3Source({this.accessKeyId, this.bucketUrl, this.provider, this.secretAccessKey, });
+@immutable final class R2EnableSippyS3Source {const R2EnableSippyS3Source({this.accessKeyId, this.bucketUrl, this.provider, this.secretAccessKey, });
 
 factory R2EnableSippyS3Source.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3Source(
   accessKeyId: json['accessKeyId'] as String?,

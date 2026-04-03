@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteAssistantResponseObject {const DeleteAssistantResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteAssistantResponseObject {const DeleteAssistantResponseObject._(this.value);
 
 factory DeleteAssistantResponseObject.fromJson(String json) { return switch (json) {
   'assistant.deleted' => assistantDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteAssistantResponseObject($value)'; } 
  }
-final class DeleteAssistantResponse {const DeleteAssistantResponse({required this.id, required this.deleted, required this.object, });
+@immutable final class DeleteAssistantResponse {const DeleteAssistantResponse({required this.id, required this.deleted, required this.object, });
 
 factory DeleteAssistantResponse.fromJson(Map<String, dynamic> json) { return DeleteAssistantResponse(
   id: json['id'] as String,

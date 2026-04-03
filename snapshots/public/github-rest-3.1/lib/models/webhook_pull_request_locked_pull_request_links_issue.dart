@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestLockedPullRequestLinksIssue {const WebhookPullRequestLockedPullRequestLinksIssue({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestLockedPullRequestLinksIssue {const WebhookPullRequestLockedPullRequestLinksIssue({required this.href});
 
 factory WebhookPullRequestLockedPullRequestLinksIssue.fromJson(Map<String, dynamic> json) { return WebhookPullRequestLockedPullRequestLinksIssue(
   href: json['href'] as String,

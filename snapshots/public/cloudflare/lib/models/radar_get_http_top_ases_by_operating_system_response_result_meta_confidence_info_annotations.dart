@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetHttpTopAsesByOperatingSystemResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

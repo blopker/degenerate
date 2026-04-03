@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters($value)'; } 
  }
 /// Controls whether or not the mobile payment element shows saved payment methods.
-final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRedisplay {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRedisplay._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRedisplay {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRedisplay._(this.value);
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRedisplay.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Controls whether the mobile payment element displays the option to remove a saved payment method."
 /// 
 /// Allowing buyers to remove their saved payment methods impacts subscriptions that depend on that payment method. Removing the payment method detaches the [`customer` object](https://docs.stripe.com/api/payment_methods/object#payment_method_object-customer) from that [PaymentMethod](https://docs.stripe.com/api/payment_methods).
-final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRemove._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRemove._(this.value);
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Controls whether the mobile payment element displays a checkbox offering to save a new payment method.
 /// 
 /// If a customer checks the box, the [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) value on the PaymentMethod is set to `'always'` at confirmation time. For PaymentIntents, the [`setup_future_usage`](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-setup_future_usage) value is also set to the value defined in `payment_method_save_usage`.
-final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave._(this.value);
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Allows overriding the value of allow_override when saving a new payment method when payment_method_save is set to disabled. Use values: "always", "limited", or "unspecified".
 /// 
 /// If not specified, defaults to `nil` (no override value).
-final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSaveAllowRedisplayOverride {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSaveAllowRedisplayOverride._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSaveAllowRedisplayOverride {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSaveAllowRedisplayOverride._(this.value);
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSaveAllowRedisplayOverride.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -137,7 +137,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSaveAllowRedisplayOverride($value)'; } 
  }
 /// This hash contains the features the mobile payment element supports.
-final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveAllowRedisplayOverride, });
+@immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveAllowRedisplayOverride, });
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),

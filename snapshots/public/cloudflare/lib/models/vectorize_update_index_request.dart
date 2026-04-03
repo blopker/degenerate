@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_index_description.dart';final class VectorizeUpdateIndexRequest {const VectorizeUpdateIndexRequest({required this.description});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_description.dart';@immutable final class VectorizeUpdateIndexRequest {const VectorizeUpdateIndexRequest({required this.description});
 
 factory VectorizeUpdateIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeUpdateIndexRequest(
   description: VectorizeIndexDescription.fromJson(json['description'] as String),

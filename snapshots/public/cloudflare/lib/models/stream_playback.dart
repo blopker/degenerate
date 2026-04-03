@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamPlayback {const StreamPlayback({this.dash, this.hls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamPlayback {const StreamPlayback({this.dash, this.hls, });
 
 factory StreamPlayback.fromJson(Map<String, dynamic> json) { return StreamPlayback(
   dash: json['dash'] as String?,

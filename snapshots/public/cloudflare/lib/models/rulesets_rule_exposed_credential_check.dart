@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration for exposed credential checking.
-final class RulesetsRuleExposedCredentialCheck {const RulesetsRuleExposedCredentialCheck({required this.passwordExpression, required this.usernameExpression, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for exposed credential checking.
+@immutable final class RulesetsRuleExposedCredentialCheck {const RulesetsRuleExposedCredentialCheck({required this.passwordExpression, required this.usernameExpression, });
 
 factory RulesetsRuleExposedCredentialCheck.fromJson(Map<String, dynamic> json) { return RulesetsRuleExposedCredentialCheck(
   passwordExpression: json['password_expression'] as String,

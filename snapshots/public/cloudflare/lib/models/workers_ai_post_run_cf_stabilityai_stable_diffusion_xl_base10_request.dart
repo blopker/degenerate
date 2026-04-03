@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request({this.guidance = 7.5, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps = 20, required this.prompt, this.seed, this.strength = 1.0, this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request({required this.prompt, this.guidance = 7.5, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps = 20, this.seed, this.strength = 1.0, this.width, });
 
 factory WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request(
   guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 7.5,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_instance_search_request_ai_search_options_query_rewrite.dart';import 'ai_search_instance_search_request_ai_search_options_reranking.dart';import 'ai_search_instance_search_request_ai_search_options_retrieval.dart';final class AiSearchInstanceSearchRequestAiSearchOptions {const AiSearchInstanceSearchRequestAiSearchOptions({this.queryRewrite, this.reranking, this.retrieval, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options_query_rewrite.dart';import 'ai_search_instance_search_request_ai_search_options_reranking.dart';import 'ai_search_instance_search_request_ai_search_options_retrieval.dart';@immutable final class AiSearchInstanceSearchRequestAiSearchOptions {const AiSearchInstanceSearchRequestAiSearchOptions({this.queryRewrite, this.reranking, this.retrieval, });
 
 factory AiSearchInstanceSearchRequestAiSearchOptions.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptions(
   queryRewrite: json['query_rewrite'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite.fromJson(json['query_rewrite'] as Map<String, dynamic>) : null,

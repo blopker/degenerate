@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// This is typed as an enum for consistency with `requirements.disabled_reason`.
-final class AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason._(this.value);
+@immutable final class AccountFutureRequirementsDisabledReason {const AccountFutureRequirementsDisabledReason._(this.value);
 
 factory AccountFutureRequirementsDisabledReason.fromJson(String json) { return switch (json) {
   'action_required.requested_capabilities' => actionRequiredRequestedCapabilities,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountFutureRequirementsDisabledReason($value)'; } 
  }
 /// 
-final class AccountFutureRequirements {const AccountFutureRequirements({this.alternatives, this.currentDeadline, this.currentlyDue, this.disabledReason, this.errors, this.eventuallyDue, this.pastDue, this.pendingVerification, });
+@immutable final class AccountFutureRequirements {const AccountFutureRequirements({this.alternatives, this.currentDeadline, this.currentlyDue, this.disabledReason, this.errors, this.eventuallyDue, this.pastDue, this.pendingVerification, });
 
 factory AccountFutureRequirements.fromJson(Map<String, dynamic> json) { return AccountFutureRequirements(
   alternatives: (json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList(),

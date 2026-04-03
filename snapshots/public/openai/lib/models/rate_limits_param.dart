@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls request rate limits for the session.
-final class RateLimitsParam {const RateLimitsParam({this.maxRequestsPer1Minute});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls request rate limits for the session.
+@immutable final class RateLimitsParam {const RateLimitsParam({this.maxRequestsPer1Minute});
 
 factory RateLimitsParam.fromJson(Map<String, dynamic> json) { return RateLimitsParam(
   maxRequestsPer1Minute: json['max_requests_per_1_minute'] != null ? (json['max_requests_per_1_minute'] as num).toInt() : null,

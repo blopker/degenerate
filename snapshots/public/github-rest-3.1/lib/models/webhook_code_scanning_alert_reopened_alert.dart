@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_dismissed_comment.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_reopened_alert_most_recent_instance.dart';import 'webhook_code_scanning_alert_reopened_alert_rule.dart';import 'webhook_code_scanning_alert_reopened_alert_tool.dart';/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-final class WebhookCodeScanningAlertReopenedAlertState {const WebhookCodeScanningAlertReopenedAlertState._(this.value);
+@immutable final class WebhookCodeScanningAlertReopenedAlertState {const WebhookCodeScanningAlertReopenedAlertState._(this.value);
 
 factory WebhookCodeScanningAlertReopenedAlertState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCodeScanningAlertReopenedAlertState($value)'; } 
  }
 /// The code scanning alert involved in the event.
-final class WebhookCodeScanningAlertReopenedAlert {const WebhookCodeScanningAlertReopenedAlert({this.assignees, required this.createdAt, required this.dismissedAt, required this.dismissedBy, this.dismissedComment, required this.dismissedReason, this.fixedAt, required this.htmlUrl, this.instancesUrl, this.mostRecentInstance, required this.number, required this.rule, required this.state, required this.tool, this.updatedAt, required this.url, this.dismissalApprovedBy, });
+@immutable final class WebhookCodeScanningAlertReopenedAlert {const WebhookCodeScanningAlertReopenedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment, this.fixedAt, this.instancesUrl, this.mostRecentInstance, this.updatedAt, this.dismissalApprovedBy, });
 
 factory WebhookCodeScanningAlertReopenedAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),

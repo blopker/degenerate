@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of jsonl source. Always `file_id`.
-final class EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of jsonl source. Always `file_id`.
+@immutable final class EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType._(this.value);
 
 factory EvalJsonlFileIdSourceType.fromJson(String json) { return switch (json) {
   'file_id' => fileId,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EvalJsonlFileIdSourceType($value)'; } 
  }
-final class EvalJsonlFileIdSource {const EvalJsonlFileIdSource({this.type = EvalJsonlFileIdSourceType.fileId, required this.id, });
+@immutable final class EvalJsonlFileIdSource {const EvalJsonlFileIdSource({required this.id, this.type = EvalJsonlFileIdSourceType.fileId, });
 
 factory EvalJsonlFileIdSource.fromJson(Map<String, dynamic> json) { return EvalJsonlFileIdSource(
   type: EvalJsonlFileIdSourceType.fromJson(json['type'] as String),

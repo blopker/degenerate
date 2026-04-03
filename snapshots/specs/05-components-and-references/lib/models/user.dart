@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class User {const User({required this.id, required this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class User {const User({required this.id, required this.email, });
 
 factory User.fromJson(Map<String, dynamic> json) { return User(
   id: json['id'] as String,

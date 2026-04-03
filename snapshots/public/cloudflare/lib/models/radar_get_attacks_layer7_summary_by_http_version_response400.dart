@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_summary_by_http_version_response400_errors.dart';final class RadarGetAttacksLayer7SummaryByHttpVersionResponse400 {const RadarGetAttacksLayer7SummaryByHttpVersionResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_summary_by_http_version_response400_errors.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionResponse400 {const RadarGetAttacksLayer7SummaryByHttpVersionResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAttacksLayer7SummaryByHttpVersionResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByHttpVersionResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAttacksLayer7SummaryByHttpVersionResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_namespace.dart';final class WorkersKvNamespaceListNamespacesResponse {const WorkersKvNamespaceListNamespacesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_namespace.dart';@immutable final class WorkersKvNamespaceListNamespacesResponse {const WorkersKvNamespaceListNamespacesResponse({this.result});
 
 factory WorkersKvNamespaceListNamespacesResponse.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceListNamespacesResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => WorkersKvNamespace.fromJson(e as Map<String, dynamic>)).toList(),

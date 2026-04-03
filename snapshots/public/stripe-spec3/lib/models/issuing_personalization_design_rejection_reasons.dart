@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class IssuingPersonalizationDesignRejectionReasonsCardLogo {const IssuingPersonalizationDesignRejectionReasonsCardLogo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuingPersonalizationDesignRejectionReasonsCardLogo {const IssuingPersonalizationDesignRejectionReasonsCardLogo._(this.value);
 
 factory IssuingPersonalizationDesignRejectionReasonsCardLogo.fromJson(String json) { return switch (json) {
   'geographic_location' => geographicLocation,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingPersonalizationDesignRejectionReasonsCardLogo($value)'; } 
  }
-final class IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText._(this.value);
+@immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText._(this.value);
 
 factory IssuingPersonalizationDesignRejectionReasonsCarrierText.fromJson(String json) { return switch (json) {
   'geographic_location' => geographicLocation,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPersonalizationDesignRejectionReasonsCarrierText($value)'; } 
  }
 /// 
-final class IssuingPersonalizationDesignRejectionReasons {const IssuingPersonalizationDesignRejectionReasons({this.cardLogo, this.carrierText, });
+@immutable final class IssuingPersonalizationDesignRejectionReasons {const IssuingPersonalizationDesignRejectionReasons({this.cardLogo, this.carrierText, });
 
 factory IssuingPersonalizationDesignRejectionReasons.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesignRejectionReasons(
   cardLogo: (json['card_logo'] as List<dynamic>?)?.map((e) => IssuingPersonalizationDesignRejectionReasonsCardLogo.fromJson(e as String)).toList(),

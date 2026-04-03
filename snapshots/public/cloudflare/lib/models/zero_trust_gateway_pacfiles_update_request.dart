@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_contents.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';final class ZeroTrustGatewayPacfilesUpdateRequest {const ZeroTrustGatewayPacfilesUpdateRequest({required this.contents, required this.description, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_contents.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';@immutable final class ZeroTrustGatewayPacfilesUpdateRequest {const ZeroTrustGatewayPacfilesUpdateRequest({required this.contents, required this.description, required this.name, });
 
 factory ZeroTrustGatewayPacfilesUpdateRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayPacfilesUpdateRequest(
   contents: ZeroTrustGatewayContents.fromJson(json['contents'] as String),

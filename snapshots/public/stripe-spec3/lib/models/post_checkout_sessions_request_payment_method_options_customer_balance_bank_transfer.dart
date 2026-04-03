@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_customer_balance_bank_transfer_eu_bank_transfer.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_customer_balance_bank_transfer_eu_bank_transfer.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes.fromJson(String json) { return switch (json) {
   'aba' => aba,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferType {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferType._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferType {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferType._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferType($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.requestedAddressTypes, required this.type, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer({required this.type, this.euBankTransfer, this.requestedAddressTypes, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZeroTrustGatewayDnsResolverSettings2 {const ZeroTrustGatewayDnsResolverSettings2({required this.ip, this.port, this.routeThroughPrivateNetwork, this.vnetId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayDnsResolverSettings2 {const ZeroTrustGatewayDnsResolverSettings2({required this.ip, this.port, this.routeThroughPrivateNetwork, this.vnetId, });
 
 factory ZeroTrustGatewayDnsResolverSettings2.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayDnsResolverSettings2(
   ip: json['ip'] as String,

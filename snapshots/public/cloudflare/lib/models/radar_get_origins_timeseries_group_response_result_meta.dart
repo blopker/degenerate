@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_timeseries_group_response_result_meta_confidence_info.dart';import 'radar_get_origins_timeseries_group_response_result_meta_date_range.dart';import 'radar_get_origins_timeseries_group_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval {const RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval {const RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetOriginsTimeseriesGroupResponseResultMetaNormalization {const RadarGetOriginsTimeseriesGroupResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetOriginsTimeseriesGroupResponseResultMetaNormalization {const RadarGetOriginsTimeseriesGroupResponseResultMetaNormalization._(this.value);
 
 factory RadarGetOriginsTimeseriesGroupResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetOriginsTimeseriesGroupResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetOriginsTimeseriesGroupResponseResultMeta {const RadarGetOriginsTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetOriginsTimeseriesGroupResponseResultMeta {const RadarGetOriginsTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetOriginsTimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesGroupResponseResultMeta(
   aggInterval: RadarGetOriginsTimeseriesGroupResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

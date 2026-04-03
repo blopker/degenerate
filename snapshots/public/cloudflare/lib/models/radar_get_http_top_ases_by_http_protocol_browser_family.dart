@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByHttpProtocolBrowserFamily {const RadarGetHttpTopAsesByHttpProtocolBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpProtocolBrowserFamily {const RadarGetHttpTopAsesByHttpProtocolBrowserFamily._(this.value);
 
 factory RadarGetHttpTopAsesByHttpProtocolBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,

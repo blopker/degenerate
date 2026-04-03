@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue2.dart';final class WebhookIssuesPinnedAction {const WebhookIssuesPinnedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue2.dart';@immutable final class WebhookIssuesPinnedAction {const WebhookIssuesPinnedAction._(this.value);
 
 factory WebhookIssuesPinnedAction.fromJson(String json) { return switch (json) {
   'pinned' => pinned,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssuesPinnedAction($value)'; } 
  }
-final class WebhookIssuesPinned {const WebhookIssuesPinned({required this.action, this.enterprise, this.installation, required this.issue, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookIssuesPinned {const WebhookIssuesPinned({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesPinned.fromJson(Map<String, dynamic> json) { return WebhookIssuesPinned(
   action: WebhookIssuesPinnedAction.fromJson(json['action'] as String),

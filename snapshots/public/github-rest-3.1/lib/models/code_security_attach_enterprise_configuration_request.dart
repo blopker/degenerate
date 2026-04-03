@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of repositories to attach the configuration to.
-final class CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to.
+@immutable final class CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope._(this.value);
 
 factory CodeSecurityAttachEnterpriseConfigurationRequestScope.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecurityAttachEnterpriseConfigurationRequestScope($value)'; } 
  }
-final class CodeSecurityAttachEnterpriseConfigurationRequest {const CodeSecurityAttachEnterpriseConfigurationRequest({required this.scope});
+@immutable final class CodeSecurityAttachEnterpriseConfigurationRequest {const CodeSecurityAttachEnterpriseConfigurationRequest({required this.scope});
 
 factory CodeSecurityAttachEnterpriseConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityAttachEnterpriseConfigurationRequest(
   scope: CodeSecurityAttachEnterpriseConfigurationRequestScope.fromJson(json['scope'] as String),

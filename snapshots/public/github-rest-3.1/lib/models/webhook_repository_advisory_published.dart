@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_advisory.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryAdvisoryPublishedAction {const WebhookRepositoryAdvisoryPublishedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_advisory.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryAdvisoryPublishedAction {const WebhookRepositoryAdvisoryPublishedAction._(this.value);
 
 factory WebhookRepositoryAdvisoryPublishedAction.fromJson(String json) { return switch (json) {
   'published' => published,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRepositoryAdvisoryPublishedAction($value)'; } 
  }
-final class WebhookRepositoryAdvisoryPublished {const WebhookRepositoryAdvisoryPublished({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.repositoryAdvisory, this.sender, });
+@immutable final class WebhookRepositoryAdvisoryPublished {const WebhookRepositoryAdvisoryPublished({required this.action, required this.repository, required this.repositoryAdvisory, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookRepositoryAdvisoryPublished.fromJson(Map<String, dynamic> json) { return WebhookRepositoryAdvisoryPublished(
   action: WebhookRepositoryAdvisoryPublishedAction.fromJson(json['action'] as String),

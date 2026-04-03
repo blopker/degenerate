@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'timeline_reviewed_event_links_html.dart';import 'timeline_reviewed_event_links_pull_request.dart';final class TimelineReviewedEventLinks {const TimelineReviewedEventLinks({required this.html, required this.pullRequest, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeline_reviewed_event_links_html.dart';import 'timeline_reviewed_event_links_pull_request.dart';@immutable final class TimelineReviewedEventLinks {const TimelineReviewedEventLinks({required this.html, required this.pullRequest, });
 
 factory TimelineReviewedEventLinks.fromJson(Map<String, dynamic> json) { return TimelineReviewedEventLinks(
   html: TimelineReviewedEventLinksHtml.fromJson(json['html'] as Map<String, dynamic>),

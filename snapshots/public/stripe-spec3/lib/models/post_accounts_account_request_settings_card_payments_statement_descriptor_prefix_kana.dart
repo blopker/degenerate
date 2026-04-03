@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2 {const PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2 {const PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2._(this.value);
 
 factory PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

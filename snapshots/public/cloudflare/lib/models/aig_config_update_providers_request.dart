@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigUpdateProvidersRequest {const AigConfigUpdateProvidersRequest({required this.secret});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateProvidersRequest {const AigConfigUpdateProvidersRequest({required this.secret});
 
 factory AigConfigUpdateProvidersRequest.fromJson(Map<String, dynamic> json) { return AigConfigUpdateProvidersRequest(
   secret: json['secret'] as String,

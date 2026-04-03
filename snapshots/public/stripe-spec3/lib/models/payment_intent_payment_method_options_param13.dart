@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param13_reference.dart';final class PaymentIntentPaymentMethodOptionsParam13SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam13SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param13_reference.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam13SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam13SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam13SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam13SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam13 {const PaymentIntentPaymentMethodOptionsParam13({this.reference, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam13 {const PaymentIntentPaymentMethodOptionsParam13({this.reference, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam13.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam13(
   reference: json['reference'] != null ? OneOf2.parse(json['reference'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParam13ReferenceVariant2.fromJson(v as String),) : null,

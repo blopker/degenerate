@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FirewallResultInfo {const FirewallResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallResultInfo {const FirewallResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory FirewallResultInfo.fromJson(Map<String, dynamic> json) { return FirewallResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

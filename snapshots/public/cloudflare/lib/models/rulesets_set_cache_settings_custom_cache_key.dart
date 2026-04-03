@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_set_cache_settings_custom_cache_key_cookie.dart';import 'rulesets_set_cache_settings_custom_cache_key_header.dart';import 'rulesets_set_cache_settings_custom_cache_key_host.dart';import 'rulesets_set_cache_settings_custom_cache_key_query_string.dart';import 'rulesets_set_cache_settings_custom_cache_key_user.dart';/// Which components of the request are included or excluded from the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKey {const RulesetsSetCacheSettingsCustomCacheKey({this.cookie, this.header, this.host, this.queryString, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_custom_cache_key_cookie.dart';import 'rulesets_set_cache_settings_custom_cache_key_header.dart';import 'rulesets_set_cache_settings_custom_cache_key_host.dart';import 'rulesets_set_cache_settings_custom_cache_key_query_string.dart';import 'rulesets_set_cache_settings_custom_cache_key_user.dart';/// Which components of the request are included or excluded from the cache key.
+@immutable final class RulesetsSetCacheSettingsCustomCacheKey {const RulesetsSetCacheSettingsCustomCacheKey({this.cookie, this.header, this.host, this.queryString, this.user, });
 
 factory RulesetsSetCacheSettingsCustomCacheKey.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKey(
   cookie: json['cookie'] != null ? RulesetsSetCacheSettingsCustomCacheKeyCookie.fromJson(json['cookie'] as Map<String, dynamic>) : null,

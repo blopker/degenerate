@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'merge_group.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merge_group.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction._(this.value);
 
 factory WebhookMergeGroupDestroyedAction.fromJson(String json) { return switch (json) {
   'destroyed' => destroyed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookMergeGroupDestroyedAction($value)'; } 
  }
 /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
-final class WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason._(this.value);
+@immutable final class WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason._(this.value);
 
 factory WebhookMergeGroupDestroyedReason.fromJson(String json) { return switch (json) {
   'merged' => merged,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMergeGroupDestroyedReason($value)'; } 
  }
-final class WebhookMergeGroupDestroyed {const WebhookMergeGroupDestroyed({required this.action, this.reason, this.installation, required this.mergeGroup, this.organization, this.repository, this.sender, });
+@immutable final class WebhookMergeGroupDestroyed {const WebhookMergeGroupDestroyed({required this.action, required this.mergeGroup, this.reason, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) { return WebhookMergeGroupDestroyed(
   action: WebhookMergeGroupDestroyedAction.fromJson(json['action'] as String),

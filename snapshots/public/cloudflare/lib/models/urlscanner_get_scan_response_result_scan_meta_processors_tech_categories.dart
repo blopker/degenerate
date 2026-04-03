@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories {const UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories({required this.groups, required this.id, required this.name, required this.priority, required this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories {const UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories({required this.groups, required this.id, required this.name, required this.priority, required this.slug, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechCategories(
   groups: (json['groups'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

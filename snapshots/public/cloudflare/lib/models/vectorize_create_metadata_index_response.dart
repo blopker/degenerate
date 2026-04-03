@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_mutation_uuid.dart';final class VectorizeCreateMetadataIndexResponse {const VectorizeCreateMetadataIndexResponse({this.mutationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_mutation_uuid.dart';@immutable final class VectorizeCreateMetadataIndexResponse {const VectorizeCreateMetadataIndexResponse({this.mutationId});
 
 factory VectorizeCreateMetadataIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeCreateMetadataIndexResponse(
   mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as dynamic) : null,

@@ -14,7 +14,7 @@ factory ZonesModifiedOn.fromJson(String json) => ZonesModifiedOn(DateTime.parse(
 String toJson() => value.toIso8601String();
 
 }
-final class ZonesPageRule {const ZonesPageRule({required this.actions, required this.createdOn, required this.id, required this.modifiedOn, required this.priority, required this.status, required this.targets, });
+@immutable final class ZonesPageRule {const ZonesPageRule({required this.actions, required this.createdOn, required this.id, required this.modifiedOn, required this.priority, required this.status, required this.targets, });
 
 factory ZonesPageRule.fromJson(Map<String, dynamic> json) { return ZonesPageRule(
   actions: (json['actions'] as List<dynamic>).map((e) => ZonesActions2.fromJson(e as Map<String, dynamic>)).toList(),

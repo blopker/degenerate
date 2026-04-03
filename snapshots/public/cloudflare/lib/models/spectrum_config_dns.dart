@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The name of the DNS record associated with the application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the DNS record associated with the application.
 extension type const SpectrumConfigDnsName(String value) {
 factory SpectrumConfigDnsName.fromJson(String json) => SpectrumConfigDnsName(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// The type of DNS record associated with the application.
-final class SpectrumConfigDnsType {const SpectrumConfigDnsType._(this.value);
+@immutable final class SpectrumConfigDnsType {const SpectrumConfigDnsType._(this.value);
 
 factory SpectrumConfigDnsType.fromJson(String json) { return switch (json) {
   'CNAME' => cname,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpectrumConfigDnsType($value)'; } 
  }
 /// The name and type of DNS record for the Spectrum application.
-final class SpectrumConfigDns {const SpectrumConfigDns({this.name, this.type, });
+@immutable final class SpectrumConfigDns {const SpectrumConfigDns({this.name, this.type, });
 
 factory SpectrumConfigDns.fromJson(Map<String, dynamic> json) { return SpectrumConfigDns(
   name: json['name'] != null ? SpectrumConfigDnsName.fromJson(json['name'] as String) : null,

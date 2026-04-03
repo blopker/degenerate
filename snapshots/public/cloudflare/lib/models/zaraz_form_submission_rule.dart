@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_form_submission_rule_settings.dart';final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_form_submission_rule_settings.dart';@immutable final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
 
 factory ZarazFormSubmissionRuleAction.fromJson(String json) { return switch (json) {
   'formSubmission' => formSubmission,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazFormSubmissionRuleAction($value)'; } 
  }
-final class ZarazFormSubmissionRule {const ZarazFormSubmissionRule({required this.action, required this.id, required this.settings, });
+@immutable final class ZarazFormSubmissionRule {const ZarazFormSubmissionRule({required this.action, required this.id, required this.settings, });
 
 factory ZarazFormSubmissionRule.fromJson(Map<String, dynamic> json) { return ZarazFormSubmissionRule(
   action: ZarazFormSubmissionRuleAction.fromJson(json['action'] as String),

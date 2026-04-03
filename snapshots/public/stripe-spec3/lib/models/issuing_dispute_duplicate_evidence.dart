@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_duplicate_evidence_additional_documentation.dart';import 'issuing_dispute_duplicate_evidence_card_statement.dart';import 'issuing_dispute_duplicate_evidence_cash_receipt.dart';import 'issuing_dispute_duplicate_evidence_check_image.dart';/// 
-final class IssuingDisputeDuplicateEvidence {const IssuingDisputeDuplicateEvidence({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
+@immutable final class IssuingDisputeDuplicateEvidence {const IssuingDisputeDuplicateEvidence({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory IssuingDisputeDuplicateEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeDuplicateEvidence(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

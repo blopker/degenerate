@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingNetworkTokenAddress {const IssuingNetworkTokenAddress({required this.line1, required this.postalCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingNetworkTokenAddress {const IssuingNetworkTokenAddress({required this.line1, required this.postalCode, });
 
 factory IssuingNetworkTokenAddress.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenAddress(
   line1: json['line1'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeSecurityGetConfigurationsForOrgTargetType {const CodeSecurityGetConfigurationsForOrgTargetType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeSecurityGetConfigurationsForOrgTargetType {const CodeSecurityGetConfigurationsForOrgTargetType._(this.value);
 
 factory CodeSecurityGetConfigurationsForOrgTargetType.fromJson(String json) { return switch (json) {
   'global' => global,

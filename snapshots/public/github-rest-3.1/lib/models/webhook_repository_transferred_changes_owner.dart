@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_repository_transferred_changes_owner_from.dart';final class WebhookRepositoryTransferredChangesOwner {const WebhookRepositoryTransferredChangesOwner({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_transferred_changes_owner_from.dart';@immutable final class WebhookRepositoryTransferredChangesOwner {const WebhookRepositoryTransferredChangesOwner({required this.from});
 
 factory WebhookRepositoryTransferredChangesOwner.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferredChangesOwner(
   from: WebhookRepositoryTransferredChangesOwnerFrom.fromJson(json['from'] as Map<String, dynamic>),

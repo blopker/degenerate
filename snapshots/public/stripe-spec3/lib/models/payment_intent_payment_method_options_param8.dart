@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentIntentPaymentMethodOptionsParam8CaptureMethod {const PaymentIntentPaymentMethodOptionsParam8CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam8CaptureMethod {const PaymentIntentPaymentMethodOptionsParam8CaptureMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam8CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam8CaptureMethod($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam8 {const PaymentIntentPaymentMethodOptionsParam8({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam8 {const PaymentIntentPaymentMethodOptionsParam8({this.captureMethod, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam8.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam8(
   captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsParam8CaptureMethod.fromJson(json['capture_method'] as String) : null,

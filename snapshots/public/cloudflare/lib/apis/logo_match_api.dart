@@ -17,7 +17,7 @@ Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatches({
 final queryParametersList = <ApiQueryParameter>[];
 if (logoId != null) {
 for (final item in logoId) {
-  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item));
 }
 }
 if (offset != null) {
@@ -57,7 +57,7 @@ Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatchesDo
 final queryParametersList = <ApiQueryParameter>[];
 if (logoId != null) {
 for (final item in logoId) {
-  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item));
 }
 }
 if (offset != null) {

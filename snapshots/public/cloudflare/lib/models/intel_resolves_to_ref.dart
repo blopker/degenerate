@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// STIX 2.1 identifier: https://docs.oasis-open.org/cti/stix/v2.1/cs02/stix-v2.1-cs02.html#_64yvzeku5a5c.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// STIX 2.1 identifier: https://docs.oasis-open.org/cti/stix/v2.1/cs02/stix-v2.1-cs02.html#_64yvzeku5a5c.
 extension type const IntelStixIdentifier(String value) {
 factory IntelStixIdentifier.fromJson(String json) => IntelStixIdentifier(json);
 
 String toJson() => value;
 
 }
-final class IntelResolvesToRef {const IntelResolvesToRef({this.id, this.value, });
+@immutable final class IntelResolvesToRef {const IntelResolvesToRef({this.id, this.value, });
 
 factory IntelResolvesToRef.fromJson(Map<String, dynamic> json) { return IntelResolvesToRef(
   id: json['id'] != null ? IntelStixIdentifier.fromJson(json['id'] as String) : null,

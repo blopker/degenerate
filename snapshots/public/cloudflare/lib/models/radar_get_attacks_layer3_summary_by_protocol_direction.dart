@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies whether the `location` filter applies to the source or target location.
-final class RadarGetAttacksLayer3SummaryByProtocolDirection {const RadarGetAttacksLayer3SummaryByProtocolDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
+@immutable final class RadarGetAttacksLayer3SummaryByProtocolDirection {const RadarGetAttacksLayer3SummaryByProtocolDirection._(this.value);
 
 factory RadarGetAttacksLayer3SummaryByProtocolDirection.fromJson(String json) { return switch (json) {
   'ORIGIN' => origin,

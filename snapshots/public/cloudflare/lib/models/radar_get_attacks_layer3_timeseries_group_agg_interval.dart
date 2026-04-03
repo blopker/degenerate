@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetAttacksLayer3TimeseriesGroupAggInterval {const RadarGetAttacksLayer3TimeseriesGroupAggInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupAggInterval {const RadarGetAttacksLayer3TimeseriesGroupAggInterval._(this.value);
 
 factory RadarGetAttacksLayer3TimeseriesGroupAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,

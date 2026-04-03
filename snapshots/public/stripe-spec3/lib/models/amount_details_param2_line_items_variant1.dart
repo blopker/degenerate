@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'amount_details_param2_line_items_variant1_payment_method_options.dart';import 'amount_details_param2_line_items_variant1_tax.dart';final class AmountDetailsParam2LineItemsVariant1 {const AmountDetailsParam2LineItemsVariant1({this.discountAmount, this.paymentMethodOptions, this.productCode, required this.productName, required this.quantity, this.tax, required this.unitCost, this.unitOfMeasure, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param2_line_items_variant1_payment_method_options.dart';import 'amount_details_param2_line_items_variant1_tax.dart';@immutable final class AmountDetailsParam2LineItemsVariant1 {const AmountDetailsParam2LineItemsVariant1({required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
 
 factory AmountDetailsParam2LineItemsVariant1.fromJson(Map<String, dynamic> json) { return AmountDetailsParam2LineItemsVariant1(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,

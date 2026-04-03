@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'bank_account.dart';import 'card.dart';import 'cash_balance.dart';import 'customer_default_source.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'discount.dart';import 'invoice_setting_customer_setting.dart';import 'shipping.dart';import 'source.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CustomerObject {const CustomerObject._(this.value);
+@immutable final class CustomerObject {const CustomerObject._(this.value);
 
 factory CustomerObject.fromJson(String json) { return switch (json) {
   'customer' => customer,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerObject($value)'; } 
  }
 /// Describes the customer's tax exemption status, which is `none`, `exempt`, or `reverse`. When set to `reverse`, invoice and receipt PDFs include the following text: **"Reverse charge"**.
-final class CustomerTaxExempt {const CustomerTaxExempt._(this.value);
+@immutable final class CustomerTaxExempt {const CustomerTaxExempt._(this.value);
 
 factory CustomerTaxExempt.fromJson(String json) { return switch (json) {
   'exempt' => exempt,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// This object represents a customer of your business. Use it to [create recurring charges](https://docs.stripe.com/invoicing/customer), [save payment](https://docs.stripe.com/payments/save-during-payment) and contact information,
 /// and track payments that belong to the same customer.
-final class Customer {const Customer({this.address, this.balance, this.businessName, this.cashBalance, required this.created, this.currency, this.customerAccount, this.defaultSource, this.delinquent, this.description, this.discount, this.email, required this.id, this.individualName, this.invoiceCreditBalance, this.invoicePrefix, this.invoiceSettings, required this.livemode, this.metadata, this.name, this.nextInvoiceSequence, required this.object, this.phone, this.preferredLocales, this.shipping, this.sources, this.subscriptions, this.tax, this.taxExempt, this.taxIds, this.testClock, });
+@immutable final class Customer {const Customer({required this.created, required this.id, required this.livemode, required this.object, this.address, this.balance, this.businessName, this.cashBalance, this.currency, this.customerAccount, this.defaultSource, this.delinquent, this.description, this.discount, this.email, this.individualName, this.invoiceCreditBalance, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.sources, this.subscriptions, this.tax, this.taxExempt, this.taxIds, this.testClock, });
 
 factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,

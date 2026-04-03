@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_dataset_upload_status.dart';final class DlpDatasetColumn {const DlpDatasetColumn({required this.entryId, required this.headerName, required this.numCells, required this.uploadStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpDatasetColumn {const DlpDatasetColumn({required this.entryId, required this.headerName, required this.numCells, required this.uploadStatus, });
 
 factory DlpDatasetColumn.fromJson(Map<String, dynamic> json) { return DlpDatasetColumn(
   entryId: json['entry_id'] as String,

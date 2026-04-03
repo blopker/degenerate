@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_origin_error_page_pass_thru_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_origin_error_page_pass_thru_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
 /// 
-final class ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId._(this.value);
+@immutable final class ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId._(this.value);
 
 factory ZonesOriginErrorPagePassThruId.fromJson(String json) { return switch (json) {
   'origin_error_page_pass_thru' => originErrorPagePassThru,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesOriginErrorPagePassThruId($value)'; } 
  }
-final class ZonesOriginErrorPagePassThru {const ZonesOriginErrorPagePassThru({this.id, this.value, });
+@immutable final class ZonesOriginErrorPagePassThru {const ZonesOriginErrorPagePassThru({this.id, this.value, });
 
 factory ZonesOriginErrorPagePassThru.fromJson(Map<String, dynamic> json) { return ZonesOriginErrorPagePassThru(
   id: json['id'] != null ? ZonesOriginErrorPagePassThruId.fromJson(json['id'] as String) : null,

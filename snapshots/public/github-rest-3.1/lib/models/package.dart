@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'minimal_repository.dart';import 'simple_user.dart';final class PackagePackageType {const PackagePackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'simple_user.dart';@immutable final class PackagePackageType {const PackagePackageType._(this.value);
 
 factory PackagePackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PackagePackageType($value)'; } 
  }
-final class PackageVisibility {const PackageVisibility._(this.value);
+@immutable final class PackageVisibility {const PackageVisibility._(this.value);
 
 factory PackageVisibility.fromJson(String json) { return switch (json) {
   'private' => private,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PackageVisibility($value)'; } 
  }
 /// A software package
-final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, this.owner, this.repository, required this.createdAt, required this.updatedAt, });
+@immutable final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, required this.createdAt, required this.updatedAt, this.owner, this.repository, });
 
 factory Package.fromJson(Map<String, dynamic> json) { return Package(
   id: (json['id'] as num).toInt(),

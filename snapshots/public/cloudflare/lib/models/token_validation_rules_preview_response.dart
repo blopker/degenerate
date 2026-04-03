@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'token_validation_rules_preview_response_result.dart';final class TokenValidationRulesPreviewResponse {const TokenValidationRulesPreviewResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'token_validation_rules_preview_response_result.dart';@immutable final class TokenValidationRulesPreviewResponse {const TokenValidationRulesPreviewResponse({required this.result});
 
 factory TokenValidationRulesPreviewResponse.fromJson(Map<String, dynamic> json) { return TokenValidationRulesPreviewResponse(
   result: TokenValidationRulesPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>),

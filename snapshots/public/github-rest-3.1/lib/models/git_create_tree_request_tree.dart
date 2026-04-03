@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
-final class GitCreateTreeRequestTreeMode {const GitCreateTreeRequestTreeMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
+@immutable final class GitCreateTreeRequestTreeMode {const GitCreateTreeRequestTreeMode._(this.value);
 
 factory GitCreateTreeRequestTreeMode.fromJson(String json) { return switch (json) {
   '100644' => $100644,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GitCreateTreeRequestTreeMode($value)'; } 
  }
 /// Either `blob`, `tree`, or `commit`.
-final class GitCreateTreeRequestTreeType {const GitCreateTreeRequestTreeType._(this.value);
+@immutable final class GitCreateTreeRequestTreeType {const GitCreateTreeRequestTreeType._(this.value);
 
 factory GitCreateTreeRequestTreeType.fromJson(String json) { return switch (json) {
   'blob' => blob,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GitCreateTreeRequestTreeType($value)'; } 
  }
-final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha, this.content, });
+@immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha, this.content, });
 
 factory GitCreateTreeRequestTree.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequestTree(
   path: json['path'] as String?,

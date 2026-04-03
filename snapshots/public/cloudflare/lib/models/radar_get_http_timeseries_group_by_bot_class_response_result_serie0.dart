@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0({required this.bot, required this.human, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0({required this.bot, required this.human, required this.timestamps, });
 
 factory RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0(
   bot: (json['bot'] as List<dynamic>).map((e) => e as String).toList(),

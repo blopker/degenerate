@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_indicator_type_create_response500_content.dart';final class PostIndicatorTypeCreateResponse500 {const PostIndicatorTypeCreateResponse500({required this.content, required this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_type_create_response500_content.dart';@immutable final class PostIndicatorTypeCreateResponse500 {const PostIndicatorTypeCreateResponse500({required this.content, required this.description, });
 
 factory PostIndicatorTypeCreateResponse500.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse500(
   content: PostIndicatorTypeCreateResponse500Content.fromJson(json['content'] as Map<String, dynamic>),

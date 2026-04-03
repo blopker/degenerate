@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fuel.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest({this.expand, required this.finalAmount, this.fleet, this.fuel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fuel.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest({required this.finalAmount, this.expand, this.fleet, this.fuel, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

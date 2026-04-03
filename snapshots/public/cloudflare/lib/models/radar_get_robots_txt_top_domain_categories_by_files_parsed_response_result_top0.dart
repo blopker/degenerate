@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0 {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0 {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0({required this.name, required this.value, });
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0(
   name: json['name'] as String,

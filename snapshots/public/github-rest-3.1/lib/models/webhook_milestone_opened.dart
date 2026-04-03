@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_milestone3.dart';final class WebhookMilestoneOpenedAction {const WebhookMilestoneOpenedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_milestone3.dart';@immutable final class WebhookMilestoneOpenedAction {const WebhookMilestoneOpenedAction._(this.value);
 
 factory WebhookMilestoneOpenedAction.fromJson(String json) { return switch (json) {
   'opened' => opened,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMilestoneOpenedAction($value)'; } 
  }
-final class WebhookMilestoneOpened {const WebhookMilestoneOpened({required this.action, this.enterprise, this.installation, required this.milestone, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookMilestoneOpened {const WebhookMilestoneOpened({required this.action, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookMilestoneOpened.fromJson(Map<String, dynamic> json) { return WebhookMilestoneOpened(
   action: WebhookMilestoneOpenedAction.fromJson(json['action'] as String),

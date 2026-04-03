@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnAdminDeviceFields {const MconnAdminDeviceFields({this.cryptKey, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationOutput, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.lastCryptKey, this.lastUpdated, this.metadata, this.pkiRotationFinishedAt, this.pkiRotationOutput, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnAdminDeviceFields {const MconnAdminDeviceFields({this.cryptKey, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationOutput, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.lastCryptKey, this.lastUpdated, this.metadata, this.pkiRotationFinishedAt, this.pkiRotationOutput, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
 
 factory MconnAdminDeviceFields.fromJson(Map<String, dynamic> json) { return MconnAdminDeviceFields(
   cryptKey: json['crypt_key'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_promotion_code_request_metadata.dart';import 'post_promotion_codes_promotion_code_request_restrictions.dart';final class PostPromotionCodesPromotionCodeRequest {const PostPromotionCodesPromotionCodeRequest({this.active, this.expand, this.metadata, this.restrictions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_promotion_code_request_metadata.dart';import 'post_promotion_codes_promotion_code_request_restrictions.dart';@immutable final class PostPromotionCodesPromotionCodeRequest {const PostPromotionCodesPromotionCodeRequest({this.active, this.expand, this.metadata, this.restrictions, });
 
 factory PostPromotionCodesPromotionCodeRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequest(
   active: json['active'] as bool?,

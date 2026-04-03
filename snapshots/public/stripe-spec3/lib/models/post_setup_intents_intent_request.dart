@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_excluded_payment_method_types.dart';import 'post_setup_intents_intent_request_metadata.dart';import 'post_setup_intents_intent_request_payment_method_data.dart';import 'post_setup_intents_intent_request_payment_method_options.dart';final class PostSetupIntentsIntentRequestFlowDirections {const PostSetupIntentsIntentRequestFlowDirections._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_excluded_payment_method_types.dart';import 'post_setup_intents_intent_request_metadata.dart';import 'post_setup_intents_intent_request_payment_method_data.dart';import 'post_setup_intents_intent_request_payment_method_options.dart';@immutable final class PostSetupIntentsIntentRequestFlowDirections {const PostSetupIntentsIntentRequestFlowDirections._(this.value);
 
 factory PostSetupIntentsIntentRequestFlowDirections.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestFlowDirections($value)'; } 
  }
-final class PostSetupIntentsIntentRequest {const PostSetupIntentsIntentRequest({this.attachToSelf, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.metadata, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, });
+@immutable final class PostSetupIntentsIntentRequest {const PostSetupIntentsIntentRequest({this.attachToSelf, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.metadata, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, });
 
 factory PostSetupIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequest(
   attachToSelf: json['attach_to_self'] as bool?,

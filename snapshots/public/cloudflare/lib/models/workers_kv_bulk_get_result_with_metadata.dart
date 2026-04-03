@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_bulk_get_result_with_metadata_values_value.dart';final class WorkersKvBulkGetResultWithMetadata {const WorkersKvBulkGetResultWithMetadata({this.values});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_bulk_get_result_with_metadata_values_value.dart';@immutable final class WorkersKvBulkGetResultWithMetadata {const WorkersKvBulkGetResultWithMetadata({this.values});
 
 factory WorkersKvBulkGetResultWithMetadata.fromJson(Map<String, dynamic> json) { return WorkersKvBulkGetResultWithMetadata(
   values: (json['values'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, WorkersKvBulkGetResultWithMetadataValuesValue.fromJson(v as Map<String, dynamic>))),

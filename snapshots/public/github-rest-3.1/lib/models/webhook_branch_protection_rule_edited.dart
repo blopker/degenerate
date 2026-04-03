@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_branch_protection_rule_edited_changes.dart';import 'webhooks_rule.dart';final class WebhookBranchProtectionRuleEditedAction {const WebhookBranchProtectionRuleEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_branch_protection_rule_edited_changes.dart';import 'webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleEditedAction {const WebhookBranchProtectionRuleEditedAction._(this.value);
 
 factory WebhookBranchProtectionRuleEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookBranchProtectionRuleEditedAction($value)'; } 
  }
-final class WebhookBranchProtectionRuleEdited {const WebhookBranchProtectionRuleEdited({required this.action, this.changes, this.enterprise, this.installation, this.organization, required this.repository, required this.rule, required this.sender, });
+@immutable final class WebhookBranchProtectionRuleEdited {const WebhookBranchProtectionRuleEdited({required this.action, required this.repository, required this.rule, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookBranchProtectionRuleEdited.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEdited(
   action: WebhookBranchProtectionRuleEditedAction.fromJson(json['action'] as String),

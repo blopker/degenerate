@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesAssistantToolCallsCustomCustom {const Messages51MessagesAssistantToolCallsCustomCustom({required this.input, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesAssistantToolCallsCustomCustom {const Messages51MessagesAssistantToolCallsCustomCustom({required this.input, required this.name, });
 
 factory Messages51MessagesAssistantToolCallsCustomCustom.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistantToolCallsCustomCustom(
   input: json['input'] as String,

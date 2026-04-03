@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_schemas_identifier.dart';final class FirewallRuleSingleIdResponseResult {const FirewallRuleSingleIdResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_schemas_identifier.dart';@immutable final class FirewallRuleSingleIdResponseResult {const FirewallRuleSingleIdResponseResult({this.id});
 
 factory FirewallRuleSingleIdResponseResult.fromJson(Map<String, dynamic> json) { return FirewallRuleSingleIdResponseResult(
   id: json['id'] != null ? FirewallSchemasIdentifier.fromJson(json['id'] as String) : null,

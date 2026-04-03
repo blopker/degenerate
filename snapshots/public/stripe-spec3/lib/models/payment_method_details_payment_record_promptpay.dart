@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsPaymentRecordPromptpay {const PaymentMethodDetailsPaymentRecordPromptpay({this.reference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsPaymentRecordPromptpay {const PaymentMethodDetailsPaymentRecordPromptpay({this.reference});
 
 factory PaymentMethodDetailsPaymentRecordPromptpay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordPromptpay(
   reference: json['reference'] as String?,

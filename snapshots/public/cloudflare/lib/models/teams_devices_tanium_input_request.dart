@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operator to evaluate risk_level or eid_last_seen.
-final class TeamsDevicesTaniumInputRequestOperator {const TeamsDevicesTaniumInputRequestOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator to evaluate risk_level or eid_last_seen.
+@immutable final class TeamsDevicesTaniumInputRequestOperator {const TeamsDevicesTaniumInputRequestOperator._(this.value);
 
 factory TeamsDevicesTaniumInputRequestOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesTaniumInputRequestOperator($value)'; } 
  }
 /// For more details on risk level, refer to the Tanium documentation.
-final class TeamsDevicesTaniumInputRequestRiskLevel {const TeamsDevicesTaniumInputRequestRiskLevel._(this.value);
+@immutable final class TeamsDevicesTaniumInputRequestRiskLevel {const TeamsDevicesTaniumInputRequestRiskLevel._(this.value);
 
 factory TeamsDevicesTaniumInputRequestRiskLevel.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesTaniumInputRequestRiskLevel($value)'; } 
  }
 /// Score Operator.
-final class TeamsDevicesTaniumInputRequestScoreOperator {const TeamsDevicesTaniumInputRequestScoreOperator._(this.value);
+@immutable final class TeamsDevicesTaniumInputRequestScoreOperator {const TeamsDevicesTaniumInputRequestScoreOperator._(this.value);
 
 factory TeamsDevicesTaniumInputRequestScoreOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesTaniumInputRequestScoreOperator($value)'; } 
  }
-final class TeamsDevicesTaniumInputRequest {const TeamsDevicesTaniumInputRequest({required this.connectionId, this.eidLastSeen, this.$operator, this.riskLevel, this.scoreOperator, this.totalScore, });
+@immutable final class TeamsDevicesTaniumInputRequest {const TeamsDevicesTaniumInputRequest({required this.connectionId, this.eidLastSeen, this.$operator, this.riskLevel, this.scoreOperator, this.totalScore, });
 
 factory TeamsDevicesTaniumInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesTaniumInputRequest(
   connectionId: json['connection_id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.added`.
-final class RealtimeServerEventConversationItemAddedType {const RealtimeServerEventConversationItemAddedType._(this.value);
+@immutable final class RealtimeServerEventConversationItemAddedType {const RealtimeServerEventConversationItemAddedType._(this.value);
 
 factory RealtimeServerEventConversationItemAddedType.fromJson(String json) { return switch (json) {
   'conversation.item.added' => conversationItemAdded,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// The event will include the full content of the Item (except when model is generating a Response) except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if necessary.
 /// 
-final class RealtimeServerEventConversationItemAdded {const RealtimeServerEventConversationItemAdded({required this.eventId, required this.type, this.previousItemId, required this.item, });
+@immutable final class RealtimeServerEventConversationItemAdded {const RealtimeServerEventConversationItemAdded({required this.eventId, required this.type, required this.item, this.previousItemId, });
 
 factory RealtimeServerEventConversationItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemAdded(
   eventId: json['event_id'] as String,

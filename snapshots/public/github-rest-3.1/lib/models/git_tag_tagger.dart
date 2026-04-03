@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitTagTagger {const GitTagTagger({required this.date, required this.email, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTagTagger {const GitTagTagger({required this.date, required this.email, required this.name, });
 
 factory GitTagTagger.fromJson(Map<String, dynamic> json) { return GitTagTagger(
   date: json['date'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageEmbeddingsResultObject {const UsageEmbeddingsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageEmbeddingsResultObject {const UsageEmbeddingsResultObject._(this.value);
 
 factory UsageEmbeddingsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.embeddings.result' => organizationUsageEmbeddingsResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageEmbeddingsResultObject($value)'; } 
  }
 /// The aggregated embeddings usage details of the specific time bucket.
-final class UsageEmbeddingsResult {const UsageEmbeddingsResult({required this.object, required this.inputTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
+@immutable final class UsageEmbeddingsResult {const UsageEmbeddingsResult({required this.object, required this.inputTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
 
 factory UsageEmbeddingsResult.fromJson(Map<String, dynamic> json) { return UsageEmbeddingsResult(
   object: UsageEmbeddingsResultObject.fromJson(json['object'] as String),

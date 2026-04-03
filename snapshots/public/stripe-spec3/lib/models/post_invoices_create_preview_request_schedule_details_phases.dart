@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param3.dart';import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items.dart';import 'post_invoices_create_preview_request_schedule_details_phases_automatic_tax.dart';import 'post_invoices_create_preview_request_schedule_details_phases_billing_thresholds.dart';import 'post_invoices_create_preview_request_schedule_details_phases_default_tax_rates.dart';import 'post_invoices_create_preview_request_schedule_details_phases_description.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts_variant1.dart';import 'post_invoices_create_preview_request_schedule_details_phases_duration.dart';import 'post_invoices_create_preview_request_schedule_details_phases_end_date.dart';import 'post_invoices_create_preview_request_schedule_details_phases_invoice_settings.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items.dart';import 'post_invoices_create_preview_request_schedule_details_phases_start_date.dart';import 'post_invoices_create_preview_request_schedule_details_phases_transfer_data.dart';import 'post_invoices_create_preview_request_schedule_details_phases_trial_end.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param3.dart';import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items.dart';import 'post_invoices_create_preview_request_schedule_details_phases_automatic_tax.dart';import 'post_invoices_create_preview_request_schedule_details_phases_billing_thresholds.dart';import 'post_invoices_create_preview_request_schedule_details_phases_default_tax_rates.dart';import 'post_invoices_create_preview_request_schedule_details_phases_description.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts_variant1.dart';import 'post_invoices_create_preview_request_schedule_details_phases_duration.dart';import 'post_invoices_create_preview_request_schedule_details_phases_end_date.dart';import 'post_invoices_create_preview_request_schedule_details_phases_invoice_settings.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items.dart';import 'post_invoices_create_preview_request_schedule_details_phases_start_date.dart';import 'post_invoices_create_preview_request_schedule_details_phases_transfer_data.dart';import 'post_invoices_create_preview_request_schedule_details_phases_trial_end.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod._(this.value);
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior._(this.value);
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhases {const PostInvoicesCreatePreviewRequestScheduleDetailsPhases({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, required this.items, this.metadata, this.onBehalfOf, this.prorationBehavior, this.startDate, this.transferData, this.trial, this.trialEnd, });
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhases {const PostInvoicesCreatePreviewRequestScheduleDetailsPhases({required this.items, this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.startDate, this.transferData, this.trial, this.trialEnd, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhases.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),

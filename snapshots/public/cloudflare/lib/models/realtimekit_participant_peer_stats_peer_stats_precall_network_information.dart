@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation {const RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughtput, this.turnConnectivity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation {const RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughtput, this.turnConnectivity, });
 
 factory RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(
   backendRtt: json['backend_rtt'] != null ? (json['backend_rtt'] as num).toDouble() : null,

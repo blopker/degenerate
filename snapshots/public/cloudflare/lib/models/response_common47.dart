@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_messages2.dart';import 'response_common47_result.dart';final class ResponseCommon47 {const ResponseCommon47({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_messages2.dart';import 'response_common47_result.dart';@immutable final class ResponseCommon47 {const ResponseCommon47({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon47.fromJson(Map<String, dynamic> json) { return ResponseCommon47(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityPcapsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

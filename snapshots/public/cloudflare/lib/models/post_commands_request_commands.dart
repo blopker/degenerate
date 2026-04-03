@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_commands_request_commands_command_args.dart';/// Type of command to execute on the device
-final class PostCommandsRequestCommandsCommandType {const PostCommandsRequestCommandsCommandType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_commands_request_commands_command_args.dart';/// Type of command to execute on the device
+@immutable final class PostCommandsRequestCommandsCommandType {const PostCommandsRequestCommandsCommandType._(this.value);
 
 factory PostCommandsRequestCommandsCommandType.fromJson(String json) { return switch (json) {
   'pcap' => pcap,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCommandsRequestCommandsCommandType($value)'; } 
  }
-final class PostCommandsRequestCommands {const PostCommandsRequestCommands({this.commandArgs, required this.commandType, required this.deviceId, this.registrationId, required this.userEmail, });
+@immutable final class PostCommandsRequestCommands {const PostCommandsRequestCommands({required this.commandType, required this.deviceId, required this.userEmail, this.commandArgs, this.registrationId, });
 
 factory PostCommandsRequestCommands.fromJson(Map<String, dynamic> json) { return PostCommandsRequestCommands(
   commandArgs: json['command_args'] != null ? PostCommandsRequestCommandsCommandArgs.fromJson(json['command_args'] as Map<String, dynamic>) : null,

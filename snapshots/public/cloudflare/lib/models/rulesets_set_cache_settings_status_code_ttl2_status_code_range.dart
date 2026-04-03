@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A range of status codes to apply the TTL to.
-final class RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange {const RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A range of status codes to apply the TTL to.
+@immutable final class RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange {const RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange({this.from, this.to, });
 
 factory RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(
   from: json['from'] != null ? (json['from'] as num).toInt() : null,

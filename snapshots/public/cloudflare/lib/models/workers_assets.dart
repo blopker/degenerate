@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_assets_config.dart';/// Configuration for assets within a Worker.
-final class WorkersAssets {const WorkersAssets({this.config, this.jwt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_assets_config.dart';/// Configuration for assets within a Worker.
+@immutable final class WorkersAssets {const WorkersAssets({this.config, this.jwt, });
 
 factory WorkersAssets.fromJson(Map<String, dynamic> json) { return WorkersAssets(
   config: json['config'] != null ? WorkersAssetsConfig.fromJson(json['config'] as Map<String, dynamic>) : null,

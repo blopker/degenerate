@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects {const PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects {const PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects._(this.value);
 
 factory PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects($value)'; } 
  }
 /// When you enable this parameter, this PaymentIntent accepts payment methods that you enable in the Dashboard and that are compatible with this PaymentIntent's other parameters.
-final class PostPaymentIntentsRequestAutomaticPaymentMethods {const PostPaymentIntentsRequestAutomaticPaymentMethods({this.allowRedirects, required this.enabled, });
+@immutable final class PostPaymentIntentsRequestAutomaticPaymentMethods {const PostPaymentIntentsRequestAutomaticPaymentMethods({required this.enabled, this.allowRedirects, });
 
 factory PostPaymentIntentsRequestAutomaticPaymentMethods.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestAutomaticPaymentMethods(
   allowRedirects: json['allow_redirects'] != null ? PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects.fromJson(json['allow_redirects'] as String) : null,

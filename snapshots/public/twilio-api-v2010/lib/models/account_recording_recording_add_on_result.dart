@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
-final class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
+@immutable final class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus._(this.value);
 
 factory RecordingAddOnResultEnumStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RecordingAddOnResultEnumStatus($value)'; } 
  }
-final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });
+@immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });
 
 factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResult(
   sid: json['sid'] as String?,

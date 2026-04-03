@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_response404_errors.dart';final class AigConfigDeleteGatewayResponse404 {const AigConfigDeleteGatewayResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_response404_errors.dart';@immutable final class AigConfigDeleteGatewayResponse404 {const AigConfigDeleteGatewayResponse404({required this.errors, required this.success, });
 
 factory AigConfigDeleteGatewayResponse404.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigDeleteGatewayResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

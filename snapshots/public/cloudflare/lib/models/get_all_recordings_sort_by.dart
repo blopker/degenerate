@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAllRecordingsSortBy {const GetAllRecordingsSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAllRecordingsSortBy {const GetAllRecordingsSortBy._(this.value);
 
 factory GetAllRecordingsSortBy.fromJson(String json) { return switch (json) {
   'invokedTime' => invokedTime,

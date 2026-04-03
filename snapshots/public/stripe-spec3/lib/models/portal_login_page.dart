@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalLoginPage {const PortalLoginPage({required this.enabled, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalLoginPage {const PortalLoginPage({required this.enabled, this.url, });
 
 factory PortalLoginPage.fromJson(Map<String, dynamic> json) { return PortalLoginPage(
   enabled: json['enabled'] as bool,

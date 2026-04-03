@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The outcome type. Always `exit`.
-final class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `exit`.
+@immutable final class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType._(this.value);
 
 factory FunctionShellCallOutputExitOutcomeType.fromJson(String json) { return switch (json) {
   'exit' => exit,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FunctionShellCallOutputExitOutcomeType($value)'; } 
  }
 /// Indicates that the shell commands finished and returned an exit code.
-final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({this.type = FunctionShellCallOutputExitOutcomeType.exit, required this.exitCode, });
+@immutable final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({required this.exitCode, this.type = FunctionShellCallOutputExitOutcomeType.exit, });
 
 factory FunctionShellCallOutputExitOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputExitOutcome(
   type: FunctionShellCallOutputExitOutcomeType.fromJson(json['type'] as String),

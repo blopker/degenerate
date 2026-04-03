@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle {const PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle {const PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle._(this.value);
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle.fromJson(String json) { return switch (json) {
   'primary' => primary,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle($value)'; } 
  }
-final class PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices {const PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices({required this.id, this.style, required this.text, });
+@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices {const PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices({required this.id, required this.text, this.style, });
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices(
   id: json['id'] as String,

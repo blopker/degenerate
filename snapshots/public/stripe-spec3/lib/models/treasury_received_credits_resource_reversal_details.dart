@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set if a ReceivedCredit cannot be reversed.
-final class TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason {const TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set if a ReceivedCredit cannot be reversed.
+@immutable final class TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason {const TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason._(this.value);
 
 factory TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason.fromJson(String json) { return switch (json) {
   'already_reversed' => alreadyReversed,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason($value)'; } 
  }
 /// 
-final class TreasuryReceivedCreditsResourceReversalDetails {const TreasuryReceivedCreditsResourceReversalDetails({this.deadline, this.restrictedReason, });
+@immutable final class TreasuryReceivedCreditsResourceReversalDetails {const TreasuryReceivedCreditsResourceReversalDetails({this.deadline, this.restrictedReason, });
 
 factory TreasuryReceivedCreditsResourceReversalDetails.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceReversalDetails(
   deadline: json['deadline'] != null ? (json['deadline'] as num).toInt() : null,

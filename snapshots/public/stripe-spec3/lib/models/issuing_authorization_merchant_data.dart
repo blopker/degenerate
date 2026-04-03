@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingAuthorizationMerchantData {const IssuingAuthorizationMerchantData({required this.category, required this.categoryCode, this.city, this.country, this.name, required this.networkId, this.postalCode, this.state, this.taxId, this.terminalId, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingAuthorizationMerchantData {const IssuingAuthorizationMerchantData({required this.category, required this.categoryCode, required this.networkId, this.city, this.country, this.name, this.postalCode, this.state, this.taxId, this.terminalId, this.url, });
 
 factory IssuingAuthorizationMerchantData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationMerchantData(
   category: json['category'] as String,

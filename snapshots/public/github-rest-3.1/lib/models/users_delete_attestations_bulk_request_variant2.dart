@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UsersDeleteAttestationsBulkRequestVariant2 {const UsersDeleteAttestationsBulkRequestVariant2({required this.attestationIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersDeleteAttestationsBulkRequestVariant2 {const UsersDeleteAttestationsBulkRequestVariant2({required this.attestationIds});
 
 factory UsersDeleteAttestationsBulkRequestVariant2.fromJson(Map<String, dynamic> json) { return UsersDeleteAttestationsBulkRequestVariant2(
   attestationIds: (json['attestation_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

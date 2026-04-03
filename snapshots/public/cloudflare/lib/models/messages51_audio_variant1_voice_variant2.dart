@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51AudioVariant1VoiceVariant2 {const Messages51AudioVariant1VoiceVariant2({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51AudioVariant1VoiceVariant2 {const Messages51AudioVariant1VoiceVariant2({required this.id});
 
 factory Messages51AudioVariant1VoiceVariant2.fromJson(Map<String, dynamic> json) { return Messages51AudioVariant1VoiceVariant2(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_asns_response400_errors.dart';final class RadarGetBgpRoutesAsnsResponse400 {const RadarGetBgpRoutesAsnsResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_asns_response400_errors.dart';@immutable final class RadarGetBgpRoutesAsnsResponse400 {const RadarGetBgpRoutesAsnsResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetBgpRoutesAsnsResponse400.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesAsnsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetBgpRoutesAsnsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

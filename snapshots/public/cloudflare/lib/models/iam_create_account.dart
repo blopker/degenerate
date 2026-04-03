@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_account_type.dart';import 'iam_create_account_unit.dart';final class IamCreateAccount {const IamCreateAccount({required this.name, this.type, this.unit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_account_type.dart';import 'iam_create_account_unit.dart';@immutable final class IamCreateAccount {const IamCreateAccount({required this.name, this.type, this.unit, });
 
 factory IamCreateAccount.fromJson(Map<String, dynamic> json) { return IamCreateAccount(
   name: json['name'] as String,

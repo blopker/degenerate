@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPermissionCreateRequestRole {const PostPermissionCreateRequestRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPermissionCreateRequestRole {const PostPermissionCreateRequestRole._(this.value);
 
 factory PostPermissionCreateRequestRole.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPermissionCreateRequestRole($value)'; } 
  }
-final class PostPermissionCreateRequestSubjectType {const PostPermissionCreateRequestSubjectType._(this.value);
+@immutable final class PostPermissionCreateRequestSubjectType {const PostPermissionCreateRequestSubjectType._(this.value);
 
 factory PostPermissionCreateRequestSubjectType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPermissionCreateRequestSubjectType($value)'; } 
  }
-final class PostPermissionCreateRequest {const PostPermissionCreateRequest({required this.role, required this.subjectId, required this.subjectType, });
+@immutable final class PostPermissionCreateRequest {const PostPermissionCreateRequest({required this.role, required this.subjectId, required this.subjectType, });
 
 factory PostPermissionCreateRequest.fromJson(Map<String, dynamic> json) { return PostPermissionCreateRequest(
   role: PostPermissionCreateRequestRole.fromJson(json['role'] as String),

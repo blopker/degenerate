@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_pull_request_parameters.dart';final class RepositoryRulePullRequestType {const RepositoryRulePullRequestType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_pull_request_parameters.dart';@immutable final class RepositoryRulePullRequestType {const RepositoryRulePullRequestType._(this.value);
 
 factory RepositoryRulePullRequestType.fromJson(String json) { return switch (json) {
   'pull_request' => pullRequest,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulePullRequestType($value)'; } 
  }
 /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
-final class RepositoryRulePullRequest {const RepositoryRulePullRequest({required this.type, this.parameters, });
+@immutable final class RepositoryRulePullRequest {const RepositoryRulePullRequest({required this.type, this.parameters, });
 
 factory RepositoryRulePullRequest.fromJson(Map<String, dynamic> json) { return RepositoryRulePullRequest(
   type: RepositoryRulePullRequestType.fromJson(json['type'] as String),

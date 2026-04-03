@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageCodeInterpreterSessionsGroupBy {const UsageCodeInterpreterSessionsGroupBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCodeInterpreterSessionsGroupBy {const UsageCodeInterpreterSessionsGroupBy._(this.value);
 
 factory UsageCodeInterpreterSessionsGroupBy.fromJson(String json) { return switch (json) {
   'project_id' => projectId,

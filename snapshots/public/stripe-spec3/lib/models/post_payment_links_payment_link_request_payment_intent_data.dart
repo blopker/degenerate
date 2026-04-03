@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_payment_intent_data_description.dart';import 'post_payment_links_payment_link_request_payment_intent_data_metadata.dart';import 'post_payment_links_payment_link_request_payment_intent_data_statement_descriptor.dart';import 'post_payment_links_payment_link_request_payment_intent_data_statement_descriptor_suffix.dart';import 'post_payment_links_payment_link_request_payment_intent_data_transfer_group.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
-final class PostPaymentLinksPaymentLinkRequestPaymentIntentData {const PostPaymentLinksPaymentLinkRequestPaymentIntentData({this.description, this.metadata, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
+@immutable final class PostPaymentLinksPaymentLinkRequestPaymentIntentData {const PostPaymentLinksPaymentLinkRequestPaymentIntentData({this.description, this.metadata, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
 factory PostPaymentLinksPaymentLinkRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
   description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescriptionVariant2.fromJson(v as String),) : null,

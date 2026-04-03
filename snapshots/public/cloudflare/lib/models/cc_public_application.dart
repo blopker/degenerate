@@ -31,7 +31,7 @@ String toJson() => value;
 
 }
 /// Provides the current state and configuration of a Containers application.
-final class CcPublicApplication {const CcPublicApplication({required this.createdAt, this.durableObject, required this.health, required this.id, required this.image, required this.instanceType, required this.maxInstances, required this.name, this.network, this.observability, this.rolloutActiveGracePeriod, required this.updatedAt, required this.version, });
+@immutable final class CcPublicApplication {const CcPublicApplication({required this.createdAt, required this.health, required this.id, required this.image, required this.instanceType, required this.maxInstances, required this.name, required this.updatedAt, required this.version, this.durableObject, this.network, this.observability, this.rolloutActiveGracePeriod, });
 
 factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPublicApplication(
   createdAt: CcIso8601Timestamp.fromJson(json['created_at'] as String),

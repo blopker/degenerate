@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_domain_secret_param.dart';/// Allow outbound network access only to specified domains. Always `allowlist`.
-final class ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType._(this.value);
+@immutable final class ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType._(this.value);
 
 factory ContainerNetworkPolicyAllowlistParamType.fromJson(String json) { return switch (json) {
   'allowlist' => allowlist,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerNetworkPolicyAllowlistParamType($value)'; } 
  }
-final class ContainerNetworkPolicyAllowlistParam {const ContainerNetworkPolicyAllowlistParam({this.type = ContainerNetworkPolicyAllowlistParamType.allowlist, required this.allowedDomains, this.domainSecrets, });
+@immutable final class ContainerNetworkPolicyAllowlistParam {const ContainerNetworkPolicyAllowlistParam({required this.allowedDomains, this.type = ContainerNetworkPolicyAllowlistParamType.allowlist, this.domainSecrets, });
 
 factory ContainerNetworkPolicyAllowlistParam.fromJson(Map<String, dynamic> json) { return ContainerNetworkPolicyAllowlistParam(
   type: ContainerNetworkPolicyAllowlistParamType.fromJson(json['type'] as String),

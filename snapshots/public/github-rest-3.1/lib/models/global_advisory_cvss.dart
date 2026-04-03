@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GlobalAdvisoryCvss {const GlobalAdvisoryCvss({required this.vectorString, required this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GlobalAdvisoryCvss {const GlobalAdvisoryCvss({required this.vectorString, required this.score, });
 
 factory GlobalAdvisoryCvss.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryCvss(
   vectorString: json['vector_string'] as String?,

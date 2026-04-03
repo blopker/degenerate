@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPricesRequestRecurringInterval {const PostPricesRequestRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesRequestRecurringInterval {const PostPricesRequestRecurringInterval._(this.value);
 
 factory PostPricesRequestRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPricesRequestRecurringInterval($value)'; } 
  }
-final class PostPricesRequestRecurringUsageType {const PostPricesRequestRecurringUsageType._(this.value);
+@immutable final class PostPricesRequestRecurringUsageType {const PostPricesRequestRecurringUsageType._(this.value);
 
 factory PostPricesRequestRecurringUsageType.fromJson(String json) { return switch (json) {
   'licensed' => licensed,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPricesRequestRecurringUsageType($value)'; } 
  }
 /// The recurring components of a price such as `interval` and `usage_type`.
-final class PostPricesRequestRecurring {const PostPricesRequestRecurring({required this.interval, this.intervalCount, this.meter, this.usageType, });
+@immutable final class PostPricesRequestRecurring {const PostPricesRequestRecurring({required this.interval, this.intervalCount, this.meter, this.usageType, });
 
 factory PostPricesRequestRecurring.fromJson(Map<String, dynamic> json) { return PostPricesRequestRecurring(
   interval: PostPricesRequestRecurringInterval.fromJson(json['interval'] as String),

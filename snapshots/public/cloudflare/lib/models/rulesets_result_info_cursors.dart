@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_cursor.dart';/// The set of cursors.
-final class RulesetsResultInfoCursors {const RulesetsResultInfoCursors({required this.after});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_cursor.dart';/// The set of cursors.
+@immutable final class RulesetsResultInfoCursors {const RulesetsResultInfoCursors({required this.after});
 
 factory RulesetsResultInfoCursors.fromJson(Map<String, dynamic> json) { return RulesetsResultInfoCursors(
   after: RulesetsCursor.fromJson(json['after'] as String),

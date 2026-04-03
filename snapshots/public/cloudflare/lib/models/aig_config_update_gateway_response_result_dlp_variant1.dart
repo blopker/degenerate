@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigUpdateGatewayResponseResultDlpVariant1Action {const AigConfigUpdateGatewayResponseResultDlpVariant1Action._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayResponseResultDlpVariant1Action {const AigConfigUpdateGatewayResponseResultDlpVariant1Action._(this.value);
 
 factory AigConfigUpdateGatewayResponseResultDlpVariant1Action.fromJson(String json) { return switch (json) {
   'BLOCK' => block,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayResponseResultDlpVariant1Action($value)'; } 
  }
-final class AigConfigUpdateGatewayResponseResultDlpVariant1 {const AigConfigUpdateGatewayResponseResultDlpVariant1({required this.action, required this.enabled, required this.profiles, });
+@immutable final class AigConfigUpdateGatewayResponseResultDlpVariant1 {const AigConfigUpdateGatewayResponseResultDlpVariant1({required this.action, required this.enabled, required this.profiles, });
 
 factory AigConfigUpdateGatewayResponseResultDlpVariant1.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayResponseResultDlpVariant1(
   action: AigConfigUpdateGatewayResponseResultDlpVariant1Action.fromJson(json['action'] as String),

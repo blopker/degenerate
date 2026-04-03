@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_poll.dart';final class CreatePollResponseData {const CreatePollResponseData({this.action, this.poll, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_poll.dart';@immutable final class CreatePollResponseData {const CreatePollResponseData({this.action, this.poll, });
 
 factory CreatePollResponseData.fromJson(Map<String, dynamic> json) { return CreatePollResponseData(
   action: json['action'] as String?,

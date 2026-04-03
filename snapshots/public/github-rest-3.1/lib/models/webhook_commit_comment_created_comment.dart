@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_commit_comment_created_comment_reactions.dart';import 'webhook_commit_comment_created_comment_user.dart';/// How the author is associated with the repository.
-final class WebhookCommitCommentCreatedCommentAuthorAssociation {const WebhookCommitCommentCreatedCommentAuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_commit_comment_created_comment_reactions.dart';import 'webhook_commit_comment_created_comment_user.dart';/// How the author is associated with the repository.
+@immutable final class WebhookCommitCommentCreatedCommentAuthorAssociation {const WebhookCommitCommentCreatedCommentAuthorAssociation._(this.value);
 
 factory WebhookCommitCommentCreatedCommentAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCommitCommentCreatedCommentAuthorAssociation($value)'; } 
  }
 /// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
-final class WebhookCommitCommentCreatedComment {const WebhookCommitCommentCreatedComment({required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.path, required this.position, this.reactions, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookCommitCommentCreatedComment {const WebhookCommitCommentCreatedComment({required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.path, required this.position, required this.updatedAt, required this.url, required this.user, this.reactions, });
 
 factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) { return WebhookCommitCommentCreatedComment(
   authorAssociation: WebhookCommitCommentCreatedCommentAuthorAssociation.fromJson(json['author_association'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiGetModelSchemaResponseResultOutput {const WorkersAiGetModelSchemaResponseResultOutput({required this.additionalProperties, required this.description, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiGetModelSchemaResponseResultOutput {const WorkersAiGetModelSchemaResponseResultOutput({required this.additionalProperties, required this.description, required this.type, });
 
 factory WorkersAiGetModelSchemaResponseResultOutput.fromJson(Map<String, dynamic> json) { return WorkersAiGetModelSchemaResponseResultOutput(
   additionalProperties: json['additionalProperties'] as bool,

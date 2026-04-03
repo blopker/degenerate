@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'easy_input_message.dart';import 'item.dart';import 'item_reference_param.dart';sealed class InputItem {const InputItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'easy_input_message.dart';import 'item.dart';import 'item_reference_param.dart';sealed class InputItem {const InputItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InputItem$Unknown; } 
  }
-final class InputItemMessage extends InputItem {const InputItemMessage(this.easyInputMessage);
+@immutable final class InputItemMessage extends InputItem {const InputItemMessage(this.easyInputMessage);
 
 factory InputItemMessage.fromJson(Map<String, dynamic> json) { return InputItemMessage(EasyInputMessage.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final EasyInputMessage easyInputMessage;
 @override int get hashCode { return easyInputMessage.hashCode; } 
 @override String toString() { return 'InputItemMessage(easyInputMessage: $easyInputMessage)'; } 
  }
-final class InputItemItem extends InputItem {const InputItemItem(this.item);
+@immutable final class InputItemItem extends InputItem {const InputItemItem(this.item);
 
 factory InputItemItem.fromJson(Map<String, dynamic> json) { return InputItemItem(Item.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final Item item;
 @override int get hashCode { return item.hashCode; } 
 @override String toString() { return 'InputItemItem(item: $item)'; } 
  }
-final class InputItemItemReferenceParam extends InputItem {const InputItemItemReferenceParam(this.itemReferenceParam);
+@immutable final class InputItemItemReferenceParam extends InputItem {const InputItemItemReferenceParam(this.itemReferenceParam);
 
 factory InputItemItemReferenceParam.fromJson(Map<String, dynamic> json) { return InputItemItemReferenceParam(ItemReferenceParam.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final ItemReferenceParam itemReferenceParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class InputItem$Unknown extends InputItem {const InputItem$Unknown(this.json);
+@immutable final class InputItem$Unknown extends InputItem {const InputItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

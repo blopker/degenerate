@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of condition.
-final class PortalResourceScheduleUpdateAtPeriodEndConditionType {const PortalResourceScheduleUpdateAtPeriodEndConditionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of condition.
+@immutable final class PortalResourceScheduleUpdateAtPeriodEndConditionType {const PortalResourceScheduleUpdateAtPeriodEndConditionType._(this.value);
 
 factory PortalResourceScheduleUpdateAtPeriodEndConditionType.fromJson(String json) { return switch (json) {
   'decreasing_item_amount' => decreasingItemAmount,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalResourceScheduleUpdateAtPeriodEndConditionType($value)'; } 
  }
 /// 
-final class PortalResourceScheduleUpdateAtPeriodEndCondition {const PortalResourceScheduleUpdateAtPeriodEndCondition({required this.type});
+@immutable final class PortalResourceScheduleUpdateAtPeriodEndCondition {const PortalResourceScheduleUpdateAtPeriodEndCondition({required this.type});
 
 factory PortalResourceScheduleUpdateAtPeriodEndCondition.fromJson(Map<String, dynamic> json) { return PortalResourceScheduleUpdateAtPeriodEndCondition(
   type: PortalResourceScheduleUpdateAtPeriodEndConditionType.fromJson(json['type'] as String),

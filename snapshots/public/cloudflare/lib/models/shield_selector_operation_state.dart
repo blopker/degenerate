@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details how `selector` interacted with an operation:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details how `selector` interacted with an operation:
 ///   - `included` operations are included by `selector` and will be covered by the Token Validation Rule
 ///   - `excluded` operations are excluded by `selector` and will not be covered by the Token Validation Rule
 ///   - `ignored` operations are not included by `selector` and will not be covered by the Token Validation Rule
 /// 
-final class ShieldSelectorOperationState {const ShieldSelectorOperationState._(this.value);
+@immutable final class ShieldSelectorOperationState {const ShieldSelectorOperationState._(this.value);
 
 factory ShieldSelectorOperationState.fromJson(String json) { return switch (json) {
   'included' => included,

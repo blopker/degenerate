@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateThreadAndRunRequestModelVariant2 {const CreateThreadAndRunRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateThreadAndRunRequestModelVariant2 {const CreateThreadAndRunRequestModelVariant2._(this.value);
 
 factory CreateThreadAndRunRequestModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-5' => gpt5,

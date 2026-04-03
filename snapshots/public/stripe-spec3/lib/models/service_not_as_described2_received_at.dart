@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ServiceNotAsDescribed2ReceivedAtVariant2 {const ServiceNotAsDescribed2ReceivedAtVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ServiceNotAsDescribed2ReceivedAtVariant2 {const ServiceNotAsDescribed2ReceivedAtVariant2._(this.value);
 
 factory ServiceNotAsDescribed2ReceivedAtVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

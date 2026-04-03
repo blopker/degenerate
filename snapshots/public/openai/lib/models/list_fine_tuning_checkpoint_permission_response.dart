@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_checkpoint_permission.dart';final class ListFineTuningCheckpointPermissionResponseObject {const ListFineTuningCheckpointPermissionResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_checkpoint_permission.dart';@immutable final class ListFineTuningCheckpointPermissionResponseObject {const ListFineTuningCheckpointPermissionResponseObject._(this.value);
 
 factory ListFineTuningCheckpointPermissionResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListFineTuningCheckpointPermissionResponseObject($value)'; } 
  }
-final class ListFineTuningCheckpointPermissionResponse {const ListFineTuningCheckpointPermissionResponse({required this.data, required this.object, this.firstId, this.lastId, required this.hasMore, });
+@immutable final class ListFineTuningCheckpointPermissionResponse {const ListFineTuningCheckpointPermissionResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
 
 factory ListFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningCheckpointPermissionResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningCheckpointPermission.fromJson(e as Map<String, dynamic>)).toList(),

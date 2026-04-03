@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// KV namespace binding.
-final class PagesDeploymentConfigValuesRequestKvNamespacesValue {const PagesDeploymentConfigValuesRequestKvNamespacesValue({required this.namespaceId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// KV namespace binding.
+@immutable final class PagesDeploymentConfigValuesRequestKvNamespacesValue {const PagesDeploymentConfigValuesRequestKvNamespacesValue({required this.namespaceId});
 
 factory PagesDeploymentConfigValuesRequestKvNamespacesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestKvNamespacesValue(
   namespaceId: json['namespace_id'] as String,

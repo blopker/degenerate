@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_true_client_ip_header_value.dart';/// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_true_client_ip_header_value.dart';/// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
 /// 
-final class ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId._(this.value);
+@immutable final class ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId._(this.value);
 
 factory ZonesTrueClientIpHeaderId.fromJson(String json) { return switch (json) {
   'true_client_ip_header' => trueClientIpHeader,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesTrueClientIpHeaderId($value)'; } 
  }
-final class ZonesTrueClientIpHeader {const ZonesTrueClientIpHeader({this.id, this.value, });
+@immutable final class ZonesTrueClientIpHeader {const ZonesTrueClientIpHeader({this.id, this.value, });
 
 factory ZonesTrueClientIpHeader.fromJson(Map<String, dynamic> json) { return ZonesTrueClientIpHeader(
   id: json['id'] != null ? ZonesTrueClientIpHeaderId.fromJson(json['id'] as String) : null,

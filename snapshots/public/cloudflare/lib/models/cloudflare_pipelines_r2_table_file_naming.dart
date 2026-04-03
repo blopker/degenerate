@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filename generation strategy.
-final class CloudflarePipelinesR2TableFileNamingStrategy {const CloudflarePipelinesR2TableFileNamingStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filename generation strategy.
+@immutable final class CloudflarePipelinesR2TableFileNamingStrategy {const CloudflarePipelinesR2TableFileNamingStrategy._(this.value);
 
 factory CloudflarePipelinesR2TableFileNamingStrategy.fromJson(String json) { return switch (json) {
   'serial' => serial,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CloudflarePipelinesR2TableFileNamingStrategy($value)'; } 
  }
 /// Controls filename prefix/suffix and strategy.
-final class CloudflarePipelinesR2TableFileNaming {const CloudflarePipelinesR2TableFileNaming({this.prefix, this.strategy, this.suffix, });
+@immutable final class CloudflarePipelinesR2TableFileNaming {const CloudflarePipelinesR2TableFileNaming({this.prefix, this.strategy, this.suffix, });
 
 factory CloudflarePipelinesR2TableFileNaming.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TableFileNaming(
   prefix: json['prefix'] as String?,

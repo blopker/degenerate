@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorGetWorkflowDetailsResponseResultInstances {const WorGetWorkflowDetailsResponseResultInstances({this.complete, this.errored, this.paused, this.queued, this.running, this.terminated, this.waiting, this.waitingForPause, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorGetWorkflowDetailsResponseResultInstances {const WorGetWorkflowDetailsResponseResultInstances({this.complete, this.errored, this.paused, this.queued, this.running, this.terminated, this.waiting, this.waitingForPause, });
 
 factory WorGetWorkflowDetailsResponseResultInstances.fromJson(Map<String, dynamic> json) { return WorGetWorkflowDetailsResponseResultInstances(
   complete: json['complete'] != null ? (json['complete'] as num).toDouble() : null,

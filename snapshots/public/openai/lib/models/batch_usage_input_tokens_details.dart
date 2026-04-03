@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A detailed breakdown of the input tokens.
-final class BatchUsageInputTokensDetails {const BatchUsageInputTokensDetails({required this.cachedTokens});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A detailed breakdown of the input tokens.
+@immutable final class BatchUsageInputTokensDetails {const BatchUsageInputTokensDetails({required this.cachedTokens});
 
 factory BatchUsageInputTokensDetails.fromJson(Map<String, dynamic> json) { return BatchUsageInputTokensDetails(
   cachedTokens: (json['cached_tokens'] as num).toInt(),

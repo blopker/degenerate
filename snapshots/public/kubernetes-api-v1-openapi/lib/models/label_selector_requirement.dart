@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
-final class LabelSelectorRequirement {const LabelSelectorRequirement({this.key = '', this.$operator = '', this.values, });
+@immutable final class LabelSelectorRequirement {const LabelSelectorRequirement({this.key = '', this.$operator = '', this.values, });
 
 factory LabelSelectorRequirement.fromJson(Map<String, dynamic> json) { return LabelSelectorRequirement(
   key: json['key'] as String,

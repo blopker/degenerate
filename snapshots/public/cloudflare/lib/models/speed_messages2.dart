@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SpeedMessages2 {const SpeedMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpeedMessages2 {const SpeedMessages2({required this.code, required this.message, });
 
 factory SpeedMessages2.fromJson(Map<String, dynamic> json) { return SpeedMessages2(
   code: (json['code'] as num).toInt(),

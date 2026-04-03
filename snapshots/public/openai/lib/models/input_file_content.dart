@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileInputDetail {const FileInputDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileInputDetail {const FileInputDetail._(this.value);
 
 factory FileInputDetail.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileInputDetail($value)'; } 
  }
 /// A file input to the model.
-final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
+@immutable final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
 
 factory InputFileContent.fromJson(Map<String, dynamic> json) { return InputFileContent(
   type: json['type'] as String,

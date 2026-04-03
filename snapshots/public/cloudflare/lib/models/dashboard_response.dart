@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dashboard.dart';import 'query_response.dart';final class DashboardResponse {const DashboardResponse({this.query, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dashboard.dart';import 'query_response.dart';@immutable final class DashboardResponse {const DashboardResponse({this.query, this.result, });
 
 factory DashboardResponse.fromJson(Map<String, dynamic> json) { return DashboardResponse(
   query: json['query'] != null ? QueryResponse.fromJson(json['query'] as Map<String, dynamic>) : null,

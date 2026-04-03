@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PublicUserPlan {const PublicUserPlan({required this.collaborators, required this.name, required this.space, required this.privateRepos, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicUserPlan {const PublicUserPlan({required this.collaborators, required this.name, required this.space, required this.privateRepos, });
 
 factory PublicUserPlan.fromJson(Map<String, dynamic> json) { return PublicUserPlan(
   collaborators: (json['collaborators'] as num).toInt(),

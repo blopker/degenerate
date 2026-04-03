@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_components_schemas_name.dart';import 'aaa_secret.dart';import 'aaa_url.dart';final class NotificationWebhooksCreateAWebhookRequest {const NotificationWebhooksCreateAWebhookRequest({required this.name, this.secret, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_name.dart';import 'aaa_secret.dart';import 'aaa_url.dart';@immutable final class NotificationWebhooksCreateAWebhookRequest {const NotificationWebhooksCreateAWebhookRequest({required this.name, required this.url, this.secret, });
 
 factory NotificationWebhooksCreateAWebhookRequest.fromJson(Map<String, dynamic> json) { return NotificationWebhooksCreateAWebhookRequest(
   name: AaaComponentsSchemasName.fromJson(json['name'] as String),

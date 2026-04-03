@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_format.dart';import 'streams_by_stream_id_response2_result_http.dart';import 'streams_by_stream_id_response2_result_worker_binding.dart';final class StreamsByStreamIdResponse2Result {const StreamsByStreamIdResponse2Result({required this.createdAt, this.endpoint, this.format, required this.http, required this.id, required this.modifiedAt, required this.name, required this.version, required this.workerBinding, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'streams_by_stream_id_response2_result_http.dart';import 'streams_by_stream_id_response2_result_worker_binding.dart';@immutable final class StreamsByStreamIdResponse2Result {const StreamsByStreamIdResponse2Result({required this.createdAt, required this.http, required this.id, required this.modifiedAt, required this.name, required this.version, required this.workerBinding, this.endpoint, this.format, });
 
 factory StreamsByStreamIdResponse2Result.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdResponse2Result(
   createdAt: DateTime.parse(json['created_at'] as String),

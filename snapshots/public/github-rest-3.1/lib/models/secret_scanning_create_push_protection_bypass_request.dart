@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_scanning_push_protection_bypass_placeholder_id.dart';import 'secret_scanning_push_protection_bypass_reason.dart';final class SecretScanningCreatePushProtectionBypassRequest {const SecretScanningCreatePushProtectionBypassRequest({required this.reason, required this.placeholderId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_push_protection_bypass_placeholder_id.dart';import 'secret_scanning_push_protection_bypass_reason.dart';@immutable final class SecretScanningCreatePushProtectionBypassRequest {const SecretScanningCreatePushProtectionBypassRequest({required this.reason, required this.placeholderId, });
 
 factory SecretScanningCreatePushProtectionBypassRequest.fromJson(Map<String, dynamic> json) { return SecretScanningCreatePushProtectionBypassRequest(
   reason: SecretScanningPushProtectionBypassReason.fromJson(json['reason'] as String),

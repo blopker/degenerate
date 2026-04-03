@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DiscussionCategory {const DiscussionCategory({required this.createdAt, required this.description, required this.emoji, required this.id, required this.isAnswerable, required this.name, this.nodeId, required this.repositoryId, required this.slug, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DiscussionCategory {const DiscussionCategory({required this.createdAt, required this.description, required this.emoji, required this.id, required this.isAnswerable, required this.name, required this.repositoryId, required this.slug, required this.updatedAt, this.nodeId, });
 
 factory DiscussionCategory.fromJson(Map<String, dynamic> json) { return DiscussionCategory(
   createdAt: DateTime.parse(json['created_at'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker name is too long to be used as a subdomain.
-final class WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is too long to be used as a subdomain.
+@immutable final class WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode._(this.value);
 
 factory WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(int json) { return switch (json) {
   100132 => $100132,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerNameSubdomainLengthLimitCode($value)'; } 
  }
-final class WorkersErrorWorkerNameSubdomainLengthLimit {const WorkersErrorWorkerNameSubdomainLengthLimit({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerNameSubdomainLengthLimit {const WorkersErrorWorkerNameSubdomainLengthLimit({required this.code, required this.message, });
 
 factory WorkersErrorWorkerNameSubdomainLengthLimit.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerNameSubdomainLengthLimit(
   code: WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson((json['code'] as num).toInt()),

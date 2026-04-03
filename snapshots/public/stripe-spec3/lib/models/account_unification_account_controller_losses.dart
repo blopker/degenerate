@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A value indicating who is liable when this account can't pay back negative balances from payments.
-final class AccountUnificationAccountControllerLossesPayments {const AccountUnificationAccountControllerLossesPayments._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating who is liable when this account can't pay back negative balances from payments.
+@immutable final class AccountUnificationAccountControllerLossesPayments {const AccountUnificationAccountControllerLossesPayments._(this.value);
 
 factory AccountUnificationAccountControllerLossesPayments.fromJson(String json) { return switch (json) {
   'application' => application,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountUnificationAccountControllerLossesPayments($value)'; } 
  }
 /// 
-final class AccountUnificationAccountControllerLosses {const AccountUnificationAccountControllerLosses({required this.payments});
+@immutable final class AccountUnificationAccountControllerLosses {const AccountUnificationAccountControllerLosses({required this.payments});
 
 factory AccountUnificationAccountControllerLosses.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountControllerLosses(
   payments: AccountUnificationAccountControllerLossesPayments.fromJson(json['payments'] as String),

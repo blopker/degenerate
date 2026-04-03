@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_billing_credit_balance_summary_filter_applicability_scope_prices.dart';final class GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType {const GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_billing_credit_balance_summary_filter_applicability_scope_prices.dart';@immutable final class GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType {const GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType._(this.value);
 
 factory GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType.fromJson(String json) { return switch (json) {
   'metered' => metered,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType($value)'; } 
  }
-final class GetBillingCreditBalanceSummaryFilterApplicabilityScope {const GetBillingCreditBalanceSummaryFilterApplicabilityScope({this.priceType, this.prices, });
+@immutable final class GetBillingCreditBalanceSummaryFilterApplicabilityScope {const GetBillingCreditBalanceSummaryFilterApplicabilityScope({this.priceType, this.prices, });
 
 factory GetBillingCreditBalanceSummaryFilterApplicabilityScope.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceSummaryFilterApplicabilityScope(
   priceType: json['price_type'] != null ? GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType.fromJson(json['price_type'] as String) : null,

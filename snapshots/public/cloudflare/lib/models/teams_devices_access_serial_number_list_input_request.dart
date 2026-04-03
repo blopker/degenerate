@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesAccessSerialNumberListInputRequest {const TeamsDevicesAccessSerialNumberListInputRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesAccessSerialNumberListInputRequest {const TeamsDevicesAccessSerialNumberListInputRequest({required this.id});
 
 factory TeamsDevicesAccessSerialNumberListInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesAccessSerialNumberListInputRequest(
   id: json['id'] as String,

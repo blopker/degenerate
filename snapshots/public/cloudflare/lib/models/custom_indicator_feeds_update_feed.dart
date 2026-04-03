@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomIndicatorFeedsUpdateFeed {const CustomIndicatorFeedsUpdateFeed({this.fileId, this.filename, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdateFeed {const CustomIndicatorFeedsUpdateFeed({this.fileId, this.filename, this.status, });
 
 factory CustomIndicatorFeedsUpdateFeed.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdateFeed(
   fileId: json['file_id'] != null ? (json['file_id'] as num).toInt() : null,

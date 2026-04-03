@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audio_transcription.dart';import 'realtime_transcription_session_create_response_client_secret.dart';import 'realtime_transcription_session_create_response_turn_detection.dart';/// A new Realtime transcription session configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'realtime_transcription_session_create_response_client_secret.dart';import 'realtime_transcription_session_create_response_turn_detection.dart';/// A new Realtime transcription session configuration.
 /// 
 /// When a session is created on the server via REST API, the session object
 /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This
 /// property is not present when a session is updated via the WebSocket API.
 /// 
-final class RealtimeTranscriptionSessionCreateResponse {const RealtimeTranscriptionSessionCreateResponse({required this.clientSecret, this.modalities, this.inputAudioFormat, this.inputAudioTranscription, this.turnDetection, });
+@immutable final class RealtimeTranscriptionSessionCreateResponse {const RealtimeTranscriptionSessionCreateResponse({required this.clientSecret, this.modalities, this.inputAudioFormat, this.inputAudioTranscription, this.turnDetection, });
 
 factory RealtimeTranscriptionSessionCreateResponse.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponse(
   clientSecret: RealtimeTranscriptionSessionCreateResponseClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),

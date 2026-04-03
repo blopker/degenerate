@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteCategoryDeleteResponse400Errors {const DeleteCategoryDeleteResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteCategoryDeleteResponse400Errors {const DeleteCategoryDeleteResponse400Errors({required this.message});
 
 factory DeleteCategoryDeleteResponse400Errors.fromJson(Map<String, dynamic> json) { return DeleteCategoryDeleteResponse400Errors(
   message: json['message'] as String,

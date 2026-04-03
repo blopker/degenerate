@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledByType {const WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledByType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledByType {const WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledByType._(this.value);
 
 factory WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledByType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledByType($value)'; } 
  }
-final class WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledBy {const WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledBy({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledBy {const WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledBy({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledBy.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlabeledPullRequestAutoMergeEnabledBy(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

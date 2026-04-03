@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedPayoutsFeatures {const ConnectEmbeddedPayoutsFeatures({required this.disableStripeUserAuthentication, required this.editPayoutSchedule, required this.externalAccountCollection, required this.instantPayouts, required this.standardPayouts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedPayoutsFeatures {const ConnectEmbeddedPayoutsFeatures({required this.disableStripeUserAuthentication, required this.editPayoutSchedule, required this.externalAccountCollection, required this.instantPayouts, required this.standardPayouts, });
 
 factory ConnectEmbeddedPayoutsFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedPayoutsFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool,

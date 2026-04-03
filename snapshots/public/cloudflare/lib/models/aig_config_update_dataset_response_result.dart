@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_dataset_response_result_filters.dart';final class AigConfigUpdateDatasetResponseResult {const AigConfigUpdateDatasetResponseResult({required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_dataset_response_result_filters.dart';@immutable final class AigConfigUpdateDatasetResponseResult {const AigConfigUpdateDatasetResponseResult({required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
 
 factory AigConfigUpdateDatasetResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_locked_pull_request_base_repo.dart';import 'webhook_pull_request_locked_pull_request_base_user.dart';final class WebhookPullRequestLockedPullRequestBase {const WebhookPullRequestLockedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_locked_pull_request_base_repo.dart';import 'webhook_pull_request_locked_pull_request_base_user.dart';@immutable final class WebhookPullRequestLockedPullRequestBase {const WebhookPullRequestLockedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestLockedPullRequestBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestLockedPullRequestBase(
   label: json['label'] as String,

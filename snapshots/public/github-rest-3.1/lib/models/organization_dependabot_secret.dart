@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Visibility of a secret
-final class OrganizationDependabotSecretVisibility {const OrganizationDependabotSecretVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a secret
+@immutable final class OrganizationDependabotSecretVisibility {const OrganizationDependabotSecretVisibility._(this.value);
 
 factory OrganizationDependabotSecretVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationDependabotSecretVisibility($value)'; } 
  }
 /// Secrets for GitHub Dependabot for an organization.
-final class OrganizationDependabotSecret {const OrganizationDependabotSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
+@immutable final class OrganizationDependabotSecret {const OrganizationDependabotSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
 
 factory OrganizationDependabotSecret.fromJson(Map<String, dynamic> json) { return OrganizationDependabotSecret(
   name: json['name'] as String,

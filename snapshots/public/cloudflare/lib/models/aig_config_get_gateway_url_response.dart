@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigGetGatewayUrlResponse {const AigConfigGetGatewayUrlResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayUrlResponse {const AigConfigGetGatewayUrlResponse({required this.result, required this.success, });
 
 factory AigConfigGetGatewayUrlResponse.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayUrlResponse(
   result: json['result'] as String,

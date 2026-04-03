@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
 /// 
-final class RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType._(this.value);
+@immutable final class RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType._(this.value);
 
 factory RealtimeConversationItemWithReferenceContentType.fromJson(String json) { return switch (json) {
   'input_audio' => inputAudio,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemWithReferenceContentType($value)'; } 
  }
-final class RealtimeConversationItemWithReferenceContent {const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript, });
+@immutable final class RealtimeConversationItemWithReferenceContent {const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript, });
 
 factory RealtimeConversationItemWithReferenceContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemWithReferenceContent(
   type: json['type'] != null ? RealtimeConversationItemWithReferenceContentType.fromJson(json['type'] as String) : null,

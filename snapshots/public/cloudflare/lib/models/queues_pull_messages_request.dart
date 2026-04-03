@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_batch_size.dart';import 'mq_visibility_timeout.dart';final class QueuesPullMessagesRequest {const QueuesPullMessagesRequest({this.batchSize, this.visibilityTimeoutMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_batch_size.dart';import 'mq_visibility_timeout.dart';@immutable final class QueuesPullMessagesRequest {const QueuesPullMessagesRequest({this.batchSize, this.visibilityTimeoutMs, });
 
 factory QueuesPullMessagesRequest.fromJson(Map<String, dynamic> json) { return QueuesPullMessagesRequest(
   batchSize: json['batch_size'] != null ? MqBatchSize.fromJson(json['batch_size'] as num) : null,

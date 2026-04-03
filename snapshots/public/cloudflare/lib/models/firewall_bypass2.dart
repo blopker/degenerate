@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FirewallBypass2Name {const FirewallBypass2Name._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallBypass2Name {const FirewallBypass2Name._(this.value);
 
 factory FirewallBypass2Name.fromJson(String json) { return switch (json) {
   'url' => url,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallBypass2Name($value)'; } 
  }
-final class FirewallBypass2 {const FirewallBypass2({this.name, this.value, });
+@immutable final class FirewallBypass2 {const FirewallBypass2({this.name, this.value, });
 
 factory FirewallBypass2.fromJson(Map<String, dynamic> json) { return FirewallBypass2(
   name: json['name'] != null ? FirewallBypass2Name.fromJson(json['name'] as String) : null,

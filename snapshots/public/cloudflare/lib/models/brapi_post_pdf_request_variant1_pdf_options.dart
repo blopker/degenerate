@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'brapi_post_pdf_request_variant1_pdf_options_margin.dart';/// Paper format. Takes priority over width and height if set.
-final class BrapiPostPdfRequestVariant1PdfOptionsFormat {const BrapiPostPdfRequestVariant1PdfOptionsFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_pdf_request_variant1_pdf_options_margin.dart';/// Paper format. Takes priority over width and height if set.
+@immutable final class BrapiPostPdfRequestVariant1PdfOptionsFormat {const BrapiPostPdfRequestVariant1PdfOptionsFormat._(this.value);
 
 factory BrapiPostPdfRequestVariant1PdfOptionsFormat.fromJson(String json) { return switch (json) {
   'letter' => letter,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BrapiPostPdfRequestVariant1PdfOptionsFormat($value)'; } 
  }
 /// Check [options](https://pptr.dev/api/puppeteer.pdfoptions).
-final class BrapiPostPdfRequestVariant1PdfOptions {const BrapiPostPdfRequestVariant1PdfOptions({this.displayHeaderFooter = false, this.footerTemplate, this.format = BrapiPostPdfRequestVariant1PdfOptionsFormat.letter, this.headerTemplate, this.height, this.landscape = false, this.margin, this.omitBackground = false, this.outline = false, this.pageRanges, this.preferCssPageSize = false, this.printBackground = false, this.scale = 1.0, this.tagged = true, this.timeout = 30000.0, this.width, });
+@immutable final class BrapiPostPdfRequestVariant1PdfOptions {const BrapiPostPdfRequestVariant1PdfOptions({this.displayHeaderFooter = false, this.footerTemplate, this.format = BrapiPostPdfRequestVariant1PdfOptionsFormat.letter, this.headerTemplate, this.height, this.landscape = false, this.margin, this.omitBackground = false, this.outline = false, this.pageRanges, this.preferCssPageSize = false, this.printBackground = false, this.scale = 1.0, this.tagged = true, this.timeout = 30000.0, this.width, });
 
 factory BrapiPostPdfRequestVariant1PdfOptions.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant1PdfOptions(
   displayHeaderFooter: json.containsKey('displayHeaderFooter') ? json['displayHeaderFooter'] as bool : false,

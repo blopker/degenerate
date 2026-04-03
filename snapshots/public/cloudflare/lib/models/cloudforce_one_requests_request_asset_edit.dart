@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Asset file to upload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Asset file to upload.
 extension type const CloudforceOneRequestsAssetContent(String value) {
 factory CloudforceOneRequestsAssetContent.fromJson(String json) => CloudforceOneRequestsAssetContent(json);
 
 String toJson() => value;
 
 }
-final class CloudforceOneRequestsRequestAssetEdit {const CloudforceOneRequestsRequestAssetEdit({this.source});
+@immutable final class CloudforceOneRequestsRequestAssetEdit {const CloudforceOneRequestsRequestAssetEdit({this.source});
 
 factory CloudforceOneRequestsRequestAssetEdit.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestAssetEdit(
   source: json['source'] != null ? CloudforceOneRequestsAssetContent.fromJson(json['source'] as String) : null,

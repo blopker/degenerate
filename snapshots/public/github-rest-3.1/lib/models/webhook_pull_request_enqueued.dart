@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_enqueued_pull_request.dart';final class WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_enqueued_pull_request.dart';@immutable final class WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction._(this.value);
 
 factory WebhookPullRequestEnqueuedAction.fromJson(String json) { return switch (json) {
   'enqueued' => enqueued,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestEnqueuedAction($value)'; } 
  }
-final class WebhookPullRequestEnqueued {const WebhookPullRequestEnqueued({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestEnqueued {const WebhookPullRequestEnqueued({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestEnqueued.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEnqueued(
   action: WebhookPullRequestEnqueuedAction.fromJson(json['action'] as String),

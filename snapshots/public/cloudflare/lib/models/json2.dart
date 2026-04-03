@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_decimal_encoding.dart';import 'cloudflare_pipelines_timestamp_format.dart';final class Json2Type {const Json2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_decimal_encoding.dart';import 'cloudflare_pipelines_timestamp_format.dart';@immutable final class Json2Type {const Json2Type._(this.value);
 
 factory Json2Type.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Json2Type($value)'; } 
  }
-final class Json2 {const Json2({this.decimalEncoding, this.timestampFormat, this.unstructured, required this.type, });
+@immutable final class Json2 {const Json2({required this.type, this.decimalEncoding, this.timestampFormat, this.unstructured, });
 
 factory Json2.fromJson(Map<String, dynamic> json) { return Json2(
   decimalEncoding: json['decimal_encoding'] != null ? CloudflarePipelinesDecimalEncoding.fromJson(json['decimal_encoding'] as String) : null,

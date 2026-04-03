@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of refund. This can be `refund`, `reversal`, or `pending`.
-final class RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of refund. This can be `refund`, `reversal`, or `pending`.
+@immutable final class RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType._(this.value);
 
 factory RefundDestinationDetailsCardType.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RefundDestinationDetailsCardType($value)'; } 
  }
 /// 
-final class RefundDestinationDetailsCard {const RefundDestinationDetailsCard({this.reference, this.referenceStatus, this.referenceType, required this.type, });
+@immutable final class RefundDestinationDetailsCard {const RefundDestinationDetailsCard({required this.type, this.reference, this.referenceStatus, this.referenceType, });
 
 factory RefundDestinationDetailsCard.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsCard(
   reference: json['reference'] as String?,

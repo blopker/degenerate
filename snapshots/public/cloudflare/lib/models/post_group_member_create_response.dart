@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostGroupMemberCreateResponse {const PostGroupMemberCreateResponse({required this.accountId, this.createdAt, required this.groupId, this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostGroupMemberCreateResponse {const PostGroupMemberCreateResponse({required this.accountId, required this.groupId, required this.uuid, this.createdAt, this.updatedAt, });
 
 factory PostGroupMemberCreateResponse.fromJson(Map<String, dynamic> json) { return PostGroupMemberCreateResponse(
   accountId: json['accountId'] as String,

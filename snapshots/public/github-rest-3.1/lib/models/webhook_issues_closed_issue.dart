@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_closed_issue_pull_request.dart';import 'webhook_issues_closed_issue_reactions.dart';import 'webhook_issues_closed_issue_user.dart';final class WebhookIssuesClosedIssueState {const WebhookIssuesClosedIssueState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_closed_issue_pull_request.dart';import 'webhook_issues_closed_issue_reactions.dart';import 'webhook_issues_closed_issue_user.dart';@immutable final class WebhookIssuesClosedIssueState {const WebhookIssuesClosedIssueState._(this.value);
 
 factory WebhookIssuesClosedIssueState.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssuesClosedIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final class WebhookIssuesClosedIssue {const WebhookIssuesClosedIssue({required this.activeLockReason, this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft, required this.eventsUrl, required this.htmlUrl, required this.id, this.labels, required this.labelsUrl, this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, required this.reactions, required this.repositoryUrl, this.pinnedComment, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, required this.state, this.stateReason, this.timelineUrl, required this.title, this.type, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookIssuesClosedIssue {const WebhookIssuesClosedIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.state, required this.milestone, required this.nodeId, required this.number, required this.user, required this.reactions, required this.repositoryUrl, this.performedViaGithubApp, this.pinnedComment, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.locked, this.stateReason, this.timelineUrl, this.labels, this.type, this.draft, this.assignee, this.pullRequest, });
 
 factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesClosedIssue(
   activeLockReason: json['active_lock_reason'] as String?,

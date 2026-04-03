@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_messages2.dart';final class ResponseCommon11 {const ResponseCommon11({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_messages2.dart';@immutable final class ResponseCommon11 {const ResponseCommon11({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon11.fromJson(Map<String, dynamic> json) { return ResponseCommon11(
   errors: (json['errors'] as List<dynamic>).map((e) => CallsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

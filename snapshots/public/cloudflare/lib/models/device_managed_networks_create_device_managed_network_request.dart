@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_request.dart';final class DeviceManagedNetworksCreateDeviceManagedNetworkRequest {const DeviceManagedNetworksCreateDeviceManagedNetworkRequest({required this.config, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_request.dart';@immutable final class DeviceManagedNetworksCreateDeviceManagedNetworkRequest {const DeviceManagedNetworksCreateDeviceManagedNetworkRequest({required this.config, required this.name, required this.type, });
 
 factory DeviceManagedNetworksCreateDeviceManagedNetworkRequest.fromJson(Map<String, dynamic> json) { return DeviceManagedNetworksCreateDeviceManagedNetworkRequest(
   config: TeamsDevicesSchemasConfigRequest.fromJson(json['config'] as Map<String, dynamic>),

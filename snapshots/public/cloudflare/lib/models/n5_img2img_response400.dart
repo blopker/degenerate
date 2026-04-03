@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_img2img_response400_errors.dart';final class $5Img2imgResponse400 {const $5Img2imgResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_img2img_response400_errors.dart';@immutable final class $5Img2imgResponse400 {const $5Img2imgResponse400({required this.errors, required this.result, required this.success, });
 
 factory $5Img2imgResponse400.fromJson(Map<String, dynamic> json) { return $5Img2imgResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => $5Img2imgResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

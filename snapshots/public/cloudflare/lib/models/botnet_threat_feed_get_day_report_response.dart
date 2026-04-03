@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'botnet_threat_feed_get_day_report_response_result.dart';import 'dos_messages2.dart';final class BotnetThreatFeedGetDayReportResponse {const BotnetThreatFeedGetDayReportResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'botnet_threat_feed_get_day_report_response_result.dart';import 'dos_messages2.dart';@immutable final class BotnetThreatFeedGetDayReportResponse {const BotnetThreatFeedGetDayReportResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory BotnetThreatFeedGetDayReportResponse.fromJson(Map<String, dynamic> json) { return BotnetThreatFeedGetDayReportResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),

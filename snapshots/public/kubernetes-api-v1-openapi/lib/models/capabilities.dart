@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Adds and removes POSIX capabilities from running containers.
-final class Capabilities {const Capabilities({this.add, this.drop, });
+@immutable final class Capabilities {const Capabilities({this.add, this.drop, });
 
 factory Capabilities.fromJson(Map<String, dynamic> json) { return Capabilities(
   add: (json['add'] as List<dynamic>?)?.map((e) => e as String).toList(),

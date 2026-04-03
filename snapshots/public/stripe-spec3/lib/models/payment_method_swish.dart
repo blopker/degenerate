@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodSwish {const PaymentMethodSwish();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodSwish {const PaymentMethodSwish();
 
 factory PaymentMethodSwish.fromJson(Map<String, dynamic> json) { return PaymentMethodSwish(
 

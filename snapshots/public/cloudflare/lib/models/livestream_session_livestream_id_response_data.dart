@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'livestream_session_livestream_id_response_data_livestream.dart';import 'livestream_session_livestream_id_response_data_paging.dart';import 'livestream_session_livestream_id_response_data_session.dart';final class LivestreamSessionLivestreamIdResponseData {const LivestreamSessionLivestreamIdResponseData({this.livestream, this.paging, this.session, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'livestream_session_livestream_id_response_data_livestream.dart';import 'livestream_session_livestream_id_response_data_paging.dart';import 'livestream_session_livestream_id_response_data_session.dart';@immutable final class LivestreamSessionLivestreamIdResponseData {const LivestreamSessionLivestreamIdResponseData({this.livestream, this.paging, this.session, });
 
 factory LivestreamSessionLivestreamIdResponseData.fromJson(Map<String, dynamic> json) { return LivestreamSessionLivestreamIdResponseData(
   livestream: json['livestream'] != null ? LivestreamSessionLivestreamIdResponseDataLivestream.fromJson(json['livestream'] as Map<String, dynamic>) : null,

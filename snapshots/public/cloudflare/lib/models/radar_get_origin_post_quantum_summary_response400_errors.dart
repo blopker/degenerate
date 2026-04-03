@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetOriginPostQuantumSummaryResponse400Errors {const RadarGetOriginPostQuantumSummaryResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetOriginPostQuantumSummaryResponse400Errors {const RadarGetOriginPostQuantumSummaryResponse400Errors({required this.message});
 
 factory RadarGetOriginPostQuantumSummaryResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumSummaryResponse400Errors(
   message: json['message'] as String,

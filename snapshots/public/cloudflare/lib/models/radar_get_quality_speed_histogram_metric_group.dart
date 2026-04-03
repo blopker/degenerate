@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metrics to be returned.
-final class RadarGetQualitySpeedHistogramMetricGroup {const RadarGetQualitySpeedHistogramMetricGroup._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics to be returned.
+@immutable final class RadarGetQualitySpeedHistogramMetricGroup {const RadarGetQualitySpeedHistogramMetricGroup._(this.value);
 
 factory RadarGetQualitySpeedHistogramMetricGroup.fromJson(String json) { return switch (json) {
   'BANDWIDTH' => bandwidth,

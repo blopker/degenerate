@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `python`.
-final class EvalGraderPythonType {const EvalGraderPythonType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `python`.
+@immutable final class EvalGraderPythonType {const EvalGraderPythonType._(this.value);
 
 factory EvalGraderPythonType.fromJson(String json) { return switch (json) {
   'python' => python,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EvalGraderPythonType($value)'; } 
  }
-final class EvalGraderPython {const EvalGraderPython({required this.type, required this.name, required this.source, this.imageTag, this.passThreshold, });
+@immutable final class EvalGraderPython {const EvalGraderPython({required this.type, required this.name, required this.source, this.imageTag, this.passThreshold, });
 
 factory EvalGraderPython.fromJson(Map<String, dynamic> json) { return EvalGraderPython(
   type: EvalGraderPythonType.fromJson(json['type'] as String),

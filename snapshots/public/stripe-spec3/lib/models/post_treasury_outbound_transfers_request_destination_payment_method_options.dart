@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param113.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_options_us_bank_account.dart';/// Hash describing payment method configuration details.
-final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions({this.usBankAccount});
+@immutable final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions({this.usBankAccount});
 
 factory PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions(
   usBankAccount: json['us_bank_account'] != null ? OneOf2.parse(json['us_bank_account'], fromA: (v) => PaymentMethodOptionsParam113.fromJson(v as Map<String, dynamic>), fromB: (v) => PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptionsUsBankAccountVariant2.fromJson(v as String),) : null,

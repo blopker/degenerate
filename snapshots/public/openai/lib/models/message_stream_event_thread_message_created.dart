@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_object.dart';final class MessageStreamEventThreadMessageCreatedEvent {const MessageStreamEventThreadMessageCreatedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';@immutable final class MessageStreamEventThreadMessageCreatedEvent {const MessageStreamEventThreadMessageCreatedEvent._(this.value);
 
 factory MessageStreamEventThreadMessageCreatedEvent.fromJson(String json) { return switch (json) {
   'thread.message.created' => threadMessageCreated,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageStreamEventThreadMessageCreatedEvent($value)'; } 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) is created.
-final class MessageStreamEventThreadMessageCreated {const MessageStreamEventThreadMessageCreated({required this.event, required this.data, });
+@immutable final class MessageStreamEventThreadMessageCreated {const MessageStreamEventThreadMessageCreated({required this.event, required this.data, });
 
 factory MessageStreamEventThreadMessageCreated.fromJson(Map<String, dynamic> json) { return MessageStreamEventThreadMessageCreated(
   event: MessageStreamEventThreadMessageCreatedEvent.fromJson(json['event'] as String),

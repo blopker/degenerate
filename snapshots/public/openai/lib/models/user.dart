@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `organization.user`
-final class UserObject {const UserObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.user`
+@immutable final class UserObject {const UserObject._(this.value);
 
 factory UserObject.fromJson(String json) { return switch (json) {
   'organization.user' => organizationUser,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserObject($value)'; } 
  }
 /// `owner` or `reader`
-final class UserRole {const UserRole._(this.value);
+@immutable final class UserRole {const UserRole._(this.value);
 
 factory UserRole.fromJson(String json) { return switch (json) {
   'owner' => owner,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserRole($value)'; } 
  }
 /// Represents an individual `user` within an organization.
-final class User {const User({required this.object, required this.id, required this.name, required this.email, required this.role, required this.addedAt, });
+@immutable final class User {const User({required this.object, required this.id, required this.name, required this.email, required this.role, required this.addedAt, });
 
 factory User.fromJson(Map<String, dynamic> json) { return User(
   object: UserObject.fromJson(json['object'] as String),

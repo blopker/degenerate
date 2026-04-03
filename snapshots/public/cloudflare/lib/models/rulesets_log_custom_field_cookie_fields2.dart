@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The cookie field to log.
-final class RulesetsLogCustomFieldCookieFields2 {const RulesetsLogCustomFieldCookieFields2({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The cookie field to log.
+@immutable final class RulesetsLogCustomFieldCookieFields2 {const RulesetsLogCustomFieldCookieFields2({required this.name});
 
 factory RulesetsLogCustomFieldCookieFields2.fromJson(Map<String, dynamic> json) { return RulesetsLogCustomFieldCookieFields2(
   name: json['name'] as String,

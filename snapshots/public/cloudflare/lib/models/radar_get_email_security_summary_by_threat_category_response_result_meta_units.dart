@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByThreatCategoryResponseResultMetaUnits {const RadarGetEmailSecuritySummaryByThreatCategoryResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByThreatCategoryResponseResultMetaUnits {const RadarGetEmailSecuritySummaryByThreatCategoryResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetEmailSecuritySummaryByThreatCategoryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByThreatCategoryResponseResultMetaUnits(
   name: json['name'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Annotations for the Worker version. Annotations are not inherited across settings updates; omitting this field means the new version will have no annotations.
-final class WorkersScriptAndVersionSettingsItemAnnotations {const WorkersScriptAndVersionSettingsItemAnnotations({this.workersMessage, this.workersTag, this.workersTriggeredBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Annotations for the Worker version. Annotations are not inherited across settings updates; omitting this field means the new version will have no annotations.
+@immutable final class WorkersScriptAndVersionSettingsItemAnnotations {const WorkersScriptAndVersionSettingsItemAnnotations({this.workersMessage, this.workersTag, this.workersTriggeredBy, });
 
 factory WorkersScriptAndVersionSettingsItemAnnotations.fromJson(Map<String, dynamic> json) { return WorkersScriptAndVersionSettingsItemAnnotations(
   workersMessage: json['workers/message'] as String?,

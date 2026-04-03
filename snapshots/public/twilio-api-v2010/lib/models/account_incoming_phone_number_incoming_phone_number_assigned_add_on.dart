@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn {const AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn({this.sid, this.accountSid, this.resourceSid, this.friendlyName, this.description, this.configuration, this.uniqueName, this.dateCreated, this.dateUpdated, this.uri, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn {const AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn({this.sid, this.accountSid, this.resourceSid, this.friendlyName, this.description, this.configuration, this.uniqueName, this.dateCreated, this.dateUpdated, this.uri, this.subresourceUris, });
 
 factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
   sid: json['sid'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the tool, i.e. `function`.
-final class RealtimeFunctionToolType {const RealtimeFunctionToolType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the tool, i.e. `function`.
+@immutable final class RealtimeFunctionToolType {const RealtimeFunctionToolType._(this.value);
 
 factory RealtimeFunctionToolType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeFunctionToolType($value)'; } 
  }
-final class RealtimeFunctionTool {const RealtimeFunctionTool({this.type, this.name, this.description, this.parameters, });
+@immutable final class RealtimeFunctionTool {const RealtimeFunctionTool({this.type, this.name, this.description, this.parameters, });
 
 factory RealtimeFunctionTool.fromJson(Map<String, dynamic> json) { return RealtimeFunctionTool(
   type: json['type'] != null ? RealtimeFunctionToolType.fromJson(json['type'] as String) : null,

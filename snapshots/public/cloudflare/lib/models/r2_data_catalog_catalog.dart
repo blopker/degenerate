@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_catalog_maintenance_config.dart';import 'r2_data_catalog_credential_status.dart';/// Indicates the status of the catalog.
-final class R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog_maintenance_config.dart';import 'r2_data_catalog_credential_status.dart';/// Indicates the status of the catalog.
+@immutable final class R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus._(this.value);
 
 factory R2DataCatalogCatalogStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2DataCatalogCatalogStatus($value)'; } 
  }
 /// Contains R2 Data Catalog information.
-final class R2DataCatalogCatalog {const R2DataCatalogCatalog({required this.bucket, this.credentialStatus, required this.id, this.maintenanceConfig, required this.name, required this.status, });
+@immutable final class R2DataCatalogCatalog {const R2DataCatalogCatalog({required this.bucket, required this.id, required this.name, required this.status, this.credentialStatus, this.maintenanceConfig, });
 
 factory R2DataCatalogCatalog.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalog(
   bucket: json['bucket'] as String,

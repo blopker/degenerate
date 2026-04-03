@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceTransactionAchCreditTransferData {const SourceTransactionAchCreditTransferData({this.customerData, this.fingerprint, this.last4, this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceTransactionAchCreditTransferData {const SourceTransactionAchCreditTransferData({this.customerData, this.fingerprint, this.last4, this.routingNumber, });
 
 factory SourceTransactionAchCreditTransferData.fromJson(Map<String, dynamic> json) { return SourceTransactionAchCreditTransferData(
   customerData: json['customer_data'] as String?,

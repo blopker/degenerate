@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateVectorStoreFileAttributesRequest {const UpdateVectorStoreFileAttributesRequest({required this.attributes});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateVectorStoreFileAttributesRequest {const UpdateVectorStoreFileAttributesRequest({required this.attributes});
 
 factory UpdateVectorStoreFileAttributesRequest.fromJson(Map<String, dynamic> json) { return UpdateVectorStoreFileAttributesRequest(
   attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

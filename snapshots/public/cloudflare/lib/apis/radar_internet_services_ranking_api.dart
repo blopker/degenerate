@@ -20,12 +20,12 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (date != null) {
 for (final item in date) {
-  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item));
 }
 }
 if (format != null) {
@@ -63,7 +63,7 @@ Future<ApiResult<RadarGetRankingInternetServicesTimeseriesResponseResult, RadarG
 final queryParametersList = <ApiQueryParameter>[];
 if (serviceCategory != null) {
 for (final item in serviceCategory) {
-  queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item));
 }
 }
 if (limit != null) {
@@ -71,22 +71,22 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (format != null) {
@@ -124,7 +124,7 @@ Future<ApiResult<RadarGetRankingTopInternetServicesResponseResult, RadarGetRanki
 final queryParametersList = <ApiQueryParameter>[];
 if (serviceCategory != null) {
 for (final item in serviceCategory) {
-  queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'serviceCategory', value: item));
 }
 }
 if (limit != null) {
@@ -132,12 +132,12 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (date != null) {
 for (final item in date) {
-  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item));
 }
 }
 if (format != null) {

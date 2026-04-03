@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Report has invalid type
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Report has invalid type
 extension type const AbuseReportsBadActError(String value) {
 factory AbuseReportsBadActError.fromJson(String json) => AbuseReportsBadActError(json);
 
@@ -100,7 +100,7 @@ factory AbuseReportsErrorCode.fromJson(Map<String, dynamic> json) {   return Abu
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsBadActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadActError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsBadActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadActError(this._value);
 
 final AbuseReportsBadActError _value;
 
@@ -110,7 +110,7 @@ final AbuseReportsBadActError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadActError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsMaxIPsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMaxIPsError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsMaxIPsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMaxIPsError(this._value);
 
 final AbuseReportsMaxIPsError _value;
 
@@ -120,7 +120,7 @@ final AbuseReportsMaxIPsError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsMaxIPsError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsPortsProtocolError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsPortsProtocolError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsPortsProtocolError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsPortsProtocolError(this._value);
 
 final AbuseReportsPortsProtocolError _value;
 
@@ -130,7 +130,7 @@ final AbuseReportsPortsProtocolError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsPortsProtocolError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsInternalError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInternalError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsInternalError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInternalError(this._value);
 
 final AbuseReportsInternalError _value;
 
@@ -140,7 +140,7 @@ final AbuseReportsInternalError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsInternalError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsInvalidNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInvalidNotifyError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsInvalidNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInvalidNotifyError(this._value);
 
 final AbuseReportsInvalidNotifyError _value;
 
@@ -150,7 +150,7 @@ final AbuseReportsInvalidNotifyError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsInvalidNotifyError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsMustNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMustNotifyError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsMustNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMustNotifyError(this._value);
 
 final AbuseReportsMustNotifyError _value;
 
@@ -160,7 +160,7 @@ final AbuseReportsMustNotifyError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsMustNotifyError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsNoAgreeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoAgreeError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsNoAgreeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoAgreeError(this._value);
 
 final AbuseReportsNoAgreeError _value;
 
@@ -170,7 +170,7 @@ final AbuseReportsNoAgreeError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoAgreeError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError(this._value);
 
 final AbuseReportsNoOriginalWorkError _value;
 
@@ -180,7 +180,7 @@ final AbuseReportsNoOriginalWorkError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoOriginalWorkError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsNoSigError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoSigError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsNoSigError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoSigError(this._value);
 
 final AbuseReportsNoSigError _value;
 
@@ -190,7 +190,7 @@ final AbuseReportsNoSigError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoSigError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsUnexpectedActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnexpectedActError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsUnexpectedActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnexpectedActError(this._value);
 
 final AbuseReportsUnexpectedActError _value;
 
@@ -200,7 +200,7 @@ final AbuseReportsUnexpectedActError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsUnexpectedActError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsUnknownError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnknownError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsUnknownError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnknownError(this._value);
 
 final AbuseReportsUnknownError _value;
 
@@ -210,7 +210,7 @@ final AbuseReportsUnknownError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsUnknownError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError(this._value);
 
 final AbuseReportsUrlNotOrangeError _value;
 
@@ -220,7 +220,7 @@ final AbuseReportsUrlNotOrangeError _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsUrlNotOrangeError($_value)'; } 
  }
-final class AbuseReportsErrorCodeAbuseReportsUrlNotvalidError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotvalidError(this._value);
+@immutable final class AbuseReportsErrorCodeAbuseReportsUrlNotvalidError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotvalidError(this._value);
 
 final AbuseReportsUrlNotvalidError _value;
 
@@ -231,7 +231,7 @@ final AbuseReportsUrlNotvalidError _value;
 @override String toString() { return 'AbuseReportsErrorCode.abuseReportsUrlNotvalidError($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class AbuseReportsErrorCode$Unknown extends AbuseReportsErrorCode {const AbuseReportsErrorCode$Unknown(this._value);
+@immutable final class AbuseReportsErrorCode$Unknown extends AbuseReportsErrorCode {const AbuseReportsErrorCode$Unknown(this._value);
 
 final dynamic _value;
 

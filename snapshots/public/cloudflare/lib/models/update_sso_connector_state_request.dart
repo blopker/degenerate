@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_use_fedramp_language.dart';final class UpdateSsoConnectorStateRequest {const UpdateSsoConnectorStateRequest({this.enabled, this.useFedrampLanguage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_use_fedramp_language.dart';@immutable final class UpdateSsoConnectorStateRequest {const UpdateSsoConnectorStateRequest({this.enabled, this.useFedrampLanguage, });
 
 factory UpdateSsoConnectorStateRequest.fromJson(Map<String, dynamic> json) { return UpdateSsoConnectorStateRequest(
   enabled: json['enabled'] as bool?,

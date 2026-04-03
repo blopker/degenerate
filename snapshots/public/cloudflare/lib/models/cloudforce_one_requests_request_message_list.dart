@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_requests_time.dart';/// Sort order (asc or desc).
-final class CloudforceOneRequestsRequestMessageListSortOrder {const CloudforceOneRequestsRequestMessageListSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';/// Sort order (asc or desc).
+@immutable final class CloudforceOneRequestsRequestMessageListSortOrder {const CloudforceOneRequestsRequestMessageListSortOrder._(this.value);
 
 factory CloudforceOneRequestsRequestMessageListSortOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudforceOneRequestsRequestMessageListSortOrder($value)'; } 
  }
-final class CloudforceOneRequestsRequestMessageList {const CloudforceOneRequestsRequestMessageList({this.after, this.before, required this.page, required this.perPage, this.sortBy, this.sortOrder, });
+@immutable final class CloudforceOneRequestsRequestMessageList {const CloudforceOneRequestsRequestMessageList({required this.page, required this.perPage, this.after, this.before, this.sortBy, this.sortOrder, });
 
 factory CloudforceOneRequestsRequestMessageList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestMessageList(
   after: json['after'] != null ? CloudforceOneRequestsTime.fromJson(json['after'] as String) : null,

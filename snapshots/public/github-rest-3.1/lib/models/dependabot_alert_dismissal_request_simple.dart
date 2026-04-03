@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependabot_alert_dismissal_request_simple_requester.dart';/// The current status of the dismissal request.
-final class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert_dismissal_request_simple_requester.dart';/// The current status of the dismissal request.
+@immutable final class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus._(this.value);
 
 factory DependabotAlertDismissalRequestSimpleStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertDismissalRequestSimpleStatus($value)'; } 
  }
 /// Information about an active dismissal request for this Dependabot alert.
-final class DependabotAlertDismissalRequestSimple {const DependabotAlertDismissalRequestSimple({this.id, this.status, this.requester, this.createdAt, this.url, });
+@immutable final class DependabotAlertDismissalRequestSimple {const DependabotAlertDismissalRequestSimple({this.id, this.status, this.requester, this.createdAt, this.url, });
 
 factory DependabotAlertDismissalRequestSimple.fromJson(Map<String, dynamic> json) { return DependabotAlertDismissalRequestSimple(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

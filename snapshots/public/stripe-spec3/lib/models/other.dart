@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_additional_documentation.dart';import 'other_explanation.dart';import 'other_product_description.dart';final class OtherProductType {const OtherProductType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_additional_documentation.dart';import 'other_explanation.dart';import 'other_product_description.dart';@immutable final class OtherProductType {const OtherProductType._(this.value);
 
 factory OtherProductType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OtherProductType($value)'; } 
  }
-final class Other {const Other({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
+@immutable final class Other {const Other({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
 
 factory Other.fromJson(Map<String, dynamic> json) { return Other(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => OtherAdditionalDocumentationVariant2.fromJson(v as String),) : null,

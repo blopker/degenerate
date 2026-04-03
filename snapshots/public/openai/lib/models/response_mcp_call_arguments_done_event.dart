@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_call_arguments.done'.
-final class ResponseMcpCallArgumentsDoneEventType {const ResponseMcpCallArgumentsDoneEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_call_arguments.done'.
+@immutable final class ResponseMcpCallArgumentsDoneEventType {const ResponseMcpCallArgumentsDoneEventType._(this.value);
 
 factory ResponseMcpCallArgumentsDoneEventType.fromJson(String json) { return switch (json) {
   'response.mcp_call_arguments.done' => responseMcpCallArgumentsDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when the arguments for an MCP tool call are finalized.
 /// 
-final class ResponseMcpCallArgumentsDoneEvent {const ResponseMcpCallArgumentsDoneEvent({required this.type, required this.outputIndex, required this.itemId, required this.arguments, required this.sequenceNumber, });
+@immutable final class ResponseMcpCallArgumentsDoneEvent {const ResponseMcpCallArgumentsDoneEvent({required this.type, required this.outputIndex, required this.itemId, required this.arguments, required this.sequenceNumber, });
 
 factory ResponseMcpCallArgumentsDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallArgumentsDoneEvent(
   type: ResponseMcpCallArgumentsDoneEventType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookPersonalAccessTokenRequestCancelledAction {const WebhookPersonalAccessTokenRequestCancelledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestCancelledAction {const WebhookPersonalAccessTokenRequestCancelledAction._(this.value);
 
 factory WebhookPersonalAccessTokenRequestCancelledAction.fromJson(String json) { return switch (json) {
   'cancelled' => cancelled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPersonalAccessTokenRequestCancelledAction($value)'; } 
  }
-final class WebhookPersonalAccessTokenRequestCancelled {const WebhookPersonalAccessTokenRequestCancelled({required this.action, required this.personalAccessTokenRequest, this.enterprise, required this.organization, required this.sender, required this.installation, });
+@immutable final class WebhookPersonalAccessTokenRequestCancelled {const WebhookPersonalAccessTokenRequestCancelled({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
 factory WebhookPersonalAccessTokenRequestCancelled.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestCancelled(
   action: WebhookPersonalAccessTokenRequestCancelledAction.fromJson(json['action'] as String),

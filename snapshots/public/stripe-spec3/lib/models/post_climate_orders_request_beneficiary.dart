@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Publicly sharable reference for the end beneficiary of carbon removal. Assumed to be the Stripe account if not set.
-final class PostClimateOrdersRequestBeneficiary {const PostClimateOrdersRequestBeneficiary({required this.publicName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Publicly sharable reference for the end beneficiary of carbon removal. Assumed to be the Stripe account if not set.
+@immutable final class PostClimateOrdersRequestBeneficiary {const PostClimateOrdersRequestBeneficiary({required this.publicName});
 
 factory PostClimateOrdersRequestBeneficiary.fromJson(Map<String, dynamic> json) { return PostClimateOrdersRequestBeneficiary(
   publicName: json['public_name'] as String,

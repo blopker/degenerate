@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_client_certificates_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_csr.dart';import 'tls_certificates_and_hostnames_schemas_validity_days.dart';/// The Client Certificate PEM
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_client_certificates_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_csr.dart';import 'tls_certificates_and_hostnames_schemas_validity_days.dart';/// The Client Certificate PEM
 extension type const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate(String value) {
 factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(String json) => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions
-final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -122,7 +122,7 @@ factory TlsCertificatesAndHostnamesState.fromJson(String json) => TlsCertificate
 String toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesClientCertificate {const TlsCertificatesAndHostnamesClientCertificate({this.certificate, this.certificateAuthority, this.commonName, this.country, this.csr, this.expiresOn, this.fingerprintSha256, this.id, this.issuedOn, this.location, this.organization, this.organizationalUnit, this.serialNumber, this.signature, this.ski, this.state, this.status, this.validityDays, });
+@immutable final class TlsCertificatesAndHostnamesClientCertificate {const TlsCertificatesAndHostnamesClientCertificate({this.certificate, this.certificateAuthority, this.commonName, this.country, this.csr, this.expiresOn, this.fingerprintSha256, this.id, this.issuedOn, this.location, this.organization, this.organizationalUnit, this.serialNumber, this.signature, this.ski, this.state, this.status, this.validityDays, });
 
 factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesClientCertificate(
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,

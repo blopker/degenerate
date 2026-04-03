@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_requests_time.dart';final class CloudforceOneRequestsQuota {const CloudforceOneRequestsQuota({this.anniversaryDate, this.quarterAnniversaryDate, this.quota, this.remaining, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsQuota {const CloudforceOneRequestsQuota({this.anniversaryDate, this.quarterAnniversaryDate, this.quota, this.remaining, });
 
 factory CloudforceOneRequestsQuota.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsQuota(
   anniversaryDate: json['anniversary_date'] != null ? CloudforceOneRequestsTime.fromJson(json['anniversary_date'] as String) : null,

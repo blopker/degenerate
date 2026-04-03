@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'overview_domains.dart';import 'overview_ssh_key_fingerprints.dart';/// Api Overview
-final class Overview {const Overview({required this.verifiablePasswordAuthentication, this.sshKeyFingerprints, this.sshKeys, this.hooks, this.githubEnterpriseImporter, this.web, this.api, this.git, this.packages, this.pages, this.importer, this.actions, this.actionsMacos, this.codespaces, this.dependabot, this.copilot, this.domains, });
+@immutable final class Overview {const Overview({required this.verifiablePasswordAuthentication, this.sshKeyFingerprints, this.sshKeys, this.hooks, this.githubEnterpriseImporter, this.web, this.api, this.git, this.packages, this.pages, this.importer, this.actions, this.actionsMacos, this.codespaces, this.dependabot, this.copilot, this.domains, });
 
 factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
   verifiablePasswordAuthentication: json['verifiable_password_authentication'] as bool,

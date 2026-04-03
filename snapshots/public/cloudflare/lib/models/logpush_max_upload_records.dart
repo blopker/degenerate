@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class LogpushMaxUploadRecordsVariant1 {const LogpushMaxUploadRecordsVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushMaxUploadRecordsVariant1 {const LogpushMaxUploadRecordsVariant1._(this.value);
 
 factory LogpushMaxUploadRecordsVariant1.fromJson(int json) { return switch (json) {
   0 => $0,

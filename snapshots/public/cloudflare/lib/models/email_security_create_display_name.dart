@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityCreateDisplayName {const EmailSecurityCreateDisplayName({required this.email, required this.isEmailRegex, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCreateDisplayName {const EmailSecurityCreateDisplayName({required this.email, required this.isEmailRegex, required this.name, });
 
 factory EmailSecurityCreateDisplayName.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateDisplayName(
   email: json['email'] as String,

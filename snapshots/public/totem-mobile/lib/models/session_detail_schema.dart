@@ -1,8 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'meeting_provider_enum.dart';
 import 'mobile_space_detail_schema.dart';
 
+@immutable
 final class SessionDetailSchema {
   const SessionDetailSchema({
     required this.slug,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_created_time.dart';import 'dns_settings_identifier.dart';import 'dns_settings_modified_time.dart';import 'dns_settings_name.dart';final class DnsSettingsDnsViewResponse {const DnsSettingsDnsViewResponse({required this.createdTime, required this.modifiedTime, required this.name, required this.zones, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_created_time.dart';import 'dns_settings_identifier.dart';import 'dns_settings_modified_time.dart';import 'dns_settings_name.dart';@immutable final class DnsSettingsDnsViewResponse {const DnsSettingsDnsViewResponse({required this.createdTime, required this.modifiedTime, required this.name, required this.zones, required this.id, });
 
 factory DnsSettingsDnsViewResponse.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsViewResponse(
   createdTime: DnsSettingsCreatedTime.fromJson(json['created_time'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_ownership_response.dart';final class MagicVisibilityPcapsPcapsOwnershipCollection {const MagicVisibilityPcapsPcapsOwnershipCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_ownership_response.dart';@immutable final class MagicVisibilityPcapsPcapsOwnershipCollection {const MagicVisibilityPcapsPcapsOwnershipCollection({this.result});
 
 factory MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsOwnershipCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList(),

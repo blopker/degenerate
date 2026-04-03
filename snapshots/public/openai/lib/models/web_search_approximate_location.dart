@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of location approximation. Always `approximate`.
-final class WebSearchApproximateLocationType {const WebSearchApproximateLocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of location approximation. Always `approximate`.
+@immutable final class WebSearchApproximateLocationType {const WebSearchApproximateLocationType._(this.value);
 
 factory WebSearchApproximateLocationType.fromJson(String json) { return switch (json) {
   'approximate' => approximate,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The approximate location of the user.
 /// 
-final class WebSearchApproximateLocation {const WebSearchApproximateLocation({this.type = WebSearchApproximateLocationType.approximate, this.country, this.region, this.city, this.timezone, });
+@immutable final class WebSearchApproximateLocation {const WebSearchApproximateLocation({this.type = WebSearchApproximateLocationType.approximate, this.country, this.region, this.city, this.timezone, });
 
 factory WebSearchApproximateLocation.fromJson(Map<String, dynamic> json) { return WebSearchApproximateLocation(
   type: json.containsKey('type') ? WebSearchApproximateLocationType.fromJson(json['type'] as String) : WebSearchApproximateLocationType.approximate,

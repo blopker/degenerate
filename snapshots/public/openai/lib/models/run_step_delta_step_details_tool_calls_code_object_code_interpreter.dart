@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter_outputs.dart';import 'run_step_delta_step_details_tool_calls_code_output_image_object.dart';import 'run_step_delta_step_details_tool_calls_code_output_logs_object.dart';/// The Code Interpreter tool call definition.
-final class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter {const RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter({this.input, this.outputs, });
+@immutable final class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter {const RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter({this.input, this.outputs, });
 
 factory RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: json['input'] as String?,

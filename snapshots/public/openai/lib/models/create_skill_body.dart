@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_skill_body_files.dart';/// Uploads a skill either as a directory (multipart `files[]`) or as a single zip file.
-final class CreateSkillBody {const CreateSkillBody({required this.files});
+@immutable final class CreateSkillBody {const CreateSkillBody({required this.files});
 
 factory CreateSkillBody.fromJson(Map<String, dynamic> json) { return CreateSkillBody(
   files: OneOf2.parse(json['files'], fromA: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(), fromB: (v) => base64Decode(v as String),),

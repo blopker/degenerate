@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_revolut_pay_display_preference.dart';/// Revolut Pay, developed by Revolut, a global finance app, is a digital wallet payment method. Revolut Pay uses the customer’s stored balance or cards to fund the payment, and offers the option for non-Revolut customers to save their details after their first purchase.
-final class PostPaymentMethodConfigurationsRequestRevolutPay {const PostPaymentMethodConfigurationsRequestRevolutPay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_revolut_pay_display_preference.dart';/// Revolut Pay, developed by Revolut, a global finance app, is a digital wallet payment method. Revolut Pay uses the customer’s stored balance or cards to fund the payment, and offers the option for non-Revolut customers to save their details after their first purchase.
+@immutable final class PostPaymentMethodConfigurationsRequestRevolutPay {const PostPaymentMethodConfigurationsRequestRevolutPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestRevolutPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestRevolutPay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

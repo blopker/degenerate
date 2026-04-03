@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam52 {const PaymentMethodOptionsParam52();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam52 {const PaymentMethodOptionsParam52();
 
 factory PaymentMethodOptionsParam52.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam52(
 

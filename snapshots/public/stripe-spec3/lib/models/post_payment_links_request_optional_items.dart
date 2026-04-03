@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_request_optional_items_adjustable_quantity.dart';final class PostPaymentLinksRequestOptionalItems {const PostPaymentLinksRequestOptionalItems({this.adjustableQuantity, required this.price, required this.quantity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_optional_items_adjustable_quantity.dart';@immutable final class PostPaymentLinksRequestOptionalItems {const PostPaymentLinksRequestOptionalItems({required this.price, required this.quantity, this.adjustableQuantity, });
 
 factory PostPaymentLinksRequestOptionalItems.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestOptionalItems(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostPaymentLinksRequestOptionalItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,

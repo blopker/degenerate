@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityGetMessageRawResponseResult {const EmailSecurityGetMessageRawResponseResult({required this.raw});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityGetMessageRawResponseResult {const EmailSecurityGetMessageRawResponseResult({required this.raw});
 
 factory EmailSecurityGetMessageRawResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageRawResponseResult(
   raw: json['raw'] as String,

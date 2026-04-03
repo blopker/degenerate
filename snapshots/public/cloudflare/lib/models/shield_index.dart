@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShieldIndex {const ShieldIndex({required this.index});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldIndex {const ShieldIndex({required this.index});
 
 factory ShieldIndex.fromJson(Map<String, dynamic> json) { return ShieldIndex(
   index: (json['index'] as num).toInt(),

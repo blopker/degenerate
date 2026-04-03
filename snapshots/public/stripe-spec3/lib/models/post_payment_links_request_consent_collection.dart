@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_request_consent_collection_payment_method_reuse_agreement.dart';final class PostPaymentLinksRequestConsentCollectionPromotions {const PostPaymentLinksRequestConsentCollectionPromotions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_consent_collection_payment_method_reuse_agreement.dart';@immutable final class PostPaymentLinksRequestConsentCollectionPromotions {const PostPaymentLinksRequestConsentCollectionPromotions._(this.value);
 
 factory PostPaymentLinksRequestConsentCollectionPromotions.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksRequestConsentCollectionPromotions($value)'; } 
  }
-final class PostPaymentLinksRequestConsentCollectionTermsOfService {const PostPaymentLinksRequestConsentCollectionTermsOfService._(this.value);
+@immutable final class PostPaymentLinksRequestConsentCollectionTermsOfService {const PostPaymentLinksRequestConsentCollectionTermsOfService._(this.value);
 
 factory PostPaymentLinksRequestConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestConsentCollectionTermsOfService($value)'; } 
  }
 /// Configure fields to gather active consent from customers.
-final class PostPaymentLinksRequestConsentCollection {const PostPaymentLinksRequestConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
+@immutable final class PostPaymentLinksRequestConsentCollection {const PostPaymentLinksRequestConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PostPaymentLinksRequestConsentCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestConsentCollection(
   paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,

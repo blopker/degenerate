@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wor_describe_workflow_instance_response_result_steps_step_config_retries.dart';final class WorDescribeWorkflowInstanceResponseResultStepsStepConfig {const WorDescribeWorkflowInstanceResponseResultStepsStepConfig({required this.retries, required this.timeout, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_step_config_retries.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepConfig {const WorDescribeWorkflowInstanceResponseResultStepsStepConfig({required this.retries, required this.timeout, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfig(
   retries: WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(json['retries'] as Map<String, dynamic>),

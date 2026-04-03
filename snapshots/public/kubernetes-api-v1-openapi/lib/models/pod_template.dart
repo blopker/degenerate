@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'pod_template_spec.dart';/// PodTemplate describes a template for creating copies of a predefined pod.
-final class PodTemplate {const PodTemplate({this.apiVersion, this.kind, this.metadata, this.template, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'pod_template_spec.dart';/// PodTemplate describes a template for creating copies of a predefined pod.
+@immutable final class PodTemplate {const PodTemplate({this.apiVersion, this.kind, this.metadata, this.template, });
 
 factory PodTemplate.fromJson(Map<String, dynamic> json) { return PodTemplate(
   apiVersion: json['apiVersion'] as String?,

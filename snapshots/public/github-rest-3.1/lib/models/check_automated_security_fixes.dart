@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Check Dependabot security updates
-final class CheckAutomatedSecurityFixes {const CheckAutomatedSecurityFixes({required this.enabled, required this.paused, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check Dependabot security updates
+@immutable final class CheckAutomatedSecurityFixes {const CheckAutomatedSecurityFixes({required this.enabled, required this.paused, });
 
 factory CheckAutomatedSecurityFixes.fromJson(Map<String, dynamic> json) { return CheckAutomatedSecurityFixes(
   enabled: json['enabled'] as bool,

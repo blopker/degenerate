@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
-final class AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme._(this.value);
+@immutable final class AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme._(this.value);
 
 factory AccessScimConfigAuthenticationOauth2Scheme.fromJson(String json) { return switch (json) {
   'oauth2' => oauth2,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessScimConfigAuthenticationOauth2Scheme($value)'; } 
  }
 /// Attributes for configuring OAuth 2 authentication scheme for SCIM provisioning to an application.
-final class AccessScimConfigAuthenticationOauth2 {const AccessScimConfigAuthenticationOauth2({required this.authorizationUrl, required this.clientId, required this.clientSecret, required this.scheme, this.scopes, required this.tokenUrl, });
+@immutable final class AccessScimConfigAuthenticationOauth2 {const AccessScimConfigAuthenticationOauth2({required this.authorizationUrl, required this.clientId, required this.clientSecret, required this.scheme, required this.tokenUrl, this.scopes, });
 
 factory AccessScimConfigAuthenticationOauth2.fromJson(Map<String, dynamic> json) { return AccessScimConfigAuthenticationOauth2(
   authorizationUrl: json['authorization_url'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTestHelpersTestClocksTestClockRequest {const GetTestHelpersTestClocksTestClockRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTestHelpersTestClocksTestClockRequest {const GetTestHelpersTestClocksTestClockRequest();
 
 factory GetTestHelpersTestClocksTestClockRequest.fromJson(Map<String, dynamic> json) { return GetTestHelpersTestClocksTestClockRequest(
 

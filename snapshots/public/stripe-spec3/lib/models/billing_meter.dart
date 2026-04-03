@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_meter_resource_aggregation_settings.dart';import 'billing_meter_resource_billing_meter_status_transitions.dart';import 'billing_meter_resource_billing_meter_value.dart';import 'billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
-final class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter_resource_aggregation_settings.dart';import 'billing_meter_resource_billing_meter_status_transitions.dart';import 'billing_meter_resource_billing_meter_value.dart';import 'billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
+@immutable final class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow._(this.value);
 
 factory BillingMeterEventTimeWindow.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterEventTimeWindow($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class BillingMeterObject {const BillingMeterObject._(this.value);
+@immutable final class BillingMeterObject {const BillingMeterObject._(this.value);
 
 factory BillingMeterObject.fromJson(String json) { return switch (json) {
   'billing.meter' => billingMeter,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterObject($value)'; } 
  }
 /// The meter's status.
-final class BillingMeterStatus {const BillingMeterStatus._(this.value);
+@immutable final class BillingMeterStatus {const BillingMeterStatus._(this.value);
 
 factory BillingMeterStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
 /// 
 /// Related guide: [Usage based billing](https://docs.stripe.com/billing/subscriptions/usage-based)
-final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, this.eventTimeWindow, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, });
+@immutable final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, this.eventTimeWindow, });
 
 factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
   created: (json['created'] as num).toInt(),

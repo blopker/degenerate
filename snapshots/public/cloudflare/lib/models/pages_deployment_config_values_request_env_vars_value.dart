@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_plain_text_env_var.dart';import 'pages_secret_text_env_var.dart';sealed class PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValue();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_plain_text_env_var.dart';import 'pages_secret_text_env_var.dart';sealed class PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValue();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory PagesDeploymentConfigValuesRequestEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown; } 
  }
-final class PagesDeploymentConfigValuesRequestEnvVarsValuePlainText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
+@immutable final class PagesDeploymentConfigValuesRequestEnvVarsValuePlainText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
 
 factory PagesDeploymentConfigValuesRequestEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(PagesPlainTextEnvVar.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final PagesPlainTextEnvVar pagesPlainTextEnvVar;
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(pagesPlainTextEnvVar: $pagesPlainTextEnvVar)'; } 
  }
-final class PagesDeploymentConfigValuesRequestEnvVarsValueSecretText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
+@immutable final class PagesDeploymentConfigValuesRequestEnvVarsValueSecretText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
 factory PagesDeploymentConfigValuesRequestEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(PagesSecretTextEnvVar.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final PagesSecretTextEnvVar pagesSecretTextEnvVar;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown(this.json);
+@immutable final class PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

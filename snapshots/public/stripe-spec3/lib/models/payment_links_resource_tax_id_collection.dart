@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentLinksResourceTaxIdCollectionRequired {const PaymentLinksResourceTaxIdCollectionRequired._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentLinksResourceTaxIdCollectionRequired {const PaymentLinksResourceTaxIdCollectionRequired._(this.value);
 
 factory PaymentLinksResourceTaxIdCollectionRequired.fromJson(String json) { return switch (json) {
   'if_supported' => ifSupported,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceTaxIdCollectionRequired($value)'; } 
  }
 /// 
-final class PaymentLinksResourceTaxIdCollection {const PaymentLinksResourceTaxIdCollection({required this.enabled, required this.$required, });
+@immutable final class PaymentLinksResourceTaxIdCollection {const PaymentLinksResourceTaxIdCollection({required this.enabled, required this.$required, });
 
 factory PaymentLinksResourceTaxIdCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceTaxIdCollection(
   enabled: json['enabled'] as bool,

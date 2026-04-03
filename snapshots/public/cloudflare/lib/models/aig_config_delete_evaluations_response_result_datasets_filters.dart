@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey {const AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey {const AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey._(this.value);
 
 factory AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey($value)'; } 
  }
-final class AigConfigDeleteEvaluationsResponseResultDatasetsFiltersOperator {const AigConfigDeleteEvaluationsResponseResultDatasetsFiltersOperator._(this.value);
+@immutable final class AigConfigDeleteEvaluationsResponseResultDatasetsFiltersOperator {const AigConfigDeleteEvaluationsResponseResultDatasetsFiltersOperator._(this.value);
 
 factory AigConfigDeleteEvaluationsResponseResultDatasetsFiltersOperator.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteEvaluationsResponseResultDatasetsFiltersOperator($value)'; } 
  }
-final class AigConfigDeleteEvaluationsResponseResultDatasetsFilters {const AigConfigDeleteEvaluationsResponseResultDatasetsFilters({required this.key, required this.$operator, required this.value, });
+@immutable final class AigConfigDeleteEvaluationsResponseResultDatasetsFilters {const AigConfigDeleteEvaluationsResponseResultDatasetsFilters({required this.key, required this.$operator, required this.value, });
 
 factory AigConfigDeleteEvaluationsResponseResultDatasetsFilters.fromJson(Map<String, dynamic> json) { return AigConfigDeleteEvaluationsResponseResultDatasetsFilters(
   key: AigConfigDeleteEvaluationsResponseResultDatasetsFiltersKey.fromJson(json['key'] as String),

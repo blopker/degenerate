@@ -7,9 +7,19 @@ resolution: workspace
 executables:
   degenerate: degenerate
 
+topics:
+  - openapi
+  - codegen
+  - swagger
+  - rest
+  - api-client
+
 platforms:
+  android:
+  ios:
   linux:
   macos:
+  web:
   windows:
 
 environment:

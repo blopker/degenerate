@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookWorkflowJobWaitingWorkflowJobStepsConclusion {const WebhookWorkflowJobWaitingWorkflowJobStepsConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookWorkflowJobWaitingWorkflowJobStepsConclusion {const WebhookWorkflowJobWaitingWorkflowJobStepsConclusion._(this.value);
 
 factory WebhookWorkflowJobWaitingWorkflowJobStepsConclusion.fromJson(String json) { return switch (json) {
   'failure' => failure,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobWaitingWorkflowJobStepsConclusion($value)'; } 
  }
-final class WebhookWorkflowJobWaitingWorkflowJobStepsStatus {const WebhookWorkflowJobWaitingWorkflowJobStepsStatus._(this.value);
+@immutable final class WebhookWorkflowJobWaitingWorkflowJobStepsStatus {const WebhookWorkflowJobWaitingWorkflowJobStepsStatus._(this.value);
 
 factory WebhookWorkflowJobWaitingWorkflowJobStepsStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobWaitingWorkflowJobStepsStatus($value)'; } 
  }
-final class WebhookWorkflowJobWaitingWorkflowJobSteps {const WebhookWorkflowJobWaitingWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
+@immutable final class WebhookWorkflowJobWaitingWorkflowJobSteps {const WebhookWorkflowJobWaitingWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
 
 factory WebhookWorkflowJobWaitingWorkflowJobSteps.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobWaitingWorkflowJobSteps(
   completedAt: json['completed_at'] as String?,

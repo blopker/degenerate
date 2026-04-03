@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates that the shell commands finished and returned an exit code.
-final class FunctionShellCallOutputExitOutcomeParam {const FunctionShellCallOutputExitOutcomeParam({this.type = 'exit', required this.exitCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that the shell commands finished and returned an exit code.
+@immutable final class FunctionShellCallOutputExitOutcomeParam {const FunctionShellCallOutputExitOutcomeParam({required this.exitCode, this.type = 'exit', });
 
 factory FunctionShellCallOutputExitOutcomeParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputExitOutcomeParam(
   type: json['type'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MagicMessages2 {const MagicMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicMessages2 {const MagicMessages2({required this.code, required this.message, });
 
 factory MagicMessages2.fromJson(Map<String, dynamic> json) { return MagicMessages2(
   code: (json['code'] as num).toInt(),

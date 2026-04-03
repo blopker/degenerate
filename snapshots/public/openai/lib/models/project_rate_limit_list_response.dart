@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_rate_limit.dart';final class ProjectRateLimitListResponseObject {const ProjectRateLimitListResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_rate_limit.dart';@immutable final class ProjectRateLimitListResponseObject {const ProjectRateLimitListResponseObject._(this.value);
 
 factory ProjectRateLimitListResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectRateLimitListResponseObject($value)'; } 
  }
-final class ProjectRateLimitListResponse {const ProjectRateLimitListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ProjectRateLimitListResponse {const ProjectRateLimitListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ProjectRateLimitListResponse.fromJson(Map<String, dynamic> json) { return ProjectRateLimitListResponse(
   object: ProjectRateLimitListResponseObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnAzureSetup {const McnAzureSetup({required this.azureConsentUrl, required this.integrationIdentityTag, required this.itemType, required this.tagCliCommand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnAzureSetup {const McnAzureSetup({required this.azureConsentUrl, required this.integrationIdentityTag, required this.itemType, required this.tagCliCommand, });
 
 factory McnAzureSetup.fromJson(Map<String, dynamic> json) { return McnAzureSetup(
   azureConsentUrl: json['azure_consent_url'] as String,

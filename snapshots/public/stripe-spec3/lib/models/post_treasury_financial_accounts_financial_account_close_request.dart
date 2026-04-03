@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_close_request_forwarding_settings.dart';final class PostTreasuryFinancialAccountsFinancialAccountCloseRequest {const PostTreasuryFinancialAccountsFinancialAccountCloseRequest({this.expand, this.forwardingSettings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_close_request_forwarding_settings.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountCloseRequest {const PostTreasuryFinancialAccountsFinancialAccountCloseRequest({this.expand, this.forwardingSettings, });
 
 factory PostTreasuryFinancialAccountsFinancialAccountCloseRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountCloseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

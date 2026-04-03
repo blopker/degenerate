@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a CERT record.
-final class DnsRecordsCertRecordData {const DnsRecordsCertRecordData({this.algorithm, this.certificate, this.keyTag, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a CERT record.
+@immutable final class DnsRecordsCertRecordData {const DnsRecordsCertRecordData({this.algorithm, this.certificate, this.keyTag, this.type, });
 
 factory DnsRecordsCertRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsCertRecordData(
   algorithm: json['algorithm'] != null ? (json['algorithm'] as num).toDouble() : null,

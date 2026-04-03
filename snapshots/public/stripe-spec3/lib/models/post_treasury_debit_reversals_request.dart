@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryDebitReversalsRequest {const PostTreasuryDebitReversalsRequest({this.expand, this.metadata, required this.receivedDebit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryDebitReversalsRequest {const PostTreasuryDebitReversalsRequest({required this.receivedDebit, this.expand, this.metadata, });
 
 factory PostTreasuryDebitReversalsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryDebitReversalsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

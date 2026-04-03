@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateServersRequest {const UpdateServersRequest({this.authCredentials, this.description, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateServersRequest {const UpdateServersRequest({this.authCredentials, this.description, this.name, });
 
 factory UpdateServersRequest.fromJson(Map<String, dynamic> json) { return UpdateServersRequest(
   authCredentials: json['auth_credentials'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_data_requests_response_asn.dart';import 'urlscanner_get_scan_response2_data_requests_response_geoip.dart';import 'urlscanner_get_scan_response2_data_requests_response_response.dart';final class UrlscannerGetScanResponse2DataRequestsResponse {const UrlscannerGetScanResponse2DataRequestsResponse({required this.asn, this.contentAvailable, required this.dataLength, required this.encodedDataLength, required this.geoip, required this.hasExtraInfo, this.hash, required this.requestId, required this.response, required this.size, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_response_asn.dart';import 'urlscanner_get_scan_response2_data_requests_response_geoip.dart';import 'urlscanner_get_scan_response2_data_requests_response_response.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsResponse {const UrlscannerGetScanResponse2DataRequestsResponse({required this.asn, required this.dataLength, required this.encodedDataLength, required this.geoip, required this.hasExtraInfo, required this.requestId, required this.response, required this.size, required this.type, this.contentAvailable, this.hash, });
 
 factory UrlscannerGetScanResponse2DataRequestsResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponse(
   asn: UrlscannerGetScanResponse2DataRequestsResponseAsn.fromJson(json['asn'] as Map<String, dynamic>),

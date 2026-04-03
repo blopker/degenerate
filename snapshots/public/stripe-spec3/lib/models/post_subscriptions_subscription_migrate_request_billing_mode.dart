@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_subscription_migrate_request_billing_mode_flexible.dart';final class PostSubscriptionsSubscriptionMigrateRequestBillingModeType {const PostSubscriptionsSubscriptionMigrateRequestBillingModeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_migrate_request_billing_mode_flexible.dart';@immutable final class PostSubscriptionsSubscriptionMigrateRequestBillingModeType {const PostSubscriptionsSubscriptionMigrateRequestBillingModeType._(this.value);
 
 factory PostSubscriptionsSubscriptionMigrateRequestBillingModeType.fromJson(String json) { return switch (json) {
   'flexible' => flexible,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsSubscriptionMigrateRequestBillingModeType($value)'; } 
  }
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
-final class PostSubscriptionsSubscriptionMigrateRequestBillingMode {const PostSubscriptionsSubscriptionMigrateRequestBillingMode({this.flexible, required this.type, });
+@immutable final class PostSubscriptionsSubscriptionMigrateRequestBillingMode {const PostSubscriptionsSubscriptionMigrateRequestBillingMode({required this.type, this.flexible, });
 
 factory PostSubscriptionsSubscriptionMigrateRequestBillingMode.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionMigrateRequestBillingMode(
   flexible: json['flexible'] != null ? PostSubscriptionsSubscriptionMigrateRequestBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,

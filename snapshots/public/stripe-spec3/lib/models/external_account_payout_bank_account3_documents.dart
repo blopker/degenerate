@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'external_account_payout_bank_account3_documents_bank_account_ownership_verification.dart';final class ExternalAccountPayoutBankAccount3Documents {const ExternalAccountPayoutBankAccount3Documents({this.bankAccountOwnershipVerification});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account3_documents_bank_account_ownership_verification.dart';@immutable final class ExternalAccountPayoutBankAccount3Documents {const ExternalAccountPayoutBankAccount3Documents({this.bankAccountOwnershipVerification});
 
 factory ExternalAccountPayoutBankAccount3Documents.fromJson(Map<String, dynamic> json) { return ExternalAccountPayoutBankAccount3Documents(
   bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null ? ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>) : null,

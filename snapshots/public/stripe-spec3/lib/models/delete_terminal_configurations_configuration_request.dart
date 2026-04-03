@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteTerminalConfigurationsConfigurationRequest {const DeleteTerminalConfigurationsConfigurationRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTerminalConfigurationsConfigurationRequest {const DeleteTerminalConfigurationsConfigurationRequest();
 
 factory DeleteTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return DeleteTerminalConfigurationsConfigurationRequest(
 

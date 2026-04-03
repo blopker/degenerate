@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_unique_devices_total.dart';final class DigitalExperienceMonitoringSchemasAggregateStat {const DigitalExperienceMonitoringSchemasAggregateStat({this.timestamp, this.uniqueDevicesTotal, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_unique_devices_total.dart';@immutable final class DigitalExperienceMonitoringSchemasAggregateStat {const DigitalExperienceMonitoringSchemasAggregateStat({this.timestamp, this.uniqueDevicesTotal, this.value, });
 
 factory DigitalExperienceMonitoringSchemasAggregateStat.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringSchemasAggregateStat(
   timestamp: json['timestamp'] != null ? DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String) : null,

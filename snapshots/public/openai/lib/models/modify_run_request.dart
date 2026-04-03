@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ModifyRunRequest {const ModifyRunRequest({this.metadata});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyRunRequest {const ModifyRunRequest({this.metadata});
 
 factory ModifyRunRequest.fromJson(Map<String, dynamic> json) { return ModifyRunRequest(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

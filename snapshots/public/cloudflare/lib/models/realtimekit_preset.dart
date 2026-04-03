@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_config.dart';import 'realtimekit_preset_permissions.dart';import 'realtimekit_preset_ui.dart';final class RealtimekitPreset {const RealtimekitPreset({required this.config, required this.name, this.permissions, required this.ui, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_config.dart';import 'realtimekit_preset_permissions.dart';import 'realtimekit_preset_ui.dart';@immutable final class RealtimekitPreset {const RealtimekitPreset({required this.config, required this.name, required this.ui, this.permissions, });
 
 factory RealtimekitPreset.fromJson(Map<String, dynamic> json) { return RealtimekitPreset(
   config: RealtimekitPresetConfig.fromJson(json['config'] as Map<String, dynamic>),

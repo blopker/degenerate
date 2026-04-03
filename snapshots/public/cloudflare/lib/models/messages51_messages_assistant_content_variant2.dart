@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesAssistantContentVariant2Type {const Messages51MessagesAssistantContentVariant2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesAssistantContentVariant2Type {const Messages51MessagesAssistantContentVariant2Type._(this.value);
 
 factory Messages51MessagesAssistantContentVariant2Type.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesAssistantContentVariant2Type($value)'; } 
  }
-final class Messages51MessagesAssistantContentVariant2 {const Messages51MessagesAssistantContentVariant2({this.refusal, this.text, required this.type, });
+@immutable final class Messages51MessagesAssistantContentVariant2 {const Messages51MessagesAssistantContentVariant2({required this.type, this.refusal, this.text, });
 
 factory Messages51MessagesAssistantContentVariant2.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistantContentVariant2(
   refusal: json['refusal'] as String?,

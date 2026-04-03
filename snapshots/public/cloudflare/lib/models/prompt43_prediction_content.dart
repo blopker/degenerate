@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_prediction_content_content.dart';import 'prompt43_prediction_content_content_variant2.dart';final class Prompt43PredictionContentType {const Prompt43PredictionContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_prediction_content_content.dart';import 'prompt43_prediction_content_content_variant2.dart';@immutable final class Prompt43PredictionContentType {const Prompt43PredictionContentType._(this.value);
 
 factory Prompt43PredictionContentType.fromJson(String json) { return switch (json) {
   'content' => content,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43PredictionContentType($value)'; } 
  }
-final class Prompt43PredictionContent {const Prompt43PredictionContent({required this.content, required this.type, });
+@immutable final class Prompt43PredictionContent {const Prompt43PredictionContent({required this.content, required this.type, });
 
 factory Prompt43PredictionContent.fromJson(Map<String, dynamic> json) { return Prompt43PredictionContent(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Prompt43PredictionContentContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),

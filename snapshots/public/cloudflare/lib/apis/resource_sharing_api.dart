@@ -26,7 +26,7 @@ if (targetType != null) {
 }
 if (resourceTypes != null) {
 for (final item in resourceTypes) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_types', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_types', value: item.toJson()));
 }
 }
 if (order != null) {
@@ -452,7 +452,7 @@ if (targetType != null) {
 }
 if (resourceTypes != null) {
 for (final item in resourceTypes) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_types', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_types', value: item.toJson()));
 }
 }
 if (order != null) {

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// Whether or not the Keyless SSL is on or off.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// Whether or not the Keyless SSL is on or off.
 extension type const TlsCertificatesAndHostnamesEnabledWrite(bool value) {
 factory TlsCertificatesAndHostnamesEnabledWrite.fromJson(bool json) => TlsCertificatesAndHostnamesEnabledWrite(json);
 
 bool toJson() => value;
 
 }
-final class KeylessSslForAZoneEditKeylessSslConfigurationRequest {const KeylessSslForAZoneEditKeylessSslConfigurationRequest({this.enabled, this.host, this.name, this.port, this.tunnel, });
+@immutable final class KeylessSslForAZoneEditKeylessSslConfigurationRequest {const KeylessSslForAZoneEditKeylessSslConfigurationRequest({this.enabled, this.host, this.name, this.port, this.tunnel, });
 
 factory KeylessSslForAZoneEditKeylessSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return KeylessSslForAZoneEditKeylessSslConfigurationRequest(
   enabled: json['enabled'] != null ? TlsCertificatesAndHostnamesEnabledWrite.fromJson(json['enabled'] as bool) : null,

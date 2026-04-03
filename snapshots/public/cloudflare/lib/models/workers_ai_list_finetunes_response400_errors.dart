@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiListFinetunesResponse400Errors {const WorkersAiListFinetunesResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiListFinetunesResponse400Errors {const WorkersAiListFinetunesResponse400Errors({required this.message});
 
 factory WorkersAiListFinetunesResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiListFinetunesResponse400Errors(
   message: json['message'] as String,

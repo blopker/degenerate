@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_database.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';import 'hyperdrive_identifier.dart';final class HyperdriveHyperdriveConfig {const HyperdriveHyperdriveConfig({this.caching, this.createdOn, required this.id, this.modifiedOn, this.mtls, required this.name, required this.origin, this.originConnectionLimit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_database.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';import 'hyperdrive_identifier.dart';@immutable final class HyperdriveHyperdriveConfig {const HyperdriveHyperdriveConfig({required this.id, required this.name, required this.origin, this.caching, this.createdOn, this.modifiedOn, this.mtls, this.originConnectionLimit, });
 
 factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveConfig(
   caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,

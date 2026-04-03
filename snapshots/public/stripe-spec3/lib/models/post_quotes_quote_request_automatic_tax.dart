@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_quotes_quote_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this quote and resulting invoices and subscriptions.
-final class PostQuotesQuoteRequestAutomaticTax {const PostQuotesQuoteRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_quote_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this quote and resulting invoices and subscriptions.
+@immutable final class PostQuotesQuoteRequestAutomaticTax {const PostQuotesQuoteRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostQuotesQuoteRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestAutomaticTax(
   enabled: json['enabled'] as bool,

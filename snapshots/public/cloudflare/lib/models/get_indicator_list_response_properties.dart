@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_indicator_list_response_properties_indicators.dart';import 'get_indicator_list_response_properties_pagination.dart';final class GetIndicatorListResponseProperties {const GetIndicatorListResponseProperties({required this.indicators, required this.pagination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_indicators.dart';import 'get_indicator_list_response_properties_pagination.dart';@immutable final class GetIndicatorListResponseProperties {const GetIndicatorListResponseProperties({required this.indicators, required this.pagination, });
 
 factory GetIndicatorListResponseProperties.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponseProperties(
   indicators: GetIndicatorListResponsePropertiesIndicators.fromJson(json['indicators'] as Map<String, dynamic>),

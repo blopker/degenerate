@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'argo_config_setting_value.dart';/// Configures the enablement of Argo Smart Routing.
-final class ArgoConfigPatch {const ArgoConfigPatch({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_config_setting_value.dart';/// Configures the enablement of Argo Smart Routing.
+@immutable final class ArgoConfigPatch {const ArgoConfigPatch({required this.value});
 
 factory ArgoConfigPatch.fromJson(Map<String, dynamic> json) { return ArgoConfigPatch(
   value: ArgoConfigSettingValue.fromJson(json['value'] as String),

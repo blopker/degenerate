@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_ip_info_location.dart';final class DigitalExperienceMonitoringIpInfo {const DigitalExperienceMonitoringIpInfo({this.address, this.asn, this.aso, this.location, this.netmask, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_ip_info_location.dart';@immutable final class DigitalExperienceMonitoringIpInfo {const DigitalExperienceMonitoringIpInfo({this.address, this.asn, this.aso, this.location, this.netmask, this.version, });
 
 factory DigitalExperienceMonitoringIpInfo.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringIpInfo(
   address: json['address'] as String?,

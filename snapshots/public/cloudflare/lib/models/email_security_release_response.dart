@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_postfix_id.dart';final class EmailSecurityReleaseResponse {const EmailSecurityReleaseResponse({this.delivered, this.failed, this.undelivered, required this.id, required this.postfixId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_postfix_id.dart';@immutable final class EmailSecurityReleaseResponse {const EmailSecurityReleaseResponse({required this.id, required this.postfixId, this.delivered, this.failed, this.undelivered, });
 
 factory EmailSecurityReleaseResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityReleaseResponse(
   delivered: (json['delivered'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_dataset_request_filters.dart';final class AigConfigUpdateDatasetRequest {const AigConfigUpdateDatasetRequest({required this.enable, required this.filters, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_dataset_request_filters.dart';@immutable final class AigConfigUpdateDatasetRequest {const AigConfigUpdateDatasetRequest({required this.enable, required this.filters, required this.name, });
 
 factory AigConfigUpdateDatasetRequest.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetRequest(
   enable: json['enable'] as bool,

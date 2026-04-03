@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_send_event_workflow_instance_response404_errors.dart';final class WorSendEventWorkflowInstanceResponse404 {const WorSendEventWorkflowInstanceResponse404({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_send_event_workflow_instance_response404_errors.dart';@immutable final class WorSendEventWorkflowInstanceResponse404 {const WorSendEventWorkflowInstanceResponse404({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorSendEventWorkflowInstanceResponse404.fromJson(Map<String, dynamic> json) { return WorSendEventWorkflowInstanceResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorSendEventWorkflowInstanceResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

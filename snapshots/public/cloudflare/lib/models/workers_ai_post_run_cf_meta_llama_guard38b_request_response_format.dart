@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Dictate the output format of the generated response.
-final class WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat {const WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat({this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Dictate the output format of the generated response.
+@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat {const WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat({this.type});
 
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat(
   type: json['type'] as String?,

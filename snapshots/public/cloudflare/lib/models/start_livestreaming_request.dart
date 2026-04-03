@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'start_livestreaming_request_video_config.dart';final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name, this.videoConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_livestreaming_request_video_config.dart';@immutable final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name, this.videoConfig, });
 
 factory StartLivestreamingRequest.fromJson(Map<String, dynamic> json) { return StartLivestreamingRequest(
   name: json['name'] as String?,

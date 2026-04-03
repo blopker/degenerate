@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryOutboundTransfersOutboundTransferRequest {const GetTreasuryOutboundTransfersOutboundTransferRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryOutboundTransfersOutboundTransferRequest {const GetTreasuryOutboundTransfersOutboundTransferRequest();
 
 factory GetTreasuryOutboundTransfersOutboundTransferRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryOutboundTransfersOutboundTransferRequest(
 

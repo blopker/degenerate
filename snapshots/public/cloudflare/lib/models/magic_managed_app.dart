@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_app_name.dart';import 'magic_app_type.dart';import 'magic_cidr.dart';import 'magic_managed_app_id.dart';/// Managed app defined by Cloudflare.
-final class MagicManagedApp {const MagicManagedApp({this.hostnames, this.ipSubnets, required this.managedAppId, this.name, this.sourceSubnets, this.type, });
+@immutable final class MagicManagedApp {const MagicManagedApp({required this.managedAppId, this.hostnames, this.ipSubnets, this.name, this.sourceSubnets, this.type, });
 
 factory MagicManagedApp.fromJson(Map<String, dynamic> json) { return MagicManagedApp(
   hostnames: (json['hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),

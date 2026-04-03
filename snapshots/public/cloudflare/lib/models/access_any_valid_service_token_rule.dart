@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Matches any valid Access Service Token
-final class AccessAnyValidServiceTokenRule {const AccessAnyValidServiceTokenRule({required this.anyValidServiceToken});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches any valid Access Service Token
+@immutable final class AccessAnyValidServiceTokenRule {const AccessAnyValidServiceTokenRule({required this.anyValidServiceToken});
 
 factory AccessAnyValidServiceTokenRule.fromJson(Map<String, dynamic> json) { return AccessAnyValidServiceTokenRule(
   anyValidServiceToken: (json['any_valid_service_token'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

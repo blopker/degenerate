@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this session.
-final class PaymentPagesCheckoutSessionAutomaticTaxStatus {const PaymentPagesCheckoutSessionAutomaticTaxStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this session.
+@immutable final class PaymentPagesCheckoutSessionAutomaticTaxStatus {const PaymentPagesCheckoutSessionAutomaticTaxStatus._(this.value);
 
 factory PaymentPagesCheckoutSessionAutomaticTaxStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionAutomaticTaxStatus($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionAutomaticTax {const PaymentPagesCheckoutSessionAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });
+@immutable final class PaymentPagesCheckoutSessionAutomaticTax {const PaymentPagesCheckoutSessionAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });
 
 factory PaymentPagesCheckoutSessionAutomaticTax.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAutomaticTax(
   enabled: json['enabled'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'project_service_account.dart';import 'project_user.dart';/// `user` or `service_account`
-final class Key3OwnerType {const Key3OwnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_service_account.dart';import 'project_user.dart';/// `user` or `service_account`
+@immutable final class Key3OwnerType {const Key3OwnerType._(this.value);
 
 factory Key3OwnerType.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Key3OwnerType($value)'; } 
  }
-final class Key3Owner {const Key3Owner({this.type, this.user, this.serviceAccount, });
+@immutable final class Key3Owner {const Key3Owner({this.type, this.user, this.serviceAccount, });
 
 factory Key3Owner.fromJson(Map<String, dynamic> json) { return Key3Owner(
   type: json['type'] != null ? Key3OwnerType.fromJson(json['type'] as String) : null,

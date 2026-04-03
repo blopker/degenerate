@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataKonbini {const PostPaymentIntentsIntentRequestPaymentMethodDataKonbini();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataKonbini {const PostPaymentIntentsIntentRequestPaymentMethodDataKonbini();
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataKonbini.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataKonbini(
 

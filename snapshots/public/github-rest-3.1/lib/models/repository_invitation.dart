@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'minimal_repository.dart';import 'simple_user.dart';/// The permission associated with the invitation.
-final class RepositoryInvitationPermissions {const RepositoryInvitationPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'simple_user.dart';/// The permission associated with the invitation.
+@immutable final class RepositoryInvitationPermissions {const RepositoryInvitationPermissions._(this.value);
 
 factory RepositoryInvitationPermissions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryInvitationPermissions($value)'; } 
  }
 /// Repository invitations let you manage who you collaborate with.
-final class RepositoryInvitation {const RepositoryInvitation({required this.id, required this.repository, required this.invitee, required this.inviter, required this.permissions, required this.createdAt, this.expired, required this.url, required this.htmlUrl, required this.nodeId, });
+@immutable final class RepositoryInvitation {const RepositoryInvitation({required this.id, required this.repository, required this.invitee, required this.inviter, required this.permissions, required this.createdAt, required this.url, required this.htmlUrl, required this.nodeId, this.expired, });
 
 factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return RepositoryInvitation(
   id: (json['id'] as num).toInt(),

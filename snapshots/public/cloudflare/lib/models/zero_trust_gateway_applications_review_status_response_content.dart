@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_read_only_timestamp.dart';final class ZeroTrustGatewayApplicationsReviewStatusResponseContent {const ZeroTrustGatewayApplicationsReviewStatusResponseContent({this.approvedApps, this.createdAt, this.inReviewApps, this.unapprovedApps, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_read_only_timestamp.dart';@immutable final class ZeroTrustGatewayApplicationsReviewStatusResponseContent {const ZeroTrustGatewayApplicationsReviewStatusResponseContent({this.approvedApps, this.createdAt, this.inReviewApps, this.unapprovedApps, this.updatedAt, });
 
 factory ZeroTrustGatewayApplicationsReviewStatusResponseContent.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
   approvedApps: (json['approved_apps'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

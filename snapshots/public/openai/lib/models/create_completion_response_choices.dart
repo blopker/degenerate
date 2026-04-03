@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_completion_response_choices_logprobs.dart';/// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_completion_response_choices_logprobs.dart';/// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
 /// `length` if the maximum number of tokens specified in the request was reached,
 /// or `content_filter` if content was omitted due to a flag from our content filters.
 /// 
-final class CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason._(this.value);
+@immutable final class CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason._(this.value);
 
 factory CreateCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
   'stop' => stop,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateCompletionResponseChoicesFinishReason($value)'; } 
  }
-final class CreateCompletionResponseChoices {const CreateCompletionResponseChoices({required this.finishReason, required this.index, required this.logprobs, required this.text, });
+@immutable final class CreateCompletionResponseChoices {const CreateCompletionResponseChoices({required this.finishReason, required this.index, required this.logprobs, required this.text, });
 
 factory CreateCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return CreateCompletionResponseChoices(
   finishReason: CreateCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),

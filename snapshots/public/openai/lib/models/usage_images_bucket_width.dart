@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageImagesBucketWidth {const UsageImagesBucketWidth._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesBucketWidth {const UsageImagesBucketWidth._(this.value);
 
 factory UsageImagesBucketWidth.fromJson(String json) { return switch (json) {
   '1m' => $1m,

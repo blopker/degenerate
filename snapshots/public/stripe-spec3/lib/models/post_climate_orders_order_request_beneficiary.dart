@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'beneficiary_params.dart';final class PostClimateOrdersOrderRequestBeneficiaryVariant2 {const PostClimateOrdersOrderRequestBeneficiaryVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'beneficiary_params.dart';@immutable final class PostClimateOrdersOrderRequestBeneficiaryVariant2 {const PostClimateOrdersOrderRequestBeneficiaryVariant2._(this.value);
 
 factory PostClimateOrdersOrderRequestBeneficiaryVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

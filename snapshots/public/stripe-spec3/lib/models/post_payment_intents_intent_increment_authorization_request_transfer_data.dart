@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The parameters used to automatically create a transfer after the payment is captured.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The parameters used to automatically create a transfer after the payment is captured.
 /// Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final class PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData {const PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData({this.amount});
+@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData {const PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData({this.amount});
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

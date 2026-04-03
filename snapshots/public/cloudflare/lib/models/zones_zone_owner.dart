@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';/// The owner of the zone.
-final class ZonesZoneOwner {const ZonesZoneOwner({this.id, this.name, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';/// The owner of the zone.
+@immutable final class ZonesZoneOwner {const ZonesZoneOwner({this.id, this.name, this.type, });
 
 factory ZonesZoneOwner.fromJson(Map<String, dynamic> json) { return ZonesZoneOwner(
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,

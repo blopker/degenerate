@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'snippets_page.dart';import 'snippets_per_page.dart';/// Additional information to navigate the results.
-final class SnippetsResultInfo {const SnippetsResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'snippets_page.dart';import 'snippets_per_page.dart';/// Additional information to navigate the results.
+@immutable final class SnippetsResultInfo {const SnippetsResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
 
 factory SnippetsResultInfo.fromJson(Map<String, dynamic> json) { return SnippetsResultInfo(
   count: (json['count'] as num).toInt(),

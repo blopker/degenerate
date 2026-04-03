@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An object without any properties.
-final class EmptyObject {const EmptyObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object without any properties.
+@immutable final class EmptyObject {const EmptyObject();
 
 factory EmptyObject.fromJson(Map<String, dynamic> json) { return EmptyObject(
 

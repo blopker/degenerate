@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_custom_page_without_html.dart';final class AccessSingleResponseWithoutHtml {const AccessSingleResponseWithoutHtml({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_page_without_html.dart';@immutable final class AccessSingleResponseWithoutHtml {const AccessSingleResponseWithoutHtml({this.result});
 
 factory AccessSingleResponseWithoutHtml.fromJson(Map<String, dynamic> json) { return AccessSingleResponseWithoutHtml(
   result: json['result'] != null ? AccessCustomPageWithoutHtml.fromJson(json['result'] as Map<String, dynamic>) : null,

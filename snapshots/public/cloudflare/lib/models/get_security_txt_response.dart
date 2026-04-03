@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_messages2.dart';import 'security_center_security_txt.dart';final class GetSecurityTxtResponse {const GetSecurityTxtResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_messages2.dart';import 'security_center_security_txt.dart';@immutable final class GetSecurityTxtResponse {const GetSecurityTxtResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory GetSecurityTxtResponse.fromJson(Map<String, dynamic> json) { return GetSecurityTxtResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),

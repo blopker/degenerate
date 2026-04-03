@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'invoice_setting_subscription_schedule_setting.dart';import 'payment_method.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedules_resource_default_settings_automatic_tax.dart';import 'subscription_schedules_resource_default_settings_default_payment_method.dart';import 'subscription_schedules_resource_default_settings_on_behalf_of.dart';import 'subscription_transfer_data.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-final class SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor {const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._(this.value);
+@immutable final class SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor {const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._(this.value);
 
 factory SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor($value)'; } 
  }
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
-final class SubscriptionSchedulesResourceDefaultSettingsCollectionMethod {const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._(this.value);
+@immutable final class SubscriptionSchedulesResourceDefaultSettingsCollectionMethod {const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._(this.value);
 
 factory SubscriptionSchedulesResourceDefaultSettingsCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsCollectionMethod($value)'; } 
  }
 /// 
-final class SubscriptionSchedulesResourceDefaultSettings {const SubscriptionSchedulesResourceDefaultSettings({this.applicationFeePercent, this.automaticTax, required this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, required this.invoiceSettings, this.onBehalfOf, this.transferData, });
+@immutable final class SubscriptionSchedulesResourceDefaultSettings {const SubscriptionSchedulesResourceDefaultSettings({required this.billingCycleAnchor, required this.invoiceSettings, this.applicationFeePercent, this.automaticTax, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, this.onBehalfOf, this.transferData, });
 
 factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceDefaultSettings(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,

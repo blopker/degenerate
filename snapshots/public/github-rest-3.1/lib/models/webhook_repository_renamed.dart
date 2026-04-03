@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_repository_renamed_changes.dart';final class WebhookRepositoryRenamedAction {const WebhookRepositoryRenamedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_repository_renamed_changes.dart';@immutable final class WebhookRepositoryRenamedAction {const WebhookRepositoryRenamedAction._(this.value);
 
 factory WebhookRepositoryRenamedAction.fromJson(String json) { return switch (json) {
   'renamed' => renamed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRepositoryRenamedAction($value)'; } 
  }
-final class WebhookRepositoryRenamed {const WebhookRepositoryRenamed({required this.action, required this.changes, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookRepositoryRenamed {const WebhookRepositoryRenamed({required this.action, required this.changes, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryRenamed.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRenamed(
   action: WebhookRepositoryRenamedAction.fromJson(json['action'] as String),

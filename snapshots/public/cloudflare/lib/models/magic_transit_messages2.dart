@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_transit_messages2_source.dart';final class MagicTransitMessages2 {const MagicTransitMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_messages2_source.dart';@immutable final class MagicTransitMessages2 {const MagicTransitMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory MagicTransitMessages2.fromJson(Map<String, dynamic> json) { return MagicTransitMessages2(
   code: (json['code'] as num).toInt(),

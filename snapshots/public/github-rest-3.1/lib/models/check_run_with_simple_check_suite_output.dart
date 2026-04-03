@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CheckRunWithSimpleCheckSuiteOutput {const CheckRunWithSimpleCheckSuiteOutput({required this.annotationsCount, required this.annotationsUrl, required this.summary, required this.text, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckRunWithSimpleCheckSuiteOutput {const CheckRunWithSimpleCheckSuiteOutput({required this.annotationsCount, required this.annotationsUrl, required this.summary, required this.text, required this.title, });
 
 factory CheckRunWithSimpleCheckSuiteOutput.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuiteOutput(
   annotationsCount: (json['annotations_count'] as num).toInt(),

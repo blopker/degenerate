@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate_outputs.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate_properties.dart';final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRateType {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate_outputs.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate_properties.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRateType {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRateType._(this.value);
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRateType.fromJson(String json) { return switch (json) {
   'rate' => rate,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRateType($value)'; } 
  }
-final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate(
   id: json['id'] as String,

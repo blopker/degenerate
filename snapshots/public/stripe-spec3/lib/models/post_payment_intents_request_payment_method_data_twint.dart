@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestPaymentMethodDataTwint {const PostPaymentIntentsRequestPaymentMethodDataTwint();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataTwint {const PostPaymentIntentsRequestPaymentMethodDataTwint();
 
 factory PostPaymentIntentsRequestPaymentMethodDataTwint.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataTwint(
 

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_session_create_request_ga.dart';/// Parameters required to initiate a realtime call and receive the SDP answer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_session_create_request_ga.dart';/// Parameters required to initiate a realtime call and receive the SDP answer
 /// needed to complete a WebRTC peer connection. Provide an SDP offer generated
 /// by your client and optionally configure the session that will answer the call.
-final class RealtimeCallCreateRequest {const RealtimeCallCreateRequest({required this.sdp, this.session, });
+@immutable final class RealtimeCallCreateRequest {const RealtimeCallCreateRequest({required this.sdp, this.session, });
 
 factory RealtimeCallCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeCallCreateRequest(
   sdp: json['sdp'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'managed_fields_entry.dart';import 'owner_reference.dart';import 'time.dart';/// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
-final class ObjectMeta {const ObjectMeta({this.annotations, this.creationTimestamp, this.deletionGracePeriodSeconds, this.deletionTimestamp, this.finalizers, this.generateName, this.generation, this.labels, this.managedFields, this.name, this.namespace, this.ownerReferences, this.resourceVersion, this.selfLink, this.uid, });
+@immutable final class ObjectMeta {const ObjectMeta({this.annotations, this.creationTimestamp, this.deletionGracePeriodSeconds, this.deletionTimestamp, this.finalizers, this.generateName, this.generation, this.labels, this.managedFields, this.name, this.namespace, this.ownerReferences, this.resourceVersion, this.selfLink, this.uid, });
 
 factory ObjectMeta.fromJson(Map<String, dynamic> json) { return ObjectMeta(
   annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

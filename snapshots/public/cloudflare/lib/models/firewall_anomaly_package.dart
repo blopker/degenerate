@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_action_mode.dart';import 'firewall_identifier.dart';import 'firewall_sensitivity.dart';import 'firewall_status.dart';/// A summary of the purpose/function of the WAF package.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action_mode.dart';import 'firewall_identifier.dart';import 'firewall_sensitivity.dart';import 'firewall_status.dart';/// A summary of the purpose/function of the WAF package.
 extension type const FirewallAnomalyDescription(String value) {
 factory FirewallAnomalyDescription.fromJson(String json) => FirewallAnomalyDescription(json);
 
@@ -21,7 +21,7 @@ factory FirewallAnomalyName.fromJson(String json) => FirewallAnomalyName(json);
 String toJson() => value;
 
 }
-final class FirewallAnomalyPackage {const FirewallAnomalyPackage({required this.description, required this.detectionMode, required this.id, required this.name, this.status, required this.zoneId, required this.actionMode, required this.sensitivity, });
+@immutable final class FirewallAnomalyPackage {const FirewallAnomalyPackage({required this.description, required this.detectionMode, required this.id, required this.name, required this.zoneId, required this.actionMode, required this.sensitivity, this.status, });
 
 factory FirewallAnomalyPackage.fromJson(Map<String, dynamic> json) { return FirewallAnomalyPackage(
   description: FirewallAnomalyDescription.fromJson(json['description'] as String),

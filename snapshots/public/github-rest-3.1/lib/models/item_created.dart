@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ItemCreatedAction {const ItemCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ItemCreatedAction {const ItemCreatedAction._(this.value);
 
 factory ItemCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ItemCreatedAction($value)'; } 
  }
-final class ItemCreated {const ItemCreated({required this.action, this.installation, required this.organization, required this.projectsV2Item, required this.sender, });
+@immutable final class ItemCreated {const ItemCreated({required this.action, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
 factory ItemCreated.fromJson(Map<String, dynamic> json) { return ItemCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),

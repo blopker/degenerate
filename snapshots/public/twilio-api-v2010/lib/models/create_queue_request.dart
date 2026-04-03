@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateQueueRequest {const CreateQueueRequest({required this.friendlyName, this.maxSize, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateQueueRequest {const CreateQueueRequest({required this.friendlyName, this.maxSize, });
 
 factory CreateQueueRequest.fromJson(Map<String, dynamic> json) { return CreateQueueRequest(
   friendlyName: json['FriendlyName'] as String,

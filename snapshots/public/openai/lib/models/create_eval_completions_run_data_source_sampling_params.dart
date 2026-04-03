@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_tool.dart';import 'create_eval_completions_run_data_source_sampling_params_response_format.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';final class CreateEvalCompletionsRunDataSourceSamplingParams {const CreateEvalCompletionsRunDataSourceSamplingParams({this.reasoningEffort, this.temperature = 1.0, this.maxCompletionTokens, this.topP = 1.0, this.seed = 42, this.responseFormat, this.tools, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_tool.dart';import 'create_eval_completions_run_data_source_sampling_params_response_format.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';@immutable final class CreateEvalCompletionsRunDataSourceSamplingParams {const CreateEvalCompletionsRunDataSourceSamplingParams({this.reasoningEffort, this.temperature = 1.0, this.maxCompletionTokens, this.topP = 1.0, this.seed = 42, this.responseFormat, this.tools, });
 
 factory CreateEvalCompletionsRunDataSourceSamplingParams.fromJson(Map<String, dynamic> json) { return CreateEvalCompletionsRunDataSourceSamplingParams(
   reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,

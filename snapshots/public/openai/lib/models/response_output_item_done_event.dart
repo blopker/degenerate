@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'output_item.dart';/// The type of the event. Always `response.output_item.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// The type of the event. Always `response.output_item.done`.
 /// 
-final class ResponseOutputItemDoneEventType {const ResponseOutputItemDoneEventType._(this.value);
+@immutable final class ResponseOutputItemDoneEventType {const ResponseOutputItemDoneEventType._(this.value);
 
 factory ResponseOutputItemDoneEventType.fromJson(String json) { return switch (json) {
   'response.output_item.done' => responseOutputItemDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseOutputItemDoneEventType($value)'; } 
  }
 /// Emitted when an output item is marked done.
-final class ResponseOutputItemDoneEvent {const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
+@immutable final class ResponseOutputItemDoneEvent {const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
 factory ResponseOutputItemDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemDoneEvent(
   type: ResponseOutputItemDoneEventType.fromJson(json['type'] as String),

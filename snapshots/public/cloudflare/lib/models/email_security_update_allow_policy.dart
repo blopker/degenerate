@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_pattern_type.dart';final class EmailSecurityUpdateAllowPolicy {const EmailSecurityUpdateAllowPolicy({this.comments, this.isAcceptableSender, this.isExemptRecipient, this.isRegex, this.isTrustedSender, this.pattern, this.patternType, this.verifySender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityUpdateAllowPolicy {const EmailSecurityUpdateAllowPolicy({this.comments, this.isAcceptableSender, this.isExemptRecipient, this.isRegex, this.isTrustedSender, this.pattern, this.patternType, this.verifySender, });
 
 factory EmailSecurityUpdateAllowPolicy.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateAllowPolicy(
   comments: json['comments'] as String?,

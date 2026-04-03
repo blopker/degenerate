@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_document_fingerprint.dart';final class DlpDocumentFingerprintsReadAllResponse {const DlpDocumentFingerprintsReadAllResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_document_fingerprint.dart';@immutable final class DlpDocumentFingerprintsReadAllResponse {const DlpDocumentFingerprintsReadAllResponse({this.result});
 
 factory DlpDocumentFingerprintsReadAllResponse.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintsReadAllResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DlpDocumentFingerprint.fromJson(e as Map<String, dynamic>)).toList(),

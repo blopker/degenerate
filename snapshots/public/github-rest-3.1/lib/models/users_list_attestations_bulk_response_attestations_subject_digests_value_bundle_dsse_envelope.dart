@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope {const UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope({this.additionalProperties = const {}});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope {const UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope({this.additionalProperties = const {}});
 
 factory UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope(
 

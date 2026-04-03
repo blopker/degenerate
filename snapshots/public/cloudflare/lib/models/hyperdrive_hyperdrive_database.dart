@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the URL scheme used to connect to your origin database.
-final class HyperdriveHyperdriveScheme {const HyperdriveHyperdriveScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the URL scheme used to connect to your origin database.
+@immutable final class HyperdriveHyperdriveScheme {const HyperdriveHyperdriveScheme._(this.value);
 
 factory HyperdriveHyperdriveScheme.fromJson(String json) { return switch (json) {
   'postgres' => postgres,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'HyperdriveHyperdriveScheme($value)'; } 
  }
-final class HyperdriveHyperdriveDatabase {const HyperdriveHyperdriveDatabase({this.database, this.password, this.scheme, this.user, });
+@immutable final class HyperdriveHyperdriveDatabase {const HyperdriveHyperdriveDatabase({this.database, this.password, this.scheme, this.user, });
 
 factory HyperdriveHyperdriveDatabase.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveDatabase(
   database: json['database'] as String?,

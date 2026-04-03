@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.image_generation_call.partial_image'.
-final class ResponseImageGenCallPartialImageEventType {const ResponseImageGenCallPartialImageEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.image_generation_call.partial_image'.
+@immutable final class ResponseImageGenCallPartialImageEventType {const ResponseImageGenCallPartialImageEventType._(this.value);
 
 factory ResponseImageGenCallPartialImageEventType.fromJson(String json) { return switch (json) {
   'response.image_generation_call.partial_image' => responseImageGenerationCallPartialImage,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when a partial image is available during image generation streaming.
 /// 
-final class ResponseImageGenCallPartialImageEvent {const ResponseImageGenCallPartialImageEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, required this.partialImageIndex, required this.partialImageB64, });
+@immutable final class ResponseImageGenCallPartialImageEvent {const ResponseImageGenCallPartialImageEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, required this.partialImageIndex, required this.partialImageB64, });
 
 factory ResponseImageGenCallPartialImageEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallPartialImageEvent(
   type: ResponseImageGenCallPartialImageEventType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// License Simple
-final class LicenseSimple {const LicenseSimple({required this.key, required this.name, required this.url, required this.spdxId, required this.nodeId, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// License Simple
+@immutable final class LicenseSimple {const LicenseSimple({required this.key, required this.name, required this.url, required this.spdxId, required this.nodeId, this.htmlUrl, });
 
 factory LicenseSimple.fromJson(Map<String, dynamic> json) { return LicenseSimple(
   key: json['key'] as String,

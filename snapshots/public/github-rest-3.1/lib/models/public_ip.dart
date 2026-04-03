@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides details of Public IP for a GitHub-hosted larger runners
-final class PublicIp {const PublicIp({this.enabled, this.prefix, this.length, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of Public IP for a GitHub-hosted larger runners
+@immutable final class PublicIp {const PublicIp({this.enabled, this.prefix, this.length, });
 
 factory PublicIp.fromJson(Map<String, dynamic> json) { return PublicIp(
   enabled: json['enabled'] as bool?,

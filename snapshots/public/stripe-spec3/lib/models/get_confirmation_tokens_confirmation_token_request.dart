@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetConfirmationTokensConfirmationTokenRequest {const GetConfirmationTokensConfirmationTokenRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetConfirmationTokensConfirmationTokenRequest {const GetConfirmationTokensConfirmationTokenRequest();
 
 factory GetConfirmationTokensConfirmationTokenRequest.fromJson(Map<String, dynamic> json) { return GetConfirmationTokensConfirmationTokenRequest(
 

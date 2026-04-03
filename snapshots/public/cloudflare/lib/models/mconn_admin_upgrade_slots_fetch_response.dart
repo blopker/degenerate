@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_upgrade_slot.dart';final class MconnAdminUpgradeSlotsFetchResponse {const MconnAdminUpgradeSlotsFetchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_upgrade_slot.dart';@immutable final class MconnAdminUpgradeSlotsFetchResponse {const MconnAdminUpgradeSlotsFetchResponse({this.result});
 
 factory MconnAdminUpgradeSlotsFetchResponse.fromJson(Map<String, dynamic> json) { return MconnAdminUpgradeSlotsFetchResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MconnAdminUpgradeSlot.fromJson(e as Map<String, dynamic>)).toList(),

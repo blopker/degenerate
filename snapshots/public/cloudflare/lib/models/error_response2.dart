@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_rest_error.dart';final class ErrorResponse2 {const ErrorResponse2({this.errors, this.result, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_rest_error.dart';@immutable final class ErrorResponse2 {const ErrorResponse2({this.errors, this.result, this.success, });
 
 factory ErrorResponse2.fromJson(Map<String, dynamic> json) { return ErrorResponse2(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlRestError.fromJson(e as Map<String, dynamic>)).toList(),

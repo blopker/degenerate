@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_pacfile.dart';final class ZeroTrustGatewayPacfilesComponentsSchemasSingleResponse {const ZeroTrustGatewayPacfilesComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_pacfile.dart';@immutable final class ZeroTrustGatewayPacfilesComponentsSchemasSingleResponse {const ZeroTrustGatewayPacfilesComponentsSchemasSingleResponse({this.result});
 
 factory ZeroTrustGatewayPacfilesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayPacfilesComponentsSchemasSingleResponse(
   result: json['result'] != null ? ZeroTrustGatewayPacfile.fromJson(json['result'] as Map<String, dynamic>) : null,

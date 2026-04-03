@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'verifone_p400.dart';final class PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2 {const PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'verifone_p400.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2 {const PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2._(this.value);
 
 factory PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2.fromJson(String json) { return switch (json) {
   '' => $empty,

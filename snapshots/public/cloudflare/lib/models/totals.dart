@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth2.dart';import 'pageviews.dart';import 'requests.dart';import 'since.dart';import 'threats.dart';import 'uniques.dart';import 'until.dart';/// Breakdown of totals by data type.
-final class Totals {const Totals({this.bandwidth, this.pageviews, this.requests, this.since, this.threats, this.uniques, this.until, });
+@immutable final class Totals {const Totals({this.bandwidth, this.pageviews, this.requests, this.since, this.threats, this.uniques, this.until, });
 
 factory Totals.fromJson(Map<String, dynamic> json) { return Totals(
   bandwidth: json['bandwidth'] != null ? Bandwidth2.fromJson(json['bandwidth'] as Map<String, dynamic>) : null,

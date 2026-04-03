@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that an unknown internal server error has occurred.
-final class WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that an unknown internal server error has occurred.
+@immutable final class WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode._(this.value);
 
 factory WorkersErrorInternalServerCode.fromJson(int json) { return switch (json) {
   10002 => $10002,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorInternalServerCode($value)'; } 
  }
-final class WorkersErrorInternalServer {const WorkersErrorInternalServer({required this.code, required this.message, });
+@immutable final class WorkersErrorInternalServer {const WorkersErrorInternalServer({required this.code, required this.message, });
 
 factory WorkersErrorInternalServer.fromJson(Map<String, dynamic> json) { return WorkersErrorInternalServer(
   code: WorkersErrorInternalServerCode.fromJson((json['code'] as num).toInt()),

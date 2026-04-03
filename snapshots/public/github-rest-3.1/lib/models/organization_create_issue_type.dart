@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Color for the issue type.
-final class OrganizationCreateIssueTypeColor {const OrganizationCreateIssueTypeColor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Color for the issue type.
+@immutable final class OrganizationCreateIssueTypeColor {const OrganizationCreateIssueTypeColor._(this.value);
 
 factory OrganizationCreateIssueTypeColor.fromJson(String json) { return switch (json) {
   'gray' => gray,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrganizationCreateIssueTypeColor($value)'; } 
  }
-final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description, this.color, });
+@immutable final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description, this.color, });
 
 factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) { return OrganizationCreateIssueType(
   name: json['name'] as String,

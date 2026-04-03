@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, required this.timestamps, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(
   $1GbpsTo10Gbps: (json['_1_GBPS_TO_10_GBPS'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Selects a key from a ConfigMap.
-final class ConfigMapKeySelector {const ConfigMapKeySelector({this.key = '', this.name = '', this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Selects a key from a ConfigMap.
+@immutable final class ConfigMapKeySelector {const ConfigMapKeySelector({this.key = '', this.name = '', this.optional, });
 
 factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) { return ConfigMapKeySelector(
   key: json['key'] as String,

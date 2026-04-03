@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'contact_properties.dart';import 'locked.dart';import 'transfer_in.dart';/// Shows if a domain is available for transferring into Cloudflare Registrar.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'contact_properties.dart';import 'locked.dart';import 'transfer_in.dart';/// Shows if a domain is available for transferring into Cloudflare Registrar.
 extension type const Available(bool value) {
 factory Available.fromJson(bool json) => Available(json);
 
@@ -63,7 +63,7 @@ factory UpdatedAt.fromJson(String json) => UpdatedAt(DateTime.parse(json));
 String toJson() => value.toIso8601String();
 
 }
-final class DomainProperties {const DomainProperties({this.available, this.canRegister, this.createdAt, this.currentRegistrar, this.expiresAt, this.id, this.locked, this.registrantContact, this.registryStatuses, this.supportedTld, this.transferIn, this.updatedAt, });
+@immutable final class DomainProperties {const DomainProperties({this.available, this.canRegister, this.createdAt, this.currentRegistrar, this.expiresAt, this.id, this.locked, this.registrantContact, this.registryStatuses, this.supportedTld, this.transferIn, this.updatedAt, });
 
 factory DomainProperties.fromJson(Map<String, dynamic> json) { return DomainProperties(
   available: json['available'] != null ? Available.fromJson(json['available'] as bool) : null,

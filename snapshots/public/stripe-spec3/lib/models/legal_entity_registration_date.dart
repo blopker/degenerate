@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class LegalEntityRegistrationDate {const LegalEntityRegistrationDate({this.day, this.month, this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class LegalEntityRegistrationDate {const LegalEntityRegistrationDate({this.day, this.month, this.year, });
 
 factory LegalEntityRegistrationDate.fromJson(Map<String, dynamic> json) { return LegalEntityRegistrationDate(
   day: json['day'] != null ? (json['day'] as num).toInt() : null,

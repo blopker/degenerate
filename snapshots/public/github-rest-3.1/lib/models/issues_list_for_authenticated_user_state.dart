@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesListForAuthenticatedUserState {const IssuesListForAuthenticatedUserState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForAuthenticatedUserState {const IssuesListForAuthenticatedUserState._(this.value);
 
 factory IssuesListForAuthenticatedUserState.fromJson(String json) { return switch (json) {
   'open' => open,

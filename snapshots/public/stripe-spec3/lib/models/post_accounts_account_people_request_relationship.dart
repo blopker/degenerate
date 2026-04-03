@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_request_relationship_percent_ownership.dart';/// The relationship that this person has with the account's legal entity.
-final class PostAccountsAccountPeopleRequestRelationship {const PostAccountsAccountPeopleRequestRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
+@immutable final class PostAccountsAccountPeopleRequestRelationship {const PostAccountsAccountPeopleRequestRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
 
 factory PostAccountsAccountPeopleRequestRelationship.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestRelationship(
   authorizer: json['authorizer'] as bool?,

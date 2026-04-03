@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleMaxFileSizeParameters {const RepositoryRuleMaxFileSizeParameters({required this.maxFileSize});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleMaxFileSizeParameters {const RepositoryRuleMaxFileSizeParameters({required this.maxFileSize});
 
 factory RepositoryRuleMaxFileSizeParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFileSizeParameters(
   maxFileSize: (json['max_file_size'] as num).toInt(),

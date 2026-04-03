@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'sinks_by_sink_id_response_result.dart';final class SinksBySinkIdResponse {const SinksBySinkIdResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'sinks_by_sink_id_response_result.dart';@immutable final class SinksBySinkIdResponse {const SinksBySinkIdResponse({required this.result, required this.success, });
 
 factory SinksBySinkIdResponse.fromJson(Map<String, dynamic> json) { return SinksBySinkIdResponse(
   result: SinksBySinkIdResponseResult.fromJson(json['result'] as Map<String, dynamic>),

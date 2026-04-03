@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData {const UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData({required this.inherited, required this.isPrimary, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData {const UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData({required this.inherited, required this.isPrimary, required this.name, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData(
   inherited: (json['inherited'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

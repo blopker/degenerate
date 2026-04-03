@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ProjectReopenedAction {const ProjectReopenedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectReopenedAction {const ProjectReopenedAction._(this.value);
 
 factory ProjectReopenedAction.fromJson(String json) { return switch (json) {
   'reopened' => reopened,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectReopenedAction($value)'; } 
  }
-final class ProjectReopened {const ProjectReopened({required this.action, this.installation, required this.organization, required this.projectsV2, required this.sender, });
+@immutable final class ProjectReopened {const ProjectReopened({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectReopened.fromJson(Map<String, dynamic> json) { return ProjectReopened(
   action: ProjectReopenedAction.fromJson(json['action'] as String),

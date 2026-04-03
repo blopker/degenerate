@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByDeviceTypeResponseResultMetaDateRange {const RadarGetHttpTopAsesByDeviceTypeResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByDeviceTypeResponseResultMetaDateRange {const RadarGetHttpTopAsesByDeviceTypeResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetHttpTopAsesByDeviceTypeResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByDeviceTypeResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

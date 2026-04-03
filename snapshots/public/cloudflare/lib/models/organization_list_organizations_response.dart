@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message3.dart';import 'organization.dart';import 'page_token_result_info.dart';final class OrganizationListOrganizationsResponse {const OrganizationListOrganizationsResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message3.dart';import 'organization.dart';import 'page_token_result_info.dart';@immutable final class OrganizationListOrganizationsResponse {const OrganizationListOrganizationsResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
 
 factory OrganizationListOrganizationsResponse.fromJson(Map<String, dynamic> json) { return OrganizationListOrganizationsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),

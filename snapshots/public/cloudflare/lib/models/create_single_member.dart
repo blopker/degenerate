@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_single_member_user.dart';final class CreateSingleMemberStatus {const CreateSingleMemberStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_single_member_user.dart';@immutable final class CreateSingleMemberStatus {const CreateSingleMemberStatus._(this.value);
 
 factory CreateSingleMemberStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateSingleMemberStatus($value)'; } 
  }
-final class CreateSingleMember {const CreateSingleMember({this.status, required this.user, });
+@immutable final class CreateSingleMember {const CreateSingleMember({required this.user, this.status, });
 
 factory CreateSingleMember.fromJson(Map<String, dynamic> json) { return CreateSingleMember(
   status: json['status'] != null ? CreateSingleMemberStatus.fromJson(json['status'] as String) : null,

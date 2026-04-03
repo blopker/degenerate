@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items_period_end.dart';import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items_period_start.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items_period_end.dart';import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items_period_start.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod({required this.end, required this.start, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriod(
   end: PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_issuing_authorizations_request_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_authorizations_request_fleet_reported_breakdown.dart';final class PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType {const PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_authorizations_request_fleet_reported_breakdown.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType {const PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType.fromJson(String json) { return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestFleetServiceType {const PostTestHelpersIssuingAuthorizationsRequestFleetServiceType._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestFleetServiceType {const PostTestHelpersIssuingAuthorizationsRequestFleetServiceType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestFleetServiceType.fromJson(String json) { return switch (json) {
   'full_service' => fullService,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFleetServiceType($value)'; } 
  }
 /// Fleet-specific information for authorizations using Fleet cards.
-final class PostTestHelpersIssuingAuthorizationsRequestFleet {const PostTestHelpersIssuingAuthorizationsRequestFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestFleet {const PostTestHelpersIssuingAuthorizationsRequestFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestFleet.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestFleet(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,

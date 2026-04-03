@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_delta_event_logprobs.dart';/// The type of the event. Always `transcript.text.delta`.
 /// 
-final class TranscriptTextDeltaEventType {const TranscriptTextDeltaEventType._(this.value);
+@immutable final class TranscriptTextDeltaEventType {const TranscriptTextDeltaEventType._(this.value);
 
 factory TranscriptTextDeltaEventType.fromJson(String json) { return switch (json) {
   'transcript.text.delta' => transcriptTextDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TranscriptTextDeltaEventType($value)'; } 
  }
 /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-final class TranscriptTextDeltaEvent {const TranscriptTextDeltaEvent({required this.type, required this.delta, this.logprobs, this.segmentId, });
+@immutable final class TranscriptTextDeltaEvent {const TranscriptTextDeltaEvent({required this.type, required this.delta, this.logprobs, this.segmentId, });
 
 factory TranscriptTextDeltaEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextDeltaEvent(
   type: TranscriptTextDeltaEventType.fromJson(json['type'] as String),

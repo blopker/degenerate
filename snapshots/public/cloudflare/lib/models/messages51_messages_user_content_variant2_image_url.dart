@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesUserContentVariant2ImageUrlDetail {const Messages51MessagesUserContentVariant2ImageUrlDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesUserContentVariant2ImageUrlDetail {const Messages51MessagesUserContentVariant2ImageUrlDetail._(this.value);
 
 factory Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesUserContentVariant2ImageUrlDetail($value)'; } 
  }
-final class Messages51MessagesUserContentVariant2ImageUrl {const Messages51MessagesUserContentVariant2ImageUrl({this.detail = Messages51MessagesUserContentVariant2ImageUrlDetail.auto, this.url, });
+@immutable final class Messages51MessagesUserContentVariant2ImageUrl {const Messages51MessagesUserContentVariant2ImageUrl({this.detail = Messages51MessagesUserContentVariant2ImageUrlDetail.auto, this.url, });
 
 factory Messages51MessagesUserContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2ImageUrl(
   detail: json.containsKey('detail') ? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(json['detail'] as String) : Messages51MessagesUserContentVariant2ImageUrlDetail.auto,

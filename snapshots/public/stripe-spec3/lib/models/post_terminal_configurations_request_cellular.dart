@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cellular.dart';final class PostTerminalConfigurationsRequestCellularVariant2 {const PostTerminalConfigurationsRequestCellularVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cellular.dart';@immutable final class PostTerminalConfigurationsRequestCellularVariant2 {const PostTerminalConfigurationsRequestCellularVariant2._(this.value);
 
 factory PostTerminalConfigurationsRequestCellularVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'subscription.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';import 'test_helpers_test_clock.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
-final class SubscriptionScheduleEndBehavior {const SubscriptionScheduleEndBehavior._(this.value);
+@immutable final class SubscriptionScheduleEndBehavior {const SubscriptionScheduleEndBehavior._(this.value);
 
 factory SubscriptionScheduleEndBehavior.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionScheduleEndBehavior($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class SubscriptionScheduleObject {const SubscriptionScheduleObject._(this.value);
+@immutable final class SubscriptionScheduleObject {const SubscriptionScheduleObject._(this.value);
 
 factory SubscriptionScheduleObject.fromJson(String json) { return switch (json) {
   'subscription_schedule' => subscriptionSchedule,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionScheduleObject($value)'; } 
  }
 /// The present status of the subscription schedule. Possible values are `not_started`, `active`, `completed`, `released`, and `canceled`. You can read more about the different states in our [behavior guide](https://docs.stripe.com/billing/subscriptions/subscription-schedules).
-final class SubscriptionScheduleStatus {const SubscriptionScheduleStatus._(this.value);
+@immutable final class SubscriptionScheduleStatus {const SubscriptionScheduleStatus._(this.value);
 
 factory SubscriptionScheduleStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -90,7 +90,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.
 /// 
 /// Related guide: [Subscription schedules](https://docs.stripe.com/billing/subscriptions/subscription-schedules)
-final class SubscriptionSchedule {const SubscriptionSchedule({this.application, required this.billingMode, this.canceledAt, this.completedAt, required this.created, this.currentPhase, required this.customer, this.customerAccount, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, this.metadata, required this.object, required this.phases, this.releasedAt, this.releasedSubscription, required this.status, this.subscription, this.testClock, });
+@immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application, this.canceledAt, this.completedAt, this.currentPhase, this.customerAccount, this.metadata, this.releasedAt, this.releasedSubscription, this.subscription, this.testClock, });
 
 factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
   application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,

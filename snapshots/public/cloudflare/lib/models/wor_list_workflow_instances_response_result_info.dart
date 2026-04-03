@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorListWorkflowInstancesResponseResultInfo {const WorListWorkflowInstancesResponseResultInfo({required this.count, this.cursor, this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorListWorkflowInstancesResponseResultInfo {const WorListWorkflowInstancesResponseResultInfo({required this.count, required this.perPage, required this.totalCount, this.cursor, this.page, });
 
 factory WorListWorkflowInstancesResponseResultInfo.fromJson(Map<String, dynamic> json) { return WorListWorkflowInstancesResponseResultInfo(
   count: (json['count'] as num).toDouble(),

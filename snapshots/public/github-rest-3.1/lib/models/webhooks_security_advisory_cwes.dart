@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksSecurityAdvisoryCwes {const WebhooksSecurityAdvisoryCwes({required this.cweId, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryCwes {const WebhooksSecurityAdvisoryCwes({required this.cweId, required this.name, });
 
 factory WebhooksSecurityAdvisoryCwes.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryCwes(
   cweId: json['cwe_id'] as String,

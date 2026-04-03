@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_client_id.dart';import 'tunnel_colo_name.dart';import 'tunnel_connection_id.dart';import 'tunnel_ip.dart';import 'tunnel_is_pending_reconnect.dart';import 'tunnel_version.dart';final class TunnelSchemasConnection {const TunnelSchemasConnection({this.clientId, this.clientVersion, this.coloName, this.id, this.isPendingReconnect, this.openedAt, this.originIp, this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_client_id.dart';import 'tunnel_colo_name.dart';import 'tunnel_connection_id.dart';import 'tunnel_ip.dart';import 'tunnel_is_pending_reconnect.dart';import 'tunnel_version.dart';@immutable final class TunnelSchemasConnection {const TunnelSchemasConnection({this.clientId, this.clientVersion, this.coloName, this.id, this.isPendingReconnect, this.openedAt, this.originIp, this.uuid, });
 
 factory TunnelSchemasConnection.fromJson(Map<String, dynamic> json) { return TunnelSchemasConnection(
   clientId: json['client_id'] != null ? TunnelClientId.fromJson(json['client_id'] as String) : null,

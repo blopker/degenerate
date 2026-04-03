@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_resource_group_meta.dart';import 'iam_scope.dart';/// A group of scoped resources.
-final class IamResourceGroup {const IamResourceGroup({required this.id, this.meta, this.name, required this.scope, });
+@immutable final class IamResourceGroup {const IamResourceGroup({required this.id, required this.scope, this.meta, this.name, });
 
 factory IamResourceGroup.fromJson(Map<String, dynamic> json) { return IamResourceGroup(
   id: json['id'] as String,

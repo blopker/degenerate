@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logcontrol_cmb_config.dart';final class LogcontrolCmbConfigResponseSingle {const LogcontrolCmbConfigResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_cmb_config.dart';@immutable final class LogcontrolCmbConfigResponseSingle {const LogcontrolCmbConfigResponseSingle({this.result});
 
 factory LogcontrolCmbConfigResponseSingle.fromJson(Map<String, dynamic> json) { return LogcontrolCmbConfigResponseSingle(
   result: json['result'] != null ? LogcontrolCmbConfig.fromJson(json['result'] as Map<String, dynamic>) : null,

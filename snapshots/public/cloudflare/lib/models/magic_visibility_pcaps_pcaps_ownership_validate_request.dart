@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_ownership_challenge.dart';final class MagicVisibilityPcapsPcapsOwnershipValidateRequest {const MagicVisibilityPcapsPcapsOwnershipValidateRequest({required this.destinationConf, required this.ownershipChallenge, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_ownership_challenge.dart';@immutable final class MagicVisibilityPcapsPcapsOwnershipValidateRequest {const MagicVisibilityPcapsPcapsOwnershipValidateRequest({required this.destinationConf, required this.ownershipChallenge, });
 
 factory MagicVisibilityPcapsPcapsOwnershipValidateRequest.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsOwnershipValidateRequest(
   destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),

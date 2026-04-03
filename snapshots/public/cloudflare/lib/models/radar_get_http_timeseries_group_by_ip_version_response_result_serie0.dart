@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetHttpTimeseriesGroupByIpVersionResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByIpVersionResponseResultSerie0({required this.iPv4, required this.iPv6, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByIpVersionResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByIpVersionResponseResultSerie0({required this.iPv4, required this.iPv6, required this.timestamps, });
 
 factory RadarGetHttpTimeseriesGroupByIpVersionResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByIpVersionResponseResultSerie0(
   iPv4: (json['IPv4'] as List<dynamic>).map((e) => e as String).toList(),

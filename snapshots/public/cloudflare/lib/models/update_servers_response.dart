@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'update_servers_response_result.dart';final class UpdateServersResponse {const UpdateServersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_servers_response_result.dart';@immutable final class UpdateServersResponse {const UpdateServersResponse({required this.result, required this.success, });
 
 factory UpdateServersResponse.fromJson(Map<String, dynamic> json) { return UpdateServersResponse(
   result: UpdateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>),

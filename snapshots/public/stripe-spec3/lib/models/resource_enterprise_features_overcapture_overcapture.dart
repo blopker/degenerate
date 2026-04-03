@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether or not the authorized amount can be over-captured.
-final class ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus {const ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether or not the authorized amount can be over-captured.
+@immutable final class ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus {const ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus._(this.value);
 
 factory ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus.fromJson(String json) { return switch (json) {
   'available' => available,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus($value)'; } 
  }
 /// 
-final class ResourceEnterpriseFeaturesOvercaptureOvercapture {const ResourceEnterpriseFeaturesOvercaptureOvercapture({required this.maximumAmountCapturable, required this.status, });
+@immutable final class ResourceEnterpriseFeaturesOvercaptureOvercapture {const ResourceEnterpriseFeaturesOvercaptureOvercapture({required this.maximumAmountCapturable, required this.status, });
 
 factory ResourceEnterpriseFeaturesOvercaptureOvercapture.fromJson(Map<String, dynamic> json) { return ResourceEnterpriseFeaturesOvercaptureOvercapture(
   maximumAmountCapturable: (json['maximum_amount_capturable'] as num).toInt(),

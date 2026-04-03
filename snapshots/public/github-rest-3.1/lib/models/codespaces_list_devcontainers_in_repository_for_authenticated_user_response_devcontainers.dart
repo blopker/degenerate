@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainers {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainers({required this.path, this.name, this.displayName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainers {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainers({required this.path, this.name, this.displayName, });
 
 factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainers.fromJson(Map<String, dynamic> json) { return CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainers(
   path: json['path'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_top_ases_response_result.dart';final class RadarGetDnsTopAsesResponse {const RadarGetDnsTopAsesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_top_ases_response_result.dart';@immutable final class RadarGetDnsTopAsesResponse {const RadarGetDnsTopAsesResponse({required this.result, required this.success, });
 
 factory RadarGetDnsTopAsesResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTopAsesResponse(
   result: RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

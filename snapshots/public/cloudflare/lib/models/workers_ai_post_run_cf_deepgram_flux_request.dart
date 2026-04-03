@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Encoding of the audio stream. Currently only supports raw signed little-endian 16-bit PCM.
-final class WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the audio stream. Currently only supports raw signed little-endian 16-bit PCM.
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding._(this.value);
 
 factory WorkersAiPostRunCfDeepgramFluxRequestEncoding.fromJson(String json) { return switch (json) {
   'linear16' => linear16,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)'; } 
  }
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
-final class WorkersAiPostRunCfDeepgramFluxRequestMipOptOut {const WorkersAiPostRunCfDeepgramFluxRequestMipOptOut._(this.value);
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequestMipOptOut {const WorkersAiPostRunCfDeepgramFluxRequestMipOptOut._(this.value);
 
 factory WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersAiPostRunCfDeepgramFluxRequestMipOptOut($value)'; } 
  }
-final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({this.eagerEotThreshold, required this.encoding, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.$false, required this.sampleRate, this.tag, });
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.$false, this.tag, });
 
 factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: json['eager_eot_threshold'] as String?,

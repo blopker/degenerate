@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_treasury_financial_accounts_request_features_outbound_transfers_ach.dart';import 'post_treasury_financial_accounts_request_features_outbound_transfers_us_domestic_wire.dart';final class PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers {const PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers({this.ach, this.usDomesticWire, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features_outbound_transfers_ach.dart';import 'post_treasury_financial_accounts_request_features_outbound_transfers_us_domestic_wire.dart';@immutable final class PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers {const PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers({this.ach, this.usDomesticWire, });
 
 factory PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers(
   ach: json['ach'] != null ? PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>) : null,

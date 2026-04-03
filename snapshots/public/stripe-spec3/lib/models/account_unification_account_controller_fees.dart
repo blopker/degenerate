@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A value indicating the responsible payer of a bundle of Stripe fees for pricing-control eligible products on this account. Learn more about [fee behavior on connected accounts](https://docs.stripe.com/connect/direct-charges-fee-payer-behavior).
-final class AccountUnificationAccountControllerFeesPayer {const AccountUnificationAccountControllerFeesPayer._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating the responsible payer of a bundle of Stripe fees for pricing-control eligible products on this account. Learn more about [fee behavior on connected accounts](https://docs.stripe.com/connect/direct-charges-fee-payer-behavior).
+@immutable final class AccountUnificationAccountControllerFeesPayer {const AccountUnificationAccountControllerFeesPayer._(this.value);
 
 factory AccountUnificationAccountControllerFeesPayer.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountUnificationAccountControllerFeesPayer($value)'; } 
  }
 /// 
-final class AccountUnificationAccountControllerFees {const AccountUnificationAccountControllerFees({required this.payer});
+@immutable final class AccountUnificationAccountControllerFees {const AccountUnificationAccountControllerFees({required this.payer});
 
 factory AccountUnificationAccountControllerFees.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountControllerFees(
   payer: AccountUnificationAccountControllerFeesPayer.fromJson(json['payer'] as String),

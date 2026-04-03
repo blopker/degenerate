@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_settings.dart';final class AccessSchemasResponseCollectionHostnames {const AccessSchemasResponseCollectionHostnames({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_settings.dart';@immutable final class AccessSchemasResponseCollectionHostnames {const AccessSchemasResponseCollectionHostnames({this.result});
 
 factory AccessSchemasResponseCollectionHostnames.fromJson(Map<String, dynamic> json) { return AccessSchemasResponseCollectionHostnames(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessSchemasSettings.fromJson(e as Map<String, dynamic>)).toList(),

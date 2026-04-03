@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operating System.
-final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
+@immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(this.value);
 
 factory TeamsDevicesUniqueClientIdInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'android' => android,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesUniqueClientIdInputRequestOperatingSystem($value)'; } 
  }
-final class TeamsDevicesUniqueClientIdInputRequest {const TeamsDevicesUniqueClientIdInputRequest({required this.id, required this.operatingSystem, });
+@immutable final class TeamsDevicesUniqueClientIdInputRequest {const TeamsDevicesUniqueClientIdInputRequest({required this.id, required this.operatingSystem, });
 
 factory TeamsDevicesUniqueClientIdInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesUniqueClientIdInputRequest(
   id: json['id'] as String,

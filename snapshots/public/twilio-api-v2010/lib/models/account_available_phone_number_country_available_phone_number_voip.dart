@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_available_phone_number_country_available_phone_number_voip_capabilities.dart';final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_voip_capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
 
 factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(
   friendlyName: json['friendly_name'] as String?,

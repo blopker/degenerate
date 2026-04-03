@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0 {const RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0({required this.https, required this.tcp, required this.tls, required this.udp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0 {const RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0({required this.https, required this.tcp, required this.tls, required this.udp, });
 
 factory RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0(
   https: json['HTTPS'] as String,

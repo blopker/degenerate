@@ -14,7 +14,7 @@ factory AccessSchemasOptionsPreflightBypass.fromJson(bool json) => AccessSchemas
 bool toJson() => value;
 
 }
-final class AccessSchemasSelfHostedProps {const AccessSchemasSelfHostedProps({this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, required this.domain, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, required this.type, this.useClientlessIsolationAppLauncherUrl, });
+@immutable final class AccessSchemasSelfHostedProps {const AccessSchemasSelfHostedProps({required this.domain, required this.type, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.useClientlessIsolationAppLauncherUrl, });
 
 factory AccessSchemasSelfHostedProps.fromJson(Map<String, dynamic> json) { return AccessSchemasSelfHostedProps(
   allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,

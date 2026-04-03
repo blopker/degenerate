@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitLivestreamingConfig {const RealtimekitLivestreamingConfig({this.rtmpUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitLivestreamingConfig {const RealtimekitLivestreamingConfig({this.rtmpUrl});
 
 factory RealtimekitLivestreamingConfig.fromJson(Map<String, dynamic> json) { return RealtimekitLivestreamingConfig(
   rtmpUrl: json['rtmp_url'] != null ? Uri.parse(json['rtmp_url'] as String) : null,

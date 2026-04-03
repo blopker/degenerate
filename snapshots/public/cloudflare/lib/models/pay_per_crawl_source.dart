@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PayPerCrawlSource {const PayPerCrawlSource({this.parameter, this.parameterValueIndex, this.pointer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlSource {const PayPerCrawlSource({this.parameter, this.parameterValueIndex, this.pointer, });
 
 factory PayPerCrawlSource.fromJson(Map<String, dynamic> json) { return PayPerCrawlSource(
   parameter: json['parameter'] as String?,

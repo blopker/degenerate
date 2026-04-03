@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_release_assets.dart';import 'webhooks_release_author.dart';import 'webhooks_release_reactions.dart';/// The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object.
-final class WebhooksRelease {const WebhooksRelease({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.updatedAt, this.discussionUrl, required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, this.reactions, required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.uploadUrl, required this.url, required this.zipballUrl, });
+@immutable final class WebhooksRelease {const WebhooksRelease({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.updatedAt, required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.uploadUrl, required this.url, required this.zipballUrl, this.discussionUrl, this.reactions, });
 
 factory WebhooksRelease.fromJson(Map<String, dynamic> json) { return WebhooksRelease(
   assets: (json['assets'] as List<dynamic>).map((e) => WebhooksReleaseAssets.fromJson(e as Map<String, dynamic>)).toList(),

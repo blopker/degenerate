@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_methods_payment_method_request_billing_details.dart';import 'post_payment_methods_payment_method_request_card.dart';import 'post_payment_methods_payment_method_request_metadata.dart';import 'post_payment_methods_payment_method_request_payto.dart';import 'post_payment_methods_payment_method_request_us_bank_account.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to `unspecified`.
-final class PostPaymentMethodsPaymentMethodRequestAllowRedisplay {const PostPaymentMethodsPaymentMethodRequestAllowRedisplay._(this.value);
+@immutable final class PostPaymentMethodsPaymentMethodRequestAllowRedisplay {const PostPaymentMethodsPaymentMethodRequestAllowRedisplay._(this.value);
 
 factory PostPaymentMethodsPaymentMethodRequestAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodsPaymentMethodRequestAllowRedisplay($value)'; } 
  }
-final class PostPaymentMethodsPaymentMethodRequest {const PostPaymentMethodsPaymentMethodRequest({this.allowRedisplay, this.billingDetails, this.card, this.expand, this.metadata, this.payto, this.usBankAccount, });
+@immutable final class PostPaymentMethodsPaymentMethodRequest {const PostPaymentMethodsPaymentMethodRequest({this.allowRedisplay, this.billingDetails, this.card, this.expand, this.metadata, this.payto, this.usBankAccount, });
 
 factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: json['allow_redisplay'] != null ? PostPaymentMethodsPaymentMethodRequestAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,

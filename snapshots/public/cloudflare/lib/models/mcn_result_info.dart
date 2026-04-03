@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnResultInfo {const McnResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnResultInfo {const McnResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, this.totalPages, });
 
 factory McnResultInfo.fromJson(Map<String, dynamic> json) { return McnResultInfo(
   count: (json['count'] as num).toInt(),

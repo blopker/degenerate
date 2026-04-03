@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
-final class PostCheckoutSessionsRequestInvoiceCreation {const PostCheckoutSessionsRequestInvoiceCreation({required this.enabled, this.invoiceData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
+@immutable final class PostCheckoutSessionsRequestInvoiceCreation {const PostCheckoutSessionsRequestInvoiceCreation({required this.enabled, this.invoiceData, });
 
 factory PostCheckoutSessionsRequestInvoiceCreation.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestInvoiceCreation(
   enabled: json['enabled'] as bool,

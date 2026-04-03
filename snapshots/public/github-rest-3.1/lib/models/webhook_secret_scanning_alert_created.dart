@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookSecretScanningAlertCreatedAction {const WebhookSecretScanningAlertCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertCreatedAction {const WebhookSecretScanningAlertCreatedAction._(this.value);
 
 factory WebhookSecretScanningAlertCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSecretScanningAlertCreatedAction($value)'; } 
  }
-final class WebhookSecretScanningAlertCreated {const WebhookSecretScanningAlertCreated({required this.action, required this.alert, this.enterprise, this.installation, this.organization, required this.repository, this.sender, });
+@immutable final class WebhookSecretScanningAlertCreated {const WebhookSecretScanningAlertCreated({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningAlertCreated.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertCreated(
   action: WebhookSecretScanningAlertCreatedAction.fromJson(json['action'] as String),

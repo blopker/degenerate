@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_admin_flare.dart';final class MconnAdminFlareReplaceResponse {const MconnAdminFlareReplaceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_flare.dart';@immutable final class MconnAdminFlareReplaceResponse {const MconnAdminFlareReplaceResponse({this.result});
 
 factory MconnAdminFlareReplaceResponse.fromJson(Map<String, dynamic> json) { return MconnAdminFlareReplaceResponse(
   result: json['result'] != null ? MconnAdminFlare.fromJson(json['result'] as Map<String, dynamic>) : null,

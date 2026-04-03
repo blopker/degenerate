@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pet_status.dart';final class Pet {const Pet({required this.id, required this.name, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pet_status.dart';@immutable final class Pet {const Pet({required this.id, required this.name, this.status, });
 
 factory Pet.fromJson(Map<String, dynamic> json) { return Pet(
   id: (json['id'] as num).toInt(),

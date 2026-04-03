@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_web_search_options_variant1_user_location.dart';final class Messages51WebSearchOptionsVariant1SearchContextSize {const Messages51WebSearchOptionsVariant1SearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_web_search_options_variant1_user_location.dart';@immutable final class Messages51WebSearchOptionsVariant1SearchContextSize {const Messages51WebSearchOptionsVariant1SearchContextSize._(this.value);
 
 factory Messages51WebSearchOptionsVariant1SearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Messages51WebSearchOptionsVariant1SearchContextSize($value)'; } 
  }
 /// Options for the web search tool (when using built-in web search).
-final class Messages51WebSearchOptionsVariant1 {const Messages51WebSearchOptionsVariant1({this.searchContextSize = Messages51WebSearchOptionsVariant1SearchContextSize.medium, this.userLocation, });
+@immutable final class Messages51WebSearchOptionsVariant1 {const Messages51WebSearchOptionsVariant1({this.searchContextSize = Messages51WebSearchOptionsVariant1SearchContextSize.medium, this.userLocation, });
 
 factory Messages51WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return Messages51WebSearchOptionsVariant1(
   searchContextSize: json.containsKey('search_context_size') ? Messages51WebSearchOptionsVariant1SearchContextSize.fromJson(json['search_context_size'] as String) : Messages51WebSearchOptionsVariant1SearchContextSize.medium,

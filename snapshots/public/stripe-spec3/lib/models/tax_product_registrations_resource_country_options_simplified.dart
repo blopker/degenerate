@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of registration in `country`.
-final class TaxProductRegistrationsResourceCountryOptionsSimplifiedType {const TaxProductRegistrationsResourceCountryOptionsSimplifiedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of registration in `country`.
+@immutable final class TaxProductRegistrationsResourceCountryOptionsSimplifiedType {const TaxProductRegistrationsResourceCountryOptionsSimplifiedType._(this.value);
 
 factory TaxProductRegistrationsResourceCountryOptionsSimplifiedType.fromJson(String json) { return switch (json) {
   'simplified' => simplified,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsSimplifiedType($value)'; } 
  }
 /// 
-final class TaxProductRegistrationsResourceCountryOptionsSimplified {const TaxProductRegistrationsResourceCountryOptionsSimplified({required this.type});
+@immutable final class TaxProductRegistrationsResourceCountryOptionsSimplified {const TaxProductRegistrationsResourceCountryOptionsSimplified({required this.type});
 
 factory TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsSimplified(
   type: TaxProductRegistrationsResourceCountryOptionsSimplifiedType.fromJson(json['type'] as String),

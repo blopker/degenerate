@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopBrowserFamiliesTlsVersion {const RadarGetHttpTopBrowserFamiliesTlsVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowserFamiliesTlsVersion {const RadarGetHttpTopBrowserFamiliesTlsVersion._(this.value);
 
 factory RadarGetHttpTopBrowserFamiliesTlsVersion.fromJson(String json) { return switch (json) {
   'TLSv1_0' => tlSv10,

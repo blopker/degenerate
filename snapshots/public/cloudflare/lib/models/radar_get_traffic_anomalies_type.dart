@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTrafficAnomaliesType {const RadarGetTrafficAnomaliesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTrafficAnomaliesType {const RadarGetTrafficAnomaliesType._(this.value);
 
 factory RadarGetTrafficAnomaliesType.fromJson(String json) { return switch (json) {
   'LOCATION' => location,

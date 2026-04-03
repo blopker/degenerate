@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionSchedulesRequestPhasesDiscountsVariant1 {const PostSubscriptionSchedulesRequestPhasesDiscountsVariant1({this.coupon, this.discount, this.promotionCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesDiscountsVariant1 {const PostSubscriptionSchedulesRequestPhasesDiscountsVariant1({this.coupon, this.discount, this.promotionCode, });
 
 factory PostSubscriptionSchedulesRequestPhasesDiscountsVariant1.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesDiscountsVariant1(
   coupon: json['coupon'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteApplePayDomainsDomainRequest {const DeleteApplePayDomainsDomainRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteApplePayDomainsDomainRequest {const DeleteApplePayDomainsDomainRequest();
 
 factory DeleteApplePayDomainsDomainRequest.fromJson(Map<String, dynamic> json) { return DeleteApplePayDomainsDomainRequest(
 

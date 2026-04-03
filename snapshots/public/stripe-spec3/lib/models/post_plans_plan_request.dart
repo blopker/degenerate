@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_plans_plan_request_metadata.dart';final class PostPlansPlanRequest {const PostPlansPlanRequest({this.active, this.expand, this.metadata, this.nickname, this.product, this.trialPeriodDays, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_plans_plan_request_metadata.dart';@immutable final class PostPlansPlanRequest {const PostPlansPlanRequest({this.active, this.expand, this.metadata, this.nickname, this.product, this.trialPeriodDays, });
 
 factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) { return PostPlansPlanRequest(
   active: json['active'] as bool?,

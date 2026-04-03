@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action to take when the expression matches.
-final class WaitingroomRuleAction {const WaitingroomRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when the expression matches.
+@immutable final class WaitingroomRuleAction {const WaitingroomRuleAction._(this.value);
 
 factory WaitingroomRuleAction.fromJson(String json) { return switch (json) {
   'bypass_waiting_room' => bypassWaitingRoom,

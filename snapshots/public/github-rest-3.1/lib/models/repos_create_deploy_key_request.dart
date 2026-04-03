@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateDeployKeyRequest {const ReposCreateDeployKeyRequest({this.title, required this.key, this.readOnly, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateDeployKeyRequest {const ReposCreateDeployKeyRequest({required this.key, this.title, this.readOnly, });
 
 factory ReposCreateDeployKeyRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeployKeyRequest(
   title: json['title'] as String?,

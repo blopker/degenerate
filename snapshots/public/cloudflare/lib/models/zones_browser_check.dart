@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
 /// spammers and certain bots.
 /// 
-final class ZonesBrowserCheckId {const ZonesBrowserCheckId._(this.value);
+@immutable final class ZonesBrowserCheckId {const ZonesBrowserCheckId._(this.value);
 
 factory ZonesBrowserCheckId.fromJson(String json) { return switch (json) {
   'browser_check' => browserCheck,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesBrowserCheckId($value)'; } 
  }
-final class ZonesBrowserCheck {const ZonesBrowserCheck({this.id, this.value, });
+@immutable final class ZonesBrowserCheck {const ZonesBrowserCheck({this.id, this.value, });
 
 factory ZonesBrowserCheck.fromJson(Map<String, dynamic> json) { return ZonesBrowserCheck(
   id: json['id'] != null ? ZonesBrowserCheckId.fromJson(json['id'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_response_result.dart';final class AigConfigListGatewayResponse {const AigConfigListGatewayResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_response_result.dart';@immutable final class AigConfigListGatewayResponse {const AigConfigListGatewayResponse({required this.result, required this.success, });
 
 factory AigConfigListGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayResponse(
   result: (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

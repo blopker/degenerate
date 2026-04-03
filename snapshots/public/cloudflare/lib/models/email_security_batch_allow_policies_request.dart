@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_allow_policies_request_deletes.dart';import 'email_security_batch_allow_policies_request_patches.dart';import 'email_security_batch_allow_policies_request_puts.dart';import 'email_security_create_allow_policy.dart';final class EmailSecurityBatchAllowPoliciesRequest {const EmailSecurityBatchAllowPoliciesRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_allow_policies_request_deletes.dart';import 'email_security_batch_allow_policies_request_patches.dart';import 'email_security_batch_allow_policies_request_puts.dart';import 'email_security_create_allow_policy.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequest {const EmailSecurityBatchAllowPoliciesRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
 factory EmailSecurityBatchAllowPoliciesRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchAllowPoliciesRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),

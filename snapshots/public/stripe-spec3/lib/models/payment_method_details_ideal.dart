@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method.dart';import 'payment_method_details_ideal_generated_sepa_debit.dart';import 'payment_method_details_ideal_generated_sepa_debit_mandate.dart';/// The customer's bank. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
-final class PaymentMethodDetailsIdealBank {const PaymentMethodDetailsIdealBank._(this.value);
+@immutable final class PaymentMethodDetailsIdealBank {const PaymentMethodDetailsIdealBank._(this.value);
 
 factory PaymentMethodDetailsIdealBank.fromJson(String json) { return switch (json) {
   'abn_amro' => abnAmro,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsIdealBank($value)'; } 
  }
 /// The Bank Identifier Code of the customer's bank.
-final class PaymentMethodDetailsIdealBic {const PaymentMethodDetailsIdealBic._(this.value);
+@immutable final class PaymentMethodDetailsIdealBic {const PaymentMethodDetailsIdealBic._(this.value);
 
 factory PaymentMethodDetailsIdealBic.fromJson(String json) { return switch (json) {
   'ABNANL2A' => abnanl2A,
@@ -162,7 +162,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsIdealBic($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsIdeal {const PaymentMethodDetailsIdeal({this.bank, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.transactionId, this.verifiedName, });
+@immutable final class PaymentMethodDetailsIdeal {const PaymentMethodDetailsIdeal({this.bank, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.transactionId, this.verifiedName, });
 
 factory PaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsIdeal(
   bank: json['bank'] != null ? PaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null,

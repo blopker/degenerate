@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Can produce video
-final class RealtimekitUpdatePresetPermissionsMediaVideoCanProduce {const RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Can produce video
+@immutable final class RealtimekitUpdatePresetPermissionsMediaVideoCanProduce {const RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._(this.value);
 
 factory RealtimekitUpdatePresetPermissionsMediaVideoCanProduce.fromJson(String json) { return switch (json) {
   'ALLOWED' => allowed,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaVideoCanProduce($value)'; } 
  }
 /// Video permissions
-final class RealtimekitUpdatePresetPermissionsMediaVideo {const RealtimekitUpdatePresetPermissionsMediaVideo({this.canProduce});
+@immutable final class RealtimekitUpdatePresetPermissionsMediaVideo {const RealtimekitUpdatePresetPermissionsMediaVideo({this.canProduce});
 
 factory RealtimekitUpdatePresetPermissionsMediaVideo.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsMediaVideo(
   canProduce: json['can_produce'] != null ? RealtimekitUpdatePresetPermissionsMediaVideoCanProduce.fromJson(json['can_produce'] as String) : null,

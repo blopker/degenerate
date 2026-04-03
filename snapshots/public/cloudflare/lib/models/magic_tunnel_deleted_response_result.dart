@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_gre_tunnel.dart';final class MagicTunnelDeletedResponseResult {const MagicTunnelDeletedResponseResult({this.deleted, this.deletedGreTunnel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_gre_tunnel.dart';@immutable final class MagicTunnelDeletedResponseResult {const MagicTunnelDeletedResponseResult({this.deleted, this.deletedGreTunnel, });
 
 factory MagicTunnelDeletedResponseResult.fromJson(Map<String, dynamic> json) { return MagicTunnelDeletedResponseResult(
   deleted: json['deleted'] as bool?,

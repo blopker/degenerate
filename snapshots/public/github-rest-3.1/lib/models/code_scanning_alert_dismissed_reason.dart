@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
-final class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+@immutable final class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason._(this.value);
 
 factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (json) {
   'false positive' => falsePositive,

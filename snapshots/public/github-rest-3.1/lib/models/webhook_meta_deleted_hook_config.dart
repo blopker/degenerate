@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookMetaDeletedHookConfigContentType {const WebhookMetaDeletedHookConfigContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMetaDeletedHookConfigContentType {const WebhookMetaDeletedHookConfigContentType._(this.value);
 
 factory WebhookMetaDeletedHookConfigContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMetaDeletedHookConfigContentType($value)'; } 
  }
-final class WebhookMetaDeletedHookConfig {const WebhookMetaDeletedHookConfig({required this.contentType, required this.insecureSsl, this.secret, required this.url, });
+@immutable final class WebhookMetaDeletedHookConfig {const WebhookMetaDeletedHookConfig({required this.contentType, required this.insecureSsl, required this.url, this.secret, });
 
 factory WebhookMetaDeletedHookConfig.fromJson(Map<String, dynamic> json) { return WebhookMetaDeletedHookConfig(
   contentType: WebhookMetaDeletedHookConfigContentType.fromJson(json['content_type'] as String),

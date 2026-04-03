@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationUpdateResponseResultConfigurationLogpushDataset {const DestinationUpdateResponseResultConfigurationLogpushDataset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationUpdateResponseResultConfigurationLogpushDataset {const DestinationUpdateResponseResultConfigurationLogpushDataset._(this.value);
 
 factory DestinationUpdateResponseResultConfigurationLogpushDataset.fromJson(String json) { return switch (json) {
   'opentelemetry-traces' => opentelemetryTraces,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationUpdateResponseResultConfigurationLogpushDataset($value)'; } 
  }
-final class DestinationUpdateResponseResultConfigurationType {const DestinationUpdateResponseResultConfigurationType._(this.value);
+@immutable final class DestinationUpdateResponseResultConfigurationType {const DestinationUpdateResponseResultConfigurationType._(this.value);
 
 factory DestinationUpdateResponseResultConfigurationType.fromJson(String json) { return switch (json) {
   'logpush' => logpush,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationUpdateResponseResultConfigurationType($value)'; } 
  }
-final class DestinationUpdateResponseResultConfiguration {const DestinationUpdateResponseResultConfiguration({required this.destinationConf, required this.logpushDataset, required this.logpushJob, required this.type, required this.url, });
+@immutable final class DestinationUpdateResponseResultConfiguration {const DestinationUpdateResponseResultConfiguration({required this.destinationConf, required this.logpushDataset, required this.logpushJob, required this.type, required this.url, });
 
 factory DestinationUpdateResponseResultConfiguration.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponseResultConfiguration(
   destinationConf: json['destination_conf'] as String,

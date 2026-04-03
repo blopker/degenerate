@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SubscriptionsListResponseResultInfo {const SubscriptionsListResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubscriptionsListResponseResultInfo {const SubscriptionsListResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
 
 factory SubscriptionsListResponseResultInfo.fromJson(Map<String, dynamic> json) { return SubscriptionsListResponseResultInfo(
   count: (json['count'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TenantTenantMetadataDnsNsPool {const TenantTenantMetadataDnsNsPool({this.primary, this.secondary, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantTenantMetadataDnsNsPool {const TenantTenantMetadataDnsNsPool({this.primary, this.secondary, });
 
 factory TenantTenantMetadataDnsNsPool.fromJson(Map<String, dynamic> json) { return TenantTenantMetadataDnsNsPool(
   primary: json['primary'] as String?,

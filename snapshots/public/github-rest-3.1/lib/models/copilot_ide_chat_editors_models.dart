@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CopilotIdeChatEditorsModels {const CopilotIdeChatEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.totalChats, this.totalChatInsertionEvents, this.totalChatCopyEvents, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotIdeChatEditorsModels {const CopilotIdeChatEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.totalChats, this.totalChatInsertionEvents, this.totalChatCopyEvents, });
 
 factory CopilotIdeChatEditorsModels.fromJson(Map<String, dynamic> json) { return CopilotIdeChatEditorsModels(
   name: json['name'] as String?,

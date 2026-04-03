@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_role.dart';import 'iam_update_member_with_roles_user.dart';final class IamUpdateMemberWithRoles {const IamUpdateMemberWithRoles({this.id, this.roles, this.status, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_role.dart';import 'iam_update_member_with_roles_user.dart';@immutable final class IamUpdateMemberWithRoles {const IamUpdateMemberWithRoles({this.id, this.roles, this.status, this.user, });
 
 factory IamUpdateMemberWithRoles.fromJson(Map<String, dynamic> json) { return IamUpdateMemberWithRoles(
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,

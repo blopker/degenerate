@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction_source.dart';import 'fee.dart';/// The balance that this transaction impacts.
-final class BalanceTransactionBalanceType {const BalanceTransactionBalanceType._(this.value);
+@immutable final class BalanceTransactionBalanceType {const BalanceTransactionBalanceType._(this.value);
 
 factory BalanceTransactionBalanceType.fromJson(String json) { return switch (json) {
   'issuing' => issuing,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceTransactionBalanceType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class BalanceTransactionObject {const BalanceTransactionObject._(this.value);
+@immutable final class BalanceTransactionObject {const BalanceTransactionObject._(this.value);
 
 factory BalanceTransactionObject.fromJson(String json) { return switch (json) {
   'balance_transaction' => balanceTransaction,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceTransactionObject($value)'; } 
  }
 /// Transaction type: `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `contribution`, `issuing_authorization_hold`, `issuing_authorization_release`, `issuing_dispute`, `issuing_transaction`, `obligation_outbound`, `obligation_reversal_inbound`, `payment`, `payment_failure_refund`, `payment_network_reserve_hold`, `payment_network_reserve_release`, `payment_refund`, `payment_reversal`, `payment_unreconciled`, `payout`, `payout_cancel`, `payout_failure`, `payout_minimum_balance_hold`, `payout_minimum_balance_release`, `refund`, `refund_failure`, `reserve_transaction`, `reserved_funds`, `reserve_hold`, `reserve_release`, `stripe_fee`, `stripe_fx_fee`, `stripe_balance_payment_debit`, `stripe_balance_payment_debit_reversal`, `tax_fee`, `topup`, `topup_reversal`, `transfer`, `transfer_cancel`, `transfer_failure`, or `transfer_refund`. Learn more about [balance transaction types and what they represent](https://stripe.com/docs/reports/balance-transaction-types). To classify transactions for accounting purposes, consider `reporting_category` instead.
-final class BalanceTransactionType {const BalanceTransactionType._(this.value);
+@immutable final class BalanceTransactionType {const BalanceTransactionType._(this.value);
 
 factory BalanceTransactionType.fromJson(String json) { return switch (json) {
   'adjustment' => adjustment,
@@ -214,7 +214,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe creates them for every type of transaction that enters or leaves your Stripe account balance.
 /// 
 /// Related guide: [Balance transaction types](https://docs.stripe.com/reports/balance-transaction-types)
-final class BalanceTransaction {const BalanceTransaction({required this.amount, required this.availableOn, required this.balanceType, required this.created, required this.currency, this.description, this.exchangeRate, required this.fee, required this.feeDetails, required this.id, required this.net, required this.object, required this.reportingCategory, this.source, required this.status, required this.type, });
+@immutable final class BalanceTransaction {const BalanceTransaction({required this.amount, required this.availableOn, required this.balanceType, required this.created, required this.currency, required this.fee, required this.feeDetails, required this.id, required this.net, required this.object, required this.reportingCategory, required this.status, required this.type, this.description, this.exchangeRate, this.source, });
 
 factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceTransaction(
   amount: (json['amount'] as num).toInt(),

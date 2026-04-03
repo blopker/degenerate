@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action type.
 /// 
-final class WebSearchActionFindType {const WebSearchActionFindType._(this.value);
+@immutable final class WebSearchActionFindType {const WebSearchActionFindType._(this.value);
 
 factory WebSearchActionFindType.fromJson(String json) { return switch (json) {
   'find_in_page' => findInPage,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Action type "find_in_page": Searches for a pattern within a loaded page.
 /// 
-final class WebSearchActionFind {const WebSearchActionFind({required this.type, required this.url, required this.pattern, });
+@immutable final class WebSearchActionFind {const WebSearchActionFind({required this.type, required this.url, required this.pattern, });
 
 factory WebSearchActionFind.fromJson(Map<String, dynamic> json) { return WebSearchActionFind(
   type: WebSearchActionFindType.fromJson(json['type'] as String),

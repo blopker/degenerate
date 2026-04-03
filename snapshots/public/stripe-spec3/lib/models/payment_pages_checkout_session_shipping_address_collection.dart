@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries {const PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries {const PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries._(this.value);
 
 factory PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
   'AC' => ac,
@@ -733,7 +733,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionShippingAddressCollection {const PaymentPagesCheckoutSessionShippingAddressCollection({required this.allowedCountries});
+@immutable final class PaymentPagesCheckoutSessionShippingAddressCollection {const PaymentPagesCheckoutSessionShippingAddressCollection({required this.allowedCountries});
 
 factory PaymentPagesCheckoutSessionShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingAddressCollection(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),

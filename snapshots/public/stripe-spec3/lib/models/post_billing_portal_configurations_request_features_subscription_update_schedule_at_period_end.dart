@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_schedule_at_period_end_conditions.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd({this.conditions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_schedule_at_period_end_conditions.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd({this.conditions});
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions.fromJson(e as Map<String, dynamic>)).toList(),

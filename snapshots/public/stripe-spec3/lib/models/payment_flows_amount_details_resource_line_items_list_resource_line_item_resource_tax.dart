@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax {const PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax({required this.totalTaxAmount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax {const PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax({required this.totalTaxAmount});
 
 factory PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(
   totalTaxAmount: (json['total_tax_amount'] as num).toInt(),

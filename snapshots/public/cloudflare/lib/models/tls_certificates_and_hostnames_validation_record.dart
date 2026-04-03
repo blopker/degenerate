@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate's required validation record.
-final class TlsCertificatesAndHostnamesValidationRecord {const TlsCertificatesAndHostnamesValidationRecord({this.cname, this.cnameTarget, this.emails, this.httpBody, this.httpUrl, this.status, this.txtName, this.txtValue, });
+@immutable final class TlsCertificatesAndHostnamesValidationRecord {const TlsCertificatesAndHostnamesValidationRecord({this.cname, this.cnameTarget, this.emails, this.httpBody, this.httpUrl, this.status, this.txtName, this.txtValue, });
 
 factory TlsCertificatesAndHostnamesValidationRecord.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesValidationRecord(
   cname: json['cname'] as String?,

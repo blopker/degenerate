@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_analytics_time_delta.dart';final class DnsAnalyticsReportBytimeQuery {const DnsAnalyticsReportBytimeQuery({required this.timeDelta});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_time_delta.dart';@immutable final class DnsAnalyticsReportBytimeQuery {const DnsAnalyticsReportBytimeQuery({required this.timeDelta});
 
 factory DnsAnalyticsReportBytimeQuery.fromJson(Map<String, dynamic> json) { return DnsAnalyticsReportBytimeQuery(
   timeDelta: DnsAnalyticsTimeDelta.fromJson(json['time_delta'] as String),

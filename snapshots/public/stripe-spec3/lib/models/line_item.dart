@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_subscription.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class LineItemObject {const LineItemObject._(this.value);
+@immutable final class LineItemObject {const LineItemObject._(this.value);
 
 factory LineItemObject.fromJson(String json) { return switch (json) {
   'line_item' => lineItem,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Invoice Line Items represent the individual lines within an [invoice](https://docs.stripe.com/api/invoices) and only exist within the context of an invoice.
 /// 
 /// Each line item is backed by either an [invoice item](https://docs.stripe.com/api/invoiceitems) or a [subscription item](https://docs.stripe.com/api/subscription_items).
-final class LineItem {const LineItem({required this.amount, required this.currency, this.description, this.discountAmounts, required this.discountable, required this.discounts, required this.id, this.invoice, required this.livemode, required this.metadata, required this.object, this.parent, required this.period, this.pretaxCreditAmounts, this.pricing, this.quantity, this.subscription, required this.subtotal, this.taxes, });
+@immutable final class LineItem {const LineItem({required this.amount, required this.currency, required this.discountable, required this.discounts, required this.id, required this.livemode, required this.metadata, required this.object, required this.period, required this.subtotal, this.description, this.discountAmounts, this.invoice, this.parent, this.pretaxCreditAmounts, this.pricing, this.quantity, this.subscription, this.taxes, });
 
 factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
   amount: (json['amount'] as num).toInt(),

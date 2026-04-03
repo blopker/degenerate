@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowUsageBillableUbuntu {const WorkflowUsageBillableUbuntu({this.totalMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowUsageBillableUbuntu {const WorkflowUsageBillableUbuntu({this.totalMs});
 
 factory WorkflowUsageBillableUbuntu.fromJson(Map<String, dynamic> json) { return WorkflowUsageBillableUbuntu(
   totalMs: json['total_ms'] != null ? (json['total_ms'] as num).toInt() : null,

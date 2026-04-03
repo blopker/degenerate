@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secrets_store_identifier.dart';final class SecretsStoreDeleteSecretObject {const SecretsStoreDeleteSecretObject({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_identifier.dart';@immutable final class SecretsStoreDeleteSecretObject {const SecretsStoreDeleteSecretObject({required this.id});
 
 factory SecretsStoreDeleteSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreDeleteSecretObject(
   id: SecretsStoreIdentifier.fromJson(json['id'] as String),

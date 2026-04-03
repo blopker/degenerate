@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_key_rotation_interval_days.dart';final class AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest {const AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest({required this.keyRotationIntervalDays});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_key_rotation_interval_days.dart';@immutable final class AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest {const AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest({required this.keyRotationIntervalDays});
 
 factory AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest.fromJson(Map<String, dynamic> json) { return AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(
   keyRotationIntervalDays: AccessKeyRotationIntervalDays.fromJson(json['key_rotation_interval_days'] as num),

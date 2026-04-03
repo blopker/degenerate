@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_messages2.dart';import 'response_collection23_result_info.dart';final class ResponseCollection23 {const ResponseCollection23({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_messages2.dart';import 'response_collection23_result_info.dart';@immutable final class ResponseCollection23 {const ResponseCollection23({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection23.fromJson(Map<String, dynamic> json) { return ResponseCollection23(
   errors: (json['errors'] as List<dynamic>).map((e) => InfraMessages2.fromJson(e as Map<String, dynamic>)).toList(),

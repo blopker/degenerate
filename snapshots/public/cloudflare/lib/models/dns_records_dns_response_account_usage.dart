@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_records_dns_response_account_usage_result.dart';final class DnsRecordsDnsResponseAccountUsage {const DnsRecordsDnsResponseAccountUsage({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_dns_response_account_usage_result.dart';@immutable final class DnsRecordsDnsResponseAccountUsage {const DnsRecordsDnsResponseAccountUsage({this.result});
 
 factory DnsRecordsDnsResponseAccountUsage.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseAccountUsage(
   result: json['result'] != null ? DnsRecordsDnsResponseAccountUsageResult.fromJson(json['result'] as Map<String, dynamic>) : null,

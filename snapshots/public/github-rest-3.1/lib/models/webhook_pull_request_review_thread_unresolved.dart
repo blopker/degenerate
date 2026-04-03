@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_unresolved_pull_request.dart';import 'webhook_pull_request_review_thread_unresolved_thread.dart';final class WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_unresolved_pull_request.dart';import 'webhook_pull_request_review_thread_unresolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction._(this.value);
 
 factory WebhookPullRequestReviewThreadUnresolvedAction.fromJson(String json) { return switch (json) {
   'unresolved' => unresolved,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedAction($value)'; } 
  }
-final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, this.sender, required this.thread, this.updatedAt, });
+@immutable final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
 
 factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolved(
   action: WebhookPullRequestReviewThreadUnresolvedAction.fromJson(json['action'] as String),

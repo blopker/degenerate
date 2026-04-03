@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';final class PageShieldCookieSameSiteAttribute {const PageShieldCookieSameSiteAttribute._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';@immutable final class PageShieldCookieSameSiteAttribute {const PageShieldCookieSameSiteAttribute._(this.value);
 
 factory PageShieldCookieSameSiteAttribute.fromJson(String json) { return switch (json) {
   'lax' => lax,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PageShieldCookieSameSiteAttribute($value)'; } 
  }
-final class PageShieldCookieType {const PageShieldCookieType._(this.value);
+@immutable final class PageShieldCookieType {const PageShieldCookieType._(this.value);
 
 factory PageShieldCookieType.fromJson(String json) { return switch (json) {
   'first_party' => firstParty,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PageShieldCookieType($value)'; } 
  }
-final class PageShieldCookie {const PageShieldCookie({this.domainAttribute, this.expiresAttribute, required this.firstSeenAt, required this.host, this.httpOnlyAttribute, required this.id, required this.lastSeenAt, this.maxAgeAttribute, required this.name, this.pageUrls, this.pathAttribute, this.sameSiteAttribute, this.secureAttribute, required this.type, });
+@immutable final class PageShieldCookie {const PageShieldCookie({required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.name, required this.type, this.domainAttribute, this.expiresAttribute, this.httpOnlyAttribute, this.maxAgeAttribute, this.pageUrls, this.pathAttribute, this.sameSiteAttribute, this.secureAttribute, });
 
 factory PageShieldCookie.fromJson(Map<String, dynamic> json) { return PageShieldCookie(
   domainAttribute: json['domain_attribute'] as String?,

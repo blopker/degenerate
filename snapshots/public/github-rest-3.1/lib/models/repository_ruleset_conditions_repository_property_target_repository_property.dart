@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_conditions_repository_property_spec.dart';final class RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty {const RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty({this.include, this.exclude, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_conditions_repository_property_spec.dart';@immutable final class RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty {const RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty({this.include, this.exclude, });
 
 factory RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
   include: (json['include'] as List<dynamic>?)?.map((e) => RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(e as Map<String, dynamic>)).toList(),

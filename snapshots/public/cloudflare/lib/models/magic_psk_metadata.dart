@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_schemas_modified_on.dart';/// The PSK metadata that includes when the PSK was generated.
-final class MagicPskMetadata {const MagicPskMetadata({this.lastGeneratedOn});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_schemas_modified_on.dart';/// The PSK metadata that includes when the PSK was generated.
+@immutable final class MagicPskMetadata {const MagicPskMetadata({this.lastGeneratedOn});
 
 factory MagicPskMetadata.fromJson(Map<String, dynamic> json) { return MagicPskMetadata(
   lastGeneratedOn: json['last_generated_on'] != null ? MagicSchemasModifiedOn.fromJson(json['last_generated_on'] as String) : null,

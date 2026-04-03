@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_member_added_changes.dart';import 'webhooks_user.dart';final class WebhookMemberAddedAction {const WebhookMemberAddedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_member_added_changes.dart';import 'webhooks_user.dart';@immutable final class WebhookMemberAddedAction {const WebhookMemberAddedAction._(this.value);
 
 factory WebhookMemberAddedAction.fromJson(String json) { return switch (json) {
   'added' => added,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMemberAddedAction($value)'; } 
  }
-final class WebhookMemberAdded {const WebhookMemberAdded({required this.action, this.changes, this.enterprise, this.installation, required this.member, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookMemberAdded {const WebhookMemberAdded({required this.action, required this.member, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookMemberAdded.fromJson(Map<String, dynamic> json) { return WebhookMemberAdded(
   action: WebhookMemberAddedAction.fromJson(json['action'] as String),

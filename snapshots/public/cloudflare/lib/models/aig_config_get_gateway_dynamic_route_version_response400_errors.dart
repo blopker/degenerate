@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigGetGatewayDynamicRouteVersionResponse400Errors {const AigConfigGetGatewayDynamicRouteVersionResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponse400Errors {const AigConfigGetGatewayDynamicRouteVersionResponse400Errors({required this.message});
 
 factory AigConfigGetGatewayDynamicRouteVersionResponse400Errors.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponse400Errors(
   message: json['message'] as String,

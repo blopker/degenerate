@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param6_bank_transfer_eu_bank_transfer.dart';final class PaymentIntentPaymentMethodOptionsParam6BankTransferRequestedAddressTypes {const PaymentIntentPaymentMethodOptionsParam6BankTransferRequestedAddressTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param6_bank_transfer_eu_bank_transfer.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam6BankTransferRequestedAddressTypes {const PaymentIntentPaymentMethodOptionsParam6BankTransferRequestedAddressTypes._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam6BankTransferRequestedAddressTypes.fromJson(String json) { return switch (json) {
   'aba' => aba,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6BankTransferRequestedAddressTypes($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam6BankTransferType {const PaymentIntentPaymentMethodOptionsParam6BankTransferType._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam6BankTransferType {const PaymentIntentPaymentMethodOptionsParam6BankTransferType._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam6BankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6BankTransferType($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam6BankTransfer {const PaymentIntentPaymentMethodOptionsParam6BankTransfer({this.euBankTransfer, this.requestedAddressTypes, required this.type, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam6BankTransfer {const PaymentIntentPaymentMethodOptionsParam6BankTransfer({required this.type, this.euBankTransfer, this.requestedAddressTypes, });
 
 factory PaymentIntentPaymentMethodOptionsParam6BankTransfer.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam6BankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? PaymentIntentPaymentMethodOptionsParam6BankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,

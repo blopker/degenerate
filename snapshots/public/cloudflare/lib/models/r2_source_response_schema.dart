@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_jurisdiction.dart';final class R2SourceResponseSchemaVendor {const R2SourceResponseSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_jurisdiction.dart';@immutable final class R2SourceResponseSchemaVendor {const R2SourceResponseSchemaVendor._(this.value);
 
 factory R2SourceResponseSchemaVendor.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SourceResponseSchemaVendor($value)'; } 
  }
-final class R2SourceResponseSchema {const R2SourceResponseSchema({this.bucket, this.jurisdiction, this.keys, this.pathPrefix, this.vendor, });
+@immutable final class R2SourceResponseSchema {const R2SourceResponseSchema({this.bucket, this.jurisdiction, this.keys, this.pathPrefix, this.vendor, });
 
 factory R2SourceResponseSchema.fromJson(Map<String, dynamic> json) { return R2SourceResponseSchema(
   bucket: json['bucket'] as String?,

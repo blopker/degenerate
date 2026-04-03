@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reason why the customer is appealing.
-final class AbuseReportsAppealReason {const AbuseReportsAppealReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason why the customer is appealing.
+@immutable final class AbuseReportsAppealReason {const AbuseReportsAppealReason._(this.value);
 
 factory AbuseReportsAppealReason.fromJson(String json) { return switch (json) {
   'removed' => removed,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AbuseReportsAppealReason($value)'; } 
  }
-final class AbuseReportsMitigationAppeal {const AbuseReportsMitigationAppeal({required this.id, required this.reason, });
+@immutable final class AbuseReportsMitigationAppeal {const AbuseReportsMitigationAppeal({required this.id, required this.reason, });
 
 factory AbuseReportsMitigationAppeal.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationAppeal(
   id: json['id'] as String,

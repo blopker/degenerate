@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final class TaxProductResourceTaxTransactionShippingCostTaxBehavior {const TaxProductResourceTaxTransactionShippingCostTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
+@immutable final class TaxProductResourceTaxTransactionShippingCostTaxBehavior {const TaxProductResourceTaxTransactionShippingCostTaxBehavior._(this.value);
 
 factory TaxProductResourceTaxTransactionShippingCostTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxTransactionShippingCostTaxBehavior($value)'; } 
  }
 /// 
-final class TaxProductResourceTaxTransactionShippingCost {const TaxProductResourceTaxTransactionShippingCost({required this.amount, required this.amountTax, this.shippingRate, required this.taxBehavior, required this.taxCode, });
+@immutable final class TaxProductResourceTaxTransactionShippingCost {const TaxProductResourceTaxTransactionShippingCost({required this.amount, required this.amountTax, required this.taxBehavior, required this.taxCode, this.shippingRate, });
 
 factory TaxProductResourceTaxTransactionShippingCost.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxTransactionShippingCost(
   amount: (json['amount'] as num).toInt(),

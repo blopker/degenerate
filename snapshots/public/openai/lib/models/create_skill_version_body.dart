@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_skill_version_body_files.dart';/// Uploads a new immutable version of a skill.
-final class CreateSkillVersionBody {const CreateSkillVersionBody({required this.files, this.$default, });
+@immutable final class CreateSkillVersionBody {const CreateSkillVersionBody({required this.files, this.$default, });
 
 factory CreateSkillVersionBody.fromJson(Map<String, dynamic> json) { return CreateSkillVersionBody(
   files: OneOf2.parse(json['files'], fromA: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(), fromB: (v) => base64Decode(v as String),),

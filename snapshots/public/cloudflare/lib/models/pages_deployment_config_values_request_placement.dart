@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Placement setting used for Pages Functions.
-final class PagesDeploymentConfigValuesRequestPlacement {const PagesDeploymentConfigValuesRequestPlacement({required this.mode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Placement setting used for Pages Functions.
+@immutable final class PagesDeploymentConfigValuesRequestPlacement {const PagesDeploymentConfigValuesRequestPlacement({required this.mode});
 
 factory PagesDeploymentConfigValuesRequestPlacement.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestPlacement(
   mode: json['mode'] as String,

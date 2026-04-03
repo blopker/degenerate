@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretScanningListAlertsForRepoState {const SecretScanningListAlertsForRepoState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningListAlertsForRepoState {const SecretScanningListAlertsForRepoState._(this.value);
 
 factory SecretScanningListAlertsForRepoState.fromJson(String json) { return switch (json) {
   'open' => open,

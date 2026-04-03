@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Preferred language of the Bancontact authorization page that the customer is redirected to.
-final class InvoicePaymentMethodOptionsBancontactPreferredLanguage {const InvoicePaymentMethodOptionsBancontactPreferredLanguage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to.
+@immutable final class InvoicePaymentMethodOptionsBancontactPreferredLanguage {const InvoicePaymentMethodOptionsBancontactPreferredLanguage._(this.value);
 
 factory InvoicePaymentMethodOptionsBancontactPreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsBancontactPreferredLanguage($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsBancontact {const InvoicePaymentMethodOptionsBancontact({required this.preferredLanguage});
+@immutable final class InvoicePaymentMethodOptionsBancontact {const InvoicePaymentMethodOptionsBancontact({required this.preferredLanguage});
 
 factory InvoicePaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsBancontact(
   preferredLanguage: InvoicePaymentMethodOptionsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String),

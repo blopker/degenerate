@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NamespaceSpec describes the attributes on a Namespace.
-final class NamespaceSpec {const NamespaceSpec({this.finalizers});
+@immutable final class NamespaceSpec {const NamespaceSpec({this.finalizers});
 
 factory NamespaceSpec.fromJson(Map<String, dynamic> json) { return NamespaceSpec(
   finalizers: (json['finalizers'] as List<dynamic>?)?.map((e) => e as String).toList(),

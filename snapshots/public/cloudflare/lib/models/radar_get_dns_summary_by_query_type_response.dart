@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_summary_by_query_type_response_result.dart';final class RadarGetDnsSummaryByQueryTypeResponse {const RadarGetDnsSummaryByQueryTypeResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_query_type_response_result.dart';@immutable final class RadarGetDnsSummaryByQueryTypeResponse {const RadarGetDnsSummaryByQueryTypeResponse({required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByQueryTypeResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByQueryTypeResponse(
   result: RadarGetDnsSummaryByQueryTypeResponseResult.fromJson(json['result'] as Map<String, dynamic>),

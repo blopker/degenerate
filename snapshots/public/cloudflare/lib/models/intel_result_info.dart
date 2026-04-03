@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelResultInfo {const IntelResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelResultInfo {const IntelResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory IntelResultInfo.fromJson(Map<String, dynamic> json) { return IntelResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_syn_protection_rule.dart';final class DosSynProtectionRuleListResponse {const DosSynProtectionRuleListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_syn_protection_rule.dart';@immutable final class DosSynProtectionRuleListResponse {const DosSynProtectionRuleListResponse({this.result});
 
 factory DosSynProtectionRuleListResponse.fromJson(Map<String, dynamic> json) { return DosSynProtectionRuleListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DosSynProtectionRule.fromJson(e as Map<String, dynamic>)).toList(),

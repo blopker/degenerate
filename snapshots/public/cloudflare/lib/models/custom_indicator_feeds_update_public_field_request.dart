@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomIndicatorFeedsUpdatePublicFieldRequest {const CustomIndicatorFeedsUpdatePublicFieldRequest({this.description, this.isAttributable, this.isDownloadable, this.isPublic, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdatePublicFieldRequest {const CustomIndicatorFeedsUpdatePublicFieldRequest({this.description, this.isAttributable, this.isDownloadable, this.isPublic, this.name, });
 
 factory CustomIndicatorFeedsUpdatePublicFieldRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
   description: json['description'] as String?,

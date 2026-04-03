@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'intel_asn.dart';final class IntelAsnComponentsSchemasResponse {const IntelAsnComponentsSchemasResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';@immutable final class IntelAsnComponentsSchemasResponse {const IntelAsnComponentsSchemasResponse({this.result});
 
 factory IntelAsnComponentsSchemasResponse.fromJson(Map<String, dynamic> json) { return IntelAsnComponentsSchemasResponse(
   result: json['result'] != null ? IntelAsn.fromJson(json['result'] as num) : null,

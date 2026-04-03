@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// token in form of UUID
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// token in form of UUID
 extension type const AaaToken(String value) {
 factory AaaToken.fromJson(String json) => AaaToken(json);
 
 String toJson() => value;
 
 }
-final class AaaSensitiveIdResponseResult {const AaaSensitiveIdResponseResult({this.id});
+@immutable final class AaaSensitiveIdResponseResult {const AaaSensitiveIdResponseResult({this.id});
 
 factory AaaSensitiveIdResponseResult.fromJson(Map<String, dynamic> json) { return AaaSensitiveIdResponseResult(
   id: json['id'] != null ? AaaToken.fromJson(json['id'] as String) : null,

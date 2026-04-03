@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// object containing information about the author.
-final class ReposDeleteFileRequestAuthor {const ReposDeleteFileRequestAuthor({this.name, this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// object containing information about the author.
+@immutable final class ReposDeleteFileRequestAuthor {const ReposDeleteFileRequestAuthor({this.name, this.email, });
 
 factory ReposDeleteFileRequestAuthor.fromJson(Map<String, dynamic> json) { return ReposDeleteFileRequestAuthor(
   name: json['name'] as String?,

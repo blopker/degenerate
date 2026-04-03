@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnYamlDiff {const McnYamlDiff({required this.diff, required this.leftDescription, required this.leftYaml, required this.rightDescription, required this.rightYaml, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnYamlDiff {const McnYamlDiff({required this.diff, required this.leftDescription, required this.leftYaml, required this.rightDescription, required this.rightYaml, });
 
 factory McnYamlDiff.fromJson(Map<String, dynamic> json) { return McnYamlDiff(
   diff: json['diff'] as String,

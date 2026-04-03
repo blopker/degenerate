@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `audio.voice_consent`.
-final class VoiceConsentResourceObject {const VoiceConsentResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `audio.voice_consent`.
+@immutable final class VoiceConsentResourceObject {const VoiceConsentResourceObject._(this.value);
 
 factory VoiceConsentResourceObject.fromJson(String json) { return switch (json) {
   'audio.voice_consent' => audioVoiceConsent,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VoiceConsentResourceObject($value)'; } 
  }
 /// A consent recording used to authorize creation of a custom voice.
-final class VoiceConsentResource {const VoiceConsentResource({required this.object, required this.id, required this.name, required this.language, required this.createdAt, });
+@immutable final class VoiceConsentResource {const VoiceConsentResource({required this.object, required this.id, required this.name, required this.language, required this.createdAt, });
 
 factory VoiceConsentResource.fromJson(Map<String, dynamic> json) { return VoiceConsentResource(
   object: VoiceConsentResourceObject.fromJson(json['object'] as String),

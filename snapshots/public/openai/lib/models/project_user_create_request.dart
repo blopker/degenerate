@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// `owner` or `member`
-final class ProjectUserCreateRequestRole {const ProjectUserCreateRequestRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// `owner` or `member`
+@immutable final class ProjectUserCreateRequestRole {const ProjectUserCreateRequestRole._(this.value);
 
 factory ProjectUserCreateRequestRole.fromJson(String json) { return switch (json) {
   'owner' => owner,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectUserCreateRequestRole($value)'; } 
  }
-final class ProjectUserCreateRequest {const ProjectUserCreateRequest({required this.userId, required this.role, });
+@immutable final class ProjectUserCreateRequest {const ProjectUserCreateRequest({required this.userId, required this.role, });
 
 factory ProjectUserCreateRequest.fromJson(Map<String, dynamic> json) { return ProjectUserCreateRequest(
   userId: json['user_id'] as String,

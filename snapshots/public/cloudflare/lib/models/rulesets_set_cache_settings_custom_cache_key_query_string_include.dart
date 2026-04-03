@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which query string parameters to include in the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude {const RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude({this.all, this.list, });
+@immutable final class RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude {const RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude({this.all, this.list, });
 
 factory RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude(
   all: json['all'] as bool?,

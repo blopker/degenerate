@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'legal_entity_company_verification_document.dart';/// 
-final class LegalEntityCompanyVerification {const LegalEntityCompanyVerification({required this.document});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'legal_entity_company_verification_document.dart';/// 
+@immutable final class LegalEntityCompanyVerification {const LegalEntityCompanyVerification({required this.document});
 
 factory LegalEntityCompanyVerification.fromJson(Map<String, dynamic> json) { return LegalEntityCompanyVerification(
   document: LegalEntityCompanyVerificationDocument.fromJson(json['document'] as Map<String, dynamic>),

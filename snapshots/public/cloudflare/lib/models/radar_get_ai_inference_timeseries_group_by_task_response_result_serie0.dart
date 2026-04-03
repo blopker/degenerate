@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultSerie0 {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultSerie0 {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupByTaskResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),

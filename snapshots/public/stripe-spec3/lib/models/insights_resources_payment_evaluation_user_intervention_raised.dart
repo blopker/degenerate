@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_user_intervention_raised_custom.dart';/// Type of user intervention raised.
-final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_user_intervention_raised_custom.dart';/// Type of user intervention raised.
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationUserInterventionRaisedType.fromJson(String json) { return switch (json) {
   '3ds' => $3ds,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionRaisedType($value)'; } 
  }
 /// User intervention raised event details attached to this payment evaluation
-final class InsightsResourcesPaymentEvaluationUserInterventionRaised {const InsightsResourcesPaymentEvaluationUserInterventionRaised({this.custom, required this.key, required this.type, });
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaised {const InsightsResourcesPaymentEvaluationUserInterventionRaised({required this.key, required this.type, this.custom, });
 
 factory InsightsResourcesPaymentEvaluationUserInterventionRaised.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionRaised(
   custom: json['custom'] != null ? InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,

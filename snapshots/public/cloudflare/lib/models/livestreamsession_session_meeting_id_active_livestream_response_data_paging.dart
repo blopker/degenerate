@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
 
 factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging.fromJson(Map<String, dynamic> json) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
   endOffset: json['end_offset'] != null ? (json['end_offset'] as num).toDouble() : null,

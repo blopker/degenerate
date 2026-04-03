@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ArgoAnalyticsMessages2 {const ArgoAnalyticsMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArgoAnalyticsMessages2 {const ArgoAnalyticsMessages2({required this.code, required this.message, });
 
 factory ArgoAnalyticsMessages2.fromJson(Map<String, dynamic> json) { return ArgoAnalyticsMessages2(
   code: (json['code'] as num).toInt(),

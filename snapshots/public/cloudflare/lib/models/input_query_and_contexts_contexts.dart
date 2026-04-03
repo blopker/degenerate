@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InputQueryAndContextsContexts {const InputQueryAndContextsContexts({this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InputQueryAndContextsContexts {const InputQueryAndContextsContexts({this.text});
 
 factory InputQueryAndContextsContexts.fromJson(Map<String, dynamic> json) { return InputQueryAndContextsContexts(
   text: json['text'] as String?,

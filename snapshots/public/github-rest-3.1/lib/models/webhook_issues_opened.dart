@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_opened_changes.dart';import 'webhook_issues_opened_issue.dart';final class WebhookIssuesOpenedAction {const WebhookIssuesOpenedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_opened_changes.dart';import 'webhook_issues_opened_issue.dart';@immutable final class WebhookIssuesOpenedAction {const WebhookIssuesOpenedAction._(this.value);
 
 factory WebhookIssuesOpenedAction.fromJson(String json) { return switch (json) {
   'opened' => opened,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssuesOpenedAction($value)'; } 
  }
-final class WebhookIssuesOpened {const WebhookIssuesOpened({required this.action, this.changes, this.enterprise, this.installation, required this.issue, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookIssuesOpened {const WebhookIssuesOpened({required this.action, required this.issue, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesOpened.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpened(
   action: WebhookIssuesOpenedAction.fromJson(json['action'] as String),

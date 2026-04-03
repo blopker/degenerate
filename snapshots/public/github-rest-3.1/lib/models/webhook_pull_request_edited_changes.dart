@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_edited_changes_base.dart';import 'webhook_pull_request_edited_changes_body.dart';import 'webhook_pull_request_edited_changes_title.dart';/// The changes to the comment if the action was `edited`.
-final class WebhookPullRequestEditedChanges {const WebhookPullRequestEditedChanges({this.base, this.body, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_edited_changes_base.dart';import 'webhook_pull_request_edited_changes_body.dart';import 'webhook_pull_request_edited_changes_title.dart';/// The changes to the comment if the action was `edited`.
+@immutable final class WebhookPullRequestEditedChanges {const WebhookPullRequestEditedChanges({this.base, this.body, this.title, });
 
 factory WebhookPullRequestEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEditedChanges(
   base: json['base'] != null ? WebhookPullRequestEditedChangesBase.fromJson(json['base'] as Map<String, dynamic>) : null,

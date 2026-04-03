@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentRequestPaymentMethodDataMbWay {const PostSetupIntentsIntentRequestPaymentMethodDataMbWay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataMbWay {const PostSetupIntentsIntentRequestPaymentMethodDataMbWay();
 
 factory PostSetupIntentsIntentRequestPaymentMethodDataMbWay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataMbWay(
 

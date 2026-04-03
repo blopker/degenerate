@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image.dart';final class ImagesImagesListResponse2Result {const ImagesImagesListResponse2Result({this.images});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image.dart';@immutable final class ImagesImagesListResponse2Result {const ImagesImagesListResponse2Result({this.images});
 
 factory ImagesImagesListResponse2Result.fromJson(Map<String, dynamic> json) { return ImagesImagesListResponse2Result(
   images: (json['images'] as List<dynamic>?)?.map((e) => ImagesImage.fromJson(e as Map<String, dynamic>)).toList(),

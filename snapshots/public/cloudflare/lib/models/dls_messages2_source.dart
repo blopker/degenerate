@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlsMessages2Source {const DlsMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlsMessages2Source {const DlsMessages2Source({this.pointer});
 
 factory DlsMessages2Source.fromJson(Map<String, dynamic> json) { return DlsMessages2Source(
   pointer: json['pointer'] as String?,

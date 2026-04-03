@@ -2,6 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
+@immutable
 final class SessionStatus {
   const SessionStatus._(this.value);
 
@@ -50,6 +51,7 @@ final class SessionStatus {
   }
 }
 
+@immutable
 final class TotemStatus {
   const TotemStatus._(this.value);
 
@@ -98,11 +100,12 @@ final class TotemStatus {
   }
 }
 
+@immutable
 final class SessionState {
   const SessionState({
     required this.keeperSlug,
-    this.status = SessionStatus.waiting,
     required this.speakingOrder,
+    this.status = SessionStatus.waiting,
     this.speakingNow,
     this.nextSpeaker,
     this.totemStatus = TotemStatus.none,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigFilesResponseResultInfo {const AutoragConfigFilesResponseResultInfo({required this.count, required this.page, this.perPage = 20, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesResponseResultInfo {const AutoragConfigFilesResponseResultInfo({required this.count, required this.page, required this.totalCount, this.perPage = 20, });
 
 factory AutoragConfigFilesResponseResultInfo.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponseResultInfo(
   count: (json['count'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesTaniumConfigRequest {const TeamsDevicesTaniumConfigRequest({this.accessClientId, this.accessClientSecret, required this.apiUrl, required this.clientSecret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTaniumConfigRequest {const TeamsDevicesTaniumConfigRequest({required this.apiUrl, required this.clientSecret, this.accessClientId, this.accessClientSecret, });
 
 factory TeamsDevicesTaniumConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesTaniumConfigRequest(
   accessClientId: json['access_client_id'] as String?,

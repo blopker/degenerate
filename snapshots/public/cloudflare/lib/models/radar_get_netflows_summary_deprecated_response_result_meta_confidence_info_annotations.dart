@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_sensitive_id_response_result.dart';final class AaaSensitiveIdResponse {const AaaSensitiveIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_sensitive_id_response_result.dart';@immutable final class AaaSensitiveIdResponse {const AaaSensitiveIdResponse({this.result});
 
 factory AaaSensitiveIdResponse.fromJson(Map<String, dynamic> json) { return AaaSensitiveIdResponse(
   result: json['result'] != null ? AaaSensitiveIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

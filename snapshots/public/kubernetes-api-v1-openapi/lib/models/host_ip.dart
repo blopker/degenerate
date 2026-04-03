@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// HostIP represents a single IP address allocated to the host.
-final class HostIp {const HostIp({this.ip = ''});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// HostIP represents a single IP address allocated to the host.
+@immutable final class HostIp {const HostIp({this.ip = ''});
 
 factory HostIp.fromJson(Map<String, dynamic> json) { return HostIp(
   ip: json['ip'] as String,

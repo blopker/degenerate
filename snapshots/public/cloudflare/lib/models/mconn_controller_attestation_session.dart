@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_connector_identity.dart';import 'mconn_controller_device_identity.dart';final class MconnControllerAttestationSession {const MconnControllerAttestationSession({required this.akPublic, this.connector, required this.device, required this.nonce, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_connector_identity.dart';import 'mconn_controller_device_identity.dart';@immutable final class MconnControllerAttestationSession {const MconnControllerAttestationSession({required this.akPublic, required this.device, required this.nonce, this.connector, });
 
 factory MconnControllerAttestationSession.fromJson(Map<String, dynamic> json) { return MconnControllerAttestationSession(
   akPublic: json['ak_public'] as String,

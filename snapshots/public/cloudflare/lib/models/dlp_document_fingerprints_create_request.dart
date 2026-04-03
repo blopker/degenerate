@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpDocumentFingerprintsCreateRequest {const DlpDocumentFingerprintsCreateRequest({this.description = '', required this.matchPercent, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDocumentFingerprintsCreateRequest {const DlpDocumentFingerprintsCreateRequest({required this.matchPercent, required this.name, this.description = '', });
 
 factory DlpDocumentFingerprintsCreateRequest.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintsCreateRequest(
   description: json.containsKey('description') ? json['description'] as String : '',

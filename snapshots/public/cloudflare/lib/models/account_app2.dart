@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_account_app_id.dart';final class AccountApp2 {const AccountApp2({required this.accountAppId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_account_app_id.dart';@immutable final class AccountApp2 {const AccountApp2({required this.accountAppId});
 
 factory AccountApp2.fromJson(Map<String, dynamic> json) { return AccountApp2(
   accountAppId: MagicAccountAppId.fromJson(json['account_app_id'] as String),

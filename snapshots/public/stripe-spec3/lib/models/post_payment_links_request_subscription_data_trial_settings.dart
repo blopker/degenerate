@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_request_subscription_data_trial_settings_end_behavior.dart';final class PostPaymentLinksRequestSubscriptionDataTrialSettings {const PostPaymentLinksRequestSubscriptionDataTrialSettings({required this.endBehavior});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_subscription_data_trial_settings_end_behavior.dart';@immutable final class PostPaymentLinksRequestSubscriptionDataTrialSettings {const PostPaymentLinksRequestSubscriptionDataTrialSettings({required this.endBehavior});
 
 factory PostPaymentLinksRequestSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestSubscriptionDataTrialSettings(
   endBehavior: PostPaymentLinksRequestSubscriptionDataTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),

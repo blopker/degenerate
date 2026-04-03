@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class User {const User({this.id, this.username, this.firstName, this.lastName, this.email, this.password, this.phone, this.userStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class User {const User({this.id, this.username, this.firstName, this.lastName, this.email, this.password, this.phone, this.userStatus, });
 
 factory User.fromJson(Map<String, dynamic> json) { return User(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

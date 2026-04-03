@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazManagedComponentType {const ZarazManagedComponentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazManagedComponentType {const ZarazManagedComponentType._(this.value);
 
 factory ZarazManagedComponentType.fromJson(String json) { return switch (json) {
   'component' => component,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazManagedComponentType($value)'; } 
  }
-final class ZarazManagedComponent {const ZarazManagedComponent({required this.type});
+@immutable final class ZarazManagedComponent {const ZarazManagedComponent({required this.type});
 
 factory ZarazManagedComponent.fromJson(Map<String, dynamic> json) { return ZarazManagedComponent(
   type: ZarazManagedComponentType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StartLivestreamingResponseDataStatus {const StartLivestreamingResponseDataStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StartLivestreamingResponseDataStatus {const StartLivestreamingResponseDataStatus._(this.value);
 
 factory StartLivestreamingResponseDataStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StartLivestreamingResponseDataStatus($value)'; } 
  }
-final class StartLivestreamingResponseData {const StartLivestreamingResponseData({this.id, this.ingestServer, this.playbackUrl, this.status, this.streamKey, });
+@immutable final class StartLivestreamingResponseData {const StartLivestreamingResponseData({this.id, this.ingestServer, this.playbackUrl, this.status, this.streamKey, });
 
 factory StartLivestreamingResponseData.fromJson(Map<String, dynamic> json) { return StartLivestreamingResponseData(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ArchiveSecurityCenterInsightDeprecatedRequest {const ArchiveSecurityCenterInsightDeprecatedRequest({this.dismiss = true});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArchiveSecurityCenterInsightDeprecatedRequest {const ArchiveSecurityCenterInsightDeprecatedRequest({this.dismiss = true});
 
 factory ArchiveSecurityCenterInsightDeprecatedRequest.fromJson(Map<String, dynamic> json) { return ArchiveSecurityCenterInsightDeprecatedRequest(
   dismiss: json.containsKey('dismiss') ? json['dismiss'] as bool : true,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEvalRunOutputItemsOrder {const GetEvalRunOutputItemsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEvalRunOutputItemsOrder {const GetEvalRunOutputItemsOrder._(this.value);
 
 factory GetEvalRunOutputItemsOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

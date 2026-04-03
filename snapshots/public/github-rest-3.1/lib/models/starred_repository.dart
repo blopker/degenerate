@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository.dart';/// Starred Repository
-final class StarredRepository {const StarredRepository({required this.starredAt, required this.repo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';/// Starred Repository
+@immutable final class StarredRepository {const StarredRepository({required this.starredAt, required this.repo, });
 
 factory StarredRepository.fromJson(Map<String, dynamic> json) { return StarredRepository(
   starredAt: DateTime.parse(json['starred_at'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitDaywiseStats {const RealtimekitDaywiseStats({this.date, this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitDaywiseStats {const RealtimekitDaywiseStats({this.date, this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
 
 factory RealtimekitDaywiseStats.fromJson(Map<String, dynamic> json) { return RealtimekitDaywiseStats(
   date: json['date'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_response400_errors.dart';final class RadarGetHttpTimeseriesResponse400 {const RadarGetHttpTimeseriesResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_response400_errors.dart';@immutable final class RadarGetHttpTimeseriesResponse400 {const RadarGetHttpTimeseriesResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesResponse400.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

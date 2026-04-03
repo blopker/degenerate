@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ObjectReference contains enough information to let you inspect or modify the referred object.
-final class ObjectReference {const ObjectReference({this.apiVersion, this.fieldPath, this.kind, this.name, this.namespace, this.resourceVersion, this.uid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ObjectReference contains enough information to let you inspect or modify the referred object.
+@immutable final class ObjectReference {const ObjectReference({this.apiVersion, this.fieldPath, this.kind, this.name, this.namespace, this.resourceVersion, this.uid, });
 
 factory ObjectReference.fromJson(Map<String, dynamic> json) { return ObjectReference(
   apiVersion: json['apiVersion'] as String?,

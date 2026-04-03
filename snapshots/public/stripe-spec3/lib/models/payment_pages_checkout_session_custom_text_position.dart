@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionCustomTextPosition {const PaymentPagesCheckoutSessionCustomTextPosition({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionCustomTextPosition {const PaymentPagesCheckoutSessionCustomTextPosition({required this.message});
 
 factory PaymentPagesCheckoutSessionCustomTextPosition.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomTextPosition(
   message: json['message'] as String,

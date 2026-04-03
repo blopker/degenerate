@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Parameters required to transfer a SIP call to a new destination using the
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters required to transfer a SIP call to a new destination using the
 /// Realtime API.
-final class RealtimeCallReferRequest {const RealtimeCallReferRequest({required this.targetUri});
+@immutable final class RealtimeCallReferRequest {const RealtimeCallReferRequest({required this.targetUri});
 
 factory RealtimeCallReferRequest.fromJson(Map<String, dynamic> json) { return RealtimeCallReferRequest(
   targetUri: json['target_uri'] as String,

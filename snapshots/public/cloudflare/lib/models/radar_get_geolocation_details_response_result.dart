@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_geolocation_details_response_result_geolocation.dart';final class RadarGetGeolocationDetailsResponseResult {const RadarGetGeolocationDetailsResponseResult({required this.geolocation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_geolocation_details_response_result_geolocation.dart';@immutable final class RadarGetGeolocationDetailsResponseResult {const RadarGetGeolocationDetailsResponseResult({required this.geolocation});
 
 factory RadarGetGeolocationDetailsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetGeolocationDetailsResponseResult(
   geolocation: RadarGetGeolocationDetailsResponseResultGeolocation.fromJson(json['geolocation'] as Map<String, dynamic>),

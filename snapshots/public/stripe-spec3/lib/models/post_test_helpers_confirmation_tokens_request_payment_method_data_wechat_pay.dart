@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataWechatPay(
 

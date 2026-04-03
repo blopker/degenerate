@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_dataset_update_response400_errors.dart';final class PatchDatasetUpdateResponse400 {const PatchDatasetUpdateResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_dataset_update_response400_errors.dart';@immutable final class PatchDatasetUpdateResponse400 {const PatchDatasetUpdateResponse400({required this.errors, required this.result, required this.success, });
 
 factory PatchDatasetUpdateResponse400.fromJson(Map<String, dynamic> json) { return PatchDatasetUpdateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PatchDatasetUpdateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

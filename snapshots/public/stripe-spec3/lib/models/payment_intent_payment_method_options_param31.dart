@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_payment_method_options_param31_mandate_options.dart';final class PaymentIntentPaymentMethodOptionsParam31SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam31SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param31_mandate_options.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam31SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam31SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam31SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam31SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam31 {const PaymentIntentPaymentMethodOptionsParam31({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam31 {const PaymentIntentPaymentMethodOptionsParam31({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsParam31.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam31(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam31MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

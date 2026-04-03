@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EvalRunPerModelUsage {const EvalRunPerModelUsage({required this.modelName, required this.invocationCount, required this.promptTokens, required this.completionTokens, required this.totalTokens, required this.cachedTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EvalRunPerModelUsage {const EvalRunPerModelUsage({required this.modelName, required this.invocationCount, required this.promptTokens, required this.completionTokens, required this.totalTokens, required this.cachedTokens, });
 
 factory EvalRunPerModelUsage.fromJson(Map<String, dynamic> json) { return EvalRunPerModelUsage(
   modelName: json['model_name'] as String,

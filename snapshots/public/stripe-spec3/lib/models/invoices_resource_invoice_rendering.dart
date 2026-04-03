@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_rendering_pdf.dart';/// 
-final class InvoicesResourceInvoiceRendering {const InvoicesResourceInvoiceRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_rendering_pdf.dart';/// 
+@immutable final class InvoicesResourceInvoiceRendering {const InvoicesResourceInvoiceRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
 
 factory InvoicesResourceInvoiceRendering.fromJson(Map<String, dynamic> json) { return InvoicesResourceInvoiceRendering(
   amountTaxDisplay: json['amount_tax_display'] as String?,

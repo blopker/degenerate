@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_generic_error_response_error.dart';final class RealtimekitGenericErrorResponse {const RealtimekitGenericErrorResponse({required this.error, this.success = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_generic_error_response_error.dart';@immutable final class RealtimekitGenericErrorResponse {const RealtimekitGenericErrorResponse({required this.error, this.success = false, });
 
 factory RealtimekitGenericErrorResponse.fromJson(Map<String, dynamic> json) { return RealtimekitGenericErrorResponse(
   error: RealtimekitGenericErrorResponseError.fromJson(json['error'] as Map<String, dynamic>),

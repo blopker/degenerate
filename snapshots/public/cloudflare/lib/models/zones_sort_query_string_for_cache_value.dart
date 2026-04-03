@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue._(this.value);
 
 factory ZonesSortQueryStringForCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,

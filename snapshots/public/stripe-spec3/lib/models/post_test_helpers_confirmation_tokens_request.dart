@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_options.dart';import 'post_test_helpers_confirmation_tokens_request_shipping.dart';/// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
 /// 
 /// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
-final class PostTestHelpersConfirmationTokensRequestSetupFutureUsage {const PostTestHelpersConfirmationTokensRequestSetupFutureUsage._(this.value);
+@immutable final class PostTestHelpersConfirmationTokensRequestSetupFutureUsage {const PostTestHelpersConfirmationTokensRequestSetupFutureUsage._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestSetupFutureUsage($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
+@immutable final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
 
 factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_column_metrics.dart';final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_column_metrics.dart';@immutable final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
 
 factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsColumn(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => e as String).toList(),

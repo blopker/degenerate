@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The user who performed the audit logged action.
-final class AuditLogActorUser {const AuditLogActorUser({this.id, this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who performed the audit logged action.
+@immutable final class AuditLogActorUser {const AuditLogActorUser({this.id, this.email, });
 
 factory AuditLogActorUser.fromJson(Map<String, dynamic> json) { return AuditLogActorUser(
   id: json['id'] as String?,

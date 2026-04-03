@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_messages2.dart';final class ResponseCommonFailure59 {const ResponseCommonFailure59({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_messages2.dart';@immutable final class ResponseCommonFailure59 {const ResponseCommonFailure59({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure59.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure59(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceTaggingMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestPaymentMethodDataSwish {const PostPaymentIntentsRequestPaymentMethodDataSwish();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataSwish {const PostPaymentIntentsRequestPaymentMethodDataSwish();
 
 factory PostPaymentIntentsRequestPaymentMethodDataSwish.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataSwish(
 

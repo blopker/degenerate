@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsersCreatePublicSshKeyForAuthenticatedUserRequest {const UsersCreatePublicSshKeyForAuthenticatedUserRequest({this.title, required this.key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersCreatePublicSshKeyForAuthenticatedUserRequest {const UsersCreatePublicSshKeyForAuthenticatedUserRequest({required this.key, this.title, });
 
 factory UsersCreatePublicSshKeyForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersCreatePublicSshKeyForAuthenticatedUserRequest(
   title: json['title'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ModifyAssistantRequestToolResourcesFileSearch {const ModifyAssistantRequestToolResourcesFileSearch({this.vectorStoreIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyAssistantRequestToolResourcesFileSearch {const ModifyAssistantRequestToolResourcesFileSearch({this.vectorStoreIds});
 
 factory ModifyAssistantRequestToolResourcesFileSearch.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequestToolResourcesFileSearch(
   vectorStoreIds: (json['vector_store_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),

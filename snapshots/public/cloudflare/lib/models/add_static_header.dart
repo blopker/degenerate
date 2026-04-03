@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_rewrite_header_operation.dart';import 'rulesets_rewrite_header_value.dart';/// A header with a static value to add.
-final class AddStaticHeader {const AddStaticHeader({required this.operation, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_header_operation.dart';import 'rulesets_rewrite_header_value.dart';/// A header with a static value to add.
+@immutable final class AddStaticHeader {const AddStaticHeader({required this.operation, required this.value, });
 
 factory AddStaticHeader.fromJson(Map<String, dynamic> json) { return AddStaticHeader(
   operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),

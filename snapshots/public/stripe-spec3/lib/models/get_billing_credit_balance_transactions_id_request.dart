@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingCreditBalanceTransactionsIdRequest {const GetBillingCreditBalanceTransactionsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingCreditBalanceTransactionsIdRequest {const GetBillingCreditBalanceTransactionsIdRequest();
 
 factory GetBillingCreditBalanceTransactionsIdRequest.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceTransactionsIdRequest(
 

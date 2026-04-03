@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2.dart';import 'dos_protection_status.dart';final class DosProtectionStatusResponse {const DosProtectionStatusResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2.dart';import 'dos_protection_status.dart';@immutable final class DosProtectionStatusResponse {const DosProtectionStatusResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DosProtectionStatusResponse.fromJson(Map<String, dynamic> json) { return DosProtectionStatusResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),

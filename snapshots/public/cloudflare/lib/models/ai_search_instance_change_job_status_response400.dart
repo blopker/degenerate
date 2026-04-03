@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_change_job_status_response400_errors.dart';final class AiSearchInstanceChangeJobStatusResponse400 {const AiSearchInstanceChangeJobStatusResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_change_job_status_response400_errors.dart';@immutable final class AiSearchInstanceChangeJobStatusResponse400 {const AiSearchInstanceChangeJobStatusResponse400({required this.errors, required this.result, required this.success, });
 
 factory AiSearchInstanceChangeJobStatusResponse400.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChangeJobStatusResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'climate_removals_location.dart';import 'climate_supplier.dart';/// The delivery of a specified quantity of carbon for an order.
-final class ClimateRemovalsOrderDeliveries {const ClimateRemovalsOrderDeliveries({required this.deliveredAt, this.location, required this.metricTons, this.registryUrl, required this.supplier, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_removals_location.dart';import 'climate_supplier.dart';/// The delivery of a specified quantity of carbon for an order.
+@immutable final class ClimateRemovalsOrderDeliveries {const ClimateRemovalsOrderDeliveries({required this.deliveredAt, required this.metricTons, required this.supplier, this.location, this.registryUrl, });
 
 factory ClimateRemovalsOrderDeliveries.fromJson(Map<String, dynamic> json) { return ClimateRemovalsOrderDeliveries(
   deliveredAt: (json['delivered_at'] as num).toInt(),

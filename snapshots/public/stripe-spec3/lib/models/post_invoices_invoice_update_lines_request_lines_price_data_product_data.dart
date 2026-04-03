@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData({this.description, this.images, this.metadata, required this.name, this.taxCode, this.unitLabel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData({required this.name, this.description, this.images, this.metadata, this.taxCode, this.unitLabel, });
 
 factory PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData(
   description: json['description'] as String?,

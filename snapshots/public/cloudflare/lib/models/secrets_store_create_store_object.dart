@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secrets_store_store_name.dart';final class SecretsStoreCreateStoreObject {const SecretsStoreCreateStoreObject({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_store_name.dart';@immutable final class SecretsStoreCreateStoreObject {const SecretsStoreCreateStoreObject({required this.name});
 
 factory SecretsStoreCreateStoreObject.fromJson(Map<String, dynamic> json) { return SecretsStoreCreateStoreObject(
   name: SecretsStoreStoreName.fromJson(json['name'] as String),

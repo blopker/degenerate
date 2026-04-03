@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class TerminalConfigurationConfigurationResourceCurrencySpecificConfig {const TerminalConfigurationConfigurationResourceCurrencySpecificConfig({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
+@immutable final class TerminalConfigurationConfigurationResourceCurrencySpecificConfig {const TerminalConfigurationConfigurationResourceCurrencySpecificConfig({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 
 factory TerminalConfigurationConfigurationResourceCurrencySpecificConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceCurrencySpecificConfig(
   fixedAmounts: (json['fixed_amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

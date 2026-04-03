@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitTreeTree {const GitTreeTree({required this.path, required this.mode, required this.type, required this.sha, this.size, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTreeTree {const GitTreeTree({required this.path, required this.mode, required this.type, required this.sha, this.size, this.url, });
 
 factory GitTreeTree.fromJson(Map<String, dynamic> json) { return GitTreeTree(
   path: json['path'] as String,

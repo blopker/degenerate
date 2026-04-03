@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_schema_response_discovery_result.dart';final class ShieldSchemaResponseDiscovery {const ShieldSchemaResponseDiscovery({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_schema_response_discovery_result.dart';@immutable final class ShieldSchemaResponseDiscovery {const ShieldSchemaResponseDiscovery({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ShieldSchemaResponseDiscovery.fromJson(Map<String, dynamic> json) { return ShieldSchemaResponseDiscovery(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

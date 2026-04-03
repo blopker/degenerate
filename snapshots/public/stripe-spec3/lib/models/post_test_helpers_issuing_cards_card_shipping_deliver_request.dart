@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingCardsCardShippingDeliverRequest {const PostTestHelpersIssuingCardsCardShippingDeliverRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingCardsCardShippingDeliverRequest {const PostTestHelpersIssuingCardsCardShippingDeliverRequest({this.expand});
 
 factory PostTestHelpersIssuingCardsCardShippingDeliverRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingCardsCardShippingDeliverRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

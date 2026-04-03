@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_string_constraint.dart';/// URL target.
-final class ZonesUrlTarget {const ZonesUrlTarget({this.constraint, this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_string_constraint.dart';/// URL target.
+@immutable final class ZonesUrlTarget {const ZonesUrlTarget({this.constraint, this.target, });
 
 factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarget(
   constraint: json['constraint'] != null ? ZonesStringConstraint.fromJson(json['constraint'] as Map<String, dynamic>) : null,

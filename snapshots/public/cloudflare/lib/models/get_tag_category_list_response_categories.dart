@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTagCategoryListResponseCategories {const GetTagCategoryListResponseCategories({this.createdAt, this.description, required this.name, this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTagCategoryListResponseCategories {const GetTagCategoryListResponseCategories({required this.name, required this.uuid, this.createdAt, this.description, this.updatedAt, });
 
 factory GetTagCategoryListResponseCategories.fromJson(Map<String, dynamic> json) { return GetTagCategoryListResponseCategories(
   createdAt: json['createdAt'] as String?,

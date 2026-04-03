@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome._(this.value);
 
 factory SmsFeedbackEnumOutcome.fromJson(String json) { return switch (json) {
   'confirmed' => confirmed,

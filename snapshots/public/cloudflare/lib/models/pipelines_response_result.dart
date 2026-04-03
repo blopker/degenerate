@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PipelinesResponseResult {const PipelinesResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PipelinesResponseResult {const PipelinesResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, });
 
 factory PipelinesResponseResult.fromJson(Map<String, dynamic> json) { return PipelinesResponseResult(
   createdAt: json['created_at'] as String,

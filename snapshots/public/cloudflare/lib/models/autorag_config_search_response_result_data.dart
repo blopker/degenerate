@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_response_result_data_content.dart';final class AutoragConfigSearchResponseResultData {const AutoragConfigSearchResponseResultData({this.attributes, this.content, this.fileId, this.filename, required this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_response_result_data_content.dart';@immutable final class AutoragConfigSearchResponseResultData {const AutoragConfigSearchResponseResultData({required this.score, this.attributes, this.content, this.fileId, this.filename, });
 
 factory AutoragConfigSearchResponseResultData.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchResponseResultData(
   attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

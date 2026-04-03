@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'external_account_payout_bank_account3_documents.dart';final class ExternalAccountPayoutBankAccount3AccountHolderType {const ExternalAccountPayoutBankAccount3AccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account3_documents.dart';@immutable final class ExternalAccountPayoutBankAccount3AccountHolderType {const ExternalAccountPayoutBankAccount3AccountHolderType._(this.value);
 
 factory ExternalAccountPayoutBankAccount3AccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ExternalAccountPayoutBankAccount3AccountHolderType($value)'; } 
  }
-final class ExternalAccountPayoutBankAccount3AccountType {const ExternalAccountPayoutBankAccount3AccountType._(this.value);
+@immutable final class ExternalAccountPayoutBankAccount3AccountType {const ExternalAccountPayoutBankAccount3AccountType._(this.value);
 
 factory ExternalAccountPayoutBankAccount3AccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ExternalAccountPayoutBankAccount3AccountType($value)'; } 
  }
-final class ExternalAccountPayoutBankAccount3Object {const ExternalAccountPayoutBankAccount3Object._(this.value);
+@immutable final class ExternalAccountPayoutBankAccount3Object {const ExternalAccountPayoutBankAccount3Object._(this.value);
 
 factory ExternalAccountPayoutBankAccount3Object.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ExternalAccountPayoutBankAccount3Object($value)'; } 
  }
-final class ExternalAccountPayoutBankAccount3 {const ExternalAccountPayoutBankAccount3({this.accountHolderName, this.accountHolderType, required this.accountNumber, this.accountType, required this.country, this.currency, this.documents, this.object, this.routingNumber, });
+@immutable final class ExternalAccountPayoutBankAccount3 {const ExternalAccountPayoutBankAccount3({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.accountType, this.currency, this.documents, this.object, this.routingNumber, });
 
 factory ExternalAccountPayoutBankAccount3.fromJson(Map<String, dynamic> json) { return ExternalAccountPayoutBankAccount3(
   accountHolderName: json['account_holder_name'] as String?,

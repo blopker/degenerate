@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AccountsBatchMoveAccountsRequest {const AccountsBatchMoveAccountsRequest({required this.accountIds, required this.destinationOrganizationId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsBatchMoveAccountsRequest {const AccountsBatchMoveAccountsRequest({required this.accountIds, required this.destinationOrganizationId, });
 
 factory AccountsBatchMoveAccountsRequest.fromJson(Map<String, dynamic> json) { return AccountsBatchMoveAccountsRequest(
   accountIds: (json['account_ids'] as List<dynamic>).map((e) => e as String).toList(),

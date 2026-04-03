@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'requests_ssl.dart';import 'requests_ssl_protocols.dart';/// Breakdown of totals for requests.
-final class Requests {const Requests({this.all, this.cached, this.contentType, this.country, this.httpStatus, this.ssl, this.sslProtocols, this.uncached, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'requests_ssl.dart';import 'requests_ssl_protocols.dart';/// Breakdown of totals for requests.
+@immutable final class Requests {const Requests({this.all, this.cached, this.contentType, this.country, this.httpStatus, this.ssl, this.sslProtocols, this.uncached, });
 
 factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,

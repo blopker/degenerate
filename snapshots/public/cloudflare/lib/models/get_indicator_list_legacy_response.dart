@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_legacy_response_indicators.dart';import 'get_indicator_list_legacy_response_pagination.dart';final class GetIndicatorListLegacyResponse {const GetIndicatorListLegacyResponse({required this.indicators, required this.pagination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_legacy_response_indicators.dart';import 'get_indicator_list_legacy_response_pagination.dart';@immutable final class GetIndicatorListLegacyResponse {const GetIndicatorListLegacyResponse({required this.indicators, required this.pagination, });
 
 factory GetIndicatorListLegacyResponse.fromJson(Map<String, dynamic> json) { return GetIndicatorListLegacyResponse(
   indicators: (json['indicators'] as List<dynamic>).map((e) => GetIndicatorListLegacyResponseIndicators.fromJson(e as Map<String, dynamic>)).toList(),

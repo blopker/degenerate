@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_messages2.dart';import 'web3_result_info.dart';final class ResponseCollection46 {const ResponseCollection46({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_messages2.dart';import 'web3_result_info.dart';@immutable final class ResponseCollection46 {const ResponseCollection46({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseCollection46.fromJson(Map<String, dynamic> json) { return ResponseCollection46(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),

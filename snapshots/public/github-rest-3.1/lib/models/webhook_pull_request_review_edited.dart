@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_edited_changes.dart';import 'webhook_pull_request_review_edited_pull_request.dart';import 'webhooks_review.dart';final class WebhookPullRequestReviewEditedAction {const WebhookPullRequestReviewEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_edited_changes.dart';import 'webhook_pull_request_review_edited_pull_request.dart';import 'webhooks_review.dart';@immutable final class WebhookPullRequestReviewEditedAction {const WebhookPullRequestReviewEditedAction._(this.value);
 
 factory WebhookPullRequestReviewEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewEditedAction($value)'; } 
  }
-final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited({required this.action, required this.changes, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, required this.review, required this.sender, });
+@immutable final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited({required this.action, required this.changes, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEdited(
   action: WebhookPullRequestReviewEditedAction.fromJson(json['action'] as String),

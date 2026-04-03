@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.getUser();
 /// ```
 final class SpecExtensionTypesApi {
-  final ApiConfig _config;
-
   SpecExtensionTypesApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

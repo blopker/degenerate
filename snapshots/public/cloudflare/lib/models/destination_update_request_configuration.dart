@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationUpdateRequestConfigurationType {const DestinationUpdateRequestConfigurationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationUpdateRequestConfigurationType {const DestinationUpdateRequestConfigurationType._(this.value);
 
 factory DestinationUpdateRequestConfigurationType.fromJson(String json) { return switch (json) {
   'logpush' => logpush,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationUpdateRequestConfigurationType($value)'; } 
  }
-final class DestinationUpdateRequestConfiguration {const DestinationUpdateRequestConfiguration({required this.headers, required this.type, required this.url, });
+@immutable final class DestinationUpdateRequestConfiguration {const DestinationUpdateRequestConfiguration({required this.headers, required this.type, required this.url, });
 
 factory DestinationUpdateRequestConfiguration.fromJson(Map<String, dynamic> json) { return DestinationUpdateRequestConfiguration(
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),

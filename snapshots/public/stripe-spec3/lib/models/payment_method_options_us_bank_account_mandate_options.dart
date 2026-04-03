@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Mandate collection method
-final class PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {const PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mandate collection method
+@immutable final class PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {const PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(this.value);
 
 factory PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
   'paper' => paper,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsUsBankAccountMandateOptions {const PaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});
+@immutable final class PaymentMethodOptionsUsBankAccountMandateOptions {const PaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});
 
 factory PaymentMethodOptionsUsBankAccountMandateOptions.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsUsBankAccountMandateOptions(
   collectionMethod: json['collection_method'] != null ? PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(json['collection_method'] as String) : null,

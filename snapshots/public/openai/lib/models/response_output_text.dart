@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_output_text_annotations.dart';/// Type discriminator that is always `output_text`.
-final class ResponseOutputTextType {const ResponseOutputTextType._(this.value);
+@immutable final class ResponseOutputTextType {const ResponseOutputTextType._(this.value);
 
 factory ResponseOutputTextType.fromJson(String json) { return switch (json) {
   'output_text' => outputText,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseOutputTextType($value)'; } 
  }
 /// Assistant response text accompanied by optional annotations.
-final class ResponseOutputText {const ResponseOutputText({this.type = ResponseOutputTextType.outputText, required this.text, required this.annotations, });
+@immutable final class ResponseOutputText {const ResponseOutputText({required this.text, required this.annotations, this.type = ResponseOutputTextType.outputText, });
 
 factory ResponseOutputText.fromJson(Map<String, dynamic> json) { return ResponseOutputText(
   type: ResponseOutputTextType.fromJson(json['type'] as String),

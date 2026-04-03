@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_documents_proof_of_ultimate_beneficial_ownership_signer.dart';final class PostAccountsAccountRequestDocumentsProofOfUltimateBeneficialOwnership {const PostAccountsAccountRequestDocumentsProofOfUltimateBeneficialOwnership({this.files, this.signer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_documents_proof_of_ultimate_beneficial_ownership_signer.dart';@immutable final class PostAccountsAccountRequestDocumentsProofOfUltimateBeneficialOwnership {const PostAccountsAccountRequestDocumentsProofOfUltimateBeneficialOwnership({this.files, this.signer, });
 
 factory PostAccountsAccountRequestDocumentsProofOfUltimateBeneficialOwnership.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestDocumentsProofOfUltimateBeneficialOwnership(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),

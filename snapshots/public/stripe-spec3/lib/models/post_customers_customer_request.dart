@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_bank_account.dart';import 'customer_payment_source_card2.dart';import 'customer_shipping3.dart';import 'optional_fields_customer_address2.dart';import 'post_customers_customer_request_address.dart';import 'post_customers_customer_request_bank_account.dart';import 'post_customers_customer_request_business_name.dart';import 'post_customers_customer_request_card.dart';import 'post_customers_customer_request_cash_balance.dart';import 'post_customers_customer_request_individual_name.dart';import 'post_customers_customer_request_invoice_settings.dart';import 'post_customers_customer_request_metadata.dart';import 'post_customers_customer_request_shipping.dart';import 'post_customers_customer_request_tax.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
-final class PostCustomersCustomerRequestTaxExempt {const PostCustomersCustomerRequestTaxExempt._(this.value);
+@immutable final class PostCustomersCustomerRequestTaxExempt {const PostCustomersCustomerRequestTaxExempt._(this.value);
 
 factory PostCustomersCustomerRequestTaxExempt.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerRequestTaxExempt($value)'; } 
  }
-final class PostCustomersCustomerRequest {const PostCustomersCustomerRequest({this.address, this.balance, this.bankAccount, this.businessName, this.card, this.cashBalance, this.defaultAlipayAccount, this.defaultBankAccount, this.defaultCard, this.defaultSource, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, });
+@immutable final class PostCustomersCustomerRequest {const PostCustomersCustomerRequest({this.address, this.balance, this.bankAccount, this.businessName, this.card, this.cashBalance, this.defaultAlipayAccount, this.defaultBankAccount, this.defaultCard, this.defaultSource, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, });
 
 factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequest(
   address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsCustomerAddress2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersCustomerRequestAddressVariant2.fromJson(v as String),) : null,

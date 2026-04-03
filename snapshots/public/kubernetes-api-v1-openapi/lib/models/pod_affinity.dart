@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_affinity_term.dart';import 'weighted_pod_affinity_term.dart';/// Pod affinity is a group of inter pod affinity scheduling rules.
-final class PodAffinity {const PodAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
+@immutable final class PodAffinity {const PodAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
 
 factory PodAffinity.fromJson(Map<String, dynamic> json) { return PodAffinity(
   preferredDuringSchedulingIgnoredDuringExecution: (json['preferredDuringSchedulingIgnoredDuringExecution'] as List<dynamic>?)?.map((e) => WeightedPodAffinityTerm.fromJson(e as Map<String, dynamic>)).toList(),

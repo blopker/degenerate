@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_app_policies_components_schemas_id_response_result.dart';final class AccessAppPoliciesComponentsSchemasIdResponse {const AccessAppPoliciesComponentsSchemasIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_policies_components_schemas_id_response_result.dart';@immutable final class AccessAppPoliciesComponentsSchemasIdResponse {const AccessAppPoliciesComponentsSchemasIdResponse({this.result});
 
 factory AccessAppPoliciesComponentsSchemasIdResponse.fromJson(Map<String, dynamic> json) { return AccessAppPoliciesComponentsSchemasIdResponse(
   result: json['result'] != null ? AccessAppPoliciesComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

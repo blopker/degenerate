@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_as_botnet_threat_feed_response_result_ases.dart';import 'radar_get_as_botnet_threat_feed_response_result_meta.dart';final class RadarGetAsBotnetThreatFeedResponseResult {const RadarGetAsBotnetThreatFeedResponseResult({required this.ases, required this.meta, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_as_botnet_threat_feed_response_result_ases.dart';import 'radar_get_as_botnet_threat_feed_response_result_meta.dart';@immutable final class RadarGetAsBotnetThreatFeedResponseResult {const RadarGetAsBotnetThreatFeedResponseResult({required this.ases, required this.meta, });
 
 factory RadarGetAsBotnetThreatFeedResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAsBotnetThreatFeedResponseResult(
   ases: (json['ases'] as List<dynamic>).map((e) => RadarGetAsBotnetThreatFeedResponseResultAses.fromJson(e as Map<String, dynamic>)).toList(),

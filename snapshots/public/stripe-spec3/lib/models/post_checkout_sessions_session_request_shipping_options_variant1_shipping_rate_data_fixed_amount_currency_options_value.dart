@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior($value)'; } 
  }
-final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue({required this.amount, this.taxBehavior, });
+@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue({required this.amount, this.taxBehavior, });
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue(
   amount: (json['amount'] as num).toInt(),

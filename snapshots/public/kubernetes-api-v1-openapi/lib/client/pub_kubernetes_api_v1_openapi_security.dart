@@ -6,7 +6,7 @@ final class OpenapiSecurity {
   const OpenapiSecurity._();
 
   static final securitySchemes = <String, ApiSecurityScheme>{
-    'BearerToken': ApiSecurityScheme(name: 'BearerToken', type: ApiSecuritySchemeType.apiKey, scheme: null, bearerFormat: null, parameterName: 'authorization', location: ApiKeyLocation.header, openIdConnectUrl: null, flows: []),
+    'BearerToken': const ApiSecurityScheme(name: 'BearerToken', type: ApiSecuritySchemeType.apiKey, parameterName: 'authorization', location: ApiKeyLocation.header),
   };
 
   static ApiConfig applyBearerToken(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'authorization': value});

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesRequestFromInvoiceAction {const PostInvoicesRequestFromInvoiceAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesRequestFromInvoiceAction {const PostInvoicesRequestFromInvoiceAction._(this.value);
 
 factory PostInvoicesRequestFromInvoiceAction.fromJson(String json) { return switch (json) {
   'revision' => revision,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesRequestFromInvoiceAction($value)'; } 
  }
 /// Revise an existing invoice. The new invoice will be created in `status=draft`. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.
-final class PostInvoicesRequestFromInvoice {const PostInvoicesRequestFromInvoice({required this.action, required this.invoice, });
+@immutable final class PostInvoicesRequestFromInvoice {const PostInvoicesRequestFromInvoice({required this.action, required this.invoice, });
 
 factory PostInvoicesRequestFromInvoice.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestFromInvoice(
   action: PostInvoicesRequestFromInvoiceAction.fromJson(json['action'] as String),

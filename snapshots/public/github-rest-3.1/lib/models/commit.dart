@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_author.dart';import 'commit_commit.dart';import 'commit_committer.dart';import 'commit_parents.dart';import 'commit_stats.dart';import 'diff_entry.dart';import 'empty_object.dart';import 'simple_user.dart';/// Commit
-final class Commit {const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats, this.files, });
+@immutable final class Commit {const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats, this.files, });
 
 factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
   url: Uri.parse(json['url'] as String),

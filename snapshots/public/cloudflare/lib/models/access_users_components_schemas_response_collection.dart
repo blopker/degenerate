@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_users.dart';import 'access_users_components_schemas_response_collection_result_info.dart';final class AccessUsersComponentsSchemasResponseCollection {const AccessUsersComponentsSchemasResponseCollection({this.resultInfo, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_users.dart';import 'access_users_components_schemas_response_collection_result_info.dart';@immutable final class AccessUsersComponentsSchemasResponseCollection {const AccessUsersComponentsSchemasResponseCollection({this.resultInfo, this.result, });
 
 factory AccessUsersComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessUsersComponentsSchemasResponseCollection(
   resultInfo: json['result_info'] != null ? AccessUsersComponentsSchemasResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,

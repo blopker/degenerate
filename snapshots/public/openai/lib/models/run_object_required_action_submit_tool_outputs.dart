@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_tool_call_object.dart';/// Details on the tool outputs needed for this run to continue.
-final class RunObjectRequiredActionSubmitToolOutputs {const RunObjectRequiredActionSubmitToolOutputs({required this.toolCalls});
+@immutable final class RunObjectRequiredActionSubmitToolOutputs {const RunObjectRequiredActionSubmitToolOutputs({required this.toolCalls});
 
 factory RunObjectRequiredActionSubmitToolOutputs.fromJson(Map<String, dynamic> json) { return RunObjectRequiredActionSubmitToolOutputs(
   toolCalls: (json['tool_calls'] as List<dynamic>).map((e) => RunToolCallObject.fromJson(e as Map<String, dynamic>)).toList(),

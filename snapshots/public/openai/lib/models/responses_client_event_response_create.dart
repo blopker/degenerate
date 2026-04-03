@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the client event. Always `response.create`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the client event. Always `response.create`.
 /// 
-final class ResponsesClientEventResponseCreateType {const ResponsesClientEventResponseCreateType._(this.value);
+@immutable final class ResponsesClientEventResponseCreateType {const ResponsesClientEventResponseCreateType._(this.value);
 
 factory ResponsesClientEventResponseCreateType.fromJson(String json) { return switch (json) {
   'response.create' => responseCreate,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `stream` is implicit over WebSocket and should not be sent.
 /// - `background` is not supported over WebSocket.
 /// 
-final class ResponsesClientEventResponseCreate {const ResponsesClientEventResponseCreate({required this.type});
+@immutable final class ResponsesClientEventResponseCreate {const ResponsesClientEventResponseCreate({required this.type});
 
 factory ResponsesClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return ResponsesClientEventResponseCreate(
   type: ResponsesClientEventResponseCreateType.fromJson(json['type'] as String),

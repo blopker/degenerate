@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SmartshieldMessages2 {const SmartshieldMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartshieldMessages2 {const SmartshieldMessages2({required this.code, required this.message, });
 
 factory SmartshieldMessages2.fromJson(Map<String, dynamic> json) { return SmartshieldMessages2(
   code: (json['code'] as num).toInt(),

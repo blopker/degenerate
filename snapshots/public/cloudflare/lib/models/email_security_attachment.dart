@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_disposition_label.dart';final class EmailSecurityAttachment {const EmailSecurityAttachment({this.contentType, this.detection, this.encrypted, this.name, required this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecurityAttachment {const EmailSecurityAttachment({required this.size, this.contentType, this.detection, this.encrypted, this.name, });
 
 factory EmailSecurityAttachment.fromJson(Map<String, dynamic> json) { return EmailSecurityAttachment(
   contentType: json['content_type'] as String?,

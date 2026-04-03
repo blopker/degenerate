@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NullAllocationType {const NullAllocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullAllocationType {const NullAllocationType._(this.value);
 
 factory NullAllocationType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'NullAllocationType($value)'; } 
  }
-final class NullAllocation {const NullAllocation({required this.type, this.value, });
+@immutable final class NullAllocation {const NullAllocation({required this.type, this.value, });
 
 factory NullAllocation.fromJson(Map<String, dynamic> json) { return NullAllocation(
   type: NullAllocationType.fromJson(json['type'] as String),

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
 /// 
-final class ZonesIpGeolocationId {const ZonesIpGeolocationId._(this.value);
+@immutable final class ZonesIpGeolocationId {const ZonesIpGeolocationId._(this.value);
 
 factory ZonesIpGeolocationId.fromJson(String json) { return switch (json) {
   'ip_geolocation' => ipGeolocation,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesIpGeolocationId($value)'; } 
  }
-final class ZonesIpGeolocation {const ZonesIpGeolocation({this.id, this.value, });
+@immutable final class ZonesIpGeolocation {const ZonesIpGeolocation({this.id, this.value, });
 
 factory ZonesIpGeolocation.fromJson(Map<String, dynamic> json) { return ZonesIpGeolocation(
   id: json['id'] != null ? ZonesIpGeolocationId.fromJson(json['id'] as String) : null,

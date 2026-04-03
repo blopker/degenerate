@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_server_event_response_content_part_added_part.dart';/// The event type, must be `response.content_part.added`.
-final class RealtimeBetaServerEventResponseContentPartAddedType {const RealtimeBetaServerEventResponseContentPartAddedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_server_event_response_content_part_added_part.dart';/// The event type, must be `response.content_part.added`.
+@immutable final class RealtimeBetaServerEventResponseContentPartAddedType {const RealtimeBetaServerEventResponseContentPartAddedType._(this.value);
 
 factory RealtimeBetaServerEventResponseContentPartAddedType.fromJson(String json) { return switch (json) {
   'response.content_part.added' => responseContentPartAdded,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when a new content part is added to an assistant message item during
 /// response generation.
 /// 
-final class RealtimeBetaServerEventResponseContentPartAdded {const RealtimeBetaServerEventResponseContentPartAdded({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, });
+@immutable final class RealtimeBetaServerEventResponseContentPartAdded {const RealtimeBetaServerEventResponseContentPartAdded({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, });
 
 factory RealtimeBetaServerEventResponseContentPartAdded.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseContentPartAdded(
   eventId: json['event_id'] as String,

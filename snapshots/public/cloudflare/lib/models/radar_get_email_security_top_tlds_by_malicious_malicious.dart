@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Malicious classification.
-final class RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Malicious classification.
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious._(this.value);
 
 factory RadarGetEmailSecurityTopTldsByMaliciousMalicious.fromJson(String json) { return switch (json) {
   'MALICIOUS' => malicious,

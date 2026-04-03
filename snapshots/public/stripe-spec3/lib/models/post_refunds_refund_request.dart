@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_refunds_refund_request_metadata.dart';final class PostRefundsRefundRequest {const PostRefundsRefundRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_refunds_refund_request_metadata.dart';@immutable final class PostRefundsRefundRequest {const PostRefundsRefundRequest({this.expand, this.metadata, });
 
 factory PostRefundsRefundRequest.fromJson(Map<String, dynamic> json) { return PostRefundsRefundRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

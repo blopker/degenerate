@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts {const PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts {const PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts._(this.value);
 
 factory PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
   'included' => included,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts($value)'; } 
  }
-final class PostSubscriptionsRequestBillingModeFlexible {const PostSubscriptionsRequestBillingModeFlexible({this.prorationDiscounts});
+@immutable final class PostSubscriptionsRequestBillingModeFlexible {const PostSubscriptionsRequestBillingModeFlexible({this.prorationDiscounts});
 
 factory PostSubscriptionsRequestBillingModeFlexible.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestBillingModeFlexible(
   prorationDiscounts: json['proration_discounts'] != null ? PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,

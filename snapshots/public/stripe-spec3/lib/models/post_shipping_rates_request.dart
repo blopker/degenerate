@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_shipping_rates_request_delivery_estimate.dart';import 'post_shipping_rates_request_fixed_amount.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final class PostShippingRatesRequestTaxBehavior {const PostShippingRatesRequestTaxBehavior._(this.value);
+@immutable final class PostShippingRatesRequestTaxBehavior {const PostShippingRatesRequestTaxBehavior._(this.value);
 
 factory PostShippingRatesRequestTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostShippingRatesRequestTaxBehavior($value)'; } 
  }
 /// The type of calculation to use on the shipping rate.
-final class PostShippingRatesRequestType {const PostShippingRatesRequestType._(this.value);
+@immutable final class PostShippingRatesRequestType {const PostShippingRatesRequestType._(this.value);
 
 factory PostShippingRatesRequestType.fromJson(String json) { return switch (json) {
   'fixed_amount' => fixedAmount,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostShippingRatesRequestType($value)'; } 
  }
-final class PostShippingRatesRequest {const PostShippingRatesRequest({this.deliveryEstimate, required this.displayName, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
+@immutable final class PostShippingRatesRequest {const PostShippingRatesRequest({required this.displayName, this.deliveryEstimate, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory PostShippingRatesRequest.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequest(
   deliveryEstimate: json['delivery_estimate'] != null ? PostShippingRatesRequestDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,

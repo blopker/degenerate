@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the packet capture request.
-final class MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the packet capture request.
+@immutable final class MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus._(this.value);
 
 factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) { return switch (json) {
   'unknown' => unknown,

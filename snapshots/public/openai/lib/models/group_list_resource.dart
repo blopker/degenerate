@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'group_response.dart';/// Always `list`.
-final class GroupListResourceObject {const GroupListResourceObject._(this.value);
+@immutable final class GroupListResourceObject {const GroupListResourceObject._(this.value);
 
 factory GroupListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GroupListResourceObject($value)'; } 
  }
 /// Paginated list of organization groups.
-final class GroupListResource {const GroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
+@immutable final class GroupListResource {const GroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory GroupListResource.fromJson(Map<String, dynamic> json) { return GroupListResource(
   object: GroupListResourceObject.fromJson(json['object'] as String),

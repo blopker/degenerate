@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_zone_snippet_request_metadata.dart';/// Define a snippet object.
-final class UpdateZoneSnippetRequest {const UpdateZoneSnippetRequest({required this.metadata, this.additionalProperties = const {}, });
+@immutable final class UpdateZoneSnippetRequest {const UpdateZoneSnippetRequest({required this.metadata, this.additionalProperties = const {}, });
 
 factory UpdateZoneSnippetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneSnippetRequest(
   metadata: UpdateZoneSnippetRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>),

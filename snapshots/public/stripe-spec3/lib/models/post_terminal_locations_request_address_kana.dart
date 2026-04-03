@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Kana variation of the full address of the location (Japan only).
-final class PostTerminalLocationsRequestAddressKana {const PostTerminalLocationsRequestAddressKana({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Kana variation of the full address of the location (Japan only).
+@immutable final class PostTerminalLocationsRequestAddressKana {const PostTerminalLocationsRequestAddressKana({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 
 factory PostTerminalLocationsRequestAddressKana.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsRequestAddressKana(
   city: json['city'] as String?,

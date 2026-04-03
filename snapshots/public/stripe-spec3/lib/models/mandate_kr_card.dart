@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateKrCard {const MandateKrCard();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateKrCard {const MandateKrCard();
 
 factory MandateKrCard.fromJson(Map<String, dynamic> json) { return MandateKrCard(
 

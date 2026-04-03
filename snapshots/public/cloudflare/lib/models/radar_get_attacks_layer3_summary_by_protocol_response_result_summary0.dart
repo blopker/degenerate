@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0({required this.gre, required this.icmp, required this.tcp, required this.udp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0({required this.gre, required this.icmp, required this.tcp, required this.udp, });
 
 factory RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(
   gre: json['GRE'] as String,

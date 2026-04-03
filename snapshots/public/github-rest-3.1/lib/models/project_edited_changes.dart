@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'project_edited_changes_description.dart';import 'project_edited_changes_public.dart';import 'project_edited_changes_short_description.dart';import 'project_edited_changes_title.dart';final class ProjectEditedChanges {const ProjectEditedChanges({this.description, this.public, this.shortDescription, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_edited_changes_description.dart';import 'project_edited_changes_public.dart';import 'project_edited_changes_short_description.dart';import 'project_edited_changes_title.dart';@immutable final class ProjectEditedChanges {const ProjectEditedChanges({this.description, this.public, this.shortDescription, this.title, });
 
 factory ProjectEditedChanges.fromJson(Map<String, dynamic> json) { return ProjectEditedChanges(
   description: json['description'] != null ? ProjectEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,

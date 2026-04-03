@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateAmazonPay {const MandateAmazonPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateAmazonPay {const MandateAmazonPay();
 
 factory MandateAmazonPay.fromJson(Map<String, dynamic> json) { return MandateAmazonPay(
 

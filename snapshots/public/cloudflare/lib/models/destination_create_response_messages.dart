@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage._(this.value);
 
 factory DestinationCreateResponseMessagesMessage.fromJson(String json) { return switch (json) {
   'Resource created' => resourceCreated,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationCreateResponseMessagesMessage($value)'; } 
  }
-final class DestinationCreateResponseMessages {const DestinationCreateResponseMessages({required this.message});
+@immutable final class DestinationCreateResponseMessages {const DestinationCreateResponseMessages({required this.message});
 
 factory DestinationCreateResponseMessages.fromJson(Map<String, dynamic> json) { return DestinationCreateResponseMessages(
   message: DestinationCreateResponseMessagesMessage.fromJson(json['message'] as String),

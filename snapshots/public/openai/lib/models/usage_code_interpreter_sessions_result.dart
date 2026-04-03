@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject._(this.value);
 
 factory UsageCodeInterpreterSessionsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.code_interpreter_sessions.result' => organizationUsageCodeInterpreterSessionsResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageCodeInterpreterSessionsResultObject($value)'; } 
  }
 /// The aggregated code interpreter sessions usage details of the specific time bucket.
-final class UsageCodeInterpreterSessionsResult {const UsageCodeInterpreterSessionsResult({required this.object, this.numSessions, this.projectId, });
+@immutable final class UsageCodeInterpreterSessionsResult {const UsageCodeInterpreterSessionsResult({required this.object, this.numSessions, this.projectId, });
 
 factory UsageCodeInterpreterSessionsResult.fromJson(Map<String, dynamic> json) { return UsageCodeInterpreterSessionsResult(
   object: UsageCodeInterpreterSessionsResultObject.fromJson(json['object'] as String),

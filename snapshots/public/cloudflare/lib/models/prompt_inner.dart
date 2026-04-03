@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt_inner_response_format.dart';final class PromptInner {const PromptInner({this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, required this.prompt, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt_inner_response_format.dart';@immutable final class PromptInner {const PromptInner({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
 
 factory PromptInner.fromJson(Map<String, dynamic> json) { return PromptInner(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

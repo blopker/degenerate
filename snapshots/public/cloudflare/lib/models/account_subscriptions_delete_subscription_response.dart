@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_subscriptions_delete_subscription_response_result.dart';final class AccountSubscriptionsDeleteSubscriptionResponse {const AccountSubscriptionsDeleteSubscriptionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_subscriptions_delete_subscription_response_result.dart';@immutable final class AccountSubscriptionsDeleteSubscriptionResponse {const AccountSubscriptionsDeleteSubscriptionResponse({this.result});
 
 factory AccountSubscriptionsDeleteSubscriptionResponse.fromJson(Map<String, dynamic> json) { return AccountSubscriptionsDeleteSubscriptionResponse(
   result: json['result'] != null ? AccountSubscriptionsDeleteSubscriptionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

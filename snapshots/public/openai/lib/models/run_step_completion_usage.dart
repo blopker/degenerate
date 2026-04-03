@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
-final class RunStepCompletionUsage {const RunStepCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
+@immutable final class RunStepCompletionUsage {const RunStepCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, });
 
 factory RunStepCompletionUsage.fromJson(Map<String, dynamic> json) { return RunStepCompletionUsage(
   completionTokens: (json['completion_tokens'] as num).toInt(),

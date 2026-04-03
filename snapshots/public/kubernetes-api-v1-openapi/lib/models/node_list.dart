@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'node.dart';/// NodeList is the whole list of all Nodes which have been registered with master.
-final class NodeList {const NodeList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class NodeList {const NodeList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory NodeList.fromJson(Map<String, dynamic> json) { return NodeList(
   apiVersion: json['apiVersion'] as String?,

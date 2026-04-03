@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class Networks {const Networks({required this.available, this.preferred, });
+@immutable final class Networks {const Networks({required this.available, this.preferred, });
 
 factory Networks.fromJson(Map<String, dynamic> json) { return Networks(
   available: (json['available'] as List<dynamic>).map((e) => e as String).toList(),

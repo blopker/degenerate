@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessIpListRuleIpList {const AccessIpListRuleIpList({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessIpListRuleIpList {const AccessIpListRuleIpList({required this.id});
 
 factory AccessIpListRuleIpList.fromJson(Map<String, dynamic> json) { return AccessIpListRuleIpList(
   id: json['id'] as String,

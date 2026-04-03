@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringTestStatOverTimeSlots {const DigitalExperienceMonitoringTestStatOverTimeSlots({required this.timestamp, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringTestStatOverTimeSlots {const DigitalExperienceMonitoringTestStatOverTimeSlots({required this.timestamp, required this.value, });
 
 factory DigitalExperienceMonitoringTestStatOverTimeSlots.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestStatOverTimeSlots(
   timestamp: json['timestamp'] as String,

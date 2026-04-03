@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_payto_display_preference.dart';/// PayTo is a [real-time](https://docs.stripe.com/payments/real-time) payment method that enables customers in Australia to pay by providing their bank account details. Customers must accept a mandate authorizing you to debit their account. Check this [page](https://docs.stripe.com/payments/payto) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestPayto {const PostPaymentMethodConfigurationsConfigurationRequestPayto({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_payto_display_preference.dart';/// PayTo is a [real-time](https://docs.stripe.com/payments/real-time) payment method that enables customers in Australia to pay by providing their bank account details. Customers must accept a mandate authorizing you to debit their account. Check this [page](https://docs.stripe.com/payments/payto) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestPayto {const PostPaymentMethodConfigurationsConfigurationRequestPayto({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestPayto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPayto(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPaytoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

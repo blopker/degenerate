@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts_variant1.dart';final class GetCreditNotesPreviewLinesTaxAmountsVariant2 {const GetCreditNotesPreviewLinesTaxAmountsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts_variant1.dart';@immutable final class GetCreditNotesPreviewLinesTaxAmountsVariant2 {const GetCreditNotesPreviewLinesTaxAmountsVariant2._(this.value);
 
 factory GetCreditNotesPreviewLinesTaxAmountsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

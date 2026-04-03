@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_not_as_described2.dart';final class PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2 {const PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_not_as_described2.dart';@immutable final class PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2 {const PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2._(this.value);
 
 factory PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Managed Network TLS Config Response.
-final class TeamsDevicesTlsConfigResponse {const TeamsDevicesTlsConfigResponse({this.sha256, required this.tlsSockaddr, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Managed Network TLS Config Response.
+@immutable final class TeamsDevicesTlsConfigResponse {const TeamsDevicesTlsConfigResponse({required this.tlsSockaddr, this.sha256, });
 
 factory TeamsDevicesTlsConfigResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesTlsConfigResponse(
   sha256: json['sha256'] as String?,

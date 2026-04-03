@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_cancel_cancellation_reason_options.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason({required this.enabled, required this.options, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_cancel_cancellation_reason_options.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason({required this.enabled, required this.options, });
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
   enabled: json['enabled'] as bool,

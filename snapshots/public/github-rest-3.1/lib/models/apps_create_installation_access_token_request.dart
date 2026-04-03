@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';final class AppsCreateInstallationAccessTokenRequest {const AppsCreateInstallationAccessTokenRequest({this.repositories, this.repositoryIds, this.permissions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';@immutable final class AppsCreateInstallationAccessTokenRequest {const AppsCreateInstallationAccessTokenRequest({this.repositories, this.repositoryIds, this.permissions, });
 
 factory AppsCreateInstallationAccessTokenRequest.fromJson(Map<String, dynamic> json) { return AppsCreateInstallationAccessTokenRequest(
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => e as String).toList(),

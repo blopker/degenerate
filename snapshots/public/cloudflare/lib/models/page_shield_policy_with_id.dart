@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'page_shield_id.dart';import 'page_shield_policy_action.dart';import 'page_shield_policy_description.dart';import 'page_shield_policy_enabled.dart';import 'page_shield_policy_expression.dart';import 'page_shield_policy_value.dart';final class PageShieldPolicyWithId {const PageShieldPolicyWithId({required this.action, required this.description, required this.enabled, required this.expression, required this.value, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';import 'page_shield_policy_action.dart';import 'page_shield_policy_description.dart';import 'page_shield_policy_enabled.dart';import 'page_shield_policy_expression.dart';import 'page_shield_policy_value.dart';@immutable final class PageShieldPolicyWithId {const PageShieldPolicyWithId({required this.action, required this.description, required this.enabled, required this.expression, required this.value, required this.id, });
 
 factory PageShieldPolicyWithId.fromJson(Map<String, dynamic> json) { return PageShieldPolicyWithId(
   action: PageShieldPolicyAction.fromJson(json['action'] as String),

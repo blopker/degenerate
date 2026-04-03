@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sets the target file size for compaction in megabytes. Defaults to "128".
-final class R2DataCatalogCatalogTargetFileSize {const R2DataCatalogCatalogTargetFileSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the target file size for compaction in megabytes. Defaults to "128".
+@immutable final class R2DataCatalogCatalogTargetFileSize {const R2DataCatalogCatalogTargetFileSize._(this.value);
 
 factory R2DataCatalogCatalogTargetFileSize.fromJson(String json) { return switch (json) {
   '64' => $64,

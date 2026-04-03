@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this quote.
-final class QuotesResourceAutomaticTaxStatus {const QuotesResourceAutomaticTaxStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this quote.
+@immutable final class QuotesResourceAutomaticTaxStatus {const QuotesResourceAutomaticTaxStatus._(this.value);
 
 factory QuotesResourceAutomaticTaxStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'QuotesResourceAutomaticTaxStatus($value)'; } 
  }
 /// 
-final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });
+@immutable final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });
 
 factory QuotesResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return QuotesResourceAutomaticTax(
   enabled: json['enabled'] as bool,

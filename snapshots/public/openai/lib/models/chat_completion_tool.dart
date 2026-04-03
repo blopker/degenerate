@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'function_object.dart';/// The type of the tool. Currently, only `function` is supported.
-final class ChatCompletionToolType {const ChatCompletionToolType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_object.dart';/// The type of the tool. Currently, only `function` is supported.
+@immutable final class ChatCompletionToolType {const ChatCompletionToolType._(this.value);
 
 factory ChatCompletionToolType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A function tool that can be used to generate a response.
 /// 
-final class ChatCompletionTool {const ChatCompletionTool({required this.type, required this.function, });
+@immutable final class ChatCompletionTool {const ChatCompletionTool({required this.type, required this.function, });
 
 factory ChatCompletionTool.fromJson(Map<String, dynamic> json) { return ChatCompletionTool(
   type: ChatCompletionToolType.fromJson(json['type'] as String),

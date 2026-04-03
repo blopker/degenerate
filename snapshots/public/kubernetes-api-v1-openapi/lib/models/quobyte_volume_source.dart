@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
-final class QuobyteVolumeSource {const QuobyteVolumeSource({this.group, this.readOnly, this.registry = '', this.tenant, this.user, this.volume = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
+@immutable final class QuobyteVolumeSource {const QuobyteVolumeSource({this.group, this.readOnly, this.registry = '', this.tenant, this.user, this.volume = '', });
 
 factory QuobyteVolumeSource.fromJson(Map<String, dynamic> json) { return QuobyteVolumeSource(
   group: json['group'] as String?,

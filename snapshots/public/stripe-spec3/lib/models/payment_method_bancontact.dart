@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodBancontact {const PaymentMethodBancontact();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodBancontact {const PaymentMethodBancontact();
 
 factory PaymentMethodBancontact.fromJson(Map<String, dynamic> json) { return PaymentMethodBancontact(
 

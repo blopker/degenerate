@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_request_data_indicators.dart';import 'post_event_create_bulk_request_data_raw.dart';final class PostEventCreateBulkRequestData {const PostEventCreateBulkRequestData({this.accountId, this.attacker, this.attackerCountry, required this.category, this.datasetId, required this.date, required this.event, this.indicator, this.indicatorType, this.indicators, this.insight, required this.raw, this.tags, this.targetCountry, this.targetIndustry, required this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_request_data_indicators.dart';import 'post_event_create_bulk_request_data_raw.dart';@immutable final class PostEventCreateBulkRequestData {const PostEventCreateBulkRequestData({required this.category, required this.date, required this.event, required this.raw, required this.tlp, this.accountId, this.attacker, this.attackerCountry, this.datasetId, this.indicator, this.indicatorType, this.indicators, this.insight, this.tags, this.targetCountry, this.targetIndustry, });
 
 factory PostEventCreateBulkRequestData.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkRequestData(
   accountId: json['accountId'] != null ? (json['accountId'] as num).toDouble() : null,

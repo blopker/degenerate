@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'thread_object_tool_resources.dart';/// The object type, which is always `thread`.
-final class ThreadObjectObject {const ThreadObjectObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_object_tool_resources.dart';/// The object type, which is always `thread`.
+@immutable final class ThreadObjectObject {const ThreadObjectObject._(this.value);
 
 factory ThreadObjectObject.fromJson(String json) { return switch (json) {
   'thread' => thread,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreadObjectObject($value)'; } 
  }
 /// Represents a thread that contains [messages](/docs/api-reference/messages).
-final class ThreadObject {const ThreadObject({required this.id, required this.object, required this.createdAt, required this.toolResources, required this.metadata, });
+@immutable final class ThreadObject {const ThreadObject({required this.id, required this.object, required this.createdAt, required this.toolResources, required this.metadata, });
 
 factory ThreadObject.fromJson(Map<String, dynamic> json) { return ThreadObject(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_schemas_paused.dart';import 'firewall_components_schemas_priority.dart';import 'firewall_firewall_rules_components_schemas_description.dart';import 'firewall_firewall_rules_components_schemas_id.dart';import 'firewall_products2.dart';import 'firewall_ref.dart';import 'firewall_schemas_action.dart';final class FirewallFilterRuleBase {const FirewallFilterRuleBase({this.action, this.description, this.id, this.paused, this.priority, this.products, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_schemas_paused.dart';import 'firewall_components_schemas_priority.dart';import 'firewall_firewall_rules_components_schemas_description.dart';import 'firewall_firewall_rules_components_schemas_id.dart';import 'firewall_products2.dart';import 'firewall_ref.dart';import 'firewall_schemas_action.dart';@immutable final class FirewallFilterRuleBase {const FirewallFilterRuleBase({this.action, this.description, this.id, this.paused, this.priority, this.products, this.ref, });
 
 factory FirewallFilterRuleBase.fromJson(Map<String, dynamic> json) { return FirewallFilterRuleBase(
   action: json['action'] != null ? FirewallSchemasAction.fromJson(json['action'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the desired compression algorithm and format.
-final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the desired compression algorithm and format.
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType._(this.value);
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType($value)'; } 
  }
-final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression({this.type = CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType.gzip});
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression({this.type = CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType.gzip});
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression(
   type: CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType.fromJson(json['type'] as String),

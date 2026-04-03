@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostSnapshotResponseErrors {const BrapiPostSnapshotResponseErrors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostSnapshotResponseErrors {const BrapiPostSnapshotResponseErrors({required this.code, required this.message, });
 
 factory BrapiPostSnapshotResponseErrors.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotResponseErrors(
   code: (json['code'] as num).toDouble(),

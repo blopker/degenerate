@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param8.dart';import 'pending_invoice_item_interval_params3.dart';import 'post_subscriptions_request_add_invoice_items.dart';import 'post_subscriptions_request_application_fee_percent.dart';import 'post_subscriptions_request_automatic_tax.dart';import 'post_subscriptions_request_billing_cycle_anchor_config.dart';import 'post_subscriptions_request_billing_mode.dart';import 'post_subscriptions_request_billing_thresholds.dart';import 'post_subscriptions_request_cancel_at.dart';import 'post_subscriptions_request_default_tax_rates.dart';import 'post_subscriptions_request_discounts.dart';import 'post_subscriptions_request_discounts_variant1.dart';import 'post_subscriptions_request_invoice_settings.dart';import 'post_subscriptions_request_items.dart';import 'post_subscriptions_request_metadata.dart';import 'post_subscriptions_request_on_behalf_of.dart';import 'post_subscriptions_request_payment_settings.dart';import 'post_subscriptions_request_pending_invoice_item_interval.dart';import 'post_subscriptions_request_transfer_data.dart';import 'post_subscriptions_request_trial_end.dart';import 'post_subscriptions_request_trial_settings.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-final class PostSubscriptionsRequestCollectionMethod {const PostSubscriptionsRequestCollectionMethod._(this.value);
+@immutable final class PostSubscriptionsRequestCollectionMethod {const PostSubscriptionsRequestCollectionMethod._(this.value);
 
 factory PostSubscriptionsRequestCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `pending_if_incomplete` is only used with updates and cannot be passed when creating a Subscription.
 /// 
 /// Subscriptions with `collection_method=send_invoice` are automatically activated regardless of the first Invoice status.
-final class PostSubscriptionsRequestPaymentBehavior {const PostSubscriptionsRequestPaymentBehavior._(this.value);
+@immutable final class PostSubscriptionsRequestPaymentBehavior {const PostSubscriptionsRequestPaymentBehavior._(this.value);
 
 factory PostSubscriptionsRequestPaymentBehavior.fromJson(String json) { return switch (json) {
   'allow_incomplete' => allowIncomplete,
@@ -67,7 +67,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsRequestPaymentBehavior($value)'; } 
  }
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) resulting from the `billing_cycle_anchor`. If no value is passed, the default is `create_prorations`.
-final class PostSubscriptionsRequestProrationBehavior {const PostSubscriptionsRequestProrationBehavior._(this.value);
+@immutable final class PostSubscriptionsRequestProrationBehavior {const PostSubscriptionsRequestProrationBehavior._(this.value);
 
 factory PostSubscriptionsRequestProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsRequestProrationBehavior($value)'; } 
  }
-final class PostSubscriptionsRequest {const PostSubscriptionsRequest({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.backdateStartDate, this.billingCycleAnchor, this.billingCycleAnchorConfig, this.billingMode, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.collectionMethod, this.currency, this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.expand, this.invoiceSettings, this.items, this.metadata, this.offSession, this.onBehalfOf, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.transferData, this.trialEnd, this.trialFromPlan, this.trialPeriodDays, this.trialSettings, });
+@immutable final class PostSubscriptionsRequest {const PostSubscriptionsRequest({this.customer, this.applicationFeePercent, this.automaticTax, this.backdateStartDate, this.billingCycleAnchor, this.billingCycleAnchorConfig, this.billingMode, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.collectionMethod, this.currency, this.addInvoiceItems, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.expand, this.invoiceSettings, this.trialSettings, this.metadata, this.offSession, this.onBehalfOf, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.transferData, this.trialEnd, this.trialFromPlan, this.trialPeriodDays, this.items, });
 
 factory PostSubscriptionsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequest(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostSubscriptionsRequestAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),

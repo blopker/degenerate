@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
-final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType {const OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType._(this.value);
+@immutable final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType {const OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType._(this.value);
 
 factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType.fromJson(String json) { return switch (json) {
   'maven_repository' => mavenRepository,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType($value)'; } 
  }
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility {const OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility._(this.value);
+@immutable final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility {const OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility._(this.value);
 
 factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility($value)'; } 
  }
 /// Private registry configuration for an organization
-final class OrgPrivateRegistryConfigurationWithSelectedRepositories {const OrgPrivateRegistryConfigurationWithSelectedRepositories({required this.name, required this.registryType, this.url, this.username, this.replacesBase = false, required this.visibility, this.selectedRepositoryIds, required this.createdAt, required this.updatedAt, });
+@immutable final class OrgPrivateRegistryConfigurationWithSelectedRepositories {const OrgPrivateRegistryConfigurationWithSelectedRepositories({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username, this.replacesBase = false, this.selectedRepositoryIds, });
 
 factory OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(Map<String, dynamic> json) { return OrgPrivateRegistryConfigurationWithSelectedRepositories(
   name: json['name'] as String,

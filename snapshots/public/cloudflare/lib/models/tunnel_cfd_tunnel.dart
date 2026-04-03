@@ -8,7 +8,7 @@ bool toJson() => value;
 
 }
 /// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
-final class TunnelCfdTunnel {const TunnelCfdTunnel({this.accountTag, this.configSrc, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.remoteConfig, this.status, this.tunType, });
+@immutable final class TunnelCfdTunnel {const TunnelCfdTunnel({this.accountTag, this.configSrc, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.remoteConfig, this.status, this.tunType, });
 
 factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTunnel(
   accountTag: json['account_tag'] != null ? TunnelAccountId.fromJson(json['account_tag'] as String) : null,

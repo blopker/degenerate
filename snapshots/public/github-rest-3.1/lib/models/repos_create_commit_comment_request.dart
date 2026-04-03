@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateCommitCommentRequest {const ReposCreateCommitCommentRequest({required this.body, this.path, this.position, this.line, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateCommitCommentRequest {const ReposCreateCommitCommentRequest({required this.body, this.path, this.position, this.line, });
 
 factory ReposCreateCommitCommentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateCommitCommentRequest(
   body: json['body'] as String,

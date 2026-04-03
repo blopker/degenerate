@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamRepositoryPermissions {const TeamRepositoryPermissions({required this.admin, required this.pull, this.triage, required this.push, this.maintain, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamRepositoryPermissions {const TeamRepositoryPermissions({required this.admin, required this.pull, required this.push, this.triage, this.maintain, });
 
 factory TeamRepositoryPermissions.fromJson(Map<String, dynamic> json) { return TeamRepositoryPermissions(
   admin: json['admin'] as bool,

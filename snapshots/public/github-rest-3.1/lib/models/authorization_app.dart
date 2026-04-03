@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AuthorizationApp {const AuthorizationApp({required this.clientId, required this.name, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorizationApp {const AuthorizationApp({required this.clientId, required this.name, required this.url, });
 
 factory AuthorizationApp.fromJson(Map<String, dynamic> json) { return AuthorizationApp(
   clientId: json['client_id'] as String,

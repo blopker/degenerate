@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoiceRenderingTemplatesTemplateArchiveRequest {const PostInvoiceRenderingTemplatesTemplateArchiveRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoiceRenderingTemplatesTemplateArchiveRequest {const PostInvoiceRenderingTemplatesTemplateArchiveRequest({this.expand});
 
 factory PostInvoiceRenderingTemplatesTemplateArchiveRequest.fromJson(Map<String, dynamic> json) { return PostInvoiceRenderingTemplatesTemplateArchiveRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

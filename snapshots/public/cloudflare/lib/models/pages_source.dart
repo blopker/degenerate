@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_source_config.dart';/// The source control management provider.
-final class PagesSourceType {const PagesSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_source_config.dart';/// The source control management provider.
+@immutable final class PagesSourceType {const PagesSourceType._(this.value);
 
 factory PagesSourceType.fromJson(String json) { return switch (json) {
   'github' => github,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesSourceType($value)'; } 
  }
 /// Configs for the project source control.
-final class PagesSource {const PagesSource({required this.config, required this.type, });
+@immutable final class PagesSource {const PagesSource({required this.config, required this.type, });
 
 factory PagesSource.fromJson(Map<String, dynamic> json) { return PagesSource(
   config: PagesSourceConfig.fromJson(json['config'] as Map<String, dynamic>),

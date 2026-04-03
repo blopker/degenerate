@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomersRequestTaxIdDataType {const PostCustomersRequestTaxIdDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersRequestTaxIdDataType {const PostCustomersRequestTaxIdDataType._(this.value);
 
 factory PostCustomersRequestTaxIdDataType.fromJson(String json) { return switch (json) {
   'ad_nrt' => adNrt,
@@ -354,7 +354,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersRequestTaxIdDataType($value)'; } 
  }
-final class PostCustomersRequestTaxIdData {const PostCustomersRequestTaxIdData({required this.type, required this.value, });
+@immutable final class PostCustomersRequestTaxIdData {const PostCustomersRequestTaxIdData({required this.type, required this.value, });
 
 factory PostCustomersRequestTaxIdData.fromJson(Map<String, dynamic> json) { return PostCustomersRequestTaxIdData(
   type: PostCustomersRequestTaxIdDataType.fromJson(json['type'] as String),

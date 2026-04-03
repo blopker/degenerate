@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed tool configuration type. Always `allowed_tools`.
-final class ToolChoiceAllowedType {const ToolChoiceAllowedType._(this.value);
+@immutable final class ToolChoiceAllowedType {const ToolChoiceAllowedType._(this.value);
 
 factory ToolChoiceAllowedType.fromJson(String json) { return switch (json) {
   'allowed_tools' => allowedTools,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// `required` requires the model to call one or more of the allowed tools.
 /// 
-final class ToolChoiceAllowedMode {const ToolChoiceAllowedMode._(this.value);
+@immutable final class ToolChoiceAllowedMode {const ToolChoiceAllowedMode._(this.value);
 
 factory ToolChoiceAllowedMode.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Constrains the tools available to the model to a pre-defined set.
 /// 
-final class ToolChoiceAllowed {const ToolChoiceAllowed({required this.type, required this.mode, required this.tools, });
+@immutable final class ToolChoiceAllowed {const ToolChoiceAllowed({required this.type, required this.mode, required this.tools, });
 
 factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) { return ToolChoiceAllowed(
   type: ToolChoiceAllowedType.fromJson(json['type'] as String),

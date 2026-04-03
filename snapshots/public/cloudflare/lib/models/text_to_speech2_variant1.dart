@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TextToSpeech2Variant1 {const TextToSpeech2Variant1({this.audio});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech2Variant1 {const TextToSpeech2Variant1({this.audio});
 
 factory TextToSpeech2Variant1.fromJson(Map<String, dynamic> json) { return TextToSpeech2Variant1(
   audio: json['audio'] as String?,

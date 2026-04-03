@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_category_list_response400_errors.dart';final class GetTagCategoryListResponse400 {const GetTagCategoryListResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_category_list_response400_errors.dart';@immutable final class GetTagCategoryListResponse400 {const GetTagCategoryListResponse400({required this.errors, required this.result, required this.success, });
 
 factory GetTagCategoryListResponse400.fromJson(Map<String, dynamic> json) { return GetTagCategoryListResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetTagCategoryListResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

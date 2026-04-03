@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service the network configuration supports.
-final class NetworkConfigurationComputeService {const NetworkConfigurationComputeService._(this.value);
+@immutable final class NetworkConfigurationComputeService {const NetworkConfigurationComputeService._(this.value);
 
 factory NetworkConfigurationComputeService.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'NetworkConfigurationComputeService($value)'; } 
  }
 /// A hosted compute network configuration.
-final class NetworkConfiguration {const NetworkConfiguration({required this.id, required this.name, this.computeService, this.networkSettingsIds, this.failoverNetworkSettingsIds, this.failoverNetworkEnabled, required this.createdOn, });
+@immutable final class NetworkConfiguration {const NetworkConfiguration({required this.id, required this.name, required this.createdOn, this.computeService, this.networkSettingsIds, this.failoverNetworkSettingsIds, this.failoverNetworkEnabled, });
 
 factory NetworkConfiguration.fromJson(Map<String, dynamic> json) { return NetworkConfiguration(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'balance_transaction.dart';import 'charge.dart';import 'transfer_balance_transaction.dart';import 'transfer_destination.dart';import 'transfer_destination_payment.dart';import 'transfer_reversals.dart';import 'transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TransferObject {const TransferObject._(this.value);
+@immutable final class TransferObject {const TransferObject._(this.value);
 
 factory TransferObject.fromJson(String json) { return switch (json) {
   'transfer' => transfer,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// [transfer/payout split](https://docs.stripe.com/transfer-payout-split).
 /// 
 /// Related guide: [Creating separate charges and transfers](https://docs.stripe.com/connect/separate-charges-and-transfers)
-final class Transfer {const Transfer({required this.amount, required this.amountReversed, this.balanceTransaction, required this.created, required this.currency, this.description, this.destination, this.destinationPayment, required this.id, required this.livemode, required this.metadata, required this.object, required this.reversals, required this.reversed, this.sourceTransaction, this.sourceType, this.transferGroup, });
+@immutable final class Transfer {const Transfer({required this.amount, required this.amountReversed, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.reversals, required this.reversed, this.balanceTransaction, this.description, this.destination, this.destinationPayment, this.sourceTransaction, this.sourceType, this.transferGroup, });
 
 factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   amount: (json['amount'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitTranscript {const RealtimekitTranscript({required this.sessionId, required this.transcriptDownloadUrl, required this.transcriptDownloadUrlExpiry, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitTranscript {const RealtimekitTranscript({required this.sessionId, required this.transcriptDownloadUrl, required this.transcriptDownloadUrlExpiry, });
 
 factory RealtimekitTranscript.fromJson(Map<String, dynamic> json) { return RealtimekitTranscript(
   sessionId: json['sessionId'] as String,

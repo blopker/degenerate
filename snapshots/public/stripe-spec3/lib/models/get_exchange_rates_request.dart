@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetExchangeRatesRequest {const GetExchangeRatesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetExchangeRatesRequest {const GetExchangeRatesRequest();
 
 factory GetExchangeRatesRequest.fromJson(Map<String, dynamic> json) { return GetExchangeRatesRequest(
 

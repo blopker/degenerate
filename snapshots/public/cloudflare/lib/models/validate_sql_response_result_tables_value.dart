@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ValidateSqlResponseResultTablesValue {const ValidateSqlResponseResultTablesValue({required this.id, required this.name, required this.type, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ValidateSqlResponseResultTablesValue {const ValidateSqlResponseResultTablesValue({required this.id, required this.name, required this.type, required this.version, });
 
 factory ValidateSqlResponseResultTablesValue.fromJson(Map<String, dynamic> json) { return ValidateSqlResponseResultTablesValue(
   id: json['id'] as String,

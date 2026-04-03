@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2.dart';final class PagesDeploymentDeleteDeploymentResponse {const PagesDeploymentDeleteDeploymentResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2.dart';@immutable final class PagesDeploymentDeleteDeploymentResponse {const PagesDeploymentDeleteDeploymentResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory PagesDeploymentDeleteDeploymentResponse.fromJson(Map<String, dynamic> json) { return PagesDeploymentDeleteDeploymentResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

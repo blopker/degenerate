@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_security_level_value.dart';/// Control options for the **Security Level** feature from the **Security** app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_security_level_value.dart';/// Control options for the **Security Level** feature from the **Security** app.
 /// 
-final class ZonesSecurityLevelId {const ZonesSecurityLevelId._(this.value);
+@immutable final class ZonesSecurityLevelId {const ZonesSecurityLevelId._(this.value);
 
 factory ZonesSecurityLevelId.fromJson(String json) { return switch (json) {
   'security_level' => securityLevel,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesSecurityLevelId($value)'; } 
  }
-final class ZonesSecurityLevel {const ZonesSecurityLevel({this.id, this.value, });
+@immutable final class ZonesSecurityLevel {const ZonesSecurityLevel({this.id, this.value, });
 
 factory ZonesSecurityLevel.fromJson(Map<String, dynamic> json) { return ZonesSecurityLevel(
   id: json['id'] != null ? ZonesSecurityLevelId.fromJson(json['id'] as String) : null,

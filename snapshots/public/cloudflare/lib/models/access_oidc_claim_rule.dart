@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_oidc_claim_rule_oidc.dart';/// Matches an OIDC claim.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_claim_rule_oidc.dart';/// Matches an OIDC claim.
 /// Requires an OIDC identity provider.
-final class AccessOidcClaimRule {const AccessOidcClaimRule({required this.oidc});
+@immutable final class AccessOidcClaimRule {const AccessOidcClaimRule({required this.oidc});
 
 factory AccessOidcClaimRule.fromJson(Map<String, dynamic> json) { return AccessOidcClaimRule(
   oidc: AccessOidcClaimRuleOidc.fromJson(json['oidc'] as Map<String, dynamic>),

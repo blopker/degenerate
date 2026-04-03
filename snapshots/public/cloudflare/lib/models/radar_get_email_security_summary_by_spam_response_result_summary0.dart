@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryBySpamResponseResultSummary0 {const RadarGetEmailSecuritySummaryBySpamResponseResultSummary0({required this.notSpam, required this.spam, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryBySpamResponseResultSummary0 {const RadarGetEmailSecuritySummaryBySpamResponseResultSummary0({required this.notSpam, required this.spam, });
 
 factory RadarGetEmailSecuritySummaryBySpamResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpamResponseResultSummary0(
   notSpam: json['NOT_SPAM'] as String,

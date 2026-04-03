@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_messages2.dart';import 'response_collection12_result_info.dart';final class ResponseCollection12 {const ResponseCollection12({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_messages2.dart';import 'response_collection12_result_info.dart';@immutable final class ResponseCollection12 {const ResponseCollection12({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection12.fromJson(Map<String, dynamic> json) { return ResponseCollection12(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsCustomNameserversMessages2.fromJson(e as Map<String, dynamic>)).toList(),

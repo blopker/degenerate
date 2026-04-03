@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result_dlp.dart';import 'aig_config_fetch_gateway_response_result_dlp_variant1.dart';import 'aig_config_fetch_gateway_response_result_dlp_variant2.dart';import 'aig_config_fetch_gateway_response_result_otel.dart';import 'aig_config_fetch_gateway_response_result_stripe.dart';final class AigConfigFetchGatewayResponseResultLogManagementStrategy {const AigConfigFetchGatewayResponseResultLogManagementStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result_dlp.dart';import 'aig_config_fetch_gateway_response_result_dlp_variant1.dart';import 'aig_config_fetch_gateway_response_result_dlp_variant2.dart';import 'aig_config_fetch_gateway_response_result_otel.dart';import 'aig_config_fetch_gateway_response_result_stripe.dart';@immutable final class AigConfigFetchGatewayResponseResultLogManagementStrategy {const AigConfigFetchGatewayResponseResultLogManagementStrategy._(this.value);
 
 factory AigConfigFetchGatewayResponseResultLogManagementStrategy.fromJson(String json) { return switch (json) {
   'STOP_INSERTING' => stopInserting,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigFetchGatewayResponseResultLogManagementStrategy($value)'; } 
  }
-final class AigConfigFetchGatewayResponseResultRateLimitingTechnique {const AigConfigFetchGatewayResponseResultRateLimitingTechnique._(this.value);
+@immutable final class AigConfigFetchGatewayResponseResultRateLimitingTechnique {const AigConfigFetchGatewayResponseResultRateLimitingTechnique._(this.value);
 
 factory AigConfigFetchGatewayResponseResultRateLimitingTechnique.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AigConfigFetchGatewayResponseResultRateLimitingTechnique($value)'; } 
  }
 /// Controls how Workers AI inference calls routed through this gateway are billed
-final class AigConfigFetchGatewayResponseResultWorkersAiBillingMode {const AigConfigFetchGatewayResponseResultWorkersAiBillingMode._(this.value);
+@immutable final class AigConfigFetchGatewayResponseResultWorkersAiBillingMode {const AigConfigFetchGatewayResponseResultWorkersAiBillingMode._(this.value);
 
 factory AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson(String json) { return switch (json) {
   'postpaid' => postpaid,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigFetchGatewayResponseResultWorkersAiBillingMode($value)'; } 
  }
-final class AigConfigFetchGatewayResponseResult {const AigConfigFetchGatewayResponseResult({this.authentication, required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.createdAt, this.dlp, required this.id, this.isDefault, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, required this.modifiedAt, this.otel, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.storeId, this.stripe, this.workersAiBillingMode = AigConfigFetchGatewayResponseResultWorkersAiBillingMode.postpaid, this.zdr, });
+@immutable final class AigConfigFetchGatewayResponseResult {const AigConfigFetchGatewayResponseResult({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.createdAt, required this.id, required this.modifiedAt, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.dlp, this.isDefault, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, this.otel, this.storeId, this.stripe, this.workersAiBillingMode = AigConfigFetchGatewayResponseResultWorkersAiBillingMode.postpaid, this.zdr, });
 
 factory AigConfigFetchGatewayResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResult(
   authentication: json['authentication'] as bool?,

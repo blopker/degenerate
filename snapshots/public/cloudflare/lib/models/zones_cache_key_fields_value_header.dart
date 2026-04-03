@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls which headers go into the Cache Key. Exactly one of
 /// `include` or `exclude` is expected.
 /// 
-final class ZonesCacheKeyFieldsValueHeader {const ZonesCacheKeyFieldsValueHeader({this.checkPresence, this.exclude, this.include, });
+@immutable final class ZonesCacheKeyFieldsValueHeader {const ZonesCacheKeyFieldsValueHeader({this.checkPresence, this.exclude, this.include, });
 
 factory ZonesCacheKeyFieldsValueHeader.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueHeader(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),

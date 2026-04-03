@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomIndicatorFeedsPermissionsRequest {const CustomIndicatorFeedsPermissionsRequest({this.accountTag, this.feedId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsPermissionsRequest {const CustomIndicatorFeedsPermissionsRequest({this.accountTag, this.feedId, });
 
 factory CustomIndicatorFeedsPermissionsRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsPermissionsRequest(
   accountTag: json['account_tag'] as String?,

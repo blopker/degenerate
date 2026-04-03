@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodOxxo {const PaymentMethodOxxo();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodOxxo {const PaymentMethodOxxo();
 
 factory PaymentMethodOxxo.fromJson(Map<String, dynamic> json) { return PaymentMethodOxxo(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method used to send this payout, which is `standard` or `instant`. We support `instant` for payouts to debit cards and bank accounts in certain countries. Learn more about [bank support for Instant Payouts](https://stripe.com/docs/payouts/instant-payouts-banks).
-final class PostPayoutsRequestMethod {const PostPayoutsRequestMethod._(this.value);
+@immutable final class PostPayoutsRequestMethod {const PostPayoutsRequestMethod._(this.value);
 
 factory PostPayoutsRequestMethod.fromJson(String json) { return switch (json) {
   'instant' => instant,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPayoutsRequestMethod($value)'; } 
  }
 /// The balance type of your Stripe balance to draw this payout from. Balances for different payment sources are kept separately. You can find the amounts with the Balances API. One of `bank_account`, `card`, or `fpx`.
-final class PostPayoutsRequestSourceType {const PostPayoutsRequestSourceType._(this.value);
+@immutable final class PostPayoutsRequestSourceType {const PostPayoutsRequestSourceType._(this.value);
 
 factory PostPayoutsRequestSourceType.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPayoutsRequestSourceType($value)'; } 
  }
-final class PostPayoutsRequest {const PostPayoutsRequest({required this.amount, required this.currency, this.description, this.destination, this.expand, this.metadata, this.method, this.payoutMethod, this.sourceType, this.statementDescriptor, });
+@immutable final class PostPayoutsRequest {const PostPayoutsRequest({required this.amount, required this.currency, this.description, this.destination, this.expand, this.metadata, this.method, this.payoutMethod, this.sourceType, this.statementDescriptor, });
 
 factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) { return PostPayoutsRequest(
   amount: (json['amount'] as num).toInt(),

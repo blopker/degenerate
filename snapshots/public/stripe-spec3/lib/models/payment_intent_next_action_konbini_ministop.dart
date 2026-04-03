@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionKonbiniMinistop {const PaymentIntentNextActionKonbiniMinistop({this.confirmationNumber, required this.paymentCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionKonbiniMinistop {const PaymentIntentNextActionKonbiniMinistop({required this.paymentCode, this.confirmationNumber, });
 
 factory PaymentIntentNextActionKonbiniMinistop.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniMinistop(
   confirmationNumber: json['confirmation_number'] as String?,

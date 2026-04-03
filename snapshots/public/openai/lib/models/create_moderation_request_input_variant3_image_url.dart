@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_moderation_request_input_variant3_image_url_image_url.dart';/// Always `image_url`.
-final class CreateModerationRequestInputVariant3ImageUrlType {const CreateModerationRequestInputVariant3ImageUrlType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_request_input_variant3_image_url_image_url.dart';/// Always `image_url`.
+@immutable final class CreateModerationRequestInputVariant3ImageUrlType {const CreateModerationRequestInputVariant3ImageUrlType._(this.value);
 
 factory CreateModerationRequestInputVariant3ImageUrlType.fromJson(String json) { return switch (json) {
   'image_url' => imageUrl,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateModerationRequestInputVariant3ImageUrlType($value)'; } 
  }
 /// An object describing an image to classify.
-final class CreateModerationRequestInputVariant3ImageUrl {const CreateModerationRequestInputVariant3ImageUrl({required this.type, required this.imageUrl, });
+@immutable final class CreateModerationRequestInputVariant3ImageUrl {const CreateModerationRequestInputVariant3ImageUrl({required this.type, required this.imageUrl, });
 
 factory CreateModerationRequestInputVariant3ImageUrl.fromJson(Map<String, dynamic> json) { return CreateModerationRequestInputVariant3ImageUrl(
   type: CreateModerationRequestInputVariant3ImageUrlType.fromJson(json['type'] as String),

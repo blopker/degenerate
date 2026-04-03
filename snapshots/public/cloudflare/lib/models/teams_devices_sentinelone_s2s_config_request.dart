@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesSentineloneS2sConfigRequest {const TeamsDevicesSentineloneS2sConfigRequest({required this.apiUrl, required this.clientSecret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesSentineloneS2sConfigRequest {const TeamsDevicesSentineloneS2sConfigRequest({required this.apiUrl, required this.clientSecret, });
 
 factory TeamsDevicesSentineloneS2sConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneS2sConfigRequest(
   apiUrl: json['api_url'] as String,

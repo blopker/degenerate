@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter = '', this.includeSubdomains = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter = '', this.includeSubdomains = false, });
 
 factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zones0HoldPatchRequest(
   holdAfter: json.containsKey('hold_after') ? json['hold_after'] as String : '',

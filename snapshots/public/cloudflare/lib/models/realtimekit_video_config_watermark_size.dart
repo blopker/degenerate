@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Size of the watermark
-final class RealtimekitVideoConfigWatermarkSize {const RealtimekitVideoConfigWatermarkSize({this.height, this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Size of the watermark
+@immutable final class RealtimekitVideoConfigWatermarkSize {const RealtimekitVideoConfigWatermarkSize({this.height, this.width, });
 
 factory RealtimekitVideoConfigWatermarkSize.fromJson(Map<String, dynamic> json) { return RealtimekitVideoConfigWatermarkSize(
   height: json['height'] != null ? (json['height'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanMetaProcessorsRank {const UrlscannerGetScanResponseResultScanMetaProcessorsRank({required this.bucket, required this.name, this.rank, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsRank {const UrlscannerGetScanResponseResultScanMetaProcessorsRank({required this.bucket, required this.name, this.rank, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessorsRank.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsRank(
   bucket: json['bucket'] as String,

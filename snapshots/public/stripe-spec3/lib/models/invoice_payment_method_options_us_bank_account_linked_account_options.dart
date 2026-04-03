@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_us_bank_account_linked_account_options_filters.dart';final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_us_bank_account_linked_account_options_filters.dart';@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions._(this.value);
 
 factory InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions($value)'; } 
  }
-final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch._(this.value);
+@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch._(this.value);
 
 factory InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions({this.filters, this.permissions, this.prefetch, });
+@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions({this.filters, this.permissions, this.prefetch, });
 
 factory InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(
   filters: json['filters'] != null ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

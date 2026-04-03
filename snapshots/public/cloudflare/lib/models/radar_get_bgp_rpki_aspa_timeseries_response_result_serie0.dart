@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetBgpRpkiAspaTimeseriesResponseResultSerie0 {const RadarGetBgpRpkiAspaTimeseriesResponseResultSerie0({required this.timestamps, required this.values, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaTimeseriesResponseResultSerie0 {const RadarGetBgpRpkiAspaTimeseriesResponseResultSerie0({required this.timestamps, required this.values, });
 
 factory RadarGetBgpRpkiAspaTimeseriesResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaTimeseriesResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),

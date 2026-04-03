@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'simple_user.dart';import 'timeline_reviewed_event_links.dart';/// Timeline Reviewed Event
-final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, this.submittedAt, this.updatedAt, required this.commitId, this.bodyHtml, this.bodyText, required this.authorAssociation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'simple_user.dart';import 'timeline_reviewed_event_links.dart';/// Timeline Reviewed Event
+@immutable final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.updatedAt, this.bodyHtml, this.bodyText, });
 
 factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return TimelineReviewedEvent(
   event: json['event'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_transactions_create_reversal_request_line_items.dart';import 'post_tax_transactions_create_reversal_request_shipping_cost.dart';/// If `partial`, the provided line item or shipping cost amounts are reversed. If `full`, the original transaction is fully reversed.
-final class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode._(this.value);
+@immutable final class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode._(this.value);
 
 factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) { return switch (json) {
   'full' => full,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxTransactionsCreateReversalRequestMode($value)'; } 
  }
-final class PostTaxTransactionsCreateReversalRequest {const PostTaxTransactionsCreateReversalRequest({this.expand, this.flatAmount, this.lineItems, this.metadata, required this.mode, required this.originalTransaction, required this.reference, this.shippingCost, });
+@immutable final class PostTaxTransactionsCreateReversalRequest {const PostTaxTransactionsCreateReversalRequest({required this.mode, required this.originalTransaction, required this.reference, this.expand, this.flatAmount, this.lineItems, this.metadata, this.shippingCost, });
 
 factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateReversalRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

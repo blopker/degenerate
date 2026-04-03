@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

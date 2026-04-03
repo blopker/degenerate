@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SubscriptionsListOrder {const SubscriptionsListOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubscriptionsListOrder {const SubscriptionsListOrder._(this.value);
 
 factory SubscriptionsListOrder.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,

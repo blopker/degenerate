@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_email_rule_email.dart';/// Matches a specific email.
-final class AccessEmailRule {const AccessEmailRule({required this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_email_rule_email.dart';/// Matches a specific email.
+@immutable final class AccessEmailRule {const AccessEmailRule({required this.email});
 
 factory AccessEmailRule.fromJson(Map<String, dynamic> json) { return AccessEmailRule(
   email: AccessEmailRuleEmail.fromJson(json['email'] as Map<String, dynamic>),

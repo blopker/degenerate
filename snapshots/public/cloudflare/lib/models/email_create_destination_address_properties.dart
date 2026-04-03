@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_email.dart';final class EmailCreateDestinationAddressProperties {const EmailCreateDestinationAddressProperties({required this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_email.dart';@immutable final class EmailCreateDestinationAddressProperties {const EmailCreateDestinationAddressProperties({required this.email});
 
 factory EmailCreateDestinationAddressProperties.fromJson(Map<String, dynamic> json) { return EmailCreateDestinationAddressProperties(
   email: EmailEmail.fromJson(json['email'] as String),

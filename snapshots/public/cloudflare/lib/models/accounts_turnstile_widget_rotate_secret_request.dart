@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If `invalidate_immediately` is set to `false`, the previous secret will
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `invalidate_immediately` is set to `false`, the previous secret will
 /// remain valid for two hours. Otherwise, the secret is immediately
 /// invalidated, and requests using it will be rejected.
 /// 
@@ -10,7 +10,7 @@ factory TurnstileInvalidateImmediately.fromJson(bool json) => TurnstileInvalidat
 bool toJson() => value;
 
 }
-final class AccountsTurnstileWidgetRotateSecretRequest {const AccountsTurnstileWidgetRotateSecretRequest({this.invalidateImmediately});
+@immutable final class AccountsTurnstileWidgetRotateSecretRequest {const AccountsTurnstileWidgetRotateSecretRequest({this.invalidateImmediately});
 
 factory AccountsTurnstileWidgetRotateSecretRequest.fromJson(Map<String, dynamic> json) { return AccountsTurnstileWidgetRotateSecretRequest(
   invalidateImmediately: json['invalidate_immediately'] != null ? TurnstileInvalidateImmediately.fromJson(json['invalidate_immediately'] as bool) : null,

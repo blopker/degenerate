@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_charges_charge_request_shipping_address.dart';/// Shipping information for the charge. Helps prevent fraud on charges for physical goods.
-final class PostChargesChargeRequestShipping {const PostChargesChargeRequestShipping({required this.address, this.carrier, required this.name, this.phone, this.trackingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_request_shipping_address.dart';/// Shipping information for the charge. Helps prevent fraud on charges for physical goods.
+@immutable final class PostChargesChargeRequestShipping {const PostChargesChargeRequestShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 
 factory PostChargesChargeRequestShipping.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequestShipping(
   address: PostChargesChargeRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),

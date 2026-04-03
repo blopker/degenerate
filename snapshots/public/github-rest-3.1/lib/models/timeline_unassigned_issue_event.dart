@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'simple_user.dart';/// Timeline Unassigned Issue Event
-final class TimelineUnassignedIssueEvent {const TimelineUnassignedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.assignee, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// Timeline Unassigned Issue Event
+@immutable final class TimelineUnassignedIssueEvent {const TimelineUnassignedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.assignee, });
 
 factory TimelineUnassignedIssueEvent.fromJson(Map<String, dynamic> json) { return TimelineUnassignedIssueEvent(
   id: (json['id'] as num).toInt(),

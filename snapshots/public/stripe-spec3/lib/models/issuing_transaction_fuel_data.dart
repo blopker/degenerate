@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionFuelData {const IssuingTransactionFuelData({this.industryProductCode, this.quantityDecimal, required this.type, required this.unit, required this.unitCostDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionFuelData {const IssuingTransactionFuelData({required this.type, required this.unit, required this.unitCostDecimal, this.industryProductCode, this.quantityDecimal, });
 
 factory IssuingTransactionFuelData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFuelData(
   industryProductCode: json['industry_product_code'] as String?,

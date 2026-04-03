@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_function_tool.dart';import 'realtime_session_create_response_audio.dart';import 'realtime_session_create_response_max_output_tokens.dart';import 'realtime_session_create_response_tracing.dart';import 'realtime_session_create_response_turn_detection.dart';import 'tracing_configuration4.dart';final class RealtimeSessionCreateResponseInclude {const RealtimeSessionCreateResponseInclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_function_tool.dart';import 'realtime_session_create_response_audio.dart';import 'realtime_session_create_response_max_output_tokens.dart';import 'realtime_session_create_response_tracing.dart';import 'realtime_session_create_response_turn_detection.dart';import 'tracing_configuration4.dart';@immutable final class RealtimeSessionCreateResponseInclude {const RealtimeSessionCreateResponseInclude._(this.value);
 
 factory RealtimeSessionCreateResponseInclude.fromJson(String json) { return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Realtime session configuration object.
 /// 
-final class RealtimeSessionCreateResponse {const RealtimeSessionCreateResponse({this.id, this.object, this.expiresAt, this.include, this.model, this.outputModalities, this.instructions, this.audio, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.maxOutputTokens, });
+@immutable final class RealtimeSessionCreateResponse {const RealtimeSessionCreateResponse({this.id, this.object, this.expiresAt, this.include, this.model, this.outputModalities, this.instructions, this.audio, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.maxOutputTokens, });
 
 factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponse(
   id: json['id'] as String?,

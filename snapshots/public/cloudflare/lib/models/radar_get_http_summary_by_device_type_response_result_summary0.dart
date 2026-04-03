@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 {const RadarGetHttpSummaryByDeviceTypeResponseResultSummary0({required this.desktop, required this.mobile, required this.other, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 {const RadarGetHttpSummaryByDeviceTypeResponseResultSummary0({required this.desktop, required this.mobile, required this.other, });
 
 factory RadarGetHttpSummaryByDeviceTypeResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(
   desktop: json['desktop'] as String,

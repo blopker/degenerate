@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to match all search requirements or at least one (any).
-final class UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match all search requirements or at least one (any).
+@immutable final class UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch._(this.value);
 
 factory UserSOrganizationsListOrganizationsMatch.fromJson(String json) { return switch (json) {
   'any' => any,

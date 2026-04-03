@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanPageCookies {const UrlscannerGetScanResponseResultScanPageCookies({required this.domain, required this.expires, required this.httpOnly, required this.name, required this.path, this.priority, required this.sameParty, required this.secure, required this.session, required this.size, required this.sourcePort, required this.sourceScheme, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanPageCookies {const UrlscannerGetScanResponseResultScanPageCookies({required this.domain, required this.expires, required this.httpOnly, required this.name, required this.path, required this.sameParty, required this.secure, required this.session, required this.size, required this.sourcePort, required this.sourceScheme, required this.value, this.priority, });
 
 factory UrlscannerGetScanResponseResultScanPageCookies.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPageCookies(
   domain: json['domain'] as String,

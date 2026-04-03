@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Key Simple
-final class KeySimple {const KeySimple({required this.id, required this.key, this.createdAt, this.lastUsed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key Simple
+@immutable final class KeySimple {const KeySimple({required this.id, required this.key, this.createdAt, this.lastUsed, });
 
 factory KeySimple.fromJson(Map<String, dynamic> json) { return KeySimple(
   id: (json['id'] as num).toInt(),

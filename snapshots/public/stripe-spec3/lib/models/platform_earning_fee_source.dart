@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of object that created the application fee.
-final class PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of object that created the application fee.
+@immutable final class PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType._(this.value);
 
 factory PlatformEarningFeeSourceType.fromJson(String json) { return switch (json) {
   'charge' => charge,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PlatformEarningFeeSourceType($value)'; } 
  }
 /// 
-final class PlatformEarningFeeSource {const PlatformEarningFeeSource({this.charge, this.payout, required this.type, });
+@immutable final class PlatformEarningFeeSource {const PlatformEarningFeeSource({required this.type, this.charge, this.payout, });
 
 factory PlatformEarningFeeSource.fromJson(Map<String, dynamic> json) { return PlatformEarningFeeSource(
   charge: json['charge'] as String?,

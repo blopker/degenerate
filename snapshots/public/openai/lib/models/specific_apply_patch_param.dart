@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The tool to call. Always `apply_patch`.
-final class SpecificApplyPatchParamType {const SpecificApplyPatchParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `apply_patch`.
+@immutable final class SpecificApplyPatchParamType {const SpecificApplyPatchParamType._(this.value);
 
 factory SpecificApplyPatchParamType.fromJson(String json) { return switch (json) {
   'apply_patch' => applyPatch,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpecificApplyPatchParamType($value)'; } 
  }
 /// Forces the model to call the apply_patch tool when executing a tool call.
-final class SpecificApplyPatchParam {const SpecificApplyPatchParam({this.type = SpecificApplyPatchParamType.applyPatch});
+@immutable final class SpecificApplyPatchParam {const SpecificApplyPatchParam({this.type = SpecificApplyPatchParamType.applyPatch});
 
 factory SpecificApplyPatchParam.fromJson(Map<String, dynamic> json) { return SpecificApplyPatchParam(
   type: SpecificApplyPatchParamType.fromJson(json['type'] as String),

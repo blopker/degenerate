@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';final class StreamLiveInputObjectWithoutUrl {const StreamLiveInputObjectWithoutUrl({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.uid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';@immutable final class StreamLiveInputObjectWithoutUrl {const StreamLiveInputObjectWithoutUrl({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.uid, });
 
 factory StreamLiveInputObjectWithoutUrl.fromJson(Map<String, dynamic> json) { return StreamLiveInputObjectWithoutUrl(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,

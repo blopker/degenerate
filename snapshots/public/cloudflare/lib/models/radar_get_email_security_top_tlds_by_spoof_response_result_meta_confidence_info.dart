@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_spoof_response_result_meta_confidence_info_annotations.dart';final class RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfo {const RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_spoof_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfo {const RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetEmailSecurityTopTldsBySpoofResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

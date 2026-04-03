@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(this.value);
 
 factory WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom($value)'; } 
  }
-final class WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel({required this.from});
+@immutable final class WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel(
   from: WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.fromJson(json['from'] as String),

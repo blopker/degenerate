@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsMultibanco {const PostCheckoutSessionsRequestPaymentMethodOptionsMultibanco({this.setupFutureUsage});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsMultibanco {const PostCheckoutSessionsRequestPaymentMethodOptionsMultibanco({this.setupFutureUsage});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsMultibanco.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsMultibanco(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsMultibancoSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

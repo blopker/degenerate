@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestCapabilitiesLinkPayments {const PostAccountsRequestCapabilitiesLinkPayments({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestCapabilitiesLinkPayments {const PostAccountsRequestCapabilitiesLinkPayments({this.requested});
 
 factory PostAccountsRequestCapabilitiesLinkPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesLinkPayments(
   requested: json['requested'] as bool?,

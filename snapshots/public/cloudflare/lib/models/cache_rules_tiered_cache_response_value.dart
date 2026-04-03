@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_tiered_cache_response_value_result.dart';final class CacheRulesTieredCacheResponseValue {const CacheRulesTieredCacheResponseValue({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_tiered_cache_response_value_result.dart';@immutable final class CacheRulesTieredCacheResponseValue {const CacheRulesTieredCacheResponseValue({this.result});
 
 factory CacheRulesTieredCacheResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesTieredCacheResponseValue(
   result: json['result'] != null ? CacheRulesTieredCacheResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,

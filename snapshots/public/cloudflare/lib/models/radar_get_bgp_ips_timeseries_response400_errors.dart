@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpIpsTimeseriesResponse400Errors {const RadarGetBgpIpsTimeseriesResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpIpsTimeseriesResponse400Errors {const RadarGetBgpIpsTimeseriesResponse400Errors({required this.message});
 
 factory RadarGetBgpIpsTimeseriesResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetBgpIpsTimeseriesResponse400Errors(
   message: json['message'] as String,

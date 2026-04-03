@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param21.dart';final class PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 {const PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param21.dart';@immutable final class PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 {const PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2._(this.value);
 
 factory PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type that signals the deletion response.
-final class DeletedVideoResourceObject {const DeletedVideoResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type that signals the deletion response.
+@immutable final class DeletedVideoResourceObject {const DeletedVideoResourceObject._(this.value);
 
 factory DeletedVideoResourceObject.fromJson(String json) { return switch (json) {
   'video.deleted' => videoDeleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedVideoResourceObject($value)'; } 
  }
 /// Confirmation payload returned after deleting a video.
-final class DeletedVideoResource {const DeletedVideoResource({this.object = DeletedVideoResourceObject.videoDeleted, required this.deleted, required this.id, });
+@immutable final class DeletedVideoResource {const DeletedVideoResource({required this.deleted, required this.id, this.object = DeletedVideoResourceObject.videoDeleted, });
 
 factory DeletedVideoResource.fromJson(Map<String, dynamic> json) { return DeletedVideoResource(
   object: DeletedVideoResourceObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponse2DataRequestsResponseGeoip {const UrlscannerGetScanResponse2DataRequestsResponseGeoip({required this.city, required this.country, required this.countryName, required this.geonameId, required this.ll, required this.region, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsResponseGeoip {const UrlscannerGetScanResponse2DataRequestsResponseGeoip({required this.city, required this.country, required this.countryName, required this.geonameId, required this.ll, required this.region, });
 
 factory UrlscannerGetScanResponse2DataRequestsResponseGeoip.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponseGeoip(
   city: json['city'] as String,

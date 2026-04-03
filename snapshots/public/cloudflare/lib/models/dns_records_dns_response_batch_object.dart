@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DnsRecordsDnsResponseBatchObject {const DnsRecordsDnsResponseBatchObject({this.deletes, this.patches, this.posts, this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseBatchObject {const DnsRecordsDnsResponseBatchObject({this.deletes, this.patches, this.posts, this.puts, });
 
 factory DnsRecordsDnsResponseBatchObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseBatchObject(
   deletes: (json['deletes'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),

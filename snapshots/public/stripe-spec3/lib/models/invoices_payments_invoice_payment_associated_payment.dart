@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'invoices_payments_invoice_payment_associated_payment_charge.dart';import 'invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'payment_intent.dart';import 'payment_record.dart';/// Type of payment object associated with this invoice payment.
-final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(this.value);
+@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(this.value);
 
 factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) { return switch (json) {
   'charge' => charge,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)'; } 
  }
 /// 
-final class InvoicesPaymentsInvoicePaymentAssociatedPayment {const InvoicesPaymentsInvoicePaymentAssociatedPayment({this.charge, this.paymentIntent, this.paymentRecord, required this.type, });
+@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPayment {const InvoicesPaymentsInvoicePaymentAssociatedPayment({required this.type, this.charge, this.paymentIntent, this.paymentRecord, });
 
 factory InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(Map<String, dynamic> json) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
   charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `multibanco` PaymentMethod, this hash contains details about the Multibanco payment method.
-final class PostPaymentMethodsRequestMultibanco {const PostPaymentMethodsRequestMultibanco();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `multibanco` PaymentMethod, this hash contains details about the Multibanco payment method.
+@immutable final class PostPaymentMethodsRequestMultibanco {const PostPaymentMethodsRequestMultibanco();
 
 factory PostPaymentMethodsRequestMultibanco.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestMultibanco(
 

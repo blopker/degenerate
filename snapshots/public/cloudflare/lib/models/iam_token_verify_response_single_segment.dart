@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_token_verify_response_single_segment_result.dart';final class IamTokenVerifyResponseSingleSegment {const IamTokenVerifyResponseSingleSegment({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_token_verify_response_single_segment_result.dart';@immutable final class IamTokenVerifyResponseSingleSegment {const IamTokenVerifyResponseSingleSegment({this.result});
 
 factory IamTokenVerifyResponseSingleSegment.fromJson(Map<String, dynamic> json) { return IamTokenVerifyResponseSingleSegment(
   result: json['result'] != null ? IamTokenVerifyResponseSingleSegmentResult.fromJson(json['result'] as Map<String, dynamic>) : null,

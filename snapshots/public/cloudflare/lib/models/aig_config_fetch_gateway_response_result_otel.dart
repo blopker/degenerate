@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigFetchGatewayResponseResultOtelContentType {const AigConfigFetchGatewayResponseResultOtelContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigFetchGatewayResponseResultOtelContentType {const AigConfigFetchGatewayResponseResultOtelContentType._(this.value);
 
 factory AigConfigFetchGatewayResponseResultOtelContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigFetchGatewayResponseResultOtelContentType($value)'; } 
  }
-final class AigConfigFetchGatewayResponseResultOtel {const AigConfigFetchGatewayResponseResultOtel({required this.authorization, this.contentType = AigConfigFetchGatewayResponseResultOtelContentType.$json, required this.headers, required this.url, });
+@immutable final class AigConfigFetchGatewayResponseResultOtel {const AigConfigFetchGatewayResponseResultOtel({required this.authorization, required this.headers, required this.url, this.contentType = AigConfigFetchGatewayResponseResultOtelContentType.$json, });
 
 factory AigConfigFetchGatewayResponseResultOtel.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResultOtel(
   authorization: json['authorization'] as String,

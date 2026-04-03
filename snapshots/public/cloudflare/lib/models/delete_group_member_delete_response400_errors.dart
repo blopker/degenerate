@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteGroupMemberDeleteResponse400Errors {const DeleteGroupMemberDeleteResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteGroupMemberDeleteResponse400Errors {const DeleteGroupMemberDeleteResponse400Errors({required this.message});
 
 factory DeleteGroupMemberDeleteResponse400Errors.fromJson(Map<String, dynamic> json) { return DeleteGroupMemberDeleteResponse400Errors(
   message: json['message'] as String,

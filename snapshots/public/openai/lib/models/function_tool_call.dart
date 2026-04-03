@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the item. One of `in_progress`, `completed`, or
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final class FunctionToolCallStatus {const FunctionToolCallStatus._(this.value);
+@immutable final class FunctionToolCallStatus {const FunctionToolCallStatus._(this.value);
 
 factory FunctionToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A tool call to run a function. See the
 /// [function calling guide](/docs/guides/function-calling) for more information.
 /// 
-final class FunctionToolCall {const FunctionToolCall({this.id, required this.type, required this.callId, this.namespace, required this.name, required this.arguments, this.status, });
+@immutable final class FunctionToolCall {const FunctionToolCall({required this.type, required this.callId, required this.name, required this.arguments, this.id, this.namespace, this.status, });
 
 factory FunctionToolCall.fromJson(Map<String, dynamic> json) { return FunctionToolCall(
   id: json['id'] as String?,

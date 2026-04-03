@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarding_request.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetForwardingRequestsResponseObject {const GetForwardingRequestsResponseObject._(this.value);
+@immutable final class GetForwardingRequestsResponseObject {const GetForwardingRequestsResponseObject._(this.value);
 
 factory GetForwardingRequestsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetForwardingRequestsResponseObject($value)'; } 
  }
 /// List of ForwardingRequest data.
-final class GetForwardingRequestsResponse {const GetForwardingRequestsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetForwardingRequestsResponse {const GetForwardingRequestsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetForwardingRequestsResponse.fromJson(Map<String, dynamic> json) { return GetForwardingRequestsResponse(
   data: (json['data'] as List<dynamic>).map((e) => ForwardingRequest.fromJson(e as Map<String, dynamic>)).toList(),

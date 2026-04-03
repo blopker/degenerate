@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'call_enum_status.dart';final class AccountCall {const AccountCall({this.sid, this.dateCreated, this.dateUpdated, this.parentCallSid, this.accountSid, this.to, this.toFormatted, this.from, this.fromFormatted, this.phoneNumberSid, this.status, this.startTime, this.endTime, this.duration, this.price, this.priceUnit, this.direction, this.answeredBy, this.apiVersion, this.forwardedFrom, this.groupSid, this.callerName, this.queueTime, this.trunkSid, this.uri, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'call_enum_status.dart';@immutable final class AccountCall {const AccountCall({this.sid, this.dateCreated, this.dateUpdated, this.parentCallSid, this.accountSid, this.to, this.toFormatted, this.from, this.fromFormatted, this.phoneNumberSid, this.status, this.startTime, this.endTime, this.duration, this.price, this.priceUnit, this.direction, this.answeredBy, this.apiVersion, this.forwardedFrom, this.groupSid, this.callerName, this.queueTime, this.trunkSid, this.uri, this.subresourceUris, });
 
 factory AccountCall.fromJson(Map<String, dynamic> json) { return AccountCall(
   sid: json['sid'] as String?,

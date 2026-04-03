@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopBrowsersResponseResultTop0 {const RadarGetHttpTopBrowsersResponseResultTop0({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowsersResponseResultTop0 {const RadarGetHttpTopBrowsersResponseResultTop0({required this.name, required this.value, });
 
 factory RadarGetHttpTopBrowsersResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopBrowsersResponseResultTop0(
   name: json['name'] as String,

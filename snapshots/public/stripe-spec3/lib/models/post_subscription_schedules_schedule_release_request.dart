@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionSchedulesScheduleReleaseRequest {const PostSubscriptionSchedulesScheduleReleaseRequest({this.expand, this.preserveCancelDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleReleaseRequest {const PostSubscriptionSchedulesScheduleReleaseRequest({this.expand, this.preserveCancelDate, });
 
 factory PostSubscriptionSchedulesScheduleReleaseRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleReleaseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

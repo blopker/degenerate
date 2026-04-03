@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_column.dart';import 'spectrum_analytics_query.dart';import 'spectrum_analytics_timestamp.dart';final class SpectrumAnalyticsQueryResponseSingleResult {const SpectrumAnalyticsQueryResponseSingleResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, this.timeIntervals, required this.totals, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_column.dart';import 'spectrum_analytics_query.dart';import 'spectrum_analytics_timestamp.dart';@immutable final class SpectrumAnalyticsQueryResponseSingleResult {const SpectrumAnalyticsQueryResponseSingleResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, this.timeIntervals, });
 
 factory SpectrumAnalyticsQueryResponseSingleResult.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQueryResponseSingleResult(
   data: (json['data'] as List<dynamic>).map((e) => SpectrumAnalyticsColumn.fromJson(e as Map<String, dynamic>)).toList(),

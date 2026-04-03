@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_outbound_transfers_resource_ach_tracking_details.dart';import 'treasury_outbound_transfers_resource_us_domestic_wire_tracking_details.dart';/// The US bank account network used to send funds.
-final class TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType {const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_transfers_resource_ach_tracking_details.dart';import 'treasury_outbound_transfers_resource_us_domestic_wire_tracking_details.dart';/// The US bank account network used to send funds.
+@immutable final class TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType {const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType._(this.value);
 
 factory TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType($value)'; } 
  }
 /// 
-final class TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails {const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
+@immutable final class TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails {const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
 factory TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails(
   ach: json['ach'] != null ? TreasuryOutboundTransfersResourceAchTrackingDetails.fromJson(json['ach'] as Map<String, dynamic>) : null,

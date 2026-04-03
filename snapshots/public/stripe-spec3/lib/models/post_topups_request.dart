@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_topups_request_metadata.dart';final class PostTopupsRequest {const PostTopupsRequest({required this.amount, required this.currency, this.description, this.expand, this.metadata, this.source, this.statementDescriptor, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_topups_request_metadata.dart';@immutable final class PostTopupsRequest {const PostTopupsRequest({required this.amount, required this.currency, this.description, this.expand, this.metadata, this.source, this.statementDescriptor, this.transferGroup, });
 
 factory PostTopupsRequest.fromJson(Map<String, dynamic> json) { return PostTopupsRequest(
   amount: (json['amount'] as num).toInt(),

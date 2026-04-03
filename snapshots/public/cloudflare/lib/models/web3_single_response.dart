@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web3_web3_hostname.dart';final class Web3SingleResponse {const Web3SingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_web3_hostname.dart';@immutable final class Web3SingleResponse {const Web3SingleResponse({this.result});
 
 factory Web3SingleResponse.fromJson(Map<String, dynamic> json) { return Web3SingleResponse(
   result: json['result'] != null ? Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>) : null,

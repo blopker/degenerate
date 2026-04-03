@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_messages2_source.dart';final class StreamMessages2 {const StreamMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_messages2_source.dart';@immutable final class StreamMessages2 {const StreamMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory StreamMessages2.fromJson(Map<String, dynamic> json) { return StreamMessages2(
   code: (json['code'] as num).toInt(),

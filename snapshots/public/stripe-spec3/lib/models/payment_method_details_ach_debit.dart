@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of entity that holds the account. This can be either `individual` or `company`.
-final class PaymentMethodDetailsAchDebitAccountHolderType {const PaymentMethodDetailsAchDebitAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of entity that holds the account. This can be either `individual` or `company`.
+@immutable final class PaymentMethodDetailsAchDebitAccountHolderType {const PaymentMethodDetailsAchDebitAccountHolderType._(this.value);
 
 factory PaymentMethodDetailsAchDebitAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsAchDebitAccountHolderType($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsAchDebit {const PaymentMethodDetailsAchDebit({this.accountHolderType, this.bankName, this.country, this.fingerprint, this.last4, this.routingNumber, });
+@immutable final class PaymentMethodDetailsAchDebit {const PaymentMethodDetailsAchDebit({this.accountHolderType, this.bankName, this.country, this.fingerprint, this.last4, this.routingNumber, });
 
 factory PaymentMethodDetailsAchDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAchDebit(
   accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsAchDebitAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

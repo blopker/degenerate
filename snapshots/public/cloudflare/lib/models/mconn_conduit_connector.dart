@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_account_id.dart';final class MconnConduitConnector {const MconnConduitConnector({required this.accountId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_account_id.dart';@immutable final class MconnConduitConnector {const MconnConduitConnector({required this.accountId});
 
 factory MconnConduitConnector.fromJson(Map<String, dynamic> json) { return MconnConduitConnector(
   accountId: MconnAccountId.fromJson(json['account_id'] as String),

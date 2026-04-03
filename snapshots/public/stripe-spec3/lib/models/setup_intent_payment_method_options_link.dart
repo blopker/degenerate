@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupIntentPaymentMethodOptionsLink {const SetupIntentPaymentMethodOptionsLink();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupIntentPaymentMethodOptionsLink {const SetupIntentPaymentMethodOptionsLink();
 
 factory SetupIntentPaymentMethodOptionsLink.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsLink(
 

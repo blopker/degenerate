@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTopTldsBySpamArc {const RadarGetEmailSecurityTopTldsBySpamArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpamArc {const RadarGetEmailSecurityTopTldsBySpamArc._(this.value);
 
 factory RadarGetEmailSecurityTopTldsBySpamArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_parameter_schemas_definition.dart';import 'shield_timestamp.dart';final class ShieldOperationFeatureParameterSchemasParameterSchemas {const ShieldOperationFeatureParameterSchemasParameterSchemas({this.lastUpdated, this.parameterSchemas, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_parameter_schemas_definition.dart';import 'shield_timestamp.dart';@immutable final class ShieldOperationFeatureParameterSchemasParameterSchemas {const ShieldOperationFeatureParameterSchemasParameterSchemas({this.lastUpdated, this.parameterSchemas, });
 
 factory ShieldOperationFeatureParameterSchemasParameterSchemas.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureParameterSchemasParameterSchemas(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,

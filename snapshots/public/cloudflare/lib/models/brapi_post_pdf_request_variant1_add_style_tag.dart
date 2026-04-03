@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostPdfRequestVariant1AddStyleTag {const BrapiPostPdfRequestVariant1AddStyleTag({this.content, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostPdfRequestVariant1AddStyleTag {const BrapiPostPdfRequestVariant1AddStyleTag({this.content, this.url, });
 
 factory BrapiPostPdfRequestVariant1AddStyleTag.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant1AddStyleTag(
   content: json['content'] as String?,

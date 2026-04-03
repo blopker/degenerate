@@ -136,12 +136,12 @@ Future<ApiResult<List<ResourceTaggingTaggedResourceObject>?, Never>> tagsList({r
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
 for (final item in type) {
-  queryParametersList.add(ApiQueryParameter(name: 'type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'type', value: item.toJson()));
 }
 }
 if (tag != null) {
 for (final item in tag) {
-  queryParametersList.add(ApiQueryParameter(name: 'tag', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tag', value: item));
 }
 }
 if (cursor != null) {

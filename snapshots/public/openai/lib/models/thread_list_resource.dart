@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_resource.dart';/// The type of object returned, must be `list`.
-final class ThreadListResourceObject {const ThreadListResourceObject._(this.value);
+@immutable final class ThreadListResourceObject {const ThreadListResourceObject._(this.value);
 
 factory ThreadListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreadListResourceObject($value)'; } 
  }
 /// A paginated list of ChatKit threads.
-final class ThreadListResource {const ThreadListResource({this.object = ThreadListResourceObject.list, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ThreadListResource {const ThreadListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ThreadListResourceObject.list, });
 
 factory ThreadListResource.fromJson(Map<String, dynamic> json) { return ThreadListResource(
   object: ThreadListResourceObject.fromJson(json['object'] as String),

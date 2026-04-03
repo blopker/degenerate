@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesAccount {const TeamsDevicesAccount({this.accountType, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesAccount {const TeamsDevicesAccount({this.accountType, this.id, this.name, });
 
 factory TeamsDevicesAccount.fromJson(Map<String, dynamic> json) { return TeamsDevicesAccount(
   accountType: json['account_type'] as String?,

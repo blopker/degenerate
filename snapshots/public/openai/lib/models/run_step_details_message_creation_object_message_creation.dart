@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RunStepDetailsMessageCreationObjectMessageCreation {const RunStepDetailsMessageCreationObjectMessageCreation({required this.messageId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDetailsMessageCreationObjectMessageCreation {const RunStepDetailsMessageCreationObjectMessageCreation({required this.messageId});
 
 factory RunStepDetailsMessageCreationObjectMessageCreation.fromJson(Map<String, dynamic> json) { return RunStepDetailsMessageCreationObjectMessageCreation(
   messageId: json['message_id'] as String,

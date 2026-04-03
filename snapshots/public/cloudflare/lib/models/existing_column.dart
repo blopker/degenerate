@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ExistingColumn {const ExistingColumn({required this.entryId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExistingColumn {const ExistingColumn({required this.entryId});
 
 factory ExistingColumn.fromJson(Map<String, dynamic> json) { return ExistingColumn(
   entryId: json['entry_id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_intent_request_hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
-final class PostPaymentIntentsIntentRequestHooks {const PostPaymentIntentsIntentRequestHooks({this.inputs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_request_hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
+@immutable final class PostPaymentIntentsIntentRequestHooks {const PostPaymentIntentsIntentRequestHooks({this.inputs});
 
 factory PostPaymentIntentsIntentRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestHooks(
   inputs: json['inputs'] != null ? PostPaymentIntentsIntentRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,

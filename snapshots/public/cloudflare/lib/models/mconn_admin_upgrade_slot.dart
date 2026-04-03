@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnAdminUpgradeSlot {const MconnAdminUpgradeSlot({this.connectorId, required this.id, this.startedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnAdminUpgradeSlot {const MconnAdminUpgradeSlot({required this.id, this.connectorId, this.startedAt, });
 
 factory MconnAdminUpgradeSlot.fromJson(Map<String, dynamic> json) { return MconnAdminUpgradeSlot(
   connectorId: json['connector_id'] != null ? MconnUuid.fromJson(json['connector_id'] as String) : null,

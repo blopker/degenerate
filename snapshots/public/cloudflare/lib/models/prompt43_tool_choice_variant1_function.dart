@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_tool_choice_variant1_function_function.dart';final class Prompt43ToolChoiceVariant1FunctionType {const Prompt43ToolChoiceVariant1FunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tool_choice_variant1_function_function.dart';@immutable final class Prompt43ToolChoiceVariant1FunctionType {const Prompt43ToolChoiceVariant1FunctionType._(this.value);
 
 factory Prompt43ToolChoiceVariant1FunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Prompt43ToolChoiceVariant1FunctionType($value)'; } 
  }
 /// Force a specific function tool.
-final class Prompt43ToolChoiceVariant1Function {const Prompt43ToolChoiceVariant1Function({required this.function, required this.type, });
+@immutable final class Prompt43ToolChoiceVariant1Function {const Prompt43ToolChoiceVariant1Function({required this.function, required this.type, });
 
 factory Prompt43ToolChoiceVariant1Function.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1Function(
   function: Prompt43ToolChoiceVariant1FunctionFunction.fromJson(json['function'] as Map<String, dynamic>),

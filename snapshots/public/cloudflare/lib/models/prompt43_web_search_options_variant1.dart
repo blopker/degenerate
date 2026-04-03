@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_web_search_options_variant1_user_location.dart';final class Prompt43WebSearchOptionsVariant1SearchContextSize {const Prompt43WebSearchOptionsVariant1SearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_web_search_options_variant1_user_location.dart';@immutable final class Prompt43WebSearchOptionsVariant1SearchContextSize {const Prompt43WebSearchOptionsVariant1SearchContextSize._(this.value);
 
 factory Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Prompt43WebSearchOptionsVariant1SearchContextSize($value)'; } 
  }
 /// Options for the web search tool (when using built-in web search).
-final class Prompt43WebSearchOptionsVariant1 {const Prompt43WebSearchOptionsVariant1({this.searchContextSize = Prompt43WebSearchOptionsVariant1SearchContextSize.medium, this.userLocation, });
+@immutable final class Prompt43WebSearchOptionsVariant1 {const Prompt43WebSearchOptionsVariant1({this.searchContextSize = Prompt43WebSearchOptionsVariant1SearchContextSize.medium, this.userLocation, });
 
 factory Prompt43WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return Prompt43WebSearchOptionsVariant1(
   searchContextSize: json.containsKey('search_context_size') ? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(json['search_context_size'] as String) : Prompt43WebSearchOptionsVariant1SearchContextSize.medium,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_ai_config.dart';import 'realtimekit_recording_config.dart';final class CreateMeetingRequest {const CreateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.recordingConfig, this.sessionKeepAliveTimeInSecs = 60.0, this.summarizeOnEnd = false, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_ai_config.dart';import 'realtimekit_recording_config.dart';@immutable final class CreateMeetingRequest {const CreateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.recordingConfig, this.sessionKeepAliveTimeInSecs = 60.0, this.summarizeOnEnd = false, this.title, });
 
 factory CreateMeetingRequest.fromJson(Map<String, dynamic> json) { return CreateMeetingRequest(
   aiConfig: json['ai_config'] != null ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>) : null,

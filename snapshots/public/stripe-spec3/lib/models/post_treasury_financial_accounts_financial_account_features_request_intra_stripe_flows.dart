@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents the ability for the FinancialAccount to send money to, or receive money from other FinancialAccounts (for example, via OutboundPayment).
-final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows({required this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the ability for the FinancialAccount to send money to, or receive money from other FinancialAccounts (for example, via OutboundPayment).
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows({required this.requested});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(
   requested: json['requested'] as bool,

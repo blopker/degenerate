@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SearchCommitsOrder {const SearchCommitsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchCommitsOrder {const SearchCommitsOrder._(this.value);
 
 factory SearchCommitsOrder.fromJson(String json) { return switch (json) {
   'desc' => desc,

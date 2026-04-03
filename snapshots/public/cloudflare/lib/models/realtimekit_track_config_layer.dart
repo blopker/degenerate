@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_track_layer_output.dart';final class RealtimekitTrackConfigLayer {const RealtimekitTrackConfigLayer({this.fileNamePrefix, this.outputs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_track_layer_output.dart';@immutable final class RealtimekitTrackConfigLayer {const RealtimekitTrackConfigLayer({this.fileNamePrefix, this.outputs, });
 
 factory RealtimekitTrackConfigLayer.fromJson(Map<String, dynamic> json) { return RealtimekitTrackConfigLayer(
   fileNamePrefix: json['file_name_prefix'] as String?,

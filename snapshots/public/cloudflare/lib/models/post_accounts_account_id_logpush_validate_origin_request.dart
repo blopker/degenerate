@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_logpull_options.dart';final class PostAccountsAccountIdLogpushValidateOriginRequest {const PostAccountsAccountIdLogpushValidateOriginRequest({required this.logpullOptions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_logpull_options.dart';@immutable final class PostAccountsAccountIdLogpushValidateOriginRequest {const PostAccountsAccountIdLogpushValidateOriginRequest({required this.logpullOptions});
 
 factory PostAccountsAccountIdLogpushValidateOriginRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountIdLogpushValidateOriginRequest(
   logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,

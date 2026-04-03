@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_content_text_annotations_file_path_object_file_path.dart';/// Always `file_path`.
-final class MessageDeltaContentTextAnnotationsFilePathObjectType {const MessageDeltaContentTextAnnotationsFilePathObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_annotations_file_path_object_file_path.dart';/// Always `file_path`.
+@immutable final class MessageDeltaContentTextAnnotationsFilePathObjectType {const MessageDeltaContentTextAnnotationsFilePathObjectType._(this.value);
 
 factory MessageDeltaContentTextAnnotationsFilePathObjectType.fromJson(String json) { return switch (json) {
   'file_path' => filePath,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaContentTextAnnotationsFilePathObjectType($value)'; } 
  }
 /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
-final class MessageDeltaContentTextAnnotationsFilePathObject {const MessageDeltaContentTextAnnotationsFilePathObject({required this.index, required this.type, this.text, this.filePath, this.startIndex, this.endIndex, });
+@immutable final class MessageDeltaContentTextAnnotationsFilePathObject {const MessageDeltaContentTextAnnotationsFilePathObject({required this.index, required this.type, this.text, this.filePath, this.startIndex, this.endIndex, });
 
 factory MessageDeltaContentTextAnnotationsFilePathObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFilePathObject(
   index: (json['index'] as num).toInt(),

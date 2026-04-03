@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_routing_summary_by_encrypted_response_result_meta.dart';import 'radar_get_email_routing_summary_by_encrypted_response_result_summary0.dart';final class RadarGetEmailRoutingSummaryByEncryptedResponseResult {const RadarGetEmailRoutingSummaryByEncryptedResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_encrypted_response_result_meta.dart';import 'radar_get_email_routing_summary_by_encrypted_response_result_summary0.dart';@immutable final class RadarGetEmailRoutingSummaryByEncryptedResponseResult {const RadarGetEmailRoutingSummaryByEncryptedResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetEmailRoutingSummaryByEncryptedResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByEncryptedResponseResult(
   meta: RadarGetEmailRoutingSummaryByEncryptedResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

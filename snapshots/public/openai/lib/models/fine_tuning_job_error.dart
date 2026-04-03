@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
-final class FineTuningJobError {const FineTuningJobError({required this.code, required this.message, required this.param, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
+@immutable final class FineTuningJobError {const FineTuningJobError({required this.code, required this.message, required this.param, });
 
 factory FineTuningJobError.fromJson(Map<String, dynamic> json) { return FineTuningJobError(
   code: json['code'] as String,

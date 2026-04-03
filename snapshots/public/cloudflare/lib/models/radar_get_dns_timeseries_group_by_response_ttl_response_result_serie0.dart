@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0({required this.gt1dLte1w, required this.gt1hLte1d, required this.gt1mLte5m, required this.gt1w, required this.gt5mLte15m, required this.gt15mLte1h, required this.lte1m, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0({required this.gt1dLte1w, required this.gt1hLte1d, required this.gt1mLte5m, required this.gt1w, required this.gt5mLte15m, required this.gt15mLte1h, required this.lte1m, });
 
 factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(
   gt1dLte1w: (json['gt_1d_lte_1w'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,7 +1,3 @@
-// Code-generating emitters use long string-interpolation templates
-// that inherently exceed 80 chars.
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
@@ -123,18 +119,11 @@ class DiscriminatedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
         ..docs.add('/// An unknown variant not defined in the OpenAPI spec.')
         ..docs.add(
           '/// Returned when the server sends a discriminator value that this client does not recognize.',
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = 'json'
-              ..modifier = FieldModifier.final$
-              ..type = refer('Map<String, dynamic>'),
-          ),
         )
         ..constructors.add(
           Constructor(
@@ -147,6 +136,14 @@ class DiscriminatedUnionEmitter {
                     ..toThis = true,
                 ),
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = 'json'
+              ..modifier = FieldModifier.final$
+              ..type = refer('Map<String, dynamic>'),
           ),
         )
         ..methods.add(
@@ -274,18 +271,8 @@ class DiscriminatedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = _discDartName
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
-          ),
-        )
-        ..fields.addAll(fieldDecls)
         ..constructors.add(
           Constructor(
             (c) => c
@@ -306,6 +293,17 @@ class DiscriminatedUnionEmitter {
                 ),
               )
               ..body = Code('return $className(\n$fromJsonArgs\n);'),
+          ),
+        )
+        ..fields.addAll(fieldDecls)
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = _discDartName
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = refer('String')
+              ..body = Code("return '$discValue';"),
           ),
         )
         ..methods.add(
@@ -352,25 +350,8 @@ class DiscriminatedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = _discDartName
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
-          ),
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = fieldName
-              ..modifier = FieldModifier.final$
-              ..type = irTypeToReference(type),
-          ),
-        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -399,6 +380,24 @@ class DiscriminatedUnionEmitter {
               ..body = Code(
                 'return $className(${buildFromJsonCode(type, 'json', paramIsMap: true)});',
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = fieldName
+              ..modifier = FieldModifier.final$
+              ..type = irTypeToReference(type),
+          ),
+        )
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = _discDartName
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = refer('String')
+              ..body = Code("return '$discValue';"),
           ),
         )
         ..methods.add(
@@ -616,25 +615,8 @@ class UntaggedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'value'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = irTypeToReference(variant)
-              ..body = const Code('return _value;'),
-          ),
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = '_value'
-              ..modifier = FieldModifier.final$
-              ..type = irTypeToReference(variant),
-          ),
-        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -646,6 +628,24 @@ class UntaggedUnionEmitter {
                     ..toThis = true,
                 ),
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = '_value'
+              ..modifier = FieldModifier.final$
+              ..type = irTypeToReference(variant),
+          ),
+        )
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = 'value'
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = irTypeToReference(variant)
+              ..body = const Code('return _value;'),
           ),
         )
         ..methods.addAll([
@@ -667,26 +667,9 @@ class UntaggedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
         ..docs.add('/// An unknown variant not defined in the OpenAPI spec.')
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'value'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('dynamic')
-              ..body = const Code("return _value ?? '';"),
-          ),
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = '_value'
-              ..modifier = FieldModifier.final$
-              ..type = refer('dynamic'),
-          ),
-        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -698,6 +681,24 @@ class UntaggedUnionEmitter {
                     ..toThis = true,
                 ),
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = '_value'
+              ..modifier = FieldModifier.final$
+              ..type = refer('dynamic'),
+          ),
+        )
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = 'value'
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = refer('dynamic')
+              ..body = const Code("return _value ?? '';"),
           ),
         )
         ..methods.addAll([

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BuildsPaginationInfo {const BuildsPaginationInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsPaginationInfo {const BuildsPaginationInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
 factory BuildsPaginationInfo.fromJson(Map<String, dynamic> json) { return BuildsPaginationInfo(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

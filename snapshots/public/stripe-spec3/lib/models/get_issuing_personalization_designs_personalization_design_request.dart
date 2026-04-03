@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingPersonalizationDesignsPersonalizationDesignRequest {const GetIssuingPersonalizationDesignsPersonalizationDesignRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPersonalizationDesignsPersonalizationDesignRequest {const GetIssuingPersonalizationDesignsPersonalizationDesignRequest();
 
 factory GetIssuingPersonalizationDesignsPersonalizationDesignRequest.fromJson(Map<String, dynamic> json) { return GetIssuingPersonalizationDesignsPersonalizationDesignRequest(
 

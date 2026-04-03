@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelSchemasResultInfo {const IntelSchemasResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelSchemasResultInfo {const IntelSchemasResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory IntelSchemasResultInfo.fromJson(Map<String, dynamic> json) { return IntelSchemasResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

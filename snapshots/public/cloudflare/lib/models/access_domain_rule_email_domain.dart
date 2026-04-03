@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessDomainRuleEmailDomain {const AccessDomainRuleEmailDomain({required this.domain});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessDomainRuleEmailDomain {const AccessDomainRuleEmailDomain({required this.domain});
 
 factory AccessDomainRuleEmailDomain.fromJson(Map<String, dynamic> json) { return AccessDomainRuleEmailDomain(
   domain: json['domain'] as String,

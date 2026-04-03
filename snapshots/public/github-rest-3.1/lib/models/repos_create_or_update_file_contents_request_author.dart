@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
-final class ReposCreateOrUpdateFileContentsRequestAuthor {const ReposCreateOrUpdateFileContentsRequestAuthor({required this.name, required this.email, this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
+@immutable final class ReposCreateOrUpdateFileContentsRequestAuthor {const ReposCreateOrUpdateFileContentsRequestAuthor({required this.name, required this.email, this.date, });
 
 factory ReposCreateOrUpdateFileContentsRequestAuthor.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateFileContentsRequestAuthor(
   name: json['name'] as String,

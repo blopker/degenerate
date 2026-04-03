@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log_prob.dart';/// The type of the event. Always `response.output_text.done`.
 /// 
-final class ResponseTextDoneEventType {const ResponseTextDoneEventType._(this.value);
+@immutable final class ResponseTextDoneEventType {const ResponseTextDoneEventType._(this.value);
 
 factory ResponseTextDoneEventType.fromJson(String json) { return switch (json) {
   'response.output_text.done' => responseOutputTextDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseTextDoneEventType($value)'; } 
  }
 /// Emitted when text content is finalized.
-final class ResponseTextDoneEvent {const ResponseTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, required this.sequenceNumber, required this.logprobs, });
+@immutable final class ResponseTextDoneEvent {const ResponseTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, required this.sequenceNumber, required this.logprobs, });
 
 factory ResponseTextDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseTextDoneEvent(
   type: ResponseTextDoneEventType.fromJson(json['type'] as String),

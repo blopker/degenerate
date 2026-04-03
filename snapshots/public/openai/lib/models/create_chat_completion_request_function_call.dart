@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_function_call_option.dart';/// `none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function.
 /// 
-final class CreateChatCompletionRequestFunctionCallVariant1 {const CreateChatCompletionRequestFunctionCallVariant1._(this.value);
+@immutable final class CreateChatCompletionRequestFunctionCallVariant1 {const CreateChatCompletionRequestFunctionCallVariant1._(this.value);
 
 factory CreateChatCompletionRequestFunctionCallVariant1.fromJson(String json) { return switch (json) {
   'none' => none,

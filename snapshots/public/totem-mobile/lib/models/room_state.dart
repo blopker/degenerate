@@ -3,6 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'room_state_status_detail.dart';
 
+@immutable
 final class RoomStatus {
   const RoomStatus._(this.value);
 
@@ -51,6 +52,7 @@ final class RoomStatus {
   }
 }
 
+@immutable
 final class TurnState {
   const TurnState._(this.value);
 
@@ -105,6 +107,7 @@ final class TurnState {
 ///
 /// Clients should treat this as the single type they deserialize everywhere.
 /// User references are slugs (short unique public IDs), not internal IDs.
+@immutable
 final class RoomState {
   const RoomState({
     required this.sessionSlug,
@@ -112,10 +115,10 @@ final class RoomState {
     required this.status,
     required this.turnState,
     required this.statusDetail,
-    this.currentSpeaker,
-    this.nextSpeaker,
     required this.talkingOrder,
     required this.keeper,
+    this.currentSpeaker,
+    this.nextSpeaker,
     this.bannedParticipants = const [],
   });
 

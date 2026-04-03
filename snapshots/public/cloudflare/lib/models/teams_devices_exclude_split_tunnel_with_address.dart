@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_split_tunnel_description.dart';/// The address in CIDR format to exclude from the tunnel. If `address` is present, `host` must not be present.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_split_tunnel_description.dart';/// The address in CIDR format to exclude from the tunnel. If `address` is present, `host` must not be present.
 extension type const TeamsDevicesSplitTunnelAddress(String value) {
 factory TeamsDevicesSplitTunnelAddress.fromJson(String json) => TeamsDevicesSplitTunnelAddress(json);
 
 String toJson() => value;
 
 }
-final class TeamsDevicesExcludeSplitTunnelWithAddress {const TeamsDevicesExcludeSplitTunnelWithAddress({required this.address, this.description, });
+@immutable final class TeamsDevicesExcludeSplitTunnelWithAddress {const TeamsDevicesExcludeSplitTunnelWithAddress({required this.address, this.description, });
 
 factory TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(Map<String, dynamic> json) { return TeamsDevicesExcludeSplitTunnelWithAddress(
   address: TeamsDevicesSplitTunnelAddress.fromJson(json['address'] as String),

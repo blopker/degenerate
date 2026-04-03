@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfers_transfer_reversals_id_request_metadata.dart';final class PostTransfersTransferReversalsIdRequest {const PostTransfersTransferReversalsIdRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfers_transfer_reversals_id_request_metadata.dart';@immutable final class PostTransfersTransferReversalsIdRequest {const PostTransfersTransferReversalsIdRequest({this.expand, this.metadata, });
 
 factory PostTransfersTransferReversalsIdRequest.fromJson(Map<String, dynamic> json) { return PostTransfersTransferReversalsIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

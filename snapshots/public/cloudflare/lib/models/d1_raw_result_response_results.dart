@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_raw_result_response_results_rows.dart';final class D1RawResultResponseResults {const D1RawResultResponseResults({this.columns, this.rows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_raw_result_response_results_rows.dart';@immutable final class D1RawResultResponseResults {const D1RawResultResponseResults({this.columns, this.rows, });
 
 factory D1RawResultResponseResults.fromJson(Map<String, dynamic> json) { return D1RawResultResponseResults(
   columns: (json['columns'] as List<dynamic>?)?.map((e) => e as String).toList(),

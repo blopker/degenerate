@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_options_card_present_routing.dart';/// Controls when the funds will be captured from the customer's account.
-final class PaymentMethodOptionsCardPresentCaptureMethod {const PaymentMethodOptionsCardPresentCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_card_present_routing.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentMethodOptionsCardPresentCaptureMethod {const PaymentMethodOptionsCardPresentCaptureMethod._(this.value);
 
 factory PaymentMethodOptionsCardPresentCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCardPresentCaptureMethod($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsCardPresent {const PaymentMethodOptionsCardPresent({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
+@immutable final class PaymentMethodOptionsCardPresent {const PaymentMethodOptionsCardPresent({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
 
 factory PaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardPresent(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsCardPresentCaptureMethod.fromJson(json['capture_method'] as String) : null,

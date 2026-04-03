@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposCreateAttestationRequestBundleVerificationMaterial {const ReposCreateAttestationRequestBundleVerificationMaterial({this.additionalProperties = const {}});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAttestationRequestBundleVerificationMaterial {const ReposCreateAttestationRequestBundleVerificationMaterial({this.additionalProperties = const {}});
 
 factory ReposCreateAttestationRequestBundleVerificationMaterial.fromJson(Map<String, dynamic> json) { return ReposCreateAttestationRequestBundleVerificationMaterial(
 

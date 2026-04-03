@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'sepa_debit_generated_from_charge.dart';import 'sepa_debit_generated_from_setup_attempt.dart';import 'setup_attempt.dart';/// 
-final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge, this.setupAttempt, });
+@immutable final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge, this.setupAttempt, });
 
 factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) { return SepaDebitGeneratedFrom(
   charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,

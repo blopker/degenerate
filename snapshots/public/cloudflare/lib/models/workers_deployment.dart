@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_deployment_annotations.dart';import 'workers_deployment_versions.dart';final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_deployment_annotations.dart';import 'workers_deployment_versions.dart';@immutable final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
 
 factory WorkersDeploymentStrategy.fromJson(String json) { return switch (json) {
   'percentage' => percentage,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersDeploymentStrategy($value)'; } 
  }
-final class WorkersDeployment {const WorkersDeployment({this.annotations, this.authorEmail, required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, });
+@immutable final class WorkersDeployment {const WorkersDeployment({required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, this.annotations, this.authorEmail, });
 
 factory WorkersDeployment.fromJson(Map<String, dynamic> json) { return WorkersDeployment(
   annotations: json['annotations'] != null ? WorkersDeploymentAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,

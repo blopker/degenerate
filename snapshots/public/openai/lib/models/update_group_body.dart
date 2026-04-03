@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Request payload for updating the details of an existing group.
-final class UpdateGroupBody {const UpdateGroupBody({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for updating the details of an existing group.
+@immutable final class UpdateGroupBody {const UpdateGroupBody({required this.name});
 
 factory UpdateGroupBody.fromJson(Map<String, dynamic> json) { return UpdateGroupBody(
   name: json['name'] as String,

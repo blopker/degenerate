@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'paypal_seller_protection.dart';/// 
-final class PaymentMethodDetailsPaypal {const PaymentMethodDetailsPaypal({this.country, this.payerEmail, this.payerId, this.payerName, this.sellerProtection, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'paypal_seller_protection.dart';/// 
+@immutable final class PaymentMethodDetailsPaypal {const PaymentMethodDetailsPaypal({this.country, this.payerEmail, this.payerId, this.payerName, this.sellerProtection, this.transactionId, });
 
 factory PaymentMethodDetailsPaypal.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaypal(
   country: json['country'] as String?,

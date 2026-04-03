@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_created_on.dart';import 'builds_deleted_on.dart';import 'builds_deploy_command.dart';import 'builds_external_script_id.dart';import 'builds_modified_on.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';import 'builds_trigger_uuid.dart';import 'builds_upsert_repo_connection_response.dart';/// Trigger information without build_token_uuid
-final class BuildsBuildResponseTrigger {const BuildsBuildResponseTrigger({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.createdOn, this.deletedOn, this.deployCommand, this.externalScriptId, this.modifiedOn, this.pathExcludes, this.pathIncludes, this.repoConnection, this.rootDirectory, this.triggerName, this.triggerUuid, });
+@immutable final class BuildsBuildResponseTrigger {const BuildsBuildResponseTrigger({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.createdOn, this.deletedOn, this.deployCommand, this.externalScriptId, this.modifiedOn, this.pathExcludes, this.pathIncludes, this.repoConnection, this.rootDirectory, this.triggerName, this.triggerUuid, });
 
 factory BuildsBuildResponseTrigger.fromJson(Map<String, dynamic> json) { return BuildsBuildResponseTrigger(
   branchExcludes: (json['branch_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),

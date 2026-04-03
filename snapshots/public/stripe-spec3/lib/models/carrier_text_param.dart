@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param_footer_body.dart';import 'carrier_text_param_footer_title.dart';import 'carrier_text_param_header_body.dart';import 'carrier_text_param_header_title.dart';final class CarrierTextParam {const CarrierTextParam({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param_footer_body.dart';import 'carrier_text_param_footer_title.dart';import 'carrier_text_param_header_body.dart';import 'carrier_text_param_header_title.dart';@immutable final class CarrierTextParam {const CarrierTextParam({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory CarrierTextParam.fromJson(Map<String, dynamic> json) { return CarrierTextParam(
   footerBody: json['footer_body'] != null ? OneOf2.parse(json['footer_body'], fromA: (v) => v as String, fromB: (v) => CarrierTextParamFooterBodyVariant2.fromJson(v as String),) : null,

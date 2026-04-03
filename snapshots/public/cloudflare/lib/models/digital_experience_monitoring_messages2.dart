@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_messages2_source.dart';final class DigitalExperienceMonitoringMessages2 {const DigitalExperienceMonitoringMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_messages2_source.dart';@immutable final class DigitalExperienceMonitoringMessages2 {const DigitalExperienceMonitoringMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DigitalExperienceMonitoringMessages2.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringMessages2(
   code: (json['code'] as num).toInt(),

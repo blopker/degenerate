@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ipsec_tunnel.dart';final class MagicSchemasTunnelsCollectionResponseResult {const MagicSchemasTunnelsCollectionResponseResult({this.ipsecTunnels});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ipsec_tunnel.dart';@immutable final class MagicSchemasTunnelsCollectionResponseResult {const MagicSchemasTunnelsCollectionResponseResult({this.ipsecTunnels});
 
 factory MagicSchemasTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicSchemasTunnelsCollectionResponseResult(
   ipsecTunnels: (json['ipsec_tunnels'] as List<dynamic>?)?.map((e) => MagicIpsecTunnel.fromJson(e as Map<String, dynamic>)).toList(),

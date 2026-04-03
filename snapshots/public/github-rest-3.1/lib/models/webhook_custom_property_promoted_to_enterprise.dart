@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction._(this.value);
 
 factory WebhookCustomPropertyPromotedToEnterpriseAction.fromJson(String json) { return switch (json) {
   'promote_to_enterprise' => promoteToEnterprise,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCustomPropertyPromotedToEnterpriseAction($value)'; } 
  }
-final class WebhookCustomPropertyPromotedToEnterprise {const WebhookCustomPropertyPromotedToEnterprise({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
+@immutable final class WebhookCustomPropertyPromotedToEnterprise {const WebhookCustomPropertyPromotedToEnterprise({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookCustomPropertyPromotedToEnterprise.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyPromotedToEnterprise(
   action: WebhookCustomPropertyPromotedToEnterpriseAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTerminalReadersRequest {const GetTerminalReadersRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalReadersRequest {const GetTerminalReadersRequest();
 
 factory GetTerminalReadersRequest.fromJson(Map<String, dynamic> json) { return GetTerminalReadersRequest(
 

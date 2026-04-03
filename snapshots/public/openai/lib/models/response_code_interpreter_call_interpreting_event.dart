@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.code_interpreter_call.interpreting`.
-final class ResponseCodeInterpreterCallInterpretingEventType {const ResponseCodeInterpreterCallInterpretingEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.code_interpreter_call.interpreting`.
+@immutable final class ResponseCodeInterpreterCallInterpretingEventType {const ResponseCodeInterpreterCallInterpretingEventType._(this.value);
 
 factory ResponseCodeInterpreterCallInterpretingEventType.fromJson(String json) { return switch (json) {
   'response.code_interpreter_call.interpreting' => responseCodeInterpreterCallInterpreting,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseCodeInterpreterCallInterpretingEventType($value)'; } 
  }
 /// Emitted when the code interpreter is actively interpreting the code snippet.
-final class ResponseCodeInterpreterCallInterpretingEvent {const ResponseCodeInterpreterCallInterpretingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseCodeInterpreterCallInterpretingEvent {const ResponseCodeInterpreterCallInterpretingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseCodeInterpreterCallInterpretingEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallInterpretingEvent(
   type: ResponseCodeInterpreterCallInterpretingEventType.fromJson(json['type'] as String),

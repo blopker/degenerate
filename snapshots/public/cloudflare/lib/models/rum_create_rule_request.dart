@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RumCreateRuleRequest {const RumCreateRuleRequest({this.host, this.inclusive, this.isPaused, this.paths, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumCreateRuleRequest {const RumCreateRuleRequest({this.host, this.inclusive, this.isPaused, this.paths, });
 
 factory RumCreateRuleRequest.fromJson(Map<String, dynamic> json) { return RumCreateRuleRequest(
   host: json['host'] as String?,

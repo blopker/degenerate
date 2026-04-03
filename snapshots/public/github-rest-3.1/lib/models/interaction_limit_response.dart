@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'interaction_group.dart';/// Interaction limit settings.
-final class InteractionLimitResponse {const InteractionLimitResponse({required this.limit, required this.origin, required this.expiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'interaction_group.dart';/// Interaction limit settings.
+@immutable final class InteractionLimitResponse {const InteractionLimitResponse({required this.limit, required this.origin, required this.expiresAt, });
 
 factory InteractionLimitResponse.fromJson(Map<String, dynamic> json) { return InteractionLimitResponse(
   limit: InteractionGroup.fromJson(json['limit'] as String),

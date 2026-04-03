@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_created.dart';import 'calls_identifier.dart';import 'calls_modified.dart';import 'calls_name.dart';/// Bearer token
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_created.dart';import 'calls_identifier.dart';import 'calls_modified.dart';import 'calls_name.dart';/// Bearer token
 extension type const CallsSecret(String value) {
 factory CallsSecret.fromJson(String json) => CallsSecret(json);
 
 String toJson() => value;
 
 }
-final class CallsAppWithSecret {const CallsAppWithSecret({this.created, this.modified, this.name, this.secret, this.uid, });
+@immutable final class CallsAppWithSecret {const CallsAppWithSecret({this.created, this.modified, this.name, this.secret, this.uid, });
 
 factory CallsAppWithSecret.fromJson(Map<String, dynamic> json) { return CallsAppWithSecret(
   created: json['created'] != null ? CallsCreated.fromJson(json['created'] as String) : null,

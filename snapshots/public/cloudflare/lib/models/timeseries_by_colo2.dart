@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth_by_colo.dart';import 'requests_by_colo.dart';import 'since.dart';import 'threats.dart';import 'until.dart';final class TimeseriesByColo2 {const TimeseriesByColo2({this.bandwidth, this.requests, this.since, this.threats, this.until, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth_by_colo.dart';import 'requests_by_colo.dart';import 'since.dart';import 'threats.dart';import 'until.dart';@immutable final class TimeseriesByColo2 {const TimeseriesByColo2({this.bandwidth, this.requests, this.since, this.threats, this.until, });
 
 factory TimeseriesByColo2.fromJson(Map<String, dynamic> json) { return TimeseriesByColo2(
   bandwidth: json['bandwidth'] != null ? BandwidthByColo.fromJson(json['bandwidth'] as Map<String, dynamic>) : null,

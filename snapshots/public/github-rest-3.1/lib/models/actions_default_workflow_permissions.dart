@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
-final class ActionsDefaultWorkflowPermissions {const ActionsDefaultWorkflowPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
+@immutable final class ActionsDefaultWorkflowPermissions {const ActionsDefaultWorkflowPermissions._(this.value);
 
 factory ActionsDefaultWorkflowPermissions.fromJson(String json) { return switch (json) {
   'read' => read,

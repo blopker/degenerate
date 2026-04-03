@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `promptpay` PaymentMethod, this hash contains details about the PromptPay payment method.
-final class PostPaymentMethodsRequestPromptpay {const PostPaymentMethodsRequestPromptpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `promptpay` PaymentMethod, this hash contains details about the PromptPay payment method.
+@immutable final class PostPaymentMethodsRequestPromptpay {const PostPaymentMethodsRequestPromptpay();
 
 factory PostPaymentMethodsRequestPromptpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestPromptpay(
 

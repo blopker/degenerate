@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_messages2.dart';import 'response_collection15_result_info.dart';final class ResponseCollection15 {const ResponseCollection15({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_messages2.dart';import 'response_collection15_result_info.dart';@immutable final class ResponseCollection15 {const ResponseCollection15({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection15.fromJson(Map<String, dynamic> json) { return ResponseCollection15(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsSettingsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

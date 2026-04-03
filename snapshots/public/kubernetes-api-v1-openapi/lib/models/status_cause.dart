@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
-final class StatusCause {const StatusCause({this.field, this.message, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
+@immutable final class StatusCause {const StatusCause({this.field, this.message, this.reason, });
 
 factory StatusCause.fromJson(Map<String, dynamic> json) { return StatusCause(
   field: json['field'] as String?,

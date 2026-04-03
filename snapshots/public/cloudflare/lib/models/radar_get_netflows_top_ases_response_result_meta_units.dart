@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsTopAsesResponseResultMetaUnits {const RadarGetNetflowsTopAsesResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsTopAsesResponseResultMetaUnits {const RadarGetNetflowsTopAsesResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetNetflowsTopAsesResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTopAsesResponseResultMetaUnits(
   name: json['name'] as String,

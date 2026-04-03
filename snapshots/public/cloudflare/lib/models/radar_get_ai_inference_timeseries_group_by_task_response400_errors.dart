@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors {const RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors {const RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors({required this.message});
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors(
   message: json['message'] as String,

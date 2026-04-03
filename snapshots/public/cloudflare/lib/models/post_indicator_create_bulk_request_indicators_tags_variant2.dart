@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIndicatorCreateBulkRequestIndicatorsTagsVariant2 {const PostIndicatorCreateBulkRequestIndicatorsTagsVariant2({this.categoryName, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorCreateBulkRequestIndicatorsTagsVariant2 {const PostIndicatorCreateBulkRequestIndicatorsTagsVariant2({required this.value, this.categoryName, });
 
 factory PostIndicatorCreateBulkRequestIndicatorsTagsVariant2.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateBulkRequestIndicatorsTagsVariant2(
   categoryName: json['categoryName'] as String?,

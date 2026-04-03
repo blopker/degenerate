@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'function_object.dart';/// The type of tool being defined: `function`
-final class AssistantToolsFunctionType {const AssistantToolsFunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_object.dart';/// The type of tool being defined: `function`
+@immutable final class AssistantToolsFunctionType {const AssistantToolsFunctionType._(this.value);
 
 factory AssistantToolsFunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AssistantToolsFunctionType($value)'; } 
  }
-final class AssistantToolsFunction {const AssistantToolsFunction({required this.type, required this.function, });
+@immutable final class AssistantToolsFunction {const AssistantToolsFunction({required this.type, required this.function, });
 
 factory AssistantToolsFunction.fromJson(Map<String, dynamic> json) { return AssistantToolsFunction(
   type: AssistantToolsFunctionType.fromJson(json['type'] as String),

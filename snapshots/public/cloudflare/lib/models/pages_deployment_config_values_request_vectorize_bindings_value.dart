@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Vectorize binding.
-final class PagesDeploymentConfigValuesRequestVectorizeBindingsValue {const PagesDeploymentConfigValuesRequestVectorizeBindingsValue({required this.indexName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Vectorize binding.
+@immutable final class PagesDeploymentConfigValuesRequestVectorizeBindingsValue {const PagesDeploymentConfigValuesRequestVectorizeBindingsValue({required this.indexName});
 
 factory PagesDeploymentConfigValuesRequestVectorizeBindingsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestVectorizeBindingsValue(
   indexName: json['index_name'] as String,

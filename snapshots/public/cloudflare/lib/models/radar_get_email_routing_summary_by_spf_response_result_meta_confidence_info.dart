@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_spf_response_result_meta_confidence_info_annotations.dart';final class RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfo {const RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_spf_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfo {const RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetEmailRoutingSummaryBySpfResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

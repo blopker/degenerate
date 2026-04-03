@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_msg.dart';import 'pay_per_crawl_result_info.dart';final class NoResultResponse {const NoResultResponse({this.errors, this.messages, this.resultInfo, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_msg.dart';import 'pay_per_crawl_result_info.dart';@immutable final class NoResultResponse {const NoResultResponse({this.errors, this.messages, this.resultInfo, this.success, });
 
 factory NoResultResponse.fromJson(Map<String, dynamic> json) { return NoResultResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),

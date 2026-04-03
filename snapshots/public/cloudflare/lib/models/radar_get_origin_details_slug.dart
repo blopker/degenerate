@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Origin slug.
-final class RadarGetOriginDetailsSlug {const RadarGetOriginDetailsSlug._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origin slug.
+@immutable final class RadarGetOriginDetailsSlug {const RadarGetOriginDetailsSlug._(this.value);
 
 factory RadarGetOriginDetailsSlug.fromJson(String json) { return switch (json) {
   'AMAZON' => amazon,

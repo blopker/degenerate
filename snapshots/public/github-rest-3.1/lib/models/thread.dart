@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'minimal_repository.dart';import 'thread_subject.dart';/// Thread
-final class Thread {const Thread({required this.id, required this.repository, required this.subject, required this.reason, required this.unread, required this.updatedAt, required this.lastReadAt, required this.url, required this.subscriptionUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'thread_subject.dart';/// Thread
+@immutable final class Thread {const Thread({required this.id, required this.repository, required this.subject, required this.reason, required this.unread, required this.updatedAt, required this.lastReadAt, required this.url, required this.subscriptionUrl, });
 
 factory Thread.fromJson(Map<String, dynamic> json) { return Thread(
   id: json['id'] as String,

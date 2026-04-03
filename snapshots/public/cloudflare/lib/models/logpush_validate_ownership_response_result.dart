@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LogpushValidateOwnershipResponseResult {const LogpushValidateOwnershipResponseResult({this.valid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushValidateOwnershipResponseResult {const LogpushValidateOwnershipResponseResult({this.valid});
 
 factory LogpushValidateOwnershipResponseResult.fromJson(Map<String, dynamic> json) { return LogpushValidateOwnershipResponseResult(
   valid: json['valid'] as bool?,

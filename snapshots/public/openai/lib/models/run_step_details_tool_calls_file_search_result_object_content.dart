@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the content.
-final class RunStepDetailsToolCallsFileSearchResultObjectContentType {const RunStepDetailsToolCallsFileSearchResultObjectContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the content.
+@immutable final class RunStepDetailsToolCallsFileSearchResultObjectContentType {const RunStepDetailsToolCallsFileSearchResultObjectContentType._(this.value);
 
 factory RunStepDetailsToolCallsFileSearchResultObjectContentType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RunStepDetailsToolCallsFileSearchResultObjectContentType($value)'; } 
  }
-final class RunStepDetailsToolCallsFileSearchResultObjectContent {const RunStepDetailsToolCallsFileSearchResultObjectContent({this.type, this.text, });
+@immutable final class RunStepDetailsToolCallsFileSearchResultObjectContent {const RunStepDetailsToolCallsFileSearchResultObjectContent({this.type, this.text, });
 
 factory RunStepDetailsToolCallsFileSearchResultObjectContent.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFileSearchResultObjectContent(
   type: json['type'] != null ? RunStepDetailsToolCallsFileSearchResultObjectContentType.fromJson(json['type'] as String) : null,

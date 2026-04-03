@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_confirmation_tokens_request_payment_method_options_card.dart';/// Payment-method-specific configuration for this ConfirmationToken.
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptions {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptions({this.card});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_options_card.dart';/// Payment-method-specific configuration for this ConfirmationToken.
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptions {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptions({this.card});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptions(
   card: json['card'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,

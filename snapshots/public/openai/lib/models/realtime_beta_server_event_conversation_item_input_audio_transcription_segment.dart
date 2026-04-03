@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `conversation.item.input_audio_transcription.segment`.
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.input_audio_transcription.segment`.
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.segment' => conversationItemInputAudioTranscriptionSegment,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType($value)'; } 
  }
 /// Returned when an input audio transcription segment is identified for an item.
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: json['event_id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The audio format. Always `audio/pcm`.
-final class PcmAudioFormatType {const PcmAudioFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcm`.
+@immutable final class PcmAudioFormatType {const PcmAudioFormatType._(this.value);
 
 factory PcmAudioFormatType.fromJson(String json) { return switch (json) {
   'audio/pcm' => audioPcm,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PcmAudioFormatType($value)'; } 
  }
 /// The sample rate of the audio. Always `24000`.
-final class PcmAudioFormatRate {const PcmAudioFormatRate._(this.value);
+@immutable final class PcmAudioFormatRate {const PcmAudioFormatRate._(this.value);
 
 factory PcmAudioFormatRate.fromJson(int json) { return switch (json) {
   24000 => $24000,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PcmAudioFormatRate($value)'; } 
  }
 /// The PCM audio format. Only a 24kHz sample rate is supported.
-final class PcmAudioFormat {const PcmAudioFormat({this.type, this.rate, });
+@immutable final class PcmAudioFormat {const PcmAudioFormat({this.type, this.rate, });
 
 factory PcmAudioFormat.fromJson(Map<String, dynamic> json) { return PcmAudioFormat(
   type: json['type'] != null ? PcmAudioFormatType.fromJson(json['type'] as String) : null,

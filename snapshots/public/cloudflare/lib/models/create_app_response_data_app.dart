@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateAppResponseDataApp {const CreateAppResponseDataApp({this.createdAt, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAppResponseDataApp {const CreateAppResponseDataApp({this.createdAt, this.id, this.name, });
 
 factory CreateAppResponseDataApp.fromJson(Map<String, dynamic> json) { return CreateAppResponseDataApp(
   createdAt: json['created_at'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Describes whether Checkout should display Link. Defaults to `auto`.
-final class CheckoutLinkWalletOptionsDisplay {const CheckoutLinkWalletOptionsDisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes whether Checkout should display Link. Defaults to `auto`.
+@immutable final class CheckoutLinkWalletOptionsDisplay {const CheckoutLinkWalletOptionsDisplay._(this.value);
 
 factory CheckoutLinkWalletOptionsDisplay.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutLinkWalletOptionsDisplay($value)'; } 
  }
 /// 
-final class CheckoutLinkWalletOptions {const CheckoutLinkWalletOptions({this.display});
+@immutable final class CheckoutLinkWalletOptions {const CheckoutLinkWalletOptions({this.display});
 
 factory CheckoutLinkWalletOptions.fromJson(Map<String, dynamic> json) { return CheckoutLinkWalletOptions(
   display: json['display'] != null ? CheckoutLinkWalletOptionsDisplay.fromJson(json['display'] as String) : null,

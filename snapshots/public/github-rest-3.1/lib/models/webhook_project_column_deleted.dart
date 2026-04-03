@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';final class WebhookProjectColumnDeletedAction {const WebhookProjectColumnDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnDeletedAction {const WebhookProjectColumnDeletedAction._(this.value);
 
 factory WebhookProjectColumnDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookProjectColumnDeletedAction($value)'; } 
  }
-final class WebhookProjectColumnDeleted {const WebhookProjectColumnDeleted({required this.action, this.enterprise, this.installation, this.organization, required this.projectColumn, this.repository, this.sender, });
+@immutable final class WebhookProjectColumnDeleted {const WebhookProjectColumnDeleted({required this.action, required this.projectColumn, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookProjectColumnDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnDeleted(
   action: WebhookProjectColumnDeletedAction.fromJson(json['action'] as String),

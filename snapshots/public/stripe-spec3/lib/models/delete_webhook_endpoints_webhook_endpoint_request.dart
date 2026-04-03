@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteWebhookEndpointsWebhookEndpointRequest {const DeleteWebhookEndpointsWebhookEndpointRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteWebhookEndpointsWebhookEndpointRequest {const DeleteWebhookEndpointsWebhookEndpointRequest();
 
 factory DeleteWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return DeleteWebhookEndpointsWebhookEndpointRequest(
 

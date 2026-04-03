@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesDevicesPolicyCertificates {const TeamsDevicesDevicesPolicyCertificates({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDevicesPolicyCertificates {const TeamsDevicesDevicesPolicyCertificates({required this.enabled});
 
 factory TeamsDevicesDevicesPolicyCertificates.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicesPolicyCertificates(
   enabled: json['enabled'] as bool,

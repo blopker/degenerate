@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DocumentFingerprintEntryType {const DocumentFingerprintEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DocumentFingerprintEntryType {const DocumentFingerprintEntryType._(this.value);
 
 factory DocumentFingerprintEntryType.fromJson(String json) { return switch (json) {
   'document_fingerprint' => documentFingerprint,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DocumentFingerprintEntryType($value)'; } 
  }
-final class DocumentFingerprintEntry {const DocumentFingerprintEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, });
+@immutable final class DocumentFingerprintEntry {const DocumentFingerprintEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, });
 
 factory DocumentFingerprintEntry.fromJson(Map<String, dynamic> json) { return DocumentFingerprintEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

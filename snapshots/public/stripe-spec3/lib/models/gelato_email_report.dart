@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_email_report_error.dart';/// Status of this `email` check.
-final class GelatoEmailReportStatus {const GelatoEmailReportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_email_report_error.dart';/// Status of this `email` check.
+@immutable final class GelatoEmailReportStatus {const GelatoEmailReportStatus._(this.value);
 
 factory GelatoEmailReportStatus.fromJson(String json) { return switch (json) {
   'unverified' => unverified,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoEmailReportStatus($value)'; } 
  }
 /// Result from a email check
-final class GelatoEmailReport {const GelatoEmailReport({this.email, this.error, required this.status, });
+@immutable final class GelatoEmailReport {const GelatoEmailReport({required this.status, this.email, this.error, });
 
 factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEmailReport(
   email: json['email'] as String?,

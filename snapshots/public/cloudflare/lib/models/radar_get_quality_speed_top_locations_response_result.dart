@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_speed_top_locations_response_result_meta.dart';import 'radar_get_quality_speed_top_locations_response_result_top0.dart';final class RadarGetQualitySpeedTopLocationsResponseResult {const RadarGetQualitySpeedTopLocationsResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_speed_top_locations_response_result_meta.dart';import 'radar_get_quality_speed_top_locations_response_result_top0.dart';@immutable final class RadarGetQualitySpeedTopLocationsResponseResult {const RadarGetQualitySpeedTopLocationsResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetQualitySpeedTopLocationsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopLocationsResponseResult(
   meta: RadarGetQualitySpeedTopLocationsResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

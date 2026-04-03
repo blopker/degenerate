@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'costs_result.dart';import 'usage_audio_speeches_result.dart';import 'usage_audio_transcriptions_result.dart';import 'usage_code_interpreter_sessions_result.dart';import 'usage_completions_result.dart';import 'usage_embeddings_result.dart';import 'usage_images_result.dart';import 'usage_moderations_result.dart';import 'usage_time_bucket_result.dart';import 'usage_vector_stores_result.dart';final class UsageTimeBucketObject {const UsageTimeBucketObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'costs_result.dart';import 'usage_audio_speeches_result.dart';import 'usage_audio_transcriptions_result.dart';import 'usage_code_interpreter_sessions_result.dart';import 'usage_completions_result.dart';import 'usage_embeddings_result.dart';import 'usage_images_result.dart';import 'usage_moderations_result.dart';import 'usage_time_bucket_result.dart';import 'usage_vector_stores_result.dart';@immutable final class UsageTimeBucketObject {const UsageTimeBucketObject._(this.value);
 
 factory UsageTimeBucketObject.fromJson(String json) { return switch (json) {
   'bucket' => bucket,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UsageTimeBucketObject($value)'; } 
  }
-final class UsageTimeBucket {const UsageTimeBucket({required this.object, required this.startTime, required this.endTime, required this.result, });
+@immutable final class UsageTimeBucket {const UsageTimeBucket({required this.object, required this.startTime, required this.endTime, required this.result, });
 
 factory UsageTimeBucket.fromJson(Map<String, dynamic> json) { return UsageTimeBucket(
   object: UsageTimeBucketObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_whois_messages2.dart';final class ResponseCommonFailure20 {const ResponseCommonFailure20({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_whois_messages2.dart';@immutable final class ResponseCommonFailure20 {const ResponseCommonFailure20({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure20.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure20(
   errors: (json['errors'] as List<dynamic>).map((e) => CloudforceOneWhoisMessages2.fromJson(e as Map<String, dynamic>)).toList(),

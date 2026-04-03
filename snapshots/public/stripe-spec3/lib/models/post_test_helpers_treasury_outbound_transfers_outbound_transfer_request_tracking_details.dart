@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_request_tracking_details_ach.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_request_tracking_details_us_domestic_wire.dart';final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_request_tracking_details_ach.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_request_tracking_details_us_domestic_wire.dart';@immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType._(this.value);
 
 factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType($value)'; } 
  }
 /// Details about network-specific tracking information.
-final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
+@immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
 factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(
   ach: json['ach'] != null ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,

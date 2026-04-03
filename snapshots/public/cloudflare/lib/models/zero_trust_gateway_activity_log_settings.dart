@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify activity log settings.
-final class ZeroTrustGatewayActivityLogSettings {const ZeroTrustGatewayActivityLogSettings({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify activity log settings.
+@immutable final class ZeroTrustGatewayActivityLogSettings {const ZeroTrustGatewayActivityLogSettings({this.enabled});
 
 factory ZeroTrustGatewayActivityLogSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayActivityLogSettings(
   enabled: json['enabled'] as bool?,

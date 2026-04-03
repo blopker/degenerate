@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies which status the token should be updated to.
-final class PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus._(this.value);
+@immutable final class PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus._(this.value);
 
 factory PostIssuingTokensTokenRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingTokensTokenRequestStatus($value)'; } 
  }
-final class PostIssuingTokensTokenRequest {const PostIssuingTokensTokenRequest({this.expand, required this.status, });
+@immutable final class PostIssuingTokensTokenRequest {const PostIssuingTokensTokenRequest({required this.status, this.expand, });
 
 factory PostIssuingTokensTokenRequest.fromJson(Map<String, dynamic> json) { return PostIssuingTokensTokenRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

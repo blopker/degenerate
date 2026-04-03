@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionSchedulesRequestPhasesDurationInterval {const PostSubscriptionSchedulesRequestPhasesDurationInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesDurationInterval {const PostSubscriptionSchedulesRequestPhasesDurationInterval._(this.value);
 
 factory PostSubscriptionSchedulesRequestPhasesDurationInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestPhasesDurationInterval($value)'; } 
  }
-final class PostSubscriptionSchedulesRequestPhasesDuration {const PostSubscriptionSchedulesRequestPhasesDuration({required this.interval, this.intervalCount, });
+@immutable final class PostSubscriptionSchedulesRequestPhasesDuration {const PostSubscriptionSchedulesRequestPhasesDuration({required this.interval, this.intervalCount, });
 
 factory PostSubscriptionSchedulesRequestPhasesDuration.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesDuration(
   interval: PostSubscriptionSchedulesRequestPhasesDurationInterval.fromJson(json['interval'] as String),

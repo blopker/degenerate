@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config_default_sampling.dart';import 'magic_visibility_mnm_mnm_config_name.dart';import 'magic_visibility_mnm_mnm_config_router_ip.dart';import 'magic_visibility_mnm_mnm_config_warp_device.dart';final class MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest {const MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest({this.defaultSampling, this.name, this.routerIps, this.warpDevices, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config_default_sampling.dart';import 'magic_visibility_mnm_mnm_config_name.dart';import 'magic_visibility_mnm_mnm_config_router_ip.dart';import 'magic_visibility_mnm_mnm_config_warp_device.dart';@immutable final class MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest {const MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest({this.defaultSampling, this.name, this.routerIps, this.warpDevices, });
 
 factory MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest.fromJson(Map<String, dynamic> json) { return MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest(
   defaultSampling: json['default_sampling'] != null ? MagicVisibilityMnmMnmConfigDefaultSampling.fromJson(json['default_sampling'] as num) : null,

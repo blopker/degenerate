@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_notification_settings.dart';/// Specify whether to enable anti-virus scanning on downloads.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_notification_settings.dart';/// Specify whether to enable anti-virus scanning on downloads.
 extension type const ZeroTrustGatewayEnabledDownloadPhase(bool value) {
 factory ZeroTrustGatewayEnabledDownloadPhase.fromJson(bool json) => ZeroTrustGatewayEnabledDownloadPhase(json);
 
@@ -22,7 +22,7 @@ bool toJson() => value;
 
 }
 /// Specify anti-virus settings.
-final class ZeroTrustGatewayAntiVirusSettings {const ZeroTrustGatewayAntiVirusSettings({this.enabledDownloadPhase, this.enabledUploadPhase, this.failClosed, this.notificationSettings, });
+@immutable final class ZeroTrustGatewayAntiVirusSettings {const ZeroTrustGatewayAntiVirusSettings({this.enabledDownloadPhase, this.enabledUploadPhase, this.failClosed, this.notificationSettings, });
 
 factory ZeroTrustGatewayAntiVirusSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAntiVirusSettings(
   enabledDownloadPhase: json['enabled_download_phase'] != null ? ZeroTrustGatewayEnabledDownloadPhase.fromJson(json['enabled_download_phase'] as bool) : null,

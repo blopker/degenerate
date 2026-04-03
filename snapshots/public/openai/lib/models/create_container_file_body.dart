@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class CreateContainerFileBody {const CreateContainerFileBody({this.fileId, this.file, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateContainerFileBody {const CreateContainerFileBody({this.fileId, this.file, });
 
 factory CreateContainerFileBody.fromJson(Map<String, dynamic> json) { return CreateContainerFileBody(
   fileId: json['file_id'] as String?,

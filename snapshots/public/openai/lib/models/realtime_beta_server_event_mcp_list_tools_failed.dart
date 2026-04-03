@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `mcp_list_tools.failed`.
-final class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.failed`.
+@immutable final class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType._(this.value);
 
 factory RealtimeBetaServerEventMcpListToolsFailedType.fromJson(String json) { return switch (json) {
   'mcp_list_tools.failed' => mcpListToolsFailed,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventMcpListToolsFailedType($value)'; } 
  }
 /// Returned when listing MCP tools has failed for an item.
-final class RealtimeBetaServerEventMcpListToolsFailed {const RealtimeBetaServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
+@immutable final class RealtimeBetaServerEventMcpListToolsFailed {const RealtimeBetaServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
 
 factory RealtimeBetaServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventMcpListToolsFailed(
   eventId: json['event_id'] as String,

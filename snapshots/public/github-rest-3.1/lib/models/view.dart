@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The layout of the view.
-final class ViewLayout {const ViewLayout._(this.value);
+@immutable final class ViewLayout {const ViewLayout._(this.value);
 
 factory ViewLayout.fromJson(String json) { return switch (json) {
   'table' => table,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ViewLayout($value)'; } 
  }
 /// A view inside a projects v2 project
-final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, this.filter, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, });
+@immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter, });
 
 factory View.fromJson(Map<String, dynamic> json) { return View(
   id: (json['id'] as num).toInt(),

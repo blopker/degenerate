@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_delete_instances_response_result.dart';final class AiSearchDeleteInstancesResponse {const AiSearchDeleteInstancesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response_result.dart';@immutable final class AiSearchDeleteInstancesResponse {const AiSearchDeleteInstancesResponse({required this.result, required this.success, });
 
 factory AiSearchDeleteInstancesResponse.fromJson(Map<String, dynamic> json) { return AiSearchDeleteInstancesResponse(
   result: AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

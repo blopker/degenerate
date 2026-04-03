@@ -8,7 +8,7 @@ dynamic toJson() => value;
 
 }
 /// A scope is a combination of scope objects which provides additional context.
-final class IamScope {const IamScope({required this.key, required this.objects, });
+@immutable final class IamScope {const IamScope({required this.key, required this.objects, });
 
 factory IamScope.fromJson(Map<String, dynamic> json) { return IamScope(
   key: json['key'] != null ? IamScopeKey.fromJson(json['key'] as dynamic) : null,

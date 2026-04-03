@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class NotificationEventData {const NotificationEventData({required this.object, this.previousAttributes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class NotificationEventData {const NotificationEventData({required this.object, this.previousAttributes, });
 
 factory NotificationEventData.fromJson(Map<String, dynamic> json) { return NotificationEventData(
   object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

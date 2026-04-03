@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Request payload for adding a user to a group.
-final class CreateGroupUserBody {const CreateGroupUserBody({required this.userId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for adding a user to a group.
+@immutable final class CreateGroupUserBody {const CreateGroupUserBody({required this.userId});
 
 factory CreateGroupUserBody.fromJson(Map<String, dynamic> json) { return CreateGroupUserBody(
   userId: json['user_id'] as String,

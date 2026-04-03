@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_certificate.dart';import 'tls_certificates_and_hostnames_deploy.dart';import 'tls_certificates_and_hostnames_geo_restrictions.dart';import 'tls_certificates_and_hostnames_policy.dart';import 'tls_certificates_and_hostnames_private_key.dart';final class CustomSslForAZoneEditSslConfigurationRequest {const CustomSslForAZoneEditSslConfigurationRequest({this.bundleMethod, this.certificate, this.deploy, this.geoRestrictions, this.policy, this.privateKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_certificate.dart';import 'tls_certificates_and_hostnames_deploy.dart';import 'tls_certificates_and_hostnames_geo_restrictions.dart';import 'tls_certificates_and_hostnames_policy.dart';import 'tls_certificates_and_hostnames_private_key.dart';@immutable final class CustomSslForAZoneEditSslConfigurationRequest {const CustomSslForAZoneEditSslConfigurationRequest({this.bundleMethod, this.certificate, this.deploy, this.geoRestrictions, this.policy, this.privateKey, });
 
 factory CustomSslForAZoneEditSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return CustomSslForAZoneEditSslConfigurationRequest(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,

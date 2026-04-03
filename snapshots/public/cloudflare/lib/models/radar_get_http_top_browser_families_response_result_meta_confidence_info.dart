@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_browser_families_response_result_meta_confidence_info_annotations.dart';final class RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfo {const RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_browser_families_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfo {const RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetHttpTopBrowserFamiliesResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

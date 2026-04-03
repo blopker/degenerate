@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class FileSystemNodeKind {const FileSystemNodeKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileSystemNodeKind {const FileSystemNodeKind._(this.value);
 
 factory FileSystemNodeKind.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FileSystemNodeKind($value)'; } 
  }
-final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes, this.children, this.symlinkTarget, this.metadata, });
+@immutable final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes, this.children, this.symlinkTarget, this.metadata, });
 
 factory FileSystemNode.fromJson(Map<String, dynamic> json) { return FileSystemNode(
   name: json['name'] as String,

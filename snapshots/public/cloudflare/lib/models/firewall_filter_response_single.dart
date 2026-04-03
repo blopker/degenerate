@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_filter.dart';final class FirewallFilterResponseSingle {const FirewallFilterResponseSingle({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filter.dart';@immutable final class FirewallFilterResponseSingle {const FirewallFilterResponseSingle({required this.result});
 
 factory FirewallFilterResponseSingle.fromJson(Map<String, dynamic> json) { return FirewallFilterResponseSingle(
   result: FirewallFilter.fromJson(json['result'] as Map<String, dynamic>),

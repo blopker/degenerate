@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';import 'intel_result_info.dart';import 'response_collection24_result.dart';final class ResponseCollection24 {const ResponseCollection24({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';import 'intel_result_info.dart';import 'response_collection24_result.dart';@immutable final class ResponseCollection24 {const ResponseCollection24({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseCollection24.fromJson(Map<String, dynamic> json) { return ResponseCollection24(
   errors: (json['errors'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),

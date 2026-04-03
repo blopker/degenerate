@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_black_forest_labs_flux2_klein4b_response400_errors.dart';final class WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400 {const WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_black_forest_labs_flux2_klein4b_response400_errors.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400 {const WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

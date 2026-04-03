@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_label_edited_changes.dart';import 'webhooks_label.dart';final class WebhookLabelEditedAction {const WebhookLabelEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_label_edited_changes.dart';import 'webhooks_label.dart';@immutable final class WebhookLabelEditedAction {const WebhookLabelEditedAction._(this.value);
 
 factory WebhookLabelEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookLabelEditedAction($value)'; } 
  }
-final class WebhookLabelEdited {const WebhookLabelEdited({required this.action, this.changes, this.enterprise, this.installation, required this.label, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookLabelEdited {const WebhookLabelEdited({required this.action, required this.label, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookLabelEdited(
   action: WebhookLabelEditedAction.fromJson(json['action'] as String),

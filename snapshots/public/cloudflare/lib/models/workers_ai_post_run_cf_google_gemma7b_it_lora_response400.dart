@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_google_gemma7b_it_lora_response400_errors.dart';final class WorkersAiPostRunCfGoogleGemma7bItLoraResponse400 {const WorkersAiPostRunCfGoogleGemma7bItLoraResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_google_gemma7b_it_lora_response400_errors.dart';@immutable final class WorkersAiPostRunCfGoogleGemma7bItLoraResponse400 {const WorkersAiPostRunCfGoogleGemma7bItLoraResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfGoogleGemma7bItLoraResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleGemma7bItLoraResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfGoogleGemma7bItLoraResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

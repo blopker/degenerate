@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.
-final class StreamAccessRulesAction {const StreamAccessRulesAction._(this.value);
+@immutable final class StreamAccessRulesAction {const StreamAccessRulesAction._(this.value);
 
 factory StreamAccessRulesAction.fromJson(String json) { return switch (json) {
   'allow' => allow,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'StreamAccessRulesAction($value)'; } 
  }
 /// Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.
-final class StreamAccessRulesType {const StreamAccessRulesType._(this.value);
+@immutable final class StreamAccessRulesType {const StreamAccessRulesType._(this.value);
 
 factory StreamAccessRulesType.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'StreamAccessRulesType($value)'; } 
  }
 /// Defines rules for fine-grained control over content than signed URL tokens alone. Access rules primarily make tokens conditionally valid based on user information. Access Rules are specified on token payloads as the `accessRules` property containing an array of Rule objects.
-final class StreamAccessRules {const StreamAccessRules({this.action, this.country, this.ip, this.type, });
+@immutable final class StreamAccessRules {const StreamAccessRules({this.action, this.country, this.ip, this.type, });
 
 factory StreamAccessRules.fromJson(Map<String, dynamic> json) { return StreamAccessRules(
   action: json['action'] != null ? StreamAccessRulesAction.fromJson(json['action'] as String) : null,

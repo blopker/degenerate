@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_create_preview_request_subscription_details_items_price_data_recurring.dart';final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_items_price_data_recurring.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData(
   currency: json['currency'] as String,

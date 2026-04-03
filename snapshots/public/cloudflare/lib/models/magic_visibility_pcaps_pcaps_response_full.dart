@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_pcaps_pcaps_byte_limit.dart';import 'magic_visibility_pcaps_pcaps_colo_name.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_id.dart';import 'magic_visibility_pcaps_pcaps_status.dart';import 'magic_visibility_pcaps_pcaps_submitted.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_full.dart';import 'magic_visibility_pcaps_pcaps_type.dart';/// An error message that describes why the packet capture failed. This field only applies to `full` packet captures.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_byte_limit.dart';import 'magic_visibility_pcaps_pcaps_colo_name.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_id.dart';import 'magic_visibility_pcaps_pcaps_status.dart';import 'magic_visibility_pcaps_pcaps_submitted.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_full.dart';import 'magic_visibility_pcaps_pcaps_type.dart';/// An error message that describes why the packet capture failed. This field only applies to `full` packet captures.
 extension type const MagicVisibilityPcapsPcapsErrorMessage(String value) {
 factory MagicVisibilityPcapsPcapsErrorMessage.fromJson(String json) => MagicVisibilityPcapsPcapsErrorMessage(json);
 
@@ -21,7 +21,7 @@ factory MagicVisibilityPcapsPcapsStopRequested.fromJson(String json) => MagicVis
 String toJson() => value.toIso8601String();
 
 }
-final class MagicVisibilityPcapsPcapsResponseFull {const MagicVisibilityPcapsPcapsResponseFull({this.byteLimit, this.coloName, this.destinationConf, this.errorMessage, this.filterV1, this.id, this.packetsCaptured, this.status, this.stopRequested, this.submitted, this.system, this.timeLimit, this.type, });
+@immutable final class MagicVisibilityPcapsPcapsResponseFull {const MagicVisibilityPcapsPcapsResponseFull({this.byteLimit, this.coloName, this.destinationConf, this.errorMessage, this.filterV1, this.id, this.packetsCaptured, this.status, this.stopRequested, this.submitted, this.system, this.timeLimit, this.type, });
 
 factory MagicVisibilityPcapsPcapsResponseFull.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsResponseFull(
   byteLimit: json['byte_limit'] != null ? MagicVisibilityPcapsPcapsByteLimit.fromJson(json['byte_limit'] as num) : null,

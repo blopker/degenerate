@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_message.dart';import 'eval_item.dart';import 'input_messages_template_template.dart';/// The type of input messages. Always `template`.
-final class InputMessagesTemplateType {const InputMessagesTemplateType._(this.value);
+@immutable final class InputMessagesTemplateType {const InputMessagesTemplateType._(this.value);
 
 factory InputMessagesTemplateType.fromJson(String json) { return switch (json) {
   'template' => template,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InputMessagesTemplateType($value)'; } 
  }
-final class InputMessagesTemplate {const InputMessagesTemplate({required this.type, required this.template, });
+@immutable final class InputMessagesTemplate {const InputMessagesTemplate({required this.type, required this.template, });
 
 factory InputMessagesTemplate.fromJson(Map<String, dynamic> json) { return InputMessagesTemplate(
   type: InputMessagesTemplateType.fromJson(json['type'] as String),

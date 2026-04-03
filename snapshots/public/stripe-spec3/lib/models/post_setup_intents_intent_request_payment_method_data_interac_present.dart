@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentRequestPaymentMethodDataInteracPresent {const PostSetupIntentsIntentRequestPaymentMethodDataInteracPresent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataInteracPresent {const PostSetupIntentsIntentRequestPaymentMethodDataInteracPresent();
 
 factory PostSetupIntentsIntentRequestPaymentMethodDataInteracPresent.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataInteracPresent(
 

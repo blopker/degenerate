@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetDnsTimeseriesGroupByResponseCodeFormat {const RadarGetDnsTimeseriesGroupByResponseCodeFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetDnsTimeseriesGroupByResponseCodeFormat {const RadarGetDnsTimeseriesGroupByResponseCodeFormat._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByResponseCodeFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

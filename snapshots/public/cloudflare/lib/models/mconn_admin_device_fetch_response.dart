@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_admin_device.dart';final class MconnAdminDeviceFetchResponse {const MconnAdminDeviceFetchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_device.dart';@immutable final class MconnAdminDeviceFetchResponse {const MconnAdminDeviceFetchResponse({this.result});
 
 factory MconnAdminDeviceFetchResponse.fromJson(Map<String, dynamic> json) { return MconnAdminDeviceFetchResponse(
   result: json['result'] != null ? MconnAdminDevice.fromJson(json['result'] as Map<String, dynamic>) : null,

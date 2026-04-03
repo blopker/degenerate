@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When listed as a reference, the type (direction) of the reference.
-final class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType._(this.value);
+@immutable final class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType._(this.value);
 
 factory LoadBalancingResourceReferenceReferenceType.fromJson(String json) { return switch (json) {
   'referral' => referral,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingResourceReferenceReferenceType($value)'; } 
  }
 /// The type of the resource.
-final class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType._(this.value);
+@immutable final class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType._(this.value);
 
 factory LoadBalancingResourceReferenceResourceType.fromJson(String json) { return switch (json) {
   'load_balancer' => loadBalancer,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingResourceReferenceResourceType($value)'; } 
  }
 /// A reference to a load balancer resource.
-final class LoadBalancingResourceReference {const LoadBalancingResourceReference({this.referenceType, this.references, this.resourceId, this.resourceName, this.resourceType, });
+@immutable final class LoadBalancingResourceReference {const LoadBalancingResourceReference({this.referenceType, this.references, this.resourceId, this.resourceName, this.resourceType, });
 
 factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { return LoadBalancingResourceReference(
   referenceType: json['reference_type'] != null ? LoadBalancingResourceReferenceReferenceType.fromJson(json['reference_type'] as String) : null,

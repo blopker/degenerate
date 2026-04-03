@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.append`.
-final class RealtimeClientEventInputAudioBufferAppendType {const RealtimeClientEventInputAudioBufferAppendType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.append`.
+@immutable final class RealtimeClientEventInputAudioBufferAppendType {const RealtimeClientEventInputAudioBufferAppendType._(this.value);
 
 factory RealtimeClientEventInputAudioBufferAppendType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.append' => inputAudioBufferAppend,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 /// VAD to be more responsive. Unlike most other client events, the server will
 /// not send a confirmation response to this event.
 /// 
-final class RealtimeClientEventInputAudioBufferAppend {const RealtimeClientEventInputAudioBufferAppend({this.eventId, required this.type, required this.audio, });
+@immutable final class RealtimeClientEventInputAudioBufferAppend {const RealtimeClientEventInputAudioBufferAppend({required this.type, required this.audio, this.eventId, });
 
 factory RealtimeClientEventInputAudioBufferAppend.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferAppend(
   eventId: json['event_id'] as String?,

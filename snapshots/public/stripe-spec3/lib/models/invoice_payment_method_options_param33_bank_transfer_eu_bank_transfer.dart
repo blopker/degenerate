@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer {const InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer({required this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer {const InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer({required this.country});
 
 factory InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer(
   country: json['country'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpDatasetUploadStatus {const DlpDatasetUploadStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetUploadStatus {const DlpDatasetUploadStatus._(this.value);
 
 factory DlpDatasetUploadStatus.fromJson(String json) { return switch (json) {
   'empty' => empty,

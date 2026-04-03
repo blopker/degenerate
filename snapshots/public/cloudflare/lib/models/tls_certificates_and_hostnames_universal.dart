@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Disabling Universal SSL removes any currently active Universal SSL certificates for your zone from the edge and prevents any future Universal SSL certificates from being ordered. If there are no advanced certificates or custom certificates uploaded for the domain, visitors will be unable to access the domain over HTTPS.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Disabling Universal SSL removes any currently active Universal SSL certificates for your zone from the edge and prevents any future Universal SSL certificates from being ordered. If there are no advanced certificates or custom certificates uploaded for the domain, visitors will be unable to access the domain over HTTPS.
 /// 
 /// By disabling Universal SSL, you understand that the following Cloudflare settings and preferences will result in visitors being unable to visit your domain unless you have uploaded a custom certificate or purchased an advanced certificate.
 /// 
@@ -19,7 +19,7 @@ factory TlsCertificatesAndHostnamesSchemasEnabled.fromJson(bool json) => TlsCert
 bool toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesUniversal {const TlsCertificatesAndHostnamesUniversal({this.enabled});
+@immutable final class TlsCertificatesAndHostnamesUniversal {const TlsCertificatesAndHostnamesUniversal({this.enabled});
 
 factory TlsCertificatesAndHostnamesUniversal.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesUniversal(
   enabled: json['enabled'] != null ? TlsCertificatesAndHostnamesSchemasEnabled.fromJson(json['enabled'] as bool) : null,

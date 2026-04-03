@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType._(this.value);
 
 factory AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType($value)'; } 
  }
-final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptions {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptions({this.r2Jurisdiction = 'default', required this.storageId, this.storageType = AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType.r2, });
+@immutable final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptions {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptions({required this.storageId, this.r2Jurisdiction = 'default', this.storageType = AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptionsStorageType.r2, });
 
 factory AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(Map<String, dynamic> json) { return AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerStoreOptions(
   r2Jurisdiction: json.containsKey('r2_jurisdiction') ? json['r2_jurisdiction'] as String : 'default',

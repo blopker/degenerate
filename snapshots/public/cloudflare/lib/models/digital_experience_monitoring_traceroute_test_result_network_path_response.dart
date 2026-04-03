@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_result_network_path_response_hops.dart';import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse({this.deviceName, required this.hops, required this.resultId, this.testId, this.testName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_result_network_path_response_hops.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse({required this.hops, required this.resultId, this.deviceName, this.testId, this.testName, });
 
 factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(
   deviceName: json['deviceName'] as String?,

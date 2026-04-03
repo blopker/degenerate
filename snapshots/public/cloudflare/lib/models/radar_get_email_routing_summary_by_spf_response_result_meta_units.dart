@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryBySpfResponseResultMetaUnits {const RadarGetEmailRoutingSummaryBySpfResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryBySpfResponseResultMetaUnits {const RadarGetEmailRoutingSummaryBySpfResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetEmailRoutingSummaryBySpfResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryBySpfResponseResultMetaUnits(
   name: json['name'] as String,

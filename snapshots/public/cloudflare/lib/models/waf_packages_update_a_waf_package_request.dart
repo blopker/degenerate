@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_action_mode.dart';import 'firewall_sensitivity.dart';final class WafPackagesUpdateAWafPackageRequest {const WafPackagesUpdateAWafPackageRequest({this.actionMode, this.sensitivity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action_mode.dart';import 'firewall_sensitivity.dart';@immutable final class WafPackagesUpdateAWafPackageRequest {const WafPackagesUpdateAWafPackageRequest({this.actionMode, this.sensitivity, });
 
 factory WafPackagesUpdateAWafPackageRequest.fromJson(Map<String, dynamic> json) { return WafPackagesUpdateAWafPackageRequest(
   actionMode: json['action_mode'] != null ? FirewallActionMode.fromJson(json['action_mode'] as String) : null,

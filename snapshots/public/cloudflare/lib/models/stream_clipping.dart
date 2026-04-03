@@ -7,7 +7,7 @@ factory StreamClippingCreated.fromJson(String json) => StreamClippingCreated(Dat
 String toJson() => value.toIso8601String();
 
 }
-final class StreamClipping {const StreamClipping({this.allowedOrigins, this.clippedFromVideoUid, this.created, this.creator, this.endTimeSeconds, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.requireSignedUrLs, this.startTimeSeconds, this.status, this.thumbnailTimestampPct, this.watermark, });
+@immutable final class StreamClipping {const StreamClipping({this.allowedOrigins, this.clippedFromVideoUid, this.created, this.creator, this.endTimeSeconds, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.requireSignedUrLs, this.startTimeSeconds, this.status, this.thumbnailTimestampPct, this.watermark, });
 
 factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClipping(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ClimateRemovalsBeneficiary {const ClimateRemovalsBeneficiary({required this.publicName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ClimateRemovalsBeneficiary {const ClimateRemovalsBeneficiary({required this.publicName});
 
 factory ClimateRemovalsBeneficiary.fromJson(Map<String, dynamic> json) { return ClimateRemovalsBeneficiary(
   publicName: json['public_name'] as String,

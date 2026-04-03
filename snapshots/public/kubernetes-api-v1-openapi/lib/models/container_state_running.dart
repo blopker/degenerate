@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// ContainerStateRunning is a running state of a container.
-final class ContainerStateRunning {const ContainerStateRunning({this.startedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ContainerStateRunning is a running state of a container.
+@immutable final class ContainerStateRunning {const ContainerStateRunning({this.startedAt});
 
 factory ContainerStateRunning.fromJson(Map<String, dynamic> json) { return ContainerStateRunning(
   startedAt: json['startedAt'] != null ? Time.fromJson(json['startedAt'] as String) : null,

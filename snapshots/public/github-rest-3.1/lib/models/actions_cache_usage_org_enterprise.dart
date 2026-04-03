@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsCacheUsageOrgEnterprise {const ActionsCacheUsageOrgEnterprise({required this.totalActiveCachesCount, required this.totalActiveCachesSizeInBytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCacheUsageOrgEnterprise {const ActionsCacheUsageOrgEnterprise({required this.totalActiveCachesCount, required this.totalActiveCachesSizeInBytes, });
 
 factory ActionsCacheUsageOrgEnterprise.fromJson(Map<String, dynamic> json) { return ActionsCacheUsageOrgEnterprise(
   totalActiveCachesCount: (json['total_active_caches_count'] as num).toInt(),

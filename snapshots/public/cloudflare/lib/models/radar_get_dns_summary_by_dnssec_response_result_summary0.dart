@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByDnssecResponseResultSummary0 {const RadarGetDnsSummaryByDnssecResponseResultSummary0({required this.insecure, required this.invalid, required this.other, required this.secure, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecResponseResultSummary0 {const RadarGetDnsSummaryByDnssecResponseResultSummary0({required this.insecure, required this.invalid, required this.other, required this.secure, });
 
 factory RadarGetDnsSummaryByDnssecResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecResponseResultSummary0(
   insecure: json['INSECURE'] as String,

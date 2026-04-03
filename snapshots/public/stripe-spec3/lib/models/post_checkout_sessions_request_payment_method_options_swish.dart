@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSwish {const PostCheckoutSessionsRequestPaymentMethodOptionsSwish({this.reference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSwish {const PostCheckoutSessionsRequestPaymentMethodOptionsSwish({this.reference});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSwish(
   reference: json['reference'] as String?,

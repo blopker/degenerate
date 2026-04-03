@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostEventGraphQlResponse {const PostEventGraphQlResponse({this.data, this.errors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventGraphQlResponse {const PostEventGraphQlResponse({this.data, this.errors, });
 
 factory PostEventGraphQlResponse.fromJson(Map<String, dynamic> json) { return PostEventGraphQlResponse(
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the repository property. Defaults to 'custom' if not specified.
-final class RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
+@immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
 
 factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)'; } 
  }
 /// Parameters for a targeting a repository property
-final class RepositoryRulesetConditionsRepositoryPropertySpec {const RepositoryRulesetConditionsRepositoryPropertySpec({required this.name, required this.propertyValues, this.source, });
+@immutable final class RepositoryRulesetConditionsRepositoryPropertySpec {const RepositoryRulesetConditionsRepositoryPropertySpec({required this.name, required this.propertyValues, this.source, });
 
 factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryPropertySpec(
   name: json['name'] as String,

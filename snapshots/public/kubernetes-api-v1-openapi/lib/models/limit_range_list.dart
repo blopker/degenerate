@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'limit_range.dart';import 'list_meta.dart';/// LimitRangeList is a list of LimitRange items.
-final class LimitRangeList {const LimitRangeList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class LimitRangeList {const LimitRangeList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory LimitRangeList.fromJson(Map<String, dynamic> json) { return LimitRangeList(
   apiVersion: json['apiVersion'] as String?,

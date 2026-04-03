@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_content_text_object_text.dart';/// Always `text`.
-final class MessageContentTextObjectType {const MessageContentTextObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_object_text.dart';/// Always `text`.
+@immutable final class MessageContentTextObjectType {const MessageContentTextObjectType._(this.value);
 
 factory MessageContentTextObjectType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageContentTextObjectType($value)'; } 
  }
 /// The text content that is part of a message.
-final class MessageContentTextObject {const MessageContentTextObject({required this.type, required this.text, });
+@immutable final class MessageContentTextObject {const MessageContentTextObject({required this.type, required this.text, });
 
 factory MessageContentTextObject.fromJson(Map<String, dynamic> json) { return MessageContentTextObject(
   type: MessageContentTextObjectType.fromJson(json['type'] as String),

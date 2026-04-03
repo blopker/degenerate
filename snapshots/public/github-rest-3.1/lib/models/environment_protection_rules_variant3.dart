@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EnvironmentProtectionRulesVariant3 {const EnvironmentProtectionRulesVariant3({required this.id, required this.nodeId, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnvironmentProtectionRulesVariant3 {const EnvironmentProtectionRulesVariant3({required this.id, required this.nodeId, required this.type, });
 
 factory EnvironmentProtectionRulesVariant3.fromJson(Map<String, dynamic> json) { return EnvironmentProtectionRulesVariant3(
   id: (json['id'] as num).toInt(),

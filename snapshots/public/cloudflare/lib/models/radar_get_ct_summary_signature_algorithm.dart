@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummarySignatureAlgorithm {const RadarGetCtSummarySignatureAlgorithm._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummarySignatureAlgorithm {const RadarGetCtSummarySignatureAlgorithm._(this.value);
 
 factory RadarGetCtSummarySignatureAlgorithm.fromJson(String json) { return switch (json) {
   'DSA_SHA_1' => dsaSha1,

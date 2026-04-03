@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_selection_choices.dart';final class PostTerminalReadersReaderCollectInputsRequestInputsSelection {const PostTerminalReadersReaderCollectInputsRequestInputsSelection({required this.choices});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_selection_choices.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsSelection {const PostTerminalReadersReaderCollectInputsRequestInputsSelection({required this.choices});
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsSelection.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequestInputsSelection(
   choices: (json['choices'] as List<dynamic>).map((e) => PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices.fromJson(e as Map<String, dynamic>)).toList(),

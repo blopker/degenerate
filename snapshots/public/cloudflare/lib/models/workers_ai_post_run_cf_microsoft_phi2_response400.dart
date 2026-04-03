@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_microsoft_phi2_response400_errors.dart';final class WorkersAiPostRunCfMicrosoftPhi2Response400 {const WorkersAiPostRunCfMicrosoftPhi2Response400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_microsoft_phi2_response400_errors.dart';@immutable final class WorkersAiPostRunCfMicrosoftPhi2Response400 {const WorkersAiPostRunCfMicrosoftPhi2Response400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfMicrosoftPhi2Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMicrosoftPhi2Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfMicrosoftPhi2Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-final class EnabledRepositories {const EnabledRepositories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
+@immutable final class EnabledRepositories {const EnabledRepositories._(this.value);
 
 factory EnabledRepositories.fromJson(String json) { return switch (json) {
   'all' => all,

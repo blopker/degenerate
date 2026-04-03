@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DnsRecordsDnsResponseZoneUsageResult {const DnsRecordsDnsResponseZoneUsageResult({this.recordQuota, this.recordUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseZoneUsageResult {const DnsRecordsDnsResponseZoneUsageResult({this.recordQuota, this.recordUsage, });
 
 factory DnsRecordsDnsResponseZoneUsageResult.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseZoneUsageResult(
   recordQuota: json['record_quota'] != null ? (json['record_quota'] as num).toInt() : null,

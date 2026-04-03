@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_create_scan_response2_options.dart';/// Submitted visibility status.
-final class UrlscannerCreateScanResponse2Visibility {const UrlscannerCreateScanResponse2Visibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_response2_options.dart';/// Submitted visibility status.
+@immutable final class UrlscannerCreateScanResponse2Visibility {const UrlscannerCreateScanResponse2Visibility._(this.value);
 
 factory UrlscannerCreateScanResponse2Visibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerCreateScanResponse2Visibility($value)'; } 
  }
-final class UrlscannerCreateScanResponse2 {const UrlscannerCreateScanResponse2({required this.api, required this.message, this.options, required this.result, required this.url, required this.uuid, required this.visibility, });
+@immutable final class UrlscannerCreateScanResponse2 {const UrlscannerCreateScanResponse2({required this.api, required this.message, required this.result, required this.url, required this.uuid, required this.visibility, this.options, });
 
 factory UrlscannerCreateScanResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse2(
   api: json['api'] as String,

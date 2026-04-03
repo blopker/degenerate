@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_fetch_gateway_response_result.dart';final class AigConfigFetchGatewayResponse {const AigConfigFetchGatewayResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result.dart';@immutable final class AigConfigFetchGatewayResponse {const AigConfigFetchGatewayResponse({required this.result, required this.success, });
 
 factory AigConfigFetchGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponse(
   result: AigConfigFetchGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>),

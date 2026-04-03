@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Commit Comment
-final class CommitComment {const CommitComment({required this.htmlUrl, required this.url, required this.id, required this.nodeId, required this.body, required this.path, required this.position, required this.line, required this.commitId, required this.user, required this.createdAt, required this.updatedAt, required this.authorAssociation, this.reactions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Commit Comment
+@immutable final class CommitComment {const CommitComment({required this.htmlUrl, required this.url, required this.id, required this.nodeId, required this.body, required this.path, required this.position, required this.line, required this.commitId, required this.user, required this.createdAt, required this.updatedAt, required this.authorAssociation, this.reactions, });
 
 factory CommitComment.fromJson(Map<String, dynamic> json) { return CommitComment(
   htmlUrl: Uri.parse(json['html_url'] as String),

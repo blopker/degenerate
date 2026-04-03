@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `conversation.item.truncate`.
-final class RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.truncate`.
+@immutable final class RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType._(this.value);
 
 factory RealtimeBetaClientEventConversationItemTruncateType.fromJson(String json) { return switch (json) {
   'conversation.item.truncate' => conversationItemTruncate,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If successful, the server will respond with a `conversation.item.truncated`
 /// event.
 /// 
-final class RealtimeBetaClientEventConversationItemTruncate {const RealtimeBetaClientEventConversationItemTruncate({this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, });
+@immutable final class RealtimeBetaClientEventConversationItemTruncate {const RealtimeBetaClientEventConversationItemTruncate({required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, this.eventId, });
 
 factory RealtimeBetaClientEventConversationItemTruncate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventConversationItemTruncate(
   eventId: json['event_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchEventRawUpdateRequest {const PatchEventRawUpdateRequest({this.data, this.source, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchEventRawUpdateRequest {const PatchEventRawUpdateRequest({this.data, this.source, this.tlp, });
 
 factory PatchEventRawUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchEventRawUpdateRequest(
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

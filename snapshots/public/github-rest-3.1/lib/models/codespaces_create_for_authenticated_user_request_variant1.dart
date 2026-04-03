@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-final class CodespacesCreateForAuthenticatedUserRequestVariant1Geo {const CodespacesCreateForAuthenticatedUserRequestVariant1Geo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+@immutable final class CodespacesCreateForAuthenticatedUserRequestVariant1Geo {const CodespacesCreateForAuthenticatedUserRequestVariant1Geo._(this.value);
 
 factory CodespacesCreateForAuthenticatedUserRequestVariant1Geo.fromJson(String json) { return switch (json) {
   'EuropeWest' => europeWest,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant1Geo($value)'; } 
  }
-final class CodespacesCreateForAuthenticatedUserRequestVariant1 {const CodespacesCreateForAuthenticatedUserRequestVariant1({required this.repositoryId, this.ref, this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
+@immutable final class CodespacesCreateForAuthenticatedUserRequestVariant1 {const CodespacesCreateForAuthenticatedUserRequestVariant1({required this.repositoryId, this.ref, this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
 
 factory CodespacesCreateForAuthenticatedUserRequestVariant1.fromJson(Map<String, dynamic> json) { return CodespacesCreateForAuthenticatedUserRequestVariant1(
   repositoryId: (json['repository_id'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The check_run.completed webhook encoded with URL encoding
-final class WebhookCheckRunCompletedFormEncoded {const WebhookCheckRunCompletedFormEncoded({required this.payload});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The check_run.completed webhook encoded with URL encoding
+@immutable final class WebhookCheckRunCompletedFormEncoded {const WebhookCheckRunCompletedFormEncoded({required this.payload});
 
 factory WebhookCheckRunCompletedFormEncoded.fromJson(Map<String, dynamic> json) { return WebhookCheckRunCompletedFormEncoded(
   payload: json['payload'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_event_reference_delete_response400_errors.dart';final class DeleteEventReferenceDeleteResponse400 {const DeleteEventReferenceDeleteResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_event_reference_delete_response400_errors.dart';@immutable final class DeleteEventReferenceDeleteResponse400 {const DeleteEventReferenceDeleteResponse400({required this.errors, required this.result, required this.success, });
 
 factory DeleteEventReferenceDeleteResponse400.fromJson(Map<String, dynamic> json) { return DeleteEventReferenceDeleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteEventReferenceDeleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logcontrol_messages2_source.dart';final class LogcontrolMessages2 {const LogcontrolMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_messages2_source.dart';@immutable final class LogcontrolMessages2 {const LogcontrolMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory LogcontrolMessages2.fromJson(Map<String, dynamic> json) { return LogcontrolMessages2(
   code: (json['code'] as num).toInt(),

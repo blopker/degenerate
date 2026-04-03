@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner {const WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner {const WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner(
   avatarUrl: json['avatar_url'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_custom_text_position.dart';/// 
-final class PaymentLinksResourceCustomText {const PaymentLinksResourceCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_custom_text_position.dart';/// 
+@immutable final class PaymentLinksResourceCustomText {const PaymentLinksResourceCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentLinksResourceCustomText.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomText(
   afterSubmit: json['after_submit'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['after_submit'] as Map<String, dynamic>) : null,

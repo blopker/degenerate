@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class GelatoReportIdNumberOptions {const GelatoReportIdNumberOptions();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class GelatoReportIdNumberOptions {const GelatoReportIdNumberOptions();
 
 factory GelatoReportIdNumberOptions.fromJson(Map<String, dynamic> json) { return GelatoReportIdNumberOptions(
 

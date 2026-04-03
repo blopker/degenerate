@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'circle.dart';import 'rectangle.dart';import 'triangle.dart';sealed class Shape {const Shape();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'circle.dart';import 'rectangle.dart';import 'triangle.dart';sealed class Shape {const Shape();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory Shape.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Shape$Unknown; } 
  }
-final class ShapeCircle extends Shape {const ShapeCircle(this.circle);
+@immutable final class ShapeCircle extends Shape {const ShapeCircle(this.circle);
 
 factory ShapeCircle.fromJson(Map<String, dynamic> json) { return ShapeCircle(Circle.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final Circle circle;
 @override int get hashCode { return circle.hashCode; } 
 @override String toString() { return 'ShapeCircle(circle: $circle)'; } 
  }
-final class ShapeRectangle extends Shape {const ShapeRectangle(this.rectangle);
+@immutable final class ShapeRectangle extends Shape {const ShapeRectangle(this.rectangle);
 
 factory ShapeRectangle.fromJson(Map<String, dynamic> json) { return ShapeRectangle(Rectangle.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final Rectangle rectangle;
 @override int get hashCode { return rectangle.hashCode; } 
 @override String toString() { return 'ShapeRectangle(rectangle: $rectangle)'; } 
  }
-final class ShapeTriangle extends Shape {const ShapeTriangle(this.triangle);
+@immutable final class ShapeTriangle extends Shape {const ShapeTriangle(this.triangle);
 
 factory ShapeTriangle.fromJson(Map<String, dynamic> json) { return ShapeTriangle(Triangle.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final Triangle triangle;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class Shape$Unknown extends Shape {const Shape$Unknown(this.json);
+@immutable final class Shape$Unknown extends Shape {const Shape$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

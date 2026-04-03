@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestFuelType {const PostTestHelpersIssuingAuthorizationsRequestFuelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestFuelType {const PostTestHelpersIssuingAuthorizationsRequestFuelType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFuelType($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestFuelUnit {const PostTestHelpersIssuingAuthorizationsRequestFuelUnit._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestFuelUnit {const PostTestHelpersIssuingAuthorizationsRequestFuelUnit._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestFuelUnit.fromJson(String json) { return switch (json) {
   'charging_minute' => chargingMinute,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFuelUnit($value)'; } 
  }
 /// Information about fuel that was purchased with this transaction.
-final class PostTestHelpersIssuingAuthorizationsRequestFuel {const PostTestHelpersIssuingAuthorizationsRequestFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestFuel {const PostTestHelpersIssuingAuthorizationsRequestFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestFuel(
   industryProductCode: json['industry_product_code'] as String?,

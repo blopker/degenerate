@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to.
-final class PostPaymentLinksRequestTransferData {const PostPaymentLinksRequestTransferData({this.amount, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to.
+@immutable final class PostPaymentLinksRequestTransferData {const PostPaymentLinksRequestTransferData({required this.destination, this.amount, });
 
 factory PostPaymentLinksRequestTransferData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

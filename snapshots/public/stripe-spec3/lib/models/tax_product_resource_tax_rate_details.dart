@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_rate_flat_amount.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
-final class TaxProductResourceTaxRateDetailsRateType {const TaxProductResourceTaxRateDetailsRateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_rate_flat_amount.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
+@immutable final class TaxProductResourceTaxRateDetailsRateType {const TaxProductResourceTaxRateDetailsRateType._(this.value);
 
 factory TaxProductResourceTaxRateDetailsRateType.fromJson(String json) { return switch (json) {
   'flat_amount' => flatAmount,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxRateDetailsRateType($value)'; } 
  }
 /// The tax type, such as `vat` or `sales_tax`.
-final class TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType._(this.value);
+@immutable final class TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType._(this.value);
 
 factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) { return switch (json) {
   'amusement_tax' => amusementTax,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxRateDetailsTaxType($value)'; } 
  }
 /// 
-final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDetails({this.country, this.flatAmount, required this.percentageDecimal, this.rateType, this.state, this.taxType, });
+@immutable final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDetails({required this.percentageDecimal, this.country, this.flatAmount, this.rateType, this.state, this.taxType, });
 
 factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxRateDetails(
   country: json['country'] as String?,

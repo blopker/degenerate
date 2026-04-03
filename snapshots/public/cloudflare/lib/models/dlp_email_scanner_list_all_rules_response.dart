@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule.dart';final class DlpEmailScannerListAllRulesResponse {const DlpEmailScannerListAllRulesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule.dart';@immutable final class DlpEmailScannerListAllRulesResponse {const DlpEmailScannerListAllRulesResponse({this.result});
 
 factory DlpEmailScannerListAllRulesResponse.fromJson(Map<String, dynamic> json) { return DlpEmailScannerListAllRulesResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DlpEmailRule.fromJson(e as Map<String, dynamic>)).toList(),

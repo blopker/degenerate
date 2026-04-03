@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_audio_config.dart';import 'realtimekit_interactive_config.dart';import 'realtimekit_livestreaming_config.dart';import 'realtimekit_realtimekit_bucket_config.dart';import 'realtimekit_storage_config.dart';import 'realtimekit_video_config.dart';final class StartRecordingRequest {const StartRecordingRequest({this.allowMultipleRecordings = false, this.audioConfig, this.fileNamePrefix, this.interactiveConfig, this.maxSeconds, this.meetingId, this.realtimekitBucketConfig, this.rtmpOutConfig, this.storageConfig, this.url, this.videoConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_audio_config.dart';import 'realtimekit_interactive_config.dart';import 'realtimekit_livestreaming_config.dart';import 'realtimekit_realtimekit_bucket_config.dart';import 'realtimekit_storage_config.dart';import 'realtimekit_video_config.dart';@immutable final class StartRecordingRequest {const StartRecordingRequest({this.allowMultipleRecordings = false, this.audioConfig, this.fileNamePrefix, this.interactiveConfig, this.maxSeconds, this.meetingId, this.realtimekitBucketConfig, this.rtmpOutConfig, this.storageConfig, this.url, this.videoConfig, });
 
 factory StartRecordingRequest.fromJson(Map<String, dynamic> json) { return StartRecordingRequest(
   allowMultipleRecordings: json.containsKey('allow_multiple_recordings') ? json['allow_multiple_recordings'] as bool : false,

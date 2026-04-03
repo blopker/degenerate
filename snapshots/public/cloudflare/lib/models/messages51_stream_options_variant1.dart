@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51StreamOptionsVariant1 {const Messages51StreamOptionsVariant1({this.includeObfuscation, this.includeUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51StreamOptionsVariant1 {const Messages51StreamOptionsVariant1({this.includeObfuscation, this.includeUsage, });
 
 factory Messages51StreamOptionsVariant1.fromJson(Map<String, dynamic> json) { return Messages51StreamOptionsVariant1(
   includeObfuscation: json['include_obfuscation'] as bool?,

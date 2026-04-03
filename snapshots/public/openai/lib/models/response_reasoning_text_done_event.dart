@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.reasoning_text.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.reasoning_text.done`.
 /// 
-final class ResponseReasoningTextDoneEventType {const ResponseReasoningTextDoneEventType._(this.value);
+@immutable final class ResponseReasoningTextDoneEventType {const ResponseReasoningTextDoneEventType._(this.value);
 
 factory ResponseReasoningTextDoneEventType.fromJson(String json) { return switch (json) {
   'response.reasoning_text.done' => responseReasoningTextDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseReasoningTextDoneEventType($value)'; } 
  }
 /// Emitted when a reasoning text is completed.
-final class ResponseReasoningTextDoneEvent {const ResponseReasoningTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, required this.sequenceNumber, });
+@immutable final class ResponseReasoningTextDoneEvent {const ResponseReasoningTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, required this.sequenceNumber, });
 
 factory ResponseReasoningTextDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningTextDoneEvent(
   type: ResponseReasoningTextDoneEventType.fromJson(json['type'] as String),

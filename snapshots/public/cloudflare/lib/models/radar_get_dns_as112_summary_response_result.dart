@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_as112_summary_response_result_meta.dart';final class RadarGetDnsAs112SummaryResponseResult {const RadarGetDnsAs112SummaryResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_summary_response_result_meta.dart';@immutable final class RadarGetDnsAs112SummaryResponseResult {const RadarGetDnsAs112SummaryResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetDnsAs112SummaryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112SummaryResponseResult(
   meta: RadarGetDnsAs112SummaryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

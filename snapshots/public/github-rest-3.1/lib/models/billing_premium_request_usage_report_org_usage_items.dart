@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BillingPremiumRequestUsageReportOrgUsageItems {const BillingPremiumRequestUsageReportOrgUsageItems({required this.product, required this.sku, required this.model, required this.unitType, required this.pricePerUnit, required this.grossQuantity, required this.grossAmount, required this.discountQuantity, required this.discountAmount, required this.netQuantity, required this.netAmount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingPremiumRequestUsageReportOrgUsageItems {const BillingPremiumRequestUsageReportOrgUsageItems({required this.product, required this.sku, required this.model, required this.unitType, required this.pricePerUnit, required this.grossQuantity, required this.grossAmount, required this.discountQuantity, required this.discountAmount, required this.netQuantity, required this.netAmount, });
 
 factory BillingPremiumRequestUsageReportOrgUsageItems.fromJson(Map<String, dynamic> json) { return BillingPremiumRequestUsageReportOrgUsageItems(
   product: json['product'] as String,

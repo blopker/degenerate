@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigGetJobResponseResultSource {const AutoragConfigGetJobResponseResultSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigGetJobResponseResultSource {const AutoragConfigGetJobResponseResultSource._(this.value);
 
 factory AutoragConfigGetJobResponseResultSource.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AutoragConfigGetJobResponseResultSource($value)'; } 
  }
-final class AutoragConfigGetJobResponseResult {const AutoragConfigGetJobResponseResult({this.endReason, this.endedAt, required this.id, this.lastSeenAt, required this.source, this.startedAt, });
+@immutable final class AutoragConfigGetJobResponseResult {const AutoragConfigGetJobResponseResult({required this.id, required this.source, this.endReason, this.endedAt, this.lastSeenAt, this.startedAt, });
 
 factory AutoragConfigGetJobResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigGetJobResponseResult(
   endReason: json['end_reason'] as String?,

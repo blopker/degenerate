@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_messages2.dart';import 'cloudforce_one_requests_quota.dart';final class CloudforceOneRequestQuotaResponse {const CloudforceOneRequestQuotaResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_messages2.dart';import 'cloudforce_one_requests_quota.dart';@immutable final class CloudforceOneRequestQuotaResponse {const CloudforceOneRequestQuotaResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory CloudforceOneRequestQuotaResponse.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestQuotaResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CloudforceOneRequestsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

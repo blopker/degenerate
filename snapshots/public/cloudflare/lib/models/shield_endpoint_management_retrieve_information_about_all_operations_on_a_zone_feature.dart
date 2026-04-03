@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._(this.value);
 
 factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature.fromJson(String json) { return switch (json) {
   'thresholds' => thresholds,

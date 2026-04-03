@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest {const WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest({this.guidance = 7.5, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps = 20, required this.prompt, this.seed, this.strength = 1.0, this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest {const WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest({required this.prompt, this.guidance = 7.5, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps = 20, this.seed, this.strength = 1.0, this.width, });
 
 factory WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest(
   guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 7.5,

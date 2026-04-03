@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAttacksLayer7SummaryByManagedRulesResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

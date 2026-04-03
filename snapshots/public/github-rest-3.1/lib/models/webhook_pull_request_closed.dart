@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_number.dart';final class WebhookPullRequestClosedAction {const WebhookPullRequestClosedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestClosedAction {const WebhookPullRequestClosedAction._(this.value);
 
 factory WebhookPullRequestClosedAction.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestClosedAction($value)'; } 
  }
-final class WebhookPullRequestClosed {const WebhookPullRequestClosed({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestClosed {const WebhookPullRequestClosed({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestClosed.fromJson(Map<String, dynamic> json) { return WebhookPullRequestClosed(
   action: WebhookPullRequestClosedAction.fromJson(json['action'] as String),

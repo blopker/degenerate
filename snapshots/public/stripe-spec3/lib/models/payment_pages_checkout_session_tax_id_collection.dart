@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether a tax ID is required on the payment page
-final class PaymentPagesCheckoutSessionTaxIdCollectionRequired {const PaymentPagesCheckoutSessionTaxIdCollectionRequired._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether a tax ID is required on the payment page
+@immutable final class PaymentPagesCheckoutSessionTaxIdCollectionRequired {const PaymentPagesCheckoutSessionTaxIdCollectionRequired._(this.value);
 
 factory PaymentPagesCheckoutSessionTaxIdCollectionRequired.fromJson(String json) { return switch (json) {
   'if_supported' => ifSupported,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionTaxIdCollectionRequired($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionTaxIdCollection {const PaymentPagesCheckoutSessionTaxIdCollection({required this.enabled, required this.$required, });
+@immutable final class PaymentPagesCheckoutSessionTaxIdCollection {const PaymentPagesCheckoutSessionTaxIdCollection({required this.enabled, required this.$required, });
 
 factory PaymentPagesCheckoutSessionTaxIdCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionTaxIdCollection(
   enabled: json['enabled'] as bool,

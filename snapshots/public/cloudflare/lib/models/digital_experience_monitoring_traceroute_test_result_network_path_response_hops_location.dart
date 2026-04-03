@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation({this.city, this.state, this.zip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation({this.city, this.state, this.zip, });
 
 factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation(
   city: json['city'] as String?,

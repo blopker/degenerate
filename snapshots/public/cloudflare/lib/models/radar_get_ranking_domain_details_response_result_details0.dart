@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_domain_details_response_result_details0_categories.dart';import 'radar_get_ranking_domain_details_response_result_details0_top_locations.dart';final class RadarGetRankingDomainDetailsResponseResultDetails0 {const RadarGetRankingDomainDetailsResponseResultDetails0({this.bucket, required this.categories, this.rank, this.topLocations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_domain_details_response_result_details0_categories.dart';import 'radar_get_ranking_domain_details_response_result_details0_top_locations.dart';@immutable final class RadarGetRankingDomainDetailsResponseResultDetails0 {const RadarGetRankingDomainDetailsResponseResultDetails0({required this.categories, this.bucket, this.rank, this.topLocations, });
 
 factory RadarGetRankingDomainDetailsResponseResultDetails0.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainDetailsResponseResultDetails0(
   bucket: json['bucket'] as String?,

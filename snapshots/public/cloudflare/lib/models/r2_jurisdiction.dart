@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Jurisdiction where objects in this bucket are guaranteed to be stored.
-final class R2Jurisdiction {const R2Jurisdiction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Jurisdiction where objects in this bucket are guaranteed to be stored.
+@immutable final class R2Jurisdiction {const R2Jurisdiction._(this.value);
 
 factory R2Jurisdiction.fromJson(String json) { return switch (json) {
   'default' => $default,

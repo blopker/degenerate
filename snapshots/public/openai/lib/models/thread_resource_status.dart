@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'active_status.dart';import 'closed_status.dart';import 'locked_status.dart';/// Current status for the thread. Defaults to `active` for newly created threads.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'active_status.dart';import 'closed_status.dart';import 'locked_status.dart';/// Current status for the thread. Defaults to `active` for newly created threads.
 sealed class ThreadResourceStatus {const ThreadResourceStatus();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreadResourceStatus$Unknown; } 
  }
-final class ThreadResourceStatusActive extends ThreadResourceStatus {const ThreadResourceStatusActive(this.activeStatus);
+@immutable final class ThreadResourceStatusActive extends ThreadResourceStatus {const ThreadResourceStatusActive(this.activeStatus);
 
 factory ThreadResourceStatusActive.fromJson(Map<String, dynamic> json) { return ThreadResourceStatusActive(ActiveStatus.fromJson(json)); }
 
@@ -30,7 +30,7 @@ final ActiveStatus activeStatus;
 @override int get hashCode { return activeStatus.hashCode; } 
 @override String toString() { return 'ThreadResourceStatusActive(activeStatus: $activeStatus)'; } 
  }
-final class ThreadResourceStatusLocked extends ThreadResourceStatus {const ThreadResourceStatusLocked(this.lockedStatus);
+@immutable final class ThreadResourceStatusLocked extends ThreadResourceStatus {const ThreadResourceStatusLocked(this.lockedStatus);
 
 factory ThreadResourceStatusLocked.fromJson(Map<String, dynamic> json) { return ThreadResourceStatusLocked(LockedStatus.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final LockedStatus lockedStatus;
 @override int get hashCode { return lockedStatus.hashCode; } 
 @override String toString() { return 'ThreadResourceStatusLocked(lockedStatus: $lockedStatus)'; } 
  }
-final class ThreadResourceStatusClosed extends ThreadResourceStatus {const ThreadResourceStatusClosed(this.closedStatus);
+@immutable final class ThreadResourceStatusClosed extends ThreadResourceStatus {const ThreadResourceStatusClosed(this.closedStatus);
 
 factory ThreadResourceStatusClosed.fromJson(Map<String, dynamic> json) { return ThreadResourceStatusClosed(ClosedStatus.fromJson(json)); }
 
@@ -58,7 +58,7 @@ final ClosedStatus closedStatus;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ThreadResourceStatus$Unknown extends ThreadResourceStatus {const ThreadResourceStatus$Unknown(this.json);
+@immutable final class ThreadResourceStatus$Unknown extends ThreadResourceStatus {const ThreadResourceStatus$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

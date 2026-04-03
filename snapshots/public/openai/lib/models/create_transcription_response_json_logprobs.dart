@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateTranscriptionResponseJsonLogprobs {const CreateTranscriptionResponseJsonLogprobs({this.token, this.logprob, this.bytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTranscriptionResponseJsonLogprobs {const CreateTranscriptionResponseJsonLogprobs({this.token, this.logprob, this.bytes, });
 
 factory CreateTranscriptionResponseJsonLogprobs.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseJsonLogprobs(
   token: json['token'] as String?,

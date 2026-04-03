@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'nsc_interconnect_gcp_partner_body.dart';import 'nsc_interconnect_physical_body.dart';sealed class NscInterconnect {const NscInterconnect();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_interconnect_gcp_partner_body.dart';import 'nsc_interconnect_physical_body.dart';sealed class NscInterconnect {const NscInterconnect();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NscInterconnect.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NscInterconnect$Unknown; } 
  }
-final class NscInterconnectDirect extends NscInterconnect {const NscInterconnectDirect(this.nscInterconnectPhysicalBody);
+@immutable final class NscInterconnectDirect extends NscInterconnect {const NscInterconnectDirect(this.nscInterconnectPhysicalBody);
 
 factory NscInterconnectDirect.fromJson(Map<String, dynamic> json) { return NscInterconnectDirect(NscInterconnectPhysicalBody.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final NscInterconnectPhysicalBody nscInterconnectPhysicalBody;
 @override int get hashCode { return nscInterconnectPhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnectDirect(nscInterconnectPhysicalBody: $nscInterconnectPhysicalBody)'; } 
  }
-final class NscInterconnectGcpPartner extends NscInterconnect {const NscInterconnectGcpPartner(this.nscInterconnectGcpPartnerBody);
+@immutable final class NscInterconnectGcpPartner extends NscInterconnect {const NscInterconnectGcpPartner(this.nscInterconnectGcpPartnerBody);
 
 factory NscInterconnectGcpPartner.fromJson(Map<String, dynamic> json) { return NscInterconnectGcpPartner(NscInterconnectGcpPartnerBody.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final NscInterconnectGcpPartnerBody nscInterconnectGcpPartnerBody;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class NscInterconnect$Unknown extends NscInterconnect {const NscInterconnect$Unknown(this.json);
+@immutable final class NscInterconnect$Unknown extends NscInterconnect {const NscInterconnect$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

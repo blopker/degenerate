@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettingsType {const PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettingsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettingsType {const PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettingsType._(this.value);
 
 factory PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettingsType.fromJson(String json) { return switch (json) {
   'financial_account' => financialAccount,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettingsType($value)'; } 
  }
 /// A different bank account where funds can be deposited/debited in order to get the closing FA's balance to $0
-final class PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings {const PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings({this.financialAccount, this.paymentMethod, required this.type, });
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings {const PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings({required this.type, this.financialAccount, this.paymentMethod, });
 
 factory PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings(
   financialAccount: json['financial_account'] as String?,

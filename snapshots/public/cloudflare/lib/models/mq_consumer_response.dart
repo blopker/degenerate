@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_http_consumer_response.dart';import 'mq_worker_consumer_response.dart';/// Response body representing a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_response.dart';import 'mq_worker_consumer_response.dart';/// Response body representing a consumer
 sealed class MqConsumerResponse {const MqConsumerResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MqConsumerResponse$Unknown; } 
  }
-final class MqConsumerResponseHttpPull extends MqConsumerResponse {const MqConsumerResponseHttpPull(this.mqHttpConsumerResponse);
+@immutable final class MqConsumerResponseHttpPull extends MqConsumerResponse {const MqConsumerResponseHttpPull(this.mqHttpConsumerResponse);
 
 factory MqConsumerResponseHttpPull.fromJson(Map<String, dynamic> json) { return MqConsumerResponseHttpPull(MqHttpConsumerResponse.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final MqHttpConsumerResponse mqHttpConsumerResponse;
 @override int get hashCode { return mqHttpConsumerResponse.hashCode; } 
 @override String toString() { return 'MqConsumerResponseHttpPull(mqHttpConsumerResponse: $mqHttpConsumerResponse)'; } 
  }
-final class MqConsumerResponseWorker extends MqConsumerResponse {const MqConsumerResponseWorker(this.mqWorkerConsumerResponse);
+@immutable final class MqConsumerResponseWorker extends MqConsumerResponse {const MqConsumerResponseWorker(this.mqWorkerConsumerResponse);
 
 factory MqConsumerResponseWorker.fromJson(Map<String, dynamic> json) { return MqConsumerResponseWorker(MqWorkerConsumerResponse.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final MqWorkerConsumerResponse mqWorkerConsumerResponse;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class MqConsumerResponse$Unknown extends MqConsumerResponse {const MqConsumerResponse$Unknown(this.json);
+@immutable final class MqConsumerResponse$Unknown extends MqConsumerResponse {const MqConsumerResponse$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

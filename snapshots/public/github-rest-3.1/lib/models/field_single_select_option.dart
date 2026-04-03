@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The color associated with the option.
-final class FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The color associated with the option.
+@immutable final class FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor._(this.value);
 
 factory FieldSingleSelectOptionColor.fromJson(String json) { return switch (json) {
   'BLUE' => blue,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FieldSingleSelectOptionColor($value)'; } 
  }
-final class FieldSingleSelectOption {const FieldSingleSelectOption({this.name, this.color, this.description, });
+@immutable final class FieldSingleSelectOption {const FieldSingleSelectOption({this.name, this.color, this.description, });
 
 factory FieldSingleSelectOption.fromJson(Map<String, dynamic> json) { return FieldSingleSelectOption(
   name: json['name'] as String?,

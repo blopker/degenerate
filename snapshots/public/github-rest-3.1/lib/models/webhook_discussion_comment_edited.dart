@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_discussion_comment_edited_changes.dart';import 'webhooks_comment.dart';final class WebhookDiscussionCommentEditedAction {const WebhookDiscussionCommentEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_discussion_comment_edited_changes.dart';import 'webhooks_comment.dart';@immutable final class WebhookDiscussionCommentEditedAction {const WebhookDiscussionCommentEditedAction._(this.value);
 
 factory WebhookDiscussionCommentEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionCommentEditedAction($value)'; } 
  }
-final class WebhookDiscussionCommentEdited {const WebhookDiscussionCommentEdited({required this.action, required this.changes, required this.comment, required this.discussion, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookDiscussionCommentEdited {const WebhookDiscussionCommentEdited({required this.action, required this.changes, required this.comment, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionCommentEdited.fromJson(Map<String, dynamic> json) { return WebhookDiscussionCommentEdited(
   action: WebhookDiscussionCommentEditedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay {const PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay {const PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod.fromJson(json['capture_method'] as String) : null,

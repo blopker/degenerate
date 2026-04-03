@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount.dart';/// 
-final class BalanceDetail {const BalanceDetail({required this.available});
+@immutable final class BalanceDetail {const BalanceDetail({required this.available});
 
 factory BalanceDetail.fromJson(Map<String, dynamic> json) { return BalanceDetail(
   available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),

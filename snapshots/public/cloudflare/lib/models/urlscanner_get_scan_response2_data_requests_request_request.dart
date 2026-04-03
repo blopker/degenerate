@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataRequestsRequestRequest {const UrlscannerGetScanResponse2DataRequestsRequestRequest({this.headers, required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestRequest {const UrlscannerGetScanResponse2DataRequestsRequestRequest({required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, this.headers, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequestRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestRequest(
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

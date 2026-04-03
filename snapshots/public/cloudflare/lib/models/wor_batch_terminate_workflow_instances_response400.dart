@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_batch_terminate_workflow_instances_response400_errors.dart';final class WorBatchTerminateWorkflowInstancesResponse400 {const WorBatchTerminateWorkflowInstancesResponse400({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_batch_terminate_workflow_instances_response400_errors.dart';@immutable final class WorBatchTerminateWorkflowInstancesResponse400 {const WorBatchTerminateWorkflowInstancesResponse400({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorBatchTerminateWorkflowInstancesResponse400.fromJson(Map<String, dynamic> json) { return WorBatchTerminateWorkflowInstancesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorBatchTerminateWorkflowInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

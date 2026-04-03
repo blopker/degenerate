@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesInvoiceRequestCustomFieldsVariant1 {const PostInvoicesInvoiceRequestCustomFieldsVariant1({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRequestCustomFieldsVariant1 {const PostInvoicesInvoiceRequestCustomFieldsVariant1({required this.name, required this.value, });
 
 factory PostInvoicesInvoiceRequestCustomFieldsVariant1.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestCustomFieldsVariant1(
   name: json['name'] as String,

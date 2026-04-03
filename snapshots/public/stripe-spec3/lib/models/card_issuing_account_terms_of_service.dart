@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class CardIssuingAccountTermsOfService {const CardIssuingAccountTermsOfService({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class CardIssuingAccountTermsOfService {const CardIssuingAccountTermsOfService({this.date, this.ip, this.userAgent, });
 
 factory CardIssuingAccountTermsOfService.fromJson(Map<String, dynamic> json) { return CardIssuingAccountTermsOfService(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

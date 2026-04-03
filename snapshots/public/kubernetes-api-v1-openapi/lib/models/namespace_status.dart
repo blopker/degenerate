@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_condition.dart';/// NamespaceStatus is information about the current status of a Namespace.
-final class NamespaceStatus {const NamespaceStatus({this.conditions, this.phase, });
+@immutable final class NamespaceStatus {const NamespaceStatus({this.conditions, this.phase, });
 
 factory NamespaceStatus.fromJson(Map<String, dynamic> json) { return NamespaceStatus(
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => NamespaceCondition.fromJson(e as Map<String, dynamic>)).toList(),

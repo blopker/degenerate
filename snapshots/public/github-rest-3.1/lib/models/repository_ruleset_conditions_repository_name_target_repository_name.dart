@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RepositoryRulesetConditionsRepositoryNameTargetRepositoryName {const RepositoryRulesetConditionsRepositoryNameTargetRepositoryName({this.include, this.exclude, this.protected, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRulesetConditionsRepositoryNameTargetRepositoryName {const RepositoryRulesetConditionsRepositoryNameTargetRepositoryName({this.include, this.exclude, this.protected, });
 
 factory RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
   include: (json['include'] as List<dynamic>?)?.map((e) => e as String).toList(),

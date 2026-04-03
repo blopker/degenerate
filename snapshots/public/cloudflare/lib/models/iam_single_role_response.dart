@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_role.dart';final class IamSingleRoleResponse {const IamSingleRoleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_role.dart';@immutable final class IamSingleRoleResponse {const IamSingleRoleResponse({this.result});
 
 factory IamSingleRoleResponse.fromJson(Map<String, dynamic> json) { return IamSingleRoleResponse(
   result: json['result'] != null ? IamRole.fromJson(json['result'] as Map<String, dynamic>) : null,

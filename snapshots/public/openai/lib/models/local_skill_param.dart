@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LocalSkillParam {const LocalSkillParam({required this.name, required this.description, required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LocalSkillParam {const LocalSkillParam({required this.name, required this.description, required this.path, });
 
 factory LocalSkillParam.fromJson(Map<String, dynamic> json) { return LocalSkillParam(
   name: json['name'] as String,

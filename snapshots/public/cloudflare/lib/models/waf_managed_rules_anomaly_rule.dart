@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the mode anomaly. When set to `on`, the current WAF rule will be used when evaluating the request. Applies to anomaly detection WAF rules.
-final class WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly._(this.value);
+@immutable final class WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly._(this.value);
 
 factory WafManagedRulesModeAnomaly.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WafManagedRulesModeAnomaly($value)'; } 
  }
 /// When triggered, anomaly detection WAF rules contribute to an overall threat score that will determine if a request is considered malicious. You can configure the total scoring threshold through the 'sensitivity' property of the WAF package.
-final class WafManagedRulesAnomalyRule {const WafManagedRulesAnomalyRule({required this.allowedModes, required this.mode, });
+@immutable final class WafManagedRulesAnomalyRule {const WafManagedRulesAnomalyRule({required this.allowedModes, required this.mode, });
 
 factory WafManagedRulesAnomalyRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesAnomalyRule(
   allowedModes: (json['allowed_modes'] as List<dynamic>).map((e) => WafManagedRulesModeAnomaly.fromJson(e as String)).toList(),

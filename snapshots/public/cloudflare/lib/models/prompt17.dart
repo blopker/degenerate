@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt17_response_format.dart';final class Prompt17 {const Prompt17({this.frequencyPenalty, this.lora, this.maxTokens = 256, this.presencePenalty, required this.prompt, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt17_response_format.dart';@immutable final class Prompt17 {const Prompt17({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
 
 factory Prompt17.fromJson(Map<String, dynamic> json) { return Prompt17(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

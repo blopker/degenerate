@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingAuthorizationsRequest {const GetIssuingAuthorizationsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingAuthorizationsRequest {const GetIssuingAuthorizationsRequest();
 
 factory GetIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return GetIssuingAuthorizationsRequest(
 

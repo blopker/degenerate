@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_commit_commit.dart';import 'file_commit_content.dart';/// File Commit
-final class FileCommit {const FileCommit({required this.content, required this.commit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_commit_commit.dart';import 'file_commit_content.dart';/// File Commit
+@immutable final class FileCommit {const FileCommit({required this.content, required this.commit, });
 
 factory FileCommit.fromJson(Map<String, dynamic> json) { return FileCommit(
   content: json['content'] != null ? FileCommitContent.fromJson(json['content'] as Map<String, dynamic>) : null,

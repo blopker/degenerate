@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_zero_trust_account_device_settings.dart';final class TeamsDevicesZeroTrustAccountDeviceSettingsResponse {const TeamsDevicesZeroTrustAccountDeviceSettingsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_zero_trust_account_device_settings.dart';@immutable final class TeamsDevicesZeroTrustAccountDeviceSettingsResponse {const TeamsDevicesZeroTrustAccountDeviceSettingsResponse({this.result});
 
 factory TeamsDevicesZeroTrustAccountDeviceSettingsResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesZeroTrustAccountDeviceSettingsResponse(
   result: json['result'] != null ? TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesResponseResultMetaUnits {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesResponseResultMetaUnits {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetAttacksLayer7TimeseriesGroupByManagedRulesResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByManagedRulesResponseResultMetaUnits(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPhishingUrlInfoModelResults {const IntelPhishingUrlInfoModelResults({this.modelName, this.modelScore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlInfoModelResults {const IntelPhishingUrlInfoModelResults({this.modelName, this.modelScore, });
 
 factory IntelPhishingUrlInfoModelResults.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfoModelResults(
   modelName: json['model_name'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription_model.dart';final class AudioTranscription {const AudioTranscription({this.model, this.language, this.prompt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription_model.dart';@immutable final class AudioTranscription {const AudioTranscription({this.model, this.language, this.prompt, });
 
 factory AudioTranscription.fromJson(Map<String, dynamic> json) { return AudioTranscription(
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AudioTranscriptionModelVariant2.fromJson(v as String),) : null,

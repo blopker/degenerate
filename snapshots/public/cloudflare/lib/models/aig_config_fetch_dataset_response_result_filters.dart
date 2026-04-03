@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigFetchDatasetResponseResultFiltersKey {const AigConfigFetchDatasetResponseResultFiltersKey._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigFetchDatasetResponseResultFiltersKey {const AigConfigFetchDatasetResponseResultFiltersKey._(this.value);
 
 factory AigConfigFetchDatasetResponseResultFiltersKey.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigFetchDatasetResponseResultFiltersKey($value)'; } 
  }
-final class AigConfigFetchDatasetResponseResultFiltersOperator {const AigConfigFetchDatasetResponseResultFiltersOperator._(this.value);
+@immutable final class AigConfigFetchDatasetResponseResultFiltersOperator {const AigConfigFetchDatasetResponseResultFiltersOperator._(this.value);
 
 factory AigConfigFetchDatasetResponseResultFiltersOperator.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigFetchDatasetResponseResultFiltersOperator($value)'; } 
  }
-final class AigConfigFetchDatasetResponseResultFilters {const AigConfigFetchDatasetResponseResultFilters({required this.key, required this.$operator, required this.value, });
+@immutable final class AigConfigFetchDatasetResponseResultFilters {const AigConfigFetchDatasetResponseResultFilters({required this.key, required this.$operator, required this.value, });
 
 factory AigConfigFetchDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigFetchDatasetResponseResultFilters(
   key: AigConfigFetchDatasetResponseResultFiltersKey.fromJson(json['key'] as String),

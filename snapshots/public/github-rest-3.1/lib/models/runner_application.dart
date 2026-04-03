@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Runner Application
-final class RunnerApplication {const RunnerApplication({required this.os, required this.architecture, required this.downloadUrl, required this.filename, this.tempDownloadToken, this.sha256Checksum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Runner Application
+@immutable final class RunnerApplication {const RunnerApplication({required this.os, required this.architecture, required this.downloadUrl, required this.filename, this.tempDownloadToken, this.sha256Checksum, });
 
 factory RunnerApplication.fromJson(Map<String, dynamic> json) { return RunnerApplication(
   os: json['os'] as String,

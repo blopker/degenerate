@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgHookConfig {const OrgHookConfig({this.url, this.insecureSsl, this.contentType, this.secret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgHookConfig {const OrgHookConfig({this.url, this.insecureSsl, this.contentType, this.secret, });
 
 factory OrgHookConfig.fromJson(Map<String, dynamic> json) { return OrgHookConfig(
   url: json['url'] as String?,

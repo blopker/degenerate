@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer({required this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer({required this.country});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer(
   country: json['country'] as String,

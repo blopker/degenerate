@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information on whether this personalization design is used to create cards when one is not specified.
-final class PostIssuingPersonalizationDesignsRequestPreferences {const PostIssuingPersonalizationDesignsRequestPreferences({required this.isDefault});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information on whether this personalization design is used to create cards when one is not specified.
+@immutable final class PostIssuingPersonalizationDesignsRequestPreferences {const PostIssuingPersonalizationDesignsRequestPreferences({required this.isDefault});
 
 factory PostIssuingPersonalizationDesignsRequestPreferences.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequestPreferences(
   isDefault: json['is_default'] as bool,

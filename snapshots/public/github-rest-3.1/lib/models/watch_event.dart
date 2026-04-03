@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WatchEvent {const WatchEvent({required this.action});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WatchEvent {const WatchEvent({required this.action});
 
 factory WatchEvent.fromJson(Map<String, dynamic> json) { return WatchEvent(
   action: json['action'] as String,

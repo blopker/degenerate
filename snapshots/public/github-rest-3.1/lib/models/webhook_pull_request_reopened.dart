@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_number.dart';final class WebhookPullRequestReopenedAction {const WebhookPullRequestReopenedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestReopenedAction {const WebhookPullRequestReopenedAction._(this.value);
 
 factory WebhookPullRequestReopenedAction.fromJson(String json) { return switch (json) {
   'reopened' => reopened,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReopenedAction($value)'; } 
  }
-final class WebhookPullRequestReopened {const WebhookPullRequestReopened({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestReopened {const WebhookPullRequestReopened({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReopened.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReopened(
   action: WebhookPullRequestReopenedAction.fromJson(json['action'] as String),

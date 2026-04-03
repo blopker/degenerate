@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudforceOneRequestsPriorityList {const CloudforceOneRequestsPriorityList({required this.page, required this.perPage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneRequestsPriorityList {const CloudforceOneRequestsPriorityList({required this.page, required this.perPage, });
 
 factory CloudforceOneRequestsPriorityList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsPriorityList(
   page: (json['page'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The chronological order used to sort the logs.
-final class AccessDirection {const AccessDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The chronological order used to sort the logs.
+@immutable final class AccessDirection {const AccessDirection._(this.value);
 
 factory AccessDirection.fromJson(String json) { return switch (json) {
   'desc' => desc,

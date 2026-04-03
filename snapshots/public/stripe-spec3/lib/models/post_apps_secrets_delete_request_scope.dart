@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAppsSecretsDeleteRequestScopeType {const PostAppsSecretsDeleteRequestScopeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAppsSecretsDeleteRequestScopeType {const PostAppsSecretsDeleteRequestScopeType._(this.value);
 
 factory PostAppsSecretsDeleteRequestScopeType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAppsSecretsDeleteRequestScopeType($value)'; } 
  }
 /// Specifies the scoping of the secret. Requests originating from UI extensions can only access account-scoped secrets or secrets scoped to their own user.
-final class PostAppsSecretsDeleteRequestScope {const PostAppsSecretsDeleteRequestScope({required this.type, this.user, });
+@immutable final class PostAppsSecretsDeleteRequestScope {const PostAppsSecretsDeleteRequestScope({required this.type, this.user, });
 
 factory PostAppsSecretsDeleteRequestScope.fromJson(Map<String, dynamic> json) { return PostAppsSecretsDeleteRequestScope(
   type: PostAppsSecretsDeleteRequestScopeType.fromJson(json['type'] as String),

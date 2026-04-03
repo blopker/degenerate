@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common86_result.dart';import 'zones_messages2.dart';final class ResponseCommon86 {const ResponseCommon86({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common86_result.dart';import 'zones_messages2.dart';@immutable final class ResponseCommon86 {const ResponseCommon86({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon86.fromJson(Map<String, dynamic> json) { return ResponseCommon86(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

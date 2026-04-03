@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBinDbGetBinaryResponse400Errors {const GetBinDbGetBinaryResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBinDbGetBinaryResponse400Errors {const GetBinDbGetBinaryResponse400Errors({required this.message});
 
 factory GetBinDbGetBinaryResponse400Errors.fromJson(Map<String, dynamic> json) { return GetBinDbGetBinaryResponse400Errors(
   message: json['message'] as String,

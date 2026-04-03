@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_dmarc_response_result_meta_confidence_info_annotations.dart';final class RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfo {const RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_dmarc_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfo {const RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetEmailRoutingSummaryByDmarcResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

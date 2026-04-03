@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secrets_store_comment.dart';import 'secrets_store_created.dart';import 'secrets_store_identifier.dart';import 'secrets_store_modified.dart';import 'secrets_store_secret_name.dart';import 'secrets_store_store_identifier.dart';final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';import 'secrets_store_created.dart';import 'secrets_store_identifier.dart';import 'secrets_store_modified.dart';import 'secrets_store_secret_name.dart';import 'secrets_store_store_identifier.dart';@immutable final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
 
 factory SecretsStoreSecretStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretsStoreSecretStatus($value)'; } 
  }
-final class SecretsStoreSecretObject {const SecretsStoreSecretObject({this.comment, required this.created, required this.id, required this.modified, required this.name, required this.status, required this.storeId, });
+@immutable final class SecretsStoreSecretObject {const SecretsStoreSecretObject({required this.created, required this.id, required this.modified, required this.name, required this.status, required this.storeId, this.comment, });
 
 factory SecretsStoreSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreSecretObject(
   comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,

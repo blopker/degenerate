@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// End user details.
-final class PostTreasuryOutboundPaymentsRequestEndUserDetails {const PostTreasuryOutboundPaymentsRequestEndUserDetails({this.ipAddress, required this.present, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// End user details.
+@immutable final class PostTreasuryOutboundPaymentsRequestEndUserDetails {const PostTreasuryOutboundPaymentsRequestEndUserDetails({required this.present, this.ipAddress, });
 
 factory PostTreasuryOutboundPaymentsRequestEndUserDetails.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestEndUserDetails(
   ipAddress: json['ip_address'] as String?,

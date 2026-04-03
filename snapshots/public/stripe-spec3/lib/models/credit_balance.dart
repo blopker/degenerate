@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_credit_grants_resource_amount.dart';/// 
-final class CreditBalance {const CreditBalance({required this.availableBalance, required this.ledgerBalance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_amount.dart';/// 
+@immutable final class CreditBalance {const CreditBalance({required this.availableBalance, required this.ledgerBalance, });
 
 factory CreditBalance.fromJson(Map<String, dynamic> json) { return CreditBalance(
   availableBalance: BillingCreditGrantsResourceAmount.fromJson(json['available_balance'] as Map<String, dynamic>),

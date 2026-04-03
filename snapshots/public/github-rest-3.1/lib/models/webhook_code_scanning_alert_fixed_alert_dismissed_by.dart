@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookCodeScanningAlertFixedAlertDismissedByType {const WebhookCodeScanningAlertFixedAlertDismissedByType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertFixedAlertDismissedByType {const WebhookCodeScanningAlertFixedAlertDismissedByType._(this.value);
 
 factory WebhookCodeScanningAlertFixedAlertDismissedByType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertFixedAlertDismissedByType($value)'; } 
  }
-final class WebhookCodeScanningAlertFixedAlertDismissedBy {const WebhookCodeScanningAlertFixedAlertDismissedBy({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookCodeScanningAlertFixedAlertDismissedBy {const WebhookCodeScanningAlertFixedAlertDismissedBy({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookCodeScanningAlertFixedAlertDismissedBy.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertFixedAlertDismissedBy(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

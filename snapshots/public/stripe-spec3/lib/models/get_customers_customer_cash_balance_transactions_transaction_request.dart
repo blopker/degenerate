@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCustomersCustomerCashBalanceTransactionsTransactionRequest {const GetCustomersCustomerCashBalanceTransactionsTransactionRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerCashBalanceTransactionsTransactionRequest {const GetCustomersCustomerCashBalanceTransactionsTransactionRequest();
 
 factory GetCustomersCustomerCashBalanceTransactionsTransactionRequest.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerCashBalanceTransactionsTransactionRequest(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShortBranchCommit {const ShortBranchCommit({required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShortBranchCommit {const ShortBranchCommit({required this.sha, required this.url, });
 
 factory ShortBranchCommit.fromJson(Map<String, dynamic> json) { return ShortBranchCommit(
   sha: json['sha'] as String,

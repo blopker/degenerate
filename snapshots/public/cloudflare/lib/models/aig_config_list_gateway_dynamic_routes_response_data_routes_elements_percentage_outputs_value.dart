@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsPercentageOutputsValue {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsPercentageOutputsValue({required this.elementId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsPercentageOutputsValue {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsPercentageOutputsValue({required this.elementId});
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsPercentageOutputsValue.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsPercentageOutputsValue(
   elementId: json['elementId'] as String,

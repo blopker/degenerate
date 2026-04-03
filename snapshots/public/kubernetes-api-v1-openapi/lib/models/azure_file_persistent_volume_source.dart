@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
-final class AzureFilePersistentVolumeSource {const AzureFilePersistentVolumeSource({this.readOnly, this.secretName = '', this.secretNamespace, this.shareName = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
+@immutable final class AzureFilePersistentVolumeSource {const AzureFilePersistentVolumeSource({this.readOnly, this.secretName = '', this.secretNamespace, this.shareName = '', });
 
 factory AzureFilePersistentVolumeSource.fromJson(Map<String, dynamic> json) { return AzureFilePersistentVolumeSource(
   readOnly: json['readOnly'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The toggle's default value. Can be `enabled` or `disabled`.
-final class TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The toggle's default value. Can be `enabled` or `disabled`.
+@immutable final class TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue._(this.value);
 
 factory TerminalReaderReaderResourceToggleDefaultValue.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceToggleDefaultValue($value)'; } 
  }
 /// The toggle's collected value. Can be `enabled` or `disabled`.
-final class TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue._(this.value);
+@immutable final class TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue._(this.value);
 
 factory TerminalReaderReaderResourceToggleValue.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceToggleValue($value)'; } 
  }
 /// Information about an input's toggle
-final class TerminalReaderReaderResourceToggle {const TerminalReaderReaderResourceToggle({this.defaultValue, this.description, this.title, this.value, });
+@immutable final class TerminalReaderReaderResourceToggle {const TerminalReaderReaderResourceToggle({this.defaultValue, this.description, this.title, this.value, });
 
 factory TerminalReaderReaderResourceToggle.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceToggle(
   defaultValue: json['default_value'] != null ? TerminalReaderReaderResourceToggleDefaultValue.fromJson(json['default_value'] as String) : null,

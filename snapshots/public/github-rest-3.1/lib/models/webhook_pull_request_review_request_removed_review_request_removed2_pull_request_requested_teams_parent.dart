@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParentPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParentPrivacy._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParentPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParentPrivacy($value)'; } 
  }
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParent {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParent {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParent.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestRequestedTeamsParent(
   description: json['description'] as String?,

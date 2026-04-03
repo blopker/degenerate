@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GlobalAdvisoryCwes {const GlobalAdvisoryCwes({required this.cweId, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GlobalAdvisoryCwes {const GlobalAdvisoryCwes({required this.cweId, required this.name, });
 
 factory GlobalAdvisoryCwes.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryCwes(
   cweId: json['cwe_id'] as String,

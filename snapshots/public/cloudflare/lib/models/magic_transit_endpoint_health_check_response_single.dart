@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_endpoint_health_check_response.dart';import 'magic_transit_messages2.dart';final class MagicTransitEndpointHealthCheckResponseSingle {const MagicTransitEndpointHealthCheckResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_endpoint_health_check_response.dart';import 'magic_transit_messages2.dart';@immutable final class MagicTransitEndpointHealthCheckResponseSingle {const MagicTransitEndpointHealthCheckResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory MagicTransitEndpointHealthCheckResponseSingle.fromJson(Map<String, dynamic> json) { return MagicTransitEndpointHealthCheckResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicTransitMessages2.fromJson(e as Map<String, dynamic>)).toList(),

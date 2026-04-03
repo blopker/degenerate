@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'node_affinity.dart';import 'pod_affinity.dart';import 'pod_anti_affinity.dart';/// Affinity is a group of affinity scheduling rules.
-final class Affinity {const Affinity({this.nodeAffinity, this.podAffinity, this.podAntiAffinity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_affinity.dart';import 'pod_affinity.dart';import 'pod_anti_affinity.dart';/// Affinity is a group of affinity scheduling rules.
+@immutable final class Affinity {const Affinity({this.nodeAffinity, this.podAffinity, this.podAntiAffinity, });
 
 factory Affinity.fromJson(Map<String, dynamic> json) { return Affinity(
   nodeAffinity: json['nodeAffinity'] != null ? NodeAffinity.fromJson(json['nodeAffinity'] as Map<String, dynamic>) : null,

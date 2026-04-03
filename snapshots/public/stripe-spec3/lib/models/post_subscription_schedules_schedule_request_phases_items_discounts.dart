@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_phases_items_discounts_variant1.dart';final class PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscountsVariant2 {const PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscountsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_phases_items_discounts_variant1.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscountsVariant2 {const PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscountsVariant2._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesItemsDiscountsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

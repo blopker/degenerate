@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsListOutsideCollaboratorsFilter {const OrgsListOutsideCollaboratorsFilter._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListOutsideCollaboratorsFilter {const OrgsListOutsideCollaboratorsFilter._(this.value);
 
 factory OrgsListOutsideCollaboratorsFilter.fromJson(String json) { return switch (json) {
   '2fa_disabled' => $2faDisabled,

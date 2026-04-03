@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
 /// 
-final class ZonesRocketLoaderId {const ZonesRocketLoaderId._(this.value);
+@immutable final class ZonesRocketLoaderId {const ZonesRocketLoaderId._(this.value);
 
 factory ZonesRocketLoaderId.fromJson(String json) { return switch (json) {
   'rocket_loader' => rocketLoader,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesRocketLoaderId($value)'; } 
  }
-final class ZonesRocketLoader {const ZonesRocketLoader({this.id, this.value, });
+@immutable final class ZonesRocketLoader {const ZonesRocketLoader({this.id, this.value, });
 
 factory ZonesRocketLoader.fromJson(Map<String, dynamic> json) { return ZonesRocketLoader(
   id: json['id'] != null ? ZonesRocketLoaderId.fromJson(json['id'] as String) : null,

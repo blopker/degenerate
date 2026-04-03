@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_bot_fight_mode_config_stale_zone_configuration.dart';/// Whether to enable Bot Fight Mode.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_bot_fight_mode_config_stale_zone_configuration.dart';/// Whether to enable Bot Fight Mode.
 extension type const BotManagementFightMode(bool value) {
 factory BotManagementFightMode.fromJson(bool json) => BotManagementFightMode(json);
 
 bool toJson() => value;
 
 }
-final class BotManagementBotFightModeConfig {const BotManagementBotFightModeConfig({this.fightMode, this.staleZoneConfiguration, });
+@immutable final class BotManagementBotFightModeConfig {const BotManagementBotFightModeConfig({this.fightMode, this.staleZoneConfiguration, });
 
 factory BotManagementBotFightModeConfig.fromJson(Map<String, dynamic> json) { return BotManagementBotFightModeConfig(
   fightMode: json['fight_mode'] != null ? BotManagementFightMode.fromJson(json['fight_mode'] as bool) : null,

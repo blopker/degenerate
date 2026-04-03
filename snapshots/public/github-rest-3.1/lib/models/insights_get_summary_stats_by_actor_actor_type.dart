@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType._(this.value);
 
 factory InsightsGetSummaryStatsByActorActorType.fromJson(String json) { return switch (json) {
   'installation' => installation,

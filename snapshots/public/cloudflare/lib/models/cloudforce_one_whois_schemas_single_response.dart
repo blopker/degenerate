@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_whois_whois.dart';final class CloudforceOneWhoisSchemasSingleResponse {const CloudforceOneWhoisSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_whois_whois.dart';@immutable final class CloudforceOneWhoisSchemasSingleResponse {const CloudforceOneWhoisSchemasSingleResponse({this.result});
 
 factory CloudforceOneWhoisSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return CloudforceOneWhoisSchemasSingleResponse(
   result: json['result'] != null ? CloudforceOneWhoisWhois.fromJson(json['result'] as Map<String, dynamic>) : null,

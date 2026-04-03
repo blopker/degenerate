@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_programmatic_access_grant_permissions.dart';import 'simple_user.dart';/// Type of repository selection requested.
-final class OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_programmatic_access_grant_permissions.dart';import 'simple_user.dart';/// Type of repository selection requested.
+@immutable final class OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection._(this.value);
 
 factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationProgrammaticAccessGrantRepositorySelection($value)'; } 
  }
 /// Minimal representation of an organization programmatic access grant for enumerations
-final class OrganizationProgrammaticAccessGrant {const OrganizationProgrammaticAccessGrant({required this.id, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.accessGrantedAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
+@immutable final class OrganizationProgrammaticAccessGrant {const OrganizationProgrammaticAccessGrant({required this.id, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.accessGrantedAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
 factory OrganizationProgrammaticAccessGrant.fromJson(Map<String, dynamic> json) { return OrganizationProgrammaticAccessGrant(
   id: (json['id'] as num).toInt(),

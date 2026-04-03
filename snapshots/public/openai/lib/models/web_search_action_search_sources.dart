@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of source. Always `url`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source. Always `url`.
 /// 
-final class WebSearchActionSearchSourcesType {const WebSearchActionSearchSourcesType._(this.value);
+@immutable final class WebSearchActionSearchSourcesType {const WebSearchActionSearchSourcesType._(this.value);
 
 factory WebSearchActionSearchSourcesType.fromJson(String json) { return switch (json) {
   'url' => url,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A source used in the search.
 /// 
-final class WebSearchActionSearchSources {const WebSearchActionSearchSources({required this.type, required this.url, });
+@immutable final class WebSearchActionSearchSources {const WebSearchActionSearchSources({required this.type, required this.url, });
 
 factory WebSearchActionSearchSources.fromJson(Map<String, dynamic> json) { return WebSearchActionSearchSources(
   type: WebSearchActionSearchSourcesType.fromJson(json['type'] as String),

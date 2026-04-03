@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpNewDataset {const DlpNewDataset({this.caseSensitive, this.description, this.encodingVersion, required this.name, this.secret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewDataset {const DlpNewDataset({required this.name, this.caseSensitive, this.description, this.encodingVersion, this.secret, });
 
 factory DlpNewDataset.fromJson(Map<String, dynamic> json) { return DlpNewDataset(
   caseSensitive: json['case_sensitive'] as bool?,

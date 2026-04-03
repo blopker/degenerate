@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetApplicationFeesIdRequest {const GetApplicationFeesIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetApplicationFeesIdRequest {const GetApplicationFeesIdRequest();
 
 factory GetApplicationFeesIdRequest.fromJson(Map<String, dynamic> json) { return GetApplicationFeesIdRequest(
 

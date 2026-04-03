@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsWechat {const PaymentMethodDetailsWechat();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsWechat {const PaymentMethodDetailsWechat();
 
 factory PaymentMethodDetailsWechat.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsWechat(
 

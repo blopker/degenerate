@@ -1,5 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
+@immutable
 final class TypeModelEventType {
   const TypeModelEventType._(this.value);
 
@@ -122,6 +125,7 @@ final class TypeModelEventType {
   }
 }
 
+@immutable
 final class TypeModel {
   const TypeModel({this.eventType, this.timestamp, this.details});
 

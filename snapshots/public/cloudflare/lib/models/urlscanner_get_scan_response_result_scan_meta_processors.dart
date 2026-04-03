@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_categories.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_rank.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech.dart';final class UrlscannerGetScanResponseResultScanMetaProcessors {const UrlscannerGetScanResponseResultScanMetaProcessors({required this.categories, required this.phishing, required this.rank, required this.tech, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_categories.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_rank.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessors {const UrlscannerGetScanResponseResultScanMetaProcessors({required this.categories, required this.phishing, required this.rank, required this.tech, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessors.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessors(
   categories: UrlscannerGetScanResponseResultScanMetaProcessorsCategories.fromJson(json['categories'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51FunctionCallVariant2 {const Messages51FunctionCallVariant2({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51FunctionCallVariant2 {const Messages51FunctionCallVariant2({required this.name});
 
 factory Messages51FunctionCallVariant2.fromJson(Map<String, dynamic> json) { return Messages51FunctionCallVariant2(
   name: json['name'] as String,

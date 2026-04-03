@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_entities_asn_by_ip_response_result_asn.dart';final class RadarGetEntitiesAsnByIpResponseResult {const RadarGetEntitiesAsnByIpResponseResult({required this.asn});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_ip_response_result_asn.dart';@immutable final class RadarGetEntitiesAsnByIpResponseResult {const RadarGetEntitiesAsnByIpResponseResult({required this.asn});
 
 factory RadarGetEntitiesAsnByIpResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIpResponseResult(
   asn: RadarGetEntitiesAsnByIpResponseResultAsn.fromJson(json['asn'] as Map<String, dynamic>),

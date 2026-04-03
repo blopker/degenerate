@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that an observability sampling rate is invalid.
-final class WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that an observability sampling rate is invalid.
+@immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode._(this.value);
 
 factory WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(int json) { return switch (json) {
   100308 => $100308,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerObservabilitySamplingRateInvalidCode($value)'; } 
  }
-final class WorkersErrorWorkerObservabilitySamplingRateInvalid {const WorkersErrorWorkerObservabilitySamplingRateInvalid({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalid {const WorkersErrorWorkerObservabilitySamplingRateInvalid({required this.code, required this.message, });
 
 factory WorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerObservabilitySamplingRateInvalid(
   code: WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson((json['code'] as num).toInt()),

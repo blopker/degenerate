@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls phone number collection settings for the session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls phone number collection settings for the session.
 /// 
 /// We recommend that you review your privacy policy and check with your legal contacts
 /// before using this feature. Learn more about [collecting phone numbers with Checkout](https://docs.stripe.com/payments/checkout/phone-numbers).
-final class PostCheckoutSessionsRequestPhoneNumberCollection {const PostCheckoutSessionsRequestPhoneNumberCollection({required this.enabled});
+@immutable final class PostCheckoutSessionsRequestPhoneNumberCollection {const PostCheckoutSessionsRequestPhoneNumberCollection({required this.enabled});
 
 factory PostCheckoutSessionsRequestPhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPhoneNumberCollection(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTopupsRequest {const GetTopupsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTopupsRequest {const GetTopupsRequest();
 
 factory GetTopupsRequest.fromJson(Map<String, dynamic> json) { return GetTopupsRequest(
 

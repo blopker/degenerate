@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_list_data_annotations.dart';import 'chat_completion_message_list_data_audio.dart';import 'chat_completion_message_list_data_content_parts2.dart';import 'chat_completion_message_list_data_function_call.dart';import 'chat_completion_message_tool_calls2.dart';import 'chat_completion_request_message_content_part_image.dart';import 'chat_completion_request_message_content_part_text.dart';/// The role of the author of this message.
-final class ChatCompletionMessageListDataRole {const ChatCompletionMessageListDataRole._(this.value);
+@immutable final class ChatCompletionMessageListDataRole {const ChatCompletionMessageListDataRole._(this.value);
 
 factory ChatCompletionMessageListDataRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageListDataRole($value)'; } 
  }
-final class ChatCompletionMessageListData {const ChatCompletionMessageListData({required this.content, required this.refusal, this.toolCalls, this.annotations, required this.role, this.functionCall, this.audio, required this.id, this.contentParts, });
+@immutable final class ChatCompletionMessageListData {const ChatCompletionMessageListData({required this.content, required this.refusal, required this.role, required this.id, this.toolCalls, this.annotations, this.functionCall, this.audio, this.contentParts, });
 
 factory ChatCompletionMessageListData.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageListData(
   content: json['content'] as String?,

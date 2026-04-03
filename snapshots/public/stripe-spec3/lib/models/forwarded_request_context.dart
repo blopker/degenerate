@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metadata about the forwarded request.
-final class ForwardedRequestContext {const ForwardedRequestContext({required this.destinationDuration, required this.destinationIpAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the forwarded request.
+@immutable final class ForwardedRequestContext {const ForwardedRequestContext({required this.destinationDuration, required this.destinationIpAddress, });
 
 factory ForwardedRequestContext.fromJson(Map<String, dynamic> json) { return ForwardedRequestContext(
   destinationDuration: (json['destination_duration'] as num).toInt(),

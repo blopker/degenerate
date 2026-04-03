@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceCodeVerificationFlow {const SourceCodeVerificationFlow({required this.attemptsRemaining, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceCodeVerificationFlow {const SourceCodeVerificationFlow({required this.attemptsRemaining, required this.status, });
 
 factory SourceCodeVerificationFlow.fromJson(Map<String, dynamic> json) { return SourceCodeVerificationFlow(
   attemptsRemaining: (json['attempts_remaining'] as num).toInt(),

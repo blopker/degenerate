@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountAddress {const AccountAddress({this.accountSid, this.city, this.customerName, this.dateCreated, this.dateUpdated, this.friendlyName, this.isoCountry, this.postalCode, this.region, this.sid, this.street, this.uri, this.emergencyEnabled, this.validated, this.verified, this.streetSecondary, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountAddress {const AccountAddress({this.accountSid, this.city, this.customerName, this.dateCreated, this.dateUpdated, this.friendlyName, this.isoCountry, this.postalCode, this.region, this.sid, this.street, this.uri, this.emergencyEnabled, this.validated, this.verified, this.streetSecondary, });
 
 factory AccountAddress.fromJson(Map<String, dynamic> json) { return AccountAddress(
   accountSid: json['account_sid'] as String?,

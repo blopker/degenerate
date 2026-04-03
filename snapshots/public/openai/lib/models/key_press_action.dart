@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A collection of keypresses the model would like to perform.
-final class KeyPressAction {const KeyPressAction({this.type = 'keypress', required this.keys, });
+@immutable final class KeyPressAction {const KeyPressAction({required this.keys, this.type = 'keypress', });
 
 factory KeyPressAction.fromJson(Map<String, dynamic> json) { return KeyPressAction(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String constraint.
-final class ZonesStringConstraint {const ZonesStringConstraint({required this.$operator, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String constraint.
+@immutable final class ZonesStringConstraint {const ZonesStringConstraint({required this.$operator, required this.value, });
 
 factory ZonesStringConstraint.fromJson(Map<String, dynamic> json) { return ZonesStringConstraint(
   $operator: json['operator'],

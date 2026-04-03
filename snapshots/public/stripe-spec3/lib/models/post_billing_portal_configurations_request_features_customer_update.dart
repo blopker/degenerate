@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_customer_update_allowed_updates.dart';final class PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate({this.allowedUpdates, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_customer_update_allowed_updates.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate({required this.enabled, this.allowedUpdates, });
 
 factory PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate(
   allowedUpdates: json['allowed_updates'] != null ? OneOf2.parse(json['allowed_updates'], fromA: (v) => (v as List<dynamic>).map((e) => PostBillingPortalConfigurationsRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostBillingPortalConfigurationsRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.fromJson(v as String),) : null,

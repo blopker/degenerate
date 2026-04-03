@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param9.dart';import 'pause_collection_param2.dart';import 'pending_invoice_item_interval_params4.dart';import 'post_subscriptions_subscription_exposed_id_request_add_invoice_items.dart';import 'post_subscriptions_subscription_exposed_id_request_application_fee_percent.dart';import 'post_subscriptions_subscription_exposed_id_request_automatic_tax.dart';import 'post_subscriptions_subscription_exposed_id_request_billing_thresholds.dart';import 'post_subscriptions_subscription_exposed_id_request_cancel_at.dart';import 'post_subscriptions_subscription_exposed_id_request_cancellation_details.dart';import 'post_subscriptions_subscription_exposed_id_request_default_source.dart';import 'post_subscriptions_subscription_exposed_id_request_default_tax_rates.dart';import 'post_subscriptions_subscription_exposed_id_request_description.dart';import 'post_subscriptions_subscription_exposed_id_request_discounts.dart';import 'post_subscriptions_subscription_exposed_id_request_discounts_variant1.dart';import 'post_subscriptions_subscription_exposed_id_request_invoice_settings.dart';import 'post_subscriptions_subscription_exposed_id_request_items.dart';import 'post_subscriptions_subscription_exposed_id_request_metadata.dart';import 'post_subscriptions_subscription_exposed_id_request_on_behalf_of.dart';import 'post_subscriptions_subscription_exposed_id_request_pause_collection.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings.dart';import 'post_subscriptions_subscription_exposed_id_request_pending_invoice_item_interval.dart';import 'post_subscriptions_subscription_exposed_id_request_transfer_data.dart';import 'post_subscriptions_subscription_exposed_id_request_trial_end.dart';import 'post_subscriptions_subscription_exposed_id_request_trial_settings.dart';import 'transfer_data_specs7.dart';/// Either `now` or `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-final class PostSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor._(this.value);
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor($value)'; } 
  }
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-final class PostSubscriptionsSubscriptionExposedIdRequestCollectionMethod {const PostSubscriptionsSubscriptionExposedIdRequestCollectionMethod._(this.value);
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestCollectionMethod {const PostSubscriptionsSubscriptionExposedIdRequestCollectionMethod._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Use `pending_if_incomplete` to update the subscription using [pending updates](https://docs.stripe.com/billing/subscriptions/pending-updates). When you use `pending_if_incomplete` you can only pass the parameters [supported by pending updates](https://docs.stripe.com/billing/pending-updates-reference#supported-attributes).
 /// 
 /// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's invoice cannot be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further user action is needed, this parameter does not update the subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/changelog/2019-03-14) to learn more.
-final class PostSubscriptionsSubscriptionExposedIdRequestPaymentBehavior {const PostSubscriptionsSubscriptionExposedIdRequestPaymentBehavior._(this.value);
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestPaymentBehavior {const PostSubscriptionsSubscriptionExposedIdRequestPaymentBehavior._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestPaymentBehavior.fromJson(String json) { return switch (json) {
   'allow_incomplete' => allowIncomplete,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentBehavior($value)'; } 
  }
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) when the billing cycle changes (e.g., when switching plans, resetting `billing_cycle_anchor=now`, or starting a trial), or if an item's `quantity` changes. The default value is `create_prorations`.
-final class PostSubscriptionsSubscriptionExposedIdRequestProrationBehavior {const PostSubscriptionsSubscriptionExposedIdRequestProrationBehavior._(this.value);
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestProrationBehavior {const PostSubscriptionsSubscriptionExposedIdRequestProrationBehavior._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -115,7 +115,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestProrationBehavior($value)'; } 
  }
-final class PostSubscriptionsSubscriptionExposedIdRequest {const PostSubscriptionsSubscriptionExposedIdRequest({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.cancellationDetails, this.collectionMethod, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.expand, this.invoiceSettings, this.items, this.metadata, this.offSession, this.onBehalfOf, this.pauseCollection, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.prorationDate, this.transferData, this.trialEnd, this.trialFromPlan, this.trialSettings, });
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequest {const PostSubscriptionsSubscriptionExposedIdRequest({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.cancellationDetails, this.collectionMethod, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.expand, this.invoiceSettings, this.items, this.metadata, this.offSession, this.onBehalfOf, this.pauseCollection, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.prorationDate, this.transferData, this.trialEnd, this.trialFromPlan, this.trialSettings, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequest(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_shipping_options_shipping_rate_data.dart';final class PostCheckoutSessionsRequestShippingOptions {const PostCheckoutSessionsRequestShippingOptions({this.shippingRate, this.shippingRateData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data.dart';@immutable final class PostCheckoutSessionsRequestShippingOptions {const PostCheckoutSessionsRequestShippingOptions({this.shippingRate, this.shippingRateData, });
 
 factory PostCheckoutSessionsRequestShippingOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptions(
   shippingRate: json['shipping_rate'] as String?,

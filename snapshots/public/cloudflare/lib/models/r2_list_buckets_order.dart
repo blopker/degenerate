@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order buckets by.
-final class R2ListBucketsOrder {const R2ListBucketsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order buckets by.
+@immutable final class R2ListBucketsOrder {const R2ListBucketsOrder._(this.value);
 
 factory R2ListBucketsOrder.fromJson(String json) { return switch (json) {
   'name' => $name,

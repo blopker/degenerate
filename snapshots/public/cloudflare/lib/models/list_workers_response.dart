@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker.dart';final class ListWorkersResponse {const ListWorkersResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker.dart';@immutable final class ListWorkersResponse {const ListWorkersResponse({required this.result});
 
 factory ListWorkersResponse.fromJson(Map<String, dynamic> json) { return ListWorkersResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkersWorker.fromJson(e as Map<String, dynamic>)).toList(),

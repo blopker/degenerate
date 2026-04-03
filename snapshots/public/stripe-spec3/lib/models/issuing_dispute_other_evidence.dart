@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_other_evidence_additional_documentation.dart';/// Whether the product was a merchandise or service.
-final class IssuingDisputeOtherEvidenceProductType {const IssuingDisputeOtherEvidenceProductType._(this.value);
+@immutable final class IssuingDisputeOtherEvidenceProductType {const IssuingDisputeOtherEvidenceProductType._(this.value);
 
 factory IssuingDisputeOtherEvidenceProductType.fromJson(String json) { return switch (json) {
   'merchandise' => merchandise,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeOtherEvidenceProductType($value)'; } 
  }
 /// 
-final class IssuingDisputeOtherEvidence {const IssuingDisputeOtherEvidence({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
+@immutable final class IssuingDisputeOtherEvidence {const IssuingDisputeOtherEvidence({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
 
 factory IssuingDisputeOtherEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeOtherEvidence(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

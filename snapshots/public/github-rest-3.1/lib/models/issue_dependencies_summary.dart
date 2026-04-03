@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssueDependenciesSummary {const IssueDependenciesSummary({required this.blockedBy, required this.blocking, required this.totalBlockedBy, required this.totalBlocking, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssueDependenciesSummary {const IssueDependenciesSummary({required this.blockedBy, required this.blocking, required this.totalBlockedBy, required this.totalBlocking, });
 
 factory IssueDependenciesSummary.fromJson(Map<String, dynamic> json) { return IssueDependenciesSummary(
   blockedBy: (json['blocked_by'] as num).toInt(),

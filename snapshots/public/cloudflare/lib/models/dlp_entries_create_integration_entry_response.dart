@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_integration_entry.dart';final class DlpEntriesCreateIntegrationEntryResponse {const DlpEntriesCreateIntegrationEntryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_integration_entry.dart';@immutable final class DlpEntriesCreateIntegrationEntryResponse {const DlpEntriesCreateIntegrationEntryResponse({this.result});
 
 factory DlpEntriesCreateIntegrationEntryResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesCreateIntegrationEntryResponse(
   result: json['result'] != null ? DlpIntegrationEntry.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_session_participant.dart';final class MuteParticipantsResponseData {const MuteParticipantsResponseData({this.action, this.participants, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_session_participant.dart';@immutable final class MuteParticipantsResponseData {const MuteParticipantsResponseData({this.action, this.participants, });
 
 factory MuteParticipantsResponseData.fromJson(Map<String, dynamic> json) { return MuteParticipantsResponseData(
   action: json['action'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionSchedulesScheduleCancelRequest {const PostSubscriptionSchedulesScheduleCancelRequest({this.expand, this.invoiceNow, this.prorate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleCancelRequest {const PostSubscriptionSchedulesScheduleCancelRequest({this.expand, this.invoiceNow, this.prorate, });
 
 factory PostSubscriptionSchedulesScheduleCancelRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleCancelRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

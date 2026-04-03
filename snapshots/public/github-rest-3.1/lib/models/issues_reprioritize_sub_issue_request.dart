@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesReprioritizeSubIssueRequest {const IssuesReprioritizeSubIssueRequest({required this.subIssueId, this.afterId, this.beforeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesReprioritizeSubIssueRequest {const IssuesReprioritizeSubIssueRequest({required this.subIssueId, this.afterId, this.beforeId, });
 
 factory IssuesReprioritizeSubIssueRequest.fromJson(Map<String, dynamic> json) { return IssuesReprioritizeSubIssueRequest(
   subIssueId: (json['sub_issue_id'] as num).toInt(),

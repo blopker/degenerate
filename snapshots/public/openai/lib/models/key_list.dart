@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key.dart';final class KeyList {const KeyList({this.object, this.data, this.hasMore, this.firstId, this.lastId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key.dart';@immutable final class KeyList {const KeyList({this.object, this.data, this.hasMore, this.firstId, this.lastId, });
 
 factory KeyList.fromJson(Map<String, dynamic> json) { return KeyList(
   object: json['object'] as String?,

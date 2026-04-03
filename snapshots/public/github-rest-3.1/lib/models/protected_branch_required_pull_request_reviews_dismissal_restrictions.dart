@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';final class ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions {const ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions({required this.url, required this.usersUrl, required this.teamsUrl, required this.users, required this.teams, this.apps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';@immutable final class ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions {const ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions({required this.url, required this.usersUrl, required this.teamsUrl, required this.users, required this.teams, this.apps, });
 
 factory ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
   url: Uri.parse(json['url'] as String),

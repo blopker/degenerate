@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposAddCollaboratorRequest {const ReposAddCollaboratorRequest({this.permission = 'push'});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposAddCollaboratorRequest {const ReposAddCollaboratorRequest({this.permission = 'push'});
 
 factory ReposAddCollaboratorRequest.fromJson(Map<String, dynamic> json) { return ReposAddCollaboratorRequest(
   permission: json.containsKey('permission') ? json['permission'] as String : 'push',

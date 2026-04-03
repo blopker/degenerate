@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_dispatch_namespace_outbound_params.dart';import 'workers_binding_kind_dispatch_namespace_outbound_worker.dart';/// Outbound worker.
-final class WorkersBindingKindDispatchNamespaceOutbound {const WorkersBindingKindDispatchNamespaceOutbound({this.params, this.worker, });
+@immutable final class WorkersBindingKindDispatchNamespaceOutbound {const WorkersBindingKindDispatchNamespaceOutbound({this.params, this.worker, });
 
 factory WorkersBindingKindDispatchNamespaceOutbound.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespaceOutbound(
   params: (json['params'] as List<dynamic>?)?.map((e) => WorkersBindingKindDispatchNamespaceOutboundParams.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_schemas_messages2_source.dart';final class IamSchemasMessages2 {const IamSchemasMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_schemas_messages2_source.dart';@immutable final class IamSchemasMessages2 {const IamSchemasMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory IamSchemasMessages2.fromJson(Map<String, dynamic> json) { return IamSchemasMessages2(
   code: (json['code'] as num).toInt(),

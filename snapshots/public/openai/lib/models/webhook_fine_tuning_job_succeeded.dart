@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_fine_tuning_job_succeeded_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_fine_tuning_job_succeeded_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookFineTuningJobSucceededObject {const WebhookFineTuningJobSucceededObject._(this.value);
+@immutable final class WebhookFineTuningJobSucceededObject {const WebhookFineTuningJobSucceededObject._(this.value);
 
 factory WebhookFineTuningJobSucceededObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `fine_tuning.job.succeeded`.
 /// 
-final class WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType._(this.value);
+@immutable final class WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType._(this.value);
 
 factory WebhookFineTuningJobSucceededType.fromJson(String json) { return switch (json) {
   'fine_tuning.job.succeeded' => fineTuningJobSucceeded,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a fine-tuning job has succeeded.
 /// 
-final class WebhookFineTuningJobSucceeded {const WebhookFineTuningJobSucceeded({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookFineTuningJobSucceeded {const WebhookFineTuningJobSucceeded({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookFineTuningJobSucceeded.fromJson(Map<String, dynamic> json) { return WebhookFineTuningJobSucceeded(
   createdAt: (json['created_at'] as num).toInt(),

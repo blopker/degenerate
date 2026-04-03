@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSourcesSourceRequest {const GetSourcesSourceRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSourcesSourceRequest {const GetSourcesSourceRequest();
 
 factory GetSourcesSourceRequest.fromJson(Map<String, dynamic> json) { return GetSourcesSourceRequest(
 

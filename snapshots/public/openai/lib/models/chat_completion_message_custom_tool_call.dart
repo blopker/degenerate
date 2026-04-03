@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_message_custom_tool_call_custom.dart';/// The type of the tool. Always `custom`.
-final class ChatCompletionMessageCustomToolCallType {const ChatCompletionMessageCustomToolCallType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_custom_tool_call_custom.dart';/// The type of the tool. Always `custom`.
+@immutable final class ChatCompletionMessageCustomToolCallType {const ChatCompletionMessageCustomToolCallType._(this.value);
 
 factory ChatCompletionMessageCustomToolCallType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A call to a custom tool created by the model.
 /// 
-final class ChatCompletionMessageCustomToolCall {const ChatCompletionMessageCustomToolCall({required this.id, required this.type, required this.custom, });
+@immutable final class ChatCompletionMessageCustomToolCall {const ChatCompletionMessageCustomToolCall({required this.id, required this.type, required this.custom, });
 
 factory ChatCompletionMessageCustomToolCall.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageCustomToolCall(
   id: json['id'] as String,

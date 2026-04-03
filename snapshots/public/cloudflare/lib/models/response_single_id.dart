@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_purge_messages2.dart';import 'response_single_id_result.dart';final class ResponseSingleId {const ResponseSingleId({required this.errors, required this.messages, this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_purge_messages2.dart';import 'response_single_id_result.dart';@immutable final class ResponseSingleId {const ResponseSingleId({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseSingleId.fromJson(Map<String, dynamic> json) { return ResponseSingleId(
   errors: (json['errors'] as List<dynamic>).map((e) => CachePurgeMessages2.fromJson(e as Map<String, dynamic>)).toList(),

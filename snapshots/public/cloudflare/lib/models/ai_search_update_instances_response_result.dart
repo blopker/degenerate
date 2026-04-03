@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_response_result_ai_search_model.dart';import 'ai_search_update_instances_response_result_custom_metadata.dart';import 'ai_search_update_instances_response_result_embedding_model.dart';import 'ai_search_update_instances_response_result_metadata.dart';import 'ai_search_update_instances_response_result_public_endpoint_params.dart';import 'ai_search_update_instances_response_result_retrieval_options.dart';import 'ai_search_update_instances_response_result_rewrite_model.dart';import 'ai_search_update_instances_response_result_source_params.dart';final class AiSearchUpdateInstancesResponseResultRerankingModel {const AiSearchUpdateInstancesResponseResultRerankingModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_response_result_ai_search_model.dart';import 'ai_search_update_instances_response_result_custom_metadata.dart';import 'ai_search_update_instances_response_result_embedding_model.dart';import 'ai_search_update_instances_response_result_metadata.dart';import 'ai_search_update_instances_response_result_public_endpoint_params.dart';import 'ai_search_update_instances_response_result_retrieval_options.dart';import 'ai_search_update_instances_response_result_rewrite_model.dart';import 'ai_search_update_instances_response_result_source_params.dart';@immutable final class AiSearchUpdateInstancesResponseResultRerankingModel {const AiSearchUpdateInstancesResponseResultRerankingModel._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultRerankingModel.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultRerankingModel($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResultCacheThreshold {const AiSearchUpdateInstancesResponseResultCacheThreshold._(this.value);
+@immutable final class AiSearchUpdateInstancesResponseResultCacheThreshold {const AiSearchUpdateInstancesResponseResultCacheThreshold._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultCacheThreshold.fromJson(String json) { return switch (json) {
   'super_strict_match' => superStrictMatch,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultCacheThreshold($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResultFusionMethod {const AiSearchUpdateInstancesResponseResultFusionMethod._(this.value);
+@immutable final class AiSearchUpdateInstancesResponseResultFusionMethod {const AiSearchUpdateInstancesResponseResultFusionMethod._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultFusionMethod.fromJson(String json) { return switch (json) {
   'max' => max,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultFusionMethod($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResultType {const AiSearchUpdateInstancesResponseResultType._(this.value);
+@immutable final class AiSearchUpdateInstancesResponseResultType {const AiSearchUpdateInstancesResponseResultType._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultType.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultType($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResult {const AiSearchUpdateInstancesResponseResult({this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchUpdateInstancesResponseResultCacheThreshold.closeEnough, this.chunkOverlap = 10, this.chunkSize = 256, required this.createdAt, this.createdBy, this.customMetadata, this.embeddingModel, this.enable = true, this.fusionMethod = AiSearchUpdateInstancesResponseResultFusionMethod.rrf, this.hybridSearchEnabled = false, required this.id, this.lastActivity, this.maxNumResults = 10, this.metadata, required this.modifiedAt, this.modifiedBy, this.paused = false, this.publicEndpointId, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams, this.status = 'waiting', this.tokenId, this.type, required this.vectorizeName, });
+@immutable final class AiSearchUpdateInstancesResponseResult {const AiSearchUpdateInstancesResponseResult({required this.vectorizeName, required this.createdAt, required this.id, required this.modifiedAt, this.fusionMethod = AiSearchUpdateInstancesResponseResultFusionMethod.rrf, this.chunkSize = 256, this.aiSearchModel, this.createdBy, this.customMetadata, this.embeddingModel, this.enable = true, this.aiGatewayId, this.hybridSearchEnabled = false, this.cache = true, this.lastActivity, this.maxNumResults = 10, this.metadata, this.cacheThreshold = AiSearchUpdateInstancesResponseResultCacheThreshold.closeEnough, this.modifiedBy, this.paused = false, this.publicEndpointId, this.chunkOverlap = 10, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams, this.status = 'waiting', this.tokenId, this.type, this.publicEndpointParams, });
 
 factory AiSearchUpdateInstancesResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResult(
   aiGatewayId: json['ai_gateway_id'] as String?,

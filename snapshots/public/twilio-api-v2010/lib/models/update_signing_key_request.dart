@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateSigningKeyRequest {const UpdateSigningKeyRequest({this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSigningKeyRequest {const UpdateSigningKeyRequest({this.friendlyName});
 
 factory UpdateSigningKeyRequest.fromJson(Map<String, dynamic> json) { return UpdateSigningKeyRequest(
   friendlyName: json['FriendlyName'] as String?,

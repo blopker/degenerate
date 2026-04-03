@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class InvoiceItemThresholdReason {const InvoiceItemThresholdReason({required this.lineItemIds, required this.usageGte, });
+@immutable final class InvoiceItemThresholdReason {const InvoiceItemThresholdReason({required this.lineItemIds, required this.usageGte, });
 
 factory InvoiceItemThresholdReason.fromJson(Map<String, dynamic> json) { return InvoiceItemThresholdReason(
   lineItemIds: (json['line_item_ids'] as List<dynamic>).map((e) => e as String).toList(),

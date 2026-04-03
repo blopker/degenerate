@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_reference_create_response400_errors.dart';final class PostEventReferenceCreateResponse400 {const PostEventReferenceCreateResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_reference_create_response400_errors.dart';@immutable final class PostEventReferenceCreateResponse400 {const PostEventReferenceCreateResponse400({required this.errors, required this.result, required this.success, });
 
 factory PostEventReferenceCreateResponse400.fromJson(Map<String, dynamic> json) { return PostEventReferenceCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostEventReferenceCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespace_machine.dart';import 'codespace_with_full_repository_git_status.dart';import 'codespace_with_full_repository_runtime_constraints.dart';import 'full_repository.dart';import 'simple_user.dart';/// State of this codespace.
-final class CodespaceWithFullRepositoryState {const CodespaceWithFullRepositoryState._(this.value);
+@immutable final class CodespaceWithFullRepositoryState {const CodespaceWithFullRepositoryState._(this.value);
 
 factory CodespaceWithFullRepositoryState.fromJson(String json) { return switch (json) {
   'Unknown' => unknown,
@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodespaceWithFullRepositoryState($value)'; } 
  }
 /// The initally assigned location of a new codespace.
-final class CodespaceWithFullRepositoryLocation {const CodespaceWithFullRepositoryLocation._(this.value);
+@immutable final class CodespaceWithFullRepositoryLocation {const CodespaceWithFullRepositoryLocation._(this.value);
 
 factory CodespaceWithFullRepositoryLocation.fromJson(String json) { return switch (json) {
   'EastUs' => eastUs,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodespaceWithFullRepositoryLocation($value)'; } 
  }
 /// A codespace.
-final class CodespaceWithFullRepository {const CodespaceWithFullRepository({required this.id, required this.name, this.displayName, required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, this.devcontainerPath, required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, this.publishUrl, required this.pullsUrl, required this.recentFolders, this.runtimeConstraints, this.pendingOperation, this.pendingOperationDisabledReason, this.idleTimeoutNotice, this.retentionPeriodMinutes, this.retentionExpiresAt, });
+@immutable final class CodespaceWithFullRepository {const CodespaceWithFullRepository({required this.id, required this.name, required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, required this.pullsUrl, required this.recentFolders, this.displayName, this.devcontainerPath, this.publishUrl, this.runtimeConstraints, this.pendingOperation, this.pendingOperationDisabledReason, this.idleTimeoutNotice, this.retentionPeriodMinutes, this.retentionExpiresAt, });
 
 factory CodespaceWithFullRepository.fromJson(Map<String, dynamic> json) { return CodespaceWithFullRepository(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_response400_errors.dart';final class WorkersAiPostRunCfQwenQwen3Embedding06bResponse400 {const WorkersAiPostRunCfQwenQwen3Embedding06bResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_response400_errors.dart';@immutable final class WorkersAiPostRunCfQwenQwen3Embedding06bResponse400 {const WorkersAiPostRunCfQwenQwen3Embedding06bResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfQwenQwen3Embedding06bResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfQwenQwen3Embedding06bResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfQwenQwen3Embedding06bResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

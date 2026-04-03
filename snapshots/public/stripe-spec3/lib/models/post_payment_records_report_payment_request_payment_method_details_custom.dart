@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsCustom {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsCustom({this.displayName, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsCustom {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsCustom({this.displayName, this.type, });
 
 factory PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsCustom.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsCustom(
   displayName: json['display_name'] as String?,

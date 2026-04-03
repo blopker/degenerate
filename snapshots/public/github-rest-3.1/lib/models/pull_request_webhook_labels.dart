@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullRequestWebhookLabels {const PullRequestWebhookLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestWebhookLabels {const PullRequestWebhookLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
 
 factory PullRequestWebhookLabels.fromJson(Map<String, dynamic> json) { return PullRequestWebhookLabels(
   id: (json['id'] as num).toInt(),

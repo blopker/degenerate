@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CachePurgeFlexPurgeByTags {const CachePurgeFlexPurgeByTags({this.tags});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CachePurgeFlexPurgeByTags {const CachePurgeFlexPurgeByTags({this.tags});
 
 factory CachePurgeFlexPurgeByTags.fromJson(Map<String, dynamic> json) { return CachePurgeFlexPurgeByTags(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),

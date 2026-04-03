@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode {const DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode({required this.status200, required this.status300, required this.status400, required this.status500, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode {const DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode({required this.status200, required this.status300, required this.status400, required this.status500, required this.timestamp, });
 
 factory DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode(
   status200: (json['status200'] as num).toInt(),

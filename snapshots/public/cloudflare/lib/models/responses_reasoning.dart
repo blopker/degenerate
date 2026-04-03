@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
-final class ResponsesReasoningEffort {const ResponsesReasoningEffort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+@immutable final class ResponsesReasoningEffort {const ResponsesReasoningEffort._(this.value);
 
 factory ResponsesReasoningEffort.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponsesReasoningEffort($value)'; } 
  }
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
-final class ResponsesReasoningSummary {const ResponsesReasoningSummary._(this.value);
+@immutable final class ResponsesReasoningSummary {const ResponsesReasoningSummary._(this.value);
 
 factory ResponsesReasoningSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponsesReasoningSummary($value)'; } 
  }
-final class ResponsesReasoning {const ResponsesReasoning({this.effort, this.summary, });
+@immutable final class ResponsesReasoning {const ResponsesReasoning({this.effort, this.summary, });
 
 factory ResponsesReasoning.fromJson(Map<String, dynamic> json) { return ResponsesReasoning(
   effort: json['effort'] != null ? ResponsesReasoningEffort.fromJson(json['effort'] as String) : null,

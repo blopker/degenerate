@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingPhysicalBundlesPhysicalBundleRequest {const GetIssuingPhysicalBundlesPhysicalBundleRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPhysicalBundlesPhysicalBundleRequest {const GetIssuingPhysicalBundlesPhysicalBundleRequest();
 
 factory GetIssuingPhysicalBundlesPhysicalBundleRequest.fromJson(Map<String, dynamic> json) { return GetIssuingPhysicalBundlesPhysicalBundleRequest(
 

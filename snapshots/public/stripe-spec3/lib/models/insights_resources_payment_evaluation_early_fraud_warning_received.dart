@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of fraud labeled by the issuer.
-final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType {const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud labeled by the issuer.
+@immutable final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType {const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType.fromJson(String json) { return switch (json) {
   'made_with_lost_card' => madeWithLostCard,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType($value)'; } 
  }
 /// Early Fraud Warning Received event details attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived {const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived({required this.fraudType});
+@immutable final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived {const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived({required this.fraudType});
 
 factory InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(
   fraudType: InsightsResourcesPaymentEvaluationEarlyFraudWarningReceivedFraudType.fromJson(json['fraud_type'] as String),

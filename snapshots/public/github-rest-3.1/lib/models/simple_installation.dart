@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
 /// for and sent to a GitHub App. For more information,
 /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
-final class SimpleInstallation {const SimpleInstallation({required this.id, required this.nodeId, });
+@immutable final class SimpleInstallation {const SimpleInstallation({required this.id, required this.nodeId, });
 
 factory SimpleInstallation.fromJson(Map<String, dynamic> json) { return SimpleInstallation(
   id: (json['id'] as num).toInt(),

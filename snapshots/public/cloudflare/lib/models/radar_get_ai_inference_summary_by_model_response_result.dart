@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_ai_inference_summary_by_model_response_result_meta.dart';final class RadarGetAiInferenceSummaryByModelResponseResult {const RadarGetAiInferenceSummaryByModelResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_summary_by_model_response_result_meta.dart';@immutable final class RadarGetAiInferenceSummaryByModelResponseResult {const RadarGetAiInferenceSummaryByModelResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetAiInferenceSummaryByModelResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceSummaryByModelResponseResult(
   meta: RadarGetAiInferenceSummaryByModelResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

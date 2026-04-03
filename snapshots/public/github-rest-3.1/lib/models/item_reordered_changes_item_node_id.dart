@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ItemReorderedChangesItemNodeId {const ItemReorderedChangesItemNodeId({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemReorderedChangesItemNodeId {const ItemReorderedChangesItemNodeId({this.from, this.to, });
 
 factory ItemReorderedChangesItemNodeId.fromJson(Map<String, dynamic> json) { return ItemReorderedChangesItemNodeId(
   from: json['from'] as String?,

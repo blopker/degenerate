@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileCommitCommitTree {const FileCommitCommitTree({this.url, this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitTree {const FileCommitCommitTree({this.url, this.sha, });
 
 factory FileCommitCommitTree.fromJson(Map<String, dynamic> json) { return FileCommitCommitTree(
   url: json['url'] as String?,

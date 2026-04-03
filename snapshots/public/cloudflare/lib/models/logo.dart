@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Logo {const Logo({this.id, this.tag, this.uploadPath, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Logo {const Logo({this.id, this.tag, this.uploadPath, });
 
 factory Logo.fromJson(Map<String, dynamic> json) { return Logo(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

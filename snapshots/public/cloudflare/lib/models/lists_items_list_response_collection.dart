@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_item.dart';import 'lists_items_list_response_collection_result_info.dart';import 'lists_list_item_asn_object.dart';import 'lists_list_item_hostname_object.dart';import 'lists_list_item_ip_object.dart';import 'lists_list_item_redirect_object.dart';final class ListsItemsListResponseCollection {const ListsItemsListResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_item.dart';import 'lists_items_list_response_collection_result_info.dart';import 'lists_list_item_asn_object.dart';import 'lists_list_item_hostname_object.dart';import 'lists_list_item_ip_object.dart';import 'lists_list_item_redirect_object.dart';@immutable final class ListsItemsListResponseCollection {const ListsItemsListResponseCollection({this.result, this.resultInfo, });
 
 factory ListsItemsListResponseCollection.fromJson(Map<String, dynamic> json) { return ListsItemsListResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf4.parse(e, fromA: (v) => ListsListItemIpObject.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsListItemHostnameObject.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsListItemRedirectObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ListsListItemAsnObject.fromJson(v as Map<String, dynamic>),)).toList(),

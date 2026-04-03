@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates you've finished uploading to tell the D1 to start consuming it
-final class IngestAction {const IngestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you've finished uploading to tell the D1 to start consuming it
+@immutable final class IngestAction {const IngestAction._(this.value);
 
 factory IngestAction.fromJson(String json) { return switch (json) {
   'ingest' => ingest,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IngestAction($value)'; } 
  }
-final class Ingest {const Ingest({required this.action, required this.etag, required this.filename, });
+@immutable final class Ingest {const Ingest({required this.action, required this.etag, required this.filename, });
 
 factory Ingest.fromJson(Map<String, dynamic> json) { return Ingest(
   action: IngestAction.fromJson(json['action'] as String),

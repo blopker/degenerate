@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType._(this.value);
 
 factory PackagesGetPackageVersionForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,

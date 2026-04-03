@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class BillingMeterEventObject {const BillingMeterEventObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class BillingMeterEventObject {const BillingMeterEventObject._(this.value);
 
 factory BillingMeterEventObject.fromJson(String json) { return switch (json) {
   'billing.meter_event' => billingMeterEvent,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterEventObject($value)'; } 
  }
 /// Meter events represent actions that customers take in your system. You can use meter events to bill a customer based on their usage. Meter events are associated with billing meters, which define both the contents of the event’s payload and how to aggregate those events.
-final class BillingMeterEvent {const BillingMeterEvent({required this.created, required this.eventName, required this.identifier, required this.livemode, required this.object, required this.payload, required this.timestamp, });
+@immutable final class BillingMeterEvent {const BillingMeterEvent({required this.created, required this.eventName, required this.identifier, required this.livemode, required this.object, required this.payload, required this.timestamp, });
 
 factory BillingMeterEvent.fromJson(Map<String, dynamic> json) { return BillingMeterEvent(
   created: (json['created'] as num).toInt(),

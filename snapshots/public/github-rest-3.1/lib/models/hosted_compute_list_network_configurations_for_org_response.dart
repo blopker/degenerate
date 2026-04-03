@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'network_configuration.dart';final class HostedComputeListNetworkConfigurationsForOrgResponse {const HostedComputeListNetworkConfigurationsForOrgResponse({required this.totalCount, required this.networkConfigurations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'network_configuration.dart';@immutable final class HostedComputeListNetworkConfigurationsForOrgResponse {const HostedComputeListNetworkConfigurationsForOrgResponse({required this.totalCount, required this.networkConfigurations, });
 
 factory HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(Map<String, dynamic> json) { return HostedComputeListNetworkConfigurationsForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),

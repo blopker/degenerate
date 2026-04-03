@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Matches any valid client certificate.
-final class AccessCertificateRule {const AccessCertificateRule({required this.certificate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches any valid client certificate.
+@immutable final class AccessCertificateRule {const AccessCertificateRule({required this.certificate});
 
 factory AccessCertificateRule.fromJson(Map<String, dynamic> json) { return AccessCertificateRule(
   certificate: (json['certificate'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

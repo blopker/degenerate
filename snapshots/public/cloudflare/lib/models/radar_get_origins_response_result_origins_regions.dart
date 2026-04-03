@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetOriginsResponseResultOriginsRegions {const RadarGetOriginsResponseResultOriginsRegions({required this.region});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetOriginsResponseResultOriginsRegions {const RadarGetOriginsResponseResultOriginsRegions({required this.region});
 
 factory RadarGetOriginsResponseResultOriginsRegions.fromJson(Map<String, dynamic> json) { return RadarGetOriginsResponseResultOriginsRegions(
   region: json['region'] as String,

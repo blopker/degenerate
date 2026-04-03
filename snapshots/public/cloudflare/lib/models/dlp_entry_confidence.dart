@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpEntryConfidence {const DlpEntryConfidence({required this.aiContextAvailable, required this.available, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryConfidence {const DlpEntryConfidence({required this.aiContextAvailable, required this.available, });
 
 factory DlpEntryConfidence.fromJson(Map<String, dynamic> json) { return DlpEntryConfidence(
   aiContextAvailable: json['ai_context_available'] as bool,

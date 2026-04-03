@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'assistants_named_tool_choice.dart';import 'parallel_tool_calls.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';import 'run_completion_usage.dart';import 'run_object_incomplete_details.dart';import 'run_object_last_error.dart';import 'run_object_required_action.dart';import 'run_object_tools.dart';import 'tool_choice_option.dart';import 'truncation_object.dart';/// The object type, which is always `thread.run`.
-final class RunObjectObject {const RunObjectObject._(this.value);
+@immutable final class RunObjectObject {const RunObjectObject._(this.value);
 
 factory RunObjectObject.fromJson(String json) { return switch (json) {
   'thread.run' => threadRun,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectObject($value)'; } 
  }
 /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
-final class RunObjectStatus {const RunObjectStatus._(this.value);
+@immutable final class RunObjectStatus {const RunObjectStatus._(this.value);
 
 factory RunObjectStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectStatus($value)'; } 
  }
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
-final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, this.tools = const [], required this.metadata, required this.usage, this.temperature, this.topP, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, });
+@immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.tools = const [], this.temperature, this.topP, });
 
 factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Limits to apply for this Worker.
-final class WorkersLimits {const WorkersLimits({this.cpuMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Limits to apply for this Worker.
+@immutable final class WorkersLimits {const WorkersLimits({this.cpuMs});
 
 factory WorkersLimits.fromJson(Map<String, dynamic> json) { return WorkersLimits(
   cpuMs: json['cpu_ms'] != null ? (json['cpu_ms'] as num).toInt() : null,

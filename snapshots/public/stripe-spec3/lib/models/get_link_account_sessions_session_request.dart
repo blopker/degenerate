@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetLinkAccountSessionsSessionRequest {const GetLinkAccountSessionsSessionRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLinkAccountSessionsSessionRequest {const GetLinkAccountSessionsSessionRequest();
 
 factory GetLinkAccountSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return GetLinkAccountSessionsSessionRequest(
 

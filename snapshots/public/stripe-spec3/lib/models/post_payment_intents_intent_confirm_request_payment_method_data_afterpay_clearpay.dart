@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataAfterpayClearpay {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataAfterpayClearpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataAfterpayClearpay {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataAfterpayClearpay();
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataAfterpayClearpay(
 

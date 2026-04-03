@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details of the error.
-final class RealtimeServerEventErrorError {const RealtimeServerEventErrorError({required this.type, this.code, required this.message, this.param, this.eventId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the error.
+@immutable final class RealtimeServerEventErrorError {const RealtimeServerEventErrorError({required this.type, required this.message, this.code, this.param, this.eventId, });
 
 factory RealtimeServerEventErrorError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventErrorError(
   type: json['type'] as String,

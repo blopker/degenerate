@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// This hash contains details about the online acceptance.
-final class ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline {const ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline({this.ipAddress, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains details about the online acceptance.
+@immutable final class ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline {const ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline({this.ipAddress, this.userAgent, });
 
 factory ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline(
   ipAddress: json['ip_address'] as String?,

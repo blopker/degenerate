@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_dataset.dart';final class DlpDatasetsReadResponse {const DlpDatasetsReadResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset.dart';@immutable final class DlpDatasetsReadResponse {const DlpDatasetsReadResponse({this.result});
 
 factory DlpDatasetsReadResponse.fromJson(Map<String, dynamic> json) { return DlpDatasetsReadResponse(
   result: json['result'] != null ? DlpDataset.fromJson(json['result'] as Map<String, dynamic>) : null,

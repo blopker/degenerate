@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnErrorMeta {const McnErrorMeta({this.l10nKey, this.loggableError, this.templateData, this.traceId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnErrorMeta {const McnErrorMeta({this.l10nKey, this.loggableError, this.templateData, this.traceId, });
 
 factory McnErrorMeta.fromJson(Map<String, dynamic> json) { return McnErrorMeta(
   l10nKey: json['l10n_key'] as String?,

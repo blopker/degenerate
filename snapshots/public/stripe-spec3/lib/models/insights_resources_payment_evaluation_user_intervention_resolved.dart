@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Result of the intervention if it has been completed.
-final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the intervention if it has been completed.
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(this.value);
 
 factory InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)'; } 
  }
 /// User Intervention Resolved Event details attached to this payment evaluation
-final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome, });
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome, });
 
 factory InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: json['key'] as String,

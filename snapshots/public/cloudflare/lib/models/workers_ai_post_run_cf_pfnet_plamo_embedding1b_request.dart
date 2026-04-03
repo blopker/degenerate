@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_pfnet_plamo_embedding1b_request_text.dart';final class WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest {const WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_pfnet_plamo_embedding1b_request_text.dart';@immutable final class WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest {const WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest({required this.text});
 
 factory WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_funding_instructions_request_bank_transfer.dart';/// The `funding_type` to get the instructions for.
-final class PostCustomersCustomerFundingInstructionsRequestFundingType {const PostCustomersCustomerFundingInstructionsRequestFundingType._(this.value);
+@immutable final class PostCustomersCustomerFundingInstructionsRequestFundingType {const PostCustomersCustomerFundingInstructionsRequestFundingType._(this.value);
 
 factory PostCustomersCustomerFundingInstructionsRequestFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestFundingType($value)'; } 
  }
-final class PostCustomersCustomerFundingInstructionsRequest {const PostCustomersCustomerFundingInstructionsRequest({required this.bankTransfer, required this.currency, this.expand, required this.fundingType, });
+@immutable final class PostCustomersCustomerFundingInstructionsRequest {const PostCustomersCustomerFundingInstructionsRequest({required this.bankTransfer, required this.currency, required this.fundingType, this.expand, });
 
 factory PostCustomersCustomerFundingInstructionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerFundingInstructionsRequest(
   bankTransfer: PostCustomersCustomerFundingInstructionsRequestBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `Alipay` PaymentMethod, this hash contains details about the Alipay payment method.
-final class PostPaymentMethodsRequestAlipay {const PostPaymentMethodsRequestAlipay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `Alipay` PaymentMethod, this hash contains details about the Alipay payment method.
+@immutable final class PostPaymentMethodsRequestAlipay {const PostPaymentMethodsRequestAlipay();
 
 factory PostPaymentMethodsRequestAlipay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestAlipay(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_instance_chat_completion_response_choices_message.dart';final class AiSearchInstanceChatCompletionResponseChoices {const AiSearchInstanceChatCompletionResponseChoices({this.index, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_response_choices_message.dart';@immutable final class AiSearchInstanceChatCompletionResponseChoices {const AiSearchInstanceChatCompletionResponseChoices({required this.message, this.index, });
 
 factory AiSearchInstanceChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponseChoices(
   index: json['index'] != null ? (json['index'] as num).toInt() : null,

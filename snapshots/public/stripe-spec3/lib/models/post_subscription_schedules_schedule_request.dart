@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_default_settings.dart';import 'post_subscription_schedules_schedule_request_metadata.dart';import 'post_subscription_schedules_schedule_request_phases.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
-final class PostSubscriptionSchedulesScheduleRequestEndBehavior {const PostSubscriptionSchedulesScheduleRequestEndBehavior._(this.value);
+@immutable final class PostSubscriptionSchedulesScheduleRequestEndBehavior {const PostSubscriptionSchedulesScheduleRequestEndBehavior._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestEndBehavior.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestEndBehavior($value)'; } 
  }
 /// If the update changes the billing configuration (item price, quantity, etc.) of the current phase, indicates how prorations from this change should be handled. The default value is `create_prorations`.
-final class PostSubscriptionSchedulesScheduleRequestProrationBehavior {const PostSubscriptionSchedulesScheduleRequestProrationBehavior._(this.value);
+@immutable final class PostSubscriptionSchedulesScheduleRequestProrationBehavior {const PostSubscriptionSchedulesScheduleRequestProrationBehavior._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestProrationBehavior($value)'; } 
  }
-final class PostSubscriptionSchedulesScheduleRequest {const PostSubscriptionSchedulesScheduleRequest({this.defaultSettings, this.endBehavior, this.expand, this.metadata, this.phases, this.prorationBehavior, });
+@immutable final class PostSubscriptionSchedulesScheduleRequest {const PostSubscriptionSchedulesScheduleRequest({this.defaultSettings, this.endBehavior, this.expand, this.metadata, this.phases, this.prorationBehavior, });
 
 factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequest(
   defaultSettings: json['default_settings'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,

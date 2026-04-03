@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateSipCredentialListRequest {const CreateSipCredentialListRequest({required this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipCredentialListRequest {const CreateSipCredentialListRequest({required this.friendlyName});
 
 factory CreateSipCredentialListRequest.fromJson(Map<String, dynamic> json) { return CreateSipCredentialListRequest(
   friendlyName: json['FriendlyName'] as String,

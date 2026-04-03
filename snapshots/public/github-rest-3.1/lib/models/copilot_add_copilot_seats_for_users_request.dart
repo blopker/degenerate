@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CopilotAddCopilotSeatsForUsersRequest {const CopilotAddCopilotSeatsForUsersRequest({required this.selectedUsernames});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotAddCopilotSeatsForUsersRequest {const CopilotAddCopilotSeatsForUsersRequest({required this.selectedUsernames});
 
 factory CopilotAddCopilotSeatsForUsersRequest.fromJson(Map<String, dynamic> json) { return CopilotAddCopilotSeatsForUsersRequest(
   selectedUsernames: (json['selected_usernames'] as List<dynamic>).map((e) => e as String).toList(),

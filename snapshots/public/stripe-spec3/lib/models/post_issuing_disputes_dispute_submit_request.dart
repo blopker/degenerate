@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_dispute_submit_request_metadata.dart';final class PostIssuingDisputesDisputeSubmitRequest {const PostIssuingDisputesDisputeSubmitRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_dispute_submit_request_metadata.dart';@immutable final class PostIssuingDisputesDisputeSubmitRequest {const PostIssuingDisputesDisputeSubmitRequest({this.expand, this.metadata, });
 
 factory PostIssuingDisputesDisputeSubmitRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesDisputeSubmitRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

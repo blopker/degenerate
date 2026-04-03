@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesNelValue {const ZonesNelValue({this.enabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesNelValue {const ZonesNelValue({this.enabled = false});
 
 factory ZonesNelValue.fromJson(Map<String, dynamic> json) { return ZonesNelValue(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,

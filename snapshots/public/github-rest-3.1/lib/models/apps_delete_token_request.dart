@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AppsDeleteTokenRequest {const AppsDeleteTokenRequest({required this.accessToken});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsDeleteTokenRequest {const AppsDeleteTokenRequest({required this.accessToken});
 
 factory AppsDeleteTokenRequest.fromJson(Map<String, dynamic> json) { return AppsDeleteTokenRequest(
   accessToken: json['access_token'] as String,

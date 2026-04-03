@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a Photon Controller persistent disk resource.
-final class PhotonPersistentDiskVolumeSource {const PhotonPersistentDiskVolumeSource({this.fsType, this.pdId = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Photon Controller persistent disk resource.
+@immutable final class PhotonPersistentDiskVolumeSource {const PhotonPersistentDiskVolumeSource({this.fsType, this.pdId = '', });
 
 factory PhotonPersistentDiskVolumeSource.fromJson(Map<String, dynamic> json) { return PhotonPersistentDiskVolumeSource(
   fsType: json['fsType'] as String?,

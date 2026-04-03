@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_routing_summary_by_ip_version_response_result_meta.dart';import 'radar_get_email_routing_summary_by_ip_version_response_result_summary0.dart';final class RadarGetEmailRoutingSummaryByIpVersionResponseResult {const RadarGetEmailRoutingSummaryByIpVersionResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_ip_version_response_result_meta.dart';import 'radar_get_email_routing_summary_by_ip_version_response_result_summary0.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponseResult {const RadarGetEmailRoutingSummaryByIpVersionResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetEmailRoutingSummaryByIpVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByIpVersionResponseResult(
   meta: RadarGetEmailRoutingSummaryByIpVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

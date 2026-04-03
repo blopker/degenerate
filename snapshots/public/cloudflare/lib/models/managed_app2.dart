@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_managed_app_id.dart';final class ManagedApp2 {const ManagedApp2({required this.managedAppId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_managed_app_id.dart';@immutable final class ManagedApp2 {const ManagedApp2({required this.managedAppId});
 
 factory ManagedApp2.fromJson(Map<String, dynamic> json) { return ManagedApp2(
   managedAppId: MagicManagedAppId.fromJson(json['managed_app_id'] as String),

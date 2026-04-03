@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'commit_comment_event.dart';import 'create_event.dart';import 'delete_event.dart';import 'discussion_event.dart';import 'fork_event.dart';import 'gollum_event.dart';import 'issue_comment_event.dart';import 'issues_event.dart';import 'member_event.dart';import 'pull_request_event.dart';import 'pull_request_review_comment_event.dart';import 'pull_request_review_event.dart';import 'push_event.dart';import 'release_event.dart';import 'watch_event.dart';/// A value that is one of: `CreateEvent`, `DeleteEvent`, `DiscussionEvent`, `IssuesEvent`, `IssueCommentEvent`, `ForkEvent`, `GollumEvent`, `MemberEvent`, `Map<String, dynamic>`, `PushEvent`, `PullRequestEvent`, `PullRequestReviewCommentEvent`, `PullRequestReviewEvent`, `CommitCommentEvent`, `ReleaseEvent`, `WatchEvent`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_comment_event.dart';import 'create_event.dart';import 'delete_event.dart';import 'discussion_event.dart';import 'fork_event.dart';import 'gollum_event.dart';import 'issue_comment_event.dart';import 'issues_event.dart';import 'member_event.dart';import 'pull_request_event.dart';import 'pull_request_review_comment_event.dart';import 'pull_request_review_event.dart';import 'push_event.dart';import 'release_event.dart';import 'watch_event.dart';/// A value that is one of: `CreateEvent`, `DeleteEvent`, `DiscussionEvent`, `IssuesEvent`, `IssueCommentEvent`, `ForkEvent`, `GollumEvent`, `MemberEvent`, `Map<String, dynamic>`, `PushEvent`, `PullRequestEvent`, `PullRequestReviewCommentEvent`, `PullRequestReviewEvent`, `CommitCommentEvent`, `ReleaseEvent`, `WatchEvent`.
 sealed class EventPayload {const EventPayload();
 
 factory EventPayload.fromJson(Map<String, dynamic> json) {   if (CreateEvent.canParse(json)) {
@@ -54,7 +54,7 @@ factory EventPayload.fromJson(Map<String, dynamic> json) {   if (CreateEvent.can
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class EventPayloadCreateEvent extends EventPayload {const EventPayloadCreateEvent(this._value);
+@immutable final class EventPayloadCreateEvent extends EventPayload {const EventPayloadCreateEvent(this._value);
 
 final CreateEvent _value;
 
@@ -64,7 +64,7 @@ final CreateEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.createEvent($_value)'; } 
  }
-final class EventPayloadDeleteEvent extends EventPayload {const EventPayloadDeleteEvent(this._value);
+@immutable final class EventPayloadDeleteEvent extends EventPayload {const EventPayloadDeleteEvent(this._value);
 
 final DeleteEvent _value;
 
@@ -74,7 +74,7 @@ final DeleteEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.deleteEvent($_value)'; } 
  }
-final class EventPayloadDiscussionEvent extends EventPayload {const EventPayloadDiscussionEvent(this._value);
+@immutable final class EventPayloadDiscussionEvent extends EventPayload {const EventPayloadDiscussionEvent(this._value);
 
 final DiscussionEvent _value;
 
@@ -84,7 +84,7 @@ final DiscussionEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.discussionEvent($_value)'; } 
  }
-final class EventPayloadIssuesEvent extends EventPayload {const EventPayloadIssuesEvent(this._value);
+@immutable final class EventPayloadIssuesEvent extends EventPayload {const EventPayloadIssuesEvent(this._value);
 
 final IssuesEvent _value;
 
@@ -94,7 +94,7 @@ final IssuesEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.issuesEvent($_value)'; } 
  }
-final class EventPayloadIssueCommentEvent extends EventPayload {const EventPayloadIssueCommentEvent(this._value);
+@immutable final class EventPayloadIssueCommentEvent extends EventPayload {const EventPayloadIssueCommentEvent(this._value);
 
 final IssueCommentEvent _value;
 
@@ -104,7 +104,7 @@ final IssueCommentEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.issueCommentEvent($_value)'; } 
  }
-final class EventPayloadForkEvent extends EventPayload {const EventPayloadForkEvent(this._value);
+@immutable final class EventPayloadForkEvent extends EventPayload {const EventPayloadForkEvent(this._value);
 
 final ForkEvent _value;
 
@@ -114,7 +114,7 @@ final ForkEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.forkEvent($_value)'; } 
  }
-final class EventPayloadGollumEvent extends EventPayload {const EventPayloadGollumEvent(this._value);
+@immutable final class EventPayloadGollumEvent extends EventPayload {const EventPayloadGollumEvent(this._value);
 
 final GollumEvent _value;
 
@@ -124,7 +124,7 @@ final GollumEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.gollumEvent($_value)'; } 
  }
-final class EventPayloadMemberEvent extends EventPayload {const EventPayloadMemberEvent(this._value);
+@immutable final class EventPayloadMemberEvent extends EventPayload {const EventPayloadMemberEvent(this._value);
 
 final MemberEvent _value;
 
@@ -134,7 +134,7 @@ final MemberEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.memberEvent($_value)'; } 
  }
-final class EventPayloadMapStringdynamic extends EventPayload {const EventPayloadMapStringdynamic(this._value);
+@immutable final class EventPayloadMapStringdynamic extends EventPayload {const EventPayloadMapStringdynamic(this._value);
 
 final Map<String,dynamic> _value;
 
@@ -144,7 +144,7 @@ final Map<String,dynamic> _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.map<String,Dynamic>($_value)'; } 
  }
-final class EventPayloadPushEvent extends EventPayload {const EventPayloadPushEvent(this._value);
+@immutable final class EventPayloadPushEvent extends EventPayload {const EventPayloadPushEvent(this._value);
 
 final PushEvent _value;
 
@@ -154,7 +154,7 @@ final PushEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.pushEvent($_value)'; } 
  }
-final class EventPayloadPullRequestEvent extends EventPayload {const EventPayloadPullRequestEvent(this._value);
+@immutable final class EventPayloadPullRequestEvent extends EventPayload {const EventPayloadPullRequestEvent(this._value);
 
 final PullRequestEvent _value;
 
@@ -164,7 +164,7 @@ final PullRequestEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.pullRequestEvent($_value)'; } 
  }
-final class EventPayloadPullRequestReviewCommentEvent extends EventPayload {const EventPayloadPullRequestReviewCommentEvent(this._value);
+@immutable final class EventPayloadPullRequestReviewCommentEvent extends EventPayload {const EventPayloadPullRequestReviewCommentEvent(this._value);
 
 final PullRequestReviewCommentEvent _value;
 
@@ -174,7 +174,7 @@ final PullRequestReviewCommentEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.pullRequestReviewCommentEvent($_value)'; } 
  }
-final class EventPayloadPullRequestReviewEvent extends EventPayload {const EventPayloadPullRequestReviewEvent(this._value);
+@immutable final class EventPayloadPullRequestReviewEvent extends EventPayload {const EventPayloadPullRequestReviewEvent(this._value);
 
 final PullRequestReviewEvent _value;
 
@@ -184,7 +184,7 @@ final PullRequestReviewEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.pullRequestReviewEvent($_value)'; } 
  }
-final class EventPayloadCommitCommentEvent extends EventPayload {const EventPayloadCommitCommentEvent(this._value);
+@immutable final class EventPayloadCommitCommentEvent extends EventPayload {const EventPayloadCommitCommentEvent(this._value);
 
 final CommitCommentEvent _value;
 
@@ -194,7 +194,7 @@ final CommitCommentEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.commitCommentEvent($_value)'; } 
  }
-final class EventPayloadReleaseEvent extends EventPayload {const EventPayloadReleaseEvent(this._value);
+@immutable final class EventPayloadReleaseEvent extends EventPayload {const EventPayloadReleaseEvent(this._value);
 
 final ReleaseEvent _value;
 
@@ -204,7 +204,7 @@ final ReleaseEvent _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'EventPayload.releaseEvent($_value)'; } 
  }
-final class EventPayloadWatchEvent extends EventPayload {const EventPayloadWatchEvent(this._value);
+@immutable final class EventPayloadWatchEvent extends EventPayload {const EventPayloadWatchEvent(this._value);
 
 final WatchEvent _value;
 
@@ -215,7 +215,7 @@ final WatchEvent _value;
 @override String toString() { return 'EventPayload.watchEvent($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class EventPayload$Unknown extends EventPayload {const EventPayload$Unknown(this._value);
+@immutable final class EventPayload$Unknown extends EventPayload {const EventPayload$Unknown(this._value);
 
 final dynamic _value;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_param33_bank_transfer_eu_bank_transfer.dart';final class InvoicePaymentMethodOptionsParam33BankTransfer {const InvoicePaymentMethodOptionsParam33BankTransfer({this.euBankTransfer, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param33_bank_transfer_eu_bank_transfer.dart';@immutable final class InvoicePaymentMethodOptionsParam33BankTransfer {const InvoicePaymentMethodOptionsParam33BankTransfer({this.euBankTransfer, this.type, });
 
 factory InvoicePaymentMethodOptionsParam33BankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam33BankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,

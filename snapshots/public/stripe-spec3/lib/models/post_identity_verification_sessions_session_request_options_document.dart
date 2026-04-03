@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'document_options2.dart';final class PostIdentityVerificationSessionsSessionRequestOptionsDocumentVariant2 {const PostIdentityVerificationSessionsSessionRequestOptionsDocumentVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'document_options2.dart';@immutable final class PostIdentityVerificationSessionsSessionRequestOptionsDocumentVariant2 {const PostIdentityVerificationSessionsSessionRequestOptionsDocumentVariant2._(this.value);
 
 factory PostIdentityVerificationSessionsSessionRequestOptionsDocumentVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

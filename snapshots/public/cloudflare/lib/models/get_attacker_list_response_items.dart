@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAttackerListResponseItems {const GetAttackerListResponseItems({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAttackerListResponseItems {const GetAttackerListResponseItems({required this.type});
 
 factory GetAttackerListResponseItems.fromJson(Map<String, dynamic> json) { return GetAttackerListResponseItems(
   type: json['type'] as String,

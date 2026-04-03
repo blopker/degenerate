@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnYamlItem {const McnYamlItem({required this.itemType, required this.yaml, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnYamlItem {const McnYamlItem({required this.itemType, required this.yaml, });
 
 factory McnYamlItem.fromJson(Map<String, dynamic> json) { return McnYamlItem(
   itemType: json['item_type'] as String,

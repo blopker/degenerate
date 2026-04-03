@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_query_type_response_result_meta_confidence_info_annotations.dart';final class RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfo {const RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_query_type_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfo {const RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetDnsSummaryByQueryTypeResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

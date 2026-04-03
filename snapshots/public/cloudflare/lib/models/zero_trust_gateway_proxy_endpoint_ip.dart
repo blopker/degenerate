@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_subdomain.dart';final class ZeroTrustGatewayProxyEndpointIp {const ZeroTrustGatewayProxyEndpointIp({this.createdAt, this.id, required this.ips, this.kind, required this.name, this.subdomain, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_subdomain.dart';@immutable final class ZeroTrustGatewayProxyEndpointIp {const ZeroTrustGatewayProxyEndpointIp({required this.ips, required this.name, this.createdAt, this.id, this.kind, this.subdomain, this.updatedAt, });
 
 factory ZeroTrustGatewayProxyEndpointIp.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointIp(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,

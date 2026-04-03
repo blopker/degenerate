@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response404_errors.dart';final class AiSearchDeleteInstancesResponse404 {const AiSearchDeleteInstancesResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response404_errors.dart';@immutable final class AiSearchDeleteInstancesResponse404 {const AiSearchDeleteInstancesResponse404({required this.errors, required this.success, });
 
 factory AiSearchDeleteInstancesResponse404.fromJson(Map<String, dynamic> json) { return AiSearchDeleteInstancesResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchDeleteInstancesResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

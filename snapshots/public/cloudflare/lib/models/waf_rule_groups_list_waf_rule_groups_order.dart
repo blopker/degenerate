@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the field used to sort returned rule groups.
-final class WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rule groups.
+@immutable final class WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder._(this.value);
 
 factory WafRuleGroupsListWafRuleGroupsOrder.fromJson(String json) { return switch (json) {
   'mode' => mode,

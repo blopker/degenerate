@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages6_tools_variant1_parameters.dart';final class Messages6ToolsVariant1 {const Messages6ToolsVariant1({required this.description, required this.name, required this.parameters, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages6_tools_variant1_parameters.dart';@immutable final class Messages6ToolsVariant1 {const Messages6ToolsVariant1({required this.description, required this.name, required this.parameters, });
 
 factory Messages6ToolsVariant1.fromJson(Map<String, dynamic> json) { return Messages6ToolsVariant1(
   description: json['description'] as String,

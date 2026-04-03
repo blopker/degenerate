@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A citation to a file.
-final class FileCitationBody {const FileCitationBody({this.type = 'file_citation', required this.fileId, required this.index, required this.filename, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation to a file.
+@immutable final class FileCitationBody {const FileCitationBody({required this.fileId, required this.index, required this.filename, this.type = 'file_citation', });
 
 factory FileCitationBody.fromJson(Map<String, dynamic> json) { return FileCitationBody(
   type: json['type'] as String,

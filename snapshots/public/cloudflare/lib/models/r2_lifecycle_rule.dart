@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule_abort_multipart_uploads_transition.dart';import 'r2_lifecycle_rule_conditions.dart';import 'r2_lifecycle_rule_delete_objects_transition.dart';import 'r2_lifecycle_storage_transition.dart';final class R2LifecycleRule {const R2LifecycleRule({this.abortMultipartUploadsTransition, required this.conditions, this.deleteObjectsTransition, required this.enabled, required this.id, this.storageClassTransitions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule_abort_multipart_uploads_transition.dart';import 'r2_lifecycle_rule_conditions.dart';import 'r2_lifecycle_rule_delete_objects_transition.dart';import 'r2_lifecycle_storage_transition.dart';@immutable final class R2LifecycleRule {const R2LifecycleRule({required this.conditions, required this.enabled, required this.id, this.abortMultipartUploadsTransition, this.deleteObjectsTransition, this.storageClassTransitions, });
 
 factory R2LifecycleRule.fromJson(Map<String, dynamic> json) { return R2LifecycleRule(
   abortMultipartUploadsTransition: json['abortMultipartUploadsTransition'] != null ? R2LifecycleRuleAbortMultipartUploadsTransition.fromJson(json['abortMultipartUploadsTransition'] as Map<String, dynamic>) : null,

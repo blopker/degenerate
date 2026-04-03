@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_polish_value.dart';/// Apply options from the Polish feature of the Cloudflare Speed app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_polish_value.dart';/// Apply options from the Polish feature of the Cloudflare Speed app.
 /// 
-final class ZonesPolishId {const ZonesPolishId._(this.value);
+@immutable final class ZonesPolishId {const ZonesPolishId._(this.value);
 
 factory ZonesPolishId.fromJson(String json) { return switch (json) {
   'polish' => polish,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesPolishId($value)'; } 
  }
-final class ZonesPolish {const ZonesPolish({this.id, this.value, });
+@immutable final class ZonesPolish {const ZonesPolish({this.id, this.value, });
 
 factory ZonesPolish.fromJson(Map<String, dynamic> json) { return ZonesPolish(
   id: json['id'] != null ? ZonesPolishId.fromJson(json['id'] as String) : null,

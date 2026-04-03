@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'deleted_invoice.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_setting_quote_setting.dart';import 'quote_application.dart';import 'quote_customer.dart';import 'quote_default_tax_rates.dart';import 'quote_discounts.dart';import 'quote_invoice.dart';import 'quote_line_items.dart';import 'quote_on_behalf_of.dart';import 'quote_subscription.dart';import 'quote_subscription_schedule.dart';import 'quote_test_clock.dart';import 'quotes_resource_automatic_tax.dart';import 'quotes_resource_computed.dart';import 'quotes_resource_from_quote.dart';import 'quotes_resource_status_transitions.dart';import 'quotes_resource_subscription_data_subscription_data.dart';import 'quotes_resource_total_details.dart';import 'quotes_resource_transfer_data.dart';import 'subscription.dart';import 'subscription_schedule.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay invoices at the end of the subscription cycle or on finalization using the default payment method attached to the subscription or customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-final class QuoteCollectionMethod {const QuoteCollectionMethod._(this.value);
+@immutable final class QuoteCollectionMethod {const QuoteCollectionMethod._(this.value);
 
 factory QuoteCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'QuoteCollectionMethod($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class QuoteObject {const QuoteObject._(this.value);
+@immutable final class QuoteObject {const QuoteObject._(this.value);
 
 factory QuoteObject.fromJson(String json) { return switch (json) {
   'quote' => quote,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'QuoteObject($value)'; } 
  }
 /// The status of the quote.
-final class QuoteStatus {const QuoteStatus._(this.value);
+@immutable final class QuoteStatus {const QuoteStatus._(this.value);
 
 factory QuoteStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Quote is a way to model prices that you'd like to provide to a customer.
 /// Once accepted, it will automatically create an invoice, subscription or subscription schedule.
-final class Quote {const Quote({required this.amountSubtotal, required this.amountTotal, this.application, this.applicationFeeAmount, this.applicationFeePercent, required this.automaticTax, required this.collectionMethod, required this.computed, required this.created, this.currency, this.customer, this.customerAccount, this.defaultTaxRates, this.description, required this.discounts, required this.expiresAt, this.footer, this.fromQuote, this.header, required this.id, this.invoice, required this.invoiceSettings, this.lineItems, required this.livemode, required this.metadata, this.number, required this.object, this.onBehalfOf, required this.status, required this.statusTransitions, this.subscription, required this.subscriptionData, this.subscriptionSchedule, this.testClock, required this.totalDetails, this.transferData, });
+@immutable final class Quote {const Quote({required this.statusTransitions, required this.amountTotal, required this.automaticTax, required this.collectionMethod, required this.computed, required this.created, required this.amountSubtotal, required this.discounts, required this.expiresAt, required this.object, required this.metadata, required this.subscriptionData, required this.invoiceSettings, required this.id, required this.status, required this.totalDetails, required this.livemode, this.footer, this.header, this.description, this.invoice, this.defaultTaxRates, this.lineItems, this.transferData, this.customer, this.number, this.currency, this.onBehalfOf, this.applicationFeePercent, this.customerAccount, this.subscription, this.applicationFeeAmount, this.subscriptionSchedule, this.testClock, this.application, this.fromQuote, });
 
 factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),

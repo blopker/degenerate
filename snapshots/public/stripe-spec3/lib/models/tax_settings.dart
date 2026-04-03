@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_settings_defaults.dart';import 'tax_product_resource_tax_settings_head_office.dart';import 'tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxSettingsObject {const TaxSettingsObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_settings_defaults.dart';import 'tax_product_resource_tax_settings_head_office.dart';import 'tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TaxSettingsObject {const TaxSettingsObject._(this.value);
 
 factory TaxSettingsObject.fromJson(String json) { return switch (json) {
   'tax.settings' => taxSettings,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxSettingsObject($value)'; } 
  }
 /// The status of the Tax `Settings`.
-final class TaxSettingsStatus {const TaxSettingsStatus._(this.value);
+@immutable final class TaxSettingsStatus {const TaxSettingsStatus._(this.value);
 
 factory TaxSettingsStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 /// You can use Tax `Settings` to manage configurations used by Stripe Tax calculations.
 /// 
 /// Related guide: [Using the Settings API](https://docs.stripe.com/tax/settings-api)
-final class TaxSettings {const TaxSettings({required this.defaults, this.headOffice, required this.livemode, required this.object, required this.status, required this.statusDetails, });
+@immutable final class TaxSettings {const TaxSettings({required this.defaults, required this.livemode, required this.object, required this.status, required this.statusDetails, this.headOffice, });
 
 factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
   defaults: TaxProductResourceTaxSettingsDefaults.fromJson(json['defaults'] as Map<String, dynamic>),

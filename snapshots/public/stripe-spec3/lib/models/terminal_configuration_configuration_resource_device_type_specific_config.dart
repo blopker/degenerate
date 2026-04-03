@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
-final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});
+@immutable final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});
 
 factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
   splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

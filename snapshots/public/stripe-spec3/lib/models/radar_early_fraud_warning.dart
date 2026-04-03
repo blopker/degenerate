@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'radar_early_fraud_warning_charge.dart';import 'radar_early_fraud_warning_payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject._(this.value);
+@immutable final class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject._(this.value);
 
 factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
   'radar.early_fraud_warning' => radarEarlyFraudWarning,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// charge may be fraudulent.
 /// 
 /// Related guide: [Early fraud warnings](https://docs.stripe.com/disputes/measuring#early-fraud-warnings)
-final class RadarEarlyFraudWarning {const RadarEarlyFraudWarning({required this.actionable, required this.charge, required this.created, required this.fraudType, required this.id, required this.livemode, required this.object, this.paymentIntent, });
+@immutable final class RadarEarlyFraudWarning {const RadarEarlyFraudWarning({required this.actionable, required this.charge, required this.created, required this.fraudType, required this.id, required this.livemode, required this.object, this.paymentIntent, });
 
 factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return RadarEarlyFraudWarning(
   actionable: json['actionable'] as bool,

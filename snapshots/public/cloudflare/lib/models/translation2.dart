@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Translation2 {const Translation2({this.translatedText});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Translation2 {const Translation2({this.translatedText});
 
 factory Translation2.fromJson(Map<String, dynamic> json) { return Translation2(
   translatedText: json['translated_text'] as String?,

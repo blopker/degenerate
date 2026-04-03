@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventCreateBulkRequestDataIndicators {const PostEventCreateBulkRequestDataIndicators({required this.indicatorType, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventCreateBulkRequestDataIndicators {const PostEventCreateBulkRequestDataIndicators({required this.indicatorType, required this.value, });
 
 factory PostEventCreateBulkRequestDataIndicators.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkRequestDataIndicators(
   indicatorType: json['indicatorType'] as String,

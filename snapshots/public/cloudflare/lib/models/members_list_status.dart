@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MembersListStatus {const MembersListStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MembersListStatus {const MembersListStatus._(this.value);
 
 factory MembersListStatus.fromJson(String json) { return switch (json) {
   'active' => active,

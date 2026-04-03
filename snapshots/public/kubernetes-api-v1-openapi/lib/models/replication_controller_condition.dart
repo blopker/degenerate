@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// ReplicationControllerCondition describes the state of a replication controller at a certain point.
-final class ReplicationControllerCondition {const ReplicationControllerCondition({this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ReplicationControllerCondition describes the state of a replication controller at a certain point.
+@immutable final class ReplicationControllerCondition {const ReplicationControllerCondition({this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
 
 factory ReplicationControllerCondition.fromJson(Map<String, dynamic> json) { return ReplicationControllerCondition(
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,

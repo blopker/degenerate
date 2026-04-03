@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_aggregates.dart';import 'workers_observability_query_results_compare_series.dart';final class WorkersObservabilityQueryResultsCompare {const WorkersObservabilityQueryResultsCompare({required this.aggregates, this.alias, required this.calculation, required this.series, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_aggregates.dart';import 'workers_observability_query_results_compare_series.dart';@immutable final class WorkersObservabilityQueryResultsCompare {const WorkersObservabilityQueryResultsCompare({required this.aggregates, required this.calculation, required this.series, this.alias, });
 
 factory WorkersObservabilityQueryResultsCompare.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompare(
   aggregates: (json['aggregates'] as List<dynamic>).map((e) => WorkersObservabilityQueryResultsCompareAggregates.fromJson(e as Map<String, dynamic>)).toList(),

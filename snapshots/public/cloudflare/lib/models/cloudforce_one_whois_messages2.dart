@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudforceOneWhoisMessages2 {const CloudforceOneWhoisMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneWhoisMessages2 {const CloudforceOneWhoisMessages2({required this.code, required this.message, });
 
 factory CloudforceOneWhoisMessages2.fromJson(Map<String, dynamic> json) { return CloudforceOneWhoisMessages2(
   code: (json['code'] as num).toInt(),

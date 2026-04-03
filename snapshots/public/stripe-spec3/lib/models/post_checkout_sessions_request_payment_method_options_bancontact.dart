@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsBancontact {const PostCheckoutSessionsRequestPaymentMethodOptionsBancontact({this.setupFutureUsage});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBancontact {const PostCheckoutSessionsRequestPaymentMethodOptionsBancontact({this.setupFutureUsage});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsBancontact(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsBancontactSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

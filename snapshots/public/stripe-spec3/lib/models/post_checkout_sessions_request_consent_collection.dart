@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_consent_collection_payment_method_reuse_agreement.dart';final class PostCheckoutSessionsRequestConsentCollectionPromotions {const PostCheckoutSessionsRequestConsentCollectionPromotions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_consent_collection_payment_method_reuse_agreement.dart';@immutable final class PostCheckoutSessionsRequestConsentCollectionPromotions {const PostCheckoutSessionsRequestConsentCollectionPromotions._(this.value);
 
 factory PostCheckoutSessionsRequestConsentCollectionPromotions.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestConsentCollectionPromotions($value)'; } 
  }
-final class PostCheckoutSessionsRequestConsentCollectionTermsOfService {const PostCheckoutSessionsRequestConsentCollectionTermsOfService._(this.value);
+@immutable final class PostCheckoutSessionsRequestConsentCollectionTermsOfService {const PostCheckoutSessionsRequestConsentCollectionTermsOfService._(this.value);
 
 factory PostCheckoutSessionsRequestConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestConsentCollectionTermsOfService($value)'; } 
  }
 /// Configure fields for the Checkout Session to gather active consent from customers.
-final class PostCheckoutSessionsRequestConsentCollection {const PostCheckoutSessionsRequestConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
+@immutable final class PostCheckoutSessionsRequestConsentCollection {const PostCheckoutSessionsRequestConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PostCheckoutSessionsRequestConsentCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestConsentCollection(
   paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,

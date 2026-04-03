@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListAbuseReportsResponseResultInfo {const ListAbuseReportsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListAbuseReportsResponseResultInfo {const ListAbuseReportsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });
 
 factory ListAbuseReportsResponseResultInfo.fromJson(Map<String, dynamic> json) { return ListAbuseReportsResponseResultInfo(
   count: (json['count'] as num).toDouble(),

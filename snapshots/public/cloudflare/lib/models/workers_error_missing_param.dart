@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that a required URL parameter is missing.
-final class WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that a required URL parameter is missing.
+@immutable final class WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode._(this.value);
 
 factory WorkersErrorMissingParamCode.fromJson(int json) { return switch (json) {
   10003 => $10003,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorMissingParamCode($value)'; } 
  }
-final class WorkersErrorMissingParam {const WorkersErrorMissingParam({required this.code, required this.message, });
+@immutable final class WorkersErrorMissingParam {const WorkersErrorMissingParam({required this.code, required this.message, });
 
 factory WorkersErrorMissingParam.fromJson(Map<String, dynamic> json) { return WorkersErrorMissingParam(
   code: WorkersErrorMissingParamCode.fromJson((json['code'] as num).toInt()),

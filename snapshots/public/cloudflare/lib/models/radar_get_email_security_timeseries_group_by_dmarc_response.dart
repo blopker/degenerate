@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_security_timeseries_group_by_dmarc_response_result.dart';final class RadarGetEmailSecurityTimeseriesGroupByDmarcResponse {const RadarGetEmailSecurityTimeseriesGroupByDmarcResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_dmarc_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcResponse {const RadarGetEmailSecurityTimeseriesGroupByDmarcResponse({required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByDmarcResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByDmarcResponse(
   result: RadarGetEmailSecurityTimeseriesGroupByDmarcResponseResult.fromJson(json['result'] as Map<String, dynamic>),

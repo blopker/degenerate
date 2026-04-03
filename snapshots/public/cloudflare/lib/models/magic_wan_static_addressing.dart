@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_cidr.dart';import 'magic_ip_address.dart';/// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
-final class MagicWanStaticAddressing {const MagicWanStaticAddressing({required this.address, required this.gatewayAddress, this.secondaryAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_cidr.dart';import 'magic_ip_address.dart';/// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
+@immutable final class MagicWanStaticAddressing {const MagicWanStaticAddressing({required this.address, required this.gatewayAddress, this.secondaryAddress, });
 
 factory MagicWanStaticAddressing.fromJson(Map<String, dynamic> json) { return MagicWanStaticAddressing(
   address: MagicCidr.fromJson(json['address'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class GelatoSessionDocumentOptionsAllowedTypes {const GelatoSessionDocumentOptionsAllowedTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GelatoSessionDocumentOptionsAllowedTypes {const GelatoSessionDocumentOptionsAllowedTypes._(this.value);
 
 factory GelatoSessionDocumentOptionsAllowedTypes.fromJson(String json) { return switch (json) {
   'driving_license' => drivingLicense,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSessionDocumentOptionsAllowedTypes($value)'; } 
  }
 /// 
-final class GelatoSessionDocumentOptions {const GelatoSessionDocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
+@immutable final class GelatoSessionDocumentOptions {const GelatoSessionDocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
 factory GelatoSessionDocumentOptions.fromJson(Map<String, dynamic> json) { return GelatoSessionDocumentOptions(
   allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => GelatoSessionDocumentOptionsAllowedTypes.fromJson(e as String)).toList(),

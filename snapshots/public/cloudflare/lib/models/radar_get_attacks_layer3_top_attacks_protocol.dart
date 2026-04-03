@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol._(this.value);
 
 factory RadarGetAttacksLayer3TopAttacksProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,

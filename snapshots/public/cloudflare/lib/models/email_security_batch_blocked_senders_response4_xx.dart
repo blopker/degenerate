@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';final class EmailSecurityBatchBlockedSendersResponse4Xx {const EmailSecurityBatchBlockedSendersResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';@immutable final class EmailSecurityBatchBlockedSendersResponse4Xx {const EmailSecurityBatchBlockedSendersResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory EmailSecurityBatchBlockedSendersResponse4Xx.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

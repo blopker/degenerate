@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_code_interpreter_tool_param.dart';import 'code_interpreter_tool_container.dart';/// A tool that runs Python code to help generate a response to a prompt.
 /// 
-final class CodeInterpreterTool {const CodeInterpreterTool({required this.type, required this.container, });
+@immutable final class CodeInterpreterTool {const CodeInterpreterTool({required this.type, required this.container, });
 
 factory CodeInterpreterTool.fromJson(Map<String, dynamic> json) { return CodeInterpreterTool(
   type: json['type'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_content_list_action.dart';import 'web3_content_list_entry.dart';final class Web3ContentListUpdateRequest {const Web3ContentListUpdateRequest({required this.action, required this.entries, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_content_list_action.dart';import 'web3_content_list_entry.dart';@immutable final class Web3ContentListUpdateRequest {const Web3ContentListUpdateRequest({required this.action, required this.entries, });
 
 factory Web3ContentListUpdateRequest.fromJson(Map<String, dynamic> json) { return Web3ContentListUpdateRequest(
   action: Web3ContentListAction.fromJson(json['action'] as String),

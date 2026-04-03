@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestBrandingSettingsLogoType {const PostCheckoutSessionsRequestBrandingSettingsLogoType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestBrandingSettingsLogoType {const PostCheckoutSessionsRequestBrandingSettingsLogoType._(this.value);
 
 factory PostCheckoutSessionsRequestBrandingSettingsLogoType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsLogoType($value)'; } 
  }
-final class PostCheckoutSessionsRequestBrandingSettingsLogo {const PostCheckoutSessionsRequestBrandingSettingsLogo({this.file, required this.type, this.url, });
+@immutable final class PostCheckoutSessionsRequestBrandingSettingsLogo {const PostCheckoutSessionsRequestBrandingSettingsLogo({required this.type, this.file, this.url, });
 
 factory PostCheckoutSessionsRequestBrandingSettingsLogo.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettingsLogo(
   file: json['file'] as String?,

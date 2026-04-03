@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_beta.dart';import 'zero_trust_gateway_categories_components_schemas_name.dart';import 'zero_trust_gateway_class.dart';import 'zero_trust_gateway_components_schemas_description.dart';import 'zero_trust_gateway_id.dart';final class ZeroTrustGatewaySubcategory {const ZeroTrustGatewaySubcategory({this.beta, this.$class, this.description, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_beta.dart';import 'zero_trust_gateway_categories_components_schemas_name.dart';import 'zero_trust_gateway_class.dart';import 'zero_trust_gateway_components_schemas_description.dart';import 'zero_trust_gateway_id.dart';@immutable final class ZeroTrustGatewaySubcategory {const ZeroTrustGatewaySubcategory({this.beta, this.$class, this.description, this.id, this.name, });
 
 factory ZeroTrustGatewaySubcategory.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySubcategory(
   beta: json['beta'] != null ? ZeroTrustGatewayBeta.fromJson(json['beta'] as bool) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateMultiUse {const MandateMultiUse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateMultiUse {const MandateMultiUse();
 
 factory MandateMultiUse.fromJson(Map<String, dynamic> json) { return MandateMultiUse(
 

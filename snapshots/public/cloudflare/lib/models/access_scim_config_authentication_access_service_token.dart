@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The authentication scheme to use when making SCIM requests to this application.
-final class AccessScimConfigAuthenticationAccessServiceTokenScheme {const AccessScimConfigAuthenticationAccessServiceTokenScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
+@immutable final class AccessScimConfigAuthenticationAccessServiceTokenScheme {const AccessScimConfigAuthenticationAccessServiceTokenScheme._(this.value);
 
 factory AccessScimConfigAuthenticationAccessServiceTokenScheme.fromJson(String json) { return switch (json) {
   'access_service_token' => accessServiceToken,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessScimConfigAuthenticationAccessServiceTokenScheme($value)'; } 
  }
 /// Attributes for configuring Access Service Token authentication scheme for SCIM provisioning to an application.
-final class AccessScimConfigAuthenticationAccessServiceToken {const AccessScimConfigAuthenticationAccessServiceToken({required this.clientId, required this.clientSecret, required this.scheme, });
+@immutable final class AccessScimConfigAuthenticationAccessServiceToken {const AccessScimConfigAuthenticationAccessServiceToken({required this.clientId, required this.clientSecret, required this.scheme, });
 
 factory AccessScimConfigAuthenticationAccessServiceToken.fromJson(Map<String, dynamic> json) { return AccessScimConfigAuthenticationAccessServiceToken(
   clientId: json['client_id'] as String,

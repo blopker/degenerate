@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_r2_data_catalog_table_public.dart';import 'cloudflare_pipelines_r2_table_public.dart';import 'sinks_response_result_config.dart';/// Specifies the type of sink.
-final class SinksResponseResultType {const SinksResponseResultType._(this.value);
+@immutable final class SinksResponseResultType {const SinksResponseResultType._(this.value);
 
 factory SinksResponseResultType.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SinksResponseResultType($value)'; } 
  }
-final class SinksResponseResult {const SinksResponseResult({this.config, required this.createdAt, this.format, required this.id, required this.modifiedAt, required this.name, this.schema, required this.type, });
+@immutable final class SinksResponseResult {const SinksResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.type, this.config, this.format, this.schema, });
 
 factory SinksResponseResult.fromJson(Map<String, dynamic> json) { return SinksResponseResult(
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2TablePublic.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTablePublic.fromJson(v as Map<String, dynamic>),) : null,

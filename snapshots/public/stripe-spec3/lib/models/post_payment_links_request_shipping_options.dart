@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestShippingOptions {const PostPaymentLinksRequestShippingOptions({this.shippingRate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestShippingOptions {const PostPaymentLinksRequestShippingOptions({this.shippingRate});
 
 factory PostPaymentLinksRequestShippingOptions.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestShippingOptions(
   shippingRate: json['shipping_rate'] as String?,

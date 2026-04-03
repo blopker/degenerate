@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Parameters required for the redirect flow. Required if the source is authenticated by a redirect (`flow` is `redirect`).
-final class PostSourcesRequestRedirect {const PostSourcesRequestRedirect({required this.returnUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters required for the redirect flow. Required if the source is authenticated by a redirect (`flow` is `redirect`).
+@immutable final class PostSourcesRequestRedirect {const PostSourcesRequestRedirect({required this.returnUrl});
 
 factory PostSourcesRequestRedirect.fromJson(Map<String, dynamic> json) { return PostSourcesRequestRedirect(
   returnUrl: json['return_url'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The metadata of the SCIM resource.
-final class AccessMeta {const AccessMeta({this.created, this.lastModified, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The metadata of the SCIM resource.
+@immutable final class AccessMeta {const AccessMeta({this.created, this.lastModified, });
 
 factory AccessMeta.fromJson(Map<String, dynamic> json) { return AccessMeta(
   created: json['created'] != null ? DateTime.parse(json['created'] as String) : null,

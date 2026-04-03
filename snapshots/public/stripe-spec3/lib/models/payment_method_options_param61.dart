@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam61SetupFutureUsage {const PaymentMethodOptionsParam61SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam61SetupFutureUsage {const PaymentMethodOptionsParam61SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam61SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam61SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam61 {const PaymentMethodOptionsParam61({this.expiresAfterDays, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam61 {const PaymentMethodOptionsParam61({this.expiresAfterDays, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam61.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam61(
   expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,

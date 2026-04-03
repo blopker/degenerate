@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Algorithm
-final class ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Algorithm
+@immutable final class ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg._(this.value);
 
 factory ShieldCredentialsJwtKeyRsaAlg.fromJson(String json) { return switch (json) {
   'RS256' => rs256,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldCredentialsJwtKeyRsaAlg($value)'; } 
  }
 /// Key Type
-final class ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty._(this.value);
+@immutable final class ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty._(this.value);
 
 factory ShieldCredentialsJwtKeyRsaKty.fromJson(String json) { return switch (json) {
   'RSA' => rsa,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldCredentialsJwtKeyRsaKty($value)'; } 
  }
 /// JSON representation of an RSA key.
-final class ShieldCredentialsJwtKeyRsa {const ShieldCredentialsJwtKeyRsa({required this.kid, required this.alg, required this.e, required this.kty, required this.n, });
+@immutable final class ShieldCredentialsJwtKeyRsa {const ShieldCredentialsJwtKeyRsa({required this.kid, required this.alg, required this.e, required this.kty, required this.n, });
 
 factory ShieldCredentialsJwtKeyRsa.fromJson(Map<String, dynamic> json) { return ShieldCredentialsJwtKeyRsa(
   kid: json['kid'] as String,

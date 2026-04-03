@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.speech_started`.
-final class RealtimeServerEventInputAudioBufferSpeechStartedType {const RealtimeServerEventInputAudioBufferSpeechStartedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_started`.
+@immutable final class RealtimeServerEventInputAudioBufferSpeechStartedType {const RealtimeServerEventInputAudioBufferSpeechStartedType._(this.value);
 
 factory RealtimeServerEventInputAudioBufferSpeechStartedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.speech_started' => inputAudioBufferSpeechStarted,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `input_audio_buffer.speech_stopped` event (unless the client manually commits
 /// the audio buffer during VAD activation).
 /// 
-final class RealtimeServerEventInputAudioBufferSpeechStarted {const RealtimeServerEventInputAudioBufferSpeechStarted({required this.eventId, required this.type, required this.audioStartMs, required this.itemId, });
+@immutable final class RealtimeServerEventInputAudioBufferSpeechStarted {const RealtimeServerEventInputAudioBufferSpeechStarted({required this.eventId, required this.type, required this.audioStartMs, required this.itemId, });
 
 factory RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStarted(
   eventId: json['event_id'] as String,

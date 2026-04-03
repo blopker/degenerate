@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `conversation.item.deleted`.
-final class RealtimeServerEventConversationItemDeletedType {const RealtimeServerEventConversationItemDeletedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.deleted`.
+@immutable final class RealtimeServerEventConversationItemDeletedType {const RealtimeServerEventConversationItemDeletedType._(this.value);
 
 factory RealtimeServerEventConversationItemDeletedType.fromJson(String json) { return switch (json) {
   'conversation.item.deleted' => conversationItemDeleted,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `conversation.item.delete` event. This event is used to synchronize the
 /// server's understanding of the conversation history with the client's view.
 /// 
-final class RealtimeServerEventConversationItemDeleted {const RealtimeServerEventConversationItemDeleted({required this.eventId, required this.type, required this.itemId, });
+@immutable final class RealtimeServerEventConversationItemDeleted {const RealtimeServerEventConversationItemDeleted({required this.eventId, required this.type, required this.itemId, });
 
 factory RealtimeServerEventConversationItemDeleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemDeleted(
   eventId: json['event_id'] as String,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status code to use for the URL redirect. 301 is a permanent
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status code to use for the URL redirect. 301 is a permanent
 /// redirect. 302 is a temporary redirect.
 /// 
-final class ZonesForwardingUrlValueStatusCode {const ZonesForwardingUrlValueStatusCode._(this.value);
+@immutable final class ZonesForwardingUrlValueStatusCode {const ZonesForwardingUrlValueStatusCode._(this.value);
 
 factory ZonesForwardingUrlValueStatusCode.fromJson(int json) { return switch (json) {
   301 => $301,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesForwardingUrlValueStatusCode($value)'; } 
  }
-final class ZonesForwardingUrlValue {const ZonesForwardingUrlValue({this.statusCode, this.url, });
+@immutable final class ZonesForwardingUrlValue {const ZonesForwardingUrlValue({this.statusCode, this.url, });
 
 factory ZonesForwardingUrlValue.fromJson(Map<String, dynamic> json) { return ZonesForwardingUrlValue(
   statusCode: json['status_code'] != null ? ZonesForwardingUrlValueStatusCode.fromJson((json['status_code'] as num).toInt()) : null,

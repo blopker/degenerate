@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'reasoning_effort.dart';/// A summary of the reasoning performed by the model. This can be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// A summary of the reasoning performed by the model. This can be
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
 /// `concise` is supported for `computer-use-preview` models and all reasoning models after `gpt-5`.
 /// 
-final class ReasoningSummary {const ReasoningSummary._(this.value);
+@immutable final class ReasoningSummary {const ReasoningSummary._(this.value);
 
 factory ReasoningSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
-final class ReasoningGenerateSummary {const ReasoningGenerateSummary._(this.value);
+@immutable final class ReasoningGenerateSummary {const ReasoningGenerateSummary._(this.value);
 
 factory ReasoningGenerateSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Configuration options for
 /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
 /// 
-final class Reasoning {const Reasoning({this.effort, this.summary, this.generateSummary, });
+@immutable final class Reasoning {const Reasoning({this.effort, this.summary, this.generateSummary, });
 
 factory Reasoning.fromJson(Map<String, dynamic> json) { return Reasoning(
   effort: json['effort'] != null ? ReasoningEffort.fromJson(json['effort'] as String) : null,

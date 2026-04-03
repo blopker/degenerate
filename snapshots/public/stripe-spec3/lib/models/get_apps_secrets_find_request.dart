@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAppsSecretsFindRequest {const GetAppsSecretsFindRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAppsSecretsFindRequest {const GetAppsSecretsFindRequest();
 
 factory GetAppsSecretsFindRequest.fromJson(Map<String, dynamic> json) { return GetAppsSecretsFindRequest(
 

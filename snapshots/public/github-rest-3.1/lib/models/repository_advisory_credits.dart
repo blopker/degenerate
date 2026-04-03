@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'security_advisory_credit_types.dart';final class RepositoryAdvisoryCredits {const RepositoryAdvisoryCredits({this.login, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_credit_types.dart';@immutable final class RepositoryAdvisoryCredits {const RepositoryAdvisoryCredits({this.login, this.type, });
 
 factory RepositoryAdvisoryCredits.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCredits(
   login: json['login'] as String?,

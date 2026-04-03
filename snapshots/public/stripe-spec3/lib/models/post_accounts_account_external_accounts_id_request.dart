@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_external_accounts_id_request_documents.dart';import 'post_accounts_account_external_accounts_id_request_metadata.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
-final class PostAccountsAccountExternalAccountsIdRequestAccountHolderType {const PostAccountsAccountExternalAccountsIdRequestAccountHolderType._(this.value);
+@immutable final class PostAccountsAccountExternalAccountsIdRequestAccountHolderType {const PostAccountsAccountExternalAccountsIdRequestAccountHolderType._(this.value);
 
 factory PostAccountsAccountExternalAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAccountsAccountExternalAccountsIdRequestAccountHolderType($value)'; } 
  }
 /// The bank account type. This can only be `checking` or `savings` in most countries. In Japan, this can only be `futsu` or `toza`.
-final class PostAccountsAccountExternalAccountsIdRequestAccountType {const PostAccountsAccountExternalAccountsIdRequestAccountType._(this.value);
+@immutable final class PostAccountsAccountExternalAccountsIdRequestAccountType {const PostAccountsAccountExternalAccountsIdRequestAccountType._(this.value);
 
 factory PostAccountsAccountExternalAccountsIdRequestAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountExternalAccountsIdRequestAccountType($value)'; } 
  }
-final class PostAccountsAccountExternalAccountsIdRequest {const PostAccountsAccountExternalAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
+@immutable final class PostAccountsAccountExternalAccountsIdRequest {const PostAccountsAccountExternalAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
 
 factory PostAccountsAccountExternalAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountExternalAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Returned by Get All Presets route
-final class RealtimekitPresetListItem {const RealtimekitPresetListItem({this.createdAt, this.id, this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned by Get All Presets route
+@immutable final class RealtimekitPresetListItem {const RealtimekitPresetListItem({this.createdAt, this.id, this.name, this.updatedAt, });
 
 factory RealtimekitPresetListItem.fromJson(Map<String, dynamic> json) { return RealtimekitPresetListItem(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

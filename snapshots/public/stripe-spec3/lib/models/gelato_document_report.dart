@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'gelato_data_document_report_date_of_birth.dart';import 'gelato_data_document_report_expiration_date.dart';import 'gelato_data_document_report_issued_date.dart';import 'gelato_document_report_error.dart';/// Sex of the person in the document.
-final class GelatoDocumentReportSex {const GelatoDocumentReportSex._(this.value);
+@immutable final class GelatoDocumentReportSex {const GelatoDocumentReportSex._(this.value);
 
 factory GelatoDocumentReportSex.fromJson(String json) { return switch (json) {
   '[redacted]' => redacted,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoDocumentReportSex($value)'; } 
  }
 /// Status of this `document` check.
-final class GelatoDocumentReportStatus {const GelatoDocumentReportStatus._(this.value);
+@immutable final class GelatoDocumentReportStatus {const GelatoDocumentReportStatus._(this.value);
 
 factory GelatoDocumentReportStatus.fromJson(String json) { return switch (json) {
   'unverified' => unverified,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoDocumentReportStatus($value)'; } 
  }
 /// Type of the document.
-final class GelatoDocumentReportType {const GelatoDocumentReportType._(this.value);
+@immutable final class GelatoDocumentReportType {const GelatoDocumentReportType._(this.value);
 
 factory GelatoDocumentReportType.fromJson(String json) { return switch (json) {
   'driving_license' => drivingLicense,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoDocumentReportType($value)'; } 
  }
 /// Result from a document check
-final class GelatoDocumentReport {const GelatoDocumentReport({this.address, this.dob, this.error, this.expirationDate, this.files, this.firstName, this.issuedDate, this.issuingCountry, this.lastName, this.number, this.sex, required this.status, this.type, this.unparsedPlaceOfBirth, this.unparsedSex, });
+@immutable final class GelatoDocumentReport {const GelatoDocumentReport({required this.status, this.address, this.dob, this.error, this.expirationDate, this.files, this.firstName, this.issuedDate, this.issuingCountry, this.lastName, this.number, this.sex, this.type, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoDocumentReport.fromJson(Map<String, dynamic> json) { return GelatoDocumentReport(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,

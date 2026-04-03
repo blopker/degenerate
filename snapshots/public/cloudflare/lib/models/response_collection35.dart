@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection35_result_info.dart';import 'secrets_store_messages2.dart';final class ResponseCollection35 {const ResponseCollection35({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection35_result_info.dart';import 'secrets_store_messages2.dart';@immutable final class ResponseCollection35 {const ResponseCollection35({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection35.fromJson(Map<String, dynamic> json) { return ResponseCollection35(
   errors: (json['errors'] as List<dynamic>).map((e) => SecretsStoreMessages2.fromJson(e as Map<String, dynamic>)).toList(),

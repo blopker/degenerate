@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteTaxIdsIdRequest {const DeleteTaxIdsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTaxIdsIdRequest {const DeleteTaxIdsIdRequest();
 
 factory DeleteTaxIdsIdRequest.fromJson(Map<String, dynamic> json) { return DeleteTaxIdsIdRequest(
 

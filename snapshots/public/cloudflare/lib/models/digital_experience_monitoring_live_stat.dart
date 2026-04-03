@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_unique_devices_total.dart';final class DigitalExperienceMonitoringLiveStat {const DigitalExperienceMonitoringLiveStat({this.uniqueDevicesTotal, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_unique_devices_total.dart';@immutable final class DigitalExperienceMonitoringLiveStat {const DigitalExperienceMonitoringLiveStat({this.uniqueDevicesTotal, this.value, });
 
 factory DigitalExperienceMonitoringLiveStat.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringLiveStat(
   uniqueDevicesTotal: json['uniqueDevicesTotal'] != null ? DigitalExperienceMonitoringUniqueDevicesTotal.fromJson(json['uniqueDevicesTotal'] as num) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Cellular2 {const Cellular2({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Cellular2 {const Cellular2({required this.enabled});
 
 factory Cellular2.fromJson(Map<String, dynamic> json) { return Cellular2(
   enabled: json['enabled'] as bool,

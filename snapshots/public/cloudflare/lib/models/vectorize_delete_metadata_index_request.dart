@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VectorizeDeleteMetadataIndexRequest {const VectorizeDeleteMetadataIndexRequest({required this.propertyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorizeDeleteMetadataIndexRequest {const VectorizeDeleteMetadataIndexRequest({required this.propertyName});
 
 factory VectorizeDeleteMetadataIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeDeleteMetadataIndexRequest(
   propertyName: json['propertyName'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class ImagesImageBasicUpload {const ImagesImageBasicUpload({this.creator, this.file, this.id, this.metadata, this.requireSignedUrLs = false, this.url, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageBasicUpload {const ImagesImageBasicUpload({this.creator, this.file, this.id, this.metadata, this.requireSignedUrLs = false, this.url, });
 
 factory ImagesImageBasicUpload.fromJson(Map<String, dynamic> json) { return ImagesImageBasicUpload(
   creator: json['creator'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// This hash contains whether the pricing table is enabled.
-final class CustomerSessionResourceComponentsResourcePricingTable {const CustomerSessionResourceComponentsResourcePricingTable({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains whether the pricing table is enabled.
+@immutable final class CustomerSessionResourceComponentsResourcePricingTable {const CustomerSessionResourceComponentsResourcePricingTable({required this.enabled});
 
 factory CustomerSessionResourceComponentsResourcePricingTable.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourcePricingTable(
   enabled: json['enabled'] as bool,

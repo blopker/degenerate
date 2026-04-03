@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_customer_balance_eu_bank_account.dart';final class CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes {const CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_customer_balance_eu_bank_account.dart';@immutable final class CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes {const CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes._(this.value);
 
 factory CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes.fromJson(String json) { return switch (json) {
   'aba' => aba,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes($value)'; } 
  }
 /// The bank transfer type that this PaymentIntent is allowed to use for funding Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
-final class CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType {const CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType._(this.value);
+@immutable final class CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType {const CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType._(this.value);
 
 factory CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -74,7 +74,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType($value)'; } 
  }
 /// 
-final class CheckoutCustomerBalanceBankTransferPaymentMethodOptions {const CheckoutCustomerBalanceBankTransferPaymentMethodOptions({this.euBankTransfer, this.requestedAddressTypes, this.type, });
+@immutable final class CheckoutCustomerBalanceBankTransferPaymentMethodOptions {const CheckoutCustomerBalanceBankTransferPaymentMethodOptions({this.euBankTransfer, this.requestedAddressTypes, this.type, });
 
 factory CheckoutCustomerBalanceBankTransferPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCustomerBalanceBankTransferPaymentMethodOptions(
   euBankTransfer: json['eu_bank_transfer'] != null ? PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,

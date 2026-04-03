@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LogpushMessages2Source {const LogpushMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushMessages2Source {const LogpushMessages2Source({this.pointer});
 
 factory LogpushMessages2Source.fromJson(Map<String, dynamic> json) { return LogpushMessages2Source(
   pointer: json['pointer'] as String?,

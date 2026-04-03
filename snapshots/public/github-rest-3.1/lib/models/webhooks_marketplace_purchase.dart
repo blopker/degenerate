@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_marketplace_purchase_account.dart';import 'webhooks_marketplace_purchase_plan.dart';final class WebhooksMarketplacePurchase {const WebhooksMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.nextBillingDate, required this.onFreeTrial, required this.plan, required this.unitCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_marketplace_purchase_account.dart';import 'webhooks_marketplace_purchase_plan.dart';@immutable final class WebhooksMarketplacePurchase {const WebhooksMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.nextBillingDate, required this.onFreeTrial, required this.plan, required this.unitCount, });
 
 factory WebhooksMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhooksMarketplacePurchase(
   account: WebhooksMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),

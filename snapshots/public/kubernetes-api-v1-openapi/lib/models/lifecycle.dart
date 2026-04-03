@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lifecycle_handler.dart';/// Lifecycle describes actions that the management system should take in response to container lifecycle events. For the PostStart and PreStop lifecycle handlers, management of the container blocks until the action is complete, unless the container process fails, in which case the handler is aborted.
-final class Lifecycle {const Lifecycle({this.postStart, this.preStop, this.stopSignal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lifecycle_handler.dart';/// Lifecycle describes actions that the management system should take in response to container lifecycle events. For the PostStart and PreStop lifecycle handlers, management of the container blocks until the action is complete, unless the container process fails, in which case the handler is aborted.
+@immutable final class Lifecycle {const Lifecycle({this.postStart, this.preStop, this.stopSignal, });
 
 factory Lifecycle.fromJson(Map<String, dynamic> json) { return Lifecycle(
   postStart: json['postStart'] != null ? LifecycleHandler.fromJson(json['postStart'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TerminalConfigurationConfigurationResourceEnterpriseTlsWifi {const TerminalConfigurationConfigurationResourceEnterpriseTlsWifi({this.caCertificateFile, required this.clientCertificateFile, required this.privateKeyFile, this.privateKeyFilePassword, required this.ssid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourceEnterpriseTlsWifi {const TerminalConfigurationConfigurationResourceEnterpriseTlsWifi({required this.clientCertificateFile, required this.privateKeyFile, required this.ssid, this.caCertificateFile, this.privateKeyFilePassword, });
 
 factory TerminalConfigurationConfigurationResourceEnterpriseTlsWifi.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceEnterpriseTlsWifi(
   caCertificateFile: json['ca_certificate_file'] as String?,

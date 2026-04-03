@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_index_description.dart';import 'vectorize_index_dimension_configuration.dart';import 'vectorize_index_name.dart';final class VectorizeCreateIndexResponse {const VectorizeCreateIndexResponse({this.config, this.createdOn, this.description, this.modifiedOn, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_description.dart';import 'vectorize_index_dimension_configuration.dart';import 'vectorize_index_name.dart';@immutable final class VectorizeCreateIndexResponse {const VectorizeCreateIndexResponse({this.config, this.createdOn, this.description, this.modifiedOn, this.name, });
 
 factory VectorizeCreateIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeCreateIndexResponse(
   config: json['config'] != null ? VectorizeIndexDimensionConfiguration.fromJson(json['config'] as Map<String, dynamic>) : null,

@@ -1,7 +1,3 @@
-// Code-generating emitters use StringBuffer chains and long string templates
-// that inherently exceed 80 chars and resist cascading.
-// ignore_for_file: cascade_invocations, lines_longer_than_80_chars
-
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/api_emitter.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
@@ -132,7 +128,13 @@ class FileEmitter {
       final needsTypedData = modelAnalysis.needsTypedData;
       final needsConvert = modelAnalysis.needsConvert;
       final needsOneOf = modelAnalysis.needsOneOf;
-      final needsRuntime = needsOneOf || needsCollection;
+
+      // Determine if the runtime import is needed: for @immutable (classes with
+      // == and hashCode), collection helpers, or OneOf types.
+      final needsImmutable =
+          _typeNeedsImmutable(type) ||
+          (children?.any(_typeNeedsImmutable) ?? false);
+      final needsRuntime = needsOneOf || needsCollection || needsImmutable;
 
       final library = Library((b) {
         b.comments.addAll(header);
@@ -314,6 +316,17 @@ class FileEmitter {
   }
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
+
+  /// Whether a type emits classes that have == and hashCode (needing
+  /// @immutable).
+  static bool _typeNeedsImmutable(IrType type) => switch (type) {
+    IrObject() => true,
+    IrEnum() => true,
+    IrDiscriminatedUnion() => true,
+    IrUntaggedUnion() => true,
+    IrAnyOf() => true,
+    _ => false,
+  };
 
   String? _typeName(IrType type) => type.emittableName;
 
@@ -743,12 +756,10 @@ class FileEmitter {
     Set<String> inlinedTypes = const {},
     bool hasSecurityFile = false,
   }) {
-    final exports = <Directive>[
-      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
-      if (apis.isNotEmpty) Directive.export('client/${packageName}_api.dart'),
-      if (hasSecurityFile)
-        Directive.export('client/${packageName}_security.dart'),
-      // Model exports (sorted, deduplicated, excluding inlined)
+    // Collect all relative exports and sort them alphabetically.
+    final relativeExports = <String>[
+      if (apis.isNotEmpty) 'client/${packageName}_api.dart',
+      if (hasSecurityFile) 'client/${packageName}_security.dart',
       for (final name
           in types
               .map(_typeName)
@@ -757,10 +768,14 @@ class FileEmitter {
               .toSet()
               .toList()
             ..sort())
-        Directive.export('models/${toSnakeCase(name)}.dart'),
-      // API exports (sorted, deduplicated)
+        'models/${toSnakeCase(name)}.dart',
       for (final name in apis.map((a) => a.name).toSet().toList()..sort())
-        Directive.export('apis/${toSnakeCase(name)}.dart'),
+        'apis/${toSnakeCase(name)}.dart',
+    ]..sort();
+
+    final exports = <Directive>[
+      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
+      ...relativeExports.map(Directive.export),
     ];
 
     final library = Library((b) {
@@ -779,18 +794,22 @@ class FileEmitter {
     final className = '${sanitizeDartName(toPascalCase(packageName))}Api';
     final buf = StringBuffer();
     buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
+    // Collect and sort relative imports alphabetically.
+    final relativeImports = <String>[];
     if (securitySchemes.isNotEmpty) {
-      buf.writeln("import '${packageName}_security.dart';");
+      relativeImports.add("'${packageName}_security.dart'");
     }
-    // Deduplicate imports - multiple tags can resolve to the same API class
-    // name.
     final seenImports = <String>{};
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final importLine = "'../apis/$fileName.dart'";
       if (seenImports.add(importLine)) {
-        buf.writeln('import $importLine;');
+        relativeImports.add(importLine);
       }
+    }
+    relativeImports.sort();
+    for (final imp in relativeImports) {
+      buf.writeln('import $imp;');
     }
     buf.writeln();
     buf.writeln('/// Root SDK client providing access to all API groups.');
@@ -807,14 +826,14 @@ class FileEmitter {
     }
     buf.writeln('/// ```');
     buf.writeln('final class $className {');
+    buf.writeln('  $className(this._config);');
+    buf.writeln();
     if (defaultServerUrl != null) {
       final escaped = escapeDartString(defaultServerUrl);
       buf.writeln("  static const defaultBaseUrl = '$escaped';");
       buf.writeln();
     }
     buf.writeln('  final ApiConfig _config;');
-    buf.writeln();
-    buf.writeln('  $className(this._config);');
     buf.writeln();
 
     // Lazy-initialized API accessors - deduplicate field names.
@@ -904,19 +923,61 @@ class FileEmitter {
       'openIdConnect' => 'ApiSecuritySchemeType.openIdConnect',
       _ => 'ApiSecuritySchemeType.http',
     };
-    final location = switch (scheme.location) {
-      'header' => 'ApiKeyLocation.header',
-      'query' => 'ApiKeyLocation.query',
-      'cookie' => 'ApiKeyLocation.cookie',
-      _ => 'null',
-    };
-    final flowLiterals = scheme.flows
-        .map(
-          (flow) =>
-              'ApiOAuthFlow(type: ${_oauthFlowType(flow.type)}, authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}, tokenUrl: ${_stringOrNull(flow.tokenUrl)}, refreshUrl: ${_stringOrNull(flow.refreshUrl)}, deviceAuthorizationUrl: ${_stringOrNull(flow.deviceAuthorizationUrl)}, scopes: ${_stringMapLiteral(flow.scopes)})',
-        )
-        .join(', ');
-    return 'ApiSecurityScheme(name: ${_stringOrNull(scheme.name)}, type: $type, scheme: ${_stringOrNull(scheme.scheme)}, bearerFormat: ${_stringOrNull(scheme.bearerFormat)}, parameterName: ${_stringOrNull(scheme.parameterName)}, location: $location, openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}, flows: [$flowLiterals])';
+    // Only include optional parameters that differ from their defaults.
+    final args = <String>[
+      "name: '${escapeDartString(scheme.name)}'",
+      'type: $type',
+    ];
+    if (scheme.scheme != null) {
+      args.add('scheme: ${_stringOrNull(scheme.scheme)}');
+    }
+    if (scheme.bearerFormat != null) {
+      args.add('bearerFormat: ${_stringOrNull(scheme.bearerFormat)}');
+    }
+    if (scheme.parameterName != null) {
+      args.add('parameterName: ${_stringOrNull(scheme.parameterName)}');
+    }
+    if (scheme.location != null) {
+      final location = switch (scheme.location) {
+        'header' => 'ApiKeyLocation.header',
+        'query' => 'ApiKeyLocation.query',
+        'cookie' => 'ApiKeyLocation.cookie',
+        _ => 'null',
+      };
+      if (location != 'null') args.add('location: $location');
+    }
+    if (scheme.openIdConnectUrl != null) {
+      args.add(
+        'openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}',
+      );
+    }
+    if (scheme.flows.isNotEmpty) {
+      final flowLiterals = scheme.flows.map(_oauthFlowLiteral).join(', ');
+      args.add('flows: [$flowLiterals]');
+    }
+    return 'const ApiSecurityScheme(${args.join(', ')})';
+  }
+
+  String _oauthFlowLiteral(IrOAuthFlow flow) {
+    final args = <String>['type: ${_oauthFlowType(flow.type)}'];
+    if (flow.authorizationUrl != null) {
+      args.add('authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}');
+    }
+    if (flow.tokenUrl != null) {
+      args.add('tokenUrl: ${_stringOrNull(flow.tokenUrl)}');
+    }
+    if (flow.refreshUrl != null) {
+      args.add('refreshUrl: ${_stringOrNull(flow.refreshUrl)}');
+    }
+    if (flow.deviceAuthorizationUrl != null) {
+      args.add(
+        'deviceAuthorizationUrl: ${_stringOrNull(flow.deviceAuthorizationUrl)}',
+      );
+    }
+    if (flow.scopes.isNotEmpty) {
+      args.add('scopes: ${_stringMapLiteral(flow.scopes)}');
+    }
+    return 'ApiOAuthFlow(${args.join(', ')})';
   }
 
   String _securityRequirementsLiteral(
@@ -930,7 +991,7 @@ class FileEmitter {
                     "'${entry.key}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
-          return 'ApiSecurityRequirement({$entries})';
+          return 'const ApiSecurityRequirement({$entries})';
         })
         .join(', ');
     return '[$pieces]';

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_status_branches_commit.dart';final class WebhookStatusBranches {const WebhookStatusBranches({required this.commit, required this.name, required this.protected, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_status_branches_commit.dart';@immutable final class WebhookStatusBranches {const WebhookStatusBranches({required this.commit, required this.name, required this.protected, });
 
 factory WebhookStatusBranches.fromJson(Map<String, dynamic> json) { return WebhookStatusBranches(
   commit: WebhookStatusBranchesCommit.fromJson(json['commit'] as Map<String, dynamic>),

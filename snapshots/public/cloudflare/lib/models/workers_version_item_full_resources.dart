@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_version_item_full_resources_script.dart';import 'workers_version_item_full_resources_script_runtime.dart';final class WorkersVersionItemFullResources {const WorkersVersionItemFullResources({this.bindings, this.script, this.scriptRuntime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_version_item_full_resources_script.dart';import 'workers_version_item_full_resources_script_runtime.dart';@immutable final class WorkersVersionItemFullResources {const WorkersVersionItemFullResources({this.bindings, this.script, this.scriptRuntime, });
 
 factory WorkersVersionItemFullResources.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullResources(
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),

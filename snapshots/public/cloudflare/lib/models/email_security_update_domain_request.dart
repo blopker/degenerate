@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delivery_mode.dart';import 'email_security_disposition_label.dart';import 'email_security_scannable_folder.dart';final class EmailSecurityUpdateDomainRequestRegions {const EmailSecurityUpdateDomainRequestRegions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delivery_mode.dart';import 'email_security_disposition_label.dart';import 'email_security_scannable_folder.dart';@immutable final class EmailSecurityUpdateDomainRequestRegions {const EmailSecurityUpdateDomainRequestRegions._(this.value);
 
 factory EmailSecurityUpdateDomainRequestRegions.fromJson(String json) { return switch (json) {
   'GLOBAL' => global,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityUpdateDomainRequestRegions($value)'; } 
  }
-final class EmailSecurityUpdateDomainRequest {const EmailSecurityUpdateDomainRequest({this.allowedDeliveryModes, this.domain, this.dropDispositions, this.folder, this.integrationId, required this.ipRestrictions, this.lookbackHops, this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.transport, });
+@immutable final class EmailSecurityUpdateDomainRequest {const EmailSecurityUpdateDomainRequest({required this.ipRestrictions, this.allowedDeliveryModes, this.domain, this.dropDispositions, this.folder, this.integrationId, this.lookbackHops, this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.transport, });
 
 factory EmailSecurityUpdateDomainRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainRequest(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>?)?.map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),

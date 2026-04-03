@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_timestamp_unit.dart';final class TimestampType {const TimestampType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_timestamp_unit.dart';@immutable final class TimestampType {const TimestampType._(this.value);
 
 factory TimestampType.fromJson(String json) { return switch (json) {
   'timestamp' => timestamp,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TimestampType($value)'; } 
  }
-final class Timestamp {const Timestamp({this.unit, required this.type, });
+@immutable final class Timestamp {const Timestamp({required this.type, this.unit, });
 
 factory Timestamp.fromJson(Map<String, dynamic> json) { return Timestamp(
   unit: json['unit'] != null ? CloudflarePipelinesTimestampUnit.fromJson(json['unit'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';final class ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest {const ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest({required this.properties});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';@immutable final class ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest {const ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest({required this.properties});
 
 factory ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest.fromJson(Map<String, dynamic> json) { return ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest(
   properties: (json['properties'] as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_ip_profile_enabled.dart';import 'teams_devices_ip_profile_match.dart';import 'teams_devices_ip_profile_name.dart';import 'teams_devices_ip_profile_precedence.dart';import 'teams_devices_ip_profile_subnet_id.dart';/// The RFC3339Nano timestamp when the Device IP profile was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_ip_profile_enabled.dart';import 'teams_devices_ip_profile_match.dart';import 'teams_devices_ip_profile_name.dart';import 'teams_devices_ip_profile_precedence.dart';import 'teams_devices_ip_profile_subnet_id.dart';/// The RFC3339Nano timestamp when the Device IP profile was created.
 extension type const TeamsDevicesIpProfileCreatedAt(String value) {
 factory TeamsDevicesIpProfileCreatedAt.fromJson(String json) => TeamsDevicesIpProfileCreatedAt(json);
 
@@ -28,7 +28,7 @@ factory TeamsDevicesIpProfileUpdatedAt.fromJson(String json) => TeamsDevicesIpPr
 String toJson() => value;
 
 }
-final class TeamsDevicesIpProfile {const TeamsDevicesIpProfile({required this.createdAt, required this.description, required this.enabled, required this.id, required this.match, required this.name, required this.precedence, required this.subnetId, required this.updatedAt, });
+@immutable final class TeamsDevicesIpProfile {const TeamsDevicesIpProfile({required this.createdAt, required this.description, required this.enabled, required this.id, required this.match, required this.name, required this.precedence, required this.subnetId, required this.updatedAt, });
 
 factory TeamsDevicesIpProfile.fromJson(Map<String, dynamic> json) { return TeamsDevicesIpProfile(
   createdAt: TeamsDevicesIpProfileCreatedAt.fromJson(json['created_at'] as String),

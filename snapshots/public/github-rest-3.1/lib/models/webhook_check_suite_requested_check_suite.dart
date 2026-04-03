@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_requested_check_suite_app.dart';import 'webhook_check_suite_requested_check_suite_head_commit.dart';import 'webhook_check_suite_requested_check_suite_pull_requests.dart';/// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
-final class WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion._(this.value);
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion._(this.value);
 
 factory WebhookCheckSuiteRequestedCheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteConclusion($value)'; } 
  }
 /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
-final class WebhookCheckSuiteRequestedCheckSuiteStatus {const WebhookCheckSuiteRequestedCheckSuiteStatus._(this.value);
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteStatus {const WebhookCheckSuiteRequestedCheckSuiteStatus._(this.value);
 
 factory WebhookCheckSuiteRequestedCheckSuiteStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteStatus($value)'; } 
  }
 /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
-final class WebhookCheckSuiteRequestedCheckSuite {const WebhookCheckSuiteRequestedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, this.rerequestable, this.runsRerequestable, required this.status, required this.updatedAt, required this.url, });
+@immutable final class WebhookCheckSuiteRequestedCheckSuite {const WebhookCheckSuiteRequestedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, required this.status, required this.updatedAt, required this.url, this.rerequestable, this.runsRerequestable, });
 
 factory WebhookCheckSuiteRequestedCheckSuite.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuite(
   after: json['after'] as String?,

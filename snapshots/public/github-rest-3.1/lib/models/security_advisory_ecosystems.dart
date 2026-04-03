@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The package's language or package management ecosystem.
-final class SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The package's language or package management ecosystem.
+@immutable final class SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems._(this.value);
 
 factory SecurityAdvisoryEcosystems.fromJson(String json) { return switch (json) {
   'rubygems' => rubygems,

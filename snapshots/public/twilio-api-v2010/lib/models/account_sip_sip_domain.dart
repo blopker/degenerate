@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final class AccountSipSipDomainVoiceFallbackMethod {const AccountSipSipDomainVoiceFallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
+@immutable final class AccountSipSipDomainVoiceFallbackMethod {const AccountSipSipDomainVoiceFallbackMethod._(this.value);
 
 factory AccountSipSipDomainVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountSipSipDomainVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final class AccountSipSipDomainVoiceMethod {const AccountSipSipDomainVoiceMethod._(this.value);
+@immutable final class AccountSipSipDomainVoiceMethod {const AccountSipSipDomainVoiceMethod._(this.value);
 
 factory AccountSipSipDomainVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountSipSipDomainVoiceMethod($value)'; } 
  }
 /// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
-final class AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod._(this.value);
+@immutable final class AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod._(this.value);
 
 factory AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountSipSipDomainVoiceStatusCallbackMethod($value)'; } 
  }
-final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid, this.apiVersion, this.authType, this.dateCreated, this.dateUpdated, this.domainName, this.friendlyName, this.sid, this.uri, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.subresourceUris, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
+@immutable final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid, this.apiVersion, this.authType, this.dateCreated, this.dateUpdated, this.domainName, this.friendlyName, this.sid, this.uri, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.subresourceUris, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
 
 factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) { return AccountSipSipDomain(
   accountSid: json['account_sid'] as String?,

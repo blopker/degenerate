@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// VolumeResourceRequirements describes the storage resource requirements for a volume.
-final class VolumeResourceRequirements {const VolumeResourceRequirements({this.limits, this.requests, });
+@immutable final class VolumeResourceRequirements {const VolumeResourceRequirements({this.limits, this.requests, });
 
 factory VolumeResourceRequirements.fromJson(Map<String, dynamic> json) { return VolumeResourceRequirements(
   limits: (json['limits'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Preferred language of the Bancontact authorization page that the customer is redirected to.
-final class PaymentMethodOptionsBancontactPreferredLanguage {const PaymentMethodOptionsBancontactPreferredLanguage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to.
+@immutable final class PaymentMethodOptionsBancontactPreferredLanguage {const PaymentMethodOptionsBancontactPreferredLanguage._(this.value);
 
 factory PaymentMethodOptionsBancontactPreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentMethodOptionsBancontactSetupFutureUsage {const PaymentMethodOptionsBancontactSetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsBancontactSetupFutureUsage {const PaymentMethodOptionsBancontactSetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsBancontactSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsBancontactSetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsBancontact {const PaymentMethodOptionsBancontact({required this.preferredLanguage, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsBancontact {const PaymentMethodOptionsBancontact({required this.preferredLanguage, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsBancontact(
   preferredLanguage: PaymentMethodOptionsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String),

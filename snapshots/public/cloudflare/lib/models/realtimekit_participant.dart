@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a participant.
-final class RealtimekitParticipant {const RealtimekitParticipant({required this.createdAt, required this.customParticipantId, required this.id, this.name, this.picture, required this.presetName, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a participant.
+@immutable final class RealtimekitParticipant {const RealtimekitParticipant({required this.createdAt, required this.customParticipantId, required this.id, required this.presetName, required this.updatedAt, this.name, this.picture, });
 
 factory RealtimekitParticipant.fromJson(Map<String, dynamic> json) { return RealtimekitParticipant(
   createdAt: DateTime.parse(json['created_at'] as String),

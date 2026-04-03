@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'error_model.dart';final class ErrorEventEvent {const ErrorEventEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model.dart';@immutable final class ErrorEventEvent {const ErrorEventEvent._(this.value);
 
 factory ErrorEventEvent.fromJson(String json) { return switch (json) {
   'error' => error,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ErrorEventEvent($value)'; } 
  }
 /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
-final class ErrorEvent {const ErrorEvent({required this.event, required this.data, });
+@immutable final class ErrorEvent {const ErrorEvent({required this.event, required this.data, });
 
 factory ErrorEvent.fromJson(Map<String, dynamic> json) { return ErrorEvent(
   event: ErrorEventEvent.fromJson(json['event'] as String),

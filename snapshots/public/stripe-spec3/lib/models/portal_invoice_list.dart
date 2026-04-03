@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalInvoiceList {const PortalInvoiceList({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalInvoiceList {const PortalInvoiceList({required this.enabled});
 
 factory PortalInvoiceList.fromJson(Map<String, dynamic> json) { return PortalInvoiceList(
   enabled: json['enabled'] as bool,

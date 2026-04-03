@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_session_automatic_thread_titling.dart';import 'chat_session_file_upload.dart';import 'chat_session_history.dart';/// ChatKit configuration for the session.
-final class ChatSessionChatkitConfiguration {const ChatSessionChatkitConfiguration({required this.automaticThreadTitling, required this.fileUpload, required this.history, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_session_automatic_thread_titling.dart';import 'chat_session_file_upload.dart';import 'chat_session_history.dart';/// ChatKit configuration for the session.
+@immutable final class ChatSessionChatkitConfiguration {const ChatSessionChatkitConfiguration({required this.automaticThreadTitling, required this.fileUpload, required this.history, });
 
 factory ChatSessionChatkitConfiguration.fromJson(Map<String, dynamic> json) { return ChatSessionChatkitConfiguration(
   automaticThreadTitling: ChatSessionAutomaticThreadTitling.fromJson(json['automatic_thread_titling'] as Map<String, dynamic>),

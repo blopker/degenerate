@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the metric to order the ASNs by.
-final class RadarGetEntitiesAsnListOrderBy {const RadarGetEntitiesAsnListOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the ASNs by.
+@immutable final class RadarGetEntitiesAsnListOrderBy {const RadarGetEntitiesAsnListOrderBy._(this.value);
 
 factory RadarGetEntitiesAsnListOrderBy.fromJson(String json) { return switch (json) {
   'ASN' => asn,

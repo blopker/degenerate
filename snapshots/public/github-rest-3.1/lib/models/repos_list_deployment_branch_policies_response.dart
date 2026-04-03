@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_branch_policy.dart';final class ReposListDeploymentBranchPoliciesResponse {const ReposListDeploymentBranchPoliciesResponse({required this.totalCount, required this.branchPolicies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_branch_policy.dart';@immutable final class ReposListDeploymentBranchPoliciesResponse {const ReposListDeploymentBranchPoliciesResponse({required this.totalCount, required this.branchPolicies, });
 
 factory ReposListDeploymentBranchPoliciesResponse.fromJson(Map<String, dynamic> json) { return ReposListDeploymentBranchPoliciesResponse(
   totalCount: (json['total_count'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class UserUploadProfileImageRequest {const UserUploadProfileImageRequest({required this.file});
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserUploadProfileImageRequest {const UserUploadProfileImageRequest({required this.file});
 
 factory UserUploadProfileImageRequest.fromJson(Map<String, dynamic> json) { return UserUploadProfileImageRequest(
   file: base64Decode(json['file'] as String),

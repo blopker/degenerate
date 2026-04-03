@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_total_details_resource_breakdown.dart';/// 
-final class PaymentPagesCheckoutSessionTotalDetails {const PaymentPagesCheckoutSessionTotalDetails({required this.amountDiscount, this.amountShipping, required this.amountTax, this.breakdown, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_total_details_resource_breakdown.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionTotalDetails {const PaymentPagesCheckoutSessionTotalDetails({required this.amountDiscount, required this.amountTax, this.amountShipping, this.breakdown, });
 
 factory PaymentPagesCheckoutSessionTotalDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionTotalDetails(
   amountDiscount: (json['amount_discount'] as num).toInt(),

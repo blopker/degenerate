@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_installments_card.dart';/// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-final class InvoicePaymentMethodOptionsCardRequestThreeDSecure {const InvoicePaymentMethodOptionsCardRequestThreeDSecure._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_installments_card.dart';/// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
+@immutable final class InvoicePaymentMethodOptionsCardRequestThreeDSecure {const InvoicePaymentMethodOptionsCardRequestThreeDSecure._(this.value);
 
 factory InvoicePaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsCard {const InvoicePaymentMethodOptionsCard({this.installments, this.requestThreeDSecure, });
+@immutable final class InvoicePaymentMethodOptionsCard {const InvoicePaymentMethodOptionsCard({this.installments, this.requestThreeDSecure, });
 
 factory InvoicePaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCard(
   installments: json['installments'] != null ? InvoiceInstallmentsCard.fromJson(json['installments'] as Map<String, dynamic>) : null,

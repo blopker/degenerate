@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is `skill.version`.
-final class SkillVersionResourceObject {const SkillVersionResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill.version`.
+@immutable final class SkillVersionResourceObject {const SkillVersionResourceObject._(this.value);
 
 factory SkillVersionResourceObject.fromJson(String json) { return switch (json) {
   'skill.version' => skillVersion,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SkillVersionResourceObject($value)'; } 
  }
-final class SkillVersionResource {const SkillVersionResource({this.object = SkillVersionResourceObject.skillVersion, required this.id, required this.skillId, required this.version, required this.createdAt, required this.name, required this.description, });
+@immutable final class SkillVersionResource {const SkillVersionResource({required this.id, required this.skillId, required this.version, required this.createdAt, required this.name, required this.description, this.object = SkillVersionResourceObject.skillVersion, });
 
 factory SkillVersionResource.fromJson(Map<String, dynamic> json) { return SkillVersionResource(
   object: SkillVersionResourceObject.fromJson(json['object'] as String),

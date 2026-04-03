@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_data_requests_requests_initiator.dart';import 'urlscanner_get_scan_response2_data_requests_requests_request.dart';final class UrlscannerGetScanResponse2DataRequestsRequests {const UrlscannerGetScanResponse2DataRequestsRequests({required this.documentUrl, required this.frameId, required this.hasUserGesture, required this.initiator, required this.loaderId, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_requests_initiator.dart';import 'urlscanner_get_scan_response2_data_requests_requests_request.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequests {const UrlscannerGetScanResponse2DataRequestsRequests({required this.documentUrl, required this.frameId, required this.hasUserGesture, required this.initiator, required this.loaderId, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequests.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequests(
   documentUrl: json['documentURL'] as String,

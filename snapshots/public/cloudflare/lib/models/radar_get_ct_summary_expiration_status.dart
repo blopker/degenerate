@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryExpirationStatus {const RadarGetCtSummaryExpirationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryExpirationStatus {const RadarGetCtSummaryExpirationStatus._(this.value);
 
 factory RadarGetCtSummaryExpirationStatus.fromJson(String json) { return switch (json) {
   'EXPIRED' => expired,

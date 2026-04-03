@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Location of the bucket.
-final class R2BucketLocation {const R2BucketLocation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Location of the bucket.
+@immutable final class R2BucketLocation {const R2BucketLocation._(this.value);
 
 factory R2BucketLocation.fromJson(String json) { return switch (json) {
   'apac' => apac,

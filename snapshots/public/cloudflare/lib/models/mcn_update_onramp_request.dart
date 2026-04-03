@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_id.dart';final class McnUpdateOnrampRequest {const McnUpdateOnrampRequest({this.attachedHubs, this.attachedVpcs, this.description, this.installRoutesInCloud, this.installRoutesInMagicWan, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, this.name, this.vpc, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_id.dart';@immutable final class McnUpdateOnrampRequest {const McnUpdateOnrampRequest({this.attachedHubs, this.attachedVpcs, this.description, this.installRoutesInCloud, this.installRoutesInMagicWan, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, this.name, this.vpc, });
 
 factory McnUpdateOnrampRequest.fromJson(Map<String, dynamic> json) { return McnUpdateOnrampRequest(
   attachedHubs: (json['attached_hubs'] as List<dynamic>?)?.map((e) => McnResourceId.fromJson(e as String)).toList(),

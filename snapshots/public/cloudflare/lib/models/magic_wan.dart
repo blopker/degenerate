@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_identifier.dart';import 'magic_port.dart';import 'magic_vlan_tag.dart';import 'magic_wan_static_addressing.dart';/// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
-final class MagicWanHealthCheckRate {const MagicWanHealthCheckRate._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_identifier.dart';import 'magic_port.dart';import 'magic_vlan_tag.dart';import 'magic_wan_static_addressing.dart';/// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
+@immutable final class MagicWanHealthCheckRate {const MagicWanHealthCheckRate._(this.value);
 
 factory MagicWanHealthCheckRate.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicWanHealthCheckRate($value)'; } 
  }
-final class MagicWan {const MagicWan({this.healthCheckRate = MagicWanHealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
+@immutable final class MagicWan {const MagicWan({this.healthCheckRate = MagicWanHealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
 
 factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
   healthCheckRate: json.containsKey('health_check_rate') ? MagicWanHealthCheckRate.fromJson(json['health_check_rate'] as String) : MagicWanHealthCheckRate.mid,

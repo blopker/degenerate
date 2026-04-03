@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class DeletedWebhookEndpointObject {const DeletedWebhookEndpointObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class DeletedWebhookEndpointObject {const DeletedWebhookEndpointObject._(this.value);
 
 factory DeletedWebhookEndpointObject.fromJson(String json) { return switch (json) {
   'webhook_endpoint' => webhookEndpoint,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedWebhookEndpointObject($value)'; } 
  }
 /// 
-final class DeletedWebhookEndpoint {const DeletedWebhookEndpoint({required this.deleted, required this.id, required this.object, });
+@immutable final class DeletedWebhookEndpoint {const DeletedWebhookEndpoint({required this.deleted, required this.id, required this.object, });
 
 factory DeletedWebhookEndpoint.fromJson(Map<String, dynamic> json) { return DeletedWebhookEndpoint(
   deleted: json['deleted'] as bool,

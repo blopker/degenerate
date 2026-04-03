@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Allow out of region access
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow out of region access
 extension type const LogcontrolAllowOutOfRegionAccess(bool value) {
 factory LogcontrolAllowOutOfRegionAccess.fromJson(bool json) => LogcontrolAllowOutOfRegionAccess(json);
 
@@ -14,7 +14,7 @@ factory LogcontrolRegions.fromJson(String json) => LogcontrolRegions(json);
 String toJson() => value;
 
 }
-final class LogcontrolCmbConfig {const LogcontrolCmbConfig({this.allowOutOfRegionAccess, this.regions, });
+@immutable final class LogcontrolCmbConfig {const LogcontrolCmbConfig({this.allowOutOfRegionAccess, this.regions, });
 
 factory LogcontrolCmbConfig.fromJson(Map<String, dynamic> json) { return LogcontrolCmbConfig(
   allowOutOfRegionAccess: json['allow_out_of_region_access'] != null ? LogcontrolAllowOutOfRegionAccess.fromJson(json['allow_out_of_region_access'] as bool) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A pending safety check for the computer call.
-final class ComputerCallSafetyCheckParam {const ComputerCallSafetyCheckParam({required this.id, this.code, this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A pending safety check for the computer call.
+@immutable final class ComputerCallSafetyCheckParam {const ComputerCallSafetyCheckParam({required this.id, this.code, this.message, });
 
 factory ComputerCallSafetyCheckParam.fromJson(Map<String, dynamic> json) { return ComputerCallSafetyCheckParam(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `acss_debit` PaymentMethod, this hash contains details about the ACSS Debit payment method.
-final class PostPaymentMethodsRequestAcssDebit {const PostPaymentMethodsRequestAcssDebit({required this.accountNumber, required this.institutionNumber, required this.transitNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `acss_debit` PaymentMethod, this hash contains details about the ACSS Debit payment method.
+@immutable final class PostPaymentMethodsRequestAcssDebit {const PostPaymentMethodsRequestAcssDebit({required this.accountNumber, required this.institutionNumber, required this.transitNumber, });
 
 factory PostPaymentMethodsRequestAcssDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestAcssDebit(
   accountNumber: json['account_number'] as String,

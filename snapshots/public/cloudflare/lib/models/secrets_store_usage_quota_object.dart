@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The number of secrets the account is entitlted to use
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The number of secrets the account is entitlted to use
 extension type const SecretsStoreQuota(double value) {
 factory SecretsStoreQuota.fromJson(num json) => SecretsStoreQuota(json.toDouble());
 
@@ -14,7 +14,7 @@ factory SecretsStoreUsage.fromJson(num json) => SecretsStoreUsage(json.toDouble(
 num toJson() => value;
 
 }
-final class SecretsStoreUsageQuotaObject {const SecretsStoreUsageQuotaObject({required this.quota, required this.usage, });
+@immutable final class SecretsStoreUsageQuotaObject {const SecretsStoreUsageQuotaObject({required this.quota, required this.usage, });
 
 factory SecretsStoreUsageQuotaObject.fromJson(Map<String, dynamic> json) { return SecretsStoreUsageQuotaObject(
   quota: SecretsStoreQuota.fromJson(json['quota'] as num),

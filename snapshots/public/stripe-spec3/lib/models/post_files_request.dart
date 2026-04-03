@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_files_request_file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
-final class PostFilesRequestPurpose {const PostFilesRequestPurpose._(this.value);
+@immutable final class PostFilesRequestPurpose {const PostFilesRequestPurpose._(this.value);
 
 factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
   'account_requirement' => accountRequirement,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostFilesRequestPurpose($value)'; } 
  }
-final class PostFilesRequest {const PostFilesRequest({this.expand, required this.file, this.fileLinkData, required this.purpose, });
+@immutable final class PostFilesRequest {const PostFilesRequest({required this.file, required this.purpose, this.expand, this.fileLinkData, });
 
 factory PostFilesRequest.fromJson(Map<String, dynamic> json) { return PostFilesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

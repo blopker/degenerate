@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsCashapp {const PaymentMethodDetailsCashapp({this.buyerId, this.cashtag, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsCashapp {const PaymentMethodDetailsCashapp({this.buyerId, this.cashtag, this.transactionId, });
 
 factory PaymentMethodDetailsCashapp.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCashapp(
   buyerId: json['buyer_id'] as String?,

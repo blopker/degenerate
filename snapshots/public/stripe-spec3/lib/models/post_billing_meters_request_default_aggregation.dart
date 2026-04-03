@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingMetersRequestDefaultAggregationFormula {const PostBillingMetersRequestDefaultAggregationFormula._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMetersRequestDefaultAggregationFormula {const PostBillingMetersRequestDefaultAggregationFormula._(this.value);
 
 factory PostBillingMetersRequestDefaultAggregationFormula.fromJson(String json) { return switch (json) {
   'count' => count,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostBillingMetersRequestDefaultAggregationFormula($value)'; } 
  }
 /// The default settings to aggregate a meter's events with.
-final class PostBillingMetersRequestDefaultAggregation {const PostBillingMetersRequestDefaultAggregation({required this.formula});
+@immutable final class PostBillingMetersRequestDefaultAggregation {const PostBillingMetersRequestDefaultAggregation({required this.formula});
 
 factory PostBillingMetersRequestDefaultAggregation.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequestDefaultAggregation(
   formula: PostBillingMetersRequestDefaultAggregationFormula.fromJson(json['formula'] as String),

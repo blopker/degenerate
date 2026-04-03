@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto({required this.taxId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto({required this.taxId});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(
   taxId: json['tax_id'] as String,

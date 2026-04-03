@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceTransactionChfCreditTransferData {const SourceTransactionChfCreditTransferData({this.reference, this.senderAddressCountry, this.senderAddressLine1, this.senderIban, this.senderName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceTransactionChfCreditTransferData {const SourceTransactionChfCreditTransferData({this.reference, this.senderAddressCountry, this.senderAddressLine1, this.senderIban, this.senderName, });
 
 factory SourceTransactionChfCreditTransferData.fromJson(Map<String, dynamic> json) { return SourceTransactionChfCreditTransferData(
   reference: json['reference'] as String?,

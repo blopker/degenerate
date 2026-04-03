@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingMetersRequest {const GetBillingMetersRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingMetersRequest {const GetBillingMetersRequest();
 
 factory GetBillingMetersRequest.fromJson(Map<String, dynamic> json) { return GetBillingMetersRequest(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_sharing_account_id.dart';import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_type.dart';final class ResourceSharingCreateShareResourceRequest {const ResourceSharingCreateShareResourceRequest({required this.meta, required this.resourceAccountId, required this.resourceId, required this.resourceType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_account_id.dart';import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_type.dart';@immutable final class ResourceSharingCreateShareResourceRequest {const ResourceSharingCreateShareResourceRequest({required this.meta, required this.resourceAccountId, required this.resourceId, required this.resourceType, });
 
 factory ResourceSharingCreateShareResourceRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingCreateShareResourceRequest(
   meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

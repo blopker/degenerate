@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_custom_entry.dart';final class DlpEntriesCreateEntryResponse {const DlpEntriesCreateEntryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_custom_entry.dart';@immutable final class DlpEntriesCreateEntryResponse {const DlpEntriesCreateEntryResponse({this.result});
 
 factory DlpEntriesCreateEntryResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesCreateEntryResponse(
   result: json['result'] != null ? DlpCustomEntry.fromJson(json['result'] as Map<String, dynamic>) : null,

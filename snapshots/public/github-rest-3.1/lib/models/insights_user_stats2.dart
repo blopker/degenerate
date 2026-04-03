@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InsightsUserStats2 {const InsightsUserStats2({this.actorType, this.actorName, this.actorId, this.integrationId, this.oauthApplicationId, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp, this.lastRequestTimestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsUserStats2 {const InsightsUserStats2({this.actorType, this.actorName, this.actorId, this.integrationId, this.oauthApplicationId, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp, this.lastRequestTimestamp, });
 
 factory InsightsUserStats2.fromJson(Map<String, dynamic> json) { return InsightsUserStats2(
   actorType: json['actor_type'] as String?,

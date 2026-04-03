@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeScanningDeleteCodeqlDatabaseResponse503 {const CodeScanningDeleteCodeqlDatabaseResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningDeleteCodeqlDatabaseResponse503 {const CodeScanningDeleteCodeqlDatabaseResponse503({this.code, this.message, this.documentationUrl, });
 
 factory CodeScanningDeleteCodeqlDatabaseResponse503.fromJson(Map<String, dynamic> json) { return CodeScanningDeleteCodeqlDatabaseResponse503(
   code: json['code'] as String?,

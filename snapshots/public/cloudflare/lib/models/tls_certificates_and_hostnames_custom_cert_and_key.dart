@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesCustomCertAndKey {const TlsCertificatesAndHostnamesCustomCertAndKey({required this.customCertificate, required this.customKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesCustomCertAndKey {const TlsCertificatesAndHostnamesCustomCertAndKey({required this.customCertificate, required this.customKey, });
 
 factory TlsCertificatesAndHostnamesCustomCertAndKey.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomCertAndKey(
   customCertificate: json['custom_certificate'] as String,

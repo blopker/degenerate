@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_list_item_list.dart';final class McnListItem {const McnListItem({required this.itemType, required this.list, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_list_item_list.dart';@immutable final class McnListItem {const McnListItem({required this.itemType, required this.list, });
 
 factory McnListItem.fromJson(Map<String, dynamic> json) { return McnListItem(
   itemType: json['item_type'] as String,

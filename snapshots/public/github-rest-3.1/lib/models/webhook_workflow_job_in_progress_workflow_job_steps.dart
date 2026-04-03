@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookWorkflowJobInProgressWorkflowJobStepsStatus {const WebhookWorkflowJobInProgressWorkflowJobStepsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookWorkflowJobInProgressWorkflowJobStepsStatus {const WebhookWorkflowJobInProgressWorkflowJobStepsStatus._(this.value);
 
 factory WebhookWorkflowJobInProgressWorkflowJobStepsStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobInProgressWorkflowJobStepsStatus($value)'; } 
  }
-final class WebhookWorkflowJobInProgressWorkflowJobSteps {const WebhookWorkflowJobInProgressWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
+@immutable final class WebhookWorkflowJobInProgressWorkflowJobSteps {const WebhookWorkflowJobInProgressWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
 
 factory WebhookWorkflowJobInProgressWorkflowJobSteps.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobInProgressWorkflowJobSteps(
   completedAt: json['completed_at'] as String?,

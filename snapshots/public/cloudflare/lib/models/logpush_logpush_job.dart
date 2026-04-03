@@ -21,7 +21,7 @@ factory LogpushLastError.fromJson(String json) => LogpushLastError(DateTime.pars
 String toJson() => value.toIso8601String();
 
 }
-final class LogpushLogpushJob {const LogpushLogpushJob({this.dataset, this.destinationConf, this.enabled, this.errorMessage, this.frequency, this.id, this.kind, this.lastComplete, this.lastError, this.logpullOptions, this.maxUploadBytes, this.maxUploadIntervalSeconds, this.maxUploadRecords, this.name, this.outputOptions, });
+@immutable final class LogpushLogpushJob {const LogpushLogpushJob({this.dataset, this.destinationConf, this.enabled, this.errorMessage, this.frequency, this.id, this.kind, this.lastComplete, this.lastError, this.logpullOptions, this.maxUploadBytes, this.maxUploadIntervalSeconds, this.maxUploadRecords, this.name, this.outputOptions, });
 
 factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) { return LogpushLogpushJob(
   dataset: json['dataset'] != null ? LogpushDataset.fromJson(json['dataset'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_subscription_exposed_id_request_trial_settings_end_behavior.dart';/// Settings related to subscription trials.
-final class PostSubscriptionsSubscriptionExposedIdRequestTrialSettings {const PostSubscriptionsSubscriptionExposedIdRequestTrialSettings({required this.endBehavior});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_trial_settings_end_behavior.dart';/// Settings related to subscription trials.
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestTrialSettings {const PostSubscriptionsSubscriptionExposedIdRequestTrialSettings({required this.endBehavior});
 
 factory PostSubscriptionsSubscriptionExposedIdRequestTrialSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestTrialSettings(
   endBehavior: PostSubscriptionsSubscriptionExposedIdRequestTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),

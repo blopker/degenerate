@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';final class AccessBasePolicyReq {const AccessBasePolicyReq({required this.decision, this.exclude, required this.include, required this.name, this.require, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';@immutable final class AccessBasePolicyReq {const AccessBasePolicyReq({required this.decision, required this.include, required this.name, this.exclude, this.require, });
 
 factory AccessBasePolicyReq.fromJson(Map<String, dynamic> json) { return AccessBasePolicyReq(
   decision: AccessDecision.fromJson(json['decision'] as String),

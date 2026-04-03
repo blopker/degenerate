@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_baai_bge_reranker_base_response400_errors.dart';final class WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400 {const WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_baai_bge_reranker_base_response400_errors.dart';@immutable final class WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400 {const WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

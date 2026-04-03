@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'legal_entity_company_verification_document_back.dart';import 'legal_entity_company_verification_document_front.dart';/// 
-final class LegalEntityCompanyVerificationDocument {const LegalEntityCompanyVerificationDocument({this.back, this.details, this.detailsCode, this.front, });
+@immutable final class LegalEntityCompanyVerificationDocument {const LegalEntityCompanyVerificationDocument({this.back, this.details, this.detailsCode, this.front, });
 
 factory LegalEntityCompanyVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityCompanyVerificationDocument(
   back: json['back'] != null ? OneOf2.parse(json['back'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

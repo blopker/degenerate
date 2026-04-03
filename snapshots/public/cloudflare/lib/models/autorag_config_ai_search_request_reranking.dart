@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigAiSearchRequestRerankingModel {const AutoragConfigAiSearchRequestRerankingModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigAiSearchRequestRerankingModel {const AutoragConfigAiSearchRequestRerankingModel._(this.value);
 
 factory AutoragConfigAiSearchRequestRerankingModel.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AutoragConfigAiSearchRequestRerankingModel($value)'; } 
  }
-final class AutoragConfigAiSearchRequestReranking {const AutoragConfigAiSearchRequestReranking({this.enabled = false, this.model, });
+@immutable final class AutoragConfigAiSearchRequestReranking {const AutoragConfigAiSearchRequestReranking({this.enabled = false, this.model, });
 
 factory AutoragConfigAiSearchRequestReranking.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequestReranking(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,

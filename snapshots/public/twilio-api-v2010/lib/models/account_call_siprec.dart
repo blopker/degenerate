@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status - one of `stopped`, `in-progress`
-final class SiprecEnumStatus {const SiprecEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status - one of `stopped`, `in-progress`
+@immutable final class SiprecEnumStatus {const SiprecEnumStatus._(this.value);
 
 factory SiprecEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SiprecEnumStatus($value)'; } 
  }
-final class AccountCallSiprec {const AccountCallSiprec({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
+@immutable final class AccountCallSiprec {const AccountCallSiprec({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
 
 factory AccountCallSiprec.fromJson(Map<String, dynamic> json) { return AccountCallSiprec(
   sid: json['sid'] as String?,

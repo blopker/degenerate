@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_trend.dart';final class ObservatoryTrendResponse {const ObservatoryTrendResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_trend.dart';@immutable final class ObservatoryTrendResponse {const ObservatoryTrendResponse({this.result});
 
 factory ObservatoryTrendResponse.fromJson(Map<String, dynamic> json) { return ObservatoryTrendResponse(
   result: json['result'] != null ? ObservatoryTrend.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_messages2.dart';final class CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx {const CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_messages2.dart';@immutable final class CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx {const CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.id, });
 
 factory CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the type of content list entry to block.
-final class Web3ContentListEntryType {const Web3ContentListEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the type of content list entry to block.
+@immutable final class Web3ContentListEntryType {const Web3ContentListEntryType._(this.value);
 
 factory Web3ContentListEntryType.fromJson(String json) { return switch (json) {
   'cid' => cid,

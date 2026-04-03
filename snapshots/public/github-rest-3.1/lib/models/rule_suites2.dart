@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The result of the rule evaluations for rules with the `active` enforcement status.
-final class RuleSuites2Result {const RuleSuites2Result._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The result of the rule evaluations for rules with the `active` enforcement status.
+@immutable final class RuleSuites2Result {const RuleSuites2Result._(this.value);
 
 factory RuleSuites2Result.fromJson(String json) { return switch (json) {
   'pass' => pass,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RuleSuites2Result($value)'; } 
  }
 /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
-final class RuleSuites2EvaluationResult {const RuleSuites2EvaluationResult._(this.value);
+@immutable final class RuleSuites2EvaluationResult {const RuleSuites2EvaluationResult._(this.value);
 
 factory RuleSuites2EvaluationResult.fromJson(String json) { return switch (json) {
   'pass' => pass,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RuleSuites2EvaluationResult($value)'; } 
  }
-final class RuleSuites2 {const RuleSuites2({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, });
+@immutable final class RuleSuites2 {const RuleSuites2({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, });
 
 factory RuleSuites2.fromJson(Map<String, dynamic> json) { return RuleSuites2(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

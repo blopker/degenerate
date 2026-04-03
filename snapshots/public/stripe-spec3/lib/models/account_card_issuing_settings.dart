@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'card_issuing_account_terms_of_service.dart';/// 
-final class AccountCardIssuingSettings {const AccountCardIssuingSettings({this.tosAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'card_issuing_account_terms_of_service.dart';/// 
+@immutable final class AccountCardIssuingSettings {const AccountCardIssuingSettings({this.tosAcceptance});
 
 factory AccountCardIssuingSettings.fromJson(Map<String, dynamic> json) { return AccountCardIssuingSettings(
   tosAcceptance: json['tos_acceptance'] != null ? CardIssuingAccountTermsOfService.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,

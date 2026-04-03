@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines.dart';import 'post_credit_notes_request_refunds.dart';import 'post_credit_notes_request_shipping_cost.dart';/// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
-final class PostCreditNotesRequestEmailType {const PostCreditNotesRequestEmailType._(this.value);
+@immutable final class PostCreditNotesRequestEmailType {const PostCreditNotesRequestEmailType._(this.value);
 
 factory PostCreditNotesRequestEmailType.fromJson(String json) { return switch (json) {
   'credit_note' => creditNote,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCreditNotesRequestEmailType($value)'; } 
  }
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
-final class PostCreditNotesRequestReason {const PostCreditNotesRequestReason._(this.value);
+@immutable final class PostCreditNotesRequestReason {const PostCreditNotesRequestReason._(this.value);
 
 factory PostCreditNotesRequestReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCreditNotesRequestReason($value)'; } 
  }
-final class PostCreditNotesRequest {const PostCreditNotesRequest({this.amount, this.creditAmount, this.effectiveAt, this.emailType, this.expand, required this.invoice, this.lines, this.memo, this.metadata, this.outOfBandAmount, this.reason, this.refundAmount, this.refunds, this.shippingCost, });
+@immutable final class PostCreditNotesRequest {const PostCreditNotesRequest({required this.invoice, this.amount, this.creditAmount, this.effectiveAt, this.emailType, this.expand, this.lines, this.memo, this.metadata, this.outOfBandAmount, this.reason, this.refundAmount, this.refunds, this.shippingCost, });
 
 factory PostCreditNotesRequest.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_grader_response_metadata_errors.dart';final class RunGraderResponseMetadata {const RunGraderResponseMetadata({required this.name, required this.type, required this.errors, required this.executionTime, required this.scores, required this.tokenUsage, required this.sampledModelName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_grader_response_metadata_errors.dart';@immutable final class RunGraderResponseMetadata {const RunGraderResponseMetadata({required this.name, required this.type, required this.errors, required this.executionTime, required this.scores, required this.tokenUsage, required this.sampledModelName, });
 
 factory RunGraderResponseMetadata.fromJson(Map<String, dynamic> json) { return RunGraderResponseMetadata(
   name: json['name'] as String,

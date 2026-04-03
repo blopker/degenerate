@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The customer's bank, if provided. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
-final class PaymentMethodIdealBank {const PaymentMethodIdealBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank, if provided. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
+@immutable final class PaymentMethodIdealBank {const PaymentMethodIdealBank._(this.value);
 
 factory PaymentMethodIdealBank.fromJson(String json) { return switch (json) {
   'abn_amro' => abnAmro,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodIdealBank($value)'; } 
  }
 /// The Bank Identifier Code of the customer's bank, if the bank was provided.
-final class PaymentMethodIdealBic {const PaymentMethodIdealBic._(this.value);
+@immutable final class PaymentMethodIdealBic {const PaymentMethodIdealBic._(this.value);
 
 factory PaymentMethodIdealBic.fromJson(String json) { return switch (json) {
   'ABNANL2A' => abnanl2A,
@@ -162,7 +162,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodIdealBic($value)'; } 
  }
 /// 
-final class PaymentMethodIdeal {const PaymentMethodIdeal({this.bank, this.bic, });
+@immutable final class PaymentMethodIdeal {const PaymentMethodIdeal({this.bank, this.bic, });
 
 factory PaymentMethodIdeal.fromJson(Map<String, dynamic> json) { return PaymentMethodIdeal(
   bank: json['bank'] != null ? PaymentMethodIdealBank.fromJson(json['bank'] as String) : null,

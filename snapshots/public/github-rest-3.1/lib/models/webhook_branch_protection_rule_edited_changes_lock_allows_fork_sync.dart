@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync {const WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync {const WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync(
   from: json['from'] as bool?,

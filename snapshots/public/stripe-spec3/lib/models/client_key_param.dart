@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'client_key_param_customer_acceptance.dart';/// This hash contains details about the Mandate to create
-final class ClientKeyParam {const ClientKeyParam({required this.customerAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param_customer_acceptance.dart';/// This hash contains details about the Mandate to create
+@immutable final class ClientKeyParam {const ClientKeyParam({required this.customerAcceptance});
 
 factory ClientKeyParam.fromJson(Map<String, dynamic> json) { return ClientKeyParam(
   customerAcceptance: ClientKeyParamCustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),

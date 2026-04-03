@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_patch_gateway_log_response404_errors.dart';final class AigConfigPatchGatewayLogResponse404 {const AigConfigPatchGatewayLogResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_patch_gateway_log_response404_errors.dart';@immutable final class AigConfigPatchGatewayLogResponse404 {const AigConfigPatchGatewayLogResponse404({required this.errors, required this.success, });
 
 factory AigConfigPatchGatewayLogResponse404.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigPatchGatewayLogResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

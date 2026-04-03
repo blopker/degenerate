@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ChatTemplateKwargs {const Prompt43ChatTemplateKwargs({this.clearThinking = false, this.enableThinking = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ChatTemplateKwargs {const Prompt43ChatTemplateKwargs({this.clearThinking = false, this.enableThinking = true, });
 
 factory Prompt43ChatTemplateKwargs.fromJson(Map<String, dynamic> json) { return Prompt43ChatTemplateKwargs(
   clearThinking: json.containsKey('clear_thinking') ? json['clear_thinking'] as bool : false,

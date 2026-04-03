@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingTokensRequest {const GetIssuingTokensRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingTokensRequest {const GetIssuingTokensRequest();
 
 factory GetIssuingTokensRequest.fromJson(Map<String, dynamic> json) { return GetIssuingTokensRequest(
 

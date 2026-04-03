@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_name_collection_business.dart';import 'post_checkout_sessions_request_name_collection_individual.dart';/// Controls name collection settings for the session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_name_collection_business.dart';import 'post_checkout_sessions_request_name_collection_individual.dart';/// Controls name collection settings for the session.
 /// 
 /// You can configure Checkout to collect your customers' business names, individual names, or both. Each name field can be either required or optional.
 /// 
 /// If a [Customer](https://docs.stripe.com/api/customers) is created or provided, the names can be saved to the Customer object as well.
 /// 
 /// You can't set this parameter if `ui_mode` is `custom`.
-final class PostCheckoutSessionsRequestNameCollection {const PostCheckoutSessionsRequestNameCollection({this.business, this.individual, });
+@immutable final class PostCheckoutSessionsRequestNameCollection {const PostCheckoutSessionsRequestNameCollection({this.business, this.individual, });
 
 factory PostCheckoutSessionsRequestNameCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestNameCollection(
   business: json['business'] != null ? PostCheckoutSessionsRequestNameCollectionBusiness.fromJson(json['business'] as Map<String, dynamic>) : null,

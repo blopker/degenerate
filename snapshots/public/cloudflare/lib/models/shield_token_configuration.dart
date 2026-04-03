@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_timestamp.dart';import 'shield_title.dart';import 'shield_token_type.dart';import 'shield_uuid.dart';final class ShieldTokenConfiguration {const ShieldTokenConfiguration({required this.createdAt, required this.credentials, required this.description, required this.id, required this.lastUpdated, required this.title, required this.tokenSources, required this.tokenType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_timestamp.dart';import 'shield_title.dart';import 'shield_token_type.dart';import 'shield_uuid.dart';@immutable final class ShieldTokenConfiguration {const ShieldTokenConfiguration({required this.createdAt, required this.credentials, required this.description, required this.id, required this.lastUpdated, required this.title, required this.tokenSources, required this.tokenType, });
 
 factory ShieldTokenConfiguration.fromJson(Map<String, dynamic> json) { return ShieldTokenConfiguration(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),

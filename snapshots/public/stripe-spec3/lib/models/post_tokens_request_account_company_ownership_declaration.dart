@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTokensRequestAccountCompanyOwnershipDeclaration {const PostTokensRequestAccountCompanyOwnershipDeclaration({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestAccountCompanyOwnershipDeclaration {const PostTokensRequestAccountCompanyOwnershipDeclaration({this.date, this.ip, this.userAgent, });
 
 factory PostTokensRequestAccountCompanyOwnershipDeclaration.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountCompanyOwnershipDeclaration(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

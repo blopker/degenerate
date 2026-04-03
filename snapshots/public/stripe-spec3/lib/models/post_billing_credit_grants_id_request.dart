@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_id_request_expires_at.dart';final class PostBillingCreditGrantsIdRequest {const PostBillingCreditGrantsIdRequest({this.expand, this.expiresAt, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_id_request_expires_at.dart';@immutable final class PostBillingCreditGrantsIdRequest {const PostBillingCreditGrantsIdRequest({this.expand, this.expiresAt, this.metadata, });
 
 factory PostBillingCreditGrantsIdRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

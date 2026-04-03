@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnOnrampCloudType {const McnOnrampCloudType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnOnrampCloudType {const McnOnrampCloudType._(this.value);
 
 factory McnOnrampCloudType.fromJson(String json) { return switch (json) {
   'AWS' => aws,

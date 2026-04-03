@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// References a container created with the /v1/containers endpoint
-final class ContainerReferenceParamType {const ContainerReferenceParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a container created with the /v1/containers endpoint
+@immutable final class ContainerReferenceParamType {const ContainerReferenceParamType._(this.value);
 
 factory ContainerReferenceParamType.fromJson(String json) { return switch (json) {
   'container_reference' => containerReference,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerReferenceParamType($value)'; } 
  }
-final class ContainerReferenceParam {const ContainerReferenceParam({this.type = ContainerReferenceParamType.containerReference, required this.containerId, });
+@immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });
 
 factory ContainerReferenceParam.fromJson(Map<String, dynamic> json) { return ContainerReferenceParam(
   type: ContainerReferenceParamType.fromJson(json['type'] as String),

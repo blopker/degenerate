@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullRequestMinimalHeadRepo {const PullRequestMinimalHeadRepo({required this.id, required this.url, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestMinimalHeadRepo {const PullRequestMinimalHeadRepo({required this.id, required this.url, required this.name, });
 
 factory PullRequestMinimalHeadRepo.fromJson(Map<String, dynamic> json) { return PullRequestMinimalHeadRepo(
   id: (json['id'] as num).toInt(),

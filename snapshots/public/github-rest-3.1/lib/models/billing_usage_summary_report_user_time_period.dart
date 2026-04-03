@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BillingUsageSummaryReportUserTimePeriod {const BillingUsageSummaryReportUserTimePeriod({required this.year, this.month, this.day, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUsageSummaryReportUserTimePeriod {const BillingUsageSummaryReportUserTimePeriod({required this.year, this.month, this.day, });
 
 factory BillingUsageSummaryReportUserTimePeriod.fromJson(Map<String, dynamic> json) { return BillingUsageSummaryReportUserTimePeriod(
   year: (json['year'] as num).toInt(),

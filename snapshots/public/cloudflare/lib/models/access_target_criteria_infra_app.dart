@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_port.dart';/// The communication protocol your application secures.
-final class AccessProtocolInfraApp {const AccessProtocolInfraApp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_port.dart';/// The communication protocol your application secures.
+@immutable final class AccessProtocolInfraApp {const AccessProtocolInfraApp._(this.value);
 
 factory AccessProtocolInfraApp.fromJson(String json) { return switch (json) {
   'SSH' => ssh,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessProtocolInfraApp($value)'; } 
  }
-final class AccessTargetCriteriaInfraApp {const AccessTargetCriteriaInfraApp({required this.port, required this.targetAttributes, required this.protocol, });
+@immutable final class AccessTargetCriteriaInfraApp {const AccessTargetCriteriaInfraApp({required this.port, required this.targetAttributes, required this.protocol, });
 
 factory AccessTargetCriteriaInfraApp.fromJson(Map<String, dynamic> json) { return AccessTargetCriteriaInfraApp(
   port: AccessPort.fromJson(json['port'] as num),

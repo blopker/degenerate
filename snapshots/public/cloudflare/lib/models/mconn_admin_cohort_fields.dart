@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnAdminCohortFields {const MconnAdminCohortFields({this.desiredVersion, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnAdminCohortFields {const MconnAdminCohortFields({this.desiredVersion, this.name, });
 
 factory MconnAdminCohortFields.fromJson(Map<String, dynamic> json) { return MconnAdminCohortFields(
   desiredVersion: json['desired_version'] as String?,

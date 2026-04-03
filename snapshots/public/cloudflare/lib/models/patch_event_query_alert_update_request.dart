@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Alert frequency (immediate or daily)
-final class PatchEventQueryAlertUpdateRequestFrequency {const PatchEventQueryAlertUpdateRequestFrequency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
+@immutable final class PatchEventQueryAlertUpdateRequestFrequency {const PatchEventQueryAlertUpdateRequestFrequency._(this.value);
 
 factory PatchEventQueryAlertUpdateRequestFrequency.fromJson(String json) { return switch (json) {
   'immediate' => immediate,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PatchEventQueryAlertUpdateRequestFrequency($value)'; } 
  }
-final class PatchEventQueryAlertUpdateRequest {const PatchEventQueryAlertUpdateRequest({this.enabled, this.frequency, this.notificationType, });
+@immutable final class PatchEventQueryAlertUpdateRequest {const PatchEventQueryAlertUpdateRequest({this.enabled, this.frequency, this.notificationType, });
 
 factory PatchEventQueryAlertUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchEventQueryAlertUpdateRequest(
   enabled: json['enabled'] as bool?,

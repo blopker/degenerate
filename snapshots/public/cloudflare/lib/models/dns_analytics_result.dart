@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_data2.dart';import 'dns_analytics_query.dart';final class DnsAnalyticsResult {const DnsAnalyticsResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_data2.dart';import 'dns_analytics_query.dart';@immutable final class DnsAnalyticsResult {const DnsAnalyticsResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
 
 factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) { return DnsAnalyticsResult(
   data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsData2.fromJson(e as Map<String, dynamic>)).toList(),

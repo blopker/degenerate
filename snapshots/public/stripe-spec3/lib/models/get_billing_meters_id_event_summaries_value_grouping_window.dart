@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow._(this.value);
 
 factory GetBillingMetersIdEventSummariesValueGroupingWindow.fromJson(String json) { return switch (json) {
   'day' => day,

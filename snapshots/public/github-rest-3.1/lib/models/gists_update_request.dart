@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gists_update_request_files_value.dart';final class GistsUpdateRequest {const GistsUpdateRequest({this.description, this.files, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gists_update_request_files_value.dart';@immutable final class GistsUpdateRequest {const GistsUpdateRequest({this.description, this.files, });
 
 factory GistsUpdateRequest.fromJson(Map<String, dynamic> json) { return GistsUpdateRequest(
   description: json['description'] as String?,

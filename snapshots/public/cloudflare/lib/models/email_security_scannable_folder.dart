@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityScannableFolder {const EmailSecurityScannableFolder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityScannableFolder {const EmailSecurityScannableFolder._(this.value);
 
 factory EmailSecurityScannableFolder.fromJson(String json) { return switch (json) {
   'AllItems' => allItems,

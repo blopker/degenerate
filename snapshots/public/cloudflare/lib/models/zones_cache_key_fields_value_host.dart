@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Determines which host header to include in the Cache Key.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which host header to include in the Cache Key.
 /// 
-final class ZonesCacheKeyFieldsValueHost {const ZonesCacheKeyFieldsValueHost({this.resolved});
+@immutable final class ZonesCacheKeyFieldsValueHost {const ZonesCacheKeyFieldsValueHost({this.resolved});
 
 factory ZonesCacheKeyFieldsValueHost.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueHost(
   resolved: json['resolved'] as bool?,

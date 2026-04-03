@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AppsListAccountsForPlanStubbedDirection {const AppsListAccountsForPlanStubbedDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsListAccountsForPlanStubbedDirection {const AppsListAccountsForPlanStubbedDirection._(this.value);
 
 factory AppsListAccountsForPlanStubbedDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

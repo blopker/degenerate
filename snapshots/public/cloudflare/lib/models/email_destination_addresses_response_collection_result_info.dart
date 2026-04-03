@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailDestinationAddressesResponseCollectionResultInfo {const EmailDestinationAddressesResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailDestinationAddressesResponseCollectionResultInfo {const EmailDestinationAddressesResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory EmailDestinationAddressesResponseCollectionResultInfo.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressesResponseCollectionResultInfo(
   count: json['count'],

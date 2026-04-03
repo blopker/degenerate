@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_address.dart';/// Billing details attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationBillingDetails {const InsightsResourcesPaymentEvaluationBillingDetails({required this.address, this.email, this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_address.dart';/// Billing details attached to this payment evaluation.
+@immutable final class InsightsResourcesPaymentEvaluationBillingDetails {const InsightsResourcesPaymentEvaluationBillingDetails({required this.address, this.email, this.name, this.phone, });
 
 factory InsightsResourcesPaymentEvaluationBillingDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationBillingDetails(
   address: InsightsResourcesPaymentEvaluationAddress.fromJson(json['address'] as Map<String, dynamic>),

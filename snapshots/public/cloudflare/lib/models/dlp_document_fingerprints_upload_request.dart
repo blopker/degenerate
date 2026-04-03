@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class DlpDocumentFingerprintsUploadRequest {const DlpDocumentFingerprintsUploadRequest({required this.file});
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDocumentFingerprintsUploadRequest {const DlpDocumentFingerprintsUploadRequest({required this.file});
 
 factory DlpDocumentFingerprintsUploadRequest.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintsUploadRequest(
   file: base64Decode(json['file'] as String),

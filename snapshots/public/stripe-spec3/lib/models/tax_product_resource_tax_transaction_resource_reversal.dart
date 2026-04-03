@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TaxProductResourceTaxTransactionResourceReversal {const TaxProductResourceTaxTransactionResourceReversal({this.originalTransaction});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TaxProductResourceTaxTransactionResourceReversal {const TaxProductResourceTaxTransactionResourceReversal({this.originalTransaction});
 
 factory TaxProductResourceTaxTransactionResourceReversal.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxTransactionResourceReversal(
   originalTransaction: json['original_transaction'] as String?,

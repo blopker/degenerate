@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// PodResourceClaim references exactly one ResourceClaim, either directly or by naming a ResourceClaimTemplate which is then turned into a ResourceClaim for the pod.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodResourceClaim references exactly one ResourceClaim, either directly or by naming a ResourceClaimTemplate which is then turned into a ResourceClaim for the pod.
 /// 
 /// It adds a name to it that uniquely identifies the ResourceClaim inside the Pod. Containers that need access to the ResourceClaim reference it with this name.
-final class PodResourceClaim {const PodResourceClaim({this.name = '', this.resourceClaimName, this.resourceClaimTemplateName, });
+@immutable final class PodResourceClaim {const PodResourceClaim({this.name = '', this.resourceClaimName, this.resourceClaimTemplateName, });
 
 factory PodResourceClaim.fromJson(Map<String, dynamic> json) { return PodResourceClaim(
   name: json['name'] as String,

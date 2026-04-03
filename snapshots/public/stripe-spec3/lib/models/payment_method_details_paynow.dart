@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsPaynow {const PaymentMethodDetailsPaynow({this.location, this.reader, this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsPaynow {const PaymentMethodDetailsPaynow({this.location, this.reader, this.reference, });
 
 factory PaymentMethodDetailsPaynow.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaynow(
   location: json['location'] as String?,

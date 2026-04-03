@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_update_gateway_dynamic_route_response_route_elements_conditional_outputs_false.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_conditional_outputs_true.dart';final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputs {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputs({required this.$false, required this.$true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_conditional_outputs_false.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_conditional_outputs_true.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputs {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputs({required this.$false, required this.$true, });
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputs.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputs(
   $false: AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsFalse.fromJson(json['false'] as Map<String, dynamic>),

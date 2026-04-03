@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'promotion_code_currency_option.dart';/// 
-final class PromotionCodesResourceRestrictions {const PromotionCodesResourceRestrictions({this.currencyOptions, required this.firstTimeTransaction, this.minimumAmount, this.minimumAmountCurrency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'promotion_code_currency_option.dart';/// 
+@immutable final class PromotionCodesResourceRestrictions {const PromotionCodesResourceRestrictions({required this.firstTimeTransaction, this.currencyOptions, this.minimumAmount, this.minimumAmountCurrency, });
 
 factory PromotionCodesResourceRestrictions.fromJson(Map<String, dynamic> json) { return PromotionCodesResourceRestrictions(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PromotionCodeCurrencyOption.fromJson(v as Map<String, dynamic>))),

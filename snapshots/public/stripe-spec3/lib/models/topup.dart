@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'source.dart';import 'topup_balance_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TopupObject {const TopupObject._(this.value);
+@immutable final class TopupObject {const TopupObject._(this.value);
 
 factory TopupObject.fromJson(String json) { return switch (json) {
   'topup' => topup,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TopupObject($value)'; } 
  }
 /// The status of the top-up is either `canceled`, `failed`, `pending`, `reversed`, or `succeeded`.
-final class TopupStatus {const TopupStatus._(this.value);
+@immutable final class TopupStatus {const TopupStatus._(this.value);
 
 factory TopupStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 /// unique, random ID.
 /// 
 /// Related guide: [Topping up your platform account](https://docs.stripe.com/connect/top-ups)
-final class Topup {const Topup({required this.amount, this.balanceTransaction, required this.created, required this.currency, this.description, this.expectedAvailabilityDate, this.failureCode, this.failureMessage, required this.id, required this.livemode, required this.metadata, required this.object, this.source, this.statementDescriptor, required this.status, this.transferGroup, });
+@immutable final class Topup {const Topup({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, this.balanceTransaction, this.description, this.expectedAvailabilityDate, this.failureCode, this.failureMessage, this.source, this.statementDescriptor, this.transferGroup, });
 
 factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
   amount: (json['amount'] as num).toInt(),

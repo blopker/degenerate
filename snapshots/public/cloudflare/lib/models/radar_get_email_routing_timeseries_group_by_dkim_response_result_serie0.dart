@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetEmailRoutingTimeseriesGroupByDkimResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupByDkimResponseResultSerie0({required this.fail, required this.none, required this.pass, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupByDkimResponseResultSerie0({required this.fail, required this.none, required this.pass, });
 
 factory RadarGetEmailRoutingTimeseriesGroupByDkimResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByDkimResponseResultSerie0(
   fail: (json['FAIL'] as List<dynamic>).map((e) => e as String).toList(),

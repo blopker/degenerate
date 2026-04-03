@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringRamUsedPctByApp2 {const DigitalExperienceMonitoringRamUsedPctByApp2({this.name, this.ramUsedPct, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringRamUsedPctByApp2 {const DigitalExperienceMonitoringRamUsedPctByApp2({this.name, this.ramUsedPct, });
 
 factory DigitalExperienceMonitoringRamUsedPctByApp2.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringRamUsedPctByApp2(
   name: json['name'] as String?,

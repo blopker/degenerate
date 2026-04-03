@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml {const WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml {const WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml({required this.href});
 
 factory WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml(
   href: json['href'] as String,

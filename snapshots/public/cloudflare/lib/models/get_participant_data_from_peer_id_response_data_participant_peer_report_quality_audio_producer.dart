@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer({this.bytesSent, this.jitter, this.mid, this.mosQuality, this.packetsLost, this.packetsSent, this.producerId, this.rtt, this.ssrc, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer({this.bytesSent, this.jitter, this.mid, this.mosQuality, this.packetsLost, this.packetsSent, this.producerId, this.rtt, this.ssrc, this.timestamp, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(
   bytesSent: json['bytes_sent'] != null ? (json['bytes_sent'] as num).toInt() : null,

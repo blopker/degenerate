@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a per-transaction override of a reader configuration
-final class TerminalReaderReaderResourceConfirmConfig {const TerminalReaderReaderResourceConfirmConfig({this.returnUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-transaction override of a reader configuration
+@immutable final class TerminalReaderReaderResourceConfirmConfig {const TerminalReaderReaderResourceConfirmConfig({this.returnUrl});
 
 factory TerminalReaderReaderResourceConfirmConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceConfirmConfig(
   returnUrl: json['return_url'] as String?,

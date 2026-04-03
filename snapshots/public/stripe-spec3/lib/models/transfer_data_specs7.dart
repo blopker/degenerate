@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TransferDataSpecs7 {const TransferDataSpecs7({this.amountPercent, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TransferDataSpecs7 {const TransferDataSpecs7({required this.destination, this.amountPercent, });
 
 factory TransferDataSpecs7.fromJson(Map<String, dynamic> json) { return TransferDataSpecs7(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,

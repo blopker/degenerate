@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// ABA Records contain U.S. bank account details per the ABA format.
-final class FundingInstructionsBankTransferAbaRecord {const FundingInstructionsBankTransferAbaRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.accountType, required this.bankAddress, required this.bankName, required this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// ABA Records contain U.S. bank account details per the ABA format.
+@immutable final class FundingInstructionsBankTransferAbaRecord {const FundingInstructionsBankTransferAbaRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.accountType, required this.bankAddress, required this.bankName, required this.routingNumber, });
 
 factory FundingInstructionsBankTransferAbaRecord.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferAbaRecord(
   accountHolderAddress: Address.fromJson(json['account_holder_address'] as Map<String, dynamic>),

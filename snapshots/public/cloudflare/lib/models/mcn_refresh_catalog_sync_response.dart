@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-extension type const McnPolicyResult(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const McnPolicyResult(String value) {
 factory McnPolicyResult.fromJson(String json) => McnPolicyResult(json);
 
 String toJson() => value;
 
 }
-final class McnRefreshCatalogSyncResponse {const McnRefreshCatalogSyncResponse({this.result});
+@immutable final class McnRefreshCatalogSyncResponse {const McnRefreshCatalogSyncResponse({this.result});
 
 factory McnRefreshCatalogSyncResponse.fromJson(Map<String, dynamic> json) { return McnRefreshCatalogSyncResponse(
   result: json['result'] != null ? McnPolicyResult.fromJson(json['result'] as String) : null,

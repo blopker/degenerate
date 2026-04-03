@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_account_features.dart';import 'treasury_financial_accounts_resource_balance.dart';import 'treasury_financial_accounts_resource_financial_address.dart';import 'treasury_financial_accounts_resource_platform_restrictions.dart';import 'treasury_financial_accounts_resource_status_details.dart';final class TreasuryFinancialAccountActiveFeatures {const TreasuryFinancialAccountActiveFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_account_features.dart';import 'treasury_financial_accounts_resource_balance.dart';import 'treasury_financial_accounts_resource_financial_address.dart';import 'treasury_financial_accounts_resource_platform_restrictions.dart';import 'treasury_financial_accounts_resource_status_details.dart';@immutable final class TreasuryFinancialAccountActiveFeatures {const TreasuryFinancialAccountActiveFeatures._(this.value);
 
 factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountActiveFeatures($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject._(this.value);
+@immutable final class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject._(this.value);
 
 factory TreasuryFinancialAccountObject.fromJson(String json) { return switch (json) {
   'treasury.financial_account' => treasuryFinancialAccount,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TreasuryFinancialAccountObject($value)'; } 
  }
-final class TreasuryFinancialAccountPendingFeatures {const TreasuryFinancialAccountPendingFeatures._(this.value);
+@immutable final class TreasuryFinancialAccountPendingFeatures {const TreasuryFinancialAccountPendingFeatures._(this.value);
 
 factory TreasuryFinancialAccountPendingFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -124,7 +124,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TreasuryFinancialAccountPendingFeatures($value)'; } 
  }
-final class TreasuryFinancialAccountRestrictedFeatures {const TreasuryFinancialAccountRestrictedFeatures._(this.value);
+@immutable final class TreasuryFinancialAccountRestrictedFeatures {const TreasuryFinancialAccountRestrictedFeatures._(this.value);
 
 factory TreasuryFinancialAccountRestrictedFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -176,7 +176,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountRestrictedFeatures($value)'; } 
  }
 /// Status of this FinancialAccount.
-final class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus._(this.value);
+@immutable final class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus._(this.value);
 
 factory TreasuryFinancialAccountStatus.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -202,7 +202,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Stripe Treasury provides users with a container for money called a FinancialAccount that is separate from their Payments balance.
 /// FinancialAccounts serve as the source and destination of Treasury’s money movement APIs.
-final class TreasuryFinancialAccount {const TreasuryFinancialAccount({this.activeFeatures, required this.balance, required this.country, required this.created, this.features, required this.financialAddresses, required this.id, this.isDefault, required this.livemode, this.metadata, this.nickname, required this.object, this.pendingFeatures, this.platformRestrictions, this.restrictedFeatures, required this.status, required this.statusDetails, required this.supportedCurrencies, });
+@immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata, this.nickname, this.pendingFeatures, this.platformRestrictions, this.restrictedFeatures, });
 
 factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccount(
   activeFeatures: (json['active_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountActiveFeatures.fromJson(e as String)).toList(),

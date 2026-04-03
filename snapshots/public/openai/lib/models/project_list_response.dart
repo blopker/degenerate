@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project.dart';final class ProjectListResponseObject {const ProjectListResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project.dart';@immutable final class ProjectListResponseObject {const ProjectListResponseObject._(this.value);
 
 factory ProjectListResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectListResponseObject($value)'; } 
  }
-final class ProjectListResponse {const ProjectListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ProjectListResponse {const ProjectListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ProjectListResponse.fromJson(Map<String, dynamic> json) { return ProjectListResponse(
   object: ProjectListResponseObject.fromJson(json['object'] as String),

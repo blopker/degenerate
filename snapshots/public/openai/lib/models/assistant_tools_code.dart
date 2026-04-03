@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of tool being defined: `code_interpreter`
-final class AssistantToolsCodeType {const AssistantToolsCodeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `code_interpreter`
+@immutable final class AssistantToolsCodeType {const AssistantToolsCodeType._(this.value);
 
 factory AssistantToolsCodeType.fromJson(String json) { return switch (json) {
   'code_interpreter' => codeInterpreter,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AssistantToolsCodeType($value)'; } 
  }
-final class AssistantToolsCode {const AssistantToolsCode({required this.type});
+@immutable final class AssistantToolsCode {const AssistantToolsCode({required this.type});
 
 factory AssistantToolsCode.fromJson(Map<String, dynamic> json) { return AssistantToolsCode(
   type: AssistantToolsCodeType.fromJson(json['type'] as String),

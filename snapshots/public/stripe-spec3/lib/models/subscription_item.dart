@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discount.dart';import 'price.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_item_discounts.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class SubscriptionItemObject {const SubscriptionItemObject._(this.value);
+@immutable final class SubscriptionItemObject {const SubscriptionItemObject._(this.value);
 
 factory SubscriptionItemObject.fromJson(String json) { return switch (json) {
   'subscription_item' => subscriptionItem,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Subscription items allow you to create customer subscriptions with more than
 /// one plan, making it easy to represent complex billing relationships.
-final class SubscriptionItem {const SubscriptionItem({this.billingThresholds, required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, this.quantity, required this.subscription, this.taxRates, });
+@immutable final class SubscriptionItem {const SubscriptionItem({required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, required this.subscription, this.billingThresholds, this.quantity, this.taxRates, });
 
 factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return SubscriptionItem(
   billingThresholds: json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,

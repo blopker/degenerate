@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksProjectColumn {const WebhooksProjectColumn({this.afterId, required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectColumn {const WebhooksProjectColumn({required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, });
 
 factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) { return WebhooksProjectColumn(
   afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,

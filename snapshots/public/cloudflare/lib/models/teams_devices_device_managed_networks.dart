@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_response.dart';import 'teams_devices_uuid.dart';final class TeamsDevicesDeviceManagedNetworks {const TeamsDevicesDeviceManagedNetworks({this.config, this.name, this.networkId, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_response.dart';import 'teams_devices_uuid.dart';@immutable final class TeamsDevicesDeviceManagedNetworks {const TeamsDevicesDeviceManagedNetworks({this.config, this.name, this.networkId, this.type, });
 
 factory TeamsDevicesDeviceManagedNetworks.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceManagedNetworks(
   config: json['config'] != null ? TeamsDevicesSchemasConfigResponse.fromJson(json['config'] as Map<String, dynamic>) : null,

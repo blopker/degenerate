@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatCompletionRequestMessageContentPartFileFile {const ChatCompletionRequestMessageContentPartFileFile({this.filename, this.fileData, this.fileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionRequestMessageContentPartFileFile {const ChatCompletionRequestMessageContentPartFileFile({this.filename, this.fileData, this.fileId, });
 
 factory ChatCompletionRequestMessageContentPartFileFile.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartFileFile(
   filename: json['filename'] as String?,

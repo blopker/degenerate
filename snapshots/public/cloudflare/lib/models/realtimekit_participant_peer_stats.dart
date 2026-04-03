@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_participant_peer_stats_peer_stats.dart';final class RealtimekitParticipantPeerStats {const RealtimekitParticipantPeerStats({this.peerStats});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_peer_stats_peer_stats.dart';@immutable final class RealtimekitParticipantPeerStats {const RealtimekitParticipantPeerStats({this.peerStats});
 
 factory RealtimekitParticipantPeerStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStats(
   peerStats: json['peer_stats'] != null ? RealtimekitParticipantPeerStatsPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostContentResponseMeta {const BrapiPostContentResponseMeta({this.status, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostContentResponseMeta {const BrapiPostContentResponseMeta({this.status, this.title, });
 
 factory BrapiPostContentResponseMeta.fromJson(Map<String, dynamic> json) { return BrapiPostContentResponseMeta(
   status: json['status'] != null ? (json['status'] as num).toDouble() : null,

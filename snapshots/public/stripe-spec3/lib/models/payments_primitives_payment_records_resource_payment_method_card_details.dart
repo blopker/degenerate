@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)'; } 
  }
 /// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(this.value);
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(String json) { return switch (json) {
   'credit' => credit,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)'; } 
  }
 /// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(this.value);
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -142,7 +142,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)'; } 
  }
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._(this.value);
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(String json) { return switch (json) {
   'recurring' => recurring,
@@ -167,7 +167,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage($value)'; } 
  }
 /// Details of the card used for this payment attempt.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({this.authorizationCode, required this.brand, this.captureBefore, this.checks, this.country, this.description, required this.expMonth, required this.expYear, this.fingerprint, required this.funding, this.iin, this.installments, this.issuer, required this.last4, this.network, this.networkAdviceCode, this.networkDeclineCode, this.networkToken, this.networkTransactionId, this.storedCredentialUsage, this.threeDSecure, this.wallet, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode, this.captureBefore, this.checks, this.country, this.description, this.fingerprint, this.iin, this.installments, this.issuer, this.network, this.networkAdviceCode, this.networkDeclineCode, this.networkToken, this.networkTransactionId, this.storedCredentialUsage, this.threeDSecure, this.wallet, });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: json['authorization_code'] as String?,

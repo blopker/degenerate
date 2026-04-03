@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For MCP tools, the type is always `mcp`.
-final class ToolChoiceMcpType {const ToolChoiceMcpType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For MCP tools, the type is always `mcp`.
+@immutable final class ToolChoiceMcpType {const ToolChoiceMcpType._(this.value);
 
 factory ToolChoiceMcpType.fromJson(String json) { return switch (json) {
   'mcp' => mcp,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Use this option to force the model to call a specific tool on a remote MCP server.
 /// 
-final class ToolChoiceMcp {const ToolChoiceMcp({required this.type, required this.serverLabel, this.name, });
+@immutable final class ToolChoiceMcp {const ToolChoiceMcp({required this.type, required this.serverLabel, this.name, });
 
 factory ToolChoiceMcp.fromJson(Map<String, dynamic> json) { return ToolChoiceMcp(
   type: ToolChoiceMcpType.fromJson(json['type'] as String),

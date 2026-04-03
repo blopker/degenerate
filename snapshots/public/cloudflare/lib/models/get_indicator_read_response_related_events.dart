@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIndicatorReadResponseRelatedEvents {const GetIndicatorReadResponseRelatedEvents({required this.datasetId, required this.eventId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorReadResponseRelatedEvents {const GetIndicatorReadResponseRelatedEvents({required this.datasetId, required this.eventId, });
 
 factory GetIndicatorReadResponseRelatedEvents.fromJson(Map<String, dynamic> json) { return GetIndicatorReadResponseRelatedEvents(
   datasetId: json['datasetId'] as String,

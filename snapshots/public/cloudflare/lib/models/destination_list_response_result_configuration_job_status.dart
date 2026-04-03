@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationListResponseResultConfigurationJobStatus {const DestinationListResponseResultConfigurationJobStatus({required this.errorMessage, required this.lastComplete, required this.lastError, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationListResponseResultConfigurationJobStatus {const DestinationListResponseResultConfigurationJobStatus({required this.errorMessage, required this.lastComplete, required this.lastError, });
 
 factory DestinationListResponseResultConfigurationJobStatus.fromJson(Map<String, dynamic> json) { return DestinationListResponseResultConfigurationJobStatus(
   errorMessage: json['error_message'] as String,

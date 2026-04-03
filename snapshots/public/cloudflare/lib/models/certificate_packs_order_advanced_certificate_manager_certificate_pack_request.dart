@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';import 'tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_validation_method.dart';import 'tls_certificates_and_hostnames_validity_days.dart';/// Type of certificate pack.
-final class TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType._(this.value);
+@immutable final class TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType._(this.value);
 
 factory TlsCertificatesAndHostnamesAdvancedType.fromJson(String json) { return switch (json) {
   'advanced' => advanced,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesAdvancedType($value)'; } 
  }
-final class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest({required this.certificateAuthority, this.cloudflareBranding, required this.hosts, required this.type, required this.validationMethod, required this.validityDays, });
+@immutable final class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest({required this.certificateAuthority, required this.hosts, required this.type, required this.validationMethod, required this.validityDays, this.cloudflareBranding, });
 
 factory CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest.fromJson(Map<String, dynamic> json) { return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
   certificateAuthority: TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String),

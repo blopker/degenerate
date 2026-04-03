@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'entitlements_active_entitlement_feature.dart';import 'entitlements_feature.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject._(this.value);
+@immutable final class EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject._(this.value);
 
 factory EntitlementsActiveEntitlementObject.fromJson(String json) { return switch (json) {
   'entitlements.active_entitlement' => entitlementsActiveEntitlement,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EntitlementsActiveEntitlementObject($value)'; } 
  }
 /// An active entitlement describes access to a feature for a customer.
-final class EntitlementsActiveEntitlement {const EntitlementsActiveEntitlement({required this.feature, required this.id, required this.livemode, required this.lookupKey, required this.object, });
+@immutable final class EntitlementsActiveEntitlement {const EntitlementsActiveEntitlement({required this.feature, required this.id, required this.livemode, required this.lookupKey, required this.object, });
 
 factory EntitlementsActiveEntitlement.fromJson(Map<String, dynamic> json) { return EntitlementsActiveEntitlement(
   feature: OneOf2.parse(json['feature'], fromA: (v) => v as String, fromB: (v) => EntitlementsFeature.fromJson(v as Map<String, dynamic>),),

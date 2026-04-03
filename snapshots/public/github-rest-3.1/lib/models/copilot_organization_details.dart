@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
-final class CopilotOrganizationDetailsPublicCodeSuggestions {const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
+@immutable final class CopilotOrganizationDetailsPublicCodeSuggestions {const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
 
 factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String json) { return switch (json) {
   'allow' => allow,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsPublicCodeSuggestions($value)'; } 
  }
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
-final class CopilotOrganizationDetailsIdeChat {const CopilotOrganizationDetailsIdeChat._(this.value);
+@immutable final class CopilotOrganizationDetailsIdeChat {const CopilotOrganizationDetailsIdeChat._(this.value);
 
 factory CopilotOrganizationDetailsIdeChat.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsIdeChat($value)'; } 
  }
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
-final class CopilotOrganizationDetailsPlatformChat {const CopilotOrganizationDetailsPlatformChat._(this.value);
+@immutable final class CopilotOrganizationDetailsPlatformChat {const CopilotOrganizationDetailsPlatformChat._(this.value);
 
 factory CopilotOrganizationDetailsPlatformChat.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsPlatformChat($value)'; } 
  }
 /// The organization policy for allowing or disallowing Copilot CLI.
-final class CopilotOrganizationDetailsCli {const CopilotOrganizationDetailsCli._(this.value);
+@immutable final class CopilotOrganizationDetailsCli {const CopilotOrganizationDetailsCli._(this.value);
 
 factory CopilotOrganizationDetailsCli.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -113,7 +113,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsCli($value)'; } 
  }
 /// The mode of assigning new seats.
-final class CopilotOrganizationDetailsSeatManagementSetting {const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
+@immutable final class CopilotOrganizationDetailsSeatManagementSetting {const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
 
 factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(String json) { return switch (json) {
   'assign_all' => assignAll,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsSeatManagementSetting($value)'; } 
  }
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
-final class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType._(this.value);
+@immutable final class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType._(this.value);
 
 factory CopilotOrganizationDetailsPlanType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -169,7 +169,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsPlanType($value)'; } 
  }
 /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
-final class CopilotOrganizationDetails {const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, this.ideChat, this.platformChat, this.cli, required this.seatManagementSetting, this.planType, this.additionalProperties = const {}, });
+@immutable final class CopilotOrganizationDetails {const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, required this.seatManagementSetting, this.ideChat, this.platformChat, this.cli, this.planType, this.additionalProperties = const {}, });
 
 factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return CopilotOrganizationDetails(
   seatBreakdown: CopilotOrganizationSeatBreakdown.fromJson(json['seat_breakdown'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingMeterResourceBillingMeterStatusTransitions {const BillingMeterResourceBillingMeterStatusTransitions({this.deactivatedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingMeterResourceBillingMeterStatusTransitions {const BillingMeterResourceBillingMeterStatusTransitions({this.deactivatedAt});
 
 factory BillingMeterResourceBillingMeterStatusTransitions.fromJson(Map<String, dynamic> json) { return BillingMeterResourceBillingMeterStatusTransitions(
   deactivatedAt: json['deactivated_at'] != null ? (json['deactivated_at'] as num).toInt() : null,

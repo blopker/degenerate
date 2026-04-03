@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'overview_domains_actions_inbound.dart';import 'overview_domains_artifact_attestations.dart';final class OverviewDomains {const OverviewDomains({this.website, this.codespaces, this.copilot, this.packages, this.actions, this.actionsInbound, this.artifactAttestations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'overview_domains_actions_inbound.dart';import 'overview_domains_artifact_attestations.dart';@immutable final class OverviewDomains {const OverviewDomains({this.website, this.codespaces, this.copilot, this.packages, this.actions, this.actionsInbound, this.artifactAttestations, });
 
 factory OverviewDomains.fromJson(Map<String, dynamic> json) { return OverviewDomains(
   website: (json['website'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';final class ResponseCommonFailure2 {const ResponseCommonFailure2({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';@immutable final class ResponseCommonFailure2 {const ResponseCommonFailure2({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommonFailure2.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure2(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

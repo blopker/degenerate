@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_redirect_from_value_target_url.dart';/// The status code to use for the redirect.
-final class RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_redirect_from_value_target_url.dart';/// The status code to use for the redirect.
+@immutable final class RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode._(this.value);
 
 factory RulesetsRedirectFromValueStatusCode.fromJson(int json) { return switch (json) {
   301 => $301,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RulesetsRedirectFromValueStatusCode($value)'; } 
  }
 /// A redirect based on the request properties.
-final class RulesetsRedirectFromValue {const RulesetsRedirectFromValue({this.preserveQueryString = false, this.statusCode, required this.targetUrl, });
+@immutable final class RulesetsRedirectFromValue {const RulesetsRedirectFromValue({required this.targetUrl, this.preserveQueryString = false, this.statusCode, });
 
 factory RulesetsRedirectFromValue.fromJson(Map<String, dynamic> json) { return RulesetsRedirectFromValue(
   preserveQueryString: json.containsKey('preserve_query_string') ? json['preserve_query_string'] as bool : false,

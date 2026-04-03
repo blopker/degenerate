@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_rendering_options_param2.dart';final class PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2 {const PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_rendering_options_param2.dart';@immutable final class PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2 {const PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2._(this.value);
 
 factory PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

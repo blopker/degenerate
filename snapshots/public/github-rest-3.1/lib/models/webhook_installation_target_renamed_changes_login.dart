@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookInstallationTargetRenamedChangesLogin {const WebhookInstallationTargetRenamedChangesLogin({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationTargetRenamedChangesLogin {const WebhookInstallationTargetRenamedChangesLogin({required this.from});
 
 factory WebhookInstallationTargetRenamedChangesLogin.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamedChangesLogin(
   from: json['from'] as String,

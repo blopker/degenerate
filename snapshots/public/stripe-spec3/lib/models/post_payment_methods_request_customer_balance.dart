@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `customer_balance` PaymentMethod, this hash contains details about the CustomerBalance payment method.
-final class PostPaymentMethodsRequestCustomerBalance {const PostPaymentMethodsRequestCustomerBalance();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `customer_balance` PaymentMethod, this hash contains details about the CustomerBalance payment method.
+@immutable final class PostPaymentMethodsRequestCustomerBalance {const PostPaymentMethodsRequestCustomerBalance();
 
 factory PostPaymentMethodsRequestCustomerBalance.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestCustomerBalance(
 

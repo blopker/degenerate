@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// URL where the custom waiting room page can temporarily be previewed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// URL where the custom waiting room page can temporarily be previewed.
 extension type const WaitingroomPreviewUrl(String value) {
 factory WaitingroomPreviewUrl.fromJson(String json) => WaitingroomPreviewUrl(json);
 
 String toJson() => value;
 
 }
-final class WaitingroomPreviewResponseResult {const WaitingroomPreviewResponseResult({this.previewUrl});
+@immutable final class WaitingroomPreviewResponseResult {const WaitingroomPreviewResponseResult({this.previewUrl});
 
 factory WaitingroomPreviewResponseResult.fromJson(Map<String, dynamic> json) { return WaitingroomPreviewResponseResult(
   previewUrl: json['preview_url'] != null ? WaitingroomPreviewUrl.fromJson(json['preview_url'] as String) : null,

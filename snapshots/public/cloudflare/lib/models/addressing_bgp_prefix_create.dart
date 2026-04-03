@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_cidr.dart';final class AddressingBgpPrefixCreate {const AddressingBgpPrefixCreate({required this.cidr});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_cidr.dart';@immutable final class AddressingBgpPrefixCreate {const AddressingBgpPrefixCreate({required this.cidr});
 
 factory AddressingBgpPrefixCreate.fromJson(Map<String, dynamic> json) { return AddressingBgpPrefixCreate(
   cidr: AddressingCidr.fromJson(json['cidr'] as String),

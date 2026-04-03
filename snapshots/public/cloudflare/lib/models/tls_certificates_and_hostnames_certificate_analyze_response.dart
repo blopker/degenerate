@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesCertificateAnalyzeResponse {const TlsCertificatesAndHostnamesCertificateAnalyzeResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesCertificateAnalyzeResponse {const TlsCertificatesAndHostnamesCertificateAnalyzeResponse({this.result});
 
 factory TlsCertificatesAndHostnamesCertificateAnalyzeResponse.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateAnalyzeResponse(
   result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

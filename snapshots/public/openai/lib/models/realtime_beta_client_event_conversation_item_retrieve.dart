@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `conversation.item.retrieve`.
-final class RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.retrieve`.
+@immutable final class RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType._(this.value);
 
 factory RealtimeBetaClientEventConversationItemRetrieveType.fromJson(String json) { return switch (json) {
   'conversation.item.retrieve' => conversationItemRetrieve,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// unless the item does not exist in the conversation history, in which case the
 /// server will respond with an error.
 /// 
-final class RealtimeBetaClientEventConversationItemRetrieve {const RealtimeBetaClientEventConversationItemRetrieve({this.eventId, required this.type, required this.itemId, });
+@immutable final class RealtimeBetaClientEventConversationItemRetrieve {const RealtimeBetaClientEventConversationItemRetrieve({required this.type, required this.itemId, this.eventId, });
 
 factory RealtimeBetaClientEventConversationItemRetrieve.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventConversationItemRetrieve(
   eventId: json['event_id'] as String?,

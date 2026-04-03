@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookSponsorshipEditedChangesPrivacyLevel {const WebhookSponsorshipEditedChangesPrivacyLevel({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookSponsorshipEditedChangesPrivacyLevel {const WebhookSponsorshipEditedChangesPrivacyLevel({required this.from});
 
 factory WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipEditedChangesPrivacyLevel(
   from: json['from'] as String,

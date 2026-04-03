@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement. One of ["visa", "maestro"]
-final class PostTestHelpersIssuingSettlementsRequestNetwork {const PostTestHelpersIssuingSettlementsRequestNetwork._(this.value);
+@immutable final class PostTestHelpersIssuingSettlementsRequestNetwork {const PostTestHelpersIssuingSettlementsRequestNetwork._(this.value);
 
 factory PostTestHelpersIssuingSettlementsRequestNetwork.fromJson(String json) { return switch (json) {
   'maestro' => maestro,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingSettlementsRequestNetwork($value)'; } 
  }
-final class PostTestHelpersIssuingSettlementsRequest {const PostTestHelpersIssuingSettlementsRequest({required this.bin, required this.clearingDate, required this.currency, this.expand, this.interchangeFeesAmount, required this.netTotalAmount, this.network, this.networkSettlementIdentifier, this.transactionAmount, this.transactionCount, });
+@immutable final class PostTestHelpersIssuingSettlementsRequest {const PostTestHelpersIssuingSettlementsRequest({required this.bin, required this.clearingDate, required this.currency, required this.netTotalAmount, this.expand, this.interchangeFeesAmount, this.network, this.networkSettlementIdentifier, this.transactionAmount, this.transactionCount, });
 
 factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingSettlementsRequest(
   bin: json['bin'] as String,

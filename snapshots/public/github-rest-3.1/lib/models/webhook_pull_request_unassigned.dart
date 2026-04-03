@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_unassigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user_mannequin.dart';final class WebhookPullRequestUnassignedAction {const WebhookPullRequestUnassignedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_unassigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user_mannequin.dart';@immutable final class WebhookPullRequestUnassignedAction {const WebhookPullRequestUnassignedAction._(this.value);
 
 factory WebhookPullRequestUnassignedAction.fromJson(String json) { return switch (json) {
   'unassigned' => unassigned,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestUnassignedAction($value)'; } 
  }
-final class WebhookPullRequestUnassigned {const WebhookPullRequestUnassigned({required this.action, this.assignee, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, this.sender, });
+@immutable final class WebhookPullRequestUnassigned {const WebhookPullRequestUnassigned({required this.action, required this.number, required this.pullRequest, required this.repository, this.assignee, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnassigned(
   action: WebhookPullRequestUnassignedAction.fromJson(json['action'] as String),

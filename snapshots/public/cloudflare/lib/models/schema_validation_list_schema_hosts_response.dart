@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_schema_hosts.dart';final class SchemaValidationListSchemaHostsResponse {const SchemaValidationListSchemaHostsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_schema_hosts.dart';@immutable final class SchemaValidationListSchemaHostsResponse {const SchemaValidationListSchemaHostsResponse({required this.result});
 
 factory SchemaValidationListSchemaHostsResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationListSchemaHostsResponse(
   result: (json['result'] as List<dynamic>).map((e) => ShieldSchemaHosts.fromJson(e as Map<String, dynamic>)).toList(),

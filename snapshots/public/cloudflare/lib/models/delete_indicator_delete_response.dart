@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteIndicatorDeleteResponse {const DeleteIndicatorDeleteResponse({this.message, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteIndicatorDeleteResponse {const DeleteIndicatorDeleteResponse({this.message, this.success, });
 
 factory DeleteIndicatorDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteIndicatorDeleteResponse(
   message: json['message'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_customer_details_resource_tax_id.dart';import 'tax_product_resource_postal_address.dart';/// The type of customer address provided.
-final class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource._(this.value);
+@immutable final class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource._(this.value);
 
 factory TaxProductResourceCustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
   'billing' => billing,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceCustomerDetailsAddressSource($value)'; } 
  }
 /// The taxability override used for taxation.
-final class TaxProductResourceCustomerDetailsTaxabilityOverride {const TaxProductResourceCustomerDetailsTaxabilityOverride._(this.value);
+@immutable final class TaxProductResourceCustomerDetailsTaxabilityOverride {const TaxProductResourceCustomerDetailsTaxabilityOverride._(this.value);
 
 factory TaxProductResourceCustomerDetailsTaxabilityOverride.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceCustomerDetailsTaxabilityOverride($value)'; } 
  }
 /// 
-final class TaxProductResourceCustomerDetails {const TaxProductResourceCustomerDetails({this.address, this.addressSource, this.ipAddress, required this.taxIds, required this.taxabilityOverride, });
+@immutable final class TaxProductResourceCustomerDetails {const TaxProductResourceCustomerDetails({required this.taxIds, required this.taxabilityOverride, this.address, this.addressSource, this.ipAddress, });
 
 factory TaxProductResourceCustomerDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceCustomerDetails(
   address: json['address'] != null ? TaxProductResourcePostalAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

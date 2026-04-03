@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_details_card_installments_plan.dart';/// 
-final class PaymentFlowsInstallmentOptions {const PaymentFlowsInstallmentOptions({required this.enabled, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_installments_plan.dart';/// 
+@immutable final class PaymentFlowsInstallmentOptions {const PaymentFlowsInstallmentOptions({required this.enabled, this.plan, });
 
 factory PaymentFlowsInstallmentOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsInstallmentOptions(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_cidr.dart';import 'addressing_service_identifier.dart';final class AddressingCreateBindingRequest {const AddressingCreateBindingRequest({required this.cidr, required this.serviceId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_cidr.dart';import 'addressing_service_identifier.dart';@immutable final class AddressingCreateBindingRequest {const AddressingCreateBindingRequest({required this.cidr, required this.serviceId, });
 
 factory AddressingCreateBindingRequest.fromJson(Map<String, dynamic> json) { return AddressingCreateBindingRequest(
   cidr: AddressingCidr.fromJson(json['cidr'] as String),

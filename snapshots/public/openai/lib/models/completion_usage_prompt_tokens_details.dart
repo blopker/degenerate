@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Breakdown of tokens used in the prompt.
-final class CompletionUsagePromptTokensDetails {const CompletionUsagePromptTokensDetails({this.audioTokens = 0, this.cachedTokens = 0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tokens used in the prompt.
+@immutable final class CompletionUsagePromptTokensDetails {const CompletionUsagePromptTokensDetails({this.audioTokens = 0, this.cachedTokens = 0, });
 
 factory CompletionUsagePromptTokensDetails.fromJson(Map<String, dynamic> json) { return CompletionUsagePromptTokensDetails(
   audioTokens: json.containsKey('audio_tokens') ? (json['audio_tokens'] as num).toInt() : 0,

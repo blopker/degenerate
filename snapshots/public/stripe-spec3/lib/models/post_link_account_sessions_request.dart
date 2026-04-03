@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_link_account_sessions_request_account_holder.dart';import 'post_link_account_sessions_request_filters.dart';final class PostLinkAccountSessionsRequestPermissions {const PostLinkAccountSessionsRequestPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_link_account_sessions_request_account_holder.dart';import 'post_link_account_sessions_request_filters.dart';@immutable final class PostLinkAccountSessionsRequestPermissions {const PostLinkAccountSessionsRequestPermissions._(this.value);
 
 factory PostLinkAccountSessionsRequestPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostLinkAccountSessionsRequestPermissions($value)'; } 
  }
-final class PostLinkAccountSessionsRequestPrefetch {const PostLinkAccountSessionsRequestPrefetch._(this.value);
+@immutable final class PostLinkAccountSessionsRequestPrefetch {const PostLinkAccountSessionsRequestPrefetch._(this.value);
 
 factory PostLinkAccountSessionsRequestPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostLinkAccountSessionsRequestPrefetch($value)'; } 
  }
-final class PostLinkAccountSessionsRequest {const PostLinkAccountSessionsRequest({required this.accountHolder, this.expand, this.filters, required this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class PostLinkAccountSessionsRequest {const PostLinkAccountSessionsRequest({required this.accountHolder, required this.permissions, this.expand, this.filters, this.prefetch, this.returnUrl, });
 
 factory PostLinkAccountSessionsRequest.fromJson(Map<String, dynamic> json) { return PostLinkAccountSessionsRequest(
   accountHolder: PostLinkAccountSessionsRequestAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>),

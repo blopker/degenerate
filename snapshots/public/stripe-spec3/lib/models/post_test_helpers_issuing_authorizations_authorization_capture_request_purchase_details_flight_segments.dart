@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlightSegments {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlightSegments({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlightSegments {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlightSegments({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlightSegments.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFlightSegments(
   arrivalAirportCode: json['arrival_airport_code'] as String?,

@@ -29,7 +29,7 @@ if (indicatorType != null) {
 }
 if (relatedEvent != null) {
 for (final item in relatedEvent) {
-  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item));
 }
 }
 
@@ -211,7 +211,7 @@ Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndi
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item));
 }
 }
 if (page != null) {
@@ -228,12 +228,12 @@ if (indicatorType != null) {
 }
 if (relatedEvents != null) {
 for (final item in relatedEvents) {
-  queryParametersList.add(ApiQueryParameter(name: 'relatedEvents', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvents', value: item));
 }
 }
 if (tags != null) {
 for (final item in tags) {
-  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item));
 }
 }
 if (createdAfter != null) {

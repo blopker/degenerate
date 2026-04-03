@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion._(this.value);
 
 factory RadarGetHttpTopAsesByBrowserFamilyHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,

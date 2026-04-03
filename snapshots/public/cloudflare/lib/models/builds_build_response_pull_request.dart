@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_created_on.dart';final class BuildsBuildResponsePullRequest {const BuildsBuildResponsePullRequest({this.createdOn, this.pullRequestUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_created_on.dart';@immutable final class BuildsBuildResponsePullRequest {const BuildsBuildResponsePullRequest({this.createdOn, this.pullRequestUrl, });
 
 factory BuildsBuildResponsePullRequest.fromJson(Map<String, dynamic> json) { return BuildsBuildResponsePullRequest(
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,

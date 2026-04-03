@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorBatchCreateWorkflowInstanceRequestInstanceRetention {const WorBatchCreateWorkflowInstanceRequestInstanceRetention({this.errorRetention, this.successRetention, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorBatchCreateWorkflowInstanceRequestInstanceRetention {const WorBatchCreateWorkflowInstanceRequestInstanceRetention({this.errorRetention, this.successRetention, });
 
 factory WorBatchCreateWorkflowInstanceRequestInstanceRetention.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceRequestInstanceRetention(
   errorRetention: json['error_retention'],

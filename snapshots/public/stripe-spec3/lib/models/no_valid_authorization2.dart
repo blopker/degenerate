@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'no_valid_authorization2_additional_documentation.dart';import 'no_valid_authorization2_explanation.dart';final class NoValidAuthorization2 {const NoValidAuthorization2({this.additionalDocumentation, this.explanation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'no_valid_authorization2_additional_documentation.dart';import 'no_valid_authorization2_explanation.dart';@immutable final class NoValidAuthorization2 {const NoValidAuthorization2({this.additionalDocumentation, this.explanation, });
 
 factory NoValidAuthorization2.fromJson(Map<String, dynamic> json) { return NoValidAuthorization2(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => NoValidAuthorization2AdditionalDocumentationVariant2.fromJson(v as String),) : null,

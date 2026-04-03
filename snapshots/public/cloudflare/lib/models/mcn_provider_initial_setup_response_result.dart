@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_aws_trust_policy.dart';import 'mcn_azure_setup.dart';import 'mcn_gcp_setup.dart';sealed class McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_aws_trust_policy.dart';import 'mcn_azure_setup.dart';import 'mcn_gcp_setup.dart';sealed class McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnProviderInitialSetupResponseResult.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnProviderInitialSetupResponseResult$Unknown; } 
  }
-final class McnProviderInitialSetupResponseResultMcnAwsTrustPolicy extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(this.mcnAwsTrustPolicy);
+@immutable final class McnProviderInitialSetupResponseResultMcnAwsTrustPolicy extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(this.mcnAwsTrustPolicy);
 
 factory McnProviderInitialSetupResponseResultMcnAwsTrustPolicy.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(McnAwsTrustPolicy.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final McnAwsTrustPolicy mcnAwsTrustPolicy;
 @override int get hashCode { return mcnAwsTrustPolicy.hashCode; } 
 @override String toString() { return 'McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy: $mcnAwsTrustPolicy)'; } 
  }
-final class McnProviderInitialSetupResponseResultMcnAzureSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAzureSetup(this.mcnAzureSetup);
+@immutable final class McnProviderInitialSetupResponseResultMcnAzureSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAzureSetup(this.mcnAzureSetup);
 
 factory McnProviderInitialSetupResponseResultMcnAzureSetup.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponseResultMcnAzureSetup(McnAzureSetup.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final McnAzureSetup mcnAzureSetup;
 @override int get hashCode { return mcnAzureSetup.hashCode; } 
 @override String toString() { return 'McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup: $mcnAzureSetup)'; } 
  }
-final class McnProviderInitialSetupResponseResultMcnGcpSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnGcpSetup(this.mcnGcpSetup);
+@immutable final class McnProviderInitialSetupResponseResultMcnGcpSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnGcpSetup(this.mcnGcpSetup);
 
 factory McnProviderInitialSetupResponseResultMcnGcpSetup.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponseResultMcnGcpSetup(McnGcpSetup.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final McnGcpSetup mcnGcpSetup;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class McnProviderInitialSetupResponseResult$Unknown extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult$Unknown(this.json);
+@immutable final class McnProviderInitialSetupResponseResult$Unknown extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

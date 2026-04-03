@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
-final class ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
+@immutable final class ConferenceRecordingEnumStatus {const ConferenceRecordingEnumStatus._(this.value);
 
 factory ConferenceRecordingEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,

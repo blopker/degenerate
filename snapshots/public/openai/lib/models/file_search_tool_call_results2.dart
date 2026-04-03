@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileSearchToolCallResults2 {const FileSearchToolCallResults2({this.fileId, this.text, this.filename, this.attributes, this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileSearchToolCallResults2 {const FileSearchToolCallResults2({this.fileId, this.text, this.filename, this.attributes, this.score, });
 
 factory FileSearchToolCallResults2.fromJson(Map<String, dynamic> json) { return FileSearchToolCallResults2(
   fileId: json['file_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MultimodalEmbeddings {const MultimodalEmbeddings({this.image, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MultimodalEmbeddings {const MultimodalEmbeddings({this.image, this.text, });
 
 factory MultimodalEmbeddings.fromJson(Map<String, dynamic> json) { return MultimodalEmbeddings(
   image: json['image'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchIndicatorUpdateResponse400Errors {const PatchIndicatorUpdateResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchIndicatorUpdateResponse400Errors {const PatchIndicatorUpdateResponse400Errors({required this.message});
 
 factory PatchIndicatorUpdateResponse400Errors.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateResponse400Errors(
   message: json['message'] as String,

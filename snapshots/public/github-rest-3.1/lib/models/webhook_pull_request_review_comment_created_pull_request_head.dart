@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_comment_created_pull_request_head_repo.dart';import 'webhook_pull_request_review_comment_created_pull_request_head_user.dart';final class WebhookPullRequestReviewCommentCreatedPullRequestHead {const WebhookPullRequestReviewCommentCreatedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_comment_created_pull_request_head_repo.dart';import 'webhook_pull_request_review_comment_created_pull_request_head_user.dart';@immutable final class WebhookPullRequestReviewCommentCreatedPullRequestHead {const WebhookPullRequestReviewCommentCreatedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestReviewCommentCreatedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentCreatedPullRequestHead(
   label: json['label'] as String,

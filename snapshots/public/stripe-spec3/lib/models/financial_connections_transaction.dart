@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject._(this.value);
 
 factory FinancialConnectionsTransactionObject.fromJson(String json) { return switch (json) {
   'financial_connections.transaction' => financialConnectionsTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsTransactionObject($value)'; } 
  }
 /// The status of the transaction.
-final class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus._(this.value);
+@immutable final class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus._(this.value);
 
 factory FinancialConnectionsTransactionStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsTransactionStatus($value)'; } 
  }
 /// A Transaction represents a real transaction that affects a Financial Connections Account balance.
-final class FinancialConnectionsTransaction {const FinancialConnectionsTransaction({required this.account, required this.amount, required this.currency, required this.description, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.transactedAt, required this.transactionRefresh, required this.updated, });
+@immutable final class FinancialConnectionsTransaction {const FinancialConnectionsTransaction({required this.account, required this.amount, required this.currency, required this.description, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.transactedAt, required this.transactionRefresh, required this.updated, });
 
 factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) { return FinancialConnectionsTransaction(
   account: json['account'] as String,

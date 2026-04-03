@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The system role from which this role inherits permissions.
-final class OrganizationRoleBaseRole {const OrganizationRoleBaseRole._(this.value);
+@immutable final class OrganizationRoleBaseRole {const OrganizationRoleBaseRole._(this.value);
 
 factory OrganizationRoleBaseRole.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationRoleBaseRole($value)'; } 
  }
 /// Source answers the question, "where did this role come from?"
-final class OrganizationRoleSource {const OrganizationRoleSource._(this.value);
+@immutable final class OrganizationRoleSource {const OrganizationRoleSource._(this.value);
 
 factory OrganizationRoleSource.fromJson(String json) { return switch (json) {
   'Organization' => organization,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationRoleSource($value)'; } 
  }
 /// Organization roles
-final class OrganizationRole {const OrganizationRole({required this.id, required this.name, this.description, this.baseRole, this.source, required this.permissions, required this.organization, required this.createdAt, required this.updatedAt, });
+@immutable final class OrganizationRole {const OrganizationRole({required this.id, required this.name, required this.permissions, required this.organization, required this.createdAt, required this.updatedAt, this.description, this.baseRole, this.source, });
 
 factory OrganizationRole.fromJson(Map<String, dynamic> json) { return OrganizationRole(
   id: (json['id'] as num).toInt(),

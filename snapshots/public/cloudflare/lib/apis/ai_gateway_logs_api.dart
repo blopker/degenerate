@@ -30,7 +30,7 @@ if (orderByDirection != null) {
 }
 if (filters != null) {
 for (final item in filters) {
-  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString()));
 }
 }
 if (metaInfo != null) {
@@ -76,7 +76,7 @@ if (maxDuration != null) {
   queryParameters['max_duration'] = maxDuration.toString();
 }
 if (feedback != null) {
-queryParametersList.add(ApiQueryParameter(name: 'feedback', value: feedback.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'feedback', value: feedback.toString()));
 }
 if (success != null) {
   queryParameters['success'] = success.toString();
@@ -135,7 +135,7 @@ if (orderByDirection != null) {
 }
 if (filters != null) {
 for (final item in filters) {
-  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString()));
 }
 }
 if (limit != null) {

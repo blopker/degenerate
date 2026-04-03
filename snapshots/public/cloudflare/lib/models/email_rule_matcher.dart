@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field for type matcher.
-final class EmailRuleMatcherField {const EmailRuleMatcherField._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field for type matcher.
+@immutable final class EmailRuleMatcherField {const EmailRuleMatcherField._(this.value);
 
 factory EmailRuleMatcherField.fromJson(String json) { return switch (json) {
   'to' => to,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EmailRuleMatcherField($value)'; } 
  }
 /// Type of matcher.
-final class EmailRuleMatcherType {const EmailRuleMatcherType._(this.value);
+@immutable final class EmailRuleMatcherType {const EmailRuleMatcherType._(this.value);
 
 factory EmailRuleMatcherType.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EmailRuleMatcherType($value)'; } 
  }
 /// Matching pattern to forward your actions.
-final class EmailRuleMatcher {const EmailRuleMatcher({this.field, required this.type, this.value, });
+@immutable final class EmailRuleMatcher {const EmailRuleMatcher({required this.type, this.field, this.value, });
 
 factory EmailRuleMatcher.fromJson(Map<String, dynamic> json) { return EmailRuleMatcher(
   field: json['field'] != null ? EmailRuleMatcherField.fromJson(json['field'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a vSphere volume resource.
-final class VsphereVirtualDiskVolumeSource {const VsphereVirtualDiskVolumeSource({this.fsType, this.storagePolicyId, this.storagePolicyName, this.volumePath = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a vSphere volume resource.
+@immutable final class VsphereVirtualDiskVolumeSource {const VsphereVirtualDiskVolumeSource({this.fsType, this.storagePolicyId, this.storagePolicyName, this.volumePath = '', });
 
 factory VsphereVirtualDiskVolumeSource.fromJson(Map<String, dynamic> json) { return VsphereVirtualDiskVolumeSource(
   fsType: json['fsType'] as String?,

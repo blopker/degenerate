@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_parquet_compression.dart';final class ParquetType {const ParquetType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_parquet_compression.dart';@immutable final class ParquetType {const ParquetType._(this.value);
 
 factory ParquetType.fromJson(String json) { return switch (json) {
   'parquet' => parquet,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ParquetType($value)'; } 
  }
-final class Parquet {const Parquet({this.compression, this.rowGroupBytes, required this.type, });
+@immutable final class Parquet {const Parquet({required this.type, this.compression, this.rowGroupBytes, });
 
 factory Parquet.fromJson(Map<String, dynamic> json) { return Parquet(
   compression: json['compression'] != null ? CloudflarePipelinesParquetCompression.fromJson(json['compression'] as String) : null,

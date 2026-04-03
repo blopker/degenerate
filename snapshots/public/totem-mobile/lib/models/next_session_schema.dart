@@ -1,7 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'meeting_provider_enum.dart';
 
+@immutable
 final class NextSessionSchema {
   const NextSessionSchema({
     required this.slug,

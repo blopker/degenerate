@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-final class AccountApplicationSmsFallbackMethod {const AccountApplicationSmsFallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
+@immutable final class AccountApplicationSmsFallbackMethod {const AccountApplicationSmsFallbackMethod._(this.value);
 
 factory AccountApplicationSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountApplicationSmsFallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-final class AccountApplicationSmsMethod {const AccountApplicationSmsMethod._(this.value);
+@immutable final class AccountApplicationSmsMethod {const AccountApplicationSmsMethod._(this.value);
 
 factory AccountApplicationSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountApplicationSmsMethod($value)'; } 
  }
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-final class AccountApplicationStatusCallbackMethod {const AccountApplicationStatusCallbackMethod._(this.value);
+@immutable final class AccountApplicationStatusCallbackMethod {const AccountApplicationStatusCallbackMethod._(this.value);
 
 factory AccountApplicationStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountApplicationStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final class AccountApplicationVoiceFallbackMethod {const AccountApplicationVoiceFallbackMethod._(this.value);
+@immutable final class AccountApplicationVoiceFallbackMethod {const AccountApplicationVoiceFallbackMethod._(this.value);
 
 factory AccountApplicationVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountApplicationVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final class AccountApplicationVoiceMethod {const AccountApplicationVoiceMethod._(this.value);
+@immutable final class AccountApplicationVoiceMethod {const AccountApplicationVoiceMethod._(this.value);
 
 factory AccountApplicationVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountApplicationVoiceMethod($value)'; } 
  }
-final class AccountApplication {const AccountApplication({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.messageStatusCallback, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsStatusCallback, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.uri, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.publicApplicationConnectEnabled, });
+@immutable final class AccountApplication {const AccountApplication({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.messageStatusCallback, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsStatusCallback, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.uri, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.publicApplicationConnectEnabled, });
 
 factory AccountApplication.fromJson(Map<String, dynamic> json) { return AccountApplication(
   accountSid: json['account_sid'] as String?,

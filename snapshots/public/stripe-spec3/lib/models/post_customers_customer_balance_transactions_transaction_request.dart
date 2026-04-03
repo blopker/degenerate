@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_balance_transactions_transaction_request_metadata.dart';final class PostCustomersCustomerBalanceTransactionsTransactionRequest {const PostCustomersCustomerBalanceTransactionsTransactionRequest({this.description, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_balance_transactions_transaction_request_metadata.dart';@immutable final class PostCustomersCustomerBalanceTransactionsTransactionRequest {const PostCustomersCustomerBalanceTransactionsTransactionRequest({this.description, this.expand, this.metadata, });
 
 factory PostCustomersCustomerBalanceTransactionsTransactionRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBalanceTransactionsTransactionRequest(
   description: json['description'] as String?,

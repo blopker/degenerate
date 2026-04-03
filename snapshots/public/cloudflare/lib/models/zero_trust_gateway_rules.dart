@@ -42,7 +42,7 @@ factory ZeroTrustGatewayWarningStatus.fromJson(String json) => ZeroTrustGatewayW
 String toJson() => value;
 
 }
-final class ZeroTrustGatewayRules {const ZeroTrustGatewayRules({required this.action, this.createdAt, this.deletedAt, this.description, this.devicePosture, required this.enabled, this.expiration, required this.filters, this.id, this.identity, required this.name, required this.precedence, this.readOnly, this.ruleSettings, this.schedule, this.sharable, this.sourceAccount, required this.traffic, this.updatedAt, this.version, this.warningStatus, });
+@immutable final class ZeroTrustGatewayRules {const ZeroTrustGatewayRules({required this.action, required this.enabled, required this.filters, required this.name, required this.precedence, required this.traffic, this.createdAt, this.deletedAt, this.description, this.devicePosture, this.expiration, this.id, this.identity, this.readOnly, this.ruleSettings, this.schedule, this.sharable, this.sourceAccount, this.updatedAt, this.version, this.warningStatus, });
 
 factory ZeroTrustGatewayRules.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRules(
   action: ZeroTrustGatewayAction.fromJson(json['action'] as String),

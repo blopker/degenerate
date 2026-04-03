@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders {const UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders {const UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders({required this.name});
 
 factory UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(
   name: json['name'] as String,

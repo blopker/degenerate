@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'worker_versions_upload_version_request_metadata_annotations.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
-final class WorkerVersionsUploadVersionRequestMetadata {const WorkerVersionsUploadVersionRequestMetadata({this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.keepBindings, required this.mainModule, this.usageModel, });
+@immutable final class WorkerVersionsUploadVersionRequestMetadata {const WorkerVersionsUploadVersionRequestMetadata({required this.mainModule, this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.keepBindings, this.usageModel, });
 
 factory WorkerVersionsUploadVersionRequestMetadata.fromJson(Map<String, dynamic> json) { return WorkerVersionsUploadVersionRequestMetadata(
   annotations: json['annotations'] != null ? WorkerVersionsUploadVersionRequestMetadataAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,

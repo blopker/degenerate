@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sorts results in an ascending or descending order.
-final class EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results in an ascending or descending order.
+@immutable final class EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection._(this.value);
 
 factory EmailRoutingDestinationAddressesListDestinationAddressesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

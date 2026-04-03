@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespace.dart';final class CodespacesListInRepositoryForAuthenticatedUserResponse {const CodespacesListInRepositoryForAuthenticatedUserResponse({required this.totalCount, required this.codespaces, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespace.dart';@immutable final class CodespacesListInRepositoryForAuthenticatedUserResponse {const CodespacesListInRepositoryForAuthenticatedUserResponse({required this.totalCount, required this.codespaces, });
 
 factory CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesListInRepositoryForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// app install id.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// app install id.
 extension type const InstallId(String value) {
 factory InstallId.fromJson(String json) => InstallId(json);
 
 String toJson() => value;
 
 }
-final class Subscription2App {const Subscription2App({this.installId});
+@immutable final class Subscription2App {const Subscription2App({this.installId});
 
 factory Subscription2App.fromJson(Map<String, dynamic> json) { return Subscription2App(
   installId: json['install_id'] != null ? InstallId.fromJson(json['install_id'] as String) : null,

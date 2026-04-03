@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_payload_log_setting.dart';/// DLP account-level settings response.
-final class DlpDlpSettings {const DlpDlpSettings({required this.aiContextAnalysis, required this.ocr, required this.payloadLogging, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_setting.dart';/// DLP account-level settings response.
+@immutable final class DlpDlpSettings {const DlpDlpSettings({required this.aiContextAnalysis, required this.ocr, required this.payloadLogging, });
 
 factory DlpDlpSettings.fromJson(Map<String, dynamic> json) { return DlpDlpSettings(
   aiContextAnalysis: json['ai_context_analysis'] as bool,

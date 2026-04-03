@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchListTokensResponse400Errors {const AiSearchListTokensResponse400Errors({required this.code, required this.message, required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchListTokensResponse400Errors {const AiSearchListTokensResponse400Errors({required this.code, required this.message, required this.path, });
 
 factory AiSearchListTokensResponse400Errors.fromJson(Map<String, dynamic> json) { return AiSearchListTokensResponse400Errors(
   code: (json['code'] as num).toDouble(),

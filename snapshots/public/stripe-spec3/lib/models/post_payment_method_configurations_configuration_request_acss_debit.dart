@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_acss_debit_display_preference.dart';/// Canadian pre-authorized debit payments, check this [page](https://docs.stripe.com/payments/acss-debit) for more details like country availability.
-final class PostPaymentMethodConfigurationsConfigurationRequestAcssDebit {const PostPaymentMethodConfigurationsConfigurationRequestAcssDebit({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_acss_debit_display_preference.dart';/// Canadian pre-authorized debit payments, check this [page](https://docs.stripe.com/payments/acss-debit) for more details like country availability.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAcssDebit {const PostPaymentMethodConfigurationsConfigurationRequestAcssDebit({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAcssDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAcssDebit(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAcssDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

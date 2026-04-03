@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_policies.dart';final class AccessPoliciesComponentsSchemasSingleResponse {const AccessPoliciesComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policies.dart';@immutable final class AccessPoliciesComponentsSchemasSingleResponse {const AccessPoliciesComponentsSchemasSingleResponse({this.result});
 
 factory AccessPoliciesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessPoliciesComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessPolicies.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_dataset_column.dart';final class DlpDatasetsUploadDatasetColumnResponse {const DlpDatasetsUploadDatasetColumnResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';@immutable final class DlpDatasetsUploadDatasetColumnResponse {const DlpDatasetsUploadDatasetColumnResponse({this.result});
 
 factory DlpDatasetsUploadDatasetColumnResponse.fromJson(Map<String, dynamic> json) { return DlpDatasetsUploadDatasetColumnResponse(
   result: json['result'] != null ? DlpDatasetColumn.fromJson(json['result'] as Map<String, dynamic>) : null,

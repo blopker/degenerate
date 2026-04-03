@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The log retention flag for Logpull API.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The log retention flag for Logpull API.
 extension type const LogcontrolFlag(bool value) {
 factory LogcontrolFlag.fromJson(bool json) => LogcontrolFlag(json);
 
 bool toJson() => value;
 
 }
-final class LogcontrolRetentionFlag {const LogcontrolRetentionFlag({this.flag});
+@immutable final class LogcontrolRetentionFlag {const LogcontrolRetentionFlag({this.flag});
 
 factory LogcontrolRetentionFlag.fromJson(Map<String, dynamic> json) { return LogcontrolRetentionFlag(
   flag: json['flag'] != null ? LogcontrolFlag.fromJson(json['flag'] as bool) : null,

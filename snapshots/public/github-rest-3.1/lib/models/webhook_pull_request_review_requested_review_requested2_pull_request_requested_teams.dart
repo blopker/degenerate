@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_requested_review_requested2_pull_request_requested_teams_parent.dart';final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeamsPrivacy {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeamsPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_requested_review_requested2_pull_request_requested_teams_parent.dart';@immutable final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeamsPrivacy {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeamsPrivacy._(this.value);
 
 factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeamsPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeamsPrivacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeams {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeams({this.deleted, this.description, this.htmlUrl, required this.id, this.membersUrl, required this.name, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
+@immutable final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeams {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeams({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
 factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestedReviewRequested2PullRequestRequestedTeams(
   deleted: json['deleted'] as bool?,

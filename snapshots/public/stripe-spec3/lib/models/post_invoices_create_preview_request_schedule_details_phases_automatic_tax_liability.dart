@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiabilityType {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiabilityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiabilityType {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiabilityType._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiabilityType($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability({this.account, required this.type, });
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability({required this.type, this.account, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTaxLiability(
   account: json['account'] as String?,

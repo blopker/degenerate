@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class FinancialReportingFinanceReportRunRunParameters {const FinancialReportingFinanceReportRunRunParameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
+@immutable final class FinancialReportingFinanceReportRunRunParameters {const FinancialReportingFinanceReportRunRunParameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
 
 factory FinancialReportingFinanceReportRunRunParameters.fromJson(Map<String, dynamic> json) { return FinancialReportingFinanceReportRunRunParameters(
   columns: (json['columns'] as List<dynamic>?)?.map((e) => e as String).toList(),

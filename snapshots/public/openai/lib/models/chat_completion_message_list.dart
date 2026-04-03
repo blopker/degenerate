@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_list_data.dart';/// The type of this object. It is always set to "list".
 /// 
-final class ChatCompletionMessageListObject {const ChatCompletionMessageListObject._(this.value);
+@immutable final class ChatCompletionMessageListObject {const ChatCompletionMessageListObject._(this.value);
 
 factory ChatCompletionMessageListObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An object representing a list of chat completion messages.
 /// 
-final class ChatCompletionMessageList {const ChatCompletionMessageList({this.object = ChatCompletionMessageListObject.list, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ChatCompletionMessageList {const ChatCompletionMessageList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionMessageListObject.list, });
 
 factory ChatCompletionMessageList.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageList(
   object: ChatCompletionMessageListObject.fromJson(json['object'] as String),

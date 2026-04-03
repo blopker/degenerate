@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apps_secret.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetAppsSecretsResponseObject {const GetAppsSecretsResponseObject._(this.value);
+@immutable final class GetAppsSecretsResponseObject {const GetAppsSecretsResponseObject._(this.value);
 
 factory GetAppsSecretsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetAppsSecretsResponseObject($value)'; } 
  }
 /// 
-final class GetAppsSecretsResponse {const GetAppsSecretsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetAppsSecretsResponse {const GetAppsSecretsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetAppsSecretsResponse.fromJson(Map<String, dynamic> json) { return GetAppsSecretsResponse(
   data: (json['data'] as List<dynamic>).map((e) => AppsSecret.fromJson(e as Map<String, dynamic>)).toList(),

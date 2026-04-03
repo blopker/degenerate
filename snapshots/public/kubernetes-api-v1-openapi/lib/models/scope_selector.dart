@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'scoped_resource_selector_requirement.dart';/// A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.
-final class ScopeSelector {const ScopeSelector({this.matchExpressions});
+@immutable final class ScopeSelector {const ScopeSelector({this.matchExpressions});
 
 factory ScopeSelector.fromJson(Map<String, dynamic> json) { return ScopeSelector(
   matchExpressions: (json['matchExpressions'] as List<dynamic>?)?.map((e) => ScopedResourceSelectorRequirement.fromJson(e as Map<String, dynamic>)).toList(),

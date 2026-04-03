@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_smart_shield_settings_patch_body_cache_reserve.dart';import 'smartshield_smart_shield_settings_patch_body_regional_tiered_cache.dart';import 'smartshield_smart_shield_settings_patch_body_smart_routing.dart';import 'smartshield_smart_shield_settings_patch_body_smart_tiered_cache.dart';/// The patch body for Smart Shield.
-final class SmartshieldSmartShieldSettingsPatchBody {const SmartshieldSmartShieldSettingsPatchBody({this.cacheReserve, this.regionalTieredCache, this.smartRouting, this.smartTieredCache, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_smart_shield_settings_patch_body_cache_reserve.dart';import 'smartshield_smart_shield_settings_patch_body_regional_tiered_cache.dart';import 'smartshield_smart_shield_settings_patch_body_smart_routing.dart';import 'smartshield_smart_shield_settings_patch_body_smart_tiered_cache.dart';/// The patch body for Smart Shield.
+@immutable final class SmartshieldSmartShieldSettingsPatchBody {const SmartshieldSmartShieldSettingsPatchBody({this.cacheReserve, this.regionalTieredCache, this.smartRouting, this.smartTieredCache, });
 
 factory SmartshieldSmartShieldSettingsPatchBody.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBody(
   cacheReserve: json['cache_reserve'] != null ? SmartshieldSmartShieldSettingsPatchBodyCacheReserve.fromJson(json['cache_reserve'] as Map<String, dynamic>) : null,

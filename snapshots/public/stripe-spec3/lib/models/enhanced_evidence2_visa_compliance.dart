@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EnhancedEvidence2VisaCompliance {const EnhancedEvidence2VisaCompliance({this.feeAcknowledged});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnhancedEvidence2VisaCompliance {const EnhancedEvidence2VisaCompliance({this.feeAcknowledged});
 
 factory EnhancedEvidence2VisaCompliance.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompliance(
   feeAcknowledged: json['fee_acknowledged'] as bool?,

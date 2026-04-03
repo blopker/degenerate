@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always "checkpoint.permission".
-final class DeleteFineTuningCheckpointPermissionResponseObject {const DeleteFineTuningCheckpointPermissionResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "checkpoint.permission".
+@immutable final class DeleteFineTuningCheckpointPermissionResponseObject {const DeleteFineTuningCheckpointPermissionResponseObject._(this.value);
 
 factory DeleteFineTuningCheckpointPermissionResponseObject.fromJson(String json) { return switch (json) {
   'checkpoint.permission' => checkpointPermission,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteFineTuningCheckpointPermissionResponseObject($value)'; } 
  }
-final class DeleteFineTuningCheckpointPermissionResponse {const DeleteFineTuningCheckpointPermissionResponse({required this.id, required this.object, required this.deleted, });
+@immutable final class DeleteFineTuningCheckpointPermissionResponse {const DeleteFineTuningCheckpointPermissionResponse({required this.id, required this.object, required this.deleted, });
 
 factory DeleteFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic> json) { return DeleteFineTuningCheckpointPermissionResponse(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_reference.dart';/// FlexPersistentVolumeSource represents a generic persistent volume resource that is provisioned/attached using an exec based plugin.
-final class FlexPersistentVolumeSource {const FlexPersistentVolumeSource({this.driver = '', this.fsType, this.options, this.readOnly, this.secretRef, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_reference.dart';/// FlexPersistentVolumeSource represents a generic persistent volume resource that is provisioned/attached using an exec based plugin.
+@immutable final class FlexPersistentVolumeSource {const FlexPersistentVolumeSource({this.driver = '', this.fsType, this.options, this.readOnly, this.secretRef, });
 
 factory FlexPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return FlexPersistentVolumeSource(
   driver: json['driver'] as String,

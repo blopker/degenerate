@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DnssecDeleteDnssecResponseSingle {const DnssecDeleteDnssecResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnssecDeleteDnssecResponseSingle {const DnssecDeleteDnssecResponseSingle({this.result});
 
 factory DnssecDeleteDnssecResponseSingle.fromJson(Map<String, dynamic> json) { return DnssecDeleteDnssecResponseSingle(
   result: json['result'] as String?,

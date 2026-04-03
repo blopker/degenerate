@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_health_data.dart';final class LoadBalancingPreviewResultValue {const LoadBalancingPreviewResultValue({this.healthy, this.origins, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_health_data.dart';@immutable final class LoadBalancingPreviewResultValue {const LoadBalancingPreviewResultValue({this.healthy, this.origins, });
 
 factory LoadBalancingPreviewResultValue.fromJson(Map<String, dynamic> json) { return LoadBalancingPreviewResultValue(
   healthy: json['healthy'] as bool?,

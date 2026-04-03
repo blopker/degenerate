@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_override_codes_response_result.dart';final class TeamsDevicesOverrideCodesResponse {const TeamsDevicesOverrideCodesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_override_codes_response_result.dart';@immutable final class TeamsDevicesOverrideCodesResponse {const TeamsDevicesOverrideCodesResponse({this.result});
 
 factory TeamsDevicesOverrideCodesResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesOverrideCodesResponse(
   result: json['result'] != null ? TeamsDevicesOverrideCodesResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

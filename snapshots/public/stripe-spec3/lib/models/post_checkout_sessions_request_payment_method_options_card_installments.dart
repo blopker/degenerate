@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments {const PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments {const PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments({this.enabled});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments(
   enabled: json['enabled'] as bool?,

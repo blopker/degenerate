@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessExternalEvaluationRuleExternalEvaluation {const AccessExternalEvaluationRuleExternalEvaluation({required this.evaluateUrl, required this.keysUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessExternalEvaluationRuleExternalEvaluation {const AccessExternalEvaluationRuleExternalEvaluation({required this.evaluateUrl, required this.keysUrl, });
 
 factory AccessExternalEvaluationRuleExternalEvaluation.fromJson(Map<String, dynamic> json) { return AccessExternalEvaluationRuleExternalEvaluation(
   evaluateUrl: json['evaluate_url'] as String,

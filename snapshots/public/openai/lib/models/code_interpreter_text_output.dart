@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the code interpreter text output. Always `logs`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the code interpreter text output. Always `logs`.
 /// 
-final class CodeInterpreterTextOutputType {const CodeInterpreterTextOutputType._(this.value);
+@immutable final class CodeInterpreterTextOutputType {const CodeInterpreterTextOutputType._(this.value);
 
 factory CodeInterpreterTextOutputType.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a code interpreter tool call that is text.
 /// 
-final class CodeInterpreterTextOutput {const CodeInterpreterTextOutput({required this.type, required this.logs, });
+@immutable final class CodeInterpreterTextOutput {const CodeInterpreterTextOutput({required this.type, required this.logs, });
 
 factory CodeInterpreterTextOutput.fromJson(Map<String, dynamic> json) { return CodeInterpreterTextOutput(
   type: CodeInterpreterTextOutputType.fromJson(json['type'] as String),

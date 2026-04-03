@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsArtifactAndLogRetention {const ActionsArtifactAndLogRetention({required this.days});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsArtifactAndLogRetention {const ActionsArtifactAndLogRetention({required this.days});
 
 factory ActionsArtifactAndLogRetention.fromJson(Map<String, dynamic> json) { return ActionsArtifactAndLogRetention(
   days: (json['days'] as num).toInt(),

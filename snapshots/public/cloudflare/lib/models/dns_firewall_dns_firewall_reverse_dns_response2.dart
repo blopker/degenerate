@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_firewall_dns_firewall_reverse_dns.dart';final class DnsFirewallDnsFirewallReverseDnsResponse2 {const DnsFirewallDnsFirewallReverseDnsResponse2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_dns_firewall_reverse_dns.dart';@immutable final class DnsFirewallDnsFirewallReverseDnsResponse2 {const DnsFirewallDnsFirewallReverseDnsResponse2({this.result});
 
 factory DnsFirewallDnsFirewallReverseDnsResponse2.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallReverseDnsResponse2(
   result: json['result'] != null ? DnsFirewallDnsFirewallReverseDns.fromJson(json['result'] as Map<String, dynamic>) : null,

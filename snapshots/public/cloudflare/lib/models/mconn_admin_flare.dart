@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnAdminFlare {const MconnAdminFlare({required this.id, required this.triggeredAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnAdminFlare {const MconnAdminFlare({required this.id, required this.triggeredAt, });
 
 factory MconnAdminFlare.fromJson(Map<String, dynamic> json) { return MconnAdminFlare(
   id: MconnUuid.fromJson(json['id'] as String),

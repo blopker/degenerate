@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether or not the capture window is extended beyond the standard authorization.
-final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether or not the capture window is extended beyond the standard authorization.
+@immutable final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus._(this.value);
 
 factory ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus($value)'; } 
  }
 /// 
-final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization({required this.status});
+@immutable final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization({required this.status});
 
 factory ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization.fromJson(Map<String, dynamic> json) { return ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization(
   status: ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus.fromJson(json['status'] as String),

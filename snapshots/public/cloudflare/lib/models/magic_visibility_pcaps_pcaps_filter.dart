@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The packet capture filter. When this field is empty, all packets are captured.
-final class MagicVisibilityPcapsPcapsFilter {const MagicVisibilityPcapsPcapsFilter({this.destinationAddress, this.destinationPort, this.protocol, this.sourceAddress, this.sourcePort, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The packet capture filter. When this field is empty, all packets are captured.
+@immutable final class MagicVisibilityPcapsPcapsFilter {const MagicVisibilityPcapsPcapsFilter({this.destinationAddress, this.destinationPort, this.protocol, this.sourceAddress, this.sourcePort, });
 
 factory MagicVisibilityPcapsPcapsFilter.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsFilter(
   destinationAddress: json['destination_address'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsListAttestationRepositoriesResponse {const OrgsListAttestationRepositoriesResponse({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListAttestationRepositoriesResponse {const OrgsListAttestationRepositoriesResponse({this.id, this.name, });
 
 factory OrgsListAttestationRepositoriesResponse.fromJson(Map<String, dynamic> json) { return OrgsListAttestationRepositoriesResponse(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

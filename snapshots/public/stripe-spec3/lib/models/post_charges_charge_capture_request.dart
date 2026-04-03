@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_capture_request_transfer_data.dart';final class PostChargesChargeCaptureRequest {const PostChargesChargeCaptureRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.expand, this.receiptEmail, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_capture_request_transfer_data.dart';@immutable final class PostChargesChargeCaptureRequest {const PostChargesChargeCaptureRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.expand, this.receiptEmail, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostChargesChargeCaptureRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeCaptureRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route.dart';final class MagicMultipleRouteModifiedResponseResult {const MagicMultipleRouteModifiedResponseResult({this.modified, this.modifiedRoutes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route.dart';@immutable final class MagicMultipleRouteModifiedResponseResult {const MagicMultipleRouteModifiedResponseResult({this.modified, this.modifiedRoutes, });
 
 factory MagicMultipleRouteModifiedResponseResult.fromJson(Map<String, dynamic> json) { return MagicMultipleRouteModifiedResponseResult(
   modified: json['modified'] as bool?,

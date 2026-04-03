@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostPdfResponse422Errors {const BrapiPostPdfResponse422Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostPdfResponse422Errors {const BrapiPostPdfResponse422Errors({required this.code, required this.message, });
 
 factory BrapiPostPdfResponse422Errors.fromJson(Map<String, dynamic> json) { return BrapiPostPdfResponse422Errors(
   code: (json['code'] as num).toDouble(),

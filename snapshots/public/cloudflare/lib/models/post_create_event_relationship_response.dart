@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_create_event_relationship_response_errors.dart';import 'post_create_event_relationship_response_relationships.dart';final class PostCreateEventRelationshipResponse {const PostCreateEventRelationshipResponse({this.childIds, this.errors, required this.message, required this.relationships, this.relationshipsCreated, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_create_event_relationship_response_errors.dart';import 'post_create_event_relationship_response_relationships.dart';@immutable final class PostCreateEventRelationshipResponse {const PostCreateEventRelationshipResponse({required this.message, required this.relationships, required this.success, this.childIds, this.errors, this.relationshipsCreated, });
 
 factory PostCreateEventRelationshipResponse.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponse(
   childIds: (json['childIds'] as List<dynamic>?)?.map((e) => e as String).toList(),

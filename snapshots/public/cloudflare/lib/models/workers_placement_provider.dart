@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_placement_region.dart';final class WorkersPlacementProvider {const WorkersPlacementProvider({required this.id, required this.regions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_placement_region.dart';@immutable final class WorkersPlacementProvider {const WorkersPlacementProvider({required this.id, required this.regions, });
 
 factory WorkersPlacementProvider.fromJson(Map<String, dynamic> json) { return WorkersPlacementProvider(
   id: json['id'] as String,

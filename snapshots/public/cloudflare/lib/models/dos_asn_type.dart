@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Infrastructure type of this ASN.
-final class DosAsnType {const DosAsnType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Infrastructure type of this ASN.
+@immutable final class DosAsnType {const DosAsnType._(this.value);
 
 factory DosAsnType.fromJson(String json) { return switch (json) {
   'hosting_provider' => hostingProvider,

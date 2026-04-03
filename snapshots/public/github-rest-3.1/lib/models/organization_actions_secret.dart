@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Visibility of a secret
-final class OrganizationActionsSecretVisibility {const OrganizationActionsSecretVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a secret
+@immutable final class OrganizationActionsSecretVisibility {const OrganizationActionsSecretVisibility._(this.value);
 
 factory OrganizationActionsSecretVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationActionsSecretVisibility($value)'; } 
  }
 /// Secrets for GitHub Actions for an organization.
-final class OrganizationActionsSecret {const OrganizationActionsSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
+@immutable final class OrganizationActionsSecret {const OrganizationActionsSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
 
 factory OrganizationActionsSecret.fromJson(Map<String, dynamic> json) { return OrganizationActionsSecret(
   name: json['name'] as String,

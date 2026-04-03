@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
-final class PaymentsEnumCapture {const PaymentsEnumCapture._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
+@immutable final class PaymentsEnumCapture {const PaymentsEnumCapture._(this.value);
 
 factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
   'payment-card-number' => paymentCardNumber,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsEnumCapture($value)'; } 
  }
 /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
-final class PaymentsEnumStatus {const PaymentsEnumStatus._(this.value);
+@immutable final class PaymentsEnumStatus {const PaymentsEnumStatus._(this.value);
 
 factory PaymentsEnumStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentsEnumStatus($value)'; } 
  }
-final class UpdatePaymentsRequest {const UpdatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.capture, this.status, });
+@immutable final class UpdatePaymentsRequest {const UpdatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.capture, this.status, });
 
 factory UpdatePaymentsRequest.fromJson(Map<String, dynamic> json) { return UpdatePaymentsRequest(
   idempotencyKey: json['IdempotencyKey'] as String,

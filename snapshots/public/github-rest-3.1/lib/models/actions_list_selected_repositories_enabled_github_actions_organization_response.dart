@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';final class ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse {const ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';@immutable final class ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse {const ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse({required this.totalCount, required this.repositories, });
 
 factory ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
   totalCount: (json['total_count'] as num).toDouble(),

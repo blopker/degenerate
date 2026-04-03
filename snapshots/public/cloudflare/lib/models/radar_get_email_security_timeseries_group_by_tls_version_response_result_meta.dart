@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_tls_version_response_result_meta_confidence_info.dart';import 'radar_get_email_security_timeseries_group_by_tls_version_response_result_meta_date_range.dart';import 'radar_get_email_security_timeseries_group_by_tls_version_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaNormalization._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMeta(
   aggInterval: RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

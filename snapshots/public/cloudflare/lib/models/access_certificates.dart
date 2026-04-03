@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name.dart';import 'access_fingerprint.dart';import 'access_timestamp.dart';final class AccessCertificates {const AccessCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name.dart';import 'access_fingerprint.dart';import 'access_timestamp.dart';@immutable final class AccessCertificates {const AccessCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
 
 factory AccessCertificates.fromJson(Map<String, dynamic> json) { return AccessCertificates(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),

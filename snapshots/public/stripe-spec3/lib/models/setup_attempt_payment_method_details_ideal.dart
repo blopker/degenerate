@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method.dart';import 'setup_attempt_payment_method_details_ideal_generated_sepa_debit.dart';import 'setup_attempt_payment_method_details_ideal_generated_sepa_debit_mandate.dart';/// The customer's bank. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
-final class SetupAttemptPaymentMethodDetailsIdealBank {const SetupAttemptPaymentMethodDetailsIdealBank._(this.value);
+@immutable final class SetupAttemptPaymentMethodDetailsIdealBank {const SetupAttemptPaymentMethodDetailsIdealBank._(this.value);
 
 factory SetupAttemptPaymentMethodDetailsIdealBank.fromJson(String json) { return switch (json) {
   'abn_amro' => abnAmro,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupAttemptPaymentMethodDetailsIdealBank($value)'; } 
  }
 /// The Bank Identifier Code of the customer's bank.
-final class SetupAttemptPaymentMethodDetailsIdealBic {const SetupAttemptPaymentMethodDetailsIdealBic._(this.value);
+@immutable final class SetupAttemptPaymentMethodDetailsIdealBic {const SetupAttemptPaymentMethodDetailsIdealBic._(this.value);
 
 factory SetupAttemptPaymentMethodDetailsIdealBic.fromJson(String json) { return switch (json) {
   'ABNANL2A' => abnanl2A,
@@ -162,7 +162,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupAttemptPaymentMethodDetailsIdealBic($value)'; } 
  }
 /// 
-final class SetupAttemptPaymentMethodDetailsIdeal {const SetupAttemptPaymentMethodDetailsIdeal({this.bank, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.verifiedName, });
+@immutable final class SetupAttemptPaymentMethodDetailsIdeal {const SetupAttemptPaymentMethodDetailsIdeal({this.bank, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.verifiedName, });
 
 factory SetupAttemptPaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsIdeal(
   bank: json['bank'] != null ? SetupAttemptPaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null,

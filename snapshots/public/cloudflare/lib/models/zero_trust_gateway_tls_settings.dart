@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify whether to inspect encrypted HTTP traffic.
-final class ZeroTrustGatewayTlsSettings {const ZeroTrustGatewayTlsSettings({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to inspect encrypted HTTP traffic.
+@immutable final class ZeroTrustGatewayTlsSettings {const ZeroTrustGatewayTlsSettings({this.enabled});
 
 factory ZeroTrustGatewayTlsSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayTlsSettings(
   enabled: json['enabled'] as bool?,

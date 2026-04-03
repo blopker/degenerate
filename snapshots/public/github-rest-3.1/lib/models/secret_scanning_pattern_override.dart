@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default push protection setting for this pattern.
-final class SecretScanningPatternOverrideDefaultSetting {const SecretScanningPatternOverrideDefaultSetting._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default push protection setting for this pattern.
+@immutable final class SecretScanningPatternOverrideDefaultSetting {const SecretScanningPatternOverrideDefaultSetting._(this.value);
 
 factory SecretScanningPatternOverrideDefaultSetting.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SecretScanningPatternOverrideDefaultSetting($value)'; } 
  }
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-final class SecretScanningPatternOverrideEnterpriseSetting {const SecretScanningPatternOverrideEnterpriseSetting._(this.value);
+@immutable final class SecretScanningPatternOverrideEnterpriseSetting {const SecretScanningPatternOverrideEnterpriseSetting._(this.value);
 
 factory SecretScanningPatternOverrideEnterpriseSetting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SecretScanningPatternOverrideEnterpriseSetting($value)'; } 
  }
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
-final class SecretScanningPatternOverrideSetting {const SecretScanningPatternOverrideSetting._(this.value);
+@immutable final class SecretScanningPatternOverrideSetting {const SecretScanningPatternOverrideSetting._(this.value);
 
 factory SecretScanningPatternOverrideSetting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretScanningPatternOverrideSetting($value)'; } 
  }
-final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });
+@immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });
 
 factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { return SecretScanningPatternOverride(
   tokenType: json['token_type'] as String?,

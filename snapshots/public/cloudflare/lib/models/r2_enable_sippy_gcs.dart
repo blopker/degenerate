@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_enable_sippy_gcs_destination.dart';import 'r2_enable_sippy_gcs_source.dart';final class R2EnableSippyGcs {const R2EnableSippyGcs({this.destination, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_enable_sippy_gcs_destination.dart';import 'r2_enable_sippy_gcs_source.dart';@immutable final class R2EnableSippyGcs {const R2EnableSippyGcs({this.destination, this.source, });
 
 factory R2EnableSippyGcs.fromJson(Map<String, dynamic> json) { return R2EnableSippyGcs(
   destination: json['destination'] != null ? R2EnableSippyGcsDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,

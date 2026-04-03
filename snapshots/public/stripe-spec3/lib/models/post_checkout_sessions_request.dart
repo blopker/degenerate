@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_adaptive_pricing.dart';import 'post_checkout_sessions_request_after_expiration.dart';import 'post_checkout_sessions_request_automatic_tax.dart';import 'post_checkout_sessions_request_branding_settings.dart';import 'post_checkout_sessions_request_consent_collection.dart';import 'post_checkout_sessions_request_custom_fields.dart';import 'post_checkout_sessions_request_custom_text.dart';import 'post_checkout_sessions_request_customer_update.dart';import 'post_checkout_sessions_request_discounts.dart';import 'post_checkout_sessions_request_invoice_creation.dart';import 'post_checkout_sessions_request_line_items.dart';import 'post_checkout_sessions_request_name_collection.dart';import 'post_checkout_sessions_request_optional_items.dart';import 'post_checkout_sessions_request_payment_intent_data.dart';import 'post_checkout_sessions_request_payment_method_data.dart';import 'post_checkout_sessions_request_payment_method_options.dart';import 'post_checkout_sessions_request_permissions.dart';import 'post_checkout_sessions_request_phone_number_collection.dart';import 'post_checkout_sessions_request_saved_payment_method_options.dart';import 'post_checkout_sessions_request_setup_intent_data.dart';import 'post_checkout_sessions_request_shipping_address_collection.dart';import 'post_checkout_sessions_request_shipping_options.dart';import 'post_checkout_sessions_request_subscription_data.dart';import 'post_checkout_sessions_request_tax_id_collection.dart';import 'post_checkout_sessions_request_wallet_options.dart';final class PostCheckoutSessionsRequestExcludedPaymentMethodTypes {const PostCheckoutSessionsRequestExcludedPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_adaptive_pricing.dart';import 'post_checkout_sessions_request_after_expiration.dart';import 'post_checkout_sessions_request_automatic_tax.dart';import 'post_checkout_sessions_request_branding_settings.dart';import 'post_checkout_sessions_request_consent_collection.dart';import 'post_checkout_sessions_request_custom_fields.dart';import 'post_checkout_sessions_request_custom_text.dart';import 'post_checkout_sessions_request_customer_update.dart';import 'post_checkout_sessions_request_discounts.dart';import 'post_checkout_sessions_request_invoice_creation.dart';import 'post_checkout_sessions_request_line_items.dart';import 'post_checkout_sessions_request_name_collection.dart';import 'post_checkout_sessions_request_optional_items.dart';import 'post_checkout_sessions_request_payment_intent_data.dart';import 'post_checkout_sessions_request_payment_method_data.dart';import 'post_checkout_sessions_request_payment_method_options.dart';import 'post_checkout_sessions_request_permissions.dart';import 'post_checkout_sessions_request_phone_number_collection.dart';import 'post_checkout_sessions_request_saved_payment_method_options.dart';import 'post_checkout_sessions_request_setup_intent_data.dart';import 'post_checkout_sessions_request_shipping_address_collection.dart';import 'post_checkout_sessions_request_shipping_options.dart';import 'post_checkout_sessions_request_subscription_data.dart';import 'post_checkout_sessions_request_tax_id_collection.dart';import 'post_checkout_sessions_request_wallet_options.dart';@immutable final class PostCheckoutSessionsRequestExcludedPaymentMethodTypes {const PostCheckoutSessionsRequestExcludedPaymentMethodTypes._(this.value);
 
 factory PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -165,7 +165,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestExcludedPaymentMethodTypes($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -334,7 +334,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodTypes($value)'; } 
  }
 /// Specify whether Checkout should collect the customer's billing address. Defaults to `auto`.
-final class PostCheckoutSessionsRequestBillingAddressCollection {const PostCheckoutSessionsRequestBillingAddressCollection._(this.value);
+@immutable final class PostCheckoutSessionsRequestBillingAddressCollection {const PostCheckoutSessionsRequestBillingAddressCollection._(this.value);
 
 factory PostCheckoutSessionsRequestBillingAddressCollection.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -367,7 +367,7 @@ bool get isUnknown { return !values.contains(this); }
 /// in the Dashboard. Promotion codes limited to first time customers will return invalid for these Sessions.
 /// 
 /// Can only be set in `payment` and `setup` mode.
-final class PostCheckoutSessionsRequestCustomerCreation {const PostCheckoutSessionsRequestCustomerCreation._(this.value);
+@immutable final class PostCheckoutSessionsRequestCustomerCreation {const PostCheckoutSessionsRequestCustomerCreation._(this.value);
 
 factory PostCheckoutSessionsRequestCustomerCreation.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -392,7 +392,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestCustomerCreation($value)'; } 
  }
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
-final class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale._(this.value);
+@immutable final class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale._(this.value);
 
 factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -534,7 +534,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestLocale($value)'; } 
  }
 /// The mode of the Checkout Session. Pass `subscription` if the Checkout Session includes at least one recurring item.
-final class PostCheckoutSessionsRequestMode {const PostCheckoutSessionsRequestMode._(this.value);
+@immutable final class PostCheckoutSessionsRequestMode {const PostCheckoutSessionsRequestMode._(this.value);
 
 factory PostCheckoutSessionsRequestMode.fromJson(String json) { return switch (json) {
   'payment' => payment,
@@ -562,7 +562,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestMode($value)'; } 
  }
 /// Where the user is coming from. This informs the optimizations that are applied to the session. You can't set this parameter if `ui_mode` is `custom`.
-final class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext._(this.value);
+@immutable final class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext._(this.value);
 
 factory PostCheckoutSessionsRequestOriginContext.fromJson(String json) { return switch (json) {
   'mobile_app' => mobileApp,
@@ -592,7 +592,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Can only be set in `subscription` mode. Defaults to `always`.
 /// 
 /// If you'd like information on how to collect a payment method outside of Checkout, read the guide on configuring [subscriptions with a free trial](https://docs.stripe.com/payments/checkout/free-trials).
-final class PostCheckoutSessionsRequestPaymentMethodCollection {const PostCheckoutSessionsRequestPaymentMethodCollection._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodCollection {const PostCheckoutSessionsRequestPaymentMethodCollection._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodCollection.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -617,7 +617,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodCollection($value)'; } 
  }
 /// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
-final class PostCheckoutSessionsRequestRedirectOnCompletion {const PostCheckoutSessionsRequestRedirectOnCompletion._(this.value);
+@immutable final class PostCheckoutSessionsRequestRedirectOnCompletion {const PostCheckoutSessionsRequestRedirectOnCompletion._(this.value);
 
 factory PostCheckoutSessionsRequestRedirectOnCompletion.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -649,7 +649,7 @@ bool get isUnknown { return !values.contains(this); }
 ///  `submit_type` can only be specified on Checkout Sessions in
 /// `payment` or `subscription` mode. If blank or `auto`, `pay` is used.
 /// You can't set this parameter if `ui_mode` is `custom`.
-final class PostCheckoutSessionsRequestSubmitType {const PostCheckoutSessionsRequestSubmitType._(this.value);
+@immutable final class PostCheckoutSessionsRequestSubmitType {const PostCheckoutSessionsRequestSubmitType._(this.value);
 
 factory PostCheckoutSessionsRequestSubmitType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -683,7 +683,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestSubmitType($value)'; } 
  }
 /// The UI mode of the Session. Defaults to `hosted`.
-final class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode._(this.value);
+@immutable final class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode._(this.value);
 
 factory PostCheckoutSessionsRequestUiMode.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -710,7 +710,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestUiMode($value)'; } 
  }
-final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.adaptivePricing, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.customerUpdate, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.walletOptions, });
+@immutable final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.customerUpdate, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.adaptivePricing, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.walletOptions, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.paymentMethodData, });
 
 factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequest(
   adaptivePricing: json['adaptive_pricing'] != null ? PostCheckoutSessionsRequestAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,

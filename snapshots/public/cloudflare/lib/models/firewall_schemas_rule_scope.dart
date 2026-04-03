@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_identifier.dart';/// The contact email address of the user.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_identifier.dart';/// The contact email address of the user.
 extension type const FirewallEmail(String value) {
 factory FirewallEmail.fromJson(String json) => FirewallEmail(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Defines the scope of the rule.
-final class FirewallSchemasRuleScopeType {const FirewallSchemasRuleScopeType._(this.value);
+@immutable final class FirewallSchemasRuleScopeType {const FirewallSchemasRuleScopeType._(this.value);
 
 factory FirewallSchemasRuleScopeType.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FirewallSchemasRuleScopeType($value)'; } 
  }
 /// All zones owned by the user will have the rule applied.
-final class FirewallSchemasRuleScope {const FirewallSchemasRuleScope({this.email, this.id, this.type, });
+@immutable final class FirewallSchemasRuleScope {const FirewallSchemasRuleScope({this.email, this.id, this.type, });
 
 factory FirewallSchemasRuleScope.fromJson(Map<String, dynamic> json) { return FirewallSchemasRuleScope(
   email: json['email'] != null ? FirewallEmail.fromJson(json['email'] as String) : null,

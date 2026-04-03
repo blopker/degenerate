@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage {const RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage({this.fileId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage {const RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage({this.fileId});
 
 factory RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage(
   fileId: json['file_id'] as String?,

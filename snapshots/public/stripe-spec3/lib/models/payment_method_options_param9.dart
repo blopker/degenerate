@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_options_param9_routing.dart';final class PaymentMethodOptionsParam9CaptureMethod {const PaymentMethodOptionsParam9CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param9_routing.dart';@immutable final class PaymentMethodOptionsParam9CaptureMethod {const PaymentMethodOptionsParam9CaptureMethod._(this.value);
 
 factory PaymentMethodOptionsParam9CaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam9CaptureMethod($value)'; } 
  }
-final class PaymentMethodOptionsParam9 {const PaymentMethodOptionsParam9({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
+@immutable final class PaymentMethodOptionsParam9 {const PaymentMethodOptionsParam9({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
 
 factory PaymentMethodOptionsParam9.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam9(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam9CaptureMethod.fromJson(json['capture_method'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_auto_param.dart';import 'container_reference_param.dart';import 'local_environment_param.dart';sealed class FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironment();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_auto_param.dart';import 'container_reference_param.dart';import 'local_environment_param.dart';sealed class FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironment();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellToolParamEnvironment.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellToolParamEnvironment$Unknown; } 
  }
-final class FunctionShellToolParamEnvironmentContainerAuto extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerAuto(this.containerAutoParam);
+@immutable final class FunctionShellToolParamEnvironmentContainerAuto extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerAuto(this.containerAutoParam);
 
 factory FunctionShellToolParamEnvironmentContainerAuto.fromJson(Map<String, dynamic> json) { return FunctionShellToolParamEnvironmentContainerAuto(ContainerAutoParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final ContainerAutoParam containerAutoParam;
 @override int get hashCode { return containerAutoParam.hashCode; } 
 @override String toString() { return 'FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam: $containerAutoParam)'; } 
  }
-final class FunctionShellToolParamEnvironmentLocal extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentLocal(this.localEnvironmentParam);
+@immutable final class FunctionShellToolParamEnvironmentLocal extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentLocal(this.localEnvironmentParam);
 
 factory FunctionShellToolParamEnvironmentLocal.fromJson(Map<String, dynamic> json) { return FunctionShellToolParamEnvironmentLocal(LocalEnvironmentParam.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final LocalEnvironmentParam localEnvironmentParam;
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
 @override String toString() { return 'FunctionShellToolParamEnvironmentLocal(localEnvironmentParam: $localEnvironmentParam)'; } 
  }
-final class FunctionShellToolParamEnvironmentContainerReference extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerReference(this.containerReferenceParam);
+@immutable final class FunctionShellToolParamEnvironmentContainerReference extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerReference(this.containerReferenceParam);
 
 factory FunctionShellToolParamEnvironmentContainerReference.fromJson(Map<String, dynamic> json) { return FunctionShellToolParamEnvironmentContainerReference(ContainerReferenceParam.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final ContainerReferenceParam containerReferenceParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class FunctionShellToolParamEnvironment$Unknown extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironment$Unknown(this.json);
+@immutable final class FunctionShellToolParamEnvironment$Unknown extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironment$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

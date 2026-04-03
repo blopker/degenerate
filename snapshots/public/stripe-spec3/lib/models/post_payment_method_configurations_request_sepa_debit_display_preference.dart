@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference {const PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference {const PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

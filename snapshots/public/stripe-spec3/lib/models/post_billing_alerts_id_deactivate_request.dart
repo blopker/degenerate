@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingAlertsIdDeactivateRequest {const PostBillingAlertsIdDeactivateRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingAlertsIdDeactivateRequest {const PostBillingAlertsIdDeactivateRequest({this.expand});
 
 factory PostBillingAlertsIdDeactivateRequest.fromJson(Map<String, dynamic> json) { return PostBillingAlertsIdDeactivateRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

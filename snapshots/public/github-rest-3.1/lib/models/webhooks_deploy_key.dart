@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The [`deploy key`](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key) resource.
-final class WebhooksDeployKey {const WebhooksDeployKey({this.addedBy, required this.createdAt, required this.id, required this.key, this.lastUsed, required this.readOnly, required this.title, required this.url, required this.verified, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [`deploy key`](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key) resource.
+@immutable final class WebhooksDeployKey {const WebhooksDeployKey({required this.createdAt, required this.id, required this.key, required this.readOnly, required this.title, required this.url, required this.verified, this.addedBy, this.lastUsed, this.enabled, });
 
 factory WebhooksDeployKey.fromJson(Map<String, dynamic> json) { return WebhooksDeployKey(
   addedBy: json['added_by'] as String?,

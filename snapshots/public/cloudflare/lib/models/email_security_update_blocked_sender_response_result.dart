@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_blocked_sender_id.dart';import 'email_security_pattern_type.dart';final class EmailSecurityUpdateBlockedSenderResponseResult {const EmailSecurityUpdateBlockedSenderResponseResult({this.comments, required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_blocked_sender_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityUpdateBlockedSenderResponseResult {const EmailSecurityUpdateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments, });
 
 factory EmailSecurityUpdateBlockedSenderResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateBlockedSenderResponseResult(
   comments: json['comments'] as String?,

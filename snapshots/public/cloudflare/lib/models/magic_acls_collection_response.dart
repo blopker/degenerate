@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_acl.dart';final class MagicAclsCollectionResponse {const MagicAclsCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_acl.dart';@immutable final class MagicAclsCollectionResponse {const MagicAclsCollectionResponse({this.result});
 
 factory MagicAclsCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicAclsCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MagicAcl.fromJson(e as Map<String, dynamic>)).toList(),

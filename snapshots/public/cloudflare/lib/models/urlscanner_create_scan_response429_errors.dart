@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerCreateScanResponse429Errors {const UrlscannerCreateScanResponse429Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerCreateScanResponse429Errors {const UrlscannerCreateScanResponse429Errors({required this.message});
 
 factory UrlscannerCreateScanResponse429Errors.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse429Errors(
   message: json['message'] as String,

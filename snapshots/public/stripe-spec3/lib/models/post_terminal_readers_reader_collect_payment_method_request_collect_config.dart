@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_terminal_readers_reader_collect_payment_method_request_collect_config_tipping.dart';final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_payment_method_request_collect_config_tipping.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay._(this.value);
 
 factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay($value)'; } 
  }
 /// Configuration overrides for this collection, such as tipping, surcharging, and customer cancellation settings.
-final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig({this.allowRedisplay, this.enableCustomerCancellation, this.skipTipping, this.tipping, });
+@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig({this.allowRedisplay, this.enableCustomerCancellation, this.skipTipping, this.tipping, });
 
 factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
   allowRedisplay: json['allow_redisplay'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,

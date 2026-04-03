@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_credit_grants_resource_monetary_amount.dart';/// The type of this amount. We currently only support `monetary` billing credits.
-final class BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_monetary_amount.dart';/// The type of this amount. We currently only support `monetary` billing credits.
+@immutable final class BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType._(this.value);
 
 factory BillingCreditGrantsResourceAmountType.fromJson(String json) { return switch (json) {
   'monetary' => monetary,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditGrantsResourceAmountType($value)'; } 
  }
 /// 
-final class BillingCreditGrantsResourceAmount {const BillingCreditGrantsResourceAmount({this.monetary, required this.type, });
+@immutable final class BillingCreditGrantsResourceAmount {const BillingCreditGrantsResourceAmount({required this.type, this.monetary, });
 
 factory BillingCreditGrantsResourceAmount.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceAmount(
   monetary: json['monetary'] != null ? BillingCreditGrantsResourceMonetaryAmount.fromJson(json['monetary'] as Map<String, dynamic>) : null,

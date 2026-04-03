@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_bots_timeseries_response_result_meta_confidence_info.dart';import 'radar_get_ai_bots_timeseries_response_result_meta_date_range.dart';import 'radar_get_ai_bots_timeseries_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetAiBotsTimeseriesResponseResultMetaAggInterval {const RadarGetAiBotsTimeseriesResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetAiBotsTimeseriesResponseResultMetaAggInterval {const RadarGetAiBotsTimeseriesResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetAiBotsTimeseriesResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAiBotsTimeseriesResponseResultMetaNormalization {const RadarGetAiBotsTimeseriesResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAiBotsTimeseriesResponseResultMetaNormalization {const RadarGetAiBotsTimeseriesResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAiBotsTimeseriesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAiBotsTimeseriesResponseResultMeta {const RadarGetAiBotsTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAiBotsTimeseriesResponseResultMeta {const RadarGetAiBotsTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAiBotsTimeseriesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesResponseResultMeta(
   aggInterval: RadarGetAiBotsTimeseriesResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

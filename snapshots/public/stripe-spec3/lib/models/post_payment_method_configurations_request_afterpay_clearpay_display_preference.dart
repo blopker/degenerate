@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreference {const PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreference {const PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestAfterpayClearpayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

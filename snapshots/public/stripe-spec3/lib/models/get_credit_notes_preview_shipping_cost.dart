@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesPreviewShippingCost {const GetCreditNotesPreviewShippingCost({this.shippingRate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewShippingCost {const GetCreditNotesPreviewShippingCost({this.shippingRate});
 
 factory GetCreditNotesPreviewShippingCost.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewShippingCost(
   shippingRate: json['shipping_rate'] as String?,

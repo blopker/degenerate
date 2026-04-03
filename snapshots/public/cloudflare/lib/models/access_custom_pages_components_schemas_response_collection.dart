@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_page_without_html.dart';final class AccessCustomPagesComponentsSchemasResponseCollection {const AccessCustomPagesComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_page_without_html.dart';@immutable final class AccessCustomPagesComponentsSchemasResponseCollection {const AccessCustomPagesComponentsSchemasResponseCollection({this.result});
 
 factory AccessCustomPagesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessCustomPagesComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessCustomPageWithoutHtml.fromJson(e as Map<String, dynamic>)).toList(),

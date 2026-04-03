@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageImagesResultObject {const UsageImagesResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesResultObject {const UsageImagesResultObject._(this.value);
 
 factory UsageImagesResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.images.result' => organizationUsageImagesResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageImagesResultObject($value)'; } 
  }
 /// The aggregated images usage details of the specific time bucket.
-final class UsageImagesResult {const UsageImagesResult({required this.object, required this.images, required this.numModelRequests, this.source, this.size, this.projectId, this.userId, this.apiKeyId, this.model, });
+@immutable final class UsageImagesResult {const UsageImagesResult({required this.object, required this.images, required this.numModelRequests, this.source, this.size, this.projectId, this.userId, this.apiKeyId, this.model, });
 
 factory UsageImagesResult.fromJson(Map<String, dynamic> json) { return UsageImagesResult(
   object: UsageImagesResultObject.fromJson(json['object'] as String),

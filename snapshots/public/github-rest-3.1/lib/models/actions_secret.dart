@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set secrets for GitHub Actions.
-final class ActionsSecret {const ActionsSecret({required this.name, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set secrets for GitHub Actions.
+@immutable final class ActionsSecret {const ActionsSecret({required this.name, required this.createdAt, required this.updatedAt, });
 
 factory ActionsSecret.fromJson(Map<String, dynamic> json) { return ActionsSecret(
   name: json['name'] as String,

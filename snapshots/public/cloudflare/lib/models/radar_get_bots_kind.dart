@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by bot kind.
-final class RadarGetBotsKind {const RadarGetBotsKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot kind.
+@immutable final class RadarGetBotsKind {const RadarGetBotsKind._(this.value);
 
 factory RadarGetBotsKind.fromJson(String json) { return switch (json) {
   'AGENT' => agent,

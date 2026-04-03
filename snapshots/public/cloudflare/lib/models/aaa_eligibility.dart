@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Determines whether or not the account is eligible for the delivery mechanism.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines whether or not the account is eligible for the delivery mechanism.
 extension type const AaaEligible(bool value) {
 factory AaaEligible.fromJson(bool json) => AaaEligible(json);
 
@@ -15,7 +15,7 @@ bool toJson() => value;
 
 }
 /// Determines type of delivery mechanism.
-final class AaaSchemasType {const AaaSchemasType._(this.value);
+@immutable final class AaaSchemasType {const AaaSchemasType._(this.value);
 
 factory AaaSchemasType.fromJson(String json) { return switch (json) {
   'email' => email,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AaaSchemasType($value)'; } 
  }
-final class AaaEligibility {const AaaEligibility({this.eligible, this.ready, this.type, });
+@immutable final class AaaEligibility {const AaaEligibility({this.eligible, this.ready, this.type, });
 
 factory AaaEligibility.fromJson(Map<String, dynamic> json) { return AaaEligibility(
   eligible: json['eligible'] != null ? AaaEligible.fromJson(json['eligible'] as bool) : null,

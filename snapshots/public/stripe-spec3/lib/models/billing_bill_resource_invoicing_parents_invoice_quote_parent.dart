@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingBillResourceInvoicingParentsInvoiceQuoteParent {const BillingBillResourceInvoicingParentsInvoiceQuoteParent({required this.quote});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingBillResourceInvoicingParentsInvoiceQuoteParent {const BillingBillResourceInvoicingParentsInvoiceQuoteParent({required this.quote});
 
 factory BillingBillResourceInvoicingParentsInvoiceQuoteParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceQuoteParent(
   quote: json['quote'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesSourceField {const CloudflarePipelinesSourceField({this.metadataKey, required this.name, this.$required, this.sqlName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesSourceField {const CloudflarePipelinesSourceField({required this.name, this.metadataKey, this.$required, this.sqlName, });
 
 factory CloudflarePipelinesSourceField.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesSourceField(
   metadataKey: json['metadata_key'] as String?,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_components_schemas_tunnel_id.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_hostname.dart';import 'tunnel_hostname_comment.dart';import 'tunnel_hostname_route_id.dart';/// A user-friendly name for a tunnel.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_components_schemas_tunnel_id.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_hostname.dart';import 'tunnel_hostname_comment.dart';import 'tunnel_hostname_route_id.dart';/// A user-friendly name for a tunnel.
 extension type const TunnelSchemasTunnelName(String value) {
 factory TunnelSchemasTunnelName.fromJson(String json) => TunnelSchemasTunnelName(json);
 
 String toJson() => value;
 
 }
-final class TunnelHostnameRoute {const TunnelHostnameRoute({this.comment, this.createdAt, this.deletedAt, this.hostname, this.id, this.tunnelId, this.tunnelName, });
+@immutable final class TunnelHostnameRoute {const TunnelHostnameRoute({this.comment, this.createdAt, this.deletedAt, this.hostname, this.id, this.tunnelId, this.tunnelName, });
 
 factory TunnelHostnameRoute.fromJson(Map<String, dynamic> json) { return TunnelHostnameRoute(
   comment: json['comment'] != null ? TunnelHostnameComment.fromJson(json['comment'] as String) : null,

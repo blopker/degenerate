@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
-final class ReposCreateDeploymentStatusRequestState {const ReposCreateDeploymentStatusRequestState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
+@immutable final class ReposCreateDeploymentStatusRequestState {const ReposCreateDeploymentStatusRequestState._(this.value);
 
 factory ReposCreateDeploymentStatusRequestState.fromJson(String json) { return switch (json) {
   'error' => error,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateDeploymentStatusRequestState($value)'; } 
  }
-final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl = '', this.logUrl = '', this.description = '', this.environment, this.environmentUrl = '', this.autoInactive, });
+@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl = '', this.logUrl = '', this.description = '', this.environment, this.environmentUrl = '', this.autoInactive, });
 
 factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentStatusRequest(
   state: ReposCreateDeploymentStatusRequestState.fromJson(json['state'] as String),

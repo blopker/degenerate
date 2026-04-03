@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Quality of screen share
-final class RealtimekitUpdatePresetConfigMediaScreenshareQuality {const RealtimekitUpdatePresetConfigMediaScreenshareQuality._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Quality of screen share
+@immutable final class RealtimekitUpdatePresetConfigMediaScreenshareQuality {const RealtimekitUpdatePresetConfigMediaScreenshareQuality._(this.value);
 
 factory RealtimekitUpdatePresetConfigMediaScreenshareQuality.fromJson(String json) { return switch (json) {
   'hd' => hd,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitUpdatePresetConfigMediaScreenshareQuality($value)'; } 
  }
 /// Configuration options for participant screen shares
-final class RealtimekitUpdatePresetConfigMediaScreenshare {const RealtimekitUpdatePresetConfigMediaScreenshare({this.frameRate, this.quality, });
+@immutable final class RealtimekitUpdatePresetConfigMediaScreenshare {const RealtimekitUpdatePresetConfigMediaScreenshare({this.frameRate, this.quality, });
 
 factory RealtimekitUpdatePresetConfigMediaScreenshare.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMediaScreenshare(
   frameRate: json['frame_rate'] != null ? (json['frame_rate'] as num).toInt() : null,

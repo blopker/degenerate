@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'page_build_error.dart';import 'simple_user.dart';/// Page Build
-final class PageBuild {const PageBuild({required this.url, required this.status, required this.error, required this.pusher, required this.commit, required this.duration, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_build_error.dart';import 'simple_user.dart';/// Page Build
+@immutable final class PageBuild {const PageBuild({required this.url, required this.status, required this.error, required this.pusher, required this.commit, required this.duration, required this.createdAt, required this.updatedAt, });
 
 factory PageBuild.fromJson(Map<String, dynamic> json) { return PageBuild(
   url: Uri.parse(json['url'] as String),

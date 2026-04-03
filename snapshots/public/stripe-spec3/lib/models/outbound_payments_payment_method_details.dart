@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'outbound_payments_payment_method_details_financial_account.dart';import 'outbound_payments_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the OutboundPayment.
-final class OutboundPaymentsPaymentMethodDetailsType {const OutboundPaymentsPaymentMethodDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details_financial_account.dart';import 'outbound_payments_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the OutboundPayment.
+@immutable final class OutboundPaymentsPaymentMethodDetailsType {const OutboundPaymentsPaymentMethodDetailsType._(this.value);
 
 factory OutboundPaymentsPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'financial_account' => financialAccount,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OutboundPaymentsPaymentMethodDetailsType($value)'; } 
  }
 /// 
-final class OutboundPaymentsPaymentMethodDetails {const OutboundPaymentsPaymentMethodDetails({required this.billingDetails, this.financialAccount, required this.type, this.usBankAccount, });
+@immutable final class OutboundPaymentsPaymentMethodDetails {const OutboundPaymentsPaymentMethodDetails({required this.billingDetails, required this.type, this.financialAccount, this.usBankAccount, });
 
 factory OutboundPaymentsPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return OutboundPaymentsPaymentMethodDetails(
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),

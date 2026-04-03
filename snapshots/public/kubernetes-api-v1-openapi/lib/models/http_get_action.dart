@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'http_header.dart';import 'io_k8s_apimachinery_pkg_util_intstr_int_or_string.dart';/// HTTPGetAction describes an action based on HTTP Get requests.
-final class HttpGetAction {const HttpGetAction({this.host, this.httpHeaders, this.path, required this.port, this.scheme, });
+@immutable final class HttpGetAction {const HttpGetAction({required this.port, this.host, this.httpHeaders, this.path, this.scheme, });
 
 factory HttpGetAction.fromJson(Map<String, dynamic> json) { return HttpGetAction(
   host: json['host'] as String?,

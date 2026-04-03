@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpTopAsnsByPrefixesResponseResultAsns {const RadarGetBgpTopAsnsByPrefixesResponseResultAsns({required this.asn, required this.country, required this.name, required this.pfxsCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponseResultAsns {const RadarGetBgpTopAsnsByPrefixesResponseResultAsns({required this.asn, required this.country, required this.name, required this.pfxsCount, });
 
 factory RadarGetBgpTopAsnsByPrefixesResponseResultAsns.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsnsByPrefixesResponseResultAsns(
   asn: (json['asn'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_file_content_response_data.dart';/// The object type, which is always `vector_store.file_content.page`
-final class VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject._(this.value);
+@immutable final class VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject._(this.value);
 
 factory VectorStoreFileContentResponseObject.fromJson(String json) { return switch (json) {
   'vector_store.file_content.page' => vectorStoreFileContentPage,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileContentResponseObject($value)'; } 
  }
 /// Represents the parsed content of a vector store file.
-final class VectorStoreFileContentResponse {const VectorStoreFileContentResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
+@immutable final class VectorStoreFileContentResponse {const VectorStoreFileContentResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
 
 factory VectorStoreFileContentResponse.fromJson(Map<String, dynamic> json) { return VectorStoreFileContentResponse(
   object: VectorStoreFileContentResponseObject.fromJson(json['object'] as String),

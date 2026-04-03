@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StatusUpdateEditedChangesStatusFrom {const StatusUpdateEditedChangesStatusFrom._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StatusUpdateEditedChangesStatusFrom {const StatusUpdateEditedChangesStatusFrom._(this.value);
 
 factory StatusUpdateEditedChangesStatusFrom.fromJson(String json) { return switch (json) {
   'INACTIVE' => inactive,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StatusUpdateEditedChangesStatusFrom($value)'; } 
  }
-final class StatusUpdateEditedChangesStatusTo {const StatusUpdateEditedChangesStatusTo._(this.value);
+@immutable final class StatusUpdateEditedChangesStatusTo {const StatusUpdateEditedChangesStatusTo._(this.value);
 
 factory StatusUpdateEditedChangesStatusTo.fromJson(String json) { return switch (json) {
   'INACTIVE' => inactive,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StatusUpdateEditedChangesStatusTo($value)'; } 
  }
-final class StatusUpdateEditedChangesStatus {const StatusUpdateEditedChangesStatus({this.from, this.to, });
+@immutable final class StatusUpdateEditedChangesStatus {const StatusUpdateEditedChangesStatus({this.from, this.to, });
 
 factory StatusUpdateEditedChangesStatus.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChangesStatus(
   from: json['from'] != null ? StatusUpdateEditedChangesStatusFrom.fromJson(json['from'] as String) : null,

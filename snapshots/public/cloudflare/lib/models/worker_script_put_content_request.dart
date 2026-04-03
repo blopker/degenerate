@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'worker_script_put_content_request_metadata.dart';final class WorkerScriptPutContentRequest {const WorkerScriptPutContentRequest({this.files, required this.metadata, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'worker_script_put_content_request_metadata.dart';@immutable final class WorkerScriptPutContentRequest {const WorkerScriptPutContentRequest({required this.metadata, this.files, });
 
 factory WorkerScriptPutContentRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptPutContentRequest(
   files: (json['files'] as List<dynamic>?)?.map((e) => base64Decode(e as String)).toList(),

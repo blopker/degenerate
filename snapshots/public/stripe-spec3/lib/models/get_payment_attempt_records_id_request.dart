@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPaymentAttemptRecordsIdRequest {const GetPaymentAttemptRecordsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPaymentAttemptRecordsIdRequest {const GetPaymentAttemptRecordsIdRequest();
 
 factory GetPaymentAttemptRecordsIdRequest.fromJson(Map<String, dynamic> json) { return GetPaymentAttemptRecordsIdRequest(
 

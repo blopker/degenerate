@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.image_generation_call.in_progress'.
-final class ResponseImageGenCallInProgressEventType {const ResponseImageGenCallInProgressEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.image_generation_call.in_progress'.
+@immutable final class ResponseImageGenCallInProgressEventType {const ResponseImageGenCallInProgressEventType._(this.value);
 
 factory ResponseImageGenCallInProgressEventType.fromJson(String json) { return switch (json) {
   'response.image_generation_call.in_progress' => responseImageGenerationCallInProgress,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an image generation tool call is in progress.
 /// 
-final class ResponseImageGenCallInProgressEvent {const ResponseImageGenCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseImageGenCallInProgressEvent {const ResponseImageGenCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseImageGenCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallInProgressEvent(
   type: ResponseImageGenCallInProgressEventType.fromJson(json['type'] as String),

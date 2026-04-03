@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContributorActivityWeeks {const ContributorActivityWeeks({this.w, this.a, this.d, this.c, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContributorActivityWeeks {const ContributorActivityWeeks({this.w, this.a, this.d, this.c, });
 
 factory ContributorActivityWeeks.fromJson(Map<String, dynamic> json) { return ContributorActivityWeeks(
   w: json['w'] != null ? (json['w'] as num).toInt() : null,

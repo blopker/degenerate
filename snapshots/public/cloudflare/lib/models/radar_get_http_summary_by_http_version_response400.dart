@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_http_version_response400_errors.dart';final class RadarGetHttpSummaryByHttpVersionResponse400 {const RadarGetHttpSummaryByHttpVersionResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_http_version_response400_errors.dart';@immutable final class RadarGetHttpSummaryByHttpVersionResponse400 {const RadarGetHttpSummaryByHttpVersionResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetHttpSummaryByHttpVersionResponse400.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByHttpVersionResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetHttpSummaryByHttpVersionResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

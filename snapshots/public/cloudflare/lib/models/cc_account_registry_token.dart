@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A unique identifier for the user's account
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A unique identifier for the user's account
 extension type const CcAccountId(String value) {
 factory CcAccountId.fromJson(String json) => CcAccountId(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Credentials that can be used to interact with the requested image registry.
-final class CcAccountRegistryToken {const CcAccountRegistryToken({required this.accountId, this.password, required this.registryHost, required this.username, });
+@immutable final class CcAccountRegistryToken {const CcAccountRegistryToken({required this.accountId, required this.registryHost, required this.username, this.password, });
 
 factory CcAccountRegistryToken.fromJson(Map<String, dynamic> json) { return CcAccountRegistryToken(
   accountId: CcAccountId.fromJson(json['account_id'] as String),

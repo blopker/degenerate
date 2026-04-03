@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a line item to be displayed on the reader
-final class TerminalReaderReaderResourceLineItem {const TerminalReaderReaderResourceLineItem({required this.amount, required this.description, required this.quantity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a line item to be displayed on the reader
+@immutable final class TerminalReaderReaderResourceLineItem {const TerminalReaderReaderResourceLineItem({required this.amount, required this.description, required this.quantity, });
 
 factory TerminalReaderReaderResourceLineItem.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceLineItem(
   amount: (json['amount'] as num).toInt(),

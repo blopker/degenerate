@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryDebitReversalsRequest {const GetTreasuryDebitReversalsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryDebitReversalsRequest {const GetTreasuryDebitReversalsRequest();
 
 factory GetTreasuryDebitReversalsRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryDebitReversalsRequest(
 

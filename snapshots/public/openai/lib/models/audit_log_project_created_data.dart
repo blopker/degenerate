@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to create the project.
-final class AuditLogProjectCreatedData {const AuditLogProjectCreatedData({this.name, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the project.
+@immutable final class AuditLogProjectCreatedData {const AuditLogProjectCreatedData({this.name, this.title, });
 
 factory AuditLogProjectCreatedData.fromJson(Map<String, dynamic> json) { return AuditLogProjectCreatedData(
   name: json['name'] as String?,

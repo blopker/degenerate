@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
-final class LimitRangeItem {const LimitRangeItem({this.$default, this.defaultRequest, this.max, this.maxLimitRequestRatio, this.min, this.type = '', });
+@immutable final class LimitRangeItem {const LimitRangeItem({this.$default, this.defaultRequest, this.max, this.maxLimitRequestRatio, this.min, this.type = '', });
 
 factory LimitRangeItem.fromJson(Map<String, dynamic> json) { return LimitRangeItem(
   $default: (json['default'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class CustomLogo {const CustomLogo({this.contentType, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class CustomLogo {const CustomLogo({required this.url, this.contentType, });
 
 factory CustomLogo.fromJson(Map<String, dynamic> json) { return CustomLogo(
   contentType: json['content_type'] as String?,

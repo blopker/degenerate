@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByDnssecAwarenessResponseResultSummary0 {const RadarGetDnsSummaryByDnssecAwarenessResponseResultSummary0({required this.notSupported, required this.supported, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecAwarenessResponseResultSummary0 {const RadarGetDnsSummaryByDnssecAwarenessResponseResultSummary0({required this.notSupported, required this.supported, });
 
 factory RadarGetDnsSummaryByDnssecAwarenessResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecAwarenessResponseResultSummary0(
   notSupported: json['NOT_SUPPORTED'] as String,

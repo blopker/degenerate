@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourceCompletionBehaviorRedirect {const PaymentLinksResourceCompletionBehaviorRedirect({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourceCompletionBehaviorRedirect {const PaymentLinksResourceCompletionBehaviorRedirect({required this.url});
 
 factory PaymentLinksResourceCompletionBehaviorRedirect.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCompletionBehaviorRedirect(
   url: json['url'] as String,

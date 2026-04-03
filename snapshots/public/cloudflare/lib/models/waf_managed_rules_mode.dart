@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the state of the rules contained in the rule group. When `on`, the rules in the group are configurable/usable.
-final class WafManagedRulesMode {const WafManagedRulesMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the state of the rules contained in the rule group. When `on`, the rules in the group are configurable/usable.
+@immutable final class WafManagedRulesMode {const WafManagedRulesMode._(this.value);
 
 factory WafManagedRulesMode.fromJson(String json) { return switch (json) {
   'on' => $on,

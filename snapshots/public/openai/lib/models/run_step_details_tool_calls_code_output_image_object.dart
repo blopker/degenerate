@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_details_tool_calls_code_output_image_object_image.dart';/// Always `image`.
-final class RunStepDetailsToolCallsCodeOutputImageObjectType {const RunStepDetailsToolCallsCodeOutputImageObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_output_image_object_image.dart';/// Always `image`.
+@immutable final class RunStepDetailsToolCallsCodeOutputImageObjectType {const RunStepDetailsToolCallsCodeOutputImageObjectType._(this.value);
 
 factory RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(String json) { return switch (json) {
   'image' => image,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RunStepDetailsToolCallsCodeOutputImageObjectType($value)'; } 
  }
-final class RunStepDetailsToolCallsCodeOutputImageObject {const RunStepDetailsToolCallsCodeOutputImageObject({required this.type, required this.image, });
+@immutable final class RunStepDetailsToolCallsCodeOutputImageObject {const RunStepDetailsToolCallsCodeOutputImageObject({required this.type, required this.image, });
 
 factory RunStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeOutputImageObject(
   type: RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class GcsSourceResponseSchemaVendor {const GcsSourceResponseSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GcsSourceResponseSchemaVendor {const GcsSourceResponseSchemaVendor._(this.value);
 
 factory GcsSourceResponseSchemaVendor.fromJson(String json) { return switch (json) {
   'gcs' => gcs,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GcsSourceResponseSchemaVendor($value)'; } 
  }
-final class GcsSourceResponseSchema {const GcsSourceResponseSchema({this.bucket, this.keys, this.pathPrefix, this.vendor, });
+@immutable final class GcsSourceResponseSchema {const GcsSourceResponseSchema({this.bucket, this.keys, this.pathPrefix, this.vendor, });
 
 factory GcsSourceResponseSchema.fromJson(Map<String, dynamic> json) { return GcsSourceResponseSchema(
   bucket: json['bucket'] as String?,

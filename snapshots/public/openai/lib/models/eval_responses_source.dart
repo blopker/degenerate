@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// The type of run data source. Always `responses`.
-final class EvalResponsesSourceType {const EvalResponsesSourceType._(this.value);
+@immutable final class EvalResponsesSourceType {const EvalResponsesSourceType._(this.value);
 
 factory EvalResponsesSourceType.fromJson(String json) { return switch (json) {
   'responses' => responses,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A EvalResponsesSource object describing a run data source configuration.
 /// 
-final class EvalResponsesSource {const EvalResponsesSource({required this.type, this.metadata, this.model, this.instructionsSearch, this.createdAfter, this.createdBefore, this.reasoningEffort, this.temperature, this.topP, this.users, this.tools, });
+@immutable final class EvalResponsesSource {const EvalResponsesSource({required this.type, this.metadata, this.model, this.instructionsSearch, this.createdAfter, this.createdBefore, this.reasoningEffort, this.temperature, this.topP, this.users, this.tools, });
 
 factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
   type: EvalResponsesSourceType.fromJson(json['type'] as String),

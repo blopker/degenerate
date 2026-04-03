@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_delete_advanced_certificate_pack_response_single_result.dart';final class TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingle {const TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_delete_advanced_certificate_pack_response_single_result.dart';@immutable final class TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingle {const TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingle({this.result});
 
 factory TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingle.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingle(
   result: json['result'] != null ? TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_direct_upload_response_result.dart';final class StreamDirectUploadResponse {const StreamDirectUploadResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_direct_upload_response_result.dart';@immutable final class StreamDirectUploadResponse {const StreamDirectUploadResponse({this.result});
 
 factory StreamDirectUploadResponse.fromJson(Map<String, dynamic> json) { return StreamDirectUploadResponse(
   result: json['result'] != null ? StreamDirectUploadResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

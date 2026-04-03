@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DoneEventEvent {const DoneEventEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DoneEventEvent {const DoneEventEvent._(this.value);
 
 factory DoneEventEvent.fromJson(String json) { return switch (json) {
   'done' => done,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DoneEventEvent($value)'; } 
  }
-final class DoneEventData {const DoneEventData._(this.value);
+@immutable final class DoneEventData {const DoneEventData._(this.value);
 
 factory DoneEventData.fromJson(String json) { return switch (json) {
   '[DONE]' => done,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DoneEventData($value)'; } 
  }
 /// Occurs when a stream ends.
-final class DoneEvent {const DoneEvent({required this.event, required this.data, });
+@immutable final class DoneEvent {const DoneEvent({required this.event, required this.data, });
 
 factory DoneEvent.fromJson(Map<String, dynamic> json) { return DoneEvent(
   event: DoneEventEvent.fromJson(json['event'] as String),

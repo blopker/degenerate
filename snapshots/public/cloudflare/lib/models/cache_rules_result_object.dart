@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_editable.dart';import 'cache_rules_modified_on.dart';import 'cache_rules_setting_id.dart';/// The value of the setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_editable.dart';import 'cache_rules_modified_on.dart';import 'cache_rules_setting_id.dart';/// The value of the setting.
 extension type const CacheRulesSettingValue(String value) {
 factory CacheRulesSettingValue.fromJson(String json) => CacheRulesSettingValue(json);
 
 String toJson() => value;
 
 }
-final class CacheRulesResultObject {const CacheRulesResultObject({required this.editable, required this.id, this.modifiedOn, required this.value, });
+@immutable final class CacheRulesResultObject {const CacheRulesResultObject({required this.editable, required this.id, required this.value, this.modifiedOn, });
 
 factory CacheRulesResultObject.fromJson(Map<String, dynamic> json) { return CacheRulesResultObject(
   editable: CacheRulesEditable.fromJson(json['editable'] as bool),

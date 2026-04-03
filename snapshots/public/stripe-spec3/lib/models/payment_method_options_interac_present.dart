@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodOptionsInteracPresent {const PaymentMethodOptionsInteracPresent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodOptionsInteracPresent {const PaymentMethodOptionsInteracPresent();
 
 factory PaymentMethodOptionsInteracPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsInteracPresent(
 

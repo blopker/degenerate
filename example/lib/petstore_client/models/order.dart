@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Order Status
-final class OrderStatus {const OrderStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order Status
+@immutable final class OrderStatus {const OrderStatus._(this.value);
 
 factory OrderStatus.fromJson(String json) { return switch (json) {
   'placed' => placed,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrderStatus($value)'; } 
  }
-final class Order {const Order({this.id, this.petId, this.quantity, this.shipDate, this.status, this.complete, });
+@immutable final class Order {const Order({this.id, this.petId, this.quantity, this.shipDate, this.status, this.complete, });
 
 factory Order.fromJson(Map<String, dynamic> json) { return Order(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

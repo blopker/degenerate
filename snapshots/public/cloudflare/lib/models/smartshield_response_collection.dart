@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_healthchecks.dart';final class SmartshieldResponseCollection {const SmartshieldResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_healthchecks.dart';@immutable final class SmartshieldResponseCollection {const SmartshieldResponseCollection({this.result});
 
 factory SmartshieldResponseCollection.fromJson(Map<String, dynamic> json) { return SmartshieldResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => SmartshieldHealthchecks.fromJson(e as Map<String, dynamic>)).toList(),

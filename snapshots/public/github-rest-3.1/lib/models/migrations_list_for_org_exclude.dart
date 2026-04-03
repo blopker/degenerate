@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Allowed values that can be passed to the exclude param.
-final class MigrationsListForOrgExclude {const MigrationsListForOrgExclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
+@immutable final class MigrationsListForOrgExclude {const MigrationsListForOrgExclude._(this.value);
 
 factory MigrationsListForOrgExclude.fromJson(String json) { return switch (json) {
   'repositories' => repositories,

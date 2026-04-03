@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ResourceCreditBalance {const ResourceCreditBalance({this.used});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ResourceCreditBalance {const ResourceCreditBalance({this.used});
 
 factory ResourceCreditBalance.fromJson(Map<String, dynamic> json) { return ResourceCreditBalance(
   used: (json['used'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),

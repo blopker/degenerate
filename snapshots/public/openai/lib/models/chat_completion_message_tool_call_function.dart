@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The function that the model called.
-final class ChatCompletionMessageToolCallFunction {const ChatCompletionMessageToolCallFunction({required this.name, required this.arguments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The function that the model called.
+@immutable final class ChatCompletionMessageToolCallFunction {const ChatCompletionMessageToolCallFunction({required this.name, required this.arguments, });
 
 factory ChatCompletionMessageToolCallFunction.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCallFunction(
   name: json['name'] as String,

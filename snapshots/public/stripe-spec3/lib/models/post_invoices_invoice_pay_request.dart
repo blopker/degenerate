@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_pay_request_mandate.dart';final class PostInvoicesInvoicePayRequest {const PostInvoicesInvoicePayRequest({this.expand, this.forgive, this.mandate, this.offSession, this.paidOutOfBand, this.paymentMethod, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_pay_request_mandate.dart';@immutable final class PostInvoicesInvoicePayRequest {const PostInvoicesInvoicePayRequest({this.expand, this.forgive, this.mandate, this.offSession, this.paidOutOfBand, this.paymentMethod, this.source, });
 
 factory PostInvoicesInvoicePayRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoicePayRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

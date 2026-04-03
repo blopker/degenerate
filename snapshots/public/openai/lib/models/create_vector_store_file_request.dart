@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chunking_strategy_request_param.dart';final class CreateVectorStoreFileRequest {const CreateVectorStoreFileRequest({required this.fileId, this.chunkingStrategy, this.attributes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chunking_strategy_request_param.dart';@immutable final class CreateVectorStoreFileRequest {const CreateVectorStoreFileRequest({required this.fileId, this.chunkingStrategy, this.attributes, });
 
 factory CreateVectorStoreFileRequest.fromJson(Map<String, dynamic> json) { return CreateVectorStoreFileRequest(
   fileId: json['file_id'] as String,

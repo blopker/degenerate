@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_responses.dart';final class AccessScimUpdateLogsResponse {const AccessScimUpdateLogsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_responses.dart';@immutable final class AccessScimUpdateLogsResponse {const AccessScimUpdateLogsResponse({this.result});
 
 factory AccessScimUpdateLogsResponse.fromJson(Map<String, dynamic> json) { return AccessScimUpdateLogsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessResponses.fromJson(e as Map<String, dynamic>)).toList(),

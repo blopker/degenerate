@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';import 'workers_namespace_identifier.dart';final class WorkersBindingKindDurableObjectNamespace {const WorkersBindingKindDurableObjectNamespace({this.className, this.dispatchNamespace, this.environment, required this.name, this.namespaceId, this.scriptName, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';import 'workers_namespace_identifier.dart';@immutable final class WorkersBindingKindDurableObjectNamespace {const WorkersBindingKindDurableObjectNamespace({required this.name, required this.type, this.className, this.dispatchNamespace, this.environment, this.namespaceId, this.scriptName, });
 
 factory WorkersBindingKindDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDurableObjectNamespace(
   className: json['class_name'] as String?,

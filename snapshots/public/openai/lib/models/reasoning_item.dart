@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_text_content.dart';import 'summary_text_content.dart';/// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final class ReasoningItemStatus {const ReasoningItemStatus._(this.value);
+@immutable final class ReasoningItemStatus {const ReasoningItemStatus._(this.value);
 
 factory ReasoningItemStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 /// for subsequent turns of a conversation if you are manually
 /// [managing context](/docs/guides/conversation-state).
 /// 
-final class ReasoningItem {const ReasoningItem({required this.type, required this.id, this.encryptedContent, required this.summary, this.content, this.status, });
+@immutable final class ReasoningItem {const ReasoningItem({required this.type, required this.id, required this.summary, this.encryptedContent, this.content, this.status, });
 
 factory ReasoningItem.fromJson(Map<String, dynamic> json) { return ReasoningItem(
   type: json['type'] as String,

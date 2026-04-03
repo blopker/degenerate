@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject._(this.value);
 
 factory GetAccountsAccountExternalAccountsObject.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,

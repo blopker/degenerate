@@ -15,7 +15,7 @@ String toJson() => value;
 
 }
 /// Used only for ECMP routes.
-final class MagicScope {const MagicScope({this.coloNames, this.coloRegions, });
+@immutable final class MagicScope {const MagicScope({this.coloNames, this.coloRegions, });
 
 factory MagicScope.fromJson(Map<String, dynamic> json) { return MagicScope(
   coloNames: (json['colo_names'] as List<dynamic>?)?.map((e) => MagicColoName.fromJson(e as String)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';import 'email_security_mailsearch_message_findings.dart';import 'email_security_mailsearch_message_properties.dart';import 'email_security_mailsearch_message_validation.dart';import 'email_security_message_delivery_mode.dart';import 'email_security_postfix_id.dart';final class EmailSecurityMailsearchMessagePostDeliveryOperations {const EmailSecurityMailsearchMessagePostDeliveryOperations._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';import 'email_security_mailsearch_message_findings.dart';import 'email_security_mailsearch_message_properties.dart';import 'email_security_mailsearch_message_validation.dart';import 'email_security_message_delivery_mode.dart';import 'email_security_postfix_id.dart';@immutable final class EmailSecurityMailsearchMessagePostDeliveryOperations {const EmailSecurityMailsearchMessagePostDeliveryOperations._(this.value);
 
 factory EmailSecurityMailsearchMessagePostDeliveryOperations.fromJson(String json) { return switch (json) {
   'PREVIEW' => preview,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityMailsearchMessagePostDeliveryOperations($value)'; } 
  }
-final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, this.alertId, required this.clientRecipients, this.deliveryMode, required this.detectionReasons, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, required this.isPhishSubmission, required this.isQuarantined, this.messageId, this.postDeliveryOperations, required this.postfixId, this.postfixIdOutbound, required this.properties, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, required this.ts, this.validation, required this.id, });
+@immutable final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId, this.deliveryMode, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, this.messageId, this.postDeliveryOperations, this.postfixIdOutbound, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, this.validation, });
 
 factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessage(
   actionLog: json['action_log'],

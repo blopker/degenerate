@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
-final class MessageDeltaContentTextAnnotationsFileCitationObjectType {const MessageDeltaContentTextAnnotationsFileCitationObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
+@immutable final class MessageDeltaContentTextAnnotationsFileCitationObjectType {const MessageDeltaContentTextAnnotationsFileCitationObjectType._(this.value);
 
 factory MessageDeltaContentTextAnnotationsFileCitationObjectType.fromJson(String json) { return switch (json) {
   'file_citation' => fileCitation,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaContentTextAnnotationsFileCitationObjectType($value)'; } 
  }
 /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
-final class MessageDeltaContentTextAnnotationsFileCitationObject {const MessageDeltaContentTextAnnotationsFileCitationObject({required this.index, required this.type, this.text, this.fileCitation, this.startIndex, this.endIndex, });
+@immutable final class MessageDeltaContentTextAnnotationsFileCitationObject {const MessageDeltaContentTextAnnotationsFileCitationObject({required this.index, required this.type, this.text, this.fileCitation, this.startIndex, this.endIndex, });
 
 factory MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFileCitationObject(
   index: (json['index'] as num).toInt(),

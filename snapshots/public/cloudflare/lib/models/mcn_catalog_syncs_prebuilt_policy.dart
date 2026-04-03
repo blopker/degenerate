@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_destination_type.dart';final class McnCatalogSyncsPrebuiltPolicy {const McnCatalogSyncsPrebuiltPolicy({required this.applicableDestinations, required this.policyDescription, required this.policyName, required this.policyString, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_destination_type.dart';@immutable final class McnCatalogSyncsPrebuiltPolicy {const McnCatalogSyncsPrebuiltPolicy({required this.applicableDestinations, required this.policyDescription, required this.policyName, required this.policyString, });
 
 factory McnCatalogSyncsPrebuiltPolicy.fromJson(Map<String, dynamic> json) { return McnCatalogSyncsPrebuiltPolicy(
   applicableDestinations: (json['applicable_destinations'] as List<dynamic>).map((e) => McnCatalogSyncDestinationType.fromJson(e as String)).toList(),

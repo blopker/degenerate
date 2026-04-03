@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestAfterCompletionRedirect {const PostPaymentLinksRequestAfterCompletionRedirect({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestAfterCompletionRedirect {const PostPaymentLinksRequestAfterCompletionRedirect({required this.url});
 
 factory PostPaymentLinksRequestAfterCompletionRedirect.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestAfterCompletionRedirect(
   url: json['url'] as String,

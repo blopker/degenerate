@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessGeo {const AccessGeo({this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessGeo {const AccessGeo({this.country});
 
 factory AccessGeo.fromJson(Map<String, dynamic> json) { return AccessGeo(
   country: json['country'] as String?,

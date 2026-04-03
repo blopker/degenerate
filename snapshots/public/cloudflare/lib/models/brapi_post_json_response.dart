@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_response_errors.dart';final class BrapiPostJsonResponse {const BrapiPostJsonResponse({this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_response_errors.dart';@immutable final class BrapiPostJsonResponse {const BrapiPostJsonResponse({required this.result, required this.success, this.errors, });
 
 factory BrapiPostJsonResponse.fromJson(Map<String, dynamic> json) { return BrapiPostJsonResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostJsonResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),

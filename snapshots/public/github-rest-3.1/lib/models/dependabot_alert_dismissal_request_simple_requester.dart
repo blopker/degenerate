@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The user who requested the dismissal.
-final class DependabotAlertDismissalRequestSimpleRequester {const DependabotAlertDismissalRequestSimpleRequester({this.id, this.login, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who requested the dismissal.
+@immutable final class DependabotAlertDismissalRequestSimpleRequester {const DependabotAlertDismissalRequestSimpleRequester({this.id, this.login, });
 
 factory DependabotAlertDismissalRequestSimpleRequester.fromJson(Map<String, dynamic> json) { return DependabotAlertDismissalRequestSimpleRequester(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories._(this.value);
 
 factory InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters({this.accountSubcategories});
+@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters({this.accountSubcategories});
 
 factory InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories.fromJson(e as String)).toList(),

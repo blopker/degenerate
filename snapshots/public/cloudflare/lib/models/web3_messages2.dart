@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Web3Messages2 {const Web3Messages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Web3Messages2 {const Web3Messages2({required this.code, required this.message, });
 
 factory Web3Messages2.fromJson(Map<String, dynamic> json) { return Web3Messages2(
   code: (json['code'] as num).toInt(),

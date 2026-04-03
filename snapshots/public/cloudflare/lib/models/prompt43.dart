@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_audio_variant1.dart';import 'prompt43_chat_template_kwargs.dart';import 'prompt43_function_call.dart';import 'prompt43_function_call_variant2.dart';import 'prompt43_functions.dart';import 'prompt43_prediction_content.dart';import 'prompt43_response_format_variant1.dart';import 'prompt43_response_format_variant1_json_object.dart';import 'prompt43_response_format_variant1_json_schema.dart';import 'prompt43_response_format_variant1_text.dart';import 'prompt43_stop.dart';import 'prompt43_stream_options_variant1.dart';import 'prompt43_tool_choice_variant1.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';import 'prompt43_tools.dart';import 'prompt43_tools_custom.dart';import 'prompt43_tools_function.dart';import 'prompt43_web_search_options_variant1.dart';final class Prompt43Modalities {const Prompt43Modalities._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_audio_variant1.dart';import 'prompt43_chat_template_kwargs.dart';import 'prompt43_function_call.dart';import 'prompt43_function_call_variant2.dart';import 'prompt43_functions.dart';import 'prompt43_prediction_content.dart';import 'prompt43_response_format_variant1.dart';import 'prompt43_response_format_variant1_json_object.dart';import 'prompt43_response_format_variant1_json_schema.dart';import 'prompt43_response_format_variant1_text.dart';import 'prompt43_stop.dart';import 'prompt43_stream_options_variant1.dart';import 'prompt43_tool_choice_variant1.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';import 'prompt43_tools.dart';import 'prompt43_tools_custom.dart';import 'prompt43_tools_function.dart';import 'prompt43_web_search_options_variant1.dart';@immutable final class Prompt43Modalities {const Prompt43Modalities._(this.value);
 
 factory Prompt43Modalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43Modalities($value)'; } 
  }
-final class Prompt43ReasoningEffort {const Prompt43ReasoningEffort._(this.value);
+@immutable final class Prompt43ReasoningEffort {const Prompt43ReasoningEffort._(this.value);
 
 factory Prompt43ReasoningEffort.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ReasoningEffort($value)'; } 
  }
-final class Prompt43ServiceTier {const Prompt43ServiceTier._(this.value);
+@immutable final class Prompt43ServiceTier {const Prompt43ServiceTier._(this.value);
 
 factory Prompt43ServiceTier.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ServiceTier($value)'; } 
  }
-final class Prompt43 {const Prompt43({this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, required this.prompt, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
+@immutable final class Prompt43 {const Prompt43({required this.prompt, this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
 
 factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   audio: json['audio'] != null ? Prompt43AudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,

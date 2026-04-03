@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_response_status_details_error.dart';/// The type of error that caused the response to fail, corresponding
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response_status_details_error.dart';/// The type of error that caused the response to fail, corresponding
 /// with the `status` field (`completed`, `cancelled`, `incomplete`,
 /// `failed`).
 /// 
-final class RealtimeResponseStatusDetailsType {const RealtimeResponseStatusDetailsType._(this.value);
+@immutable final class RealtimeResponseStatusDetailsType {const RealtimeResponseStatusDetailsType._(this.value);
 
 factory RealtimeResponseStatusDetailsType.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The reason the Response did not complete. For a `cancelled` Response,  one of `turn_detected` (the server VAD detected a new start of speech)  or `client_cancelled` (the client sent a cancel event). For an  `incomplete` Response, one of `max_output_tokens` or `content_filter`  (the server-side safety filter activated and cut off the response).
 /// 
-final class RealtimeResponseStatusDetailsReason {const RealtimeResponseStatusDetailsReason._(this.value);
+@immutable final class RealtimeResponseStatusDetailsReason {const RealtimeResponseStatusDetailsReason._(this.value);
 
 factory RealtimeResponseStatusDetailsReason.fromJson(String json) { return switch (json) {
   'turn_detected' => turnDetected,
@@ -67,7 +67,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeResponseStatusDetailsReason($value)'; } 
  }
 /// Additional details about the status.
-final class RealtimeResponseStatusDetails {const RealtimeResponseStatusDetails({this.type, this.reason, this.error, });
+@immutable final class RealtimeResponseStatusDetails {const RealtimeResponseStatusDetails({this.type, this.reason, this.error, });
 
 factory RealtimeResponseStatusDetails.fromJson(Map<String, dynamic> json) { return RealtimeResponseStatusDetails(
   type: json['type'] != null ? RealtimeResponseStatusDetailsType.fromJson(json['type'] as String) : null,

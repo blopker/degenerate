@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContextManagementParam {const ContextManagementParam({required this.type, this.compactThreshold, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContextManagementParam {const ContextManagementParam({required this.type, this.compactThreshold, });
 
 factory ContextManagementParam.fromJson(Map<String, dynamic> json) { return ContextManagementParam(
   type: json['type'] as String,

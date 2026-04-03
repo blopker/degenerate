@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Region where this widget can be used. This cannot be changed after creation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Region where this widget can be used. This cannot be changed after creation.
 /// 
-final class TurnstileRegion {const TurnstileRegion._(this.value);
+@immutable final class TurnstileRegion {const TurnstileRegion._(this.value);
 
 factory TurnstileRegion.fromJson(String json) { return switch (json) {
   'world' => world,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which query string parameters to exclude from the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude {const RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude({this.all, this.list, });
+@immutable final class RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude {const RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude({this.all, this.list, });
 
 factory RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude(
   all: json['all'] as bool?,

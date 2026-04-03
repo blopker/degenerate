@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDatasetCreateRequest {const PostDatasetCreateRequest({required this.isPublic, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetCreateRequest {const PostDatasetCreateRequest({required this.isPublic, required this.name, });
 
 factory PostDatasetCreateRequest.fromJson(Map<String, dynamic> json) { return PostDatasetCreateRequest(
   isPublic: json['isPublic'] as bool,

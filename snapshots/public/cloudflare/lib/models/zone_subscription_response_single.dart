@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'subscription2.dart';final class ZoneSubscriptionResponseSingle {const ZoneSubscriptionResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription2.dart';@immutable final class ZoneSubscriptionResponseSingle {const ZoneSubscriptionResponseSingle({this.result});
 
 factory ZoneSubscriptionResponseSingle.fromJson(Map<String, dynamic> json) { return ZoneSubscriptionResponseSingle(
   result: json['result'] != null ? Subscription2.fromJson(json['result'] as Map<String, dynamic>) : null,

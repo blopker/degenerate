@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_response_result_chunks.dart';final class AiSearchInstanceSearchResponseResult {const AiSearchInstanceSearchResponseResult({required this.chunks, required this.searchQuery, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_response_result_chunks.dart';@immutable final class AiSearchInstanceSearchResponseResult {const AiSearchInstanceSearchResponseResult({required this.chunks, required this.searchQuery, });
 
 factory AiSearchInstanceSearchResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchResponseResult(
   chunks: (json['chunks'] as List<dynamic>).map((e) => AiSearchInstanceSearchResponseResultChunks.fromJson(e as Map<String, dynamic>)).toList(),

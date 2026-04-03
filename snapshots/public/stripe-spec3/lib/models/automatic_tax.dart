@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
-final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
+@immutable final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);
 
 factory AutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
   'finalization_requires_location_inputs' => finalizationRequiresLocationInputs,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AutomaticTaxDisabledReason($value)'; } 
  }
 /// The status of the most recent automated tax calculation for this invoice.
-final class AutomaticTaxStatus {const AutomaticTaxStatus._(this.value);
+@immutable final class AutomaticTaxStatus {const AutomaticTaxStatus._(this.value);
 
 factory AutomaticTaxStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AutomaticTaxStatus($value)'; } 
  }
 /// 
-final class AutomaticTax {const AutomaticTax({this.disabledReason, required this.enabled, this.liability, this.provider, this.status, });
+@immutable final class AutomaticTax {const AutomaticTax({required this.enabled, this.disabledReason, this.liability, this.provider, this.status, });
 
 factory AutomaticTax.fromJson(Map<String, dynamic> json) { return AutomaticTax(
   disabledReason: json['disabled_reason'] != null ? AutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,

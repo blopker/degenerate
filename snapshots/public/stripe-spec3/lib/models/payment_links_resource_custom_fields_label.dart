@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the label.
-final class PaymentLinksResourceCustomFieldsLabelType {const PaymentLinksResourceCustomFieldsLabelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the label.
+@immutable final class PaymentLinksResourceCustomFieldsLabelType {const PaymentLinksResourceCustomFieldsLabelType._(this.value);
 
 factory PaymentLinksResourceCustomFieldsLabelType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceCustomFieldsLabelType($value)'; } 
  }
 /// 
-final class PaymentLinksResourceCustomFieldsLabel {const PaymentLinksResourceCustomFieldsLabel({this.custom, required this.type, });
+@immutable final class PaymentLinksResourceCustomFieldsLabel {const PaymentLinksResourceCustomFieldsLabel({required this.type, this.custom, });
 
 factory PaymentLinksResourceCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsLabel(
   custom: json['custom'] as String?,

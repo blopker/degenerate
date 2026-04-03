@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByOperatingSystemResponseResultMetaUnits {const RadarGetHttpTimeseriesGroupByOperatingSystemResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemResponseResultMetaUnits {const RadarGetHttpTimeseriesGroupByOperatingSystemResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetHttpTimeseriesGroupByOperatingSystemResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByOperatingSystemResponseResultMetaUnits(
   name: json['name'] as String,

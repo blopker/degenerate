@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy._(this.value);
 
 factory DexEndpointsListColosSortBy.fromJson(String json) { return switch (json) {
   'fleet-status-usage' => fleetStatusUsage,

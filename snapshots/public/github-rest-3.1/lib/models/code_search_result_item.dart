@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'search_result_text_matches2.dart';/// Code Search Result Item
-final class CodeSearchResultItem {const CodeSearchResultItem({required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.repository, required this.score, this.fileSize, this.language, this.lastModifiedAt, this.lineNumbers, this.textMatches, });
+@immutable final class CodeSearchResultItem {const CodeSearchResultItem({required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.repository, required this.score, this.fileSize, this.language, this.lastModifiedAt, this.lineNumbers, this.textMatches, });
 
 factory CodeSearchResultItem.fromJson(Map<String, dynamic> json) { return CodeSearchResultItem(
   name: json['name'] as String,

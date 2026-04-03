@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_skip_config.dart';/// Scan the context of predefined entries to only return matches surrounded by keywords.
-final class DlpContextAwareness {const DlpContextAwareness({required this.enabled, required this.skip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_skip_config.dart';/// Scan the context of predefined entries to only return matches surrounded by keywords.
+@immutable final class DlpContextAwareness {const DlpContextAwareness({required this.enabled, required this.skip, });
 
 factory DlpContextAwareness.fromJson(Map<String, dynamic> json) { return DlpContextAwareness(
   enabled: json['enabled'] as bool,

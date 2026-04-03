@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZeroTrustGatewayResultInfo {const ZeroTrustGatewayResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayResultInfo {const ZeroTrustGatewayResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory ZeroTrustGatewayResultInfo.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

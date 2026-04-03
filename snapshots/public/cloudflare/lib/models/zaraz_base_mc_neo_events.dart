@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZarazBaseMcNeoEvents {const ZarazBaseMcNeoEvents({required this.actionType, required this.blockingTriggers, required this.data, required this.firingTriggers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazBaseMcNeoEvents {const ZarazBaseMcNeoEvents({required this.actionType, required this.blockingTriggers, required this.data, required this.firingTriggers, });
 
 factory ZarazBaseMcNeoEvents.fromJson(Map<String, dynamic> json) { return ZarazBaseMcNeoEvents(
   actionType: json['actionType'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationsDeleteResponseResultConfigurationLogpushDataset {const DestinationsDeleteResponseResultConfigurationLogpushDataset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationsDeleteResponseResultConfigurationLogpushDataset {const DestinationsDeleteResponseResultConfigurationLogpushDataset._(this.value);
 
 factory DestinationsDeleteResponseResultConfigurationLogpushDataset.fromJson(String json) { return switch (json) {
   'opentelemetry-traces' => opentelemetryTraces,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationsDeleteResponseResultConfigurationLogpushDataset($value)'; } 
  }
-final class DestinationsDeleteResponseResultConfigurationType {const DestinationsDeleteResponseResultConfigurationType._(this.value);
+@immutable final class DestinationsDeleteResponseResultConfigurationType {const DestinationsDeleteResponseResultConfigurationType._(this.value);
 
 factory DestinationsDeleteResponseResultConfigurationType.fromJson(String json) { return switch (json) {
   'logpush' => logpush,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationsDeleteResponseResultConfigurationType($value)'; } 
  }
-final class DestinationsDeleteResponseResultConfiguration {const DestinationsDeleteResponseResultConfiguration({required this.destinationConf, required this.logpushDataset, required this.logpushJob, required this.type, required this.url, });
+@immutable final class DestinationsDeleteResponseResultConfiguration {const DestinationsDeleteResponseResultConfiguration({required this.destinationConf, required this.logpushDataset, required this.logpushJob, required this.type, required this.url, });
 
 factory DestinationsDeleteResponseResultConfiguration.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponseResultConfiguration(
   destinationConf: json['destination_conf'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'spectrum_config_identifier.dart';final class ResponseSingleId5Result {const ResponseSingleId5Result({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_identifier.dart';@immutable final class ResponseSingleId5Result {const ResponseSingleId5Result({required this.id});
 
 factory ResponseSingleId5Result.fromJson(Map<String, dynamic> json) { return ResponseSingleId5Result(
   id: SpectrumConfigIdentifier.fromJson(json['id'] as String),

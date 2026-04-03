@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_routes_realtime_response_result.dart';final class RadarGetBgpRoutesRealtimeResponse {const RadarGetBgpRoutesRealtimeResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_realtime_response_result.dart';@immutable final class RadarGetBgpRoutesRealtimeResponse {const RadarGetBgpRoutesRealtimeResponse({required this.result, required this.success, });
 
 factory RadarGetBgpRoutesRealtimeResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponse(
   result: RadarGetBgpRoutesRealtimeResponseResult.fromJson(json['result'] as Map<String, dynamic>),

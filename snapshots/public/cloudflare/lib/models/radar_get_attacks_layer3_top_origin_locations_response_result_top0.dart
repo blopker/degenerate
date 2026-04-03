@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3TopOriginLocationsResponseResultTop0 {const RadarGetAttacksLayer3TopOriginLocationsResponseResultTop0({required this.originCountryAlpha2, required this.originCountryName, required this.rank, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopOriginLocationsResponseResultTop0 {const RadarGetAttacksLayer3TopOriginLocationsResponseResultTop0({required this.originCountryAlpha2, required this.originCountryName, required this.rank, required this.value, });
 
 factory RadarGetAttacksLayer3TopOriginLocationsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopOriginLocationsResponseResultTop0(
   originCountryAlpha2: json['originCountryAlpha2'] as String,

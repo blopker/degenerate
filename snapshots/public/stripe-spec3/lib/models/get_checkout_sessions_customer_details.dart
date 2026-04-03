@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCheckoutSessionsCustomerDetails {const GetCheckoutSessionsCustomerDetails({required this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCheckoutSessionsCustomerDetails {const GetCheckoutSessionsCustomerDetails({required this.email});
 
 factory GetCheckoutSessionsCustomerDetails.fromJson(Map<String, dynamic> json) { return GetCheckoutSessionsCustomerDetails(
   email: json['email'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_request_variant2_add_script_tag.dart';import 'brapi_post_json_request_variant2_add_style_tag.dart';import 'brapi_post_json_request_variant2_authenticate.dart';import 'brapi_post_json_request_variant2_cookies.dart';import 'brapi_post_json_request_variant2_custom_ai.dart';import 'brapi_post_json_request_variant2_goto_options.dart';import 'brapi_post_json_request_variant2_response_format.dart';import 'brapi_post_json_request_variant2_viewport.dart';import 'brapi_post_json_request_variant2_wait_for_selector.dart';final class BrapiPostJsonRequestVariant2AllowResourceTypes {const BrapiPostJsonRequestVariant2AllowResourceTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_request_variant2_add_script_tag.dart';import 'brapi_post_json_request_variant2_add_style_tag.dart';import 'brapi_post_json_request_variant2_authenticate.dart';import 'brapi_post_json_request_variant2_cookies.dart';import 'brapi_post_json_request_variant2_custom_ai.dart';import 'brapi_post_json_request_variant2_goto_options.dart';import 'brapi_post_json_request_variant2_response_format.dart';import 'brapi_post_json_request_variant2_viewport.dart';import 'brapi_post_json_request_variant2_wait_for_selector.dart';@immutable final class BrapiPostJsonRequestVariant2AllowResourceTypes {const BrapiPostJsonRequestVariant2AllowResourceTypes._(this.value);
 
 factory BrapiPostJsonRequestVariant2AllowResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostJsonRequestVariant2AllowResourceTypes($value)'; } 
  }
-final class BrapiPostJsonRequestVariant2RejectResourceTypes {const BrapiPostJsonRequestVariant2RejectResourceTypes._(this.value);
+@immutable final class BrapiPostJsonRequestVariant2RejectResourceTypes {const BrapiPostJsonRequestVariant2RejectResourceTypes._(this.value);
 
 factory BrapiPostJsonRequestVariant2RejectResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostJsonRequestVariant2RejectResourceTypes($value)'; } 
  }
-final class BrapiPostJsonRequestVariant2 {const BrapiPostJsonRequestVariant2({this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.customAi, this.emulateMediaType, this.gotoOptions, this.prompt, this.rejectRequestPattern, this.rejectResourceTypes, this.responseFormat, this.setExtraHttpHeaders, this.setJavaScriptEnabled, required this.url, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostJsonRequestVariant2 {const BrapiPostJsonRequestVariant2({required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.customAi, this.emulateMediaType, this.gotoOptions, this.prompt, this.rejectRequestPattern, this.rejectResourceTypes, this.responseFormat, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostJsonRequestVariant2.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant2(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,

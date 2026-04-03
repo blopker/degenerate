@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The direction used to sort returned scripts.
-final class PageShieldListScriptsDirection {const PageShieldListScriptsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned scripts.
+@immutable final class PageShieldListScriptsDirection {const PageShieldListScriptsDirection._(this.value);
 
 factory PageShieldListScriptsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

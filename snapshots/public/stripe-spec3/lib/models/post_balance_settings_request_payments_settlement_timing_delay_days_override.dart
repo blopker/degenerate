@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverrideVariant2 {const PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverrideVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverrideVariant2 {const PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverrideVariant2._(this.value);
 
 factory PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverrideVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

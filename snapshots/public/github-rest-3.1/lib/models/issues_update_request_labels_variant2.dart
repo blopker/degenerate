@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesUpdateRequestLabelsVariant2 {const IssuesUpdateRequestLabelsVariant2({this.id, this.name, this.description, this.color, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesUpdateRequestLabelsVariant2 {const IssuesUpdateRequestLabelsVariant2({this.id, this.name, this.description, this.color, });
 
 factory IssuesUpdateRequestLabelsVariant2.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequestLabelsVariant2(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

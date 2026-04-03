@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The set of Boolean properties that indicate whether a phone number can receive calls or messages.  Capabilities are  `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
-final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities({this.mms, this.sms, this.voice, this.fax, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of Boolean properties that indicate whether a phone number can receive calls or messages.  Capabilities are  `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
+@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities({this.mms, this.sms, this.voice, this.fax, });
 
 factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities(
   mms: json['mms'] as bool?,

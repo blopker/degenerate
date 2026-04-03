@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_repositories2.dart';final class WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_repositories2.dart';@immutable final class WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction._(this.value);
 
 factory WebhookInstallationNewPermissionsAcceptedAction.fromJson(String json) { return switch (json) {
   'new_permissions_accepted' => newPermissionsAccepted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookInstallationNewPermissionsAcceptedAction($value)'; } 
  }
-final class WebhookInstallationNewPermissionsAccepted {const WebhookInstallationNewPermissionsAccepted({required this.action, this.enterprise, required this.installation, this.organization, this.repositories, this.repository, this.requester, required this.sender, });
+@immutable final class WebhookInstallationNewPermissionsAccepted {const WebhookInstallationNewPermissionsAccepted({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });
 
 factory WebhookInstallationNewPermissionsAccepted.fromJson(Map<String, dynamic> json) { return WebhookInstallationNewPermissionsAccepted(
   action: WebhookInstallationNewPermissionsAcceptedAction.fromJson(json['action'] as String),

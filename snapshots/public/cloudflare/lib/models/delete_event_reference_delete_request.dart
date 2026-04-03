@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DeleteEventReferenceDeleteRequest {const DeleteEventReferenceDeleteRequest({required this.events});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEventReferenceDeleteRequest {const DeleteEventReferenceDeleteRequest({required this.events});
 
 factory DeleteEventReferenceDeleteRequest.fromJson(Map<String, dynamic> json) { return DeleteEventReferenceDeleteRequest(
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),

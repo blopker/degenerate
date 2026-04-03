@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
-final class BrapiPostScreenshotRequestVariant2Viewport {const BrapiPostScreenshotRequestVariant2Viewport({this.deviceScaleFactor, this.hasTouch, required this.height, this.isLandscape, this.isMobile, required this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
+@immutable final class BrapiPostScreenshotRequestVariant2Viewport {const BrapiPostScreenshotRequestVariant2Viewport({required this.height, required this.width, this.deviceScaleFactor, this.hasTouch, this.isLandscape, this.isMobile, });
 
 factory BrapiPostScreenshotRequestVariant2Viewport.fromJson(Map<String, dynamic> json) { return BrapiPostScreenshotRequestVariant2Viewport(
   deviceScaleFactor: json['deviceScaleFactor'] != null ? (json['deviceScaleFactor'] as num).toDouble() : null,

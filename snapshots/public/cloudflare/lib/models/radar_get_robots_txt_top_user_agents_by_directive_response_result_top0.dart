@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0 {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0({this.fully, required this.name, this.partially, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0 {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0({required this.name, required this.value, this.fully, this.partially, });
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0(
   fully: json['fully'] != null ? (json['fully'] as num).toInt() : null,

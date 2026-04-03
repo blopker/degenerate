@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerCreateScanBulkResponseOptions {const UrlscannerCreateScanBulkResponseOptions({this.useragent});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerCreateScanBulkResponseOptions {const UrlscannerCreateScanBulkResponseOptions({this.useragent});
 
 factory UrlscannerCreateScanBulkResponseOptions.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkResponseOptions(
   useragent: json['useragent'] as String?,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For authenticated transactions: how the customer was authenticated by
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For authenticated transactions: how the customer was authenticated by
 /// the issuing bank.
-final class ThreeDSecureDetailsAuthenticationFlow {const ThreeDSecureDetailsAuthenticationFlow._(this.value);
+@immutable final class ThreeDSecureDetailsAuthenticationFlow {const ThreeDSecureDetailsAuthenticationFlow._(this.value);
 
 factory ThreeDSecureDetailsAuthenticationFlow.fromJson(String json) { return switch (json) {
   'challenge' => challenge,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The Electronic Commerce Indicator (ECI). A protocol-level field
 /// indicating what degree of authentication was performed.
-final class ThreeDSecureDetailsElectronicCommerceIndicator {const ThreeDSecureDetailsElectronicCommerceIndicator._(this.value);
+@immutable final class ThreeDSecureDetailsElectronicCommerceIndicator {const ThreeDSecureDetailsElectronicCommerceIndicator._(this.value);
 
 factory ThreeDSecureDetailsElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
   '01' => $01,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsElectronicCommerceIndicator($value)'; } 
  }
 /// Indicates the outcome of 3D Secure authentication.
-final class ThreeDSecureDetailsResult {const ThreeDSecureDetailsResult._(this.value);
+@immutable final class ThreeDSecureDetailsResult {const ThreeDSecureDetailsResult._(this.value);
 
 factory ThreeDSecureDetailsResult.fromJson(String json) { return switch (json) {
   'attempt_acknowledged' => attemptAcknowledged,
@@ -100,7 +100,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Additional information about why 3D Secure succeeded or failed based
 /// on the `result`.
-final class ThreeDSecureDetailsResultReason {const ThreeDSecureDetailsResultReason._(this.value);
+@immutable final class ThreeDSecureDetailsResultReason {const ThreeDSecureDetailsResultReason._(this.value);
 
 factory ThreeDSecureDetailsResultReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -140,7 +140,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsResultReason($value)'; } 
  }
 /// The version of 3D Secure that was used.
-final class ThreeDSecureDetailsVersion {const ThreeDSecureDetailsVersion._(this.value);
+@immutable final class ThreeDSecureDetailsVersion {const ThreeDSecureDetailsVersion._(this.value);
 
 factory ThreeDSecureDetailsVersion.fromJson(String json) { return switch (json) {
   '1.0.2' => $102,
@@ -174,7 +174,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsVersion($value)'; } 
  }
 /// 
-final class ThreeDSecureDetails {const ThreeDSecureDetails({this.authenticationFlow, this.electronicCommerceIndicator, this.result, this.resultReason, this.transactionId, this.version, });
+@immutable final class ThreeDSecureDetails {const ThreeDSecureDetails({this.authenticationFlow, this.electronicCommerceIndicator, this.result, this.resultReason, this.transactionId, this.version, });
 
 factory ThreeDSecureDetails.fromJson(Map<String, dynamic> json) { return ThreeDSecureDetails(
   authenticationFlow: json['authentication_flow'] != null ? ThreeDSecureDetailsAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null,

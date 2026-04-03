@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the user is not authorized to perform this action.
-final class WorkersErrorAuthCode {const WorkersErrorAuthCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the user is not authorized to perform this action.
+@immutable final class WorkersErrorAuthCode {const WorkersErrorAuthCode._(this.value);
 
 factory WorkersErrorAuthCode.fromJson(int json) { return switch (json) {
   10023 => $10023,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorAuthCode($value)'; } 
  }
-final class WorkersErrorAuth {const WorkersErrorAuth({required this.code, required this.message, });
+@immutable final class WorkersErrorAuth {const WorkersErrorAuth({required this.code, required this.message, });
 
 factory WorkersErrorAuth.fromJson(Map<String, dynamic> json) { return WorkersErrorAuth(
   code: WorkersErrorAuthCode.fromJson((json['code'] as num).toInt()),

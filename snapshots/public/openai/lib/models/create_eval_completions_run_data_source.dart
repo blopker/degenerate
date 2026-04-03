@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source_input_messages.dart';import 'create_eval_completions_run_data_source_sampling_params.dart';import 'create_eval_completions_run_data_source_source.dart';import 'eval_jsonl_file_content_source.dart';import 'eval_jsonl_file_id_source.dart';import 'eval_stored_completions_source.dart';import 'item_reference_input_messages.dart';import 'template_input_messages.dart';/// The type of run data source. Always `completions`.
-final class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType._(this.value);
+@immutable final class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType._(this.value);
 
 factory CreateEvalCompletionsRunDataSourceType.fromJson(String json) { return switch (json) {
   'completions' => completions,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A CompletionsRunDataSource object describing a model sampling configuration.
 /// 
-final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({this.type = CreateEvalCompletionsRunDataSourceType.completions, this.inputMessages, this.samplingParams, this.model, required this.source, });
+@immutable final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({required this.source, this.type = CreateEvalCompletionsRunDataSourceType.completions, this.inputMessages, this.samplingParams, this.model, });
 
 factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalCompletionsRunDataSource(
   type: CreateEvalCompletionsRunDataSourceType.fromJson(json['type'] as String),

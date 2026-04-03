@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'source.dart';import 'source_mandate_notification_acss_debit_data.dart';import 'source_mandate_notification_bacs_debit_data.dart';import 'source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class SourceMandateNotificationObject {const SourceMandateNotificationObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source.dart';import 'source_mandate_notification_acss_debit_data.dart';import 'source_mandate_notification_bacs_debit_data.dart';import 'source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class SourceMandateNotificationObject {const SourceMandateNotificationObject._(this.value);
 
 factory SourceMandateNotificationObject.fromJson(String json) { return switch (json) {
   'source_mandate_notification' => sourceMandateNotification,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Source mandate notifications should be created when a notification related to
 /// a source mandate must be sent to the payer. They will trigger a webhook or
 /// deliver an email to the customer.
-final class SourceMandateNotification {const SourceMandateNotification({this.acssDebit, this.amount, this.bacsDebit, required this.created, required this.id, required this.livemode, required this.object, required this.reason, this.sepaDebit, required this.source, required this.status, required this.type, });
+@immutable final class SourceMandateNotification {const SourceMandateNotification({required this.created, required this.id, required this.livemode, required this.object, required this.reason, required this.source, required this.status, required this.type, this.acssDebit, this.amount, this.bacsDebit, this.sepaDebit, });
 
 factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return SourceMandateNotification(
   acssDebit: json['acss_debit'] != null ? SourceMandateNotificationAcssDebitData.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,

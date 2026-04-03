@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_acceptance.dart';import 'mandate_multi_use.dart';import 'mandate_payment_method.dart';import 'mandate_payment_method_details.dart';import 'mandate_single_use.dart';import 'payment_method.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class MandateObject {const MandateObject._(this.value);
+@immutable final class MandateObject {const MandateObject._(this.value);
 
 factory MandateObject.fromJson(String json) { return switch (json) {
   'mandate' => mandate,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateObject($value)'; } 
  }
 /// The mandate status indicates whether or not you can use it to initiate a payment.
-final class MandateStatus {const MandateStatus._(this.value);
+@immutable final class MandateStatus {const MandateStatus._(this.value);
 
 factory MandateStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateStatus($value)'; } 
  }
 /// The type of the mandate.
-final class MandateType {const MandateType._(this.value);
+@immutable final class MandateType {const MandateType._(this.value);
 
 factory MandateType.fromJson(String json) { return switch (json) {
   'multi_use' => multiUse,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateType($value)'; } 
  }
 /// A Mandate is a record of the permission that your customer gives you to debit their payment method.
-final class Mandate {const Mandate({required this.customerAcceptance, required this.id, required this.livemode, this.multiUse, required this.object, this.onBehalfOf, required this.paymentMethod, required this.paymentMethodDetails, this.singleUse, required this.status, required this.type, });
+@immutable final class Mandate {const Mandate({required this.customerAcceptance, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.status, required this.type, this.multiUse, this.onBehalfOf, this.singleUse, });
 
 factory Mandate.fromJson(Map<String, dynamic> json) { return Mandate(
   customerAcceptance: CustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),

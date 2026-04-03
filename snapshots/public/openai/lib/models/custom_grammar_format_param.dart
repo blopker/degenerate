@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GrammarSyntax1 {const GrammarSyntax1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GrammarSyntax1 {const GrammarSyntax1._(this.value);
 
 factory GrammarSyntax1.fromJson(String json) { return switch (json) {
   'lark' => lark,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GrammarSyntax1($value)'; } 
  }
 /// Grammar format. Always `grammar`.
-final class CustomGrammarFormatParamType {const CustomGrammarFormatParamType._(this.value);
+@immutable final class CustomGrammarFormatParamType {const CustomGrammarFormatParamType._(this.value);
 
 factory CustomGrammarFormatParamType.fromJson(String json) { return switch (json) {
   'grammar' => grammar,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomGrammarFormatParamType($value)'; } 
  }
 /// A grammar defined by the user.
-final class CustomGrammarFormatParam {const CustomGrammarFormatParam({this.type = CustomGrammarFormatParamType.grammar, required this.syntax, required this.definition, });
+@immutable final class CustomGrammarFormatParam {const CustomGrammarFormatParam({required this.syntax, required this.definition, this.type = CustomGrammarFormatParamType.grammar, });
 
 factory CustomGrammarFormatParam.fromJson(Map<String, dynamic> json) { return CustomGrammarFormatParam(
   type: CustomGrammarFormatParamType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pose.dart';final class PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2 {const PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pose.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2 {const PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2._(this.value);
 
 factory PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

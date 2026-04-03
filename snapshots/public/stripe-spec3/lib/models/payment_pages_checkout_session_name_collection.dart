@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_business_name.dart';import 'payment_pages_checkout_session_individual_name.dart';/// 
-final class PaymentPagesCheckoutSessionNameCollection {const PaymentPagesCheckoutSessionNameCollection({this.business, this.individual, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_business_name.dart';import 'payment_pages_checkout_session_individual_name.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionNameCollection {const PaymentPagesCheckoutSessionNameCollection({this.business, this.individual, });
 
 factory PaymentPagesCheckoutSessionNameCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionNameCollection(
   business: json['business'] != null ? PaymentPagesCheckoutSessionBusinessName.fromJson(json['business'] as Map<String, dynamic>) : null,

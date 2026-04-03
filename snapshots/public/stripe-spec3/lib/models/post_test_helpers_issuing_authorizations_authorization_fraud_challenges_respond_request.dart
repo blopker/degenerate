@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest({required this.confirmed, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest({required this.confirmed, this.expand, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest(
   confirmed: json['confirmed'] as bool,

@@ -8,7 +8,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// If `transparent`, the output format needs to support transparency, so it
 /// should be set to either `png` (default value) or `webp`.
 /// 
-final class CreateImageEditRequestBackground {const CreateImageEditRequestBackground._(this.value);
+@immutable final class CreateImageEditRequestBackground {const CreateImageEditRequestBackground._(this.value);
 
 factory CreateImageEditRequestBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateImageEditRequestBackground($value)'; } 
  }
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
-final class CreateImageEditRequestSize {const CreateImageEditRequestSize._(this.value);
+@immutable final class CreateImageEditRequestSize {const CreateImageEditRequestSize._(this.value);
 
 factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) {
   '256x256' => $256x256,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateImageEditRequestSize($value)'; } 
  }
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
-final class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat._(this.value);
+@immutable final class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat._(this.value);
 
 factory CreateImageEditRequestResponseFormat.fromJson(String json) { return switch (json) {
   'url' => url,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
 /// The default value is `png`.
 /// 
-final class CreateImageEditRequestOutputFormat {const CreateImageEditRequestOutputFormat._(this.value);
+@immutable final class CreateImageEditRequestOutputFormat {const CreateImageEditRequestOutputFormat._(this.value);
 
 factory CreateImageEditRequestOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -130,7 +130,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
-final class CreateImageEditRequestQuality {const CreateImageEditRequestQuality._(this.value);
+@immutable final class CreateImageEditRequestQuality {const CreateImageEditRequestQuality._(this.value);
 
 factory CreateImageEditRequestQuality.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -163,7 +163,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageEditRequestQuality($value)'; } 
  }
-final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model, this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity, this.stream = false, this.partialImages, this.quality = CreateImageEditRequestQuality.auto, });
+@immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model, this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity, this.stream = false, this.partialImages, this.quality = CreateImageEditRequestQuality.auto, });
 
 factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return CreateImageEditRequest(
   image: OneOf2.parse(json['image'], fromA: (v) => base64Decode(v as String), fromB: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(),),

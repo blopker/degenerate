@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestTwintDisplayPreference {const PostPaymentMethodConfigurationsRequestTwintDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestTwintDisplayPreference {const PostPaymentMethodConfigurationsRequestTwintDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestTwintDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestTwintDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

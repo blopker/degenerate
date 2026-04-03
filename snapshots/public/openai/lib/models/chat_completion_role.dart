@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The role of the author of a message
-final class ChatCompletionRole {const ChatCompletionRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the author of a message
+@immutable final class ChatCompletionRole {const ChatCompletionRole._(this.value);
 
 factory ChatCompletionRole.fromJson(String json) { return switch (json) {
   'developer' => developer,

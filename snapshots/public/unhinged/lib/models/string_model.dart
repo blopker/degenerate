@@ -1,7 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
+@immutable
 final class StringModel {
-  const StringModel({this.length, required this.value, this.charAt, this.trim});
+  const StringModel({required this.value, this.length, this.charAt, this.trim});
 
   factory StringModel.fromJson(Map<String, dynamic> json) {
     return StringModel(

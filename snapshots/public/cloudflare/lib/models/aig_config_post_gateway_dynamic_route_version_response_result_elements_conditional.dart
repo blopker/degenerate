@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_conditional_properties.dart';final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_conditional_properties.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType._(this.value);
 
 factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType($value)'; } 
  }
-final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(
   id: json['id'] as String,

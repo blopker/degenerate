@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersPlacementInfoNoStatusVariant3 {const WorkersPlacementInfoNoStatusVariant3({required this.hostname});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementInfoNoStatusVariant3 {const WorkersPlacementInfoNoStatusVariant3({required this.hostname});
 
 factory WorkersPlacementInfoNoStatusVariant3.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusVariant3(
   hostname: json['hostname'] as String,

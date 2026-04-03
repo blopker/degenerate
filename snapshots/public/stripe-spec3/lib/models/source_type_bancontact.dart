@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeBancontact {const SourceTypeBancontact({this.bankCode, this.bankName, this.bic, this.ibanLast4, this.preferredLanguage, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeBancontact {const SourceTypeBancontact({this.bankCode, this.bankName, this.bic, this.ibanLast4, this.preferredLanguage, this.statementDescriptor, });
 
 factory SourceTypeBancontact.fromJson(Map<String, dynamic> json) { return SourceTypeBancontact(
   bankCode: json['bank_code'] as String?,

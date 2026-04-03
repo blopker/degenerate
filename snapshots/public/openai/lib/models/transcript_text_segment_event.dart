@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `transcript.text.segment`.
-final class TranscriptTextSegmentEventType {const TranscriptTextSegmentEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `transcript.text.segment`.
+@immutable final class TranscriptTextSegmentEventType {const TranscriptTextSegmentEventType._(this.value);
 
 factory TranscriptTextSegmentEventType.fromJson(String json) { return switch (json) {
   'transcript.text.segment' => transcriptTextSegment,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
 /// 
-final class TranscriptTextSegmentEvent {const TranscriptTextSegmentEvent({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
+@immutable final class TranscriptTextSegmentEvent {const TranscriptTextSegmentEvent({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
 
 factory TranscriptTextSegmentEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextSegmentEvent(
   type: TranscriptTextSegmentEventType.fromJson(json['type'] as String),

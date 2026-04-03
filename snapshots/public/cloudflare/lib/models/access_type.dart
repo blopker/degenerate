@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The application type.
-final class AccessType {const AccessType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The application type.
+@immutable final class AccessType {const AccessType._(this.value);
 
 factory AccessType.fromJson(String json) { return switch (json) {
   'self_hosted' => selfHosted,

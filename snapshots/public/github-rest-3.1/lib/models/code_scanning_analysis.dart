@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_analysis_commit_sha.dart';import 'code_scanning_analysis_sarif_id.dart';import 'code_scanning_analysis_tool.dart';import 'code_scanning_ref.dart';/// Identifies the variable values associated with the environment in which this analysis was performed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_analysis_commit_sha.dart';import 'code_scanning_analysis_sarif_id.dart';import 'code_scanning_analysis_tool.dart';import 'code_scanning_ref.dart';/// Identifies the variable values associated with the environment in which this analysis was performed.
 extension type const CodeScanningAnalysisEnvironment(String value) {
 factory CodeScanningAnalysisEnvironment.fromJson(String json) => CodeScanningAnalysisEnvironment(json);
 
@@ -21,7 +21,7 @@ factory CodeScanningAnalysisUrl.fromJson(String json) => CodeScanningAnalysisUrl
 String toJson() => value.toString();
 
 }
-final class CodeScanningAnalysis {const CodeScanningAnalysis({required this.ref, required this.commitSha, required this.analysisKey, required this.environment, this.category, required this.error, required this.createdAt, required this.resultsCount, required this.rulesCount, required this.id, required this.url, required this.sarifId, required this.tool, required this.deletable, required this.warning, });
+@immutable final class CodeScanningAnalysis {const CodeScanningAnalysis({required this.ref, required this.commitSha, required this.analysisKey, required this.environment, required this.error, required this.createdAt, required this.resultsCount, required this.rulesCount, required this.id, required this.url, required this.sarifId, required this.tool, required this.deletable, required this.warning, this.category, });
 
 factory CodeScanningAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysis(
   ref: CodeScanningRef.fromJson(json['ref'] as String),

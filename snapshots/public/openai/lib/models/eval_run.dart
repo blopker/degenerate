@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'error_model2.dart';import 'eval_run_data_source.dart';import 'eval_run_per_model_usage.dart';import 'eval_run_per_testing_criteria_results.dart';import 'eval_run_result_counts.dart';/// The type of the object. Always "eval.run".
-final class EvalRunObject {const EvalRunObject._(this.value);
+@immutable final class EvalRunObject {const EvalRunObject._(this.value);
 
 factory EvalRunObject.fromJson(String json) { return switch (json) {
   'eval.run' => evalRun,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A schema representing an evaluation run.
 /// 
-final class EvalRun {const EvalRun({this.object = EvalRunObject.evalRun, required this.id, required this.evalId, required this.status, required this.model, required this.name, required this.createdAt, required this.reportUrl, required this.resultCounts, required this.perModelUsage, required this.perTestingCriteriaResults, required this.dataSource, required this.metadata, required this.error, });
+@immutable final class EvalRun {const EvalRun({required this.id, required this.evalId, required this.status, required this.model, required this.name, required this.createdAt, required this.reportUrl, required this.resultCounts, required this.perModelUsage, required this.perTestingCriteriaResults, required this.dataSource, required this.metadata, required this.error, this.object = EvalRunObject.evalRun, });
 
 factory EvalRun.fromJson(Map<String, dynamic> json) { return EvalRun(
   object: EvalRunObject.fromJson(json['object'] as String),

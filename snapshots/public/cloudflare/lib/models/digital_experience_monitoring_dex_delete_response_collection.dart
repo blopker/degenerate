@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'digital_experience_monitoring_messages2.dart';final class DigitalExperienceMonitoringDexDeleteResponseCollection {const DigitalExperienceMonitoringDexDeleteResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'digital_experience_monitoring_messages2.dart';@immutable final class DigitalExperienceMonitoringDexDeleteResponseCollection {const DigitalExperienceMonitoringDexDeleteResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DigitalExperienceMonitoringDexDeleteResponseCollection.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexDeleteResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),

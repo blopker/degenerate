@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_financial_connections.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_mandate_options.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_networks.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_financial_connections.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_mandate_options.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_networks.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.networks, this.verificationMethod, });
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.networks, this.verificationMethod, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

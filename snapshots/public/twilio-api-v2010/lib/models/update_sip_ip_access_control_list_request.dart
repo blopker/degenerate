@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateSipIpAccessControlListRequest {const UpdateSipIpAccessControlListRequest({required this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipIpAccessControlListRequest {const UpdateSipIpAccessControlListRequest({required this.friendlyName});
 
 factory UpdateSipIpAccessControlListRequest.fromJson(Map<String, dynamic> json) { return UpdateSipIpAccessControlListRequest(
   friendlyName: json['FriendlyName'] as String,

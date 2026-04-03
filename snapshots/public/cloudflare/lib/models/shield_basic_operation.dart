@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';final class ShieldBasicOperation {const ShieldBasicOperation({required this.endpoint, required this.host, required this.method, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';@immutable final class ShieldBasicOperation {const ShieldBasicOperation({required this.endpoint, required this.host, required this.method, });
 
 factory ShieldBasicOperation.fromJson(Map<String, dynamic> json) { return ShieldBasicOperation(
   endpoint: ShieldEndpoint.fromJson(json['endpoint'] as String),

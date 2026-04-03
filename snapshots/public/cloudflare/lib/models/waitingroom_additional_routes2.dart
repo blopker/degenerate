@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WaitingroomAdditionalRoutes2 {const WaitingroomAdditionalRoutes2({this.host, this.path = '/', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomAdditionalRoutes2 {const WaitingroomAdditionalRoutes2({this.host, this.path = '/', });
 
 factory WaitingroomAdditionalRoutes2.fromJson(Map<String, dynamic> json) { return WaitingroomAdditionalRoutes2(
   host: json['host'] as String?,

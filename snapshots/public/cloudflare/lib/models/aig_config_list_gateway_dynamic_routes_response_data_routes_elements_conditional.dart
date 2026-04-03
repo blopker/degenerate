@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_conditional_outputs.dart';import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_conditional_properties.dart';final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalType {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_conditional_outputs.dart';import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_conditional_properties.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalType {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalType._(this.value);
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalType($value)'; } 
  }
-final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditional {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditional {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditional(
   id: json['id'] as String,

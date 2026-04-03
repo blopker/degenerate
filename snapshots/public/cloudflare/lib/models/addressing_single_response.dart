@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_ipam_prefixes.dart';final class AddressingSingleResponse {const AddressingSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_prefixes.dart';@immutable final class AddressingSingleResponse {const AddressingSingleResponse({this.result});
 
 factory AddressingSingleResponse.fromJson(Map<String, dynamic> json) { return AddressingSingleResponse(
   result: json['result'] != null ? AddressingIpamPrefixes.fromJson(json['result'] as Map<String, dynamic>) : null,

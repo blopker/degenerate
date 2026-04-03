@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowRunUsageBillableUbuntuJobRuns {const WorkflowRunUsageBillableUbuntuJobRuns({required this.jobId, required this.durationMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowRunUsageBillableUbuntuJobRuns {const WorkflowRunUsageBillableUbuntuJobRuns({required this.jobId, required this.durationMs, });
 
 factory WorkflowRunUsageBillableUbuntuJobRuns.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillableUbuntuJobRuns(
   jobId: (json['job_id'] as num).toInt(),

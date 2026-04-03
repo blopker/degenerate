@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifying information for the git-user
-final class TimelineCommittedEventCommitter {const TimelineCommittedEventCommitter({required this.date, required this.email, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifying information for the git-user
+@immutable final class TimelineCommittedEventCommitter {const TimelineCommittedEventCommitter({required this.date, required this.email, required this.name, });
 
 factory TimelineCommittedEventCommitter.fromJson(Map<String, dynamic> json) { return TimelineCommittedEventCommitter(
   date: DateTime.parse(json['date'] as String),

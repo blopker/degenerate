@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'invoice_setting_subscription_schedule_setting_account_tax_ids.dart';import 'tax_id.dart';/// 
-final class InvoiceSettingSubscriptionScheduleSetting {const InvoiceSettingSubscriptionScheduleSetting({this.accountTaxIds, this.daysUntilDue, required this.issuer, });
+@immutable final class InvoiceSettingSubscriptionScheduleSetting {const InvoiceSettingSubscriptionScheduleSetting({required this.issuer, this.accountTaxIds, this.daysUntilDue, });
 
 factory InvoiceSettingSubscriptionScheduleSetting.fromJson(Map<String, dynamic> json) { return InvoiceSettingSubscriptionScheduleSetting(
   accountTaxIds: (json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList(),

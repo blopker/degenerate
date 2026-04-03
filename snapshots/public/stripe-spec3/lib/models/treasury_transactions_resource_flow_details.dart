@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization.dart';import 'treasury_credit_reversal.dart';import 'treasury_debit_reversal.dart';import 'treasury_inbound_transfer.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';import 'treasury_received_credit.dart';import 'treasury_received_debit.dart';/// Type of the flow that created the Transaction. Set to the same value as `flow_type`.
-final class TreasuryTransactionsResourceFlowDetailsType {const TreasuryTransactionsResourceFlowDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';import 'treasury_credit_reversal.dart';import 'treasury_debit_reversal.dart';import 'treasury_inbound_transfer.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';import 'treasury_received_credit.dart';import 'treasury_received_debit.dart';/// Type of the flow that created the Transaction. Set to the same value as `flow_type`.
+@immutable final class TreasuryTransactionsResourceFlowDetailsType {const TreasuryTransactionsResourceFlowDetailsType._(this.value);
 
 factory TreasuryTransactionsResourceFlowDetailsType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryTransactionsResourceFlowDetailsType($value)'; } 
  }
 /// 
-final class TreasuryTransactionsResourceFlowDetails {const TreasuryTransactionsResourceFlowDetails({this.creditReversal, this.debitReversal, this.inboundTransfer, this.issuingAuthorization, this.outboundPayment, this.outboundTransfer, this.receivedCredit, this.receivedDebit, required this.type, });
+@immutable final class TreasuryTransactionsResourceFlowDetails {const TreasuryTransactionsResourceFlowDetails({required this.type, this.creditReversal, this.debitReversal, this.inboundTransfer, this.issuingAuthorization, this.outboundPayment, this.outboundTransfer, this.receivedCredit, this.receivedDebit, });
 
 factory TreasuryTransactionsResourceFlowDetails.fromJson(Map<String, dynamic> json) { return TreasuryTransactionsResourceFlowDetails(
   creditReversal: json['credit_reversal'] != null ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>) : null,

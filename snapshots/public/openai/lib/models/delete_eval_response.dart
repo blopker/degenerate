@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteEvalResponse {const DeleteEvalResponse({required this.object, required this.deleted, required this.evalId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEvalResponse {const DeleteEvalResponse({required this.object, required this.deleted, required this.evalId, });
 
 factory DeleteEvalResponse.fromJson(Map<String, dynamic> json) { return DeleteEvalResponse(
   object: json['object'] as String,

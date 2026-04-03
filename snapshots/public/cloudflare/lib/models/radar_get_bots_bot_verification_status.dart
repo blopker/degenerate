@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by bot verification status.
-final class RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot verification status.
+@immutable final class RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus._(this.value);
 
 factory RadarGetBotsBotVerificationStatus.fromJson(String json) { return switch (json) {
   'VERIFIED' => verified,

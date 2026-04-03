@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPayoutsRequest {const GetPayoutsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPayoutsRequest {const GetPayoutsRequest();
 
 factory GetPayoutsRequest.fromJson(Map<String, dynamic> json) { return GetPayoutsRequest(
 

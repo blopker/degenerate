@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_choice.dart';/// Information about a selection being collected using a reader
-final class TerminalReaderReaderResourceSelection {const TerminalReaderReaderResourceSelection({required this.choices, this.id, this.text, });
+@immutable final class TerminalReaderReaderResourceSelection {const TerminalReaderReaderResourceSelection({required this.choices, this.id, this.text, });
 
 factory TerminalReaderReaderResourceSelection.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSelection(
   choices: (json['choices'] as List<dynamic>).map((e) => TerminalReaderReaderResourceChoice.fromJson(e as Map<String, dynamic>)).toList(),

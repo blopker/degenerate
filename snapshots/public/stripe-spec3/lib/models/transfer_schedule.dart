@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TransferScheduleWeeklyPayoutDays {const TransferScheduleWeeklyPayoutDays._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TransferScheduleWeeklyPayoutDays {const TransferScheduleWeeklyPayoutDays._(this.value);
 
 factory TransferScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
   'friday' => friday,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransferScheduleWeeklyPayoutDays($value)'; } 
  }
 /// 
-final class TransferSchedule {const TransferSchedule({required this.delayDays, required this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
+@immutable final class TransferSchedule {const TransferSchedule({required this.delayDays, required this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
 factory TransferSchedule.fromJson(Map<String, dynamic> json) { return TransferSchedule(
   delayDays: (json['delay_days'] as num).toInt(),

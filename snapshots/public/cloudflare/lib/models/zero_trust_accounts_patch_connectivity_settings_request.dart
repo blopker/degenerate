@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A flag to enable the ICMP proxy for the account network.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A flag to enable the ICMP proxy for the account network.
 extension type const TunnelIcmpProxyEnabled(bool value) {
 factory TunnelIcmpProxyEnabled.fromJson(bool json) => TunnelIcmpProxyEnabled(json);
 
@@ -14,7 +14,7 @@ factory TunnelOfframpWarpEnabled.fromJson(bool json) => TunnelOfframpWarpEnabled
 bool toJson() => value;
 
 }
-final class ZeroTrustAccountsPatchConnectivitySettingsRequest {const ZeroTrustAccountsPatchConnectivitySettingsRequest({this.icmpProxyEnabled, this.offrampWarpEnabled, });
+@immutable final class ZeroTrustAccountsPatchConnectivitySettingsRequest {const ZeroTrustAccountsPatchConnectivitySettingsRequest({this.icmpProxyEnabled, this.offrampWarpEnabled, });
 
 factory ZeroTrustAccountsPatchConnectivitySettingsRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustAccountsPatchConnectivitySettingsRequest(
   icmpProxyEnabled: json['icmp_proxy_enabled'] != null ? TunnelIcmpProxyEnabled.fromJson(json['icmp_proxy_enabled'] as bool) : null,

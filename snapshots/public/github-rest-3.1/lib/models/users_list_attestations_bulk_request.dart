@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UsersListAttestationsBulkRequest {const UsersListAttestationsBulkRequest({required this.subjectDigests, this.predicateType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersListAttestationsBulkRequest {const UsersListAttestationsBulkRequest({required this.subjectDigests, this.predicateType, });
 
 factory UsersListAttestationsBulkRequest.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkRequest(
   subjectDigests: (json['subject_digests'] as List<dynamic>).map((e) => e as String).toList(),

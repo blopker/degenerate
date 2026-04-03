@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetClimateSuppliersSupplierRequest {const GetClimateSuppliersSupplierRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetClimateSuppliersSupplierRequest {const GetClimateSuppliersSupplierRequest();
 
 factory GetClimateSuppliersSupplierRequest.fromJson(Map<String, dynamic> json) { return GetClimateSuppliersSupplierRequest(
 

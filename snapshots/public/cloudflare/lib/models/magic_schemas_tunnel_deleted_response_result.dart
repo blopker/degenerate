@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_ipsec_tunnel.dart';final class MagicSchemasTunnelDeletedResponseResult {const MagicSchemasTunnelDeletedResponseResult({this.deleted, this.deletedIpsecTunnel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ipsec_tunnel.dart';@immutable final class MagicSchemasTunnelDeletedResponseResult {const MagicSchemasTunnelDeletedResponseResult({this.deleted, this.deletedIpsecTunnel, });
 
 factory MagicSchemasTunnelDeletedResponseResult.fromJson(Map<String, dynamic> json) { return MagicSchemasTunnelDeletedResponseResult(
   deleted: json['deleted'] as bool?,

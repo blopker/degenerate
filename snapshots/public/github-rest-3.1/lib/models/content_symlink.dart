@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'content_symlink_links.dart';final class ContentSymlinkType {const ContentSymlinkType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_symlink_links.dart';@immutable final class ContentSymlinkType {const ContentSymlinkType._(this.value);
 
 factory ContentSymlinkType.fromJson(String json) { return switch (json) {
   'symlink' => symlink,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ContentSymlinkType($value)'; } 
  }
 /// An object describing a symlink
-final class ContentSymlink {const ContentSymlink({required this.type, required this.target, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
+@immutable final class ContentSymlink {const ContentSymlink({required this.type, required this.target, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
 factory ContentSymlink.fromJson(Map<String, dynamic> json) { return ContentSymlink(
   type: ContentSymlinkType.fromJson(json['type'] as String),

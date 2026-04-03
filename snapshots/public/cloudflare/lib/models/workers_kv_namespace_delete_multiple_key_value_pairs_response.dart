@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_bulk_result.dart';final class WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse {const WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_bulk_result.dart';@immutable final class WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse {const WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse({this.result});
 
 factory WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse(
   result: json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null,

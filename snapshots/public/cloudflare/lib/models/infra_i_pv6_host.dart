@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_network.dart';final class InfraIPv6Host {const InfraIPv6Host({required this.ipv6, required this.network, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_network.dart';@immutable final class InfraIPv6Host {const InfraIPv6Host({required this.ipv6, required this.network, });
 
 factory InfraIPv6Host.fromJson(Map<String, dynamic> json) { return InfraIPv6Host(
   ipv6: json['ipv6'] as String,

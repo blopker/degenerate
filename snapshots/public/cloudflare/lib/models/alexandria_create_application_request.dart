@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_application_human_id.dart';import 'alexandria_application_name.dart';final class AlexandriaCreateApplicationRequest {const AlexandriaCreateApplicationRequest({required this.applicationTypeId, this.hostnames, required this.humanId, this.ipSubnets, required this.name, this.portProtocols, this.supportDomains, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_application_human_id.dart';import 'alexandria_application_name.dart';@immutable final class AlexandriaCreateApplicationRequest {const AlexandriaCreateApplicationRequest({required this.applicationTypeId, required this.humanId, required this.name, this.hostnames, this.ipSubnets, this.portProtocols, this.supportDomains, });
 
 factory AlexandriaCreateApplicationRequest.fromJson(Map<String, dynamic> json) { return AlexandriaCreateApplicationRequest(
   applicationTypeId: json['application_type_id'] as String,

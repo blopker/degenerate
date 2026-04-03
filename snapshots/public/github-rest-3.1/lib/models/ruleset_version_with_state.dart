@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ruleset_version_with_state_actor.dart';final class RulesetVersionWithState {const RulesetVersionWithState({required this.versionId, required this.actor, required this.updatedAt, required this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ruleset_version_with_state_actor.dart';@immutable final class RulesetVersionWithState {const RulesetVersionWithState({required this.versionId, required this.actor, required this.updatedAt, required this.state, });
 
 factory RulesetVersionWithState.fromJson(Map<String, dynamic> json) { return RulesetVersionWithState(
   versionId: (json['version_id'] as num).toInt(),

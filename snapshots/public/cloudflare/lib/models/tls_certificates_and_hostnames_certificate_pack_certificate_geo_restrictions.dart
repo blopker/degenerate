@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel {const TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel {const TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel._(this.value);
 
 factory TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel.fromJson(String json) { return switch (json) {
   'us' => us,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel($value)'; } 
  }
 /// Specify the region where your private key can be held locally.
-final class TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions {const TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions({this.label});
+@immutable final class TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions {const TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions({this.label});
 
 factory TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions(
   label: json['label'] != null ? TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictionsLabel.fromJson(json['label'] as String) : null,

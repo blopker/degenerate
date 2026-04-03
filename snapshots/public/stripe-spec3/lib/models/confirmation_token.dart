@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'confirmation_tokens_resource_mandate_data.dart';import 'confirmation_tokens_resource_payment_method_options.dart';import 'confirmation_tokens_resource_payment_method_preview.dart';import 'confirmation_tokens_resource_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ConfirmationTokenObject {const ConfirmationTokenObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'confirmation_tokens_resource_mandate_data.dart';import 'confirmation_tokens_resource_payment_method_options.dart';import 'confirmation_tokens_resource_payment_method_preview.dart';import 'confirmation_tokens_resource_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ConfirmationTokenObject {const ConfirmationTokenObject._(this.value);
 
 factory ConfirmationTokenObject.fromJson(String json) { return switch (json) {
   'confirmation_token' => confirmationToken,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
 /// 
 /// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
-final class ConfirmationTokenSetupFutureUsage {const ConfirmationTokenSetupFutureUsage._(this.value);
+@immutable final class ConfirmationTokenSetupFutureUsage {const ConfirmationTokenSetupFutureUsage._(this.value);
 
 factory ConfirmationTokenSetupFutureUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 /// To learn more about how to use ConfirmationToken, visit the related guides:
 /// - [Finalize payments on the server](https://docs.stripe.com/payments/finalize-payments-on-the-server)
 /// - [Build two-step confirmation](https://docs.stripe.com/payments/build-a-two-step-confirmation).
-final class ConfirmationToken {const ConfirmationToken({required this.created, this.expiresAt, required this.id, required this.livemode, this.mandateData, required this.object, this.paymentIntent, this.paymentMethodOptions, this.paymentMethodPreview, this.returnUrl, this.setupFutureUsage, this.setupIntent, this.shipping, required this.useStripeSdk, });
+@immutable final class ConfirmationToken {const ConfirmationToken({required this.created, required this.id, required this.livemode, required this.object, required this.useStripeSdk, this.expiresAt, this.mandateData, this.paymentIntent, this.paymentMethodOptions, this.paymentMethodPreview, this.returnUrl, this.setupFutureUsage, this.setupIntent, this.shipping, });
 
 factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return ConfirmationToken(
   created: (json['created'] as num).toInt(),

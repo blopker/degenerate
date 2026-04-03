@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'thresholds_resource_usage_threshold_config.dart';/// Defines the type of the alert.
-final class BillingAlertAlertType {const BillingAlertAlertType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thresholds_resource_usage_threshold_config.dart';/// Defines the type of the alert.
+@immutable final class BillingAlertAlertType {const BillingAlertAlertType._(this.value);
 
 factory BillingAlertAlertType.fromJson(String json) { return switch (json) {
   'usage_threshold' => usageThreshold,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingAlertAlertType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class BillingAlertObject {const BillingAlertObject._(this.value);
+@immutable final class BillingAlertObject {const BillingAlertObject._(this.value);
 
 factory BillingAlertObject.fromJson(String json) { return switch (json) {
   'billing.alert' => billingAlert,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingAlertObject($value)'; } 
  }
 /// Status of the alert. This can be active, inactive or archived.
-final class BillingAlertStatus {const BillingAlertStatus._(this.value);
+@immutable final class BillingAlertStatus {const BillingAlertStatus._(this.value);
 
 factory BillingAlertStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingAlertStatus($value)'; } 
  }
 /// A billing alert is a resource that notifies you when a certain usage threshold on a meter is crossed. For example, you might create a billing alert to notify you when a certain user made 100 API requests.
-final class BillingAlert {const BillingAlert({required this.alertType, required this.id, required this.livemode, required this.object, this.status, required this.title, this.usageThreshold, });
+@immutable final class BillingAlert {const BillingAlert({required this.alertType, required this.id, required this.livemode, required this.object, required this.title, this.status, this.usageThreshold, });
 
 factory BillingAlert.fromJson(Map<String, dynamic> json) { return BillingAlert(
   alertType: BillingAlertAlertType.fromJson(json['alert_type'] as String),

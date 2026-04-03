@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';final class ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances {const ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances({required this.users, required this.teams, this.apps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';@immutable final class ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances {const ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances({required this.users, required this.teams, this.apps, });
 
 factory ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
   users: (json['users'] as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),

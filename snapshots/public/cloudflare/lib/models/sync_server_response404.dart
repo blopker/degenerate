@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'sync_server_response404_errors.dart';final class SyncServerResponse404 {const SyncServerResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'sync_server_response404_errors.dart';@immutable final class SyncServerResponse404 {const SyncServerResponse404({required this.errors, required this.success, });
 
 factory SyncServerResponse404.fromJson(Map<String, dynamic> json) { return SyncServerResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => SyncServerResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

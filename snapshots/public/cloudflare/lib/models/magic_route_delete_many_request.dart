@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route_delete_id.dart';final class MagicRouteDeleteManyRequest {const MagicRouteDeleteManyRequest({required this.routes});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route_delete_id.dart';@immutable final class MagicRouteDeleteManyRequest {const MagicRouteDeleteManyRequest({required this.routes});
 
 factory MagicRouteDeleteManyRequest.fromJson(Map<String, dynamic> json) { return MagicRouteDeleteManyRequest(
   routes: (json['routes'] as List<dynamic>).map((e) => MagicRouteDeleteId.fromJson(e as Map<String, dynamic>)).toList(),

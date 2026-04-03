@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingCardholderCompany {const IssuingCardholderCompany({required this.taxIdProvided});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingCardholderCompany {const IssuingCardholderCompany({required this.taxIdProvided});
 
 factory IssuingCardholderCompany.fromJson(Map<String, dynamic> json) { return IssuingCardholderCompany(
   taxIdProvided: json['tax_id_provided'] as bool,

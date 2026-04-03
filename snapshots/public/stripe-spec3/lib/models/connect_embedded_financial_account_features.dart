@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedFinancialAccountFeatures {const ConnectEmbeddedFinancialAccountFeatures({required this.disableStripeUserAuthentication, required this.externalAccountCollection, required this.sendMoney, required this.transferBalance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedFinancialAccountFeatures {const ConnectEmbeddedFinancialAccountFeatures({required this.disableStripeUserAuthentication, required this.externalAccountCollection, required this.sendMoney, required this.transferBalance, });
 
 factory ConnectEmbeddedFinancialAccountFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedFinancialAccountFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError {const WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError({required this.message, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError {const WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError({required this.message, required this.name, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(
   message: json['message'] as String,

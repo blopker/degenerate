@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_max_duration_seconds.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';import 'stream_watermark_at_upload.dart';final class StreamDirectUploadRequest {const StreamDirectUploadRequest({this.allowedOrigins, this.creator, this.expiry, required this.maxDurationSeconds, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.watermark, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_max_duration_seconds.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';import 'stream_watermark_at_upload.dart';@immutable final class StreamDirectUploadRequest {const StreamDirectUploadRequest({required this.maxDurationSeconds, this.allowedOrigins, this.creator, this.expiry, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.watermark, });
 
 factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return StreamDirectUploadRequest(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),

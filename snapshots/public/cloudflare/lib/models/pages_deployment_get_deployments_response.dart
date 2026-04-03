@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment.dart';final class PagesDeploymentGetDeploymentsResponse {const PagesDeploymentGetDeploymentsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment.dart';@immutable final class PagesDeploymentGetDeploymentsResponse {const PagesDeploymentGetDeploymentsResponse({required this.result});
 
 factory PagesDeploymentGetDeploymentsResponse.fromJson(Map<String, dynamic> json) { return PagesDeploymentGetDeploymentsResponse(
   result: (json['result'] as List<dynamic>).map((e) => PagesDeployment.fromJson(e as Map<String, dynamic>)).toList(),

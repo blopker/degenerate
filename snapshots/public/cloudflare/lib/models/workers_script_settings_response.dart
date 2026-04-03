@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_script_settings_item.dart';final class WorkersScriptSettingsResponse {const WorkersScriptSettingsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_script_settings_item.dart';@immutable final class WorkersScriptSettingsResponse {const WorkersScriptSettingsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory WorkersScriptSettingsResponse.fromJson(Map<String, dynamic> json) { return WorkersScriptSettingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),

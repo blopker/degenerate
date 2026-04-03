@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpHijacksEventsResponseResultEventsTags {const RadarGetBgpHijacksEventsResponseResultEventsTags({required this.name, required this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpHijacksEventsResponseResultEventsTags {const RadarGetBgpHijacksEventsResponseResultEventsTags({required this.name, required this.score, });
 
 factory RadarGetBgpHijacksEventsResponseResultEventsTags.fromJson(Map<String, dynamic> json) { return RadarGetBgpHijacksEventsResponseResultEventsTags(
   name: json['name'] as String,

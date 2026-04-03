@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers_payment_method_details_us_bank_account_mandate.dart';import 'mandate.dart';/// Account holder type: individual or company.
-final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);
+@immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);
 
 factory InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType($value)'; } 
  }
 /// Account type: checkings or savings. Defaults to checking if omitted.
-final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(this.value);
+@immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(this.value);
 
 factory InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountAccountType($value)'; } 
  }
 /// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
-final class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(this.value);
+@immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(this.value);
 
 factory InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountNetwork($value)'; } 
  }
 /// 
-final class InboundTransfersPaymentMethodDetailsUsBankAccount {const InboundTransfersPaymentMethodDetailsUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.fingerprint, this.last4, this.mandate, required this.network, this.routingNumber, });
+@immutable final class InboundTransfersPaymentMethodDetailsUsBankAccount {const InboundTransfersPaymentMethodDetailsUsBankAccount({required this.network, this.accountHolderType, this.accountType, this.bankName, this.fingerprint, this.last4, this.mandate, this.routingNumber, });
 
 factory InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

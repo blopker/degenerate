@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Queue Producer binding.
-final class PagesDeploymentConfigValuesRequestQueueProducersValue {const PagesDeploymentConfigValuesRequestQueueProducersValue({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Queue Producer binding.
+@immutable final class PagesDeploymentConfigValuesRequestQueueProducersValue {const PagesDeploymentConfigValuesRequestQueueProducersValue({required this.name});
 
 factory PagesDeploymentConfigValuesRequestQueueProducersValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestQueueProducersValue(
   name: json['name'] as String,

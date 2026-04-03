@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Short Blob
-final class ShortBlob {const ShortBlob({required this.url, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Short Blob
+@immutable final class ShortBlob {const ShortBlob({required this.url, required this.sha, });
 
 factory ShortBlob.fromJson(Map<String, dynamic> json) { return ShortBlob(
   url: json['url'] as String,

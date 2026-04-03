@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaUnits {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaUnits {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaUnits(
   name: json['name'] as String,

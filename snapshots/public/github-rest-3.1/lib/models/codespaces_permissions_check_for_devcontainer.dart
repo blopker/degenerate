@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Permission check result for a given devcontainer config.
-final class CodespacesPermissionsCheckForDevcontainer {const CodespacesPermissionsCheckForDevcontainer({required this.accepted});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permission check result for a given devcontainer config.
+@immutable final class CodespacesPermissionsCheckForDevcontainer {const CodespacesPermissionsCheckForDevcontainer({required this.accepted});
 
 factory CodespacesPermissionsCheckForDevcontainer.fromJson(Map<String, dynamic> json) { return CodespacesPermissionsCheckForDevcontainer(
   accepted: json['accepted'] as bool,

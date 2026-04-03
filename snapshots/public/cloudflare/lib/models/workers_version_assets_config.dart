@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_assets_config_run_worker_first.dart';/// Determines the redirects and rewrites of requests for HTML content.
-final class WorkersVersionAssetsConfigHtmlHandling {const WorkersVersionAssetsConfigHtmlHandling._(this.value);
+@immutable final class WorkersVersionAssetsConfigHtmlHandling {const WorkersVersionAssetsConfigHtmlHandling._(this.value);
 
 factory WorkersVersionAssetsConfigHtmlHandling.fromJson(String json) { return switch (json) {
   'auto-trailing-slash' => autoTrailingSlash,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersVersionAssetsConfigHtmlHandling($value)'; } 
  }
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
-final class WorkersVersionAssetsConfigNotFoundHandling {const WorkersVersionAssetsConfigNotFoundHandling._(this.value);
+@immutable final class WorkersVersionAssetsConfigNotFoundHandling {const WorkersVersionAssetsConfigNotFoundHandling._(this.value);
 
 factory WorkersVersionAssetsConfigNotFoundHandling.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersVersionAssetsConfigNotFoundHandling($value)'; } 
  }
 /// Configuration for assets within a Worker.
-final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.htmlHandling = WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash, this.notFoundHandling = WorkersVersionAssetsConfigNotFoundHandling.none, this.runWorkerFirst, });
+@immutable final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.htmlHandling = WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash, this.notFoundHandling = WorkersVersionAssetsConfigNotFoundHandling.none, this.runWorkerFirst, });
 
 factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersVersionAssetsConfig(
   htmlHandling: json.containsKey('html_handling') ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer7_summary_by_industry_response_result_meta.dart';final class RadarGetAttacksLayer7SummaryByIndustryResponseResult {const RadarGetAttacksLayer7SummaryByIndustryResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_summary_by_industry_response_result_meta.dart';@immutable final class RadarGetAttacksLayer7SummaryByIndustryResponseResult {const RadarGetAttacksLayer7SummaryByIndustryResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetAttacksLayer7SummaryByIndustryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByIndustryResponseResult(
   meta: RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

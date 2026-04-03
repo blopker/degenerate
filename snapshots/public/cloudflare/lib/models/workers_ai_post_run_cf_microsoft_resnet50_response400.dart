@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_microsoft_resnet50_response400_errors.dart';final class WorkersAiPostRunCfMicrosoftResnet50Response400 {const WorkersAiPostRunCfMicrosoftResnet50Response400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_microsoft_resnet50_response400_errors.dart';@immutable final class WorkersAiPostRunCfMicrosoftResnet50Response400 {const WorkersAiPostRunCfMicrosoftResnet50Response400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfMicrosoftResnet50Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMicrosoftResnet50Response400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfMicrosoftResnet50Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeAuBecsDebit {const SourceTypeAuBecsDebit({this.bsbNumber, this.fingerprint, this.last4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAuBecsDebit {const SourceTypeAuBecsDebit({this.bsbNumber, this.fingerprint, this.last4, });
 
 factory SourceTypeAuBecsDebit.fromJson(Map<String, dynamic> json) { return SourceTypeAuBecsDebit(
   bsbNumber: json['bsb_number'] as String?,

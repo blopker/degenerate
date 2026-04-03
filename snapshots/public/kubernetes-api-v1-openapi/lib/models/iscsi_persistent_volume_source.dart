@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_reference.dart';/// ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
-final class IscsiPersistentVolumeSource {const IscsiPersistentVolumeSource({this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iqn = '', this.iscsiInterface = 'default', this.lun = 0, this.portals, this.readOnly, this.secretRef, this.targetPortal = '', });
+@immutable final class IscsiPersistentVolumeSource {const IscsiPersistentVolumeSource({this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iqn = '', this.iscsiInterface = 'default', this.lun = 0, this.portals, this.readOnly, this.secretRef, this.targetPortal = '', });
 
 factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return IscsiPersistentVolumeSource(
   chapAuthDiscovery: json['chapAuthDiscovery'] as bool?,

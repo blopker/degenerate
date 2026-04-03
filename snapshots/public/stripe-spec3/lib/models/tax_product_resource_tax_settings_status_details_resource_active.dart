@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TaxProductResourceTaxSettingsStatusDetailsResourceActive {const TaxProductResourceTaxSettingsStatusDetailsResourceActive();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TaxProductResourceTaxSettingsStatusDetailsResourceActive {const TaxProductResourceTaxSettingsStatusDetailsResourceActive();
 
 factory TaxProductResourceTaxSettingsStatusDetailsResourceActive.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsStatusDetailsResourceActive(
 

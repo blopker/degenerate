@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_loa_upload_response_result.dart';final class AddressingLoaUploadResponse {const AddressingLoaUploadResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_loa_upload_response_result.dart';@immutable final class AddressingLoaUploadResponse {const AddressingLoaUploadResponse({this.result});
 
 factory AddressingLoaUploadResponse.fromJson(Map<String, dynamic> json) { return AddressingLoaUploadResponse(
   result: json['result'] != null ? AddressingLoaUploadResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

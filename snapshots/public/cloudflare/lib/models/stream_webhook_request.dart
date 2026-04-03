@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The URL where webhooks will be sent.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The URL where webhooks will be sent.
 extension type StreamNotificationUrl(Uri value) {
 factory StreamNotificationUrl.fromJson(String json) => StreamNotificationUrl(Uri.parse(json));
 
 String toJson() => value.toString();
 
 }
-final class StreamWebhookRequest {const StreamWebhookRequest({required this.notificationUrl});
+@immutable final class StreamWebhookRequest {const StreamWebhookRequest({required this.notificationUrl});
 
 factory StreamWebhookRequest.fromJson(Map<String, dynamic> json) { return StreamWebhookRequest(
   notificationUrl: StreamNotificationUrl.fromJson(json['notificationUrl'] as String),

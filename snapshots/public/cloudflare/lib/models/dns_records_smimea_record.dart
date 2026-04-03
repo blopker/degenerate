@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_smimea_record_data.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsSmimeaRecordType {const DnsRecordsSmimeaRecordType._(this.value);
+@immutable final class DnsRecordsSmimeaRecordType {const DnsRecordsSmimeaRecordType._(this.value);
 
 factory DnsRecordsSmimeaRecordType.fromJson(String json) { return switch (json) {
   'SMIMEA' => smimea,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsSmimeaRecordType($value)'; } 
  }
-final class DnsRecordsSmimeaRecord {const DnsRecordsSmimeaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+@immutable final class DnsRecordsSmimeaRecord {const DnsRecordsSmimeaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsSmimeaRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsSmimeaRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

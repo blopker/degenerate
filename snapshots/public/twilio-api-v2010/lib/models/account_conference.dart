@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'conference_enum_status.dart';/// The reason why a conference ended. When a conference is in progress, will be `null`. When conference is completed, can be: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, or `last-participant-left`.
-final class ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conference_enum_status.dart';/// The reason why a conference ended. When a conference is in progress, will be `null`. When conference is completed, can be: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, or `last-participant-left`.
+@immutable final class ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded._(this.value);
 
 factory ConferenceEnumReasonConferenceEnded.fromJson(String json) { return switch (json) {
   'conference-ended-via-api' => conferenceEndedViaApi,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConferenceEnumReasonConferenceEnded($value)'; } 
  }
-final class AccountConference {const AccountConference({this.accountSid, this.dateCreated, this.dateUpdated, this.apiVersion, this.friendlyName, this.region, this.sid, this.status, this.uri, this.subresourceUris, this.reasonConferenceEnded, this.callSidEndingConference, });
+@immutable final class AccountConference {const AccountConference({this.accountSid, this.dateCreated, this.dateUpdated, this.apiVersion, this.friendlyName, this.region, this.sid, this.status, this.uri, this.subresourceUris, this.reasonConferenceEnded, this.callSidEndingConference, });
 
 factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountConference(
   accountSid: json['account_sid'] as String?,

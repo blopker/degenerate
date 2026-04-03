@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_ipam_bgp_prefixes.dart';final class AddressingSingleResponseBgp {const AddressingSingleResponseBgp({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_bgp_prefixes.dart';@immutable final class AddressingSingleResponseBgp {const AddressingSingleResponseBgp({this.result});
 
 factory AddressingSingleResponseBgp.fromJson(Map<String, dynamic> json) { return AddressingSingleResponseBgp(
   result: json['result'] != null ? AddressingIpamBgpPrefixes.fromJson(json['result'] as Map<String, dynamic>) : null,

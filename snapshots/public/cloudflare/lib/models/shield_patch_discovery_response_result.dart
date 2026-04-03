@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discovery_state.dart';final class ShieldPatchDiscoveryResponseResult {const ShieldPatchDiscoveryResponseResult({this.state});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discovery_state.dart';@immutable final class ShieldPatchDiscoveryResponseResult {const ShieldPatchDiscoveryResponseResult({this.state});
 
 factory ShieldPatchDiscoveryResponseResult.fromJson(Map<String, dynamic> json) { return ShieldPatchDiscoveryResponseResult(
   state: json['state'] != null ? DiscoveryState.fromJson(json['state'] as String) : null,

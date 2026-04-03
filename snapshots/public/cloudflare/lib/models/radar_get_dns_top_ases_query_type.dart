@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTopAsesQueryType {const RadarGetDnsTopAsesQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopAsesQueryType {const RadarGetDnsTopAsesQueryType._(this.value);
 
 factory RadarGetDnsTopAsesQueryType.fromJson(String json) { return switch (json) {
   'A' => a,

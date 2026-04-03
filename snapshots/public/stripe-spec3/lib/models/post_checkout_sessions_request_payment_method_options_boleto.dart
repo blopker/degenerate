@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsBoletoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsBoletoSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBoletoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsBoletoSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBoletoSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBoletoSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsBoleto {const PostCheckoutSessionsRequestPaymentMethodOptionsBoleto({this.expiresAfterDays, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBoleto {const PostCheckoutSessionsRequestPaymentMethodOptionsBoleto({this.expiresAfterDays, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBoleto.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsBoleto(
   expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,

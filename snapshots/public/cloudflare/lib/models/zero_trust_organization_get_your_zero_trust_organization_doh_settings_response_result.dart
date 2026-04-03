@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult {const ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult({this.dohJwtDuration});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult {const ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult({this.dohJwtDuration});
 
 factory ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(Map<String, dynamic> json) { return ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult(
   dohJwtDuration: json['doh_jwt_duration'] as String?,

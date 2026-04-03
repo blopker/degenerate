@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_retrieval_boost_by.dart';final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_retrieval_boost_by.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod._(this.value);
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod.fromJson(String json) { return switch (json) {
   'max' => max,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod($value)'; } 
  }
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
-final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode._(this.value);
+@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode._(this.value);
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(String json) { return switch (json) {
   'exact_match' => exactMatch,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode($value)'; } 
  }
-final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType._(this.value);
+@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType._(this.value);
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType.fromJson(String json) { return switch (json) {
   'vector' => vector,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType($value)'; } 
  }
-final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
+@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),

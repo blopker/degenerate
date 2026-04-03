@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRankingTopInternetServicesResponseResultTop0 {const RadarGetRankingTopInternetServicesResponseResultTop0({required this.rank, required this.service, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRankingTopInternetServicesResponseResultTop0 {const RadarGetRankingTopInternetServicesResponseResultTop0({required this.rank, required this.service, });
 
 factory RadarGetRankingTopInternetServicesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopInternetServicesResponseResultTop0(
   rank: (json['rank'] as num).toInt(),

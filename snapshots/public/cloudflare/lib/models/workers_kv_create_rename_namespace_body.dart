@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_namespace_title.dart';final class WorkersKvCreateRenameNamespaceBody {const WorkersKvCreateRenameNamespaceBody({required this.title});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_namespace_title.dart';@immutable final class WorkersKvCreateRenameNamespaceBody {const WorkersKvCreateRenameNamespaceBody({required this.title});
 
 factory WorkersKvCreateRenameNamespaceBody.fromJson(Map<String, dynamic> json) { return WorkersKvCreateRenameNamespaceBody(
   title: WorkersKvNamespaceTitle.fromJson(json['title'] as String),

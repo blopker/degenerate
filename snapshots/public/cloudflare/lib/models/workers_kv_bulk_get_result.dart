@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_bulk_get_result_values_value.dart';final class WorkersKvBulkGetResult {const WorkersKvBulkGetResult({this.values});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_bulk_get_result_values_value.dart';@immutable final class WorkersKvBulkGetResult {const WorkersKvBulkGetResult({this.values});
 
 factory WorkersKvBulkGetResult.fromJson(Map<String, dynamic> json) { return WorkersKvBulkGetResult(
   values: (json['values'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),))),

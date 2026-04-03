@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_traffic_anomalies_top_response_result_traffic_anomalies.dart';final class RadarGetTrafficAnomaliesTopResponseResult {const RadarGetTrafficAnomaliesTopResponseResult({required this.trafficAnomalies});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_traffic_anomalies_top_response_result_traffic_anomalies.dart';@immutable final class RadarGetTrafficAnomaliesTopResponseResult {const RadarGetTrafficAnomaliesTopResponseResult({required this.trafficAnomalies});
 
 factory RadarGetTrafficAnomaliesTopResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesTopResponseResult(
   trafficAnomalies: (json['trafficAnomalies'] as List<dynamic>).map((e) => RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies.fromJson(e as Map<String, dynamic>)).toList(),

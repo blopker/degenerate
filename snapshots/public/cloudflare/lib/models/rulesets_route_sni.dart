@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A Server Name Indication (SNI) override.
-final class RulesetsRouteSni {const RulesetsRouteSni({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Server Name Indication (SNI) override.
+@immutable final class RulesetsRouteSni {const RulesetsRouteSni({required this.value});
 
 factory RulesetsRouteSni.fromJson(Map<String, dynamic> json) { return RulesetsRouteSni(
   value: json['value'] as String,

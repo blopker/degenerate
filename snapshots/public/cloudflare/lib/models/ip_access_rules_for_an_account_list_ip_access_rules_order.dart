@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the field used to sort returned rules.
-final class IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rules.
+@immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder._(this.value);
 
 factory IpAccessRulesForAnAccountListIpAccessRulesOrder.fromJson(String json) { return switch (json) {
   'configuration.target' => configurationTarget,

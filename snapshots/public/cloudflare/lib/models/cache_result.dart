@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Current setting of the automatic SSL/TLS.
-final class CacheResultValue {const CacheResultValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current setting of the automatic SSL/TLS.
+@immutable final class CacheResultValue {const CacheResultValue._(this.value);
 
 factory CacheResultValue.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheResultValue($value)'; } 
  }
-final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, this.nextScheduledScan, required this.value, });
+@immutable final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, required this.value, this.nextScheduledScan, });
 
 factory CacheResult.fromJson(Map<String, dynamic> json) { return CacheResult(
   editable: json['editable'] as bool,

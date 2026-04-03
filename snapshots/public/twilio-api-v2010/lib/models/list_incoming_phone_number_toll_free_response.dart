@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_toll_free.dart';final class ListIncomingPhoneNumberTollFreeResponse {const ListIncomingPhoneNumberTollFreeResponse({this.incomingPhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_toll_free.dart';@immutable final class ListIncomingPhoneNumberTollFreeResponse {const ListIncomingPhoneNumberTollFreeResponse({this.incomingPhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListIncomingPhoneNumberTollFreeResponse.fromJson(Map<String, dynamic> json) { return ListIncomingPhoneNumberTollFreeResponse(
   incomingPhoneNumbers: (json['incoming_phone_numbers'] as List<dynamic>?)?.map((e) => AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(e as Map<String, dynamic>)).toList(),

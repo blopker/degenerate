@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPricesRequestTransformQuantityRound {const PostPricesRequestTransformQuantityRound._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesRequestTransformQuantityRound {const PostPricesRequestTransformQuantityRound._(this.value);
 
 factory PostPricesRequestTransformQuantityRound.fromJson(String json) { return switch (json) {
   'down' => down,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPricesRequestTransformQuantityRound($value)'; } 
  }
 /// Apply a transformation to the reported usage or set quantity before computing the billed price. Cannot be combined with `tiers`.
-final class PostPricesRequestTransformQuantity {const PostPricesRequestTransformQuantity({required this.divideBy, required this.round, });
+@immutable final class PostPricesRequestTransformQuantity {const PostPricesRequestTransformQuantity({required this.divideBy, required this.round, });
 
 factory PostPricesRequestTransformQuantity.fromJson(Map<String, dynamic> json) { return PostPricesRequestTransformQuantity(
   divideBy: (json['divide_by'] as num).toInt(),

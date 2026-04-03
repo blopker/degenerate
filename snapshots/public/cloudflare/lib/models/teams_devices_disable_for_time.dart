@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesDisableForTime {const TeamsDevicesDisableForTime({this.$1, this.$3, this.$6, this.$12, this.$24, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDisableForTime {const TeamsDevicesDisableForTime({this.$1, this.$3, this.$6, this.$12, this.$24, });
 
 factory TeamsDevicesDisableForTime.fromJson(Map<String, dynamic> json) { return TeamsDevicesDisableForTime(
   $1: json['1'] as String?,

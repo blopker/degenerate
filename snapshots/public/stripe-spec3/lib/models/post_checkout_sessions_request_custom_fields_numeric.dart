@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestCustomFieldsNumeric {const PostCheckoutSessionsRequestCustomFieldsNumeric({this.defaultValue, this.maximumLength, this.minimumLength, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestCustomFieldsNumeric {const PostCheckoutSessionsRequestCustomFieldsNumeric({this.defaultValue, this.maximumLength, this.minimumLength, });
 
 factory PostCheckoutSessionsRequestCustomFieldsNumeric.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFieldsNumeric(
   defaultValue: json['default_value'] as String?,

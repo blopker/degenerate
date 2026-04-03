@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2.dart';final class PagesPurgeBuildCacheResponse {const PagesPurgeBuildCacheResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2.dart';@immutable final class PagesPurgeBuildCacheResponse {const PagesPurgeBuildCacheResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory PagesPurgeBuildCacheResponse.fromJson(Map<String, dynamic> json) { return PagesPurgeBuildCacheResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

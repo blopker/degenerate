@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of relationship to create between parent and child events
-final class PostCreateEventRelationshipRequestRelationshipType {const PostCreateEventRelationshipRequestRelationshipType._(this.value);
+@immutable final class PostCreateEventRelationshipRequestRelationshipType {const PostCreateEventRelationshipRequestRelationshipType._(this.value);
 
 factory PostCreateEventRelationshipRequestRelationshipType.fromJson(String json) { return switch (json) {
   'related_to' => relatedTo,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCreateEventRelationshipRequestRelationshipType($value)'; } 
  }
-final class PostCreateEventRelationshipRequest {const PostCreateEventRelationshipRequest({required this.childIds, required this.datasetId, required this.parentId, required this.relationshipType, });
+@immutable final class PostCreateEventRelationshipRequest {const PostCreateEventRelationshipRequest({required this.childIds, required this.datasetId, required this.parentId, required this.relationshipType, });
 
 factory PostCreateEventRelationshipRequest.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipRequest(
   childIds: (json['childIds'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_options_param17_subscriptions_variant1_next_billing.dart';final class PaymentMethodOptionsParam17SubscriptionsVariant1Interval {const PaymentMethodOptionsParam17SubscriptionsVariant1Interval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param17_subscriptions_variant1_next_billing.dart';@immutable final class PaymentMethodOptionsParam17SubscriptionsVariant1Interval {const PaymentMethodOptionsParam17SubscriptionsVariant1Interval._(this.value);
 
 factory PaymentMethodOptionsParam17SubscriptionsVariant1Interval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam17SubscriptionsVariant1Interval($value)'; } 
  }
-final class PaymentMethodOptionsParam17SubscriptionsVariant1 {const PaymentMethodOptionsParam17SubscriptionsVariant1({required this.interval, this.intervalCount, this.name, this.nextBilling, required this.reference, });
+@immutable final class PaymentMethodOptionsParam17SubscriptionsVariant1 {const PaymentMethodOptionsParam17SubscriptionsVariant1({required this.interval, required this.reference, this.intervalCount, this.name, this.nextBilling, });
 
 factory PaymentMethodOptionsParam17SubscriptionsVariant1.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam17SubscriptionsVariant1(
   interval: PaymentMethodOptionsParam17SubscriptionsVariant1Interval.fromJson(json['interval'] as String),

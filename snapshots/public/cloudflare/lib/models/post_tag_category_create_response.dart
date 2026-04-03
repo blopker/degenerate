@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTagCategoryCreateResponse {const PostTagCategoryCreateResponse({this.createdAt, this.description, required this.name, this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCategoryCreateResponse {const PostTagCategoryCreateResponse({required this.name, required this.uuid, this.createdAt, this.description, this.updatedAt, });
 
 factory PostTagCategoryCreateResponse.fromJson(Map<String, dynamic> json) { return PostTagCategoryCreateResponse(
   createdAt: json['createdAt'] as String?,

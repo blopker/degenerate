@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingCreditGrantsResourceApplicablePrice {const BillingCreditGrantsResourceApplicablePrice({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingCreditGrantsResourceApplicablePrice {const BillingCreditGrantsResourceApplicablePrice({this.id});
 
 factory BillingCreditGrantsResourceApplicablePrice.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicablePrice(
   id: json['id'] as String?,

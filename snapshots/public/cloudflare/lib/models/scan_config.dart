@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';final class ScanConfig {const ScanConfig({required this.accountId, required this.frequency, required this.id, required this.ips, required this.ports, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';@immutable final class ScanConfig {const ScanConfig({required this.accountId, required this.frequency, required this.id, required this.ips, required this.ports, });
 
 factory ScanConfig.fromJson(Map<String, dynamic> json) { return ScanConfig(
   accountId: json['account_id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param49.dart';final class PostPaymentIntentsIntentRequestPaymentMethodOptionsGiropayVariant2 {const PostPaymentIntentsIntentRequestPaymentMethodOptionsGiropayVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param49.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodOptionsGiropayVariant2 {const PostPaymentIntentsIntentRequestPaymentMethodOptionsGiropayVariant2._(this.value);
 
 factory PostPaymentIntentsIntentRequestPaymentMethodOptionsGiropayVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

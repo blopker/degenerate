@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_quality_stats_quality_stats.dart';final class RealtimekitParticipantQualityStats {const RealtimekitParticipantQualityStats({this.qualityStats});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_quality_stats_quality_stats.dart';@immutable final class RealtimekitParticipantQualityStats {const RealtimekitParticipantQualityStats({this.qualityStats});
 
 factory RealtimekitParticipantQualityStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStats(
   qualityStats: (json['quality_stats'] as List<dynamic>?)?.map((e) => RealtimekitParticipantQualityStatsQualityStats.fromJson(e as Map<String, dynamic>)).toList(),

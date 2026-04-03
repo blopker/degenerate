@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Breakdown of totals for threats.
-final class Threats {const Threats({this.all, this.country, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for threats.
+@immutable final class Threats {const Threats({this.all, this.country, this.type, });
 
 factory Threats.fromJson(Map<String, dynamic> json) { return Threats(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,

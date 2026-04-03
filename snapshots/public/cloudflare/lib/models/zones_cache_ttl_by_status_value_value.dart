@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `no-store` (equivalent to -1), `no-cache` (equivalent to 0)
 /// 
-final class ZonesCacheTtlByStatusValueValueVariant1 {const ZonesCacheTtlByStatusValueValueVariant1._(this.value);
+@immutable final class ZonesCacheTtlByStatusValueValueVariant1 {const ZonesCacheTtlByStatusValueValueVariant1._(this.value);
 
 factory ZonesCacheTtlByStatusValueValueVariant1.fromJson(String json) { return switch (json) {
   'no-cache' => noCache,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_definitely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';final class BotManagementSbfmDefinitelyConfig {const BotManagementSbfmDefinitelyConfig({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_definitely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';@immutable final class BotManagementSbfmDefinitelyConfig {const BotManagementSbfmDefinitelyConfig({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
 
 factory BotManagementSbfmDefinitelyConfig.fromJson(Map<String, dynamic> json) { return BotManagementSbfmDefinitelyConfig(
   optimizeWordpress: json['optimize_wordpress'] != null ? BotManagementOptimizeWordpress.fromJson(json['optimize_wordpress'] as bool) : null,

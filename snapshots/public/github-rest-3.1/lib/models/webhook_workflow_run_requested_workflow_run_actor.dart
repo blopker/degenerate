@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookWorkflowRunRequestedWorkflowRunActorType {const WebhookWorkflowRunRequestedWorkflowRunActorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookWorkflowRunRequestedWorkflowRunActorType {const WebhookWorkflowRunRequestedWorkflowRunActorType._(this.value);
 
 factory WebhookWorkflowRunRequestedWorkflowRunActorType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowRunRequestedWorkflowRunActorType($value)'; } 
  }
-final class WebhookWorkflowRunRequestedWorkflowRunActor {const WebhookWorkflowRunRequestedWorkflowRunActor({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookWorkflowRunRequestedWorkflowRunActor {const WebhookWorkflowRunRequestedWorkflowRunActor({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookWorkflowRunRequestedWorkflowRunActor.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequestedWorkflowRunActor(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

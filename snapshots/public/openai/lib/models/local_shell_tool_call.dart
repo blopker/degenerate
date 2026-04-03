@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'local_shell_exec_action.dart';/// The status of the local shell call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_shell_exec_action.dart';/// The status of the local shell call.
 /// 
-final class LocalShellToolCallStatus {const LocalShellToolCallStatus._(this.value);
+@immutable final class LocalShellToolCallStatus {const LocalShellToolCallStatus._(this.value);
 
 factory LocalShellToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A tool call to run a command on the local shell.
 /// 
-final class LocalShellToolCall {const LocalShellToolCall({required this.type, required this.id, required this.callId, required this.action, required this.status, });
+@immutable final class LocalShellToolCall {const LocalShellToolCall({required this.type, required this.id, required this.callId, required this.action, required this.status, });
 
 factory LocalShellToolCall.fromJson(Map<String, dynamic> json) { return LocalShellToolCall(
   type: json['type'] as String,

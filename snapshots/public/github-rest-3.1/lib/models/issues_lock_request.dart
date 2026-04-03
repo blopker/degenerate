@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
 ///  * `off-topic`
 ///  * `too heated`
 ///  * `resolved`
 ///  * `spam`
-final class IssuesLockRequestLockReason {const IssuesLockRequestLockReason._(this.value);
+@immutable final class IssuesLockRequestLockReason {const IssuesLockRequestLockReason._(this.value);
 
 factory IssuesLockRequestLockReason.fromJson(String json) { return switch (json) {
   'off-topic' => offTopic,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuesLockRequestLockReason($value)'; } 
  }
-final class IssuesLockRequest {const IssuesLockRequest({this.lockReason});
+@immutable final class IssuesLockRequest {const IssuesLockRequest({this.lockReason});
 
 factory IssuesLockRequest.fromJson(Map<String, dynamic> json) { return IssuesLockRequest(
   lockReason: json['lock_reason'] != null ? IssuesLockRequestLockReason.fromJson(json['lock_reason'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

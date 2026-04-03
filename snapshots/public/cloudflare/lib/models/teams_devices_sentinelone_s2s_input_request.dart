@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Network status of device.
-final class TeamsDevicesSentineloneS2sInputRequestNetworkStatus {const TeamsDevicesSentineloneS2sInputRequestNetworkStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Network status of device.
+@immutable final class TeamsDevicesSentineloneS2sInputRequestNetworkStatus {const TeamsDevicesSentineloneS2sInputRequestNetworkStatus._(this.value);
 
 factory TeamsDevicesSentineloneS2sInputRequestNetworkStatus.fromJson(String json) { return switch (json) {
   'connected' => connected,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesSentineloneS2sInputRequestNetworkStatus($value)'; } 
  }
 /// Agent operational state.
-final class TeamsDevicesSentineloneS2sInputRequestOperationalState {const TeamsDevicesSentineloneS2sInputRequestOperationalState._(this.value);
+@immutable final class TeamsDevicesSentineloneS2sInputRequestOperationalState {const TeamsDevicesSentineloneS2sInputRequestOperationalState._(this.value);
 
 factory TeamsDevicesSentineloneS2sInputRequestOperationalState.fromJson(String json) { return switch (json) {
   'na' => na,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesSentineloneS2sInputRequestOperationalState($value)'; } 
  }
 /// Operator.
-final class TeamsDevicesSentineloneS2sInputRequestOperator {const TeamsDevicesSentineloneS2sInputRequestOperator._(this.value);
+@immutable final class TeamsDevicesSentineloneS2sInputRequestOperator {const TeamsDevicesSentineloneS2sInputRequestOperator._(this.value);
 
 factory TeamsDevicesSentineloneS2sInputRequestOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesSentineloneS2sInputRequestOperator($value)'; } 
  }
-final class TeamsDevicesSentineloneS2sInputRequest {const TeamsDevicesSentineloneS2sInputRequest({this.activeThreats, required this.connectionId, this.infected, this.isActive, this.networkStatus, this.operationalState, this.$operator, });
+@immutable final class TeamsDevicesSentineloneS2sInputRequest {const TeamsDevicesSentineloneS2sInputRequest({required this.connectionId, this.activeThreats, this.infected, this.isActive, this.networkStatus, this.operationalState, this.$operator, });
 
 factory TeamsDevicesSentineloneS2sInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneS2sInputRequest(
   activeThreats: json['active_threats'] != null ? (json['active_threats'] as num).toDouble() : null,

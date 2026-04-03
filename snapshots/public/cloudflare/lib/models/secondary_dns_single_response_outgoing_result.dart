@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';import 'secondary_dns_soa_serial.dart';import 'secondary_dns_time.dart';final class SecondaryDnsSingleResponseOutgoingResult {const SecondaryDnsSingleResponseOutgoingResult({this.checkedTime, this.createdTime, this.id, this.lastTransferredTime, this.name, this.peers, this.soaSerial, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';import 'secondary_dns_soa_serial.dart';import 'secondary_dns_time.dart';@immutable final class SecondaryDnsSingleResponseOutgoingResult {const SecondaryDnsSingleResponseOutgoingResult({this.checkedTime, this.createdTime, this.id, this.lastTransferredTime, this.name, this.peers, this.soaSerial, });
 
 factory SecondaryDnsSingleResponseOutgoingResult.fromJson(Map<String, dynamic> json) { return SecondaryDnsSingleResponseOutgoingResult(
   checkedTime: json['checked_time'] != null ? SecondaryDnsTime.fromJson(json['checked_time'] as String) : null,

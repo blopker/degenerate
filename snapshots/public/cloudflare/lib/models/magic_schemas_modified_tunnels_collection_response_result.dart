@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ipsec_tunnel.dart';final class MagicSchemasModifiedTunnelsCollectionResponseResult {const MagicSchemasModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedIpsecTunnels, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ipsec_tunnel.dart';@immutable final class MagicSchemasModifiedTunnelsCollectionResponseResult {const MagicSchemasModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedIpsecTunnels, });
 
 factory MagicSchemasModifiedTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicSchemasModifiedTunnelsCollectionResponseResult(
   modified: json['modified'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountCallCallEvent {const AccountCallCallEvent({this.request, this.response, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountCallCallEvent {const AccountCallCallEvent({this.request, this.response, });
 
 factory AccountCallCallEvent.fromJson(Map<String, dynamic> json) { return AccountCallCallEvent(
   request: json['request'],

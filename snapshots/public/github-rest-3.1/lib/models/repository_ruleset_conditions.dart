@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_ruleset_conditions_ref_name.dart';/// Parameters for a repository ruleset ref name condition
-final class RepositoryRulesetConditions {const RepositoryRulesetConditions({this.refName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_conditions_ref_name.dart';/// Parameters for a repository ruleset ref name condition
+@immutable final class RepositoryRulesetConditions {const RepositoryRulesetConditions({this.refName});
 
 factory RepositoryRulesetConditions.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditions(
   refName: json['ref_name'] != null ? RepositoryRulesetConditionsRefName.fromJson(json['ref_name'] as Map<String, dynamic>) : null,

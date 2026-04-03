@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BotnetThreatFeedGetDayReportResponseResult {const BotnetThreatFeedGetDayReportResponseResult({this.cidr, this.date, this.offenseCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotnetThreatFeedGetDayReportResponseResult {const BotnetThreatFeedGetDayReportResponseResult({this.cidr, this.date, this.offenseCount, });
 
 factory BotnetThreatFeedGetDayReportResponseResult.fromJson(Map<String, dynamic> json) { return BotnetThreatFeedGetDayReportResponseResult(
   cidr: json['cidr'] as String?,

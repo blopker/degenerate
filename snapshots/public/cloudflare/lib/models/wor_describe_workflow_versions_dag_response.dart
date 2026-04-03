@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_versions_dag_response_errors.dart';import 'wor_describe_workflow_versions_dag_response_messages.dart';import 'wor_describe_workflow_versions_dag_response_result.dart';import 'wor_describe_workflow_versions_dag_response_result_info.dart';final class WorDescribeWorkflowVersionsDagResponse {const WorDescribeWorkflowVersionsDagResponse({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_versions_dag_response_errors.dart';import 'wor_describe_workflow_versions_dag_response_messages.dart';import 'wor_describe_workflow_versions_dag_response_result.dart';import 'wor_describe_workflow_versions_dag_response_result_info.dart';@immutable final class WorDescribeWorkflowVersionsDagResponse {const WorDescribeWorkflowVersionsDagResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory WorDescribeWorkflowVersionsDagResponse.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowVersionsDagResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsDagResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),

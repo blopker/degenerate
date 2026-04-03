@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-final class MessageDeltaContentImageUrlObjectImageUrlDetail {const MessageDeltaContentImageUrlObjectImageUrlDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
+@immutable final class MessageDeltaContentImageUrlObjectImageUrlDetail {const MessageDeltaContentImageUrlObjectImageUrlDetail._(this.value);
 
 factory MessageDeltaContentImageUrlObjectImageUrlDetail.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageDeltaContentImageUrlObjectImageUrlDetail($value)'; } 
  }
-final class MessageDeltaContentImageUrlObjectImageUrl {const MessageDeltaContentImageUrlObjectImageUrl({this.url, this.detail = MessageDeltaContentImageUrlObjectImageUrlDetail.auto, });
+@immutable final class MessageDeltaContentImageUrlObjectImageUrl {const MessageDeltaContentImageUrlObjectImageUrl({this.url, this.detail = MessageDeltaContentImageUrlObjectImageUrlDetail.auto, });
 
 factory MessageDeltaContentImageUrlObjectImageUrl.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageUrlObjectImageUrl(
   url: json['url'] as String?,

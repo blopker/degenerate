@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_messages2.dart';final class ResponseCommonFailure47 {const ResponseCommonFailure47({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_messages2.dart';@immutable final class ResponseCommonFailure47 {const ResponseCommonFailure47({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure47.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure47(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicTransitMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAsBotnetThreatFeedResponseResultMeta {const RadarGetAsBotnetThreatFeedResponseResultMeta({this.compareDate, required this.date, required this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsBotnetThreatFeedResponseResultMeta {const RadarGetAsBotnetThreatFeedResponseResultMeta({required this.date, required this.total, this.compareDate, });
 
 factory RadarGetAsBotnetThreatFeedResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAsBotnetThreatFeedResponseResultMeta(
   compareDate: json['compareDate'] as String?,

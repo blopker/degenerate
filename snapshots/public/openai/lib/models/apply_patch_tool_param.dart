@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Allows the assistant to create, delete, or update files using unified diffs.
-final class ApplyPatchToolParam {const ApplyPatchToolParam({this.type = 'apply_patch'});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allows the assistant to create, delete, or update files using unified diffs.
+@immutable final class ApplyPatchToolParam {const ApplyPatchToolParam({this.type = 'apply_patch'});
 
 factory ApplyPatchToolParam.fromJson(Map<String, dynamic> json) { return ApplyPatchToolParam(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The TCP connection method to use for the health check.
-final class HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TCP connection method to use for the health check.
+@immutable final class HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod._(this.value);
 
 factory HealthchecksTcpConfigMethod.fromJson(String json) { return switch (json) {
   'connection_established' => connectionEstablished,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'HealthchecksTcpConfigMethod($value)'; } 
  }
 /// Parameters specific to TCP health check.
-final class HealthchecksTcpConfig {const HealthchecksTcpConfig({this.method = HealthchecksTcpConfigMethod.connectionEstablished, this.port = 80, });
+@immutable final class HealthchecksTcpConfig {const HealthchecksTcpConfig({this.method = HealthchecksTcpConfigMethod.connectionEstablished, this.port = 80, });
 
 factory HealthchecksTcpConfig.fromJson(Map<String, dynamic> json) { return HealthchecksTcpConfig(
   method: json.containsKey('method') ? HealthchecksTcpConfigMethod.fromJson(json['method'] as String) : HealthchecksTcpConfigMethod.connectionEstablished,

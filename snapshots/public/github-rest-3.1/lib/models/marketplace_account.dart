@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MarketplaceAccount {const MarketplaceAccount({required this.url, required this.id, required this.type, this.nodeId, required this.login, this.email, this.organizationBillingEmail, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceAccount {const MarketplaceAccount({required this.url, required this.id, required this.type, required this.login, this.nodeId, this.email, this.organizationBillingEmail, });
 
 factory MarketplaceAccount.fromJson(Map<String, dynamic> json) { return MarketplaceAccount(
   url: Uri.parse(json['url'] as String),

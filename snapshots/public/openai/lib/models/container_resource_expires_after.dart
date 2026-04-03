@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reference point for the expiration.
-final class ContainerResourceExpiresAfterAnchor {const ContainerResourceExpiresAfterAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reference point for the expiration.
+@immutable final class ContainerResourceExpiresAfterAnchor {const ContainerResourceExpiresAfterAnchor._(this.value);
 
 factory ContainerResourceExpiresAfterAnchor.fromJson(String json) { return switch (json) {
   'last_active_at' => lastActiveAt,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The anchor is the reference point for the expiration.
 /// The minutes is the number of minutes after the anchor before the container expires.
 /// 
-final class ContainerResourceExpiresAfter {const ContainerResourceExpiresAfter({this.anchor, this.minutes, });
+@immutable final class ContainerResourceExpiresAfter {const ContainerResourceExpiresAfter({this.anchor, this.minutes, });
 
 factory ContainerResourceExpiresAfter.fromJson(Map<String, dynamic> json) { return ContainerResourceExpiresAfter(
   anchor: json['anchor'] != null ? ContainerResourceExpiresAfterAnchor.fromJson(json['anchor'] as String) : null,

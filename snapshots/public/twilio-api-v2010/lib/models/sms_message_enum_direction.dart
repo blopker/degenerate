@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SmsMessageEnumDirection {const SmsMessageEnumDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmsMessageEnumDirection {const SmsMessageEnumDirection._(this.value);
 
 factory SmsMessageEnumDirection.fromJson(String json) { return switch (json) {
   'inbound' => inbound,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0({required this.$1HourTo3Hours, required this.$10MinsTo20Mins, required this.$20MinsTo40Mins, required this.$40MinsTo1Hour, required this.over3Hours, required this.under10Mins, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0({required this.$1HourTo3Hours, required this.$10MinsTo20Mins, required this.$20MinsTo40Mins, required this.$40MinsTo1Hour, required this.over3Hours, required this.under10Mins, });
 
 factory RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0(
   $1HourTo3Hours: json['_1_HOUR_TO_3_HOURS'] as String,

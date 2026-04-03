@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringIpInfoLocation {const DigitalExperienceMonitoringIpInfoLocation({this.city, this.countryIso, this.stateIso, this.zip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringIpInfoLocation {const DigitalExperienceMonitoringIpInfoLocation({this.city, this.countryIso, this.stateIso, this.zip, });
 
 factory DigitalExperienceMonitoringIpInfoLocation.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringIpInfoLocation(
   city: json['city'] as String?,

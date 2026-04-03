@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'resource_quota_spec.dart';import 'resource_quota_status.dart';/// ResourceQuota sets aggregate quota restrictions enforced per namespace
-final class ResourceQuota {const ResourceQuota({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'resource_quota_spec.dart';import 'resource_quota_status.dart';/// ResourceQuota sets aggregate quota restrictions enforced per namespace
+@immutable final class ResourceQuota {const ResourceQuota({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory ResourceQuota.fromJson(Map<String, dynamic> json) { return ResourceQuota(
   apiVersion: json['apiVersion'] as String?,

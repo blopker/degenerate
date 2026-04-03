@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'recipient_shipping_with_optional_fields_address_address.dart';import 'recipient_shipping_with_optional_fields_address_phone.dart';final class RecipientShippingWithOptionalFieldsAddress {const RecipientShippingWithOptionalFieldsAddress({required this.address, required this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'recipient_shipping_with_optional_fields_address_address.dart';import 'recipient_shipping_with_optional_fields_address_phone.dart';@immutable final class RecipientShippingWithOptionalFieldsAddress {const RecipientShippingWithOptionalFieldsAddress({required this.address, required this.name, this.phone, });
 
 factory RecipientShippingWithOptionalFieldsAddress.fromJson(Map<String, dynamic> json) { return RecipientShippingWithOptionalFieldsAddress(
   address: RecipientShippingWithOptionalFieldsAddressAddress.fromJson(json['address'] as Map<String, dynamic>),

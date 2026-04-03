@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';import 'label.dart';import 'simple_user.dart';final class IssuesEvent {const IssuesEvent({required this.action, required this.issue, this.assignee, this.assignees, this.label, this.labels, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';import 'label.dart';import 'simple_user.dart';@immutable final class IssuesEvent {const IssuesEvent({required this.action, required this.issue, this.assignee, this.assignees, this.label, this.labels, });
 
 factory IssuesEvent.fromJson(Map<String, dynamic> json) { return IssuesEvent(
   action: json['action'] as String,

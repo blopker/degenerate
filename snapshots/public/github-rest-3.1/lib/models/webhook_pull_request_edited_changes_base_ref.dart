@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestEditedChangesBaseRef {const WebhookPullRequestEditedChangesBaseRef({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestEditedChangesBaseRef {const WebhookPullRequestEditedChangesBaseRef({required this.from});
 
 factory WebhookPullRequestEditedChangesBaseRef.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEditedChangesBaseRef(
   from: json['from'] as String,

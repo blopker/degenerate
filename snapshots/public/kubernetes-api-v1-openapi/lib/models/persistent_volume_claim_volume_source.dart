@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// PersistentVolumeClaimVolumeSource references the user's PVC in the same namespace. This volume finds the bound PV and mounts that volume for the pod. A PersistentVolumeClaimVolumeSource is, essentially, a wrapper around another type of volume that is owned by someone else (the system).
-final class PersistentVolumeClaimVolumeSource {const PersistentVolumeClaimVolumeSource({this.claimName = '', this.readOnly, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// PersistentVolumeClaimVolumeSource references the user's PVC in the same namespace. This volume finds the bound PV and mounts that volume for the pod. A PersistentVolumeClaimVolumeSource is, essentially, a wrapper around another type of volume that is owned by someone else (the system).
+@immutable final class PersistentVolumeClaimVolumeSource {const PersistentVolumeClaimVolumeSource({this.claimName = '', this.readOnly, });
 
 factory PersistentVolumeClaimVolumeSource.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimVolumeSource(
   claimName: json['claimName'] as String,

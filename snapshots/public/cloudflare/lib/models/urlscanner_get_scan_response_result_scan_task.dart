@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_task_errors.dart';import 'urlscanner_get_scan_response_result_scan_task_scanned_from.dart';final class UrlscannerGetScanResponseResultScanTaskClientType {const UrlscannerGetScanResponseResultScanTaskClientType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_task_errors.dart';import 'urlscanner_get_scan_response_result_scan_task_scanned_from.dart';@immutable final class UrlscannerGetScanResponseResultScanTaskClientType {const UrlscannerGetScanResponseResultScanTaskClientType._(this.value);
 
 factory UrlscannerGetScanResponseResultScanTaskClientType.fromJson(String json) { return switch (json) {
   'Site' => site,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerGetScanResponseResultScanTaskClientType($value)'; } 
  }
-final class UrlscannerGetScanResponseResultScanTaskStatus {const UrlscannerGetScanResponseResultScanTaskStatus._(this.value);
+@immutable final class UrlscannerGetScanResponseResultScanTaskStatus {const UrlscannerGetScanResponseResultScanTaskStatus._(this.value);
 
 factory UrlscannerGetScanResponseResultScanTaskStatus.fromJson(String json) { return switch (json) {
   'Queued' => queued,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerGetScanResponseResultScanTaskStatus($value)'; } 
  }
-final class UrlscannerGetScanResponseResultScanTaskVisibility {const UrlscannerGetScanResponseResultScanTaskVisibility._(this.value);
+@immutable final class UrlscannerGetScanResponseResultScanTaskVisibility {const UrlscannerGetScanResponseResultScanTaskVisibility._(this.value);
 
 factory UrlscannerGetScanResponseResultScanTaskVisibility.fromJson(String json) { return switch (json) {
   'Public' => public,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerGetScanResponseResultScanTaskVisibility($value)'; } 
  }
-final class UrlscannerGetScanResponseResultScanTask {const UrlscannerGetScanResponseResultScanTask({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
+@immutable final class UrlscannerGetScanResponseResultScanTask {const UrlscannerGetScanResponseResultScanTask({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanTask(
   clientLocation: json['clientLocation'] as String,

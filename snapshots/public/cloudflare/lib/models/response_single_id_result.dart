@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_purge_identifier.dart';final class ResponseSingleIdResult {const ResponseSingleIdResult({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_purge_identifier.dart';@immutable final class ResponseSingleIdResult {const ResponseSingleIdResult({required this.id});
 
 factory ResponseSingleIdResult.fromJson(Map<String, dynamic> json) { return ResponseSingleIdResult(
   id: CachePurgeIdentifier.fromJson(json['id'] as String),

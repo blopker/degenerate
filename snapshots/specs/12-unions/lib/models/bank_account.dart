@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BankAccount {const BankAccount({required this.routingNumber, required this.accountNumber, this.accountHolderName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BankAccount {const BankAccount({required this.routingNumber, required this.accountNumber, this.accountHolderName, });
 
 factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   routingNumber: json['routingNumber'] as String,

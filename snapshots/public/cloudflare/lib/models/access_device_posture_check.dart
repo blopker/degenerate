@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessDevicePostureCheck {const AccessDevicePostureCheck({this.exists, this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessDevicePostureCheck {const AccessDevicePostureCheck({this.exists, this.path, });
 
 factory AccessDevicePostureCheck.fromJson(Map<String, dynamic> json) { return AccessDevicePostureCheck(
   exists: json['exists'] as bool?,

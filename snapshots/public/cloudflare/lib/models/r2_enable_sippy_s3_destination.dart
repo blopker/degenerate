@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2EnableSippyS3DestinationProvider {const R2EnableSippyS3DestinationProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyS3DestinationProvider {const R2EnableSippyS3DestinationProvider._(this.value);
 
 factory R2EnableSippyS3DestinationProvider.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2EnableSippyS3DestinationProvider($value)'; } 
  }
 /// R2 bucket to copy objects to.
-final class R2EnableSippyS3Destination {const R2EnableSippyS3Destination({this.accessKeyId, this.provider, this.secretAccessKey, });
+@immutable final class R2EnableSippyS3Destination {const R2EnableSippyS3Destination({this.accessKeyId, this.provider, this.secretAccessKey, });
 
 factory R2EnableSippyS3Destination.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3Destination(
   accessKeyId: json['accessKeyId'] as String?,

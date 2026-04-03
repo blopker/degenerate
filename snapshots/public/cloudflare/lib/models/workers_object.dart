@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObject {const WorkersObject({this.hasStoredData, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObject {const WorkersObject({this.hasStoredData, this.id, });
 
 factory WorkersObject.fromJson(Map<String, dynamic> json) { return WorkersObject(
   hasStoredData: json['hasStoredData'] as bool?,

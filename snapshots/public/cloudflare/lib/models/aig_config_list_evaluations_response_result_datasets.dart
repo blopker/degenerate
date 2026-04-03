@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_evaluations_response_result_datasets_filters.dart';final class AigConfigListEvaluationsResponseResultDatasets {const AigConfigListEvaluationsResponseResultDatasets({required this.accountId, required this.accountTag, required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_evaluations_response_result_datasets_filters.dart';@immutable final class AigConfigListEvaluationsResponseResultDatasets {const AigConfigListEvaluationsResponseResultDatasets({required this.accountId, required this.accountTag, required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
 
 factory AigConfigListEvaluationsResponseResultDatasets.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluationsResponseResultDatasets(
   accountId: json['account_id'] as String,

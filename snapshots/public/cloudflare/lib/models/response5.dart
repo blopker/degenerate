@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response5_matches.dart';final class Response5 {const Response5({this.count, this.matches, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response5_matches.dart';@immutable final class Response5 {const Response5({this.count, this.matches, });
 
 factory Response5.fromJson(Map<String, dynamic> json) { return Response5(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

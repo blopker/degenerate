@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the tool, i.e. `function`.
-final class RealtimeBetaResponseCreateParamsToolsType {const RealtimeBetaResponseCreateParamsToolsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the tool, i.e. `function`.
+@immutable final class RealtimeBetaResponseCreateParamsToolsType {const RealtimeBetaResponseCreateParamsToolsType._(this.value);
 
 factory RealtimeBetaResponseCreateParamsToolsType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeBetaResponseCreateParamsToolsType($value)'; } 
  }
-final class RealtimeBetaResponseCreateParamsTools {const RealtimeBetaResponseCreateParamsTools({this.type, this.name, this.description, this.parameters, });
+@immutable final class RealtimeBetaResponseCreateParamsTools {const RealtimeBetaResponseCreateParamsTools({this.type, this.name, this.description, this.parameters, });
 
 factory RealtimeBetaResponseCreateParamsTools.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParamsTools(
   type: json['type'] != null ? RealtimeBetaResponseCreateParamsToolsType.fromJson(json['type'] as String) : null,

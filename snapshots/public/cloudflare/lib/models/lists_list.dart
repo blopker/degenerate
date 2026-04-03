@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_created_on.dart';import 'lists_description.dart';import 'lists_kind.dart';import 'lists_list_id.dart';import 'lists_modified_on.dart';import 'lists_name.dart';/// The number of items in the list.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_created_on.dart';import 'lists_description.dart';import 'lists_kind.dart';import 'lists_list_id.dart';import 'lists_modified_on.dart';import 'lists_name.dart';/// The number of items in the list.
 extension type const ListsNumItems(double value) {
 factory ListsNumItems.fromJson(num json) => ListsNumItems(json.toDouble());
 
@@ -14,7 +14,7 @@ factory ListsNumReferencingFilters.fromJson(num json) => ListsNumReferencingFilt
 num toJson() => value;
 
 }
-final class ListsList {const ListsList({required this.createdOn, this.description, required this.id, required this.kind, required this.modifiedOn, required this.name, required this.numItems, required this.numReferencingFilters, });
+@immutable final class ListsList {const ListsList({required this.createdOn, required this.id, required this.kind, required this.modifiedOn, required this.name, required this.numItems, required this.numReferencingFilters, this.description, });
 
 factory ListsList.fromJson(Map<String, dynamic> json) { return ListsList(
   createdOn: ListsCreatedOn.fromJson(json['created_on'] as String),

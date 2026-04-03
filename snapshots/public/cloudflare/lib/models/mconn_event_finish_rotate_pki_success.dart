@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Finished PKI rotation
-final class MconnEventFinishRotatePkiSuccessK {const MconnEventFinishRotatePkiSuccessK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished PKI rotation
+@immutable final class MconnEventFinishRotatePkiSuccessK {const MconnEventFinishRotatePkiSuccessK._(this.value);
 
 factory MconnEventFinishRotatePkiSuccessK.fromJson(String json) { return switch (json) {
   'FinishRotatePkiSuccess' => finishRotatePkiSuccess,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventFinishRotatePkiSuccessK($value)'; } 
  }
-final class MconnEventFinishRotatePkiSuccess {const MconnEventFinishRotatePkiSuccess({required this.k});
+@immutable final class MconnEventFinishRotatePkiSuccess {const MconnEventFinishRotatePkiSuccess({required this.k});
 
 factory MconnEventFinishRotatePkiSuccess.fromJson(Map<String, dynamic> json) { return MconnEventFinishRotatePkiSuccess(
   k: MconnEventFinishRotatePkiSuccessK.fromJson(json['k'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Base timestamp used to calculate expiration. Currently fixed to `created_at`.
-final class ExpiresAfterParamAnchor {const ExpiresAfterParamAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Base timestamp used to calculate expiration. Currently fixed to `created_at`.
+@immutable final class ExpiresAfterParamAnchor {const ExpiresAfterParamAnchor._(this.value);
 
 factory ExpiresAfterParamAnchor.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ExpiresAfterParamAnchor($value)'; } 
  }
 /// Controls when the session expires relative to an anchor timestamp.
-final class ExpiresAfterParam {const ExpiresAfterParam({this.anchor = ExpiresAfterParamAnchor.createdAt, required this.seconds, });
+@immutable final class ExpiresAfterParam {const ExpiresAfterParam({required this.seconds, this.anchor = ExpiresAfterParamAnchor.createdAt, });
 
 factory ExpiresAfterParam.fromJson(Map<String, dynamic> json) { return ExpiresAfterParam(
   anchor: ExpiresAfterParamAnchor.fromJson(json['anchor'] as String),

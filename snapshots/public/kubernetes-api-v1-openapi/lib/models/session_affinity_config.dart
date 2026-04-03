@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'client_ip_config.dart';/// SessionAffinityConfig represents the configurations of session affinity.
-final class SessionAffinityConfig {const SessionAffinityConfig({this.clientIp});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_ip_config.dart';/// SessionAffinityConfig represents the configurations of session affinity.
+@immutable final class SessionAffinityConfig {const SessionAffinityConfig({this.clientIp});
 
 factory SessionAffinityConfig.fromJson(Map<String, dynamic> json) { return SessionAffinityConfig(
   clientIp: json['clientIP'] != null ? ClientIpConfig.fromJson(json['clientIP'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm_discounts.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm_items.dart';final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm({this.discounts, required this.items, required this.subscription, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm_discounts.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm_items.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm({required this.items, required this.subscription, this.discounts, });
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm(
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts.fromJson(e as Map<String, dynamic>)).toList(),

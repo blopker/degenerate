@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsOxxo {const PaymentMethodDetailsOxxo({this.number});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsOxxo {const PaymentMethodDetailsOxxo({this.number});
 
 factory PaymentMethodDetailsOxxo.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsOxxo(
   number: json['number'] as String?,

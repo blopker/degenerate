@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
-final class Preconditions {const Preconditions({this.resourceVersion, this.uid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
+@immutable final class Preconditions {const Preconditions({this.resourceVersion, this.uid, });
 
 factory Preconditions.fromJson(Map<String, dynamic> json) { return Preconditions(
   resourceVersion: json['resourceVersion'] as String?,

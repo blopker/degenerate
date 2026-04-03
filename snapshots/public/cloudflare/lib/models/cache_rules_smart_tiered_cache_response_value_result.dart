@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Smart Tiered Cache zone setting.
-final class CacheRulesSmartTieredCacheValue {const CacheRulesSmartTieredCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Smart Tiered Cache zone setting.
+@immutable final class CacheRulesSmartTieredCacheValue {const CacheRulesSmartTieredCacheValue._(this.value);
 
 factory CacheRulesSmartTieredCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheRulesSmartTieredCacheValue($value)'; } 
  }
-final class CacheRulesSmartTieredCacheResponseValueResult {const CacheRulesSmartTieredCacheResponseValueResult({required this.value});
+@immutable final class CacheRulesSmartTieredCacheResponseValueResult {const CacheRulesSmartTieredCacheResponseValueResult({required this.value});
 
 factory CacheRulesSmartTieredCacheResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCacheResponseValueResult(
   value: CacheRulesSmartTieredCacheValue.fromJson(json['value'] as String),

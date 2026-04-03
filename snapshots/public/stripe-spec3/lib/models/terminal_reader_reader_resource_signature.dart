@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about a signature being collected using a reader
-final class TerminalReaderReaderResourceSignature {const TerminalReaderReaderResourceSignature({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about a signature being collected using a reader
+@immutable final class TerminalReaderReaderResourceSignature {const TerminalReaderReaderResourceSignature({this.value});
 
 factory TerminalReaderReaderResourceSignature.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSignature(
   value: json['value'] as String?,

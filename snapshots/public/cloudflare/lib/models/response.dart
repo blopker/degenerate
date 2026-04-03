@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_pagination_info.dart';import 'response_errors2.dart';final class Response {const Response({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_pagination_info.dart';import 'response_errors2.dart';@immutable final class Response {const Response({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors2.fromJson(e as Map<String, dynamic>)).toList(),

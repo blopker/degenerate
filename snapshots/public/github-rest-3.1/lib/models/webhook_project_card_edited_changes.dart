@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_project_card_edited_changes_note.dart';final class WebhookProjectCardEditedChanges {const WebhookProjectCardEditedChanges({required this.note});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_project_card_edited_changes_note.dart';@immutable final class WebhookProjectCardEditedChanges {const WebhookProjectCardEditedChanges({required this.note});
 
 factory WebhookProjectCardEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectCardEditedChanges(
   note: WebhookProjectCardEditedChangesNote.fromJson(json['note'] as Map<String, dynamic>),

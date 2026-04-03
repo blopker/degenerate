@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'campaign_state.dart';final class CampaignsUpdateCampaignRequest {const CampaignsUpdateCampaignRequest({this.name, this.description, this.managers, this.teamManagers, this.endsAt, this.contactLink, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'campaign_state.dart';@immutable final class CampaignsUpdateCampaignRequest {const CampaignsUpdateCampaignRequest({this.name, this.description, this.managers, this.teamManagers, this.endsAt, this.contactLink, this.state, });
 
 factory CampaignsUpdateCampaignRequest.fromJson(Map<String, dynamic> json) { return CampaignsUpdateCampaignRequest(
   name: json['name'] as String?,

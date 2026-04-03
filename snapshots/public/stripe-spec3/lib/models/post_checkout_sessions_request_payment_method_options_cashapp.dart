@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCashapp {const PostCheckoutSessionsRequestPaymentMethodOptionsCashapp({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCashapp {const PostCheckoutSessionsRequestPaymentMethodOptionsCashapp({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCashapp.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCashapp(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod.fromJson(json['capture_method'] as String) : null,

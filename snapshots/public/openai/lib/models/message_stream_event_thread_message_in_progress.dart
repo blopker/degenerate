@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_object.dart';final class MessageStreamEventThreadMessageInProgressEvent {const MessageStreamEventThreadMessageInProgressEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';@immutable final class MessageStreamEventThreadMessageInProgressEvent {const MessageStreamEventThreadMessageInProgressEvent._(this.value);
 
 factory MessageStreamEventThreadMessageInProgressEvent.fromJson(String json) { return switch (json) {
   'thread.message.in_progress' => threadMessageInProgress,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageStreamEventThreadMessageInProgressEvent($value)'; } 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
-final class MessageStreamEventThreadMessageInProgress {const MessageStreamEventThreadMessageInProgress({required this.event, required this.data, });
+@immutable final class MessageStreamEventThreadMessageInProgress {const MessageStreamEventThreadMessageInProgress({required this.event, required this.data, });
 
 factory MessageStreamEventThreadMessageInProgress.fromJson(Map<String, dynamic> json) { return MessageStreamEventThreadMessageInProgress(
   event: MessageStreamEventThreadMessageInProgressEvent.fromJson(json['event'] as String),

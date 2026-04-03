@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryDataLatest {const RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryDataLatest({required this.count, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryDataLatest {const RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryDataLatest({required this.count, required this.timestamp, });
 
 factory RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryDataLatest.fromJson(Map<String, dynamic> json) { return RadarGetBgpIpsTimeseriesResponseResultMetaDelayCountryDataLatest(
   count: (json['count'] as num).toDouble(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of supported action.
-final class EmailRuleActionType {const EmailRuleActionType._(this.value);
+@immutable final class EmailRuleActionType {const EmailRuleActionType._(this.value);
 
 factory EmailRuleActionType.fromJson(String json) { return switch (json) {
   'drop' => drop,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EmailRuleActionType($value)'; } 
  }
 /// Actions pattern.
-final class EmailRuleAction {const EmailRuleAction({required this.type, this.value, });
+@immutable final class EmailRuleAction {const EmailRuleAction({required this.type, this.value, });
 
 factory EmailRuleAction.fromJson(Map<String, dynamic> json) { return EmailRuleAction(
   type: EmailRuleActionType.fromJson(json['type'] as String),

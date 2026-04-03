@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of data source. Always `logs`.
-final class CreateEvalLogsDataSourceConfigType {const CreateEvalLogsDataSourceConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `logs`.
+@immutable final class CreateEvalLogsDataSourceConfigType {const CreateEvalLogsDataSourceConfigType._(this.value);
 
 factory CreateEvalLogsDataSourceConfigType.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A data source config which specifies the metadata property of your logs query.
 /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
 /// 
-final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig({this.type = CreateEvalLogsDataSourceConfigType.logs, this.metadata, });
+@immutable final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig({this.type = CreateEvalLogsDataSourceConfigType.logs, this.metadata, });
 
 factory CreateEvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalLogsDataSourceConfig(
   type: CreateEvalLogsDataSourceConfigType.fromJson(json['type'] as String),

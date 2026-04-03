@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_fetch_dataset_response_result.dart';final class AigConfigFetchDatasetResponse {const AigConfigFetchDatasetResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_dataset_response_result.dart';@immutable final class AigConfigFetchDatasetResponse {const AigConfigFetchDatasetResponse({required this.result, required this.success, });
 
 factory AigConfigFetchDatasetResponse.fromJson(Map<String, dynamic> json) { return AigConfigFetchDatasetResponse(
   result: AigConfigFetchDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),

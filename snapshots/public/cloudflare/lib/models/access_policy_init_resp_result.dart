@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_policy_test_id.dart';/// The status of the policy test request.
-final class AccessStatus {const AccessStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policy_test_id.dart';/// The status of the policy test request.
+@immutable final class AccessStatus {const AccessStatus._(this.value);
 
 factory AccessStatus.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessStatus($value)'; } 
  }
-final class AccessPolicyInitRespResult {const AccessPolicyInitRespResult({this.id, this.status, });
+@immutable final class AccessPolicyInitRespResult {const AccessPolicyInitRespResult({this.id, this.status, });
 
 factory AccessPolicyInitRespResult.fromJson(Map<String, dynamic> json) { return AccessPolicyInitRespResult(
   id: json['id'] != null ? AccessPolicyTestId.fromJson(json['id'] as String) : null,

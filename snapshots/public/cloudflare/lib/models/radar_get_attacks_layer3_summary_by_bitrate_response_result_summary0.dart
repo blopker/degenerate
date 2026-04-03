@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, });
 
 factory RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
   $1GbpsTo10Gbps: json['_1_GBPS_TO_10_GBPS'] as String,

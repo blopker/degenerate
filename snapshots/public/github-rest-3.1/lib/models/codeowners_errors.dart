@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codeowners_errors_errors.dart';/// A list of errors found in a repo's CODEOWNERS file
-final class CodeownersErrors {const CodeownersErrors({required this.errors});
+@immutable final class CodeownersErrors {const CodeownersErrors({required this.errors});
 
 factory CodeownersErrors.fromJson(Map<String, dynamic> json) { return CodeownersErrors(
   errors: (json['errors'] as List<dynamic>).map((e) => CodeownersErrorsErrors.fromJson(e as Map<String, dynamic>)).toList(),

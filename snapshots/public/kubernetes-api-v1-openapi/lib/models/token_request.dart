@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'token_request_spec.dart';import 'token_request_status.dart';/// TokenRequest requests a token for a given service account.
-final class TokenRequest {const TokenRequest({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'token_request_spec.dart';import 'token_request_status.dart';/// TokenRequest requests a token for a given service account.
+@immutable final class TokenRequest {const TokenRequest({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory TokenRequest.fromJson(Map<String, dynamic> json) { return TokenRequest(
   apiVersion: json['apiVersion'] as String?,

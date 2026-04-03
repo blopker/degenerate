@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a Persistent Disk resource in Google Compute Engine.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Persistent Disk resource in Google Compute Engine.
 /// 
 /// A GCE PD must exist before mounting to a container. The disk must also be in the same GCE project and zone as the kubelet. A GCE PD can only be mounted as read/write once or read-only many times. GCE PDs support ownership management and SELinux relabeling.
-final class GcePersistentDiskVolumeSource {const GcePersistentDiskVolumeSource({this.fsType, this.partition, this.pdName = '', this.readOnly, });
+@immutable final class GcePersistentDiskVolumeSource {const GcePersistentDiskVolumeSource({this.fsType, this.partition, this.pdName = '', this.readOnly, });
 
 factory GcePersistentDiskVolumeSource.fromJson(Map<String, dynamic> json) { return GcePersistentDiskVolumeSource(
   fsType: json['fsType'] as String?,

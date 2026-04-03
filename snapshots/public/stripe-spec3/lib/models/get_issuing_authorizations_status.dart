@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingAuthorizationsStatus {const GetIssuingAuthorizationsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingAuthorizationsStatus {const GetIssuingAuthorizationsStatus._(this.value);
 
 factory GetIssuingAuthorizationsStatus.fromJson(String json) { return switch (json) {
   'closed' => closed,

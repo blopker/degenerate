@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Turn off [Zaraz](https://developers.cloudflare.com/zaraz/).
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off [Zaraz](https://developers.cloudflare.com/zaraz/).
 /// 
-final class ZonesDisableZarazId {const ZonesDisableZarazId._(this.value);
+@immutable final class ZonesDisableZarazId {const ZonesDisableZarazId._(this.value);
 
 factory ZonesDisableZarazId.fromJson(String json) { return switch (json) {
   'disable_zaraz' => disableZaraz,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesDisableZarazId($value)'; } 
  }
-final class ZonesDisableZaraz {const ZonesDisableZaraz({this.id});
+@immutable final class ZonesDisableZaraz {const ZonesDisableZaraz({this.id});
 
 factory ZonesDisableZaraz.fromJson(Map<String, dynamic> json) { return ZonesDisableZaraz(
   id: json['id'] != null ? ZonesDisableZarazId.fromJson(json['id'] as String) : null,

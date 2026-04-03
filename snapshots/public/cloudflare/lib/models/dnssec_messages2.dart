@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dnssec_messages2_source.dart';final class DnssecMessages2 {const DnssecMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_messages2_source.dart';@immutable final class DnssecMessages2 {const DnssecMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DnssecMessages2.fromJson(Map<String, dynamic> json) { return DnssecMessages2(
   code: (json['code'] as num).toInt(),

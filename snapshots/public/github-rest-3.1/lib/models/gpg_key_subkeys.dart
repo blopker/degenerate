@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gpg_key_subkeys_emails.dart';final class GpgKeySubkeys {const GpgKeySubkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt, this.rawKey, this.revoked, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gpg_key_subkeys_emails.dart';@immutable final class GpgKeySubkeys {const GpgKeySubkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt, this.rawKey, this.revoked, });
 
 factory GpgKeySubkeys.fromJson(Map<String, dynamic> json) { return GpgKeySubkeys(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

@@ -1,48 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../apis/meta_api.dart';
-import '../apis/security_advisories_api.dart';
-import '../apis/apps_api.dart';
-import '../apis/classroom_api.dart';
-import '../apis/codes_of_conduct_api.dart';
-import '../apis/credentials_api.dart';
-import '../apis/emojis_api.dart';
 import '../apis/actions_api.dart';
+import '../apis/activity_api.dart';
+import '../apis/apps_api.dart';
+import '../apis/billing_api.dart';
+import '../apis/campaigns_api.dart';
+import '../apis/checks_api.dart';
+import '../apis/classroom_api.dart';
+import '../apis/code_scanning_api.dart';
 import '../apis/code_security_api.dart';
+import '../apis/codes_of_conduct_api.dart';
+import '../apis/codespaces_api.dart';
+import '../apis/copilot_api.dart';
+import '../apis/credentials_api.dart';
 import '../apis/dependabot_api.dart';
-import '../apis/enterprise_teams_api.dart';
+import '../apis/dependency_graph_api.dart';
+import '../apis/emojis_api.dart';
 import '../apis/enterprise_team_memberships_api.dart';
 import '../apis/enterprise_team_organizations_api.dart';
-import '../apis/activity_api.dart';
+import '../apis/enterprise_teams_api.dart';
 import '../apis/gists_api.dart';
+import '../apis/git_api.dart';
 import '../apis/gitignore_api.dart';
+import '../apis/hosted_compute_api.dart';
+import '../apis/interactions_api.dart';
 import '../apis/issues_api.dart';
 import '../apis/licenses_api.dart';
 import '../apis/markdown_api.dart';
-import '../apis/orgs_api.dart';
-import '../apis/billing_api.dart';
-import '../apis/oidc_api.dart';
-import '../apis/campaigns_api.dart';
-import '../apis/code_scanning_api.dart';
-import '../apis/codespaces_api.dart';
-import '../apis/copilot_api.dart';
-import '../apis/packages_api.dart';
-import '../apis/interactions_api.dart';
+import '../apis/meta_api.dart';
 import '../apis/migrations_api.dart';
+import '../apis/oidc_api.dart';
+import '../apis/orgs_api.dart';
+import '../apis/packages_api.dart';
 import '../apis/private_registries_api.dart';
 import '../apis/projects_api.dart';
-import '../apis/repos_api.dart';
-import '../apis/secret_scanning_api.dart';
-import '../apis/hosted_compute_api.dart';
-import '../apis/teams_api.dart';
-import '../apis/rate_limit_api.dart';
-import '../apis/checks_api.dart';
-import '../apis/reactions_api.dart';
-import '../apis/dependency_graph_api.dart';
-import '../apis/git_api.dart';
 import '../apis/pulls_api.dart';
+import '../apis/rate_limit_api.dart';
+import '../apis/reactions_api.dart';
+import '../apis/repos_api.dart';
 import '../apis/search_api.dart';
+import '../apis/secret_scanning_api.dart';
+import '../apis/security_advisories_api.dart';
+import '../apis/teams_api.dart';
 import '../apis/users_api.dart';
 
 /// Root SDK client providing access to all API groups.
@@ -52,11 +52,11 @@ import '../apis/users_api.dart';
 /// sdk.meta.metaRoot();
 /// ```
 final class PubGithubRest31Api {
+  PubGithubRest31Api(this._config);
+
   static const defaultBaseUrl = 'https://api.github.com';
 
   final ApiConfig _config;
-
-  PubGithubRest31Api(this._config);
 
   late final MetaApi meta = MetaApi(_config);
   late final SecurityAdvisoriesApi securityAdvisories = SecurityAdvisoriesApi(_config);

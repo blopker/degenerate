@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostEventMoveToNewDsRequest {const PostEventMoveToNewDsRequest({required this.destDatasetId, this.eventIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventMoveToNewDsRequest {const PostEventMoveToNewDsRequest({required this.destDatasetId, this.eventIds, });
 
 factory PostEventMoveToNewDsRequest.fromJson(Map<String, dynamic> json) { return PostEventMoveToNewDsRequest(
   destDatasetId: json['destDatasetId'] as String,

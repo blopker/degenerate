@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamsResponseResultInfo {const StreamsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamsResponseResultInfo {const StreamsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
 factory StreamsResponseResultInfo.fromJson(Map<String, dynamic> json) { return StreamsResponseResultInfo(
   count: (json['count'] as num).toDouble(),

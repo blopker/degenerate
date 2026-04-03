@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTcpResetsTimeoutsSummaryResponseResultMetaUnits {const RadarGetTcpResetsTimeoutsSummaryResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponseResultMetaUnits {const RadarGetTcpResetsTimeoutsSummaryResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetTcpResetsTimeoutsSummaryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsSummaryResponseResultMetaUnits(
   name: json['name'] as String,

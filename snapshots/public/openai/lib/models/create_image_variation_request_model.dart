@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateImageVariationRequestModelVariant2 {const CreateImageVariationRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateImageVariationRequestModelVariant2 {const CreateImageVariationRequestModelVariant2._(this.value);
 
 factory CreateImageVariationRequestModelVariant2.fromJson(String json) { return switch (json) {
   'dall-e-2' => dallE2,

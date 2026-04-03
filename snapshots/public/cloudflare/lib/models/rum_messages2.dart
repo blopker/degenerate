@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RumMessages2 {const RumMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumMessages2 {const RumMessages2({required this.code, required this.message, });
 
 factory RumMessages2.fromJson(Map<String, dynamic> json) { return RumMessages2(
   code: (json['code'] as num).toInt(),

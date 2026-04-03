@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'service_account.dart';/// ServiceAccountList is a list of ServiceAccount objects
-final class ServiceAccountList {const ServiceAccountList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class ServiceAccountList {const ServiceAccountList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ServiceAccountList.fromJson(Map<String, dynamic> json) { return ServiceAccountList(
   apiVersion: json['apiVersion'] as String?,

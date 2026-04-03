@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_link.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class FileLinksObject {const FileLinksObject._(this.value);
+@immutable final class FileLinksObject {const FileLinksObject._(this.value);
 
 factory FileLinksObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileLinksObject($value)'; } 
  }
 /// A list of [file links](https://api.stripe.com#file_links) that point at this file.
-final class FileLinks {const FileLinks({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class FileLinks {const FileLinks({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory FileLinks.fromJson(Map<String, dynamic> json) { return FileLinks(
   data: (json['data'] as List<dynamic>).map((e) => FileLink.fromJson(e as Map<String, dynamic>)).toList(),

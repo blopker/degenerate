@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'balance_amount_by_source_type.dart';/// 
-final class BalanceNetAvailable {const BalanceNetAvailable({required this.amount, required this.destination, this.sourceTypes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount_by_source_type.dart';/// 
+@immutable final class BalanceNetAvailable {const BalanceNetAvailable({required this.amount, required this.destination, this.sourceTypes, });
 
 factory BalanceNetAvailable.fromJson(Map<String, dynamic> json) { return BalanceNetAvailable(
   amount: (json['amount'] as num).toInt(),

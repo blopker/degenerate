@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_tests_response_tests_http_results.dart';import 'digital_experience_monitoring_tests_response_tests_http_results_by_colo.dart';import 'digital_experience_monitoring_tests_response_tests_target_policies.dart';import 'digital_experience_monitoring_tests_response_tests_traceroute_results.dart';import 'digital_experience_monitoring_tests_response_tests_traceroute_results_by_colo.dart';import 'digital_experience_monitoring_uuid.dart';/// test type, http or traceroute
-final class DigitalExperienceMonitoringTestsResponseTestsKind {const DigitalExperienceMonitoringTestsResponseTestsKind._(this.value);
+@immutable final class DigitalExperienceMonitoringTestsResponseTestsKind {const DigitalExperienceMonitoringTestsResponseTestsKind._(this.value);
 
 factory DigitalExperienceMonitoringTestsResponseTestsKind.fromJson(String json) { return switch (json) {
   'http' => http,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DigitalExperienceMonitoringTestsResponseTestsKind($value)'; } 
  }
-final class DigitalExperienceMonitoringTestsResponseTests {const DigitalExperienceMonitoringTestsResponseTests({required this.created, required this.description, required this.enabled, required this.host, this.httpResults, this.httpResultsByColo, required this.id, required this.interval, required this.kind, this.method, required this.name, this.targetPolicies, this.targeted, this.tracerouteResults, this.tracerouteResultsByColo, required this.updated, });
+@immutable final class DigitalExperienceMonitoringTestsResponseTests {const DigitalExperienceMonitoringTestsResponseTests({required this.created, required this.description, required this.enabled, required this.host, required this.id, required this.interval, required this.kind, required this.name, required this.updated, this.httpResults, this.httpResultsByColo, this.method, this.targetPolicies, this.targeted, this.tracerouteResults, this.tracerouteResultsByColo, });
 
 factory DigitalExperienceMonitoringTestsResponseTests.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponseTests(
   created: json['created'] as String,

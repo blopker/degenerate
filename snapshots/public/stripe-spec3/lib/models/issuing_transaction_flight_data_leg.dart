@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionFlightDataLeg {const IssuingTransactionFlightDataLeg({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionFlightDataLeg {const IssuingTransactionFlightDataLeg({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
 
 factory IssuingTransactionFlightDataLeg.fromJson(Map<String, dynamic> json) { return IssuingTransactionFlightDataLeg(
   arrivalAirportCode: json['arrival_airport_code'] as String?,

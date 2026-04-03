@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestLabels {const WebhookPullRequestAutoMergeDisabledPullRequestLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestAutoMergeDisabledPullRequestLabels {const WebhookPullRequestAutoMergeDisabledPullRequestLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
 
 factory WebhookPullRequestAutoMergeDisabledPullRequestLabels.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequestLabels(
   color: json['color'] as String,

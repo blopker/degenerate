@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodBlik {const PaymentMethodBlik();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodBlik {const PaymentMethodBlik();
 
 factory PaymentMethodBlik.fromJson(Map<String, dynamic> json) { return PaymentMethodBlik(
 

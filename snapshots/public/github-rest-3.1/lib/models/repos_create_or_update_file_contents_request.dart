@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_create_or_update_file_contents_request_author.dart';import 'repos_create_or_update_file_contents_request_committer.dart';final class ReposCreateOrUpdateFileContentsRequest {const ReposCreateOrUpdateFileContentsRequest({required this.message, required this.content, this.sha, this.branch, this.committer, this.author, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_or_update_file_contents_request_author.dart';import 'repos_create_or_update_file_contents_request_committer.dart';@immutable final class ReposCreateOrUpdateFileContentsRequest {const ReposCreateOrUpdateFileContentsRequest({required this.message, required this.content, this.sha, this.branch, this.committer, this.author, });
 
 factory ReposCreateOrUpdateFileContentsRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateFileContentsRequest(
   message: json['message'] as String,

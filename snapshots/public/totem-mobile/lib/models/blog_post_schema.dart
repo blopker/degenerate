@@ -1,13 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'public_user_schema.dart';
 
+@immutable
 final class BlogPostSchema {
   const BlogPostSchema({
+    required this.title,
     this.author,
     this.headerImageUrl,
     this.contentHtml,
-    required this.title,
     this.subtitle,
     this.datePublished,
     this.slug,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_tags_components_schemas_name.dart';final class AccessTagsCreateTagRequest {const AccessTagsCreateTagRequest({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tags_components_schemas_name.dart';@immutable final class AccessTagsCreateTagRequest {const AccessTagsCreateTagRequest({this.name});
 
 factory AccessTagsCreateTagRequest.fromJson(Map<String, dynamic> json) { return AccessTagsCreateTagRequest(
   name: json['name'] != null ? AccessTagsComponentsSchemasName.fromJson(json['name'] as String) : null,

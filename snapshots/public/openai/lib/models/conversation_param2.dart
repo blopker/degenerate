@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The conversation that this response belongs to.
-final class ConversationParam2 {const ConversationParam2({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation that this response belongs to.
+@immutable final class ConversationParam2 {const ConversationParam2({required this.id});
 
 factory ConversationParam2.fromJson(Map<String, dynamic> json) { return ConversationParam2(
   id: json['id'] as String,

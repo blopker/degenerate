@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalSubscriptionUpdateProductAdjustableQuantity {const PortalSubscriptionUpdateProductAdjustableQuantity({required this.enabled, this.maximum, required this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalSubscriptionUpdateProductAdjustableQuantity {const PortalSubscriptionUpdateProductAdjustableQuantity({required this.enabled, required this.minimum, this.maximum, });
 
 factory PortalSubscriptionUpdateProductAdjustableQuantity.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdateProductAdjustableQuantity(
   enabled: json['enabled'] as bool,

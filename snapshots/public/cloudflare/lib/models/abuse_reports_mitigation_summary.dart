@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A summary of the mitigations related to this report.
-final class AbuseReportsMitigationSummary {const AbuseReportsMitigationSummary({required this.acceptedUrlCount, required this.activeCount, required this.externalHostNotified, required this.inReviewCount, required this.pendingCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A summary of the mitigations related to this report.
+@immutable final class AbuseReportsMitigationSummary {const AbuseReportsMitigationSummary({required this.acceptedUrlCount, required this.activeCount, required this.externalHostNotified, required this.inReviewCount, required this.pendingCount, });
 
 factory AbuseReportsMitigationSummary.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationSummary(
   acceptedUrlCount: (json['accepted_url_count'] as num).toInt(),

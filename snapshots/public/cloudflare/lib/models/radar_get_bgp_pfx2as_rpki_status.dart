@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Return only results with matching rpki status: valid, invalid or unknown.
-final class RadarGetBgpPfx2asRpkiStatus {const RadarGetBgpPfx2asRpkiStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Return only results with matching rpki status: valid, invalid or unknown.
+@immutable final class RadarGetBgpPfx2asRpkiStatus {const RadarGetBgpPfx2asRpkiStatus._(this.value);
 
 factory RadarGetBgpPfx2asRpkiStatus.fromJson(String json) { return switch (json) {
   'VALID' => valid,

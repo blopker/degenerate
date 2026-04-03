@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookWorkflowRunCompletedWorkflowRunPullRequestsHeadRepo {const WebhookWorkflowRunCompletedWorkflowRunPullRequestsHeadRepo({required this.id, required this.name, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookWorkflowRunCompletedWorkflowRunPullRequestsHeadRepo {const WebhookWorkflowRunCompletedWorkflowRunPullRequestsHeadRepo({required this.id, required this.name, required this.url, });
 
 factory WebhookWorkflowRunCompletedWorkflowRunPullRequestsHeadRepo.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunCompletedWorkflowRunPullRequestsHeadRepo(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetAsnsAsSetResponseResultAsSets {const RadarGetAsnsAsSetResponseResultAsSets({required this.asMembersCount, required this.asSetMembersCount, required this.asSetUpstreamsCount, required this.asnConeSize, this.hierarchicalAsn, this.inferredAsn, required this.irrSources, required this.name, this.peeringdbAsn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsnsAsSetResponseResultAsSets {const RadarGetAsnsAsSetResponseResultAsSets({required this.asMembersCount, required this.asSetMembersCount, required this.asSetUpstreamsCount, required this.asnConeSize, required this.irrSources, required this.name, this.hierarchicalAsn, this.inferredAsn, this.peeringdbAsn, });
 
 factory RadarGetAsnsAsSetResponseResultAsSets.fromJson(Map<String, dynamic> json) { return RadarGetAsnsAsSetResponseResultAsSets(
   asMembersCount: (json['as_members_count'] as num).toInt(),

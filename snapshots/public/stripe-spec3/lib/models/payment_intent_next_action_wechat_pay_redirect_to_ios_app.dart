@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionWechatPayRedirectToIosApp {const PaymentIntentNextActionWechatPayRedirectToIosApp({required this.nativeUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionWechatPayRedirectToIosApp {const PaymentIntentNextActionWechatPayRedirectToIosApp({required this.nativeUrl});
 
 factory PaymentIntentNextActionWechatPayRedirectToIosApp.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionWechatPayRedirectToIosApp(
   nativeUrl: json['native_url'] as String,

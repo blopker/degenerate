@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_cache_key_fields_value_cookie.dart';import 'zones_cache_key_fields_value_header.dart';import 'zones_cache_key_fields_value_host.dart';import 'zones_cache_key_fields_value_query_string.dart';import 'zones_cache_key_fields_value_user.dart';final class ZonesCacheKeyFieldsValue {const ZonesCacheKeyFieldsValue({this.cookie, this.header, this.host, this.queryString, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_key_fields_value_cookie.dart';import 'zones_cache_key_fields_value_header.dart';import 'zones_cache_key_fields_value_host.dart';import 'zones_cache_key_fields_value_query_string.dart';import 'zones_cache_key_fields_value_user.dart';@immutable final class ZonesCacheKeyFieldsValue {const ZonesCacheKeyFieldsValue({this.cookie, this.header, this.host, this.queryString, this.user, });
 
 factory ZonesCacheKeyFieldsValue.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValue(
   cookie: json['cookie'] != null ? ZonesCacheKeyFieldsValueCookie.fromJson(json['cookie'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request_certificates.dart';final class CustomSslForAZoneRePrioritizeSslCertificatesRequest {const CustomSslForAZoneRePrioritizeSslCertificatesRequest({required this.certificates});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request_certificates.dart';@immutable final class CustomSslForAZoneRePrioritizeSslCertificatesRequest {const CustomSslForAZoneRePrioritizeSslCertificatesRequest({required this.certificates});
 
 factory CustomSslForAZoneRePrioritizeSslCertificatesRequest.fromJson(Map<String, dynamic> json) { return CustomSslForAZoneRePrioritizeSslCertificatesRequest(
   certificates: (json['certificates'] as List<dynamic>).map((e) => CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates.fromJson(e as Map<String, dynamic>)).toList(),

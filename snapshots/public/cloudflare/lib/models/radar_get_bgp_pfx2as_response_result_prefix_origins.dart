@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpPfx2asResponseResultPrefixOrigins {const RadarGetBgpPfx2asResponseResultPrefixOrigins({required this.origin, required this.peerCount, required this.prefix, required this.rpkiValidation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpPfx2asResponseResultPrefixOrigins {const RadarGetBgpPfx2asResponseResultPrefixOrigins({required this.origin, required this.peerCount, required this.prefix, required this.rpkiValidation, });
 
 factory RadarGetBgpPfx2asResponseResultPrefixOrigins.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asResponseResultPrefixOrigins(
   origin: (json['origin'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath(
   bucket: json['bucket'] as String,

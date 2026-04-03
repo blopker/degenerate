@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a 'discussion_comment' secret scanning location type. This location type shows that a secret was detected in a comment on a discussion.
-final class SecretScanningLocationDiscussionComment {const SecretScanningLocationDiscussionComment({required this.discussionCommentUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'discussion_comment' secret scanning location type. This location type shows that a secret was detected in a comment on a discussion.
+@immutable final class SecretScanningLocationDiscussionComment {const SecretScanningLocationDiscussionComment({required this.discussionCommentUrl});
 
 factory SecretScanningLocationDiscussionComment.fromJson(Map<String, dynamic> json) { return SecretScanningLocationDiscussionComment(
   discussionCommentUrl: Uri.parse(json['discussion_comment_url'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address5.dart';import 'post_payment_methods_request_billing_details_address.dart';import 'post_payment_methods_request_billing_details_email.dart';import 'post_payment_methods_request_billing_details_name.dart';import 'post_payment_methods_request_billing_details_phone.dart';/// Billing information associated with the PaymentMethod that may be used or required by particular types of payment methods.
-final class PostPaymentMethodsRequestBillingDetails {const PostPaymentMethodsRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
+@immutable final class PostPaymentMethodsRequestBillingDetails {const PostPaymentMethodsRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostPaymentMethodsRequestBillingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBillingDetails(
   address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => BillingDetailsAddress5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentMethodsRequestBillingDetailsAddressVariant2.fromJson(v as String),) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// This is typed as an enum for consistency with `requirements.disabled_reason`, but it safe to assume `future_requirements.disabled_reason` is null because fields in `future_requirements` will never disable the account.
-final class AccountCapabilityFutureRequirementsDisabledReason {const AccountCapabilityFutureRequirementsDisabledReason._(this.value);
+@immutable final class AccountCapabilityFutureRequirementsDisabledReason {const AccountCapabilityFutureRequirementsDisabledReason._(this.value);
 
 factory AccountCapabilityFutureRequirementsDisabledReason.fromJson(String json) { return switch (json) {
   'other' => $other,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilityFutureRequirementsDisabledReason($value)'; } 
  }
 /// 
-final class AccountCapabilityFutureRequirements {const AccountCapabilityFutureRequirements({this.alternatives, this.currentDeadline, required this.currentlyDue, this.disabledReason, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, });
+@immutable final class AccountCapabilityFutureRequirements {const AccountCapabilityFutureRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives, this.currentDeadline, this.disabledReason, });
 
 factory AccountCapabilityFutureRequirements.fromJson(Map<String, dynamic> json) { return AccountCapabilityFutureRequirements(
   alternatives: (json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList(),

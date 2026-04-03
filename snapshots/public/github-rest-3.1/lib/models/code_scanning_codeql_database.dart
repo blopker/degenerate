@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// A CodeQL database.
-final class CodeScanningCodeqlDatabase {const CodeScanningCodeqlDatabase({required this.id, required this.name, required this.language, required this.uploader, required this.contentType, required this.size, required this.createdAt, required this.updatedAt, required this.url, this.commitOid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// A CodeQL database.
+@immutable final class CodeScanningCodeqlDatabase {const CodeScanningCodeqlDatabase({required this.id, required this.name, required this.language, required this.uploader, required this.contentType, required this.size, required this.createdAt, required this.updatedAt, required this.url, this.commitOid, });
 
 factory CodeScanningCodeqlDatabase.fromJson(Map<String, dynamic> json) { return CodeScanningCodeqlDatabase(
   id: (json['id'] as num).toInt(),

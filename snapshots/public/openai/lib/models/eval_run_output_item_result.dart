@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A single grader result for an evaluation run output item.
 /// 
-final class EvalRunOutputItemResult {const EvalRunOutputItemResult({required this.name, this.type, required this.score, required this.passed, this.sample, this.additionalProperties = const {}, });
+@immutable final class EvalRunOutputItemResult {const EvalRunOutputItemResult({required this.name, required this.score, required this.passed, this.type, this.sample, this.additionalProperties = const {}, });
 
 factory EvalRunOutputItemResult.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemResult(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_messages2.dart';import 'zones_zone.dart';final class Zones0PatchResponse {const Zones0PatchResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_messages2.dart';import 'zones_zone.dart';@immutable final class Zones0PatchResponse {const Zones0PatchResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory Zones0PatchResponse.fromJson(Map<String, dynamic> json) { return Zones0PatchResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

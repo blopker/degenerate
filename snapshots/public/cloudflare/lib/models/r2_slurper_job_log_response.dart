@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SlurperJobLogResponseLogType {const R2SlurperJobLogResponseLogType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJobLogResponseLogType {const R2SlurperJobLogResponseLogType._(this.value);
 
 factory R2SlurperJobLogResponseLogType.fromJson(String json) { return switch (json) {
   'migrationStart' => migrationStart,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperJobLogResponseLogType($value)'; } 
  }
-final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message, this.objectKey, });
+@immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message, this.objectKey, });
 
 factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobLogResponse(
   createdAt: json['createdAt'] as String?,

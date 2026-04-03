@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityMoveResponseItem {const EmailSecurityMoveResponseItem({required this.completedTimestamp, this.destination, required this.itemCount, this.messageId, this.operation, this.recipient, this.status, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMoveResponseItem {const EmailSecurityMoveResponseItem({required this.completedTimestamp, required this.itemCount, required this.success, this.destination, this.messageId, this.operation, this.recipient, this.status, });
 
 factory EmailSecurityMoveResponseItem.fromJson(Map<String, dynamic> json) { return EmailSecurityMoveResponseItem(
   completedTimestamp: DateTime.parse(json['completed_timestamp'] as String),

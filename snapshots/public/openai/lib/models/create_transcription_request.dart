@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_transcription_request_chunking_strategy.dart';import 'create_transcription_request_model.dart';import 'vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
 /// 
-final class AudioResponseFormat {const AudioResponseFormat._(this.value);
+@immutable final class AudioResponseFormat {const AudioResponseFormat._(this.value);
 
 factory AudioResponseFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AudioResponseFormat($value)'; } 
  }
-final class TranscriptionInclude {const TranscriptionInclude._(this.value);
+@immutable final class TranscriptionInclude {const TranscriptionInclude._(this.value);
 
 factory TranscriptionInclude.fromJson(String json) { return switch (json) {
   'logprobs' => logprobs,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TranscriptionInclude($value)'; } 
  }
-final class CreateTranscriptionRequestTimestampGranularities {const CreateTranscriptionRequestTimestampGranularities._(this.value);
+@immutable final class CreateTranscriptionRequestTimestampGranularities {const CreateTranscriptionRequestTimestampGranularities._(this.value);
 
 factory CreateTranscriptionRequestTimestampGranularities.fromJson(String json) { return switch (json) {
   'word' => word,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateTranscriptionRequestTimestampGranularities($value)'; } 
  }
-final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream, this.chunkingStrategy, this.knownSpeakerNames, this.knownSpeakerReferences, });
+@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream, this.chunkingStrategy, this.knownSpeakerNames, this.knownSpeakerReferences, });
 
 factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateTranscriptionRequest(
   file: base64Decode(json['file'] as String),

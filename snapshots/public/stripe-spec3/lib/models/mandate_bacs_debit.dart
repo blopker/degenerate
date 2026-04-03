@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the mandate on the Bacs network. Can be one of `pending`, `revoked`, `refused`, or `accepted`.
-final class MandateBacsDebitNetworkStatus {const MandateBacsDebitNetworkStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the mandate on the Bacs network. Can be one of `pending`, `revoked`, `refused`, or `accepted`.
+@immutable final class MandateBacsDebitNetworkStatus {const MandateBacsDebitNetworkStatus._(this.value);
 
 factory MandateBacsDebitNetworkStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateBacsDebitNetworkStatus($value)'; } 
  }
 /// When the mandate is revoked on the Bacs network this field displays the reason for the revocation.
-final class MandateBacsDebitRevocationReason {const MandateBacsDebitRevocationReason._(this.value);
+@immutable final class MandateBacsDebitRevocationReason {const MandateBacsDebitRevocationReason._(this.value);
 
 factory MandateBacsDebitRevocationReason.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateBacsDebitRevocationReason($value)'; } 
  }
 /// 
-final class MandateBacsDebit {const MandateBacsDebit({this.displayName, required this.networkStatus, required this.reference, this.revocationReason, this.serviceUserNumber, required this.url, });
+@immutable final class MandateBacsDebit {const MandateBacsDebit({required this.networkStatus, required this.reference, required this.url, this.displayName, this.revocationReason, this.serviceUserNumber, });
 
 factory MandateBacsDebit.fromJson(Map<String, dynamic> json) { return MandateBacsDebit(
   displayName: json['display_name'] as String?,

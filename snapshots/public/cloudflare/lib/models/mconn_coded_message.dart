@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnCodedMessage {const MconnCodedMessage({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnCodedMessage {const MconnCodedMessage({required this.code, required this.message, });
 
 factory MconnCodedMessage.fromJson(Map<String, dynamic> json) { return MconnCodedMessage(
   code: (json['code'] as num).toDouble(),

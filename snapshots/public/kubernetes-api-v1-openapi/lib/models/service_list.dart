@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'service.dart';/// ServiceList holds a list of services.
-final class ServiceList {const ServiceList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class ServiceList {const ServiceList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ServiceList.fromJson(Map<String, dynamic> json) { return ServiceList(
   apiVersion: json['apiVersion'] as String?,

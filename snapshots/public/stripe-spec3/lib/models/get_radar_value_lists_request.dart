@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetRadarValueListsRequest {const GetRadarValueListsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRadarValueListsRequest {const GetRadarValueListsRequest();
 
 factory GetRadarValueListsRequest.fromJson(Map<String, dynamic> json) { return GetRadarValueListsRequest(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingTransactionsTransactionRequest {const GetIssuingTransactionsTransactionRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingTransactionsTransactionRequest {const GetIssuingTransactionsTransactionRequest();
 
 factory GetIssuingTransactionsTransactionRequest.fromJson(Map<String, dynamic> json) { return GetIssuingTransactionsTransactionRequest(
 

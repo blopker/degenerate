@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_page_rule.dart';final class PageRulesCreateAPageRuleResponse {const PageRulesCreateAPageRuleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_page_rule.dart';@immutable final class PageRulesCreateAPageRuleResponse {const PageRulesCreateAPageRuleResponse({this.result});
 
 factory PageRulesCreateAPageRuleResponse.fromJson(Map<String, dynamic> json) { return PageRulesCreateAPageRuleResponse(
   result: json['result'] != null ? ZonesPageRule.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'io_k8s_apimachinery_pkg_util_intstr_int_or_string.dart';/// ServicePort contains information on service's port.
-final class ServicePort {const ServicePort({this.appProtocol, this.name, this.nodePort, this.port = 0, this.protocol = 'TCP', this.targetPort, });
+@immutable final class ServicePort {const ServicePort({this.appProtocol, this.name, this.nodePort, this.port = 0, this.protocol = 'TCP', this.targetPort, });
 
 factory ServicePort.fromJson(Map<String, dynamic> json) { return ServicePort(
   appProtocol: json['appProtocol'] as String?,

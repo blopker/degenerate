@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A phase to skip the execution of. This option is only compatible with the products option.
-final class RulesetsSkipPhase {const RulesetsSkipPhase._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A phase to skip the execution of. This option is only compatible with the products option.
+@immutable final class RulesetsSkipPhase {const RulesetsSkipPhase._(this.value);
 
 factory RulesetsSkipPhase.fromJson(String json) { return switch (json) {
   'current' => current,

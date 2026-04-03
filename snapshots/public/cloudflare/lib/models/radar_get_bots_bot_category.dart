@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by bot category.
-final class RadarGetBotsBotCategory {const RadarGetBotsBotCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot category.
+@immutable final class RadarGetBotsBotCategory {const RadarGetBotsBotCategory._(this.value);
 
 factory RadarGetBotsBotCategory.fromJson(String json) { return switch (json) {
   'SEARCH_ENGINE_CRAWLER' => searchEngineCrawler,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteRadarValueListItemsItemRequest {const DeleteRadarValueListItemsItemRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteRadarValueListItemsItemRequest {const DeleteRadarValueListItemsItemRequest();
 
 factory DeleteRadarValueListItemsItemRequest.fromJson(Map<String, dynamic> json) { return DeleteRadarValueListItemsItemRequest(
 

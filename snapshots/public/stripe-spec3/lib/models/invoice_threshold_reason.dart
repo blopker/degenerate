@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_item_threshold_reason.dart';/// 
-final class InvoiceThresholdReason {const InvoiceThresholdReason({this.amountGte, required this.itemReasons, });
+@immutable final class InvoiceThresholdReason {const InvoiceThresholdReason({required this.itemReasons, this.amountGte, });
 
 factory InvoiceThresholdReason.fromJson(Map<String, dynamic> json) { return InvoiceThresholdReason(
   amountGte: json['amount_gte'] != null ? (json['amount_gte'] as num).toInt() : null,

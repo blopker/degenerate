@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ClientIPConfig represents the configurations of Client IP based session affinity.
-final class ClientIpConfig {const ClientIpConfig({this.timeoutSeconds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ClientIPConfig represents the configurations of Client IP based session affinity.
+@immutable final class ClientIpConfig {const ClientIpConfig({this.timeoutSeconds});
 
 factory ClientIpConfig.fromJson(Map<String, dynamic> json) { return ClientIpConfig(
   timeoutSeconds: json['timeoutSeconds'] != null ? (json['timeoutSeconds'] as num).toInt() : null,

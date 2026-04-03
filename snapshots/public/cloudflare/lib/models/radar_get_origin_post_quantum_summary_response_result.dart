@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_origin_post_quantum_summary_response_result_meta.dart';final class RadarGetOriginPostQuantumSummaryResponseResult {const RadarGetOriginPostQuantumSummaryResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_post_quantum_summary_response_result_meta.dart';@immutable final class RadarGetOriginPostQuantumSummaryResponseResult {const RadarGetOriginPostQuantumSummaryResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetOriginPostQuantumSummaryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumSummaryResponseResult(
   meta: RadarGetOriginPostQuantumSummaryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

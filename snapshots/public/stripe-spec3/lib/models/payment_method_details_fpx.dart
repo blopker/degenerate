@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The customer's bank. Can be one of `affin_bank`, `agrobank`, `alliance_bank`, `ambank`, `bank_islam`, `bank_muamalat`, `bank_rakyat`, `bsn`, `cimb`, `hong_leong_bank`, `hsbc`, `kfh`, `maybank2u`, `ocbc`, `public_bank`, `rhb`, `standard_chartered`, `uob`, `deutsche_bank`, `maybank2e`, `pb_enterprise`, or `bank_of_china`.
-final class PaymentMethodDetailsFpxBank {const PaymentMethodDetailsFpxBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank. Can be one of `affin_bank`, `agrobank`, `alliance_bank`, `ambank`, `bank_islam`, `bank_muamalat`, `bank_rakyat`, `bsn`, `cimb`, `hong_leong_bank`, `hsbc`, `kfh`, `maybank2u`, `ocbc`, `public_bank`, `rhb`, `standard_chartered`, `uob`, `deutsche_bank`, `maybank2e`, `pb_enterprise`, or `bank_of_china`.
+@immutable final class PaymentMethodDetailsFpxBank {const PaymentMethodDetailsFpxBank._(this.value);
 
 factory PaymentMethodDetailsFpxBank.fromJson(String json) { return switch (json) {
   'affin_bank' => affinBank,
@@ -86,7 +86,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsFpxBank($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsFpx {const PaymentMethodDetailsFpx({required this.bank, this.transactionId, });
+@immutable final class PaymentMethodDetailsFpx {const PaymentMethodDetailsFpx({required this.bank, this.transactionId, });
 
 factory PaymentMethodDetailsFpx.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsFpx(
   bank: PaymentMethodDetailsFpxBank.fromJson(json['bank'] as String),

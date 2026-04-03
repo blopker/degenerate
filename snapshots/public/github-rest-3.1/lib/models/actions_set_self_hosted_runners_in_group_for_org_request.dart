@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsSetSelfHostedRunnersInGroupForOrgRequest {const ActionsSetSelfHostedRunnersInGroupForOrgRequest({required this.runners});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetSelfHostedRunnersInGroupForOrgRequest {const ActionsSetSelfHostedRunnersInGroupForOrgRequest({required this.runners});
 
 factory ActionsSetSelfHostedRunnersInGroupForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsSetSelfHostedRunnersInGroupForOrgRequest(
   runners: (json['runners'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

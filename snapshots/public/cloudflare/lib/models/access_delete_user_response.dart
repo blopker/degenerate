@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessDeleteUserResponse {const AccessDeleteUserResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessDeleteUserResponse {const AccessDeleteUserResponse({this.result});
 
 factory AccessDeleteUserResponse.fromJson(Map<String, dynamic> json) { return AccessDeleteUserResponse(
   result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

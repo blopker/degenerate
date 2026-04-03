@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_ip_profile_enabled.dart';import 'teams_devices_ip_profile_match.dart';import 'teams_devices_ip_profile_name.dart';import 'teams_devices_ip_profile_precedence.dart';import 'teams_devices_ip_profile_subnet_id.dart';final class TeamsDevicesIpProfileUpdateRequest {const TeamsDevicesIpProfileUpdateRequest({this.description, this.enabled, this.match, this.name, this.precedence, this.subnetId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_ip_profile_enabled.dart';import 'teams_devices_ip_profile_match.dart';import 'teams_devices_ip_profile_name.dart';import 'teams_devices_ip_profile_precedence.dart';import 'teams_devices_ip_profile_subnet_id.dart';@immutable final class TeamsDevicesIpProfileUpdateRequest {const TeamsDevicesIpProfileUpdateRequest({this.description, this.enabled, this.match, this.name, this.precedence, this.subnetId, });
 
 factory TeamsDevicesIpProfileUpdateRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesIpProfileUpdateRequest(
   description: json['description'] as String?,

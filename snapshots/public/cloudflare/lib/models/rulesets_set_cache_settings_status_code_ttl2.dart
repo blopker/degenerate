@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_set_cache_settings_status_code_ttl2_status_code_range.dart';final class RulesetsSetCacheSettingsStatusCodeTtl2 {const RulesetsSetCacheSettingsStatusCodeTtl2({this.statusCode, this.statusCodeRange, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_status_code_ttl2_status_code_range.dart';@immutable final class RulesetsSetCacheSettingsStatusCodeTtl2 {const RulesetsSetCacheSettingsStatusCodeTtl2({required this.value, this.statusCode, this.statusCodeRange, });
 
 factory RulesetsSetCacheSettingsStatusCodeTtl2.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsStatusCodeTtl2(
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,

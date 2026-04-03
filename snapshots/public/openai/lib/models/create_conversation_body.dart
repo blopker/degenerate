@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_item.dart';final class CreateConversationBody {const CreateConversationBody({this.metadata, this.items, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_item.dart';@immutable final class CreateConversationBody {const CreateConversationBody({this.metadata, this.items, });
 
 factory CreateConversationBody.fromJson(Map<String, dynamic> json) { return CreateConversationBody(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

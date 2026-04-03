@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingCardsRequest {const GetIssuingCardsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingCardsRequest {const GetIssuingCardsRequest();
 
 factory GetIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return GetIssuingCardsRequest(
 

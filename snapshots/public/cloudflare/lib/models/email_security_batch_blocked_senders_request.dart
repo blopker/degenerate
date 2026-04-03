@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_blocked_senders_request_deletes.dart';import 'email_security_batch_blocked_senders_request_patches.dart';import 'email_security_batch_blocked_senders_request_puts.dart';import 'email_security_create_blocked_sender.dart';final class EmailSecurityBatchBlockedSendersRequest {const EmailSecurityBatchBlockedSendersRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_blocked_senders_request_deletes.dart';import 'email_security_batch_blocked_senders_request_patches.dart';import 'email_security_batch_blocked_senders_request_puts.dart';import 'email_security_create_blocked_sender.dart';@immutable final class EmailSecurityBatchBlockedSendersRequest {const EmailSecurityBatchBlockedSendersRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
 factory EmailSecurityBatchBlockedSendersRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchBlockedSendersRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingCardholdersStatus {const GetIssuingCardholdersStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingCardholdersStatus {const GetIssuingCardholdersStatus._(this.value);
 
 factory GetIssuingCardholdersStatus.fromJson(String json) { return switch (json) {
   'active' => active,

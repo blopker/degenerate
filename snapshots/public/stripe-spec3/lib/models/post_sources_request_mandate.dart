@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate_acceptance.dart';import 'post_sources_request_mandate_amount.dart';final class PostSourcesRequestMandateInterval {const PostSourcesRequestMandateInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate_acceptance.dart';import 'post_sources_request_mandate_amount.dart';@immutable final class PostSourcesRequestMandateInterval {const PostSourcesRequestMandateInterval._(this.value);
 
 factory PostSourcesRequestMandateInterval.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesRequestMandateInterval($value)'; } 
  }
-final class PostSourcesRequestMandateNotificationMethod {const PostSourcesRequestMandateNotificationMethod._(this.value);
+@immutable final class PostSourcesRequestMandateNotificationMethod {const PostSourcesRequestMandateNotificationMethod._(this.value);
 
 factory PostSourcesRequestMandateNotificationMethod.fromJson(String json) { return switch (json) {
   'deprecated_none' => deprecatedNone,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSourcesRequestMandateNotificationMethod($value)'; } 
  }
 /// Information about a mandate possibility attached to a source object (generally for bank debits) as well as its acceptance status.
-final class PostSourcesRequestMandate {const PostSourcesRequestMandate({this.acceptance, this.amount, this.currency, this.interval, this.notificationMethod, });
+@immutable final class PostSourcesRequestMandate {const PostSourcesRequestMandate({this.acceptance, this.amount, this.currency, this.interval, this.notificationMethod, });
 
 factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandate(
   acceptance: json['acceptance'] != null ? PostSourcesRequestMandateAcceptance.fromJson(json['acceptance'] as Map<String, dynamic>) : null,

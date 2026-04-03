@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodConfigBizPaymentMethodConfigurationDetails {const PaymentMethodConfigBizPaymentMethodConfigurationDetails({required this.id, this.parent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodConfigBizPaymentMethodConfigurationDetails {const PaymentMethodConfigBizPaymentMethodConfigurationDetails({required this.id, this.parent, });
 
 factory PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(Map<String, dynamic> json) { return PaymentMethodConfigBizPaymentMethodConfigurationDetails(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vector_store_expiration_after.dart';import 'vector_store_object_file_counts.dart';/// The object type, which is always `vector_store`.
-final class VectorStoreObjectObject {const VectorStoreObjectObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_expiration_after.dart';import 'vector_store_object_file_counts.dart';/// The object type, which is always `vector_store`.
+@immutable final class VectorStoreObjectObject {const VectorStoreObjectObject._(this.value);
 
 factory VectorStoreObjectObject.fromJson(String json) { return switch (json) {
   'vector_store' => vectorStore,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreObjectObject($value)'; } 
  }
 /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
-final class VectorStoreObjectStatus {const VectorStoreObjectStatus._(this.value);
+@immutable final class VectorStoreObjectStatus {const VectorStoreObjectStatus._(this.value);
 
 factory VectorStoreObjectStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreObjectStatus($value)'; } 
  }
 /// A vector store is a collection of processed files can be used by the `file_search` tool.
-final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, this.expiresAfter, this.expiresAt, required this.lastActiveAt, required this.metadata, });
+@immutable final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, required this.lastActiveAt, required this.metadata, this.expiresAfter, this.expiresAt, });
 
 factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorStoreObject(
   id: json['id'] as String,

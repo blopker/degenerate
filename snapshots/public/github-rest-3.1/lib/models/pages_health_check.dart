@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_health_check_alt_domain.dart';import 'pages_health_check_domain.dart';/// Pages Health Check Status
-final class PagesHealthCheck {const PagesHealthCheck({this.domain, this.altDomain, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_health_check_alt_domain.dart';import 'pages_health_check_domain.dart';/// Pages Health Check Status
+@immutable final class PagesHealthCheck {const PagesHealthCheck({this.domain, this.altDomain, });
 
 factory PagesHealthCheck.fromJson(Map<String, dynamic> json) { return PagesHealthCheck(
   domain: json['domain'] != null ? PagesHealthCheckDomain.fromJson(json['domain'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_messages2.dart';final class ResponseCommon34 {const ResponseCommon34({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_messages2.dart';@immutable final class ResponseCommon34 {const ResponseCommon34({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon34.fromJson(Map<String, dynamic> json) { return ResponseCommon34(
   errors: (json['errors'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),

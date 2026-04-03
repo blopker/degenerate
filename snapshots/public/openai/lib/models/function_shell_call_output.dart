@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_content.dart';final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_content.dart';@immutable final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
 
 factory LocalShellCallOutputStatusEnum.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LocalShellCallOutputStatusEnum($value)'; } 
  }
 /// The output of a shell tool call that was emitted.
-final class FunctionShellCallOutput {const FunctionShellCallOutput({this.type = 'shell_call_output', required this.id, required this.callId, required this.status, required this.output, required this.maxOutputLength, this.createdBy, });
+@immutable final class FunctionShellCallOutput {const FunctionShellCallOutput({required this.id, required this.callId, required this.status, required this.output, required this.maxOutputLength, this.type = 'shell_call_output', this.createdBy, });
 
 factory FunctionShellCallOutput.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutput(
   type: json['type'] as String,

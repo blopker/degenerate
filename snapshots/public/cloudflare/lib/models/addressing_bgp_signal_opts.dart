@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether control of advertisement of the prefix to the Internet is enabled to be performed via BGP signal
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether control of advertisement of the prefix to the Internet is enabled to be performed via BGP signal
 extension type const AddressingBgpSignalingEnabled(bool value) {
 factory AddressingBgpSignalingEnabled.fromJson(bool json) => AddressingBgpSignalingEnabled(json);
 
@@ -14,7 +14,7 @@ factory AddressingBgpSignalingModifiedAt.fromJson(String json) => AddressingBgpS
 String toJson() => value.toIso8601String();
 
 }
-final class AddressingBgpSignalOpts {const AddressingBgpSignalOpts({this.enabled, this.modifiedAt, });
+@immutable final class AddressingBgpSignalOpts {const AddressingBgpSignalOpts({this.enabled, this.modifiedAt, });
 
 factory AddressingBgpSignalOpts.fromJson(Map<String, dynamic> json) { return AddressingBgpSignalOpts(
   enabled: json['enabled'] != null ? AddressingBgpSignalingEnabled.fromJson(json['enabled'] as bool) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the reviewer
-final class RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the reviewer
+@immutable final class RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType._(this.value);
 
 factory RepositoryRuleParamsReviewerType.fromJson(String json) { return switch (json) {
   'Team' => team,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleParamsReviewerType($value)'; } 
  }
 /// A required reviewing team
-final class RepositoryRuleParamsReviewer {const RepositoryRuleParamsReviewer({required this.id, required this.type, });
+@immutable final class RepositoryRuleParamsReviewer {const RepositoryRuleParamsReviewer({required this.id, required this.type, });
 
 factory RepositoryRuleParamsReviewer.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsReviewer(
   id: (json['id'] as num).toInt(),

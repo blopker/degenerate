@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages5.dart';import 'schemas_identifier.dart';final class UserSubscriptionDeleteUserSubscriptionResponse4Xx {const UserSubscriptionDeleteUserSubscriptionResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.subscriptionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages5.dart';import 'schemas_identifier.dart';@immutable final class UserSubscriptionDeleteUserSubscriptionResponse4Xx {const UserSubscriptionDeleteUserSubscriptionResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.subscriptionId, });
 
 factory UserSubscriptionDeleteUserSubscriptionResponse4Xx.fromJson(Map<String, dynamic> json) { return UserSubscriptionDeleteUserSubscriptionResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),

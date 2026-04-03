@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_tool_choice_variant1_custom_custom.dart';final class Prompt43ToolChoiceVariant1CustomType {const Prompt43ToolChoiceVariant1CustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tool_choice_variant1_custom_custom.dart';@immutable final class Prompt43ToolChoiceVariant1CustomType {const Prompt43ToolChoiceVariant1CustomType._(this.value);
 
 factory Prompt43ToolChoiceVariant1CustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Prompt43ToolChoiceVariant1CustomType($value)'; } 
  }
 /// Force a specific custom tool.
-final class Prompt43ToolChoiceVariant1Custom {const Prompt43ToolChoiceVariant1Custom({required this.custom, required this.type, });
+@immutable final class Prompt43ToolChoiceVariant1Custom {const Prompt43ToolChoiceVariant1Custom({required this.custom, required this.type, });
 
 factory Prompt43ToolChoiceVariant1Custom.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1Custom(
   custom: Prompt43ToolChoiceVariant1CustomCustom.fromJson(json['custom'] as Map<String, dynamic>),

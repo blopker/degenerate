@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When set, this applies a mitigation action to this operation
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set, this applies a mitigation action to this operation
 /// 
 ///   - `log` log request when request does not conform to schema for this operation
 ///   - `block` deny access to the site when request does not conform to schema for this operation
 ///   - `none` will skip mitigation for this operation
 ///   - `null` indicates that no operation level mitigation is in place, see Zone Level Schema Validation Settings for mitigation action that will be applied
 /// 
-final class ShieldOldOperationMitigationAction {const ShieldOldOperationMitigationAction._(this.value);
+@immutable final class ShieldOldOperationMitigationAction {const ShieldOldOperationMitigationAction._(this.value);
 
 factory ShieldOldOperationMitigationAction.fromJson(String json) { return switch (json) {
   'log' => log,

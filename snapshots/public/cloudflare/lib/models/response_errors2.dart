@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResponseErrors2 {const ResponseErrors2({this.code, this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseErrors2 {const ResponseErrors2({this.code, this.message, });
 
 factory ResponseErrors2.fromJson(Map<String, dynamic> json) { return ResponseErrors2(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

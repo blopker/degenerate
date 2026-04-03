@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pull_request_review_comment_links_html.dart';import 'pull_request_review_comment_links_pull_request.dart';import 'pull_request_review_comment_links_self.dart';final class PullRequestReviewCommentLinks {const PullRequestReviewCommentLinks({required this.self, required this.html, required this.pullRequest, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_review_comment_links_html.dart';import 'pull_request_review_comment_links_pull_request.dart';import 'pull_request_review_comment_links_self.dart';@immutable final class PullRequestReviewCommentLinks {const PullRequestReviewCommentLinks({required this.self, required this.html, required this.pullRequest, });
 
 factory PullRequestReviewCommentLinks.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentLinks(
   self: PullRequestReviewCommentLinksSelf.fromJson(json['self'] as Map<String, dynamic>),

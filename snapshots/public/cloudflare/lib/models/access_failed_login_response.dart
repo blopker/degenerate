@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_failed_login_response_result.dart';final class AccessFailedLoginResponse {const AccessFailedLoginResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_failed_login_response_result.dart';@immutable final class AccessFailedLoginResponse {const AccessFailedLoginResponse({this.result});
 
 factory AccessFailedLoginResponse.fromJson(Map<String, dynamic> json) { return AccessFailedLoginResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessFailedLoginResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

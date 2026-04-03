@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'git_tag_object.dart';import 'git_tag_tagger.dart';import 'verification.dart';/// Metadata for a Git tag
-final class GitTag {const GitTag({required this.nodeId, required this.tag, required this.sha, required this.url, required this.message, required this.tagger, required this.object, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_tag_object.dart';import 'git_tag_tagger.dart';import 'verification.dart';/// Metadata for a Git tag
+@immutable final class GitTag {const GitTag({required this.nodeId, required this.tag, required this.sha, required this.url, required this.message, required this.tagger, required this.object, this.verification, });
 
 factory GitTag.fromJson(Map<String, dynamic> json) { return GitTag(
   nodeId: json['node_id'] as String,

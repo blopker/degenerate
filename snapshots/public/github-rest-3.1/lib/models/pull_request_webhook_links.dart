@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'link.dart';final class PullRequestWebhookLinks {const PullRequestWebhookLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link.dart';@immutable final class PullRequestWebhookLinks {const PullRequestWebhookLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
 
 factory PullRequestWebhookLinks.fromJson(Map<String, dynamic> json) { return PullRequestWebhookLinks(
   comments: Link.fromJson(json['comments'] as Map<String, dynamic>),

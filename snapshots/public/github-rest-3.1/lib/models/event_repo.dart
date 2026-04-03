@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EventRepo {const EventRepo({required this.id, required this.name, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EventRepo {const EventRepo({required this.id, required this.name, required this.url, });
 
 factory EventRepo.fromJson(Map<String, dynamic> json) { return EventRepo(
   id: (json['id'] as num).toInt(),

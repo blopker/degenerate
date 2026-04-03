@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2.dart';import 'dos_syn_protection_rule.dart';final class DosSynProtectionRuleResponse {const DosSynProtectionRuleResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2.dart';import 'dos_syn_protection_rule.dart';@immutable final class DosSynProtectionRuleResponse {const DosSynProtectionRuleResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DosSynProtectionRuleResponse.fromJson(Map<String, dynamic> json) { return DosSynProtectionRuleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),

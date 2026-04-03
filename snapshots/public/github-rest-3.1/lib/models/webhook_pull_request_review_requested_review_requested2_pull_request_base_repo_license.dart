@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestBaseRepoLicense {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestBaseRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestBaseRepoLicense {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestBaseRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
 
 factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestBaseRepoLicense.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestedReviewRequested2PullRequestBaseRepoLicense(
   key: json['key'] as String,

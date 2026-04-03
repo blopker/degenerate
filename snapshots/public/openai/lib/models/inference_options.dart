@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tool_choice.dart';/// Model and tool overrides applied when generating the assistant response.
-final class InferenceOptions {const InferenceOptions({required this.toolChoice, required this.model, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool_choice.dart';/// Model and tool overrides applied when generating the assistant response.
+@immutable final class InferenceOptions {const InferenceOptions({required this.toolChoice, required this.model, });
 
 factory InferenceOptions.fromJson(Map<String, dynamic> json) { return InferenceOptions(
   toolChoice: json['tool_choice'] != null ? ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRulesetLinksSelf {const RepositoryRulesetLinksSelf({this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRulesetLinksSelf {const RepositoryRulesetLinksSelf({this.href});
 
 factory RepositoryRulesetLinksSelf.fromJson(Map<String, dynamic> json) { return RepositoryRulesetLinksSelf(
   href: json['href'] as String?,

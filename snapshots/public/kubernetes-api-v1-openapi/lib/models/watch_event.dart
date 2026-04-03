@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Event represents a single event to a watched resource.
-final class WatchEvent {const WatchEvent({required this.object, this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event represents a single event to a watched resource.
+@immutable final class WatchEvent {const WatchEvent({required this.object, this.type = '', });
 
 factory WatchEvent.fromJson(Map<String, dynamic> json) { return WatchEvent(
   object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

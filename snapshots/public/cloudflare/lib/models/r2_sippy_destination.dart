@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SippyDestinationProvider {const R2SippyDestinationProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SippyDestinationProvider {const R2SippyDestinationProvider._(this.value);
 
 factory R2SippyDestinationProvider.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2SippyDestinationProvider($value)'; } 
  }
 /// Details about the configured destination bucket.
-final class R2SippyDestination {const R2SippyDestination({this.accessKeyId, this.account, this.bucket, this.provider, });
+@immutable final class R2SippyDestination {const R2SippyDestination({this.accessKeyId, this.account, this.bucket, this.provider, });
 
 factory R2SippyDestination.fromJson(Map<String, dynamic> json) { return R2SippyDestination(
   accessKeyId: json['accessKeyId'] as String?,

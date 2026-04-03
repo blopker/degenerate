@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_transfers_payment_method_details.dart';import 'treasury_outbound_transfer_transaction.dart';import 'treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'treasury_outbound_transfers_resource_returned_details.dart';import 'treasury_outbound_transfers_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject._(this.value);
+@immutable final class TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject._(this.value);
 
 factory TreasuryOutboundTransferObject.fromJson(String json) { return switch (json) {
   'treasury.outbound_transfer' => treasuryOutboundTransfer,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryOutboundTransferObject($value)'; } 
  }
 /// Current status of the OutboundTransfer: `processing`, `failed`, `canceled`, `posted`, `returned`. An OutboundTransfer is `processing` if it has been created and is pending. The status changes to `posted` once the OutboundTransfer has been "confirmed" and funds have left the account, or to `failed` or `canceled`. If an OutboundTransfer fails to arrive at its destination, its status will change to `returned`.
-final class TreasuryOutboundTransferStatus {const TreasuryOutboundTransferStatus._(this.value);
+@immutable final class TreasuryOutboundTransferStatus {const TreasuryOutboundTransferStatus._(this.value);
 
 factory TreasuryOutboundTransferStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Simulate OutboundTransfer state changes with the `/v1/test_helpers/treasury/outbound_transfers` endpoints. These methods can only be called on test mode objects.
 /// 
 /// Related guide: [Moving money with Treasury using OutboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-transfers)
-final class TreasuryOutboundTransfer {const TreasuryOutboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, this.description, this.destinationPaymentMethod, required this.destinationPaymentMethodDetails, required this.expectedArrivalDate, required this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, required this.livemode, required this.metadata, required this.object, this.returnedDetails, required this.statementDescriptor, required this.status, required this.statusTransitions, this.trackingDetails, required this.transaction, });
+@immutable final class TreasuryOutboundTransfer {const TreasuryOutboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.destinationPaymentMethodDetails, required this.expectedArrivalDate, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, required this.transaction, this.description, this.destinationPaymentMethod, this.hostedRegulatoryReceiptUrl, this.returnedDetails, this.trackingDetails, });
 
 factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfer(
   amount: (json['amount'] as num).toInt(),

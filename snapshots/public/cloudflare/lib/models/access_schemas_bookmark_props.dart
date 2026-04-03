@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';final class AccessSchemasBookmarkProps {const AccessSchemasBookmarkProps({this.appLauncherVisible, required this.domain, this.logoUrl, this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';@immutable final class AccessSchemasBookmarkProps {const AccessSchemasBookmarkProps({required this.domain, required this.type, this.appLauncherVisible, this.logoUrl, this.name, });
 
 factory AccessSchemasBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessSchemasBookmarkProps(
   appLauncherVisible: json['app_launcher_visible'],

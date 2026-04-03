@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The environment type. Always `container_reference`.
-final class ContainerReferenceResourceType {const ContainerReferenceResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The environment type. Always `container_reference`.
+@immutable final class ContainerReferenceResourceType {const ContainerReferenceResourceType._(this.value);
 
 factory ContainerReferenceResourceType.fromJson(String json) { return switch (json) {
   'container_reference' => containerReference,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ContainerReferenceResourceType($value)'; } 
  }
 /// Represents a container created with /v1/containers.
-final class ContainerReferenceResource {const ContainerReferenceResource({this.type = ContainerReferenceResourceType.containerReference, required this.containerId, });
+@immutable final class ContainerReferenceResource {const ContainerReferenceResource({required this.containerId, this.type = ContainerReferenceResourceType.containerReference, });
 
 factory ContainerReferenceResource.fromJson(Map<String, dynamic> json) { return ContainerReferenceResource(
   type: ContainerReferenceResourceType.fromJson(json['type'] as String),

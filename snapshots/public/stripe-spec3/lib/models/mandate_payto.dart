@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
-final class MandatePaytoAmountType {const MandatePaytoAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
+@immutable final class MandatePaytoAmountType {const MandatePaytoAmountType._(this.value);
 
 factory MandatePaytoAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandatePaytoAmountType($value)'; } 
  }
 /// The periodicity at which payments will be collected. Defaults to `adhoc`.
-final class MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule._(this.value);
+@immutable final class MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule._(this.value);
 
 factory MandatePaytoPaymentSchedule.fromJson(String json) { return switch (json) {
   'adhoc' => adhoc,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandatePaytoPaymentSchedule($value)'; } 
  }
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final class MandatePaytoPurpose {const MandatePaytoPurpose._(this.value);
+@immutable final class MandatePaytoPurpose {const MandatePaytoPurpose._(this.value);
 
 factory MandatePaytoPurpose.fromJson(String json) { return switch (json) {
   'dependant_support' => dependantSupport,
@@ -121,7 +121,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandatePaytoPurpose($value)'; } 
  }
 /// 
-final class MandatePayto {const MandatePayto({this.amount, required this.amountType, this.endDate, required this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
+@immutable final class MandatePayto {const MandatePayto({required this.amountType, required this.paymentSchedule, this.amount, this.endDate, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory MandatePayto.fromJson(Map<String, dynamic> json) { return MandatePayto(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

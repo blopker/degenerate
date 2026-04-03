@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_request_input.dart';import 'create_moderation_request_input_variant3_image_url.dart';import 'create_moderation_request_input_variant3_text.dart';import 'create_moderation_request_model.dart';final class CreateModerationRequest {const CreateModerationRequest({required this.input, this.model, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_request_input.dart';import 'create_moderation_request_input_variant3_image_url.dart';import 'create_moderation_request_input_variant3_text.dart';import 'create_moderation_request_model.dart';@immutable final class CreateModerationRequest {const CreateModerationRequest({required this.input, this.model, });
 
 factory CreateModerationRequest.fromJson(Map<String, dynamic> json) { return CreateModerationRequest(
   input: OneOf3.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => CreateModerationRequestInputVariant3ImageUrl.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateModerationRequestInputVariant3Text.fromJson(v as Map<String, dynamic>),)).toList(),),

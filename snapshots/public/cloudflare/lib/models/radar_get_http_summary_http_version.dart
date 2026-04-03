@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryHttpVersion {const RadarGetHttpSummaryHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryHttpVersion {const RadarGetHttpSummaryHttpVersion._(this.value);
 
 factory RadarGetHttpSummaryHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,

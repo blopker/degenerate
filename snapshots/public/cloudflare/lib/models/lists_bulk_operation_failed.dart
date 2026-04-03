@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_completed.dart';import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
-final class ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_completed.dart';import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
+@immutable final class ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus._(this.value);
 
 factory ListsBulkOperationFailedStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListsBulkOperationFailedStatus($value)'; } 
  }
-final class ListsBulkOperationFailed {const ListsBulkOperationFailed({required this.completed, required this.error, required this.id, required this.status, });
+@immutable final class ListsBulkOperationFailed {const ListsBulkOperationFailed({required this.completed, required this.error, required this.id, required this.status, });
 
 factory ListsBulkOperationFailed.fromJson(Map<String, dynamic> json) { return ListsBulkOperationFailed(
   completed: ListsCompleted.fromJson(json['completed'] as String),

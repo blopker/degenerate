@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_collection_response_result.dart';import 'magic_visibility_pcaps_pcaps_response_full.dart';import 'magic_visibility_pcaps_pcaps_response_simple.dart';final class MagicVisibilityPcapsPcapsCollectionResponse {const MagicVisibilityPcapsPcapsCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_collection_response_result.dart';import 'magic_visibility_pcaps_pcaps_response_full.dart';import 'magic_visibility_pcaps_pcaps_response_simple.dart';@immutable final class MagicVisibilityPcapsPcapsCollectionResponse {const MagicVisibilityPcapsPcapsCollectionResponse({this.result});
 
 factory MagicVisibilityPcapsPcapsCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),)).toList(),

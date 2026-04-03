@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelType($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelUnit._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelUnit._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelUnit.fromJson(String json) { return switch (json) {
   'charging_minute' => chargingMinute,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuelUnit($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
+@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFuel(
   industryProductCode: json['industry_product_code'] as String?,

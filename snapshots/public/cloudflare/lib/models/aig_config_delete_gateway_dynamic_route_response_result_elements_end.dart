@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_delete_gateway_dynamic_route_response_result_elements_end_outputs_value.dart';final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsEndType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsEndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_end_outputs_value.dart';@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsEndType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsEndType._(this.value);
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsEndType.fromJson(String json) { return switch (json) {
   'end' => end,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsEndType($value)'; } 
  }
-final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsEnd {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsEnd({required this.id, required this.outputs, required this.type, });
+@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsEnd {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsEnd({required this.id, required this.outputs, required this.type, });
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsEnd.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsEnd(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_base.dart';final class ZoneCacheSettingsDeleteVariantsSettingResponse {const ZoneCacheSettingsDeleteVariantsSettingResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_base.dart';@immutable final class ZoneCacheSettingsDeleteVariantsSettingResponse {const ZoneCacheSettingsDeleteVariantsSettingResponse({this.result});
 
 factory ZoneCacheSettingsDeleteVariantsSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsDeleteVariantsSettingResponse(
   result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,

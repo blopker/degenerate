@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Comments provide a way for people to collaborate on an issue.
-final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, this.body, this.bodyText, this.bodyHtml, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.authorAssociation, this.performedViaGithubApp, this.reactions, this.pin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Comments provide a way for people to collaborate on an issue.
+@immutable final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.body, this.bodyText, this.bodyHtml, this.authorAssociation, this.performedViaGithubApp, this.reactions, this.pin, });
 
 factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   id: (json['id'] as num).toInt(),

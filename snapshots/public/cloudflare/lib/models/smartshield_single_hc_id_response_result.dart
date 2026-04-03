@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_identifier.dart';final class SmartshieldSingleHcIdResponseResult {const SmartshieldSingleHcIdResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_identifier.dart';@immutable final class SmartshieldSingleHcIdResponseResult {const SmartshieldSingleHcIdResponseResult({this.id});
 
 factory SmartshieldSingleHcIdResponseResult.fromJson(Map<String, dynamic> json) { return SmartshieldSingleHcIdResponseResult(
   id: json['id'] != null ? SmartshieldIdentifier.fromJson(json['id'] as String) : null,

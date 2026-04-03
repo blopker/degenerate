@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_old_validation_default_mitigation_action.dart';/// When set, this overrides both zone level and operation level mitigation actions.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_validation_default_mitigation_action.dart';/// When set, this overrides both zone level and operation level mitigation actions.
 /// 
 ///   - `none` will skip running schema validation entirely for the request
 ///   - `null` indicates that no override is in place
 /// 
-final class ShieldOldValidationOverrideMitigationAction {const ShieldOldValidationOverrideMitigationAction._(this.value);
+@immutable final class ShieldOldValidationOverrideMitigationAction {const ShieldOldValidationOverrideMitigationAction._(this.value);
 
 factory ShieldOldValidationOverrideMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldOldValidationOverrideMitigationAction($value)'; } 
  }
-final class ShieldOldZoneSchemaValidationSettings {const ShieldOldZoneSchemaValidationSettings({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
+@immutable final class ShieldOldZoneSchemaValidationSettings {const ShieldOldZoneSchemaValidationSettings({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
 factory ShieldOldZoneSchemaValidationSettings.fromJson(Map<String, dynamic> json) { return ShieldOldZoneSchemaValidationSettings(
   validationDefaultMitigationAction: json['validation_default_mitigation_action'] != null ? ShieldOldValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String) : null,

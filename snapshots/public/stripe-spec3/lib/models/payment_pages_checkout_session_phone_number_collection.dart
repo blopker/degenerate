@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionPhoneNumberCollection {const PaymentPagesCheckoutSessionPhoneNumberCollection({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionPhoneNumberCollection {const PaymentPagesCheckoutSessionPhoneNumberCollection({required this.enabled});
 
 factory PaymentPagesCheckoutSessionPhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPhoneNumberCollection(
   enabled: json['enabled'] as bool,

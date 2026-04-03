@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_status_code_ttl2.dart';/// The edge TTL mode.
-final class RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode._(this.value);
+@immutable final class RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode._(this.value);
 
 factory RulesetsSetCacheSettingsEdgeTtlMode.fromJson(String json) { return switch (json) {
   'respect_origin' => respectOrigin,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RulesetsSetCacheSettingsEdgeTtlMode($value)'; } 
  }
 /// How long the Cloudflare edge network should cache the response.
-final class RulesetsSetCacheSettingsEdgeTtl {const RulesetsSetCacheSettingsEdgeTtl({this.$default, required this.mode, this.statusCodeTtl, });
+@immutable final class RulesetsSetCacheSettingsEdgeTtl {const RulesetsSetCacheSettingsEdgeTtl({required this.mode, this.$default, this.statusCodeTtl, });
 
 factory RulesetsSetCacheSettingsEdgeTtl.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsEdgeTtl(
   $default: json['default'] != null ? (json['default'] as num).toInt() : null,

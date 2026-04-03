@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_provided_details.dart';import 'gelato_related_person.dart';import 'gelato_session_last_error.dart';import 'gelato_verification_session_options.dart';import 'gelato_verified_outputs.dart';import 'identity_verification_report.dart';import 'identity_verification_session_last_verification_report.dart';import 'verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);
+@immutable final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);
 
 factory IdentityVerificationSessionObject.fromJson(String json) { return switch (json) {
   'identity.verification_session' => identityVerificationSession,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IdentityVerificationSessionObject($value)'; } 
  }
 /// Status of this VerificationSession. [Learn more about the lifecycle of sessions](https://docs.stripe.com/identity/how-sessions-work).
-final class IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus._(this.value);
+@immutable final class IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus._(this.value);
 
 factory IdentityVerificationSessionStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IdentityVerificationSessionStatus($value)'; } 
  }
 /// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed.
-final class IdentityVerificationSessionType {const IdentityVerificationSessionType._(this.value);
+@immutable final class IdentityVerificationSessionType {const IdentityVerificationSessionType._(this.value);
 
 factory IdentityVerificationSessionType.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 /// verification checks are complete.
 /// 
 /// Related guide: [The Verification Sessions API](https://docs.stripe.com/identity/verification-sessions)
-final class IdentityVerificationSession {const IdentityVerificationSession({this.clientReferenceId, this.clientSecret, required this.created, required this.id, this.lastError, this.lastVerificationReport, required this.livemode, required this.metadata, required this.object, this.options, this.providedDetails, this.redaction, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, required this.status, required this.type, this.url, this.verificationFlow, this.verifiedOutputs, });
+@immutable final class IdentityVerificationSession {const IdentityVerificationSession({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.type, this.clientReferenceId, this.clientSecret, this.lastError, this.lastVerificationReport, this.options, this.providedDetails, this.redaction, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, this.url, this.verificationFlow, this.verifiedOutputs, });
 
 factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return IdentityVerificationSession(
   clientReferenceId: json['client_reference_id'] as String?,

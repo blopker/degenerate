@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
-final class PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._(this.value);
+@immutable final class PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._(this.value);
 
 factory PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(String json) { return switch (json) {
   'maven_repository' => mavenRepository,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType($value)'; } 
  }
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-final class PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._(this.value);
+@immutable final class PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._(this.value);
 
 factory PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility($value)'; } 
  }
-final class PrivateRegistriesUpdateOrgPrivateRegistryRequest {const PrivateRegistriesUpdateOrgPrivateRegistryRequest({this.registryType, this.url, this.username, this.replacesBase = false, this.encryptedValue, this.keyId, this.visibility, this.selectedRepositoryIds, });
+@immutable final class PrivateRegistriesUpdateOrgPrivateRegistryRequest {const PrivateRegistriesUpdateOrgPrivateRegistryRequest({this.registryType, this.url, this.username, this.replacesBase = false, this.encryptedValue, this.keyId, this.visibility, this.selectedRepositoryIds, });
 
 factory PrivateRegistriesUpdateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) { return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
   registryType: json['registry_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(json['registry_type'] as String) : null,

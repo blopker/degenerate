@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WaitingroomRulePositionVariant2 {const WaitingroomRulePositionVariant2({this.before});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomRulePositionVariant2 {const WaitingroomRulePositionVariant2({this.before});
 
 factory WaitingroomRulePositionVariant2.fromJson(Map<String, dynamic> json) { return WaitingroomRulePositionVariant2(
   before: json['before'] as String?,

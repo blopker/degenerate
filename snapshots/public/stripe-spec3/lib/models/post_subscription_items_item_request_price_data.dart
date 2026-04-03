@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscription_items_item_request_price_data_recurring.dart';final class PostSubscriptionItemsItemRequestPriceDataTaxBehavior {const PostSubscriptionItemsItemRequestPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_items_item_request_price_data_recurring.dart';@immutable final class PostSubscriptionItemsItemRequestPriceDataTaxBehavior {const PostSubscriptionItemsItemRequestPriceDataTaxBehavior._(this.value);
 
 factory PostSubscriptionItemsItemRequestPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionItemsItemRequestPriceDataTaxBehavior($value)'; } 
  }
 /// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object inline. One of `price` or `price_data` is required.
-final class PostSubscriptionItemsItemRequestPriceData {const PostSubscriptionItemsItemRequestPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostSubscriptionItemsItemRequestPriceData {const PostSubscriptionItemsItemRequestPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostSubscriptionItemsItemRequestPriceData.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsItemRequestPriceData(
   currency: json['currency'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_chat_editors_models.dart';/// Copilot Chat metrics, for active editors.
-final class CopilotIdeChatEditors {const CopilotIdeChatEditors({this.name, this.totalEngagedUsers, this.models, });
+@immutable final class CopilotIdeChatEditors {const CopilotIdeChatEditors({this.name, this.totalEngagedUsers, this.models, });
 
 factory CopilotIdeChatEditors.fromJson(Map<String, dynamic> json) { return CopilotIdeChatEditors(
   name: json['name'] as String?,

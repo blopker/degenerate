@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_links_request_variant1_goto_options_wait_until.dart';/// Check [options](https://pptr.dev/api/puppeteer.gotooptions).
-final class BrapiPostLinksRequestVariant1GotoOptions {const BrapiPostLinksRequestVariant1GotoOptions({this.referer, this.referrerPolicy, this.timeout = 30000.0, this.waitUntil, });
+@immutable final class BrapiPostLinksRequestVariant1GotoOptions {const BrapiPostLinksRequestVariant1GotoOptions({this.referer, this.referrerPolicy, this.timeout = 30000.0, this.waitUntil, });
 
 factory BrapiPostLinksRequestVariant1GotoOptions.fromJson(Map<String, dynamic> json) { return BrapiPostLinksRequestVariant1GotoOptions(
   referer: json['referer'] as String?,

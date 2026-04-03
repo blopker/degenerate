@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_email_rule_action_block.dart';/// A value that is one of: `DlpEmailRuleActionBlock`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_action_block.dart';/// A value that is one of: `DlpEmailRuleActionBlock`.
 sealed class DlpEmailRuleAction {const DlpEmailRuleAction();
 
 factory DlpEmailRuleAction.fromJson(Map<String, dynamic> json) {   if (DlpEmailRuleActionBlock.canParse(json)) {
@@ -12,7 +12,7 @@ factory DlpEmailRuleAction.fromJson(Map<String, dynamic> json) {   if (DlpEmailR
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class DlpEmailRuleActionDlpEmailRuleActionBlock extends DlpEmailRuleAction {const DlpEmailRuleActionDlpEmailRuleActionBlock(this._value);
+@immutable final class DlpEmailRuleActionDlpEmailRuleActionBlock extends DlpEmailRuleAction {const DlpEmailRuleActionDlpEmailRuleActionBlock(this._value);
 
 final DlpEmailRuleActionBlock _value;
 
@@ -23,7 +23,7 @@ final DlpEmailRuleActionBlock _value;
 @override String toString() { return 'DlpEmailRuleAction.dlpEmailRuleActionBlock($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class DlpEmailRuleAction$Unknown extends DlpEmailRuleAction {const DlpEmailRuleAction$Unknown(this._value);
+@immutable final class DlpEmailRuleAction$Unknown extends DlpEmailRuleAction {const DlpEmailRuleAction$Unknown(this._value);
 
 final dynamic _value;
 

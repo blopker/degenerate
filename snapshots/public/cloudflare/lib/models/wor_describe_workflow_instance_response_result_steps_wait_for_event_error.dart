@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError {const WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError({required this.message, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError {const WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError({required this.message, required this.name, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError(
   message: json['message'] as String,

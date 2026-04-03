@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_object.dart';final class MessageStreamEventThreadMessageDeltaEvent {const MessageStreamEventThreadMessageDeltaEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_object.dart';@immutable final class MessageStreamEventThreadMessageDeltaEvent {const MessageStreamEventThreadMessageDeltaEvent._(this.value);
 
 factory MessageStreamEventThreadMessageDeltaEvent.fromJson(String json) { return switch (json) {
   'thread.message.delta' => threadMessageDelta,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageStreamEventThreadMessageDeltaEvent($value)'; } 
  }
 /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
-final class MessageStreamEventThreadMessageDelta {const MessageStreamEventThreadMessageDelta({required this.event, required this.data, });
+@immutable final class MessageStreamEventThreadMessageDelta {const MessageStreamEventThreadMessageDelta({required this.event, required this.data, });
 
 factory MessageStreamEventThreadMessageDelta.fromJson(Map<String, dynamic> json) { return MessageStreamEventThreadMessageDelta(
   event: MessageStreamEventThreadMessageDeltaEvent.fromJson(json['event'] as String),

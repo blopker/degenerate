@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PersonRaceDetailsRace {const PersonRaceDetailsRace._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonRaceDetailsRace {const PersonRaceDetailsRace._(this.value);
 
 factory PersonRaceDetailsRace.fromJson(String json) { return switch (json) {
   'african_american' => africanAmerican,
@@ -91,7 +91,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PersonRaceDetailsRace($value)'; } 
  }
 /// 
-final class PersonRaceDetails {const PersonRaceDetails({this.race, this.raceOther, });
+@immutable final class PersonRaceDetails {const PersonRaceDetails({this.race, this.raceOther, });
 
 factory PersonRaceDetails.fromJson(Map<String, dynamic> json) { return PersonRaceDetails(
   race: (json['race'] as List<dynamic>?)?.map((e) => PersonRaceDetailsRace.fromJson(e as String)).toList(),

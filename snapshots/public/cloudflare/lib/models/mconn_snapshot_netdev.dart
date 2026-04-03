@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot Netdev
-final class MconnSnapshotNetdev {const MconnSnapshotNetdev({this.connectorId, required this.name, required this.recvBytes, required this.recvCompressed, required this.recvDrop, required this.recvErrs, required this.recvFifo, required this.recvFrame, required this.recvMulticast, required this.recvPackets, required this.sentBytes, required this.sentCarrier, required this.sentColls, required this.sentCompressed, required this.sentDrop, required this.sentErrs, required this.sentFifo, required this.sentPackets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Netdev
+@immutable final class MconnSnapshotNetdev {const MconnSnapshotNetdev({required this.name, required this.recvBytes, required this.recvCompressed, required this.recvDrop, required this.recvErrs, required this.recvFifo, required this.recvFrame, required this.recvMulticast, required this.recvPackets, required this.sentBytes, required this.sentCarrier, required this.sentColls, required this.sentCompressed, required this.sentDrop, required this.sentErrs, required this.sentFifo, required this.sentPackets, this.connectorId, });
 
 factory MconnSnapshotNetdev.fromJson(Map<String, dynamic> json) { return MconnSnapshotNetdev(
   connectorId: json['connector_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Key
-final class Key {const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key
+@immutable final class Key {const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed, });
 
 factory Key.fromJson(Map<String, dynamic> json) { return Key(
   key: json['key'] as String,

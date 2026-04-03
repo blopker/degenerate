@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_tools_custom_custom.dart';final class Prompt43ToolsCustomType {const Prompt43ToolsCustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tools_custom_custom.dart';@immutable final class Prompt43ToolsCustomType {const Prompt43ToolsCustomType._(this.value);
 
 factory Prompt43ToolsCustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ToolsCustomType($value)'; } 
  }
-final class Prompt43ToolsCustom {const Prompt43ToolsCustom({required this.custom, required this.type, });
+@immutable final class Prompt43ToolsCustom {const Prompt43ToolsCustom({required this.custom, required this.type, });
 
 factory Prompt43ToolsCustom.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustom(
   custom: Prompt43ToolsCustomCustom.fromJson(json['custom'] as Map<String, dynamic>),

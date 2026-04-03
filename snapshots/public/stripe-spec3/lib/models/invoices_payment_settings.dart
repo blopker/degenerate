@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_payment_method_options.dart';final class InvoicesPaymentSettingsPaymentMethodTypes {const InvoicesPaymentSettingsPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_payment_method_options.dart';@immutable final class InvoicesPaymentSettingsPaymentMethodTypes {const InvoicesPaymentSettingsPaymentMethodTypes._(this.value);
 
 factory InvoicesPaymentSettingsPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -145,7 +145,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicesPaymentSettingsPaymentMethodTypes($value)'; } 
  }
 /// 
-final class InvoicesPaymentSettings {const InvoicesPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
+@immutable final class InvoicesPaymentSettings {const InvoicesPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
 
 factory InvoicesPaymentSettings.fromJson(Map<String, dynamic> json) { return InvoicesPaymentSettings(
   defaultMandate: json['default_mandate'] as String?,

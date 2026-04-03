@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_registry_package_published_registry_package_package_version_release_author.dart';final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name, this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_release_author.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name, this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
   author: json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,

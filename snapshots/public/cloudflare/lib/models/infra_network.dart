@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InfraNetwork {const InfraNetwork({required this.tunnelId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraNetwork {const InfraNetwork({required this.tunnelId});
 
 factory InfraNetwork.fromJson(Map<String, dynamic> json) { return InfraNetwork(
   tunnelId: json['tunnel_id'] as String,

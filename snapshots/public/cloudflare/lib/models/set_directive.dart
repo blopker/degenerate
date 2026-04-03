@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_set_cache_control_cloudflare_only.dart';import 'rulesets_set_cache_control_operation.dart';/// Set the directive.
-final class SetDirective {const SetDirective({this.cloudflareOnly, required this.operation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_control_cloudflare_only.dart';import 'rulesets_set_cache_control_operation.dart';/// Set the directive.
+@immutable final class SetDirective {const SetDirective({required this.operation, this.cloudflareOnly, });
 
 factory SetDirective.fromJson(Map<String, dynamic> json) { return SetDirective(
   cloudflareOnly: json['cloudflare_only'] != null ? RulesetsSetCacheControlCloudflareOnly.fromJson(json['cloudflare_only'] as bool) : null,

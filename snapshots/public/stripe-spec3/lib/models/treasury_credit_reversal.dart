@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_credit_reversal_transaction.dart';import 'treasury_received_credits_resource_status_transitions.dart';import 'treasury_transaction.dart';/// The rails used to reverse the funds.
-final class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork._(this.value);
+@immutable final class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork._(this.value);
 
 factory TreasuryCreditReversalNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryCreditReversalNetwork($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryCreditReversalObject {const TreasuryCreditReversalObject._(this.value);
+@immutable final class TreasuryCreditReversalObject {const TreasuryCreditReversalObject._(this.value);
 
 factory TreasuryCreditReversalObject.fromJson(String json) { return switch (json) {
   'treasury.credit_reversal' => treasuryCreditReversal,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryCreditReversalObject($value)'; } 
  }
 /// Status of the CreditReversal
-final class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus._(this.value);
+@immutable final class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus._(this.value);
 
 factory TreasuryCreditReversalStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryCreditReversalStatus($value)'; } 
  }
 /// You can reverse some [ReceivedCredits](https://api.stripe.com#received_credits) depending on their network and source flow. Reversing a ReceivedCredit leads to the creation of a new object known as a CreditReversal.
-final class TreasuryCreditReversal {const TreasuryCreditReversal({required this.amount, required this.created, required this.currency, required this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedCredit, required this.status, required this.statusTransitions, this.transaction, });
+@immutable final class TreasuryCreditReversal {const TreasuryCreditReversal({required this.amount, required this.created, required this.currency, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedCredit, required this.status, required this.statusTransitions, this.hostedRegulatoryReceiptUrl, this.transaction, });
 
 factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return TreasuryCreditReversal(
   amount: (json['amount'] as num).toInt(),

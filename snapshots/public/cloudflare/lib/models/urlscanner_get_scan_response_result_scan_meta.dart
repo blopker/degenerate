@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response_result_scan_meta_processors.dart';final class UrlscannerGetScanResponseResultScanMeta {const UrlscannerGetScanResponseResultScanMeta({required this.processors});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors.dart';@immutable final class UrlscannerGetScanResponseResultScanMeta {const UrlscannerGetScanResponseResultScanMeta({required this.processors});
 
 factory UrlscannerGetScanResponseResultScanMeta.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMeta(
   processors: UrlscannerGetScanResponseResultScanMetaProcessors.fromJson(json['processors'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'license_content_links.dart';import 'license_simple.dart';/// License Content
-final class LicenseContent {const LicenseContent({required this.name, required this.path, required this.sha, required this.size, required this.url, required this.htmlUrl, required this.gitUrl, required this.downloadUrl, required this.type, required this.content, required this.encoding, required this.links, required this.license, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_content_links.dart';import 'license_simple.dart';/// License Content
+@immutable final class LicenseContent {const LicenseContent({required this.name, required this.path, required this.sha, required this.size, required this.url, required this.htmlUrl, required this.gitUrl, required this.downloadUrl, required this.type, required this.content, required this.encoding, required this.links, required this.license, });
 
 factory LicenseContent.fromJson(Map<String, dynamic> json) { return LicenseContent(
   name: json['name'] as String,

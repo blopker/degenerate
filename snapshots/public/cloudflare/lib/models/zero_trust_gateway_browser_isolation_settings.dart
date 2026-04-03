@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify Clientless Browser Isolation settings.
-final class ZeroTrustGatewayBrowserIsolationSettings {const ZeroTrustGatewayBrowserIsolationSettings({this.nonIdentityEnabled, this.urlBrowserIsolationEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify Clientless Browser Isolation settings.
+@immutable final class ZeroTrustGatewayBrowserIsolationSettings {const ZeroTrustGatewayBrowserIsolationSettings({this.nonIdentityEnabled, this.urlBrowserIsolationEnabled, });
 
 factory ZeroTrustGatewayBrowserIsolationSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBrowserIsolationSettings(
   nonIdentityEnabled: json['non_identity_enabled'] as bool?,

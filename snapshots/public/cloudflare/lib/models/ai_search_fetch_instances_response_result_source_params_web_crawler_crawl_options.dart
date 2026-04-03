@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource._(this.value);
 
 factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource($value)'; } 
  }
-final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.all, });
+@immutable final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.all, });
 
 factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions(
   depth: json['depth'] != null ? (json['depth'] as num).toDouble() : null,

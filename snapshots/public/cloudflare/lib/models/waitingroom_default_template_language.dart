@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The language of the default page template. If no default_template_language is provided, then `en-US` (English) will be used.
-final class WaitingroomDefaultTemplateLanguage {const WaitingroomDefaultTemplateLanguage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The language of the default page template. If no default_template_language is provided, then `en-US` (English) will be used.
+@immutable final class WaitingroomDefaultTemplateLanguage {const WaitingroomDefaultTemplateLanguage._(this.value);
 
 factory WaitingroomDefaultTemplateLanguage.fromJson(String json) { return switch (json) {
   'en-US' => enUs,

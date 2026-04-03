@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Settings for this internal zone.
-final class DnsSettingsInternalDnsBase {const DnsSettingsInternalDnsBase({this.referenceZoneId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for this internal zone.
+@immutable final class DnsSettingsInternalDnsBase {const DnsSettingsInternalDnsBase({this.referenceZoneId});
 
 factory DnsSettingsInternalDnsBase.fromJson(Map<String, dynamic> json) { return DnsSettingsInternalDnsBase(
   referenceZoneId: json['reference_zone_id'] as String?,

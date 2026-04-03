@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_netflows_summary_response_result.dart';final class RadarGetNetflowsSummaryResponse {const RadarGetNetflowsSummaryResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_summary_response_result.dart';@immutable final class RadarGetNetflowsSummaryResponse {const RadarGetNetflowsSummaryResponse({required this.result, required this.success, });
 
 factory RadarGetNetflowsSummaryResponse.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryResponse(
   result: RadarGetNetflowsSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>),

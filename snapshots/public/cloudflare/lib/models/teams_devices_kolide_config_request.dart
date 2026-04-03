@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesKolideConfigRequest {const TeamsDevicesKolideConfigRequest({required this.clientId, required this.clientSecret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesKolideConfigRequest {const TeamsDevicesKolideConfigRequest({required this.clientId, required this.clientSecret, });
 
 factory TeamsDevicesKolideConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesKolideConfigRequest(
   clientId: json['client_id'] as String,

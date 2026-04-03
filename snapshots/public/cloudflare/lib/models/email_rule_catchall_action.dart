@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of action for catch-all rule.
-final class EmailRuleCatchallActionType {const EmailRuleCatchallActionType._(this.value);
+@immutable final class EmailRuleCatchallActionType {const EmailRuleCatchallActionType._(this.value);
 
 factory EmailRuleCatchallActionType.fromJson(String json) { return switch (json) {
   'drop' => drop,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EmailRuleCatchallActionType($value)'; } 
  }
 /// Action for the catch-all routing rule.
-final class EmailRuleCatchallAction {const EmailRuleCatchallAction({required this.type, this.value, });
+@immutable final class EmailRuleCatchallAction {const EmailRuleCatchallAction({required this.type, this.value, });
 
 factory EmailRuleCatchallAction.fromJson(Map<String, dynamic> json) { return EmailRuleCatchallAction(
   type: EmailRuleCatchallActionType.fromJson(json['type'] as String),

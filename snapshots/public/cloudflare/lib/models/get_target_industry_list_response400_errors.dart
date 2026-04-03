@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTargetIndustryListResponse400Errors {const GetTargetIndustryListResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTargetIndustryListResponse400Errors {const GetTargetIndustryListResponse400Errors({required this.message});
 
 factory GetTargetIndustryListResponse400Errors.fromJson(Map<String, dynamic> json) { return GetTargetIndustryListResponse400Errors(
   message: json['message'] as String,

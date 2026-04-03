@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'interaction_group.dart';/// The duration of the interaction restriction. Default: `one_day`.
-final class InteractionExpiry {const InteractionExpiry._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'interaction_group.dart';/// The duration of the interaction restriction. Default: `one_day`.
+@immutable final class InteractionExpiry {const InteractionExpiry._(this.value);
 
 factory InteractionExpiry.fromJson(String json) { return switch (json) {
   'one_day' => oneDay,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InteractionExpiry($value)'; } 
  }
 /// Limit interactions to a specific type of user for a specified duration
-final class InteractionLimit {const InteractionLimit({required this.limit, this.expiry, });
+@immutable final class InteractionLimit {const InteractionLimit({required this.limit, this.expiry, });
 
 factory InteractionLimit.fromJson(Map<String, dynamic> json) { return InteractionLimit(
   limit: InteractionGroup.fromJson(json['limit'] as String),

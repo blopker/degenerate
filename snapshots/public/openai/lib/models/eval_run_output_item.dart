@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_run_output_item_result.dart';import 'eval_run_output_item_sample.dart';/// The type of the object. Always "eval.run.output_item".
-final class EvalRunOutputItemObject {const EvalRunOutputItemObject._(this.value);
+@immutable final class EvalRunOutputItemObject {const EvalRunOutputItemObject._(this.value);
 
 factory EvalRunOutputItemObject.fromJson(String json) { return switch (json) {
   'eval.run.output_item' => evalRunOutputItem,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A schema representing an evaluation run output item.
 /// 
-final class EvalRunOutputItem {const EvalRunOutputItem({this.object = EvalRunOutputItemObject.evalRunOutputItem, required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, });
+@immutable final class EvalRunOutputItem {const EvalRunOutputItem({required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, this.object = EvalRunOutputItemObject.evalRunOutputItem, });
 
 factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOutputItem(
   object: EvalRunOutputItemObject.fromJson(json['object'] as String),

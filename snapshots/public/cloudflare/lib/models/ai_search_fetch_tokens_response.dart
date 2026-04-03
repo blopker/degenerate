@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_fetch_tokens_response_result.dart';final class AiSearchFetchTokensResponse {const AiSearchFetchTokensResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_tokens_response_result.dart';@immutable final class AiSearchFetchTokensResponse {const AiSearchFetchTokensResponse({required this.result, required this.success, });
 
 factory AiSearchFetchTokensResponse.fromJson(Map<String, dynamic> json) { return AiSearchFetchTokensResponse(
   result: AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>),

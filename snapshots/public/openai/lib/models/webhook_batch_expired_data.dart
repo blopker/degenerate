@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Event data payload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data payload.
 /// 
-final class WebhookBatchExpiredData {const WebhookBatchExpiredData({required this.id});
+@immutable final class WebhookBatchExpiredData {const WebhookBatchExpiredData({required this.id});
 
 factory WebhookBatchExpiredData.fromJson(Map<String, dynamic> json) { return WebhookBatchExpiredData(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_cardholder_id_document.dart';/// 
-final class IssuingCardholderVerification {const IssuingCardholderVerification({this.document});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_id_document.dart';/// 
+@immutable final class IssuingCardholderVerification {const IssuingCardholderVerification({this.document});
 
 factory IssuingCardholderVerification.fromJson(Map<String, dynamic> json) { return IssuingCardholderVerification(
   document: json['document'] != null ? IssuingCardholderIdDocument.fromJson(json['document'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The code of the error that occurred when validating the current amount details.
-final class PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The code of the error that occurred when validating the current amount details.
+@immutable final class PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode._(this.value);
 
 factory PaymentFlowsAmountDetailsResourceErrorCode.fromJson(String json) { return switch (json) {
   'amount_details_amount_mismatch' => amountDetailsAmountMismatch,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsAmountDetailsResourceErrorCode($value)'; } 
  }
 /// 
-final class PaymentFlowsAmountDetailsResourceError {const PaymentFlowsAmountDetailsResourceError({this.code, this.message, });
+@immutable final class PaymentFlowsAmountDetailsResourceError {const PaymentFlowsAmountDetailsResourceError({this.code, this.message, });
 
 factory PaymentFlowsAmountDetailsResourceError.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceError(
   code: json['code'] != null ? PaymentFlowsAmountDetailsResourceErrorCode.fromJson(json['code'] as String) : null,

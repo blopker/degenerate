@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a 'wiki_commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository wiki.
-final class SecretScanningLocationWikiCommit {const SecretScanningLocationWikiCommit({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.blobSha, required this.pageUrl, required this.commitSha, required this.commitUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'wiki_commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository wiki.
+@immutable final class SecretScanningLocationWikiCommit {const SecretScanningLocationWikiCommit({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.blobSha, required this.pageUrl, required this.commitSha, required this.commitUrl, });
 
 factory SecretScanningLocationWikiCommit.fromJson(Map<String, dynamic> json) { return SecretScanningLocationWikiCommit(
   path: json['path'] as String,

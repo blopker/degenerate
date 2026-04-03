@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_workflow_run_requested_workflow_run_head_commit_author.dart';import 'webhook_workflow_run_requested_workflow_run_head_commit_committer.dart';final class WebhookWorkflowRunRequestedWorkflowRunHeadCommit {const WebhookWorkflowRunRequestedWorkflowRunHeadCommit({required this.author, required this.committer, required this.id, required this.message, required this.timestamp, required this.treeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_requested_workflow_run_head_commit_author.dart';import 'webhook_workflow_run_requested_workflow_run_head_commit_committer.dart';@immutable final class WebhookWorkflowRunRequestedWorkflowRunHeadCommit {const WebhookWorkflowRunRequestedWorkflowRunHeadCommit({required this.author, required this.committer, required this.id, required this.message, required this.timestamp, required this.treeId, });
 
 factory WebhookWorkflowRunRequestedWorkflowRunHeadCommit.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequestedWorkflowRunHeadCommit(
   author: WebhookWorkflowRunRequestedWorkflowRunHeadCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),

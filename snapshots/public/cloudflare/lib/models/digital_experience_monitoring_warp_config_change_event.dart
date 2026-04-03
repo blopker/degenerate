@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_uuid.dart';import 'digital_experience_monitoring_warp_config_details.dart';final class DigitalExperienceMonitoringWarpConfigChangeEvent {const DigitalExperienceMonitoringWarpConfigChangeEvent({this.deviceId, this.deviceRegistration, this.from, this.hostname, this.serialNumber, this.timestamp, this.to, this.userEmail, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_uuid.dart';import 'digital_experience_monitoring_warp_config_details.dart';@immutable final class DigitalExperienceMonitoringWarpConfigChangeEvent {const DigitalExperienceMonitoringWarpConfigChangeEvent({this.deviceId, this.deviceRegistration, this.from, this.hostname, this.serialNumber, this.timestamp, this.to, this.userEmail, });
 
 factory DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpConfigChangeEvent(
   deviceId: json['device_id'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_id'] as String) : null,

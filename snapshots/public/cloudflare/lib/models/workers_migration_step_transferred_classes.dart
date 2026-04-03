@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersMigrationStepTransferredClasses {const WorkersMigrationStepTransferredClasses({this.from, this.fromScript, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersMigrationStepTransferredClasses {const WorkersMigrationStepTransferredClasses({this.from, this.fromScript, this.to, });
 
 factory WorkersMigrationStepTransferredClasses.fromJson(Map<String, dynamic> json) { return WorkersMigrationStepTransferredClasses(
   from: json['from'] as String?,

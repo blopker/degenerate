@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BranchProtectionAllowDeletions {const BranchProtectionAllowDeletions({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchProtectionAllowDeletions {const BranchProtectionAllowDeletions({this.enabled});
 
 factory BranchProtectionAllowDeletions.fromJson(Map<String, dynamic> json) { return BranchProtectionAllowDeletions(
   enabled: json['enabled'] as bool?,

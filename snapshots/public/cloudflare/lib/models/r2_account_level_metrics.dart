@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_class_based_metrics.dart';/// Metrics based on the class they belong to.
-final class R2AccountLevelMetrics {const R2AccountLevelMetrics({this.infrequentAccess, this.standard, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_class_based_metrics.dart';/// Metrics based on the class they belong to.
+@immutable final class R2AccountLevelMetrics {const R2AccountLevelMetrics({this.infrequentAccess, this.standard, });
 
 factory R2AccountLevelMetrics.fromJson(Map<String, dynamic> json) { return R2AccountLevelMetrics(
   infrequentAccess: json['infrequentAccess'] != null ? R2ClassBasedMetrics.fromJson(json['infrequentAccess'] as Map<String, dynamic>) : null,

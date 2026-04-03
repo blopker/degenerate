@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodespacesCreateWithRepoForAuthenticatedUserResponse503 {const CodespacesCreateWithRepoForAuthenticatedUserResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesCreateWithRepoForAuthenticatedUserResponse503 {const CodespacesCreateWithRepoForAuthenticatedUserResponse503({this.code, this.message, this.documentationUrl, });
 
 factory CodespacesCreateWithRepoForAuthenticatedUserResponse503.fromJson(Map<String, dynamic> json) { return CodespacesCreateWithRepoForAuthenticatedUserResponse503(
   code: json['code'] as String?,

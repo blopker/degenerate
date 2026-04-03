@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param2.dart';import 'secret_key_param4.dart';final class PostSetupIntentsIntentConfirmRequestMandateDataVariant2 {const PostSetupIntentsIntentConfirmRequestMandateDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param2.dart';import 'secret_key_param4.dart';@immutable final class PostSetupIntentsIntentConfirmRequestMandateDataVariant2 {const PostSetupIntentsIntentConfirmRequestMandateDataVariant2._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestMandateDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Certificate Authority that will issue the certificate
-final class TlsCertificatesAndHostnamesCertificateAuthority {const TlsCertificatesAndHostnamesCertificateAuthority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Certificate Authority that will issue the certificate
+@immutable final class TlsCertificatesAndHostnamesCertificateAuthority {const TlsCertificatesAndHostnamesCertificateAuthority._(this.value);
 
 factory TlsCertificatesAndHostnamesCertificateAuthority.fromJson(String json) { return switch (json) {
   'digicert' => digicert,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A hash containing directions for what this Coupon will apply discounts to.
-final class PostCouponsRequestAppliesTo {const PostCouponsRequestAppliesTo({this.products});
+@immutable final class PostCouponsRequestAppliesTo {const PostCouponsRequestAppliesTo({this.products});
 
 factory PostCouponsRequestAppliesTo.fromJson(Map<String, dynamic> json) { return PostCouponsRequestAppliesTo(
   products: (json['products'] as List<dynamic>?)?.map((e) => e as String).toList(),

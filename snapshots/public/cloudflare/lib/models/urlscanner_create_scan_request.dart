@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device resolutions.
-final class UrlscannerCreateScanRequestScreenshotsResolutions {const UrlscannerCreateScanRequestScreenshotsResolutions._(this.value);
+@immutable final class UrlscannerCreateScanRequestScreenshotsResolutions {const UrlscannerCreateScanRequestScreenshotsResolutions._(this.value);
 
 factory UrlscannerCreateScanRequestScreenshotsResolutions.fromJson(String json) { return switch (json) {
   'desktop' => desktop,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UrlscannerCreateScanRequestScreenshotsResolutions($value)'; } 
  }
 /// Country to geo egress from
-final class UrlscannerCreateScanRequestCountry {const UrlscannerCreateScanRequestCountry._(this.value);
+@immutable final class UrlscannerCreateScanRequestCountry {const UrlscannerCreateScanRequestCountry._(this.value);
 
 factory UrlscannerCreateScanRequestCountry.fromJson(String json) { return switch (json) {
   'AF' => af,
@@ -633,7 +633,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UrlscannerCreateScanRequestCountry($value)'; } 
  }
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
-final class UrlscannerCreateScanRequestVisibility {const UrlscannerCreateScanRequestVisibility._(this.value);
+@immutable final class UrlscannerCreateScanRequestVisibility {const UrlscannerCreateScanRequestVisibility._(this.value);
 
 factory UrlscannerCreateScanRequestVisibility.fromJson(String json) { return switch (json) {
   'Public' => public,
@@ -657,7 +657,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerCreateScanRequestVisibility($value)'; } 
  }
-final class UrlscannerCreateScanRequest {const UrlscannerCreateScanRequest({this.country, this.customHeaders, this.screenshotsResolutions, required this.url, this.visibility = UrlscannerCreateScanRequestVisibility.public, });
+@immutable final class UrlscannerCreateScanRequest {const UrlscannerCreateScanRequest({required this.url, this.country, this.customHeaders, this.screenshotsResolutions, this.visibility = UrlscannerCreateScanRequestVisibility.public, });
 
 factory UrlscannerCreateScanRequest.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanRequest(
   country: json['country'] != null ? UrlscannerCreateScanRequestCountry.fromJson(json['country'] as String) : null,

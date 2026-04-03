@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_quotes_quote_request_invoice_settings_issuer.dart';/// All invoices will be billed using the specified settings.
-final class PostQuotesQuoteRequestInvoiceSettings {const PostQuotesQuoteRequestInvoiceSettings({this.daysUntilDue, this.issuer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_quote_request_invoice_settings_issuer.dart';/// All invoices will be billed using the specified settings.
+@immutable final class PostQuotesQuoteRequestInvoiceSettings {const PostQuotesQuoteRequestInvoiceSettings({this.daysUntilDue, this.issuer, });
 
 factory PostQuotesQuoteRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestInvoiceSettings(
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,

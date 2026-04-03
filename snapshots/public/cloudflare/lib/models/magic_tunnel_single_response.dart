@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_tunnel_single_response_result.dart';final class MagicTunnelSingleResponse {const MagicTunnelSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_tunnel_single_response_result.dart';@immutable final class MagicTunnelSingleResponse {const MagicTunnelSingleResponse({this.result});
 
 factory MagicTunnelSingleResponse.fromJson(Map<String, dynamic> json) { return MagicTunnelSingleResponse(
   result: json['result'] != null ? MagicTunnelSingleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

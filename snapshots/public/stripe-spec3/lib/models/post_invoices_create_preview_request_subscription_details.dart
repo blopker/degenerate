@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_billing_cycle_anchor.dart';import 'post_invoices_create_preview_request_subscription_details_billing_mode.dart';import 'post_invoices_create_preview_request_subscription_details_cancel_at.dart';import 'post_invoices_create_preview_request_subscription_details_default_tax_rates.dart';import 'post_invoices_create_preview_request_subscription_details_items.dart';import 'post_invoices_create_preview_request_subscription_details_trial_end.dart';final class PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior {const PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_billing_cycle_anchor.dart';import 'post_invoices_create_preview_request_subscription_details_billing_mode.dart';import 'post_invoices_create_preview_request_subscription_details_cancel_at.dart';import 'post_invoices_create_preview_request_subscription_details_default_tax_rates.dart';import 'post_invoices_create_preview_request_subscription_details_items.dart';import 'post_invoices_create_preview_request_subscription_details_trial_end.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior {const PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt {const PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt._(this.value);
+@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt {const PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt._(this.value);
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt($value)'; } 
  }
 /// The subscription creation or modification params to apply as a preview. Cannot be used with `schedule` or `schedule_details` fields.
-final class PostInvoicesCreatePreviewRequestSubscriptionDetails {const PostInvoicesCreatePreviewRequestSubscriptionDetails({this.billingCycleAnchor, this.billingMode, this.cancelAt, this.cancelAtPeriodEnd, this.cancelNow, this.defaultTaxRates, this.items, this.prorationBehavior, this.prorationDate, this.resumeAt, this.startDate, this.trialEnd, });
+@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetails {const PostInvoicesCreatePreviewRequestSubscriptionDetails({this.billingCycleAnchor, this.billingMode, this.cancelAt, this.cancelAtPeriodEnd, this.cancelNow, this.defaultTaxRates, this.items, this.prorationBehavior, this.prorationDate, this.resumeAt, this.startDate, this.trialEnd, });
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetails(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? OneOf2.parse(json['billing_cycle_anchor'], fromA: (v) => PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchorVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,

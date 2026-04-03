@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `status_callback`. Can be: `GET` and `POST` and defaults to `POST`.
-final class CreateParticipantRequestStatusCallbackMethod {const CreateParticipantRequestStatusCallbackMethod._(this.value);
+@immutable final class CreateParticipantRequestStatusCallbackMethod {const CreateParticipantRequestStatusCallbackMethod._(this.value);
 
 factory CreateParticipantRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateParticipantRequestStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-final class CreateParticipantRequestWaitMethod {const CreateParticipantRequestWaitMethod._(this.value);
+@immutable final class CreateParticipantRequestWaitMethod {const CreateParticipantRequestWaitMethod._(this.value);
 
 factory CreateParticipantRequestWaitMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateParticipantRequestWaitMethod($value)'; } 
  }
 /// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateParticipantRequestConferenceStatusCallbackMethod {const CreateParticipantRequestConferenceStatusCallbackMethod._(this.value);
+@immutable final class CreateParticipantRequestConferenceStatusCallbackMethod {const CreateParticipantRequestConferenceStatusCallbackMethod._(this.value);
 
 factory CreateParticipantRequestConferenceStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateParticipantRequestConferenceStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when we call `recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateParticipantRequestRecordingStatusCallbackMethod {const CreateParticipantRequestRecordingStatusCallbackMethod._(this.value);
+@immutable final class CreateParticipantRequestRecordingStatusCallbackMethod {const CreateParticipantRequestRecordingStatusCallbackMethod._(this.value);
 
 factory CreateParticipantRequestRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateParticipantRequestRecordingStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateParticipantRequestConferenceRecordingStatusCallbackMethod {const CreateParticipantRequestConferenceRecordingStatusCallbackMethod._(this.value);
+@immutable final class CreateParticipantRequestConferenceRecordingStatusCallbackMethod {const CreateParticipantRequestConferenceRecordingStatusCallbackMethod._(this.value);
 
 factory CreateParticipantRequestConferenceRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateParticipantRequestConferenceRecordingStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-final class CreateParticipantRequestAmdStatusCallbackMethod {const CreateParticipantRequestAmdStatusCallbackMethod._(this.value);
+@immutable final class CreateParticipantRequestAmdStatusCallbackMethod {const CreateParticipantRequestAmdStatusCallbackMethod._(this.value);
 
 factory CreateParticipantRequestAmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -150,7 +150,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateParticipantRequestAmdStatusCallbackMethod($value)'; } 
  }
-final class CreateParticipantRequest {const CreateParticipantRequest({required this.from, required this.to, this.statusCallback, this.statusCallbackMethod, this.statusCallbackEvent, this.label, this.timeout, this.record, this.muted, this.beep, this.startConferenceOnEnter, this.endConferenceOnExit, this.waitUrl, this.waitMethod, this.earlyMedia, this.maxParticipants, this.conferenceRecord, this.conferenceTrim, this.conferenceStatusCallback, this.conferenceStatusCallbackMethod, this.conferenceStatusCallbackEvent, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.region, this.conferenceRecordingStatusCallback, this.conferenceRecordingStatusCallbackMethod, this.recordingStatusCallbackEvent, this.conferenceRecordingStatusCallbackEvent, this.coaching, this.callSidToCoach, this.jitterBufferSize, this.byoc, this.callerId, this.callReason, this.recordingTrack, this.timeLimit, this.machineDetection, this.machineDetectionTimeout, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.amdStatusCallback, this.amdStatusCallbackMethod, this.trim, this.callToken, this.clientNotificationUrl, this.callerDisplayName, });
+@immutable final class CreateParticipantRequest {const CreateParticipantRequest({required this.from, required this.to, this.conferenceRecord, this.statusCallbackMethod, this.statusCallbackEvent, this.label, this.timeout, this.record, this.muted, this.beep, this.startConferenceOnEnter, this.endConferenceOnExit, this.waitUrl, this.waitMethod, this.earlyMedia, this.maxParticipants, this.statusCallback, this.conferenceTrim, this.conferenceStatusCallback, this.conferenceStatusCallbackMethod, this.conferenceStatusCallbackEvent, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.region, this.conferenceRecordingStatusCallback, this.conferenceRecordingStatusCallbackMethod, this.recordingStatusCallbackEvent, this.conferenceRecordingStatusCallbackEvent, this.coaching, this.callerDisplayName, this.jitterBufferSize, this.byoc, this.callerId, this.callReason, this.recordingTrack, this.timeLimit, this.machineDetection, this.machineDetectionTimeout, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.amdStatusCallback, this.amdStatusCallbackMethod, this.trim, this.callToken, this.clientNotificationUrl, this.callSidToCoach, });
 
 factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) { return CreateParticipantRequest(
   from: json['From'] as String,

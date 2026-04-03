@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Rolling policy for file sinks (when & why to close a file and open a new one).
-final class CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy {const CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy({this.fileSizeBytes, this.inactivitySeconds, this.intervalSeconds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Rolling policy for file sinks (when & why to close a file and open a new one).
+@immutable final class CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy {const CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy({this.fileSizeBytes, this.inactivitySeconds, this.intervalSeconds, });
 
 factory CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy(
   fileSizeBytes: json['file_size_bytes'] != null ? (json['file_size_bytes'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ThreadObjectToolResourcesCodeInterpreter {const ThreadObjectToolResourcesCodeInterpreter({this.fileIds = const []});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ThreadObjectToolResourcesCodeInterpreter {const ThreadObjectToolResourcesCodeInterpreter({this.fileIds = const []});
 
 factory ThreadObjectToolResourcesCodeInterpreter.fromJson(Map<String, dynamic> json) { return ThreadObjectToolResourcesCodeInterpreter(
   fileIds: json.containsKey('file_ids') ? (json['file_ids'] as List<dynamic>).map((e) => e as String).toList() : const [],

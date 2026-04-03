@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BoolAllocationType {const BoolAllocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BoolAllocationType {const BoolAllocationType._(this.value);
 
 factory BoolAllocationType.fromJson(String json) { return switch (json) {
   'bool' => $bool,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BoolAllocationType($value)'; } 
  }
-final class BoolAllocation {const BoolAllocation({required this.type, required this.value, });
+@immutable final class BoolAllocation {const BoolAllocation({required this.type, required this.value, });
 
 factory BoolAllocation.fromJson(Map<String, dynamic> json) { return BoolAllocation(
   type: BoolAllocationType.fromJson(json['type'] as String),

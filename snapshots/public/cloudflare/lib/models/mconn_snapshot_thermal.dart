@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot Thermal
-final class MconnSnapshotThermal {const MconnSnapshotThermal({this.connectorId, this.criticalCelcius, this.currentCelcius, required this.label, this.maxCelcius, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Thermal
+@immutable final class MconnSnapshotThermal {const MconnSnapshotThermal({required this.label, this.connectorId, this.criticalCelcius, this.currentCelcius, this.maxCelcius, });
 
 factory MconnSnapshotThermal.fromJson(Map<String, dynamic> json) { return MconnSnapshotThermal(
   connectorId: json['connector_id'] as String?,

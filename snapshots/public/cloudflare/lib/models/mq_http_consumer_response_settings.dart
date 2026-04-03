@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_batch_size.dart';import 'mq_max_retries.dart';import 'mq_retry_delay.dart';import 'mq_visibility_timeout.dart';final class MqHttpConsumerResponseSettings {const MqHttpConsumerResponseSettings({this.batchSize, this.maxRetries, this.retryDelay, this.visibilityTimeoutMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_batch_size.dart';import 'mq_max_retries.dart';import 'mq_retry_delay.dart';import 'mq_visibility_timeout.dart';@immutable final class MqHttpConsumerResponseSettings {const MqHttpConsumerResponseSettings({this.batchSize, this.maxRetries, this.retryDelay, this.visibilityTimeoutMs, });
 
 factory MqHttpConsumerResponseSettings.fromJson(Map<String, dynamic> json) { return MqHttpConsumerResponseSettings(
   batchSize: json['batch_size'] != null ? MqBatchSize.fromJson(json['batch_size'] as num) : null,

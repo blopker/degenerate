@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey {const AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey {const AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey._(this.value);
 
 factory AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey($value)'; } 
  }
-final class AigConfigCreateEvaluationsResponseResultDatasetsFiltersOperator {const AigConfigCreateEvaluationsResponseResultDatasetsFiltersOperator._(this.value);
+@immutable final class AigConfigCreateEvaluationsResponseResultDatasetsFiltersOperator {const AigConfigCreateEvaluationsResponseResultDatasetsFiltersOperator._(this.value);
 
 factory AigConfigCreateEvaluationsResponseResultDatasetsFiltersOperator.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateEvaluationsResponseResultDatasetsFiltersOperator($value)'; } 
  }
-final class AigConfigCreateEvaluationsResponseResultDatasetsFilters {const AigConfigCreateEvaluationsResponseResultDatasetsFilters({required this.key, required this.$operator, required this.value, });
+@immutable final class AigConfigCreateEvaluationsResponseResultDatasetsFilters {const AigConfigCreateEvaluationsResponseResultDatasetsFilters({required this.key, required this.$operator, required this.value, });
 
 factory AigConfigCreateEvaluationsResponseResultDatasetsFilters.fromJson(Map<String, dynamic> json) { return AigConfigCreateEvaluationsResponseResultDatasetsFilters(
   key: AigConfigCreateEvaluationsResponseResultDatasetsFiltersKey.fromJson(json['key'] as String),

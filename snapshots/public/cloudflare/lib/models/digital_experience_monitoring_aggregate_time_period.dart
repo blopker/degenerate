@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringAggregateTimePeriodUnits {const DigitalExperienceMonitoringAggregateTimePeriodUnits._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringAggregateTimePeriodUnits {const DigitalExperienceMonitoringAggregateTimePeriodUnits._(this.value);
 
 factory DigitalExperienceMonitoringAggregateTimePeriodUnits.fromJson(String json) { return switch (json) {
   'hours' => hours,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DigitalExperienceMonitoringAggregateTimePeriodUnits($value)'; } 
  }
-final class DigitalExperienceMonitoringAggregateTimePeriod {const DigitalExperienceMonitoringAggregateTimePeriod({required this.units, required this.value, });
+@immutable final class DigitalExperienceMonitoringAggregateTimePeriod {const DigitalExperienceMonitoringAggregateTimePeriod({required this.units, required this.value, });
 
 factory DigitalExperienceMonitoringAggregateTimePeriod.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringAggregateTimePeriod(
   units: DigitalExperienceMonitoringAggregateTimePeriodUnits.fromJson(json['units'] as String),

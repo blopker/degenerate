@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependabotListAlertsForOrgDirection {const DependabotListAlertsForOrgDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForOrgDirection {const DependabotListAlertsForOrgDirection._(this.value);
 
 factory DependabotListAlertsForOrgDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

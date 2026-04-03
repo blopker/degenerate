@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SlurperCreateJobResponseResult {const SlurperCreateJobResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SlurperCreateJobResponseResult {const SlurperCreateJobResponseResult({this.id});
 
 factory SlurperCreateJobResponseResult.fromJson(Map<String, dynamic> json) { return SlurperCreateJobResponseResult(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_config.dart';final class ListHyperdriveResponse {const ListHyperdriveResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_config.dart';@immutable final class ListHyperdriveResponse {const ListHyperdriveResponse({this.result});
 
 factory ListHyperdriveResponse.fromJson(Map<String, dynamic> json) { return ListHyperdriveResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => HyperdriveHyperdriveConfig.fromJson(e as Map<String, dynamic>)).toList(),

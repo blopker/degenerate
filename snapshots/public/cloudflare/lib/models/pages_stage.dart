@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The current build stage.
-final class PagesStageName {const PagesStageName._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current build stage.
+@immutable final class PagesStageName {const PagesStageName._(this.value);
 
 factory PagesStageName.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesStageName($value)'; } 
  }
 /// State of the current stage.
-final class PagesStageStatus {const PagesStageStatus._(this.value);
+@immutable final class PagesStageStatus {const PagesStageStatus._(this.value);
 
 factory PagesStageStatus.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesStageStatus($value)'; } 
  }
 /// The status of the deployment.
-final class PagesStage {const PagesStage({required this.endedOn, required this.name, required this.startedOn, required this.status, });
+@immutable final class PagesStage {const PagesStage({required this.endedOn, required this.name, required this.startedOn, required this.status, });
 
 factory PagesStage.fromJson(Map<String, dynamic> json) { return PagesStage(
   endedOn: json['ended_on'] != null ? DateTime.parse(json['ended_on'] as String) : null,

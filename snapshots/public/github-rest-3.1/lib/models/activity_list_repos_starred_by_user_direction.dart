@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivityListReposStarredByUserDirection {const ActivityListReposStarredByUserDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListReposStarredByUserDirection {const ActivityListReposStarredByUserDirection._(this.value);
 
 factory ActivityListReposStarredByUserDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_commit_message_pattern_parameters.dart';final class RepositoryRuleCommitMessagePatternType {const RepositoryRuleCommitMessagePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_commit_message_pattern_parameters.dart';@immutable final class RepositoryRuleCommitMessagePatternType {const RepositoryRuleCommitMessagePatternType._(this.value);
 
 factory RepositoryRuleCommitMessagePatternType.fromJson(String json) { return switch (json) {
   'commit_message_pattern' => commitMessagePattern,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleCommitMessagePatternType($value)'; } 
  }
 /// Parameters to be used for the commit_message_pattern rule
-final class RepositoryRuleCommitMessagePattern {const RepositoryRuleCommitMessagePattern({required this.type, this.parameters, });
+@immutable final class RepositoryRuleCommitMessagePattern {const RepositoryRuleCommitMessagePattern({required this.type, this.parameters, });
 
 factory RepositoryRuleCommitMessagePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitMessagePattern(
   type: RepositoryRuleCommitMessagePatternType.fromJson(json['type'] as String),

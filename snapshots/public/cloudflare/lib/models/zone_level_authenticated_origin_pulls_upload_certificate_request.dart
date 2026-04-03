@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_private_key.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_certificate.dart';final class ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest {const ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest({required this.certificate, required this.privateKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_private_key.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_certificate.dart';@immutable final class ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest {const ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest({required this.certificate, required this.privateKey, });
 
 factory ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest(
   certificate: TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasCertificate.fromJson(json['certificate'] as String),

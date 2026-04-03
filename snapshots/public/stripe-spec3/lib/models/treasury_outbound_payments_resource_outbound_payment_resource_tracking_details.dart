@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_outbound_payments_resource_ach_tracking_details.dart';import 'treasury_outbound_payments_resource_us_domestic_wire_tracking_details.dart';/// The US bank account network used to send funds.
-final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_payments_resource_ach_tracking_details.dart';import 'treasury_outbound_payments_resource_us_domestic_wire_tracking_details.dart';/// The US bank account network used to send funds.
+@immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._(this.value);
 
 factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType($value)'; } 
  }
 /// 
-final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
+@immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
 factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
   ach: json['ach'] != null ? TreasuryOutboundPaymentsResourceAchTrackingDetails.fromJson(json['ach'] as Map<String, dynamic>) : null,

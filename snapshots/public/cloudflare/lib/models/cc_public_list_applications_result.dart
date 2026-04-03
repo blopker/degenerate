@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_public_application.dart';final class CcPublicListApplicationsResult {const CcPublicListApplicationsResult({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_public_application.dart';@immutable final class CcPublicListApplicationsResult {const CcPublicListApplicationsResult({required this.result});
 
 factory CcPublicListApplicationsResult.fromJson(Map<String, dynamic> json) { return CcPublicListApplicationsResult(
   result: (json['result'] as List<dynamic>).map((e) => CcPublicApplication.fromJson(e as Map<String, dynamic>)).toList(),

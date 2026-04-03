@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamWatermarkAtUpload {const StreamWatermarkAtUpload({this.uid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamWatermarkAtUpload {const StreamWatermarkAtUpload({this.uid});
 
 factory StreamWatermarkAtUpload.fromJson(Map<String, dynamic> json) { return StreamWatermarkAtUpload(
   uid: json['uid'] as String?,

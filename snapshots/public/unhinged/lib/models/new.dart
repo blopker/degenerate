@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'n3_incident.dart';
 
+@immutable
 final class NewNull {
   const NewNull._(this.value);
 
@@ -76,6 +77,7 @@ final class NewNull {
   }
 }
 
+@immutable
 final class New0 {
   const New0._(this.value);
 
@@ -142,6 +144,7 @@ final class New0 {
   }
 }
 
+@immutable
 final class NewType {
   const NewType._(this.value);
 
@@ -205,13 +208,14 @@ final class NewType {
   }
 }
 
+@immutable
 final class New {
   const New({
-    this.$false = true,
     required this.none,
-    this.$null = NewNull.$null,
     required this.$0,
     required this.$empty,
+    this.$false = true,
+    this.$null = NewNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,

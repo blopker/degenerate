@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'service_tier.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_tier.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final class ModelResponsePropertiesPromptCacheRetention {const ModelResponsePropertiesPromptCacheRetention._(this.value);
+@immutable final class ModelResponsePropertiesPromptCacheRetention {const ModelResponsePropertiesPromptCacheRetention._(this.value);
 
 factory ModelResponsePropertiesPromptCacheRetention.fromJson(String json) { return switch (json) {
   'in-memory' => inMemory,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ModelResponsePropertiesPromptCacheRetention($value)'; } 
  }
-final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
+@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
 
 factory ModelResponseProperties.fromJson(Map<String, dynamic> json) { return ModelResponseProperties(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

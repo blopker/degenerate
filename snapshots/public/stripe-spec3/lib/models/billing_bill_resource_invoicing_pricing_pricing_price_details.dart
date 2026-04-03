@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_pricing_pricing_price_details_price.dart';import 'price.dart';/// 
-final class BillingBillResourceInvoicingPricingPricingPriceDetails {const BillingBillResourceInvoicingPricingPricingPriceDetails({required this.price, required this.product, });
+@immutable final class BillingBillResourceInvoicingPricingPricingPriceDetails {const BillingBillResourceInvoicingPricingPricingPriceDetails({required this.price, required this.product, });
 
 factory BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingPricingPricingPriceDetails(
   price: OneOf2.parse(json['price'], fromA: (v) => v as String, fromB: (v) => Price.fromJson(v as Map<String, dynamic>),),

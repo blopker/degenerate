@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts3_contexts.dart';final class InputQueryAndContexts3 {const InputQueryAndContexts3({required this.contexts, this.query, this.truncateInputs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts3_contexts.dart';@immutable final class InputQueryAndContexts3 {const InputQueryAndContexts3({required this.contexts, this.query, this.truncateInputs = false, });
 
 factory InputQueryAndContexts3.fromJson(Map<String, dynamic> json) { return InputQueryAndContexts3(
   contexts: (json['contexts'] as List<dynamic>).map((e) => InputQueryAndContexts3Contexts.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_tool_message_content.dart';import 'chat_completion_request_tool_message_content_part.dart';final class ChatCompletionRequestToolMessage {const ChatCompletionRequestToolMessage({required this.role, required this.content, required this.toolCallId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_tool_message_content.dart';import 'chat_completion_request_tool_message_content_part.dart';@immutable final class ChatCompletionRequestToolMessage {const ChatCompletionRequestToolMessage({required this.role, required this.content, required this.toolCallId, });
 
 factory ChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestToolMessage(
   role: json['role'] as String,

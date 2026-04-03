@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a HTTPS record.
-final class DnsRecordsHttpsRecordData {const DnsRecordsHttpsRecordData({this.priority, this.target, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a HTTPS record.
+@immutable final class DnsRecordsHttpsRecordData {const DnsRecordsHttpsRecordData({this.priority, this.target, this.value, });
 
 factory DnsRecordsHttpsRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsHttpsRecordData(
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,

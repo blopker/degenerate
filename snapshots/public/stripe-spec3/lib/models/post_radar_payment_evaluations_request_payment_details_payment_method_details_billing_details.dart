@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_radar_payment_evaluations_request_payment_details_payment_method_details_billing_details_address.dart';final class PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails({this.address, this.email, this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_radar_payment_evaluations_request_payment_details_payment_method_details_billing_details_address.dart';@immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails({this.address, this.email, this.name, this.phone, });
 
 factory PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails(
   address: json['address'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

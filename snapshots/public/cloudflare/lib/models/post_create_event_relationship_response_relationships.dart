@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of relationship between the events
-final class PostCreateEventRelationshipResponseRelationshipsRelationshipType {const PostCreateEventRelationshipResponseRelationshipsRelationshipType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of relationship between the events
+@immutable final class PostCreateEventRelationshipResponseRelationshipsRelationshipType {const PostCreateEventRelationshipResponseRelationshipsRelationshipType._(this.value);
 
 factory PostCreateEventRelationshipResponseRelationshipsRelationshipType.fromJson(String json) { return switch (json) {
   'related_to' => relatedTo,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCreateEventRelationshipResponseRelationshipsRelationshipType($value)'; } 
  }
-final class PostCreateEventRelationshipResponseRelationships {const PostCreateEventRelationshipResponseRelationships({required this.childDatasetId, required this.childId, required this.parentDatasetId, required this.parentId, required this.relationshipType, });
+@immutable final class PostCreateEventRelationshipResponseRelationships {const PostCreateEventRelationshipResponseRelationships({required this.childDatasetId, required this.childId, required this.parentDatasetId, required this.parentId, required this.relationshipType, });
 
 factory PostCreateEventRelationshipResponseRelationships.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponseRelationships(
   childDatasetId: json['childDatasetId'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_components_schemas_name.dart';import 'teams_devices_config_response.dart';import 'teams_devices_interval.dart';import 'teams_devices_schemas_type.dart';import 'teams_devices_uuid.dart';final class TeamsDevicesDevicePostureIntegrations {const TeamsDevicesDevicePostureIntegrations({this.config, this.id, this.interval, this.name, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_components_schemas_name.dart';import 'teams_devices_config_response.dart';import 'teams_devices_interval.dart';import 'teams_devices_schemas_type.dart';import 'teams_devices_uuid.dart';@immutable final class TeamsDevicesDevicePostureIntegrations {const TeamsDevicesDevicePostureIntegrations({this.config, this.id, this.interval, this.name, this.type, });
 
 factory TeamsDevicesDevicePostureIntegrations.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicePostureIntegrations(
   config: json['config'] != null ? TeamsDevicesConfigResponse.fromJson(json['config'] as Map<String, dynamic>) : null,

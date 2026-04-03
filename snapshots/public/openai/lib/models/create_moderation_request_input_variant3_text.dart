@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `text`.
-final class CreateModerationRequestInputVariant3TextType {const CreateModerationRequestInputVariant3TextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `text`.
+@immutable final class CreateModerationRequestInputVariant3TextType {const CreateModerationRequestInputVariant3TextType._(this.value);
 
 factory CreateModerationRequestInputVariant3TextType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateModerationRequestInputVariant3TextType($value)'; } 
  }
 /// An object describing text to classify.
-final class CreateModerationRequestInputVariant3Text {const CreateModerationRequestInputVariant3Text({required this.type, required this.text, });
+@immutable final class CreateModerationRequestInputVariant3Text {const CreateModerationRequestInputVariant3Text({required this.type, required this.text, });
 
 factory CreateModerationRequestInputVariant3Text.fromJson(Map<String, dynamic> json) { return CreateModerationRequestInputVariant3Text(
   type: CreateModerationRequestInputVariant3TextType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookIssueCommentEditedIssueLabels {const WebhookIssueCommentEditedIssueLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentEditedIssueLabels {const WebhookIssueCommentEditedIssueLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
 
 factory WebhookIssueCommentEditedIssueLabels.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentEditedIssueLabels(
   color: json['color'] as String,

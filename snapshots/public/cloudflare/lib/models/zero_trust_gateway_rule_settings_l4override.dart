@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`.
-final class ZeroTrustGatewayRuleSettingsL4override {const ZeroTrustGatewayRuleSettingsL4override({this.ip, this.port, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`.
+@immutable final class ZeroTrustGatewayRuleSettingsL4override {const ZeroTrustGatewayRuleSettingsL4override({this.ip, this.port, });
 
 factory ZeroTrustGatewayRuleSettingsL4override.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsL4override(
   ip: json['ip'] as String?,

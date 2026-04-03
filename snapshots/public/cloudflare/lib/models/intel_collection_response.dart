@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_collection_response_result.dart';final class IntelCollectionResponse {const IntelCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_collection_response_result.dart';@immutable final class IntelCollectionResponse {const IntelCollectionResponse({this.result});
 
 factory IntelCollectionResponse.fromJson(Map<String, dynamic> json) { return IntelCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IntelCollectionResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

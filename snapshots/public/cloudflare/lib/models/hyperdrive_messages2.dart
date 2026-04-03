@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HyperdriveMessages2 {const HyperdriveMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveMessages2 {const HyperdriveMessages2({required this.code, required this.message, });
 
 factory HyperdriveMessages2.fromJson(Map<String, dynamic> json) { return HyperdriveMessages2(
   code: (json['code'] as num).toInt(),

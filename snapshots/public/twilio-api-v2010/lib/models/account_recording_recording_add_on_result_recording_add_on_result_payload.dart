@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload {const AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload({this.sid, this.addOnResultSid, this.accountSid, this.label, this.addOnSid, this.addOnConfigurationSid, this.contentType, this.dateCreated, this.dateUpdated, this.referenceSid, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload {const AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload({this.sid, this.addOnResultSid, this.accountSid, this.label, this.addOnSid, this.addOnConfigurationSid, this.contentType, this.dateCreated, this.dateUpdated, this.referenceSid, this.subresourceUris, });
 
 factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
   sid: json['sid'] as String?,

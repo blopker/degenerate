@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_list_tools.in_progress'.
-final class ResponseMcpListToolsInProgressEventType {const ResponseMcpListToolsInProgressEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_list_tools.in_progress'.
+@immutable final class ResponseMcpListToolsInProgressEventType {const ResponseMcpListToolsInProgressEventType._(this.value);
 
 factory ResponseMcpListToolsInProgressEventType.fromJson(String json) { return switch (json) {
   'response.mcp_list_tools.in_progress' => responseMcpListToolsInProgress,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when the system is in the process of retrieving the list of available MCP tools.
 /// 
-final class ResponseMcpListToolsInProgressEvent {const ResponseMcpListToolsInProgressEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
+@immutable final class ResponseMcpListToolsInProgressEvent {const ResponseMcpListToolsInProgressEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
 
 factory ResponseMcpListToolsInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpListToolsInProgressEvent(
   type: ResponseMcpListToolsInProgressEventType.fromJson(json['type'] as String),

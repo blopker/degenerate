@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_anomaly_package.dart';import 'firewall_package.dart';import 'firewall_package_definition.dart';final class FirewallPackageResponseCollectionVariant2 {const FirewallPackageResponseCollectionVariant2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_anomaly_package.dart';import 'firewall_package.dart';import 'firewall_package_definition.dart';@immutable final class FirewallPackageResponseCollectionVariant2 {const FirewallPackageResponseCollectionVariant2({this.result});
 
 factory FirewallPackageResponseCollectionVariant2.fromJson(Map<String, dynamic> json) { return FirewallPackageResponseCollectionVariant2(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => FirewallPackageDefinition.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallAnomalyPackage.fromJson(v as Map<String, dynamic>),)).toList(),

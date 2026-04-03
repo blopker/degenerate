@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_output_text.dart';/// Type discriminator that is always `chatkit.thread_item`.
-final class AssistantMessageItemObject {const AssistantMessageItemObject._(this.value);
+@immutable final class AssistantMessageItemObject {const AssistantMessageItemObject._(this.value);
 
 factory AssistantMessageItemObject.fromJson(String json) { return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AssistantMessageItemObject($value)'; } 
  }
 /// Assistant-authored message within a thread.
-final class AssistantMessageItem {const AssistantMessageItem({required this.id, this.object = AssistantMessageItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.assistant_message', required this.content, });
+@immutable final class AssistantMessageItem {const AssistantMessageItem({required this.id, required this.createdAt, required this.threadId, required this.content, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.assistant_message', });
 
 factory AssistantMessageItem.fromJson(Map<String, dynamic> json) { return AssistantMessageItem(
   id: json['id'] as String,

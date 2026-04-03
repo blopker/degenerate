@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_device_dex_test_schemas_http.dart';final class DigitalExperienceMonitoringDexDeleteResponseCollectionResult {const DigitalExperienceMonitoringDexDeleteResponseCollectionResult({this.dexTests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_device_dex_test_schemas_http.dart';@immutable final class DigitalExperienceMonitoringDexDeleteResponseCollectionResult {const DigitalExperienceMonitoringDexDeleteResponseCollectionResult({this.dexTests});
 
 factory DigitalExperienceMonitoringDexDeleteResponseCollectionResult.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexDeleteResponseCollectionResult(
   dexTests: (json['dex_tests'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(e as Map<String, dynamic>)).toList(),

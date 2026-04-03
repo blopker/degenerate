@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteAccountsAccountPersonsPersonRequest {const DeleteAccountsAccountPersonsPersonRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteAccountsAccountPersonsPersonRequest {const DeleteAccountsAccountPersonsPersonRequest();
 
 factory DeleteAccountsAccountPersonsPersonRequest.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountPersonsPersonRequest(
 

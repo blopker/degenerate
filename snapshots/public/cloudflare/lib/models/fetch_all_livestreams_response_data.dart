@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'fetch_all_livestreams_response_data_paging.dart';final class FetchAllLivestreamsResponseDataStatus {const FetchAllLivestreamsResponseDataStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fetch_all_livestreams_response_data_paging.dart';@immutable final class FetchAllLivestreamsResponseDataStatus {const FetchAllLivestreamsResponseDataStatus._(this.value);
 
 factory FetchAllLivestreamsResponseDataStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FetchAllLivestreamsResponseDataStatus($value)'; } 
  }
-final class FetchAllLivestreamsResponseData {const FetchAllLivestreamsResponseData({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.paging, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
+@immutable final class FetchAllLivestreamsResponseData {const FetchAllLivestreamsResponseData({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.paging, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
 factory FetchAllLivestreamsResponseData.fromJson(Map<String, dynamic> json) { return FetchAllLivestreamsResponseData(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

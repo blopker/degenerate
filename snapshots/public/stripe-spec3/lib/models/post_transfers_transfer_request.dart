@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfers_transfer_request_metadata.dart';final class PostTransfersTransferRequest {const PostTransfersTransferRequest({this.description, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfers_transfer_request_metadata.dart';@immutable final class PostTransfersTransferRequest {const PostTransfersTransferRequest({this.description, this.expand, this.metadata, });
 
 factory PostTransfersTransferRequest.fromJson(Map<String, dynamic> json) { return PostTransfersTransferRequest(
   description: json['description'] as String?,

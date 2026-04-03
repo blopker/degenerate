@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_account_id.dart';import 'tunnel_conns_active_at.dart';import 'tunnel_conns_inactive_at.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_schemas_connection.dart';import 'tunnel_status.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_tunnel_name.dart';import 'tunnel_tunnel_type.dart';/// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
-final class TunnelWarpConnectorTunnel {const TunnelWarpConnectorTunnel({this.accountTag, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.status, this.tunType, });
+@immutable final class TunnelWarpConnectorTunnel {const TunnelWarpConnectorTunnel({this.accountTag, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.status, this.tunType, });
 
 factory TunnelWarpConnectorTunnel.fromJson(Map<String, dynamic> json) { return TunnelWarpConnectorTunnel(
   accountTag: json['account_tag'] != null ? TunnelAccountId.fromJson(json['account_tag'] as String) : null,

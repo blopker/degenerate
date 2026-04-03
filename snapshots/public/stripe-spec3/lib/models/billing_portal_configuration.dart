@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'billing_portal_configuration_application.dart';import 'deleted_application.dart';import 'portal_business_profile.dart';import 'portal_features.dart';import 'portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class BillingPortalConfigurationObject {const BillingPortalConfigurationObject._(this.value);
+@immutable final class BillingPortalConfigurationObject {const BillingPortalConfigurationObject._(this.value);
 
 factory BillingPortalConfigurationObject.fromJson(String json) { return switch (json) {
   'billing_portal.configuration' => billingPortalConfiguration,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingPortalConfigurationObject($value)'; } 
  }
 /// A portal configuration describes the functionality and behavior you embed in a portal session. Related guide: [Configure the customer portal](/customer-management/configure-portal).
-final class BillingPortalConfiguration {const BillingPortalConfiguration({required this.active, this.application, required this.businessProfile, required this.created, this.defaultReturnUrl, required this.features, required this.id, required this.isDefault, required this.livemode, required this.loginPage, this.metadata, this.name, required this.object, required this.updated, });
+@immutable final class BillingPortalConfiguration {const BillingPortalConfiguration({required this.active, required this.businessProfile, required this.created, required this.features, required this.id, required this.isDefault, required this.livemode, required this.loginPage, required this.object, required this.updated, this.application, this.defaultReturnUrl, this.metadata, this.name, });
 
 factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
   active: json['active'] as bool,

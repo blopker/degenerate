@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourceCustomFieldsText {const PaymentLinksResourceCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourceCustomFieldsText {const PaymentLinksResourceCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, });
 
 factory PaymentLinksResourceCustomFieldsText.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsText(
   defaultValue: json['default_value'] as String?,

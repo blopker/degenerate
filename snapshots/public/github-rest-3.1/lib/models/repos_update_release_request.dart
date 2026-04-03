@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-final class ReposUpdateReleaseRequestMakeLatest {const ReposUpdateReleaseRequestMakeLatest._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+@immutable final class ReposUpdateReleaseRequestMakeLatest {const ReposUpdateReleaseRequestMakeLatest._(this.value);
 
 factory ReposUpdateReleaseRequestMakeLatest.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposUpdateReleaseRequestMakeLatest($value)'; } 
  }
-final class ReposUpdateReleaseRequest {const ReposUpdateReleaseRequest({this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.makeLatest, this.discussionCategoryName, });
+@immutable final class ReposUpdateReleaseRequest {const ReposUpdateReleaseRequest({this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.makeLatest, this.discussionCategoryName, });
 
 factory ReposUpdateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateReleaseRequest(
   tagName: json['tag_name'] as String?,

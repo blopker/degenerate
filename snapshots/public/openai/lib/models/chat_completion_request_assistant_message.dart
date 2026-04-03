@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_calls2.dart';import 'chat_completion_request_assistant_message_audio.dart';import 'chat_completion_request_assistant_message_content.dart';import 'chat_completion_request_assistant_message_content_part.dart';import 'chat_completion_request_assistant_message_function_call.dart';/// Messages sent by the model in response to user messages.
 /// 
-final class ChatCompletionRequestAssistantMessage {const ChatCompletionRequestAssistantMessage({this.content, this.refusal, required this.role, this.name, this.audio, this.toolCalls, this.functionCall, });
+@immutable final class ChatCompletionRequestAssistantMessage {const ChatCompletionRequestAssistantMessage({required this.role, this.content, this.refusal, this.name, this.audio, this.toolCalls, this.functionCall, });
 
 factory ChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestAssistantMessage(
   content: json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestAssistantMessageContentPart.fromJson(e as Map<String, dynamic>)).toList(),) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dispute_enhanced_eligibility_visa_compelling_evidence3.dart';import 'dispute_enhanced_eligibility_visa_compliance.dart';/// 
-final class DisputeEnhancedEligibility {const DisputeEnhancedEligibility({this.visaCompellingEvidence3, this.visaCompliance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_enhanced_eligibility_visa_compelling_evidence3.dart';import 'dispute_enhanced_eligibility_visa_compliance.dart';/// 
+@immutable final class DisputeEnhancedEligibility {const DisputeEnhancedEligibility({this.visaCompellingEvidence3, this.visaCompliance, });
 
 factory DisputeEnhancedEligibility.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibility(
   visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null ? DisputeEnhancedEligibilityVisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>) : null,

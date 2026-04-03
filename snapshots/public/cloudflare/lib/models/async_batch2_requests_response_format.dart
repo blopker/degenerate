@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AsyncBatch2RequestsResponseFormatType {const AsyncBatch2RequestsResponseFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsyncBatch2RequestsResponseFormatType {const AsyncBatch2RequestsResponseFormatType._(this.value);
 
 factory AsyncBatch2RequestsResponseFormatType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AsyncBatch2RequestsResponseFormatType($value)'; } 
  }
-final class AsyncBatch2RequestsResponseFormat {const AsyncBatch2RequestsResponseFormat({this.jsonSchema, this.type, });
+@immutable final class AsyncBatch2RequestsResponseFormat {const AsyncBatch2RequestsResponseFormat({this.jsonSchema, this.type, });
 
 factory AsyncBatch2RequestsResponseFormat.fromJson(Map<String, dynamic> json) { return AsyncBatch2RequestsResponseFormat(
   jsonSchema: json['json_schema'],

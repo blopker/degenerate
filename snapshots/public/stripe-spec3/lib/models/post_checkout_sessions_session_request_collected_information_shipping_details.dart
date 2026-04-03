@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_session_request_collected_information_shipping_details_address.dart';final class PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails {const PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails({required this.address, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information_shipping_details_address.dart';@immutable final class PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails {const PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails({required this.address, required this.name, });
 
 factory PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails(
   address: PostCheckoutSessionsSessionRequestCollectedInformationShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>),

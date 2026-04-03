@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_token_logprob.dart';/// Log probability information for the choice.
-final class CreateChatCompletionResponseChoicesLogprobs {const CreateChatCompletionResponseChoicesLogprobs({required this.content, required this.refusal, });
+@immutable final class CreateChatCompletionResponseChoicesLogprobs {const CreateChatCompletionResponseChoicesLogprobs({required this.content, required this.refusal, });
 
 factory CreateChatCompletionResponseChoicesLogprobs.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponseChoicesLogprobs(
   content: (json['content'] as List<dynamic>?)?.map((e) => ChatCompletionTokenLogprob.fromJson(e as Map<String, dynamic>)).toList(),

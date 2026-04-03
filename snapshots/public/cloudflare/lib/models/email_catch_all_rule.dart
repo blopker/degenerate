@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_catchall_action.dart';import 'email_rule_catchall_matcher.dart';import 'email_rule_enabled.dart';import 'email_rule_identifier.dart';import 'email_rule_name.dart';import 'email_rule_tag.dart';final class EmailCatchAllRule {const EmailCatchAllRule({this.actions, this.enabled, this.id, this.matchers, this.name, this.tag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_catchall_action.dart';import 'email_rule_catchall_matcher.dart';import 'email_rule_enabled.dart';import 'email_rule_identifier.dart';import 'email_rule_name.dart';import 'email_rule_tag.dart';@immutable final class EmailCatchAllRule {const EmailCatchAllRule({this.actions, this.enabled, this.id, this.matchers, this.name, this.tag, });
 
 factory EmailCatchAllRule.fromJson(Map<String, dynamic> json) { return EmailCatchAllRule(
   actions: (json['actions'] as List<dynamic>?)?.map((e) => EmailRuleCatchallAction.fromJson(e as Map<String, dynamic>)).toList(),

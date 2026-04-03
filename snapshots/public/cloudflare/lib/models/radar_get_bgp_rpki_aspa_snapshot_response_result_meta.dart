@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRpkiAspaSnapshotResponseResultMeta {const RadarGetBgpRpkiAspaSnapshotResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponseResultMeta {const RadarGetBgpRpkiAspaSnapshotResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalCount, });
 
 factory RadarGetBgpRpkiAspaSnapshotResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaSnapshotResponseResultMeta(
   dataTime: DateTime.parse(json['dataTime'] as String),

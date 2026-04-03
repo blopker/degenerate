@@ -1,9 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'end_reason.dart';
 
+@immutable
 final class EndedDetail {
-  const EndedDetail({this.type = 'ended', required this.reason});
+  const EndedDetail({required this.reason, this.type = 'ended'});
 
   factory EndedDetail.fromJson(Map<String, dynamic> json) {
     return EndedDetail(

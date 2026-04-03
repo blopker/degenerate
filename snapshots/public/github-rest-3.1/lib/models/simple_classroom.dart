@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A GitHub Classroom classroom
-final class SimpleClassroom {const SimpleClassroom({required this.id, required this.name, required this.archived, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub Classroom classroom
+@immutable final class SimpleClassroom {const SimpleClassroom({required this.id, required this.name, required this.archived, required this.url, });
 
 factory SimpleClassroom.fromJson(Map<String, dynamic> json) { return SimpleClassroom(
   id: (json['id'] as num).toInt(),

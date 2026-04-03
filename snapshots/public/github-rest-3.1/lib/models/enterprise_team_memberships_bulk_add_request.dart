@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class EnterpriseTeamMembershipsBulkAddRequest {const EnterpriseTeamMembershipsBulkAddRequest({required this.usernames});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnterpriseTeamMembershipsBulkAddRequest {const EnterpriseTeamMembershipsBulkAddRequest({required this.usernames});
 
 factory EnterpriseTeamMembershipsBulkAddRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamMembershipsBulkAddRequest(
   usernames: (json['usernames'] as List<dynamic>).map((e) => e as String).toList(),

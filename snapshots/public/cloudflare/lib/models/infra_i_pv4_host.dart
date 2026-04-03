@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_network.dart';final class InfraIPv4Host {const InfraIPv4Host({required this.ipv4, required this.network, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_network.dart';@immutable final class InfraIPv4Host {const InfraIPv4Host({required this.ipv4, required this.network, });
 
 factory InfraIPv4Host.fromJson(Map<String, dynamic> json) { return InfraIPv4Host(
   ipv4: json['ipv4'] as String,

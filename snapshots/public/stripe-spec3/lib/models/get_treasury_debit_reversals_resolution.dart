@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution._(this.value);
 
 factory GetTreasuryDebitReversalsResolution.fromJson(String json) { return switch (json) {
   'lost' => lost,

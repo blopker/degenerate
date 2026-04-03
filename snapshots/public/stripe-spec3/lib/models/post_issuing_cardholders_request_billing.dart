@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_issuing_cardholders_request_billing_address.dart';/// The cardholder's billing address.
-final class PostIssuingCardholdersRequestBilling {const PostIssuingCardholdersRequestBilling({required this.address});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_billing_address.dart';/// The cardholder's billing address.
+@immutable final class PostIssuingCardholdersRequestBilling {const PostIssuingCardholdersRequestBilling({required this.address});
 
 factory PostIssuingCardholdersRequestBilling.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestBilling(
   address: PostIssuingCardholdersRequestBillingAddress.fromJson(json['address'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_workflows_parameters.dart';final class RepositoryRuleWorkflowsType {const RepositoryRuleWorkflowsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_workflows_parameters.dart';@immutable final class RepositoryRuleWorkflowsType {const RepositoryRuleWorkflowsType._(this.value);
 
 factory RepositoryRuleWorkflowsType.fromJson(String json) { return switch (json) {
   'workflows' => workflows,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleWorkflowsType($value)'; } 
  }
 /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
-final class RepositoryRuleWorkflows {const RepositoryRuleWorkflows({required this.type, this.parameters, });
+@immutable final class RepositoryRuleWorkflows {const RepositoryRuleWorkflows({required this.type, this.parameters, });
 
 factory RepositoryRuleWorkflows.fromJson(Map<String, dynamic> json) { return RepositoryRuleWorkflows(
   type: RepositoryRuleWorkflowsType.fromJson(json['type'] as String),

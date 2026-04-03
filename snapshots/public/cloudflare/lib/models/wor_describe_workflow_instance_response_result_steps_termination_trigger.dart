@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger {const WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger({required this.source});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger {const WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger({required this.source});
 
 factory WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger(
   source: json['source'] as String,

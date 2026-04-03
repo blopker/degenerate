@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileCommitCommitCommitter {const FileCommitCommitCommitter({this.date, this.name, this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitCommitter {const FileCommitCommitCommitter({this.date, this.name, this.email, });
 
 factory FileCommitCommitCommitter.fromJson(Map<String, dynamic> json) { return FileCommitCommitCommitter(
   date: json['date'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_web_search_options_variant1_user_location_approximate.dart';final class Prompt43WebSearchOptionsVariant1UserLocationType {const Prompt43WebSearchOptionsVariant1UserLocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_web_search_options_variant1_user_location_approximate.dart';@immutable final class Prompt43WebSearchOptionsVariant1UserLocationType {const Prompt43WebSearchOptionsVariant1UserLocationType._(this.value);
 
 factory Prompt43WebSearchOptionsVariant1UserLocationType.fromJson(String json) { return switch (json) {
   'approximate' => approximate,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43WebSearchOptionsVariant1UserLocationType($value)'; } 
  }
-final class Prompt43WebSearchOptionsVariant1UserLocation {const Prompt43WebSearchOptionsVariant1UserLocation({required this.approximate, required this.type, });
+@immutable final class Prompt43WebSearchOptionsVariant1UserLocation {const Prompt43WebSearchOptionsVariant1UserLocation({required this.approximate, required this.type, });
 
 factory Prompt43WebSearchOptionsVariant1UserLocation.fromJson(Map<String, dynamic> json) { return Prompt43WebSearchOptionsVariant1UserLocation(
   approximate: Prompt43WebSearchOptionsVariant1UserLocationApproximate.fromJson(json['approximate'] as Map<String, dynamic>),

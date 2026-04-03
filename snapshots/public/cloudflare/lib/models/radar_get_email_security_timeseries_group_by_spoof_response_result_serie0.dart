@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0({required this.notSpoof, required this.spoof, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0({required this.notSpoof, required this.spoof, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(
   notSpoof: (json['NOT_SPOOF'] as List<dynamic>).map((e) => e as String).toList(),

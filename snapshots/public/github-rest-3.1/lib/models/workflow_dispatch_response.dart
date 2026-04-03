@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The ID of the workflow run.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ID of the workflow run.
 extension type const WorkflowRunId(int value) {
 factory WorkflowRunId.fromJson(num json) => WorkflowRunId(json.toInt());
 
@@ -8,7 +8,7 @@ num toJson() => value;
 
 }
 /// Response containing the workflow run ID and URLs.
-final class WorkflowDispatchResponse {const WorkflowDispatchResponse({required this.workflowRunId, required this.runUrl, required this.htmlUrl, });
+@immutable final class WorkflowDispatchResponse {const WorkflowDispatchResponse({required this.workflowRunId, required this.runUrl, required this.htmlUrl, });
 
 factory WorkflowDispatchResponse.fromJson(Map<String, dynamic> json) { return WorkflowDispatchResponse(
   workflowRunId: WorkflowRunId.fromJson(json['workflow_run_id'] as num),

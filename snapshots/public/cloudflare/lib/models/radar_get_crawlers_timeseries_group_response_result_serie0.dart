@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCrawlersTimeseriesGroupResponseResultSerie0 {const RadarGetCrawlersTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCrawlersTimeseriesGroupResponseResultSerie0 {const RadarGetCrawlersTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetCrawlersTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetCrawlersTimeseriesGroupResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),

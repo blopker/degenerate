@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_aegis.dart';final class CacheRulesAegisResponseValue {const CacheRulesAegisResponseValue({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_aegis.dart';@immutable final class CacheRulesAegisResponseValue {const CacheRulesAegisResponseValue({this.result});
 
 factory CacheRulesAegisResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesAegisResponseValue(
   result: json['result'] != null ? CacheRulesAegis.fromJson(json['result'] as Map<String, dynamic>) : null,

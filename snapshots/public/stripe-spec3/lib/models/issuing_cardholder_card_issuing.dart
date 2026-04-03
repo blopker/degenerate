@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_cardholder_user_terms_acceptance.dart';/// 
-final class IssuingCardholderCardIssuing {const IssuingCardholderCardIssuing({this.userTermsAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_user_terms_acceptance.dart';/// 
+@immutable final class IssuingCardholderCardIssuing {const IssuingCardholderCardIssuing({this.userTermsAcceptance});
 
 factory IssuingCardholderCardIssuing.fromJson(Map<String, dynamic> json) { return IssuingCardholderCardIssuing(
   userTermsAcceptance: json['user_terms_acceptance'] != null ? IssuingCardholderUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>) : null,

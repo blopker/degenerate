@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_sources_source_request_mandate_acceptance_offline.dart';import 'post_sources_source_request_mandate_acceptance_online.dart';final class PostSourcesSourceRequestMandateAcceptanceStatus {const PostSourcesSourceRequestMandateAcceptanceStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_source_request_mandate_acceptance_offline.dart';import 'post_sources_source_request_mandate_acceptance_online.dart';@immutable final class PostSourcesSourceRequestMandateAcceptanceStatus {const PostSourcesSourceRequestMandateAcceptanceStatus._(this.value);
 
 factory PostSourcesSourceRequestMandateAcceptanceStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesSourceRequestMandateAcceptanceStatus($value)'; } 
  }
-final class PostSourcesSourceRequestMandateAcceptanceType {const PostSourcesSourceRequestMandateAcceptanceType._(this.value);
+@immutable final class PostSourcesSourceRequestMandateAcceptanceType {const PostSourcesSourceRequestMandateAcceptanceType._(this.value);
 
 factory PostSourcesSourceRequestMandateAcceptanceType.fromJson(String json) { return switch (json) {
   'offline' => offline,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesSourceRequestMandateAcceptanceType($value)'; } 
  }
-final class PostSourcesSourceRequestMandateAcceptance {const PostSourcesSourceRequestMandateAcceptance({this.date, this.ip, this.offline, this.online, required this.status, this.type, this.userAgent, });
+@immutable final class PostSourcesSourceRequestMandateAcceptance {const PostSourcesSourceRequestMandateAcceptance({required this.status, this.date, this.ip, this.offline, this.online, this.type, this.userAgent, });
 
 factory PostSourcesSourceRequestMandateAcceptance.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestMandateAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

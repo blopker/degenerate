@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_payouts_schedule_delay_days.dart';final class PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyPayoutDays {const PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyPayoutDays._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_payouts_schedule_delay_days.dart';@immutable final class PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyPayoutDays {const PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyPayoutDays._(this.value);
 
 factory PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
   'friday' => friday,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyPayoutDays($value)'; } 
  }
-final class PostAccountsAccountRequestSettingsPayoutsScheduleInterval {const PostAccountsAccountRequestSettingsPayoutsScheduleInterval._(this.value);
+@immutable final class PostAccountsAccountRequestSettingsPayoutsScheduleInterval {const PostAccountsAccountRequestSettingsPayoutsScheduleInterval._(this.value);
 
 factory PostAccountsAccountRequestSettingsPayoutsScheduleInterval.fromJson(String json) { return switch (json) {
   'daily' => daily,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestSettingsPayoutsScheduleInterval($value)'; } 
  }
-final class PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyAnchor {const PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyAnchor._(this.value);
+@immutable final class PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyAnchor {const PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyAnchor._(this.value);
 
 factory PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyAnchor.fromJson(String json) { return switch (json) {
   'friday' => friday,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestSettingsPayoutsScheduleWeeklyAnchor($value)'; } 
  }
-final class PostAccountsAccountRequestSettingsPayoutsSchedule {const PostAccountsAccountRequestSettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
+@immutable final class PostAccountsAccountRequestSettingsPayoutsSchedule {const PostAccountsAccountRequestSettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
 factory PostAccountsAccountRequestSettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsPayoutsSchedule(
   delayDays: json['delay_days'] != null ? OneOf2.parse(json['delay_days'], fromA: (v) => PostAccountsAccountRequestSettingsPayoutsScheduleDelayDaysVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,

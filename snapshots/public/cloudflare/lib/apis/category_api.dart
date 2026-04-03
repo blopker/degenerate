@@ -15,7 +15,7 @@ Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListResponse400>> get
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item));
 }
 }
 

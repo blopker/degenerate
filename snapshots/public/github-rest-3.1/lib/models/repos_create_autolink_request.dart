@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateAutolinkRequest {const ReposCreateAutolinkRequest({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAutolinkRequest {const ReposCreateAutolinkRequest({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric = true, });
 
 factory ReposCreateAutolinkRequest.fromJson(Map<String, dynamic> json) { return ReposCreateAutolinkRequest(
   keyPrefix: json['key_prefix'] as String,

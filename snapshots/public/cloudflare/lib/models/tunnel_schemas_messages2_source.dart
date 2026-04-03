@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TunnelSchemasMessages2Source {const TunnelSchemasMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TunnelSchemasMessages2Source {const TunnelSchemasMessages2Source({this.pointer});
 
 factory TunnelSchemasMessages2Source.fromJson(Map<String, dynamic> json) { return TunnelSchemasMessages2Source(
   pointer: json['pointer'] as String?,

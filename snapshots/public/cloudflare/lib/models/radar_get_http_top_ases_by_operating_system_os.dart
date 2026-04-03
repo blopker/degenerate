@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operating system.
-final class RadarGetHttpTopAsesByOperatingSystemOs {const RadarGetHttpTopAsesByOperatingSystemOs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
+@immutable final class RadarGetHttpTopAsesByOperatingSystemOs {const RadarGetHttpTopAsesByOperatingSystemOs._(this.value);
 
 factory RadarGetHttpTopAsesByOperatingSystemOs.fromJson(String json) { return switch (json) {
   'WINDOWS' => windows,

@@ -1,12 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'remove_reason.dart';
 
+@immutable
 final class RemoveParticipantPayload {
   const RemoveParticipantPayload({
-    this.action = 'remove_participant',
     required this.identity,
     required this.reason,
+    this.action = 'remove_participant',
   });
 
   factory RemoveParticipantPayload.fromJson(Map<String, dynamic> json) {

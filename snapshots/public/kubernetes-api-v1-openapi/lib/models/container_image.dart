@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describe a container image
-final class ContainerImage {const ContainerImage({this.names, this.sizeBytes, });
+@immutable final class ContainerImage {const ContainerImage({this.names, this.sizeBytes, });
 
 factory ContainerImage.fromJson(Map<String, dynamic> json) { return ContainerImage(
   names: (json['names'] as List<dynamic>?)?.map((e) => e as String).toList(),

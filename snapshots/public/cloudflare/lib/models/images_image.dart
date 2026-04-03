@@ -35,7 +35,7 @@ factory ImagesImageUploaded.fromJson(String json) => ImagesImageUploaded(DateTim
 String toJson() => value.toIso8601String();
 
 }
-final class ImagesImage {const ImagesImage({this.creator, this.filename, this.id, this.meta, this.requireSignedUrLs, this.uploaded, this.variants, });
+@immutable final class ImagesImage {const ImagesImage({this.creator, this.filename, this.id, this.meta, this.requireSignedUrLs, this.uploaded, this.variants, });
 
 factory ImagesImage.fromJson(Map<String, dynamic> json) { return ImagesImage(
   creator: json['creator'] != null ? ImagesImageCreator.fromJson(json['creator'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_token_ice_servers.dart';final class AccountToken {const AccountToken({this.accountSid, this.dateCreated, this.dateUpdated, this.iceServers, this.password, this.ttl, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_token_ice_servers.dart';@immutable final class AccountToken {const AccountToken({this.accountSid, this.dateCreated, this.dateUpdated, this.iceServers, this.password, this.ttl, this.username, });
 
 factory AccountToken.fromJson(Map<String, dynamic> json) { return AccountToken(
   accountSid: json['account_sid'] as String?,

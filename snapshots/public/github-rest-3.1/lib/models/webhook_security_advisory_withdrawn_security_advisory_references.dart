@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences({required this.url});
 
 factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences(
   url: Uri.parse(json['url'] as String),

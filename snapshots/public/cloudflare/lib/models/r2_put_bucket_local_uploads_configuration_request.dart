@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2PutBucketLocalUploadsConfigurationRequest {const R2PutBucketLocalUploadsConfigurationRequest({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2PutBucketLocalUploadsConfigurationRequest {const R2PutBucketLocalUploadsConfigurationRequest({required this.enabled});
 
 factory R2PutBucketLocalUploadsConfigurationRequest.fromJson(Map<String, dynamic> json) { return R2PutBucketLocalUploadsConfigurationRequest(
   enabled: json['enabled'] as bool,

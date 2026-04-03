@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsUpdateRepoVariableRequest {const ActionsUpdateRepoVariableRequest({this.name, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateRepoVariableRequest {const ActionsUpdateRepoVariableRequest({this.name, this.value, });
 
 factory ActionsUpdateRepoVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateRepoVariableRequest(
   name: json['name'] as String?,

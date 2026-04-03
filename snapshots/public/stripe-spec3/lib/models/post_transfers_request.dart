@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source balance to use for this transfer. One of `bank_account`, `card`, or `fpx`. For most users, this will default to `card`.
-final class PostTransfersRequestSourceType {const PostTransfersRequestSourceType._(this.value);
+@immutable final class PostTransfersRequestSourceType {const PostTransfersRequestSourceType._(this.value);
 
 factory PostTransfersRequestSourceType.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTransfersRequestSourceType($value)'; } 
  }
-final class PostTransfersRequest {const PostTransfersRequest({this.amount, required this.currency, this.description, required this.destination, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
+@immutable final class PostTransfersRequest {const PostTransfersRequest({required this.currency, required this.destination, this.amount, this.description, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
 
 factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTransfersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

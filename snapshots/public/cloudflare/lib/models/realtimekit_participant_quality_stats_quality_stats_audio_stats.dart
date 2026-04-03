@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantQualityStatsQualityStatsAudioStats {const RealtimekitParticipantQualityStatsQualityStatsAudioStats({this.concealmentEvents, this.jitter, this.packetsLost, this.quality, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantQualityStatsQualityStatsAudioStats {const RealtimekitParticipantQualityStatsQualityStatsAudioStats({this.concealmentEvents, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 
 factory RealtimekitParticipantQualityStatsQualityStatsAudioStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStatsQualityStatsAudioStats(
   concealmentEvents: json['concealment_events'] != null ? (json['concealment_events'] as num).toDouble() : null,

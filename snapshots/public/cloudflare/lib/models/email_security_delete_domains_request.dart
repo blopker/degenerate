@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityDeleteDomainsRequest {const EmailSecurityDeleteDomainsRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDeleteDomainsRequest {const EmailSecurityDeleteDomainsRequest({required this.id});
 
 factory EmailSecurityDeleteDomainsRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteDomainsRequest(
   id: (json['id'] as num).toInt(),

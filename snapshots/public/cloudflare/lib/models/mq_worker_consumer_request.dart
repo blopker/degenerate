@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_request_settings.dart';final class MqWorkerConsumerRequest {const MqWorkerConsumerRequest({this.deadLetterQueue, required this.scriptName, this.settings, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_request_settings.dart';@immutable final class MqWorkerConsumerRequest {const MqWorkerConsumerRequest({required this.scriptName, required this.type, this.deadLetterQueue, this.settings, });
 
 factory MqWorkerConsumerRequest.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerRequest(
   deadLetterQueue: json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null,

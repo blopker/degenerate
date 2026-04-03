@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_deployment_deployment_trigger_metadata.dart';/// What caused the deployment.
-final class PagesDeploymentDeploymentTriggerType {const PagesDeploymentDeploymentTriggerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment_deployment_trigger_metadata.dart';/// What caused the deployment.
+@immutable final class PagesDeploymentDeploymentTriggerType {const PagesDeploymentDeploymentTriggerType._(this.value);
 
 factory PagesDeploymentDeploymentTriggerType.fromJson(String json) { return switch (json) {
   'github:push' => githubpush,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesDeploymentDeploymentTriggerType($value)'; } 
  }
 /// Info about what caused the deployment.
-final class PagesDeploymentDeploymentTrigger {const PagesDeploymentDeploymentTrigger({required this.metadata, required this.type, });
+@immutable final class PagesDeploymentDeploymentTrigger {const PagesDeploymentDeploymentTrigger({required this.metadata, required this.type, });
 
 factory PagesDeploymentDeploymentTrigger.fromJson(Map<String, dynamic> json) { return PagesDeploymentDeploymentTrigger(
   metadata: PagesDeploymentDeploymentTriggerMetadata.fromJson(json['metadata'] as Map<String, dynamic>),

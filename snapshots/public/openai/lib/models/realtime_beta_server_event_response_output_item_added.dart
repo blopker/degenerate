@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `response.output_item.added`.
-final class RealtimeBetaServerEventResponseOutputItemAddedType {const RealtimeBetaServerEventResponseOutputItemAddedType._(this.value);
+@immutable final class RealtimeBetaServerEventResponseOutputItemAddedType {const RealtimeBetaServerEventResponseOutputItemAddedType._(this.value);
 
 factory RealtimeBetaServerEventResponseOutputItemAddedType.fromJson(String json) { return switch (json) {
   'response.output_item.added' => responseOutputItemAdded,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseOutputItemAddedType($value)'; } 
  }
 /// Returned when a new Item is created during Response generation.
-final class RealtimeBetaServerEventResponseOutputItemAdded {const RealtimeBetaServerEventResponseOutputItemAdded({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
+@immutable final class RealtimeBetaServerEventResponseOutputItemAdded {const RealtimeBetaServerEventResponseOutputItemAdded({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
 
 factory RealtimeBetaServerEventResponseOutputItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseOutputItemAdded(
   eventId: json['event_id'] as String,

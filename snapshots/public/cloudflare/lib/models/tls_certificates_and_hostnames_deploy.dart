@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The environment to deploy the certificate to, defaults to production
-final class TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The environment to deploy the certificate to, defaults to production
+@immutable final class TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy._(this.value);
 
 factory TlsCertificatesAndHostnamesDeploy.fromJson(String json) { return switch (json) {
   'staging' => staging,

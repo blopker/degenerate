@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_console.dart';import 'urlscanner_get_scan_response2_data_cookies.dart';import 'urlscanner_get_scan_response2_data_globals.dart';import 'urlscanner_get_scan_response2_data_links.dart';import 'urlscanner_get_scan_response2_data_performance.dart';import 'urlscanner_get_scan_response2_data_requests.dart';final class UrlscannerGetScanResponse2Data {const UrlscannerGetScanResponse2Data({required this.console, required this.cookies, required this.globals, required this.links, required this.performance, required this.requests, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_console.dart';import 'urlscanner_get_scan_response2_data_cookies.dart';import 'urlscanner_get_scan_response2_data_globals.dart';import 'urlscanner_get_scan_response2_data_links.dart';import 'urlscanner_get_scan_response2_data_performance.dart';import 'urlscanner_get_scan_response2_data_requests.dart';@immutable final class UrlscannerGetScanResponse2Data {const UrlscannerGetScanResponse2Data({required this.console, required this.cookies, required this.globals, required this.links, required this.performance, required this.requests, });
 
 factory UrlscannerGetScanResponse2Data.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Data(
   console: (json['console'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2DataConsole.fromJson(e as Map<String, dynamic>)).toList(),

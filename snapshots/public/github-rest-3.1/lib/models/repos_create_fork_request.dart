@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateForkRequest {const ReposCreateForkRequest({this.organization, this.name, this.defaultBranchOnly, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateForkRequest {const ReposCreateForkRequest({this.organization, this.name, this.defaultBranchOnly, });
 
 factory ReposCreateForkRequest.fromJson(Map<String, dynamic> json) { return ReposCreateForkRequest(
   organization: json['organization'] as String?,

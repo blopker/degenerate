@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, this.$required, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, this.$required, });
 
 factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) { return SimpleCommitStatus(
   description: json['description'] as String?,

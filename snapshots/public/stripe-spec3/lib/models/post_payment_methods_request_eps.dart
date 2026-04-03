@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodsRequestEpsBank {const PostPaymentMethodsRequestEpsBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestEpsBank {const PostPaymentMethodsRequestEpsBank._(this.value);
 
 factory PostPaymentMethodsRequestEpsBank.fromJson(String json) { return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
@@ -103,7 +103,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentMethodsRequestEpsBank($value)'; } 
  }
 /// If this is an `eps` PaymentMethod, this hash contains details about the EPS payment method.
-final class PostPaymentMethodsRequestEps {const PostPaymentMethodsRequestEps({this.bank});
+@immutable final class PostPaymentMethodsRequestEps {const PostPaymentMethodsRequestEps({this.bank});
 
 factory PostPaymentMethodsRequestEps.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestEps(
   bank: json['bank'] != null ? PostPaymentMethodsRequestEpsBank.fromJson(json['bank'] as String) : null,

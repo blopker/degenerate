@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `role.deleted`.
-final class RoleDeletedResourceObject {const RoleDeletedResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role.deleted`.
+@immutable final class RoleDeletedResourceObject {const RoleDeletedResourceObject._(this.value);
 
 factory RoleDeletedResourceObject.fromJson(String json) { return switch (json) {
   'role.deleted' => roleDeleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RoleDeletedResourceObject($value)'; } 
  }
 /// Confirmation payload returned after deleting a role.
-final class RoleDeletedResource {const RoleDeletedResource({required this.object, required this.id, required this.deleted, });
+@immutable final class RoleDeletedResource {const RoleDeletedResource({required this.object, required this.id, required this.deleted, });
 
 factory RoleDeletedResource.fromJson(Map<String, dynamic> json) { return RoleDeletedResource(
   object: RoleDeletedResourceObject.fromJson(json['object'] as String),

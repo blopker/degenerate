@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingCreditGrantsIdVoidRequest {const PostBillingCreditGrantsIdVoidRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingCreditGrantsIdVoidRequest {const PostBillingCreditGrantsIdVoidRequest({this.expand});
 
 factory PostBillingCreditGrantsIdVoidRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsIdVoidRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

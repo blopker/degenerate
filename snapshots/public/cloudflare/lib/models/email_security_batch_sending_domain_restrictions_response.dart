@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_sending_domain_restrictions_response_result.dart';import 'email_security_message.dart';final class EmailSecurityBatchSendingDomainRestrictionsResponse {const EmailSecurityBatchSendingDomainRestrictionsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_sending_domain_restrictions_response_result.dart';import 'email_security_message.dart';@immutable final class EmailSecurityBatchSendingDomainRestrictionsResponse {const EmailSecurityBatchSendingDomainRestrictionsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory EmailSecurityBatchSendingDomainRestrictionsResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchSendingDomainRestrictionsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates.dart';final class AccessCertificatesComponentsSchemasResponseCollection {const AccessCertificatesComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates.dart';@immutable final class AccessCertificatesComponentsSchemasResponseCollection {const AccessCertificatesComponentsSchemasResponseCollection({this.result});
 
 factory AccessCertificatesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessCertificatesComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessCertificates.fromJson(e as Map<String, dynamic>)).toList(),

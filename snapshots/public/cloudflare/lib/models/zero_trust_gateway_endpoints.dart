@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_doh_endpoint.dart';import 'zero_trust_gateway_dot_endpoint.dart';import 'zero_trust_gateway_ipv4_endpoint.dart';import 'zero_trust_gateway_ipv6_endpoint.dart';/// Configure the destination endpoints for this location.
-final class ZeroTrustGatewayEndpoints {const ZeroTrustGatewayEndpoints({required this.doh, required this.dot, required this.ipv4, required this.ipv6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_doh_endpoint.dart';import 'zero_trust_gateway_dot_endpoint.dart';import 'zero_trust_gateway_ipv4_endpoint.dart';import 'zero_trust_gateway_ipv6_endpoint.dart';/// Configure the destination endpoints for this location.
+@immutable final class ZeroTrustGatewayEndpoints {const ZeroTrustGatewayEndpoints({required this.doh, required this.dot, required this.ipv4, required this.ipv6, });
 
 factory ZeroTrustGatewayEndpoints.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayEndpoints(
   doh: ZeroTrustGatewayDohEndpoint.fromJson(json['doh'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebitDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

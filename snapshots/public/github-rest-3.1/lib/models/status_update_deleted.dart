@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'status_update.dart';final class StatusUpdateDeletedAction {const StatusUpdateDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'status_update.dart';@immutable final class StatusUpdateDeletedAction {const StatusUpdateDeletedAction._(this.value);
 
 factory StatusUpdateDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StatusUpdateDeletedAction($value)'; } 
  }
-final class StatusUpdateDeleted {const StatusUpdateDeleted({required this.action, this.installation, required this.organization, required this.projectsV2StatusUpdate, required this.sender, });
+@immutable final class StatusUpdateDeleted {const StatusUpdateDeleted({required this.action, required this.organization, required this.projectsV2StatusUpdate, required this.sender, this.installation, });
 
 factory StatusUpdateDeleted.fromJson(Map<String, dynamic> json) { return StatusUpdateDeleted(
   action: StatusUpdateDeletedAction.fromJson(json['action'] as String),

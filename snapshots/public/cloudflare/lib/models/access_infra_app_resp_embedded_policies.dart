@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_infra_policy_resp.dart';/// The policies that Access applies to the application.
-final class AccessInfraAppRespEmbeddedPolicies {const AccessInfraAppRespEmbeddedPolicies({this.policies});
+@immutable final class AccessInfraAppRespEmbeddedPolicies {const AccessInfraAppRespEmbeddedPolicies({this.policies});
 
 factory AccessInfraAppRespEmbeddedPolicies.fromJson(Map<String, dynamic> json) { return AccessInfraAppRespEmbeddedPolicies(
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessInfraPolicyResp.fromJson(e as Map<String, dynamic>)).toList(),

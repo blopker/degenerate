@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording.dart';final class ListRecordingResponse {const ListRecordingResponse({this.recordings, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording.dart';@immutable final class ListRecordingResponse {const ListRecordingResponse({this.recordings, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListRecordingResponse.fromJson(Map<String, dynamic> json) { return ListRecordingResponse(
   recordings: (json['recordings'] as List<dynamic>?)?.map((e) => AccountRecording.fromJson(e as Map<String, dynamic>)).toList(),

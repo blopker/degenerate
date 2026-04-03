@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WaitingroomRulePositionVariant1 {const WaitingroomRulePositionVariant1({this.index});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomRulePositionVariant1 {const WaitingroomRulePositionVariant1({this.index});
 
 factory WaitingroomRulePositionVariant1.fromJson(Map<String, dynamic> json) { return WaitingroomRulePositionVariant1(
   index: json['index'] != null ? (json['index'] as num).toInt() : null,

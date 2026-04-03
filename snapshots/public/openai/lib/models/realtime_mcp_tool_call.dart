@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_mcp_protocol_error.dart';import 'realtime_mcp_tool_call_error.dart';import 'realtime_mcp_tool_execution_error.dart';import 'realtime_mcphttp_error.dart';/// The type of the item. Always `mcp_call`.
-final class RealtimeMcpToolCallType {const RealtimeMcpToolCallType._(this.value);
+@immutable final class RealtimeMcpToolCallType {const RealtimeMcpToolCallType._(this.value);
 
 factory RealtimeMcpToolCallType.fromJson(String json) { return switch (json) {
   'mcp_call' => mcpCall,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Realtime item representing an invocation of a tool on an MCP server.
 /// 
-final class RealtimeMcpToolCall {const RealtimeMcpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.approvalRequestId, this.output, this.error, });
+@immutable final class RealtimeMcpToolCall {const RealtimeMcpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.approvalRequestId, this.output, this.error, });
 
 factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return RealtimeMcpToolCall(
   type: RealtimeMcpToolCallType.fromJson(json['type'] as String),

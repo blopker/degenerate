@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations {const RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations({required this.code, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations {const RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations({required this.code, required this.name, });
 
 factory RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations(
   code: json['code'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_destination_address_properties.dart';import 'email_destination_addresses_response_collection_result_info.dart';final class EmailDestinationAddressesResponseCollection {const EmailDestinationAddressesResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_destination_address_properties.dart';import 'email_destination_addresses_response_collection_result_info.dart';@immutable final class EmailDestinationAddressesResponseCollection {const EmailDestinationAddressesResponseCollection({this.result, this.resultInfo, });
 
 factory EmailDestinationAddressesResponseCollection.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressesResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => EmailDestinationAddressProperties.fromJson(e as Map<String, dynamic>)).toList(),

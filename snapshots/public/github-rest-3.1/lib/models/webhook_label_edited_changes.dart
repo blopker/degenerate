@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_label_edited_changes_color.dart';import 'webhook_label_edited_changes_description.dart';import 'webhook_label_edited_changes_name.dart';/// The changes to the label if the action was `edited`.
-final class WebhookLabelEditedChanges {const WebhookLabelEditedChanges({this.color, this.description, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_label_edited_changes_color.dart';import 'webhook_label_edited_changes_description.dart';import 'webhook_label_edited_changes_name.dart';/// The changes to the label if the action was `edited`.
+@immutable final class WebhookLabelEditedChanges {const WebhookLabelEditedChanges({this.color, this.description, this.name, });
 
 factory WebhookLabelEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookLabelEditedChanges(
   color: json['color'] != null ? WebhookLabelEditedChangesColor.fromJson(json['color'] as Map<String, dynamic>) : null,

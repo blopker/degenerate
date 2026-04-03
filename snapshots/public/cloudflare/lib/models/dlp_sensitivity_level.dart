@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpSensitivityLevel {const DlpSensitivityLevel({required this.createdAt, required this.description, required this.id, required this.name, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpSensitivityLevel {const DlpSensitivityLevel({required this.createdAt, required this.description, required this.id, required this.name, required this.updatedAt, });
 
 factory DlpSensitivityLevel.fromJson(Map<String, dynamic> json) { return DlpSensitivityLevel(
   createdAt: DateTime.parse(json['created_at'] as String),

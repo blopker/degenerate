@@ -35,7 +35,7 @@ factory TeamsDevicesSchemasTestId.fromJson(String json) => TeamsDevicesSchemasTe
 String toJson() => value;
 
 }
-final class TeamsDevicesDeviceDexTestSchemasHttp {const TeamsDevicesDeviceDexTestSchemasHttp({required this.data, this.description, required this.enabled, required this.interval, required this.name, this.targetPolicies, this.targeted, this.testId, });
+@immutable final class TeamsDevicesDeviceDexTestSchemasHttp {const TeamsDevicesDeviceDexTestSchemasHttp({required this.data, required this.enabled, required this.interval, required this.name, this.description, this.targetPolicies, this.targeted, this.testId, });
 
 factory TeamsDevicesDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasHttp(
   data: TeamsDevicesDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),

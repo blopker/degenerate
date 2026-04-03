@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_messages2.dart';import 'zaraz_zaraz_config_return.dart';final class ZarazZarazConfigResponse {const ZarazZarazConfigResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_messages2.dart';import 'zaraz_zaraz_config_return.dart';@immutable final class ZarazZarazConfigResponse {const ZarazZarazConfigResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ZarazZarazConfigResponse.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_bot_class_response_result_meta.dart';import 'radar_get_http_top_ases_by_bot_class_response_result_top0.dart';final class RadarGetHttpTopAsesByBotClassResponseResult {const RadarGetHttpTopAsesByBotClassResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_bot_class_response_result_meta.dart';import 'radar_get_http_top_ases_by_bot_class_response_result_top0.dart';@immutable final class RadarGetHttpTopAsesByBotClassResponseResult {const RadarGetHttpTopAsesByBotClassResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetHttpTopAsesByBotClassResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByBotClassResponseResult(
   meta: RadarGetHttpTopAsesByBotClassResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

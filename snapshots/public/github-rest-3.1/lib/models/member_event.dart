@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';final class MemberEvent {const MemberEvent({required this.action, required this.member, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';@immutable final class MemberEvent {const MemberEvent({required this.action, required this.member, });
 
 factory MemberEvent.fromJson(Map<String, dynamic> json) { return MemberEvent(
   action: json['action'] as String,

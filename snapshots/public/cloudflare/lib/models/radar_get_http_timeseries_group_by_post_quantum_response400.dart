@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_post_quantum_response400_errors.dart';final class RadarGetHttpTimeseriesGroupByPostQuantumResponse400 {const RadarGetHttpTimeseriesGroupByPostQuantumResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_post_quantum_response400_errors.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumResponse400 {const RadarGetHttpTimeseriesGroupByPostQuantumResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumResponse400.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByPostQuantumResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupByPostQuantumResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

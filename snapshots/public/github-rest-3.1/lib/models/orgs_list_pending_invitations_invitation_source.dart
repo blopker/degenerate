@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsListPendingInvitationsInvitationSource {const OrgsListPendingInvitationsInvitationSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPendingInvitationsInvitationSource {const OrgsListPendingInvitationsInvitationSource._(this.value);
 
 factory OrgsListPendingInvitationsInvitationSource.fromJson(String json) { return switch (json) {
   'all' => all,

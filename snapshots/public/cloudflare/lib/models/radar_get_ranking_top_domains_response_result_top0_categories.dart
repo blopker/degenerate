@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRankingTopDomainsResponseResultTop0Categories {const RadarGetRankingTopDomainsResponseResultTop0Categories({required this.id, required this.name, required this.superCategoryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRankingTopDomainsResponseResultTop0Categories {const RadarGetRankingTopDomainsResponseResultTop0Categories({required this.id, required this.name, required this.superCategoryId, });
 
 factory RadarGetRankingTopDomainsResponseResultTop0Categories.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopDomainsResponseResultTop0Categories(
   id: (json['id'] as num).toDouble(),

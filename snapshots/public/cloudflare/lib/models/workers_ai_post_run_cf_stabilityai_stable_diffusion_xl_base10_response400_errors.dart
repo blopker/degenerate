@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors({required this.code, required this.message, });
 
 factory WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400Errors(
   code: json['code'] as String,

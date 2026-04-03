@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_saml_saas_app_custom_attributes_source.dart';/// A globally unique name for an identity or service provider.
-final class AccessSchemasSamlSaasAppCustomAttributesNameFormat {const AccessSchemasSamlSaasAppCustomAttributesNameFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_saml_saas_app_custom_attributes_source.dart';/// A globally unique name for an identity or service provider.
+@immutable final class AccessSchemasSamlSaasAppCustomAttributesNameFormat {const AccessSchemasSamlSaasAppCustomAttributesNameFormat._(this.value);
 
 factory AccessSchemasSamlSaasAppCustomAttributesNameFormat.fromJson(String json) { return switch (json) {
   'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified' => urnoasisnamestcSaml20attrnameFormatunspecified,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSchemasSamlSaasAppCustomAttributesNameFormat($value)'; } 
  }
-final class AccessSchemasSamlSaasAppCustomAttributes {const AccessSchemasSamlSaasAppCustomAttributes({this.friendlyName, this.name, this.nameFormat, this.$required, this.source, });
+@immutable final class AccessSchemasSamlSaasAppCustomAttributes {const AccessSchemasSamlSaasAppCustomAttributes({this.friendlyName, this.name, this.nameFormat, this.$required, this.source, });
 
 factory AccessSchemasSamlSaasAppCustomAttributes.fromJson(Map<String, dynamic> json) { return AccessSchemasSamlSaasAppCustomAttributes(
   friendlyName: json['friendly_name'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSessionsStatus {const GetSessionsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionsStatus {const GetSessionsStatus._(this.value);
 
 factory GetSessionsStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,

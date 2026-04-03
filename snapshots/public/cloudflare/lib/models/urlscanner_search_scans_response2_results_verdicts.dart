@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerSearchScansResponse2ResultsVerdicts {const UrlscannerSearchScansResponse2ResultsVerdicts({required this.malicious});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerSearchScansResponse2ResultsVerdicts {const UrlscannerSearchScansResponse2ResultsVerdicts({required this.malicious});
 
 factory UrlscannerSearchScansResponse2ResultsVerdicts.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse2ResultsVerdicts(
   malicious: json['malicious'] as bool,

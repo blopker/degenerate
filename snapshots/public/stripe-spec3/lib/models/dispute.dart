@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'charge.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';import 'payment_intent.dart';final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'charge.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';import 'payment_intent.dart';@immutable final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
 
 factory DisputeEnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputeEnhancedEligibilityTypes($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class DisputeObject {const DisputeObject._(this.value);
+@immutable final class DisputeObject {const DisputeObject._(this.value);
 
 factory DisputeObject.fromJson(String json) { return switch (json) {
   'dispute' => dispute,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputeObject($value)'; } 
  }
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
-final class DisputeStatus {const DisputeStatus._(this.value);
+@immutable final class DisputeStatus {const DisputeStatus._(this.value);
 
 factory DisputeStatus.fromJson(String json) { return switch (json) {
   'lost' => lost,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 /// evidence that shows that the charge is legitimate.
 /// 
 /// Related guide: [Disputes and fraud](https://docs.stripe.com/disputes)
-final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, this.paymentIntent, this.paymentMethodDetails, required this.reason, required this.status, });
+@immutable final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, required this.reason, required this.status, this.paymentIntent, this.paymentMethodDetails, });
 
 factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   amount: (json['amount'] as num).toInt(),

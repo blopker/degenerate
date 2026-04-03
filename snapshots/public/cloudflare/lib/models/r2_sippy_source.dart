@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SippySourceProvider {const R2SippySourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SippySourceProvider {const R2SippySourceProvider._(this.value);
 
 factory R2SippySourceProvider.fromJson(String json) { return switch (json) {
   'aws' => aws,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2SippySourceProvider($value)'; } 
  }
 /// Details about the configured source bucket.
-final class R2SippySource {const R2SippySource({this.bucket, this.bucketUrl, this.provider, this.region, });
+@immutable final class R2SippySource {const R2SippySource({this.bucket, this.bucketUrl, this.provider, this.region, });
 
 factory R2SippySource.fromJson(Map<String, dynamic> json) { return R2SippySource(
   bucket: json['bucket'] as String?,

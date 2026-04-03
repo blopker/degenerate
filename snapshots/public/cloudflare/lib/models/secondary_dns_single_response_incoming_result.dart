@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_auto_refresh_seconds.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';import 'secondary_dns_soa_serial.dart';import 'secondary_dns_time.dart';final class SecondaryDnsSingleResponseIncomingResult {const SecondaryDnsSingleResponseIncomingResult({this.autoRefreshSeconds, this.checkedTime, this.createdTime, this.id, this.modifiedTime, this.name, this.peers, this.soaSerial, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_auto_refresh_seconds.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';import 'secondary_dns_soa_serial.dart';import 'secondary_dns_time.dart';@immutable final class SecondaryDnsSingleResponseIncomingResult {const SecondaryDnsSingleResponseIncomingResult({this.autoRefreshSeconds, this.checkedTime, this.createdTime, this.id, this.modifiedTime, this.name, this.peers, this.soaSerial, });
 
 factory SecondaryDnsSingleResponseIncomingResult.fromJson(Map<String, dynamic> json) { return SecondaryDnsSingleResponseIncomingResult(
   autoRefreshSeconds: json['auto_refresh_seconds'] != null ? SecondaryDnsAutoRefreshSeconds.fromJson(json['auto_refresh_seconds'] as num) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'webhooks_security_advisory_cvss.dart';import 'webhooks_security_advisory_cwes.dart';import 'webhooks_security_advisory_identifiers.dart';import 'webhooks_security_advisory_references.dart';import 'webhooks_security_advisory_vulnerabilities.dart';/// The details of the security advisory, including summary, description, and severity.
-final class WebhooksSecurityAdvisory {const WebhooksSecurityAdvisory({required this.cvss, this.cvssSeverities, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, });
+@immutable final class WebhooksSecurityAdvisory {const WebhooksSecurityAdvisory({required this.cvss, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, this.cvssSeverities, });
 
 factory WebhooksSecurityAdvisory.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisory(
   cvss: WebhooksSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),

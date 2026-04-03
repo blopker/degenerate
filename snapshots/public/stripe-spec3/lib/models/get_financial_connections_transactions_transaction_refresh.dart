@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetFinancialConnectionsTransactionsTransactionRefresh {const GetFinancialConnectionsTransactionsTransactionRefresh({required this.after});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFinancialConnectionsTransactionsTransactionRefresh {const GetFinancialConnectionsTransactionsTransactionRefresh({required this.after});
 
 factory GetFinancialConnectionsTransactionsTransactionRefresh.fromJson(Map<String, dynamic> json) { return GetFinancialConnectionsTransactionsTransactionRefresh(
   after: json['after'] as String,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'batch_usage_input_tokens_details.dart';import 'batch_usage_output_tokens_details.dart';/// Represents token usage details including input tokens, output tokens, a
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_usage_input_tokens_details.dart';import 'batch_usage_output_tokens_details.dart';/// Represents token usage details including input tokens, output tokens, a
 /// breakdown of output tokens, and the total tokens used. Only populated on
 /// batches created after September 7, 2025.
 /// 
-final class BatchUsage {const BatchUsage({required this.inputTokens, required this.inputTokensDetails, required this.outputTokens, required this.outputTokensDetails, required this.totalTokens, });
+@immutable final class BatchUsage {const BatchUsage({required this.inputTokens, required this.inputTokensDetails, required this.outputTokens, required this.outputTokensDetails, required this.totalTokens, });
 
 factory BatchUsage.fromJson(Map<String, dynamic> json) { return BatchUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),

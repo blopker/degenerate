@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_account_rulesets_response_result.dart';import 'rulesets_message.dart';import 'rulesets_result_info.dart';final class ListAccountRulesetsResponse {const ListAccountRulesetsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_account_rulesets_response_result.dart';import 'rulesets_message.dart';import 'rulesets_result_info.dart';@immutable final class ListAccountRulesetsResponse {const ListAccountRulesetsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ListAccountRulesetsResponse.fromJson(Map<String, dynamic> json) { return ListAccountRulesetsResponse(
   errors: json['errors'],

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_tool_choice_variant1_allowed_tools_allowed_tools.dart';final class Messages51ToolChoiceVariant1AllowedToolsType {const Messages51ToolChoiceVariant1AllowedToolsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_tool_choice_variant1_allowed_tools_allowed_tools.dart';@immutable final class Messages51ToolChoiceVariant1AllowedToolsType {const Messages51ToolChoiceVariant1AllowedToolsType._(this.value);
 
 factory Messages51ToolChoiceVariant1AllowedToolsType.fromJson(String json) { return switch (json) {
   'allowed_tools' => allowedTools,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Messages51ToolChoiceVariant1AllowedToolsType($value)'; } 
  }
 /// Constrain to an allowed subset of tools.
-final class Messages51ToolChoiceVariant1AllowedTools {const Messages51ToolChoiceVariant1AllowedTools({required this.allowedTools, required this.type, });
+@immutable final class Messages51ToolChoiceVariant1AllowedTools {const Messages51ToolChoiceVariant1AllowedTools({required this.allowedTools, required this.type, });
 
 factory Messages51ToolChoiceVariant1AllowedTools.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1AllowedTools(
   allowedTools: Messages51ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(json['allowed_tools'] as Map<String, dynamic>),

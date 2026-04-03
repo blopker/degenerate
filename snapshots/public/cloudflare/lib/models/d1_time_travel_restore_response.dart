@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_time_travel_bookmark.dart';/// Response from a time travel restore operation.
-final class D1TimeTravelRestoreResponse {const D1TimeTravelRestoreResponse({this.bookmark, this.message, this.previousBookmark, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_time_travel_bookmark.dart';/// Response from a time travel restore operation.
+@immutable final class D1TimeTravelRestoreResponse {const D1TimeTravelRestoreResponse({this.bookmark, this.message, this.previousBookmark, });
 
 factory D1TimeTravelRestoreResponse.fromJson(Map<String, dynamic> json) { return D1TimeTravelRestoreResponse(
   bookmark: json['bookmark'] != null ? D1TimeTravelBookmark.fromJson(json['bookmark'] as String) : null,

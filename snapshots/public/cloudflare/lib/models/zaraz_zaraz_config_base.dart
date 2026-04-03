@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_secret_variable.dart';import 'zaraz_string_variable.dart';import 'zaraz_worker_variable.dart';import 'zaraz_zaraz_config_base_analytics.dart';import 'zaraz_zaraz_config_base_consent.dart';import 'zaraz_zaraz_config_base_settings.dart';import 'zaraz_zaraz_config_base_triggers_value.dart';import 'zaraz_zaraz_config_base_variables_value.dart';/// Zaraz configuration
-final class ZarazZarazConfigBase {const ZarazZarazConfigBase({this.analytics, this.consent, required this.dataLayer, required this.debugKey, this.historyChange, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, });
+@immutable final class ZarazZarazConfigBase {const ZarazZarazConfigBase({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, this.analytics, this.consent, this.historyChange, });
 
 factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(
   analytics: json['analytics'] != null ? ZarazZarazConfigBaseAnalytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,

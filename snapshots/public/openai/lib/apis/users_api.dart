@@ -21,7 +21,7 @@ if (after != null) {
 }
 if (emails != null) {
 for (final item in emails) {
-  queryParametersList.add(ApiQueryParameter(name: 'emails', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'emails', value: item));
 }
 }
 

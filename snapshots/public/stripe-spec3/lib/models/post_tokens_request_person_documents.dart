@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tokens_request_person_documents_company_authorization.dart';import 'post_tokens_request_person_documents_passport.dart';import 'post_tokens_request_person_documents_visa.dart';final class PostTokensRequestPersonDocuments {const PostTokensRequestPersonDocuments({this.companyAuthorization, this.passport, this.visa, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_documents_company_authorization.dart';import 'post_tokens_request_person_documents_passport.dart';import 'post_tokens_request_person_documents_visa.dart';@immutable final class PostTokensRequestPersonDocuments {const PostTokensRequestPersonDocuments({this.companyAuthorization, this.passport, this.visa, });
 
 factory PostTokensRequestPersonDocuments.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonDocuments(
   companyAuthorization: json['company_authorization'] != null ? PostTokensRequestPersonDocumentsCompanyAuthorization.fromJson(json['company_authorization'] as Map<String, dynamic>) : null,

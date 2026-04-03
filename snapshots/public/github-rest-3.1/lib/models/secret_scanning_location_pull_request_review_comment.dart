@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a 'pull_request_review_comment' secret scanning location type. This location type shows that a secret was detected in a review comment on a pull request.
-final class SecretScanningLocationPullRequestReviewComment {const SecretScanningLocationPullRequestReviewComment({required this.pullRequestReviewCommentUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'pull_request_review_comment' secret scanning location type. This location type shows that a secret was detected in a review comment on a pull request.
+@immutable final class SecretScanningLocationPullRequestReviewComment {const SecretScanningLocationPullRequestReviewComment({required this.pullRequestReviewCommentUrl});
 
 factory SecretScanningLocationPullRequestReviewComment.fromJson(Map<String, dynamic> json) { return SecretScanningLocationPullRequestReviewComment(
   pullRequestReviewCommentUrl: Uri.parse(json['pull_request_review_comment_url'] as String),

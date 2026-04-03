@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rate_limits_for_a_zone_delete_a_rate_limit_response_result.dart';final class RateLimitsForAZoneDeleteARateLimitResponse {const RateLimitsForAZoneDeleteARateLimitResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_limits_for_a_zone_delete_a_rate_limit_response_result.dart';@immutable final class RateLimitsForAZoneDeleteARateLimitResponse {const RateLimitsForAZoneDeleteARateLimitResponse({this.result});
 
 factory RateLimitsForAZoneDeleteARateLimitResponse.fromJson(Map<String, dynamic> json) { return RateLimitsForAZoneDeleteARateLimitResponse(
   result: json['result'] != null ? RateLimitsForAZoneDeleteARateLimitResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

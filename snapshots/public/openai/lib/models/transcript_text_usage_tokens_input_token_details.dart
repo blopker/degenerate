@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the input tokens billed for this request.
-final class TranscriptTextUsageTokensInputTokenDetails {const TranscriptTextUsageTokensInputTokenDetails({this.textTokens, this.audioTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the input tokens billed for this request.
+@immutable final class TranscriptTextUsageTokensInputTokenDetails {const TranscriptTextUsageTokensInputTokenDetails({this.textTokens, this.audioTokens, });
 
 factory TranscriptTextUsageTokensInputTokenDetails.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageTokensInputTokenDetails(
   textTokens: json['text_tokens'] != null ? (json['text_tokens'] as num).toInt() : null,

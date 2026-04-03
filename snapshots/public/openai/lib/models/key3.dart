@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'key3_owner.dart';/// The object type, which is always `organization.project.api_key`
-final class Key3Object {const Key3Object._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key3_owner.dart';/// The object type, which is always `organization.project.api_key`
+@immutable final class Key3Object {const Key3Object._(this.value);
 
 factory Key3Object.fromJson(String json) { return switch (json) {
   'organization.project.api_key' => organizationProjectApiKey,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Key3Object($value)'; } 
  }
 /// Represents an individual API key in a project.
-final class Key3 {const Key3({required this.object, required this.redactedValue, required this.name, required this.createdAt, required this.lastUsedAt, required this.id, required this.owner, });
+@immutable final class Key3 {const Key3({required this.object, required this.redactedValue, required this.name, required this.createdAt, required this.lastUsedAt, required this.id, required this.owner, });
 
 factory Key3.fromJson(Map<String, dynamic> json) { return Key3(
   object: Key3Object.fromJson(json['object'] as String),

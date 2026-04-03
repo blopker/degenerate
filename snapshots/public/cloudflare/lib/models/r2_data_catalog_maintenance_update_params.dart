@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_compaction_update_params.dart';import 'r2_data_catalog_snapshot_expiration_update_params.dart';/// Contains maintenance update parameters.
-final class R2DataCatalogMaintenanceUpdateParams {const R2DataCatalogMaintenanceUpdateParams({this.compaction, this.snapshotExpiration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_compaction_update_params.dart';import 'r2_data_catalog_snapshot_expiration_update_params.dart';/// Contains maintenance update parameters.
+@immutable final class R2DataCatalogMaintenanceUpdateParams {const R2DataCatalogMaintenanceUpdateParams({this.compaction, this.snapshotExpiration, });
 
 factory R2DataCatalogMaintenanceUpdateParams.fromJson(Map<String, dynamic> json) { return R2DataCatalogMaintenanceUpdateParams(
   compaction: json['compaction'] != null ? R2DataCatalogCompactionUpdateParams.fromJson(json['compaction'] as Map<String, dynamic>) : null,

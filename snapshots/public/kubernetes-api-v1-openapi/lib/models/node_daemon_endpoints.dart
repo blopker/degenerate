@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'daemon_endpoint.dart';/// NodeDaemonEndpoints lists ports opened by daemons running on the Node.
-final class NodeDaemonEndpoints {const NodeDaemonEndpoints({this.kubeletEndpoint});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'daemon_endpoint.dart';/// NodeDaemonEndpoints lists ports opened by daemons running on the Node.
+@immutable final class NodeDaemonEndpoints {const NodeDaemonEndpoints({this.kubeletEndpoint});
 
 factory NodeDaemonEndpoints.fromJson(Map<String, dynamic> json) { return NodeDaemonEndpoints(
   kubeletEndpoint: json['kubeletEndpoint'] != null ? DaemonEndpoint.fromJson(json['kubeletEndpoint'] as Map<String, dynamic>) : null,

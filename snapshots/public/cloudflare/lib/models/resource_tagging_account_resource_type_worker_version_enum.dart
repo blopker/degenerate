@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enum for worker_version resource type.
-final class ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for worker_version resource type.
+@immutable final class ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum._(this.value);
 
 factory ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson(String json) { return switch (json) {
   'worker_version' => workerVersion,

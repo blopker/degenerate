@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_role.dart';final class OrgsListOrgRolesResponse {const OrgsListOrgRolesResponse({this.totalCount, this.roles, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_role.dart';@immutable final class OrgsListOrgRolesResponse {const OrgsListOrgRolesResponse({this.totalCount, this.roles, });
 
 factory OrgsListOrgRolesResponse.fromJson(Map<String, dynamic> json) { return OrgsListOrgRolesResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

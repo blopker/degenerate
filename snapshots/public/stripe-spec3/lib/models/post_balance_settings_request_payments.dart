@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_balance_settings_request_payments_payouts.dart';import 'post_balance_settings_request_payments_settlement_timing.dart';/// Settings that apply to the [Payments Balance](https://docs.stripe.com/api/balance).
-final class PostBalanceSettingsRequestPayments {const PostBalanceSettingsRequestPayments({this.debitNegativeBalances, this.payouts, this.settlementTiming, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_balance_settings_request_payments_payouts.dart';import 'post_balance_settings_request_payments_settlement_timing.dart';/// Settings that apply to the [Payments Balance](https://docs.stripe.com/api/balance).
+@immutable final class PostBalanceSettingsRequestPayments {const PostBalanceSettingsRequestPayments({this.debitNegativeBalances, this.payouts, this.settlementTiming, });
 
 factory PostBalanceSettingsRequestPayments.fromJson(Map<String, dynamic> json) { return PostBalanceSettingsRequestPayments(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,

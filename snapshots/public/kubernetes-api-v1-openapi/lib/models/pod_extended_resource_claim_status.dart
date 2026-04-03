@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_extended_resource_request.dart';/// PodExtendedResourceClaimStatus is stored in the PodStatus for the extended resource requests backed by DRA. It stores the generated name for the corresponding special ResourceClaim created by the scheduler.
-final class PodExtendedResourceClaimStatus {const PodExtendedResourceClaimStatus({required this.requestMappings, this.resourceClaimName = '', });
+@immutable final class PodExtendedResourceClaimStatus {const PodExtendedResourceClaimStatus({required this.requestMappings, this.resourceClaimName = '', });
 
 factory PodExtendedResourceClaimStatus.fromJson(Map<String, dynamic> json) { return PodExtendedResourceClaimStatus(
   requestMappings: (json['requestMappings'] as List<dynamic>).map((e) => ContainerExtendedResourceRequest.fromJson(e as Map<String, dynamic>)).toList(),

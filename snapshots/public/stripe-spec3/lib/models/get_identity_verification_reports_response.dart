@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'identity_verification_report.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetIdentityVerificationReportsResponseObject {const GetIdentityVerificationReportsResponseObject._(this.value);
+@immutable final class GetIdentityVerificationReportsResponseObject {const GetIdentityVerificationReportsResponseObject._(this.value);
 
 factory GetIdentityVerificationReportsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetIdentityVerificationReportsResponseObject($value)'; } 
  }
 /// 
-final class GetIdentityVerificationReportsResponse {const GetIdentityVerificationReportsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetIdentityVerificationReportsResponse {const GetIdentityVerificationReportsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetIdentityVerificationReportsResponse.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationReportsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IdentityVerificationReport.fromJson(e as Map<String, dynamic>)).toList(),

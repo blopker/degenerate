@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class GetEventAggregateResponseAggregations {const GetEventAggregateResponseAggregations({required this.count, this.date, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventAggregateResponseAggregations {const GetEventAggregateResponseAggregations({required this.count, this.date, this.additionalProperties = const {}, });
 
 factory GetEventAggregateResponseAggregations.fromJson(Map<String, dynamic> json) { return GetEventAggregateResponseAggregations(
   count: (json['count'] as num).toDouble(),

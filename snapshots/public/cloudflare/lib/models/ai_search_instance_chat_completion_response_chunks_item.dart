@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceChatCompletionResponseChunksItem {const AiSearchInstanceChatCompletionResponseChunksItem({required this.key, this.metadata, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionResponseChunksItem {const AiSearchInstanceChatCompletionResponseChunksItem({required this.key, this.metadata, this.timestamp, });
 
 factory AiSearchInstanceChatCompletionResponseChunksItem.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponseChunksItem(
   key: json['key'] as String,

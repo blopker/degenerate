@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam28CaptureMethod {const PaymentMethodOptionsParam28CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam28CaptureMethod {const PaymentMethodOptionsParam28CaptureMethod._(this.value);
 
 factory PaymentMethodOptionsParam28CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam28CaptureMethod($value)'; } 
  }
-final class PaymentMethodOptionsParam28PreferredLocale {const PaymentMethodOptionsParam28PreferredLocale._(this.value);
+@immutable final class PaymentMethodOptionsParam28PreferredLocale {const PaymentMethodOptionsParam28PreferredLocale._(this.value);
 
 factory PaymentMethodOptionsParam28PreferredLocale.fromJson(String json) { return switch (json) {
   'cs-CZ' => csCz,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam28PreferredLocale($value)'; } 
  }
-final class PaymentMethodOptionsParam28SetupFutureUsage {const PaymentMethodOptionsParam28SetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsParam28SetupFutureUsage {const PaymentMethodOptionsParam28SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam28SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam28SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam28 {const PaymentMethodOptionsParam28({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam28 {const PaymentMethodOptionsParam28({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam28.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam28(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam28CaptureMethod.fromJson(json['capture_method'] as String) : null,

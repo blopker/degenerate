@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_rendering_pdf.dart';import 'post_invoices_request_rendering_template_version.dart';final class PostInvoicesRequestRenderingAmountTaxDisplay {const PostInvoicesRequestRenderingAmountTaxDisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_rendering_pdf.dart';import 'post_invoices_request_rendering_template_version.dart';@immutable final class PostInvoicesRequestRenderingAmountTaxDisplay {const PostInvoicesRequestRenderingAmountTaxDisplay._(this.value);
 
 factory PostInvoicesRequestRenderingAmountTaxDisplay.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesRequestRenderingAmountTaxDisplay($value)'; } 
  }
 /// The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
-final class PostInvoicesRequestRendering {const PostInvoicesRequestRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
+@immutable final class PostInvoicesRequestRendering {const PostInvoicesRequestRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
 
 factory PostInvoicesRequestRendering.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestRendering(
   amountTaxDisplay: json['amount_tax_display'] != null ? PostInvoicesRequestRenderingAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,

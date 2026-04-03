@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_pattern.dart';final class DlpEntryUpdateTypeVariant1Type {const DlpEntryUpdateTypeVariant1Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpEntryUpdateTypeVariant1Type {const DlpEntryUpdateTypeVariant1Type._(this.value);
 
 factory DlpEntryUpdateTypeVariant1Type.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEntryUpdateTypeVariant1Type($value)'; } 
  }
-final class DlpEntryUpdateTypeVariant1 {const DlpEntryUpdateTypeVariant1({this.description, required this.name, required this.pattern, required this.type, });
+@immutable final class DlpEntryUpdateTypeVariant1 {const DlpEntryUpdateTypeVariant1({required this.name, required this.pattern, required this.type, this.description, });
 
 factory DlpEntryUpdateTypeVariant1.fromJson(Map<String, dynamic> json) { return DlpEntryUpdateTypeVariant1(
   description: json['description'] as String?,

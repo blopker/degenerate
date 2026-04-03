@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'role.dart';/// Always `list`.
-final class PublicRoleListResourceObject {const PublicRoleListResourceObject._(this.value);
+@immutable final class PublicRoleListResourceObject {const PublicRoleListResourceObject._(this.value);
 
 factory PublicRoleListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PublicRoleListResourceObject($value)'; } 
  }
 /// Paginated list of roles available on an organization or project.
-final class PublicRoleListResource {const PublicRoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
+@immutable final class PublicRoleListResource {const PublicRoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory PublicRoleListResource.fromJson(Map<String, dynamic> json) { return PublicRoleListResource(
   object: PublicRoleListResourceObject.fromJson(json['object'] as String),

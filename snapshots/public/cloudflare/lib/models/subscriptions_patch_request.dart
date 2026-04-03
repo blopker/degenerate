@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination.dart';final class SubscriptionsPatchRequest {const SubscriptionsPatchRequest({this.destination, this.enabled, this.events, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination.dart';@immutable final class SubscriptionsPatchRequest {const SubscriptionsPatchRequest({this.destination, this.enabled, this.events, this.name, });
 
 factory SubscriptionsPatchRequest.fromJson(Map<String, dynamic> json) { return SubscriptionsPatchRequest(
   destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,

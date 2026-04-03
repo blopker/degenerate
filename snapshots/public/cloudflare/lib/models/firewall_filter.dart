@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_filters_components_schemas_id.dart';/// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filters_components_schemas_id.dart';/// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
 extension type const FirewallExpression(String value) {
 factory FirewallExpression.fromJson(String json) => FirewallExpression(json);
 
@@ -28,7 +28,7 @@ factory FirewallSchemasRef.fromJson(String json) => FirewallSchemasRef(json);
 String toJson() => value;
 
 }
-final class FirewallFilter {const FirewallFilter({this.description, this.expression, this.id, this.paused, this.ref, });
+@immutable final class FirewallFilter {const FirewallFilter({this.description, this.expression, this.id, this.paused, this.ref, });
 
 factory FirewallFilter.fromJson(Map<String, dynamic> json) { return FirewallFilter(
   description: json['description'] != null ? FirewallFiltersComponentsSchemasDescription.fromJson(json['description'] as String) : null,

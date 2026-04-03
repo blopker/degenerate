@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents the reason why the status is `pending` or `restricted`.
-final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the reason why the status is `pending` or `restricted`.
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(this.value);
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(String json) { return switch (json) {
   'activating' => activating,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)'; } 
  }
 /// Represents what the user should do, if anything, to activate the Feature.
-final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._(this.value);
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._(this.value);
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution.fromJson(String json) { return switch (json) {
   'contact_stripe' => contactStripe,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution($value)'; } 
  }
 /// The `platform_restrictions` that are restricting this Feature.
-final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._(this.value);
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._(this.value);
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction.fromJson(String json) { return switch (json) {
   'inbound_flows' => inboundFlows,
@@ -100,7 +100,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction($value)'; } 
  }
 /// Additional details on the FinancialAccount Features information.
-final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution, this.restriction, });
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution, this.restriction, });
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(json['code'] as String),

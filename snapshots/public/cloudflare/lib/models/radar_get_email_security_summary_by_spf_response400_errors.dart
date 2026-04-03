@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryBySpfResponse400Errors {const RadarGetEmailSecuritySummaryBySpfResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryBySpfResponse400Errors {const RadarGetEmailSecuritySummaryBySpfResponse400Errors({required this.message});
 
 factory RadarGetEmailSecuritySummaryBySpfResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpfResponse400Errors(
   message: json['message'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'config_map_node_config_source.dart';/// NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
-final class NodeConfigSource {const NodeConfigSource({this.configMap});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'config_map_node_config_source.dart';/// NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
+@immutable final class NodeConfigSource {const NodeConfigSource({this.configMap});
 
 factory NodeConfigSource.fromJson(Map<String, dynamic> json) { return NodeConfigSource(
   configMap: json['configMap'] != null ? ConfigMapNodeConfigSource.fromJson(json['configMap'] as Map<String, dynamic>) : null,

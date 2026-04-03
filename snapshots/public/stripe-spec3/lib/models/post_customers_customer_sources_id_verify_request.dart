@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomersCustomerSourcesIdVerifyRequest {const PostCustomersCustomerSourcesIdVerifyRequest({this.amounts, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSourcesIdVerifyRequest {const PostCustomersCustomerSourcesIdVerifyRequest({this.amounts, this.expand, });
 
 factory PostCustomersCustomerSourcesIdVerifyRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSourcesIdVerifyRequest(
   amounts: (json['amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

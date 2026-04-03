@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
-final class GitCreateCommitRequestCommitter {const GitCreateCommitRequestCommitter({this.name, this.email, this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
+@immutable final class GitCreateCommitRequestCommitter {const GitCreateCommitRequestCommitter({this.name, this.email, this.date, });
 
 factory GitCreateCommitRequestCommitter.fromJson(Map<String, dynamic> json) { return GitCreateCommitRequestCommitter(
   name: json['name'] as String?,

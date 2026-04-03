@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_branding_settings_icon.dart';import 'payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
-final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_branding_settings_icon.dart';import 'payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(this.value);
 
 factory PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
   'pill' => pill,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionBrandingSettings {const PaymentPagesCheckoutSessionBrandingSettings({required this.backgroundColor, required this.borderStyle, required this.buttonColor, required this.displayName, required this.fontFamily, this.icon, this.logo, });
+@immutable final class PaymentPagesCheckoutSessionBrandingSettings {const PaymentPagesCheckoutSessionBrandingSettings({required this.backgroundColor, required this.borderStyle, required this.buttonColor, required this.displayName, required this.fontFamily, this.icon, this.logo, });
 
 factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: json['background_color'] as String,

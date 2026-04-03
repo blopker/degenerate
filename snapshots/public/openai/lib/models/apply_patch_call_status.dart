@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ApplyPatchCallStatus {const ApplyPatchCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ApplyPatchCallStatus {const ApplyPatchCallStatus._(this.value);
 
 factory ApplyPatchCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

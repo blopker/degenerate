@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If you populate this hash, this SetupIntent generates a `single_use` mandate after successful completion.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If you populate this hash, this SetupIntent generates a `single_use` mandate after successful completion.
 /// 
 /// Single-use mandates are only valid for the following payment methods: `acss_debit`, `alipay`, `au_becs_debit`, `bacs_debit`, `bancontact`, `boleto`, `ideal`, `link`, `sepa_debit`, and `us_bank_account`.
-final class PostSetupIntentsRequestSingleUse {const PostSetupIntentsRequestSingleUse({required this.amount, required this.currency, });
+@immutable final class PostSetupIntentsRequestSingleUse {const PostSetupIntentsRequestSingleUse({required this.amount, required this.currency, });
 
 factory PostSetupIntentsRequestSingleUse.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestSingleUse(
   amount: (json['amount'] as num).toInt(),

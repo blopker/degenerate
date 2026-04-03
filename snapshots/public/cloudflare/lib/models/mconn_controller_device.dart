@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnControllerDevice {const MconnControllerDevice({required this.cryptKey, this.cryptKeyRotationFinishedAt, required this.id, this.imagedAt, this.lastCryptKey, this.serialNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnControllerDevice {const MconnControllerDevice({required this.cryptKey, required this.id, this.cryptKeyRotationFinishedAt, this.imagedAt, this.lastCryptKey, this.serialNumber, });
 
 factory MconnControllerDevice.fromJson(Map<String, dynamic> json) { return MconnControllerDevice(
   cryptKey: json['crypt_key'] as String,

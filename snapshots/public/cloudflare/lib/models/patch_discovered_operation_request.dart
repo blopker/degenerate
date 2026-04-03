@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discovery_state_patch.dart';final class PatchDiscoveredOperationRequest {const PatchDiscoveredOperationRequest({this.state});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discovery_state_patch.dart';@immutable final class PatchDiscoveredOperationRequest {const PatchDiscoveredOperationRequest({this.state});
 
 factory PatchDiscoveredOperationRequest.fromJson(Map<String, dynamic> json) { return PatchDiscoveredOperationRequest(
   state: json['state'] != null ? DiscoveryStatePatch.fromJson(json['state'] as String) : null,

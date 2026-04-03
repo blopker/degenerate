@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject._(this.value);
 
 factory DeleteVectorStoreFileResponseObject.fromJson(String json) { return switch (json) {
   'vector_store.file.deleted' => vectorStoreFileDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteVectorStoreFileResponseObject($value)'; } 
  }
-final class DeleteVectorStoreFileResponse {const DeleteVectorStoreFileResponse({required this.id, required this.deleted, required this.object, });
+@immutable final class DeleteVectorStoreFileResponse {const DeleteVectorStoreFileResponse({required this.id, required this.deleted, required this.object, });
 
 factory DeleteVectorStoreFileResponse.fromJson(Map<String, dynamic> json) { return DeleteVectorStoreFileResponse(
   id: json['id'] as String,

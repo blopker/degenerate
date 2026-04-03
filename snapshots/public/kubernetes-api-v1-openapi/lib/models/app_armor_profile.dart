@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// AppArmorProfile defines a pod or container's AppArmor settings.
-final class AppArmorProfile {const AppArmorProfile({this.localhostProfile, this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// AppArmorProfile defines a pod or container's AppArmor settings.
+@immutable final class AppArmorProfile {const AppArmorProfile({this.localhostProfile, this.type = '', });
 
 factory AppArmorProfile.fromJson(Map<String, dynamic> json) { return AppArmorProfile(
   localhostProfile: json['localhostProfile'] as String?,

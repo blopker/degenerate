@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `ua` when specifying a user agent in the rule.
-final class FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ua` when specifying a user agent in the rule.
+@immutable final class FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget._(this.value);
 
 factory FirewallUaConfigurationTarget.fromJson(String json) { return switch (json) {
   'ua' => ua,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallUaConfigurationTarget($value)'; } 
  }
-final class FirewallUaConfiguration {const FirewallUaConfiguration({this.target, this.value, });
+@immutable final class FirewallUaConfiguration {const FirewallUaConfiguration({this.target, this.value, });
 
 factory FirewallUaConfiguration.fromJson(Map<String, dynamic> json) { return FirewallUaConfiguration(
   target: json['target'] != null ? FirewallUaConfigurationTarget.fromJson(json['target'] as String) : null,

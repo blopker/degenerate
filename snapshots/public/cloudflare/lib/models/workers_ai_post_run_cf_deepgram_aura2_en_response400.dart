@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepgram_aura2_en_response400_errors.dart';final class WorkersAiPostRunCfDeepgramAura2EnResponse400 {const WorkersAiPostRunCfDeepgramAura2EnResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepgram_aura2_en_response400_errors.dart';@immutable final class WorkersAiPostRunCfDeepgramAura2EnResponse400 {const WorkersAiPostRunCfDeepgramAura2EnResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura2EnResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfDeepgramAura2EnResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

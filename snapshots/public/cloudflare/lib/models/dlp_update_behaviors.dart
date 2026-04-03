@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_update_behavior.dart';final class DlpUpdateBehaviors {const DlpUpdateBehaviors({required this.behaviors});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_update_behavior.dart';@immutable final class DlpUpdateBehaviors {const DlpUpdateBehaviors({required this.behaviors});
 
 factory DlpUpdateBehaviors.fromJson(Map<String, dynamic> json) { return DlpUpdateBehaviors(
   behaviors: (json['behaviors'] as Map<String, dynamic>).map((k, v) => MapEntry(k, DlpUpdateBehavior.fromJson(v as Map<String, dynamic>))),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_timer_rule_settings.dart';final class ZarazTimerRuleAction {const ZarazTimerRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_timer_rule_settings.dart';@immutable final class ZarazTimerRuleAction {const ZarazTimerRuleAction._(this.value);
 
 factory ZarazTimerRuleAction.fromJson(String json) { return switch (json) {
   'timer' => timer,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazTimerRuleAction($value)'; } 
  }
-final class ZarazTimerRule {const ZarazTimerRule({required this.action, required this.id, required this.settings, });
+@immutable final class ZarazTimerRule {const ZarazTimerRule({required this.action, required this.id, required this.settings, });
 
 factory ZarazTimerRule.fromJson(Map<String, dynamic> json) { return ZarazTimerRule(
   action: ZarazTimerRuleAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_routes_asns_response_result.dart';final class RadarGetBgpRoutesAsnsResponse {const RadarGetBgpRoutesAsnsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_asns_response_result.dart';@immutable final class RadarGetBgpRoutesAsnsResponse {const RadarGetBgpRoutesAsnsResponse({required this.result, required this.success, });
 
 factory RadarGetBgpRoutesAsnsResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesAsnsResponse(
   result: RadarGetBgpRoutesAsnsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

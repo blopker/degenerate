@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookReleaseEditedChangesMakeLatest {const WebhookReleaseEditedChangesMakeLatest({required this.to});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookReleaseEditedChangesMakeLatest {const WebhookReleaseEditedChangesMakeLatest({required this.to});
 
 factory WebhookReleaseEditedChangesMakeLatest.fromJson(Map<String, dynamic> json) { return WebhookReleaseEditedChangesMakeLatest(
   to: json['to'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'refund.dart';import 'transfer.dart';import 'transfer_reversal_balance_transaction.dart';import 'transfer_reversal_destination_payment_refund.dart';import 'transfer_reversal_source_refund.dart';import 'transfer_reversal_transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TransferReversalObject {const TransferReversalObject._(this.value);
+@immutable final class TransferReversalObject {const TransferReversalObject._(this.value);
 
 factory TransferReversalObject.fromJson(String json) { return switch (json) {
   'transfer_reversal' => transferReversal,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 /// reversal.
 /// 
 /// Related guide: [Reverse transfers](https://docs.stripe.com/connect/separate-charges-and-transfers#reverse-transfers)
-final class TransferReversal {const TransferReversal({required this.amount, this.balanceTransaction, required this.created, required this.currency, this.destinationPaymentRefund, required this.id, this.metadata, required this.object, this.sourceRefund, required this.transfer, });
+@immutable final class TransferReversal {const TransferReversal({required this.amount, required this.created, required this.currency, required this.id, required this.object, required this.transfer, this.balanceTransaction, this.destinationPaymentRefund, this.metadata, this.sourceRefund, });
 
 factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferReversal(
   amount: (json['amount'] as num).toInt(),

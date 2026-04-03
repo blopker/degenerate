@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta_confidence_info_annotations.dart';final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

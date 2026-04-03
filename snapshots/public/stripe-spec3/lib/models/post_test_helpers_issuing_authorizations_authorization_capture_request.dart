@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_capture_request_purchase_details.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest({this.captureAmount, this.closeAuthorization, this.expand, this.purchaseDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_capture_request_purchase_details.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest({this.captureAmount, this.closeAuthorization, this.expand, this.purchaseDetails, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(
   captureAmount: json['capture_amount'] != null ? (json['capture_amount'] as num).toInt() : null,

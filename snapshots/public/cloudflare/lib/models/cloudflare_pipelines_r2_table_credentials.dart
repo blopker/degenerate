@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesR2TableCredentials {const CloudflarePipelinesR2TableCredentials({required this.accessKeyId, required this.secretAccessKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesR2TableCredentials {const CloudflarePipelinesR2TableCredentials({required this.accessKeyId, required this.secretAccessKey, });
 
 factory CloudflarePipelinesR2TableCredentials.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TableCredentials(
   accessKeyId: json['access_key_id'] as String,

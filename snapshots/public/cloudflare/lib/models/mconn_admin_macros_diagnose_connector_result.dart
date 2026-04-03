@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_admin_connector.dart';import 'mconn_admin_device.dart';import 'mconn_admin_site.dart';final class MconnAdminMacrosDiagnoseConnectorResult {const MconnAdminMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_connector.dart';import 'mconn_admin_device.dart';import 'mconn_admin_site.dart';@immutable final class MconnAdminMacrosDiagnoseConnectorResult {const MconnAdminMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
 
 factory MconnAdminMacrosDiagnoseConnectorResult.fromJson(Map<String, dynamic> json) { return MconnAdminMacrosDiagnoseConnectorResult(
   connector: json['connector'] != null ? MconnAdminConnector.fromJson(json['connector'] as Map<String, dynamic>) : null,

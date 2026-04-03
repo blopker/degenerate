@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The TTL of our resolution of your DNS record in seconds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TTL of our resolution of your DNS record in seconds.
 extension type const SpectrumConfigDnsTtl(int value) {
 factory SpectrumConfigDnsTtl.fromJson(num json) => SpectrumConfigDnsTtl(json.toInt());
 
@@ -15,7 +15,7 @@ String toJson() => value;
 
 }
 /// The type of DNS record associated with the origin. "" is used to specify a combination of A/AAAA records.
-final class SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType._(this.value);
+@immutable final class SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType._(this.value);
 
 factory SpectrumConfigOriginDnsType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpectrumConfigOriginDnsType($value)'; } 
  }
 /// The name and type of DNS record for the Spectrum application.
-final class SpectrumConfigOriginDns {const SpectrumConfigOriginDns({this.name, this.ttl, this.type, });
+@immutable final class SpectrumConfigOriginDns {const SpectrumConfigOriginDns({this.name, this.ttl, this.type, });
 
 factory SpectrumConfigOriginDns.fromJson(Map<String, dynamic> json) { return SpectrumConfigOriginDns(
   name: json['name'] != null ? SpectrumConfigOriginDnsName.fromJson(json['name'] as String) : null,

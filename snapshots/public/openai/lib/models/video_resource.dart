@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error2.dart';import 'video_model.dart';import 'video_size.dart';final class VideoStatus {const VideoStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error2.dart';import 'video_model.dart';import 'video_size.dart';@immutable final class VideoStatus {const VideoStatus._(this.value);
 
 factory VideoStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VideoStatus($value)'; } 
  }
 /// The object type, which is always `video`.
-final class VideoResourceObject {const VideoResourceObject._(this.value);
+@immutable final class VideoResourceObject {const VideoResourceObject._(this.value);
 
 factory VideoResourceObject.fromJson(String json) { return switch (json) {
   'video' => video,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VideoResourceObject($value)'; } 
  }
 /// Structured information describing a generated video job.
-final class VideoResource {const VideoResource({required this.id, this.object = VideoResourceObject.video, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, });
+@immutable final class VideoResource {const VideoResource({required this.id, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, this.object = VideoResourceObject.video, });
 
 factory VideoResource.fromJson(Map<String, dynamic> json) { return VideoResource(
   id: json['id'] as String,

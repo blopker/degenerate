@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action to apply to a matched request.
-final class FirewallSchemasMode {const FirewallSchemasMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to apply to a matched request.
+@immutable final class FirewallSchemasMode {const FirewallSchemasMode._(this.value);
 
 factory FirewallSchemasMode.fromJson(String json) { return switch (json) {
   'block' => block,

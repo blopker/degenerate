@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatMessage {const ChatMessage({required this.role, required this.content, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatMessage {const ChatMessage({required this.role, required this.content, });
 
 factory ChatMessage.fromJson(Map<String, dynamic> json) { return ChatMessage(
   role: json['role'] as String,

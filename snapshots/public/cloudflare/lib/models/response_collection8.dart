@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_messages2.dart';import 'response_collection8_result_info.dart';final class ResponseCollection8 {const ResponseCollection8({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_messages2.dart';import 'response_collection8_result_info.dart';@immutable final class ResponseCollection8 {const ResponseCollection8({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection8.fromJson(Map<String, dynamic> json) { return ResponseCollection8(
   errors: (json['errors'] as List<dynamic>).map((e) => CustomPagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

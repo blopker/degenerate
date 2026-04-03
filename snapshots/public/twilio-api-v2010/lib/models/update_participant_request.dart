@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
-final class UpdateParticipantRequestHoldMethod {const UpdateParticipantRequestHoldMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
+@immutable final class UpdateParticipantRequestHoldMethod {const UpdateParticipantRequestHoldMethod._(this.value);
 
 factory UpdateParticipantRequestHoldMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateParticipantRequestHoldMethod($value)'; } 
  }
 /// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class UpdateParticipantRequestAnnounceMethod {const UpdateParticipantRequestAnnounceMethod._(this.value);
+@immutable final class UpdateParticipantRequestAnnounceMethod {const UpdateParticipantRequestAnnounceMethod._(this.value);
 
 factory UpdateParticipantRequestAnnounceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateParticipantRequestAnnounceMethod($value)'; } 
  }
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-final class UpdateParticipantRequestWaitMethod {const UpdateParticipantRequestWaitMethod._(this.value);
+@immutable final class UpdateParticipantRequestWaitMethod {const UpdateParticipantRequestWaitMethod._(this.value);
 
 factory UpdateParticipantRequestWaitMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateParticipantRequestWaitMethod($value)'; } 
  }
-final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });
+@immutable final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });
 
 factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) { return UpdateParticipantRequest(
   muted: json['Muted'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turbo_request_audio.dart';import 'turbo_request_audio_variant2.dart';final class TurboRequest {const TurboRequest({required this.audio, this.beamSize = 5, this.compressionRatioThreshold = 2.4, this.conditionOnPreviousText = true, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold = -1.0, this.noSpeechThreshold = 0.6, this.prefix, this.task = 'transcribe', this.vadFilter = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turbo_request_audio.dart';import 'turbo_request_audio_variant2.dart';@immutable final class TurboRequest {const TurboRequest({required this.audio, this.beamSize = 5, this.compressionRatioThreshold = 2.4, this.conditionOnPreviousText = true, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold = -1.0, this.noSpeechThreshold = 0.6, this.prefix, this.task = 'transcribe', this.vadFilter = false, });
 
 factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
   audio: OneOf2.parse(json['audio'], fromA: (v) => v as String, fromB: (v) => TurboRequestAudioVariant2.fromJson(v as Map<String, dynamic>),),

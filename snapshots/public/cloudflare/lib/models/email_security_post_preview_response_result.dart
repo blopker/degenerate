@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityPostPreviewResponseResult {const EmailSecurityPostPreviewResponseResult({required this.screenshot});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostPreviewResponseResult {const EmailSecurityPostPreviewResponseResult({required this.screenshot});
 
 factory EmailSecurityPostPreviewResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityPostPreviewResponseResult(
   screenshot: json['screenshot'] as String,

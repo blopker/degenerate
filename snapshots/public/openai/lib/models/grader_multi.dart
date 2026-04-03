@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_label_model.dart';import 'grader_multi_graders.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';/// The object type, which is always `multi`.
-final class GraderMultiType {const GraderMultiType._(this.value);
+@immutable final class GraderMultiType {const GraderMultiType._(this.value);
 
 factory GraderMultiType.fromJson(String json) { return switch (json) {
   'multi' => multi,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GraderMultiType($value)'; } 
  }
 /// A MultiGrader object combines the output of multiple graders to produce a single score.
-final class GraderMulti {const GraderMulti({this.type = GraderMultiType.multi, required this.name, required this.graders, required this.calculateOutput, });
+@immutable final class GraderMulti {const GraderMulti({required this.name, required this.graders, required this.calculateOutput, this.type = GraderMultiType.multi, });
 
 factory GraderMulti.fromJson(Map<String, dynamic> json) { return GraderMulti(
   type: GraderMultiType.fromJson(json['type'] as String),

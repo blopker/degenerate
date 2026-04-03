@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesListForAuthenticatedUserFilter {const IssuesListForAuthenticatedUserFilter._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForAuthenticatedUserFilter {const IssuesListForAuthenticatedUserFilter._(this.value);
 
 factory IssuesListForAuthenticatedUserFilter.fromJson(String json) { return switch (json) {
   'assigned' => assigned,

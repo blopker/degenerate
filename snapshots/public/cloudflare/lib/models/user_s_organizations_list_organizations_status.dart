@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether the user is a member of the organization or has an inivitation pending.
-final class UserSOrganizationsListOrganizationsStatus {const UserSOrganizationsListOrganizationsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the user is a member of the organization or has an inivitation pending.
+@immutable final class UserSOrganizationsListOrganizationsStatus {const UserSOrganizationsListOrganizationsStatus._(this.value);
 
 factory UserSOrganizationsListOrganizationsStatus.fromJson(String json) { return switch (json) {
   'member' => member,

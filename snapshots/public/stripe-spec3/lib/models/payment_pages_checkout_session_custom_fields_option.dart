@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionCustomFieldsOption {const PaymentPagesCheckoutSessionCustomFieldsOption({required this.label, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsOption {const PaymentPagesCheckoutSessionCustomFieldsOption({required this.label, required this.value, });
 
 factory PaymentPagesCheckoutSessionCustomFieldsOption.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsOption(
   label: json['label'] as String,

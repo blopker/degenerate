@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_tagging_etag.dart';import 'resource_tagging_identifier.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';/// Base schema for zone-level resources (without type discriminator)
-final class ResourceTaggingTaggedResourceObjectZoneLevelBase {const ResourceTaggingTaggedResourceObjectZoneLevelBase({required this.etag, required this.id, required this.name, required this.tags, required this.zoneId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_identifier.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';/// Base schema for zone-level resources (without type discriminator)
+@immutable final class ResourceTaggingTaggedResourceObjectZoneLevelBase {const ResourceTaggingTaggedResourceObjectZoneLevelBase({required this.etag, required this.id, required this.name, required this.tags, required this.zoneId, });
 
 factory ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectZoneLevelBase(
   etag: ResourceTaggingEtag.fromJson(json['etag'] as String),

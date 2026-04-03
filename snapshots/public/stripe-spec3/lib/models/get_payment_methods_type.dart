@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPaymentMethodsType {const GetPaymentMethodsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPaymentMethodsType {const GetPaymentMethodsType._(this.value);
 
 factory GetPaymentMethodsType.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,

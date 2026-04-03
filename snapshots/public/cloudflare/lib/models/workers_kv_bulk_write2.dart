@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_any.dart';import 'workers_kv_expiration.dart';import 'workers_kv_expiration_ttl.dart';import 'workers_kv_key_name_bulk.dart';final class WorkersKvBulkWrite2 {const WorkersKvBulkWrite2({this.base64 = false, this.expiration, this.expirationTtl, required this.key, this.metadata, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_expiration.dart';import 'workers_kv_expiration_ttl.dart';import 'workers_kv_key_name_bulk.dart';@immutable final class WorkersKvBulkWrite2 {const WorkersKvBulkWrite2({required this.key, required this.value, this.base64 = false, this.expiration, this.expirationTtl, this.metadata, });
 
 factory WorkersKvBulkWrite2.fromJson(Map<String, dynamic> json) { return WorkersKvBulkWrite2(
   base64: json.containsKey('base64') ? json['base64'] as bool : false,

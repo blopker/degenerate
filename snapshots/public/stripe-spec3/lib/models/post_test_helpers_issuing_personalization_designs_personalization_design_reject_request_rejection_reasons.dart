@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._(this.value);
 
 factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo.fromJson(String json) { return switch (json) {
   'geographic_location' => geographicLocation,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo($value)'; } 
  }
-final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._(this.value);
+@immutable final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._(this.value);
 
 factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText.fromJson(String json) { return switch (json) {
   'geographic_location' => geographicLocation,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText($value)'; } 
  }
 /// The reason(s) the personalization design was rejected.
-final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons({this.cardLogo, this.carrierText, });
+@immutable final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons({this.cardLogo, this.carrierText, });
 
 factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons(
   cardLogo: (json['card_logo'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo.fromJson(e as String)).toList(),

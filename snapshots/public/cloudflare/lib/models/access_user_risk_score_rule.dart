@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_user_risk_score_rule_user_risk_score.dart';/// Matches a user's risk score.
-final class AccessUserRiskScoreRule {const AccessUserRiskScoreRule({required this.userRiskScore});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_user_risk_score_rule_user_risk_score.dart';/// Matches a user's risk score.
+@immutable final class AccessUserRiskScoreRule {const AccessUserRiskScoreRule({required this.userRiskScore});
 
 factory AccessUserRiskScoreRule.fromJson(Map<String, dynamic> json) { return AccessUserRiskScoreRule(
   userRiskScore: AccessUserRiskScoreRuleUserRiskScore.fromJson(json['user_risk_score'] as Map<String, dynamic>),

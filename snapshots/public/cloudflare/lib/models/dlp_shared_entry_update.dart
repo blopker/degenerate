@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpSharedEntryUpdate {const DlpSharedEntryUpdate({required this.enabled, required this.entryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpSharedEntryUpdate {const DlpSharedEntryUpdate({required this.enabled, required this.entryId, });
 
 factory DlpSharedEntryUpdate.fromJson(Map<String, dynamic> json) { return DlpSharedEntryUpdate(
   enabled: json['enabled'] as bool,

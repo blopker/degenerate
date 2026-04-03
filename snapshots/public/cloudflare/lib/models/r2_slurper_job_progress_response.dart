@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_slurper_job_status.dart';final class R2SlurperJobProgressResponse {const R2SlurperJobProgressResponse({this.createdAt, this.failedObjects, this.id, this.objects, this.skippedObjects, this.status, this.transferredObjects, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_job_status.dart';@immutable final class R2SlurperJobProgressResponse {const R2SlurperJobProgressResponse({this.createdAt, this.failedObjects, this.id, this.objects, this.skippedObjects, this.status, this.transferredObjects, });
 
 factory R2SlurperJobProgressResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobProgressResponse(
   createdAt: json['createdAt'] as String?,

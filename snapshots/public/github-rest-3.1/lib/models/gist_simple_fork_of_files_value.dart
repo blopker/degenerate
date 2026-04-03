@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GistSimpleForkOfFilesValue {const GistSimpleForkOfFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistSimpleForkOfFilesValue {const GistSimpleForkOfFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, });
 
 factory GistSimpleForkOfFilesValue.fromJson(Map<String, dynamic> json) { return GistSimpleForkOfFilesValue(
   filename: json['filename'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposListActivitiesActivityType {const ReposListActivitiesActivityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListActivitiesActivityType {const ReposListActivitiesActivityType._(this.value);
 
 factory ReposListActivitiesActivityType.fromJson(String json) { return switch (json) {
   'push' => push,

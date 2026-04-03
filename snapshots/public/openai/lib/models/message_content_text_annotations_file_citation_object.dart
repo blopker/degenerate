@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
-final class MessageContentTextAnnotationsFileCitationObjectType {const MessageContentTextAnnotationsFileCitationObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
+@immutable final class MessageContentTextAnnotationsFileCitationObjectType {const MessageContentTextAnnotationsFileCitationObjectType._(this.value);
 
 factory MessageContentTextAnnotationsFileCitationObjectType.fromJson(String json) { return switch (json) {
   'file_citation' => fileCitation,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageContentTextAnnotationsFileCitationObjectType($value)'; } 
  }
 /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
-final class MessageContentTextAnnotationsFileCitationObject {const MessageContentTextAnnotationsFileCitationObject({required this.type, required this.text, required this.fileCitation, required this.startIndex, required this.endIndex, });
+@immutable final class MessageContentTextAnnotationsFileCitationObject {const MessageContentTextAnnotationsFileCitationObject({required this.type, required this.text, required this.fileCitation, required this.startIndex, required this.endIndex, });
 
 factory MessageContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageContentTextAnnotationsFileCitationObject(
   type: MessageContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),

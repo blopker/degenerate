@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_top_locations_by_ip_version_response_result_meta.dart';import 'radar_get_dns_as112_top_locations_by_ip_version_response_result_top0.dart';final class RadarGetDnsAs112TopLocationsByIpVersionResponseResult {const RadarGetDnsAs112TopLocationsByIpVersionResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_top_locations_by_ip_version_response_result_meta.dart';import 'radar_get_dns_as112_top_locations_by_ip_version_response_result_top0.dart';@immutable final class RadarGetDnsAs112TopLocationsByIpVersionResponseResult {const RadarGetDnsAs112TopLocationsByIpVersionResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetDnsAs112TopLocationsByIpVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsByIpVersionResponseResult(
   meta: RadarGetDnsAs112TopLocationsByIpVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

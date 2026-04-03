@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NamespaceWorkerCreateRequest {const NamespaceWorkerCreateRequest({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NamespaceWorkerCreateRequest {const NamespaceWorkerCreateRequest({this.name});
 
 factory NamespaceWorkerCreateRequest.fromJson(Map<String, dynamic> json) { return NamespaceWorkerCreateRequest(
   name: json['name'] as String?,

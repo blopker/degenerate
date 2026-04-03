@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The unique component.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The unique component.
 extension type ComponentsSchemasName(dynamic value) {
 factory ComponentsSchemasName.fromJson(dynamic json) => ComponentsSchemasName(json);
 
@@ -21,7 +21,7 @@ factory UnitPrice.fromJson(num json) => UnitPrice(json.toDouble());
 num toJson() => value;
 
 }
-final class ComponentValue {const ComponentValue({this.$default, this.name, this.unitPrice, });
+@immutable final class ComponentValue {const ComponentValue({this.$default, this.name, this.unitPrice, });
 
 factory ComponentValue.fromJson(Map<String, dynamic> json) { return ComponentValue(
   $default: json['default'] != null ? Default.fromJson(json['default'] as num) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_file_links_link_request_expires_at.dart';import 'post_file_links_link_request_metadata.dart';final class PostFileLinksLinkRequest {const PostFileLinksLinkRequest({this.expand, this.expiresAt, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_file_links_link_request_expires_at.dart';import 'post_file_links_link_request_metadata.dart';@immutable final class PostFileLinksLinkRequest {const PostFileLinksLinkRequest({this.expand, this.expiresAt, this.metadata, });
 
 factory PostFileLinksLinkRequest.fromJson(Map<String, dynamic> json) { return PostFileLinksLinkRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

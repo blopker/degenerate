@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_top0.dart';final class RadarGetVerifiedBotsTopByHttpRequestsResponseResult {const RadarGetVerifiedBotsTopByHttpRequestsResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_top0.dart';@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponseResult {const RadarGetVerifiedBotsTopByHttpRequestsResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetVerifiedBotsTopByHttpRequestsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetVerifiedBotsTopByHttpRequestsResponseResult(
   meta: RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

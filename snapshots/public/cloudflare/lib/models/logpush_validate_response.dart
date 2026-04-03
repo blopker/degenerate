@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_messages2.dart';import 'logpush_validate_response_result.dart';final class LogpushValidateResponse {const LogpushValidateResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_messages2.dart';import 'logpush_validate_response_result.dart';@immutable final class LogpushValidateResponse {const LogpushValidateResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory LogpushValidateResponse.fromJson(Map<String, dynamic> json) { return LogpushValidateResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPermissionListResponse404Errors {const GetPermissionListResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPermissionListResponse404Errors {const GetPermissionListResponse404Errors({required this.message});
 
 factory GetPermissionListResponse404Errors.fromJson(Map<String, dynamic> json) { return GetPermissionListResponse404Errors(
   message: json['message'] as String,

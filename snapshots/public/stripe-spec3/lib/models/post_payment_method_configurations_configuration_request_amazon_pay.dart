@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_amazon_pay_display_preference.dart';/// Amazon Pay is a wallet payment method that lets your customers check out the same way as on Amazon.
-final class PostPaymentMethodConfigurationsConfigurationRequestAmazonPay {const PostPaymentMethodConfigurationsConfigurationRequestAmazonPay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_amazon_pay_display_preference.dart';/// Amazon Pay is a wallet payment method that lets your customers check out the same way as on Amazon.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAmazonPay {const PostPaymentMethodConfigurationsConfigurationRequestAmazonPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAmazonPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAmazonPay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAmazonPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

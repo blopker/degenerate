@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretKeyParam3CustomerAcceptanceOffline {const SecretKeyParam3CustomerAcceptanceOffline();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretKeyParam3CustomerAcceptanceOffline {const SecretKeyParam3CustomerAcceptanceOffline();
 
 factory SecretKeyParam3CustomerAcceptanceOffline.fromJson(Map<String, dynamic> json) { return SecretKeyParam3CustomerAcceptanceOffline(
 

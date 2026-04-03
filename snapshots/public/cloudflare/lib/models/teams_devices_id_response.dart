@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_id_response_result.dart';final class TeamsDevicesIdResponse {const TeamsDevicesIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_id_response_result.dart';@immutable final class TeamsDevicesIdResponse {const TeamsDevicesIdResponse({this.result});
 
 factory TeamsDevicesIdResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesIdResponse(
   result: json['result'] != null ? TeamsDevicesIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

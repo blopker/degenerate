@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dos_messages2_source.dart';final class DosMessages2 {const DosMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2_source.dart';@immutable final class DosMessages2 {const DosMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DosMessages2.fromJson(Map<String, dynamic> json) { return DosMessages2(
   code: (json['code'] as num).toInt(),

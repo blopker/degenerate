@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discounts_resource_discount_amount.dart';/// 
-final class ProrationDetails {const ProrationDetails({required this.discountAmounts});
+@immutable final class ProrationDetails {const ProrationDetails({required this.discountAmounts});
 
 factory ProrationDetails.fromJson(Map<String, dynamic> json) { return ProrationDetails(
   discountAmounts: (json['discount_amounts'] as List<dynamic>).map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_asn.dart';import 'addressing_cidr.dart';import 'addressing_delegate_loa_creation.dart';import 'addressing_description.dart';import 'addressing_loa_document_identifier.dart';final class IpAddressManagementPrefixesAddPrefixRequest {const IpAddressManagementPrefixesAddPrefixRequest({required this.asn, required this.cidr, this.delegateLoaCreation, this.description, this.loaDocumentId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_asn.dart';import 'addressing_cidr.dart';import 'addressing_delegate_loa_creation.dart';import 'addressing_description.dart';import 'addressing_loa_document_identifier.dart';@immutable final class IpAddressManagementPrefixesAddPrefixRequest {const IpAddressManagementPrefixesAddPrefixRequest({required this.asn, required this.cidr, this.delegateLoaCreation, this.description, this.loaDocumentId, });
 
 factory IpAddressManagementPrefixesAddPrefixRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementPrefixesAddPrefixRequest(
   asn: AddressingAsn.fromJson(json['asn'] as num),

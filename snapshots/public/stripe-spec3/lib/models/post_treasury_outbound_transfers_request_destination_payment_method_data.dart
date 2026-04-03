@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodDataType {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodDataType {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodDataType._(this.value);
 
 factory PostTreasuryOutboundTransfersRequestDestinationPaymentMethodDataType.fromJson(String json) { return switch (json) {
   'financial_account' => financialAccount,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTreasuryOutboundTransfersRequestDestinationPaymentMethodDataType($value)'; } 
  }
 /// Hash used to generate the PaymentMethod to be used for this OutboundTransfer. Exclusive with `destination_payment_method`.
-final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData({this.financialAccount, required this.type, });
+@immutable final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData({required this.type, this.financialAccount, });
 
 factory PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData(
   financialAccount: json['financial_account'] as String?,

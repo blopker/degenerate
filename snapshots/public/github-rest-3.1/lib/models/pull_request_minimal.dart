@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pull_request_minimal_base.dart';import 'pull_request_minimal_head.dart';final class PullRequestMinimal {const PullRequestMinimal({required this.id, required this.number, required this.url, required this.head, required this.base, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_minimal_base.dart';import 'pull_request_minimal_head.dart';@immutable final class PullRequestMinimal {const PullRequestMinimal({required this.id, required this.number, required this.url, required this.head, required this.base, });
 
 factory PullRequestMinimal.fromJson(Map<String, dynamic> json) { return PullRequestMinimal(
   id: (json['id'] as num).toInt(),

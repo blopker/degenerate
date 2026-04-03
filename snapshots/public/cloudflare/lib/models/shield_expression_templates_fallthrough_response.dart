@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_response_expression_templates_fallthrough.dart';final class ShieldExpressionTemplatesFallthroughResponse {const ShieldExpressionTemplatesFallthroughResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_response_expression_templates_fallthrough.dart';@immutable final class ShieldExpressionTemplatesFallthroughResponse {const ShieldExpressionTemplatesFallthroughResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ShieldExpressionTemplatesFallthroughResponse.fromJson(Map<String, dynamic> json) { return ShieldExpressionTemplatesFallthroughResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

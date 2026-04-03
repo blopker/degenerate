@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByIpVersionResponse400Errors {const RadarGetEmailRoutingSummaryByIpVersionResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponse400Errors {const RadarGetEmailRoutingSummaryByIpVersionResponse400Errors({required this.message});
 
 factory RadarGetEmailRoutingSummaryByIpVersionResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(
   message: json['message'] as String,

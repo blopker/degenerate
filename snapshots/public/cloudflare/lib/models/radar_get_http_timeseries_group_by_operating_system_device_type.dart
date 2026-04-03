@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByOperatingSystemDeviceType {const RadarGetHttpTimeseriesGroupByOperatingSystemDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemDeviceType {const RadarGetHttpTimeseriesGroupByOperatingSystemDeviceType._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByOperatingSystemDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,

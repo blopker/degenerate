@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns {const UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns({required this.confidence, required this.excludes, required this.implies, required this.match, required this.name, required this.regex, required this.type, required this.value, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns {const UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns({required this.confidence, required this.excludes, required this.implies, required this.match, required this.name, required this.regex, required this.type, required this.value, required this.version, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(
   confidence: (json['confidence'] as num).toInt(),

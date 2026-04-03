@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_list_response_result_configuration.dart';final class DestinationListResponseResult {const DestinationListResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_list_response_result_configuration.dart';@immutable final class DestinationListResponseResult {const DestinationListResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
 
 factory DestinationListResponseResult.fromJson(Map<String, dynamic> json) { return DestinationListResponseResult(
   configuration: DestinationListResponseResultConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),

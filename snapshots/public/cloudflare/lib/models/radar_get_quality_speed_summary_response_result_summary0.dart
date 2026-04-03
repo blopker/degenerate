@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetQualitySpeedSummaryResponseResultSummary0 {const RadarGetQualitySpeedSummaryResponseResultSummary0({required this.bandwidthDownload, required this.bandwidthUpload, required this.jitterIdle, required this.jitterLoaded, required this.latencyIdle, required this.latencyLoaded, required this.packetLoss, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualitySpeedSummaryResponseResultSummary0 {const RadarGetQualitySpeedSummaryResponseResultSummary0({required this.bandwidthDownload, required this.bandwidthUpload, required this.jitterIdle, required this.jitterLoaded, required this.latencyIdle, required this.latencyLoaded, required this.packetLoss, });
 
 factory RadarGetQualitySpeedSummaryResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedSummaryResponseResultSummary0(
   bandwidthDownload: json['bandwidthDownload'] as String,

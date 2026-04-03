@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_request_shipping_cost_shipping_rate_data_fixed_amount_currency_options_value.dart';final class PostInvoicesRequestShippingCostShippingRateDataFixedAmount {const PostInvoicesRequestShippingCostShippingRateDataFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_shipping_cost_shipping_rate_data_fixed_amount_currency_options_value.dart';@immutable final class PostInvoicesRequestShippingCostShippingRateDataFixedAmount {const PostInvoicesRequestShippingCostShippingRateDataFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
 
 factory PostInvoicesRequestShippingCostShippingRateDataFixedAmount.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingCostShippingRateDataFixedAmount(
   amount: (json['amount'] as num).toInt(),

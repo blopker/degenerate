@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.
-final class RetentionRatioTruncationTokenLimits {const RetentionRatioTruncationTokenLimits({this.postInstructions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.
+@immutable final class RetentionRatioTruncationTokenLimits {const RetentionRatioTruncationTokenLimits({this.postInstructions});
 
 factory RetentionRatioTruncationTokenLimits.fromJson(Map<String, dynamic> json) { return RetentionRatioTruncationTokenLimits(
   postInstructions: json['post_instructions'] != null ? (json['post_instructions'] as num).toInt() : null,

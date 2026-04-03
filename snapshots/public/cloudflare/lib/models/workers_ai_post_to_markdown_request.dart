@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersAiPostToMarkdownRequest {const WorkersAiPostToMarkdownRequest({required this.files});
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostToMarkdownRequest {const WorkersAiPostToMarkdownRequest({required this.files});
 
 factory WorkersAiPostToMarkdownRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostToMarkdownRequest(
   files: (json['files'] as List<dynamic>).map((e) => base64Decode(e as String)).toList(),

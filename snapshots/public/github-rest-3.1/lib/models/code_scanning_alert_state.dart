@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// State of a code scanning alert.
-final class CodeScanningAlertState {const CodeScanningAlertState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of a code scanning alert.
+@immutable final class CodeScanningAlertState {const CodeScanningAlertState._(this.value);
 
 factory CodeScanningAlertState.fromJson(String json) { return switch (json) {
   'open' => open,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TextToSpeech {const TextToSpeech({this.lang = 'en', required this.prompt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech {const TextToSpeech({required this.prompt, this.lang = 'en', });
 
 factory TextToSpeech.fromJson(Map<String, dynamic> json) { return TextToSpeech(
   lang: json.containsKey('lang') ? json['lang'] as String : 'en',

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the item. Always `mcp_approval_request`.
-final class RealtimeMcpApprovalRequestType {const RealtimeMcpApprovalRequestType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the item. Always `mcp_approval_request`.
+@immutable final class RealtimeMcpApprovalRequestType {const RealtimeMcpApprovalRequestType._(this.value);
 
 factory RealtimeMcpApprovalRequestType.fromJson(String json) { return switch (json) {
   'mcp_approval_request' => mcpApprovalRequest,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Realtime item requesting human approval of a tool invocation.
 /// 
-final class RealtimeMcpApprovalRequest {const RealtimeMcpApprovalRequest({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, });
+@immutable final class RealtimeMcpApprovalRequest {const RealtimeMcpApprovalRequest({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, });
 
 factory RealtimeMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return RealtimeMcpApprovalRequest(
   type: RealtimeMcpApprovalRequestType.fromJson(json['type'] as String),

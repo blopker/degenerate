@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session_customer.dart';import 'checkout_session_invoice.dart';import 'checkout_session_line_items.dart';import 'checkout_session_payment_intent.dart';import 'checkout_session_payment_link.dart';import 'checkout_session_payment_method_options.dart';import 'checkout_session_setup_intent.dart';import 'checkout_session_subscription.dart';import 'checkout_session_wallet_options.dart';import 'customer.dart';import 'deleted_customer.dart';import 'invoice.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_link.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'payment_pages_checkout_session_adaptive_pricing.dart';import 'payment_pages_checkout_session_after_expiration.dart';import 'payment_pages_checkout_session_automatic_tax.dart';import 'payment_pages_checkout_session_branding_settings.dart';import 'payment_pages_checkout_session_collected_information.dart';import 'payment_pages_checkout_session_consent.dart';import 'payment_pages_checkout_session_consent_collection.dart';import 'payment_pages_checkout_session_currency_conversion.dart';import 'payment_pages_checkout_session_custom_fields.dart';import 'payment_pages_checkout_session_custom_text.dart';import 'payment_pages_checkout_session_customer_details.dart';import 'payment_pages_checkout_session_discount.dart';import 'payment_pages_checkout_session_invoice_creation.dart';import 'payment_pages_checkout_session_name_collection.dart';import 'payment_pages_checkout_session_optional_item.dart';import 'payment_pages_checkout_session_permissions.dart';import 'payment_pages_checkout_session_phone_number_collection.dart';import 'payment_pages_checkout_session_saved_payment_method_options.dart';import 'payment_pages_checkout_session_shipping_address_collection.dart';import 'payment_pages_checkout_session_shipping_cost.dart';import 'payment_pages_checkout_session_shipping_option.dart';import 'payment_pages_checkout_session_tax_id_collection.dart';import 'payment_pages_checkout_session_total_details.dart';import 'setup_intent.dart';import 'subscription.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
-final class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection._(this.value);
+@immutable final class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection._(this.value);
 
 factory CheckoutSessionBillingAddressCollection.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionBillingAddressCollection($value)'; } 
  }
 /// Configure whether a Checkout Session creates a Customer when the Checkout Session completes.
-final class CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation._(this.value);
+@immutable final class CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation._(this.value);
 
 factory CheckoutSessionCustomerCreation.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionCustomerCreation($value)'; } 
  }
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
-final class CheckoutSessionLocale {const CheckoutSessionLocale._(this.value);
+@immutable final class CheckoutSessionLocale {const CheckoutSessionLocale._(this.value);
 
 factory CheckoutSessionLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -193,7 +193,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionLocale($value)'; } 
  }
 /// The mode of the Checkout Session.
-final class CheckoutSessionMode {const CheckoutSessionMode._(this.value);
+@immutable final class CheckoutSessionMode {const CheckoutSessionMode._(this.value);
 
 factory CheckoutSessionMode.fromJson(String json) { return switch (json) {
   'payment' => payment,
@@ -221,7 +221,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionMode($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class CheckoutSessionObject {const CheckoutSessionObject._(this.value);
+@immutable final class CheckoutSessionObject {const CheckoutSessionObject._(this.value);
 
 factory CheckoutSessionObject.fromJson(String json) { return switch (json) {
   'checkout.session' => checkoutSession,
@@ -243,7 +243,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionObject($value)'; } 
  }
 /// Where the user is coming from. This informs the optimizations that are applied to the session.
-final class CheckoutSessionOriginContext {const CheckoutSessionOriginContext._(this.value);
+@immutable final class CheckoutSessionOriginContext {const CheckoutSessionOriginContext._(this.value);
 
 factory CheckoutSessionOriginContext.fromJson(String json) { return switch (json) {
   'mobile_app' => mobileApp,
@@ -268,7 +268,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionOriginContext($value)'; } 
  }
 /// Configure whether a Checkout Session should collect a payment method. Defaults to `always`.
-final class CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection._(this.value);
+@immutable final class CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection._(this.value);
 
 factory CheckoutSessionPaymentMethodCollection.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -294,7 +294,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`.
 /// You can use this value to decide when to fulfill your customer's order.
-final class CheckoutSessionPaymentStatus {const CheckoutSessionPaymentStatus._(this.value);
+@immutable final class CheckoutSessionPaymentStatus {const CheckoutSessionPaymentStatus._(this.value);
 
 factory CheckoutSessionPaymentStatus.fromJson(String json) { return switch (json) {
   'no_payment_required' => noPaymentRequired,
@@ -322,7 +322,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionPaymentStatus($value)'; } 
  }
 /// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
-final class CheckoutSessionRedirectOnCompletion {const CheckoutSessionRedirectOnCompletion._(this.value);
+@immutable final class CheckoutSessionRedirectOnCompletion {const CheckoutSessionRedirectOnCompletion._(this.value);
 
 factory CheckoutSessionRedirectOnCompletion.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -350,7 +350,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionRedirectOnCompletion($value)'; } 
  }
 /// The status of the Checkout Session, one of `open`, `complete`, or `expired`.
-final class CheckoutSessionStatus {const CheckoutSessionStatus._(this.value);
+@immutable final class CheckoutSessionStatus {const CheckoutSessionStatus._(this.value);
 
 factory CheckoutSessionStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -380,7 +380,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Describes the type of transaction being performed by Checkout in order to customize
 /// relevant text on the page, such as the submit button. `submit_type` can only be
 /// specified on Checkout Sessions in `payment` mode. If blank or `auto`, `pay` is used.
-final class CheckoutSessionSubmitType {const CheckoutSessionSubmitType._(this.value);
+@immutable final class CheckoutSessionSubmitType {const CheckoutSessionSubmitType._(this.value);
 
 factory CheckoutSessionSubmitType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -414,7 +414,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSessionSubmitType($value)'; } 
  }
 /// The UI mode of the Session. Defaults to `hosted`.
-final class CheckoutSessionUiMode {const CheckoutSessionUiMode._(this.value);
+@immutable final class CheckoutSessionUiMode {const CheckoutSessionUiMode._(this.value);
 
 factory CheckoutSessionUiMode.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -455,7 +455,7 @@ bool get isUnknown { return !values.contains(this); }
 /// to begin Checkout.
 /// 
 /// Related guide: [Checkout quickstart](https://docs.stripe.com/checkout/quickstart)
-final class CheckoutSession {const CheckoutSession({this.adaptivePricing, this.afterExpiration, this.allowPromotionCodes, this.amountSubtotal, this.amountTotal, required this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.clientSecret, this.collectedInformation, this.consent, this.consentCollection, required this.created, this.currency, this.currencyConversion, required this.customFields, required this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerDetails, this.customerEmail, this.discounts, this.excludedPaymentMethodTypes, required this.expiresAt, required this.id, this.invoice, this.invoiceCreation, this.lineItems, required this.livemode, this.locale, this.metadata, required this.mode, this.nameCollection, required this.object, this.optionalItems, this.originContext, this.paymentIntent, this.paymentLink, this.paymentMethodCollection, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, required this.paymentMethodTypes, required this.paymentStatus, this.permissions, this.phoneNumberCollection, this.presentmentDetails, this.recoveredFrom, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntent, this.shippingAddressCollection, this.shippingCost, required this.shippingOptions, this.status, this.submitType, this.subscription, this.successUrl, this.taxIdCollection, this.totalDetails, this.uiMode, this.url, this.walletOptions, });
+@immutable final class CheckoutSession {const CheckoutSession({required this.shippingOptions, required this.automaticTax, required this.created, required this.customFields, required this.customText, required this.expiresAt, required this.id, required this.livemode, required this.mode, required this.object, required this.paymentMethodTypes, required this.paymentStatus, this.customerCreation, this.consentCollection, this.allowPromotionCodes, this.currency, this.currencyConversion, this.amountSubtotal, this.amountTotal, this.customer, this.customerAccount, this.adaptivePricing, this.customerDetails, this.customerEmail, this.discounts, this.excludedPaymentMethodTypes, this.afterExpiration, this.billingAddressCollection, this.invoice, this.invoiceCreation, this.lineItems, this.brandingSettings, this.locale, this.metadata, this.cancelUrl, this.nameCollection, this.clientReferenceId, this.optionalItems, this.originContext, this.paymentIntent, this.paymentLink, this.paymentMethodCollection, this.paymentMethodConfigurationDetails, this.walletOptions, this.clientSecret, this.collectedInformation, this.permissions, this.phoneNumberCollection, this.presentmentDetails, this.recoveredFrom, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntent, this.shippingAddressCollection, this.shippingCost, this.consent, this.status, this.submitType, this.subscription, this.successUrl, this.taxIdCollection, this.totalDetails, this.uiMode, this.url, this.paymentMethodOptions, });
 
 factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSession(
   adaptivePricing: json['adaptive_pricing'] != null ? PaymentPagesCheckoutSessionAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,

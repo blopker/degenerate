@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reporting_report_type.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetReportingReportTypesResponseObject {const GetReportingReportTypesResponseObject._(this.value);
+@immutable final class GetReportingReportTypesResponseObject {const GetReportingReportTypesResponseObject._(this.value);
 
 factory GetReportingReportTypesResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetReportingReportTypesResponseObject($value)'; } 
  }
 /// 
-final class GetReportingReportTypesResponse {const GetReportingReportTypesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetReportingReportTypesResponse {const GetReportingReportTypesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetReportingReportTypesResponse.fromJson(Map<String, dynamic> json) { return GetReportingReportTypesResponse(
   data: (json['data'] as List<dynamic>).map((e) => ReportingReportType.fromJson(e as Map<String, dynamic>)).toList(),

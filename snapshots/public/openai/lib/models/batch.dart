@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'batch_errors.dart';import 'batch_request_counts.dart';import 'batch_usage.dart';/// The object type, which is always `batch`.
-final class BatchObject {const BatchObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_errors.dart';import 'batch_request_counts.dart';import 'batch_usage.dart';/// The object type, which is always `batch`.
+@immutable final class BatchObject {const BatchObject._(this.value);
 
 factory BatchObject.fromJson(String json) { return switch (json) {
   'batch' => batch,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BatchObject($value)'; } 
  }
 /// The current status of the batch.
-final class BatchStatus {const BatchStatus._(this.value);
+@immutable final class BatchStatus {const BatchStatus._(this.value);
 
 factory BatchStatus.fromJson(String json) { return switch (json) {
   'validating' => validating,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BatchStatus($value)'; } 
  }
-final class Batch {const Batch({required this.id, required this.object, required this.endpoint, this.model, this.errors, required this.inputFileId, required this.completionWindow, required this.status, this.outputFileId, this.errorFileId, required this.createdAt, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata, });
+@immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata, });
 
 factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   id: json['id'] as String,

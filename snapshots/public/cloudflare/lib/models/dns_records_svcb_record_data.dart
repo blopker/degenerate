@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a SVCB record.
-final class DnsRecordsSvcbRecordData {const DnsRecordsSvcbRecordData({this.priority, this.target, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a SVCB record.
+@immutable final class DnsRecordsSvcbRecordData {const DnsRecordsSvcbRecordData({this.priority, this.target, this.value, });
 
 factory DnsRecordsSvcbRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsSvcbRecordData(
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,

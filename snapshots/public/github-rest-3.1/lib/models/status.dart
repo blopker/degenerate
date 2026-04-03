@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// The status of a commit.
-final class Status {const Status({required this.url, required this.avatarUrl, required this.id, required this.nodeId, required this.state, required this.description, required this.targetUrl, required this.context, required this.createdAt, required this.updatedAt, required this.creator, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The status of a commit.
+@immutable final class Status {const Status({required this.url, required this.avatarUrl, required this.id, required this.nodeId, required this.state, required this.description, required this.targetUrl, required this.context, required this.createdAt, required this.updatedAt, required this.creator, });
 
 factory Status.fromJson(Map<String, dynamic> json) { return Status(
   url: json['url'] as String,

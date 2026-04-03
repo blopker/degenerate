@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPricesRecurringInterval {const GetPricesRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPricesRecurringInterval {const GetPricesRecurringInterval._(this.value);
 
 factory GetPricesRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetPricesRecurringInterval($value)'; } 
  }
-final class GetPricesRecurringUsageType {const GetPricesRecurringUsageType._(this.value);
+@immutable final class GetPricesRecurringUsageType {const GetPricesRecurringUsageType._(this.value);
 
 factory GetPricesRecurringUsageType.fromJson(String json) { return switch (json) {
   'licensed' => licensed,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetPricesRecurringUsageType($value)'; } 
  }
-final class GetPricesRecurring {const GetPricesRecurring({this.interval, this.meter, this.usageType, });
+@immutable final class GetPricesRecurring {const GetPricesRecurring({this.interval, this.meter, this.usageType, });
 
 factory GetPricesRecurring.fromJson(Map<String, dynamic> json) { return GetPricesRecurring(
   interval: json['interval'] != null ? GetPricesRecurringInterval.fromJson(json['interval'] as String) : null,

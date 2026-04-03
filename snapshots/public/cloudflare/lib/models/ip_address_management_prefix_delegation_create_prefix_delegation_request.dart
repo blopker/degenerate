@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_cidr.dart';import 'addressing_delegated_account_identifier.dart';final class IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest {const IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest({required this.cidr, required this.delegatedAccountId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_cidr.dart';import 'addressing_delegated_account_identifier.dart';@immutable final class IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest {const IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest({required this.cidr, required this.delegatedAccountId, });
 
 factory IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest(
   cidr: AddressingCidr.fromJson(json['cidr'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_scim_config_mapping_operations.dart';/// The level of adherence to outbound resource schemas when provisioning to this mapping. ‘Strict’ removes unknown values, while ‘passthrough’ passes unknown values to the target.
-final class AccessScimConfigMappingStrictness {const AccessScimConfigMappingStrictness._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_scim_config_mapping_operations.dart';/// The level of adherence to outbound resource schemas when provisioning to this mapping. ‘Strict’ removes unknown values, while ‘passthrough’ passes unknown values to the target.
+@immutable final class AccessScimConfigMappingStrictness {const AccessScimConfigMappingStrictness._(this.value);
 
 factory AccessScimConfigMappingStrictness.fromJson(String json) { return switch (json) {
   'strict' => strict,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessScimConfigMappingStrictness($value)'; } 
  }
 /// Transformations and filters applied to resources before they are provisioned in the remote SCIM service.
-final class AccessScimConfigMapping {const AccessScimConfigMapping({this.enabled, this.filter, this.operations, required this.schema, this.strictness, this.transformJsonata, });
+@immutable final class AccessScimConfigMapping {const AccessScimConfigMapping({required this.schema, this.enabled, this.filter, this.operations, this.strictness, this.transformJsonata, });
 
 factory AccessScimConfigMapping.fromJson(Map<String, dynamic> json) { return AccessScimConfigMapping(
   enabled: json['enabled'] as bool?,

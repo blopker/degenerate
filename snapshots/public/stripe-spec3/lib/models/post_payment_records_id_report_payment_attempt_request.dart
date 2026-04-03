@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_request_failed.dart';import 'post_payment_records_id_report_payment_attempt_request_guaranteed.dart';import 'post_payment_records_id_report_payment_attempt_request_metadata.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details.dart';import 'post_payment_records_id_report_payment_attempt_request_shipping_details.dart';/// The outcome of the reported payment.
-final class PostPaymentRecordsIdReportPaymentAttemptRequestOutcome {const PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._(this.value);
+@immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestOutcome {const PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._(this.value);
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequestOutcome.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequestOutcome($value)'; } 
  }
-final class PostPaymentRecordsIdReportPaymentAttemptRequest {const PostPaymentRecordsIdReportPaymentAttemptRequest({this.description, this.expand, this.failed, this.guaranteed, required this.initiatedAt, this.metadata, this.outcome, this.paymentMethodDetails, this.shippingDetails, });
+@immutable final class PostPaymentRecordsIdReportPaymentAttemptRequest {const PostPaymentRecordsIdReportPaymentAttemptRequest({required this.initiatedAt, this.description, this.expand, this.failed, this.guaranteed, this.metadata, this.outcome, this.paymentMethodDetails, this.shippingDetails, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequest(
   description: json['description'] as String?,

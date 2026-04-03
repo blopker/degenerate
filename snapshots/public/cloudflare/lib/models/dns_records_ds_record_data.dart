@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a DS record.
-final class DnsRecordsDsRecordData {const DnsRecordsDsRecordData({this.algorithm, this.digest, this.digestType, this.keyTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a DS record.
+@immutable final class DnsRecordsDsRecordData {const DnsRecordsDsRecordData({this.algorithm, this.digest, this.digestType, this.keyTag, });
 
 factory DnsRecordsDsRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsDsRecordData(
   algorithm: json['algorithm'] != null ? (json['algorithm'] as num).toDouble() : null,

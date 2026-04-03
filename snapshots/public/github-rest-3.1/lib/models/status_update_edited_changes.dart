@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'status_update_edited_changes_body.dart';import 'status_update_edited_changes_start_date.dart';import 'status_update_edited_changes_status.dart';import 'status_update_edited_changes_target_date.dart';final class StatusUpdateEditedChanges {const StatusUpdateEditedChanges({this.body, this.status, this.startDate, this.targetDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'status_update_edited_changes_body.dart';import 'status_update_edited_changes_start_date.dart';import 'status_update_edited_changes_status.dart';import 'status_update_edited_changes_target_date.dart';@immutable final class StatusUpdateEditedChanges {const StatusUpdateEditedChanges({this.body, this.status, this.startDate, this.targetDate, });
 
 factory StatusUpdateEditedChanges.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChanges(
   body: json['body'] != null ? StatusUpdateEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

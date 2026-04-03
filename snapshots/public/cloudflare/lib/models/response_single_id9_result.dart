@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_schemas_identifier.dart';final class ResponseSingleId9Result {const ResponseSingleId9Result({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_schemas_identifier.dart';@immutable final class ResponseSingleId9Result {const ResponseSingleId9Result({required this.id});
 
 factory ResponseSingleId9Result.fromJson(Map<String, dynamic> json) { return ResponseSingleId9Result(
   id: ZonesSchemasIdentifier.fromJson(json['id'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The layout of the view.
-final class ProjectsCreateViewForOrgRequestLayout {const ProjectsCreateViewForOrgRequestLayout._(this.value);
+@immutable final class ProjectsCreateViewForOrgRequestLayout {const ProjectsCreateViewForOrgRequestLayout._(this.value);
 
 factory ProjectsCreateViewForOrgRequestLayout.fromJson(String json) { return switch (json) {
   'table' => table,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectsCreateViewForOrgRequestLayout($value)'; } 
  }
-final class ProjectsCreateViewForOrgRequest {const ProjectsCreateViewForOrgRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
+@immutable final class ProjectsCreateViewForOrgRequest {const ProjectsCreateViewForOrgRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
 
 factory ProjectsCreateViewForOrgRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateViewForOrgRequest(
   name: json['name'] as String,

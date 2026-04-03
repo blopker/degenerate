@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_audio_default.dart';import 'stream_audio_label.dart';final class StreamEditAudioTrack {const StreamEditAudioTrack({this.$default, this.label, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_audio_default.dart';import 'stream_audio_label.dart';@immutable final class StreamEditAudioTrack {const StreamEditAudioTrack({this.$default, this.label, });
 
 factory StreamEditAudioTrack.fromJson(Map<String, dynamic> json) { return StreamEditAudioTrack(
   $default: json['default'] != null ? StreamAudioDefault.fromJson(json['default'] as bool) : null,

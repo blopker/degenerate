@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RealtimeSessionCreateRequestMaxResponseOutputTokensVariant2 {const RealtimeSessionCreateRequestMaxResponseOutputTokensVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeSessionCreateRequestMaxResponseOutputTokensVariant2 {const RealtimeSessionCreateRequestMaxResponseOutputTokensVariant2._(this.value);
 
 factory RealtimeSessionCreateRequestMaxResponseOutputTokensVariant2.fromJson(String json) { return switch (json) {
   'inf' => inf,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_promptpay_display_preference.dart';/// PromptPay is a Thailand-based payment method that allows customers to make a payment using their preferred app from participating banks. Check this [page](https://docs.stripe.com/payments/promptpay) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestPromptpay {const PostPaymentMethodConfigurationsConfigurationRequestPromptpay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_promptpay_display_preference.dart';/// PromptPay is a Thailand-based payment method that allows customers to make a payment using their preferred app from participating banks. Check this [page](https://docs.stripe.com/payments/promptpay) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestPromptpay {const PostPaymentMethodConfigurationsConfigurationRequestPromptpay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestPromptpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPromptpay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

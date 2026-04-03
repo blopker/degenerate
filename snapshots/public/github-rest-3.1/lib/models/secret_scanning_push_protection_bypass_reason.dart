@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reason for bypassing push protection.
-final class SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for bypassing push protection.
+@immutable final class SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason._(this.value);
 
 factory SecretScanningPushProtectionBypassReason.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,

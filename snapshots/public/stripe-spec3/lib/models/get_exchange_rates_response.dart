@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'exchange_rate.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetExchangeRatesResponseObject {const GetExchangeRatesResponseObject._(this.value);
+@immutable final class GetExchangeRatesResponseObject {const GetExchangeRatesResponseObject._(this.value);
 
 factory GetExchangeRatesResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetExchangeRatesResponseObject($value)'; } 
  }
 /// 
-final class GetExchangeRatesResponse {const GetExchangeRatesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetExchangeRatesResponse {const GetExchangeRatesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetExchangeRatesResponse.fromJson(Map<String, dynamic> json) { return GetExchangeRatesResponse(
   data: (json['data'] as List<dynamic>).map((e) => ExchangeRate.fromJson(e as Map<String, dynamic>)).toList(),

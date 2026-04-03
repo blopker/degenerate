@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Key name.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key name.
 extension type const ImagesImageKeyName(String value) {
 factory ImagesImageKeyName.fromJson(String json) => ImagesImageKeyName(json);
 
@@ -14,7 +14,7 @@ factory ImagesImageKeyValue.fromJson(String json) => ImagesImageKeyValue(json);
 String toJson() => value;
 
 }
-final class ImagesImageKeys {const ImagesImageKeys({this.name, this.value, });
+@immutable final class ImagesImageKeys {const ImagesImageKeys({this.name, this.value, });
 
 factory ImagesImageKeys.fromJson(Map<String, dynamic> json) { return ImagesImageKeys(
   name: json['name'] != null ? ImagesImageKeyName.fromJson(json['name'] as String) : null,

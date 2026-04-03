@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_value.dart';final class DlpEmailRuleOperator {const DlpEmailRuleOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_value.dart';@immutable final class DlpEmailRuleOperator {const DlpEmailRuleOperator._(this.value);
 
 factory DlpEmailRuleOperator.fromJson(String json) { return switch (json) {
   'InList' => inList,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEmailRuleOperator($value)'; } 
  }
-final class DlpEmailRuleSelector {const DlpEmailRuleSelector._(this.value);
+@immutable final class DlpEmailRuleSelector {const DlpEmailRuleSelector._(this.value);
 
 factory DlpEmailRuleSelector.fromJson(String json) { return switch (json) {
   'Recipients' => recipients,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEmailRuleSelector($value)'; } 
  }
-final class DlpEmailRuleCondition {const DlpEmailRuleCondition({required this.$operator, required this.selector, required this.value, });
+@immutable final class DlpEmailRuleCondition {const DlpEmailRuleCondition({required this.$operator, required this.selector, required this.value, });
 
 factory DlpEmailRuleCondition.fromJson(Map<String, dynamic> json) { return DlpEmailRuleCondition(
   $operator: DlpEmailRuleOperator.fromJson(json['operator'] as String),

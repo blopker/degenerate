@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_account_tax_ids.dart';import 'post_invoices_request_automatic_tax.dart';import 'post_invoices_request_custom_fields.dart';import 'post_invoices_request_custom_fields_variant1.dart';import 'post_invoices_request_discounts.dart';import 'post_invoices_request_discounts_variant1.dart';import 'post_invoices_request_from_invoice.dart';import 'post_invoices_request_issuer.dart';import 'post_invoices_request_metadata.dart';import 'post_invoices_request_payment_settings.dart';import 'post_invoices_request_rendering.dart';import 'post_invoices_request_shipping_cost.dart';import 'post_invoices_request_shipping_details.dart';import 'post_invoices_request_transfer_data.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Stripe will email this invoice to the customer with payment instructions. Defaults to `charge_automatically`.
-final class PostInvoicesRequestCollectionMethod {const PostInvoicesRequestCollectionMethod._(this.value);
+@immutable final class PostInvoicesRequestCollectionMethod {const PostInvoicesRequestCollectionMethod._(this.value);
 
 factory PostInvoicesRequestCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesRequestCollectionMethod($value)'; } 
  }
 /// How to handle pending invoice items on invoice creation. Defaults to `exclude` if the parameter is omitted.
-final class PostInvoicesRequestPendingInvoiceItemsBehavior {const PostInvoicesRequestPendingInvoiceItemsBehavior._(this.value);
+@immutable final class PostInvoicesRequestPendingInvoiceItemsBehavior {const PostInvoicesRequestPendingInvoiceItemsBehavior._(this.value);
 
 factory PostInvoicesRequestPendingInvoiceItemsBehavior.fromJson(String json) { return switch (json) {
   'exclude' => exclude,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesRequestPendingInvoiceItemsBehavior($value)'; } 
  }
-final class PostInvoicesRequest {const PostInvoicesRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.currency, this.customFields, this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.fromInvoice, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.pendingInvoiceItemsBehavior, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.subscription, this.transferData, });
+@immutable final class PostInvoicesRequest {const PostInvoicesRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.currency, this.customFields, this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.fromInvoice, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.pendingInvoiceItemsBehavior, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.subscription, this.transferData, });
 
 factory PostInvoicesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesRequest(
   accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesRequestAccountTaxIdsVariant2.fromJson(v as String),) : null,

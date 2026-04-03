@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';final class SimpleCheckSuiteConclusion {const SimpleCheckSuiteConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';@immutable final class SimpleCheckSuiteConclusion {const SimpleCheckSuiteConclusion._(this.value);
 
 factory SimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SimpleCheckSuiteConclusion($value)'; } 
  }
-final class SimpleCheckSuiteStatus {const SimpleCheckSuiteStatus._(this.value);
+@immutable final class SimpleCheckSuiteStatus {const SimpleCheckSuiteStatus._(this.value);
 
 factory SimpleCheckSuiteStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SimpleCheckSuiteStatus($value)'; } 
  }
 /// A suite of checks performed on the code of a given code change
-final class SimpleCheckSuite {const SimpleCheckSuite({this.after, this.app, this.before, this.conclusion, this.createdAt, this.headBranch, this.headSha, this.id, this.nodeId, this.pullRequests, this.repository, this.status, this.updatedAt, this.url, });
+@immutable final class SimpleCheckSuite {const SimpleCheckSuite({this.after, this.app, this.before, this.conclusion, this.createdAt, this.headBranch, this.headSha, this.id, this.nodeId, this.pullRequests, this.repository, this.status, this.updatedAt, this.url, });
 
 factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleCheckSuite(
   after: json['after'] as String?,

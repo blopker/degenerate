@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_version_item_short_metadata.dart';final class WorkersVersionItemShort {const WorkersVersionItemShort({this.id, this.metadata, this.number, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_item_short_metadata.dart';@immutable final class WorkersVersionItemShort {const WorkersVersionItemShort({this.id, this.metadata, this.number, });
 
 factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) { return WorkersVersionItemShort(
   id: json['id'] as String?,

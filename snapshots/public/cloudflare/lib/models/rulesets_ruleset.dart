@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_version.dart';/// A ruleset object.
-final class RulesetsRuleset {const RulesetsRuleset({this.description = '', required this.id, required this.lastUpdated, this.name, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_version.dart';/// A ruleset object.
+@immutable final class RulesetsRuleset {const RulesetsRuleset({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, });
 
 factory RulesetsRuleset.fromJson(Map<String, dynamic> json) { return RulesetsRuleset(
   description: json.containsKey('description') ? json['description'] as String : '',

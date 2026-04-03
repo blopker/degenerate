@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rum_rule_identifier.dart';final class RumRuleIdResponseSingleResult {const RumRuleIdResponseSingleResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_rule_identifier.dart';@immutable final class RumRuleIdResponseSingleResult {const RumRuleIdResponseSingleResult({this.id});
 
 factory RumRuleIdResponseSingleResult.fromJson(Map<String, dynamic> json) { return RumRuleIdResponseSingleResult(
   id: json['id'] != null ? RumRuleIdentifier.fromJson(json['id'] as String) : null,

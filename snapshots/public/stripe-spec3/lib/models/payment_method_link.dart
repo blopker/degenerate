@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodLink {const PaymentMethodLink({this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodLink {const PaymentMethodLink({this.email});
 
 factory PaymentMethodLink.fromJson(Map<String, dynamic> json) { return PaymentMethodLink(
   email: json['email'] as String?,

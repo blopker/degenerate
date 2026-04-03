@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the desired compression algorithm and format.
-final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the desired compression algorithm and format.
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType._(this.value);
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType($value)'; } 
  }
-final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression({this.type = AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.gzip});
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression({this.type = AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.gzip});
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression(
   type: json.containsKey('type') ? AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.fromJson(json['type'] as String) : AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.gzip,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip(
 

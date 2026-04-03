@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dls_hostname.dart';import 'dls_region_key.dart';import 'dls_routing.dart';extension type DlsTimestamp(DateTime value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_hostname.dart';import 'dls_region_key.dart';import 'dls_routing.dart';extension type DlsTimestamp(DateTime value) {
 factory DlsTimestamp.fromJson(String json) => DlsTimestamp(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();
 
 }
-final class DlsRegionalHostnameResponse {const DlsRegionalHostnameResponse({required this.createdOn, required this.hostname, required this.regionKey, this.routing, });
+@immutable final class DlsRegionalHostnameResponse {const DlsRegionalHostnameResponse({required this.createdOn, required this.hostname, required this.regionKey, this.routing, });
 
 factory DlsRegionalHostnameResponse.fromJson(Map<String, dynamic> json) { return DlsRegionalHostnameResponse(
   createdOn: DlsTimestamp.fromJson(json['created_on'] as String),

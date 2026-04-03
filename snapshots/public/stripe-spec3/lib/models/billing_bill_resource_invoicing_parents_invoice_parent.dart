@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_parents_invoice_quote_parent.dart';import 'billing_bill_resource_invoicing_parents_invoice_subscription_parent.dart';/// The type of parent that generated this invoice
-final class BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_parents_invoice_quote_parent.dart';import 'billing_bill_resource_invoicing_parents_invoice_subscription_parent.dart';/// The type of parent that generated this invoice
+@immutable final class BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType._(this.value);
 
 factory BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(String json) { return switch (json) {
   'quote_details' => quoteDetails,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingParentsInvoiceParentType($value)'; } 
  }
 /// 
-final class BillingBillResourceInvoicingParentsInvoiceParent {const BillingBillResourceInvoicingParentsInvoiceParent({this.quoteDetails, this.subscriptionDetails, required this.type, });
+@immutable final class BillingBillResourceInvoicingParentsInvoiceParent {const BillingBillResourceInvoicingParentsInvoiceParent({required this.type, this.quoteDetails, this.subscriptionDetails, });
 
 factory BillingBillResourceInvoicingParentsInvoiceParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceParent(
   quoteDetails: json['quote_details'] != null ? BillingBillResourceInvoicingParentsInvoiceQuoteParent.fromJson(json['quote_details'] as Map<String, dynamic>) : null,

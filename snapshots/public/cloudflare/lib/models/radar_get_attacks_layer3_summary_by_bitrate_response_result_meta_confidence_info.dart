@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_summary_by_bitrate_response_result_meta_confidence_info_annotations.dart';final class RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfo {const RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_summary_by_bitrate_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfo {const RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetAttacksLayer3SummaryByBitrateResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

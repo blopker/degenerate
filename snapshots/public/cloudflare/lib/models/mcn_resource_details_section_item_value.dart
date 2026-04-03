@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_list_item.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';import 'mcn_yaml_diff_item.dart';import 'mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_list_item.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';import 'mcn_yaml_diff_item.dart';import 'mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnResourceDetailsSectionItemValue.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnResourceDetailsSectionItemValue$Unknown; } 
  }
-final class McnResourceDetailsSectionItemValueMcnStringItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnStringItem(this.mcnStringItem);
+@immutable final class McnResourceDetailsSectionItemValueMcnStringItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnStringItem(this.mcnStringItem);
 
 factory McnResourceDetailsSectionItemValueMcnStringItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnStringItem(McnStringItem.fromJson(json)); }
 
@@ -31,7 +31,7 @@ final McnStringItem mcnStringItem;
 @override int get hashCode { return mcnStringItem.hashCode; } 
 @override String toString() { return 'McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem: $mcnStringItem)'; } 
  }
-final class McnResourceDetailsSectionItemValueMcnYamlItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlItem(this.mcnYamlItem);
+@immutable final class McnResourceDetailsSectionItemValueMcnYamlItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlItem(this.mcnYamlItem);
 
 factory McnResourceDetailsSectionItemValueMcnYamlItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnYamlItem(McnYamlItem.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final McnYamlItem mcnYamlItem;
 @override int get hashCode { return mcnYamlItem.hashCode; } 
 @override String toString() { return 'McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem: $mcnYamlItem)'; } 
  }
-final class McnResourceDetailsSectionItemValueMcnYamlDiffItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlDiffItem(this.mcnYamlDiffItem);
+@immutable final class McnResourceDetailsSectionItemValueMcnYamlDiffItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlDiffItem(this.mcnYamlDiffItem);
 
 factory McnResourceDetailsSectionItemValueMcnYamlDiffItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(McnYamlDiffItem.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final McnYamlDiffItem mcnYamlDiffItem;
 @override int get hashCode { return mcnYamlDiffItem.hashCode; } 
 @override String toString() { return 'McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem: $mcnYamlDiffItem)'; } 
  }
-final class McnResourceDetailsSectionItemValueMcnResourcePreviewItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnResourcePreviewItem(this.mcnResourcePreviewItem);
+@immutable final class McnResourceDetailsSectionItemValueMcnResourcePreviewItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
 factory McnResourceDetailsSectionItemValueMcnResourcePreviewItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(McnResourcePreviewItem.fromJson(json)); }
 
@@ -70,7 +70,7 @@ final McnResourcePreviewItem mcnResourcePreviewItem;
 @override int get hashCode { return mcnResourcePreviewItem.hashCode; } 
 @override String toString() { return 'McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem: $mcnResourcePreviewItem)'; } 
  }
-final class McnResourceDetailsSectionItemValueMcnListItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnListItem(this.mcnListItem);
+@immutable final class McnResourceDetailsSectionItemValueMcnListItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnListItem(this.mcnListItem);
 
 factory McnResourceDetailsSectionItemValueMcnListItem.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSectionItemValueMcnListItem(McnListItem.fromJson(json)); }
 
@@ -85,7 +85,7 @@ final McnListItem mcnListItem;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class McnResourceDetailsSectionItemValue$Unknown extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue$Unknown(this.json);
+@immutable final class McnResourceDetailsSectionItemValue$Unknown extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

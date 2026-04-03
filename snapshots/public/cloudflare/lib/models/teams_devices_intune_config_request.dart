@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesIntuneConfigRequest {const TeamsDevicesIntuneConfigRequest({required this.clientId, required this.clientSecret, required this.customerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesIntuneConfigRequest {const TeamsDevicesIntuneConfigRequest({required this.clientId, required this.clientSecret, required this.customerId, });
 
 factory TeamsDevicesIntuneConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesIntuneConfigRequest(
   clientId: json['client_id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DeleteEventTagDeleteRequest {const DeleteEventTagDeleteRequest({required this.tags});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEventTagDeleteRequest {const DeleteEventTagDeleteRequest({required this.tags});
 
 factory DeleteEventTagDeleteRequest.fromJson(Map<String, dynamic> json) { return DeleteEventTagDeleteRequest(
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),

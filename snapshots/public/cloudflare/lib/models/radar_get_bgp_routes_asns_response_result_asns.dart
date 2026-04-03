@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRoutesAsnsResponseResultAsns {const RadarGetBgpRoutesAsnsResponseResultAsns({required this.asn, required this.coneSize, required this.country, required this.ipv4Count, required this.ipv6Count, required this.name, required this.pfxsCount, required this.rpkiInvalid, required this.rpkiUnknown, required this.rpkiValid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesAsnsResponseResultAsns {const RadarGetBgpRoutesAsnsResponseResultAsns({required this.asn, required this.coneSize, required this.country, required this.ipv4Count, required this.ipv6Count, required this.name, required this.pfxsCount, required this.rpkiInvalid, required this.rpkiUnknown, required this.rpkiValid, });
 
 factory RadarGetBgpRoutesAsnsResponseResultAsns.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesAsnsResponseResultAsns(
   asn: (json['asn'] as num).toInt(),

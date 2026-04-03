@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_event_reference_create_response_result.dart';final class PostEventReferenceCreateResponse {const PostEventReferenceCreateResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_reference_create_response_result.dart';@immutable final class PostEventReferenceCreateResponse {const PostEventReferenceCreateResponse({required this.result, required this.success, });
 
 factory PostEventReferenceCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventReferenceCreateResponse(
   result: PostEventReferenceCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>),

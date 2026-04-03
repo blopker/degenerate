@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Service binding.
-final class PagesDeploymentConfigValuesRequestServicesValue {const PagesDeploymentConfigValuesRequestServicesValue({this.entrypoint, this.environment, required this.service, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Service binding.
+@immutable final class PagesDeploymentConfigValuesRequestServicesValue {const PagesDeploymentConfigValuesRequestServicesValue({required this.service, this.entrypoint, this.environment, });
 
 factory PagesDeploymentConfigValuesRequestServicesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestServicesValue(
   entrypoint: json['entrypoint'] as String?,

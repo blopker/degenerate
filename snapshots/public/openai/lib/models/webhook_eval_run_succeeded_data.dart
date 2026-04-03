@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Event data payload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data payload.
 /// 
-final class WebhookEvalRunSucceededData {const WebhookEvalRunSucceededData({required this.id});
+@immutable final class WebhookEvalRunSucceededData {const WebhookEvalRunSucceededData({required this.id});
 
 factory WebhookEvalRunSucceededData.fromJson(Map<String, dynamic> json) { return WebhookEvalRunSucceededData(
   id: json['id'] as String,

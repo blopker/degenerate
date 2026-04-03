@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType {const InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType {const InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType._(this.value);
 
 factory InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam15MandateOptions {const InvoicePaymentMethodOptionsParam15MandateOptions({this.transactionType});
+@immutable final class InvoicePaymentMethodOptionsParam15MandateOptions {const InvoicePaymentMethodOptionsParam15MandateOptions({this.transactionType});
 
 factory InvoicePaymentMethodOptionsParam15MandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam15MandateOptions(
   transactionType: json['transaction_type'] != null ? InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,

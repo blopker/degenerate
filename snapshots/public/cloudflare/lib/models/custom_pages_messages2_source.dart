@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomPagesMessages2Source {const CustomPagesMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomPagesMessages2Source {const CustomPagesMessages2Source({this.pointer});
 
 factory CustomPagesMessages2Source.fromJson(Map<String, dynamic> json) { return CustomPagesMessages2Source(
   pointer: json['pointer'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class CheckoutSamsungPayPaymentMethodOptionsCaptureMethod {const CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class CheckoutSamsungPayPaymentMethodOptionsCaptureMethod {const CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._(this.value);
 
 factory CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutSamsungPayPaymentMethodOptionsCaptureMethod($value)'; } 
  }
 /// 
-final class CheckoutSamsungPayPaymentMethodOptions {const CheckoutSamsungPayPaymentMethodOptions({this.captureMethod});
+@immutable final class CheckoutSamsungPayPaymentMethodOptions {const CheckoutSamsungPayPaymentMethodOptions({this.captureMethod});
 
 factory CheckoutSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutSamsungPayPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_private_registry_configuration.dart';final class PrivateRegistriesListOrgPrivateRegistriesResponse {const PrivateRegistriesListOrgPrivateRegistriesResponse({required this.totalCount, required this.configurations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_private_registry_configuration.dart';@immutable final class PrivateRegistriesListOrgPrivateRegistriesResponse {const PrivateRegistriesListOrgPrivateRegistriesResponse({required this.totalCount, required this.configurations, });
 
 factory PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(Map<String, dynamic> json) { return PrivateRegistriesListOrgPrivateRegistriesResponse(
   totalCount: (json['total_count'] as num).toInt(),

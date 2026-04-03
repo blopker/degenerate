@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryRunStatistics {const WorkersObservabilityQueryRunStatistics({this.abrLevel, required this.bytesRead, required this.elapsed, required this.rowsRead, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryRunStatistics {const WorkersObservabilityQueryRunStatistics({required this.bytesRead, required this.elapsed, required this.rowsRead, this.abrLevel, });
 
 factory WorkersObservabilityQueryRunStatistics.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryRunStatistics(
   abrLevel: json['abr_level'] != null ? (json['abr_level'] as num).toDouble() : null,

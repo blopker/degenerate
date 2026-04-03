@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tracing_configuration4.dart';/// Default tracing mode for the session.
 /// 
-final class RealtimeSessionCreateResponseTracingVariant1 {const RealtimeSessionCreateResponseTracingVariant1._(this.value);
+@immutable final class RealtimeSessionCreateResponseTracingVariant1 {const RealtimeSessionCreateResponseTracingVariant1._(this.value);
 
 factory RealtimeSessionCreateResponseTracingVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,

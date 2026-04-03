@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsOpenpgpkeyRecordType {const DnsRecordsOpenpgpkeyRecordType._(this.value);
+@immutable final class DnsRecordsOpenpgpkeyRecordType {const DnsRecordsOpenpgpkeyRecordType._(this.value);
 
 factory DnsRecordsOpenpgpkeyRecordType.fromJson(String json) { return switch (json) {
   'OPENPGPKEY' => openpgpkey,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsOpenpgpkeyRecordType($value)'; } 
  }
-final class DnsRecordsOpenpgpkeyRecord {const DnsRecordsOpenpgpkeyRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
+@immutable final class DnsRecordsOpenpgpkeyRecord {const DnsRecordsOpenpgpkeyRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
 
 factory DnsRecordsOpenpgpkeyRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsOpenpgpkeyRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

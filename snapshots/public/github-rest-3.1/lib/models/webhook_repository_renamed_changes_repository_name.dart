@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRepositoryRenamedChangesRepositoryName {const WebhookRepositoryRenamedChangesRepositoryName({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryRenamedChangesRepositoryName {const WebhookRepositoryRenamedChangesRepositoryName({required this.from});
 
 factory WebhookRepositoryRenamedChangesRepositoryName.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRenamedChangesRepositoryName(
   from: json['from'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_jurisdiction.dart';import 'tax_product_resource_line_item_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
-final class TaxProductResourceLineItemTaxBreakdownSourcing {const TaxProductResourceLineItemTaxBreakdownSourcing._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_jurisdiction.dart';import 'tax_product_resource_line_item_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
+@immutable final class TaxProductResourceLineItemTaxBreakdownSourcing {const TaxProductResourceLineItemTaxBreakdownSourcing._(this.value);
 
 factory TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(String json) { return switch (json) {
   'destination' => destination,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceLineItemTaxBreakdownSourcing($value)'; } 
  }
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
-final class TaxProductResourceLineItemTaxBreakdownTaxabilityReason {const TaxProductResourceLineItemTaxBreakdownTaxabilityReason._(this.value);
+@immutable final class TaxProductResourceLineItemTaxBreakdownTaxabilityReason {const TaxProductResourceLineItemTaxBreakdownTaxabilityReason._(this.value);
 
 factory TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -90,7 +90,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceLineItemTaxBreakdownTaxabilityReason($value)'; } 
  }
 /// 
-final class TaxProductResourceLineItemTaxBreakdown {const TaxProductResourceLineItemTaxBreakdown({required this.amount, required this.jurisdiction, required this.sourcing, this.taxRateDetails, required this.taxabilityReason, required this.taxableAmount, });
+@immutable final class TaxProductResourceLineItemTaxBreakdown {const TaxProductResourceLineItemTaxBreakdown({required this.amount, required this.jurisdiction, required this.sourcing, required this.taxabilityReason, required this.taxableAmount, this.taxRateDetails, });
 
 factory TaxProductResourceLineItemTaxBreakdown.fromJson(Map<String, dynamic> json) { return TaxProductResourceLineItemTaxBreakdown(
   amount: (json['amount'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_scan.dart';import 'secret_scanning_scan_history_custom_pattern_backfill_scans.dart';final class SecretScanningScanHistory {const SecretScanningScanHistory({this.incrementalScans, this.patternUpdateScans, this.backfillScans, this.customPatternBackfillScans, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_scan.dart';import 'secret_scanning_scan_history_custom_pattern_backfill_scans.dart';@immutable final class SecretScanningScanHistory {const SecretScanningScanHistory({this.incrementalScans, this.patternUpdateScans, this.backfillScans, this.customPatternBackfillScans, });
 
 factory SecretScanningScanHistory.fromJson(Map<String, dynamic> json) { return SecretScanningScanHistory(
   incrementalScans: (json['incremental_scans'] as List<dynamic>?)?.map((e) => SecretScanningScan.fromJson(e as Map<String, dynamic>)).toList(),

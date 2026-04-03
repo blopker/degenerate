@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType._(this.value);
 
 factory RepositoryRuleRequiredSignaturesType.fromJson(String json) { return switch (json) {
   'required_signatures' => requiredSignatures,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleRequiredSignaturesType($value)'; } 
  }
 /// Commits pushed to matching refs must have verified signatures.
-final class RepositoryRuleRequiredSignatures {const RepositoryRuleRequiredSignatures({required this.type});
+@immutable final class RepositoryRuleRequiredSignatures {const RepositoryRuleRequiredSignatures({required this.type});
 
 factory RepositoryRuleRequiredSignatures.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredSignatures(
   type: RepositoryRuleRequiredSignaturesType.fromJson(json['type'] as String),

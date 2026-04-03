@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the output. Always `image`.
-final class CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output. Always `image`.
+@immutable final class CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType._(this.value);
 
 factory CodeInterpreterOutputImageType.fromJson(String json) { return switch (json) {
   'image' => image,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeInterpreterOutputImageType($value)'; } 
  }
 /// The image output from the code interpreter.
-final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({this.type = CodeInterpreterOutputImageType.image, required this.url, });
+@immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.url, this.type = CodeInterpreterOutputImageType.image, });
 
 factory CodeInterpreterOutputImage.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputImage(
   type: CodeInterpreterOutputImageType.fromJson(json['type'] as String),

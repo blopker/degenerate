@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject._(this.value);
 
 factory VoiceConsentDeletedResourceObject.fromJson(String json) { return switch (json) {
   'audio.voice_consent' => audioVoiceConsent,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VoiceConsentDeletedResourceObject($value)'; } 
  }
-final class VoiceConsentDeletedResource {const VoiceConsentDeletedResource({required this.id, required this.object, required this.deleted, });
+@immutable final class VoiceConsentDeletedResource {const VoiceConsentDeletedResource({required this.id, required this.object, required this.deleted, });
 
 factory VoiceConsentDeletedResource.fromJson(Map<String, dynamic> json) { return VoiceConsentDeletedResource(
   id: json['id'] as String,

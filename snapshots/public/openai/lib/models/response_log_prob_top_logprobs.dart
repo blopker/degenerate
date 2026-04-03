@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResponseLogProbTopLogprobs {const ResponseLogProbTopLogprobs({this.token, this.logprob, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseLogProbTopLogprobs {const ResponseLogProbTopLogprobs({this.token, this.logprob, });
 
 factory ResponseLogProbTopLogprobs.fromJson(Map<String, dynamic> json) { return ResponseLogProbTopLogprobs(
   token: json['token'] as String?,

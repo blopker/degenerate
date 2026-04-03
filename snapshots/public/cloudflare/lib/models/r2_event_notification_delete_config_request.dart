@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class R2EventNotificationDeleteConfigRequest {const R2EventNotificationDeleteConfigRequest({this.ruleIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EventNotificationDeleteConfigRequest {const R2EventNotificationDeleteConfigRequest({this.ruleIds});
 
 factory R2EventNotificationDeleteConfigRequest.fromJson(Map<String, dynamic> json) { return R2EventNotificationDeleteConfigRequest(
   ruleIds: (json['ruleIds'] as List<dynamic>?)?.map((e) => e as String).toList(),

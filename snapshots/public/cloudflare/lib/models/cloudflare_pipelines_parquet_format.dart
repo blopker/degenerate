@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_parquet_compression.dart';final class CloudflarePipelinesParquetFormat {const CloudflarePipelinesParquetFormat({this.compression, this.rowGroupBytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_parquet_compression.dart';@immutable final class CloudflarePipelinesParquetFormat {const CloudflarePipelinesParquetFormat({this.compression, this.rowGroupBytes, });
 
 factory CloudflarePipelinesParquetFormat.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesParquetFormat(
   compression: json['compression'] != null ? CloudflarePipelinesParquetCompression.fromJson(json['compression'] as String) : null,

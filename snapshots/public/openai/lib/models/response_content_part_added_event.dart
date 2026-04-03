@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'output_content.dart';/// The type of the event. Always `response.content_part.added`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_content.dart';/// The type of the event. Always `response.content_part.added`.
 /// 
-final class ResponseContentPartAddedEventType {const ResponseContentPartAddedEventType._(this.value);
+@immutable final class ResponseContentPartAddedEventType {const ResponseContentPartAddedEventType._(this.value);
 
 factory ResponseContentPartAddedEventType.fromJson(String json) { return switch (json) {
   'response.content_part.added' => responseContentPartAdded,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseContentPartAddedEventType($value)'; } 
  }
 /// Emitted when a new content part is added.
-final class ResponseContentPartAddedEvent {const ResponseContentPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, required this.sequenceNumber, });
+@immutable final class ResponseContentPartAddedEvent {const ResponseContentPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, required this.sequenceNumber, });
 
 factory ResponseContentPartAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseContentPartAddedEvent(
   type: ResponseContentPartAddedEventType.fromJson(json['type'] as String),

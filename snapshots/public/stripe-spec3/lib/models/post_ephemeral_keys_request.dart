@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostEphemeralKeysRequest {const PostEphemeralKeysRequest({this.customer, this.expand, this.issuingCard, this.nonce, this.verificationSession, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEphemeralKeysRequest {const PostEphemeralKeysRequest({this.customer, this.expand, this.issuingCard, this.nonce, this.verificationSession, });
 
 factory PostEphemeralKeysRequest.fromJson(Map<String, dynamic> json) { return PostEphemeralKeysRequest(
   customer: json['customer'] as String?,

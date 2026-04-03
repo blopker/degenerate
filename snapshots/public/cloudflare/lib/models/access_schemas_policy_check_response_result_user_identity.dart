@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_policy_check_response_result_user_identity_geo.dart';import 'access_uuid.dart';final class AccessSchemasPolicyCheckResponseResultUserIdentity {const AccessSchemasPolicyCheckResponseResultUserIdentity({this.accountId, this.deviceSessions, this.email, this.geo, this.iat, this.id, this.isGateway, this.isWarp, this.name, this.userUuid, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_policy_check_response_result_user_identity_geo.dart';import 'access_uuid.dart';@immutable final class AccessSchemasPolicyCheckResponseResultUserIdentity {const AccessSchemasPolicyCheckResponseResultUserIdentity({this.accountId, this.deviceSessions, this.email, this.geo, this.iat, this.id, this.isGateway, this.isWarp, this.name, this.userUuid, this.version, });
 
 factory AccessSchemasPolicyCheckResponseResultUserIdentity.fromJson(Map<String, dynamic> json) { return AccessSchemasPolicyCheckResponseResultUserIdentity(
   accountId: json['account_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_request_add_invoice_items_period_end.dart';import 'post_subscriptions_request_add_invoice_items_period_start.dart';final class PostSubscriptionsRequestAddInvoiceItemsPeriod {const PostSubscriptionsRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_add_invoice_items_period_end.dart';import 'post_subscriptions_request_add_invoice_items_period_start.dart';@immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriod {const PostSubscriptionsRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
 
 factory PostSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItemsPeriod(
   end: PostSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),

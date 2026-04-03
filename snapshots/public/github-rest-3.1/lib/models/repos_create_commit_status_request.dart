@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The state of the status.
-final class ReposCreateCommitStatusRequestState {const ReposCreateCommitStatusRequestState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status.
+@immutable final class ReposCreateCommitStatusRequestState {const ReposCreateCommitStatusRequestState._(this.value);
 
 factory ReposCreateCommitStatusRequestState.fromJson(String json) { return switch (json) {
   'error' => error,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateCommitStatusRequestState($value)'; } 
  }
-final class ReposCreateCommitStatusRequest {const ReposCreateCommitStatusRequest({required this.state, this.targetUrl, this.description, this.context = 'default', });
+@immutable final class ReposCreateCommitStatusRequest {const ReposCreateCommitStatusRequest({required this.state, this.targetUrl, this.description, this.context = 'default', });
 
 factory ReposCreateCommitStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateCommitStatusRequest(
   state: ReposCreateCommitStatusRequestState.fromJson(json['state'] as String),

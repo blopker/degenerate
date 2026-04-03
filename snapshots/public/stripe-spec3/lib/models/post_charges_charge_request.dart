@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_request_fraud_details.dart';import 'post_charges_charge_request_metadata.dart';import 'post_charges_charge_request_shipping.dart';final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_request_fraud_details.dart';import 'post_charges_charge_request_metadata.dart';import 'post_charges_charge_request_shipping.dart';@immutable final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
 
 factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequest(
   customer: json['customer'] as String?,

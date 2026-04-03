@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_reference.dart';/// Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
-final class CephFsPersistentVolumeSource {const CephFsPersistentVolumeSource({required this.monitors, this.path, this.readOnly, this.secretFile, this.secretRef, this.user, });
+@immutable final class CephFsPersistentVolumeSource {const CephFsPersistentVolumeSource({required this.monitors, this.path, this.readOnly, this.secretFile, this.secretRef, this.user, });
 
 factory CephFsPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return CephFsPersistentVolumeSource(
   monitors: (json['monitors'] as List<dynamic>).map((e) => e as String).toList(),

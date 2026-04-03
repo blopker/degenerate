@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom {const PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom({required this.refundReference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom {const PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom({required this.refundReference});
 
 factory PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom(
   refundReference: json['refund_reference'] as String,

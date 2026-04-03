@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetRefundsRefundRequest {const GetRefundsRefundRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRefundsRefundRequest {const GetRefundsRefundRequest();
 
 factory GetRefundsRefundRequest.fromJson(Map<String, dynamic> json) { return GetRefundsRefundRequest(
 

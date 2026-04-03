@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products_variant1_adjustable_quantity.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1({this.adjustableQuantity, required this.prices, required this.product, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products_variant1_adjustable_quantity.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1({required this.prices, required this.product, this.adjustableQuantity, });
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Successful deletion of a code scanning analysis
-final class CodeScanningAnalysisDeletion {const CodeScanningAnalysisDeletion({required this.nextAnalysisUrl, required this.confirmDeleteUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Successful deletion of a code scanning analysis
+@immutable final class CodeScanningAnalysisDeletion {const CodeScanningAnalysisDeletion({required this.nextAnalysisUrl, required this.confirmDeleteUrl, });
 
 factory CodeScanningAnalysisDeletion.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysisDeletion(
   nextAnalysisUrl: json['next_analysis_url'] != null ? Uri.parse(json['next_analysis_url'] as String) : null,

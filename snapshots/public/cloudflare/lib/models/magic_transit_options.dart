@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Max TTL.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Max TTL.
 extension type const MagicTransitMaxTtl(int value) {
 factory MagicTransitMaxTtl.fromJson(num json) => MagicTransitMaxTtl(json.toInt());
 
@@ -8,7 +8,7 @@ num toJson() => value;
 
 }
 /// Type of packet sent.
-final class MagicTransitPacketType {const MagicTransitPacketType._(this.value);
+@immutable final class MagicTransitPacketType {const MagicTransitPacketType._(this.value);
 
 factory MagicTransitPacketType.fromJson(String json) { return switch (json) {
   'icmp' => icmp,
@@ -62,7 +62,7 @@ factory MagicTransitWaitTime.fromJson(num json) => MagicTransitWaitTime(json.toI
 num toJson() => value;
 
 }
-final class MagicTransitOptions {const MagicTransitOptions({this.maxTtl, this.packetType, this.packetsPerTtl, this.port, this.waitTime, });
+@immutable final class MagicTransitOptions {const MagicTransitOptions({this.maxTtl, this.packetType, this.packetsPerTtl, this.port, this.waitTime, });
 
 factory MagicTransitOptions.fromJson(Map<String, dynamic> json) { return MagicTransitOptions(
   maxTtl: json['max_ttl'] != null ? MagicTransitMaxTtl.fromJson(json['max_ttl'] as num) : null,

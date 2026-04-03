@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion._(this.value);
 
 factory RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,

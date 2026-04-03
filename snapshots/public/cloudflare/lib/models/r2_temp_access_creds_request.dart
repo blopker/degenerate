@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions allowed on the credentials.
-final class R2TempAccessCredsRequestPermission {const R2TempAccessCredsRequestPermission._(this.value);
+@immutable final class R2TempAccessCredsRequestPermission {const R2TempAccessCredsRequestPermission._(this.value);
 
 factory R2TempAccessCredsRequestPermission.fromJson(String json) { return switch (json) {
   'admin-read-write' => adminReadWrite,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2TempAccessCredsRequestPermission($value)'; } 
  }
-final class R2TempAccessCredsRequest {const R2TempAccessCredsRequest({required this.bucket, this.objects, required this.parentAccessKeyId, required this.permission, this.prefixes, this.ttlSeconds = 900.0, });
+@immutable final class R2TempAccessCredsRequest {const R2TempAccessCredsRequest({required this.bucket, required this.parentAccessKeyId, required this.permission, this.objects, this.prefixes, this.ttlSeconds = 900.0, });
 
 factory R2TempAccessCredsRequest.fromJson(Map<String, dynamic> json) { return R2TempAccessCredsRequest(
   bucket: json['bucket'] as String,

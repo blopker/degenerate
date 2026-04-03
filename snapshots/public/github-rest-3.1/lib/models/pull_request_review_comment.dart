@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'pull_request_review_comment_links.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
-final class PullRequestReviewCommentStartSide {const PullRequestReviewCommentStartSide._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'pull_request_review_comment_links.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
+@immutable final class PullRequestReviewCommentStartSide {const PullRequestReviewCommentStartSide._(this.value);
 
 factory PullRequestReviewCommentStartSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullRequestReviewCommentStartSide($value)'; } 
  }
 /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
-final class PullRequestReviewCommentSide {const PullRequestReviewCommentSide._(this.value);
+@immutable final class PullRequestReviewCommentSide {const PullRequestReviewCommentSide._(this.value);
 
 factory PullRequestReviewCommentSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullRequestReviewCommentSide($value)'; } 
  }
 /// The level at which the comment is targeted, can be a diff line or a file.
-final class PullRequestReviewCommentSubjectType {const PullRequestReviewCommentSubjectType._(this.value);
+@immutable final class PullRequestReviewCommentSubjectType {const PullRequestReviewCommentSubjectType._(this.value);
 
 factory PullRequestReviewCommentSubjectType.fromJson(String json) { return switch (json) {
   'line' => line,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullRequestReviewCommentSubjectType($value)'; } 
  }
 /// Pull Request Review Comments are comments on a portion of the Pull Request's diff.
-final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, this.position, this.originalPosition, required this.commitId, required this.originalCommitId, this.inReplyToId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.startLine, this.originalStartLine, this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.side = PullRequestReviewCommentSide.right, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
+@immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine, this.originalStartLine, this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.side = PullRequestReviewCommentSide.right, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
 
 factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewComment(
   url: json['url'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Name of CNAME record.
-final class TlsCertificatesAndHostnamesVerificationInfoRecordName {const TlsCertificatesAndHostnamesVerificationInfoRecordName._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of CNAME record.
+@immutable final class TlsCertificatesAndHostnamesVerificationInfoRecordName {const TlsCertificatesAndHostnamesVerificationInfoRecordName._(this.value);
 
 factory TlsCertificatesAndHostnamesVerificationInfoRecordName.fromJson(String json) { return switch (json) {
   'record_name' => recordName,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesVerificationInfoRecordName($value)'; } 
  }
 /// Target of CNAME record.
-final class TlsCertificatesAndHostnamesVerificationInfoRecordTarget {const TlsCertificatesAndHostnamesVerificationInfoRecordTarget._(this.value);
+@immutable final class TlsCertificatesAndHostnamesVerificationInfoRecordTarget {const TlsCertificatesAndHostnamesVerificationInfoRecordTarget._(this.value);
 
 factory TlsCertificatesAndHostnamesVerificationInfoRecordTarget.fromJson(String json) { return switch (json) {
   'record_value' => recordValue,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesVerificationInfoRecordTarget($value)'; } 
  }
 /// Certificate's required verification information.
-final class TlsCertificatesAndHostnamesVerificationInfo {const TlsCertificatesAndHostnamesVerificationInfo({this.recordName, this.recordTarget, });
+@immutable final class TlsCertificatesAndHostnamesVerificationInfo {const TlsCertificatesAndHostnamesVerificationInfo({this.recordName, this.recordTarget, });
 
 factory TlsCertificatesAndHostnamesVerificationInfo.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesVerificationInfo(
   recordName: json['record_name'] != null ? TlsCertificatesAndHostnamesVerificationInfoRecordName.fromJson(json['record_name'] as String) : null,

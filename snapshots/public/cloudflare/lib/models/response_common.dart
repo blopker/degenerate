@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_messages2.dart';final class ResponseCommon {const ResponseCommon({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_messages2.dart';@immutable final class ResponseCommon {const ResponseCommon({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon.fromJson(Map<String, dynamic> json) { return ResponseCommon(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaMessages2.fromJson(e as Map<String, dynamic>)).toList(),

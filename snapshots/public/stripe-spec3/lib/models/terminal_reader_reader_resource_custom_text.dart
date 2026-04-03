@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents custom text to be displayed when collecting the input using a reader
-final class TerminalReaderReaderResourceCustomText {const TerminalReaderReaderResourceCustomText({this.description, this.skipButton, this.submitButton, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents custom text to be displayed when collecting the input using a reader
+@immutable final class TerminalReaderReaderResourceCustomText {const TerminalReaderReaderResourceCustomText({this.description, this.skipButton, this.submitButton, this.title, });
 
 factory TerminalReaderReaderResourceCustomText.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCustomText(
   description: json['description'] as String?,

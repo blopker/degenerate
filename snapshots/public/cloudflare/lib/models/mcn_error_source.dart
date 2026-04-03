@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnErrorSource {const McnErrorSource({this.parameter, this.parameterValueIndex, this.pointer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnErrorSource {const McnErrorSource({this.parameter, this.parameterValueIndex, this.pointer, });
 
 factory McnErrorSource.fromJson(Map<String, dynamic> json) { return McnErrorSource(
   parameter: json['parameter'] as String?,

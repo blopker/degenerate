@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details.dart';import 'treasury_outbound_payment_transaction.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'treasury_outbound_payments_resource_returned_status.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
+@immutable final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
 
 factory TreasuryOutboundPaymentObject.fromJson(String json) { return switch (json) {
   'treasury.outbound_payment' => treasuryOutboundPayment,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryOutboundPaymentObject($value)'; } 
  }
 /// Current status of the OutboundPayment: `processing`, `failed`, `posted`, `returned`, `canceled`. An OutboundPayment is `processing` if it has been created and is pending. The status changes to `posted` once the OutboundPayment has been "confirmed" and funds have left the account, or to `failed` or `canceled`. If an OutboundPayment fails to arrive at its destination, its status will change to `returned`.
-final class TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus._(this.value);
+@immutable final class TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus._(this.value);
 
 factory TreasuryOutboundPaymentStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Simulate OutboundPayment state changes with the `/v1/test_helpers/treasury/outbound_payments` endpoints. These methods can only be called on test mode objects.
 /// 
 /// Related guide: [Moving money with Treasury using OutboundPayment objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-payments)
-final class TreasuryOutboundPayment {const TreasuryOutboundPayment({required this.amount, required this.cancelable, required this.created, required this.currency, this.customer, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodDetails, this.endUserDetails, required this.expectedArrivalDate, required this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, required this.livemode, required this.metadata, required this.object, this.returnedDetails, required this.statementDescriptor, required this.status, required this.statusTransitions, this.trackingDetails, required this.transaction, });
+@immutable final class TreasuryOutboundPayment {const TreasuryOutboundPayment({required this.amount, required this.cancelable, required this.created, required this.currency, required this.expectedArrivalDate, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, required this.transaction, this.customer, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodDetails, this.endUserDetails, this.hostedRegulatoryReceiptUrl, this.returnedDetails, this.trackingDetails, });
 
 factory TreasuryOutboundPayment.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPayment(
   amount: (json['amount'] as num).toInt(),

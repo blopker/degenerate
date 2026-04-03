@@ -1,10 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 /// Keeper permanently bans a participant, removing them from the talking order.
+@immutable
 final class BanParticipantEvent {
   const BanParticipantEvent({
-    this.type = 'ban_participant',
     required this.participantSlug,
+    this.type = 'ban_participant',
   });
 
   factory BanParticipantEvent.fromJson(Map<String, dynamic> json) {

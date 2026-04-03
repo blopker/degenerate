@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages_inner_messages_content_variant3_image_url.dart';final class MessagesInnerMessagesContentVariant3 {const MessagesInnerMessagesContentVariant3({this.imageUrl, this.text, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages_inner_messages_content_variant3_image_url.dart';@immutable final class MessagesInnerMessagesContentVariant3 {const MessagesInnerMessagesContentVariant3({this.imageUrl, this.text, this.type, });
 
 factory MessagesInnerMessagesContentVariant3.fromJson(Map<String, dynamic> json) { return MessagesInnerMessagesContentVariant3(
   imageUrl: json['image_url'] != null ? MessagesInnerMessagesContentVariant3ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,

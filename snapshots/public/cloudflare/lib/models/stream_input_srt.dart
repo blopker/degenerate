@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The identifier of the live input to use when streaming via SRT.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The identifier of the live input to use when streaming via SRT.
 extension type const StreamInputSrtStreamId(String value) {
 factory StreamInputSrtStreamId.fromJson(String json) => StreamInputSrtStreamId(json);
 
@@ -22,7 +22,7 @@ String toJson() => value;
 
 }
 /// Details for streaming to a live input using SRT.
-final class StreamInputSrt {const StreamInputSrt({this.passphrase, this.streamId, this.url, });
+@immutable final class StreamInputSrt {const StreamInputSrt({this.passphrase, this.streamId, this.url, });
 
 factory StreamInputSrt.fromJson(Map<String, dynamic> json) { return StreamInputSrt(
   passphrase: json['passphrase'] != null ? StreamInputSrtStreamPassphrase.fromJson(json['passphrase'] as String) : null,

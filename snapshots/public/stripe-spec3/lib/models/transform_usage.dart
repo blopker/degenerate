@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// After division, either round the result `up` or `down`.
-final class TransformUsageRound {const TransformUsageRound._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// After division, either round the result `up` or `down`.
+@immutable final class TransformUsageRound {const TransformUsageRound._(this.value);
 
 factory TransformUsageRound.fromJson(String json) { return switch (json) {
   'down' => down,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TransformUsageRound($value)'; } 
  }
 /// 
-final class TransformUsage {const TransformUsage({required this.divideBy, required this.round, });
+@immutable final class TransformUsage {const TransformUsage({required this.divideBy, required this.round, });
 
 factory TransformUsage.fromJson(Map<String, dynamic> json) { return TransformUsage(
   divideBy: (json['divide_by'] as num).toInt(),

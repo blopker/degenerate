@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `grabpay` PaymentMethod, this hash contains details about the GrabPay payment method.
-final class PostPaymentMethodsRequestGrabpay {const PostPaymentMethodsRequestGrabpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `grabpay` PaymentMethod, this hash contains details about the GrabPay payment method.
+@immutable final class PostPaymentMethodsRequestGrabpay {const PostPaymentMethodsRequestGrabpay();
 
 factory PostPaymentMethodsRequestGrabpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestGrabpay(
 

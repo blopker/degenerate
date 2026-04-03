@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_portals_response_result.dart';final class CreatePortalsResponse {const CreatePortalsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_response_result.dart';@immutable final class CreatePortalsResponse {const CreatePortalsResponse({required this.result, required this.success, });
 
 factory CreatePortalsResponse.fromJson(Map<String, dynamic> json) { return CreatePortalsResponse(
   result: CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

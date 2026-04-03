@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_errors2.dart';import 'r2_result_info.dart';final class ResponseList {const ResponseList({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_errors2.dart';import 'r2_result_info.dart';@immutable final class ResponseList {const ResponseList({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseList.fromJson(Map<String, dynamic> json) { return ResponseList(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),

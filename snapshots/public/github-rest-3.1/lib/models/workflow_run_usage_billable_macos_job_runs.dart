@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowRunUsageBillableMacosJobRuns {const WorkflowRunUsageBillableMacosJobRuns({required this.jobId, required this.durationMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowRunUsageBillableMacosJobRuns {const WorkflowRunUsageBillableMacosJobRuns({required this.jobId, required this.durationMs, });
 
 factory WorkflowRunUsageBillableMacosJobRuns.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillableMacosJobRuns(
   jobId: (json['job_id'] as num).toInt(),

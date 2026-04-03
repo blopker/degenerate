@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_sending_domain_restrictions_request_deletes.dart';final class EmailSecurityBatchSendingDomainRestrictionsRequest {const EmailSecurityBatchSendingDomainRestrictionsRequest({required this.deletes});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_sending_domain_restrictions_request_deletes.dart';@immutable final class EmailSecurityBatchSendingDomainRestrictionsRequest {const EmailSecurityBatchSendingDomainRestrictionsRequest({required this.deletes});
 
 factory EmailSecurityBatchSendingDomainRestrictionsRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchSendingDomainRestrictionsRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchSendingDomainRestrictionsRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),

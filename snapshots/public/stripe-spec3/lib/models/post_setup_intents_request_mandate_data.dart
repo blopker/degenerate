@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_key_param3.dart';final class PostSetupIntentsRequestMandateDataVariant2 {const PostSetupIntentsRequestMandateDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_key_param3.dart';@immutable final class PostSetupIntentsRequestMandateDataVariant2 {const PostSetupIntentsRequestMandateDataVariant2._(this.value);
 
 factory PostSetupIntentsRequestMandateDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

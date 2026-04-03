@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_network_token_device.dart';import 'issuing_network_token_mastercard.dart';import 'issuing_network_token_visa.dart';import 'issuing_network_token_wallet_provider.dart';/// The network that the token is associated with. An additional hash is included with a name matching this value, containing tokenization data specific to the card network.
-final class IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_device.dart';import 'issuing_network_token_mastercard.dart';import 'issuing_network_token_visa.dart';import 'issuing_network_token_wallet_provider.dart';/// The network that the token is associated with. An additional hash is included with a name matching this value, containing tokenization data specific to the card network.
+@immutable final class IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType._(this.value);
 
 factory IssuingNetworkTokenNetworkDataType.fromJson(String json) { return switch (json) {
   'mastercard' => mastercard,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingNetworkTokenNetworkDataType($value)'; } 
  }
 /// 
-final class IssuingNetworkTokenNetworkData {const IssuingNetworkTokenNetworkData({this.device, this.mastercard, required this.type, this.visa, this.walletProvider, });
+@immutable final class IssuingNetworkTokenNetworkData {const IssuingNetworkTokenNetworkData({required this.type, this.device, this.mastercard, this.visa, this.walletProvider, });
 
 factory IssuingNetworkTokenNetworkData.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenNetworkData(
   device: json['device'] != null ? IssuingNetworkTokenDevice.fromJson(json['device'] as Map<String, dynamic>) : null,

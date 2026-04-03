@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodespaceRuntimeConstraints {const CodespaceRuntimeConstraints({this.allowedPortPrivacySettings});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespaceRuntimeConstraints {const CodespaceRuntimeConstraints({this.allowedPortPrivacySettings});
 
 factory CodespaceRuntimeConstraints.fromJson(Map<String, dynamic> json) { return CodespaceRuntimeConstraints(
   allowedPortPrivacySettings: (json['allowed_port_privacy_settings'] as List<dynamic>?)?.map((e) => e as String).toList(),

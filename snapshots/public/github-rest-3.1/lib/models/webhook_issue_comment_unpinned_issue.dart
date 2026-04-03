@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_dependencies_summary.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issue_comment_unpinned_issue_assignee.dart';import 'webhook_issue_comment_unpinned_issue_labels.dart';import 'webhook_issue_comment_unpinned_issue_pull_request.dart';import 'webhook_issue_comment_unpinned_issue_reactions.dart';import 'webhook_issue_comment_unpinned_issue_user.dart';/// State of the issue; either 'open' or 'closed'
-final class WebhookIssueCommentUnpinnedIssueState {const WebhookIssueCommentUnpinnedIssueState._(this.value);
+@immutable final class WebhookIssueCommentUnpinnedIssueState {const WebhookIssueCommentUnpinnedIssueState._(this.value);
 
 factory WebhookIssueCommentUnpinnedIssueState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssueCommentUnpinnedIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final class WebhookIssueCommentUnpinnedIssue {const WebhookIssueCommentUnpinnedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, required this.reactions, required this.repositoryUrl, this.subIssuesSummary, this.issueDependenciesSummary, required this.state, this.stateReason, this.timelineUrl, required this.title, this.type, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookIssueCommentUnpinnedIssue {const WebhookIssueCommentUnpinnedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, required this.reactions, required this.repositoryUrl, required this.state, required this.title, required this.updatedAt, required this.url, required this.user, this.draft, this.performedViaGithubApp, this.pullRequest, this.subIssuesSummary, this.issueDependenciesSummary, this.stateReason, this.timelineUrl, this.type, });
 
 factory WebhookIssueCommentUnpinnedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentUnpinnedIssue(
   activeLockReason: json['active_lock_reason'] as String?,

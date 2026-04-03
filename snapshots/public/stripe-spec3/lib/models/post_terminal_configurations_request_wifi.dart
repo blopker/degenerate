@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wifi.dart';final class PostTerminalConfigurationsRequestWifiVariant2 {const PostTerminalConfigurationsRequestWifiVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wifi.dart';@immutable final class PostTerminalConfigurationsRequestWifiVariant2 {const PostTerminalConfigurationsRequestWifiVariant2._(this.value);
 
 factory PostTerminalConfigurationsRequestWifiVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

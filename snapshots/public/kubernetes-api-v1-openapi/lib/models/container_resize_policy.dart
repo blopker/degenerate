@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ContainerResizePolicy represents resource resize policy for the container.
-final class ContainerResizePolicy {const ContainerResizePolicy({this.resourceName = '', this.restartPolicy = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerResizePolicy represents resource resize policy for the container.
+@immutable final class ContainerResizePolicy {const ContainerResizePolicy({this.resourceName = '', this.restartPolicy = '', });
 
 factory ContainerResizePolicy.fromJson(Map<String, dynamic> json) { return ContainerResizePolicy(
   resourceName: json['resourceName'] as String,

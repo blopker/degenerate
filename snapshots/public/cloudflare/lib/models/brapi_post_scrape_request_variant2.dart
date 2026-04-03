@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_request_variant2_add_script_tag.dart';import 'brapi_post_scrape_request_variant2_add_style_tag.dart';import 'brapi_post_scrape_request_variant2_authenticate.dart';import 'brapi_post_scrape_request_variant2_cookies.dart';import 'brapi_post_scrape_request_variant2_elements.dart';import 'brapi_post_scrape_request_variant2_goto_options.dart';import 'brapi_post_scrape_request_variant2_viewport.dart';import 'brapi_post_scrape_request_variant2_wait_for_selector.dart';final class BrapiPostScrapeRequestVariant2AllowResourceTypes {const BrapiPostScrapeRequestVariant2AllowResourceTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_request_variant2_add_script_tag.dart';import 'brapi_post_scrape_request_variant2_add_style_tag.dart';import 'brapi_post_scrape_request_variant2_authenticate.dart';import 'brapi_post_scrape_request_variant2_cookies.dart';import 'brapi_post_scrape_request_variant2_elements.dart';import 'brapi_post_scrape_request_variant2_goto_options.dart';import 'brapi_post_scrape_request_variant2_viewport.dart';import 'brapi_post_scrape_request_variant2_wait_for_selector.dart';@immutable final class BrapiPostScrapeRequestVariant2AllowResourceTypes {const BrapiPostScrapeRequestVariant2AllowResourceTypes._(this.value);
 
 factory BrapiPostScrapeRequestVariant2AllowResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScrapeRequestVariant2AllowResourceTypes($value)'; } 
  }
-final class BrapiPostScrapeRequestVariant2RejectResourceTypes {const BrapiPostScrapeRequestVariant2RejectResourceTypes._(this.value);
+@immutable final class BrapiPostScrapeRequestVariant2RejectResourceTypes {const BrapiPostScrapeRequestVariant2RejectResourceTypes._(this.value);
 
 factory BrapiPostScrapeRequestVariant2RejectResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScrapeRequestVariant2RejectResourceTypes($value)'; } 
  }
-final class BrapiPostScrapeRequestVariant2 {const BrapiPostScrapeRequestVariant2({this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, required this.elements, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, required this.url, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostScrapeRequestVariant2 {const BrapiPostScrapeRequestVariant2({required this.elements, required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostScrapeRequestVariant2.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant2(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,

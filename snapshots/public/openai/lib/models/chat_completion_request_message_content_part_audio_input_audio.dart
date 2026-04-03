@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The format of the encoded audio data. Currently supports "wav" and "mp3".
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of the encoded audio data. Currently supports "wav" and "mp3".
 /// 
-final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat._(this.value);
+@immutable final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat._(this.value);
 
 factory ChatCompletionRequestMessageContentPartAudioInputAudioFormat.fromJson(String json) { return switch (json) {
   'wav' => wav,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)'; } 
  }
-final class ChatCompletionRequestMessageContentPartAudioInputAudio {const ChatCompletionRequestMessageContentPartAudioInputAudio({required this.data, required this.format, });
+@immutable final class ChatCompletionRequestMessageContentPartAudioInputAudio {const ChatCompletionRequestMessageContentPartAudioInputAudio({required this.data, required this.format, });
 
 factory ChatCompletionRequestMessageContentPartAudioInputAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartAudioInputAudio(
   data: json['data'] as String,

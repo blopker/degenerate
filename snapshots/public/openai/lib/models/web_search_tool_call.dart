@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web_search_tool_call_action.dart';/// The status of the web search tool call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_tool_call_action.dart';/// The status of the web search tool call.
 /// 
-final class WebSearchToolCallStatus {const WebSearchToolCallStatus._(this.value);
+@immutable final class WebSearchToolCallStatus {const WebSearchToolCallStatus._(this.value);
 
 factory WebSearchToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The results of a web search tool call. See the
 /// [web search guide](/docs/guides/tools-web-search) for more information.
 /// 
-final class WebSearchToolCall {const WebSearchToolCall({required this.id, required this.type, required this.status, required this.action, });
+@immutable final class WebSearchToolCall {const WebSearchToolCall({required this.id, required this.type, required this.status, required this.action, });
 
 factory WebSearchToolCall.fromJson(Map<String, dynamic> json) { return WebSearchToolCall(
   id: json['id'] as String,

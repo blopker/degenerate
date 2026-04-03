@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesRequestIssuerType {const PostInvoicesRequestIssuerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesRequestIssuerType {const PostInvoicesRequestIssuerType._(this.value);
 
 factory PostInvoicesRequestIssuerType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesRequestIssuerType($value)'; } 
  }
 /// The connected account that issues the invoice. The invoice is presented with the branding and support information of the specified account.
-final class PostInvoicesRequestIssuer {const PostInvoicesRequestIssuer({this.account, required this.type, });
+@immutable final class PostInvoicesRequestIssuer {const PostInvoicesRequestIssuer({required this.type, this.account, });
 
 factory PostInvoicesRequestIssuer.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestIssuer(
   account: json['account'] as String?,

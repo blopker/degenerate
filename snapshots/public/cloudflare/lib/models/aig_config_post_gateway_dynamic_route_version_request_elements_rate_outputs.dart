@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_post_gateway_dynamic_route_version_request_elements_rate_outputs_fallback.dart';import 'aig_config_post_gateway_dynamic_route_version_request_elements_rate_outputs_success.dart';final class AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputs {const AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputs({required this.fallback, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_version_request_elements_rate_outputs_fallback.dart';import 'aig_config_post_gateway_dynamic_route_version_request_elements_rate_outputs_success.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputs {const AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputs({required this.fallback, required this.success, });
 
 factory AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputs.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputs(
   fallback: AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback.fromJson(json['fallback'] as Map<String, dynamic>),

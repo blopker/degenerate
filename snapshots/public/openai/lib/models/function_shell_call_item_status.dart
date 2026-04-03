@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status values reported for shell tool calls.
-final class FunctionShellCallItemStatus {const FunctionShellCallItemStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status values reported for shell tool calls.
+@immutable final class FunctionShellCallItemStatus {const FunctionShellCallItemStatus._(this.value);
 
 factory FunctionShellCallItemStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

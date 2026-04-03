@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a Alma PaymentMethod, this hash contains details about the Alma payment method.
-final class PostPaymentMethodsRequestAlma {const PostPaymentMethodsRequestAlma();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a Alma PaymentMethod, this hash contains details about the Alma payment method.
+@immutable final class PostPaymentMethodsRequestAlma {const PostPaymentMethodsRequestAlma();
 
 factory PostPaymentMethodsRequestAlma.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestAlma(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to create the checkpoint permission.
-final class AuditLogCheckpointPermissionCreatedData {const AuditLogCheckpointPermissionCreatedData({this.projectId, this.fineTunedModelCheckpoint, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the checkpoint permission.
+@immutable final class AuditLogCheckpointPermissionCreatedData {const AuditLogCheckpointPermissionCreatedData({this.projectId, this.fineTunedModelCheckpoint, });
 
 factory AuditLogCheckpointPermissionCreatedData.fromJson(Map<String, dynamic> json) { return AuditLogCheckpointPermissionCreatedData(
   projectId: json['project_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If set, the event will override the waiting room's `turnstile_action` property while it is active. If null, the event will inherit it.
-final class WaitingroomEventTurnstileAction {const WaitingroomEventTurnstileAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set, the event will override the waiting room's `turnstile_action` property while it is active. If null, the event will inherit it.
+@immutable final class WaitingroomEventTurnstileAction {const WaitingroomEventTurnstileAction._(this.value);
 
 factory WaitingroomEventTurnstileAction.fromJson(String json) { return switch (json) {
   'log' => log,

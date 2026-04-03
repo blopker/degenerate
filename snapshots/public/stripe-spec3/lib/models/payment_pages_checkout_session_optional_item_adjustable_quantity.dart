@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity {const PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity {const PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
 
 factory PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity(
   enabled: json['enabled'] as bool,

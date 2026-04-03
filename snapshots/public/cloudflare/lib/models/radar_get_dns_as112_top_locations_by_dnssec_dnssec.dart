@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// DNSSEC (DNS Security Extensions) status.
-final class RadarGetDnsAs112TopLocationsByDnssecDnssec {const RadarGetDnsAs112TopLocationsByDnssecDnssec._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNSSEC (DNS Security Extensions) status.
+@immutable final class RadarGetDnsAs112TopLocationsByDnssecDnssec {const RadarGetDnsAs112TopLocationsByDnssecDnssec._(this.value);
 
 factory RadarGetDnsAs112TopLocationsByDnssecDnssec.fromJson(String json) { return switch (json) {
   'SUPPORTED' => supported,

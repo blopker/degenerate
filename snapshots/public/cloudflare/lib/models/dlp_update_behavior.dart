@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_risk_level.dart';final class DlpUpdateBehavior {const DlpUpdateBehavior({required this.enabled, required this.riskLevel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_level.dart';@immutable final class DlpUpdateBehavior {const DlpUpdateBehavior({required this.enabled, required this.riskLevel, });
 
 factory DlpUpdateBehavior.fromJson(Map<String, dynamic> json) { return DlpUpdateBehavior(
   enabled: json['enabled'] as bool,

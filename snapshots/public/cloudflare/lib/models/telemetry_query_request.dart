@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'telemetry_query_request_parameters.dart';import 'telemetry_query_request_timeframe.dart';/// Type of pattern to search for when using pattern-based views
-final class TelemetryQueryRequestPatternType {const TelemetryQueryRequestPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_request_parameters.dart';import 'telemetry_query_request_timeframe.dart';/// Type of pattern to search for when using pattern-based views
+@immutable final class TelemetryQueryRequestPatternType {const TelemetryQueryRequestPatternType._(this.value);
 
 factory TelemetryQueryRequestPatternType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TelemetryQueryRequestPatternType($value)'; } 
  }
 /// View type for presenting the query results.
-final class TelemetryQueryRequestView {const TelemetryQueryRequestView._(this.value);
+@immutable final class TelemetryQueryRequestView {const TelemetryQueryRequestView._(this.value);
 
 factory TelemetryQueryRequestView.fromJson(String json) { return switch (json) {
   'traces' => traces,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryRequestView($value)'; } 
  }
-final class TelemetryQueryRequest {const TelemetryQueryRequest({this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, required this.queryId, required this.timeframe, this.view = TelemetryQueryRequestView.calculations, });
+@immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view = TelemetryQueryRequestView.calculations, });
 
 factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequest(
   chart: json['chart'] as bool?,

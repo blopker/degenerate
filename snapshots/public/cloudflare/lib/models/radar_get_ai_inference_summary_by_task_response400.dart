@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_summary_by_task_response400_errors.dart';final class RadarGetAiInferenceSummaryByTaskResponse400 {const RadarGetAiInferenceSummaryByTaskResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_summary_by_task_response400_errors.dart';@immutable final class RadarGetAiInferenceSummaryByTaskResponse400 {const RadarGetAiInferenceSummaryByTaskResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAiInferenceSummaryByTaskResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceSummaryByTaskResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAiInferenceSummaryByTaskResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

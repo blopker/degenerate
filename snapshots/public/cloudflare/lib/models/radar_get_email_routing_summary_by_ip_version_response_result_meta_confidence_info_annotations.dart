@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetEmailRoutingSummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

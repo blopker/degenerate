@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_top_asns_by_prefixes_response_result.dart';final class RadarGetBgpTopAsnsByPrefixesResponse {const RadarGetBgpTopAsnsByPrefixesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_asns_by_prefixes_response_result.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponse {const RadarGetBgpTopAsnsByPrefixesResponse({required this.result, required this.success, });
 
 factory RadarGetBgpTopAsnsByPrefixesResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsnsByPrefixesResponse(
   result: RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

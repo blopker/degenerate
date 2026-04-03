@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_order.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetClimateOrdersResponseObject {const GetClimateOrdersResponseObject._(this.value);
+@immutable final class GetClimateOrdersResponseObject {const GetClimateOrdersResponseObject._(this.value);
 
 factory GetClimateOrdersResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetClimateOrdersResponseObject($value)'; } 
  }
 /// 
-final class GetClimateOrdersResponse {const GetClimateOrdersResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetClimateOrdersResponse {const GetClimateOrdersResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetClimateOrdersResponse.fromJson(Map<String, dynamic> json) { return GetClimateOrdersResponse(
   data: (json['data'] as List<dynamic>).map((e) => ClimateOrder.fromJson(e as Map<String, dynamic>)).toList(),

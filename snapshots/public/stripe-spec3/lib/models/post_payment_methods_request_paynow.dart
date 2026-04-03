@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `paynow` PaymentMethod, this hash contains details about the PayNow payment method.
-final class PostPaymentMethodsRequestPaynow {const PostPaymentMethodsRequestPaynow();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `paynow` PaymentMethod, this hash contains details about the PayNow payment method.
+@immutable final class PostPaymentMethodsRequestPaynow {const PostPaymentMethodsRequestPaynow();
 
 factory PostPaymentMethodsRequestPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestPaynow(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod {const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod {const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod._(this.value);
 
 factory PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod($value)'; } 
  }
-final class PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior {const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior({required this.missingPaymentMethod});
+@immutable final class PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior {const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior({required this.missingPaymentMethod});
 
 factory PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(
   missingPaymentMethod: PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),

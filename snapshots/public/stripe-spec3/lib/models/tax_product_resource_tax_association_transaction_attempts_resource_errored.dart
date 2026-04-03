@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details on why we couldn't commit the tax transaction.
-final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details on why we couldn't commit the tax transaction.
+@immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason._(this.value);
 
 factory TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason.fromJson(String json) { return switch (json) {
   'another_payment_associated_with_calculation' => anotherPaymentAssociatedWithCalculation,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason($value)'; } 
  }
 /// 
-final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored({required this.reason});
+@immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored({required this.reason});
 
 factory TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored(
   reason: TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason.fromJson(json['reason'] as String),

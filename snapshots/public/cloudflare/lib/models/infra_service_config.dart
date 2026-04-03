@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_service_common.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_service_common.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -14,7 +14,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InfraServiceConfig$Unknown; } 
  }
-final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraServiceCommon);
+@immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraServiceCommon);
 
 factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return InfraServiceConfigHttp(InfraServiceCommon.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final InfraServiceCommon infraServiceCommon;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class InfraServiceConfig$Unknown extends InfraServiceConfig {const InfraServiceConfig$Unknown(this.json);
+@immutable final class InfraServiceConfig$Unknown extends InfraServiceConfig {const InfraServiceConfig$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

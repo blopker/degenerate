@@ -7,7 +7,7 @@ factory ResourceSharingAccountName.fromJson(String json) => ResourceSharingAccou
 String toJson() => value;
 
 }
-final class ResourceSharingShareObject {const ResourceSharingShareObject({required this.accountId, required this.accountName, this.associatedRecipientCount, this.associatingRecipientCount, required this.created, this.disassociatedRecipientCount, this.disassociatingRecipientCount, required this.id, this.kind, required this.modified, required this.name, required this.organizationId, this.resources, required this.status, required this.targetType, });
+@immutable final class ResourceSharingShareObject {const ResourceSharingShareObject({required this.accountId, required this.accountName, required this.created, required this.id, required this.modified, required this.name, required this.organizationId, required this.status, required this.targetType, this.associatedRecipientCount, this.associatingRecipientCount, this.disassociatedRecipientCount, this.disassociatingRecipientCount, this.kind, this.resources, });
 
 factory ResourceSharingShareObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareObject(
   accountId: ResourceSharingAccountId.fromJson(json['account_id'] as String),

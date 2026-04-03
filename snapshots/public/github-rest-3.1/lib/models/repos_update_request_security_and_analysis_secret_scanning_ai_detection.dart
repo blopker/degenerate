@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
-final class ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection {const ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection({this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
+@immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection {const ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection({this.status});
 
 factory ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection(
   status: json['status'] as String?,

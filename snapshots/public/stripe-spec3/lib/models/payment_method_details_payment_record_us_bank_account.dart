@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method_details_payment_record_us_bank_account_mandate.dart';/// The type of entity that holds the account. This can be either 'individual' or 'company'.
-final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._(this.value);
+@immutable final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._(this.value);
 
 factory PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType($value)'; } 
  }
 /// The type of the bank account. This can be either 'checking' or 'savings'.
-final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._(this.value);
+@immutable final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._(this.value);
 
 factory PaymentMethodDetailsPaymentRecordUsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccountAccountType($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsPaymentRecordUsBankAccount {const PaymentMethodDetailsPaymentRecordUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, this.paymentReference, this.routingNumber, });
+@immutable final class PaymentMethodDetailsPaymentRecordUsBankAccount {const PaymentMethodDetailsPaymentRecordUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, this.paymentReference, this.routingNumber, });
 
 factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

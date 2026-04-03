@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrlVariant2 {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrlVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrlVariant2 {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrlVariant2._(this.value);
 
 factory PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrlVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

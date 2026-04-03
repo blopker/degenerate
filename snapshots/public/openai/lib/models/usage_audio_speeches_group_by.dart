@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageAudioSpeechesGroupBy {const UsageAudioSpeechesGroupBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioSpeechesGroupBy {const UsageAudioSpeechesGroupBy._(this.value);
 
 factory UsageAudioSpeechesGroupBy.fromJson(String json) { return switch (json) {
   'project_id' => projectId,

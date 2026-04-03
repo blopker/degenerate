@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_embedded_disputes_list_features.dart';/// 
-final class ConnectEmbeddedDisputesListConfig {const ConnectEmbeddedDisputesListConfig({required this.enabled, required this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_disputes_list_features.dart';/// 
+@immutable final class ConnectEmbeddedDisputesListConfig {const ConnectEmbeddedDisputesListConfig({required this.enabled, required this.features, });
 
 factory ConnectEmbeddedDisputesListConfig.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedDisputesListConfig(
   enabled: json['enabled'] as bool,

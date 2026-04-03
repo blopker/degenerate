@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MqR2ProducerType {const MqR2ProducerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqR2ProducerType {const MqR2ProducerType._(this.value);
 
 factory MqR2ProducerType.fromJson(String json) { return switch (json) {
   'r2_bucket' => r2Bucket,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqR2ProducerType($value)'; } 
  }
-final class MqR2Producer {const MqR2Producer({this.bucketName, this.type, });
+@immutable final class MqR2Producer {const MqR2Producer({this.bucketName, this.type, });
 
 factory MqR2Producer.fromJson(Map<String, dynamic> json) { return MqR2Producer(
   bucketName: json['bucket_name'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UploadCertificateRequest {const UploadCertificateRequest({this.name, required this.content, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UploadCertificateRequest {const UploadCertificateRequest({required this.content, this.name, });
 
 factory UploadCertificateRequest.fromJson(Map<String, dynamic> json) { return UploadCertificateRequest(
   name: json['name'] as String?,

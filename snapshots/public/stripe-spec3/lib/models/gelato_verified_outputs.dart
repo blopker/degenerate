@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';import 'gelato_data_verified_outputs_date.dart';/// The user's verified id number type.
-final class GelatoVerifiedOutputsIdNumberType {const GelatoVerifiedOutputsIdNumberType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'gelato_data_verified_outputs_date.dart';/// The user's verified id number type.
+@immutable final class GelatoVerifiedOutputsIdNumberType {const GelatoVerifiedOutputsIdNumberType._(this.value);
 
 factory GelatoVerifiedOutputsIdNumberType.fromJson(String json) { return switch (json) {
   'br_cpf' => brCpf,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoVerifiedOutputsIdNumberType($value)'; } 
  }
 /// The user's verified sex.
-final class GelatoVerifiedOutputsSex {const GelatoVerifiedOutputsSex._(this.value);
+@immutable final class GelatoVerifiedOutputsSex {const GelatoVerifiedOutputsSex._(this.value);
 
 factory GelatoVerifiedOutputsSex.fromJson(String json) { return switch (json) {
   '[redacted]' => redacted,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoVerifiedOutputsSex($value)'; } 
  }
 /// 
-final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });
+@immutable final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputs(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,

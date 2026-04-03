@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Authentication token to be used for VPC Flows export authentication.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Authentication token to be used for VPC Flows export authentication.
 extension type const MagicVisibilityMnmMnmVpcFlowsToken(String value) {
 factory MagicVisibilityMnmMnmVpcFlowsToken.fromJson(String json) => MagicVisibilityMnmMnmVpcFlowsToken(json);
 
 String toJson() => value;
 
 }
-final class MagicVisibilityMnmMnmVpcFlowsSingleResponse {const MagicVisibilityMnmMnmVpcFlowsSingleResponse({this.result});
+@immutable final class MagicVisibilityMnmMnmVpcFlowsSingleResponse {const MagicVisibilityMnmMnmVpcFlowsSingleResponse({this.result});
 
 factory MagicVisibilityMnmMnmVpcFlowsSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmVpcFlowsSingleResponse(
   result: json['result'] != null ? MagicVisibilityMnmMnmVpcFlowsToken.fromJson(json['result'] as String) : null,

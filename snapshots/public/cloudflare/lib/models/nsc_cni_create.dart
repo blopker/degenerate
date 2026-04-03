@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'nsc_account_tag.dart';import 'nsc_bgp_control.dart';import 'nsc_magic_settings.dart';final class NscCniCreate {const NscCniCreate({required this.account, this.bgp, required this.interconnect, required this.magic, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_account_tag.dart';import 'nsc_bgp_control.dart';import 'nsc_magic_settings.dart';@immutable final class NscCniCreate {const NscCniCreate({required this.account, required this.interconnect, required this.magic, this.bgp, });
 
 factory NscCniCreate.fromJson(Map<String, dynamic> json) { return NscCniCreate(
   account: NscAccountTag.fromJson(json['account'] as String),

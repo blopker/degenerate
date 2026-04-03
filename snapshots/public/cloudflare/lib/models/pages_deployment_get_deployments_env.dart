@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// What type of deployments to fetch.
-final class PagesDeploymentGetDeploymentsEnv {const PagesDeploymentGetDeploymentsEnv._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// What type of deployments to fetch.
+@immutable final class PagesDeploymentGetDeploymentsEnv {const PagesDeploymentGetDeploymentsEnv._(this.value);
 
 factory PagesDeploymentGetDeploymentsEnv.fromJson(String json) { return switch (json) {
   'production' => production,

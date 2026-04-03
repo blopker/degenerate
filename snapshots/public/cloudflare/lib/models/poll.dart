@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates you've finished uploading to tell the D1 to start consuming it
-final class PollAction {const PollAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you've finished uploading to tell the D1 to start consuming it
+@immutable final class PollAction {const PollAction._(this.value);
 
 factory PollAction.fromJson(String json) { return switch (json) {
   'poll' => poll,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PollAction($value)'; } 
  }
-final class Poll {const Poll({required this.action, required this.currentBookmark, });
+@immutable final class Poll {const Poll({required this.action, required this.currentBookmark, });
 
 factory Poll.fromJson(Map<String, dynamic> json) { return Poll(
   action: PollAction.fromJson(json['action'] as String),

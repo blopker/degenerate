@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages53MessagesContentVariant2 {const Messages53MessagesContentVariant2({this.text, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages53MessagesContentVariant2 {const Messages53MessagesContentVariant2({this.text, this.type, });
 
 factory Messages53MessagesContentVariant2.fromJson(Map<String, dynamic> json) { return Messages53MessagesContentVariant2(
   text: json['text'] as String?,

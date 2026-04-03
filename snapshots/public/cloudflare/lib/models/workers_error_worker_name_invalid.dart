@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker name is invalid.
-final class WorkersErrorWorkerNameInvalidCode {const WorkersErrorWorkerNameInvalidCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is invalid.
+@immutable final class WorkersErrorWorkerNameInvalidCode {const WorkersErrorWorkerNameInvalidCode._(this.value);
 
 factory WorkersErrorWorkerNameInvalidCode.fromJson(int json) { return switch (json) {
   10016 => $10016,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerNameInvalidCode($value)'; } 
  }
-final class WorkersErrorWorkerNameInvalid {const WorkersErrorWorkerNameInvalid({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerNameInvalid {const WorkersErrorWorkerNameInvalid({required this.code, required this.message, });
 
 factory WorkersErrorWorkerNameInvalid.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerNameInvalid(
   code: WorkersErrorWorkerNameInvalidCode.fromJson((json['code'] as num).toInt()),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides details about the zone affected by the action.
-final class AaaAuditLogs2Zone {const AaaAuditLogs2Zone({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details about the zone affected by the action.
+@immutable final class AaaAuditLogs2Zone {const AaaAuditLogs2Zone({this.id, this.name, });
 
 factory AaaAuditLogs2Zone.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Zone(
   id: json['id'] as String?,

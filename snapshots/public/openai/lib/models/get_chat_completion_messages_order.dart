@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetChatCompletionMessagesOrder {const GetChatCompletionMessagesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetChatCompletionMessagesOrder {const GetChatCompletionMessagesOrder._(this.value);
 
 factory GetChatCompletionMessagesOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_consumer_response.dart';import 'mq_producer.dart';import 'mq_queue_name.dart';import 'mq_queue_settings.dart';import 'mq_r2_producer.dart';import 'mq_worker_producer.dart';final class MqQueue {const MqQueue({this.consumers, this.consumersTotalCount, this.createdOn, this.modifiedOn, this.producers, this.producersTotalCount, this.queueId, this.queueName, this.settings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_consumer_response.dart';import 'mq_producer.dart';import 'mq_queue_name.dart';import 'mq_queue_settings.dart';import 'mq_r2_producer.dart';import 'mq_worker_producer.dart';@immutable final class MqQueue {const MqQueue({this.consumers, this.consumersTotalCount, this.createdOn, this.modifiedOn, this.producers, this.producersTotalCount, this.queueId, this.queueName, this.settings, });
 
 factory MqQueue.fromJson(Map<String, dynamic> json) { return MqQueue(
   consumers: (json['consumers'] as List<dynamic>?)?.map((e) => MqConsumerResponse.fromJson(e as Map<String, dynamic>)).toList(),

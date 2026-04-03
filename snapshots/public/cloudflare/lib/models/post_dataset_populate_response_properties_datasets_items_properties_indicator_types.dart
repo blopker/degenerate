@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_dataset_populate_response_properties_datasets_items_properties_indicator_types_properties.dart';final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypes {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypes({required this.properties, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_populate_response_properties_datasets_items_properties_indicator_types_properties.dart';@immutable final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypes {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypes({required this.properties, required this.type, });
 
 factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypes.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypes(
   properties: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesProperties.fromJson(json['properties'] as Map<String, dynamic>),

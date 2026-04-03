@@ -3,6 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'n3_incident.dart';
 
+@immutable
 final class ListModel {
   const ListModel({required this.items, required this.size, this.next});
 

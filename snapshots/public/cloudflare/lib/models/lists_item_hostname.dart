@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).
-final class ListsItemHostname {const ListsItemHostname({this.excludeExactHostname, required this.urlHostname, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).
+@immutable final class ListsItemHostname {const ListsItemHostname({required this.urlHostname, this.excludeExactHostname, });
 
 factory ListsItemHostname.fromJson(Map<String, dynamic> json) { return ListsItemHostname(
   excludeExactHostname: json['exclude_exact_hostname'] as bool?,

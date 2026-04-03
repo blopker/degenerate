@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DeleteEphemeralKeysKeyRequest {const DeleteEphemeralKeysKeyRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEphemeralKeysKeyRequest {const DeleteEphemeralKeysKeyRequest({this.expand});
 
 factory DeleteEphemeralKeysKeyRequest.fromJson(Map<String, dynamic> json) { return DeleteEphemeralKeysKeyRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

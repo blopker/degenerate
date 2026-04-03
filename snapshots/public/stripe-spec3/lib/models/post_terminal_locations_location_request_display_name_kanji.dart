@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2 {const PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2 {const PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2._(this.value);
 
 factory PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

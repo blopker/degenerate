@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_expression_filter.dart';final class DosExpressionFilterListResponse {const DosExpressionFilterListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_expression_filter.dart';@immutable final class DosExpressionFilterListResponse {const DosExpressionFilterListResponse({this.result});
 
 factory DosExpressionFilterListResponse.fromJson(Map<String, dynamic> json) { return DosExpressionFilterListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DosExpressionFilter.fromJson(e as Map<String, dynamic>)).toList(),

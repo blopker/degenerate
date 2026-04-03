@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';final class MconnEnvelope {const MconnEnvelope({this.errors, this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';@immutable final class MconnEnvelope {const MconnEnvelope({required this.success, this.errors, this.messages, });
 
 factory MconnEnvelope.fromJson(Map<String, dynamic> json) { return MconnEnvelope(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),

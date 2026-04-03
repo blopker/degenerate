@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection34_result_info.dart';import 'secondary_dns_messages2.dart';final class ResponseCollection34 {const ResponseCollection34({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection34_result_info.dart';import 'secondary_dns_messages2.dart';@immutable final class ResponseCollection34 {const ResponseCollection34({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection34.fromJson(Map<String, dynamic> json) { return ResponseCollection34(
   errors: (json['errors'] as List<dynamic>).map((e) => SecondaryDnsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

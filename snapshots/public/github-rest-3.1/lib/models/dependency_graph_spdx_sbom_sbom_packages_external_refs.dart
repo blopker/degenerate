@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependencyGraphSpdxSbomSbomPackagesExternalRefs {const DependencyGraphSpdxSbomSbomPackagesExternalRefs({required this.referenceCategory, required this.referenceLocator, required this.referenceType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphSpdxSbomSbomPackagesExternalRefs {const DependencyGraphSpdxSbomSbomPackagesExternalRefs({required this.referenceCategory, required this.referenceLocator, required this.referenceType, });
 
 factory DependencyGraphSpdxSbomSbomPackagesExternalRefs.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbomSbomPackagesExternalRefs(
   referenceCategory: json['referenceCategory'] as String,

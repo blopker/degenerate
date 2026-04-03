@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Durable Object binding.
-final class PagesDeploymentConfigValuesDurableObjectNamespacesValue {const PagesDeploymentConfigValuesDurableObjectNamespacesValue({required this.namespaceId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Durable Object binding.
+@immutable final class PagesDeploymentConfigValuesDurableObjectNamespacesValue {const PagesDeploymentConfigValuesDurableObjectNamespacesValue({required this.namespaceId});
 
 factory PagesDeploymentConfigValuesDurableObjectNamespacesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesDurableObjectNamespacesValue(
   namespaceId: json['namespace_id'] as String,

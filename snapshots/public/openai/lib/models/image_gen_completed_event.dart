@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_usage.dart';/// The type of the event. Always `image_generation.completed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage.dart';/// The type of the event. Always `image_generation.completed`.
 /// 
-final class ImageGenCompletedEventType {const ImageGenCompletedEventType._(this.value);
+@immutable final class ImageGenCompletedEventType {const ImageGenCompletedEventType._(this.value);
 
 factory ImageGenCompletedEventType.fromJson(String json) { return switch (json) {
   'image_generation.completed' => imageGenerationCompleted,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The size of the generated image.
 /// 
-final class ImageGenCompletedEventSize {const ImageGenCompletedEventSize._(this.value);
+@immutable final class ImageGenCompletedEventSize {const ImageGenCompletedEventSize._(this.value);
 
 factory ImageGenCompletedEventSize.fromJson(String json) { return switch (json) {
   '1024x1024' => $1024x1024,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The quality setting for the generated image.
 /// 
-final class ImageGenCompletedEventQuality {const ImageGenCompletedEventQuality._(this.value);
+@immutable final class ImageGenCompletedEventQuality {const ImageGenCompletedEventQuality._(this.value);
 
 factory ImageGenCompletedEventQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The background setting for the generated image.
 /// 
-final class ImageGenCompletedEventBackground {const ImageGenCompletedEventBackground._(this.value);
+@immutable final class ImageGenCompletedEventBackground {const ImageGenCompletedEventBackground._(this.value);
 
 factory ImageGenCompletedEventBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output format for the generated image.
 /// 
-final class ImageGenCompletedEventOutputFormat {const ImageGenCompletedEventOutputFormat._(this.value);
+@immutable final class ImageGenCompletedEventOutputFormat {const ImageGenCompletedEventOutputFormat._(this.value);
 
 factory ImageGenCompletedEventOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -147,7 +147,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when image generation has completed and the final image is available.
 /// 
-final class ImageGenCompletedEvent {const ImageGenCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
+@immutable final class ImageGenCompletedEvent {const ImageGenCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
 
 factory ImageGenCompletedEvent.fromJson(Map<String, dynamic> json) { return ImageGenCompletedEvent(
   type: ImageGenCompletedEventType.fromJson(json['type'] as String),

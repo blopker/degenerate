@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteTerminalReadersReaderRequest {const DeleteTerminalReadersReaderRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTerminalReadersReaderRequest {const DeleteTerminalReadersReaderRequest();
 
 factory DeleteTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) { return DeleteTerminalReadersReaderRequest(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector.dart';import 'preferred_scheduling_term.dart';/// Node affinity is a group of node affinity scheduling rules.
-final class NodeAffinity {const NodeAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
+@immutable final class NodeAffinity {const NodeAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
 
 factory NodeAffinity.fromJson(Map<String, dynamic> json) { return NodeAffinity(
   preferredDuringSchedulingIgnoredDuringExecution: (json['preferredDuringSchedulingIgnoredDuringExecution'] as List<dynamic>?)?.map((e) => PreferredSchedulingTerm.fromJson(e as Map<String, dynamic>)).toList(),

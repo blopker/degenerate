@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'worker_script_search_workers_response_result.dart';final class WorkerScriptSearchWorkersResponse {const WorkerScriptSearchWorkersResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'worker_script_search_workers_response_result.dart';@immutable final class WorkerScriptSearchWorkersResponse {const WorkerScriptSearchWorkersResponse({required this.result});
 
 factory WorkerScriptSearchWorkersResponse.fromJson(Map<String, dynamic> json) { return WorkerScriptSearchWorkersResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkerScriptSearchWorkersResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

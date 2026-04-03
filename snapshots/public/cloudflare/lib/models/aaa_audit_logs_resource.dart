@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AaaAuditLogsResource {const AaaAuditLogsResource({this.id, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaAuditLogsResource {const AaaAuditLogsResource({this.id, this.type, });
 
 factory AaaAuditLogsResource.fromJson(Map<String, dynamic> json) { return AaaAuditLogsResource(
   id: json['id'] as String?,

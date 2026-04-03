@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1._(this.value);
 
 factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1.fromJson(String json) { return switch (json) {
   'load' => load,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1($value)'; } 
  }
-final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2._(this.value);
+@immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2._(this.value);
 
 factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2.fromJson(String json) { return switch (json) {
   'domcontentloaded' => domcontentloaded,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2($value)'; } 
  }
-final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3._(this.value);
+@immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3._(this.value);
 
 factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3.fromJson(String json) { return switch (json) {
   'networkidle0' => networkidle0,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3($value)'; } 
  }
-final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4._(this.value);
+@immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4._(this.value);
 
 factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4.fromJson(String json) { return switch (json) {
   'networkidle2' => networkidle2,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4($value)'; } 
  }
-final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5._(this.value);
+@immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5._(this.value);
 
 factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5.fromJson(String json) { return switch (json) {
   'load' => load,

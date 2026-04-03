@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use this parameter to automatically create a Transfer when the payment succeeds. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final class PostPaymentIntentsIntentRequestTransferData {const PostPaymentIntentsIntentRequestTransferData({this.amount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use this parameter to automatically create a Transfer when the payment succeeds. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
+@immutable final class PostPaymentIntentsIntentRequestTransferData {const PostPaymentIntentsIntentRequestTransferData({this.amount});
 
 factory PostPaymentIntentsIntentRequestTransferData.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

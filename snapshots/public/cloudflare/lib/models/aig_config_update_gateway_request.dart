@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_request_dlp.dart';import 'aig_config_update_gateway_request_dlp_variant1.dart';import 'aig_config_update_gateway_request_dlp_variant2.dart';import 'aig_config_update_gateway_request_otel.dart';import 'aig_config_update_gateway_request_stripe.dart';final class AigConfigUpdateGatewayRequestLogManagementStrategy {const AigConfigUpdateGatewayRequestLogManagementStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_request_dlp.dart';import 'aig_config_update_gateway_request_dlp_variant1.dart';import 'aig_config_update_gateway_request_dlp_variant2.dart';import 'aig_config_update_gateway_request_otel.dart';import 'aig_config_update_gateway_request_stripe.dart';@immutable final class AigConfigUpdateGatewayRequestLogManagementStrategy {const AigConfigUpdateGatewayRequestLogManagementStrategy._(this.value);
 
 factory AigConfigUpdateGatewayRequestLogManagementStrategy.fromJson(String json) { return switch (json) {
   'STOP_INSERTING' => stopInserting,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestLogManagementStrategy($value)'; } 
  }
-final class AigConfigUpdateGatewayRequestRateLimitingTechnique {const AigConfigUpdateGatewayRequestRateLimitingTechnique._(this.value);
+@immutable final class AigConfigUpdateGatewayRequestRateLimitingTechnique {const AigConfigUpdateGatewayRequestRateLimitingTechnique._(this.value);
 
 factory AigConfigUpdateGatewayRequestRateLimitingTechnique.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AigConfigUpdateGatewayRequestRateLimitingTechnique($value)'; } 
  }
 /// Controls how Workers AI inference calls routed through this gateway are billed
-final class AigConfigUpdateGatewayRequestWorkersAiBillingMode {const AigConfigUpdateGatewayRequestWorkersAiBillingMode._(this.value);
+@immutable final class AigConfigUpdateGatewayRequestWorkersAiBillingMode {const AigConfigUpdateGatewayRequestWorkersAiBillingMode._(this.value);
 
 factory AigConfigUpdateGatewayRequestWorkersAiBillingMode.fromJson(String json) { return switch (json) {
   'postpaid' => postpaid,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestWorkersAiBillingMode($value)'; } 
  }
-final class AigConfigUpdateGatewayRequest {const AigConfigUpdateGatewayRequest({this.authentication, required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, this.dlp, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, this.otel, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.storeId, this.stripe, this.workersAiBillingMode = AigConfigUpdateGatewayRequestWorkersAiBillingMode.postpaid, this.zdr, });
+@immutable final class AigConfigUpdateGatewayRequest {const AigConfigUpdateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.dlp, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, this.otel, this.storeId, this.stripe, this.workersAiBillingMode = AigConfigUpdateGatewayRequestWorkersAiBillingMode.postpaid, this.zdr, });
 
 factory AigConfigUpdateGatewayRequest.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequest(
   authentication: json['authentication'] as bool?,

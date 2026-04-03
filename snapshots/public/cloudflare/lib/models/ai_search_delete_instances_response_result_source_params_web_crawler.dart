@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_delete_instances_response_result_source_params_web_crawler_crawl_options.dart';import 'ai_search_delete_instances_response_result_source_params_web_crawler_parse_options.dart';import 'ai_search_delete_instances_response_result_source_params_web_crawler_store_options.dart';final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response_result_source_params_web_crawler_crawl_options.dart';import 'ai_search_delete_instances_response_result_source_params_web_crawler_parse_options.dart';import 'ai_search_delete_instances_response_result_source_params_web_crawler_store_options.dart';@immutable final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType._(this.value);
 
 factory AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(String json) { return switch (json) {
   'sitemap' => sitemap,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType($value)'; } 
  }
-final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
+@immutable final class AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler {const AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
 
 factory AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchDeleteInstancesResponseResultSourceParamsWebCrawler(
   crawlOptions: json['crawl_options'] != null ? AiSearchDeleteInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,

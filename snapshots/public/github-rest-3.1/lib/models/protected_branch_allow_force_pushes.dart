@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProtectedBranchAllowForcePushes {const ProtectedBranchAllowForcePushes({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchAllowForcePushes {const ProtectedBranchAllowForcePushes({required this.enabled});
 
 factory ProtectedBranchAllowForcePushes.fromJson(Map<String, dynamic> json) { return ProtectedBranchAllowForcePushes(
   enabled: json['enabled'] as bool,

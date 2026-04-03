@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_response400_errors.dart';final class CreatePortalsResponse400 {const CreatePortalsResponse400({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_response400_errors.dart';@immutable final class CreatePortalsResponse400 {const CreatePortalsResponse400({required this.errors, required this.success, });
 
 factory CreatePortalsResponse400.fromJson(Map<String, dynamic> json) { return CreatePortalsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => CreatePortalsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

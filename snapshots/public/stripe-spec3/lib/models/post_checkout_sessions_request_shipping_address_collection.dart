@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries {const PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries {const PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries._(this.value);
 
 factory PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
   'AC' => ac,
@@ -733,7 +733,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries($value)'; } 
  }
 /// When set, provides configuration for Checkout to collect a shipping address from a customer.
-final class PostCheckoutSessionsRequestShippingAddressCollection {const PostCheckoutSessionsRequestShippingAddressCollection({required this.allowedCountries});
+@immutable final class PostCheckoutSessionsRequestShippingAddressCollection {const PostCheckoutSessionsRequestShippingAddressCollection({required this.allowedCountries});
 
 factory PostCheckoutSessionsRequestShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingAddressCollection(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),

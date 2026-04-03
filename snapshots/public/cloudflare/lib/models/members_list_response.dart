@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'member.dart';import 'message3.dart';import 'page_token_result_info.dart';final class MembersListResponse {const MembersListResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'member.dart';import 'message3.dart';import 'page_token_result_info.dart';@immutable final class MembersListResponse {const MembersListResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
 
 factory MembersListResponse.fromJson(Map<String, dynamic> json) { return MembersListResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),

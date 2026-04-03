@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InternalCard {const InternalCard({this.brand, this.country, this.expMonth, this.expYear, this.last4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InternalCard {const InternalCard({this.brand, this.country, this.expMonth, this.expYear, this.last4, });
 
 factory InternalCard.fromJson(Map<String, dynamic> json) { return InternalCard(
   brand: json['brand'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A description of the detector used.
-final class SnapshotDetector {const SnapshotDetector({required this.name, required this.version, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of the detector used.
+@immutable final class SnapshotDetector {const SnapshotDetector({required this.name, required this.version, required this.url, });
 
 factory SnapshotDetector.fromJson(Map<String, dynamic> json) { return SnapshotDetector(
   name: json['name'] as String,

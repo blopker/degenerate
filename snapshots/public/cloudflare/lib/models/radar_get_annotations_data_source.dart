@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by data source.
-final class RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by data source.
+@immutable final class RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource._(this.value);
 
 factory RadarGetAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,

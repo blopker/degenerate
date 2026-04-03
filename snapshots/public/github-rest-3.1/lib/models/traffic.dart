@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Traffic {const Traffic({required this.timestamp, required this.uniques, required this.count, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Traffic {const Traffic({required this.timestamp, required this.uniques, required this.count, });
 
 factory Traffic.fromJson(Map<String, dynamic> json) { return Traffic(
   timestamp: DateTime.parse(json['timestamp'] as String),

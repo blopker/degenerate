@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_annotation.dart';import 'url_annotation.dart';/// Annotation object describing a cited source.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_annotation.dart';import 'url_annotation.dart';/// Annotation object describing a cited source.
 sealed class ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseOutputTextAnnotations$Unknown; } 
  }
-final class ResponseOutputTextAnnotationsFile extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsFile(this.fileAnnotation);
+@immutable final class ResponseOutputTextAnnotationsFile extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsFile(this.fileAnnotation);
 
 factory ResponseOutputTextAnnotationsFile.fromJson(Map<String, dynamic> json) { return ResponseOutputTextAnnotationsFile(FileAnnotation.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final FileAnnotation fileAnnotation;
 @override int get hashCode { return fileAnnotation.hashCode; } 
 @override String toString() { return 'ResponseOutputTextAnnotationsFile(fileAnnotation: $fileAnnotation)'; } 
  }
-final class ResponseOutputTextAnnotationsUrl extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsUrl(this.urlAnnotation);
+@immutable final class ResponseOutputTextAnnotationsUrl extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsUrl(this.urlAnnotation);
 
 factory ResponseOutputTextAnnotationsUrl.fromJson(Map<String, dynamic> json) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final UrlAnnotation urlAnnotation;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ResponseOutputTextAnnotations$Unknown extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations$Unknown(this.json);
+@immutable final class ResponseOutputTextAnnotations$Unknown extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

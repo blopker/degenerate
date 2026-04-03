@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamWatermarkProfileDeleteWatermarkProfilesResponse {const StreamWatermarkProfileDeleteWatermarkProfilesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamWatermarkProfileDeleteWatermarkProfilesResponse {const StreamWatermarkProfileDeleteWatermarkProfilesResponse({this.result});
 
 factory StreamWatermarkProfileDeleteWatermarkProfilesResponse.fromJson(Map<String, dynamic> json) { return StreamWatermarkProfileDeleteWatermarkProfilesResponse(
   result: json['result'] as String?,

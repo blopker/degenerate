@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShieldMessages2Source {const ShieldMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldMessages2Source {const ShieldMessages2Source({this.pointer});
 
 factory ShieldMessages2Source.fromJson(Map<String, dynamic> json) { return ShieldMessages2Source(
   pointer: json['pointer'] as String?,

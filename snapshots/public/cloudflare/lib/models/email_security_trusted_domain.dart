@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityTrustedDomain {const EmailSecurityTrustedDomain({this.comments, required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.createdAt, required this.id, required this.lastModified, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityTrustedDomain {const EmailSecurityTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.createdAt, required this.id, required this.lastModified, this.comments, });
 
 factory EmailSecurityTrustedDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityTrustedDomain(
   comments: json['comments'] as String?,

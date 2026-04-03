@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIdentityVerificationSessionsSessionRequest {const GetIdentityVerificationSessionsSessionRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIdentityVerificationSessionsSessionRequest {const GetIdentityVerificationSessionsSessionRequest();
 
 factory GetIdentityVerificationSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationSessionsSessionRequest(
 

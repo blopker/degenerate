@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(this.value);
 
 factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.fromJson(String json) { return switch (json) {
   'FREE' => free,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel($value)'; } 
  }
-final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
+@immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
 
 factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),

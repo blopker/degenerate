@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'datacenters2.dart';import 'query_response.dart';final class ColoResponse {const ColoResponse({this.query, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'datacenters2.dart';import 'query_response.dart';@immutable final class ColoResponse {const ColoResponse({this.query, this.result, });
 
 factory ColoResponse.fromJson(Map<String, dynamic> json) { return ColoResponse(
   query: json['query'] != null ? QueryResponse.fromJson(json['query'] as Map<String, dynamic>) : null,

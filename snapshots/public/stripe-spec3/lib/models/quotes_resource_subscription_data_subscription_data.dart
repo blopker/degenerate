@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'quotes_resource_subscription_data_billing_mode.dart';/// 
-final class QuotesResourceSubscriptionDataSubscriptionData {const QuotesResourceSubscriptionDataSubscriptionData({required this.billingMode, this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_subscription_data_billing_mode.dart';/// 
+@immutable final class QuotesResourceSubscriptionDataSubscriptionData {const QuotesResourceSubscriptionDataSubscriptionData({required this.billingMode, this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
 
 factory QuotesResourceSubscriptionDataSubscriptionData.fromJson(Map<String, dynamic> json) { return QuotesResourceSubscriptionDataSubscriptionData(
   billingMode: QuotesResourceSubscriptionDataBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_request_multipart.dart';final class WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest {const WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest({required this.multipart});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_request_multipart.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest {const WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest({required this.multipart});
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest(
   multipart: WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart.fromJson(json['multipart'] as Map<String, dynamic>),

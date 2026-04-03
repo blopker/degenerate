@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersWorkerReferencesDomains {const WorkersWorkerReferencesDomains({required this.certificateId, required this.hostname, required this.id, required this.zoneId, required this.zoneName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersWorkerReferencesDomains {const WorkersWorkerReferencesDomains({required this.certificateId, required this.hostname, required this.id, required this.zoneId, required this.zoneName, });
 
 factory WorkersWorkerReferencesDomains.fromJson(Map<String, dynamic> json) { return WorkersWorkerReferencesDomains(
   certificateId: json['certificate_id'] as String,

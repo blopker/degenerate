@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a MB WAY PaymentMethod, this hash contains details about the MB WAY payment method.
-final class PostPaymentMethodsRequestMbWay {const PostPaymentMethodsRequestMbWay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a MB WAY PaymentMethod, this hash contains details about the MB WAY payment method.
+@immutable final class PostPaymentMethodsRequestMbWay {const PostPaymentMethodsRequestMbWay();
 
 factory PostPaymentMethodsRequestMbWay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestMbWay(
 

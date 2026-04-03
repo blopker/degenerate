@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_assigned_pull_request_auto_merge_enabled_by.dart';/// The merge method to use.
-final class WebhookPullRequestAssignedPullRequestAutoMergeMergeMethod {const WebhookPullRequestAssignedPullRequestAutoMergeMergeMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_assigned_pull_request_auto_merge_enabled_by.dart';/// The merge method to use.
+@immutable final class WebhookPullRequestAssignedPullRequestAutoMergeMergeMethod {const WebhookPullRequestAssignedPullRequestAutoMergeMergeMethod._(this.value);
 
 factory WebhookPullRequestAssignedPullRequestAutoMergeMergeMethod.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestAssignedPullRequestAutoMergeMergeMethod($value)'; } 
  }
 /// The status of auto merging a pull request.
-final class WebhookPullRequestAssignedPullRequestAutoMerge {const WebhookPullRequestAssignedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
+@immutable final class WebhookPullRequestAssignedPullRequestAutoMerge {const WebhookPullRequestAssignedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
 
 factory WebhookPullRequestAssignedPullRequestAutoMerge.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssignedPullRequestAutoMerge(
   commitMessage: json['commit_message'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_send_event_workflow_instance_response_errors.dart';import 'wor_send_event_workflow_instance_response_messages.dart';import 'wor_send_event_workflow_instance_response_result_info.dart';final class WorSendEventWorkflowInstanceResponse {const WorSendEventWorkflowInstanceResponse({required this.errors, required this.messages, this.result, this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_send_event_workflow_instance_response_errors.dart';import 'wor_send_event_workflow_instance_response_messages.dart';import 'wor_send_event_workflow_instance_response_result_info.dart';@immutable final class WorSendEventWorkflowInstanceResponse {const WorSendEventWorkflowInstanceResponse({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 
 factory WorSendEventWorkflowInstanceResponse.fromJson(Map<String, dynamic> json) { return WorSendEventWorkflowInstanceResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorSendEventWorkflowInstanceResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),

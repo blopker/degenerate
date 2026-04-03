@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_bank_account2.dart';import 'customer_payment_source_card3.dart';import 'post_customers_customer_bank_accounts_request_bank_account.dart';import 'post_customers_customer_bank_accounts_request_card.dart';final class PostCustomersCustomerBankAccountsRequest {const PostCustomersCustomerBankAccountsRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_bank_account2.dart';import 'customer_payment_source_card3.dart';import 'post_customers_customer_bank_accounts_request_bank_account.dart';import 'post_customers_customer_bank_accounts_request_card.dart';@immutable final class PostCustomersCustomerBankAccountsRequest {const PostCustomersCustomerBankAccountsRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
 
 factory PostCustomersCustomerBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsRequest(
   alipayAccount: json['alipay_account'] as String?,

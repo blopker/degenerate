@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_mnm_mnm_rule_advertisable_response.dart';final class MagicVisibilityMnmMnmRuleAdvertisementSingleResponse {const MagicVisibilityMnmMnmRuleAdvertisementSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_rule_advertisable_response.dart';@immutable final class MagicVisibilityMnmMnmRuleAdvertisementSingleResponse {const MagicVisibilityMnmMnmRuleAdvertisementSingleResponse({this.result});
 
 factory MagicVisibilityMnmMnmRuleAdvertisementSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRuleAdvertisementSingleResponse(
   result: json['result'] != null ? MagicVisibilityMnmMnmRuleAdvertisableResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

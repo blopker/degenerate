@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TreasuryFinancialAccountsResourceClosedStatusDetailsReasons {const TreasuryFinancialAccountsResourceClosedStatusDetailsReasons._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TreasuryFinancialAccountsResourceClosedStatusDetailsReasons {const TreasuryFinancialAccountsResourceClosedStatusDetailsReasons._(this.value);
 
 factory TreasuryFinancialAccountsResourceClosedStatusDetailsReasons.fromJson(String json) { return switch (json) {
   'account_rejected' => accountRejected,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceClosedStatusDetailsReasons($value)'; } 
  }
 /// 
-final class TreasuryFinancialAccountsResourceClosedStatusDetails {const TreasuryFinancialAccountsResourceClosedStatusDetails({required this.reasons});
+@immutable final class TreasuryFinancialAccountsResourceClosedStatusDetails {const TreasuryFinancialAccountsResourceClosedStatusDetails({required this.reasons});
 
 factory TreasuryFinancialAccountsResourceClosedStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceClosedStatusDetails(
   reasons: (json['reasons'] as List<dynamic>).map((e) => TreasuryFinancialAccountsResourceClosedStatusDetailsReasons.fromJson(e as String)).toList(),

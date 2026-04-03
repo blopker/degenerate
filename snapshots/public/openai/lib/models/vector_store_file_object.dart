@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_chunking_strategy_response_param.dart';import 'static_chunking_strategy_response_param.dart';import 'vector_store_file_object_chunking_strategy.dart';import 'vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
-final class VectorStoreFileObjectObject {const VectorStoreFileObjectObject._(this.value);
+@immutable final class VectorStoreFileObjectObject {const VectorStoreFileObjectObject._(this.value);
 
 factory VectorStoreFileObjectObject.fromJson(String json) { return switch (json) {
   'vector_store.file' => vectorStoreFile,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileObjectObject($value)'; } 
  }
 /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
-final class VectorStoreFileObjectStatus {const VectorStoreFileObjectStatus._(this.value);
+@immutable final class VectorStoreFileObjectStatus {const VectorStoreFileObjectStatus._(this.value);
 
 factory VectorStoreFileObjectStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileObjectStatus($value)'; } 
  }
 /// A list of files attached to a vector store.
-final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes, });
+@immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes, });
 
 factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return VectorStoreFileObject(
   id: json['id'] as String,

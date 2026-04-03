@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Fields that specify how to calculate a meter event's value.
-final class PostBillingMetersRequestValueSettings {const PostBillingMetersRequestValueSettings({required this.eventPayloadKey});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Fields that specify how to calculate a meter event's value.
+@immutable final class PostBillingMetersRequestValueSettings {const PostBillingMetersRequestValueSettings({required this.eventPayloadKey});
 
 factory PostBillingMetersRequestValueSettings.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequestValueSettings(
   eventPayloadKey: json['event_payload_key'] as String,

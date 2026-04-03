@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleDeletionType {const RepositoryRuleDeletionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleDeletionType {const RepositoryRuleDeletionType._(this.value);
 
 factory RepositoryRuleDeletionType.fromJson(String json) { return switch (json) {
   'deletion' => deletion,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleDeletionType($value)'; } 
  }
 /// Only allow users with bypass permissions to delete matching refs.
-final class RepositoryRuleDeletion {const RepositoryRuleDeletion({required this.type});
+@immutable final class RepositoryRuleDeletion {const RepositoryRuleDeletion({required this.type});
 
 factory RepositoryRuleDeletion.fromJson(Map<String, dynamic> json) { return RepositoryRuleDeletion(
   type: RepositoryRuleDeletionType.fromJson(json['type'] as String),

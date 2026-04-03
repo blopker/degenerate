@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'proto.dart';
 import 'string_model.dart';
 import 'true.dart';
@@ -27,6 +28,7 @@ sealed class Self {
   }
 }
 
+@immutable
 final class SelfType extends Self {
   const SelfType(this.$true);
 
@@ -62,6 +64,7 @@ final class SelfType extends Self {
   }
 }
 
+@immutable
 final class SelfProto extends Self {
   const SelfProto(this.proto);
 
@@ -97,6 +100,7 @@ final class SelfProto extends Self {
   }
 }
 
+@immutable
 final class SelfString extends Self {
   const SelfString(this.stringModel);
 
@@ -135,6 +139,7 @@ final class SelfString extends Self {
 
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
+@immutable
 final class Self$Unknown extends Self {
   const Self$Unknown(this.json);
 

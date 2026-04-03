@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RefundDestinationDetailsCrypto {const RefundDestinationDetailsCrypto({this.reference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RefundDestinationDetailsCrypto {const RefundDestinationDetailsCrypto({this.reference});
 
 factory RefundDestinationDetailsCrypto.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsCrypto(
   reference: json['reference'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_create_event_relationship_response400_errors.dart';final class PostCreateEventRelationshipResponse400 {const PostCreateEventRelationshipResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_create_event_relationship_response400_errors.dart';@immutable final class PostCreateEventRelationshipResponse400 {const PostCreateEventRelationshipResponse400({required this.errors, required this.result, required this.success, });
 
 factory PostCreateEventRelationshipResponse400.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostCreateEventRelationshipResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

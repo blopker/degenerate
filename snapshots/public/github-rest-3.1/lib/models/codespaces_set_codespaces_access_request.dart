@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
-final class CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility._(this.value);
+@immutable final class CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility._(this.value);
 
 factory CodespacesSetCodespacesAccessRequestVisibility.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodespacesSetCodespacesAccessRequestVisibility($value)'; } 
  }
-final class CodespacesSetCodespacesAccessRequest {const CodespacesSetCodespacesAccessRequest({required this.visibility, this.selectedUsernames, });
+@immutable final class CodespacesSetCodespacesAccessRequest {const CodespacesSetCodespacesAccessRequest({required this.visibility, this.selectedUsernames, });
 
 factory CodespacesSetCodespacesAccessRequest.fromJson(Map<String, dynamic> json) { return CodespacesSetCodespacesAccessRequest(
   visibility: CodespacesSetCodespacesAccessRequestVisibility.fromJson(json['visibility'] as String),

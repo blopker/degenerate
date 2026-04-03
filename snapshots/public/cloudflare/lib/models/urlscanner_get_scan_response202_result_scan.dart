@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response202_result_scan_task.dart';final class UrlscannerGetScanResponse202ResultScan {const UrlscannerGetScanResponse202ResultScan({required this.task});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response202_result_scan_task.dart';@immutable final class UrlscannerGetScanResponse202ResultScan {const UrlscannerGetScanResponse202ResultScan({required this.task});
 
 factory UrlscannerGetScanResponse202ResultScan.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse202ResultScan(
   task: UrlscannerGetScanResponse202ResultScanTask.fromJson(json['task'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_service_config.dart';final class ConnectivityServicesPostResponse {const ConnectivityServicesPostResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_service_config.dart';@immutable final class ConnectivityServicesPostResponse {const ConnectivityServicesPostResponse({this.result});
 
 factory ConnectivityServicesPostResponse.fromJson(Map<String, dynamic> json) { return ConnectivityServicesPostResponse(
   result: json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null,

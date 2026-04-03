@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_zip_display_preference.dart';/// Zip gives your customers a way to split purchases over a series of payments. Check this [page](https://docs.stripe.com/payments/zip) for more details like country availability.
-final class PostPaymentMethodConfigurationsRequestZip {const PostPaymentMethodConfigurationsRequestZip({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_zip_display_preference.dart';/// Zip gives your customers a way to split purchases over a series of payments. Check this [page](https://docs.stripe.com/payments/zip) for more details like country availability.
+@immutable final class PostPaymentMethodConfigurationsRequestZip {const PostPaymentMethodConfigurationsRequestZip({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestZip.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestZip(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestZipDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

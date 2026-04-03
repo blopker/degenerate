@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_address_maps.dart';final class AddressingComponentsSchemasSingleResponse {const AddressingComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_address_maps.dart';@immutable final class AddressingComponentsSchemasSingleResponse {const AddressingComponentsSchemasSingleResponse({this.result});
 
 factory AddressingComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AddressingComponentsSchemasSingleResponse(
   result: json['result'] != null ? AddressingAddressMaps.fromJson(json['result'] as Map<String, dynamic>) : null,

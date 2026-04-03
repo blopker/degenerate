@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AccessMfaConfigAllowedAuthenticators {const AccessMfaConfigAllowedAuthenticators._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessMfaConfigAllowedAuthenticators {const AccessMfaConfigAllowedAuthenticators._(this.value);
 
 factory AccessMfaConfigAllowedAuthenticators.fromJson(String json) { return switch (json) {
   'totp' => totp,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessMfaConfigAllowedAuthenticators($value)'; } 
  }
 /// Configures multi-factor authentication (MFA) settings.
-final class AccessMfaConfig {const AccessMfaConfig({this.allowedAuthenticators, this.mfaDisabled, this.sessionDuration, });
+@immutable final class AccessMfaConfig {const AccessMfaConfig({this.allowedAuthenticators, this.mfaDisabled, this.sessionDuration, });
 
 factory AccessMfaConfig.fromJson(Map<String, dynamic> json) { return AccessMfaConfig(
   allowedAuthenticators: (json['allowed_authenticators'] as List<dynamic>?)?.map((e) => AccessMfaConfigAllowedAuthenticators.fromJson(e as String)).toList(),

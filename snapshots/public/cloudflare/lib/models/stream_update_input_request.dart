@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_live_input_default_creator.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';final class StreamUpdateInputRequest {const StreamUpdateInputRequest({this.defaultCreator, this.deleteRecordingAfterDays, this.enabled, this.meta, this.recording, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_default_creator.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';@immutable final class StreamUpdateInputRequest {const StreamUpdateInputRequest({this.defaultCreator, this.deleteRecordingAfterDays, this.enabled, this.meta, this.recording, });
 
 factory StreamUpdateInputRequest.fromJson(Map<String, dynamic> json) { return StreamUpdateInputRequest(
   defaultCreator: json['defaultCreator'] != null ? StreamLiveInputDefaultCreator.fromJson(json['defaultCreator'] as String) : null,

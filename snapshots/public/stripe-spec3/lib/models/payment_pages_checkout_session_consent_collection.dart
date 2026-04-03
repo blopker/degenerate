@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications. The Checkout
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications. The Checkout
 /// Session will determine whether to display an option to opt into promotional communication
 /// from the merchant depending on the customer's locale. Only available to US merchants.
-final class PaymentPagesCheckoutSessionConsentCollectionPromotions {const PaymentPagesCheckoutSessionConsentCollectionPromotions._(this.value);
+@immutable final class PaymentPagesCheckoutSessionConsentCollectionPromotions {const PaymentPagesCheckoutSessionConsentCollectionPromotions._(this.value);
 
 factory PaymentPagesCheckoutSessionConsentCollectionPromotions.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionConsentCollectionPromotions($value)'; } 
  }
 /// If set to `required`, it requires customers to accept the terms of service before being able to pay.
-final class PaymentPagesCheckoutSessionConsentCollectionTermsOfService {const PaymentPagesCheckoutSessionConsentCollectionTermsOfService._(this.value);
+@immutable final class PaymentPagesCheckoutSessionConsentCollectionTermsOfService {const PaymentPagesCheckoutSessionConsentCollectionTermsOfService._(this.value);
 
 factory PaymentPagesCheckoutSessionConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionConsentCollectionTermsOfService($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionConsentCollection {const PaymentPagesCheckoutSessionConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
+@immutable final class PaymentPagesCheckoutSessionConsentCollection {const PaymentPagesCheckoutSessionConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PaymentPagesCheckoutSessionConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsentCollection(
   paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,

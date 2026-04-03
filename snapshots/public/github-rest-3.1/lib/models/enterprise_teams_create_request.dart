@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Retired: this field is no longer supported.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Retired: this field is no longer supported.
 /// Whether the enterprise team should be reflected in each organization.
 /// This value cannot be set.
 /// 
-final class EnterpriseTeamsCreateRequestSyncToOrganizations {const EnterpriseTeamsCreateRequestSyncToOrganizations._(this.value);
+@immutable final class EnterpriseTeamsCreateRequestSyncToOrganizations {const EnterpriseTeamsCreateRequestSyncToOrganizations._(this.value);
 
 factory EnterpriseTeamsCreateRequestSyncToOrganizations.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `selected`: The team is assigned to specific organizations. You can then use the [add organization assignments API](https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#add-organization-assignments) endpoint.
 /// `all`: The team is assigned to all current and future organizations in the enterprise.
 /// 
-final class EnterpriseTeamsCreateRequestOrganizationSelectionType {const EnterpriseTeamsCreateRequestOrganizationSelectionType._(this.value);
+@immutable final class EnterpriseTeamsCreateRequestOrganizationSelectionType {const EnterpriseTeamsCreateRequestOrganizationSelectionType._(this.value);
 
 factory EnterpriseTeamsCreateRequestOrganizationSelectionType.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EnterpriseTeamsCreateRequestOrganizationSelectionType($value)'; } 
  }
-final class EnterpriseTeamsCreateRequest {const EnterpriseTeamsCreateRequest({required this.name, this.description, this.syncToOrganizations = EnterpriseTeamsCreateRequestSyncToOrganizations.disabled, this.organizationSelectionType = EnterpriseTeamsCreateRequestOrganizationSelectionType.disabled, this.groupId, });
+@immutable final class EnterpriseTeamsCreateRequest {const EnterpriseTeamsCreateRequest({required this.name, this.description, this.syncToOrganizations = EnterpriseTeamsCreateRequestSyncToOrganizations.disabled, this.organizationSelectionType = EnterpriseTeamsCreateRequestOrganizationSelectionType.disabled, this.groupId, });
 
 factory EnterpriseTeamsCreateRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamsCreateRequest(
   name: json['name'] as String,

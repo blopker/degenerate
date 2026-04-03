@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_removed_from_repository_repository.dart';import 'webhooks_team1.dart';final class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_removed_from_repository_repository.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction._(this.value);
 
 factory WebhookTeamRemovedFromRepositoryAction.fromJson(String json) { return switch (json) {
   'removed_from_repository' => removedFromRepository,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookTeamRemovedFromRepositoryAction($value)'; } 
  }
-final class WebhookTeamRemovedFromRepository {const WebhookTeamRemovedFromRepository({required this.action, this.enterprise, this.installation, required this.organization, this.repository, required this.sender, required this.team, });
+@immutable final class WebhookTeamRemovedFromRepository {const WebhookTeamRemovedFromRepository({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
 factory WebhookTeamRemovedFromRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamRemovedFromRepository(
   action: WebhookTeamRemovedFromRepositoryAction.fromJson(json['action'] as String),

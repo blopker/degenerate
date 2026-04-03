@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_fetch_evaluations_response_result.dart';final class AigConfigFetchEvaluationsResponse {const AigConfigFetchEvaluationsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_evaluations_response_result.dart';@immutable final class AigConfigFetchEvaluationsResponse {const AigConfigFetchEvaluationsResponse({required this.result, required this.success, });
 
 factory AigConfigFetchEvaluationsResponse.fromJson(Map<String, dynamic> json) { return AigConfigFetchEvaluationsResponse(
   result: AigConfigFetchEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

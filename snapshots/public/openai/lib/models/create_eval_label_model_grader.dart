@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_item.dart';import 'eval_item.dart';import 'simple_input_message.dart';/// The object type, which is always `label_model`.
-final class CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType._(this.value);
+@immutable final class CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType._(this.value);
 
 factory CreateEvalLabelModelGraderType.fromJson(String json) { return switch (json) {
   'label_model' => labelModel,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A LabelModelGrader object which uses a model to assign labels to each item
 /// in the evaluation.
 /// 
-final class CreateEvalLabelModelGrader {const CreateEvalLabelModelGrader({required this.type, required this.name, required this.model, required this.input, required this.labels, required this.passingLabels, });
+@immutable final class CreateEvalLabelModelGrader {const CreateEvalLabelModelGrader({required this.type, required this.name, required this.model, required this.input, required this.labels, required this.passingLabels, });
 
 factory CreateEvalLabelModelGrader.fromJson(Map<String, dynamic> json) { return CreateEvalLabelModelGrader(
   type: CreateEvalLabelModelGraderType.fromJson(json['type'] as String),

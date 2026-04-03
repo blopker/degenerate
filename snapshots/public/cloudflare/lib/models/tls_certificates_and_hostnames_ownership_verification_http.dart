@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_ownership_verification_http_variant1.dart';/// A value that is one of: `TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ownership_verification_http_variant1.dart';/// A value that is one of: `TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1`.
 sealed class TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp();
 
 factory TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(Map<String, dynamic> json) {   if (TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.canParse(json)) {
@@ -12,7 +12,7 @@ factory TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(Map<String
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(this._value);
+@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(this._value);
 
 final TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 _value;
 
@@ -23,7 +23,7 @@ final TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 _value;
 @override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.tlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown(this._value);
+@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown(this._value);
 
 final dynamic _value;
 

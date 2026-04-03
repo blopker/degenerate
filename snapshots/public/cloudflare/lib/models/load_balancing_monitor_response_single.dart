@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_monitor.dart';final class LoadBalancingMonitorResponseSingle {const LoadBalancingMonitorResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_monitor.dart';@immutable final class LoadBalancingMonitorResponseSingle {const LoadBalancingMonitorResponseSingle({this.result});
 
 factory LoadBalancingMonitorResponseSingle.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitorResponseSingle(
   result: json['result'] != null ? LoadBalancingMonitor.fromJson(json['result'] as Map<String, dynamic>) : null,

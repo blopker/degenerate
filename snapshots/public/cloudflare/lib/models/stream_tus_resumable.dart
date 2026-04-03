@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the TUS protocol version. This value must be included in every upload request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the TUS protocol version. This value must be included in every upload request.
 /// Notes: The only supported version of TUS protocol is 1.0.0.
-final class StreamTusResumable {const StreamTusResumable._(this.value);
+@immutable final class StreamTusResumable {const StreamTusResumable._(this.value);
 
 factory StreamTusResumable.fromJson(String json) { return switch (json) {
   '1.0.0' => $100,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamSignedTokenResponseResult {const StreamSignedTokenResponseResult({this.token});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamSignedTokenResponseResult {const StreamSignedTokenResponseResult({this.token});
 
 factory StreamSignedTokenResponseResult.fromJson(Map<String, dynamic> json) { return StreamSignedTokenResponseResult(
   token: json['token'] as String?,

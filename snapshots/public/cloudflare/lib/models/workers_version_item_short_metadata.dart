@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The source of the version upload.
-final class WorkersVersionItemShortMetadataSource {const WorkersVersionItemShortMetadataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the version upload.
+@immutable final class WorkersVersionItemShortMetadataSource {const WorkersVersionItemShortMetadataSource._(this.value);
 
 factory WorkersVersionItemShortMetadataSource.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersVersionItemShortMetadataSource($value)'; } 
  }
-final class WorkersVersionItemShortMetadata {const WorkersVersionItemShortMetadata({this.authorEmail, this.authorId, this.createdOn, this.hasPreview, this.modifiedOn, this.source, });
+@immutable final class WorkersVersionItemShortMetadata {const WorkersVersionItemShortMetadata({this.authorEmail, this.authorId, this.createdOn, this.hasPreview, this.modifiedOn, this.source, });
 
 factory WorkersVersionItemShortMetadata.fromJson(Map<String, dynamic> json) { return WorkersVersionItemShortMetadata(
   authorEmail: json['author_email'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_create_index_response.dart';final class VectorizeDeprecatedGetVectorizeIndexResponse {const VectorizeDeprecatedGetVectorizeIndexResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_create_index_response.dart';@immutable final class VectorizeDeprecatedGetVectorizeIndexResponse {const VectorizeDeprecatedGetVectorizeIndexResponse({this.result});
 
 factory VectorizeDeprecatedGetVectorizeIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeDeprecatedGetVectorizeIndexResponse(
   result: json['result'] != null ? VectorizeCreateIndexResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

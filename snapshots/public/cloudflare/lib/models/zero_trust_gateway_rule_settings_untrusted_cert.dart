@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
-final class ZeroTrustGatewayRuleSettingsUntrustedCertAction {const ZeroTrustGatewayRuleSettingsUntrustedCertAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
+@immutable final class ZeroTrustGatewayRuleSettingsUntrustedCertAction {const ZeroTrustGatewayRuleSettingsUntrustedCertAction._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsUntrustedCertAction.fromJson(String json) { return switch (json) {
   'pass_through' => passThrough,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsUntrustedCertAction($value)'; } 
  }
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.
-final class ZeroTrustGatewayRuleSettingsUntrustedCert {const ZeroTrustGatewayRuleSettingsUntrustedCert({this.action});
+@immutable final class ZeroTrustGatewayRuleSettingsUntrustedCert {const ZeroTrustGatewayRuleSettingsUntrustedCert({this.action});
 
 factory ZeroTrustGatewayRuleSettingsUntrustedCert.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsUntrustedCert(
   action: json['action'] != null ? ZeroTrustGatewayRuleSettingsUntrustedCertAction.fromJson(json['action'] as String) : null,

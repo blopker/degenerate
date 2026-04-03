@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// State of operation in API Discovery
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of operation in API Discovery
 ///   * `review` - Operation is not saved into API Shield Endpoint Management
 ///   * `saved` - Operation is saved into API Shield Endpoint Management
 ///   * `ignored` - Operation is marked as ignored
 /// 
-final class DiscoveryState {const DiscoveryState._(this.value);
+@immutable final class DiscoveryState {const DiscoveryState._(this.value);
 
 factory DiscoveryState.fromJson(String json) { return switch (json) {
   'review' => review,

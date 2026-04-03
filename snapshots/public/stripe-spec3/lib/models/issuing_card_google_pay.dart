@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reason the card is ineligible for Google Pay
-final class IssuingCardGooglePayIneligibleReason {const IssuingCardGooglePayIneligibleReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason the card is ineligible for Google Pay
+@immutable final class IssuingCardGooglePayIneligibleReason {const IssuingCardGooglePayIneligibleReason._(this.value);
 
 factory IssuingCardGooglePayIneligibleReason.fromJson(String json) { return switch (json) {
   'missing_agreement' => missingAgreement,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardGooglePayIneligibleReason($value)'; } 
  }
 /// 
-final class IssuingCardGooglePay {const IssuingCardGooglePay({required this.eligible, this.ineligibleReason, });
+@immutable final class IssuingCardGooglePay {const IssuingCardGooglePay({required this.eligible, this.ineligibleReason, });
 
 factory IssuingCardGooglePay.fromJson(Map<String, dynamic> json) { return IssuingCardGooglePay(
   eligible: json['eligible'] as bool,

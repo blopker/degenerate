@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_skill_param.dart';/// Use a local computer environment.
-final class LocalEnvironmentParamType {const LocalEnvironmentParamType._(this.value);
+@immutable final class LocalEnvironmentParamType {const LocalEnvironmentParamType._(this.value);
 
 factory LocalEnvironmentParamType.fromJson(String json) { return switch (json) {
   'local' => local,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LocalEnvironmentParamType($value)'; } 
  }
-final class LocalEnvironmentParam {const LocalEnvironmentParam({this.type = LocalEnvironmentParamType.local, this.skills, });
+@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({this.type = LocalEnvironmentParamType.local, this.skills, });
 
 factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) { return LocalEnvironmentParam(
   type: LocalEnvironmentParamType.fromJson(json['type'] as String),

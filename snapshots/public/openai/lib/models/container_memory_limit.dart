@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContainerMemoryLimit {const ContainerMemoryLimit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContainerMemoryLimit {const ContainerMemoryLimit._(this.value);
 
 factory ContainerMemoryLimit.fromJson(String json) { return switch (json) {
   '1g' => $1g,

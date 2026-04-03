@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationCreateResponseErrors {const DestinationCreateResponseErrors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponseErrors {const DestinationCreateResponseErrors({required this.message});
 
 factory DestinationCreateResponseErrors.fromJson(Map<String, dynamic> json) { return DestinationCreateResponseErrors(
   message: json['message'] as String,

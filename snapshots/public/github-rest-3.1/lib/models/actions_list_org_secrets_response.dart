@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_actions_secret.dart';final class ActionsListOrgSecretsResponse {const ActionsListOrgSecretsResponse({required this.totalCount, required this.secrets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_actions_secret.dart';@immutable final class ActionsListOrgSecretsResponse {const ActionsListOrgSecretsResponse({required this.totalCount, required this.secrets, });
 
 factory ActionsListOrgSecretsResponse.fromJson(Map<String, dynamic> json) { return ActionsListOrgSecretsResponse(
   totalCount: (json['total_count'] as num).toInt(),

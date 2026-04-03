@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_methods_payment_method_request_card_networks.dart';/// If this is a `card` PaymentMethod, this hash contains the user's card details.
-final class PostPaymentMethodsPaymentMethodRequestCard {const PostPaymentMethodsPaymentMethodRequestCard({this.expMonth, this.expYear, this.networks, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_methods_payment_method_request_card_networks.dart';/// If this is a `card` PaymentMethod, this hash contains the user's card details.
+@immutable final class PostPaymentMethodsPaymentMethodRequestCard {const PostPaymentMethodsPaymentMethodRequestCard({this.expMonth, this.expYear, this.networks, });
 
 factory PostPaymentMethodsPaymentMethodRequestCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestCard(
   expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,

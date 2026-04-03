@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopBrowsersOs {const RadarGetHttpTopBrowsersOs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowsersOs {const RadarGetHttpTopBrowsersOs._(this.value);
 
 factory RadarGetHttpTopBrowsersOs.fromJson(String json) { return switch (json) {
   'WINDOWS' => windows,

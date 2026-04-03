@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls diagnostic tracing during the session.
-final class ChatkitWorkflowTracing {const ChatkitWorkflowTracing({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls diagnostic tracing during the session.
+@immutable final class ChatkitWorkflowTracing {const ChatkitWorkflowTracing({required this.enabled});
 
 factory ChatkitWorkflowTracing.fromJson(Map<String, dynamic> json) { return ChatkitWorkflowTracing(
   enabled: json['enabled'] as bool,

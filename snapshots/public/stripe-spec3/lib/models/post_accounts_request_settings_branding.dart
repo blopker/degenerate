@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestSettingsBranding {const PostAccountsRequestSettingsBranding({this.icon, this.logo, this.primaryColor, this.secondaryColor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestSettingsBranding {const PostAccountsRequestSettingsBranding({this.icon, this.logo, this.primaryColor, this.secondaryColor, });
 
 factory PostAccountsRequestSettingsBranding.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsBranding(
   icon: json['icon'] as String?,

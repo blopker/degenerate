@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.
 /// - `"pop"`: Use the Cloudflare PoP location.
 /// - `"resolver_ip"`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.
-final class LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode._(this.value);
+@immutable final class LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode._(this.value);
 
 factory LoadBalancingLocationStrategyMode.fromJson(String json) { return switch (json) {
   'pop' => pop,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `"never"`: Never prefer ECS.
 /// - `"proximity"`: Prefer ECS only when `steering_policy="proximity"`.
 /// - `"geo"`: Prefer ECS only when `steering_policy="geo"`.
-final class LoadBalancingLocationStrategyPreferEcs {const LoadBalancingLocationStrategyPreferEcs._(this.value);
+@immutable final class LoadBalancingLocationStrategyPreferEcs {const LoadBalancingLocationStrategyPreferEcs._(this.value);
 
 factory LoadBalancingLocationStrategyPreferEcs.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingLocationStrategyPreferEcs($value)'; } 
  }
 /// Controls location-based steering for non-proxied requests. See `steering_policy` to learn how steering is affected.
-final class LoadBalancingLocationStrategy {const LoadBalancingLocationStrategy({this.mode = LoadBalancingLocationStrategyMode.pop, this.preferEcs = LoadBalancingLocationStrategyPreferEcs.proximity, });
+@immutable final class LoadBalancingLocationStrategy {const LoadBalancingLocationStrategy({this.mode = LoadBalancingLocationStrategyMode.pop, this.preferEcs = LoadBalancingLocationStrategyPreferEcs.proximity, });
 
 factory LoadBalancingLocationStrategy.fromJson(Map<String, dynamic> json) { return LoadBalancingLocationStrategy(
   mode: json.containsKey('mode') ? LoadBalancingLocationStrategyMode.fromJson(json['mode'] as String) : LoadBalancingLocationStrategyMode.pop,

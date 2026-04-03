@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the Canadian pre-authorized debits payments capability of the account, or whether the account can directly process Canadian pre-authorized debits charges.
-final class AccountCapabilitiesAcssDebitPayments {const AccountCapabilitiesAcssDebitPayments._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Canadian pre-authorized debits payments capability of the account, or whether the account can directly process Canadian pre-authorized debits charges.
+@immutable final class AccountCapabilitiesAcssDebitPayments {const AccountCapabilitiesAcssDebitPayments._(this.value);
 
 factory AccountCapabilitiesAcssDebitPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesAcssDebitPayments($value)'; } 
  }
 /// The status of the Affirm capability of the account, or whether the account can directly process Affirm charges.
-final class AccountCapabilitiesAffirmPayments {const AccountCapabilitiesAffirmPayments._(this.value);
+@immutable final class AccountCapabilitiesAffirmPayments {const AccountCapabilitiesAffirmPayments._(this.value);
 
 factory AccountCapabilitiesAffirmPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesAffirmPayments($value)'; } 
  }
 /// The status of the Afterpay Clearpay capability of the account, or whether the account can directly process Afterpay Clearpay charges.
-final class AccountCapabilitiesAfterpayClearpayPayments {const AccountCapabilitiesAfterpayClearpayPayments._(this.value);
+@immutable final class AccountCapabilitiesAfterpayClearpayPayments {const AccountCapabilitiesAfterpayClearpayPayments._(this.value);
 
 factory AccountCapabilitiesAfterpayClearpayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesAfterpayClearpayPayments($value)'; } 
  }
 /// The status of the Alma capability of the account, or whether the account can directly process Alma payments.
-final class AccountCapabilitiesAlmaPayments {const AccountCapabilitiesAlmaPayments._(this.value);
+@immutable final class AccountCapabilitiesAlmaPayments {const AccountCapabilitiesAlmaPayments._(this.value);
 
 factory AccountCapabilitiesAlmaPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -113,7 +113,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesAlmaPayments($value)'; } 
  }
 /// The status of the AmazonPay capability of the account, or whether the account can directly process AmazonPay payments.
-final class AccountCapabilitiesAmazonPayPayments {const AccountCapabilitiesAmazonPayPayments._(this.value);
+@immutable final class AccountCapabilitiesAmazonPayPayments {const AccountCapabilitiesAmazonPayPayments._(this.value);
 
 factory AccountCapabilitiesAmazonPayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -141,7 +141,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesAmazonPayPayments($value)'; } 
  }
 /// The status of the BECS Direct Debit (AU) payments capability of the account, or whether the account can directly process BECS Direct Debit (AU) charges.
-final class AccountCapabilitiesAuBecsDebitPayments {const AccountCapabilitiesAuBecsDebitPayments._(this.value);
+@immutable final class AccountCapabilitiesAuBecsDebitPayments {const AccountCapabilitiesAuBecsDebitPayments._(this.value);
 
 factory AccountCapabilitiesAuBecsDebitPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -169,7 +169,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesAuBecsDebitPayments($value)'; } 
  }
 /// The status of the Bacs Direct Debits payments capability of the account, or whether the account can directly process Bacs Direct Debits charges.
-final class AccountCapabilitiesBacsDebitPayments {const AccountCapabilitiesBacsDebitPayments._(this.value);
+@immutable final class AccountCapabilitiesBacsDebitPayments {const AccountCapabilitiesBacsDebitPayments._(this.value);
 
 factory AccountCapabilitiesBacsDebitPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -197,7 +197,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesBacsDebitPayments($value)'; } 
  }
 /// The status of the Bancontact payments capability of the account, or whether the account can directly process Bancontact charges.
-final class AccountCapabilitiesBancontactPayments {const AccountCapabilitiesBancontactPayments._(this.value);
+@immutable final class AccountCapabilitiesBancontactPayments {const AccountCapabilitiesBancontactPayments._(this.value);
 
 factory AccountCapabilitiesBancontactPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -225,7 +225,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesBancontactPayments($value)'; } 
  }
 /// The status of the customer_balance payments capability of the account, or whether the account can directly process customer_balance charges.
-final class AccountCapabilitiesBankTransferPayments {const AccountCapabilitiesBankTransferPayments._(this.value);
+@immutable final class AccountCapabilitiesBankTransferPayments {const AccountCapabilitiesBankTransferPayments._(this.value);
 
 factory AccountCapabilitiesBankTransferPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -253,7 +253,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesBankTransferPayments($value)'; } 
  }
 /// The status of the Billie capability of the account, or whether the account can directly process Billie payments.
-final class AccountCapabilitiesBilliePayments {const AccountCapabilitiesBilliePayments._(this.value);
+@immutable final class AccountCapabilitiesBilliePayments {const AccountCapabilitiesBilliePayments._(this.value);
 
 factory AccountCapabilitiesBilliePayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -281,7 +281,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesBilliePayments($value)'; } 
  }
 /// The status of the blik payments capability of the account, or whether the account can directly process blik charges.
-final class AccountCapabilitiesBlikPayments {const AccountCapabilitiesBlikPayments._(this.value);
+@immutable final class AccountCapabilitiesBlikPayments {const AccountCapabilitiesBlikPayments._(this.value);
 
 factory AccountCapabilitiesBlikPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -309,7 +309,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesBlikPayments($value)'; } 
  }
 /// The status of the boleto payments capability of the account, or whether the account can directly process boleto charges.
-final class AccountCapabilitiesBoletoPayments {const AccountCapabilitiesBoletoPayments._(this.value);
+@immutable final class AccountCapabilitiesBoletoPayments {const AccountCapabilitiesBoletoPayments._(this.value);
 
 factory AccountCapabilitiesBoletoPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -337,7 +337,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesBoletoPayments($value)'; } 
  }
 /// The status of the card issuing capability of the account, or whether you can use Issuing to distribute funds on cards
-final class AccountCapabilitiesCardIssuing {const AccountCapabilitiesCardIssuing._(this.value);
+@immutable final class AccountCapabilitiesCardIssuing {const AccountCapabilitiesCardIssuing._(this.value);
 
 factory AccountCapabilitiesCardIssuing.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -365,7 +365,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesCardIssuing($value)'; } 
  }
 /// The status of the card payments capability of the account, or whether the account can directly process credit and debit card charges.
-final class AccountCapabilitiesCardPayments {const AccountCapabilitiesCardPayments._(this.value);
+@immutable final class AccountCapabilitiesCardPayments {const AccountCapabilitiesCardPayments._(this.value);
 
 factory AccountCapabilitiesCardPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -393,7 +393,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesCardPayments($value)'; } 
  }
 /// The status of the Cartes Bancaires payments capability of the account, or whether the account can directly process Cartes Bancaires card charges in EUR currency.
-final class AccountCapabilitiesCartesBancairesPayments {const AccountCapabilitiesCartesBancairesPayments._(this.value);
+@immutable final class AccountCapabilitiesCartesBancairesPayments {const AccountCapabilitiesCartesBancairesPayments._(this.value);
 
 factory AccountCapabilitiesCartesBancairesPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -421,7 +421,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesCartesBancairesPayments($value)'; } 
  }
 /// The status of the Cash App Pay capability of the account, or whether the account can directly process Cash App Pay payments.
-final class AccountCapabilitiesCashappPayments {const AccountCapabilitiesCashappPayments._(this.value);
+@immutable final class AccountCapabilitiesCashappPayments {const AccountCapabilitiesCashappPayments._(this.value);
 
 factory AccountCapabilitiesCashappPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -449,7 +449,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesCashappPayments($value)'; } 
  }
 /// The status of the Crypto capability of the account, or whether the account can directly process Crypto payments.
-final class AccountCapabilitiesCryptoPayments {const AccountCapabilitiesCryptoPayments._(this.value);
+@immutable final class AccountCapabilitiesCryptoPayments {const AccountCapabilitiesCryptoPayments._(this.value);
 
 factory AccountCapabilitiesCryptoPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -477,7 +477,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesCryptoPayments($value)'; } 
  }
 /// The status of the EPS payments capability of the account, or whether the account can directly process EPS charges.
-final class AccountCapabilitiesEpsPayments {const AccountCapabilitiesEpsPayments._(this.value);
+@immutable final class AccountCapabilitiesEpsPayments {const AccountCapabilitiesEpsPayments._(this.value);
 
 factory AccountCapabilitiesEpsPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -505,7 +505,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesEpsPayments($value)'; } 
  }
 /// The status of the FPX payments capability of the account, or whether the account can directly process FPX charges.
-final class AccountCapabilitiesFpxPayments {const AccountCapabilitiesFpxPayments._(this.value);
+@immutable final class AccountCapabilitiesFpxPayments {const AccountCapabilitiesFpxPayments._(this.value);
 
 factory AccountCapabilitiesFpxPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -533,7 +533,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesFpxPayments($value)'; } 
  }
 /// The status of the GB customer_balance payments (GBP currency) capability of the account, or whether the account can directly process GB customer_balance charges.
-final class AccountCapabilitiesGbBankTransferPayments {const AccountCapabilitiesGbBankTransferPayments._(this.value);
+@immutable final class AccountCapabilitiesGbBankTransferPayments {const AccountCapabilitiesGbBankTransferPayments._(this.value);
 
 factory AccountCapabilitiesGbBankTransferPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -561,7 +561,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesGbBankTransferPayments($value)'; } 
  }
 /// The status of the giropay payments capability of the account, or whether the account can directly process giropay charges.
-final class AccountCapabilitiesGiropayPayments {const AccountCapabilitiesGiropayPayments._(this.value);
+@immutable final class AccountCapabilitiesGiropayPayments {const AccountCapabilitiesGiropayPayments._(this.value);
 
 factory AccountCapabilitiesGiropayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -589,7 +589,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesGiropayPayments($value)'; } 
  }
 /// The status of the GrabPay payments capability of the account, or whether the account can directly process GrabPay charges.
-final class AccountCapabilitiesGrabpayPayments {const AccountCapabilitiesGrabpayPayments._(this.value);
+@immutable final class AccountCapabilitiesGrabpayPayments {const AccountCapabilitiesGrabpayPayments._(this.value);
 
 factory AccountCapabilitiesGrabpayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -617,7 +617,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesGrabpayPayments($value)'; } 
  }
 /// The status of the iDEAL payments capability of the account, or whether the account can directly process iDEAL charges.
-final class AccountCapabilitiesIdealPayments {const AccountCapabilitiesIdealPayments._(this.value);
+@immutable final class AccountCapabilitiesIdealPayments {const AccountCapabilitiesIdealPayments._(this.value);
 
 factory AccountCapabilitiesIdealPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -645,7 +645,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesIdealPayments($value)'; } 
  }
 /// The status of the india_international_payments capability of the account, or whether the account can process international charges (non INR) in India.
-final class AccountCapabilitiesIndiaInternationalPayments {const AccountCapabilitiesIndiaInternationalPayments._(this.value);
+@immutable final class AccountCapabilitiesIndiaInternationalPayments {const AccountCapabilitiesIndiaInternationalPayments._(this.value);
 
 factory AccountCapabilitiesIndiaInternationalPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -673,7 +673,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesIndiaInternationalPayments($value)'; } 
  }
 /// The status of the JCB payments capability of the account, or whether the account (Japan only) can directly process JCB credit card charges in JPY currency.
-final class AccountCapabilitiesJcbPayments {const AccountCapabilitiesJcbPayments._(this.value);
+@immutable final class AccountCapabilitiesJcbPayments {const AccountCapabilitiesJcbPayments._(this.value);
 
 factory AccountCapabilitiesJcbPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -701,7 +701,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesJcbPayments($value)'; } 
  }
 /// The status of the Japanese customer_balance payments (JPY currency) capability of the account, or whether the account can directly process Japanese customer_balance charges.
-final class AccountCapabilitiesJpBankTransferPayments {const AccountCapabilitiesJpBankTransferPayments._(this.value);
+@immutable final class AccountCapabilitiesJpBankTransferPayments {const AccountCapabilitiesJpBankTransferPayments._(this.value);
 
 factory AccountCapabilitiesJpBankTransferPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -729,7 +729,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesJpBankTransferPayments($value)'; } 
  }
 /// The status of the KakaoPay capability of the account, or whether the account can directly process KakaoPay payments.
-final class AccountCapabilitiesKakaoPayPayments {const AccountCapabilitiesKakaoPayPayments._(this.value);
+@immutable final class AccountCapabilitiesKakaoPayPayments {const AccountCapabilitiesKakaoPayPayments._(this.value);
 
 factory AccountCapabilitiesKakaoPayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -757,7 +757,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesKakaoPayPayments($value)'; } 
  }
 /// The status of the Klarna payments capability of the account, or whether the account can directly process Klarna charges.
-final class AccountCapabilitiesKlarnaPayments {const AccountCapabilitiesKlarnaPayments._(this.value);
+@immutable final class AccountCapabilitiesKlarnaPayments {const AccountCapabilitiesKlarnaPayments._(this.value);
 
 factory AccountCapabilitiesKlarnaPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -785,7 +785,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesKlarnaPayments($value)'; } 
  }
 /// The status of the konbini payments capability of the account, or whether the account can directly process konbini charges.
-final class AccountCapabilitiesKonbiniPayments {const AccountCapabilitiesKonbiniPayments._(this.value);
+@immutable final class AccountCapabilitiesKonbiniPayments {const AccountCapabilitiesKonbiniPayments._(this.value);
 
 factory AccountCapabilitiesKonbiniPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -813,7 +813,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesKonbiniPayments($value)'; } 
  }
 /// The status of the KrCard capability of the account, or whether the account can directly process KrCard payments.
-final class AccountCapabilitiesKrCardPayments {const AccountCapabilitiesKrCardPayments._(this.value);
+@immutable final class AccountCapabilitiesKrCardPayments {const AccountCapabilitiesKrCardPayments._(this.value);
 
 factory AccountCapabilitiesKrCardPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -841,7 +841,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesKrCardPayments($value)'; } 
  }
 /// The status of the legacy payments capability of the account.
-final class AccountCapabilitiesLegacyPayments {const AccountCapabilitiesLegacyPayments._(this.value);
+@immutable final class AccountCapabilitiesLegacyPayments {const AccountCapabilitiesLegacyPayments._(this.value);
 
 factory AccountCapabilitiesLegacyPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -869,7 +869,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesLegacyPayments($value)'; } 
  }
 /// The status of the link_payments capability of the account, or whether the account can directly process Link charges.
-final class AccountCapabilitiesLinkPayments {const AccountCapabilitiesLinkPayments._(this.value);
+@immutable final class AccountCapabilitiesLinkPayments {const AccountCapabilitiesLinkPayments._(this.value);
 
 factory AccountCapabilitiesLinkPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -897,7 +897,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesLinkPayments($value)'; } 
  }
 /// The status of the MB WAY payments capability of the account, or whether the account can directly process MB WAY charges.
-final class AccountCapabilitiesMbWayPayments {const AccountCapabilitiesMbWayPayments._(this.value);
+@immutable final class AccountCapabilitiesMbWayPayments {const AccountCapabilitiesMbWayPayments._(this.value);
 
 factory AccountCapabilitiesMbWayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -925,7 +925,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesMbWayPayments($value)'; } 
  }
 /// The status of the MobilePay capability of the account, or whether the account can directly process MobilePay charges.
-final class AccountCapabilitiesMobilepayPayments {const AccountCapabilitiesMobilepayPayments._(this.value);
+@immutable final class AccountCapabilitiesMobilepayPayments {const AccountCapabilitiesMobilepayPayments._(this.value);
 
 factory AccountCapabilitiesMobilepayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -953,7 +953,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesMobilepayPayments($value)'; } 
  }
 /// The status of the Multibanco payments capability of the account, or whether the account can directly process Multibanco charges.
-final class AccountCapabilitiesMultibancoPayments {const AccountCapabilitiesMultibancoPayments._(this.value);
+@immutable final class AccountCapabilitiesMultibancoPayments {const AccountCapabilitiesMultibancoPayments._(this.value);
 
 factory AccountCapabilitiesMultibancoPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -981,7 +981,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesMultibancoPayments($value)'; } 
  }
 /// The status of the Mexican customer_balance payments (MXN currency) capability of the account, or whether the account can directly process Mexican customer_balance charges.
-final class AccountCapabilitiesMxBankTransferPayments {const AccountCapabilitiesMxBankTransferPayments._(this.value);
+@immutable final class AccountCapabilitiesMxBankTransferPayments {const AccountCapabilitiesMxBankTransferPayments._(this.value);
 
 factory AccountCapabilitiesMxBankTransferPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1009,7 +1009,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesMxBankTransferPayments($value)'; } 
  }
 /// The status of the NaverPay capability of the account, or whether the account can directly process NaverPay payments.
-final class AccountCapabilitiesNaverPayPayments {const AccountCapabilitiesNaverPayPayments._(this.value);
+@immutable final class AccountCapabilitiesNaverPayPayments {const AccountCapabilitiesNaverPayPayments._(this.value);
 
 factory AccountCapabilitiesNaverPayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1037,7 +1037,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesNaverPayPayments($value)'; } 
  }
 /// The status of the New Zealand BECS Direct Debit payments capability of the account, or whether the account can directly process New Zealand BECS Direct Debit charges.
-final class AccountCapabilitiesNzBankAccountBecsDebitPayments {const AccountCapabilitiesNzBankAccountBecsDebitPayments._(this.value);
+@immutable final class AccountCapabilitiesNzBankAccountBecsDebitPayments {const AccountCapabilitiesNzBankAccountBecsDebitPayments._(this.value);
 
 factory AccountCapabilitiesNzBankAccountBecsDebitPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1065,7 +1065,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesNzBankAccountBecsDebitPayments($value)'; } 
  }
 /// The status of the OXXO payments capability of the account, or whether the account can directly process OXXO charges.
-final class AccountCapabilitiesOxxoPayments {const AccountCapabilitiesOxxoPayments._(this.value);
+@immutable final class AccountCapabilitiesOxxoPayments {const AccountCapabilitiesOxxoPayments._(this.value);
 
 factory AccountCapabilitiesOxxoPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1093,7 +1093,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesOxxoPayments($value)'; } 
  }
 /// The status of the P24 payments capability of the account, or whether the account can directly process P24 charges.
-final class AccountCapabilitiesP24Payments {const AccountCapabilitiesP24Payments._(this.value);
+@immutable final class AccountCapabilitiesP24Payments {const AccountCapabilitiesP24Payments._(this.value);
 
 factory AccountCapabilitiesP24Payments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1121,7 +1121,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesP24Payments($value)'; } 
  }
 /// The status of the pay_by_bank payments capability of the account, or whether the account can directly process pay_by_bank charges.
-final class AccountCapabilitiesPayByBankPayments {const AccountCapabilitiesPayByBankPayments._(this.value);
+@immutable final class AccountCapabilitiesPayByBankPayments {const AccountCapabilitiesPayByBankPayments._(this.value);
 
 factory AccountCapabilitiesPayByBankPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1149,7 +1149,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesPayByBankPayments($value)'; } 
  }
 /// The status of the Payco capability of the account, or whether the account can directly process Payco payments.
-final class AccountCapabilitiesPaycoPayments {const AccountCapabilitiesPaycoPayments._(this.value);
+@immutable final class AccountCapabilitiesPaycoPayments {const AccountCapabilitiesPaycoPayments._(this.value);
 
 factory AccountCapabilitiesPaycoPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1177,7 +1177,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesPaycoPayments($value)'; } 
  }
 /// The status of the paynow payments capability of the account, or whether the account can directly process paynow charges.
-final class AccountCapabilitiesPaynowPayments {const AccountCapabilitiesPaynowPayments._(this.value);
+@immutable final class AccountCapabilitiesPaynowPayments {const AccountCapabilitiesPaynowPayments._(this.value);
 
 factory AccountCapabilitiesPaynowPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1205,7 +1205,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesPaynowPayments($value)'; } 
  }
 /// The status of the PayTo capability of the account, or whether the account can directly process PayTo charges.
-final class AccountCapabilitiesPaytoPayments {const AccountCapabilitiesPaytoPayments._(this.value);
+@immutable final class AccountCapabilitiesPaytoPayments {const AccountCapabilitiesPaytoPayments._(this.value);
 
 factory AccountCapabilitiesPaytoPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1233,7 +1233,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesPaytoPayments($value)'; } 
  }
 /// The status of the pix payments capability of the account, or whether the account can directly process pix charges.
-final class AccountCapabilitiesPixPayments {const AccountCapabilitiesPixPayments._(this.value);
+@immutable final class AccountCapabilitiesPixPayments {const AccountCapabilitiesPixPayments._(this.value);
 
 factory AccountCapabilitiesPixPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1261,7 +1261,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesPixPayments($value)'; } 
  }
 /// The status of the promptpay payments capability of the account, or whether the account can directly process promptpay charges.
-final class AccountCapabilitiesPromptpayPayments {const AccountCapabilitiesPromptpayPayments._(this.value);
+@immutable final class AccountCapabilitiesPromptpayPayments {const AccountCapabilitiesPromptpayPayments._(this.value);
 
 factory AccountCapabilitiesPromptpayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1289,7 +1289,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesPromptpayPayments($value)'; } 
  }
 /// The status of the RevolutPay capability of the account, or whether the account can directly process RevolutPay payments.
-final class AccountCapabilitiesRevolutPayPayments {const AccountCapabilitiesRevolutPayPayments._(this.value);
+@immutable final class AccountCapabilitiesRevolutPayPayments {const AccountCapabilitiesRevolutPayPayments._(this.value);
 
 factory AccountCapabilitiesRevolutPayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1317,7 +1317,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesRevolutPayPayments($value)'; } 
  }
 /// The status of the SamsungPay capability of the account, or whether the account can directly process SamsungPay payments.
-final class AccountCapabilitiesSamsungPayPayments {const AccountCapabilitiesSamsungPayPayments._(this.value);
+@immutable final class AccountCapabilitiesSamsungPayPayments {const AccountCapabilitiesSamsungPayPayments._(this.value);
 
 factory AccountCapabilitiesSamsungPayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1345,7 +1345,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesSamsungPayPayments($value)'; } 
  }
 /// The status of the Satispay capability of the account, or whether the account can directly process Satispay payments.
-final class AccountCapabilitiesSatispayPayments {const AccountCapabilitiesSatispayPayments._(this.value);
+@immutable final class AccountCapabilitiesSatispayPayments {const AccountCapabilitiesSatispayPayments._(this.value);
 
 factory AccountCapabilitiesSatispayPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1373,7 +1373,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesSatispayPayments($value)'; } 
  }
 /// The status of the SEPA customer_balance payments (EUR currency) capability of the account, or whether the account can directly process SEPA customer_balance charges.
-final class AccountCapabilitiesSepaBankTransferPayments {const AccountCapabilitiesSepaBankTransferPayments._(this.value);
+@immutable final class AccountCapabilitiesSepaBankTransferPayments {const AccountCapabilitiesSepaBankTransferPayments._(this.value);
 
 factory AccountCapabilitiesSepaBankTransferPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1401,7 +1401,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesSepaBankTransferPayments($value)'; } 
  }
 /// The status of the SEPA Direct Debits payments capability of the account, or whether the account can directly process SEPA Direct Debits charges.
-final class AccountCapabilitiesSepaDebitPayments {const AccountCapabilitiesSepaDebitPayments._(this.value);
+@immutable final class AccountCapabilitiesSepaDebitPayments {const AccountCapabilitiesSepaDebitPayments._(this.value);
 
 factory AccountCapabilitiesSepaDebitPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1429,7 +1429,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesSepaDebitPayments($value)'; } 
  }
 /// The status of the Sofort payments capability of the account, or whether the account can directly process Sofort charges.
-final class AccountCapabilitiesSofortPayments {const AccountCapabilitiesSofortPayments._(this.value);
+@immutable final class AccountCapabilitiesSofortPayments {const AccountCapabilitiesSofortPayments._(this.value);
 
 factory AccountCapabilitiesSofortPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1457,7 +1457,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesSofortPayments($value)'; } 
  }
 /// The status of the Swish capability of the account, or whether the account can directly process Swish payments.
-final class AccountCapabilitiesSwishPayments {const AccountCapabilitiesSwishPayments._(this.value);
+@immutable final class AccountCapabilitiesSwishPayments {const AccountCapabilitiesSwishPayments._(this.value);
 
 factory AccountCapabilitiesSwishPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1485,7 +1485,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesSwishPayments($value)'; } 
  }
 /// The status of the tax reporting 1099-K (US) capability of the account.
-final class AccountCapabilitiesTaxReportingUs1099K {const AccountCapabilitiesTaxReportingUs1099K._(this.value);
+@immutable final class AccountCapabilitiesTaxReportingUs1099K {const AccountCapabilitiesTaxReportingUs1099K._(this.value);
 
 factory AccountCapabilitiesTaxReportingUs1099K.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1513,7 +1513,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesTaxReportingUs1099K($value)'; } 
  }
 /// The status of the tax reporting 1099-MISC (US) capability of the account.
-final class AccountCapabilitiesTaxReportingUs1099Misc {const AccountCapabilitiesTaxReportingUs1099Misc._(this.value);
+@immutable final class AccountCapabilitiesTaxReportingUs1099Misc {const AccountCapabilitiesTaxReportingUs1099Misc._(this.value);
 
 factory AccountCapabilitiesTaxReportingUs1099Misc.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1541,7 +1541,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesTaxReportingUs1099Misc($value)'; } 
  }
 /// The status of the transfers capability of the account, or whether your platform can transfer funds to the account.
-final class AccountCapabilitiesTransfers {const AccountCapabilitiesTransfers._(this.value);
+@immutable final class AccountCapabilitiesTransfers {const AccountCapabilitiesTransfers._(this.value);
 
 factory AccountCapabilitiesTransfers.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1569,7 +1569,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesTransfers($value)'; } 
  }
 /// The status of the banking capability, or whether the account can have bank accounts.
-final class AccountCapabilitiesTreasury {const AccountCapabilitiesTreasury._(this.value);
+@immutable final class AccountCapabilitiesTreasury {const AccountCapabilitiesTreasury._(this.value);
 
 factory AccountCapabilitiesTreasury.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1597,7 +1597,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesTreasury($value)'; } 
  }
 /// The status of the TWINT capability of the account, or whether the account can directly process TWINT charges.
-final class AccountCapabilitiesTwintPayments {const AccountCapabilitiesTwintPayments._(this.value);
+@immutable final class AccountCapabilitiesTwintPayments {const AccountCapabilitiesTwintPayments._(this.value);
 
 factory AccountCapabilitiesTwintPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1625,7 +1625,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesTwintPayments($value)'; } 
  }
 /// The status of the US bank account ACH payments capability of the account, or whether the account can directly process US bank account charges.
-final class AccountCapabilitiesUsBankAccountAchPayments {const AccountCapabilitiesUsBankAccountAchPayments._(this.value);
+@immutable final class AccountCapabilitiesUsBankAccountAchPayments {const AccountCapabilitiesUsBankAccountAchPayments._(this.value);
 
 factory AccountCapabilitiesUsBankAccountAchPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1653,7 +1653,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesUsBankAccountAchPayments($value)'; } 
  }
 /// The status of the US customer_balance payments (USD currency) capability of the account, or whether the account can directly process US customer_balance charges.
-final class AccountCapabilitiesUsBankTransferPayments {const AccountCapabilitiesUsBankTransferPayments._(this.value);
+@immutable final class AccountCapabilitiesUsBankTransferPayments {const AccountCapabilitiesUsBankTransferPayments._(this.value);
 
 factory AccountCapabilitiesUsBankTransferPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1681,7 +1681,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesUsBankTransferPayments($value)'; } 
  }
 /// The status of the Zip capability of the account, or whether the account can directly process Zip charges.
-final class AccountCapabilitiesZipPayments {const AccountCapabilitiesZipPayments._(this.value);
+@immutable final class AccountCapabilitiesZipPayments {const AccountCapabilitiesZipPayments._(this.value);
 
 factory AccountCapabilitiesZipPayments.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -1709,7 +1709,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilitiesZipPayments($value)'; } 
  }
 /// 
-final class AccountCapabilities {const AccountCapabilities({this.acssDebitPayments, this.affirmPayments, this.afterpayClearpayPayments, this.almaPayments, this.amazonPayPayments, this.auBecsDebitPayments, this.bacsDebitPayments, this.bancontactPayments, this.bankTransferPayments, this.billiePayments, this.blikPayments, this.boletoPayments, this.cardIssuing, this.cardPayments, this.cartesBancairesPayments, this.cashappPayments, this.cryptoPayments, this.epsPayments, this.fpxPayments, this.gbBankTransferPayments, this.giropayPayments, this.grabpayPayments, this.idealPayments, this.indiaInternationalPayments, this.jcbPayments, this.jpBankTransferPayments, this.kakaoPayPayments, this.klarnaPayments, this.konbiniPayments, this.krCardPayments, this.legacyPayments, this.linkPayments, this.mbWayPayments, this.mobilepayPayments, this.multibancoPayments, this.mxBankTransferPayments, this.naverPayPayments, this.nzBankAccountBecsDebitPayments, this.oxxoPayments, this.p24Payments, this.payByBankPayments, this.paycoPayments, this.paynowPayments, this.paytoPayments, this.pixPayments, this.promptpayPayments, this.revolutPayPayments, this.samsungPayPayments, this.satispayPayments, this.sepaBankTransferPayments, this.sepaDebitPayments, this.sofortPayments, this.swishPayments, this.taxReportingUs1099K, this.taxReportingUs1099Misc, this.transfers, this.treasury, this.twintPayments, this.usBankAccountAchPayments, this.usBankTransferPayments, this.zipPayments, });
+@immutable final class AccountCapabilities {const AccountCapabilities({this.giropayPayments, this.affirmPayments, this.afterpayClearpayPayments, this.almaPayments, this.amazonPayPayments, this.auBecsDebitPayments, this.bacsDebitPayments, this.bancontactPayments, this.bankTransferPayments, this.billiePayments, this.blikPayments, this.boletoPayments, this.cardIssuing, this.cardPayments, this.cartesBancairesPayments, this.cashappPayments, this.cryptoPayments, this.epsPayments, this.fpxPayments, this.gbBankTransferPayments, this.acssDebitPayments, this.grabpayPayments, this.idealPayments, this.indiaInternationalPayments, this.jcbPayments, this.jpBankTransferPayments, this.kakaoPayPayments, this.klarnaPayments, this.konbiniPayments, this.krCardPayments, this.legacyPayments, this.linkPayments, this.mbWayPayments, this.mobilepayPayments, this.multibancoPayments, this.mxBankTransferPayments, this.naverPayPayments, this.nzBankAccountBecsDebitPayments, this.oxxoPayments, this.p24Payments, this.zipPayments, this.paycoPayments, this.paynowPayments, this.paytoPayments, this.pixPayments, this.promptpayPayments, this.revolutPayPayments, this.samsungPayPayments, this.satispayPayments, this.sepaBankTransferPayments, this.sepaDebitPayments, this.sofortPayments, this.swishPayments, this.taxReportingUs1099K, this.taxReportingUs1099Misc, this.transfers, this.treasury, this.twintPayments, this.usBankAccountAchPayments, this.usBankTransferPayments, this.payByBankPayments, });
 
 factory AccountCapabilities.fromJson(Map<String, dynamic> json) { return AccountCapabilities(
   acssDebitPayments: json['acss_debit_payments'] != null ? AccountCapabilitiesAcssDebitPayments.fromJson(json['acss_debit_payments'] as String) : null,

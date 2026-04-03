@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// PersistentVolumeClaimCondition contains details about state of pvc
-final class PersistentVolumeClaimCondition {const PersistentVolumeClaimCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PersistentVolumeClaimCondition contains details about state of pvc
+@immutable final class PersistentVolumeClaimCondition {const PersistentVolumeClaimCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
 
 factory PersistentVolumeClaimCondition.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimCondition(
   lastProbeTime: json['lastProbeTime'] != null ? Time.fromJson(json['lastProbeTime'] as String) : null,

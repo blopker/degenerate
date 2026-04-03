@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details of the transcription error.
-final class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError {const RealtimeServerEventConversationItemInputAudioTranscriptionFailedError({this.type, this.code, this.message, this.param, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the transcription error.
+@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError {const RealtimeServerEventConversationItemInputAudioTranscriptionFailedError({this.type, this.code, this.message, this.param, });
 
 factory RealtimeServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
   type: json['type'] as String?,

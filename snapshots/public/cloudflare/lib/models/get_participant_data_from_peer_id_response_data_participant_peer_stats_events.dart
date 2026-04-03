@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_events_metadata.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents({this.metadata, this.timestamp, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_events_metadata.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents({this.metadata, this.timestamp, this.type, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEvents(
   metadata: json['metadata'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,

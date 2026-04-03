@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_ref_param2.dart';import 'video_model.dart';import 'video_size.dart';final class VideoSeconds {const VideoSeconds._(this.value);
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_ref_param2.dart';import 'video_model.dart';import 'video_size.dart';@immutable final class VideoSeconds {const VideoSeconds._(this.value);
 
 factory VideoSeconds.fromJson(String json) { return switch (json) {
   '4' => $4,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VideoSeconds($value)'; } 
  }
 /// Parameters for creating a new video generation job.
-final class CreateVideoBody {const CreateVideoBody({this.model, required this.prompt, this.inputReference, this.imageReference, this.seconds, this.size, });
+@immutable final class CreateVideoBody {const CreateVideoBody({required this.prompt, this.model, this.inputReference, this.imageReference, this.seconds, this.size, });
 
 factory CreateVideoBody.fromJson(Map<String, dynamic> json) { return CreateVideoBody(
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => VideoModelVariant2.fromJson(v as String),) : null,

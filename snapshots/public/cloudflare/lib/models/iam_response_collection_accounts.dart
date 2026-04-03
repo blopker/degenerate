@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_account.dart';final class IamResponseCollectionAccounts {const IamResponseCollectionAccounts({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_account.dart';@immutable final class IamResponseCollectionAccounts {const IamResponseCollectionAccounts({this.result});
 
 factory IamResponseCollectionAccounts.fromJson(Map<String, dynamic> json) { return IamResponseCollectionAccounts(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamAccount.fromJson(e as Map<String, dynamic>)).toList(),

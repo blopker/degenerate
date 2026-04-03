@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The button style for the choice. Can be `primary` or `secondary`.
-final class TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The button style for the choice. Can be `primary` or `secondary`.
+@immutable final class TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle._(this.value);
 
 factory TerminalReaderReaderResourceChoiceStyle.fromJson(String json) { return switch (json) {
   'primary' => primary,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceChoiceStyle($value)'; } 
  }
 /// Choice to be selected on a Reader
-final class TerminalReaderReaderResourceChoice {const TerminalReaderReaderResourceChoice({this.id, this.style, required this.text, });
+@immutable final class TerminalReaderReaderResourceChoice {const TerminalReaderReaderResourceChoice({required this.text, this.id, this.style, });
 
 factory TerminalReaderReaderResourceChoice.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceChoice(
   id: json['id'] as String?,

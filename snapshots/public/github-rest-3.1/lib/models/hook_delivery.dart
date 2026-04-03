@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'hook_delivery_request.dart';import 'hook_delivery_response.dart';/// Delivery made by a webhook.
-final class HookDelivery {const HookDelivery({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, this.throttledAt, this.url, required this.request, required this.response, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_delivery_request.dart';import 'hook_delivery_response.dart';/// Delivery made by a webhook.
+@immutable final class HookDelivery {const HookDelivery({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, required this.request, required this.response, this.throttledAt, this.url, });
 
 factory HookDelivery.fromJson(Map<String, dynamic> json) { return HookDelivery(
   id: (json['id'] as num).toInt(),

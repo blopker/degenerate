@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_fleet_status_over_time_response_result.dart';final class DigitalExperienceMonitoringFleetStatusOverTimeResponse {const DigitalExperienceMonitoringFleetStatusOverTimeResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_fleet_status_over_time_response_result.dart';@immutable final class DigitalExperienceMonitoringFleetStatusOverTimeResponse {const DigitalExperienceMonitoringFleetStatusOverTimeResponse({this.result});
 
 factory DigitalExperienceMonitoringFleetStatusOverTimeResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringFleetStatusOverTimeResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringFleetStatusOverTimeResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

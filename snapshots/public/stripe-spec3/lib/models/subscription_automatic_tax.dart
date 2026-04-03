@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
-final class SubscriptionAutomaticTaxDisabledReason {const SubscriptionAutomaticTaxDisabledReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
+@immutable final class SubscriptionAutomaticTaxDisabledReason {const SubscriptionAutomaticTaxDisabledReason._(this.value);
 
 factory SubscriptionAutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
   'requires_location_inputs' => requiresLocationInputs,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionAutomaticTaxDisabledReason($value)'; } 
  }
 /// 
-final class SubscriptionAutomaticTax {const SubscriptionAutomaticTax({this.disabledReason, required this.enabled, this.liability, });
+@immutable final class SubscriptionAutomaticTax {const SubscriptionAutomaticTax({required this.enabled, this.disabledReason, this.liability, });
 
 factory SubscriptionAutomaticTax.fromJson(Map<String, dynamic> json) { return SubscriptionAutomaticTax(
   disabledReason: json['disabled_reason'] != null ? SubscriptionAutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class QueuesPurgeGetResponseResult {const QueuesPurgeGetResponseResult({this.completed, this.startedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QueuesPurgeGetResponseResult {const QueuesPurgeGetResponseResult({this.completed, this.startedAt, });
 
 factory QueuesPurgeGetResponseResult.fromJson(Map<String, dynamic> json) { return QueuesPurgeGetResponseResult(
   completed: json['completed'] as String?,

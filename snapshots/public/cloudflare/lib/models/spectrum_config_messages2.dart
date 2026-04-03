@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'spectrum_config_messages2_source.dart';final class SpectrumConfigMessages2 {const SpectrumConfigMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_messages2_source.dart';@immutable final class SpectrumConfigMessages2 {const SpectrumConfigMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory SpectrumConfigMessages2.fromJson(Map<String, dynamic> json) { return SpectrumConfigMessages2(
   code: (json['code'] as num).toInt(),

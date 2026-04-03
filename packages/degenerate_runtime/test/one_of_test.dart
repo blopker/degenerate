@@ -80,8 +80,8 @@ void main() {
     test('type matching selects correct variant', () {
       final v = OneOf2.parse<String, int>(
         'hello',
-        fromA: (v) => v! as String,
-        fromB: (v) => v! as int,
+        fromA: (v) => v as String,
+        fromB: (v) => v as int,
       );
       expect(v.value, 'hello');
     });
@@ -89,8 +89,8 @@ void main() {
     test('falls back to try/catch when type matching fails', () {
       final v = OneOf2.parse<String, int>(
         '42',
-        fromA: (v) => v! as String,
-        fromB: (v) => int.parse(v! as String),
+        fromA: (v) => v as String,
+        fromB: (v) => int.parse(v as String),
       );
       // '42' is a String, so type matching picks A
       expect(v.value, '42');
@@ -100,8 +100,8 @@ void main() {
       final catJson = {'type': 'cat', 'name': 'Whiskers'};
       final v = OneOf2.parse<Map<String, dynamic>, String>(
         catJson,
-        fromA: (v) => v! as Map<String, dynamic>,
-        fromB: (v) => v! as String,
+        fromA: (v) => v as Map<String, dynamic>,
+        fromB: (v) => v as String,
       );
       expect(v.value, catJson);
     });
@@ -110,10 +110,10 @@ void main() {
       final v = OneOf5.parse<String, int, double, bool, List<dynamic>>(
         42,
         fromA: (v) => v.toString(),
-        fromB: (v) => v! as int,
-        fromC: (v) => (v! as num).toDouble(),
-        fromD: (v) => v! as bool,
-        fromE: (v) => v! as List,
+        fromB: (v) => v as int,
+        fromC: (v) => (v as num).toDouble(),
+        fromD: (v) => v as bool,
+        fromE: (v) => v as List,
       );
       expect(v.value, 42);
     });

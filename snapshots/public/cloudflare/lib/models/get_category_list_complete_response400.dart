@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_category_list_complete_response400_errors.dart';final class GetCategoryListCompleteResponse400 {const GetCategoryListCompleteResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_category_list_complete_response400_errors.dart';@immutable final class GetCategoryListCompleteResponse400 {const GetCategoryListCompleteResponse400({required this.errors, required this.result, required this.success, });
 
 factory GetCategoryListCompleteResponse400.fromJson(Map<String, dynamic> json) { return GetCategoryListCompleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetCategoryListCompleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

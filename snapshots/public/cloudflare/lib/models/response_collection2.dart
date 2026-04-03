@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_audit_logs2.dart';import 'aaa_result_info.dart';import 'aaa_schemas_messages2.dart';final class ResponseCollection2 {const ResponseCollection2({this.errors, this.result, this.resultInfo, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_audit_logs2.dart';import 'aaa_result_info.dart';import 'aaa_schemas_messages2.dart';@immutable final class ResponseCollection2 {const ResponseCollection2({this.errors, this.result, this.resultInfo, this.success, });
 
 factory ResponseCollection2.fromJson(Map<String, dynamic> json) { return ResponseCollection2(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AaaSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

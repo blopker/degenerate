@@ -54,7 +54,25 @@ class EnumEmitter {
         (b) => b
           ..name = className
           ..modifier = ClassModifier.final$
+          ..annotations.add(refer('immutable'))
           ..docs.addAll(_buildDocs())
+          // Private const constructor
+          ..constructors.add(
+            Constructor(
+              (c) => c
+                ..name = '_'
+                ..constant = true
+                ..requiredParameters.add(
+                  Parameter(
+                    (p) => p
+                      ..name = 'value'
+                      ..toThis = true,
+                  ),
+                ),
+            ),
+          )
+          // fromJson factory
+          ..constructors.add(_buildFromJson(className, deduped))
           // Static const instances for each known value
           ..fields.addAll(
             deduped.map(
@@ -92,23 +110,6 @@ class EnumEmitter {
                 ..modifier = FieldModifier.final$,
             ),
           )
-          // Private const constructor
-          ..constructors.add(
-            Constructor(
-              (c) => c
-                ..name = '_'
-                ..constant = true
-                ..requiredParameters.add(
-                  Parameter(
-                    (p) => p
-                      ..name = 'value'
-                      ..toThis = true,
-                  ),
-                ),
-            ),
-          )
-          // fromJson factory
-          ..constructors.add(_buildFromJson(className, deduped))
           ..methods.add(_buildToJson())
           ..methods.add(_buildIsUnknown())
           ..methods.add(_buildEquals(className))

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_verdicts_overall_categories.dart';final class UrlscannerGetScanResponseResultScanVerdictsOverall {const UrlscannerGetScanResponseResultScanVerdictsOverall({required this.categories, required this.malicious, required this.phishing, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_verdicts_overall_categories.dart';@immutable final class UrlscannerGetScanResponseResultScanVerdictsOverall {const UrlscannerGetScanResponseResultScanVerdictsOverall({required this.categories, required this.malicious, required this.phishing, });
 
 factory UrlscannerGetScanResponseResultScanVerdictsOverall.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanVerdictsOverall(
   categories: (json['categories'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanVerdictsOverallCategories.fromJson(e as Map<String, dynamic>)).toList(),

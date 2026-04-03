@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_client_id.dart';import 'access_schemas_duration.dart';import 'access_service_tokens_components_schemas_name.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessSchemasServiceTokens {const AccessSchemasServiceTokens({this.clientId, this.createdAt, this.duration, this.expiresAt, this.id, this.lastSeenAt, this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_client_id.dart';import 'access_schemas_duration.dart';import 'access_service_tokens_components_schemas_name.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessSchemasServiceTokens {const AccessSchemasServiceTokens({this.clientId, this.createdAt, this.duration, this.expiresAt, this.id, this.lastSeenAt, this.name, this.updatedAt, });
 
 factory AccessSchemasServiceTokens.fromJson(Map<String, dynamic> json) { return AccessSchemasServiceTokens(
   clientId: json['client_id'] != null ? AccessClientId.fromJson(json['client_id'] as String) : null,

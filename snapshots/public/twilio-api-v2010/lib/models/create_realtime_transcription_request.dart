@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// One of `inbound_track`, `outbound_track`, `both_tracks`.
-final class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
+@immutable final class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack._(this.value);
 
 factory RealtimeTranscriptionEnumTrack.fromJson(String json) { return switch (json) {
   'inbound_track' => inboundTrack,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeTranscriptionEnumTrack($value)'; } 
  }
 /// The http method for the status_callback (one of GET, POST).
-final class CreateRealtimeTranscriptionRequestStatusCallbackMethod {const CreateRealtimeTranscriptionRequestStatusCallbackMethod._(this.value);
+@immutable final class CreateRealtimeTranscriptionRequestStatusCallbackMethod {const CreateRealtimeTranscriptionRequestStatusCallbackMethod._(this.value);
 
 factory CreateRealtimeTranscriptionRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateRealtimeTranscriptionRequestStatusCallbackMethod($value)'; } 
  }
-final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });
+@immutable final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });
 
 factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateRealtimeTranscriptionRequest(
   name: json['Name'] as String?,

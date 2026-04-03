@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories {const PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories {const PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories._(this.value);
 
 factory PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories($value)'; } 
  }
 /// Filters to restrict the kinds of accounts to collect.
-final class PostFinancialConnectionsSessionsRequestFilters {const PostFinancialConnectionsSessionsRequestFilters({this.accountSubcategories, this.countries, });
+@immutable final class PostFinancialConnectionsSessionsRequestFilters {const PostFinancialConnectionsSessionsRequestFilters({this.accountSubcategories, this.countries, });
 
 factory PostFinancialConnectionsSessionsRequestFilters.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsSessionsRequestFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories.fromJson(e as String)).toList(),

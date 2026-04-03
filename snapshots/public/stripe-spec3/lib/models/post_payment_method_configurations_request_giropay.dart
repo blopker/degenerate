@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_giropay_display_preference.dart';/// giropay is a German payment method based on online banking, introduced in 2006. It allows customers to complete transactions online using their online banking environment, with funds debited from their bank account. Depending on their bank, customers confirm payments on giropay using a second factor of authentication or a PIN. giropay accounts for 10% of online checkouts in Germany. Check this [page](https://docs.stripe.com/payments/giropay) for more details.
-final class PostPaymentMethodConfigurationsRequestGiropay {const PostPaymentMethodConfigurationsRequestGiropay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_giropay_display_preference.dart';/// giropay is a German payment method based on online banking, introduced in 2006. It allows customers to complete transactions online using their online banking environment, with funds debited from their bank account. Depending on their bank, customers confirm payments on giropay using a second factor of authentication or a PIN. giropay accounts for 10% of online checkouts in Germany. Check this [page](https://docs.stripe.com/payments/giropay) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestGiropay {const PostPaymentMethodConfigurationsRequestGiropay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestGiropay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestGiropay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestGiropayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

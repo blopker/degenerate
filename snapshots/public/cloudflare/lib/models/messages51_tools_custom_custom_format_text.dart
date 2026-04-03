@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ToolsCustomCustomFormatTextType {const Messages51ToolsCustomCustomFormatTextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolsCustomCustomFormatTextType {const Messages51ToolsCustomCustomFormatTextType._(this.value);
 
 factory Messages51ToolsCustomCustomFormatTextType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ToolsCustomCustomFormatTextType($value)'; } 
  }
-final class Messages51ToolsCustomCustomFormatText {const Messages51ToolsCustomCustomFormatText({required this.type});
+@immutable final class Messages51ToolsCustomCustomFormatText {const Messages51ToolsCustomCustomFormatText({required this.type});
 
 factory Messages51ToolsCustomCustomFormatText.fromJson(Map<String, dynamic> json) { return Messages51ToolsCustomCustomFormatText(
   type: Messages51ToolsCustomCustomFormatTextType.fromJson(json['type'] as String),

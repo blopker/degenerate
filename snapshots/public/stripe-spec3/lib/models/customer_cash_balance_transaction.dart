@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft.dart';import 'customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_transferred_to_balance.dart';import 'customer_balance_resource_cash_balance_transaction_resource_unapplied_from_payment_transaction.dart';import 'customer_cash_balance_transaction_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject._(this.value);
+@immutable final class CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject._(this.value);
 
 factory CustomerCashBalanceTransactionObject.fromJson(String json) { return switch (json) {
   'customer_cash_balance_transaction' => customerCashBalanceTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerCashBalanceTransactionObject($value)'; } 
  }
 /// The type of the cash balance transaction. New types may be added in future. See [Customer Balance](https://docs.stripe.com/payments/customer-balance#types) to learn more about these types.
-final class CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType._(this.value);
+@immutable final class CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType._(this.value);
 
 factory CustomerCashBalanceTransactionType.fromJson(String json) { return switch (json) {
   'adjusted_for_overdraft' => adjustedForOverdraft,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions
 /// represent when funds are moved into or out of this balance. This includes funding by the customer, allocation
 /// to payments, and refunds to the customer.
-final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({this.adjustedForOverdraft, this.appliedToPayment, required this.created, required this.currency, required this.customer, this.customerAccount, required this.endingBalance, this.funded, required this.id, required this.livemode, required this.netAmount, required this.object, this.refundedFromPayment, this.transferredToBalance, required this.type, this.unappliedFromPayment, });
+@immutable final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.netAmount, required this.object, required this.type, this.adjustedForOverdraft, this.appliedToPayment, this.customerAccount, this.funded, this.refundedFromPayment, this.transferredToBalance, this.unappliedFromPayment, });
 
 factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerCashBalanceTransaction(
   adjustedForOverdraft: json['adjusted_for_overdraft'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(json['adjusted_for_overdraft'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_click_listener_rule.dart';import 'zaraz_element_visibility_rule.dart';import 'zaraz_form_submission_rule.dart';import 'zaraz_load_rule.dart';import 'zaraz_scroll_depth_rule.dart';import 'zaraz_timer_rule.dart';import 'zaraz_variable_match_rule.dart';import 'zaraz_zaraz_config_return_triggers_value_exclude_rules.dart';import 'zaraz_zaraz_config_return_triggers_value_load_rules.dart';final class ZarazZarazConfigReturnTriggersValueSystem {const ZarazZarazConfigReturnTriggersValueSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_click_listener_rule.dart';import 'zaraz_element_visibility_rule.dart';import 'zaraz_form_submission_rule.dart';import 'zaraz_load_rule.dart';import 'zaraz_scroll_depth_rule.dart';import 'zaraz_timer_rule.dart';import 'zaraz_variable_match_rule.dart';import 'zaraz_zaraz_config_return_triggers_value_exclude_rules.dart';import 'zaraz_zaraz_config_return_triggers_value_load_rules.dart';@immutable final class ZarazZarazConfigReturnTriggersValueSystem {const ZarazZarazConfigReturnTriggersValueSystem._(this.value);
 
 factory ZarazZarazConfigReturnTriggersValueSystem.fromJson(String json) { return switch (json) {
   'pageload' => pageload,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazZarazConfigReturnTriggersValueSystem($value)'; } 
  }
-final class ZarazZarazConfigReturnTriggersValue {const ZarazZarazConfigReturnTriggersValue({this.description, required this.excludeRules, required this.loadRules, required this.name, this.system, });
+@immutable final class ZarazZarazConfigReturnTriggersValue {const ZarazZarazConfigReturnTriggersValue({required this.excludeRules, required this.loadRules, required this.name, this.description, this.system, });
 
 factory ZarazZarazConfigReturnTriggersValue.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturnTriggersValue(
   description: json['description'] as String?,

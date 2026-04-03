@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetReportingReportRunsReportRunRequest {const GetReportingReportRunsReportRunRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetReportingReportRunsReportRunRequest {const GetReportingReportRunsReportRunRequest();
 
 factory GetReportingReportRunsReportRunRequest.fromJson(Map<String, dynamic> json) { return GetReportingReportRunsReportRunRequest(
 

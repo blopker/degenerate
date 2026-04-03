@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage {const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage({this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage {const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage({this.text});
 
 factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage(
   text: json['text'] as String?,

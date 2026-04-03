@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_domain_name.dart';import 'pages_domain_validation_data.dart';import 'pages_domain_verification_data.dart';final class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain_name.dart';import 'pages_domain_validation_data.dart';import 'pages_domain_verification_data.dart';@immutable final class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority._(this.value);
 
 factory PagesDomainCertificateAuthority.fromJson(String json) { return switch (json) {
   'google' => google,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDomainCertificateAuthority($value)'; } 
  }
-final class PagesDomainStatus {const PagesDomainStatus._(this.value);
+@immutable final class PagesDomainStatus {const PagesDomainStatus._(this.value);
 
 factory PagesDomainStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDomainStatus($value)'; } 
  }
-final class PagesDomain {const PagesDomain({required this.certificateAuthority, required this.createdOn, required this.domainId, required this.id, required this.name, required this.status, required this.validationData, required this.verificationData, required this.zoneTag, });
+@immutable final class PagesDomain {const PagesDomain({required this.certificateAuthority, required this.createdOn, required this.domainId, required this.id, required this.name, required this.status, required this.validationData, required this.verificationData, required this.zoneTag, });
 
 factory PagesDomain.fromJson(Map<String, dynamic> json) { return PagesDomain(
   certificateAuthority: PagesDomainCertificateAuthority.fromJson(json['certificate_authority'] as String),

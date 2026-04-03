@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByTlsVersionBrowserFamily {const RadarGetHttpTopLocationsByTlsVersionBrowserFamily._(this.value);
 
 factory RadarGetHttpTopLocationsByTlsVersionBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,

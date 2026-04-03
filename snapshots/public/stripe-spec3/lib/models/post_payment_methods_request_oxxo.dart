@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `oxxo` PaymentMethod, this hash contains details about the OXXO payment method.
-final class PostPaymentMethodsRequestOxxo {const PostPaymentMethodsRequestOxxo();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `oxxo` PaymentMethod, this hash contains details about the OXXO payment method.
+@immutable final class PostPaymentMethodsRequestOxxo {const PostPaymentMethodsRequestOxxo();
 
 factory PostPaymentMethodsRequestOxxo.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestOxxo(
 

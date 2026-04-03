@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay({this.funding});
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay({this.funding});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
   funding: json['funding'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(json['funding'] as String) : null,

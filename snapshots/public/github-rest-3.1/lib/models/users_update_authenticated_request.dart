@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsersUpdateAuthenticatedRequest {const UsersUpdateAuthenticatedRequest({this.name, this.email, this.blog, this.twitterUsername, this.company, this.location, this.hireable, this.bio, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersUpdateAuthenticatedRequest {const UsersUpdateAuthenticatedRequest({this.name, this.email, this.blog, this.twitterUsername, this.company, this.location, this.hireable, this.bio, });
 
 factory UsersUpdateAuthenticatedRequest.fromJson(Map<String, dynamic> json) { return UsersUpdateAuthenticatedRequest(
   name: json['name'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SigmaScheduledQueryRunError {const SigmaScheduledQueryRunError({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SigmaScheduledQueryRunError {const SigmaScheduledQueryRunError({required this.message});
 
 factory SigmaScheduledQueryRunError.fromJson(Map<String, dynamic> json) { return SigmaScheduledQueryRunError(
   message: json['message'] as String,

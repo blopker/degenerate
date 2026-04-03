@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// One of `server_error` or `rate_limit_exceeded`.
-final class RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error` or `rate_limit_exceeded`.
+@immutable final class RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode._(this.value);
 
 factory RunStepObjectLastErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepObjectLastErrorCode($value)'; } 
  }
 /// The last error associated with this run step. Will be `null` if there are no errors.
-final class RunStepObjectLastError {const RunStepObjectLastError({required this.code, required this.message, });
+@immutable final class RunStepObjectLastError {const RunStepObjectLastError({required this.code, required this.message, });
 
 factory RunStepObjectLastError.fromJson(Map<String, dynamic> json) { return RunStepObjectLastError(
   code: RunStepObjectLastErrorCode.fromJson(json['code'] as String),

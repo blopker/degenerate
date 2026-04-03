@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'subscriptions_resource_trial_settings_end_behavior.dart';/// Configures how this subscription behaves during the trial period.
-final class SubscriptionsResourceTrialSettingsTrialSettings {const SubscriptionsResourceTrialSettingsTrialSettings({required this.endBehavior});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_trial_settings_end_behavior.dart';/// Configures how this subscription behaves during the trial period.
+@immutable final class SubscriptionsResourceTrialSettingsTrialSettings {const SubscriptionsResourceTrialSettingsTrialSettings({required this.endBehavior});
 
 factory SubscriptionsResourceTrialSettingsTrialSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceTrialSettingsTrialSettings(
   endBehavior: SubscriptionsResourceTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),

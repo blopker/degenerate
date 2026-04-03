@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';/// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
-final class BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';/// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
+@immutable final class BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated._(this.value);
 
 factory BotManagementSbfmLikelyAutomated.fromJson(String json) { return switch (json) {
   'allow' => allow,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BotManagementSbfmLikelyAutomated($value)'; } 
  }
-final class BotManagementSbfmLikelyConfig {const BotManagementSbfmLikelyConfig({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
+@immutable final class BotManagementSbfmLikelyConfig {const BotManagementSbfmLikelyConfig({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
 
 factory BotManagementSbfmLikelyConfig.fromJson(Map<String, dynamic> json) { return BotManagementSbfmLikelyConfig(
   optimizeWordpress: json['optimize_wordpress'] != null ? BotManagementOptimizeWordpress.fromJson(json['optimize_wordpress'] as bool) : null,

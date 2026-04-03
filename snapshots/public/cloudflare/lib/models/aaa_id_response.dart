@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_id_response_result.dart';final class AaaIdResponse {const AaaIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_id_response_result.dart';@immutable final class AaaIdResponse {const AaaIdResponse({this.result});
 
 factory AaaIdResponse.fromJson(Map<String, dynamic> json) { return AaaIdResponse(
   result: json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataKakaoPay {const PostPaymentIntentsIntentRequestPaymentMethodDataKakaoPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataKakaoPay {const PostPaymentIntentsIntentRequestPaymentMethodDataKakaoPay();
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataKakaoPay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataKakaoPay(
 

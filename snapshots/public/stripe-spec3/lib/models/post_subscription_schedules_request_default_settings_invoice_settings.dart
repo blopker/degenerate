@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings_account_tax_ids.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings_issuer.dart';final class PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings {const PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings_account_tax_ids.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings_issuer.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings {const PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
 
 factory PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings(
   accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2.fromJson(v as String),) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_quote_request_subscription_data_description.dart';import 'post_quotes_quote_request_subscription_data_effective_date.dart';import 'post_quotes_quote_request_subscription_data_trial_period_days.dart';/// When creating a subscription or subscription schedule, the specified configuration data will be used. There must be at least one line item with a recurring price for a subscription or subscription schedule to be created. A subscription schedule is created if `subscription_data[effective_date]` is present and in the future, otherwise a subscription is created.
-final class PostQuotesQuoteRequestSubscriptionData {const PostQuotesQuoteRequestSubscriptionData({this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
+@immutable final class PostQuotesQuoteRequestSubscriptionData {const PostQuotesQuoteRequestSubscriptionData({this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
 
 factory PostQuotesQuoteRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestSubscriptionData(
   description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostQuotesQuoteRequestSubscriptionDataDescriptionVariant2.fromJson(v as String),) : null,

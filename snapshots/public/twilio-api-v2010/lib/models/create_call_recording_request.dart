@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `recording_status_callback`. Can be: `GET` or `POST` and the default is `POST`.
-final class CreateCallRecordingRequestRecordingStatusCallbackMethod {const CreateCallRecordingRequestRecordingStatusCallbackMethod._(this.value);
+@immutable final class CreateCallRecordingRequestRecordingStatusCallbackMethod {const CreateCallRecordingRequestRecordingStatusCallbackMethod._(this.value);
 
 factory CreateCallRecordingRequestRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateCallRecordingRequestRecordingStatusCallbackMethod($value)'; } 
  }
-final class CreateCallRecordingRequest {const CreateCallRecordingRequest({this.recordingStatusCallbackEvent, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.trim, this.recordingChannels, this.recordingTrack, });
+@immutable final class CreateCallRecordingRequest {const CreateCallRecordingRequest({this.recordingStatusCallbackEvent, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.trim, this.recordingChannels, this.recordingTrack, });
 
 factory CreateCallRecordingRequest.fromJson(Map<String, dynamic> json) { return CreateCallRecordingRequest(
   recordingStatusCallbackEvent: (json['RecordingStatusCallbackEvent'] as List<dynamic>?)?.map((e) => e as String).toList(),

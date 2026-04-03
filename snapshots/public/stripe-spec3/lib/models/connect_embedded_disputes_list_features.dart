@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedDisputesListFeatures {const ConnectEmbeddedDisputesListFeatures({required this.capturePayments, required this.destinationOnBehalfOfChargeManagement, required this.disputeManagement, required this.refundManagement, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedDisputesListFeatures {const ConnectEmbeddedDisputesListFeatures({required this.capturePayments, required this.destinationOnBehalfOfChargeManagement, required this.disputeManagement, required this.refundManagement, });
 
 factory ConnectEmbeddedDisputesListFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedDisputesListFeatures(
   capturePayments: json['capture_payments'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod.fromJson(json['capture_method'] as String) : null,

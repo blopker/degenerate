@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The protocol to use for the health check. Currently supported protocols are 'HTTP','HTTPS', 'TCP', 'ICMP-PING', 'UDP-ICMP', and 'SMTP'.
-final class LoadBalancingType {const LoadBalancingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The protocol to use for the health check. Currently supported protocols are 'HTTP','HTTPS', 'TCP', 'ICMP-PING', 'UDP-ICMP', and 'SMTP'.
+@immutable final class LoadBalancingType {const LoadBalancingType._(this.value);
 
 factory LoadBalancingType.fromJson(String json) { return switch (json) {
   'http' => http,

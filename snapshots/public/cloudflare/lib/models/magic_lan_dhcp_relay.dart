@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ip_address.dart';final class MagicLanDhcpRelay {const MagicLanDhcpRelay({this.serverAddresses});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ip_address.dart';@immutable final class MagicLanDhcpRelay {const MagicLanDhcpRelay({this.serverAddresses});
 
 factory MagicLanDhcpRelay.fromJson(Map<String, dynamic> json) { return MagicLanDhcpRelay(
   serverAddresses: (json['server_addresses'] as List<dynamic>?)?.map((e) => MagicIpAddress.fromJson(e as String)).toList(),

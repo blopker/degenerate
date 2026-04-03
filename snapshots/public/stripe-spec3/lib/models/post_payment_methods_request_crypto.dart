@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a Crypto PaymentMethod, this hash contains details about the Crypto payment method.
-final class PostPaymentMethodsRequestCrypto {const PostPaymentMethodsRequestCrypto();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a Crypto PaymentMethod, this hash contains details about the Crypto payment method.
+@immutable final class PostPaymentMethodsRequestCrypto {const PostPaymentMethodsRequestCrypto();
 
 factory PostPaymentMethodsRequestCrypto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestCrypto(
 

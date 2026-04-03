@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A log probability object.
 /// 
-final class LogProbProperties {const LogProbProperties({required this.token, required this.logprob, required this.bytes, });
+@immutable final class LogProbProperties {const LogProbProperties({required this.token, required this.logprob, required this.bytes, });
 
 factory LogProbProperties.fromJson(Map<String, dynamic> json) { return LogProbProperties(
   token: json['token'] as String,

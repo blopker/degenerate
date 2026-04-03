@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A mouse move action.
-final class MoveParam {const MoveParam({this.type = 'move', required this.x, required this.y, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A mouse move action.
+@immutable final class MoveParam {const MoveParam({required this.x, required this.y, this.type = 'move', });
 
 factory MoveParam.fromJson(Map<String, dynamic> json) { return MoveParam(
   type: json['type'] as String,

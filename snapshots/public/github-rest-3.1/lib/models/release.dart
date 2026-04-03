@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reaction_rollup.dart';import 'release_asset.dart';import 'simple_user.dart';/// A release.
-final class Release {const Release({required this.url, required this.htmlUrl, required this.assetsUrl, required this.uploadUrl, required this.tarballUrl, required this.zipballUrl, required this.id, required this.nodeId, required this.tagName, required this.targetCommitish, required this.name, this.body, required this.draft, required this.prerelease, this.immutable, required this.createdAt, required this.publishedAt, this.updatedAt, required this.author, required this.assets, this.bodyHtml, this.bodyText, this.mentionsCount, this.discussionUrl, this.reactions, });
+@immutable final class Release {const Release({required this.url, required this.htmlUrl, required this.assetsUrl, required this.uploadUrl, required this.tarballUrl, required this.zipballUrl, required this.id, required this.nodeId, required this.tagName, required this.targetCommitish, required this.name, required this.draft, required this.prerelease, required this.createdAt, required this.publishedAt, required this.author, required this.assets, this.body, this.immutable, this.updatedAt, this.bodyHtml, this.bodyText, this.mentionsCount, this.discussionUrl, this.reactions, });
 
 factory Release.fromJson(Map<String, dynamic> json) { return Release(
   url: Uri.parse(json['url'] as String),

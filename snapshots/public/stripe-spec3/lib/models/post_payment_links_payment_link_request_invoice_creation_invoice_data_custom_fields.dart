@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_custom_fields_variant1.dart';final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_custom_fields_variant1.dart';@immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

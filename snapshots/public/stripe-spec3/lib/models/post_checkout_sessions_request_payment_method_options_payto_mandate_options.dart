@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_amount.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_end_date.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_payments_per_period.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_start_date.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_amount.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_end_date.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_payments_per_period.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_start_date.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.fromJson(v as String),) : null,

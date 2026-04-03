@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringPatchRuleBody {const DigitalExperienceMonitoringPatchRuleBody({this.description, this.match, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringPatchRuleBody {const DigitalExperienceMonitoringPatchRuleBody({this.description, this.match, this.name, });
 
 factory DigitalExperienceMonitoringPatchRuleBody.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringPatchRuleBody(
   description: json['description'] as String?,

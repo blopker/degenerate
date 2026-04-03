@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs4.dart';import 'post_accounts_account_people_person_request_additional_tos_acceptances.dart';import 'post_accounts_account_people_person_request_address.dart';import 'post_accounts_account_people_person_request_address_kana.dart';import 'post_accounts_account_people_person_request_address_kanji.dart';import 'post_accounts_account_people_person_request_dob.dart';import 'post_accounts_account_people_person_request_documents.dart';import 'post_accounts_account_people_person_request_full_name_aliases.dart';import 'post_accounts_account_people_person_request_metadata.dart';import 'post_accounts_account_people_person_request_registered_address.dart';import 'post_accounts_account_people_person_request_relationship.dart';import 'post_accounts_account_people_person_request_us_cfpb_data.dart';import 'post_accounts_account_people_person_request_verification.dart';/// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
-final class PostAccountsAccountPeoplePersonRequestPoliticalExposure {const PostAccountsAccountPeoplePersonRequestPoliticalExposure._(this.value);
+@immutable final class PostAccountsAccountPeoplePersonRequestPoliticalExposure {const PostAccountsAccountPeoplePersonRequestPoliticalExposure._(this.value);
 
 factory PostAccountsAccountPeoplePersonRequestPoliticalExposure.fromJson(String json) { return switch (json) {
   'existing' => existing,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountPeoplePersonRequestPoliticalExposure($value)'; } 
  }
-final class PostAccountsAccountPeoplePersonRequest {const PostAccountsAccountPeoplePersonRequest({this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, this.dob, this.documents, this.email, this.expand, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, this.personToken, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.usCfpbData, this.verification, });
+@immutable final class PostAccountsAccountPeoplePersonRequest {const PostAccountsAccountPeoplePersonRequest({this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, this.dob, this.documents, this.email, this.expand, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, this.personToken, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.usCfpbData, this.verification, });
 
 factory PostAccountsAccountPeoplePersonRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequest(
   additionalTosAcceptances: json['additional_tos_acceptances'] != null ? PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,

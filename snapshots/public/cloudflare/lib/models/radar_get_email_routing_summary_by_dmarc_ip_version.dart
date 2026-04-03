@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByDmarcIpVersion {const RadarGetEmailRoutingSummaryByDmarcIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByDmarcIpVersion {const RadarGetEmailRoutingSummaryByDmarcIpVersion._(this.value);
 
 factory RadarGetEmailRoutingSummaryByDmarcIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

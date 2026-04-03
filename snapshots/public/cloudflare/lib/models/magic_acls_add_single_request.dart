@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_forward_locally.dart';import 'magic_lan_acl_configuration.dart';import 'magic_unidirectional.dart';/// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
-final class MagicAclsAddSingleRequestProtocols {const MagicAclsAddSingleRequestProtocols._(this.value);
+@immutable final class MagicAclsAddSingleRequestProtocols {const MagicAclsAddSingleRequestProtocols._(this.value);
 
 factory MagicAclsAddSingleRequestProtocols.fromJson(String json) { return switch (json) {
   'tcp' => tcp,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicAclsAddSingleRequestProtocols($value)'; } 
  }
 /// Bidirectional ACL policy for local network traffic within a site.
-final class MagicAclsAddSingleRequest {const MagicAclsAddSingleRequest({this.description, this.forwardLocally, required this.lan1, required this.lan2, required this.name, this.protocols, this.unidirectional, });
+@immutable final class MagicAclsAddSingleRequest {const MagicAclsAddSingleRequest({required this.lan1, required this.lan2, required this.name, this.description, this.forwardLocally, this.protocols, this.unidirectional, });
 
 factory MagicAclsAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicAclsAddSingleRequest(
   description: json['description'] as String?,

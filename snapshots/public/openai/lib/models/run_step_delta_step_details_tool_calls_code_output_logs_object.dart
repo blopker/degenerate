@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `logs`.
-final class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType {const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `logs`.
+@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType {const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType._(this.value);
 
 factory RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType($value)'; } 
  }
 /// Text output from the Code Interpreter tool call as part of a run step.
-final class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject {const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject({required this.index, required this.type, this.logs, });
+@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject {const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject({required this.index, required this.type, this.logs, });
 
 factory RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
   index: (json['index'] as num).toInt(),

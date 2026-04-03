@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos({this.avg, this.p50, this.p75, this.p90, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos({this.avg, this.p50, this.p75, this.p90, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos(
   avg: json['avg'] != null ? (json['avg'] as num).toInt() : null,

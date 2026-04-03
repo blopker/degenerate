@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'received_payment_method_details_financial_account.dart';import 'treasury_shared_resource_billing_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_us_bank_account.dart';/// Set when `type` is `balance`.
-final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'received_payment_method_details_financial_account.dart';import 'treasury_shared_resource_billing_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_us_bank_account.dart';/// Set when `type` is `balance`.
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(this.value);
 
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance.fromJson(String json) { return switch (json) {
   'payments' => payments,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance($value)'; } 
  }
 /// Polymorphic type matching the originating money movement's source. This can be an external account, a Stripe balance, or a FinancialAccount.
-final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(this.value);
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(this.value);
 
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'balance' => balance,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)'; } 
  }
 /// 
-final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails({this.balance, required this.billingDetails, this.financialAccount, this.issuingCard, required this.type, this.usBankAccount, });
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails({required this.billingDetails, required this.type, this.balance, this.financialAccount, this.issuingCard, this.usBankAccount, });
 
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
   balance: json['balance'] != null ? TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance.fromJson(json['balance'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_sepa_debit_mandate_options.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_sepa_debit_mandate_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebit(
   mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

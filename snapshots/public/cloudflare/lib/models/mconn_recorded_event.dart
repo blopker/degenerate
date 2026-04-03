@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_event.dart';/// Recorded Event
-final class MconnRecordedEvent {const MconnRecordedEvent({required this.e, required this.n, required this.t, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_event.dart';/// Recorded Event
+@immutable final class MconnRecordedEvent {const MconnRecordedEvent({required this.e, required this.n, required this.t, });
 
 factory MconnRecordedEvent.fromJson(Map<String, dynamic> json) { return MconnRecordedEvent(
   e: MconnEvent.fromJson(json['e'] as Map<String, dynamic>),

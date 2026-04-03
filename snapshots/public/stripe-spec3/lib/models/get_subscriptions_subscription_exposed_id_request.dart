@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSubscriptionsSubscriptionExposedIdRequest {const GetSubscriptionsSubscriptionExposedIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSubscriptionsSubscriptionExposedIdRequest {const GetSubscriptionsSubscriptionExposedIdRequest();
 
 factory GetSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) { return GetSubscriptionsSubscriptionExposedIdRequest(
 

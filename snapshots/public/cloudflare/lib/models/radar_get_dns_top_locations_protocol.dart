@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTopLocationsProtocol {const RadarGetDnsTopLocationsProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopLocationsProtocol {const RadarGetDnsTopLocationsProtocol._(this.value);
 
 factory RadarGetDnsTopLocationsProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,

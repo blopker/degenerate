@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_timestamp_unit.dart';final class CloudflarePipelinesTimestampField {const CloudflarePipelinesTimestampField({this.unit});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_timestamp_unit.dart';@immutable final class CloudflarePipelinesTimestampField {const CloudflarePipelinesTimestampField({this.unit});
 
 factory CloudflarePipelinesTimestampField.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesTimestampField(
   unit: json['unit'] != null ? CloudflarePipelinesTimestampUnit.fromJson(json['unit'] as String) : null,

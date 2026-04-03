@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Desired validation method.
-final class TlsCertificatesAndHostnamesValidationMethodDefinition {const TlsCertificatesAndHostnamesValidationMethodDefinition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Desired validation method.
+@immutable final class TlsCertificatesAndHostnamesValidationMethodDefinition {const TlsCertificatesAndHostnamesValidationMethodDefinition._(this.value);
 
 factory TlsCertificatesAndHostnamesValidationMethodDefinition.fromJson(String json) { return switch (json) {
   'http' => http,

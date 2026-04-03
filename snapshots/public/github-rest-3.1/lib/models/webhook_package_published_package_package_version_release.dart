@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_package_published_package_package_version_release_author.dart';final class WebhookPackagePublishedPackagePackageVersionRelease {const WebhookPackagePublishedPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_published_package_package_version_release_author.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionRelease {const WebhookPackagePublishedPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
 
 factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionRelease(
   author: json['author'] != null ? WebhookPackagePublishedPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,

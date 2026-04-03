@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Usage model for the Worker invocations.
-final class WorkersUsageModel {const WorkersUsageModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage model for the Worker invocations.
+@immutable final class WorkersUsageModel {const WorkersUsageModel._(this.value);
 
 factory WorkersUsageModel.fromJson(String json) { return switch (json) {
   'standard' => standard,

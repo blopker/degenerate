@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status of the certificate activation.
-final class TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the certificate activation.
+@immutable final class TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,

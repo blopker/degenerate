@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_acss_debit_mandate_options.dart';/// Bank account verification method.
-final class InvoicePaymentMethodOptionsAcssDebitVerificationMethod {const InvoicePaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_acss_debit_mandate_options.dart';/// Bank account verification method.
+@immutable final class InvoicePaymentMethodOptionsAcssDebitVerificationMethod {const InvoicePaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
 
 factory InvoicePaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsAcssDebit {const InvoicePaymentMethodOptionsAcssDebit({this.mandateOptions, this.verificationMethod, });
+@immutable final class InvoicePaymentMethodOptionsAcssDebit {const InvoicePaymentMethodOptionsAcssDebit({this.mandateOptions, this.verificationMethod, });
 
 factory InvoicePaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsAcssDebit(
   mandateOptions: json['mandate_options'] != null ? InvoicePaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

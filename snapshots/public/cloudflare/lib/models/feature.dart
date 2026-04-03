@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Feature {const Feature({required this.key});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Feature {const Feature({required this.key});
 
 factory Feature.fromJson(Map<String, dynamic> json) { return Feature(
   key: json['key'] as String,

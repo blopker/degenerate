@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceTransactionPaperCheckData {const SourceTransactionPaperCheckData({this.availableAt, this.invoices, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceTransactionPaperCheckData {const SourceTransactionPaperCheckData({this.availableAt, this.invoices, });
 
 factory SourceTransactionPaperCheckData.fromJson(Map<String, dynamic> json) { return SourceTransactionPaperCheckData(
   availableAt: json['available_at'] as String?,

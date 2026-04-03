@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether this rule targets a branch or tag
-final class DeploymentBranchPolicyNamePatternWithTypeType {const DeploymentBranchPolicyNamePatternWithTypeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this rule targets a branch or tag
+@immutable final class DeploymentBranchPolicyNamePatternWithTypeType {const DeploymentBranchPolicyNamePatternWithTypeType._(this.value);
 
 factory DeploymentBranchPolicyNamePatternWithTypeType.fromJson(String json) { return switch (json) {
   'branch' => branch,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeploymentBranchPolicyNamePatternWithTypeType($value)'; } 
  }
-final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
+@immutable final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
 
 factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicyNamePatternWithType(
   name: json['name'] as String,

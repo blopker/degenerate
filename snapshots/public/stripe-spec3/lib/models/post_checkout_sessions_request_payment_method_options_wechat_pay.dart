@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsWechatPayClient {const PostCheckoutSessionsRequestPaymentMethodOptionsWechatPayClient._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsWechatPayClient {const PostCheckoutSessionsRequestPaymentMethodOptionsWechatPayClient._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsWechatPayClient.fromJson(String json) { return switch (json) {
   'android' => android,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsWechatPayClient($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsWechatPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsWechatPaySetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsWechatPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsWechatPaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsWechatPaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsWechatPaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay {const PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay({this.appId, required this.client, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay {const PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay({required this.client, this.appId, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay(
   appId: json['app_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class TerminalConnectionTokenObject {const TerminalConnectionTokenObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TerminalConnectionTokenObject {const TerminalConnectionTokenObject._(this.value);
 
 factory TerminalConnectionTokenObject.fromJson(String json) { return switch (json) {
   'terminal.connection_token' => terminalConnectionToken,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A Connection Token is used by the Stripe Terminal SDK to connect to a reader.
 /// 
 /// Related guide: [Fleet management](https://docs.stripe.com/terminal/fleet/locations)
-final class TerminalConnectionToken {const TerminalConnectionToken({this.location, required this.object, required this.secret, });
+@immutable final class TerminalConnectionToken {const TerminalConnectionToken({required this.object, required this.secret, this.location, });
 
 factory TerminalConnectionToken.fromJson(Map<String, dynamic> json) { return TerminalConnectionToken(
   location: json['location'] as String?,

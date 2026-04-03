@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules.dart';final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData({this.hash, required this.rules, required this.sitemaps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData({required this.rules, required this.sitemaps, this.hash, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData(
   hash: json['hash'] as String?,

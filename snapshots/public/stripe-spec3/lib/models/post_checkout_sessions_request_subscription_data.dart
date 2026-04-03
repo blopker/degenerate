@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_billing_mode.dart';import 'post_checkout_sessions_request_subscription_data_invoice_settings.dart';import 'post_checkout_sessions_request_subscription_data_transfer_data.dart';import 'post_checkout_sessions_request_subscription_data_trial_settings.dart';final class PostCheckoutSessionsRequestSubscriptionDataProrationBehavior {const PostCheckoutSessionsRequestSubscriptionDataProrationBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_billing_mode.dart';import 'post_checkout_sessions_request_subscription_data_invoice_settings.dart';import 'post_checkout_sessions_request_subscription_data_transfer_data.dart';import 'post_checkout_sessions_request_subscription_data_trial_settings.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataProrationBehavior {const PostCheckoutSessionsRequestSubscriptionDataProrationBehavior._(this.value);
 
 factory PostCheckoutSessionsRequestSubscriptionDataProrationBehavior.fromJson(String json) { return switch (json) {
   'create_prorations' => createProrations,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataProrationBehavior($value)'; } 
  }
 /// A subset of parameters to be passed to subscription creation for Checkout Sessions in `subscription` mode.
-final class PostCheckoutSessionsRequestSubscriptionData {const PostCheckoutSessionsRequestSubscriptionData({this.applicationFeePercent, this.billingCycleAnchor, this.billingMode, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trialEnd, this.trialPeriodDays, this.trialSettings, });
+@immutable final class PostCheckoutSessionsRequestSubscriptionData {const PostCheckoutSessionsRequestSubscriptionData({this.applicationFeePercent, this.billingCycleAnchor, this.billingMode, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trialEnd, this.trialPeriodDays, this.trialSettings, });
 
 factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,

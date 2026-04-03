@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data about a previous audio response from the model.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data about a previous audio response from the model.
 /// [Learn more](/docs/guides/audio).
 /// 
-final class ChatCompletionRequestAssistantMessageAudio {const ChatCompletionRequestAssistantMessageAudio({required this.id});
+@immutable final class ChatCompletionRequestAssistantMessageAudio {const ChatCompletionRequestAssistantMessageAudio({required this.id});
 
 factory ChatCompletionRequestAssistantMessageAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestAssistantMessageAudio(
   id: json['id'] as String,

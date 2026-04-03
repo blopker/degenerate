@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_financial_accounts_resource_outbound_ach_toggle_settings.dart';import 'treasury_financial_accounts_resource_toggle_settings.dart';/// OutboundTransfers contains outbound transfers features for a FinancialAccount.
-final class TreasuryFinancialAccountsResourceOutboundTransfers {const TreasuryFinancialAccountsResourceOutboundTransfers({this.ach, this.usDomesticWire, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_outbound_ach_toggle_settings.dart';import 'treasury_financial_accounts_resource_toggle_settings.dart';/// OutboundTransfers contains outbound transfers features for a FinancialAccount.
+@immutable final class TreasuryFinancialAccountsResourceOutboundTransfers {const TreasuryFinancialAccountsResourceOutboundTransfers({this.ach, this.usDomesticWire, });
 
 factory TreasuryFinancialAccountsResourceOutboundTransfers.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceOutboundTransfers(
   ach: json['ach'] != null ? TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(json['ach'] as Map<String, dynamic>) : null,

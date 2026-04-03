@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories {const PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories {const PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFilters {const PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFilters({this.accountSubcategories});
+@immutable final class PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFilters {const PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFilters({this.accountSubcategories});
 
 factory PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam42FinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),

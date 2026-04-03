@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityMailsearchMessagePropertiesAllowlistedPatternType {const EmailSecurityMailsearchMessagePropertiesAllowlistedPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMailsearchMessagePropertiesAllowlistedPatternType {const EmailSecurityMailsearchMessagePropertiesAllowlistedPatternType._(this.value);
 
 factory EmailSecurityMailsearchMessagePropertiesAllowlistedPatternType.fromJson(String json) { return switch (json) {
   'quarantine_release' => quarantineRelease,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityMailsearchMessagePropertiesAllowlistedPatternType($value)'; } 
  }
-final class EmailSecurityMailsearchMessagePropertiesWhitelistedPatternType {const EmailSecurityMailsearchMessagePropertiesWhitelistedPatternType._(this.value);
+@immutable final class EmailSecurityMailsearchMessagePropertiesWhitelistedPatternType {const EmailSecurityMailsearchMessagePropertiesWhitelistedPatternType._(this.value);
 
 factory EmailSecurityMailsearchMessagePropertiesWhitelistedPatternType.fromJson(String json) { return switch (json) {
   'quarantine_release' => quarantineRelease,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityMailsearchMessagePropertiesWhitelistedPatternType($value)'; } 
  }
-final class EmailSecurityMailsearchMessageProperties {const EmailSecurityMailsearchMessageProperties({this.allowlistedPattern, this.allowlistedPatternType, this.blocklistedMessage, this.blocklistedPattern, this.whitelistedPatternType, });
+@immutable final class EmailSecurityMailsearchMessageProperties {const EmailSecurityMailsearchMessageProperties({this.allowlistedPattern, this.allowlistedPatternType, this.blocklistedMessage, this.blocklistedPattern, this.whitelistedPatternType, });
 
 factory EmailSecurityMailsearchMessageProperties.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessageProperties(
   allowlistedPattern: json['allowlisted_pattern'] as String?,

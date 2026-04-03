@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class D1ExportDatabaseRequestDumpOptions {const D1ExportDatabaseRequestDumpOptions({this.noData, this.noSchema, this.tables, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class D1ExportDatabaseRequestDumpOptions {const D1ExportDatabaseRequestDumpOptions({this.noData, this.noSchema, this.tables, });
 
 factory D1ExportDatabaseRequestDumpOptions.fromJson(Map<String, dynamic> json) { return D1ExportDatabaseRequestDumpOptions(
   noData: json['no_data'] as bool?,

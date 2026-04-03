@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of identifier.
-final class GlobalAdvisoryIdentifiersType {const GlobalAdvisoryIdentifiersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of identifier.
+@immutable final class GlobalAdvisoryIdentifiersType {const GlobalAdvisoryIdentifiersType._(this.value);
 
 factory GlobalAdvisoryIdentifiersType.fromJson(String json) { return switch (json) {
   'CVE' => cve,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GlobalAdvisoryIdentifiersType($value)'; } 
  }
-final class GlobalAdvisoryIdentifiers {const GlobalAdvisoryIdentifiers({required this.type, required this.value, });
+@immutable final class GlobalAdvisoryIdentifiers {const GlobalAdvisoryIdentifiers({required this.type, required this.value, });
 
 factory GlobalAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryIdentifiers(
   type: GlobalAdvisoryIdentifiersType.fromJson(json['type'] as String),

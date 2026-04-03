@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_risk_score_integration_type.dart';final class DlpRiskScoreIntegration {const DlpRiskScoreIntegration({required this.accountTag, required this.active, required this.createdAt, required this.id, required this.integrationType, required this.referenceId, required this.tenantUrl, required this.wellKnownUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_score_integration_type.dart';@immutable final class DlpRiskScoreIntegration {const DlpRiskScoreIntegration({required this.accountTag, required this.active, required this.createdAt, required this.id, required this.integrationType, required this.referenceId, required this.tenantUrl, required this.wellKnownUrl, });
 
 factory DlpRiskScoreIntegration.fromJson(Map<String, dynamic> json) { return DlpRiskScoreIntegration(
   accountTag: json['account_tag'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_deployment_review_approved_workflow_run_pull_requests_base.dart';import 'webhook_deployment_review_approved_workflow_run_pull_requests_head.dart';final class WebhookDeploymentReviewApprovedWorkflowRunPullRequests {const WebhookDeploymentReviewApprovedWorkflowRunPullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_review_approved_workflow_run_pull_requests_base.dart';import 'webhook_deployment_review_approved_workflow_run_pull_requests_head.dart';@immutable final class WebhookDeploymentReviewApprovedWorkflowRunPullRequests {const WebhookDeploymentReviewApprovedWorkflowRunPullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
 
 factory WebhookDeploymentReviewApprovedWorkflowRunPullRequests.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowRunPullRequests(
   base: WebhookDeploymentReviewApprovedWorkflowRunPullRequestsBase.fromJson(json['base'] as Map<String, dynamic>),

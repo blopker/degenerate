@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ToolChoiceVariant1CustomCustom {const Messages51ToolChoiceVariant1CustomCustom({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolChoiceVariant1CustomCustom {const Messages51ToolChoiceVariant1CustomCustom({required this.name});
 
 factory Messages51ToolChoiceVariant1CustomCustom.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1CustomCustom(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'codespaces_pre_flight_with_repo_for_authenticated_user_response_defaults.dart';import 'simple_user.dart';final class CodespacesPreFlightWithRepoForAuthenticatedUserResponse {const CodespacesPreFlightWithRepoForAuthenticatedUserResponse({this.billableOwner, this.defaults, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespaces_pre_flight_with_repo_for_authenticated_user_response_defaults.dart';import 'simple_user.dart';@immutable final class CodespacesPreFlightWithRepoForAuthenticatedUserResponse {const CodespacesPreFlightWithRepoForAuthenticatedUserResponse({this.billableOwner, this.defaults, });
 
 factory CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
   billableOwner: json['billable_owner'] != null ? SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>) : null,

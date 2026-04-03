@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchIndicatorUpdateRequestTagsVariant2 {const PatchIndicatorUpdateRequestTagsVariant2({this.categoryName, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchIndicatorUpdateRequestTagsVariant2 {const PatchIndicatorUpdateRequestTagsVariant2({required this.value, this.categoryName, });
 
 factory PatchIndicatorUpdateRequestTagsVariant2.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateRequestTagsVariant2(
   categoryName: json['categoryName'] as String?,

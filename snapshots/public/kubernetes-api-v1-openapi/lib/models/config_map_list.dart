@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'config_map.dart';import 'list_meta.dart';/// ConfigMapList is a resource containing a list of ConfigMap objects.
-final class ConfigMapList {const ConfigMapList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class ConfigMapList {const ConfigMapList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ConfigMapList.fromJson(Map<String, dynamic> json) { return ConfigMapList(
   apiVersion: json['apiVersion'] as String?,

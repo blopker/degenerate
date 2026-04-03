@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKonbiniSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKonbiniSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKonbiniSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKonbiniSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKonbiniSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKonbini {const PostCheckoutSessionsRequestPaymentMethodOptionsKonbini({this.expiresAfterDays, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKonbini {const PostCheckoutSessionsRequestPaymentMethodOptionsKonbini({this.expiresAfterDays, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKonbini(
   expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,

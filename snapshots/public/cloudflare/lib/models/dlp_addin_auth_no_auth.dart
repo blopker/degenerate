@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpAddinAuthNoAuthType {const DlpAddinAuthNoAuthType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpAddinAuthNoAuthType {const DlpAddinAuthNoAuthType._(this.value);
 
 factory DlpAddinAuthNoAuthType.fromJson(String json) { return switch (json) {
   'NoAuth' => noAuth,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpAddinAuthNoAuthType($value)'; } 
  }
-final class DlpAddinAuthNoAuth {const DlpAddinAuthNoAuth({required this.type});
+@immutable final class DlpAddinAuthNoAuth {const DlpAddinAuthNoAuth({required this.type});
 
 factory DlpAddinAuthNoAuth.fromJson(Map<String, dynamic> json) { return DlpAddinAuthNoAuth(
   type: DlpAddinAuthNoAuthType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleCreationType {const RepositoryRuleCreationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleCreationType {const RepositoryRuleCreationType._(this.value);
 
 factory RepositoryRuleCreationType.fromJson(String json) { return switch (json) {
   'creation' => creation,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleCreationType($value)'; } 
  }
 /// Only allow users with bypass permission to create matching refs.
-final class RepositoryRuleCreation {const RepositoryRuleCreation({required this.type});
+@immutable final class RepositoryRuleCreation {const RepositoryRuleCreation({required this.type});
 
 factory RepositoryRuleCreation.fromJson(Map<String, dynamic> json) { return RepositoryRuleCreation(
   type: RepositoryRuleCreationType.fromJson(json['type'] as String),

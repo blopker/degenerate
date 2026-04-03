@@ -14,7 +14,7 @@ factory MagicAppPriority.fromJson(num json) => MagicAppPriority(json.toInt());
 num toJson() => value;
 
 }
-final class MagicAppConfigUpdateRequest {const MagicAppConfigUpdateRequest({this.accountAppId, this.breakout, this.managedAppId, this.preferredWans, this.priority, });
+@immutable final class MagicAppConfigUpdateRequest {const MagicAppConfigUpdateRequest({this.accountAppId, this.breakout, this.managedAppId, this.preferredWans, this.priority, });
 
 factory MagicAppConfigUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicAppConfigUpdateRequest(
   accountAppId: json['account_app_id'] != null ? MagicAccountAppId.fromJson(json['account_app_id'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_device_dex_test_schemas_http.dart';final class DigitalExperienceMonitoringDexSingleResponse {const DigitalExperienceMonitoringDexSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_device_dex_test_schemas_http.dart';@immutable final class DigitalExperienceMonitoringDexSingleResponse {const DigitalExperienceMonitoringDexSingleResponse({this.result});
 
 factory DigitalExperienceMonitoringDexSingleResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexSingleResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null,

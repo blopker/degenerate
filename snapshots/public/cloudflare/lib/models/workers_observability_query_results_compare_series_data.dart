@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_series_data_groups.dart';final class WorkersObservabilityQueryResultsCompareSeriesData {const WorkersObservabilityQueryResultsCompareSeriesData({required this.count, required this.firstSeen, this.groups, required this.interval, required this.lastSeen, required this.sampleInterval, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_series_data_groups.dart';@immutable final class WorkersObservabilityQueryResultsCompareSeriesData {const WorkersObservabilityQueryResultsCompareSeriesData({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, required this.sampleInterval, required this.value, this.groups, });
 
 factory WorkersObservabilityQueryResultsCompareSeriesData.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompareSeriesData(
   count: (json['count'] as num).toDouble(),

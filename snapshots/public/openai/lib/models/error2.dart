@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An error that occurred while generating the response.
-final class Error2 {const Error2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An error that occurred while generating the response.
+@immutable final class Error2 {const Error2({required this.code, required this.message, });
 
 factory Error2.fromJson(Map<String, dynamic> json) { return Error2(
   code: json['code'] as String,

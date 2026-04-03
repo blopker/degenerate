@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the Stream. Possible values are `stopped` and `in-progress`.
-final class StreamEnumStatus {const StreamEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Stream. Possible values are `stopped` and `in-progress`.
+@immutable final class StreamEnumStatus {const StreamEnumStatus._(this.value);
 
 factory StreamEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StreamEnumStatus($value)'; } 
  }
-final class AccountCallStream {const AccountCallStream({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
+@immutable final class AccountCallStream {const AccountCallStream({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
 
 factory AccountCallStream.fromJson(Map<String, dynamic> json) { return AccountCallStream(
   sid: json['sid'] as String?,

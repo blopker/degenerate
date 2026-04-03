@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A reference to a script that will consume logs from the attached Worker.
-final class WorkersTailConsumersScript {const WorkersTailConsumersScript({this.environment, this.namespace, required this.service, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A reference to a script that will consume logs from the attached Worker.
+@immutable final class WorkersTailConsumersScript {const WorkersTailConsumersScript({required this.service, this.environment, this.namespace, });
 
 factory WorkersTailConsumersScript.fromJson(Map<String, dynamic> json) { return WorkersTailConsumersScript(
   environment: json['environment'] as String?,

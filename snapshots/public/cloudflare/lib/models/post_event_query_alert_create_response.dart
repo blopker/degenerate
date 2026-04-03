@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Alert frequency (immediate or daily)
-final class PostEventQueryAlertCreateResponseFrequency {const PostEventQueryAlertCreateResponseFrequency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
+@immutable final class PostEventQueryAlertCreateResponseFrequency {const PostEventQueryAlertCreateResponseFrequency._(this.value);
 
 factory PostEventQueryAlertCreateResponseFrequency.fromJson(String json) { return switch (json) {
   'immediate' => immediate,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostEventQueryAlertCreateResponseFrequency($value)'; } 
  }
-final class PostEventQueryAlertCreateResponse {const PostEventQueryAlertCreateResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, this.lastSentAt, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, });
+@immutable final class PostEventQueryAlertCreateResponse {const PostEventQueryAlertCreateResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
 
 factory PostEventQueryAlertCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventQueryAlertCreateResponse(
   accountId: (json['account_id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesPipelineEdge {const CloudflarePipelinesPipelineEdge({required this.destId, required this.edgeType, required this.keyType, required this.srcId, required this.valueType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesPipelineEdge {const CloudflarePipelinesPipelineEdge({required this.destId, required this.edgeType, required this.keyType, required this.srcId, required this.valueType, });
 
 factory CloudflarePipelinesPipelineEdge.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineEdge(
   destId: (json['dest_id'] as num).toInt(),

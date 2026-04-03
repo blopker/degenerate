@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_max_duration_seconds.dart';import 'stream_one_time_upload_expiry.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';final class StreamVideoUpdate {const StreamVideoUpdate({this.allowedOrigins, this.creator, this.maxDurationSeconds, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.uploadExpiry, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_max_duration_seconds.dart';import 'stream_one_time_upload_expiry.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';@immutable final class StreamVideoUpdate {const StreamVideoUpdate({this.allowedOrigins, this.creator, this.maxDurationSeconds, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.uploadExpiry, });
 
 factory StreamVideoUpdate.fromJson(Map<String, dynamic> json) { return StreamVideoUpdate(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),

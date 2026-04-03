@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The secret scope type.
-final class SecretServiceResourceScopeType {const SecretServiceResourceScopeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret scope type.
+@immutable final class SecretServiceResourceScopeType {const SecretServiceResourceScopeType._(this.value);
 
 factory SecretServiceResourceScopeType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SecretServiceResourceScopeType($value)'; } 
  }
 /// 
-final class SecretServiceResourceScope {const SecretServiceResourceScope({required this.type, this.user, });
+@immutable final class SecretServiceResourceScope {const SecretServiceResourceScope({required this.type, this.user, });
 
 factory SecretServiceResourceScope.fromJson(Map<String, dynamic> json) { return SecretServiceResourceScope(
   type: SecretServiceResourceScopeType.fromJson(json['type'] as String),

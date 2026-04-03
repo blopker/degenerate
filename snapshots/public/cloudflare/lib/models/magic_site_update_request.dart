@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_connector_id.dart';import 'magic_secondary_connector_id.dart';import 'magic_site_location.dart';import 'magic_site_name.dart';final class MagicSiteUpdateRequest {const MagicSiteUpdateRequest({this.connectorId, this.description, this.location, this.name, this.secondaryConnectorId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_connector_id.dart';import 'magic_secondary_connector_id.dart';import 'magic_site_location.dart';import 'magic_site_name.dart';@immutable final class MagicSiteUpdateRequest {const MagicSiteUpdateRequest({this.connectorId, this.description, this.location, this.name, this.secondaryConnectorId, });
 
 factory MagicSiteUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicSiteUpdateRequest(
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A GitHub user.
-final class SimpleUser {const SimpleUser({this.name, this.email, required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.starredAt, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub user.
+@immutable final class SimpleUser {const SimpleUser({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.name, this.email, this.starredAt, this.userViewType, });
 
 factory SimpleUser.fromJson(Map<String, dynamic> json) { return SimpleUser(
   name: json['name'] as String?,

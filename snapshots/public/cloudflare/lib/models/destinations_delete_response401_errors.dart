@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationsDeleteResponse401ErrorsMessage {const DestinationsDeleteResponse401ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationsDeleteResponse401ErrorsMessage {const DestinationsDeleteResponse401ErrorsMessage._(this.value);
 
 factory DestinationsDeleteResponse401ErrorsMessage.fromJson(String json) { return switch (json) {
   'Unauthorized' => unauthorized,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationsDeleteResponse401ErrorsMessage($value)'; } 
  }
-final class DestinationsDeleteResponse401Errors {const DestinationsDeleteResponse401Errors({this.detail, required this.message, });
+@immutable final class DestinationsDeleteResponse401Errors {const DestinationsDeleteResponse401Errors({required this.message, this.detail, });
 
 factory DestinationsDeleteResponse401Errors.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponse401Errors(
   detail: json['detail'] as String?,

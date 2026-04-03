@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpVersion {const RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpVersion {const RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpVersion._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,

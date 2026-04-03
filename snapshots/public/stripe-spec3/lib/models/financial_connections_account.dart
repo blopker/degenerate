@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_account_number_details.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_balance.dart';import 'bank_connections_resource_balance_refresh.dart';import 'bank_connections_resource_ownership_refresh.dart';import 'bank_connections_resource_transaction_refresh.dart';import 'financial_connections_account_ownership.dart';import 'financial_connections_account_ownership2.dart';/// The type of the account. Account category is further divided in `subcategory`.
-final class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory._(this.value);
+@immutable final class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory._(this.value);
 
 factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
   'cash' => cash,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountCategory($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject._(this.value);
+@immutable final class FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject._(this.value);
 
 factory FinancialConnectionsAccountObject.fromJson(String json) { return switch (json) {
   'financial_connections.account' => financialConnectionsAccount,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FinancialConnectionsAccountObject($value)'; } 
  }
-final class FinancialConnectionsAccountPermissions {const FinancialConnectionsAccountPermissions._(this.value);
+@immutable final class FinancialConnectionsAccountPermissions {const FinancialConnectionsAccountPermissions._(this.value);
 
 factory FinancialConnectionsAccountPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountPermissions($value)'; } 
  }
 /// The status of the link to the account.
-final class FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus._(this.value);
+@immutable final class FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus._(this.value);
 
 factory FinancialConnectionsAccountStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 ///  - `other`
 /// 
 /// If `category` is `investment` or `other`, this will be `other`.
-final class FinancialConnectionsAccountSubcategory {const FinancialConnectionsAccountSubcategory._(this.value);
+@immutable final class FinancialConnectionsAccountSubcategory {const FinancialConnectionsAccountSubcategory._(this.value);
 
 factory FinancialConnectionsAccountSubcategory.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -161,7 +161,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FinancialConnectionsAccountSubcategory($value)'; } 
  }
-final class FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions._(this.value);
+@immutable final class FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions._(this.value);
 
 factory FinancialConnectionsAccountSubscriptions.fromJson(String json) { return switch (json) {
   'transactions' => transactions,
@@ -182,7 +182,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FinancialConnectionsAccountSubscriptions($value)'; } 
  }
-final class FinancialConnectionsAccountSupportedPaymentMethodTypes {const FinancialConnectionsAccountSupportedPaymentMethodTypes._(this.value);
+@immutable final class FinancialConnectionsAccountSupportedPaymentMethodTypes {const FinancialConnectionsAccountSupportedPaymentMethodTypes._(this.value);
 
 factory FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'link' => link,
@@ -207,7 +207,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountSupportedPaymentMethodTypes($value)'; } 
  }
 /// A Financial Connections Account represents an account that exists outside of Stripe, to which you have been granted some degree of access.
-final class FinancialConnectionsAccount {const FinancialConnectionsAccount({this.accountHolder, this.accountNumbers, this.balance, this.balanceRefresh, required this.category, required this.created, this.displayName, required this.id, required this.institutionName, this.last4, required this.livemode, required this.object, this.ownership, this.ownershipRefresh, this.permissions, required this.status, required this.subcategory, this.subscriptions, required this.supportedPaymentMethodTypes, this.transactionRefresh, });
+@immutable final class FinancialConnectionsAccount {const FinancialConnectionsAccount({required this.category, required this.created, required this.id, required this.institutionName, required this.livemode, required this.object, required this.status, required this.subcategory, required this.supportedPaymentMethodTypes, this.accountHolder, this.accountNumbers, this.balance, this.balanceRefresh, this.displayName, this.last4, this.ownership, this.ownershipRefresh, this.permissions, this.subscriptions, this.transactionRefresh, });
 
 factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccount(
   accountHolder: json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,

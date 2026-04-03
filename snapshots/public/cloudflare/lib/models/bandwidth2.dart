@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bandwidth2_ssl.dart';import 'bandwidth2_ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
-final class Bandwidth2 {const Bandwidth2({this.all, this.cached, this.contentType, this.country, this.ssl, this.sslProtocols, this.uncached, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth2_ssl.dart';import 'bandwidth2_ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
+@immutable final class Bandwidth2 {const Bandwidth2({this.all, this.cached, this.contentType, this.country, this.ssl, this.sslProtocols, this.uncached, });
 
 factory Bandwidth2.fromJson(Map<String, dynamic> json) { return Bandwidth2(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,

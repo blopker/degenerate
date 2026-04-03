@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pod_template_spec.dart';/// ReplicationControllerSpec is the specification of a replication controller.
-final class ReplicationControllerSpec {const ReplicationControllerSpec({this.minReadySeconds = 0, this.replicas = 1, this.selector, this.template, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_template_spec.dart';/// ReplicationControllerSpec is the specification of a replication controller.
+@immutable final class ReplicationControllerSpec {const ReplicationControllerSpec({this.minReadySeconds = 0, this.replicas = 1, this.selector, this.template, });
 
 factory ReplicationControllerSpec.fromJson(Map<String, dynamic> json) { return ReplicationControllerSpec(
   minReadySeconds: json.containsKey('minReadySeconds') ? (json['minReadySeconds'] as num).toInt() : 0,

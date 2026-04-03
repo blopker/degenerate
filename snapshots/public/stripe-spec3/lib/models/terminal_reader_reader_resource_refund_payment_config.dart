@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a per-transaction override of a reader configuration
-final class TerminalReaderReaderResourceRefundPaymentConfig {const TerminalReaderReaderResourceRefundPaymentConfig({this.enableCustomerCancellation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-transaction override of a reader configuration
+@immutable final class TerminalReaderReaderResourceRefundPaymentConfig {const TerminalReaderReaderResourceRefundPaymentConfig({this.enableCustomerCancellation});
 
 factory TerminalReaderReaderResourceRefundPaymentConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,

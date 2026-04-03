@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
-final class ServerVad {const ServerVad({this.type = 'server_vad', this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse = true, this.interruptResponse = true, this.idleTimeoutMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
+@immutable final class ServerVad {const ServerVad({this.type = 'server_vad', this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse = true, this.interruptResponse = true, this.idleTimeoutMs, });
 
 factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
   type: json['type'] as String,

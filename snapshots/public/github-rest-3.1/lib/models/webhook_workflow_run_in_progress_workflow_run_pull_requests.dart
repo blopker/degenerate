@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_base.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_head.dart';final class WebhookWorkflowRunInProgressWorkflowRunPullRequests {const WebhookWorkflowRunInProgressWorkflowRunPullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_base.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_head.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunPullRequests {const WebhookWorkflowRunInProgressWorkflowRunPullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
 
 factory WebhookWorkflowRunInProgressWorkflowRunPullRequests.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRunPullRequests(
   base: WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase.fromJson(json['base'] as Map<String, dynamic>),

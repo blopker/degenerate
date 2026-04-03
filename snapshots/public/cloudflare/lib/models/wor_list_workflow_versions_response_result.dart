@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wor_list_workflow_versions_response_result_limits.dart';final class WorListWorkflowVersionsResponseResult {const WorListWorkflowVersionsResponseResult({required this.className, required this.createdOn, required this.hasDag, required this.id, this.limits, required this.modifiedOn, required this.workflowId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_list_workflow_versions_response_result_limits.dart';@immutable final class WorListWorkflowVersionsResponseResult {const WorListWorkflowVersionsResponseResult({required this.className, required this.createdOn, required this.hasDag, required this.id, required this.modifiedOn, required this.workflowId, this.limits, });
 
 factory WorListWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json) { return WorListWorkflowVersionsResponseResult(
   className: json['class_name'] as String,

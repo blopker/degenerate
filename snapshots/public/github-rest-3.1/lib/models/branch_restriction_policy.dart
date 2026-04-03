@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_restriction_policy_apps.dart';import 'branch_restriction_policy_users.dart';import 'team.dart';/// Branch Restriction Policy
-final class BranchRestrictionPolicy {const BranchRestrictionPolicy({required this.url, required this.usersUrl, required this.teamsUrl, required this.appsUrl, required this.users, required this.teams, required this.apps, });
+@immutable final class BranchRestrictionPolicy {const BranchRestrictionPolicy({required this.url, required this.usersUrl, required this.teamsUrl, required this.appsUrl, required this.users, required this.teams, required this.apps, });
 
 factory BranchRestrictionPolicy.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicy(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersWorkerReferencesQueues {const WorkersWorkerReferencesQueues({required this.queueConsumerId, required this.queueId, required this.queueName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersWorkerReferencesQueues {const WorkersWorkerReferencesQueues({required this.queueConsumerId, required this.queueId, required this.queueName, });
 
 factory WorkersWorkerReferencesQueues.fromJson(Map<String, dynamic> json) { return WorkersWorkerReferencesQueues(
   queueConsumerId: json['queue_consumer_id'] as String,

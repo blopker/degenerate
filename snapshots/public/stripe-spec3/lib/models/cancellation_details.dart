@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
-final class CancellationDetailsFeedback {const CancellationDetailsFeedback._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
+@immutable final class CancellationDetailsFeedback {const CancellationDetailsFeedback._(this.value);
 
 factory CancellationDetailsFeedback.fromJson(String json) { return switch (json) {
   'customer_service' => customerService,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CancellationDetailsFeedback($value)'; } 
  }
 /// Why this subscription was canceled.
-final class CancellationDetailsReason {const CancellationDetailsReason._(this.value);
+@immutable final class CancellationDetailsReason {const CancellationDetailsReason._(this.value);
 
 factory CancellationDetailsReason.fromJson(String json) { return switch (json) {
   'cancellation_requested' => cancellationRequested,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CancellationDetailsReason($value)'; } 
  }
 /// 
-final class CancellationDetails {const CancellationDetails({this.comment, this.feedback, this.reason, });
+@immutable final class CancellationDetails {const CancellationDetails({this.comment, this.feedback, this.reason, });
 
 factory CancellationDetails.fromJson(Map<String, dynamic> json) { return CancellationDetails(
   comment: json['comment'] as String?,

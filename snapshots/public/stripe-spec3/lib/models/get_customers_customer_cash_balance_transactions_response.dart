@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_cash_balance_transaction.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetCustomersCustomerCashBalanceTransactionsResponseObject {const GetCustomersCustomerCashBalanceTransactionsResponseObject._(this.value);
+@immutable final class GetCustomersCustomerCashBalanceTransactionsResponseObject {const GetCustomersCustomerCashBalanceTransactionsResponseObject._(this.value);
 
 factory GetCustomersCustomerCashBalanceTransactionsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions
 /// represent when funds are moved into or out of this balance. This includes funding by the customer, allocation
 /// to payments, and refunds to the customer.
-final class GetCustomersCustomerCashBalanceTransactionsResponse {const GetCustomersCustomerCashBalanceTransactionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetCustomersCustomerCashBalanceTransactionsResponse {const GetCustomersCustomerCashBalanceTransactionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetCustomersCustomerCashBalanceTransactionsResponse.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerCashBalanceTransactionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => CustomerCashBalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),

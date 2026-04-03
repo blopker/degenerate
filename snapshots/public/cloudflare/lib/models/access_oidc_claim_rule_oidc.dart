@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessOidcClaimRuleOidc {const AccessOidcClaimRuleOidc({required this.claimName, required this.claimValue, required this.identityProviderId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcClaimRuleOidc {const AccessOidcClaimRuleOidc({required this.claimName, required this.claimValue, required this.identityProviderId, });
 
 factory AccessOidcClaimRuleOidc.fromJson(Map<String, dynamic> json) { return AccessOidcClaimRuleOidc(
   claimName: json['claim_name'] as String,

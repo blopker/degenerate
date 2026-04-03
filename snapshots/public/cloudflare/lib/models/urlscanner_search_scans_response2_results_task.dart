@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerSearchScansResponse2ResultsTask {const UrlscannerSearchScansResponse2ResultsTask({required this.time, required this.url, required this.uuid, required this.visibility, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerSearchScansResponse2ResultsTask {const UrlscannerSearchScansResponse2ResultsTask({required this.time, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerSearchScansResponse2ResultsTask.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse2ResultsTask(
   time: json['time'] as String,

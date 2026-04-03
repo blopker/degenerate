@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';final class ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest({this.ips, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';@immutable final class ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest({this.ips, this.name, });
 
 factory ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(
   ips: (json['ips'] as List<dynamic>?)?.map((e) => e as String).toList(),

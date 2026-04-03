@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingPersonalizationDesignCarrierText {const IssuingPersonalizationDesignCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingPersonalizationDesignCarrierText {const IssuingPersonalizationDesignCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory IssuingPersonalizationDesignCarrierText.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesignCarrierText(
   footerBody: json['footer_body'] as String?,

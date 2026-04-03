@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsEndOutputsValue {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsEndOutputsValue({required this.elementId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsEndOutputsValue {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsEndOutputsValue({required this.elementId});
 
 factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsEndOutputsValue.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsEndOutputsValue(
   elementId: json['elementId'] as String,

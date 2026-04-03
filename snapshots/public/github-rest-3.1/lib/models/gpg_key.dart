@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gpg_key_emails.dart';import 'gpg_key_subkeys.dart';/// A unique encryption key
-final class GpgKey {const GpgKey({required this.id, this.name, required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey, });
+@immutable final class GpgKey {const GpgKey({required this.id, required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey, this.name, });
 
 factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
   id: (json['id'] as num).toInt(),

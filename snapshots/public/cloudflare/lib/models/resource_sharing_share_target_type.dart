@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResourceSharingShareTargetType {const ResourceSharingShareTargetType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingShareTargetType {const ResourceSharingShareTargetType._(this.value);
 
 factory ResourceSharingShareTargetType.fromJson(String json) { return switch (json) {
   'account' => account,

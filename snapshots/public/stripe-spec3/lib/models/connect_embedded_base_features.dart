@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedBaseFeatures {const ConnectEmbeddedBaseFeatures();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedBaseFeatures {const ConnectEmbeddedBaseFeatures();
 
 factory ConnectEmbeddedBaseFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedBaseFeatures(
 

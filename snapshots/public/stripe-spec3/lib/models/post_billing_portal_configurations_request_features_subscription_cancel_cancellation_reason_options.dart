@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.fromJson(String json) { return switch (json) {
   'customer_service' => customerService,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1($value)'; } 
  }
-final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2._(this.value);
+@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the Git committer
-final class SimpleCommitCommitter {const SimpleCommitCommitter({required this.name, required this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the Git committer
+@immutable final class SimpleCommitCommitter {const SimpleCommitCommitter({required this.name, required this.email, });
 
 factory SimpleCommitCommitter.fromJson(Map<String, dynamic> json) { return SimpleCommitCommitter(
   name: json['name'] as String,

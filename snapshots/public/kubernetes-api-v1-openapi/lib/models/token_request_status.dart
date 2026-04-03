@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// TokenRequestStatus is the result of a token request.
-final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// TokenRequestStatus is the result of a token request.
+@immutable final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token = '', });
 
 factory TokenRequestStatus.fromJson(Map<String, dynamic> json) { return TokenRequestStatus(
   expirationTimestamp: json['expirationTimestamp'] != null ? Time.fromJson(json['expirationTimestamp'] as String) : null,

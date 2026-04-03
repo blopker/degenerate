@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'not_received.dart';final class PostIssuingDisputesRequestEvidenceNotReceivedVariant2 {const PostIssuingDisputesRequestEvidenceNotReceivedVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'not_received.dart';@immutable final class PostIssuingDisputesRequestEvidenceNotReceivedVariant2 {const PostIssuingDisputesRequestEvidenceNotReceivedVariant2._(this.value);
 
 factory PostIssuingDisputesRequestEvidenceNotReceivedVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

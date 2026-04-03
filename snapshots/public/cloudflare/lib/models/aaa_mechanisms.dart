@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_mechanisms_email.dart';import 'aaa_mechanisms_pagerduty.dart';import 'aaa_mechanisms_webhooks.dart';/// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
-final class AaaMechanisms {const AaaMechanisms({this.email, this.pagerduty, this.webhooks, });
+@immutable final class AaaMechanisms {const AaaMechanisms({this.email, this.pagerduty, this.webhooks, });
 
 factory AaaMechanisms.fromJson(Map<String, dynamic> json) { return AaaMechanisms(
   email: (json['email'] as List<dynamic>?)?.map((e) => AaaMechanismsEmail.fromJson(e as Map<String, dynamic>)).toList(),

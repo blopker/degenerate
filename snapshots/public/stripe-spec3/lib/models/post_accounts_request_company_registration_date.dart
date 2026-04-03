@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'registration_date_specs.dart';final class PostAccountsRequestCompanyRegistrationDateVariant2 {const PostAccountsRequestCompanyRegistrationDateVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'registration_date_specs.dart';@immutable final class PostAccountsRequestCompanyRegistrationDateVariant2 {const PostAccountsRequestCompanyRegistrationDateVariant2._(this.value);
 
 factory PostAccountsRequestCompanyRegistrationDateVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

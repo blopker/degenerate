@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_all_headers.dart';import 'access_allow_all_methods.dart';import 'access_allow_all_origins.dart';import 'access_allow_credentials.dart';import 'access_allowed_methods2.dart';import 'access_max_age.dart';final class AccessCorsHeaders {const AccessCorsHeaders({this.allowAllHeaders, this.allowAllMethods, this.allowAllOrigins, this.allowCredentials, this.allowedHeaders, this.allowedMethods, this.allowedOrigins, this.maxAge, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_all_headers.dart';import 'access_allow_all_methods.dart';import 'access_allow_all_origins.dart';import 'access_allow_credentials.dart';import 'access_allowed_methods2.dart';import 'access_max_age.dart';@immutable final class AccessCorsHeaders {const AccessCorsHeaders({this.allowAllHeaders, this.allowAllMethods, this.allowAllOrigins, this.allowCredentials, this.allowedHeaders, this.allowedMethods, this.allowedOrigins, this.maxAge, });
 
 factory AccessCorsHeaders.fromJson(Map<String, dynamic> json) { return AccessCorsHeaders(
   allowAllHeaders: json['allow_all_headers'] != null ? AccessAllowAllHeaders.fromJson(json['allow_all_headers'] as bool) : null,

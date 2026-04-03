@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpValidation {const DlpValidation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpValidation {const DlpValidation._(this.value);
 
 factory DlpValidation.fromJson(String json) { return switch (json) {
   'luhn' => luhn,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpValidation($value)'; } 
  }
-final class DlpPattern {const DlpPattern({required this.regex, this.validation, });
+@immutable final class DlpPattern {const DlpPattern({required this.regex, this.validation, });
 
 factory DlpPattern.fromJson(Map<String, dynamic> json) { return DlpPattern(
   regex: json['regex'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2._(this.value);
 
 factory RealtimeSessionCreateRequestGaModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-realtime' => gptRealtime,

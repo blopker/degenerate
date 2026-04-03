@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamEnumUpdateStatus {const StreamEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamEnumUpdateStatus {const StreamEnumUpdateStatus._(this.value);
 
 factory StreamEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'stopped' => stopped,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StreamEnumUpdateStatus($value)'; } 
  }
-final class UpdateStreamRequest {const UpdateStreamRequest({required this.status});
+@immutable final class UpdateStreamRequest {const UpdateStreamRequest({required this.status});
 
 factory UpdateStreamRequest.fromJson(Map<String, dynamic> json) { return UpdateStreamRequest(
   status: StreamEnumUpdateStatus.fromJson(json['Status'] as String),

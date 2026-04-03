@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_bots_timeseries_group_by_user_agent_response400_errors.dart';final class RadarGetAiBotsTimeseriesGroupByUserAgentResponse400 {const RadarGetAiBotsTimeseriesGroupByUserAgentResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_bots_timeseries_group_by_user_agent_response400_errors.dart';@immutable final class RadarGetAiBotsTimeseriesGroupByUserAgentResponse400 {const RadarGetAiBotsTimeseriesGroupByUserAgentResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAiBotsTimeseriesGroupByUserAgentResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type discriminator that is always `chatkit.thread_item`.
-final class WidgetMessageItemObject {const WidgetMessageItemObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `chatkit.thread_item`.
+@immutable final class WidgetMessageItemObject {const WidgetMessageItemObject._(this.value);
 
 factory WidgetMessageItemObject.fromJson(String json) { return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WidgetMessageItemObject($value)'; } 
  }
 /// Thread item that renders a widget payload.
-final class WidgetMessageItem {const WidgetMessageItem({required this.id, this.object = WidgetMessageItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.widget', required this.widget, });
+@immutable final class WidgetMessageItem {const WidgetMessageItem({required this.id, required this.createdAt, required this.threadId, required this.widget, this.object = WidgetMessageItemObject.chatkitThreadItem, this.type = 'chatkit.widget', });
 
 factory WidgetMessageItem.fromJson(Map<String, dynamic> json) { return WidgetMessageItem(
   id: json['id'] as String,

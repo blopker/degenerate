@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_client_secret_version.dart';import 'access_duration.dart';import 'access_previous_client_secret_expires_at.dart';import 'access_schemas_name.dart';final class AccessServiceTokensUpdateAServiceTokenRequest {const AccessServiceTokensUpdateAServiceTokenRequest({this.clientSecretVersion, this.duration, this.name, this.previousClientSecretExpiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_client_secret_version.dart';import 'access_duration.dart';import 'access_previous_client_secret_expires_at.dart';import 'access_schemas_name.dart';@immutable final class AccessServiceTokensUpdateAServiceTokenRequest {const AccessServiceTokensUpdateAServiceTokenRequest({this.clientSecretVersion, this.duration, this.name, this.previousClientSecretExpiresAt, });
 
 factory AccessServiceTokensUpdateAServiceTokenRequest.fromJson(Map<String, dynamic> json) { return AccessServiceTokensUpdateAServiceTokenRequest(
   clientSecretVersion: json['client_secret_version'] != null ? AccessClientSecretVersion.fromJson(json['client_secret_version'] as num) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_keys_list_response500_errors.dart';import 'telemetry_keys_list_response500_messages.dart';final class TelemetryKeysListResponse500 {const TelemetryKeysListResponse500({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_keys_list_response500_errors.dart';import 'telemetry_keys_list_response500_messages.dart';@immutable final class TelemetryKeysListResponse500 {const TelemetryKeysListResponse500({required this.errors, required this.messages, required this.success, });
 
 factory TelemetryKeysListResponse500.fromJson(Map<String, dynamic> json) { return TelemetryKeysListResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => TelemetryKeysListResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),

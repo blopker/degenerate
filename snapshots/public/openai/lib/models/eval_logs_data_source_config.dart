@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of data source. Always `logs`.
-final class EvalLogsDataSourceConfigType {const EvalLogsDataSourceConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `logs`.
+@immutable final class EvalLogsDataSourceConfigType {const EvalLogsDataSourceConfigType._(this.value);
 
 factory EvalLogsDataSourceConfigType.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The schema returned by this data source config is used to defined what variables are available in your evals.
 /// `item` and `sample` are both defined when using this data source config.
 /// 
-final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({this.type = EvalLogsDataSourceConfigType.logs, this.metadata, required this.schema, });
+@immutable final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({required this.schema, this.type = EvalLogsDataSourceConfigType.logs, this.metadata, });
 
 factory EvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalLogsDataSourceConfig(
   type: EvalLogsDataSourceConfigType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The amount you initially requested for this payment.
-final class PostPaymentRecordsReportPaymentRequestAmountRequested {const PostPaymentRecordsReportPaymentRequestAmountRequested({required this.currency, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The amount you initially requested for this payment.
+@immutable final class PostPaymentRecordsReportPaymentRequestAmountRequested {const PostPaymentRecordsReportPaymentRequestAmountRequested({required this.currency, required this.value, });
 
 factory PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestAmountRequested(
   currency: json['currency'] as String,

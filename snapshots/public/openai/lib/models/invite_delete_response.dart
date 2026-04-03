@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `organization.invite.deleted`
-final class InviteDeleteResponseObject {const InviteDeleteResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.invite.deleted`
+@immutable final class InviteDeleteResponseObject {const InviteDeleteResponseObject._(this.value);
 
 factory InviteDeleteResponseObject.fromJson(String json) { return switch (json) {
   'organization.invite.deleted' => organizationInviteDeleted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InviteDeleteResponseObject($value)'; } 
  }
-final class InviteDeleteResponse {const InviteDeleteResponse({required this.object, required this.id, required this.deleted, });
+@immutable final class InviteDeleteResponse {const InviteDeleteResponse({required this.object, required this.id, required this.deleted, });
 
 factory InviteDeleteResponse.fromJson(Map<String, dynamic> json) { return InviteDeleteResponse(
   object: InviteDeleteResponseObject.fromJson(json['object'] as String),

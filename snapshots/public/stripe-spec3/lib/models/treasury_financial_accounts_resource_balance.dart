@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Balance information for the FinancialAccount
-final class TreasuryFinancialAccountsResourceBalance {const TreasuryFinancialAccountsResourceBalance({required this.cash, required this.inboundPending, required this.outboundPending, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Balance information for the FinancialAccount
+@immutable final class TreasuryFinancialAccountsResourceBalance {const TreasuryFinancialAccountsResourceBalance({required this.cash, required this.inboundPending, required this.outboundPending, });
 
 factory TreasuryFinancialAccountsResourceBalance.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceBalance(
   cash: (json['cash'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),

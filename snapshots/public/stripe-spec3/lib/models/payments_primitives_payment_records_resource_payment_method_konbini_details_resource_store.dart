@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The name of the convenience store chain where the payment was completed.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the convenience store chain where the payment was completed.
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(String json) { return switch (json) {
   'familymart' => familymart,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain($value)'; } 
  }
 /// 
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore({this.chain});
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore({this.chain});
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
   chain: json['chain'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(json['chain'] as String) : null,

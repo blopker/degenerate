@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions._(this.value);
 
 factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { return switch (json) {
   'customer_service' => customerService,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionCancellationReasonOptions($value)'; } 
  }
 /// 
-final class PortalSubscriptionCancellationReason {const PortalSubscriptionCancellationReason({required this.enabled, required this.options, });
+@immutable final class PortalSubscriptionCancellationReason {const PortalSubscriptionCancellationReason({required this.enabled, required this.options, });
 
 factory PortalSubscriptionCancellationReason.fromJson(Map<String, dynamic> json) { return PortalSubscriptionCancellationReason(
   enabled: json['enabled'] as bool,

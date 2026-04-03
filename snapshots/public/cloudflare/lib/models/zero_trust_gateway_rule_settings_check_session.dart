@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
-final class ZeroTrustGatewayRuleSettingsCheckSession {const ZeroTrustGatewayRuleSettingsCheckSession({this.duration, this.enforce, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
+@immutable final class ZeroTrustGatewayRuleSettingsCheckSession {const ZeroTrustGatewayRuleSettingsCheckSession({this.duration, this.enforce, });
 
 factory ZeroTrustGatewayRuleSettingsCheckSession.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsCheckSession(
   duration: json['duration'] as String?,

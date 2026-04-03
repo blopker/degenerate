@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingAlertsRequest {const GetBillingAlertsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingAlertsRequest {const GetBillingAlertsRequest();
 
 factory GetBillingAlertsRequest.fromJson(Map<String, dynamic> json) { return GetBillingAlertsRequest(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultError {const WorDescribeWorkflowInstanceResponseResultError({required this.message, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultError {const WorDescribeWorkflowInstanceResponseResultError({required this.message, required this.name, });
 
 factory WorDescribeWorkflowInstanceResponseResultError.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultError(
   message: json['message'] as String,

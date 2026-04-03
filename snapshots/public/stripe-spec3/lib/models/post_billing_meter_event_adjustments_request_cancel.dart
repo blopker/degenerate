@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies which event to cancel.
-final class PostBillingMeterEventAdjustmentsRequestCancel {const PostBillingMeterEventAdjustmentsRequestCancel({this.identifier});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies which event to cancel.
+@immutable final class PostBillingMeterEventAdjustmentsRequestCancel {const PostBillingMeterEventAdjustmentsRequestCancel({this.identifier});
 
 factory PostBillingMeterEventAdjustmentsRequestCancel.fromJson(Map<String, dynamic> json) { return PostBillingMeterEventAdjustmentsRequestCancel(
   identifier: json['identifier'] as String?,

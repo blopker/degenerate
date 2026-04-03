@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByDkimSpf {const RadarGetEmailSecuritySummaryByDkimSpf._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByDkimSpf {const RadarGetEmailSecuritySummaryByDkimSpf._(this.value);
 
 factory RadarGetEmailSecuritySummaryByDkimSpf.fromJson(String json) { return switch (json) {
   'PASS' => pass,

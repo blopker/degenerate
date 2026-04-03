@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByHttpProtocolBrowserFamily {const RadarGetHttpTimeseriesGroupByHttpProtocolBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByHttpProtocolBrowserFamily {const RadarGetHttpTimeseriesGroupByHttpProtocolBrowserFamily._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByHttpProtocolBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_tunnel_name.dart';final class CloudflareTunnelCreateAWarpConnectorTunnelRequest {const CloudflareTunnelCreateAWarpConnectorTunnelRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_tunnel_name.dart';@immutable final class CloudflareTunnelCreateAWarpConnectorTunnelRequest {const CloudflareTunnelCreateAWarpConnectorTunnelRequest({required this.name});
 
 factory CloudflareTunnelCreateAWarpConnectorTunnelRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelCreateAWarpConnectorTunnelRequest(
   name: TunnelTunnelName.fromJson(json['name'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class GetInvoicesSearchResponseObject {const GetInvoicesSearchResponseObject._(this.value);
+@immutable final class GetInvoicesSearchResponseObject {const GetInvoicesSearchResponseObject._(this.value);
 
 factory GetInvoicesSearchResponseObject.fromJson(String json) { return switch (json) {
   'search_result' => searchResult,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetInvoicesSearchResponseObject($value)'; } 
  }
 /// 
-final class GetInvoicesSearchResponse {const GetInvoicesSearchResponse({required this.data, required this.hasMore, this.nextPage, required this.object, this.totalCount, required this.url, });
+@immutable final class GetInvoicesSearchResponse {const GetInvoicesSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage, this.totalCount, });
 
 factory GetInvoicesSearchResponse.fromJson(Map<String, dynamic> json) { return GetInvoicesSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Invoice.fromJson(e as Map<String, dynamic>)).toList(),

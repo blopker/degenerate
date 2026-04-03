@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Issue Event Project Card
-final class IssueEventProjectCard {const IssueEventProjectCard({required this.url, required this.id, required this.projectUrl, required this.projectId, required this.columnName, this.previousColumnName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Project Card
+@immutable final class IssueEventProjectCard {const IssueEventProjectCard({required this.url, required this.id, required this.projectUrl, required this.projectId, required this.columnName, this.previousColumnName, });
 
 factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) { return IssueEventProjectCard(
   url: Uri.parse(json['url'] as String),

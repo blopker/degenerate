@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Pull request number for this codespace
-final class CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest {const CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest({required this.pullRequestNumber, required this.repositoryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Pull request number for this codespace
+@immutable final class CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest {const CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest({required this.pullRequestNumber, required this.repositoryId, });
 
 factory CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest(
   pullRequestNumber: (json['pull_request_number'] as num).toInt(),

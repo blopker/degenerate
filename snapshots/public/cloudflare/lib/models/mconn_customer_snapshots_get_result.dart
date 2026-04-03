@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_snapshot_metadata.dart';final class MconnCustomerSnapshotsGetResult {const MconnCustomerSnapshotsGetResult({required this.count, this.cursor, required this.items, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_snapshot_metadata.dart';@immutable final class MconnCustomerSnapshotsGetResult {const MconnCustomerSnapshotsGetResult({required this.count, required this.items, this.cursor, });
 
 factory MconnCustomerSnapshotsGetResult.fromJson(Map<String, dynamic> json) { return MconnCustomerSnapshotsGetResult(
   count: (json['count'] as num).toDouble(),

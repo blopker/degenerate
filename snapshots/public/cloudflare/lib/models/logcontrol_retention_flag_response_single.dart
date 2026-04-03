@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logcontrol_retention_flag.dart';final class LogcontrolRetentionFlagResponseSingle {const LogcontrolRetentionFlagResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_retention_flag.dart';@immutable final class LogcontrolRetentionFlagResponseSingle {const LogcontrolRetentionFlagResponseSingle({this.result});
 
 factory LogcontrolRetentionFlagResponseSingle.fromJson(Map<String, dynamic> json) { return LogcontrolRetentionFlagResponseSingle(
   result: json['result'] != null ? LogcontrolRetentionFlag.fromJson(json['result'] as Map<String, dynamic>) : null,

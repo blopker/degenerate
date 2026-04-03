@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksReviewCommentLinksSelf {const WebhooksReviewCommentLinksSelf({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksReviewCommentLinksSelf {const WebhooksReviewCommentLinksSelf({required this.href});
 
 factory WebhooksReviewCommentLinksSelf.fromJson(Map<String, dynamic> json) { return WebhooksReviewCommentLinksSelf(
   href: json['href'] as String,

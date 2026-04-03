@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetInvoiceRenderingTemplatesRequest {const GetInvoiceRenderingTemplatesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoiceRenderingTemplatesRequest {const GetInvoiceRenderingTemplatesRequest();
 
 factory GetInvoiceRenderingTemplatesRequest.fromJson(Map<String, dynamic> json) { return GetInvoiceRenderingTemplatesRequest(
 

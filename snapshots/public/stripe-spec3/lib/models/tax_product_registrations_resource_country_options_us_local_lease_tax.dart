@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax {const TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax({required this.jurisdiction});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax {const TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax({required this.jurisdiction});
 
 factory TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax(
   jurisdiction: json['jurisdiction'] as String,

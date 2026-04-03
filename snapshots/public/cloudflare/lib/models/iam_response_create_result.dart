@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_value.dart';final class IamResponseCreateResult {const IamResponseCreateResult({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_value.dart';@immutable final class IamResponseCreateResult {const IamResponseCreateResult({this.value});
 
 factory IamResponseCreateResult.fromJson(Map<String, dynamic> json) { return IamResponseCreateResult(
   value: json['value'] != null ? IamValue.fromJson(json['value'] as String) : null,

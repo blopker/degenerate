@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The usage information for the request.
-final class CreateEmbeddingResponseUsage {const CreateEmbeddingResponseUsage({required this.promptTokens, required this.totalTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The usage information for the request.
+@immutable final class CreateEmbeddingResponseUsage {const CreateEmbeddingResponseUsage({required this.promptTokens, required this.totalTokens, });
 
 factory CreateEmbeddingResponseUsage.fromJson(Map<String, dynamic> json) { return CreateEmbeddingResponseUsage(
   promptTokens: (json['prompt_tokens'] as num).toInt(),

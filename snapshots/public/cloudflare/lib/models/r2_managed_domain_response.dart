@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2ManagedDomainResponse {const R2ManagedDomainResponse({required this.bucketId, required this.domain, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2ManagedDomainResponse {const R2ManagedDomainResponse({required this.bucketId, required this.domain, required this.enabled, });
 
 factory R2ManagedDomainResponse.fromJson(Map<String, dynamic> json) { return R2ManagedDomainResponse(
   bucketId: json['bucketId'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection6_result_info.dart';import 'shield_messages2.dart';final class ResponseCollection6 {const ResponseCollection6({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection6_result_info.dart';import 'shield_messages2.dart';@immutable final class ResponseCollection6 {const ResponseCollection6({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection6.fromJson(Map<String, dynamic> json) { return ResponseCollection6(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

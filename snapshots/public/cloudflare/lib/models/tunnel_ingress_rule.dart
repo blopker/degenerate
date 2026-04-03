@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_origin_request.dart';/// Public hostname
-final class TunnelIngressRule {const TunnelIngressRule({required this.hostname, this.originRequest, this.path, required this.service, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_origin_request.dart';/// Public hostname
+@immutable final class TunnelIngressRule {const TunnelIngressRule({required this.hostname, required this.service, this.originRequest, this.path, });
 
 factory TunnelIngressRule.fromJson(Map<String, dynamic> json) { return TunnelIngressRule(
   hostname: json['hostname'] as String,

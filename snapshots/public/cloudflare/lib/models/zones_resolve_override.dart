@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Change the origin address to the value specified in this setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Change the origin address to the value specified in this setting.
 /// 
-final class ZonesResolveOverrideId {const ZonesResolveOverrideId._(this.value);
+@immutable final class ZonesResolveOverrideId {const ZonesResolveOverrideId._(this.value);
 
 factory ZonesResolveOverrideId.fromJson(String json) { return switch (json) {
   'resolve_override' => resolveOverride,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesResolveOverrideId($value)'; } 
  }
-final class ZonesResolveOverride {const ZonesResolveOverride({this.id, this.value, });
+@immutable final class ZonesResolveOverride {const ZonesResolveOverride({this.id, this.value, });
 
 factory ZonesResolveOverride.fromJson(Map<String, dynamic> json) { return ZonesResolveOverride(
   id: json['id'] != null ? ZonesResolveOverrideId.fromJson(json['id'] as String) : null,

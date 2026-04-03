@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_tagging_resource_id.dart';/// Enum for base zone-level resource types (those with no extra required fields).
-final class ResourceTaggingZoneResourceTypeBaseEnum {const ResourceTaggingZoneResourceTypeBaseEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_resource_id.dart';/// Enum for base zone-level resource types (those with no extra required fields).
+@immutable final class ResourceTaggingZoneResourceTypeBaseEnum {const ResourceTaggingZoneResourceTypeBaseEnum._(this.value);
 
 factory ResourceTaggingZoneResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
   'api_gateway_operation' => apiGatewayOperation,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResourceTaggingZoneResourceTypeBaseEnum($value)'; } 
  }
 /// Request body schema for deleting tags from zone-level resources. Zone ID comes from URL path.
-final class ResourceTaggingDeleteTagsRequestZoneLevelBase {const ResourceTaggingDeleteTagsRequestZoneLevelBase({required this.resourceId, required this.resourceType, });
+@immutable final class ResourceTaggingDeleteTagsRequestZoneLevelBase {const ResourceTaggingDeleteTagsRequestZoneLevelBase({required this.resourceId, required this.resourceType, });
 
 factory ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestZoneLevelBase(
   resourceId: ResourceTaggingResourceId.fromJson(json['resource_id'] as String),

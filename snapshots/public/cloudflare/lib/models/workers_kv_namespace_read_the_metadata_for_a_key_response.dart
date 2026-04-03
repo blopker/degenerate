@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_messages2.dart';final class WorkersKvNamespaceReadTheMetadataForAKeyResponse {const WorkersKvNamespaceReadTheMetadataForAKeyResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_messages2.dart';@immutable final class WorkersKvNamespaceReadTheMetadataForAKeyResponse {const WorkersKvNamespaceReadTheMetadataForAKeyResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory WorkersKvNamespaceReadTheMetadataForAKeyResponse.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceReadTheMetadataForAKeyResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),

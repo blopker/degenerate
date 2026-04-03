@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_changes8_tier_from.dart';final class WebhooksChanges8Tier {const WebhooksChanges8Tier({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_changes8_tier_from.dart';@immutable final class WebhooksChanges8Tier {const WebhooksChanges8Tier({required this.from});
 
 factory WebhooksChanges8Tier.fromJson(Map<String, dynamic> json) { return WebhooksChanges8Tier(
   from: WebhooksChanges8TierFrom.fromJson(json['from'] as Map<String, dynamic>),

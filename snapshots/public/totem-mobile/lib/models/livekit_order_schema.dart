@@ -2,6 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
+@immutable
 final class LivekitOrderSchema {
   const LivekitOrderSchema({required this.order});
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'approximate_location.dart';final class SearchContextSize {const SearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'approximate_location.dart';@immutable final class SearchContextSize {const SearchContextSize._(this.value);
 
 factory SearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SearchContextSize($value)'; } 
  }
-final class SearchContentType {const SearchContentType._(this.value);
+@immutable final class SearchContentType {const SearchContentType._(this.value);
 
 factory SearchContentType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SearchContentType($value)'; } 
  }
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
-final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_search_preview', this.userLocation, this.searchContextSize, this.searchContentTypes, });
+@immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_search_preview', this.userLocation, this.searchContextSize, this.searchContentTypes, });
 
 factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSearchPreviewTool(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_details_tool_calls_function_object_function.dart';/// The type of tool call. This is always going to be `function` for this type of tool call.
-final class RunStepDetailsToolCallsFunctionObjectType {const RunStepDetailsToolCallsFunctionObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_function_object_function.dart';/// The type of tool call. This is always going to be `function` for this type of tool call.
+@immutable final class RunStepDetailsToolCallsFunctionObjectType {const RunStepDetailsToolCallsFunctionObjectType._(this.value);
 
 factory RunStepDetailsToolCallsFunctionObjectType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RunStepDetailsToolCallsFunctionObjectType($value)'; } 
  }
-final class RunStepDetailsToolCallsFunctionObject {const RunStepDetailsToolCallsFunctionObject({required this.id, required this.type, required this.function, });
+@immutable final class RunStepDetailsToolCallsFunctionObject {const RunStepDetailsToolCallsFunctionObject({required this.id, required this.type, required this.function, });
 
 factory RunStepDetailsToolCallsFunctionObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFunctionObject(
   id: json['id'] as String,

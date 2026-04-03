@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelSchemasIpRiskTypes {const IntelSchemasIpRiskTypes({this.id, this.name, this.superCategoryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelSchemasIpRiskTypes {const IntelSchemasIpRiskTypes({this.id, this.name, this.superCategoryId, });
 
 factory IntelSchemasIpRiskTypes.fromJson(Map<String, dynamic> json) { return IntelSchemasIpRiskTypes(
   id: json['id'] != null ? (json['id'] as num).toDouble() : null,

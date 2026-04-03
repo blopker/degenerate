@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_messages2.dart';final class ResponseCommon9 {const ResponseCommon9({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_messages2.dart';@immutable final class ResponseCommon9 {const ResponseCommon9({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon9.fromJson(Map<String, dynamic> json) { return ResponseCommon9(
   errors: (json['errors'] as List<dynamic>).map((e) => BotManagementMessages2.fromJson(e as Map<String, dynamic>)).toList(),

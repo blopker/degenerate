@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `kr_card` PaymentMethod, this hash contains details about the Korean Card payment method.
-final class PostPaymentMethodsRequestKrCard {const PostPaymentMethodsRequestKrCard();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `kr_card` PaymentMethod, this hash contains details about the Korean Card payment method.
+@immutable final class PostPaymentMethodsRequestKrCard {const PostPaymentMethodsRequestKrCard();
 
 factory PostPaymentMethodsRequestKrCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestKrCard(
 

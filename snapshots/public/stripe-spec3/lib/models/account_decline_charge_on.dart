@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountDeclineChargeOn {const AccountDeclineChargeOn({required this.avsFailure, required this.cvcFailure, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountDeclineChargeOn {const AccountDeclineChargeOn({required this.avsFailure, required this.cvcFailure, });
 
 factory AccountDeclineChargeOn.fromJson(Map<String, dynamic> json) { return AccountDeclineChargeOn(
   avsFailure: json['avs_failure'] as bool,

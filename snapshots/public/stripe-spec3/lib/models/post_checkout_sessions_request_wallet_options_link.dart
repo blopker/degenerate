@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestWalletOptionsLinkDisplay {const PostCheckoutSessionsRequestWalletOptionsLinkDisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestWalletOptionsLinkDisplay {const PostCheckoutSessionsRequestWalletOptionsLinkDisplay._(this.value);
 
 factory PostCheckoutSessionsRequestWalletOptionsLinkDisplay.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestWalletOptionsLinkDisplay($value)'; } 
  }
-final class PostCheckoutSessionsRequestWalletOptionsLink {const PostCheckoutSessionsRequestWalletOptionsLink({this.display});
+@immutable final class PostCheckoutSessionsRequestWalletOptionsLink {const PostCheckoutSessionsRequestWalletOptionsLink({this.display});
 
 factory PostCheckoutSessionsRequestWalletOptionsLink.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestWalletOptionsLink(
   display: json['display'] != null ? PostCheckoutSessionsRequestWalletOptionsLinkDisplay.fromJson(json['display'] as String) : null,

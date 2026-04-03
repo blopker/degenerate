@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ObservatoryResultInfo {const ObservatoryResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryResultInfo {const ObservatoryResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory ObservatoryResultInfo.fromJson(Map<String, dynamic> json) { return ObservatoryResultInfo(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

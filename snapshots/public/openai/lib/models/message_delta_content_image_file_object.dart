@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_content_image_file_object_image_file.dart';/// Always `image_file`.
-final class MessageDeltaContentImageFileObjectType {const MessageDeltaContentImageFileObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_image_file_object_image_file.dart';/// Always `image_file`.
+@immutable final class MessageDeltaContentImageFileObjectType {const MessageDeltaContentImageFileObjectType._(this.value);
 
 factory MessageDeltaContentImageFileObjectType.fromJson(String json) { return switch (json) {
   'image_file' => imageFile,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaContentImageFileObjectType($value)'; } 
  }
 /// References an image [File](/docs/api-reference/files) in the content of a message.
-final class MessageDeltaContentImageFileObject {const MessageDeltaContentImageFileObject({required this.index, required this.type, this.imageFile, });
+@immutable final class MessageDeltaContentImageFileObject {const MessageDeltaContentImageFileObject({required this.index, required this.type, this.imageFile, });
 
 factory MessageDeltaContentImageFileObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageFileObject(
   index: (json['index'] as num).toInt(),

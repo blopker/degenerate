@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_scanned_repositories.dart';import 'code_scanning_variant_analysis_skipped_repositories.dart';import 'code_scanning_variant_analysis_status.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The language targeted by the CodeQL query
-final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
+@immutable final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
 
 factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
   'actions' => actions,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningVariantAnalysisLanguage($value)'; } 
  }
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
-final class CodeScanningVariantAnalysisFailureReason {const CodeScanningVariantAnalysisFailureReason._(this.value);
+@immutable final class CodeScanningVariantAnalysisFailureReason {const CodeScanningVariantAnalysisFailureReason._(this.value);
 
 factory CodeScanningVariantAnalysisFailureReason.fromJson(String json) { return switch (json) {
   'no_repos_queried' => noReposQueried,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningVariantAnalysisFailureReason($value)'; } 
  }
 /// A run of a CodeQL query against one or more repositories.
-final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, this.createdAt, this.updatedAt, this.completedAt, required this.status, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
+@immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
 
 factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysis(
   id: (json['id'] as num).toInt(),

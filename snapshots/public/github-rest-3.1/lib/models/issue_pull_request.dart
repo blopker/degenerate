@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuePullRequest {const IssuePullRequest({this.mergedAt, required this.diffUrl, required this.htmlUrl, required this.patchUrl, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuePullRequest {const IssuePullRequest({required this.diffUrl, required this.htmlUrl, required this.patchUrl, required this.url, this.mergedAt, });
 
 factory IssuePullRequest.fromJson(Map<String, dynamic> json) { return IssuePullRequest(
   mergedAt: json['merged_at'] != null ? DateTime.parse(json['merged_at'] as String) : null,

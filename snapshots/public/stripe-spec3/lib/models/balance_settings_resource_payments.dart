@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'balance_settings_resource_payouts.dart';import 'balance_settings_resource_settlement_timing.dart';/// 
-final class BalanceSettingsResourcePayments {const BalanceSettingsResourcePayments({this.debitNegativeBalances, this.payouts, required this.settlementTiming, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_settings_resource_payouts.dart';import 'balance_settings_resource_settlement_timing.dart';/// 
+@immutable final class BalanceSettingsResourcePayments {const BalanceSettingsResourcePayments({required this.settlementTiming, this.debitNegativeBalances, this.payouts, });
 
 factory BalanceSettingsResourcePayments.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayments(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,

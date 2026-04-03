@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionCashappQrCode {const PaymentIntentNextActionCashappQrCode({required this.expiresAt, required this.imageUrlPng, required this.imageUrlSvg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionCashappQrCode {const PaymentIntentNextActionCashappQrCode({required this.expiresAt, required this.imageUrlPng, required this.imageUrlSvg, });
 
 factory PaymentIntentNextActionCashappQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionCashappQrCode(
   expiresAt: (json['expires_at'] as num).toInt(),

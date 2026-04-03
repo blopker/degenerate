@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `pay_by_bank` PaymentMethod, this hash contains details about the PayByBank payment method.
-final class PostPaymentMethodsRequestPayByBank {const PostPaymentMethodsRequestPayByBank();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `pay_by_bank` PaymentMethod, this hash contains details about the PayByBank payment method.
+@immutable final class PostPaymentMethodsRequestPayByBank {const PostPaymentMethodsRequestPayByBank();
 
 factory PostPaymentMethodsRequestPayByBank.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestPayByBank(
 

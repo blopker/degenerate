@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'check_run_with_simple_check_suite.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookCheckRunCompletedAction {const WebhookCheckRunCompletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCheckRunCompletedAction {const WebhookCheckRunCompletedAction._(this.value);
 
 factory WebhookCheckRunCompletedAction.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckRunCompletedAction($value)'; } 
  }
-final class WebhookCheckRunCompleted {const WebhookCheckRunCompleted({this.action, required this.checkRun, this.installation, this.enterprise, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookCheckRunCompleted {const WebhookCheckRunCompleted({required this.checkRun, required this.repository, required this.sender, this.action, this.installation, this.enterprise, this.organization, });
 
 factory WebhookCheckRunCompleted.fromJson(Map<String, dynamic> json) { return WebhookCheckRunCompleted(
   action: json['action'] != null ? WebhookCheckRunCompletedAction.fromJson(json['action'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
-final class HostPathVolumeSource {const HostPathVolumeSource({this.path = '', this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
+@immutable final class HostPathVolumeSource {const HostPathVolumeSource({this.path = '', this.type, });
 
 factory HostPathVolumeSource.fromJson(Map<String, dynamic> json) { return HostPathVolumeSource(
   path: json['path'] as String,

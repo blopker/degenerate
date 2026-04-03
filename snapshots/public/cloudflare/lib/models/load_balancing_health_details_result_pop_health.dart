@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_health.dart';/// List of regions and associated health status.
-final class LoadBalancingHealthDetailsResultPopHealth {const LoadBalancingHealthDetailsResultPopHealth({this.healthy, this.origins, });
+@immutable final class LoadBalancingHealthDetailsResultPopHealth {const LoadBalancingHealthDetailsResultPopHealth({this.healthy, this.origins, });
 
 factory LoadBalancingHealthDetailsResultPopHealth.fromJson(Map<String, dynamic> json) { return LoadBalancingHealthDetailsResultPopHealth(
   healthy: json['healthy'] as bool?,

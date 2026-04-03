@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_eval_run_canceled_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_eval_run_canceled_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookEvalRunCanceledObject {const WebhookEvalRunCanceledObject._(this.value);
+@immutable final class WebhookEvalRunCanceledObject {const WebhookEvalRunCanceledObject._(this.value);
 
 factory WebhookEvalRunCanceledObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `eval.run.canceled`.
 /// 
-final class WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType._(this.value);
+@immutable final class WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType._(this.value);
 
 factory WebhookEvalRunCanceledType.fromJson(String json) { return switch (json) {
   'eval.run.canceled' => evalRunCanceled,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when an eval run has been canceled.
 /// 
-final class WebhookEvalRunCanceled {const WebhookEvalRunCanceled({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookEvalRunCanceled {const WebhookEvalRunCanceled({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookEvalRunCanceled.fromJson(Map<String, dynamic> json) { return WebhookEvalRunCanceled(
   createdAt: (json['created_at'] as num).toInt(),

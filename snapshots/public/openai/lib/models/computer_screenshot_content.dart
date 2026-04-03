@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'image_detail.dart';/// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.
-final class ComputerScreenshotContentType {const ComputerScreenshotContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_detail.dart';/// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.
+@immutable final class ComputerScreenshotContentType {const ComputerScreenshotContentType._(this.value);
 
 factory ComputerScreenshotContentType.fromJson(String json) { return switch (json) {
   'computer_screenshot' => computerScreenshot,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ComputerScreenshotContentType($value)'; } 
  }
 /// A screenshot of a computer.
-final class ComputerScreenshotContent {const ComputerScreenshotContent({this.type = ComputerScreenshotContentType.computerScreenshot, required this.imageUrl, required this.fileId, required this.detail, });
+@immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.imageUrl, required this.fileId, required this.detail, this.type = ComputerScreenshotContentType.computerScreenshot, });
 
 factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return ComputerScreenshotContent(
   type: ComputerScreenshotContentType.fromJson(json['type'] as String),

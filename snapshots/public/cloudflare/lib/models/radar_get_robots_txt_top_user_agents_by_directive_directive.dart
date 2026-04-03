@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by robots.txt directive.
-final class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by robots.txt directive.
+@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective._(this.value);
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveDirective.fromJson(String json) { return switch (json) {
   'ALLOW' => allow,

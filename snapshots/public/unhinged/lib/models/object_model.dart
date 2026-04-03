@@ -1,5 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
+@immutable
 final class ObjectModelNaN {
   const ObjectModelNaN._(this.value);
 
@@ -54,6 +57,7 @@ final class ObjectModelNaN {
   }
 }
 
+@immutable
 final class ObjectModelInfinity {
   const ObjectModelInfinity._(this.value);
 
@@ -115,6 +119,7 @@ final class ObjectModelInfinity {
   }
 }
 
+@immutable
 final class ObjectModel {
   const ObjectModel({required this.$return, this.naN, this.infinity});
 

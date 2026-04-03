@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_forwarding_url_value.dart';/// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_forwarding_url_value.dart';/// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
 /// to [Wildcard matching and referencing](https://developers.cloudflare.com/rules/page-rules/reference/wildcard-matching/).
 /// 
-final class ZonesForwardingUrlId {const ZonesForwardingUrlId._(this.value);
+@immutable final class ZonesForwardingUrlId {const ZonesForwardingUrlId._(this.value);
 
 factory ZonesForwardingUrlId.fromJson(String json) { return switch (json) {
   'forwarding_url' => forwardingUrl,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesForwardingUrlId($value)'; } 
  }
-final class ZonesForwardingUrl {const ZonesForwardingUrl({this.id, this.value, });
+@immutable final class ZonesForwardingUrl {const ZonesForwardingUrl({this.id, this.value, });
 
 factory ZonesForwardingUrl.fromJson(Map<String, dynamic> json) { return ZonesForwardingUrl(
   id: json['id'] != null ? ZonesForwardingUrlId.fromJson(json['id'] as String) : null,

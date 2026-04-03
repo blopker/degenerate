@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_method.dart';import 'fine_tuning_integration.dart';import 'fine_tuning_job_error.dart';import 'fine_tuning_job_hyperparameters.dart';/// The object type, which is always "fine_tuning.job".
-final class FineTuningJobObject {const FineTuningJobObject._(this.value);
+@immutable final class FineTuningJobObject {const FineTuningJobObject._(this.value);
 
 factory FineTuningJobObject.fromJson(String json) { return switch (json) {
   'fine_tuning.job' => fineTuningJob,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuningJobObject($value)'; } 
  }
 /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
-final class FineTuningJobStatus {const FineTuningJobStatus._(this.value);
+@immutable final class FineTuningJobStatus {const FineTuningJobStatus._(this.value);
 
 factory FineTuningJobStatus.fromJson(String json) { return switch (json) {
   'validating_files' => validatingFiles,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 /// 
-final class FineTuningJob {const FineTuningJob({required this.id, required this.createdAt, required this.error, required this.fineTunedModel, required this.finishedAt, required this.hyperparameters, required this.model, required this.object, required this.organizationId, required this.resultFiles, required this.status, required this.trainedTokens, required this.trainingFile, required this.validationFile, this.integrations, required this.seed, this.estimatedFinish, this.method, this.metadata, });
+@immutable final class FineTuningJob {const FineTuningJob({required this.id, required this.createdAt, required this.error, required this.fineTunedModel, required this.finishedAt, required this.hyperparameters, required this.model, required this.object, required this.organizationId, required this.resultFiles, required this.status, required this.trainedTokens, required this.trainingFile, required this.validationFile, required this.seed, this.integrations, this.estimatedFinish, this.method, this.metadata, });
 
 factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob(
   id: json['id'] as String,

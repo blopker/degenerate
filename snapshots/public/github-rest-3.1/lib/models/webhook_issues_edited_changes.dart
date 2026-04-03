@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_issues_edited_changes_body.dart';import 'webhook_issues_edited_changes_title.dart';/// The changes to the issue.
-final class WebhookIssuesEditedChanges {const WebhookIssuesEditedChanges({this.body, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_issues_edited_changes_body.dart';import 'webhook_issues_edited_changes_title.dart';/// The changes to the issue.
+@immutable final class WebhookIssuesEditedChanges {const WebhookIssuesEditedChanges({this.body, this.title, });
 
 factory WebhookIssuesEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedChanges(
   body: json['body'] != null ? WebhookIssuesEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

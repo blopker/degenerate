@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_tools_custom_custom.dart';final class Messages51ToolsCustomType {const Messages51ToolsCustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_tools_custom_custom.dart';@immutable final class Messages51ToolsCustomType {const Messages51ToolsCustomType._(this.value);
 
 factory Messages51ToolsCustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ToolsCustomType($value)'; } 
  }
-final class Messages51ToolsCustom {const Messages51ToolsCustom({required this.custom, required this.type, });
+@immutable final class Messages51ToolsCustom {const Messages51ToolsCustom({required this.custom, required this.type, });
 
 factory Messages51ToolsCustom.fromJson(Map<String, dynamic> json) { return Messages51ToolsCustom(
   custom: Messages51ToolsCustomCustom.fromJson(json['custom'] as Map<String, dynamic>),

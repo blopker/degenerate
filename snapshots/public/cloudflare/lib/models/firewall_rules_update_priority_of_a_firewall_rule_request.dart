@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_components_schemas_identifier.dart';final class FirewallRulesUpdatePriorityOfAFirewallRuleRequest {const FirewallRulesUpdatePriorityOfAFirewallRuleRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_schemas_identifier.dart';@immutable final class FirewallRulesUpdatePriorityOfAFirewallRuleRequest {const FirewallRulesUpdatePriorityOfAFirewallRuleRequest({required this.id});
 
 factory FirewallRulesUpdatePriorityOfAFirewallRuleRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesUpdatePriorityOfAFirewallRuleRequest(
   id: FirewallComponentsSchemasIdentifier.fromJson(json['id'] as String),

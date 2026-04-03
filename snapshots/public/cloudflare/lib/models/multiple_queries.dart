@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_single_query.dart';final class MultipleQueries {const MultipleQueries({required this.batch});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_single_query.dart';@immutable final class MultipleQueries {const MultipleQueries({required this.batch});
 
 factory MultipleQueries.fromJson(Map<String, dynamic> json) { return MultipleQueries(
   batch: (json['batch'] as List<dynamic>).map((e) => D1SingleQuery.fromJson(e as Map<String, dynamic>)).toList(),

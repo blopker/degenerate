@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class AccountRequirementsAlternative {const AccountRequirementsAlternative({required this.alternativeFieldsDue, required this.originalFieldsDue, });
+@immutable final class AccountRequirementsAlternative {const AccountRequirementsAlternative({required this.alternativeFieldsDue, required this.originalFieldsDue, });
 
 factory AccountRequirementsAlternative.fromJson(Map<String, dynamic> json) { return AccountRequirementsAlternative(
   alternativeFieldsDue: (json['alternative_fields_due'] as List<dynamic>).map((e) => e as String).toList(),

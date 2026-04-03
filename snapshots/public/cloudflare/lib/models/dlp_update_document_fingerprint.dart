@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpUpdateDocumentFingerprint {const DlpUpdateDocumentFingerprint({this.description, this.matchPercent, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpUpdateDocumentFingerprint {const DlpUpdateDocumentFingerprint({this.description, this.matchPercent, this.name, });
 
 factory DlpUpdateDocumentFingerprint.fromJson(Map<String, dynamic> json) { return DlpUpdateDocumentFingerprint(
   description: json['description'] as String?,

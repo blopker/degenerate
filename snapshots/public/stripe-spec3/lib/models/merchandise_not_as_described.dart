@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merchandise_not_as_described_additional_documentation.dart';import 'merchandise_not_as_described_explanation.dart';import 'merchandise_not_as_described_received_at.dart';import 'merchandise_not_as_described_return_description.dart';import 'merchandise_not_as_described_returned_at.dart';final class MerchandiseNotAsDescribedReturnStatus {const MerchandiseNotAsDescribedReturnStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merchandise_not_as_described_additional_documentation.dart';import 'merchandise_not_as_described_explanation.dart';import 'merchandise_not_as_described_received_at.dart';import 'merchandise_not_as_described_return_description.dart';import 'merchandise_not_as_described_returned_at.dart';@immutable final class MerchandiseNotAsDescribedReturnStatus {const MerchandiseNotAsDescribedReturnStatus._(this.value);
 
 factory MerchandiseNotAsDescribedReturnStatus.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MerchandiseNotAsDescribedReturnStatus($value)'; } 
  }
-final class MerchandiseNotAsDescribed {const MerchandiseNotAsDescribed({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
+@immutable final class MerchandiseNotAsDescribed {const MerchandiseNotAsDescribed({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
 
 factory MerchandiseNotAsDescribed.fromJson(Map<String, dynamic> json) { return MerchandiseNotAsDescribed(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => MerchandiseNotAsDescribedAdditionalDocumentationVariant2.fromJson(v as String),) : null,

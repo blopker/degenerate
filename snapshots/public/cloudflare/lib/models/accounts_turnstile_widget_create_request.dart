@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turnstile_bot_fight_mode.dart';import 'turnstile_clearance_level.dart';import 'turnstile_ephemeral_id.dart';import 'turnstile_name.dart';import 'turnstile_offlabel.dart';import 'turnstile_region.dart';import 'turnstile_widget_mode.dart';final class AccountsTurnstileWidgetCreateRequest {const AccountsTurnstileWidgetCreateRequest({this.botFightMode, this.clearanceLevel, required this.domains, this.ephemeralId, required this.mode, required this.name, this.offlabel, this.region, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turnstile_bot_fight_mode.dart';import 'turnstile_clearance_level.dart';import 'turnstile_ephemeral_id.dart';import 'turnstile_name.dart';import 'turnstile_offlabel.dart';import 'turnstile_region.dart';import 'turnstile_widget_mode.dart';@immutable final class AccountsTurnstileWidgetCreateRequest {const AccountsTurnstileWidgetCreateRequest({required this.domains, required this.mode, required this.name, this.botFightMode, this.clearanceLevel, this.ephemeralId, this.offlabel, this.region, });
 
 factory AccountsTurnstileWidgetCreateRequest.fromJson(Map<String, dynamic> json) { return AccountsTurnstileWidgetCreateRequest(
   botFightMode: json['bot_fight_mode'] != null ? TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool) : null,

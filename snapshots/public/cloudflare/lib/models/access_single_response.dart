@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_organizations.dart';final class AccessSingleResponse {const AccessSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_organizations.dart';@immutable final class AccessSingleResponse {const AccessSingleResponse({this.result});
 
 factory AccessSingleResponse.fromJson(Map<String, dynamic> json) { return AccessSingleResponse(
   result: json['result'] != null ? AccessOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null,

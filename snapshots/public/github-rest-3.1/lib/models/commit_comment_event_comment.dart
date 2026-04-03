@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'reaction_rollup.dart';import 'simple_user.dart';final class CommitCommentEventComment {const CommitCommentEventComment({this.htmlUrl, this.url, this.id, this.nodeId, this.body, this.path, this.position, this.line, this.commitId, this.user, this.createdAt, this.updatedAt, this.reactions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reaction_rollup.dart';import 'simple_user.dart';@immutable final class CommitCommentEventComment {const CommitCommentEventComment({this.htmlUrl, this.url, this.id, this.nodeId, this.body, this.path, this.position, this.line, this.commitId, this.user, this.createdAt, this.updatedAt, this.reactions, });
 
 factory CommitCommentEventComment.fromJson(Map<String, dynamic> json) { return CommitCommentEventComment(
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,

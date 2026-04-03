@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPaySetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPay {const PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPay({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPay {const PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPay({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsRevolutPayCaptureMethod.fromJson(json['capture_method'] as String) : null,

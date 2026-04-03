@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeIdeal {const SourceTypeIdeal({this.bank, this.bic, this.ibanLast4, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeIdeal {const SourceTypeIdeal({this.bank, this.bic, this.ibanLast4, this.statementDescriptor, });
 
 factory SourceTypeIdeal.fromJson(Map<String, dynamic> json) { return SourceTypeIdeal(
   bank: json['bank'] as String?,

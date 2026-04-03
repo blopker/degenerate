@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `samsung_pay` PaymentMethod, this hash contains details about the SamsungPay payment method.
-final class PostPaymentMethodsRequestSamsungPay {const PostPaymentMethodsRequestSamsungPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `samsung_pay` PaymentMethod, this hash contains details about the SamsungPay payment method.
+@immutable final class PostPaymentMethodsRequestSamsungPay {const PostPaymentMethodsRequestSamsungPay();
 
 factory PostPaymentMethodsRequestSamsungPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSamsungPay(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Wifi2EnterpriseEapTls {const Wifi2EnterpriseEapTls({this.caCertificateFile, required this.clientCertificateFile, required this.privateKeyFile, this.privateKeyFilePassword, required this.ssid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Wifi2EnterpriseEapTls {const Wifi2EnterpriseEapTls({required this.clientCertificateFile, required this.privateKeyFile, required this.ssid, this.caCertificateFile, this.privateKeyFilePassword, });
 
 factory Wifi2EnterpriseEapTls.fromJson(Map<String, dynamic> json) { return Wifi2EnterpriseEapTls(
   caCertificateFile: json['ca_certificate_file'] as String?,

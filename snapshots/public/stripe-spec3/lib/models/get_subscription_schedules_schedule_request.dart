@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSubscriptionSchedulesScheduleRequest {const GetSubscriptionSchedulesScheduleRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSubscriptionSchedulesScheduleRequest {const GetSubscriptionSchedulesScheduleRequest();
 
 factory GetSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) { return GetSubscriptionSchedulesScheduleRequest(
 

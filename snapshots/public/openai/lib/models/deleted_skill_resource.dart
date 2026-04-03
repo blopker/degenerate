@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeletedSkillResourceObject {const DeletedSkillResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletedSkillResourceObject {const DeletedSkillResourceObject._(this.value);
 
 factory DeletedSkillResourceObject.fromJson(String json) { return switch (json) {
   'skill.deleted' => skillDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeletedSkillResourceObject($value)'; } 
  }
-final class DeletedSkillResource {const DeletedSkillResource({this.object = DeletedSkillResourceObject.skillDeleted, required this.deleted, required this.id, });
+@immutable final class DeletedSkillResource {const DeletedSkillResource({required this.deleted, required this.id, this.object = DeletedSkillResourceObject.skillDeleted, });
 
 factory DeletedSkillResource.fromJson(Map<String, dynamic> json) { return DeletedSkillResource(
   object: DeletedSkillResourceObject.fromJson(json['object'] as String),

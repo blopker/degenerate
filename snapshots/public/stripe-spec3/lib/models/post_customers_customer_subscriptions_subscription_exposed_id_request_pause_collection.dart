@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pause_collection_param.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pause_collection_param.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._(this.value);
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

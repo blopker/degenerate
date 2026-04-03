@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesTlsConfigRequest {const TeamsDevicesTlsConfigRequest({this.sha256, required this.tlsSockaddr, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTlsConfigRequest {const TeamsDevicesTlsConfigRequest({required this.tlsSockaddr, this.sha256, });
 
 factory TeamsDevicesTlsConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesTlsConfigRequest(
   sha256: json['sha256'] as String?,

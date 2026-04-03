@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_response_usage_input_token_details.dart';import 'realtime_response_usage_output_token_details.dart';/// Usage statistics for the Response, this will correspond to billing. A
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response_usage_input_token_details.dart';import 'realtime_response_usage_output_token_details.dart';/// Usage statistics for the Response, this will correspond to billing. A
 /// Realtime API session will maintain a conversation context and append new
 /// Items to the Conversation, thus output from previous turns (text and
 /// audio tokens) will become the input for later turns.
 /// 
-final class RealtimeResponseUsage {const RealtimeResponseUsage({this.totalTokens, this.inputTokens, this.outputTokens, this.inputTokenDetails, this.outputTokenDetails, });
+@immutable final class RealtimeResponseUsage {const RealtimeResponseUsage({this.totalTokens, this.inputTokens, this.outputTokens, this.inputTokenDetails, this.outputTokenDetails, });
 
 factory RealtimeResponseUsage.fromJson(Map<String, dynamic> json) { return RealtimeResponseUsage(
   totalTokens: json['total_tokens'] != null ? (json['total_tokens'] as num).toInt() : null,

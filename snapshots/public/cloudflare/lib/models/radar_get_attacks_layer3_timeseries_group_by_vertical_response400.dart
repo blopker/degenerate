@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_by_vertical_response400_errors.dart';final class RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400 {const RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_by_vertical_response400_errors.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400 {const RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

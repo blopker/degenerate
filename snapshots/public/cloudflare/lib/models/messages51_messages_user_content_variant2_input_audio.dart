@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesUserContentVariant2InputAudioFormat {const Messages51MessagesUserContentVariant2InputAudioFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesUserContentVariant2InputAudioFormat {const Messages51MessagesUserContentVariant2InputAudioFormat._(this.value);
 
 factory Messages51MessagesUserContentVariant2InputAudioFormat.fromJson(String json) { return switch (json) {
   'wav' => wav,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesUserContentVariant2InputAudioFormat($value)'; } 
  }
-final class Messages51MessagesUserContentVariant2InputAudio {const Messages51MessagesUserContentVariant2InputAudio({this.data, this.format, });
+@immutable final class Messages51MessagesUserContentVariant2InputAudio {const Messages51MessagesUserContentVariant2InputAudio({this.data, this.format, });
 
 factory Messages51MessagesUserContentVariant2InputAudio.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2InputAudio(
   data: json['data'] as String?,

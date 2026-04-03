@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The policy that controls when fork PR workflows require approval from a maintainer.
-final class ActionsForkPrContributorApprovalApprovalPolicy {const ActionsForkPrContributorApprovalApprovalPolicy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls when fork PR workflows require approval from a maintainer.
+@immutable final class ActionsForkPrContributorApprovalApprovalPolicy {const ActionsForkPrContributorApprovalApprovalPolicy._(this.value);
 
 factory ActionsForkPrContributorApprovalApprovalPolicy.fromJson(String json) { return switch (json) {
   'first_time_contributors_new_to_github' => firstTimeContributorsNewToGithub,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActionsForkPrContributorApprovalApprovalPolicy($value)'; } 
  }
-final class ActionsForkPrContributorApproval {const ActionsForkPrContributorApproval({required this.approvalPolicy});
+@immutable final class ActionsForkPrContributorApproval {const ActionsForkPrContributorApproval({required this.approvalPolicy});
 
 factory ActionsForkPrContributorApproval.fromJson(Map<String, dynamic> json) { return ActionsForkPrContributorApproval(
   approvalPolicy: ActionsForkPrContributorApprovalApprovalPolicy.fromJson(json['approval_policy'] as String),

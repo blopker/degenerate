@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2($value)'; } 
  }
-final class PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3 {const PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3._(this.value);
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3 {const PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3.fromJson(String json) { return switch (json) {
   'max_period_end' => maxPeriodEnd,

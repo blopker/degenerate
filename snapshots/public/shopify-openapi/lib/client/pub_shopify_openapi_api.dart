@@ -4,17 +4,17 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 import '../apis/access_api.dart';
 import '../apis/analytics_api.dart';
 import '../apis/billing_api.dart';
-import '../apis/customers_api.dart';
 import '../apis/calls_api.dart';
+import '../apis/customers_api.dart';
 import '../apis/discounts_api.dart';
 import '../apis/events_api.dart';
 import '../apis/inventory_api.dart';
 import '../apis/metafield_api.dart';
 import '../apis/online_store_api.dart';
 import '../apis/orders_api.dart';
-import '../apis/sales_channels_api.dart';
 import '../apis/plus_api.dart';
 import '../apis/products_api.dart';
+import '../apis/sales_channels_api.dart';
 import '../apis/shipping_and_fulfillment_api.dart';
 import '../apis/shopify_payments_api.dart';
 import '../apis/store_properties_api.dart';
@@ -27,9 +27,9 @@ import '../apis/tendertransaction_api.dart';
 /// sdk.access.getAdminOauthAccessScopes();
 /// ```
 final class PubShopifyOpenapiApi {
-  final ApiConfig _config;
-
   PubShopifyOpenapiApi(this._config);
+
+  final ApiConfig _config;
 
   late final AccessApi access = AccessApi(_config);
   late final AnalyticsApi analytics = AnalyticsApi(_config);

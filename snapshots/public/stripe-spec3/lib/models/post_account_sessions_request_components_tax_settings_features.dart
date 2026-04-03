@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsTaxSettingsFeatures {const PostAccountSessionsRequestComponentsTaxSettingsFeatures();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsTaxSettingsFeatures {const PostAccountSessionsRequestComponentsTaxSettingsFeatures();
 
 factory PostAccountSessionsRequestComponentsTaxSettingsFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsTaxSettingsFeatures(
 

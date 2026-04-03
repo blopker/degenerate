@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'webhook_membership_removed_sender.dart';import 'webhooks_team.dart';import 'webhooks_user.dart';final class WebhookMembershipRemovedAction {const WebhookMembershipRemovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'webhook_membership_removed_sender.dart';import 'webhooks_team.dart';import 'webhooks_user.dart';@immutable final class WebhookMembershipRemovedAction {const WebhookMembershipRemovedAction._(this.value);
 
 factory WebhookMembershipRemovedAction.fromJson(String json) { return switch (json) {
   'removed' => removed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookMembershipRemovedAction($value)'; } 
  }
 /// The scope of the membership. Currently, can only be `team`.
-final class WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope._(this.value);
+@immutable final class WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope._(this.value);
 
 factory WebhookMembershipRemovedScope.fromJson(String json) { return switch (json) {
   'team' => team,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMembershipRemovedScope($value)'; } 
  }
-final class WebhookMembershipRemoved {const WebhookMembershipRemoved({required this.action, this.enterprise, this.installation, required this.member, required this.organization, this.repository, required this.scope, required this.sender, required this.team, });
+@immutable final class WebhookMembershipRemoved {const WebhookMembershipRemoved({required this.action, required this.member, required this.organization, required this.scope, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
 factory WebhookMembershipRemoved.fromJson(Map<String, dynamic> json) { return WebhookMembershipRemoved(
   action: WebhookMembershipRemovedAction.fromJson(json['action'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Algorithm
-final class ShieldCredentialsJwtKeyEcEs384Alg {const ShieldCredentialsJwtKeyEcEs384Alg._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Algorithm
+@immutable final class ShieldCredentialsJwtKeyEcEs384Alg {const ShieldCredentialsJwtKeyEcEs384Alg._(this.value);
 
 factory ShieldCredentialsJwtKeyEcEs384Alg.fromJson(String json) { return switch (json) {
   'ES384' => es384,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldCredentialsJwtKeyEcEs384Alg($value)'; } 
  }
 /// Curve
-final class ShieldCredentialsJwtKeyEcEs384Crv {const ShieldCredentialsJwtKeyEcEs384Crv._(this.value);
+@immutable final class ShieldCredentialsJwtKeyEcEs384Crv {const ShieldCredentialsJwtKeyEcEs384Crv._(this.value);
 
 factory ShieldCredentialsJwtKeyEcEs384Crv.fromJson(String json) { return switch (json) {
   'P-384' => p384,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldCredentialsJwtKeyEcEs384Crv($value)'; } 
  }
 /// JSON representation of an ES384 key
-final class ShieldCredentialsJwtKeyEcEs384 {const ShieldCredentialsJwtKeyEcEs384({required this.kid, required this.alg, required this.crv, });
+@immutable final class ShieldCredentialsJwtKeyEcEs384 {const ShieldCredentialsJwtKeyEcEs384({required this.kid, required this.alg, required this.crv, });
 
 factory ShieldCredentialsJwtKeyEcEs384.fromJson(Map<String, dynamic> json) { return ShieldCredentialsJwtKeyEcEs384(
   kid: json['kid'] as String,

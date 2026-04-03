@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsListWorkflowRunsForRepoStatus {const ActionsListWorkflowRunsForRepoStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsListWorkflowRunsForRepoStatus {const ActionsListWorkflowRunsForRepoStatus._(this.value);
 
 factory ActionsListWorkflowRunsForRepoStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,

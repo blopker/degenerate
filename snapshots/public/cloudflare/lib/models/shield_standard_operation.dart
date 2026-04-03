@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';final class ShieldStandardOperation {const ShieldStandardOperation({required this.endpoint, required this.host, required this.method, required this.lastUpdated, required this.operationId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';@immutable final class ShieldStandardOperation {const ShieldStandardOperation({required this.endpoint, required this.host, required this.method, required this.lastUpdated, required this.operationId, });
 
 factory ShieldStandardOperation.fromJson(Map<String, dynamic> json) { return ShieldStandardOperation(
   endpoint: ShieldEndpoint.fromJson(json['endpoint'] as String),

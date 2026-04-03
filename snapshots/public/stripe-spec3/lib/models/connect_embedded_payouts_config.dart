@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_embedded_payouts_features.dart';/// 
-final class ConnectEmbeddedPayoutsConfig {const ConnectEmbeddedPayoutsConfig({required this.enabled, required this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_payouts_features.dart';/// 
+@immutable final class ConnectEmbeddedPayoutsConfig {const ConnectEmbeddedPayoutsConfig({required this.enabled, required this.features, });
 
 factory ConnectEmbeddedPayoutsConfig.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedPayoutsConfig(
   enabled: json['enabled'] as bool,

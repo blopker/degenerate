@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.
-final class ZeroTrustGatewayCustomCertificateSettings {const ZeroTrustGatewayCustomCertificateSettings({this.bindingStatus, required this.enabled, this.id, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.
+@immutable final class ZeroTrustGatewayCustomCertificateSettings {const ZeroTrustGatewayCustomCertificateSettings({required this.enabled, this.bindingStatus, this.id, this.updatedAt, });
 
 factory ZeroTrustGatewayCustomCertificateSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCustomCertificateSettings(
   bindingStatus: json['binding_status'] as String?,

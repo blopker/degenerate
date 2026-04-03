@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_authorizations_authorization_approve_request_metadata.dart';final class PostIssuingAuthorizationsAuthorizationApproveRequest {const PostIssuingAuthorizationsAuthorizationApproveRequest({this.amount, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_authorizations_authorization_approve_request_metadata.dart';@immutable final class PostIssuingAuthorizationsAuthorizationApproveRequest {const PostIssuingAuthorizationsAuthorizationApproveRequest({this.amount, this.expand, this.metadata, });
 
 factory PostIssuingAuthorizationsAuthorizationApproveRequest.fromJson(Map<String, dynamic> json) { return PostIssuingAuthorizationsAuthorizationApproveRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SpectrumAnalyticsMetrics2 {const SpectrumAnalyticsMetrics2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpectrumAnalyticsMetrics2 {const SpectrumAnalyticsMetrics2._(this.value);
 
 factory SpectrumAnalyticsMetrics2.fromJson(String json) { return switch (json) {
   'count' => count,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installment_plan.dart';import 'invoice_payment_method_options_param17_installments_plan.dart';final class InvoicePaymentMethodOptionsParam17Installments {const InvoicePaymentMethodOptionsParam17Installments({this.enabled, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installment_plan.dart';import 'invoice_payment_method_options_param17_installments_plan.dart';@immutable final class InvoicePaymentMethodOptionsParam17Installments {const InvoicePaymentMethodOptionsParam17Installments({this.enabled, this.plan, });
 
 factory InvoicePaymentMethodOptionsParam17Installments.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam17Installments(
   enabled: json['enabled'] as bool?,

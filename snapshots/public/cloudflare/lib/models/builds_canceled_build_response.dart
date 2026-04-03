@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_build_outcome.dart';import 'builds_build_uuid.dart';import 'builds_stopped_on.dart';final class BuildsCanceledBuildResponse {const BuildsCanceledBuildResponse({this.buildOutcome, this.buildUuid, this.stoppedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_outcome.dart';import 'builds_build_uuid.dart';import 'builds_stopped_on.dart';@immutable final class BuildsCanceledBuildResponse {const BuildsCanceledBuildResponse({this.buildOutcome, this.buildUuid, this.stoppedOn, });
 
 factory BuildsCanceledBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsCanceledBuildResponse(
   buildOutcome: json['build_outcome'] != null ? BuildsBuildOutcome.fromJson(json['build_outcome'] as String) : null,

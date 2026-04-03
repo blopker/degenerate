@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_response_content.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_response_headers.dart';final class UrlscannerGetScanHarResponseResultHarLogEntriesResponse {const UrlscannerGetScanHarResponseResultHarLogEntriesResponse({required this.transferSize, required this.bodySize, required this.content, required this.headers, required this.headersSize, required this.httpVersion, required this.redirectUrl, required this.status, required this.statusText, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_response_content.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_response_headers.dart';@immutable final class UrlscannerGetScanHarResponseResultHarLogEntriesResponse {const UrlscannerGetScanHarResponseResultHarLogEntriesResponse({required this.transferSize, required this.bodySize, required this.content, required this.headers, required this.headersSize, required this.httpVersion, required this.redirectUrl, required this.status, required this.statusText, });
 
 factory UrlscannerGetScanHarResponseResultHarLogEntriesResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponseResultHarLogEntriesResponse(
   transferSize: (json['_transferSize'] as num).toDouble(),

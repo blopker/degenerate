@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The details for events with this `type`.
-final class AuditLogScimEnabled {const AuditLogScimEnabled({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
+@immutable final class AuditLogScimEnabled {const AuditLogScimEnabled({this.id});
 
 factory AuditLogScimEnabled.fromJson(Map<String, dynamic> json) { return AuditLogScimEnabled(
   id: json['id'] as String?,

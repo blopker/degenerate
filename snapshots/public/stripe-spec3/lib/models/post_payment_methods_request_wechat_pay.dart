@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `wechat_pay` PaymentMethod, this hash contains details about the wechat_pay payment method.
-final class PostPaymentMethodsRequestWechatPay {const PostPaymentMethodsRequestWechatPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `wechat_pay` PaymentMethod, this hash contains details about the wechat_pay payment method.
+@immutable final class PostPaymentMethodsRequestWechatPay {const PostPaymentMethodsRequestWechatPay();
 
 factory PostPaymentMethodsRequestWechatPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestWechatPay(
 

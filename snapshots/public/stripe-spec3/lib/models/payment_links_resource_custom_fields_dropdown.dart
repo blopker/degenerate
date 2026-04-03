@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_custom_fields_dropdown_option.dart';/// 
-final class PaymentLinksResourceCustomFieldsDropdown {const PaymentLinksResourceCustomFieldsDropdown({this.defaultValue, required this.options, });
+@immutable final class PaymentLinksResourceCustomFieldsDropdown {const PaymentLinksResourceCustomFieldsDropdown({required this.options, this.defaultValue, });
 
 factory PaymentLinksResourceCustomFieldsDropdown.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsDropdown(
   defaultValue: json['default_value'] as String?,

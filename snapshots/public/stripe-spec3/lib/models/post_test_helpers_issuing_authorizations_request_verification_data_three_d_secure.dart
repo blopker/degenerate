@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult.fromJson(String json) { return switch (json) {
   'attempt_acknowledged' => attemptAcknowledged,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure({required this.result});
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure({required this.result});
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure(
   result: PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecureResult.fromJson(json['result'] as String),

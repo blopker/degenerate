@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Usage metrics for a given language for the given editor for Copilot code completions.
-final class CopilotIdeCodeCompletionsLanguages {const CopilotIdeCodeCompletionsLanguages({this.name, this.totalEngagedUsers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage metrics for a given language for the given editor for Copilot code completions.
+@immutable final class CopilotIdeCodeCompletionsLanguages {const CopilotIdeCodeCompletionsLanguages({this.name, this.totalEngagedUsers, });
 
 factory CopilotIdeCodeCompletionsLanguages.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsLanguages(
   name: json['name'] as String?,

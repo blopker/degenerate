@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_created_at.dart';import 'tunnel_tunnel_id.dart';/// The id of the tunnel linked and the date that link was created.
-final class TunnelTunnelLink {const TunnelTunnelLink({this.createdAt, this.linkedTunnelId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_created_at.dart';import 'tunnel_tunnel_id.dart';/// The id of the tunnel linked and the date that link was created.
+@immutable final class TunnelTunnelLink {const TunnelTunnelLink({this.createdAt, this.linkedTunnelId, });
 
 factory TunnelTunnelLink.fromJson(Map<String, dynamic> json) { return TunnelTunnelLink(
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,

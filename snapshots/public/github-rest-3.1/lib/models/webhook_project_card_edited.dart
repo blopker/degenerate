@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_card_edited_changes.dart';import 'webhooks_project_card.dart';final class WebhookProjectCardEditedAction {const WebhookProjectCardEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_card_edited_changes.dart';import 'webhooks_project_card.dart';@immutable final class WebhookProjectCardEditedAction {const WebhookProjectCardEditedAction._(this.value);
 
 factory WebhookProjectCardEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookProjectCardEditedAction($value)'; } 
  }
-final class WebhookProjectCardEdited {const WebhookProjectCardEdited({required this.action, required this.changes, this.enterprise, this.installation, this.organization, required this.projectCard, this.repository, required this.sender, });
+@immutable final class WebhookProjectCardEdited {const WebhookProjectCardEdited({required this.action, required this.changes, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectCardEdited.fromJson(Map<String, dynamic> json) { return WebhookProjectCardEdited(
   action: WebhookProjectCardEditedAction.fromJson(json['action'] as String),

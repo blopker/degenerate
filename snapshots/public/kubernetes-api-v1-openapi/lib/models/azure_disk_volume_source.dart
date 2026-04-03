@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
-final class AzureDiskVolumeSource {const AzureDiskVolumeSource({this.cachingMode = 'ReadWrite', this.diskName = '', this.diskUri = '', this.fsType = 'ext4', this.kind = 'Shared', this.readOnly = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
+@immutable final class AzureDiskVolumeSource {const AzureDiskVolumeSource({this.cachingMode = 'ReadWrite', this.diskName = '', this.diskUri = '', this.fsType = 'ext4', this.kind = 'Shared', this.readOnly = false, });
 
 factory AzureDiskVolumeSource.fromJson(Map<String, dynamic> json) { return AzureDiskVolumeSource(
   cachingMode: json.containsKey('cachingMode') ? json['cachingMode'] as String : 'ReadWrite',

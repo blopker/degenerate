@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `Link` PaymentMethod, this hash contains details about the Link payment method.
-final class PostPaymentMethodsRequestLink {const PostPaymentMethodsRequestLink();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `Link` PaymentMethod, this hash contains details about the Link payment method.
+@immutable final class PostPaymentMethodsRequestLink {const PostPaymentMethodsRequestLink();
 
 factory PostPaymentMethodsRequestLink.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestLink(
 

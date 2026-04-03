@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigFetchGatewayResponse404Errors {const AigConfigFetchGatewayResponse404Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigFetchGatewayResponse404Errors {const AigConfigFetchGatewayResponse404Errors({required this.code, required this.message, });
 
 factory AigConfigFetchGatewayResponse404Errors.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponse404Errors(
   code: (json['code'] as num).toDouble(),

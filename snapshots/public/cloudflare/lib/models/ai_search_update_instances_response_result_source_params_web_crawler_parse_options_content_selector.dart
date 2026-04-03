@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector {const AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector({required this.path, required this.selector, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector {const AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector({required this.path, required this.selector, });
 
 factory AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(
   path: json['path'] as String,

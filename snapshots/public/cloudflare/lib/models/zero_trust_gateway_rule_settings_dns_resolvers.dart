@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_dns_resolver_settings.dart';import 'zero_trust_gateway_dns_resolver_settings2.dart';/// Configure custom resolvers to route queries that match the resolver policy. Unused with 'resolve_dns_through_cloudflare' or 'resolve_dns_internally' settings. DNS queries get routed to the address closest to their origin. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
-final class ZeroTrustGatewayRuleSettingsDnsResolvers {const ZeroTrustGatewayRuleSettingsDnsResolvers({this.ipv4, this.ipv6, });
+@immutable final class ZeroTrustGatewayRuleSettingsDnsResolvers {const ZeroTrustGatewayRuleSettingsDnsResolvers({this.ipv4, this.ipv6, });
 
 factory ZeroTrustGatewayRuleSettingsDnsResolvers.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsDnsResolvers(
   ipv4: (json['ipv4'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayDnsResolverSettings.fromJson(e as Map<String, dynamic>)).toList(),

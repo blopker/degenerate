@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class InvoiceitemObject {const InvoiceitemObject._(this.value);
+@immutable final class InvoiceitemObject {const InvoiceitemObject._(this.value);
 
 factory InvoiceitemObject.fromJson(String json) { return switch (json) {
   'invoiceitem' => invoiceitem,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// (to minimize per-transaction fees), or for having Stripe tabulate your usage-based billing totals.
 /// 
 /// Related guides: [Integrate with the Invoicing API](https://docs.stripe.com/invoicing/integration), [Subscription Invoices](https://docs.stripe.com/billing/invoices/subscription#adding-upcoming-invoice-items).
-final class Invoiceitem {const Invoiceitem({required this.amount, required this.currency, required this.customer, this.customerAccount, required this.date, this.description, required this.discountable, this.discounts, required this.id, this.invoice, required this.livemode, this.metadata, this.netAmount, required this.object, this.parent, required this.period, this.pricing, required this.proration, this.prorationDetails, required this.quantity, this.taxRates, this.testClock, });
+@immutable final class Invoiceitem {const Invoiceitem({required this.amount, required this.currency, required this.customer, required this.date, required this.discountable, required this.id, required this.livemode, required this.object, required this.period, required this.proration, required this.quantity, this.customerAccount, this.description, this.discounts, this.invoice, this.metadata, this.netAmount, this.parent, this.pricing, this.prorationDetails, this.taxRates, this.testClock, });
 
 factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   amount: (json['amount'] as num).toInt(),

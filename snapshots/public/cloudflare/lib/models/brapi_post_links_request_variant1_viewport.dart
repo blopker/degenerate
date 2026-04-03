@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
-final class BrapiPostLinksRequestVariant1Viewport {const BrapiPostLinksRequestVariant1Viewport({this.deviceScaleFactor, this.hasTouch, required this.height, this.isLandscape, this.isMobile, required this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
+@immutable final class BrapiPostLinksRequestVariant1Viewport {const BrapiPostLinksRequestVariant1Viewport({required this.height, required this.width, this.deviceScaleFactor, this.hasTouch, this.isLandscape, this.isMobile, });
 
 factory BrapiPostLinksRequestVariant1Viewport.fromJson(Map<String, dynamic> json) { return BrapiPostLinksRequestVariant1Viewport(
   deviceScaleFactor: json['deviceScaleFactor'] != null ? (json['deviceScaleFactor'] as num).toDouble() : null,

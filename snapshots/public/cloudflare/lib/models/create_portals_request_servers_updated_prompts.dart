@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreatePortalsRequestServersUpdatedPrompts {const CreatePortalsRequestServersUpdatedPrompts({this.description, this.enabled, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreatePortalsRequestServersUpdatedPrompts {const CreatePortalsRequestServersUpdatedPrompts({required this.name, this.description, this.enabled, });
 
 factory CreatePortalsRequestServersUpdatedPrompts.fromJson(Map<String, dynamic> json) { return CreatePortalsRequestServersUpdatedPrompts(
   description: json['description'] as String?,

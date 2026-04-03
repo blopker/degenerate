@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).
-final class LogpushKind {const LogpushKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).
+@immutable final class LogpushKind {const LogpushKind._(this.value);
 
 factory LogpushKind.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposListForAuthenticatedUserVisibility {const ReposListForAuthenticatedUserVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForAuthenticatedUserVisibility {const ReposListForAuthenticatedUserVisibility._(this.value);
 
 factory ReposListForAuthenticatedUserVisibility.fromJson(String json) { return switch (json) {
   'all' => all,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Private IP of the Key Server Host
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Private IP of the Key Server Host
 extension type const TlsCertificatesAndHostnamesKeylessPrivateIp(String value) {
 factory TlsCertificatesAndHostnamesKeylessPrivateIp.fromJson(String json) => TlsCertificatesAndHostnamesKeylessPrivateIp(json);
 
@@ -15,7 +15,7 @@ String toJson() => value;
 
 }
 /// Configuration for using Keyless SSL through a Cloudflare Tunnel
-final class TlsCertificatesAndHostnamesKeylessTunnel {const TlsCertificatesAndHostnamesKeylessTunnel({required this.privateIp, required this.vnetId, });
+@immutable final class TlsCertificatesAndHostnamesKeylessTunnel {const TlsCertificatesAndHostnamesKeylessTunnel({required this.privateIp, required this.vnetId, });
 
 factory TlsCertificatesAndHostnamesKeylessTunnel.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesKeylessTunnel(
   privateIp: TlsCertificatesAndHostnamesKeylessPrivateIp.fromJson(json['private_ip'] as String),

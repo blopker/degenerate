@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Token usage statistics for the request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Token usage statistics for the request.
 /// 
-final class SpeechAudioDoneEventUsage {const SpeechAudioDoneEventUsage({required this.inputTokens, required this.outputTokens, required this.totalTokens, });
+@immutable final class SpeechAudioDoneEventUsage {const SpeechAudioDoneEventUsage({required this.inputTokens, required this.outputTokens, required this.totalTokens, });
 
 factory SpeechAudioDoneEventUsage.fromJson(Map<String, dynamic> json) { return SpeechAudioDoneEventUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),

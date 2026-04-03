@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_refunds_request_metadata.dart';/// Origin of the refund
-final class PostRefundsRequestOrigin {const PostRefundsRequestOrigin._(this.value);
+@immutable final class PostRefundsRequestOrigin {const PostRefundsRequestOrigin._(this.value);
 
 factory PostRefundsRequestOrigin.fromJson(String json) { return switch (json) {
   'customer_balance' => customerBalance,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostRefundsRequestOrigin($value)'; } 
  }
 /// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-final class PostRefundsRequestReason {const PostRefundsRequestReason._(this.value);
+@immutable final class PostRefundsRequestReason {const PostRefundsRequestReason._(this.value);
 
 factory PostRefundsRequestReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostRefundsRequestReason($value)'; } 
  }
-final class PostRefundsRequest {const PostRefundsRequest({this.amount, this.charge, this.currency, this.customer, this.expand, this.instructionsEmail, this.metadata, this.origin, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
+@immutable final class PostRefundsRequest {const PostRefundsRequest({this.amount, this.charge, this.currency, this.customer, this.expand, this.instructionsEmail, this.metadata, this.origin, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
 factory PostRefundsRequest.fromJson(Map<String, dynamic> json) { return PostRefundsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

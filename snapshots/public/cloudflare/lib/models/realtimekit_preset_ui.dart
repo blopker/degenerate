@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_ui_design_tokens.dart';final class RealtimekitPresetUi {const RealtimekitPresetUi({this.configDiff, required this.designTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_ui_design_tokens.dart';@immutable final class RealtimekitPresetUi {const RealtimekitPresetUi({required this.designTokens, this.configDiff, });
 
 factory RealtimekitPresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUi(
   configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

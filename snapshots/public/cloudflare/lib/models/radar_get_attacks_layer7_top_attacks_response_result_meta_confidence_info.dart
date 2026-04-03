@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_top_attacks_response_result_meta_confidence_info_annotations.dart';final class RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo {const RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_top_attacks_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo {const RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetAttacksLayer7TopAttacksResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ToolsFunctionFunction {const Messages51ToolsFunctionFunction({this.description, required this.name, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolsFunctionFunction {const Messages51ToolsFunctionFunction({required this.name, this.description, this.parameters, this.strict, });
 
 factory Messages51ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Messages51ToolsFunctionFunction(
   description: json['description'] as String?,

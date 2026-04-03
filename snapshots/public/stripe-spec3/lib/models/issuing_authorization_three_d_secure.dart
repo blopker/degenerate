@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The outcome of the 3D Secure authentication request.
-final class IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the 3D Secure authentication request.
+@immutable final class IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult._(this.value);
 
 factory IssuingAuthorizationThreeDSecureResult.fromJson(String json) { return switch (json) {
   'attempt_acknowledged' => attemptAcknowledged,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationThreeDSecureResult($value)'; } 
  }
 /// 
-final class IssuingAuthorizationThreeDSecure {const IssuingAuthorizationThreeDSecure({required this.result});
+@immutable final class IssuingAuthorizationThreeDSecure {const IssuingAuthorizationThreeDSecure({required this.result});
 
 factory IssuingAuthorizationThreeDSecure.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationThreeDSecure(
   result: IssuingAuthorizationThreeDSecureResult.fromJson(json['result'] as String),

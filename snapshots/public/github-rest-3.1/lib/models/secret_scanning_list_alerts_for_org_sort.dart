@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretScanningListAlertsForOrgSort {const SecretScanningListAlertsForOrgSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningListAlertsForOrgSort {const SecretScanningListAlertsForOrgSort._(this.value);
 
 factory SecretScanningListAlertsForOrgSort.fromJson(String json) { return switch (json) {
   'created' => created,

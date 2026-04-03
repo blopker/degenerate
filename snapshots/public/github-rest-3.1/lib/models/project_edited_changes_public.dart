@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectEditedChangesPublic {const ProjectEditedChangesPublic({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectEditedChangesPublic {const ProjectEditedChangesPublic({this.from, this.to, });
 
 factory ProjectEditedChangesPublic.fromJson(Map<String, dynamic> json) { return ProjectEditedChangesPublic(
   from: json['from'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If you provide a value for `address.line1`, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If you provide a value for `address.line1`, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(String json) { return switch (json) {
   'fail' => fail,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check($value)'; } 
  }
 /// If you provide a address postal code, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck._(this.value);
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
   'fail' => fail,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck($value)'; } 
  }
 /// If you provide a CVC, the check results is one of `pass`, `fail`, `unavailable`, or `unchecked`.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck._(this.value);
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck.fromJson(String json) { return switch (json) {
   'fail' => fail,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck($value)'; } 
  }
 /// 
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks({this.addressLine1Check, this.addressPostalCodeCheck, this.cvcCheck, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks({this.addressLine1Check, this.addressPostalCodeCheck, this.cvcCheck, });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
   addressLine1Check: json['address_line1_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(json['address_line1_check'] as String) : null,

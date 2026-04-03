@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VectorStoreFileContentResponseData {const VectorStoreFileContentResponseData({this.type, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorStoreFileContentResponseData {const VectorStoreFileContentResponseData({this.type, this.text, });
 
 factory VectorStoreFileContentResponseData.fromJson(Map<String, dynamic> json) { return VectorStoreFileContentResponseData(
   type: json['type'] as String?,

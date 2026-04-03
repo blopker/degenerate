@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesPreviewLinesRequest {const GetCreditNotesPreviewLinesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesRequest {const GetCreditNotesPreviewLinesRequest();
 
 factory GetCreditNotesPreviewLinesRequest.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesRequest(
 

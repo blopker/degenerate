@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'financial_connections_account_owner.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetFinancialConnectionsAccountsAccountOwnersResponseObject {const GetFinancialConnectionsAccountsAccountOwnersResponseObject._(this.value);
+@immutable final class GetFinancialConnectionsAccountsAccountOwnersResponseObject {const GetFinancialConnectionsAccountsAccountOwnersResponseObject._(this.value);
 
 factory GetFinancialConnectionsAccountsAccountOwnersResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetFinancialConnectionsAccountsAccountOwnersResponseObject($value)'; } 
  }
 /// 
-final class GetFinancialConnectionsAccountsAccountOwnersResponse {const GetFinancialConnectionsAccountsAccountOwnersResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetFinancialConnectionsAccountsAccountOwnersResponse {const GetFinancialConnectionsAccountsAccountOwnersResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetFinancialConnectionsAccountsAccountOwnersResponse.fromJson(Map<String, dynamic> json) { return GetFinancialConnectionsAccountsAccountOwnersResponse(
   data: (json['data'] as List<dynamic>).map((e) => FinancialConnectionsAccountOwner.fromJson(e as Map<String, dynamic>)).toList(),

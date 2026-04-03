@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject._(this.value);
 
 factory DeletedRadarValueListItemObject.fromJson(String json) { return switch (json) {
   'radar.value_list_item' => radarValueListItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedRadarValueListItemObject($value)'; } 
  }
 /// 
-final class DeletedRadarValueListItem {const DeletedRadarValueListItem({required this.deleted, required this.id, required this.object, });
+@immutable final class DeletedRadarValueListItem {const DeletedRadarValueListItem({required this.deleted, required this.id, required this.object, });
 
 factory DeletedRadarValueListItem.fromJson(Map<String, dynamic> json) { return DeletedRadarValueListItem(
   deleted: json['deleted'] as bool,

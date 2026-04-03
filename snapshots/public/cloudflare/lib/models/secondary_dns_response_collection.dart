@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_tsig.dart';final class SecondaryDnsResponseCollection {const SecondaryDnsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_tsig.dart';@immutable final class SecondaryDnsResponseCollection {const SecondaryDnsResponseCollection({this.result});
 
 factory SecondaryDnsResponseCollection.fromJson(Map<String, dynamic> json) { return SecondaryDnsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => SecondaryDnsTsig.fromJson(e as Map<String, dynamic>)).toList(),

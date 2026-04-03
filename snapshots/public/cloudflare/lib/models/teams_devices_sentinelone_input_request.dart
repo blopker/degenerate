@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operating system.
-final class TeamsDevicesSentineloneInputRequestOperatingSystem {const TeamsDevicesSentineloneInputRequestOperatingSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
+@immutable final class TeamsDevicesSentineloneInputRequestOperatingSystem {const TeamsDevicesSentineloneInputRequestOperatingSystem._(this.value);
 
 factory TeamsDevicesSentineloneInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesSentineloneInputRequestOperatingSystem($value)'; } 
  }
-final class TeamsDevicesSentineloneInputRequest {const TeamsDevicesSentineloneInputRequest({required this.operatingSystem, required this.path, this.sha256, this.thumbprint, });
+@immutable final class TeamsDevicesSentineloneInputRequest {const TeamsDevicesSentineloneInputRequest({required this.operatingSystem, required this.path, this.sha256, this.thumbprint, });
 
 factory TeamsDevicesSentineloneInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneInputRequest(
   operatingSystem: TeamsDevicesSentineloneInputRequestOperatingSystem.fromJson(json['operating_system'] as String),

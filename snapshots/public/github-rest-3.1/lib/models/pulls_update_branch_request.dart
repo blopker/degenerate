@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsUpdateBranchRequest {const PullsUpdateBranchRequest({this.expectedHeadSha});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsUpdateBranchRequest {const PullsUpdateBranchRequest({this.expectedHeadSha});
 
 factory PullsUpdateBranchRequest.fromJson(Map<String, dynamic> json) { return PullsUpdateBranchRequest(
   expectedHeadSha: json['expected_head_sha'] as String?,

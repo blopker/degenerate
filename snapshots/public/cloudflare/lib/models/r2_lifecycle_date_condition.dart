@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2LifecycleDateConditionType {const R2LifecycleDateConditionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LifecycleDateConditionType {const R2LifecycleDateConditionType._(this.value);
 
 factory R2LifecycleDateConditionType.fromJson(String json) { return switch (json) {
   'Date' => date,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2LifecycleDateConditionType($value)'; } 
  }
 /// Condition for lifecycle transitions to apply on a specific date.
-final class R2LifecycleDateCondition {const R2LifecycleDateCondition({required this.date, required this.type, });
+@immutable final class R2LifecycleDateCondition {const R2LifecycleDateCondition({required this.date, required this.type, });
 
 factory R2LifecycleDateCondition.fromJson(Map<String, dynamic> json) { return R2LifecycleDateCondition(
   date: DateTime.parse(json['date'] as String),

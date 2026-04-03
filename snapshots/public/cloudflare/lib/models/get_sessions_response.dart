@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_sessions_response_data.dart';final class GetSessionsResponse {const GetSessionsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_sessions_response_data.dart';@immutable final class GetSessionsResponse {const GetSessionsResponse({this.data, this.success, });
 
 factory GetSessionsResponse.fromJson(Map<String, dynamic> json) { return GetSessionsResponse(
   data: json['data'] != null ? GetSessionsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

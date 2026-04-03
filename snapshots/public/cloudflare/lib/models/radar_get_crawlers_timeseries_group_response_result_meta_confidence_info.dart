@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_crawlers_timeseries_group_response_result_meta_confidence_info_annotations.dart';final class RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfo {const RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_crawlers_timeseries_group_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfo {const RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetCrawlersTimeseriesGroupResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

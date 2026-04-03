@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_timeseries_group_by_tls_version_response_result_meta.dart';import 'radar_get_http_timeseries_group_by_tls_version_response_result_serie0.dart';final class RadarGetHttpTimeseriesGroupByTlsVersionResponseResult {const RadarGetHttpTimeseriesGroupByTlsVersionResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_tls_version_response_result_meta.dart';import 'radar_get_http_timeseries_group_by_tls_version_response_result_serie0.dart';@immutable final class RadarGetHttpTimeseriesGroupByTlsVersionResponseResult {const RadarGetHttpTimeseriesGroupByTlsVersionResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetHttpTimeseriesGroupByTlsVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByTlsVersionResponseResult(
   meta: RadarGetHttpTimeseriesGroupByTlsVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

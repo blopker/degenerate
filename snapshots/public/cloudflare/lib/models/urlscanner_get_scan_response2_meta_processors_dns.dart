@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_dns_data.dart';final class UrlscannerGetScanResponse2MetaProcessorsDns {const UrlscannerGetScanResponse2MetaProcessorsDns({required this.data});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_dns_data.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsDns {const UrlscannerGetScanResponse2MetaProcessorsDns({required this.data});
 
 factory UrlscannerGetScanResponse2MetaProcessorsDns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsDns(
   data: (json['data'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2MetaProcessorsDnsData.fromJson(e as Map<String, dynamic>)).toList(),

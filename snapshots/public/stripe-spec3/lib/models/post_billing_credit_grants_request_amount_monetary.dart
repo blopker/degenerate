@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingCreditGrantsRequestAmountMonetary {const PostBillingCreditGrantsRequestAmountMonetary({required this.currency, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingCreditGrantsRequestAmountMonetary {const PostBillingCreditGrantsRequestAmountMonetary({required this.currency, required this.value, });
 
 factory PostBillingCreditGrantsRequestAmountMonetary.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestAmountMonetary(
   currency: json['currency'] as String,

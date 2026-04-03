@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_code_scanning_parameters.dart';final class RepositoryRuleCodeScanningType {const RepositoryRuleCodeScanningType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_code_scanning_parameters.dart';@immutable final class RepositoryRuleCodeScanningType {const RepositoryRuleCodeScanningType._(this.value);
 
 factory RepositoryRuleCodeScanningType.fromJson(String json) { return switch (json) {
   'code_scanning' => codeScanning,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleCodeScanningType($value)'; } 
  }
 /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
-final class RepositoryRuleCodeScanning {const RepositoryRuleCodeScanning({required this.type, this.parameters, });
+@immutable final class RepositoryRuleCodeScanning {const RepositoryRuleCodeScanning({required this.type, this.parameters, });
 
 factory RepositoryRuleCodeScanning.fromJson(Map<String, dynamic> json) { return RepositoryRuleCodeScanning(
   type: RepositoryRuleCodeScanningType.fromJson(json['type'] as String),

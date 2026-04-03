@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DnsRecordsDnsResponseImportScanResult {const DnsRecordsDnsResponseImportScanResult({this.recsAdded, this.totalRecordsParsed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseImportScanResult {const DnsRecordsDnsResponseImportScanResult({this.recsAdded, this.totalRecordsParsed, });
 
 factory DnsRecordsDnsResponseImportScanResult.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseImportScanResult(
   recsAdded: json['recs_added'] != null ? (json['recs_added'] as num).toDouble() : null,

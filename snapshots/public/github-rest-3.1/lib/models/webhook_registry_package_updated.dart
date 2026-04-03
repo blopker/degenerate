@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_registry_package_updated_registry_package.dart';final class WebhookRegistryPackageUpdatedAction {const WebhookRegistryPackageUpdatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_registry_package_updated_registry_package.dart';@immutable final class WebhookRegistryPackageUpdatedAction {const WebhookRegistryPackageUpdatedAction._(this.value);
 
 factory WebhookRegistryPackageUpdatedAction.fromJson(String json) { return switch (json) {
   'updated' => updated,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRegistryPackageUpdatedAction($value)'; } 
  }
-final class WebhookRegistryPackageUpdated {const WebhookRegistryPackageUpdated({required this.action, this.enterprise, this.installation, this.organization, required this.registryPackage, this.repository, required this.sender, });
+@immutable final class WebhookRegistryPackageUpdated {const WebhookRegistryPackageUpdated({required this.action, required this.registryPackage, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookRegistryPackageUpdated.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdated(
   action: WebhookRegistryPackageUpdatedAction.fromJson(json['action'] as String),

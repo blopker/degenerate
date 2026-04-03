@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit({required this.accountNumber, required this.bsbNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit({required this.accountNumber, required this.bsbNumber, });
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataAuBecsDebit(
   accountNumber: json['account_number'] as String,

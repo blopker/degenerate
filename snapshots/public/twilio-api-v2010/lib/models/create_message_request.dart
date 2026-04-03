@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the message content can be stored or redacted based on privacy settings
-final class MessageEnumContentRetention {const MessageEnumContentRetention._(this.value);
+@immutable final class MessageEnumContentRetention {const MessageEnumContentRetention._(this.value);
 
 factory MessageEnumContentRetention.fromJson(String json) { return switch (json) {
   'retain' => retain,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageEnumContentRetention($value)'; } 
  }
 /// Determines if the address can be stored or obfuscated based on privacy settings
-final class MessageEnumAddressRetention {const MessageEnumAddressRetention._(this.value);
+@immutable final class MessageEnumAddressRetention {const MessageEnumAddressRetention._(this.value);
 
 factory MessageEnumAddressRetention.fromJson(String json) { return switch (json) {
   'retain' => retain,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageEnumAddressRetention($value)'; } 
  }
-final class MessageEnumTrafficType {const MessageEnumTrafficType._(this.value);
+@immutable final class MessageEnumTrafficType {const MessageEnumTrafficType._(this.value);
 
 factory MessageEnumTrafficType.fromJson(String json) { return switch (json) {
   'free' => free,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageEnumTrafficType($value)'; } 
  }
 /// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
-final class MessageEnumScheduleType {const MessageEnumScheduleType._(this.value);
+@immutable final class MessageEnumScheduleType {const MessageEnumScheduleType._(this.value);
 
 factory MessageEnumScheduleType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageEnumScheduleType($value)'; } 
  }
 /// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
-final class MessageEnumRiskCheck {const MessageEnumRiskCheck._(this.value);
+@immutable final class MessageEnumRiskCheck {const MessageEnumRiskCheck._(this.value);
 
 factory MessageEnumRiskCheck.fromJson(String json) { return switch (json) {
   'enable' => enable,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageEnumRiskCheck($value)'; } 
  }
-final class CreateMessageRequest {const CreateMessageRequest({required this.to, this.statusCallback, this.applicationSid, this.maxPrice, this.provideFeedback, this.attempt, this.validityPeriod, this.forceDelivery, this.contentRetention, this.addressRetention, this.smartEncoded, this.persistentAction, this.trafficType, this.shortenUrls, this.scheduleType, this.sendAt, this.sendAsMms, this.contentVariables, this.riskCheck, this.from, this.messagingServiceSid, this.body, this.mediaUrl, this.contentSid, });
+@immutable final class CreateMessageRequest {const CreateMessageRequest({required this.to, this.statusCallback, this.applicationSid, this.maxPrice, this.provideFeedback, this.attempt, this.validityPeriod, this.forceDelivery, this.contentRetention, this.addressRetention, this.smartEncoded, this.persistentAction, this.trafficType, this.shortenUrls, this.scheduleType, this.sendAt, this.sendAsMms, this.contentVariables, this.riskCheck, this.from, this.messagingServiceSid, this.body, this.mediaUrl, this.contentSid, });
 
 factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
   to: json['To'] as String,

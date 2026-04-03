@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'coupon_applies_to.dart';import 'coupon_currency_option.dart';/// One of `forever`, `once`, or `repeating`. Describes how long a customer who applies this coupon will get the discount.
-final class CouponDuration {const CouponDuration._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon_applies_to.dart';import 'coupon_currency_option.dart';/// One of `forever`, `once`, or `repeating`. Describes how long a customer who applies this coupon will get the discount.
+@immutable final class CouponDuration {const CouponDuration._(this.value);
 
 factory CouponDuration.fromJson(String json) { return switch (json) {
   'forever' => forever,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CouponDuration($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class CouponObject {const CouponObject._(this.value);
+@immutable final class CouponObject {const CouponObject._(this.value);
 
 factory CouponObject.fromJson(String json) { return switch (json) {
   'coupon' => coupon,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A coupon contains information about a percent-off or amount-off discount you
 /// might want to apply to a customer. Coupons may be applied to [subscriptions](https://api.stripe.com#subscriptions), [invoices](https://api.stripe.com#invoices),
 /// [checkout sessions](https://docs.stripe.com/api/checkout/sessions), [quotes](https://api.stripe.com#quotes), and more. Coupons do not work with conventional one-off [charges](https://api.stripe.com#create_charge) or [payment intents](https://docs.stripe.com/api/payment_intents).
-final class Coupon {const Coupon({this.amountOff, this.appliesTo, required this.created, this.currency, this.currencyOptions, required this.duration, this.durationInMonths, required this.id, required this.livemode, this.maxRedemptions, this.metadata, this.name, required this.object, this.percentOff, this.redeemBy, required this.timesRedeemed, required this.valid, });
+@immutable final class Coupon {const Coupon({required this.created, required this.duration, required this.id, required this.livemode, required this.object, required this.timesRedeemed, required this.valid, this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.durationInMonths, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
 
 factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,

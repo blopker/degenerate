@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The authentication scheme to use when making SCIM requests to this application.
-final class AccessScimConfigAuthenticationHttpBasicScheme {const AccessScimConfigAuthenticationHttpBasicScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
+@immutable final class AccessScimConfigAuthenticationHttpBasicScheme {const AccessScimConfigAuthenticationHttpBasicScheme._(this.value);
 
 factory AccessScimConfigAuthenticationHttpBasicScheme.fromJson(String json) { return switch (json) {
   'httpbasic' => httpbasic,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessScimConfigAuthenticationHttpBasicScheme($value)'; } 
  }
 /// Attributes for configuring HTTP Basic authentication scheme for SCIM provisioning to an application.
-final class AccessScimConfigAuthenticationHttpBasic {const AccessScimConfigAuthenticationHttpBasic({required this.password, required this.scheme, required this.user, });
+@immutable final class AccessScimConfigAuthenticationHttpBasic {const AccessScimConfigAuthenticationHttpBasic({required this.password, required this.scheme, required this.user, });
 
 factory AccessScimConfigAuthenticationHttpBasic.fromJson(Map<String, dynamic> json) { return AccessScimConfigAuthenticationHttpBasic(
   password: json['password'] as String,

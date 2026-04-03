@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKrCardSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKrCardSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKrCardSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKrCardSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKrCardSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKrCardSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKrCard {const PostCheckoutSessionsRequestPaymentMethodOptionsKrCard({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKrCard {const PostCheckoutSessionsRequestPaymentMethodOptionsKrCard({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKrCard.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKrCard(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKrCardCaptureMethod.fromJson(json['capture_method'] as String) : null,

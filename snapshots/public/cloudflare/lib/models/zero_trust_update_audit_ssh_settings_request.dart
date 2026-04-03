@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_public_key.dart';final class ZeroTrustUpdateAuditSshSettingsRequest {const ZeroTrustUpdateAuditSshSettingsRequest({required this.publicKey});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_public_key.dart';@immutable final class ZeroTrustUpdateAuditSshSettingsRequest {const ZeroTrustUpdateAuditSshSettingsRequest({required this.publicKey});
 
 factory ZeroTrustUpdateAuditSshSettingsRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustUpdateAuditSshSettingsRequest(
   publicKey: ZeroTrustGatewayPublicKey.fromJson(json['public_key'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigCreateProvidersResponseResult {const AigConfigCreateProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, this.rateLimit, this.rateLimitPeriod = 60.0, required this.secretId, required this.secretPreview, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersResponseResult {const AigConfigCreateProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod = 60.0, });
 
 factory AigConfigCreateProvidersResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersResponseResult(
   alias: json['alias'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type identifier.
-final class ResponseCustomToolCallInputDoneEventType {const ResponseCustomToolCallInputDoneEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type identifier.
+@immutable final class ResponseCustomToolCallInputDoneEventType {const ResponseCustomToolCallInputDoneEventType._(this.value);
 
 factory ResponseCustomToolCallInputDoneEventType.fromJson(String json) { return switch (json) {
   'response.custom_tool_call_input.done' => responseCustomToolCallInputDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Event indicating that input for a custom tool call is complete.
 /// 
-final class ResponseCustomToolCallInputDoneEvent {const ResponseCustomToolCallInputDoneEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, required this.input, });
+@immutable final class ResponseCustomToolCallInputDoneEvent {const ResponseCustomToolCallInputDoneEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, required this.input, });
 
 factory ResponseCustomToolCallInputDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseCustomToolCallInputDoneEvent(
   type: ResponseCustomToolCallInputDoneEventType.fromJson(json['type'] as String),

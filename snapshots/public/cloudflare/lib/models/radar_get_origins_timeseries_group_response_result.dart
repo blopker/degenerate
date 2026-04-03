@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_origins_timeseries_group_response_result_meta.dart';import 'radar_get_origins_timeseries_group_response_result_serie0.dart';final class RadarGetOriginsTimeseriesGroupResponseResult {const RadarGetOriginsTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_timeseries_group_response_result_meta.dart';import 'radar_get_origins_timeseries_group_response_result_serie0.dart';@immutable final class RadarGetOriginsTimeseriesGroupResponseResult {const RadarGetOriginsTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetOriginsTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesGroupResponseResult(
   meta: RadarGetOriginsTimeseriesGroupResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

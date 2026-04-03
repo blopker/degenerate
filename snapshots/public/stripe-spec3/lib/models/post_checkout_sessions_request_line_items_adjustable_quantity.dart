@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestLineItemsAdjustableQuantity {const PostCheckoutSessionsRequestLineItemsAdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestLineItemsAdjustableQuantity {const PostCheckoutSessionsRequestLineItemsAdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
 
 factory PostCheckoutSessionsRequestLineItemsAdjustableQuantity.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItemsAdjustableQuantity(
   enabled: json['enabled'] as bool,

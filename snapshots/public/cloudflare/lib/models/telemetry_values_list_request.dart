@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_values_list_request_filters.dart';import 'telemetry_values_list_request_needle.dart';import 'telemetry_values_list_request_timeframe.dart';final class TelemetryValuesListRequestType {const TelemetryValuesListRequestType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_values_list_request_filters.dart';import 'telemetry_values_list_request_needle.dart';import 'telemetry_values_list_request_timeframe.dart';@immutable final class TelemetryValuesListRequestType {const TelemetryValuesListRequestType._(this.value);
 
 factory TelemetryValuesListRequestType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryValuesListRequestType($value)'; } 
  }
-final class TelemetryValuesListRequest {const TelemetryValuesListRequest({required this.datasets, this.filters = const [], required this.key, this.limit = 50.0, this.needle, required this.timeframe, required this.type, });
+@immutable final class TelemetryValuesListRequest {const TelemetryValuesListRequest({required this.datasets, required this.key, required this.timeframe, required this.type, this.filters = const [], this.limit = 50.0, this.needle, });
 
 factory TelemetryValuesListRequest.fromJson(Map<String, dynamic> json) { return TelemetryValuesListRequest(
   datasets: (json['datasets'] as List<dynamic>).map((e) => e as String).toList(),

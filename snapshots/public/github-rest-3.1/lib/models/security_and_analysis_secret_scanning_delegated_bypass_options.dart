@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_and_analysis_secret_scanning_delegated_bypass_options_reviewers.dart';final class SecurityAndAnalysisSecretScanningDelegatedBypassOptions {const SecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_and_analysis_secret_scanning_delegated_bypass_options_reviewers.dart';@immutable final class SecurityAndAnalysisSecretScanningDelegatedBypassOptions {const SecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers});
 
 factory SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
   reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers.fromJson(e as Map<String, dynamic>)).toList(),

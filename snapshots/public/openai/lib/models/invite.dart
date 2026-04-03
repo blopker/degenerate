@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invite_projects.dart';/// The object type, which is always `organization.invite`
-final class InviteObject {const InviteObject._(this.value);
+@immutable final class InviteObject {const InviteObject._(this.value);
 
 factory InviteObject.fromJson(String json) { return switch (json) {
   'organization.invite' => organizationInvite,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InviteObject($value)'; } 
  }
 /// `owner` or `reader`
-final class InviteRole {const InviteRole._(this.value);
+@immutable final class InviteRole {const InviteRole._(this.value);
 
 factory InviteRole.fromJson(String json) { return switch (json) {
   'owner' => owner,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InviteRole($value)'; } 
  }
 /// `accepted`,`expired`, or `pending`
-final class InviteStatus {const InviteStatus._(this.value);
+@immutable final class InviteStatus {const InviteStatus._(this.value);
 
 factory InviteStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InviteStatus($value)'; } 
  }
 /// Represents an individual `invite` to the organization.
-final class Invite {const Invite({required this.object, required this.id, required this.email, required this.role, required this.status, required this.invitedAt, required this.expiresAt, this.acceptedAt, this.projects, });
+@immutable final class Invite {const Invite({required this.object, required this.id, required this.email, required this.role, required this.status, required this.invitedAt, required this.expiresAt, this.acceptedAt, this.projects, });
 
 factory Invite.fromJson(Map<String, dynamic> json) { return Invite(
   object: InviteObject.fromJson(json['object'] as String),

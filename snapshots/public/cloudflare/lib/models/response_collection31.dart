@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection31_result_info.dart';import 'response_errors3.dart';import 'response_messages2.dart';import 'response_success.dart';final class ResponseCollection31 {const ResponseCollection31({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection31_result_info.dart';import 'response_errors3.dart';import 'response_messages2.dart';import 'response_success.dart';@immutable final class ResponseCollection31 {const ResponseCollection31({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection31.fromJson(Map<String, dynamic> json) { return ResponseCollection31(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors3.fromJson(e as Map<String, dynamic>)).toList(),

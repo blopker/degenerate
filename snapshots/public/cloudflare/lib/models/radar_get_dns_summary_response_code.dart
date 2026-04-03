@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryResponseCode {const RadarGetDnsSummaryResponseCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryResponseCode {const RadarGetDnsSummaryResponseCode._(this.value);
 
 factory RadarGetDnsSummaryResponseCode.fromJson(String json) { return switch (json) {
   'NOERROR' => noerror,

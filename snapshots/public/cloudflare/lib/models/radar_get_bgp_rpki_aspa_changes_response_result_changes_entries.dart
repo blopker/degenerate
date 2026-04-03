@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType {const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType {const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._(this.value);
 
 factory RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType.fromJson(String json) { return switch (json) {
   'CustomerAdded' => customerAdded,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType($value)'; } 
  }
-final class RadarGetBgpRpkiAspaChangesResponseResultChangesEntries {const RadarGetBgpRpkiAspaChangesResponseResultChangesEntries({required this.customerAsn, required this.providers, required this.type, });
+@immutable final class RadarGetBgpRpkiAspaChangesResponseResultChangesEntries {const RadarGetBgpRpkiAspaChangesResponseResultChangesEntries({required this.customerAsn, required this.providers, required this.type, });
 
 factory RadarGetBgpRpkiAspaChangesResponseResultChangesEntries.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResultChangesEntries(
   customerAsn: (json['customerAsn'] as num).toInt(),

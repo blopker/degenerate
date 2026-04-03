@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket.dart';final class R2ListBucketsResponseResult {const R2ListBucketsResponseResult({this.buckets});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket.dart';@immutable final class R2ListBucketsResponseResult {const R2ListBucketsResponseResult({this.buckets});
 
 factory R2ListBucketsResponseResult.fromJson(Map<String, dynamic> json) { return R2ListBucketsResponseResult(
   buckets: (json['buckets'] as List<dynamic>?)?.map((e) => R2Bucket.fromJson(e as Map<String, dynamic>)).toList(),

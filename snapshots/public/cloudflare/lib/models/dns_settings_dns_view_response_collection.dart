@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_dns_view_response.dart';final class DnsSettingsDnsViewResponseCollection {const DnsSettingsDnsViewResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_dns_view_response.dart';@immutable final class DnsSettingsDnsViewResponseCollection {const DnsSettingsDnsViewResponseCollection({this.result});
 
 factory DnsSettingsDnsViewResponseCollection.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsViewResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => DnsSettingsDnsViewResponse.fromJson(e as Map<String, dynamic>)).toList(),

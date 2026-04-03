@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class NotificationEventRequest {const NotificationEventRequest({this.id, this.idempotencyKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class NotificationEventRequest {const NotificationEventRequest({this.id, this.idempotencyKey, });
 
 factory NotificationEventRequest.fromJson(Map<String, dynamic> json) { return NotificationEventRequest(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_list_attestations_response_attestations.dart';final class ReposListAttestationsResponse {const ReposListAttestationsResponse({this.attestations});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_list_attestations_response_attestations.dart';@immutable final class ReposListAttestationsResponse {const ReposListAttestationsResponse({this.attestations});
 
 factory ReposListAttestationsResponse.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponse(
   attestations: (json['attestations'] as List<dynamic>?)?.map((e) => ReposListAttestationsResponseAttestations.fromJson(e as Map<String, dynamic>)).toList(),

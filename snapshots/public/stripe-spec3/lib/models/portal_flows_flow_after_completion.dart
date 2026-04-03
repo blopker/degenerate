@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_after_completion_hosted_confirmation.dart';import 'portal_flows_after_completion_redirect.dart';/// The specified type of behavior after the flow is completed.
-final class PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_after_completion_hosted_confirmation.dart';import 'portal_flows_after_completion_redirect.dart';/// The specified type of behavior after the flow is completed.
+@immutable final class PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType._(this.value);
 
 factory PortalFlowsFlowAfterCompletionType.fromJson(String json) { return switch (json) {
   'hosted_confirmation' => hostedConfirmation,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalFlowsFlowAfterCompletionType($value)'; } 
  }
 /// 
-final class PortalFlowsFlowAfterCompletion {const PortalFlowsFlowAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
+@immutable final class PortalFlowsFlowAfterCompletion {const PortalFlowsFlowAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });
 
 factory PortalFlowsFlowAfterCompletion.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowAfterCompletion(
   hostedConfirmation: json['hosted_confirmation'] != null ? PortalFlowsAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,

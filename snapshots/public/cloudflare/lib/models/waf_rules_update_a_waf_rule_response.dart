@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_anomaly_rule.dart';import 'waf_managed_rules_traditional_allow_rule.dart';import 'waf_managed_rules_traditional_deny_rule.dart';import 'waf_rules_update_a_waf_rule_response_result.dart';final class WafRulesUpdateAWafRuleResponse {const WafRulesUpdateAWafRuleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_anomaly_rule.dart';import 'waf_managed_rules_traditional_allow_rule.dart';import 'waf_managed_rules_traditional_deny_rule.dart';import 'waf_rules_update_a_waf_rule_response_result.dart';@immutable final class WafRulesUpdateAWafRuleResponse {const WafRulesUpdateAWafRuleResponse({this.result});
 
 factory WafRulesUpdateAWafRuleResponse.fromJson(Map<String, dynamic> json) { return WafRulesUpdateAWafRuleResponse(
   result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => WafManagedRulesAnomalyRule.fromJson(v as Map<String, dynamic>), fromB: (v) => WafManagedRulesTraditionalDenyRule.fromJson(v as Map<String, dynamic>), fromC: (v) => WafManagedRulesTraditionalAllowRule.fromJson(v as Map<String, dynamic>),) : null,

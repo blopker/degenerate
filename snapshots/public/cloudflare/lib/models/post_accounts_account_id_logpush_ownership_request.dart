@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_destination_conf.dart';final class PostAccountsAccountIdLogpushOwnershipRequest {const PostAccountsAccountIdLogpushOwnershipRequest({required this.destinationConf});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';@immutable final class PostAccountsAccountIdLogpushOwnershipRequest {const PostAccountsAccountIdLogpushOwnershipRequest({required this.destinationConf});
 
 factory PostAccountsAccountIdLogpushOwnershipRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountIdLogpushOwnershipRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// The event type, must be
 /// `conversation.item.input_audio_transcription.completed`.
 /// 
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(this.value);
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.completed' => conversationItemInputAudioTranscriptionCompleted,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The transcript may diverge somewhat from the model's interpretation, and
 /// should be treated as a rough guide.
 /// 
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.transcript, this.logprobs, required this.usage, });
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.transcript, required this.usage, this.logprobs, });
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: json['event_id'] as String,

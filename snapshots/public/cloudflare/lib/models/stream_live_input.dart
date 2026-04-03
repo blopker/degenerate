@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_input_rtmps.dart';import 'stream_input_srt.dart';import 'stream_input_webrtc.dart';import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';import 'stream_playback_rtmps.dart';import 'stream_playback_srt.dart';import 'stream_playback_webrtc.dart';/// The connection status of a live input.
-final class StreamLiveInputStatus {const StreamLiveInputStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_input_rtmps.dart';import 'stream_input_srt.dart';import 'stream_input_webrtc.dart';import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';import 'stream_playback_rtmps.dart';import 'stream_playback_srt.dart';import 'stream_playback_webrtc.dart';/// The connection status of a live input.
+@immutable final class StreamLiveInputStatus {const StreamLiveInputStatus._(this.value);
 
 factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
   'null' => $null,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'StreamLiveInputStatus($value)'; } 
  }
 /// Details about a live input.
-final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status, this.uid, this.webRtc, this.webRtcPlayback, });
+@immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status, this.uid, this.webRtc, this.webRtcPlayback, });
 
 factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveInput(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,

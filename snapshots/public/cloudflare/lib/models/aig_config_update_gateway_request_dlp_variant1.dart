@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigUpdateGatewayRequestDlpVariant1Action {const AigConfigUpdateGatewayRequestDlpVariant1Action._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayRequestDlpVariant1Action {const AigConfigUpdateGatewayRequestDlpVariant1Action._(this.value);
 
 factory AigConfigUpdateGatewayRequestDlpVariant1Action.fromJson(String json) { return switch (json) {
   'BLOCK' => block,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestDlpVariant1Action($value)'; } 
  }
-final class AigConfigUpdateGatewayRequestDlpVariant1 {const AigConfigUpdateGatewayRequestDlpVariant1({required this.action, required this.enabled, required this.profiles, });
+@immutable final class AigConfigUpdateGatewayRequestDlpVariant1 {const AigConfigUpdateGatewayRequestDlpVariant1({required this.action, required this.enabled, required this.profiles, });
 
 factory AigConfigUpdateGatewayRequestDlpVariant1.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestDlpVariant1(
   action: AigConfigUpdateGatewayRequestDlpVariant1Action.fromJson(json['action'] as String),

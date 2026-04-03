@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Cloudflare Images allowed usage.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Cloudflare Images allowed usage.
 extension type const ImagesImagesStatsAllowed(double value) {
 factory ImagesImagesStatsAllowed.fromJson(num json) => ImagesImagesStatsAllowed(json.toDouble());
 
@@ -14,7 +14,7 @@ factory ImagesImagesStatsCurrent.fromJson(num json) => ImagesImagesStatsCurrent(
 num toJson() => value;
 
 }
-final class ImagesImagesStatsCount {const ImagesImagesStatsCount({this.allowed, this.current, });
+@immutable final class ImagesImagesStatsCount {const ImagesImagesStatsCount({this.allowed, this.current, });
 
 factory ImagesImagesStatsCount.fromJson(Map<String, dynamic> json) { return ImagesImagesStatsCount(
   allowed: json['allowed'] != null ? ImagesImagesStatsAllowed.fromJson(json['allowed'] as num) : null,

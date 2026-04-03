@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_persons_person_request_verification_additional_document.dart';import 'post_accounts_account_persons_person_request_verification_document.dart';/// The person's verification status.
-final class PostAccountsAccountPersonsPersonRequestVerification {const PostAccountsAccountPersonsPersonRequestVerification({this.additionalDocument, this.document, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_person_request_verification_additional_document.dart';import 'post_accounts_account_persons_person_request_verification_document.dart';/// The person's verification status.
+@immutable final class PostAccountsAccountPersonsPersonRequestVerification {const PostAccountsAccountPersonsPersonRequestVerification({this.additionalDocument, this.document, });
 
 factory PostAccountsAccountPersonsPersonRequestVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsPersonRequestVerification(
   additionalDocument: json['additional_document'] != null ? PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,

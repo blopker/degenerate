@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components.dart';final class PostAccountSessionsRequest {const PostAccountSessionsRequest({required this.account, required this.components, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components.dart';@immutable final class PostAccountSessionsRequest {const PostAccountSessionsRequest({required this.account, required this.components, this.expand, });
 
 factory PostAccountSessionsRequest.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequest(
   account: json['account'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
-final class MigrationsStartImportRequestVcs {const MigrationsStartImportRequestVcs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
+@immutable final class MigrationsStartImportRequestVcs {const MigrationsStartImportRequestVcs._(this.value);
 
 factory MigrationsStartImportRequestVcs.fromJson(String json) { return switch (json) {
   'subversion' => subversion,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MigrationsStartImportRequestVcs($value)'; } 
  }
-final class MigrationsStartImportRequest {const MigrationsStartImportRequest({required this.vcsUrl, this.vcs, this.vcsUsername, this.vcsPassword, this.tfvcProject, });
+@immutable final class MigrationsStartImportRequest {const MigrationsStartImportRequest({required this.vcsUrl, this.vcs, this.vcsUsername, this.vcsPassword, this.tfvcProject, });
 
 factory MigrationsStartImportRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartImportRequest(
   vcsUrl: json['vcs_url'] as String,

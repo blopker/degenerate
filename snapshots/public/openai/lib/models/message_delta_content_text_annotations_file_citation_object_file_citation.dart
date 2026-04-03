@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation {const MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation({this.fileId, this.quote, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation {const MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation({this.fileId, this.quote, });
 
 factory MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
   fileId: json['file_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Zaraz workflow
-final class ZarazZarazWorkflow {const ZarazZarazWorkflow._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Zaraz workflow
+@immutable final class ZarazZarazWorkflow {const ZarazZarazWorkflow._(this.value);
 
 factory ZarazZarazWorkflow.fromJson(String json) { return switch (json) {
   'realtime' => realtime,

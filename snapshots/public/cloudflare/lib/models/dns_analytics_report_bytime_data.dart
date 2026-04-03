@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DnsAnalyticsReportBytimeData {const DnsAnalyticsReportBytimeData({required this.metrics});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsAnalyticsReportBytimeData {const DnsAnalyticsReportBytimeData({required this.metrics});
 
 factory DnsAnalyticsReportBytimeData.fromJson(Map<String, dynamic> json) { return DnsAnalyticsReportBytimeData(
   metrics: (json['metrics'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList()).toList(),

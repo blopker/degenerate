@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentIntentsIntentConfirmRequestOffSessionVariant2 {const PostPaymentIntentsIntentConfirmRequestOffSessionVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestOffSessionVariant2 {const PostPaymentIntentsIntentConfirmRequestOffSessionVariant2._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestOffSessionVariant2.fromJson(String json) { return switch (json) {
   'one_off' => oneOff,

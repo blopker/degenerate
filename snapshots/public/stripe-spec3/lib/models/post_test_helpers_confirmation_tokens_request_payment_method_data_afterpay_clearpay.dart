@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataAfterpayClearpay(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RangeQuerySpecs58 {const RangeQuerySpecs58({this.gt, this.gte, this.lt, this.lte, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RangeQuerySpecs58 {const RangeQuerySpecs58({this.gt, this.gte, this.lt, this.lte, });
 
 factory RangeQuerySpecs58.fromJson(Map<String, dynamic> json) { return RangeQuerySpecs58(
   gt: json['gt'] != null ? (json['gt'] as num).toInt() : null,

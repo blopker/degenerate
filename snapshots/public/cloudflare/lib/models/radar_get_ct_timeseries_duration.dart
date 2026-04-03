@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtTimeseriesDuration {const RadarGetCtTimeseriesDuration._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesDuration {const RadarGetCtTimeseriesDuration._(this.value);
 
 factory RadarGetCtTimeseriesDuration.fromJson(String json) { return switch (json) {
   'LTE_3D' => lte3D,

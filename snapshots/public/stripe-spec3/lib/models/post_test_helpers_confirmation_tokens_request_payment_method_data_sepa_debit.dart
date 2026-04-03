@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit({required this.iban});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit({required this.iban});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSepaDebit(
   iban: json['iban'] as String,

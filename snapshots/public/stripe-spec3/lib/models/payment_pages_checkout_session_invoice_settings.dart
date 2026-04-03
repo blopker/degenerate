@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'invoice_setting_checkout_rendering_options.dart';import 'invoice_setting_custom_field.dart';import 'payment_pages_checkout_session_invoice_settings_account_tax_ids.dart';import 'tax_id.dart';/// 
-final class PaymentPagesCheckoutSessionInvoiceSettings {const PaymentPagesCheckoutSessionInvoiceSettings({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
+@immutable final class PaymentPagesCheckoutSessionInvoiceSettings {const PaymentPagesCheckoutSessionInvoiceSettings({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PaymentPagesCheckoutSessionInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionInvoiceSettings(
   accountTaxIds: (json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList(),

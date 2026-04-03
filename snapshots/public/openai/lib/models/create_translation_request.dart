@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_translation_request_model.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 /// 
-final class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat._(this.value);
+@immutable final class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat._(this.value);
 
 factory CreateTranslationRequestResponseFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateTranslationRequestResponseFormat($value)'; } 
  }
-final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat = CreateTranslationRequestResponseFormat.$json, this.temperature = 0.0, });
+@immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat = CreateTranslationRequestResponseFormat.$json, this.temperature = 0.0, });
 
 factory CreateTranslationRequest.fromJson(Map<String, dynamic> json) { return CreateTranslationRequest(
   file: base64Decode(json['file'] as String),

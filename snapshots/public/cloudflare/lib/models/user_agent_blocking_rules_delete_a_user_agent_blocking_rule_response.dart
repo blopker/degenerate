@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'user_agent_blocking_rules_delete_a_user_agent_blocking_rule_response_result.dart';final class UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponse {const UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user_agent_blocking_rules_delete_a_user_agent_blocking_rule_response_result.dart';@immutable final class UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponse {const UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponse({this.result});
 
 factory UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponse.fromJson(Map<String, dynamic> json) { return UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponse(
   result: json['result'] != null ? UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

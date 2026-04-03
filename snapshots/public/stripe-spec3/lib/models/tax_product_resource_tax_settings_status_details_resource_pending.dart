@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class TaxProductResourceTaxSettingsStatusDetailsResourcePending {const TaxProductResourceTaxSettingsStatusDetailsResourcePending({this.missingFields});
+@immutable final class TaxProductResourceTaxSettingsStatusDetailsResourcePending {const TaxProductResourceTaxSettingsStatusDetailsResourcePending({this.missingFields});
 
 factory TaxProductResourceTaxSettingsStatusDetailsResourcePending.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsStatusDetailsResourcePending(
   missingFields: (json['missing_fields'] as List<dynamic>?)?.map((e) => e as String).toList(),

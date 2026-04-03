@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Started crypt key rotation
-final class MconnEventStartRotateCryptKeyK {const MconnEventStartRotateCryptKeyK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started crypt key rotation
+@immutable final class MconnEventStartRotateCryptKeyK {const MconnEventStartRotateCryptKeyK._(this.value);
 
 factory MconnEventStartRotateCryptKeyK.fromJson(String json) { return switch (json) {
   'StartRotateCryptKey' => startRotateCryptKey,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventStartRotateCryptKeyK($value)'; } 
  }
-final class MconnEventStartRotateCryptKey {const MconnEventStartRotateCryptKey({required this.k});
+@immutable final class MconnEventStartRotateCryptKey {const MconnEventStartRotateCryptKey({required this.k});
 
 factory MconnEventStartRotateCryptKey.fromJson(Map<String, dynamic> json) { return MconnEventStartRotateCryptKey(
   k: MconnEventStartRotateCryptKeyK.fromJson(json['k'] as String),

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_search_tool_call_results2.dart';/// The status of the file search tool call. One of `in_progress`,
 /// `searching`, `incomplete` or `failed`,
 /// 
-final class FileSearchToolCallStatus {const FileSearchToolCallStatus._(this.value);
+@immutable final class FileSearchToolCallStatus {const FileSearchToolCallStatus._(this.value);
 
 factory FileSearchToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The results of a file search tool call. See the
 /// [file search guide](/docs/guides/tools-file-search) for more information.
 /// 
-final class FileSearchToolCall {const FileSearchToolCall({required this.id, required this.type, required this.status, required this.queries, this.results, });
+@immutable final class FileSearchToolCall {const FileSearchToolCall({required this.id, required this.type, required this.status, required this.queries, this.results, });
 
 factory FileSearchToolCall.fromJson(Map<String, dynamic> json) { return FileSearchToolCall(
   id: json['id'] as String,

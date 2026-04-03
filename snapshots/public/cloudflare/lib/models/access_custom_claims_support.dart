@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AccessCustomClaimsSupport {const AccessCustomClaimsSupport({this.claims, this.emailClaimName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessCustomClaimsSupport {const AccessCustomClaimsSupport({this.claims, this.emailClaimName, });
 
 factory AccessCustomClaimsSupport.fromJson(Map<String, dynamic> json) { return AccessCustomClaimsSupport(
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),

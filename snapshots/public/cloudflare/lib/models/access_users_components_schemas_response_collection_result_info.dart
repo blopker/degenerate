@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessUsersComponentsSchemasResponseCollectionResultInfo {const AccessUsersComponentsSchemasResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessUsersComponentsSchemasResponseCollectionResultInfo {const AccessUsersComponentsSchemasResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory AccessUsersComponentsSchemasResponseCollectionResultInfo.fromJson(Map<String, dynamic> json) { return AccessUsersComponentsSchemasResponseCollectionResultInfo(
   count: json['count'],

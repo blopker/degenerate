@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_silence_id.dart';final class AaaSilenceUpdateRequest {const AaaSilenceUpdateRequest({this.endTime, this.id, this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_silence_id.dart';@immutable final class AaaSilenceUpdateRequest {const AaaSilenceUpdateRequest({this.endTime, this.id, this.startTime, });
 
 factory AaaSilenceUpdateRequest.fromJson(Map<String, dynamic> json) { return AaaSilenceUpdateRequest(
   endTime: json['end_time'] as String?,

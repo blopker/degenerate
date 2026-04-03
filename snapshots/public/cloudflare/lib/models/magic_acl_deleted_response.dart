@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_acl.dart';final class MagicAclDeletedResponse {const MagicAclDeletedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_acl.dart';@immutable final class MagicAclDeletedResponse {const MagicAclDeletedResponse({this.result});
 
 factory MagicAclDeletedResponse.fromJson(Map<String, dynamic> json) { return MagicAclDeletedResponse(
   result: json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'nullability_combos.dart';import 'order_item.dart';final class OrderStatus {const OrderStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'nullability_combos.dart';import 'order_item.dart';@immutable final class OrderStatus {const OrderStatus._(this.value);
 
 factory OrderStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrderStatus($value)'; } 
  }
-final class Order {const Order({required this.id, this.status, required this.items, this.shippingAddress, this.metadata, this.nullabilitySample, });
+@immutable final class Order {const Order({required this.id, required this.items, this.status, this.shippingAddress, this.metadata, this.nullabilitySample, });
 
 factory Order.fromJson(Map<String, dynamic> json) { return Order(
   id: json['id'] as String,

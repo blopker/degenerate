@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_account_log_options.dart';/// Configure logging settings for each rule type.
-final class ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType {const ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType({this.dns, this.http, this.l4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_account_log_options.dart';/// Configure logging settings for each rule type.
+@immutable final class ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType {const ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType({this.dns, this.http, this.l4, });
 
 factory ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType(
   dns: json['dns'] != null ? ZeroTrustGatewayAccountLogOptions.fromJson(json['dns'] as Map<String, dynamic>) : null,

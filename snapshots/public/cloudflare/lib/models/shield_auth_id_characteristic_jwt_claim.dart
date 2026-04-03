@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of characteristic.
-final class ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
+@immutable final class ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType._(this.value);
 
 factory ShieldAuthIdCharacteristicJwtClaimType.fromJson(String json) { return switch (json) {
   'jwt' => jwt,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldAuthIdCharacteristicJwtClaimType($value)'; } 
  }
 /// Auth ID Characteristic extracted from JWT Token Claims
-final class ShieldAuthIdCharacteristicJwtClaim {const ShieldAuthIdCharacteristicJwtClaim({required this.name, required this.type, });
+@immutable final class ShieldAuthIdCharacteristicJwtClaim {const ShieldAuthIdCharacteristicJwtClaim({required this.name, required this.type, });
 
 factory ShieldAuthIdCharacteristicJwtClaim.fromJson(Map<String, dynamic> json) { return ShieldAuthIdCharacteristicJwtClaim(
   name: json['name'] as String,

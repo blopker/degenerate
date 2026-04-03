@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_content_image_url_object_image_url.dart';/// Always `image_url`.
-final class MessageDeltaContentImageUrlObjectType {const MessageDeltaContentImageUrlObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_image_url_object_image_url.dart';/// Always `image_url`.
+@immutable final class MessageDeltaContentImageUrlObjectType {const MessageDeltaContentImageUrlObjectType._(this.value);
 
 factory MessageDeltaContentImageUrlObjectType.fromJson(String json) { return switch (json) {
   'image_url' => imageUrl,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaContentImageUrlObjectType($value)'; } 
  }
 /// References an image URL in the content of a message.
-final class MessageDeltaContentImageUrlObject {const MessageDeltaContentImageUrlObject({required this.index, required this.type, this.imageUrl, });
+@immutable final class MessageDeltaContentImageUrlObject {const MessageDeltaContentImageUrlObject({required this.index, required this.type, this.imageUrl, });
 
 factory MessageDeltaContentImageUrlObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageUrlObject(
   index: (json['index'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_classroom.dart';/// Whether it's a Group Assignment or Individual Assignment.
-final class SimpleClassroomAssignmentType {const SimpleClassroomAssignmentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_classroom.dart';/// Whether it's a Group Assignment or Individual Assignment.
+@immutable final class SimpleClassroomAssignmentType {const SimpleClassroomAssignmentType._(this.value);
 
 factory SimpleClassroomAssignmentType.fromJson(String json) { return switch (json) {
   'individual' => individual,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SimpleClassroomAssignmentType($value)'; } 
  }
 /// A GitHub Classroom assignment
-final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, this.maxTeams, this.maxMembers, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, });
+@immutable final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, this.maxTeams, this.maxMembers, });
 
 factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return SimpleClassroomAssignment(
   id: (json['id'] as num).toInt(),

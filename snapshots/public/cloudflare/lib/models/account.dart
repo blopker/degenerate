@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_settings.dart';final class AccountType {const AccountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_settings.dart';@immutable final class AccountType {const AccountType._(this.value);
 
 factory AccountType.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountType($value)'; } 
  }
-final class Account {const Account({required this.createdOn, required this.id, required this.name, required this.settings, required this.type, });
+@immutable final class Account {const Account({required this.createdOn, required this.id, required this.name, required this.settings, required this.type, });
 
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
   createdOn: DateTime.parse(json['created_on'] as String),

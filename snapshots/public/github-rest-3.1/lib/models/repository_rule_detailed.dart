@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_branch_name_pattern.dart';import 'repository_rule_code_scanning.dart';import 'repository_rule_commit_author_email_pattern.dart';import 'repository_rule_commit_message_pattern.dart';import 'repository_rule_committer_email_pattern.dart';import 'repository_rule_copilot_code_review.dart';import 'repository_rule_creation.dart';import 'repository_rule_deletion.dart';import 'repository_rule_file_extension_restriction.dart';import 'repository_rule_file_path_restriction.dart';import 'repository_rule_max_file_path_length.dart';import 'repository_rule_max_file_size.dart';import 'repository_rule_merge_queue.dart';import 'repository_rule_non_fast_forward.dart';import 'repository_rule_pull_request.dart';import 'repository_rule_required_deployments.dart';import 'repository_rule_required_linear_history.dart';import 'repository_rule_required_signatures.dart';import 'repository_rule_required_status_checks.dart';import 'repository_rule_tag_name_pattern.dart';import 'repository_rule_update.dart';import 'repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleMergeQueue`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_branch_name_pattern.dart';import 'repository_rule_code_scanning.dart';import 'repository_rule_commit_author_email_pattern.dart';import 'repository_rule_commit_message_pattern.dart';import 'repository_rule_committer_email_pattern.dart';import 'repository_rule_copilot_code_review.dart';import 'repository_rule_creation.dart';import 'repository_rule_deletion.dart';import 'repository_rule_file_extension_restriction.dart';import 'repository_rule_file_path_restriction.dart';import 'repository_rule_max_file_path_length.dart';import 'repository_rule_max_file_size.dart';import 'repository_rule_merge_queue.dart';import 'repository_rule_non_fast_forward.dart';import 'repository_rule_pull_request.dart';import 'repository_rule_required_deployments.dart';import 'repository_rule_required_linear_history.dart';import 'repository_rule_required_signatures.dart';import 'repository_rule_required_status_checks.dart';import 'repository_rule_tag_name_pattern.dart';import 'repository_rule_update.dart';import 'repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleMergeQueue`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
 sealed class RepositoryRuleDetailed {const RepositoryRuleDetailed();
 
 factory RepositoryRuleDetailed.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreation.canParse(json)) {
@@ -75,7 +75,7 @@ factory RepositoryRuleDetailed.fromJson(Map<String, dynamic> json) {   if (Repos
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleCreation extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCreation(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleCreation extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCreation(this._value);
 
 final RepositoryRuleCreation _value;
 
@@ -85,7 +85,7 @@ final RepositoryRuleCreation _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCreation($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleUpdate extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleUpdate(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleUpdate extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleUpdate(this._value);
 
 final RepositoryRuleUpdate _value;
 
@@ -95,7 +95,7 @@ final RepositoryRuleUpdate _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleUpdate($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleDeletion extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDeletion(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDeletion extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDeletion(this._value);
 
 final RepositoryRuleDeletion _value;
 
@@ -105,7 +105,7 @@ final RepositoryRuleDeletion _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDeletion($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory(this._value);
 
 final RepositoryRuleRequiredLinearHistory _value;
 
@@ -115,7 +115,7 @@ final RepositoryRuleRequiredLinearHistory _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredLinearHistory($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleMergeQueue extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMergeQueue(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleMergeQueue extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMergeQueue(this._value);
 
 final RepositoryRuleMergeQueue _value;
 
@@ -125,7 +125,7 @@ final RepositoryRuleMergeQueue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleMergeQueue($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleRequiredDeployments extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredDeployments(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredDeployments extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredDeployments(this._value);
 
 final RepositoryRuleRequiredDeployments _value;
 
@@ -135,7 +135,7 @@ final RepositoryRuleRequiredDeployments _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredDeployments($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleRequiredSignatures extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredSignatures(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredSignatures extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredSignatures(this._value);
 
 final RepositoryRuleRequiredSignatures _value;
 
@@ -145,7 +145,7 @@ final RepositoryRuleRequiredSignatures _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredSignatures($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRulePullRequest extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRulePullRequest(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRulePullRequest extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRulePullRequest(this._value);
 
 final RepositoryRulePullRequest _value;
 
@@ -155,7 +155,7 @@ final RepositoryRulePullRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRulePullRequest($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks(this._value);
 
 final RepositoryRuleRequiredStatusChecks _value;
 
@@ -165,7 +165,7 @@ final RepositoryRuleRequiredStatusChecks _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredStatusChecks($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleNonFastForward extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleNonFastForward(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleNonFastForward extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleNonFastForward(this._value);
 
 final RepositoryRuleNonFastForward _value;
 
@@ -175,7 +175,7 @@ final RepositoryRuleNonFastForward _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleNonFastForward($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleCommitMessagePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitMessagePattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleCommitMessagePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitMessagePattern(this._value);
 
 final RepositoryRuleCommitMessagePattern _value;
 
@@ -185,7 +185,7 @@ final RepositoryRuleCommitMessagePattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCommitMessagePattern($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern(this._value);
 
 final RepositoryRuleCommitAuthorEmailPattern _value;
 
@@ -195,7 +195,7 @@ final RepositoryRuleCommitAuthorEmailPattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCommitAuthorEmailPattern($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern(this._value);
 
 final RepositoryRuleCommitterEmailPattern _value;
 
@@ -205,7 +205,7 @@ final RepositoryRuleCommitterEmailPattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCommitterEmailPattern($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleBranchNamePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleBranchNamePattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleBranchNamePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleBranchNamePattern(this._value);
 
 final RepositoryRuleBranchNamePattern _value;
 
@@ -215,7 +215,7 @@ final RepositoryRuleBranchNamePattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleBranchNamePattern($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleTagNamePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleTagNamePattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleTagNamePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleTagNamePattern(this._value);
 
 final RepositoryRuleTagNamePattern _value;
 
@@ -225,7 +225,7 @@ final RepositoryRuleTagNamePattern _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleTagNamePattern($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleFilePathRestriction extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleFilePathRestriction(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleFilePathRestriction extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleFilePathRestriction(this._value);
 
 final RepositoryRuleFilePathRestriction _value;
 
@@ -235,7 +235,7 @@ final RepositoryRuleFilePathRestriction _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleFilePathRestriction($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleMaxFilePathLength extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMaxFilePathLength(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleMaxFilePathLength extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMaxFilePathLength(this._value);
 
 final RepositoryRuleMaxFilePathLength _value;
 
@@ -245,7 +245,7 @@ final RepositoryRuleMaxFilePathLength _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleMaxFilePathLength($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction(this._value);
 
 final RepositoryRuleFileExtensionRestriction _value;
 
@@ -255,7 +255,7 @@ final RepositoryRuleFileExtensionRestriction _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleFileExtensionRestriction($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleMaxFileSize extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMaxFileSize(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleMaxFileSize extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMaxFileSize(this._value);
 
 final RepositoryRuleMaxFileSize _value;
 
@@ -265,7 +265,7 @@ final RepositoryRuleMaxFileSize _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleMaxFileSize($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleWorkflows extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleWorkflows(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleWorkflows extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleWorkflows(this._value);
 
 final RepositoryRuleWorkflows _value;
 
@@ -275,7 +275,7 @@ final RepositoryRuleWorkflows _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleWorkflows($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleCodeScanning extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCodeScanning(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleCodeScanning extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCodeScanning(this._value);
 
 final RepositoryRuleCodeScanning _value;
 
@@ -285,7 +285,7 @@ final RepositoryRuleCodeScanning _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCodeScanning($_value)'; } 
  }
-final class RepositoryRuleDetailedRepositoryRuleCopilotCodeReview extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCopilotCodeReview(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleCopilotCodeReview extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCopilotCodeReview(this._value);
 
 final RepositoryRuleCopilotCodeReview _value;
 
@@ -296,7 +296,7 @@ final RepositoryRuleCopilotCodeReview _value;
 @override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCopilotCodeReview($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class RepositoryRuleDetailed$Unknown extends RepositoryRuleDetailed {const RepositoryRuleDetailed$Unknown(this._value);
+@immutable final class RepositoryRuleDetailed$Unknown extends RepositoryRuleDetailed {const RepositoryRuleDetailed$Unknown(this._value);
 
 final dynamic _value;
 

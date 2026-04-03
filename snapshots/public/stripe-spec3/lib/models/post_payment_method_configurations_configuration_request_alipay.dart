@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_alipay_display_preference.dart';/// Alipay is a digital wallet in China that has more than a billion active users worldwide. Alipay users can pay on the web or on a mobile device using login credentials or their Alipay app. Alipay has a low dispute rate and reduces fraud by authenticating payments using the customer's login credentials. Check this [page](https://docs.stripe.com/payments/alipay) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestAlipay {const PostPaymentMethodConfigurationsConfigurationRequestAlipay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_alipay_display_preference.dart';/// Alipay is a digital wallet in China that has more than a billion active users worldwide. Alipay users can pay on the web or on a mobile device using login credentials or their Alipay app. Alipay has a low dispute rate and reduces fraud by authenticating payments using the customer's login credentials. Check this [page](https://docs.stripe.com/payments/alipay) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlipay {const PostPaymentMethodConfigurationsConfigurationRequestAlipay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAlipay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAlipay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

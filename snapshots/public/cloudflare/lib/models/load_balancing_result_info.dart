@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LoadBalancingResultInfo {const LoadBalancingResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LoadBalancingResultInfo {const LoadBalancingResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
 factory LoadBalancingResultInfo.fromJson(Map<String, dynamic> json) { return LoadBalancingResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

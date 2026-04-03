@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hovercard_contexts.dart';/// Hovercard
-final class Hovercard {const Hovercard({required this.contexts});
+@immutable final class Hovercard {const Hovercard({required this.contexts});
 
 factory Hovercard.fromJson(Map<String, dynamic> json) { return Hovercard(
   contexts: (json['contexts'] as List<dynamic>).map((e) => HovercardContexts.fromJson(e as Map<String, dynamic>)).toList(),

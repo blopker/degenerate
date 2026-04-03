@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permission_group.dart';import 'iam_policy_identifier.dart';import 'iam_resources.dart';/// Allow or deny operations against the resources.
-final class IamEffect {const IamEffect._(this.value);
+@immutable final class IamEffect {const IamEffect._(this.value);
 
 factory IamEffect.fromJson(String json) { return switch (json) {
   'allow' => allow,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IamEffect($value)'; } 
  }
-final class IamPolicyWithPermissionGroupsAndResources {const IamPolicyWithPermissionGroupsAndResources({required this.effect, required this.id, required this.permissionGroups, required this.resources, });
+@immutable final class IamPolicyWithPermissionGroupsAndResources {const IamPolicyWithPermissionGroupsAndResources({required this.effect, required this.id, required this.permissionGroups, required this.resources, });
 
 factory IamPolicyWithPermissionGroupsAndResources.fromJson(Map<String, dynamic> json) { return IamPolicyWithPermissionGroupsAndResources(
   effect: IamEffect.fromJson(json['effect'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_people_request_us_cfpb_data_ethnicity_details.dart';import 'post_accounts_account_people_request_us_cfpb_data_race_details.dart';/// Demographic data related to the person.
-final class PostAccountsAccountPeopleRequestUsCfpbData {const PostAccountsAccountPeopleRequestUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_request_us_cfpb_data_ethnicity_details.dart';import 'post_accounts_account_people_request_us_cfpb_data_race_details.dart';/// Demographic data related to the person.
+@immutable final class PostAccountsAccountPeopleRequestUsCfpbData {const PostAccountsAccountPeopleRequestUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
 
 factory PostAccountsAccountPeopleRequestUsCfpbData.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestUsCfpbData(
   ethnicityDetails: json['ethnicity_details'] != null ? PostAccountsAccountPeopleRequestUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>) : null,

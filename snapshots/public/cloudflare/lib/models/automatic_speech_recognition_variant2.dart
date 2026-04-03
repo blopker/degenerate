@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AutomaticSpeechRecognitionVariant2 {const AutomaticSpeechRecognitionVariant2({required this.audio, this.sourceLang, this.targetLang, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutomaticSpeechRecognitionVariant2 {const AutomaticSpeechRecognitionVariant2({required this.audio, this.sourceLang, this.targetLang, });
 
 factory AutomaticSpeechRecognitionVariant2.fromJson(Map<String, dynamic> json) { return AutomaticSpeechRecognitionVariant2(
   audio: (json['audio'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesCrowdstrikeConfigRequest {const TeamsDevicesCrowdstrikeConfigRequest({required this.apiUrl, required this.clientId, required this.clientSecret, required this.customerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesCrowdstrikeConfigRequest {const TeamsDevicesCrowdstrikeConfigRequest({required this.apiUrl, required this.clientId, required this.clientSecret, required this.customerId, });
 
 factory TeamsDevicesCrowdstrikeConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCrowdstrikeConfigRequest(
   apiUrl: json['api_url'] as String,

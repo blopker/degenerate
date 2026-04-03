@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class PaymentMethodOptionsAffirmCaptureMethod {const PaymentMethodOptionsAffirmCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentMethodOptionsAffirmCaptureMethod {const PaymentMethodOptionsAffirmCaptureMethod._(this.value);
 
 factory PaymentMethodOptionsAffirmCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentMethodOptionsAffirmSetupFutureUsage {const PaymentMethodOptionsAffirmSetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsAffirmSetupFutureUsage {const PaymentMethodOptionsAffirmSetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsAffirmSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsAffirmSetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsAffirm {const PaymentMethodOptionsAffirm({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsAffirm {const PaymentMethodOptionsAffirm({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAffirm(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsAffirmCaptureMethod.fromJson(json['capture_method'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Submitted visibility status.
-final class UrlscannerCreateScanResponseResultVisibility {const UrlscannerCreateScanResponseResultVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Submitted visibility status.
+@immutable final class UrlscannerCreateScanResponseResultVisibility {const UrlscannerCreateScanResponseResultVisibility._(this.value);
 
 factory UrlscannerCreateScanResponseResultVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerCreateScanResponseResultVisibility($value)'; } 
  }
-final class UrlscannerCreateScanResponseResult {const UrlscannerCreateScanResponseResult({required this.time, required this.url, required this.uuid, required this.visibility, });
+@immutable final class UrlscannerCreateScanResponseResult {const UrlscannerCreateScanResponseResult({required this.time, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerCreateScanResponseResult.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponseResult(
   time: DateTime.parse(json['time'] as String),

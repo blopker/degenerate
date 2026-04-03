@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookProjectCardConvertedChangesNote {const WebhookProjectCardConvertedChangesNote({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookProjectCardConvertedChangesNote {const WebhookProjectCardConvertedChangesNote({required this.from});
 
 factory WebhookProjectCardConvertedChangesNote.fromJson(Map<String, dynamic> json) { return WebhookProjectCardConvertedChangesNote(
   from: json['from'] as String,

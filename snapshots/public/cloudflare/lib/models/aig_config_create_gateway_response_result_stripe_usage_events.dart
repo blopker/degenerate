@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigCreateGatewayResponseResultStripeUsageEvents {const AigConfigCreateGatewayResponseResultStripeUsageEvents({required this.payload});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateGatewayResponseResultStripeUsageEvents {const AigConfigCreateGatewayResponseResultStripeUsageEvents({required this.payload});
 
 factory AigConfigCreateGatewayResponseResultStripeUsageEvents.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayResponseResultStripeUsageEvents(
   payload: json['payload'] as String,

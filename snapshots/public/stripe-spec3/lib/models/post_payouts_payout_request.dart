@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payouts_payout_request_metadata.dart';final class PostPayoutsPayoutRequest {const PostPayoutsPayoutRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payouts_payout_request_metadata.dart';@immutable final class PostPayoutsPayoutRequest {const PostPayoutsPayoutRequest({this.expand, this.metadata, });
 
 factory PostPayoutsPayoutRequest.fromJson(Map<String, dynamic> json) { return PostPayoutsPayoutRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

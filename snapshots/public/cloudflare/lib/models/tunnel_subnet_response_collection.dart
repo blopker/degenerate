@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_subnet.dart';final class TunnelSubnetResponseCollection {const TunnelSubnetResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_subnet.dart';@immutable final class TunnelSubnetResponseCollection {const TunnelSubnetResponseCollection({this.result});
 
 factory TunnelSubnetResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelSubnetResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TunnelSubnet.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Target device type.
-final class UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target device type.
+@immutable final class UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution._(this.value);
 
 factory UrlscannerGetScanScreenshotResolution.fromJson(String json) { return switch (json) {
   'desktop' => desktop,

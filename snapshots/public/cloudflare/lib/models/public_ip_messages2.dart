@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'public_ip_messages2_source.dart';final class PublicIpMessages2 {const PublicIpMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_ip_messages2_source.dart';@immutable final class PublicIpMessages2 {const PublicIpMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory PublicIpMessages2.fromJson(Map<String, dynamic> json) { return PublicIpMessages2(
   code: (json['code'] as num).toInt(),

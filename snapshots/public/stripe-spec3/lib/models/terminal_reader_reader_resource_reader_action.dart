@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_reader_reader_resource_collect_inputs_action.dart';import 'terminal_reader_reader_resource_collect_payment_method_action.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_setup_intent_action.dart';import 'terminal_reader_reader_resource_refund_payment_action.dart';import 'terminal_reader_reader_resource_set_reader_display_action.dart';/// Status of the action performed by the reader.
-final class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_collect_inputs_action.dart';import 'terminal_reader_reader_resource_collect_payment_method_action.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_setup_intent_action.dart';import 'terminal_reader_reader_resource_refund_payment_action.dart';import 'terminal_reader_reader_resource_set_reader_display_action.dart';/// Status of the action performed by the reader.
+@immutable final class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus._(this.value);
 
 factory TerminalReaderReaderResourceReaderActionStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceReaderActionStatus($value)'; } 
  }
 /// Type of action performed by the reader.
-final class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType._(this.value);
+@immutable final class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType._(this.value);
 
 factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) { return switch (json) {
   'collect_inputs' => collectInputs,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceReaderActionType($value)'; } 
  }
 /// Represents an action performed by the reader
-final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode, this.failureMessage, this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, required this.status, required this.type, });
+@immutable final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({required this.status, required this.type, this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode, this.failureMessage, this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, });
 
 factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceReaderAction(
   collectInputs: json['collect_inputs'] != null ? TerminalReaderReaderResourceCollectInputsAction.fromJson(json['collect_inputs'] as Map<String, dynamic>) : null,

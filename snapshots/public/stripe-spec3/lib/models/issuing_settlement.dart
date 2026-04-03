@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The card network for this settlement report. One of ["visa", "maestro"]
-final class IssuingSettlementNetwork {const IssuingSettlementNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement report. One of ["visa", "maestro"]
+@immutable final class IssuingSettlementNetwork {const IssuingSettlementNetwork._(this.value);
 
 factory IssuingSettlementNetwork.fromJson(String json) { return switch (json) {
   'maestro' => maestro,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingSettlementNetwork($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class IssuingSettlementObject {const IssuingSettlementObject._(this.value);
+@immutable final class IssuingSettlementObject {const IssuingSettlementObject._(this.value);
 
 factory IssuingSettlementObject.fromJson(String json) { return switch (json) {
   'issuing.settlement' => issuingSettlement,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingSettlementObject($value)'; } 
  }
 /// The current processing status of this settlement.
-final class IssuingSettlementStatus {const IssuingSettlementStatus._(this.value);
+@immutable final class IssuingSettlementStatus {const IssuingSettlementStatus._(this.value);
 
 factory IssuingSettlementStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingSettlementStatus($value)'; } 
  }
 /// When a non-stripe BIN is used, any use of an [issued card](https://docs.stripe.com/issuing) must be settled directly with the card network. The net amount owed is represented by an Issuing `Settlement` object.
-final class IssuingSettlement {const IssuingSettlement({required this.bin, required this.clearingDate, required this.created, required this.currency, required this.id, required this.interchangeFeesAmount, required this.livemode, required this.metadata, required this.netTotalAmount, required this.network, required this.networkFeesAmount, required this.networkSettlementIdentifier, required this.object, required this.settlementService, required this.status, required this.transactionAmount, required this.transactionCount, });
+@immutable final class IssuingSettlement {const IssuingSettlement({required this.bin, required this.clearingDate, required this.created, required this.currency, required this.id, required this.interchangeFeesAmount, required this.livemode, required this.metadata, required this.netTotalAmount, required this.network, required this.networkFeesAmount, required this.networkSettlementIdentifier, required this.object, required this.settlementService, required this.status, required this.transactionAmount, required this.transactionCount, });
 
 factory IssuingSettlement.fromJson(Map<String, dynamic> json) { return IssuingSettlement(
   bin: json['bin'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ImageVolumeSource represents a image volume resource.
-final class ImageVolumeSource {const ImageVolumeSource({this.pullPolicy, this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ImageVolumeSource represents a image volume resource.
+@immutable final class ImageVolumeSource {const ImageVolumeSource({this.pullPolicy, this.reference, });
 
 factory ImageVolumeSource.fromJson(Map<String, dynamic> json) { return ImageVolumeSource(
   pullPolicy: json['pullPolicy'] as String?,

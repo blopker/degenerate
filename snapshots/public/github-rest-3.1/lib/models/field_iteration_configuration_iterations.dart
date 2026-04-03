@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FieldIterationConfigurationIterations {const FieldIterationConfigurationIterations({this.title, this.startDate, this.duration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FieldIterationConfigurationIterations {const FieldIterationConfigurationIterations({this.title, this.startDate, this.duration, });
 
 factory FieldIterationConfigurationIterations.fromJson(Map<String, dynamic> json) { return FieldIterationConfigurationIterations(
   title: json['title'] as String?,

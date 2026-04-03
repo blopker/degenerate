@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.function_call_arguments.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.function_call_arguments.delta`.
 /// 
-final class ResponseFunctionCallArgumentsDeltaEventType {const ResponseFunctionCallArgumentsDeltaEventType._(this.value);
+@immutable final class ResponseFunctionCallArgumentsDeltaEventType {const ResponseFunctionCallArgumentsDeltaEventType._(this.value);
 
 factory ResponseFunctionCallArgumentsDeltaEventType.fromJson(String json) { return switch (json) {
   'response.function_call_arguments.delta' => responseFunctionCallArgumentsDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseFunctionCallArgumentsDeltaEventType($value)'; } 
  }
 /// Emitted when there is a partial function-call arguments delta.
-final class ResponseFunctionCallArgumentsDeltaEvent {const ResponseFunctionCallArgumentsDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, required this.delta, });
+@immutable final class ResponseFunctionCallArgumentsDeltaEvent {const ResponseFunctionCallArgumentsDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, required this.delta, });
 
 factory ResponseFunctionCallArgumentsDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseFunctionCallArgumentsDeltaEvent(
   type: ResponseFunctionCallArgumentsDeltaEventType.fromJson(json['type'] as String),

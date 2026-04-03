@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class ExchangeRateObject {const ExchangeRateObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ExchangeRateObject {const ExchangeRateObject._(this.value);
 
 factory ExchangeRateObject.fromJson(String json) { return switch (json) {
   'exchange_rate' => exchangeRate,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - *determine app fees to charge a connected account*
 /// 
 /// *Using this Exchange Rates API beta for any purpose other than to transact on Stripe is strictly prohibited and constitutes a violation of Stripe's terms of service.*
-final class ExchangeRate {const ExchangeRate({required this.id, required this.object, required this.rates, });
+@immutable final class ExchangeRate {const ExchangeRate({required this.id, required this.object, required this.rates, });
 
 factory ExchangeRate.fromJson(Map<String, dynamic> json) { return ExchangeRate(
   id: json['id'] as String,

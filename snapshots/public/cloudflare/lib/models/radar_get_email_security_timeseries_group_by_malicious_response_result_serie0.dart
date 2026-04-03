@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0({required this.malicious, required this.notMalicious, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0({required this.malicious, required this.notMalicious, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0(
   malicious: (json['MALICIOUS'] as List<dynamic>).map((e) => e as String).toList(),

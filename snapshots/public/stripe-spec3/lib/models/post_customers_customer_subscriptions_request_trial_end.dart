@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomersCustomerSubscriptionsRequestTrialEndVariant1 {const PostCustomersCustomerSubscriptionsRequestTrialEndVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestTrialEndVariant1 {const PostCustomersCustomerSubscriptionsRequestTrialEndVariant1._(this.value);
 
 factory PostCustomersCustomerSubscriptionsRequestTrialEndVariant1.fromJson(String json) { return switch (json) {
   'now' => now,

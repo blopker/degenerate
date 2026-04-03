@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Instruction for updating an existing file via the apply_patch tool.
-final class ApplyPatchUpdateFileOperationParam {const ApplyPatchUpdateFileOperationParam({this.type = 'update_file', required this.path, required this.diff, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Instruction for updating an existing file via the apply_patch tool.
+@immutable final class ApplyPatchUpdateFileOperationParam {const ApplyPatchUpdateFileOperationParam({required this.path, required this.diff, this.type = 'update_file', });
 
 factory ApplyPatchUpdateFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchUpdateFileOperationParam(
   type: json['type'] as String,

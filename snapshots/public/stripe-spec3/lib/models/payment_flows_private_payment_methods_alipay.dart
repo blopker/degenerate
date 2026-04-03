@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsPrivatePaymentMethodsAlipay {const PaymentFlowsPrivatePaymentMethodsAlipay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsPrivatePaymentMethodsAlipay {const PaymentFlowsPrivatePaymentMethodsAlipay();
 
 factory PaymentFlowsPrivatePaymentMethodsAlipay.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsAlipay(
 

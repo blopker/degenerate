@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_ibm_granite_granite40_h_micro_response400_errors.dart';final class WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400 {const WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_ibm_granite_granite40_h_micro_response400_errors.dart';@immutable final class WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400 {const WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

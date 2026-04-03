@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ChargeFraudDetails {const ChargeFraudDetails({this.stripeReport, this.userReport, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ChargeFraudDetails {const ChargeFraudDetails({this.stripeReport, this.userReport, });
 
 factory ChargeFraudDetails.fromJson(Map<String, dynamic> json) { return ChargeFraudDetails(
   stripeReport: json['stripe_report'] as String?,

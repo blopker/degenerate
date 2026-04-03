@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.dart';/// Adapts a secret into a projected volume.
 /// 
 /// The contents of the target Secret's Data field will be presented in a projected volume as files using the keys in the Data field as the file names. Note that this is identical to a secret volume source without the default mode.
-final class SecretProjection {const SecretProjection({this.items, this.name = '', this.optional, });
+@immutable final class SecretProjection {const SecretProjection({this.items, this.name = '', this.optional, });
 
 factory SecretProjection.fromJson(Map<String, dynamic> json) { return SecretProjection(
   items: (json['items'] as List<dynamic>?)?.map((e) => KeyToPath.fromJson(e as Map<String, dynamic>)).toList(),

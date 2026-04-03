@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsCreateWorkflowDispatchRequest {const ActionsCreateWorkflowDispatchRequest({required this.ref, this.inputs, this.returnRunDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateWorkflowDispatchRequest {const ActionsCreateWorkflowDispatchRequest({required this.ref, this.inputs, this.returnRunDetails, });
 
 factory ActionsCreateWorkflowDispatchRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateWorkflowDispatchRequest(
   ref: json['ref'] as String,

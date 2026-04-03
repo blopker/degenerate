@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_response_collection_result.dart';import 'stream_messages2.dart';final class StreamLiveInputResponseCollection {const StreamLiveInputResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_response_collection_result.dart';import 'stream_messages2.dart';@immutable final class StreamLiveInputResponseCollection {const StreamLiveInputResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamLiveInputResponseCollection.fromJson(Map<String, dynamic> json) { return StreamLiveInputResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),

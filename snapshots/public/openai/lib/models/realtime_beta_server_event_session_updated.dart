@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_session.dart';/// The event type, must be `session.updated`.
-final class RealtimeBetaServerEventSessionUpdatedType {const RealtimeBetaServerEventSessionUpdatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_session.dart';/// The event type, must be `session.updated`.
+@immutable final class RealtimeBetaServerEventSessionUpdatedType {const RealtimeBetaServerEventSessionUpdatedType._(this.value);
 
 factory RealtimeBetaServerEventSessionUpdatedType.fromJson(String json) { return switch (json) {
   'session.updated' => sessionUpdated,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when a session is updated with a `session.update` event, unless
 /// there is an error.
 /// 
-final class RealtimeBetaServerEventSessionUpdated {const RealtimeBetaServerEventSessionUpdated({required this.eventId, required this.type, required this.session, });
+@immutable final class RealtimeBetaServerEventSessionUpdated {const RealtimeBetaServerEventSessionUpdated({required this.eventId, required this.type, required this.session, });
 
 factory RealtimeBetaServerEventSessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventSessionUpdated(
   eventId: json['event_id'] as String,

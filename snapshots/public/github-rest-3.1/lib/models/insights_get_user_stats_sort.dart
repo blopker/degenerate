@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InsightsGetUserStatsSort {const InsightsGetUserStatsSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetUserStatsSort {const InsightsGetUserStatsSort._(this.value);
 
 factory InsightsGetUserStatsSort.fromJson(String json) { return switch (json) {
   'last_rate_limited_timestamp' => lastRateLimitedTimestamp,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Origin Max HTTP Version Setting.
-final class ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Origin Max HTTP Version Setting.
+@immutable final class ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue._(this.value);
 
 factory ZonesCacheRulesOriginMaxHttpVersionValue.fromJson(String json) { return switch (json) {
   '2' => $2,

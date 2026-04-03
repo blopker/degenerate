@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryRequestParametersGroupBysType {const TelemetryQueryRequestParametersGroupBysType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryRequestParametersGroupBysType {const TelemetryQueryRequestParametersGroupBysType._(this.value);
 
 factory TelemetryQueryRequestParametersGroupBysType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryRequestParametersGroupBysType($value)'; } 
  }
-final class TelemetryQueryRequestParametersGroupBys {const TelemetryQueryRequestParametersGroupBys({required this.type, required this.value, });
+@immutable final class TelemetryQueryRequestParametersGroupBys {const TelemetryQueryRequestParametersGroupBys({required this.type, required this.value, });
 
 factory TelemetryQueryRequestParametersGroupBys.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParametersGroupBys(
   type: TelemetryQueryRequestParametersGroupBysType.fromJson(json['type'] as String),

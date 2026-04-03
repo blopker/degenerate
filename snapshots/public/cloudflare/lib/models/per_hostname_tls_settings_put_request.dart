@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_value.dart';final class PerHostnameTlsSettingsPutRequest {const PerHostnameTlsSettingsPutRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_value.dart';@immutable final class PerHostnameTlsSettingsPutRequest {const PerHostnameTlsSettingsPutRequest({required this.value});
 
 factory PerHostnameTlsSettingsPutRequest.fromJson(Map<String, dynamic> json) { return PerHostnameTlsSettingsPutRequest(
   value: OneOf3.parse(json['value'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => TlsCertificatesAndHostnamesValueVariant2.fromJson(v as String), fromC: (v) => TlsCertificatesAndHostnamesValueVariant3.fromJson(v as String),),

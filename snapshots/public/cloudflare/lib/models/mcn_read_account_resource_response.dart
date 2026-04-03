@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_resource_details.dart';final class McnReadAccountResourceResponse {const McnReadAccountResourceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_details.dart';@immutable final class McnReadAccountResourceResponse {const McnReadAccountResourceResponse({this.result});
 
 factory McnReadAccountResourceResponse.fromJson(Map<String, dynamic> json) { return McnReadAccountResourceResponse(
   result: json['result'] != null ? McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>) : null,

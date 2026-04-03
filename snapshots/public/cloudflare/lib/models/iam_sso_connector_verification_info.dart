@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
 extension type const IamDnsVerificationCode(String value) {
 factory IamDnsVerificationCode.fromJson(String json) => IamDnsVerificationCode(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// The status of the verification code from the verification process.
-final class IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus._(this.value);
+@immutable final class IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus._(this.value);
 
 factory IamSsoConnectorVerificationInfoStatus.fromJson(String json) { return switch (json) {
   'awaiting' => awaiting,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IamSsoConnectorVerificationInfoStatus($value)'; } 
  }
-final class IamSsoConnectorVerificationInfo {const IamSsoConnectorVerificationInfo({this.code, this.status, });
+@immutable final class IamSsoConnectorVerificationInfo {const IamSsoConnectorVerificationInfo({this.code, this.status, });
 
 factory IamSsoConnectorVerificationInfo.fromJson(Map<String, dynamic> json) { return IamSsoConnectorVerificationInfo(
   code: json['code'] != null ? IamDnsVerificationCode.fromJson(json['code'] as String) : null,

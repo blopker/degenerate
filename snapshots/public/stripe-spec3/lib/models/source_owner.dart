@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class SourceOwner {const SourceOwner({this.address, this.email, this.name, this.phone, this.verifiedAddress, this.verifiedEmail, this.verifiedName, this.verifiedPhone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class SourceOwner {const SourceOwner({this.address, this.email, this.name, this.phone, this.verifiedAddress, this.verifiedEmail, this.verifiedName, this.verifiedPhone, });
 
 factory SourceOwner.fromJson(Map<String, dynamic> json) { return SourceOwner(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,

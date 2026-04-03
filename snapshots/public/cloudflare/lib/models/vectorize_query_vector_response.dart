@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response5.dart';final class VectorizeQueryVectorResponse {const VectorizeQueryVectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response5.dart';@immutable final class VectorizeQueryVectorResponse {const VectorizeQueryVectorResponse({this.result});
 
 factory VectorizeQueryVectorResponse.fromJson(Map<String, dynamic> json) { return VectorizeQueryVectorResponse(
   result: json['result'] != null ? Response5.fromJson(json['result'] as Map<String, dynamic>) : null,

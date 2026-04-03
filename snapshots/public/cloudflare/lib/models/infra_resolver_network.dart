@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class InfraResolverNetwork {const InfraResolverNetwork({this.resolverIps, required this.tunnelId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraResolverNetwork {const InfraResolverNetwork({required this.tunnelId, this.resolverIps, });
 
 factory InfraResolverNetwork.fromJson(Map<String, dynamic> json) { return InfraResolverNetwork(
   resolverIps: (json['resolver_ips'] as List<dynamic>?)?.map((e) => e as String).toList(),

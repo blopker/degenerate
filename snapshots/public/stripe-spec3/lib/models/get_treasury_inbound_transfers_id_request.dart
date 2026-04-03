@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryInboundTransfersIdRequest {const GetTreasuryInboundTransfersIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryInboundTransfersIdRequest {const GetTreasuryInboundTransfersIdRequest();
 
 factory GetTreasuryInboundTransfersIdRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryInboundTransfersIdRequest(
 

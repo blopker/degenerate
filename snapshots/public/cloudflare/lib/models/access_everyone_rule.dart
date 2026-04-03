@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Matches everyone.
-final class AccessEveryoneRule {const AccessEveryoneRule({required this.everyone});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches everyone.
+@immutable final class AccessEveryoneRule {const AccessEveryoneRule({required this.everyone});
 
 factory AccessEveryoneRule.fromJson(Map<String, dynamic> json) { return AccessEveryoneRule(
   everyone: (json['everyone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),

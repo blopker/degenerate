@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'persistent_volume_claim.dart';/// PersistentVolumeClaimList is a list of PersistentVolumeClaim items.
-final class PersistentVolumeClaimList {const PersistentVolumeClaimList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class PersistentVolumeClaimList {const PersistentVolumeClaimList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory PersistentVolumeClaimList.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimList(
   apiVersion: json['apiVersion'] as String?,

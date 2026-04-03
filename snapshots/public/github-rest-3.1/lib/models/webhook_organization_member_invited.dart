@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_organization_member_invited_invitation.dart';import 'webhooks_user.dart';final class WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_organization_member_invited_invitation.dart';import 'webhooks_user.dart';@immutable final class WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction._(this.value);
 
 factory WebhookOrganizationMemberInvitedAction.fromJson(String json) { return switch (json) {
   'member_invited' => memberInvited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookOrganizationMemberInvitedAction($value)'; } 
  }
-final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInvited({required this.action, this.enterprise, this.installation, required this.invitation, required this.organization, this.repository, required this.sender, this.user, });
+@immutable final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInvited({required this.action, required this.invitation, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, this.user, });
 
 factory WebhookOrganizationMemberInvited.fromJson(Map<String, dynamic> json) { return WebhookOrganizationMemberInvited(
   action: WebhookOrganizationMemberInvitedAction.fromJson(json['action'] as String),

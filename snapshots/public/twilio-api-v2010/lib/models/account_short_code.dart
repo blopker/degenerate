@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
-final class AccountShortCodeSmsFallbackMethod {const AccountShortCodeSmsFallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
+@immutable final class AccountShortCodeSmsFallbackMethod {const AccountShortCodeSmsFallbackMethod._(this.value);
 
 factory AccountShortCodeSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountShortCodeSmsFallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call the `sms_url`. Can be: `GET` or `POST`.
-final class AccountShortCodeSmsMethod {const AccountShortCodeSmsMethod._(this.value);
+@immutable final class AccountShortCodeSmsMethod {const AccountShortCodeSmsMethod._(this.value);
 
 factory AccountShortCodeSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountShortCodeSmsMethod($value)'; } 
  }
-final class AccountShortCode {const AccountShortCode({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.shortCode, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.uri, });
+@immutable final class AccountShortCode {const AccountShortCode({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.shortCode, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.uri, });
 
 factory AccountShortCode.fromJson(Map<String, dynamic> json) { return AccountShortCode(
   accountSid: json['account_sid'] as String?,

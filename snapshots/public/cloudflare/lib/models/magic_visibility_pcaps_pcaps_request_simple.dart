@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_offset_time.dart';import 'magic_visibility_pcaps_pcaps_packet_limit.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'magic_visibility_pcaps_pcaps_type.dart';final class MagicVisibilityPcapsPcapsRequestSimple {const MagicVisibilityPcapsPcapsRequestSimple({this.filterV1, this.offsetTime, required this.packetLimit, required this.system, required this.timeLimit, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_offset_time.dart';import 'magic_visibility_pcaps_pcaps_packet_limit.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'magic_visibility_pcaps_pcaps_type.dart';@immutable final class MagicVisibilityPcapsPcapsRequestSimple {const MagicVisibilityPcapsPcapsRequestSimple({required this.packetLimit, required this.system, required this.timeLimit, required this.type, this.filterV1, this.offsetTime, });
 
 factory MagicVisibilityPcapsPcapsRequestSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsRequestSimple(
   filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,

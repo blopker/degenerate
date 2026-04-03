@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateCallRecordingResponse408 {const UpdateCallRecordingResponse408({this.code, this.message, this.moreInfo, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateCallRecordingResponse408 {const UpdateCallRecordingResponse408({this.code, this.message, this.moreInfo, this.status, });
 
 factory UpdateCallRecordingResponse408.fromJson(Map<String, dynamic> json) { return UpdateCallRecordingResponse408(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

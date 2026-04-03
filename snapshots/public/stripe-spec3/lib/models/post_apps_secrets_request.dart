@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_apps_secrets_request_scope.dart';final class PostAppsSecretsRequest {const PostAppsSecretsRequest({this.expand, this.expiresAt, required this.name, required this.payload, required this.scope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_apps_secrets_request_scope.dart';@immutable final class PostAppsSecretsRequest {const PostAppsSecretsRequest({required this.name, required this.payload, required this.scope, this.expand, this.expiresAt, });
 
 factory PostAppsSecretsRequest.fromJson(Map<String, dynamic> json) { return PostAppsSecretsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_summary_customer.dart';import 'credit_balance.dart';import 'customer.dart';import 'deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
+@immutable final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
 
 factory BillingCreditBalanceSummaryObject.fromJson(String json) { return switch (json) {
   'billing.credit_balance_summary' => billingCreditBalanceSummary,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditBalanceSummaryObject($value)'; } 
  }
 /// Indicates the billing credit balance for billing credits granted to a customer.
-final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, this.customerAccount, required this.livemode, required this.object, });
+@immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount, });
 
 factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceSummary(
   balances: (json['balances'] as List<dynamic>).map((e) => CreditBalance.fromJson(e as Map<String, dynamic>)).toList(),

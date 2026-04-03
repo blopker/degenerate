@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The audio format. Always `audio/pcmu`.
-final class PcmuAudioFormatType {const PcmuAudioFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcmu`.
+@immutable final class PcmuAudioFormatType {const PcmuAudioFormatType._(this.value);
 
 factory PcmuAudioFormatType.fromJson(String json) { return switch (json) {
   'audio/pcmu' => audioPcmu,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PcmuAudioFormatType($value)'; } 
  }
 /// The G.711 μ-law format.
-final class PcmuAudioFormat {const PcmuAudioFormat({this.type});
+@immutable final class PcmuAudioFormat {const PcmuAudioFormat({this.type});
 
 factory PcmuAudioFormat.fromJson(Map<String, dynamic> json) { return PcmuAudioFormat(
   type: json['type'] != null ? PcmuAudioFormatType.fromJson(json['type'] as String) : null,

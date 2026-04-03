@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the enablement value of Argo Smart Routing.
-final class SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue {const SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Argo Smart Routing.
+@immutable final class SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue {const SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue._(this.value);
 
 factory SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue($value)'; } 
  }
-final class SmartshieldSmartShieldSettingsGetResponseSmartRouting {const SmartshieldSmartShieldSettingsGetResponseSmartRouting({this.editable, this.id, this.value, });
+@immutable final class SmartshieldSmartShieldSettingsGetResponseSmartRouting {const SmartshieldSmartShieldSettingsGetResponseSmartRouting({this.editable, this.id, this.value, });
 
 factory SmartshieldSmartShieldSettingsGetResponseSmartRouting.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsGetResponseSmartRouting(
   editable: json['editable'] as bool?,

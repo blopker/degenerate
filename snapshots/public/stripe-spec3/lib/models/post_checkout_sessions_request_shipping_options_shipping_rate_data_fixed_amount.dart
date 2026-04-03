@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_fixed_amount_currency_options_value.dart';final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_fixed_amount_currency_options_value.dart';@immutable final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount(
   amount: (json['amount'] as num).toInt(),

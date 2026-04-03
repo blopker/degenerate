@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsReRunWorkflowRequest {const ActionsReRunWorkflowRequest({this.enableDebugLogging = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsReRunWorkflowRequest {const ActionsReRunWorkflowRequest({this.enableDebugLogging = false});
 
 factory ActionsReRunWorkflowRequest.fromJson(Map<String, dynamic> json) { return ActionsReRunWorkflowRequest(
   enableDebugLogging: json.containsKey('enable_debug_logging') ? json['enable_debug_logging'] as bool : false,

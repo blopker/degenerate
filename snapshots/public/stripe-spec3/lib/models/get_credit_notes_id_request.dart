@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesIdRequest {const GetCreditNotesIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesIdRequest {const GetCreditNotesIdRequest();
 
 factory GetCreditNotesIdRequest.fromJson(Map<String, dynamic> json) { return GetCreditNotesIdRequest(
 

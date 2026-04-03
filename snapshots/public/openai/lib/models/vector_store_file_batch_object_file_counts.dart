@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VectorStoreFileBatchObjectFileCounts {const VectorStoreFileBatchObjectFileCounts({required this.inProgress, required this.completed, required this.failed, required this.cancelled, required this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorStoreFileBatchObjectFileCounts {const VectorStoreFileBatchObjectFileCounts({required this.inProgress, required this.completed, required this.failed, required this.cancelled, required this.total, });
 
 factory VectorStoreFileBatchObjectFileCounts.fromJson(Map<String, dynamic> json) { return VectorStoreFileBatchObjectFileCounts(
   inProgress: (json['in_progress'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.
-final class ZeroTrustGatewayCertificateSettings {const ZeroTrustGatewayCertificateSettings({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.
+@immutable final class ZeroTrustGatewayCertificateSettings {const ZeroTrustGatewayCertificateSettings({required this.id});
 
 factory ZeroTrustGatewayCertificateSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCertificateSettings(
   id: json['id'] as String,

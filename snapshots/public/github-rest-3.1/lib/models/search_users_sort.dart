@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SearchUsersSort {const SearchUsersSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchUsersSort {const SearchUsersSort._(this.value);
 
 factory SearchUsersSort.fromJson(String json) { return switch (json) {
   'followers' => followers,

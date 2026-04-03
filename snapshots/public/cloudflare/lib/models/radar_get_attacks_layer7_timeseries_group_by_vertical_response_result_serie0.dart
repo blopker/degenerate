@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultSerie0 {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultSerie0 {const RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByVerticalResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),

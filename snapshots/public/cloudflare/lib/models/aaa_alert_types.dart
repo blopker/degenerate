@@ -21,7 +21,7 @@ factory AaaType.fromJson(String json) => AaaType(json);
 String toJson() => value;
 
 }
-final class AaaAlertTypes {const AaaAlertTypes({this.description, this.displayName, this.filterOptions, this.type, });
+@immutable final class AaaAlertTypes {const AaaAlertTypes({this.description, this.displayName, this.filterOptions, this.type, });
 
 factory AaaAlertTypes.fromJson(Map<String, dynamic> json) { return AaaAlertTypes(
   description: json['description'] != null ? AaaDescription.fromJson(json['description'] as String) : null,

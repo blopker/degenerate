@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_warp_connector_tunnel.dart';final class TunnelWarpConnectorResponseCollection {const TunnelWarpConnectorResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_warp_connector_tunnel.dart';@immutable final class TunnelWarpConnectorResponseCollection {const TunnelWarpConnectorResponseCollection({this.result});
 
 factory TunnelWarpConnectorResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelWarpConnectorResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TunnelWarpConnectorTunnel.fromJson(e as Map<String, dynamic>)).toList(),

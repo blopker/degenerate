@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_acss_debit_mandate_options_custom_mandate_url.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_acss_debit_mandate_options_custom_mandate_url.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor.fromJson(String json) { return switch (json) {
   'invoice' => invoice,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule._(this.value);
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType._(this.value);
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptions(
   customMandateUrl: json['custom_mandate_url'] != null ? OneOf2.parse(json['custom_mandate_url'], fromA: (v) => v as String, fromB: (v) => PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.fromJson(v as String),) : null,

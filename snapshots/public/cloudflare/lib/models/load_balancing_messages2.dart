@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LoadBalancingMessages2 {const LoadBalancingMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LoadBalancingMessages2 {const LoadBalancingMessages2({required this.code, required this.message, });
 
 factory LoadBalancingMessages2.fromJson(Map<String, dynamic> json) { return LoadBalancingMessages2(
   code: (json['code'] as num).toInt(),

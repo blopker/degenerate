@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImagesImageDirectUploadRequest {const ImagesImageDirectUploadRequest({this.creator, this.expiry, this.id, this.metadata, this.requireSignedUrLs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageDirectUploadRequest {const ImagesImageDirectUploadRequest({this.creator, this.expiry, this.id, this.metadata, this.requireSignedUrLs = false, });
 
 factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) { return ImagesImageDirectUploadRequest(
   creator: json['creator'] as String?,

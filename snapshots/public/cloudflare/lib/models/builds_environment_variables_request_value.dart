@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_is_secret.dart';final class BuildsEnvironmentVariablesRequestValue {const BuildsEnvironmentVariablesRequestValue({required this.isSecret, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_is_secret.dart';@immutable final class BuildsEnvironmentVariablesRequestValue {const BuildsEnvironmentVariablesRequestValue({required this.isSecret, this.value, });
 
 factory BuildsEnvironmentVariablesRequestValue.fromJson(Map<String, dynamic> json) { return BuildsEnvironmentVariablesRequestValue(
   isSecret: BuildsIsSecret.fromJson(json['is_secret'] as bool),

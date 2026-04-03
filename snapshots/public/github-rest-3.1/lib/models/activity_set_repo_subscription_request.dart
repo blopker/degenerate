@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivitySetRepoSubscriptionRequest {const ActivitySetRepoSubscriptionRequest({this.subscribed, this.ignored, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivitySetRepoSubscriptionRequest {const ActivitySetRepoSubscriptionRequest({this.subscribed, this.ignored, });
 
 factory ActivitySetRepoSubscriptionRequest.fromJson(Map<String, dynamic> json) { return ActivitySetRepoSubscriptionRequest(
   subscribed: json['subscribed'] as bool?,

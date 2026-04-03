@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetClimateOrdersOrderRequest {const GetClimateOrdersOrderRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetClimateOrdersOrderRequest {const GetClimateOrdersOrderRequest();
 
 factory GetClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) { return GetClimateOrdersOrderRequest(
 

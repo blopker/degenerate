@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred {const PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred {const PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred._(this.value);
 
 factory PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred($value)'; } 
  }
-final class PostPaymentMethodsPaymentMethodRequestCardNetworks {const PostPaymentMethodsPaymentMethodRequestCardNetworks({this.preferred});
+@immutable final class PostPaymentMethodsPaymentMethodRequestCardNetworks {const PostPaymentMethodsPaymentMethodRequestCardNetworks({this.preferred});
 
 factory PostPaymentMethodsPaymentMethodRequestCardNetworks.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestCardNetworks(
   preferred: json['preferred'] != null ? PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred.fromJson(json['preferred'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls how much historical context is retained for the session.
-final class HistoryParam {const HistoryParam({this.enabled, this.recentThreads, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how much historical context is retained for the session.
+@immutable final class HistoryParam {const HistoryParam({this.enabled, this.recentThreads, });
 
 factory HistoryParam.fromJson(Map<String, dynamic> json) { return HistoryParam(
   enabled: json['enabled'] as bool?,

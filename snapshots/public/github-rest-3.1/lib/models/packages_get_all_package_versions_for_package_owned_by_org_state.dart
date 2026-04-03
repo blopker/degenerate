@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PackagesGetAllPackageVersionsForPackageOwnedByOrgState {const PackagesGetAllPackageVersionsForPackageOwnedByOrgState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesGetAllPackageVersionsForPackageOwnedByOrgState {const PackagesGetAllPackageVersionsForPackageOwnedByOrgState._(this.value);
 
 factory PackagesGetAllPackageVersionsForPackageOwnedByOrgState.fromJson(String json) { return switch (json) {
   'active' => active,

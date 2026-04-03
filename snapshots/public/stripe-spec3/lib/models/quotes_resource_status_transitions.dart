@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class QuotesResourceStatusTransitions {const QuotesResourceStatusTransitions({this.acceptedAt, this.canceledAt, this.finalizedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class QuotesResourceStatusTransitions {const QuotesResourceStatusTransitions({this.acceptedAt, this.canceledAt, this.finalizedAt, });
 
 factory QuotesResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return QuotesResourceStatusTransitions(
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,

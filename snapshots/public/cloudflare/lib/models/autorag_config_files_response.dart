@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_files_response_result.dart';import 'autorag_config_files_response_result_info.dart';final class AutoragConfigFilesResponse {const AutoragConfigFilesResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_files_response_result.dart';import 'autorag_config_files_response_result_info.dart';@immutable final class AutoragConfigFilesResponse {const AutoragConfigFilesResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory AutoragConfigFilesResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponse(
   result: (json['result'] as List<dynamic>).map((e) => AutoragConfigFilesResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

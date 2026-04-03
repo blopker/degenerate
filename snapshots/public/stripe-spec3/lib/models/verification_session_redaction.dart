@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether this object and its related objects have been redacted or not.
-final class VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether this object and its related objects have been redacted or not.
+@immutable final class VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus._(this.value);
 
 factory VerificationSessionRedactionStatus.fromJson(String json) { return switch (json) {
   'processing' => processing,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VerificationSessionRedactionStatus($value)'; } 
  }
 /// 
-final class VerificationSessionRedaction {const VerificationSessionRedaction({required this.status});
+@immutable final class VerificationSessionRedaction {const VerificationSessionRedaction({required this.status});
 
 factory VerificationSessionRedaction.fromJson(Map<String, dynamic> json) { return VerificationSessionRedaction(
   status: VerificationSessionRedactionStatus.fromJson(json['status'] as String),

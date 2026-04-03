@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParentPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParentPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParentPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParentPrivacy._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParentPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParentPrivacy($value)'; } 
  }
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent(
   description: json['description'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400Errors {const WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400Errors {const WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400Errors({required this.message});
 
 factory WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400Errors(
   message: json['message'] as String,

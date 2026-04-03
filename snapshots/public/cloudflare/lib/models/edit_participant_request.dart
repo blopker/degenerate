@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EditParticipantRequest {const EditParticipantRequest({this.name, this.picture, this.presetName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EditParticipantRequest {const EditParticipantRequest({this.name, this.picture, this.presetName, });
 
 factory EditParticipantRequest.fromJson(Map<String, dynamic> json) { return EditParticipantRequest(
   name: json['name'] as String?,

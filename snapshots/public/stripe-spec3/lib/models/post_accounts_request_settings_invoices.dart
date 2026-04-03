@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave {const PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave {const PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave._(this.value);
 
 factory PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave($value)'; } 
  }
-final class PostAccountsRequestSettingsInvoices {const PostAccountsRequestSettingsInvoices({this.hostedPaymentMethodSave});
+@immutable final class PostAccountsRequestSettingsInvoices {const PostAccountsRequestSettingsInvoices({this.hostedPaymentMethodSave});
 
 factory PostAccountsRequestSettingsInvoices.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsInvoices(
   hostedPaymentMethodSave: json['hosted_payment_method_save'] != null ? PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave.fromJson(json['hosted_payment_method_save'] as String) : null,

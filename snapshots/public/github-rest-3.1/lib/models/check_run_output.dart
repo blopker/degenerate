@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CheckRunOutput {const CheckRunOutput({required this.title, required this.summary, required this.text, required this.annotationsCount, required this.annotationsUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckRunOutput {const CheckRunOutput({required this.title, required this.summary, required this.text, required this.annotationsCount, required this.annotationsUrl, });
 
 factory CheckRunOutput.fromJson(Map<String, dynamic> json) { return CheckRunOutput(
   title: json['title'] as String?,

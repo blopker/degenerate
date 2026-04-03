@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsStripeAccount {const PaymentMethodDetailsStripeAccount();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsStripeAccount {const PaymentMethodDetailsStripeAccount();
 
 factory PaymentMethodDetailsStripeAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsStripeAccount(
 

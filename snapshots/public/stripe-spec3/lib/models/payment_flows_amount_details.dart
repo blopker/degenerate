@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_flows_amount_details_client_resource_tip.dart';import 'payment_flows_amount_details_line_items.dart';import 'payment_flows_amount_details_resource_error.dart';import 'payment_flows_amount_details_resource_shipping.dart';import 'payment_flows_amount_details_resource_tax.dart';/// 
-final class PaymentFlowsAmountDetails {const PaymentFlowsAmountDetails({this.discountAmount, this.error, this.lineItems, this.shipping, this.tax, this.tip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_amount_details_client_resource_tip.dart';import 'payment_flows_amount_details_line_items.dart';import 'payment_flows_amount_details_resource_error.dart';import 'payment_flows_amount_details_resource_shipping.dart';import 'payment_flows_amount_details_resource_tax.dart';/// 
+@immutable final class PaymentFlowsAmountDetails {const PaymentFlowsAmountDetails({this.discountAmount, this.error, this.lineItems, this.shipping, this.tax, this.tip, });
 
 factory PaymentFlowsAmountDetails.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetails(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,

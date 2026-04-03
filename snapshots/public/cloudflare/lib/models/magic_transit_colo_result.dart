@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_colo.dart';import 'magic_transit_hop_result.dart';/// Errors resulting from collecting traceroute from colo to target.
-final class MagicTransitError {const MagicTransitError._(this.value);
+@immutable final class MagicTransitError {const MagicTransitError._(this.value);
 
 factory MagicTransitError.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -41,7 +41,7 @@ factory MagicTransitTracerouteTimeMs.fromJson(num json) => MagicTransitTracerout
 num toJson() => value;
 
 }
-final class MagicTransitColoResult {const MagicTransitColoResult({this.colo, this.error, this.hops, this.targetSummary, this.tracerouteTimeMs, });
+@immutable final class MagicTransitColoResult {const MagicTransitColoResult({this.colo, this.error, this.hops, this.targetSummary, this.tracerouteTimeMs, });
 
 factory MagicTransitColoResult.fromJson(Map<String, dynamic> json) { return MagicTransitColoResult(
   colo: json['colo'] != null ? MagicTransitColo.fromJson(json['colo'] as Map<String, dynamic>) : null,

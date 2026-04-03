@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class OfflineAcceptance {const OfflineAcceptance();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class OfflineAcceptance {const OfflineAcceptance();
 
 factory OfflineAcceptance.fromJson(Map<String, dynamic> json) { return OfflineAcceptance(
 

@@ -49,7 +49,7 @@ factory AlexandriaApplicationVersion.fromJson(String json) => AlexandriaApplicat
 String toJson() => value;
 
 }
-final class AlexandriaApplication {const AlexandriaApplication({required this.applicationSource, required this.applicationType, required this.applicationTypeDescription, required this.createdAt, required this.hostnames, required this.humanId, required this.id, required this.ipSubnets, required this.name, required this.portProtocols, required this.supportDomains, required this.updatedAt, required this.version, });
+@immutable final class AlexandriaApplication {const AlexandriaApplication({required this.applicationSource, required this.applicationType, required this.applicationTypeDescription, required this.createdAt, required this.hostnames, required this.humanId, required this.id, required this.ipSubnets, required this.name, required this.portProtocols, required this.supportDomains, required this.updatedAt, required this.version, });
 
 factory AlexandriaApplication.fromJson(Map<String, dynamic> json) { return AlexandriaApplication(
   applicationSource: AlexandriaApplicationSource.fromJson(json['application_source'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_warp_config_change_event.dart';import 'digital_experience_monitoring_warp_events_response2.dart';import 'digital_experience_monitoring_warp_toggle_change_event.dart';final class ListWarpChangeEventsResponse {const ListWarpChangeEventsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_warp_config_change_event.dart';import 'digital_experience_monitoring_warp_events_response2.dart';import 'digital_experience_monitoring_warp_toggle_change_event.dart';@immutable final class ListWarpChangeEventsResponse {const ListWarpChangeEventsResponse({this.result});
 
 factory ListWarpChangeEventsResponse.fromJson(Map<String, dynamic> json) { return ListWarpChangeEventsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(v as Map<String, dynamic>),)).toList(),

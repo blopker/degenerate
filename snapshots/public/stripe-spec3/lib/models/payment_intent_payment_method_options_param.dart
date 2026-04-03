@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_payment_method_options_param_mandate_options.dart';final class PaymentIntentPaymentMethodOptionsParamSetupFutureUsage {const PaymentIntentPaymentMethodOptionsParamSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param_mandate_options.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamSetupFutureUsage {const PaymentIntentPaymentMethodOptionsParamSetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParamSetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParamSetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParamVerificationMethod {const PaymentIntentPaymentMethodOptionsParamVerificationMethod._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParamVerificationMethod {const PaymentIntentPaymentMethodOptionsParamVerificationMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParamVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParamVerificationMethod($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam {const PaymentIntentPaymentMethodOptionsParam({this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam {const PaymentIntentPaymentMethodOptionsParam({this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory PaymentIntentPaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParamMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

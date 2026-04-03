@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The statistics object contains information about query performance from the database, it does not include any network latency
-final class WorkersObservabilityPerformanceInformation {const WorkersObservabilityPerformanceInformation({this.abrLevel, required this.bytesRead, required this.elapsed, required this.rowsRead, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The statistics object contains information about query performance from the database, it does not include any network latency
+@immutable final class WorkersObservabilityPerformanceInformation {const WorkersObservabilityPerformanceInformation({required this.bytesRead, required this.elapsed, required this.rowsRead, this.abrLevel, });
 
 factory WorkersObservabilityPerformanceInformation.fromJson(Map<String, dynamic> json) { return WorkersObservabilityPerformanceInformation(
   abrLevel: json['abr_level'] != null ? (json['abr_level'] as num).toDouble() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetFilesFileRequest {const GetFilesFileRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFilesFileRequest {const GetFilesFileRequest();
 
 factory GetFilesFileRequest.fromJson(Map<String, dynamic> json) { return GetFilesFileRequest(
 

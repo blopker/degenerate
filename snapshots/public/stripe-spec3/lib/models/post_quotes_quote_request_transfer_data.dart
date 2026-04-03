@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs4.dart';final class PostQuotesQuoteRequestTransferDataVariant2 {const PostQuotesQuoteRequestTransferDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs4.dart';@immutable final class PostQuotesQuoteRequestTransferDataVariant2 {const PostQuotesQuoteRequestTransferDataVariant2._(this.value);
 
 factory PostQuotesQuoteRequestTransferDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

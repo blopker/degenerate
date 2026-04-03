@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSchemasCertificates {const AccessSchemasCertificates({this.id, this.publicKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasCertificates {const AccessSchemasCertificates({this.id, this.publicKey, });
 
 factory AccessSchemasCertificates.fromJson(Map<String, dynamic> json) { return AccessSchemasCertificates(
   id: json['id'] as String?,

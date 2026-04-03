@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBotsSummaryBotKind {const RadarGetBotsSummaryBotKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotsSummaryBotKind {const RadarGetBotsSummaryBotKind._(this.value);
 
 factory RadarGetBotsSummaryBotKind.fromJson(String json) { return switch (json) {
   'AGENT' => agent,

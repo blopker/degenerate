@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class Fee {const Fee({required this.amount, this.application, required this.currency, this.description, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class Fee {const Fee({required this.amount, required this.currency, required this.type, this.application, this.description, });
 
 factory Fee.fromJson(Map<String, dynamic> json) { return Fee(
   amount: (json['amount'] as num).toInt(),

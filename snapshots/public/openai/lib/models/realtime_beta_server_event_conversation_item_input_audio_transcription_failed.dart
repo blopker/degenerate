@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// The event type, must be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// The event type, must be
 /// `conversation.item.input_audio_transcription.failed`.
 /// 
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType._(this.value);
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.failed' => conversationItemInputAudioTranscriptionFailed,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// request for a user message failed. These events are separate from other
 /// `error` events so that the client can identify the related Item.
 /// 
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.error, });
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.error, });
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: json['event_id'] as String,

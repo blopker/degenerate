@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-final class CodespacesCreateWithRepoForAuthenticatedUserRequestGeo {const CodespacesCreateWithRepoForAuthenticatedUserRequestGeo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+@immutable final class CodespacesCreateWithRepoForAuthenticatedUserRequestGeo {const CodespacesCreateWithRepoForAuthenticatedUserRequestGeo._(this.value);
 
 factory CodespacesCreateWithRepoForAuthenticatedUserRequestGeo.fromJson(String json) { return switch (json) {
   'EuropeWest' => europeWest,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodespacesCreateWithRepoForAuthenticatedUserRequestGeo($value)'; } 
  }
-final class CodespacesCreateWithRepoForAuthenticatedUserRequest {const CodespacesCreateWithRepoForAuthenticatedUserRequest({this.ref, this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
+@immutable final class CodespacesCreateWithRepoForAuthenticatedUserRequest {const CodespacesCreateWithRepoForAuthenticatedUserRequest({this.ref, this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
 
 factory CodespacesCreateWithRepoForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateWithRepoForAuthenticatedUserRequest(
   ref: json['ref'] as String?,

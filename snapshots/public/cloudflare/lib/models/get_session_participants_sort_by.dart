@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSessionParticipantsSortBy {const GetSessionParticipantsSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionParticipantsSortBy {const GetSessionParticipantsSortBy._(this.value);
 
 factory GetSessionParticipantsSortBy.fromJson(String json) { return switch (json) {
   'joinedAt' => joinedAt,

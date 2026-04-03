@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpIpsTimeseriesResponseResultMetaDelayAsnDataLatest {const RadarGetBgpIpsTimeseriesResponseResultMetaDelayAsnDataLatest({required this.entriesCount, required this.path, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpIpsTimeseriesResponseResultMetaDelayAsnDataLatest {const RadarGetBgpIpsTimeseriesResponseResultMetaDelayAsnDataLatest({required this.entriesCount, required this.path, required this.timestamp, });
 
 factory RadarGetBgpIpsTimeseriesResponseResultMetaDelayAsnDataLatest.fromJson(Map<String, dynamic> json) { return RadarGetBgpIpsTimeseriesResponseResultMetaDelayAsnDataLatest(
   entriesCount: (json['entries_count'] as num).toDouble(),

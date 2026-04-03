@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEventListGetResponse400Errors {const GetEventListGetResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventListGetResponse400Errors {const GetEventListGetResponse400Errors({required this.message});
 
 factory GetEventListGetResponse400Errors.fromJson(Map<String, dynamic> json) { return GetEventListGetResponse400Errors(
   message: json['message'] as String,

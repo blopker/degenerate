@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingCreditGrantsIdRequest {const GetBillingCreditGrantsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingCreditGrantsIdRequest {const GetBillingCreditGrantsIdRequest();
 
 factory GetBillingCreditGrantsIdRequest.fromJson(Map<String, dynamic> json) { return GetBillingCreditGrantsIdRequest(
 

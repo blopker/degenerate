@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_build_outcome.dart';import 'builds_build_response_pull_request.dart';import 'builds_build_response_trigger.dart';import 'builds_build_trigger_metadata_response.dart';import 'builds_build_uuid.dart';import 'builds_created_on.dart';import 'builds_modified_on.dart';import 'builds_stopped_on.dart';final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_outcome.dart';import 'builds_build_response_pull_request.dart';import 'builds_build_response_trigger.dart';import 'builds_build_trigger_metadata_response.dart';import 'builds_build_uuid.dart';import 'builds_created_on.dart';import 'builds_modified_on.dart';import 'builds_stopped_on.dart';@immutable final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
 
 factory BuildsBuildStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BuildsBuildStatus($value)'; } 
  }
-final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn, this.modifiedOn, this.pullRequest, this.runningOn, this.status, this.stoppedOn, this.trigger, });
+@immutable final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn, this.modifiedOn, this.pullRequest, this.runningOn, this.status, this.stoppedOn, this.trigger, });
 
 factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildResponse(
   buildOutcome: json['build_outcome'] != null ? BuildsBuildOutcome.fromJson(json['build_outcome'] as String) : null,

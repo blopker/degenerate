@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SchemaValidationEditSchemaRequest {const SchemaValidationEditSchemaRequest({this.validationEnabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemaValidationEditSchemaRequest {const SchemaValidationEditSchemaRequest({this.validationEnabled});
 
 factory SchemaValidationEditSchemaRequest.fromJson(Map<String, dynamic> json) { return SchemaValidationEditSchemaRequest(
   validationEnabled: json['validation_enabled'] as bool?,

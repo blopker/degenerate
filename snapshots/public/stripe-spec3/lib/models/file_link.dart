@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'file_link_file.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class FileLinkObject {const FileLinkObject._(this.value);
+@immutable final class FileLinkObject {const FileLinkObject._(this.value);
 
 factory FileLinkObject.fromJson(String json) { return switch (json) {
   'file_link' => fileLink,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// To share the contents of a `File` object with non-Stripe users, you can
 /// create a `FileLink`. `FileLink`s contain a URL that you can use to
 /// retrieve the contents of the file without authentication.
-final class FileLink {const FileLink({required this.created, required this.expired, this.expiresAt, required this.file, required this.id, required this.livemode, required this.metadata, required this.object, this.url, });
+@immutable final class FileLink {const FileLink({required this.created, required this.expired, required this.file, required this.id, required this.livemode, required this.metadata, required this.object, this.expiresAt, this.url, });
 
 factory FileLink.fromJson(Map<String, dynamic> json) { return FileLink(
   created: (json['created'] as num).toInt(),

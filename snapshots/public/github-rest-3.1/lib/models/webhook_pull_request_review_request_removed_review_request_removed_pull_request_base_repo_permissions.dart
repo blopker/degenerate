@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPermissions {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPermissions({required this.admin, this.maintain, required this.pull, required this.push, this.triage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPermissions {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPermissions({required this.admin, required this.pull, required this.push, this.maintain, this.triage, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPermissions.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPermissions(
   admin: json['admin'] as bool,

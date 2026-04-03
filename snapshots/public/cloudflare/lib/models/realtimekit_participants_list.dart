@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantsList {const RealtimekitParticipantsList({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.presetName, this.updatedAt, this.userId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantsList {const RealtimekitParticipantsList({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.presetName, this.updatedAt, this.userId, });
 
 factory RealtimekitParticipantsList.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantsList(
   createdAt: json['created_at'] as String?,

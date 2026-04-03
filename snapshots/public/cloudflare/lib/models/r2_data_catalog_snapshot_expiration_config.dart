@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_catalog_maintenance_state.dart';/// Configures snapshot expiration settings.
-final class R2DataCatalogSnapshotExpirationConfig {const R2DataCatalogSnapshotExpirationConfig({required this.maxSnapshotAge, required this.minSnapshotsToKeep, required this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog_maintenance_state.dart';/// Configures snapshot expiration settings.
+@immutable final class R2DataCatalogSnapshotExpirationConfig {const R2DataCatalogSnapshotExpirationConfig({required this.maxSnapshotAge, required this.minSnapshotsToKeep, required this.state, });
 
 factory R2DataCatalogSnapshotExpirationConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogSnapshotExpirationConfig(
   maxSnapshotAge: json['max_snapshot_age'] as String,

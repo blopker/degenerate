@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'product.dart';import 'transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-final class PlanBillingScheme {const PlanBillingScheme._(this.value);
+@immutable final class PlanBillingScheme {const PlanBillingScheme._(this.value);
 
 factory PlanBillingScheme.fromJson(String json) { return switch (json) {
   'per_unit' => perUnit,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PlanBillingScheme($value)'; } 
  }
 /// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-final class PlanInterval {const PlanInterval._(this.value);
+@immutable final class PlanInterval {const PlanInterval._(this.value);
 
 factory PlanInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PlanInterval($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class PlanObject {const PlanObject._(this.value);
+@immutable final class PlanObject {const PlanObject._(this.value);
 
 factory PlanObject.fromJson(String json) { return switch (json) {
   'plan' => plan,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PlanObject($value)'; } 
  }
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-final class PlanTiersMode {const PlanTiersMode._(this.value);
+@immutable final class PlanTiersMode {const PlanTiersMode._(this.value);
 
 factory PlanTiersMode.fromJson(String json) { return switch (json) {
   'graduated' => graduated,
@@ -104,7 +104,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PlanTiersMode($value)'; } 
  }
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
-final class PlanUsageType {const PlanUsageType._(this.value);
+@immutable final class PlanUsageType {const PlanUsageType._(this.value);
 
 factory PlanUsageType.fromJson(String json) { return switch (json) {
   'licensed' => licensed,
@@ -136,7 +136,7 @@ bool get isUnknown { return !values.contains(this); }
 /// For example, you might have a single "gold" product that has plans for $10/month, $100/year, €9/month, and €90/year.
 /// 
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription) and more about [products and prices](https://docs.stripe.com/products-prices/overview).
-final class Plan {const Plan({required this.active, this.amount, this.amountDecimal, required this.billingScheme, required this.created, required this.currency, required this.id, required this.interval, required this.intervalCount, required this.livemode, this.metadata, this.meter, this.nickname, required this.object, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, required this.usageType, });
+@immutable final class Plan {const Plan({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.interval, required this.intervalCount, required this.livemode, required this.object, required this.usageType, this.amount, this.amountDecimal, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, });
 
 factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   active: json['active'] as bool,

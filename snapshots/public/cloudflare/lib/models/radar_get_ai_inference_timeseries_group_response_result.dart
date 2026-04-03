@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_ai_inference_timeseries_group_response_result_meta.dart';import 'radar_get_ai_inference_timeseries_group_response_result_serie0.dart';final class RadarGetAiInferenceTimeseriesGroupResponseResult {const RadarGetAiInferenceTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_timeseries_group_response_result_meta.dart';import 'radar_get_ai_inference_timeseries_group_response_result_serie0.dart';@immutable final class RadarGetAiInferenceTimeseriesGroupResponseResult {const RadarGetAiInferenceTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetAiInferenceTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupResponseResult(
   meta: RadarGetAiInferenceTimeseriesGroupResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

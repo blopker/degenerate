@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsListArtifactStorageRecordsResponseStorageRecords {const OrgsListArtifactStorageRecordsResponseStorageRecords({this.id, this.name, this.digest, this.artifactUrl, this.registryUrl, this.repository, this.status, this.createdAt, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListArtifactStorageRecordsResponseStorageRecords {const OrgsListArtifactStorageRecordsResponseStorageRecords({this.id, this.name, this.digest, this.artifactUrl, this.registryUrl, this.repository, this.status, this.createdAt, this.updatedAt, });
 
 factory OrgsListArtifactStorageRecordsResponseStorageRecords.fromJson(Map<String, dynamic> json) { return OrgsListArtifactStorageRecordsResponseStorageRecords(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

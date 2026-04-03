@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_usage_model.dart';import 'workers_user_limits.dart';final class WorkerScriptUpdateUsageModelRequest {const WorkerScriptUpdateUsageModelRequest({this.usageModel, this.userLimits, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_usage_model.dart';import 'workers_user_limits.dart';@immutable final class WorkerScriptUpdateUsageModelRequest {const WorkerScriptUpdateUsageModelRequest({this.usageModel, this.userLimits, });
 
 factory WorkerScriptUpdateUsageModelRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptUpdateUsageModelRequest(
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,

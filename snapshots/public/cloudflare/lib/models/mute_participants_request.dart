@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MuteParticipantsRequest {const MuteParticipantsRequest({required this.customParticipantIds, required this.participantIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MuteParticipantsRequest {const MuteParticipantsRequest({required this.customParticipantIds, required this.participantIds, });
 
 factory MuteParticipantsRequest.fromJson(Map<String, dynamic> json) { return MuteParticipantsRequest(
   customParticipantIds: (json['custom_participant_ids'] as List<dynamic>).map((e) => e as String).toList(),

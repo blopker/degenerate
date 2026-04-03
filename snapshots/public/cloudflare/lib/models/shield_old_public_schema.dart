@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_old_kind.dart';import 'shield_old_validation_enabled.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';final class ShieldOldPublicSchema {const ShieldOldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, this.source, this.validationEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_kind.dart';import 'shield_old_validation_enabled.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';@immutable final class ShieldOldPublicSchema {const ShieldOldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, this.source, this.validationEnabled, });
 
 factory ShieldOldPublicSchema.fromJson(Map<String, dynamic> json) { return ShieldOldPublicSchema(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),

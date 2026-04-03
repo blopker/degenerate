@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of item to reference. Always `item_reference`.
-final class ItemReferenceParamType {const ItemReferenceParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of item to reference. Always `item_reference`.
+@immutable final class ItemReferenceParamType {const ItemReferenceParamType._(this.value);
 
 factory ItemReferenceParamType.fromJson(String json) { return switch (json) {
   'item_reference' => itemReference,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ItemReferenceParamType($value)'; } 
  }
 /// An internal identifier for an item to reference.
-final class ItemReferenceParam {const ItemReferenceParam({this.type, required this.id, });
+@immutable final class ItemReferenceParam {const ItemReferenceParam({required this.id, this.type, });
 
 factory ItemReferenceParam.fromJson(Map<String, dynamic> json) { return ItemReferenceParam(
   type: json['type'] != null ? ItemReferenceParamType.fromJson(json['type'] as String) : null,

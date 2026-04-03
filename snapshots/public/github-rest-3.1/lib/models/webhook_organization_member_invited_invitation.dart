@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_organization_member_invited_invitation_inviter.dart';/// The invitation for the user or email if the action is `member_invited`.
-final class WebhookOrganizationMemberInvitedInvitation {const WebhookOrganizationMemberInvitedInvitation({required this.createdAt, required this.email, required this.failedAt, required this.failedReason, required this.id, required this.invitationTeamsUrl, required this.inviter, required this.login, required this.nodeId, required this.role, required this.teamCount, this.invitationSource, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_organization_member_invited_invitation_inviter.dart';/// The invitation for the user or email if the action is `member_invited`.
+@immutable final class WebhookOrganizationMemberInvitedInvitation {const WebhookOrganizationMemberInvitedInvitation({required this.createdAt, required this.email, required this.failedAt, required this.failedReason, required this.id, required this.invitationTeamsUrl, required this.inviter, required this.login, required this.nodeId, required this.role, required this.teamCount, this.invitationSource, });
 
 factory WebhookOrganizationMemberInvitedInvitation.fromJson(Map<String, dynamic> json) { return WebhookOrganizationMemberInvitedInvitation(
   createdAt: DateTime.parse(json['created_at'] as String),

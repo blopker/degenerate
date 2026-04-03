@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_is_default_network_optional.dart';import 'tunnel_virtual_network_comment.dart';import 'tunnel_virtual_network_name.dart';final class TunnelVirtualNetworkUpdateRequest {const TunnelVirtualNetworkUpdateRequest({this.comment, this.isDefaultNetwork, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_is_default_network_optional.dart';import 'tunnel_virtual_network_comment.dart';import 'tunnel_virtual_network_name.dart';@immutable final class TunnelVirtualNetworkUpdateRequest {const TunnelVirtualNetworkUpdateRequest({this.comment, this.isDefaultNetwork, this.name, });
 
 factory TunnelVirtualNetworkUpdateRequest.fromJson(Map<String, dynamic> json) { return TunnelVirtualNetworkUpdateRequest(
   comment: json['comment'] != null ? TunnelVirtualNetworkComment.fromJson(json['comment'] as String) : null,

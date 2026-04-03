@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListFilesOrder {const ListFilesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListFilesOrder {const ListFilesOrder._(this.value);
 
 factory ListFilesOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

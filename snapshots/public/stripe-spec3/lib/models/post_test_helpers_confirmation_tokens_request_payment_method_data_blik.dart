@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik(
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Client device metadata attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationClientDeviceMetadata {const InsightsResourcesPaymentEvaluationClientDeviceMetadata({required this.radarSession});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Client device metadata attached to this payment evaluation.
+@immutable final class InsightsResourcesPaymentEvaluationClientDeviceMetadata {const InsightsResourcesPaymentEvaluationClientDeviceMetadata({required this.radarSession});
 
 factory InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationClientDeviceMetadata(
   radarSession: json['radar_session'] as String,

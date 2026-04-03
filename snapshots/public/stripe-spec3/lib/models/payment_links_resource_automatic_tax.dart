@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// 
-final class PaymentLinksResourceAutomaticTax {const PaymentLinksResourceAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// 
+@immutable final class PaymentLinksResourceAutomaticTax {const PaymentLinksResourceAutomaticTax({required this.enabled, this.liability, });
 
 factory PaymentLinksResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceAutomaticTax(
   enabled: json['enabled'] as bool,

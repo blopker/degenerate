@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Job {const Job({required this.id, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Job {const Job({required this.id, required this.status, });
 
 factory Job.fromJson(Map<String, dynamic> json) { return Job(
   id: json['id'] as String,

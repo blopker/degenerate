@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityGetMessageDetectionsResponseResultSenderInfo {const EmailSecurityGetMessageDetectionsResponseResultSenderInfo({this.asName, this.asNumber, this.geo, this.ip, this.pld, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityGetMessageDetectionsResponseResultSenderInfo {const EmailSecurityGetMessageDetectionsResponseResultSenderInfo({this.asName, this.asNumber, this.geo, this.ip, this.pld, });
 
 factory EmailSecurityGetMessageDetectionsResponseResultSenderInfo.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageDetectionsResponseResultSenderInfo(
   asName: json['as_name'] as String?,

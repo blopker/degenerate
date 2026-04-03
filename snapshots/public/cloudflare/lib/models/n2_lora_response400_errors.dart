@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class $2LoraResponse400Errors {const $2LoraResponse400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class $2LoraResponse400Errors {const $2LoraResponse400Errors({required this.code, required this.message, });
 
 factory $2LoraResponse400Errors.fromJson(Map<String, dynamic> json) { return $2LoraResponse400Errors(
   code: json['code'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_selfie_report_error.dart';/// Status of this `selfie` check.
-final class GelatoSelfieReportStatus {const GelatoSelfieReportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_selfie_report_error.dart';/// Status of this `selfie` check.
+@immutable final class GelatoSelfieReportStatus {const GelatoSelfieReportStatus._(this.value);
 
 factory GelatoSelfieReportStatus.fromJson(String json) { return switch (json) {
   'unverified' => unverified,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSelfieReportStatus($value)'; } 
  }
 /// Result from a selfie check
-final class GelatoSelfieReport {const GelatoSelfieReport({this.document, this.error, this.selfie, required this.status, });
+@immutable final class GelatoSelfieReport {const GelatoSelfieReport({required this.status, this.document, this.error, this.selfie, });
 
 factory GelatoSelfieReport.fromJson(Map<String, dynamic> json) { return GelatoSelfieReport(
   document: json['document'] as String?,

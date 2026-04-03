@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction._(this.value);
 
 factory EmailSecurityInvestigateMessageAction.fromJson(String json) { return switch (json) {
   'PREVIEW' => preview,

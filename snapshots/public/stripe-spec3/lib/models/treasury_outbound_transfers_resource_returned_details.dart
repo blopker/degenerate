@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_transfers_resource_returned_details_transaction.dart';import 'treasury_transaction.dart';/// Reason for the return.
-final class TreasuryOutboundTransfersResourceReturnedDetailsCode {const TreasuryOutboundTransfersResourceReturnedDetailsCode._(this.value);
+@immutable final class TreasuryOutboundTransfersResourceReturnedDetailsCode {const TreasuryOutboundTransfersResourceReturnedDetailsCode._(this.value);
 
 factory TreasuryOutboundTransfersResourceReturnedDetailsCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryOutboundTransfersResourceReturnedDetailsCode($value)'; } 
  }
 /// 
-final class TreasuryOutboundTransfersResourceReturnedDetails {const TreasuryOutboundTransfersResourceReturnedDetails({required this.code, required this.transaction, });
+@immutable final class TreasuryOutboundTransfersResourceReturnedDetails {const TreasuryOutboundTransfersResourceReturnedDetails({required this.code, required this.transaction, });
 
 factory TreasuryOutboundTransfersResourceReturnedDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceReturnedDetails(
   code: TreasuryOutboundTransfersResourceReturnedDetailsCode.fromJson(json['code'] as String),

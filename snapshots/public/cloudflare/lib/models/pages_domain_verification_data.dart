@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesDomainVerificationDataStatus {const PagesDomainVerificationDataStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesDomainVerificationDataStatus {const PagesDomainVerificationDataStatus._(this.value);
 
 factory PagesDomainVerificationDataStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDomainVerificationDataStatus($value)'; } 
  }
-final class PagesDomainVerificationData {const PagesDomainVerificationData({this.errorMessage, required this.status, });
+@immutable final class PagesDomainVerificationData {const PagesDomainVerificationData({required this.status, this.errorMessage, });
 
 factory PagesDomainVerificationData.fromJson(Map<String, dynamic> json) { return PagesDomainVerificationData(
   errorMessage: json['error_message'] as String?,

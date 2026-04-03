@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_description.dart';import 'teams_devices_expiration.dart';import 'teams_devices_input.dart';import 'teams_devices_match_item.dart';import 'teams_devices_name.dart';import 'teams_devices_schedule.dart';import 'teams_devices_type.dart';final class DevicePostureRulesUpdateDevicePostureRuleRequest {const DevicePostureRulesUpdateDevicePostureRuleRequest({this.description, this.expiration, this.input, this.match, required this.name, this.schedule, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_description.dart';import 'teams_devices_expiration.dart';import 'teams_devices_input.dart';import 'teams_devices_match_item.dart';import 'teams_devices_name.dart';import 'teams_devices_schedule.dart';import 'teams_devices_type.dart';@immutable final class DevicePostureRulesUpdateDevicePostureRuleRequest {const DevicePostureRulesUpdateDevicePostureRuleRequest({required this.name, required this.type, this.description, this.expiration, this.input, this.match, this.schedule, });
 
 factory DevicePostureRulesUpdateDevicePostureRuleRequest.fromJson(Map<String, dynamic> json) { return DevicePostureRulesUpdateDevicePostureRuleRequest(
   description: json['description'] != null ? TeamsDevicesDescription.fromJson(json['description'] as String) : null,

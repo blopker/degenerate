@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'subscriptions_resource_subscription_invoice_settings_account_tax_ids.dart';import 'tax_id.dart';/// 
-final class SubscriptionsResourceSubscriptionInvoiceSettings {const SubscriptionsResourceSubscriptionInvoiceSettings({this.accountTaxIds, required this.issuer, });
+@immutable final class SubscriptionsResourceSubscriptionInvoiceSettings {const SubscriptionsResourceSubscriptionInvoiceSettings({required this.issuer, this.accountTaxIds, });
 
 factory SubscriptionsResourceSubscriptionInvoiceSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceSubscriptionInvoiceSettings(
   accountTaxIds: (json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList(),

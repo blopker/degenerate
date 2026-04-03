@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'volume_projection.dart';/// Represents a projected volume source
-final class ProjectedVolumeSource {const ProjectedVolumeSource({this.defaultMode, this.sources, });
+@immutable final class ProjectedVolumeSource {const ProjectedVolumeSource({this.defaultMode, this.sources, });
 
 factory ProjectedVolumeSource.fromJson(Map<String, dynamic> json) { return ProjectedVolumeSource(
   defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,

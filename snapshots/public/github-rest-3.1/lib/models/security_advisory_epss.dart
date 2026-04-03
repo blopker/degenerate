@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
-final class SecurityAdvisoryEpss {const SecurityAdvisoryEpss({this.percentage, this.percentile, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
+@immutable final class SecurityAdvisoryEpss {const SecurityAdvisoryEpss({this.percentage, this.percentile, });
 
 factory SecurityAdvisoryEpss.fromJson(Map<String, dynamic> json) { return SecurityAdvisoryEpss(
   percentage: json['percentage'] != null ? (json['percentage'] as num).toDouble() : null,

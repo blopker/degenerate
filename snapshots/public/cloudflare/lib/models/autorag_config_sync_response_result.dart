@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigSyncResponseResult {const AutoragConfigSyncResponseResult({required this.jobId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSyncResponseResult {const AutoragConfigSyncResponseResult({required this.jobId});
 
 factory AutoragConfigSyncResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigSyncResponseResult(
   jobId: json['job_id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_response202_created_events.dart';import 'post_event_create_bulk_response202_errors.dart';/// Detailed result of bulk event creation with auto-tag management
-final class PostEventCreateBulkResponse202 {const PostEventCreateBulkResponse202({this.createBulkEventsRequestId, this.createdEvents, required this.createdEventsCount, required this.createdTagsCount, required this.errorCount, this.errors, required this.queuedIndicatorsCount, });
+@immutable final class PostEventCreateBulkResponse202 {const PostEventCreateBulkResponse202({required this.createdEventsCount, required this.createdTagsCount, required this.errorCount, required this.queuedIndicatorsCount, this.createBulkEventsRequestId, this.createdEvents, this.errors, });
 
 factory PostEventCreateBulkResponse202.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkResponse202(
   createBulkEventsRequestId: json['createBulkEventsRequestId'] as String?,

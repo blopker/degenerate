@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// PodCertificateProjection provides a private key and X.509 certificate in the pod filesystem.
-final class PodCertificateProjection {const PodCertificateProjection({this.certificateChainPath, this.credentialBundlePath, this.keyPath, required this.keyType, this.maxExpirationSeconds, required this.signerName, this.userAnnotations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodCertificateProjection provides a private key and X.509 certificate in the pod filesystem.
+@immutable final class PodCertificateProjection {const PodCertificateProjection({required this.keyType, required this.signerName, this.certificateChainPath, this.credentialBundlePath, this.keyPath, this.maxExpirationSeconds, this.userAnnotations, });
 
 factory PodCertificateProjection.fromJson(Map<String, dynamic> json) { return PodCertificateProjection(
   certificateChainPath: json['certificateChainPath'] as String?,

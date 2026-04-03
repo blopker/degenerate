@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetQuotesQuoteRequest {const GetQuotesQuoteRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetQuotesQuoteRequest {const GetQuotesQuoteRequest();
 
 factory GetQuotesQuoteRequest.fromJson(Map<String, dynamic> json) { return GetQuotesQuoteRequest(
 

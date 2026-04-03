@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_embedded_account_session_create_components.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class AccountSessionObject {const AccountSessionObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_account_session_create_components.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class AccountSessionObject {const AccountSessionObject._(this.value);
 
 factory AccountSessionObject.fromJson(String json) { return switch (json) {
   'account_session' => accountSession,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// quickly, and cannot be used more than once.
 /// 
 /// Related guide: [Connect embedded components](https://docs.stripe.com/connect/get-started-connect-embedded-components)
-final class AccountSession {const AccountSession({required this.account, required this.clientSecret, required this.components, required this.expiresAt, required this.livemode, required this.object, });
+@immutable final class AccountSession {const AccountSession({required this.account, required this.clientSecret, required this.components, required this.expiresAt, required this.livemode, required this.object, });
 
 factory AccountSession.fromJson(Map<String, dynamic> json) { return AccountSession(
   account: json['account'] as String,

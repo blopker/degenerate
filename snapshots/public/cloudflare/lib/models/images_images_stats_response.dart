@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_images_stats.dart';final class ImagesImagesStatsResponse {const ImagesImagesStatsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_images_stats.dart';@immutable final class ImagesImagesStatsResponse {const ImagesImagesStatsResponse({this.result});
 
 factory ImagesImagesStatsResponse.fromJson(Map<String, dynamic> json) { return ImagesImagesStatsResponse(
   result: json['result'] != null ? ImagesImagesStats.fromJson(json['result'] as Map<String, dynamic>) : null,

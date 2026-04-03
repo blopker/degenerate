@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// The event type, must be `conversation.item.input_audio_transcription.delta`.
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType._(this.value);
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.delta' => conversationItemInputAudioTranscriptionDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Returned when the text value of an input audio transcription content part is updated.
 /// 
-final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: json['event_id'] as String,

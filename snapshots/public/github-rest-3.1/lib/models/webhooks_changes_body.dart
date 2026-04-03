@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksChangesBody {const WebhooksChangesBody({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksChangesBody {const WebhooksChangesBody({required this.from});
 
 factory WebhooksChangesBody.fromJson(Map<String, dynamic> json) { return WebhooksChangesBody(
   from: json['from'] as String,

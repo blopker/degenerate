@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_onramp_id.dart';final class McnDeletedOnramp {const McnDeletedOnramp({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_onramp_id.dart';@immutable final class McnDeletedOnramp {const McnDeletedOnramp({required this.id});
 
 factory McnDeletedOnramp.fromJson(Map<String, dynamic> json) { return McnDeletedOnramp(
   id: McnOnrampId.fromJson(json['id'] as String),

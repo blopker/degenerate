@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `response.output_item.done`.
-final class RealtimeServerEventResponseOutputItemDoneType {const RealtimeServerEventResponseOutputItemDoneType._(this.value);
+@immutable final class RealtimeServerEventResponseOutputItemDoneType {const RealtimeServerEventResponseOutputItemDoneType._(this.value);
 
 factory RealtimeServerEventResponseOutputItemDoneType.fromJson(String json) { return switch (json) {
   'response.output_item.done' => responseOutputItemDone,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when an Item is done streaming. Also emitted when a Response is
 /// interrupted, incomplete, or cancelled.
 /// 
-final class RealtimeServerEventResponseOutputItemDone {const RealtimeServerEventResponseOutputItemDone({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
+@immutable final class RealtimeServerEventResponseOutputItemDone {const RealtimeServerEventResponseOutputItemDone({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
 
 factory RealtimeServerEventResponseOutputItemDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseOutputItemDone(
   eventId: json['event_id'] as String,

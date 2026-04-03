@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_pull_request_pull_request_reviews.dart';import 'rule_suite_pull_request_pull_request_user.dart';/// The pull request associated with the rule evaluation.
-final class RuleSuitePullRequestPullRequest {const RuleSuitePullRequestPullRequest({this.id, this.number, this.user, this.reviews, });
+@immutable final class RuleSuitePullRequestPullRequest {const RuleSuitePullRequestPullRequest({this.id, this.number, this.user, this.reviews, });
 
 factory RuleSuitePullRequestPullRequest.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequestPullRequest(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

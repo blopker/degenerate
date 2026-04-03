@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The user who created the pull request.
-final class RuleSuitePullRequestPullRequestUser {const RuleSuitePullRequestPullRequestUser({this.id, this.login, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who created the pull request.
+@immutable final class RuleSuitePullRequestPullRequestUser {const RuleSuitePullRequestPullRequestUser({this.id, this.login, this.type, });
 
 factory RuleSuitePullRequestPullRequestUser.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequestPullRequestUser(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

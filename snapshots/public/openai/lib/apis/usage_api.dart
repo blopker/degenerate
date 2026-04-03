@@ -22,12 +22,12 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -69,27 +69,27 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (userIds != null) {
 for (final item in userIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item));
 }
 }
 if (apiKeyIds != null) {
 for (final item in apiKeyIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item));
 }
 }
 if (models != null) {
 for (final item in models) {
-  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -131,27 +131,27 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (userIds != null) {
 for (final item in userIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item));
 }
 }
 if (apiKeyIds != null) {
 for (final item in apiKeyIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item));
 }
 }
 if (models != null) {
 for (final item in models) {
-  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -193,12 +193,12 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -240,22 +240,22 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (userIds != null) {
 for (final item in userIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item));
 }
 }
 if (apiKeyIds != null) {
 for (final item in apiKeyIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item));
 }
 }
 if (models != null) {
 for (final item in models) {
-  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item));
 }
 }
 if (batch != null) {
@@ -263,7 +263,7 @@ if (batch != null) {
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -305,27 +305,27 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (userIds != null) {
 for (final item in userIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item));
 }
 }
 if (apiKeyIds != null) {
 for (final item in apiKeyIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item));
 }
 }
 if (models != null) {
 for (final item in models) {
-  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -367,37 +367,37 @@ if (bucketWidth != null) {
 }
 if (sources != null) {
 for (final item in sources) {
-  queryParametersList.add(ApiQueryParameter(name: 'sources', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sources', value: item.toJson()));
 }
 }
 if (sizes != null) {
 for (final item in sizes) {
-  queryParametersList.add(ApiQueryParameter(name: 'sizes', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sizes', value: item.toJson()));
 }
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (userIds != null) {
 for (final item in userIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item));
 }
 }
 if (apiKeyIds != null) {
 for (final item in apiKeyIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item));
 }
 }
 if (models != null) {
 for (final item in models) {
-  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -439,27 +439,27 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (userIds != null) {
 for (final item in userIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user_ids', value: item));
 }
 }
 if (apiKeyIds != null) {
 for (final item in apiKeyIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'api_key_ids', value: item));
 }
 }
 if (models != null) {
 for (final item in models) {
-  queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'models', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {
@@ -501,12 +501,12 @@ if (bucketWidth != null) {
 }
 if (projectIds != null) {
 for (final item in projectIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item));
 }
 }
 if (groupBy != null) {
 for (final item in groupBy) {
-  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson()));
 }
 }
 if (limit != null) {

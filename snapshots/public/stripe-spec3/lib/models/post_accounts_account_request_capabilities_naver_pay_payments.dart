@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountRequestCapabilitiesNaverPayPayments {const PostAccountsAccountRequestCapabilitiesNaverPayPayments({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesNaverPayPayments {const PostAccountsAccountRequestCapabilitiesNaverPayPayments({this.requested});
 
 factory PostAccountsAccountRequestCapabilitiesNaverPayPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesNaverPayPayments(
   requested: json['requested'] as bool?,

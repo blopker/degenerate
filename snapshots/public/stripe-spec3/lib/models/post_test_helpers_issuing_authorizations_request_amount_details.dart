@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final class PostTestHelpersIssuingAuthorizationsRequestAmountDetails {const PostTestHelpersIssuingAuthorizationsRequestAmountDetails({this.atmFee, this.cashbackAmount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestAmountDetails {const PostTestHelpersIssuingAuthorizationsRequestAmountDetails({this.atmFee, this.cashbackAmount, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestAmountDetails(
   atmFee: json['atm_fee'] != null ? (json['atm_fee'] as num).toInt() : null,

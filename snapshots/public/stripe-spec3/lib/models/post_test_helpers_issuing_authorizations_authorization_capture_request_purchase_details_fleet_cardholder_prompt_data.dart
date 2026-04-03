@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsFleetCardholderPromptData(
   driverId: json['driver_id'] as String?,

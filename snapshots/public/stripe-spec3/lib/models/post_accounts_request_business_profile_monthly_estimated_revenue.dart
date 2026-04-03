@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestBusinessProfileMonthlyEstimatedRevenue {const PostAccountsRequestBusinessProfileMonthlyEstimatedRevenue({required this.amount, required this.currency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestBusinessProfileMonthlyEstimatedRevenue {const PostAccountsRequestBusinessProfileMonthlyEstimatedRevenue({required this.amount, required this.currency, });
 
 factory PostAccountsRequestBusinessProfileMonthlyEstimatedRevenue.fromJson(Map<String, dynamic> json) { return PostAccountsRequestBusinessProfileMonthlyEstimatedRevenue(
   amount: (json['amount'] as num).toInt(),

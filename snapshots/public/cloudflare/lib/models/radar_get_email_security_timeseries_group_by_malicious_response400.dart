@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response400_errors.dart';final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400 {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response400_errors.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400 {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

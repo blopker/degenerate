@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanIpsIp {const UrlscannerGetScanResponseResultScanIpsIp({required this.asn, required this.asnDescription, required this.asnLocationAlpha2, required this.asnName, required this.asnOrgName, required this.continent, required this.geonameId, required this.ip, required this.ipVersion, required this.latitude, required this.locationAlpha2, required this.locationName, required this.longitude, required this.subdivision1Name, required this.subdivision2Name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanIpsIp {const UrlscannerGetScanResponseResultScanIpsIp({required this.asn, required this.asnDescription, required this.asnLocationAlpha2, required this.asnName, required this.asnOrgName, required this.continent, required this.geonameId, required this.ip, required this.ipVersion, required this.latitude, required this.locationAlpha2, required this.locationName, required this.longitude, required this.subdivision1Name, required this.subdivision2Name, });
 
 factory UrlscannerGetScanResponseResultScanIpsIp.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanIpsIp(
   asn: json['asn'] as String,

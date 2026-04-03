@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Project membership role
-final class InviteProjectsRole {const InviteProjectsRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Project membership role
+@immutable final class InviteProjectsRole {const InviteProjectsRole._(this.value);
 
 factory InviteProjectsRole.fromJson(String json) { return switch (json) {
   'member' => member,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InviteProjectsRole($value)'; } 
  }
-final class InviteProjects {const InviteProjects({this.id, this.role, });
+@immutable final class InviteProjects {const InviteProjects({this.id, this.role, });
 
 factory InviteProjects.fromJson(Map<String, dynamic> json) { return InviteProjects(
   id: json['id'] as String?,

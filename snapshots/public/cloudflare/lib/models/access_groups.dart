@@ -7,7 +7,7 @@ factory AccessExternalId.fromJson(String json) => AccessExternalId(json);
 String toJson() => value;
 
 }
-final class AccessGroups {const AccessGroups({this.displayName, this.externalId, this.id, this.meta, this.schemas, });
+@immutable final class AccessGroups {const AccessGroups({this.displayName, this.externalId, this.id, this.meta, this.schemas, });
 
 factory AccessGroups.fromJson(Map<String, dynamic> json) { return AccessGroups(
   displayName: json['displayName'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceTransactionSepaCreditTransferData {const SourceTransactionSepaCreditTransferData({this.reference, this.senderIban, this.senderName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceTransactionSepaCreditTransferData {const SourceTransactionSepaCreditTransferData({this.reference, this.senderIban, this.senderName, });
 
 factory SourceTransactionSepaCreditTransferData.fromJson(Map<String, dynamic> json) { return SourceTransactionSepaCreditTransferData(
   reference: json['reference'] as String?,

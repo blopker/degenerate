@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_hooks_inputs_tax_calculation.dart';final class PostPaymentIntentsRequestHooksInputsTax {const PostPaymentIntentsRequestHooksInputsTax({required this.calculation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_hooks_inputs_tax_calculation.dart';@immutable final class PostPaymentIntentsRequestHooksInputsTax {const PostPaymentIntentsRequestHooksInputsTax({required this.calculation});
 
 factory PostPaymentIntentsRequestHooksInputsTax.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestHooksInputsTax(
   calculation: OneOf2.parse(json['calculation'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsRequestHooksInputsTaxCalculationVariant2.fromJson(v as String),),

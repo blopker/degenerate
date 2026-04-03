@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_messages2.dart';import 'response_common31_result.dart';final class ResponseCommon31 {const ResponseCommon31({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_messages2.dart';import 'response_common31_result.dart';@immutable final class ResponseCommon31 {const ResponseCommon31({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon31.fromJson(Map<String, dynamic> json) { return ResponseCommon31(
   errors: (json['errors'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),

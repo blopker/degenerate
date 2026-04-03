@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'payment_method.dart';import 'setup_attempt_application.dart';import 'setup_attempt_customer.dart';import 'setup_attempt_on_behalf_of.dart';import 'setup_attempt_payment_method.dart';import 'setup_attempt_payment_method_details.dart';import 'setup_attempt_setup_intent.dart';import 'setup_intent.dart';final class SetupAttemptFlowDirections {const SetupAttemptFlowDirections._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'payment_method.dart';import 'setup_attempt_application.dart';import 'setup_attempt_customer.dart';import 'setup_attempt_on_behalf_of.dart';import 'setup_attempt_payment_method.dart';import 'setup_attempt_payment_method_details.dart';import 'setup_attempt_setup_intent.dart';import 'setup_intent.dart';@immutable final class SetupAttemptFlowDirections {const SetupAttemptFlowDirections._(this.value);
 
 factory SetupAttemptFlowDirections.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupAttemptFlowDirections($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class SetupAttemptObject {const SetupAttemptObject._(this.value);
+@immutable final class SetupAttemptObject {const SetupAttemptObject._(this.value);
 
 factory SetupAttemptObject.fromJson(String json) { return switch (json) {
   'setup_attempt' => setupAttempt,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 /// whether that confirmation is successful or unsuccessful. You can use
 /// SetupAttempts to inspect details of a specific attempt at setting up a
 /// payment method using a SetupIntent.
-final class SetupAttempt {const SetupAttempt({this.application, this.attachToSelf, required this.created, this.customer, this.customerAccount, this.flowDirections, required this.id, required this.livemode, required this.object, this.onBehalfOf, required this.paymentMethod, required this.paymentMethodDetails, this.setupError, required this.setupIntent, required this.status, required this.usage, });
+@immutable final class SetupAttempt {const SetupAttempt({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.setupIntent, required this.status, required this.usage, this.application, this.attachToSelf, this.customer, this.customerAccount, this.flowDirections, this.onBehalfOf, this.setupError, });
 
 factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
   application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,

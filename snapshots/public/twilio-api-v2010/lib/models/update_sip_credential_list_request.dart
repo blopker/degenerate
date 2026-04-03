@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateSipCredentialListRequest {const UpdateSipCredentialListRequest({required this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipCredentialListRequest {const UpdateSipCredentialListRequest({required this.friendlyName});
 
 factory UpdateSipCredentialListRequest.fromJson(Map<String, dynamic> json) { return UpdateSipCredentialListRequest(
   friendlyName: json['FriendlyName'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_geolocations_response400_errors.dart';final class RadarGetGeolocationsResponse400 {const RadarGetGeolocationsResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_geolocations_response400_errors.dart';@immutable final class RadarGetGeolocationsResponse400 {const RadarGetGeolocationsResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetGeolocationsResponse400.fromJson(Map<String, dynamic> json) { return RadarGetGeolocationsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetGeolocationsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response.dart';/// The type of the event. Always `response.created`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always `response.created`.
 /// 
-final class ResponseCreatedEventType {const ResponseCreatedEventType._(this.value);
+@immutable final class ResponseCreatedEventType {const ResponseCreatedEventType._(this.value);
 
 factory ResponseCreatedEventType.fromJson(String json) { return switch (json) {
   'response.created' => responseCreated,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An event that is emitted when a response is created.
 /// 
-final class ResponseCreatedEvent {const ResponseCreatedEvent({required this.type, required this.response, required this.sequenceNumber, });
+@immutable final class ResponseCreatedEvent {const ResponseCreatedEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseCreatedEvent.fromJson(Map<String, dynamic> json) { return ResponseCreatedEvent(
   type: ResponseCreatedEventType.fromJson(json['type'] as String),

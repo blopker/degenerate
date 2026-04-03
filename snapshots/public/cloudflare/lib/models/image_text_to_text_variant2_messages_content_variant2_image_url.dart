@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Image URL object (when type is 'image_url').
-final class ImageTextToTextVariant2MessagesContentVariant2ImageUrl {const ImageTextToTextVariant2MessagesContentVariant2ImageUrl({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Image URL object (when type is 'image_url').
+@immutable final class ImageTextToTextVariant2MessagesContentVariant2ImageUrl {const ImageTextToTextVariant2MessagesContentVariant2ImageUrl({required this.url});
 
 factory ImageTextToTextVariant2MessagesContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2MessagesContentVariant2ImageUrl(
   url: json['url'] as String,

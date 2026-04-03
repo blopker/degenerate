@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_device_credential.dart';final class MconnAdminDeviceCredentialListResponse {const MconnAdminDeviceCredentialListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_device_credential.dart';@immutable final class MconnAdminDeviceCredentialListResponse {const MconnAdminDeviceCredentialListResponse({this.result});
 
 factory MconnAdminDeviceCredentialListResponse.fromJson(Map<String, dynamic> json) { return MconnAdminDeviceCredentialListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MconnAdminDeviceCredential.fromJson(e as Map<String, dynamic>)).toList(),

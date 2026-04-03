@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_base.dart';import 'zones_cache_rules_aegis.dart';import 'zones_cache_rules_origin_h2_max_streams.dart';import 'zones_cache_rules_origin_max_http_version.dart';import 'zones_development_mode.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';final class ZonesMultipleSettings2 {const ZonesMultipleSettings2({this.zonesBase, this.zonesCacheRulesAegis, this.zonesDevelopmentMode, this.zonesCacheRulesOriginH2MaxStreams, this.zonesCacheRulesOriginMaxHttpVersion, this.zonesSchemasBase, this.zonesSslRecommender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_base.dart';import 'zones_cache_rules_aegis.dart';import 'zones_cache_rules_origin_h2_max_streams.dart';import 'zones_cache_rules_origin_max_http_version.dart';import 'zones_development_mode.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';final class ZonesMultipleSettings2 {const ZonesMultipleSettings2({this.zonesBase, this.zonesCacheRulesAegis, this.zonesDevelopmentMode, this.zonesCacheRulesOriginH2MaxStreams, this.zonesCacheRulesOriginMaxHttpVersion, this.zonesSchemasBase, this.zonesSslRecommender, });
 
 factory ZonesMultipleSettings2.fromJson(Map<String, dynamic> json) { return ZonesMultipleSettings2(
   zonesBase: ZonesBase.canParse(json) ? ZonesBase.fromJson(json) : null,

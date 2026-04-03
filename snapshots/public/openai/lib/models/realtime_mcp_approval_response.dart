@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the item. Always `mcp_approval_response`.
-final class RealtimeMcpApprovalResponseType {const RealtimeMcpApprovalResponseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the item. Always `mcp_approval_response`.
+@immutable final class RealtimeMcpApprovalResponseType {const RealtimeMcpApprovalResponseType._(this.value);
 
 factory RealtimeMcpApprovalResponseType.fromJson(String json) { return switch (json) {
   'mcp_approval_response' => mcpApprovalResponse,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Realtime item responding to an MCP approval request.
 /// 
-final class RealtimeMcpApprovalResponse {const RealtimeMcpApprovalResponse({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason, });
+@immutable final class RealtimeMcpApprovalResponse {const RealtimeMcpApprovalResponse({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason, });
 
 factory RealtimeMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return RealtimeMcpApprovalResponse(
   type: RealtimeMcpApprovalResponseType.fromJson(json['type'] as String),

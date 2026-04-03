@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_downloads.dart';/// An object with download type keys. Each key is optional and only present if that download type has been created.
-final class StreamDownloadsResponseResult {const StreamDownloadsResponseResult({this.audio, this.$default, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_downloads.dart';/// An object with download type keys. Each key is optional and only present if that download type has been created.
+@immutable final class StreamDownloadsResponseResult {const StreamDownloadsResponseResult({this.audio, this.$default, });
 
 factory StreamDownloadsResponseResult.fromJson(Map<String, dynamic> json) { return StreamDownloadsResponseResult(
   audio: json['audio'] != null ? StreamDownloads.fromJson(json['audio'] as Map<String, dynamic>) : null,

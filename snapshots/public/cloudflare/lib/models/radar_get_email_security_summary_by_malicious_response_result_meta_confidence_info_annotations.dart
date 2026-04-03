@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetEmailSecuritySummaryByMaliciousResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_timing_aggregates.dart';final class DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo {const DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo({required this.colo, required this.resourceFetchTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timing_aggregates.dart';@immutable final class DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo {const DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo({required this.colo, required this.resourceFetchTime, });
 
 factory DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo(
   colo: json['colo'] as String,

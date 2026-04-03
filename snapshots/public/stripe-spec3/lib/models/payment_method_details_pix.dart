@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsPix {const PaymentMethodDetailsPix({this.bankTransactionId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsPix {const PaymentMethodDetailsPix({this.bankTransactionId});
 
 factory PaymentMethodDetailsPix.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPix(
   bankTransactionId: json['bank_transaction_id'] as String?,

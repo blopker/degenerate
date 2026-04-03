@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_malicious_response_result_meta_confidence_info.dart';import 'radar_get_email_security_top_tlds_by_malicious_response_result_meta_date_range.dart';import 'radar_get_email_security_top_tlds_by_malicious_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaNormalization {const RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaNormalization {const RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaNormalization._(this.value);
 
 factory RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetEmailSecurityTopTldsByMaliciousResponseResultMeta {const RadarGetEmailSecurityTopTldsByMaliciousResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousResponseResultMeta {const RadarGetEmailSecurityTopTldsByMaliciousResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetEmailSecurityTopTldsByMaliciousResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsByMaliciousResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetEmailSecurityTopTldsByMaliciousResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

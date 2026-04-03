@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `konbini` PaymentMethod, this hash contains details about the Konbini payment method.
-final class PostPaymentMethodsRequestKonbini {const PostPaymentMethodsRequestKonbini();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `konbini` PaymentMethod, this hash contains details about the Konbini payment method.
+@immutable final class PostPaymentMethodsRequestKonbini {const PostPaymentMethodsRequestKonbini();
 
 factory PostPaymentMethodsRequestKonbini.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestKonbini(
 

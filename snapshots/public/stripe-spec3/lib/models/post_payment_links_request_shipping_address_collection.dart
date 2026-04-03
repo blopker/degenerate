@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentLinksRequestShippingAddressCollectionAllowedCountries {const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestShippingAddressCollectionAllowedCountries {const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._(this.value);
 
 factory PostPaymentLinksRequestShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
   'AC' => ac,
@@ -733,7 +733,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestShippingAddressCollectionAllowedCountries($value)'; } 
  }
 /// Configuration for collecting the customer's shipping address.
-final class PostPaymentLinksRequestShippingAddressCollection {const PostPaymentLinksRequestShippingAddressCollection({required this.allowedCountries});
+@immutable final class PostPaymentLinksRequestShippingAddressCollection {const PostPaymentLinksRequestShippingAddressCollection({required this.allowedCountries});
 
 factory PostPaymentLinksRequestShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestShippingAddressCollection(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PostPaymentLinksRequestShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),

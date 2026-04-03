@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_cidr.dart';import 'magic_lan_dhcp_relay.dart';import 'magic_lan_dhcp_server.dart';/// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
-final class MagicLanStaticAddressing {const MagicLanStaticAddressing({required this.address, this.dhcpRelay, this.dhcpServer, this.secondaryAddress, this.virtualAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_cidr.dart';import 'magic_lan_dhcp_relay.dart';import 'magic_lan_dhcp_server.dart';/// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
+@immutable final class MagicLanStaticAddressing {const MagicLanStaticAddressing({required this.address, this.dhcpRelay, this.dhcpServer, this.secondaryAddress, this.virtualAddress, });
 
 factory MagicLanStaticAddressing.fromJson(Map<String, dynamic> json) { return MagicLanStaticAddressing(
   address: MagicCidr.fromJson(json['address'] as String),

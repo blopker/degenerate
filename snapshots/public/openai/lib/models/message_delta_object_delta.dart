@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_image_file_object.dart';import 'message_delta_content_image_url_object.dart';import 'message_delta_content_refusal_object.dart';import 'message_delta_content_text_object.dart';import 'message_delta_object_delta_content.dart';/// The entity that produced the message. One of `user` or `assistant`.
-final class MessageDeltaObjectDeltaRole {const MessageDeltaObjectDeltaRole._(this.value);
+@immutable final class MessageDeltaObjectDeltaRole {const MessageDeltaObjectDeltaRole._(this.value);
 
 factory MessageDeltaObjectDeltaRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaObjectDeltaRole($value)'; } 
  }
 /// The delta containing the fields that have changed on the Message.
-final class MessageDeltaObjectDelta {const MessageDeltaObjectDelta({this.role, this.content, });
+@immutable final class MessageDeltaObjectDelta {const MessageDeltaObjectDelta({this.role, this.content, });
 
 factory MessageDeltaObjectDelta.fromJson(Map<String, dynamic> json) { return MessageDeltaObjectDelta(
   role: json['role'] != null ? MessageDeltaObjectDeltaRole.fromJson(json['role'] as String) : null,

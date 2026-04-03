@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_fleet_fuel_price_data.dart';import 'issuing_authorization_fleet_non_fuel_price_data.dart';import 'issuing_authorization_fleet_tax_data.dart';/// 
-final class IssuingAuthorizationFleetReportedBreakdown {const IssuingAuthorizationFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_fleet_fuel_price_data.dart';import 'issuing_authorization_fleet_non_fuel_price_data.dart';import 'issuing_authorization_fleet_tax_data.dart';/// 
+@immutable final class IssuingAuthorizationFleetReportedBreakdown {const IssuingAuthorizationFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
 factory IssuingAuthorizationFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetReportedBreakdown(
   fuel: json['fuel'] != null ? IssuingAuthorizationFleetFuelPriceData.fromJson(json['fuel'] as Map<String, dynamic>) : null,

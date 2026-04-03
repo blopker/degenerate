@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options_retrieval_boost_by.dart';final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options_retrieval_boost_by.dart';@immutable final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod._(this.value);
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod.fromJson(String json) { return switch (json) {
   'max' => max,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod($value)'; } 
  }
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
-final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode._(this.value);
+@immutable final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode._(this.value);
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(String json) { return switch (json) {
   'exact_match' => exactMatch,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode($value)'; } 
  }
-final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._(this.value);
+@immutable final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._(this.value);
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType.fromJson(String json) { return switch (json) {
   'vector' => vector,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType($value)'; } 
  }
-final class AiSearchInstanceSearchRequestAiSearchOptionsRetrieval {const AiSearchInstanceSearchRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
+@immutable final class AiSearchInstanceSearchRequestAiSearchOptionsRetrieval {const AiSearchInstanceSearchRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceSearchRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),

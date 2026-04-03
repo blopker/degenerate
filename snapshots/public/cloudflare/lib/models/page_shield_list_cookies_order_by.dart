@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The field used to sort returned cookies.
-final class PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned cookies.
+@immutable final class PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy._(this.value);
 
 factory PageShieldListCookiesOrderBy.fromJson(String json) { return switch (json) {
   'first_seen_at' => firstSeenAt,

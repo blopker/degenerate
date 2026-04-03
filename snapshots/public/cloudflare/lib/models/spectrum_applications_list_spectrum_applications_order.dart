@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Application field by which results are ordered.
-final class SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Application field by which results are ordered.
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder._(this.value);
 
 factory SpectrumApplicationsListSpectrumApplicationsOrder.fromJson(String json) { return switch (json) {
   'protocol' => protocol,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersCompletedUploadAssetsResponseResult {const WorkersCompletedUploadAssetsResponseResult({this.jwt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersCompletedUploadAssetsResponseResult {const WorkersCompletedUploadAssetsResponseResult({this.jwt});
 
 factory WorkersCompletedUploadAssetsResponseResult.fromJson(Map<String, dynamic> json) { return WorkersCompletedUploadAssetsResponseResult(
   jwt: json['jwt'] as String?,

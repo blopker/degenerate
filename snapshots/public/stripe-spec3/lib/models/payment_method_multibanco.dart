@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodMultibanco {const PaymentMethodMultibanco();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodMultibanco {const PaymentMethodMultibanco();
 
 factory PaymentMethodMultibanco.fromJson(Map<String, dynamic> json) { return PaymentMethodMultibanco(
 

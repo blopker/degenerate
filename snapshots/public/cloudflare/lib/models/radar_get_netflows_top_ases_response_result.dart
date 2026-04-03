@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_top_ases_response_result_meta.dart';import 'radar_get_netflows_top_ases_response_result_top0.dart';final class RadarGetNetflowsTopAsesResponseResult {const RadarGetNetflowsTopAsesResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_top_ases_response_result_meta.dart';import 'radar_get_netflows_top_ases_response_result_top0.dart';@immutable final class RadarGetNetflowsTopAsesResponseResult {const RadarGetNetflowsTopAsesResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetNetflowsTopAsesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTopAsesResponseResult(
   meta: RadarGetNetflowsTopAsesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

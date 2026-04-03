@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name.dart';import 'access_rule.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessSchemasGroups {const AccessSchemasGroups({this.createdAt, this.exclude, this.id, this.include, this.isDefault, this.name, this.require, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name.dart';import 'access_rule.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessSchemasGroups {const AccessSchemasGroups({this.createdAt, this.exclude, this.id, this.include, this.isDefault, this.name, this.require, this.updatedAt, });
 
 factory AccessSchemasGroups.fromJson(Map<String, dynamic> json) { return AccessSchemasGroups(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,

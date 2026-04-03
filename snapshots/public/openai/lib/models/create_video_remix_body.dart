@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Parameters for remixing an existing generated video.
-final class CreateVideoRemixBody {const CreateVideoRemixBody({required this.prompt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters for remixing an existing generated video.
+@immutable final class CreateVideoRemixBody {const CreateVideoRemixBody({required this.prompt});
 
 factory CreateVideoRemixBody.fromJson(Map<String, dynamic> json) { return CreateVideoRemixBody(
   prompt: json['prompt'] as String,

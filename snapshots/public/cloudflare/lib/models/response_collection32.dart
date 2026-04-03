@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages32.dart';import 'result_info2.dart';final class ResponseCollection32 {const ResponseCollection32({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages32.dart';import 'result_info2.dart';@immutable final class ResponseCollection32 {const ResponseCollection32({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseCollection32.fromJson(Map<String, dynamic> json) { return ResponseCollection32(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages32.fromJson(e as Map<String, dynamic>)).toList(),

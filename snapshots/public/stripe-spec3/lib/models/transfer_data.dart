@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'transfer_data_destination.dart';/// 
-final class TransferData {const TransferData({this.amount, required this.destination, });
+@immutable final class TransferData {const TransferData({required this.destination, this.amount, });
 
 factory TransferData.fromJson(Map<String, dynamic> json) { return TransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

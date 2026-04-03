@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt({this.description, this.quantity, this.total, this.unitCost, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt({this.description, this.quantity, this.total, this.unitCost, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetailsReceipt(
   description: json['description'] as String?,

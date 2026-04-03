@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_gollum_pages.dart';final class WebhookGollum {const WebhookGollum({this.enterprise, this.installation, this.organization, required this.pages, required this.repository, required this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_gollum_pages.dart';@immutable final class WebhookGollum {const WebhookGollum({required this.pages, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookGollum.fromJson(Map<String, dynamic> json) { return WebhookGollum(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

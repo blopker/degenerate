@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceMandateNotificationAcssDebitData {const SourceMandateNotificationAcssDebitData({this.statementDescriptor});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceMandateNotificationAcssDebitData {const SourceMandateNotificationAcssDebitData({this.statementDescriptor});
 
 factory SourceMandateNotificationAcssDebitData.fromJson(Map<String, dynamic> json) { return SourceMandateNotificationAcssDebitData(
   statementDescriptor: json['statement_descriptor'] as String?,

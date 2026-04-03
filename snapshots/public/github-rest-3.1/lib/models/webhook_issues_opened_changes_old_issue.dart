@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_opened_changes_old_issue_assignee.dart';import 'webhook_issues_opened_changes_old_issue_assignees.dart';import 'webhook_issues_opened_changes_old_issue_labels.dart';import 'webhook_issues_opened_changes_old_issue_milestone.dart';import 'webhook_issues_opened_changes_old_issue_performed_via_github_app.dart';import 'webhook_issues_opened_changes_old_issue_pull_request.dart';import 'webhook_issues_opened_changes_old_issue_reactions.dart';import 'webhook_issues_opened_changes_old_issue_user.dart';final class WebhookIssuesOpenedChangesOldIssueActiveLockReason {const WebhookIssuesOpenedChangesOldIssueActiveLockReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_opened_changes_old_issue_assignee.dart';import 'webhook_issues_opened_changes_old_issue_assignees.dart';import 'webhook_issues_opened_changes_old_issue_labels.dart';import 'webhook_issues_opened_changes_old_issue_milestone.dart';import 'webhook_issues_opened_changes_old_issue_performed_via_github_app.dart';import 'webhook_issues_opened_changes_old_issue_pull_request.dart';import 'webhook_issues_opened_changes_old_issue_reactions.dart';import 'webhook_issues_opened_changes_old_issue_user.dart';@immutable final class WebhookIssuesOpenedChangesOldIssueActiveLockReason {const WebhookIssuesOpenedChangesOldIssueActiveLockReason._(this.value);
 
 factory WebhookIssuesOpenedChangesOldIssueActiveLockReason.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssuesOpenedChangesOldIssueActiveLockReason($value)'; } 
  }
 /// How the author is associated with the repository.
-final class WebhookIssuesOpenedChangesOldIssueAuthorAssociation {const WebhookIssuesOpenedChangesOldIssueAuthorAssociation._(this.value);
+@immutable final class WebhookIssuesOpenedChangesOldIssueAuthorAssociation {const WebhookIssuesOpenedChangesOldIssueAuthorAssociation._(this.value);
 
 factory WebhookIssuesOpenedChangesOldIssueAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssuesOpenedChangesOldIssueAuthorAssociation($value)'; } 
  }
 /// State of the issue; either 'open' or 'closed'
-final class WebhookIssuesOpenedChangesOldIssueState {const WebhookIssuesOpenedChangesOldIssueState._(this.value);
+@immutable final class WebhookIssuesOpenedChangesOldIssueState {const WebhookIssuesOpenedChangesOldIssueState._(this.value);
 
 factory WebhookIssuesOpenedChangesOldIssueState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssuesOpenedChangesOldIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final class WebhookIssuesOpenedChangesOldIssue {const WebhookIssuesOpenedChangesOldIssue({this.activeLockReason, this.assignee, this.assignees, this.authorAssociation, this.body, this.closedAt, this.comments, this.commentsUrl, this.createdAt, this.draft, this.eventsUrl, this.htmlUrl, required this.id, this.labels, this.labelsUrl, this.locked, this.milestone, this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, this.reactions, this.repositoryUrl, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason, this.timelineUrl, this.title, this.updatedAt, this.url, this.pinnedComment, this.user, this.type, });
+@immutable final class WebhookIssuesOpenedChangesOldIssue {const WebhookIssuesOpenedChangesOldIssue({required this.number, required this.id, this.closedAt, this.authorAssociation, this.body, this.assignee, this.comments, this.commentsUrl, this.createdAt, this.draft, this.eventsUrl, this.htmlUrl, this.activeLockReason, this.labels, this.labelsUrl, this.locked, this.milestone, this.nodeId, this.assignees, this.performedViaGithubApp, this.pullRequest, this.reactions, this.type, this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason, this.timelineUrl, this.title, this.updatedAt, this.url, this.pinnedComment, this.user, this.repositoryUrl, });
 
 factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpenedChangesOldIssue(
   activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesOpenedChangesOldIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,

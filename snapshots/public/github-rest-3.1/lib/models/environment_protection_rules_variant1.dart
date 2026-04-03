@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wait_timer.dart';final class EnvironmentProtectionRulesVariant1 {const EnvironmentProtectionRulesVariant1({required this.id, required this.nodeId, required this.type, this.waitTimer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wait_timer.dart';@immutable final class EnvironmentProtectionRulesVariant1 {const EnvironmentProtectionRulesVariant1({required this.id, required this.nodeId, required this.type, this.waitTimer, });
 
 factory EnvironmentProtectionRulesVariant1.fromJson(Map<String, dynamic> json) { return EnvironmentProtectionRulesVariant1(
   id: (json['id'] as num).toInt(),

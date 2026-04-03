@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A header from the SIP Invite.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A header from the SIP Invite.
 /// 
-final class WebhookRealtimeCallIncomingDataSipHeaders {const WebhookRealtimeCallIncomingDataSipHeaders({required this.name, required this.value, });
+@immutable final class WebhookRealtimeCallIncomingDataSipHeaders {const WebhookRealtimeCallIncomingDataSipHeaders({required this.name, required this.value, });
 
 factory WebhookRealtimeCallIncomingDataSipHeaders.fromJson(Map<String, dynamic> json) { return WebhookRealtimeCallIncomingDataSipHeaders(
   name: json['name'] as String,

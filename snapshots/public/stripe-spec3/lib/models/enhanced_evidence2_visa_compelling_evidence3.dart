@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2_visa_compelling_evidence3_disputed_transaction.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions.dart';final class EnhancedEvidence2VisaCompellingEvidence3 {const EnhancedEvidence2VisaCompellingEvidence3({this.disputedTransaction, this.priorUndisputedTransactions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2_visa_compelling_evidence3_disputed_transaction.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions.dart';@immutable final class EnhancedEvidence2VisaCompellingEvidence3 {const EnhancedEvidence2VisaCompellingEvidence3({this.disputedTransaction, this.priorUndisputedTransactions, });
 
 factory EnhancedEvidence2VisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompellingEvidence3(
   disputedTransaction: json['disputed_transaction'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction.fromJson(json['disputed_transaction'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'checks_create_request_variant1.dart';import 'checks_create_request_variant2.dart';sealed class ChecksCreateRequest {const ChecksCreateRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checks_create_request_variant1.dart';import 'checks_create_request_variant2.dart';sealed class ChecksCreateRequest {const ChecksCreateRequest();
 
 /// Deserialize from JSON, dispatching on the `status` discriminator.
 factory ChecksCreateRequest.fromJson(Map<String, dynamic> json) { return switch (json['status']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChecksCreateRequest$Unknown; } 
  }
-final class ChecksCreateRequestCompleted extends ChecksCreateRequest {const ChecksCreateRequestCompleted(this.checksCreateRequestVariant1);
+@immutable final class ChecksCreateRequestCompleted extends ChecksCreateRequest {const ChecksCreateRequestCompleted(this.checksCreateRequestVariant1);
 
 factory ChecksCreateRequestCompleted.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestCompleted(ChecksCreateRequestVariant1.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final ChecksCreateRequestVariant1 checksCreateRequestVariant1;
 @override int get hashCode { return checksCreateRequestVariant1.hashCode; } 
 @override String toString() { return 'ChecksCreateRequestCompleted(checksCreateRequestVariant1: $checksCreateRequestVariant1)'; } 
  }
-final class ChecksCreateRequestQueued extends ChecksCreateRequest {const ChecksCreateRequestQueued(this.checksCreateRequestVariant2);
+@immutable final class ChecksCreateRequestQueued extends ChecksCreateRequest {const ChecksCreateRequestQueued(this.checksCreateRequestVariant2);
 
 factory ChecksCreateRequestQueued.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestQueued(ChecksCreateRequestVariant2.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final ChecksCreateRequestVariant2 checksCreateRequestVariant2;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ChecksCreateRequest$Unknown extends ChecksCreateRequest {const ChecksCreateRequest$Unknown(this.json);
+@immutable final class ChecksCreateRequest$Unknown extends ChecksCreateRequest {const ChecksCreateRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

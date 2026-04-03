@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'bank_account.dart';import 'card.dart';import 'deleted_bank_account.dart';import 'deleted_card.dart';import 'payout_application_fee.dart';import 'payout_balance_transaction.dart';import 'payout_destination.dart';import 'payout_failure_balance_transaction.dart';import 'payout_original_payout.dart';import 'payout_reversed_by.dart';import 'payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class PayoutObject {const PayoutObject._(this.value);
+@immutable final class PayoutObject {const PayoutObject._(this.value);
 
 factory PayoutObject.fromJson(String json) { return switch (json) {
   'payout' => payout,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PayoutObject($value)'; } 
  }
 /// If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout.
-final class PayoutReconciliationStatus {const PayoutReconciliationStatus._(this.value);
+@immutable final class PayoutReconciliationStatus {const PayoutReconciliationStatus._(this.value);
 
 factory PayoutReconciliationStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PayoutReconciliationStatus($value)'; } 
  }
 /// Can be `bank_account` or `card`.
-final class PayoutType {const PayoutType._(this.value);
+@immutable final class PayoutType {const PayoutType._(this.value);
 
 factory PayoutType.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 /// industry.
 /// 
 /// Related guide: [Receiving payouts](https://docs.stripe.com/payouts)
-final class Payout {const Payout({required this.amount, this.applicationFee, this.applicationFeeAmount, required this.arrivalDate, required this.automatic, this.balanceTransaction, required this.created, required this.currency, this.description, this.destination, this.failureBalanceTransaction, this.failureCode, this.failureMessage, required this.id, required this.livemode, this.metadata, required this.method, required this.object, this.originalPayout, this.payoutMethod, required this.reconciliationStatus, this.reversedBy, required this.sourceType, this.statementDescriptor, required this.status, this.traceId, required this.type, });
+@immutable final class Payout {const Payout({required this.amount, required this.arrivalDate, required this.automatic, required this.created, required this.currency, required this.id, required this.livemode, required this.method, required this.object, required this.reconciliationStatus, required this.sourceType, required this.status, required this.type, this.applicationFee, this.applicationFeeAmount, this.balanceTransaction, this.description, this.destination, this.failureBalanceTransaction, this.failureCode, this.failureMessage, this.metadata, this.originalPayout, this.payoutMethod, this.reversedBy, this.statementDescriptor, this.traceId, });
 
 factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   amount: (json['amount'] as num).toInt(),

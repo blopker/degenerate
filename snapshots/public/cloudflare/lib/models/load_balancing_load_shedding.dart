@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.
-final class LoadBalancingLoadSheddingDefaultPolicy {const LoadBalancingLoadSheddingDefaultPolicy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.
+@immutable final class LoadBalancingLoadSheddingDefaultPolicy {const LoadBalancingLoadSheddingDefaultPolicy._(this.value);
 
 factory LoadBalancingLoadSheddingDefaultPolicy.fromJson(String json) { return switch (json) {
   'random' => random,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingLoadSheddingDefaultPolicy($value)'; } 
  }
 /// Only the hash policy is supported for existing sessions (to avoid exponential decay).
-final class LoadBalancingLoadSheddingSessionPolicy {const LoadBalancingLoadSheddingSessionPolicy._(this.value);
+@immutable final class LoadBalancingLoadSheddingSessionPolicy {const LoadBalancingLoadSheddingSessionPolicy._(this.value);
 
 factory LoadBalancingLoadSheddingSessionPolicy.fromJson(String json) { return switch (json) {
   'hash' => hash,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingLoadSheddingSessionPolicy($value)'; } 
  }
 /// Configures load shedding policies and percentages for the pool.
-final class LoadBalancingLoadShedding {const LoadBalancingLoadShedding({this.defaultPercent = 0.0, this.defaultPolicy = LoadBalancingLoadSheddingDefaultPolicy.random, this.sessionPercent = 0.0, this.sessionPolicy = LoadBalancingLoadSheddingSessionPolicy.hash, });
+@immutable final class LoadBalancingLoadShedding {const LoadBalancingLoadShedding({this.defaultPercent = 0.0, this.defaultPolicy = LoadBalancingLoadSheddingDefaultPolicy.random, this.sessionPercent = 0.0, this.sessionPolicy = LoadBalancingLoadSheddingSessionPolicy.hash, });
 
 factory LoadBalancingLoadShedding.fromJson(Map<String, dynamic> json) { return LoadBalancingLoadShedding(
   defaultPercent: json.containsKey('default_percent') ? (json['default_percent'] as num).toDouble() : 0.0,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoicesResourceConfirmationSecret {const InvoicesResourceConfirmationSecret({required this.clientSecret, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoicesResourceConfirmationSecret {const InvoicesResourceConfirmationSecret({required this.clientSecret, required this.type, });
 
 factory InvoicesResourceConfirmationSecret.fromJson(Map<String, dynamic> json) { return InvoicesResourceConfirmationSecret(
   clientSecret: json['client_secret'] as String,

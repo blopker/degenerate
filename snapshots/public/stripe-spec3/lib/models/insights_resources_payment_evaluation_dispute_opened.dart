@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reason given by cardholder for dispute.
-final class InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason given by cardholder for dispute.
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason._(this.value);
 
 factory InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(String json) { return switch (json) {
   'account_not_available' => accountNotAvailable,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)'; } 
  }
 /// Dispute opened event details attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationDisputeOpened {const InsightsResourcesPaymentEvaluationDisputeOpened({required this.amount, required this.currency, required this.reason, });
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpened {const InsightsResourcesPaymentEvaluationDisputeOpened({required this.amount, required this.currency, required this.reason, });
 
 factory InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationDisputeOpened(
   amount: (json['amount'] as num).toInt(),

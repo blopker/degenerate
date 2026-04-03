@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSamlGroupRuleSaml {const AccessSamlGroupRuleSaml({required this.attributeName, required this.attributeValue, required this.identityProviderId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSamlGroupRuleSaml {const AccessSamlGroupRuleSaml({required this.attributeName, required this.attributeValue, required this.identityProviderId, });
 
 factory AccessSamlGroupRuleSaml.fromJson(Map<String, dynamic> json) { return AccessSamlGroupRuleSaml(
   attributeName: json['attribute_name'] as String,

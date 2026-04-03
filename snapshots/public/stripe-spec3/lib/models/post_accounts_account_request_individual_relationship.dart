@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_individual_relationship_percent_ownership.dart';final class PostAccountsAccountRequestIndividualRelationship {const PostAccountsAccountRequestIndividualRelationship({this.director, this.executive, this.owner, this.percentOwnership, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_individual_relationship_percent_ownership.dart';@immutable final class PostAccountsAccountRequestIndividualRelationship {const PostAccountsAccountRequestIndividualRelationship({this.director, this.executive, this.owner, this.percentOwnership, this.title, });
 
 factory PostAccountsAccountRequestIndividualRelationship.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestIndividualRelationship(
   director: json['director'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_payment_method_request_collect_config.dart';final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({this.collectConfig, this.expand, required this.paymentIntent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_payment_method_request_collect_config.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({required this.paymentIntent, this.collectConfig, this.expand, });
 
 factory PostTerminalReadersReaderCollectPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
   collectConfig: json['collect_config'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_source.dart';/// [DEPRECATED] Describes the configuration of a pipeline. Use the new streams/sinks/pipelines API instead.
-final class CloudflarePipelinesWorkersPipelinesPipeline {const CloudflarePipelinesWorkersPipelinesPipeline({required this.destination, required this.endpoint, required this.id, required this.name, required this.source, required this.version, });
+@immutable final class CloudflarePipelinesWorkersPipelinesPipeline {const CloudflarePipelinesWorkersPipelinesPipeline({required this.destination, required this.endpoint, required this.id, required this.name, required this.source, required this.version, });
 
 factory CloudflarePipelinesWorkersPipelinesPipeline.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipeline(
   destination: CloudflarePipelinesWorkersPipelinesPipelineDestination.fromJson(json['destination'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesMirageValue {const ZonesMirageValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesMirageValue {const ZonesMirageValue._(this.value);
 
 factory ZonesMirageValue.fromJson(String json) { return switch (json) {
   'on' => $on,

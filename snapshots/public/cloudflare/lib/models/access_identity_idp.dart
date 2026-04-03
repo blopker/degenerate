@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessIdentityIdp {const AccessIdentityIdp({this.id, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessIdentityIdp {const AccessIdentityIdp({this.id, this.type, });
 
 factory AccessIdentityIdp.fromJson(Map<String, dynamic> json) { return AccessIdentityIdp(
   id: json['id'] as String?,

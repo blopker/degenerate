@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_removals_products_price.dart';import 'climate_supplier.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ClimateProductObject {const ClimateProductObject._(this.value);
+@immutable final class ClimateProductObject {const ClimateProductObject._(this.value);
 
 factory ClimateProductObject.fromJson(String json) { return switch (json) {
   'climate.product' => climateProduct,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Climate product represents a type of carbon removal unit available for reservation.
 /// You can retrieve it to see the current price and availability.
-final class ClimateProduct {const ClimateProduct({required this.created, required this.currentPricesPerMetricTon, this.deliveryYear, required this.id, required this.livemode, required this.metricTonsAvailable, required this.name, required this.object, required this.suppliers, });
+@immutable final class ClimateProduct {const ClimateProduct({required this.created, required this.currentPricesPerMetricTon, required this.id, required this.livemode, required this.metricTonsAvailable, required this.name, required this.object, required this.suppliers, this.deliveryYear, });
 
 factory ClimateProduct.fromJson(Map<String, dynamic> json) { return ClimateProduct(
   created: (json['created'] as num).toInt(),

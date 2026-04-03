@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker has exceeded the maximum number of tags allowed.
-final class WorkersErrorWorkerTagLimitCode {const WorkersErrorWorkerTagLimitCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker has exceeded the maximum number of tags allowed.
+@immutable final class WorkersErrorWorkerTagLimitCode {const WorkersErrorWorkerTagLimitCode._(this.value);
 
 factory WorkersErrorWorkerTagLimitCode.fromJson(int json) { return switch (json) {
   100103 => $100103,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerTagLimitCode($value)'; } 
  }
-final class WorkersErrorWorkerTagLimit {const WorkersErrorWorkerTagLimit({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerTagLimit {const WorkersErrorWorkerTagLimit({required this.code, required this.message, });
 
 factory WorkersErrorWorkerTagLimit.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerTagLimit(
   code: WorkersErrorWorkerTagLimitCode.fromJson((json['code'] as num).toInt()),

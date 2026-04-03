@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetInvoicesInvoiceRequest {const GetInvoicesInvoiceRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicesInvoiceRequest {const GetInvoicesInvoiceRequest();
 
 factory GetInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return GetInvoicesInvoiceRequest(
 

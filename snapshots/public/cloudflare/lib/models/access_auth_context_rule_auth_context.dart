@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessAuthContextRuleAuthContext {const AccessAuthContextRuleAuthContext({required this.acId, required this.id, required this.identityProviderId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAuthContextRuleAuthContext {const AccessAuthContextRuleAuthContext({required this.acId, required this.id, required this.identityProviderId, });
 
 factory AccessAuthContextRuleAuthContext.fromJson(Map<String, dynamic> json) { return AccessAuthContextRuleAuthContext(
   acId: json['ac_id'] as String,

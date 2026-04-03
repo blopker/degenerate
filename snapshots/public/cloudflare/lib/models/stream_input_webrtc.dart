@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The WebRTC URL you provide to the broadcaster, which they stream live video to.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The WebRTC URL you provide to the broadcaster, which they stream live video to.
 extension type const StreamInputWebrtcUrl(String value) {
 factory StreamInputWebrtcUrl.fromJson(String json) => StreamInputWebrtcUrl(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Details for streaming to a live input using WebRTC.
-final class StreamInputWebrtc {const StreamInputWebrtc({this.url});
+@immutable final class StreamInputWebrtc {const StreamInputWebrtc({this.url});
 
 factory StreamInputWebrtc.fromJson(Map<String, dynamic> json) { return StreamInputWebrtc(
   url: json['url'] != null ? StreamInputWebrtcUrl.fromJson(json['url'] as String) : null,

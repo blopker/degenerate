@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the image generation call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the image generation call.
 /// 
-final class ImageGenToolCallStatus {const ImageGenToolCallStatus._(this.value);
+@immutable final class ImageGenToolCallStatus {const ImageGenToolCallStatus._(this.value);
 
 factory ImageGenToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An image generation request made by the model.
 /// 
-final class ImageGenToolCall {const ImageGenToolCall({required this.type, required this.id, required this.status, required this.result, });
+@immutable final class ImageGenToolCall {const ImageGenToolCall({required this.type, required this.id, required this.status, required this.result, });
 
 factory ImageGenToolCall.fromJson(Map<String, dynamic> json) { return ImageGenToolCall(
   type: json['type'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'canceled_additional_documentation.dart';import 'canceled_canceled_at.dart';import 'canceled_cancellation_policy_provided.dart';import 'canceled_cancellation_reason.dart';import 'canceled_expected_at.dart';import 'canceled_explanation.dart';import 'canceled_product_description.dart';import 'canceled_returned_at.dart';final class CanceledProductType {const CanceledProductType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'canceled_additional_documentation.dart';import 'canceled_canceled_at.dart';import 'canceled_cancellation_policy_provided.dart';import 'canceled_cancellation_reason.dart';import 'canceled_expected_at.dart';import 'canceled_explanation.dart';import 'canceled_product_description.dart';import 'canceled_returned_at.dart';@immutable final class CanceledProductType {const CanceledProductType._(this.value);
 
 factory CanceledProductType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CanceledProductType($value)'; } 
  }
-final class CanceledReturnStatus {const CanceledReturnStatus._(this.value);
+@immutable final class CanceledReturnStatus {const CanceledReturnStatus._(this.value);
 
 factory CanceledReturnStatus.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CanceledReturnStatus($value)'; } 
  }
-final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
+@immutable final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory Canceled.fromJson(Map<String, dynamic> json) { return Canceled(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => CanceledAdditionalDocumentationVariant2.fromJson(v as String),) : null,

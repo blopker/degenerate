@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_payload_log_masking_level.dart';final class DlpPayloadLogSetting {const DlpPayloadLogSetting({this.maskingLevel, this.publicKey, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';@immutable final class DlpPayloadLogSetting {const DlpPayloadLogSetting({required this.updatedAt, this.maskingLevel, this.publicKey, });
 
 factory DlpPayloadLogSetting.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSetting(
   maskingLevel: json['masking_level'] != null ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : null,

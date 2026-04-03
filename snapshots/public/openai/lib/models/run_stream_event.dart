@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_stream_event_thread_run_cancelled.dart';import 'run_stream_event_thread_run_cancelling.dart';import 'run_stream_event_thread_run_completed.dart';import 'run_stream_event_thread_run_created.dart';import 'run_stream_event_thread_run_expired.dart';import 'run_stream_event_thread_run_failed.dart';import 'run_stream_event_thread_run_in_progress.dart';import 'run_stream_event_thread_run_incomplete.dart';import 'run_stream_event_thread_run_queued.dart';import 'run_stream_event_thread_run_requires_action.dart';/// A value that is one of: `RunStreamEventThreadRunCreated`, `RunStreamEventThreadRunQueued`, `RunStreamEventThreadRunInProgress`, `RunStreamEventThreadRunRequiresAction`, `RunStreamEventThreadRunCompleted`, `RunStreamEventThreadRunIncomplete`, `RunStreamEventThreadRunFailed`, `RunStreamEventThreadRunCancelling`, `RunStreamEventThreadRunCancelled`, `RunStreamEventThreadRunExpired`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_stream_event_thread_run_cancelled.dart';import 'run_stream_event_thread_run_cancelling.dart';import 'run_stream_event_thread_run_completed.dart';import 'run_stream_event_thread_run_created.dart';import 'run_stream_event_thread_run_expired.dart';import 'run_stream_event_thread_run_failed.dart';import 'run_stream_event_thread_run_in_progress.dart';import 'run_stream_event_thread_run_incomplete.dart';import 'run_stream_event_thread_run_queued.dart';import 'run_stream_event_thread_run_requires_action.dart';/// A value that is one of: `RunStreamEventThreadRunCreated`, `RunStreamEventThreadRunQueued`, `RunStreamEventThreadRunInProgress`, `RunStreamEventThreadRunRequiresAction`, `RunStreamEventThreadRunCompleted`, `RunStreamEventThreadRunIncomplete`, `RunStreamEventThreadRunFailed`, `RunStreamEventThreadRunCancelling`, `RunStreamEventThreadRunCancelled`, `RunStreamEventThreadRunExpired`.
 sealed class RunStreamEvent {const RunStreamEvent();
 
 factory RunStreamEvent.fromJson(Map<String, dynamic> json) {   if (RunStreamEventThreadRunCreated.canParse(json)) {
@@ -39,7 +39,7 @@ factory RunStreamEvent.fromJson(Map<String, dynamic> json) {   if (RunStreamEven
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class RunStreamEventRunStreamEventThreadRunCreated extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCreated(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunCreated extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCreated(this._value);
 
 final RunStreamEventThreadRunCreated _value;
 
@@ -49,7 +49,7 @@ final RunStreamEventThreadRunCreated _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCreated($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunQueued extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunQueued(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunQueued extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunQueued(this._value);
 
 final RunStreamEventThreadRunQueued _value;
 
@@ -59,7 +59,7 @@ final RunStreamEventThreadRunQueued _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunQueued($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunInProgress extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunInProgress(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunInProgress extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunInProgress(this._value);
 
 final RunStreamEventThreadRunInProgress _value;
 
@@ -69,7 +69,7 @@ final RunStreamEventThreadRunInProgress _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunInProgress($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunRequiresAction extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunRequiresAction(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunRequiresAction extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunRequiresAction(this._value);
 
 final RunStreamEventThreadRunRequiresAction _value;
 
@@ -79,7 +79,7 @@ final RunStreamEventThreadRunRequiresAction _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunRequiresAction($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunCompleted extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCompleted(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunCompleted extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCompleted(this._value);
 
 final RunStreamEventThreadRunCompleted _value;
 
@@ -89,7 +89,7 @@ final RunStreamEventThreadRunCompleted _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCompleted($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunIncomplete extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunIncomplete(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunIncomplete extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunIncomplete(this._value);
 
 final RunStreamEventThreadRunIncomplete _value;
 
@@ -99,7 +99,7 @@ final RunStreamEventThreadRunIncomplete _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunIncomplete($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunFailed extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunFailed(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunFailed extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunFailed(this._value);
 
 final RunStreamEventThreadRunFailed _value;
 
@@ -109,7 +109,7 @@ final RunStreamEventThreadRunFailed _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunFailed($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunCancelling extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCancelling(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunCancelling extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCancelling(this._value);
 
 final RunStreamEventThreadRunCancelling _value;
 
@@ -119,7 +119,7 @@ final RunStreamEventThreadRunCancelling _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCancelling($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunCancelled extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCancelled(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunCancelled extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCancelled(this._value);
 
 final RunStreamEventThreadRunCancelled _value;
 
@@ -129,7 +129,7 @@ final RunStreamEventThreadRunCancelled _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCancelled($_value)'; } 
  }
-final class RunStreamEventRunStreamEventThreadRunExpired extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunExpired(this._value);
+@immutable final class RunStreamEventRunStreamEventThreadRunExpired extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunExpired(this._value);
 
 final RunStreamEventThreadRunExpired _value;
 
@@ -140,7 +140,7 @@ final RunStreamEventThreadRunExpired _value;
 @override String toString() { return 'RunStreamEvent.runStreamEventThreadRunExpired($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class RunStreamEvent$Unknown extends RunStreamEvent {const RunStreamEvent$Unknown(this._value);
+@immutable final class RunStreamEvent$Unknown extends RunStreamEvent {const RunStreamEvent$Unknown(this._value);
 
 final dynamic _value;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A group of permissions.
-final class IamMemberPermissionGroup {const IamMemberPermissionGroup({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of permissions.
+@immutable final class IamMemberPermissionGroup {const IamMemberPermissionGroup({required this.id});
 
 factory IamMemberPermissionGroup.fromJson(Map<String, dynamic> json) { return IamMemberPermissionGroup(
   id: json['id'] as String,

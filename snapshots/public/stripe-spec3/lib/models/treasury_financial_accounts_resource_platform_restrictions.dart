@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Restricts all inbound money movement.
-final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restricts all inbound money movement.
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._(this.value);
 
 factory TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows($value)'; } 
  }
 /// Restricts all outbound money movement.
-final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._(this.value);
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._(this.value);
 
 factory TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows($value)'; } 
  }
 /// Restrictions that a Connect Platform has placed on this FinancialAccount.
-final class TreasuryFinancialAccountsResourcePlatformRestrictions {const TreasuryFinancialAccountsResourcePlatformRestrictions({this.inboundFlows, this.outboundFlows, });
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictions {const TreasuryFinancialAccountsResourcePlatformRestrictions({this.inboundFlows, this.outboundFlows, });
 
 factory TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourcePlatformRestrictions(
   inboundFlows: json['inbound_flows'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows.fromJson(json['inbound_flows'] as String) : null,

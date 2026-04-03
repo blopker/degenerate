@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_r2_action.dart';final class R2QueuesConfigRules {const R2QueuesConfigRules({required this.actions, this.description, this.prefix, this.suffix, this.createdAt, this.ruleId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_r2_action.dart';@immutable final class R2QueuesConfigRules {const R2QueuesConfigRules({required this.actions, this.description, this.prefix, this.suffix, this.createdAt, this.ruleId, });
 
 factory R2QueuesConfigRules.fromJson(Map<String, dynamic> json) { return R2QueuesConfigRules(
   actions: (json['actions'] as List<dynamic>).map((e) => R2R2Action.fromJson(e as String)).toList(),

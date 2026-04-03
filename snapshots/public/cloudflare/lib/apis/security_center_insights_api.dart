@@ -38,52 +38,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 if (page != null) {
@@ -165,52 +165,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 
@@ -243,52 +243,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 
@@ -321,52 +321,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 
@@ -399,52 +399,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 if (page != null) {
@@ -504,52 +504,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 
@@ -582,52 +582,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 
@@ -660,52 +660,52 @@ if (dismissed != null) {
 }
 if (issueClass != null) {
 for (final item in issueClass) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class', value: item.toJson()));
 }
 }
 if (issueType != null) {
 for (final item in issueType) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type', value: item.toJson()));
 }
 }
 if (product != null) {
 for (final item in product) {
-  queryParametersList.add(ApiQueryParameter(name: 'product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product', value: item));
 }
 }
 if (severity != null) {
 for (final item in severity) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity', value: item.toJson()));
 }
 }
 if (subject != null) {
 for (final item in subject) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject', value: item.toJson()));
 }
 }
 if (issueClassneq != null) {
 for (final item in issueClassneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_class~neq', value: item.toJson()));
 }
 }
 if (issueTypeneq != null) {
 for (final item in issueTypeneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'issue_type~neq', value: item.toJson()));
 }
 }
 if (productneq != null) {
 for (final item in productneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'product~neq', value: item));
 }
 }
 if (severityneq != null) {
 for (final item in severityneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'severity~neq', value: item.toJson()));
 }
 }
 if (subjectneq != null) {
 for (final item in subjectneq) {
-  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'subject~neq', value: item.toJson()));
 }
 }
 

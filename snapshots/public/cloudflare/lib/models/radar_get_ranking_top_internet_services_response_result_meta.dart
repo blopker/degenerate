@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_top_internet_services_response_result_meta_confidence_info.dart';import 'radar_get_ranking_top_internet_services_response_result_meta_date_range.dart';import 'radar_get_ranking_top_internet_services_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetRankingTopInternetServicesResponseResultMetaNormalization {const RadarGetRankingTopInternetServicesResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetRankingTopInternetServicesResponseResultMetaNormalization {const RadarGetRankingTopInternetServicesResponseResultMetaNormalization._(this.value);
 
 factory RadarGetRankingTopInternetServicesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetRankingTopInternetServicesResponseResultMetaNormalization($value)'; } 
  }
-final class RadarGetRankingTopInternetServicesResponseResultMeta {const RadarGetRankingTopInternetServicesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetRankingTopInternetServicesResponseResultMeta {const RadarGetRankingTopInternetServicesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetRankingTopInternetServicesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopInternetServicesResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetRankingTopInternetServicesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesHealthCheckDomain {const PagesHealthCheckDomain({this.host, this.uri, this.nameservers, this.dnsResolves, this.isProxied, this.isCloudflareIp, this.isFastlyIp, this.isOldIpAddress, this.isARecord, this.hasCnameRecord, this.hasMxRecordsPresent, this.isValidDomain, this.isApexDomain, this.shouldBeARecord, this.isCnameToGithubUserDomain, this.isCnameToPagesDotGithubDotCom, this.isCnameToFastly, this.isPointedToGithubPagesIp, this.isNonGithubPagesIpPresent, this.isPagesDomain, this.isServedByPages, this.isValid, this.reason, this.respondsToHttps, this.enforcesHttps, this.httpsError, this.isHttpsEligible, this.caaError, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesHealthCheckDomain {const PagesHealthCheckDomain({this.host, this.uri, this.nameservers, this.dnsResolves, this.isProxied, this.isCloudflareIp, this.isFastlyIp, this.isOldIpAddress, this.isARecord, this.hasCnameRecord, this.hasMxRecordsPresent, this.isValidDomain, this.isApexDomain, this.shouldBeARecord, this.isCnameToGithubUserDomain, this.isCnameToPagesDotGithubDotCom, this.isCnameToFastly, this.isPointedToGithubPagesIp, this.isNonGithubPagesIpPresent, this.isPagesDomain, this.isServedByPages, this.isValid, this.reason, this.respondsToHttps, this.enforcesHttps, this.httpsError, this.isHttpsEligible, this.caaError, });
 
 factory PagesHealthCheckDomain.fromJson(Map<String, dynamic> json) { return PagesHealthCheckDomain(
   host: json['host'] as String?,

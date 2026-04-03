@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'get_accounts_account_external_accounts_response_data.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetAccountsAccountExternalAccountsResponseObject {const GetAccountsAccountExternalAccountsResponseObject._(this.value);
+@immutable final class GetAccountsAccountExternalAccountsResponseObject {const GetAccountsAccountExternalAccountsResponseObject._(this.value);
 
 factory GetAccountsAccountExternalAccountsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetAccountsAccountExternalAccountsResponseObject($value)'; } 
  }
 /// 
-final class GetAccountsAccountExternalAccountsResponse {const GetAccountsAccountExternalAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetAccountsAccountExternalAccountsResponse {const GetAccountsAccountExternalAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetAccountsAccountExternalAccountsResponse.fromJson(Map<String, dynamic> json) { return GetAccountsAccountExternalAccountsResponse(
   data: (json['data'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateRevolutPay {const MandateRevolutPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateRevolutPay {const MandateRevolutPay();
 
 factory MandateRevolutPay.fromJson(Map<String, dynamic> json) { return MandateRevolutPay(
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_old_validation_enabled.dart';final class ShieldSchemaValidationEnableValidationForASchemaRequest {const ShieldSchemaValidationEnableValidationForASchemaRequest({this.validationEnabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_validation_enabled.dart';@immutable final class ShieldSchemaValidationEnableValidationForASchemaRequest {const ShieldSchemaValidationEnableValidationForASchemaRequest({this.validationEnabled});
 
 factory ShieldSchemaValidationEnableValidationForASchemaRequest.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationEnableValidationForASchemaRequest(
   validationEnabled: json['validation_enabled'] != null ? ShieldOldValidationEnabled.fromJson(json['validation_enabled'] as bool) : null,

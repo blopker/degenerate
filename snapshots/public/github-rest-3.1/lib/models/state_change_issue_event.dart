@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'simple_user.dart';/// State Change Issue Event
-final class StateChangeIssueEvent {const StateChangeIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.stateReason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// State Change Issue Event
+@immutable final class StateChangeIssueEvent {const StateChangeIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.stateReason, });
 
 factory StateChangeIssueEvent.fromJson(Map<String, dynamic> json) { return StateChangeIssueEvent(
   id: (json['id'] as num).toInt(),

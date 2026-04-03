@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_properties.dart';import 'email_rules_response_collection_result_info.dart';final class EmailRulesResponseCollection {const EmailRulesResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_properties.dart';import 'email_rules_response_collection_result_info.dart';@immutable final class EmailRulesResponseCollection {const EmailRulesResponseCollection({this.result, this.resultInfo, });
 
 factory EmailRulesResponseCollection.fromJson(Map<String, dynamic> json) { return EmailRulesResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => EmailRuleProperties.fromJson(e as Map<String, dynamic>)).toList(),

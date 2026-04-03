@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PersonalAccessTokenRequestRepositories {const PersonalAccessTokenRequestRepositories({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonalAccessTokenRequestRepositories {const PersonalAccessTokenRequestRepositories({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
 
 factory PersonalAccessTokenRequestRepositories.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestRepositories(
   fullName: json['full_name'] as String,

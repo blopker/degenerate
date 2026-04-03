@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest {const ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest({required this.labels});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest {const ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest({required this.labels});
 
 factory ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest.fromJson(Map<String, dynamic> json) { return ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest(
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingMeterResourceBillingMeterValue {const BillingMeterResourceBillingMeterValue({required this.eventPayloadKey});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingMeterResourceBillingMeterValue {const BillingMeterResourceBillingMeterValue({required this.eventPayloadKey});
 
 factory BillingMeterResourceBillingMeterValue.fromJson(Map<String, dynamic> json) { return BillingMeterResourceBillingMeterValue(
   eventPayloadKey: json['event_payload_key'] as String,

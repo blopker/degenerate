@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0({required this.notSupported, required this.supported, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0({required this.notSupported, required this.supported, required this.timestamps, });
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0(
   notSupported: (json['NOT_SUPPORTED'] as List<dynamic>).map((e) => e as String).toList(),

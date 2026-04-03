@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_fallback_domain.dart';final class TeamsDevicesFallbackDomainResponseCollection {const TeamsDevicesFallbackDomainResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_fallback_domain.dart';@immutable final class TeamsDevicesFallbackDomainResponseCollection {const TeamsDevicesFallbackDomainResponseCollection({this.result});
 
 factory TeamsDevicesFallbackDomainResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesFallbackDomainResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesFallbackDomain.fromJson(e as Map<String, dynamic>)).toList(),

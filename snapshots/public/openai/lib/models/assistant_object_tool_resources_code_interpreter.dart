@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AssistantObjectToolResourcesCodeInterpreter {const AssistantObjectToolResourcesCodeInterpreter({this.fileIds = const []});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantObjectToolResourcesCodeInterpreter {const AssistantObjectToolResourcesCodeInterpreter({this.fileIds = const []});
 
 factory AssistantObjectToolResourcesCodeInterpreter.fromJson(Map<String, dynamic> json) { return AssistantObjectToolResourcesCodeInterpreter(
   fileIds: json.containsKey('file_ids') ? (json['file_ids'] as List<dynamic>).map((e) => e as String).toList() : const [],

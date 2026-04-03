@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_token_base.dart';final class IamCollectionTokensResponse {const IamCollectionTokensResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_token_base.dart';@immutable final class IamCollectionTokensResponse {const IamCollectionTokensResponse({this.result});
 
 factory IamCollectionTokensResponse.fromJson(Map<String, dynamic> json) { return IamCollectionTokensResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamTokenBase.fromJson(e as Map<String, dynamic>)).toList(),

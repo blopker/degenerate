@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-final class ActionsUpdateOrgVariableRequestVisibility {const ActionsUpdateOrgVariableRequestVisibility._(this.value);
+@immutable final class ActionsUpdateOrgVariableRequestVisibility {const ActionsUpdateOrgVariableRequestVisibility._(this.value);
 
 factory ActionsUpdateOrgVariableRequestVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActionsUpdateOrgVariableRequestVisibility($value)'; } 
  }
-final class ActionsUpdateOrgVariableRequest {const ActionsUpdateOrgVariableRequest({this.name, this.value, this.visibility, this.selectedRepositoryIds, });
+@immutable final class ActionsUpdateOrgVariableRequest {const ActionsUpdateOrgVariableRequest({this.name, this.value, this.visibility, this.selectedRepositoryIds, });
 
 factory ActionsUpdateOrgVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateOrgVariableRequest(
   name: json['name'] as String?,

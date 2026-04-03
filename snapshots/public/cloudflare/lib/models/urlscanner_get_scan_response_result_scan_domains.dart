@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response_result_scan_domains_example_com.dart';final class UrlscannerGetScanResponseResultScanDomains {const UrlscannerGetScanResponseResultScanDomains({this.exampleCom});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com.dart';@immutable final class UrlscannerGetScanResponseResultScanDomains {const UrlscannerGetScanResponseResultScanDomains({this.exampleCom});
 
 factory UrlscannerGetScanResponseResultScanDomains.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanDomains(
   exampleCom: json['example.com'] != null ? UrlscannerGetScanResponseResultScanDomainsExampleCom.fromJson(json['example.com'] as Map<String, dynamic>) : null,

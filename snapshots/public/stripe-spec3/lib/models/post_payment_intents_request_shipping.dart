@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_request_shipping_address.dart';/// Shipping information for this PaymentIntent.
-final class PostPaymentIntentsRequestShipping {const PostPaymentIntentsRequestShipping({required this.address, this.carrier, required this.name, this.phone, this.trackingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_shipping_address.dart';/// Shipping information for this PaymentIntent.
+@immutable final class PostPaymentIntentsRequestShipping {const PostPaymentIntentsRequestShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 
 factory PostPaymentIntentsRequestShipping.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestShipping(
   address: PostPaymentIntentsRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),

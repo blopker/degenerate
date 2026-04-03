@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_records_report_payment_request_shipping_details_address.dart';/// Shipping information for this payment.
-final class PostPaymentRecordsReportPaymentRequestShippingDetails {const PostPaymentRecordsReportPaymentRequestShippingDetails({this.address, this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_report_payment_request_shipping_details_address.dart';/// Shipping information for this payment.
+@immutable final class PostPaymentRecordsReportPaymentRequestShippingDetails {const PostPaymentRecordsReportPaymentRequestShippingDetails({this.address, this.name, this.phone, });
 
 factory PostPaymentRecordsReportPaymentRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestShippingDetails(
   address: json['address'] != null ? PostPaymentRecordsReportPaymentRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

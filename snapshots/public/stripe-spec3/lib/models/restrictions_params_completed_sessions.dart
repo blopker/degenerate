@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RestrictionsParamsCompletedSessions {const RestrictionsParamsCompletedSessions({required this.limit});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RestrictionsParamsCompletedSessions {const RestrictionsParamsCompletedSessions({required this.limit});
 
 factory RestrictionsParamsCompletedSessions.fromJson(Map<String, dynamic> json) { return RestrictionsParamsCompletedSessions(
   limit: (json['limit'] as num).toInt(),

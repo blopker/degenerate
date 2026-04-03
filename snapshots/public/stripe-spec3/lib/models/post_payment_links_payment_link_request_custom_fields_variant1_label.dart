@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1LabelType {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1LabelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1LabelType {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1LabelType._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1LabelType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1LabelType($value)'; } 
  }
-final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label({required this.custom, required this.type, });
+@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label({required this.custom, required this.type, });
 
 factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label(
   custom: json['custom'] as String,

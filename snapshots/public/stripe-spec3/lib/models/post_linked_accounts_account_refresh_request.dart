@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostLinkedAccountsAccountRefreshRequestFeatures {const PostLinkedAccountsAccountRefreshRequestFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostLinkedAccountsAccountRefreshRequestFeatures {const PostLinkedAccountsAccountRefreshRequestFeatures._(this.value);
 
 factory PostLinkedAccountsAccountRefreshRequestFeatures.fromJson(String json) { return switch (json) {
   'balance' => balance,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostLinkedAccountsAccountRefreshRequestFeatures($value)'; } 
  }
-final class PostLinkedAccountsAccountRefreshRequest {const PostLinkedAccountsAccountRefreshRequest({this.expand, required this.features, });
+@immutable final class PostLinkedAccountsAccountRefreshRequest {const PostLinkedAccountsAccountRefreshRequest({required this.features, this.expand, });
 
 factory PostLinkedAccountsAccountRefreshRequest.fromJson(Map<String, dynamic> json) { return PostLinkedAccountsAccountRefreshRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

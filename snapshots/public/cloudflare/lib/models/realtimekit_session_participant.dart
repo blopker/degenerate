@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitSessionParticipant {const RealtimekitSessionParticipant({required this.createdAt, this.email, required this.id, this.name, this.picture, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitSessionParticipant {const RealtimekitSessionParticipant({required this.createdAt, required this.id, required this.updatedAt, this.email, this.name, this.picture, });
 
 factory RealtimekitSessionParticipant.fromJson(Map<String, dynamic> json) { return RealtimekitSessionParticipant(
   createdAt: json['created_at'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IamResultInfo {const IamResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamResultInfo {const IamResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory IamResultInfo.fromJson(Map<String, dynamic> json) { return IamResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'input_audio_input_audio.dart';/// The type of the input item. Always `input_audio`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_audio_input_audio.dart';/// The type of the input item. Always `input_audio`.
 /// 
-final class InputAudioType {const InputAudioType._(this.value);
+@immutable final class InputAudioType {const InputAudioType._(this.value);
 
 factory InputAudioType.fromJson(String json) { return switch (json) {
   'input_audio' => inputAudio,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An audio input to the model.
 /// 
-final class InputAudio {const InputAudio({required this.type, required this.inputAudio, });
+@immutable final class InputAudio {const InputAudio({required this.type, required this.inputAudio, });
 
 factory InputAudio.fromJson(Map<String, dynamic> json) { return InputAudio(
   type: InputAudioType.fromJson(json['type'] as String),

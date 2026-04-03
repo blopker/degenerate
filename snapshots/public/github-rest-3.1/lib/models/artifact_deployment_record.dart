@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ArtifactDeploymentRecordRuntimeRisks {const ArtifactDeploymentRecordRuntimeRisks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactDeploymentRecordRuntimeRisks {const ArtifactDeploymentRecordRuntimeRisks._(this.value);
 
 factory ArtifactDeploymentRecordRuntimeRisks.fromJson(String json) { return switch (json) {
   'critical-resource' => criticalResource,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ArtifactDeploymentRecordRuntimeRisks($value)'; } 
  }
 /// Artifact Metadata Deployment Record
-final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId, });
+@immutable final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId, });
 
 factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return ArtifactDeploymentRecord(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

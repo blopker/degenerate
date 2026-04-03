@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryAdvisorySubmission {const RepositoryAdvisorySubmission({required this.accepted});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryAdvisorySubmission {const RepositoryAdvisorySubmission({required this.accepted});
 
 factory RepositoryAdvisorySubmission.fromJson(Map<String, dynamic> json) { return RepositoryAdvisorySubmission(
   accepted: json['accepted'] as bool,

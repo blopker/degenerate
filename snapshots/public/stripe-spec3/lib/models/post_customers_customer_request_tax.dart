@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_request_tax_ip_address.dart';final class PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_request_tax_ip_address.dart';@immutable final class PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation._(this.value);
 
 factory PostCustomersCustomerRequestTaxValidateLocation.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCustomersCustomerRequestTaxValidateLocation($value)'; } 
  }
 /// Tax details about the customer.
-final class PostCustomersCustomerRequestTax {const PostCustomersCustomerRequestTax({this.ipAddress, this.validateLocation, });
+@immutable final class PostCustomersCustomerRequestTax {const PostCustomersCustomerRequestTax({this.ipAddress, this.validateLocation, });
 
 factory PostCustomersCustomerRequestTax.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestTax(
   ipAddress: json['ip_address'] != null ? OneOf2.parse(json['ip_address'], fromA: (v) => v as String, fromB: (v) => PostCustomersCustomerRequestTaxIpAddressVariant2.fromJson(v as String),) : null,

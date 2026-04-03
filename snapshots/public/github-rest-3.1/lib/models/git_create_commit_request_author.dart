@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
-final class GitCreateCommitRequestAuthor {const GitCreateCommitRequestAuthor({required this.name, required this.email, this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
+@immutable final class GitCreateCommitRequestAuthor {const GitCreateCommitRequestAuthor({required this.name, required this.email, this.date, });
 
 factory GitCreateCommitRequestAuthor.fromJson(Map<String, dynamic> json) { return GitCreateCommitRequestAuthor(
   name: json['name'] as String,

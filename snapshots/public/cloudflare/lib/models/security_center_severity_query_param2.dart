@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityCenterSeverityQueryParam2 {const SecurityCenterSeverityQueryParam2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterSeverityQueryParam2 {const SecurityCenterSeverityQueryParam2._(this.value);
 
 factory SecurityCenterSeverityQueryParam2.fromJson(String json) { return switch (json) {
   'low' => low,

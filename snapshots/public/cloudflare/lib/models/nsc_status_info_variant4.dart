@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NscStatusInfoVariant4State {const NscStatusInfoVariant4State._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscStatusInfoVariant4State {const NscStatusInfoVariant4State._(this.value);
 
 factory NscStatusInfoVariant4State.fromJson(String json) { return switch (json) {
   'Healthy' => healthy,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'NscStatusInfoVariant4State($value)'; } 
  }
-final class NscStatusInfoVariant4 {const NscStatusInfoVariant4({required this.state});
+@immutable final class NscStatusInfoVariant4 {const NscStatusInfoVariant4({required this.state});
 
 factory NscStatusInfoVariant4.fromJson(Map<String, dynamic> json) { return NscStatusInfoVariant4(
   state: NscStatusInfoVariant4State.fromJson(json['state'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The ACH network code that resulted in this block.
-final class PaymentMethodUsBankAccountBlockedNetworkCode {const PaymentMethodUsBankAccountBlockedNetworkCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ACH network code that resulted in this block.
+@immutable final class PaymentMethodUsBankAccountBlockedNetworkCode {const PaymentMethodUsBankAccountBlockedNetworkCode._(this.value);
 
 factory PaymentMethodUsBankAccountBlockedNetworkCode.fromJson(String json) { return switch (json) {
   'R02' => r02,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodUsBankAccountBlockedNetworkCode($value)'; } 
  }
 /// The reason why this PaymentMethod's fingerprint has been blocked
-final class PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason._(this.value);
+@immutable final class PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason._(this.value);
 
 factory PaymentMethodUsBankAccountBlockedReason.fromJson(String json) { return switch (json) {
   'bank_account_closed' => bankAccountClosed,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodUsBankAccountBlockedReason($value)'; } 
  }
 /// 
-final class PaymentMethodUsBankAccountBlocked {const PaymentMethodUsBankAccountBlocked({this.networkCode, this.reason, });
+@immutable final class PaymentMethodUsBankAccountBlocked {const PaymentMethodUsBankAccountBlocked({this.networkCode, this.reason, });
 
 factory PaymentMethodUsBankAccountBlocked.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccountBlocked(
   networkCode: json['network_code'] != null ? PaymentMethodUsBankAccountBlockedNetworkCode.fromJson(json['network_code'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_security_configuration.dart';/// The attachment status of the code security configuration on the repository.
-final class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_security_configuration.dart';/// The attachment status of the code security configuration on the repository.
+@immutable final class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus._(this.value);
 
 factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) { return switch (json) {
   'attached' => attached,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityConfigurationForRepositoryStatus($value)'; } 
  }
 /// Code security configuration associated with a repository and attachment status
-final class CodeSecurityConfigurationForRepository {const CodeSecurityConfigurationForRepository({this.status, this.configuration, });
+@immutable final class CodeSecurityConfigurationForRepository {const CodeSecurityConfigurationForRepository({this.status, this.configuration, });
 
 factory CodeSecurityConfigurationForRepository.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationForRepository(
   status: json['status'] != null ? CodeSecurityConfigurationForRepositoryStatus.fromJson(json['status'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Request Status.
-final class CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request Status.
+@immutable final class CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus._(this.value);
 
 factory CloudforceOneRequestsRequestStatus.fromJson(String json) { return switch (json) {
   'open' => open,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingCardShippingCustoms {const IssuingCardShippingCustoms({this.eoriNumber});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingCardShippingCustoms {const IssuingCardShippingCustoms({this.eoriNumber});
 
 factory IssuingCardShippingCustoms.fromJson(Map<String, dynamic> json) { return IssuingCardShippingCustoms(
   eoriNumber: json['eori_number'] as String?,

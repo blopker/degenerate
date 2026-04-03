@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_providers_components_schemas_response_collection_result.dart';final class AccessIdentityProvidersComponentsSchemasResponseCollection {const AccessIdentityProvidersComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_providers_components_schemas_response_collection_result.dart';@immutable final class AccessIdentityProvidersComponentsSchemasResponseCollection {const AccessIdentityProvidersComponentsSchemasResponseCollection({this.result});
 
 factory AccessIdentityProvidersComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessIdentityProvidersComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessIdentityProvidersComponentsSchemasResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList(),

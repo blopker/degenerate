@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
-final class MigrationsSetLfsPreferenceRequestUseLfs {const MigrationsSetLfsPreferenceRequestUseLfs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
+@immutable final class MigrationsSetLfsPreferenceRequestUseLfs {const MigrationsSetLfsPreferenceRequestUseLfs._(this.value);
 
 factory MigrationsSetLfsPreferenceRequestUseLfs.fromJson(String json) { return switch (json) {
   'opt_in' => optIn,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MigrationsSetLfsPreferenceRequestUseLfs($value)'; } 
  }
-final class MigrationsSetLfsPreferenceRequest {const MigrationsSetLfsPreferenceRequest({required this.useLfs});
+@immutable final class MigrationsSetLfsPreferenceRequest {const MigrationsSetLfsPreferenceRequest({required this.useLfs});
 
 factory MigrationsSetLfsPreferenceRequest.fromJson(Map<String, dynamic> json) { return MigrationsSetLfsPreferenceRequest(
   useLfs: MigrationsSetLfsPreferenceRequestUseLfs.fromJson(json['use_lfs'] as String),

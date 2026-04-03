@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'security_advisory_credit_types.dart';import 'simple_user.dart';/// The state of the user's acceptance of the credit.
-final class RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_credit_types.dart';import 'simple_user.dart';/// The state of the user's acceptance of the credit.
+@immutable final class RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState._(this.value);
 
 factory RepositoryAdvisoryCreditState.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryAdvisoryCreditState($value)'; } 
  }
 /// A credit given to a user for a repository security advisory.
-final class RepositoryAdvisoryCredit {const RepositoryAdvisoryCredit({required this.user, required this.type, required this.state, });
+@immutable final class RepositoryAdvisoryCredit {const RepositoryAdvisoryCredit({required this.user, required this.type, required this.state, });
 
 factory RepositoryAdvisoryCredit.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCredit(
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),

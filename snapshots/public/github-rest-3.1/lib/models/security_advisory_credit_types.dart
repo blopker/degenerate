@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of credit the user is receiving.
-final class SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of credit the user is receiving.
+@immutable final class SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes._(this.value);
 
 factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json) {
   'analyst' => analyst,

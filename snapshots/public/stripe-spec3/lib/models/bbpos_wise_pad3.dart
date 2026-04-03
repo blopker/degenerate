@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pad3_splashscreen.dart';final class BbposWisePad3 {const BbposWisePad3({this.splashscreen});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pad3_splashscreen.dart';@immutable final class BbposWisePad3 {const BbposWisePad3({this.splashscreen});
 
 factory BbposWisePad3.fromJson(Map<String, dynamic> json) { return BbposWisePad3(
   splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => BbposWisePad3SplashscreenVariant2.fromJson(v as String),) : null,

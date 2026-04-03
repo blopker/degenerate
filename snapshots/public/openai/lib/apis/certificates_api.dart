@@ -123,7 +123,7 @@ Future<ApiResult<Certificate, Never>> getCertificate({required String certificat
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 

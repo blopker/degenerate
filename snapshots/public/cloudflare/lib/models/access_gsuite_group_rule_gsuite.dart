@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessGsuiteGroupRuleGsuite {const AccessGsuiteGroupRuleGsuite({required this.email, required this.identityProviderId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessGsuiteGroupRuleGsuite {const AccessGsuiteGroupRuleGsuite({required this.email, required this.identityProviderId, });
 
 factory AccessGsuiteGroupRuleGsuite.fromJson(Map<String, dynamic> json) { return AccessGsuiteGroupRuleGsuite(
   email: json['email'] as String,

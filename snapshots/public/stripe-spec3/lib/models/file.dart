@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_links.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class FileObject {const FileObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_links.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class FileObject {const FileObject._(this.value);
 
 factory FileObject.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileObject($value)'; } 
  }
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
-final class FilePurpose {const FilePurpose._(this.value);
+@immutable final class FilePurpose {const FilePurpose._(this.value);
 
 factory FilePurpose.fromJson(String json) { return switch (json) {
   'account_requirement' => accountRequirement,
@@ -111,7 +111,7 @@ bool get isUnknown { return !values.contains(this); }
 /// query](#scheduled_queries)).
 /// 
 /// Related guide: [File upload guide](https://docs.stripe.com/file-upload)
-final class File {const File({required this.created, this.expiresAt, this.filename, required this.id, this.links, required this.object, required this.purpose, required this.size, this.title, this.type, this.url, });
+@immutable final class File {const File({required this.created, required this.id, required this.object, required this.purpose, required this.size, this.expiresAt, this.filename, this.links, this.title, this.type, this.url, });
 
 factory File.fromJson(Map<String, dynamic> json) { return File(
   created: (json['created'] as num).toInt(),

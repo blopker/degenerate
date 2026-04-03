@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessDevicePostureRuleDevicePosture {const AccessDevicePostureRuleDevicePosture({required this.integrationUid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessDevicePostureRuleDevicePosture {const AccessDevicePostureRuleDevicePosture({required this.integrationUid});
 
 factory AccessDevicePostureRuleDevicePosture.fromJson(Map<String, dynamic> json) { return AccessDevicePostureRuleDevicePosture(
   integrationUid: json['integration_uid'] as String,

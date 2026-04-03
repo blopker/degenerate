@@ -17,7 +17,7 @@ bool toJson() => value;
 
 }
 /// Enables Proxy Protocol to the origin. Refer to [Enable Proxy protocol](https://developers.cloudflare.com/spectrum/getting-started/proxy-protocol/) for implementation details on PROXY Protocol V1, PROXY Protocol V2, and Simple Proxy Protocol.
-final class SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol._(this.value);
+@immutable final class SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol._(this.value);
 
 factory SpectrumConfigProxyProtocol.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpectrumConfigProxyProtocol($value)'; } 
  }
 /// The type of TLS termination associated with the application.
-final class SpectrumConfigTls {const SpectrumConfigTls._(this.value);
+@immutable final class SpectrumConfigTls {const SpectrumConfigTls._(this.value);
 
 factory SpectrumConfigTls.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpectrumConfigTls($value)'; } 
  }
 /// Determines how data travels from the edge to your origin. When set to "direct", Spectrum will send traffic directly to your origin, and the application's type is derived from the `protocol`. When set to "http" or "https", Spectrum will apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.
-final class SpectrumConfigTrafficType {const SpectrumConfigTrafficType._(this.value);
+@immutable final class SpectrumConfigTrafficType {const SpectrumConfigTrafficType._(this.value);
 
 factory SpectrumConfigTrafficType.fromJson(String json) { return switch (json) {
   'direct' => direct,
@@ -106,7 +106,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpectrumConfigTrafficType($value)'; } 
  }
-final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, this.argoSmartRouting, required this.dns, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, required this.protocol, this.proxyProtocol, this.tls, required this.trafficType, });
+@immutable final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, required this.trafficType, this.argoSmartRouting, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, this.proxyProtocol, this.tls, });
 
 factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),

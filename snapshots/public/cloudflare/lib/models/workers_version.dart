@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_migration_tag_conditions.dart';import 'workers_multiple_step_migrations.dart';import 'workers_placement_info_no_status.dart';import 'workers_placement_info_no_status_smart.dart';import 'workers_placement_info_no_status_targeted.dart';import 'workers_placement_info_no_status_targeted2.dart';import 'workers_placement_info_no_status_targeted3.dart';import 'workers_placement_info_no_status_targeted4.dart';import 'workers_placement_info_no_status_variant2.dart';import 'workers_placement_info_no_status_variant3.dart';import 'workers_placement_info_no_status_variant4.dart';import 'workers_version_annotations.dart';import 'workers_version_assets.dart';import 'workers_version_limits.dart';import 'workers_version_migrations.dart';import 'workers_version_modules.dart';/// Usage model for the version.
-final class WorkersVersionUsageModel {const WorkersVersionUsageModel._(this.value);
+@immutable final class WorkersVersionUsageModel {const WorkersVersionUsageModel._(this.value);
 
 factory WorkersVersionUsageModel.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersVersionUsageModel($value)'; } 
  }
-final class WorkersVersion {const WorkersVersion({this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, required this.createdOn, required this.id, this.limits, this.mainModule, this.migrations, this.modules, required this.number, this.placement, this.source, this.startupTimeMs, required this.urls, this.usageModel = WorkersVersionUsageModel.standard, });
+@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel = WorkersVersionUsageModel.standard, });
 
 factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersion(
   annotations: json['annotations'] != null ? WorkersVersionAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,

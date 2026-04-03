@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
-final class SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod {const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
+@immutable final class SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod {const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._(this.value);
 
 factory SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod($value)'; } 
  }
 /// Defines how a subscription behaves when a free trial ends.
-final class SubscriptionsTrialsResourceEndBehavior {const SubscriptionsTrialsResourceEndBehavior({required this.missingPaymentMethod});
+@immutable final class SubscriptionsTrialsResourceEndBehavior {const SubscriptionsTrialsResourceEndBehavior({required this.missingPaymentMethod});
 
 factory SubscriptionsTrialsResourceEndBehavior.fromJson(Map<String, dynamic> json) { return SubscriptionsTrialsResourceEndBehavior(
   missingPaymentMethod: SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),

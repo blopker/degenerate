@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsUpdateHostedRunnerForOrgRequest {const ActionsUpdateHostedRunnerForOrgRequest({this.name, this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.size, this.imageId, this.imageVersion, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateHostedRunnerForOrgRequest {const ActionsUpdateHostedRunnerForOrgRequest({this.name, this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.size, this.imageId, this.imageVersion, });
 
 factory ActionsUpdateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateHostedRunnerForOrgRequest(
   name: json['name'] as String?,

@@ -1,7 +1,3 @@
-// Code-generating utilities use long string-interpolation templates
-// that inherently exceed 80 chars.
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:code_builder/code_builder.dart';
 
 import 'package:degenerate/src/ir/ir_types.dart';
@@ -13,8 +9,11 @@ final _dartEmitter = DartEmitter(
 );
 
 /// Emit a [Library] to raw (unformatted) Dart source.
+///
+/// Ensures the output ends with exactly one trailing newline.
 String emitRaw(Library library) {
-  return library.accept(_dartEmitter).toString();
+  final raw = library.accept(_dartEmitter).toString();
+  return '${raw.trimRight()}\n';
 }
 
 /// Build a type [Reference] from an [IrType].

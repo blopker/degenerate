@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_source_request_mandate.dart';import 'post_sources_source_request_metadata.dart';import 'post_sources_source_request_owner.dart';import 'post_sources_source_request_source_order.dart';final class PostSourcesSourceRequest {const PostSourcesSourceRequest({this.amount, this.expand, this.mandate, this.metadata, this.owner, this.sourceOrder, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_source_request_mandate.dart';import 'post_sources_source_request_metadata.dart';import 'post_sources_source_request_owner.dart';import 'post_sources_source_request_source_order.dart';@immutable final class PostSourcesSourceRequest {const PostSourcesSourceRequest({this.amount, this.expand, this.mandate, this.metadata, this.owner, this.sourceOrder, });
 
 factory PostSourcesSourceRequest.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

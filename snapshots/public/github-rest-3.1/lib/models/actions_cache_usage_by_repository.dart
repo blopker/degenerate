@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// GitHub Actions Cache Usage by repository.
-final class ActionsCacheUsageByRepository {const ActionsCacheUsageByRepository({required this.fullName, required this.activeCachesSizeInBytes, required this.activeCachesCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// GitHub Actions Cache Usage by repository.
+@immutable final class ActionsCacheUsageByRepository {const ActionsCacheUsageByRepository({required this.fullName, required this.activeCachesSizeInBytes, required this.activeCachesCount, });
 
 factory ActionsCacheUsageByRepository.fromJson(Map<String, dynamic> json) { return ActionsCacheUsageByRepository(
   fullName: json['full_name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_person_request_additional_tos_acceptances_account_user_agent.dart';final class PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptancesAccount {const PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptancesAccount({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_person_request_additional_tos_acceptances_account_user_agent.dart';@immutable final class PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptancesAccount {const PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptancesAccount({this.date, this.ip, this.userAgent, });
 
 factory PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptancesAccount.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestAdditionalTosAcceptancesAccount(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

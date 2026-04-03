@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item_message_assistant_content.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final class RealtimeConversationItemMessageAssistantObject {const RealtimeConversationItemMessageAssistantObject._(this.value);
+@immutable final class RealtimeConversationItemMessageAssistantObject {const RealtimeConversationItemMessageAssistantObject._(this.value);
 
 factory RealtimeConversationItemMessageAssistantObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageAssistantObject($value)'; } 
  }
 /// The type of the item. Always `message`.
-final class RealtimeConversationItemMessageAssistantType {const RealtimeConversationItemMessageAssistantType._(this.value);
+@immutable final class RealtimeConversationItemMessageAssistantType {const RealtimeConversationItemMessageAssistantType._(this.value);
 
 factory RealtimeConversationItemMessageAssistantType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageAssistantType($value)'; } 
  }
 /// The status of the item. Has no effect on the conversation.
-final class RealtimeConversationItemMessageAssistantStatus {const RealtimeConversationItemMessageAssistantStatus._(this.value);
+@immutable final class RealtimeConversationItemMessageAssistantStatus {const RealtimeConversationItemMessageAssistantStatus._(this.value);
 
 factory RealtimeConversationItemMessageAssistantStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageAssistantStatus($value)'; } 
  }
 /// The role of the message sender. Always `assistant`.
-final class RealtimeConversationItemMessageAssistantRole {const RealtimeConversationItemMessageAssistantRole._(this.value);
+@immutable final class RealtimeConversationItemMessageAssistantRole {const RealtimeConversationItemMessageAssistantRole._(this.value);
 
 factory RealtimeConversationItemMessageAssistantRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageAssistantRole($value)'; } 
  }
 /// An assistant message item in a Realtime conversation.
-final class RealtimeConversationItemMessageAssistant {const RealtimeConversationItemMessageAssistant({this.id, this.object, required this.type, this.status, required this.role, required this.content, });
+@immutable final class RealtimeConversationItemMessageAssistant {const RealtimeConversationItemMessageAssistant({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemMessageAssistant.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageAssistant(
   id: json['id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalFlowsCouponOffer {const PortalFlowsCouponOffer({required this.coupon});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalFlowsCouponOffer {const PortalFlowsCouponOffer({required this.coupon});
 
 factory PortalFlowsCouponOffer.fromJson(Map<String, dynamic> json) { return PortalFlowsCouponOffer(
   coupon: json['coupon'] as String,

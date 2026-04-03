@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_update_webhook_request_config.dart';final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active = true, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_update_webhook_request_config.dart';@immutable final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active = true, this.name, });
 
 factory OrgsUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateWebhookRequest(
   config: json['config'] != null ? OrgsUpdateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>) : null,

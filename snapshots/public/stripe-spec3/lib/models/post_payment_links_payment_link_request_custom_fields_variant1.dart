@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_payment_link_request_custom_fields_variant1_dropdown.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_label.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_numeric.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_text.dart';final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_dropdown.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_label.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_numeric.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_text.dart';@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type.fromJson(String json) { return switch (json) {
   'dropdown' => dropdown,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type($value)'; } 
  }
-final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1({this.dropdown, required this.key, required this.label, this.numeric, this.optional, this.text, required this.type, });
+@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 
 factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
   dropdown: json['dropdown'] != null ? PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,

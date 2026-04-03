@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Doc {const Doc({this.id, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Doc {const Doc({this.id, this.title, });
 
 factory Doc.fromJson(Map<String, dynamic> json) { return Doc(
   id: json['id'] as String?,

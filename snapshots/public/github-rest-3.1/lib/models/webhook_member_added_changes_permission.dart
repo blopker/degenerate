@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookMemberAddedChangesPermissionTo {const WebhookMemberAddedChangesPermissionTo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMemberAddedChangesPermissionTo {const WebhookMemberAddedChangesPermissionTo._(this.value);
 
 factory WebhookMemberAddedChangesPermissionTo.fromJson(String json) { return switch (json) {
   'write' => write,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role
 /// assigned to the collaborator, use the `role_name` field instead, which will provide the full
 /// role name, including custom roles.
-final class WebhookMemberAddedChangesPermission {const WebhookMemberAddedChangesPermission({required this.to});
+@immutable final class WebhookMemberAddedChangesPermission {const WebhookMemberAddedChangesPermission({required this.to});
 
 factory WebhookMemberAddedChangesPermission.fromJson(Map<String, dynamic> json) { return WebhookMemberAddedChangesPermission(
   to: WebhookMemberAddedChangesPermissionTo.fromJson(json['to'] as String),

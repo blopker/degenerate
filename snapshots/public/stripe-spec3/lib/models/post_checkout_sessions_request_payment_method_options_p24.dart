@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsP24 {const PostCheckoutSessionsRequestPaymentMethodOptionsP24({this.setupFutureUsage, this.tosShownAndAccepted, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsP24 {const PostCheckoutSessionsRequestPaymentMethodOptionsP24({this.setupFutureUsage, this.tosShownAndAccepted, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsP24(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

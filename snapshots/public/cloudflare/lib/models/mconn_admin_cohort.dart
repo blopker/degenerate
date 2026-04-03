@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnAdminCohort {const MconnAdminCohort({this.desiredVersion, required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnAdminCohort {const MconnAdminCohort({required this.id, required this.name, this.desiredVersion, });
 
 factory MconnAdminCohort.fromJson(Map<String, dynamic> json) { return MconnAdminCohort(
   desiredVersion: json['desired_version'] as String?,

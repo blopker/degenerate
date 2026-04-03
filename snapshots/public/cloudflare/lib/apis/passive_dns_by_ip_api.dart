@@ -16,7 +16,7 @@ final class PassiveDnsByIpApi with ApiExecutor {const PassiveDnsByIpApi(this.api
 Future<ApiResult<IntelPassiveDnsByIp?, Never>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startEndParams != null) {
-queryParametersList.add(ApiQueryParameter(name: 'start_end_params', value: startEndParams.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'start_end_params', value: startEndParams.toString()));
 }
 if (ipv4 != null) {
   queryParameters['ipv4'] = ipv4;

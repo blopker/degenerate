@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The current status of the deployment.
-final class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current status of the deployment.
+@immutable final class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus._(this.value);
 
 factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json) {
   'deployment_in_progress' => deploymentInProgress,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDeploymentStatusStatus($value)'; } 
  }
-final class PagesDeploymentStatus {const PagesDeploymentStatus({this.status});
+@immutable final class PagesDeploymentStatus {const PagesDeploymentStatus({this.status});
 
 factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) { return PagesDeploymentStatus(
   status: json['status'] != null ? PagesDeploymentStatusStatus.fromJson(json['status'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_bookmarks.dart';final class AccessBookmarksComponentsSchemasSingleResponse {const AccessBookmarksComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_bookmarks.dart';@immutable final class AccessBookmarksComponentsSchemasSingleResponse {const AccessBookmarksComponentsSchemasSingleResponse({this.result});
 
 factory AccessBookmarksComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessBookmarksComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessBookmarks.fromJson(json['result'] as Map<String, dynamic>) : null,

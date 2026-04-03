@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_request_settings_payouts_schedule.dart';final class PostAccountsAccountRequestSettingsPayouts {const PostAccountsAccountRequestSettingsPayouts({this.debitNegativeBalances, this.schedule, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_payouts_schedule.dart';@immutable final class PostAccountsAccountRequestSettingsPayouts {const PostAccountsAccountRequestSettingsPayouts({this.debitNegativeBalances, this.schedule, this.statementDescriptor, });
 
 factory PostAccountsAccountRequestSettingsPayouts.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsPayouts(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,

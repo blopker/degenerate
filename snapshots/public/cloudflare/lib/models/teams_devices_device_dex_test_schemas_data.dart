@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration object which contains the details for the WARP client to conduct the test.
-final class TeamsDevicesDeviceDexTestSchemasData {const TeamsDevicesDeviceDexTestSchemasData({this.host, this.kind, this.method, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration object which contains the details for the WARP client to conduct the test.
+@immutable final class TeamsDevicesDeviceDexTestSchemasData {const TeamsDevicesDeviceDexTestSchemasData({this.host, this.kind, this.method, });
 
 factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasData(
   host: json['host'] as String?,

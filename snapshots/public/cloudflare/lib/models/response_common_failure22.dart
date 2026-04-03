@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_messages2.dart';final class ResponseCommonFailure22 {const ResponseCommonFailure22({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_messages2.dart';@immutable final class ResponseCommonFailure22 {const ResponseCommonFailure22({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure22.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure22(
   errors: (json['errors'] as List<dynamic>).map((e) => CustomPagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

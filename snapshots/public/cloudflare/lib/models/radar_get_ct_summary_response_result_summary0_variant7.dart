@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryResponseResultSummary0Variant7 {const RadarGetCtSummaryResponseResultSummary0Variant7({required this.dsa, required this.ecdsa, required this.rsa, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryResponseResultSummary0Variant7 {const RadarGetCtSummaryResponseResultSummary0Variant7({required this.dsa, required this.ecdsa, required this.rsa, });
 
 factory RadarGetCtSummaryResponseResultSummary0Variant7.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant7(
   dsa: json['DSA'] as String,

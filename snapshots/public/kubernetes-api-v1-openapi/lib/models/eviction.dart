@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'delete_options.dart';import 'object_meta.dart';/// Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/`<pod name>`/evictions.
-final class Eviction {const Eviction({this.apiVersion, this.deleteOptions, this.kind, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_options.dart';import 'object_meta.dart';/// Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/`<pod name>`/evictions.
+@immutable final class Eviction {const Eviction({this.apiVersion, this.deleteOptions, this.kind, this.metadata, });
 
 factory Eviction.fromJson(Map<String, dynamic> json) { return Eviction(
   apiVersion: json['apiVersion'] as String?,

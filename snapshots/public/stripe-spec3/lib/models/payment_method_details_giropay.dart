@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsGiropay {const PaymentMethodDetailsGiropay({this.bankCode, this.bankName, this.bic, this.verifiedName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsGiropay {const PaymentMethodDetailsGiropay({this.bankCode, this.bankName, this.bic, this.verifiedName, });
 
 factory PaymentMethodDetailsGiropay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsGiropay(
   bankCode: json['bank_code'] as String?,

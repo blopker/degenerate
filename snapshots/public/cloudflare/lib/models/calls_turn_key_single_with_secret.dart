@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_turn_key_with_key.dart';final class CallsTurnKeySingleWithSecret {const CallsTurnKeySingleWithSecret({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_turn_key_with_key.dart';@immutable final class CallsTurnKeySingleWithSecret {const CallsTurnKeySingleWithSecret({this.result});
 
 factory CallsTurnKeySingleWithSecret.fromJson(Map<String, dynamic> json) { return CallsTurnKeySingleWithSecret(
   result: json['result'] != null ? CallsTurnKeyWithKey.fromJson(json['result'] as Map<String, dynamic>) : null,

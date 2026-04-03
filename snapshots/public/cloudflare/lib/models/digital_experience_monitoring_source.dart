@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies fleet status details source
-final class DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies fleet status details source
+@immutable final class DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource._(this.value);
 
 factory DigitalExperienceMonitoringSource.fromJson(String json) { return switch (json) {
   'last_seen' => lastSeen,

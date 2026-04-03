@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_batch.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_compression.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_credentials.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_path.dart';/// Specifies the format of data to deliver.
-final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_batch.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_compression.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_credentials.dart';import 'accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_destination_path.dart';/// Specifies the format of data to deliver.
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat._(this.value);
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat($value)'; } 
  }
 /// Specifies the type of destination.
-final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType._(this.value);
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType._(this.value);
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType($value)'; } 
  }
-final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination({required this.batch, required this.compression, this.credentials, required this.format, required this.path, required this.type, });
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination({required this.batch, required this.compression, required this.format, required this.path, required this.type, this.credentials, });
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
   batch: AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch.fromJson(json['batch'] as Map<String, dynamic>),

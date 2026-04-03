@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `disabled_reason` is present, all cards will decline authorizations with `cardholder_verification_required` reason.
-final class IssuingCardholderRequirementsDisabledReason {const IssuingCardholderRequirementsDisabledReason._(this.value);
+@immutable final class IssuingCardholderRequirementsDisabledReason {const IssuingCardholderRequirementsDisabledReason._(this.value);
 
 factory IssuingCardholderRequirementsDisabledReason.fromJson(String json) { return switch (json) {
   'listed' => listed,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardholderRequirementsDisabledReason($value)'; } 
  }
-final class IssuingCardholderRequirementsPastDue {const IssuingCardholderRequirementsPastDue._(this.value);
+@immutable final class IssuingCardholderRequirementsPastDue {const IssuingCardholderRequirementsPastDue._(this.value);
 
 factory IssuingCardholderRequirementsPastDue.fromJson(String json) { return switch (json) {
   'company.tax_id' => companyTaxId,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardholderRequirementsPastDue($value)'; } 
  }
 /// 
-final class IssuingCardholderRequirements {const IssuingCardholderRequirements({this.disabledReason, this.pastDue, });
+@immutable final class IssuingCardholderRequirements {const IssuingCardholderRequirements({this.disabledReason, this.pastDue, });
 
 factory IssuingCardholderRequirements.fromJson(Map<String, dynamic> json) { return IssuingCardholderRequirements(
   disabledReason: json['disabled_reason'] != null ? IssuingCardholderRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null,

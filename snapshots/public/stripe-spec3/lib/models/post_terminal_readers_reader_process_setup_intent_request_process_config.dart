@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration overrides for this setup, such as MOTO and customer cancellation settings.
-final class PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig {const PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig({this.enableCustomerCancellation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this setup, such as MOTO and customer cancellation settings.
+@immutable final class PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig {const PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig({this.enableCustomerCancellation});
 
 factory PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,

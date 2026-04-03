@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Offline {const Offline({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Offline {const Offline({required this.enabled});
 
 factory Offline.fromJson(Map<String, dynamic> json) { return Offline(
   enabled: json['enabled'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The kind of the ruleset.
-final class RulesetsRulesetKind {const RulesetsRulesetKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The kind of the ruleset.
+@immutable final class RulesetsRulesetKind {const RulesetsRulesetKind._(this.value);
 
 factory RulesetsRulesetKind.fromJson(String json) { return switch (json) {
   'managed' => managed,

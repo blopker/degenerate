@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_get_commands_response_commands.dart';final class DigitalExperienceMonitoringGetCommandsResponse {const DigitalExperienceMonitoringGetCommandsResponse({this.commands});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_get_commands_response_commands.dart';@immutable final class DigitalExperienceMonitoringGetCommandsResponse {const DigitalExperienceMonitoringGetCommandsResponse({this.commands});
 
 factory DigitalExperienceMonitoringGetCommandsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringGetCommandsResponse(
   commands: (json['commands'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringGetCommandsResponseCommands.fromJson(e as Map<String, dynamic>)).toList(),

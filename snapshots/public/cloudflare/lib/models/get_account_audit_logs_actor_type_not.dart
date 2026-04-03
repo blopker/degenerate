@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot._(this.value);
 
 factory GetAccountAuditLogsActorTypeNot.fromJson(String json) { return switch (json) {
   'account' => account,

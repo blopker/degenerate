@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'automatic_thread_titling_param.dart';import 'file_upload_param.dart';import 'history_param.dart';/// Optional per-session configuration settings for ChatKit behavior.
-final class ChatkitConfigurationParam {const ChatkitConfigurationParam({this.automaticThreadTitling, this.fileUpload, this.history, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'automatic_thread_titling_param.dart';import 'file_upload_param.dart';import 'history_param.dart';/// Optional per-session configuration settings for ChatKit behavior.
+@immutable final class ChatkitConfigurationParam {const ChatkitConfigurationParam({this.automaticThreadTitling, this.fileUpload, this.history, });
 
 factory ChatkitConfigurationParam.fromJson(Map<String, dynamic> json) { return ChatkitConfigurationParam(
   automaticThreadTitling: json['automatic_thread_titling'] != null ? AutomaticThreadTitlingParam.fromJson(json['automatic_thread_titling'] as Map<String, dynamic>) : null,

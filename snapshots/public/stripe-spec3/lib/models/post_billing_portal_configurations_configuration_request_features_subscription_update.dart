@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_default_allowed_updates.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_products.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_products_variant1.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_schedule_at_period_end.dart';final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_default_allowed_updates.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_products.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_products_variant1.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_schedule_at_period_end.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor._(this.value);
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor($value)'; } 
  }
-final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior._(this.value);
+@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior._(this.value);
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior($value)'; } 
  }
-final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior._(this.value);
+@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior._(this.value);
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior.fromJson(String json) { return switch (json) {
   'continue_trial' => continueTrial,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior($value)'; } 
  }
-final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate({this.billingCycleAnchor, this.defaultAllowedUpdates, this.enabled, this.products, this.prorationBehavior, this.scheduleAtPeriodEnd, this.trialUpdateBehavior, });
+@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate({this.billingCycleAnchor, this.defaultAllowedUpdates, this.enabled, this.products, this.prorationBehavior, this.scheduleAtPeriodEnd, this.trialUpdateBehavior, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,

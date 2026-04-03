@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The direction used to sort returned connections.
-final class PageShieldListConnectionsDirection {const PageShieldListConnectionsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned connections.
+@immutable final class PageShieldListConnectionsDirection {const PageShieldListConnectionsDirection._(this.value);
 
 factory PageShieldListConnectionsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

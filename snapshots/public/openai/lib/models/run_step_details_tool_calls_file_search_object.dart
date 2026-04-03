@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_details_tool_calls_file_search_object_file_search.dart';/// The type of tool call. This is always going to be `file_search` for this type of tool call.
-final class RunStepDetailsToolCallsFileSearchObjectType {const RunStepDetailsToolCallsFileSearchObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_file_search_object_file_search.dart';/// The type of tool call. This is always going to be `file_search` for this type of tool call.
+@immutable final class RunStepDetailsToolCallsFileSearchObjectType {const RunStepDetailsToolCallsFileSearchObjectType._(this.value);
 
 factory RunStepDetailsToolCallsFileSearchObjectType.fromJson(String json) { return switch (json) {
   'file_search' => fileSearch,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RunStepDetailsToolCallsFileSearchObjectType($value)'; } 
  }
-final class RunStepDetailsToolCallsFileSearchObject {const RunStepDetailsToolCallsFileSearchObject({required this.id, required this.type, required this.fileSearch, });
+@immutable final class RunStepDetailsToolCallsFileSearchObject {const RunStepDetailsToolCallsFileSearchObject({required this.id, required this.type, required this.fileSearch, });
 
 factory RunStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFileSearchObject(
   id: json['id'] as String,

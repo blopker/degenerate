@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response.dart';/// The type of the event. Always `response.in_progress`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always `response.in_progress`.
 /// 
-final class ResponseInProgressEventType {const ResponseInProgressEventType._(this.value);
+@immutable final class ResponseInProgressEventType {const ResponseInProgressEventType._(this.value);
 
 factory ResponseInProgressEventType.fromJson(String json) { return switch (json) {
   'response.in_progress' => responseInProgress,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseInProgressEventType($value)'; } 
  }
 /// Emitted when the response is in progress.
-final class ResponseInProgressEvent {const ResponseInProgressEvent({required this.type, required this.response, required this.sequenceNumber, });
+@immutable final class ResponseInProgressEvent {const ResponseInProgressEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseInProgressEvent(
   type: ResponseInProgressEventType.fromJson(json['type'] as String),

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:
 /// **For a non-nested team:**
 ///  * `secret` - only visible to organization owners and members of this team.
 ///  * `closed` - visible to all members of this organization.
 /// **For a parent or child team:**
 ///  * `closed` - visible to all members of this organization.
-final class TeamsUpdateLegacyRequestPrivacy {const TeamsUpdateLegacyRequestPrivacy._(this.value);
+@immutable final class TeamsUpdateLegacyRequestPrivacy {const TeamsUpdateLegacyRequestPrivacy._(this.value);
 
 factory TeamsUpdateLegacyRequestPrivacy.fromJson(String json) { return switch (json) {
   'secret' => secret,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:
 ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.
 ///  * `notifications_disabled` - no one receives notifications.
-final class TeamsUpdateLegacyRequestNotificationSetting {const TeamsUpdateLegacyRequestNotificationSetting._(this.value);
+@immutable final class TeamsUpdateLegacyRequestNotificationSetting {const TeamsUpdateLegacyRequestNotificationSetting._(this.value);
 
 factory TeamsUpdateLegacyRequestNotificationSetting.fromJson(String json) { return switch (json) {
   'notifications_enabled' => notificationsEnabled,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsUpdateLegacyRequestNotificationSetting($value)'; } 
  }
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-final class TeamsUpdateLegacyRequestPermission {const TeamsUpdateLegacyRequestPermission._(this.value);
+@immutable final class TeamsUpdateLegacyRequestPermission {const TeamsUpdateLegacyRequestPermission._(this.value);
 
 factory TeamsUpdateLegacyRequestPermission.fromJson(String json) { return switch (json) {
   'pull' => pull,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsUpdateLegacyRequestPermission($value)'; } 
  }
-final class TeamsUpdateLegacyRequest {const TeamsUpdateLegacyRequest({required this.name, this.description, this.privacy, this.notificationSetting, this.permission = TeamsUpdateLegacyRequestPermission.pull, this.parentTeamId, });
+@immutable final class TeamsUpdateLegacyRequest {const TeamsUpdateLegacyRequest({required this.name, this.description, this.privacy, this.notificationSetting, this.permission = TeamsUpdateLegacyRequestPermission.pull, this.parentTeamId, });
 
 factory TeamsUpdateLegacyRequest.fromJson(Map<String, dynamic> json) { return TeamsUpdateLegacyRequest(
   name: json['name'] as String,

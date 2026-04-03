@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_security_timeseries_group_by_spoof_response_result.dart';final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponse {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_spoof_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponse {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponse({required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponse(
   result: RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResult.fromJson(json['result'] as Map<String, dynamic>),

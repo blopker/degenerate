@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_ai_post_run_model_response_result.dart';final class WorkersAiPostRunModelResponse {const WorkersAiPostRunModelResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_model_response_result.dart';@immutable final class WorkersAiPostRunModelResponse {const WorkersAiPostRunModelResponse({this.result});
 
 factory WorkersAiPostRunModelResponse.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunModelResponse(
   result: json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result']) : null,

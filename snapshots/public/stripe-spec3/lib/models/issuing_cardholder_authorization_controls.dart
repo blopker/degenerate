@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_spending_limit.dart';final class IssuingCardholderAuthorizationControlsAllowedCategories {const IssuingCardholderAuthorizationControlsAllowedCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_spending_limit.dart';@immutable final class IssuingCardholderAuthorizationControlsAllowedCategories {const IssuingCardholderAuthorizationControlsAllowedCategories._(this.value);
 
 factory IssuingCardholderAuthorizationControlsAllowedCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -903,7 +903,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardholderAuthorizationControlsAllowedCategories($value)'; } 
  }
-final class IssuingCardholderAuthorizationControlsBlockedCategories {const IssuingCardholderAuthorizationControlsBlockedCategories._(this.value);
+@immutable final class IssuingCardholderAuthorizationControlsBlockedCategories {const IssuingCardholderAuthorizationControlsBlockedCategories._(this.value);
 
 factory IssuingCardholderAuthorizationControlsBlockedCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -1807,7 +1807,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardholderAuthorizationControlsBlockedCategories($value)'; } 
  }
 /// 
-final class IssuingCardholderAuthorizationControls {const IssuingCardholderAuthorizationControls({this.allowedCategories, this.allowedMerchantCountries, this.blockedCategories, this.blockedMerchantCountries, this.spendingLimits, this.spendingLimitsCurrency, });
+@immutable final class IssuingCardholderAuthorizationControls {const IssuingCardholderAuthorizationControls({this.allowedCategories, this.allowedMerchantCountries, this.blockedCategories, this.blockedMerchantCountries, this.spendingLimits, this.spendingLimitsCurrency, });
 
 factory IssuingCardholderAuthorizationControls.fromJson(Map<String, dynamic> json) { return IssuingCardholderAuthorizationControls(
   allowedCategories: (json['allowed_categories'] as List<dynamic>?)?.map((e) => IssuingCardholderAuthorizationControlsAllowedCategories.fromJson(e as String)).toList(),

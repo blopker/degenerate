@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';import 'response_common39_result.dart';final class ResponseCommon39 {const ResponseCommon39({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';import 'response_common39_result.dart';@immutable final class ResponseCommon39 {const ResponseCommon39({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon39.fromJson(Map<String, dynamic> json) { return ResponseCommon39(
   errors: (json['errors'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),

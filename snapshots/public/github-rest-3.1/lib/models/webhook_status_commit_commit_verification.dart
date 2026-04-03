@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookStatusCommitCommitVerificationReason {const WebhookStatusCommitCommitVerificationReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusCommitCommitVerificationReason {const WebhookStatusCommitCommitVerificationReason._(this.value);
 
 factory WebhookStatusCommitCommitVerificationReason.fromJson(String json) { return switch (json) {
   'expired_key' => expiredKey,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookStatusCommitCommitVerificationReason($value)'; } 
  }
-final class WebhookStatusCommitCommitVerification {const WebhookStatusCommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt, });
+@immutable final class WebhookStatusCommitCommitVerification {const WebhookStatusCommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt, });
 
 factory WebhookStatusCommitCommitVerification.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitCommitVerification(
   payload: json['payload'] as String?,

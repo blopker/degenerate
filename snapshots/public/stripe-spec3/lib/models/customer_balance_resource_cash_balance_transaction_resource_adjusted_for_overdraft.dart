@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_balance_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_linked_transaction.dart';import 'customer_cash_balance_transaction.dart';/// 
-final class CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {const CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft({required this.balanceTransaction, required this.linkedTransaction, });
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {const CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft({required this.balanceTransaction, required this.linkedTransaction, });
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
   balanceTransaction: OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_created_on.dart';import 'workers_identifier.dart';import 'workers_modified_on.dart';import 'workers_script_name.dart';final class WorkerScriptSearchWorkersResponseResult {const WorkerScriptSearchWorkersResponseResult({required this.createdOn, this.environmentIsDefault, this.environmentName, required this.id, required this.modifiedOn, required this.scriptName, this.serviceName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_created_on.dart';import 'workers_identifier.dart';import 'workers_modified_on.dart';import 'workers_script_name.dart';@immutable final class WorkerScriptSearchWorkersResponseResult {const WorkerScriptSearchWorkersResponseResult({required this.createdOn, required this.id, required this.modifiedOn, required this.scriptName, this.environmentIsDefault, this.environmentName, this.serviceName, });
 
 factory WorkerScriptSearchWorkersResponseResult.fromJson(Map<String, dynamic> json) { return WorkerScriptSearchWorkersResponseResult(
   createdOn: WorkersCreatedOn.fromJson(json['created_on'] as String),

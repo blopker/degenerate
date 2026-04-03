@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pipelines_by_pipeline_id_response_result_tables.dart';final class PipelinesByPipelineIdResponseResult {const PipelinesByPipelineIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, required this.tables, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pipelines_by_pipeline_id_response_result_tables.dart';@immutable final class PipelinesByPipelineIdResponseResult {const PipelinesByPipelineIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, required this.tables, });
 
 factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) { return PipelinesByPipelineIdResponseResult(
   createdAt: json['created_at'] as String,

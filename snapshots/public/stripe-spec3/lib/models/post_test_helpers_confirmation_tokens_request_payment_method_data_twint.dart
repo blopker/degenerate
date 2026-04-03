@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataTwint(
 

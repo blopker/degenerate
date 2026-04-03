@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRoutesRealtimeResponseResultMetaPrefixOrigins {const RadarGetBgpRoutesRealtimeResponseResultMetaPrefixOrigins({required this.origin, required this.prefix, required this.rpkiValidation, required this.totalPeers, required this.totalVisible, required this.visibility, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesRealtimeResponseResultMetaPrefixOrigins {const RadarGetBgpRoutesRealtimeResponseResultMetaPrefixOrigins({required this.origin, required this.prefix, required this.rpkiValidation, required this.totalPeers, required this.totalVisible, required this.visibility, });
 
 factory RadarGetBgpRoutesRealtimeResponseResultMetaPrefixOrigins.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponseResultMetaPrefixOrigins(
   origin: (json['origin'] as num).toInt(),

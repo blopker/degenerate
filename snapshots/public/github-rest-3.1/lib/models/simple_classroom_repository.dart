@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A GitHub repository view for Classroom
-final class SimpleClassroomRepository {const SimpleClassroomRepository({required this.id, required this.fullName, required this.htmlUrl, required this.nodeId, required this.private, required this.defaultBranch, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub repository view for Classroom
+@immutable final class SimpleClassroomRepository {const SimpleClassroomRepository({required this.id, required this.fullName, required this.htmlUrl, required this.nodeId, required this.private, required this.defaultBranch, });
 
 factory SimpleClassroomRepository.fromJson(Map<String, dynamic> json) { return SimpleClassroomRepository(
   id: (json['id'] as num).toInt(),

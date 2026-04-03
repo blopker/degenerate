@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The operation to perform on the cache-control directive.
-final class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache-control directive.
+@immutable final class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation._(this.value);
 
 factory RulesetsSetCacheControlOperation.fromJson(String json) { return switch (json) {
   'set' => $set,

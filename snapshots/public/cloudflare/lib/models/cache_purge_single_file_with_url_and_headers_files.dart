@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CachePurgeSingleFileWithUrlAndHeadersFiles {const CachePurgeSingleFileWithUrlAndHeadersFiles({this.headers, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CachePurgeSingleFileWithUrlAndHeadersFiles {const CachePurgeSingleFileWithUrlAndHeadersFiles({this.headers, this.url, });
 
 factory CachePurgeSingleFileWithUrlAndHeadersFiles.fromJson(Map<String, dynamic> json) { return CachePurgeSingleFileWithUrlAndHeadersFiles(
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

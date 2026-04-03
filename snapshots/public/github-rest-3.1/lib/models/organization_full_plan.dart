@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrganizationFullPlan {const OrganizationFullPlan({required this.name, required this.space, required this.privateRepos, this.filledSeats, this.seats, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrganizationFullPlan {const OrganizationFullPlan({required this.name, required this.space, required this.privateRepos, this.filledSeats, this.seats, });
 
 factory OrganizationFullPlan.fromJson(Map<String, dynamic> json) { return OrganizationFullPlan(
   name: json['name'] as String,

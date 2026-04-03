@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The direction used to sort returned packages.
-final class WafPackagesListWafPackagesDirection {const WafPackagesListWafPackagesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned packages.
+@immutable final class WafPackagesListWafPackagesDirection {const WafPackagesListWafPackagesDirection._(this.value);
 
 factory WafPackagesListWafPackagesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param18_confirmation_number.dart';import 'payment_method_options_param18_expires_after_days.dart';import 'payment_method_options_param18_expires_at.dart';import 'payment_method_options_param18_product_description.dart';final class PaymentMethodOptionsParam18SetupFutureUsage {const PaymentMethodOptionsParam18SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param18_confirmation_number.dart';import 'payment_method_options_param18_expires_after_days.dart';import 'payment_method_options_param18_expires_at.dart';import 'payment_method_options_param18_product_description.dart';@immutable final class PaymentMethodOptionsParam18SetupFutureUsage {const PaymentMethodOptionsParam18SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam18SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam18SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam18.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam18(
   confirmationNumber: json['confirmation_number'] != null ? OneOf2.parse(json['confirmation_number'], fromA: (v) => v as String, fromB: (v) => PaymentMethodOptionsParam18ConfirmationNumberVariant2.fromJson(v as String),) : null,

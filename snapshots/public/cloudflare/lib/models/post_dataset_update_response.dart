@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDatasetUpdateResponse {const PostDatasetUpdateResponse({required this.isPublic, required this.name, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetUpdateResponse {const PostDatasetUpdateResponse({required this.isPublic, required this.name, required this.uuid, });
 
 factory PostDatasetUpdateResponse.fromJson(Map<String, dynamic> json) { return PostDatasetUpdateResponse(
   isPublic: json['isPublic'] as bool,

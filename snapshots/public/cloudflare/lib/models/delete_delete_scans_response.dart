@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DeleteDeleteScansResponse {const DeleteDeleteScansResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteDeleteScansResponse {const DeleteDeleteScansResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory DeleteDeleteScansResponse.fromJson(Map<String, dynamic> json) { return DeleteDeleteScansResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamsByStreamIdResponse2ResultWorkerBinding {const StreamsByStreamIdResponse2ResultWorkerBinding({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamsByStreamIdResponse2ResultWorkerBinding {const StreamsByStreamIdResponse2ResultWorkerBinding({required this.enabled});
 
 factory StreamsByStreamIdResponse2ResultWorkerBinding.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdResponse2ResultWorkerBinding(
   enabled: json['enabled'] as bool,

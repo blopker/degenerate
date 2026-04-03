@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_exclude_split_tunnel_with_address.dart';import 'teams_devices_exclude_split_tunnel_with_host.dart';import 'teams_devices_split_tunnel.dart';final class TeamsDevicesSplitTunnelResponseCollection {const TeamsDevicesSplitTunnelResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_exclude_split_tunnel_with_address.dart';import 'teams_devices_exclude_split_tunnel_with_host.dart';import 'teams_devices_split_tunnel.dart';@immutable final class TeamsDevicesSplitTunnelResponseCollection {const TeamsDevicesSplitTunnelResponseCollection({this.result});
 
 factory TeamsDevicesSplitTunnelResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesSplitTunnelResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => TeamsDevicesExcludeSplitTunnelWithHost.fromJson(v as Map<String, dynamic>),)).toList(),

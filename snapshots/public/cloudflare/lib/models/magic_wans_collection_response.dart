@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_wan.dart';final class MagicWansCollectionResponse {const MagicWansCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_wan.dart';@immutable final class MagicWansCollectionResponse {const MagicWansCollectionResponse({this.result});
 
 factory MagicWansCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicWansCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MagicWan.fromJson(e as Map<String, dynamic>)).toList(),

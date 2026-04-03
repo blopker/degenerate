@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_response_status_details_error.dart';/// The type of error that caused the response to fail, corresponding
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_status_details_error.dart';/// The type of error that caused the response to fail, corresponding
 /// with the `status` field (`completed`, `cancelled`, `incomplete`,
 /// `failed`).
 /// 
-final class RealtimeBetaResponseStatusDetailsType {const RealtimeBetaResponseStatusDetailsType._(this.value);
+@immutable final class RealtimeBetaResponseStatusDetailsType {const RealtimeBetaResponseStatusDetailsType._(this.value);
 
 factory RealtimeBetaResponseStatusDetailsType.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `incomplete` Response, one of `max_output_tokens` or `content_filter`
 /// (the server-side safety filter activated and cut off the response).
 /// 
-final class RealtimeBetaResponseStatusDetailsReason {const RealtimeBetaResponseStatusDetailsReason._(this.value);
+@immutable final class RealtimeBetaResponseStatusDetailsReason {const RealtimeBetaResponseStatusDetailsReason._(this.value);
 
 factory RealtimeBetaResponseStatusDetailsReason.fromJson(String json) { return switch (json) {
   'turn_detected' => turnDetected,
@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaResponseStatusDetailsReason($value)'; } 
  }
 /// Additional details about the status.
-final class RealtimeBetaResponseStatusDetails {const RealtimeBetaResponseStatusDetails({this.type, this.reason, this.error, });
+@immutable final class RealtimeBetaResponseStatusDetails {const RealtimeBetaResponseStatusDetails({this.type, this.reason, this.error, });
 
 factory RealtimeBetaResponseStatusDetails.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseStatusDetails(
   type: json['type'] != null ? RealtimeBetaResponseStatusDetailsType.fromJson(json['type'] as String) : null,

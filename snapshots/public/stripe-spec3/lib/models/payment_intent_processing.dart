@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_card_processing.dart';/// Type of the payment method for which payment is in `processing` state, one of `card`.
-final class PaymentIntentProcessingType {const PaymentIntentProcessingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_card_processing.dart';/// Type of the payment method for which payment is in `processing` state, one of `card`.
+@immutable final class PaymentIntentProcessingType {const PaymentIntentProcessingType._(this.value);
 
 factory PaymentIntentProcessingType.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentProcessingType($value)'; } 
  }
 /// 
-final class PaymentIntentProcessing {const PaymentIntentProcessing({this.card, required this.type, });
+@immutable final class PaymentIntentProcessing {const PaymentIntentProcessing({required this.type, this.card, });
 
 factory PaymentIntentProcessing.fromJson(Map<String, dynamic> json) { return PaymentIntentProcessing(
   card: json['card'] != null ? PaymentIntentCardProcessing.fromJson(json['card'] as Map<String, dynamic>) : null,

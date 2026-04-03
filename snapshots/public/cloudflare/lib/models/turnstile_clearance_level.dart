@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,
 /// this setting can determine the clearance level to be set
 /// 
-final class TurnstileClearanceLevel {const TurnstileClearanceLevel._(this.value);
+@immutable final class TurnstileClearanceLevel {const TurnstileClearanceLevel._(this.value);
 
 factory TurnstileClearanceLevel.fromJson(String json) { return switch (json) {
   'no_clearance' => noClearance,

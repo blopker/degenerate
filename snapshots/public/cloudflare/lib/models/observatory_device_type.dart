@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of device.
-final class ObservatoryDeviceType {const ObservatoryDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device.
+@immutable final class ObservatoryDeviceType {const ObservatoryDeviceType._(this.value);
 
 factory ObservatoryDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,

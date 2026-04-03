@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookIssuesTransferredChangesNewRepositoryPermissions {const WebhookIssuesTransferredChangesNewRepositoryPermissions({required this.admin, this.maintain, required this.pull, required this.push, this.triage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesTransferredChangesNewRepositoryPermissions {const WebhookIssuesTransferredChangesNewRepositoryPermissions({required this.admin, required this.pull, required this.push, this.maintain, this.triage, });
 
 factory WebhookIssuesTransferredChangesNewRepositoryPermissions.fromJson(Map<String, dynamic> json) { return WebhookIssuesTransferredChangesNewRepositoryPermissions(
   admin: json['admin'] as bool,

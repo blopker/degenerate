@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TokenCardNetworks {const TokenCardNetworks({this.preferred});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TokenCardNetworks {const TokenCardNetworks({this.preferred});
 
 factory TokenCardNetworks.fromJson(Map<String, dynamic> json) { return TokenCardNetworks(
   preferred: json['preferred'] as String?,

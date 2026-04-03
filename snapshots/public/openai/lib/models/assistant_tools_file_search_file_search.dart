@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_search_ranking_options.dart';/// Overrides for the file search tool.
-final class AssistantToolsFileSearchFileSearch {const AssistantToolsFileSearchFileSearch({this.maxNumResults, this.rankingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_search_ranking_options.dart';/// Overrides for the file search tool.
+@immutable final class AssistantToolsFileSearchFileSearch {const AssistantToolsFileSearchFileSearch({this.maxNumResults, this.rankingOptions, });
 
 factory AssistantToolsFileSearchFileSearch.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearchFileSearch(
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,

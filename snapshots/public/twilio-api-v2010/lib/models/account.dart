@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
-final class AccountEnumType {const AccountEnumType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
+@immutable final class AccountEnumType {const AccountEnumType._(this.value);
 
 factory AccountEnumType.fromJson(String json) { return switch (json) {
   'Trial' => trial,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountEnumType($value)'; } 
  }
-final class Account {const Account({this.authToken, this.dateCreated, this.dateUpdated, this.friendlyName, this.ownerAccountSid, this.sid, this.status, this.subresourceUris, this.type, this.uri, });
+@immutable final class Account {const Account({this.authToken, this.dateCreated, this.dateUpdated, this.friendlyName, this.ownerAccountSid, this.sid, this.status, this.subresourceUris, this.type, this.uri, });
 
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
   authToken: json['auth_token'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotations {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotations {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

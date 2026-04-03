@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigDeleteGatewayLogsResponse {const AigConfigDeleteGatewayLogsResponse({required this.success});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayLogsResponse {const AigConfigDeleteGatewayLogsResponse({required this.success});
 
 factory AigConfigDeleteGatewayLogsResponse.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayLogsResponse(
   success: json['success'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_customer_snapshots_get_latest_result.dart';final class MconnCustomerSnapshotsGetLatestSuccess {const MconnCustomerSnapshotsGetLatestSuccess({this.errors, this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_customer_snapshots_get_latest_result.dart';@immutable final class MconnCustomerSnapshotsGetLatestSuccess {const MconnCustomerSnapshotsGetLatestSuccess({required this.success, required this.result, this.errors, this.messages, });
 
 factory MconnCustomerSnapshotsGetLatestSuccess.fromJson(Map<String, dynamic> json) { return MconnCustomerSnapshotsGetLatestSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),

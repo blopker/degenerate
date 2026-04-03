@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest {const ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest({required this.selectedRepositoryIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest {const ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest({required this.selectedRepositoryIds});
 
 factory ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest.fromJson(Map<String, dynamic> json) { return ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest(
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

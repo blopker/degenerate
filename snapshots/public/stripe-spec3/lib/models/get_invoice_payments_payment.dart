@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType._(this.value);
 
 factory GetInvoicePaymentsPaymentType.fromJson(String json) { return switch (json) {
   'payment_intent' => paymentIntent,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetInvoicePaymentsPaymentType($value)'; } 
  }
-final class GetInvoicePaymentsPayment {const GetInvoicePaymentsPayment({this.paymentIntent, this.paymentRecord, required this.type, });
+@immutable final class GetInvoicePaymentsPayment {const GetInvoicePaymentsPayment({required this.type, this.paymentIntent, this.paymentRecord, });
 
 factory GetInvoicePaymentsPayment.fromJson(Map<String, dynamic> json) { return GetInvoicePaymentsPayment(
   paymentIntent: json['payment_intent'] as String?,

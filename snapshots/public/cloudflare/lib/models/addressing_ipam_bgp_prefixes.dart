@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_withdraw.dart';import 'addressing_bgp_on_demand.dart';import 'addressing_bgp_prefix_identifier.dart';import 'addressing_bgp_signal_opts.dart';import 'addressing_cidr.dart';import 'addressing_timestamp.dart';/// Autonomous System Number (ASN) the prefix will be advertised under.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_withdraw.dart';import 'addressing_bgp_on_demand.dart';import 'addressing_bgp_prefix_identifier.dart';import 'addressing_bgp_signal_opts.dart';import 'addressing_cidr.dart';import 'addressing_timestamp.dart';/// Autonomous System Number (ASN) the prefix will be advertised under.
 extension type const AddressingSchemasAsn(int value) {
 factory AddressingSchemasAsn.fromJson(num json) => AddressingSchemasAsn(json.toInt());
 
 num toJson() => value;
 
 }
-final class AddressingIpamBgpPrefixes {const AddressingIpamBgpPrefixes({this.asn, this.asnPrependCount, this.autoAdvertiseWithdraw, this.bgpSignalOpts, this.cidr, this.createdAt, this.id, this.modifiedAt, this.onDemand, });
+@immutable final class AddressingIpamBgpPrefixes {const AddressingIpamBgpPrefixes({this.asn, this.asnPrependCount, this.autoAdvertiseWithdraw, this.bgpSignalOpts, this.cidr, this.createdAt, this.id, this.modifiedAt, this.onDemand, });
 
 factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) { return AddressingIpamBgpPrefixes(
   asn: json['asn'] != null ? AddressingSchemasAsn.fromJson(json['asn'] as num) : null,

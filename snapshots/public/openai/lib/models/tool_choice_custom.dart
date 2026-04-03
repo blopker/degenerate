@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For custom tool calling, the type is always `custom`.
-final class ToolChoiceCustomType {const ToolChoiceCustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For custom tool calling, the type is always `custom`.
+@immutable final class ToolChoiceCustomType {const ToolChoiceCustomType._(this.value);
 
 factory ToolChoiceCustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Use this option to force the model to call a specific custom tool.
 /// 
-final class ToolChoiceCustom {const ToolChoiceCustom({required this.type, required this.name, });
+@immutable final class ToolChoiceCustom {const ToolChoiceCustom({required this.type, required this.name, });
 
 factory ToolChoiceCustom.fromJson(Map<String, dynamic> json) { return ToolChoiceCustom(
   type: ToolChoiceCustomType.fromJson(json['type'] as String),

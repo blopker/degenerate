@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_app_settings_response.dart';final class AccessSingleResponseUpdate {const AccessSingleResponseUpdate({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_settings_response.dart';@immutable final class AccessSingleResponseUpdate {const AccessSingleResponseUpdate({this.result});
 
 factory AccessSingleResponseUpdate.fromJson(Map<String, dynamic> json) { return AccessSingleResponseUpdate(
   result: json['result'] != null ? AccessAppSettingsResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMetaUnits {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMetaUnits {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMetaUnits(
   name: json['name'] as String,

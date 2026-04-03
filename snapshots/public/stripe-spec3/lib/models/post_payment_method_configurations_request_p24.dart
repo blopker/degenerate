@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_p24_display_preference.dart';/// Przelewy24 is a Poland-based payment method aggregator that allows customers to complete transactions online using bank transfers and other methods. Bank transfers account for 30% of online payments in Poland and Przelewy24 provides a way for customers to pay with over 165 banks. Check this [page](https://docs.stripe.com/payments/p24) for more details.
-final class PostPaymentMethodConfigurationsRequestP24 {const PostPaymentMethodConfigurationsRequestP24({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_p24_display_preference.dart';/// Przelewy24 is a Poland-based payment method aggregator that allows customers to complete transactions online using bank transfers and other methods. Bank transfers account for 30% of online payments in Poland and Przelewy24 provides a way for customers to pay with over 165 banks. Check this [page](https://docs.stripe.com/payments/p24) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestP24 {const PostPaymentMethodConfigurationsRequestP24({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestP24.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestP24(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestP24DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

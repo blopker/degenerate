@@ -4,6 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'next_session_schema.dart';
 import 'public_user_schema.dart';
 
+@immutable
 final class MobileSpaceDetailSchema {
   const MobileSpaceDetailSchema({
     required this.slug,

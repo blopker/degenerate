@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method.dart';import 'payment_method_details_card_present_offline.dart';import 'setup_attempt_payment_method_details_card_present_generated_card.dart';/// 
-final class SetupAttemptPaymentMethodDetailsCardPresent {const SetupAttemptPaymentMethodDetailsCardPresent({this.generatedCard, this.offline, });
+@immutable final class SetupAttemptPaymentMethodDetailsCardPresent {const SetupAttemptPaymentMethodDetailsCardPresent({this.generatedCard, this.offline, });
 
 factory SetupAttemptPaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCardPresent(
   generatedCard: json['generated_card'] != null ? OneOf2.parse(json['generated_card'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,

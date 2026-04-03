@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersCreateAssetsUploadSessionResponseResult {const WorkersCreateAssetsUploadSessionResponseResult({this.buckets, this.jwt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersCreateAssetsUploadSessionResponseResult {const WorkersCreateAssetsUploadSessionResponseResult({this.buckets, this.jwt, });
 
 factory WorkersCreateAssetsUploadSessionResponseResult.fromJson(Map<String, dynamic> json) { return WorkersCreateAssetsUploadSessionResponseResult(
   buckets: (json['buckets'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e as String).toList()).toList(),

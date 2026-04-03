@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({this.guidance = 4.5, this.height = 1120, this.numSteps, required this.prompt, this.seed, this.steps, this.width = 1120, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance = 4.5, this.height = 1120, this.numSteps, this.seed, this.steps, this.width = 1120, });
 
 factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
   guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 4.5,

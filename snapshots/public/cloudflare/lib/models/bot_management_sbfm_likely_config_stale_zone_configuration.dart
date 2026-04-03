@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_fight_mode_turned_on.dart';/// A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.
-final class BotManagementSbfmLikelyConfigStaleZoneConfiguration {const BotManagementSbfmLikelyConfigStaleZoneConfiguration({this.fightMode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_fight_mode_turned_on.dart';/// A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.
+@immutable final class BotManagementSbfmLikelyConfigStaleZoneConfiguration {const BotManagementSbfmLikelyConfigStaleZoneConfiguration({this.fightMode});
 
 factory BotManagementSbfmLikelyConfigStaleZoneConfiguration.fromJson(Map<String, dynamic> json) { return BotManagementSbfmLikelyConfigStaleZoneConfiguration(
   fightMode: json['fight_mode'] != null ? BotManagementFightModeTurnedOn.fromJson(json['fight_mode'] as bool) : null,

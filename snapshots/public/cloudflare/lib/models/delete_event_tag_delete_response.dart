@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'delete_event_tag_delete_response_result.dart';final class DeleteEventTagDeleteResponse {const DeleteEventTagDeleteResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_event_tag_delete_response_result.dart';@immutable final class DeleteEventTagDeleteResponse {const DeleteEventTagDeleteResponse({required this.result, required this.success, });
 
 factory DeleteEventTagDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteEventTagDeleteResponse(
   result: DeleteEventTagDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>),

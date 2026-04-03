@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Shows the credential configuration status.
-final class R2DataCatalogCredentialStatus {const R2DataCatalogCredentialStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Shows the credential configuration status.
+@immutable final class R2DataCatalogCredentialStatus {const R2DataCatalogCredentialStatus._(this.value);
 
 factory R2DataCatalogCredentialStatus.fromJson(String json) { return switch (json) {
   'present' => present,

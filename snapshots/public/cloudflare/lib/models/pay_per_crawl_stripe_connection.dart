@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PayPerCrawlStripeConnection {const PayPerCrawlStripeConnection({this.connectStatus, this.stripeAccountId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlStripeConnection {const PayPerCrawlStripeConnection({this.connectStatus, this.stripeAccountId, });
 
 factory PayPerCrawlStripeConnection.fromJson(Map<String, dynamic> json) { return PayPerCrawlStripeConnection(
   connectStatus: json['connect_status'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxIdsRequestOwnerType {const PostTaxIdsRequestOwnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxIdsRequestOwnerType {const PostTaxIdsRequestOwnerType._(this.value);
 
 factory PostTaxIdsRequestOwnerType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTaxIdsRequestOwnerType($value)'; } 
  }
 /// The account or customer the tax ID belongs to. Defaults to `owner[type]=self`.
-final class PostTaxIdsRequestOwner {const PostTaxIdsRequestOwner({this.account, this.customer, this.customerAccount, required this.type, });
+@immutable final class PostTaxIdsRequestOwner {const PostTaxIdsRequestOwner({required this.type, this.account, this.customer, this.customerAccount, });
 
 factory PostTaxIdsRequestOwner.fromJson(Map<String, dynamic> json) { return PostTaxIdsRequestOwner(
   account: json['account'] as String?,

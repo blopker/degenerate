@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryValuesListResponseResultType {const TelemetryValuesListResponseResultType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryValuesListResponseResultType {const TelemetryValuesListResponseResultType._(this.value);
 
 factory TelemetryValuesListResponseResultType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryValuesListResponseResultType($value)'; } 
  }
-final class TelemetryValuesListResponseResult {const TelemetryValuesListResponseResult({required this.dataset, required this.key, required this.type, required this.value, });
+@immutable final class TelemetryValuesListResponseResult {const TelemetryValuesListResponseResult({required this.dataset, required this.key, required this.type, required this.value, });
 
 factory TelemetryValuesListResponseResult.fromJson(Map<String, dynamic> json) { return TelemetryValuesListResponseResult(
   dataset: json['dataset'] as String,

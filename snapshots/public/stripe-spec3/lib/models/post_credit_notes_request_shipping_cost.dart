@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When shipping_cost contains the shipping_rate from the invoice, the shipping_cost is included in the credit note. One of `amount`, `lines`, or `shipping_cost` must be provided.
-final class PostCreditNotesRequestShippingCost {const PostCreditNotesRequestShippingCost({this.shippingRate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When shipping_cost contains the shipping_rate from the invoice, the shipping_cost is included in the credit note. One of `amount`, `lines`, or `shipping_cost` must be provided.
+@immutable final class PostCreditNotesRequestShippingCost {const PostCreditNotesRequestShippingCost({this.shippingRate});
 
 factory PostCreditNotesRequestShippingCost.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestShippingCost(
   shippingRate: json['shipping_rate'] as String?,

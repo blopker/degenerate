@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the inline skill source. Must be `base64`.
-final class InlineSkillSourceParamType {const InlineSkillSourceParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the inline skill source. Must be `base64`.
+@immutable final class InlineSkillSourceParamType {const InlineSkillSourceParamType._(this.value);
 
 factory InlineSkillSourceParamType.fromJson(String json) { return switch (json) {
   'base64' => base64,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InlineSkillSourceParamType($value)'; } 
  }
 /// The media type of the inline skill payload. Must be `application/zip`.
-final class InlineSkillSourceParamMediaType {const InlineSkillSourceParamMediaType._(this.value);
+@immutable final class InlineSkillSourceParamMediaType {const InlineSkillSourceParamMediaType._(this.value);
 
 factory InlineSkillSourceParamMediaType.fromJson(String json) { return switch (json) {
   'application/zip' => applicationZip,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InlineSkillSourceParamMediaType($value)'; } 
  }
 /// Inline skill payload
-final class InlineSkillSourceParam {const InlineSkillSourceParam({this.type = InlineSkillSourceParamType.base64, this.mediaType = InlineSkillSourceParamMediaType.applicationZip, required this.data, });
+@immutable final class InlineSkillSourceParam {const InlineSkillSourceParam({required this.data, this.type = InlineSkillSourceParamType.base64, this.mediaType = InlineSkillSourceParamMediaType.applicationZip, });
 
 factory InlineSkillSourceParam.fromJson(Map<String, dynamic> json) { return InlineSkillSourceParam(
   type: InlineSkillSourceParamType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_list_public_finetunes_response400_errors.dart';final class WorkersAiListPublicFinetunesResponse400 {const WorkersAiListPublicFinetunesResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_list_public_finetunes_response400_errors.dart';@immutable final class WorkersAiListPublicFinetunesResponse400 {const WorkersAiListPublicFinetunesResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiListPublicFinetunesResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiListPublicFinetunesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiListPublicFinetunesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

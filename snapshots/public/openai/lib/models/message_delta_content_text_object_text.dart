@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_annotations_file_citation_object.dart';import 'message_delta_content_text_annotations_file_path_object.dart';import 'message_delta_content_text_object_text_annotations.dart';final class MessageDeltaContentTextObjectText {const MessageDeltaContentTextObjectText({this.value, this.annotations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_annotations_file_citation_object.dart';import 'message_delta_content_text_annotations_file_path_object.dart';import 'message_delta_content_text_object_text_annotations.dart';@immutable final class MessageDeltaContentTextObjectText {const MessageDeltaContentTextObjectText({this.value, this.annotations, });
 
 factory MessageDeltaContentTextObjectText.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextObjectText(
   value: json['value'] as String?,

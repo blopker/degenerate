@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceMandateNotificationSepaDebitData {const SourceMandateNotificationSepaDebitData({this.creditorIdentifier, this.last4, this.mandateReference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceMandateNotificationSepaDebitData {const SourceMandateNotificationSepaDebitData({this.creditorIdentifier, this.last4, this.mandateReference, });
 
 factory SourceMandateNotificationSepaDebitData.fromJson(Map<String, dynamic> json) { return SourceMandateNotificationSepaDebitData(
   creditorIdentifier: json['creditor_identifier'] as String?,

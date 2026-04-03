@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Started attestation
-final class MconnEventStartAttestationK {const MconnEventStartAttestationK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started attestation
+@immutable final class MconnEventStartAttestationK {const MconnEventStartAttestationK._(this.value);
 
 factory MconnEventStartAttestationK.fromJson(String json) { return switch (json) {
   'StartAttestation' => startAttestation,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventStartAttestationK($value)'; } 
  }
-final class MconnEventStartAttestation {const MconnEventStartAttestation({required this.k});
+@immutable final class MconnEventStartAttestation {const MconnEventStartAttestation({required this.k});
 
 factory MconnEventStartAttestation.fromJson(Map<String, dynamic> json) { return MconnEventStartAttestation(
   k: MconnEventStartAttestationK.fromJson(json['k'] as String),

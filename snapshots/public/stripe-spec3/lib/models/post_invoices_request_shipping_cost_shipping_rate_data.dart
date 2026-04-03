@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_request_shipping_cost_shipping_rate_data_delivery_estimate.dart';import 'post_invoices_request_shipping_cost_shipping_rate_data_fixed_amount.dart';final class PostInvoicesRequestShippingCostShippingRateDataTaxBehavior {const PostInvoicesRequestShippingCostShippingRateDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_shipping_cost_shipping_rate_data_delivery_estimate.dart';import 'post_invoices_request_shipping_cost_shipping_rate_data_fixed_amount.dart';@immutable final class PostInvoicesRequestShippingCostShippingRateDataTaxBehavior {const PostInvoicesRequestShippingCostShippingRateDataTaxBehavior._(this.value);
 
 factory PostInvoicesRequestShippingCostShippingRateDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesRequestShippingCostShippingRateDataTaxBehavior($value)'; } 
  }
-final class PostInvoicesRequestShippingCostShippingRateDataType {const PostInvoicesRequestShippingCostShippingRateDataType._(this.value);
+@immutable final class PostInvoicesRequestShippingCostShippingRateDataType {const PostInvoicesRequestShippingCostShippingRateDataType._(this.value);
 
 factory PostInvoicesRequestShippingCostShippingRateDataType.fromJson(String json) { return switch (json) {
   'fixed_amount' => fixedAmount,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesRequestShippingCostShippingRateDataType($value)'; } 
  }
-final class PostInvoicesRequestShippingCostShippingRateData {const PostInvoicesRequestShippingCostShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
+@immutable final class PostInvoicesRequestShippingCostShippingRateData {const PostInvoicesRequestShippingCostShippingRateData({required this.displayName, this.deliveryEstimate, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory PostInvoicesRequestShippingCostShippingRateData.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingCostShippingRateData(
   deliveryEstimate: json['delivery_estimate'] != null ? PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,

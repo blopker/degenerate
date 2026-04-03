@@ -1,9 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'end_reason.dart';
 
+@immutable
 final class EndRoomEvent {
-  const EndRoomEvent({this.type = 'end_room', required this.reason});
+  const EndRoomEvent({required this.reason, this.type = 'end_room'});
 
   factory EndRoomEvent.fromJson(Map<String, dynamic> json) {
     return EndRoomEvent(

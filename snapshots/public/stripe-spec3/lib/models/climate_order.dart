@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_order_product.dart';import 'climate_product.dart';import 'climate_removals_beneficiary.dart';import 'climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
-final class ClimateOrderCancellationReason {const ClimateOrderCancellationReason._(this.value);
+@immutable final class ClimateOrderCancellationReason {const ClimateOrderCancellationReason._(this.value);
 
 factory ClimateOrderCancellationReason.fromJson(String json) { return switch (json) {
   'expired' => expired,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClimateOrderCancellationReason($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class ClimateOrderObject {const ClimateOrderObject._(this.value);
+@immutable final class ClimateOrderObject {const ClimateOrderObject._(this.value);
 
 factory ClimateOrderObject.fromJson(String json) { return switch (json) {
   'climate.order' => climateOrder,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClimateOrderObject($value)'; } 
  }
 /// The current status of this order.
-final class ClimateOrderStatus {const ClimateOrderStatus._(this.value);
+@immutable final class ClimateOrderStatus {const ClimateOrderStatus._(this.value);
 
 factory ClimateOrderStatus.fromJson(String json) { return switch (json) {
   'awaiting_funds' => awaitingFunds,
@@ -86,7 +86,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Orders represent your intent to purchase a particular Climate product. When you create an order, the
 /// payment is deducted from your merchant balance.
-final class ClimateOrder {const ClimateOrder({required this.amountFees, required this.amountSubtotal, required this.amountTotal, this.beneficiary, this.canceledAt, this.cancellationReason, this.certificate, this.confirmedAt, required this.created, required this.currency, this.delayedAt, this.deliveredAt, required this.deliveryDetails, required this.expectedDeliveryYear, required this.id, required this.livemode, required this.metadata, required this.metricTons, required this.object, required this.product, this.productSubstitutedAt, required this.status, });
+@immutable final class ClimateOrder {const ClimateOrder({required this.amountFees, required this.amountSubtotal, required this.amountTotal, required this.created, required this.currency, required this.deliveryDetails, required this.expectedDeliveryYear, required this.id, required this.livemode, required this.metadata, required this.metricTons, required this.object, required this.product, required this.status, this.beneficiary, this.canceledAt, this.cancellationReason, this.certificate, this.confirmedAt, this.delayedAt, this.deliveredAt, this.productSubstitutedAt, });
 
 factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   amountFees: (json['amount_fees'] as num).toInt(),

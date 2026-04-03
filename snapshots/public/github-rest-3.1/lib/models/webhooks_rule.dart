@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhooksRuleAllowDeletionsEnforcementLevel {const WebhooksRuleAllowDeletionsEnforcementLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksRuleAllowDeletionsEnforcementLevel {const WebhooksRuleAllowDeletionsEnforcementLevel._(this.value);
 
 factory WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleAllowDeletionsEnforcementLevel($value)'; } 
  }
-final class WebhooksRuleAllowForcePushesEnforcementLevel {const WebhooksRuleAllowForcePushesEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleAllowForcePushesEnforcementLevel {const WebhooksRuleAllowForcePushesEnforcementLevel._(this.value);
 
 factory WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleAllowForcePushesEnforcementLevel($value)'; } 
  }
-final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel._(this.value);
 
 factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksRuleLinearHistoryRequirementEnforcementLevel($value)'; } 
  }
 /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
-final class WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel._(this.value);
 
 factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleLockBranchEnforcementLevel($value)'; } 
  }
-final class WebhooksRuleMergeQueueEnforcementLevel {const WebhooksRuleMergeQueueEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleMergeQueueEnforcementLevel {const WebhooksRuleMergeQueueEnforcementLevel._(this.value);
 
 factory WebhooksRuleMergeQueueEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -136,7 +136,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleMergeQueueEnforcementLevel($value)'; } 
  }
-final class WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel._(this.value);
+@immutable final class WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel._(this.value);
 
 factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -163,7 +163,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRulePullRequestReviewsEnforcementLevel($value)'; } 
  }
-final class WebhooksRuleRequiredConversationResolutionLevel {const WebhooksRuleRequiredConversationResolutionLevel._(this.value);
+@immutable final class WebhooksRuleRequiredConversationResolutionLevel {const WebhooksRuleRequiredConversationResolutionLevel._(this.value);
 
 factory WebhooksRuleRequiredConversationResolutionLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -190,7 +190,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleRequiredConversationResolutionLevel($value)'; } 
  }
-final class WebhooksRuleRequiredDeploymentsEnforcementLevel {const WebhooksRuleRequiredDeploymentsEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleRequiredDeploymentsEnforcementLevel {const WebhooksRuleRequiredDeploymentsEnforcementLevel._(this.value);
 
 factory WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -217,7 +217,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleRequiredDeploymentsEnforcementLevel($value)'; } 
  }
-final class WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel._(this.value);
 
 factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -244,7 +244,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksRuleRequiredStatusChecksEnforcementLevel($value)'; } 
  }
-final class WebhooksRuleSignatureRequirementEnforcementLevel {const WebhooksRuleSignatureRequirementEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleSignatureRequirementEnforcementLevel {const WebhooksRuleSignatureRequirementEnforcementLevel._(this.value);
 
 factory WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -272,7 +272,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksRuleSignatureRequirementEnforcementLevel($value)'; } 
  }
 /// The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
-final class WebhooksRule {const WebhooksRule({required this.adminEnforced, required this.allowDeletionsEnforcementLevel, required this.allowForcePushesEnforcementLevel, required this.authorizedActorNames, required this.authorizedActorsOnly, required this.authorizedDismissalActorsOnly, this.createProtected, required this.createdAt, required this.dismissStaleReviewsOnPush, required this.id, required this.ignoreApprovalsFromContributors, required this.linearHistoryRequirementEnforcementLevel, required this.lockBranchEnforcementLevel, this.lockAllowsForkSync, required this.mergeQueueEnforcementLevel, required this.name, required this.pullRequestReviewsEnforcementLevel, required this.repositoryId, required this.requireCodeOwnerReview, this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredConversationResolutionLevel, required this.requiredDeploymentsEnforcementLevel, required this.requiredStatusChecks, required this.requiredStatusChecksEnforcementLevel, required this.signatureRequirementEnforcementLevel, required this.strictRequiredStatusChecksPolicy, required this.updatedAt, });
+@immutable final class WebhooksRule {const WebhooksRule({required this.adminEnforced, required this.allowDeletionsEnforcementLevel, required this.allowForcePushesEnforcementLevel, required this.authorizedActorNames, required this.authorizedActorsOnly, required this.authorizedDismissalActorsOnly, required this.createdAt, required this.dismissStaleReviewsOnPush, required this.id, required this.ignoreApprovalsFromContributors, required this.linearHistoryRequirementEnforcementLevel, required this.lockBranchEnforcementLevel, required this.mergeQueueEnforcementLevel, required this.name, required this.pullRequestReviewsEnforcementLevel, required this.repositoryId, required this.requireCodeOwnerReview, required this.requiredApprovingReviewCount, required this.requiredConversationResolutionLevel, required this.requiredDeploymentsEnforcementLevel, required this.requiredStatusChecks, required this.requiredStatusChecksEnforcementLevel, required this.signatureRequirementEnforcementLevel, required this.strictRequiredStatusChecksPolicy, required this.updatedAt, this.createProtected, this.lockAllowsForkSync, this.requireLastPushApproval, });
 
 factory WebhooksRule.fromJson(Map<String, dynamic> json) { return WebhooksRule(
   adminEnforced: json['admin_enforced'] as bool,

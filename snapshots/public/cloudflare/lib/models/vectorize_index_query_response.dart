@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_query_response_matches.dart';final class VectorizeIndexQueryResponse {const VectorizeIndexQueryResponse({this.count, this.matches, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_query_response_matches.dart';@immutable final class VectorizeIndexQueryResponse {const VectorizeIndexQueryResponse({this.count, this.matches, });
 
 factory VectorizeIndexQueryResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryResponse(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

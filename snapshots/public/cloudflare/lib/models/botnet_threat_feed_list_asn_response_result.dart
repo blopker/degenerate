@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BotnetThreatFeedListAsnResponseResult {const BotnetThreatFeedListAsnResponseResult({this.asn});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotnetThreatFeedListAsnResponseResult {const BotnetThreatFeedListAsnResponseResult({this.asn});
 
 factory BotnetThreatFeedListAsnResponseResult.fromJson(Map<String, dynamic> json) { return BotnetThreatFeedListAsnResponseResult(
   asn: json['asn'] != null ? (json['asn'] as num).toInt() : null,

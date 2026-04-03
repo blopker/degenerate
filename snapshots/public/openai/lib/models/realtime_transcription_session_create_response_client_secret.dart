@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Ephemeral key returned by the API. Only present when the session is
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ephemeral key returned by the API. Only present when the session is
 /// created on the server via REST API.
 /// 
-final class RealtimeTranscriptionSessionCreateResponseClientSecret {const RealtimeTranscriptionSessionCreateResponseClientSecret({required this.value, required this.expiresAt, });
+@immutable final class RealtimeTranscriptionSessionCreateResponseClientSecret {const RealtimeTranscriptionSessionCreateResponseClientSecret({required this.value, required this.expiresAt, });
 
 factory RealtimeTranscriptionSessionCreateResponseClientSecret.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponseClientSecret(
   value: json['value'] as String,

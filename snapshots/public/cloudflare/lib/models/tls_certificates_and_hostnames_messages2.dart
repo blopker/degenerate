@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_messages2_source.dart';final class TlsCertificatesAndHostnamesMessages2 {const TlsCertificatesAndHostnamesMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_messages2_source.dart';@immutable final class TlsCertificatesAndHostnamesMessages2 {const TlsCertificatesAndHostnamesMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory TlsCertificatesAndHostnamesMessages2.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesMessages2(
   code: (json['code'] as num).toInt(),

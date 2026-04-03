@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method.dart';import 'payment_method_details_payment_record_bancontact_generated_sepa_debit.dart';import 'payment_method_details_payment_record_bancontact_generated_sepa_debit_mandate.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to. Can be one of `en`, `de`, `fr`, or `nl`
-final class PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage {const PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage._(this.value);
+@immutable final class PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage {const PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage._(this.value);
 
 factory PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsPaymentRecordBancontactPreferredLanguage($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsPaymentRecordBancontact {const PaymentMethodDetailsPaymentRecordBancontact({this.bankCode, this.bankName, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.preferredLanguage, this.verifiedName, });
+@immutable final class PaymentMethodDetailsPaymentRecordBancontact {const PaymentMethodDetailsPaymentRecordBancontact({this.bankCode, this.bankName, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.preferredLanguage, this.verifiedName, });
 
 factory PaymentMethodDetailsPaymentRecordBancontact.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordBancontact(
   bankCode: json['bank_code'] as String?,

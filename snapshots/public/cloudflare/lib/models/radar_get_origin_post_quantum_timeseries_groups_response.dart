@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_origin_post_quantum_timeseries_groups_response_result.dart';final class RadarGetOriginPostQuantumTimeseriesGroupsResponse {const RadarGetOriginPostQuantumTimeseriesGroupsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_post_quantum_timeseries_groups_response_result.dart';@immutable final class RadarGetOriginPostQuantumTimeseriesGroupsResponse {const RadarGetOriginPostQuantumTimeseriesGroupsResponse({required this.result, required this.success, });
 
 factory RadarGetOriginPostQuantumTimeseriesGroupsResponse.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumTimeseriesGroupsResponse(
   result: RadarGetOriginPostQuantumTimeseriesGroupsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_value_list_list_items.dart';/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
-final class RadarValueListItemType {const RadarValueListItemType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_value_list_list_items.dart';/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
+@immutable final class RadarValueListItemType {const RadarValueListItemType._(this.value);
 
 factory RadarValueListItemType.fromJson(String json) { return switch (json) {
   'card_bin' => cardBin,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarValueListItemType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class RadarValueListObject {const RadarValueListObject._(this.value);
+@immutable final class RadarValueListObject {const RadarValueListObject._(this.value);
 
 factory RadarValueListObject.fromJson(String json) { return switch (json) {
   'radar.value_list' => radarValueList,
@@ -74,7 +74,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Value lists allow you to group values together which can then be referenced in rules.
 /// 
 /// Related guide: [Default Stripe lists](https://docs.stripe.com/radar/lists#managing-list-items)
-final class RadarValueList {const RadarValueList({required this.alias, required this.created, required this.createdBy, required this.id, required this.itemType, required this.listItems, required this.livemode, required this.metadata, required this.name, required this.object, });
+@immutable final class RadarValueList {const RadarValueList({required this.alias, required this.created, required this.createdBy, required this.id, required this.itemType, required this.listItems, required this.livemode, required this.metadata, required this.name, required this.object, });
 
 factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueList(
   alias: json['alias'] as String,

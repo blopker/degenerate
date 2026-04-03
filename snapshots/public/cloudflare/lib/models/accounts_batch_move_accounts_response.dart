@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_account_move_response.dart';import 'message3.dart';final class AccountsBatchMoveAccountsResponse {const AccountsBatchMoveAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_account_move_response.dart';import 'message3.dart';@immutable final class AccountsBatchMoveAccountsResponse {const AccountsBatchMoveAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory AccountsBatchMoveAccountsResponse.fromJson(Map<String, dynamic> json) { return AccountsBatchMoveAccountsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),

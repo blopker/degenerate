@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// GitHub Actions cache retention policy for a repository.
-final class ActionsCacheRetentionLimitForRepository {const ActionsCacheRetentionLimitForRepository({this.maxCacheRetentionDays});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// GitHub Actions cache retention policy for a repository.
+@immutable final class ActionsCacheRetentionLimitForRepository {const ActionsCacheRetentionLimitForRepository({this.maxCacheRetentionDays});
 
 factory ActionsCacheRetentionLimitForRepository.fromJson(Map<String, dynamic> json) { return ActionsCacheRetentionLimitForRepository(
   maxCacheRetentionDays: json['max_cache_retention_days'] != null ? (json['max_cache_retention_days'] as num).toInt() : null,

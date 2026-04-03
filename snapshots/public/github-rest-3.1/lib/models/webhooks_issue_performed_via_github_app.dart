@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_issue_performed_via_github_app_owner.dart';import 'webhooks_issue_performed_via_github_app_permissions.dart';final class WebhooksIssuePerformedViaGithubAppEvents {const WebhooksIssuePerformedViaGithubAppEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_issue_performed_via_github_app_owner.dart';import 'webhooks_issue_performed_via_github_app_permissions.dart';@immutable final class WebhooksIssuePerformedViaGithubAppEvents {const WebhooksIssuePerformedViaGithubAppEvents._(this.value);
 
 factory WebhooksIssuePerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
@@ -160,7 +160,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksIssuePerformedViaGithubAppEvents($value)'; } 
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-final class WebhooksIssuePerformedViaGithubApp {const WebhooksIssuePerformedViaGithubApp({required this.createdAt, required this.description, this.events, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, this.permissions, this.slug, required this.updatedAt, });
+@immutable final class WebhooksIssuePerformedViaGithubApp {const WebhooksIssuePerformedViaGithubApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.permissions, this.slug, });
 
 factory WebhooksIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) { return WebhooksIssuePerformedViaGithubApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_code_completions_editors_models.dart';/// Copilot code completion metrics for active editors.
-final class CopilotIdeCodeCompletionsEditors {const CopilotIdeCodeCompletionsEditors({this.name, this.totalEngagedUsers, this.models, this.additionalProperties = const {}, });
+@immutable final class CopilotIdeCodeCompletionsEditors {const CopilotIdeCodeCompletionsEditors({this.name, this.totalEngagedUsers, this.models, this.additionalProperties = const {}, });
 
 factory CopilotIdeCodeCompletionsEditors.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsEditors(
   name: json['name'] as String?,

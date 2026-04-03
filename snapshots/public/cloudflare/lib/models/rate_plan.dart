@@ -14,7 +14,7 @@ factory RatePlanComponentsSchemasIdentifier.fromJson(String json) => RatePlanCom
 String toJson() => value;
 
 }
-final class RatePlan {const RatePlan({this.components, this.currency, this.duration, this.frequency, this.id, this.name, });
+@immutable final class RatePlan {const RatePlan({this.components, this.currency, this.duration, this.frequency, this.id, this.name, });
 
 factory RatePlan.fromJson(Map<String, dynamic> json) { return RatePlan(
   components: (json['components'] as List<dynamic>?)?.map((e) => ComponentValue.fromJson(e as Map<String, dynamic>)).toList(),

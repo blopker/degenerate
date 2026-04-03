@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Mitigation actions are as follows:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mitigation actions are as follows:
 /// * `log` - log request when request does not conform to schema * `block` - deny access to the site when request does not conform to schema * `none` - skip running schema validation * null - clears any existing per-operation setting
 /// 
-final class SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction {const SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction._(this.value);
+@immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction {const SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction._(this.value);
 
 factory SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction($value)'; } 
  }
 /// Operation ID to mitigation action mappings
-final class SchemaValidationBulkEditPerOperationSettingsRequestValue {const SchemaValidationBulkEditPerOperationSettingsRequestValue({this.mitigationAction});
+@immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValue {const SchemaValidationBulkEditPerOperationSettingsRequestValue({this.mitigationAction});
 
 factory SchemaValidationBulkEditPerOperationSettingsRequestValue.fromJson(Map<String, dynamic> json) { return SchemaValidationBulkEditPerOperationSettingsRequestValue(
   mitigationAction: json['mitigation_action'] != null ? SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(json['mitigation_action'] as String) : null,

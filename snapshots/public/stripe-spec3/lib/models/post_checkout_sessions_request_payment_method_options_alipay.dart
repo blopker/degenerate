@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAlipay {const PostCheckoutSessionsRequestPaymentMethodOptionsAlipay({this.setupFutureUsage});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAlipay {const PostCheckoutSessionsRequestPaymentMethodOptionsAlipay({this.setupFutureUsage});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAlipay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAlipay(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAlipaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

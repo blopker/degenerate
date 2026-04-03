@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_csr.dart';import 'tls_certificates_and_hostnames_request_type.dart';import 'tls_certificates_and_hostnames_requested_validity.dart';final class OriginCaCreateCertificateRequest {const OriginCaCreateCertificateRequest({required this.csr, required this.hostnames, required this.requestType, this.requestedValidity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_csr.dart';import 'tls_certificates_and_hostnames_request_type.dart';import 'tls_certificates_and_hostnames_requested_validity.dart';@immutable final class OriginCaCreateCertificateRequest {const OriginCaCreateCertificateRequest({required this.csr, required this.hostnames, required this.requestType, this.requestedValidity, });
 
 factory OriginCaCreateCertificateRequest.fromJson(Map<String, dynamic> json) { return OriginCaCreateCertificateRequest(
   csr: TlsCertificatesAndHostnamesCsr.fromJson(json['csr'] as String),

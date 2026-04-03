@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependabot_alert_package.dart';/// The execution scope of the vulnerable dependency.
-final class DependabotAlertDependencyScope {const DependabotAlertDependencyScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert_package.dart';/// The execution scope of the vulnerable dependency.
+@immutable final class DependabotAlertDependencyScope {const DependabotAlertDependencyScope._(this.value);
 
 factory DependabotAlertDependencyScope.fromJson(String json) { return switch (json) {
   'development' => development,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// > [!NOTE]
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
-final class DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship._(this.value);
+@immutable final class DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship._(this.value);
 
 factory DependabotAlertDependencyRelationship.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertDependencyRelationship($value)'; } 
  }
 /// Details for the vulnerable dependency.
-final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope, this.relationship, });
+@immutable final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope, this.relationship, });
 
 factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) { return DependabotAlertDependency(
   package: json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The public key used for setting Codespaces secrets.
-final class CodespacesPublicKey {const CodespacesPublicKey({required this.keyId, required this.key, this.id, this.url, this.title, this.createdAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting Codespaces secrets.
+@immutable final class CodespacesPublicKey {const CodespacesPublicKey({required this.keyId, required this.key, this.id, this.url, this.title, this.createdAt, });
 
 factory CodespacesPublicKey.fromJson(Map<String, dynamic> json) { return CodespacesPublicKey(
   keyId: json['key_id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish();
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSwish(
 

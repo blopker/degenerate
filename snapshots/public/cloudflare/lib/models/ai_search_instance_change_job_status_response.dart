@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_instance_change_job_status_response_result.dart';final class AiSearchInstanceChangeJobStatusResponse {const AiSearchInstanceChangeJobStatusResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_change_job_status_response_result.dart';@immutable final class AiSearchInstanceChangeJobStatusResponse {const AiSearchInstanceChangeJobStatusResponse({required this.result, required this.success, });
 
 factory AiSearchInstanceChangeJobStatusResponse.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChangeJobStatusResponse(
   result: AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),

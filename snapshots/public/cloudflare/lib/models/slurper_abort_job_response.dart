@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model32.dart';final class SlurperAbortJobResponse {const SlurperAbortJobResponse({this.errors, this.messages, this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model32.dart';@immutable final class SlurperAbortJobResponse {const SlurperAbortJobResponse({this.errors, this.messages, this.success, this.result, });
 
 factory SlurperAbortJobResponse.fromJson(Map<String, dynamic> json) { return SlurperAbortJobResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel32.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataAlipay {const PostPaymentIntentsIntentRequestPaymentMethodDataAlipay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataAlipay {const PostPaymentIntentsIntentRequestPaymentMethodDataAlipay();
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataAlipay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataAlipay(
 

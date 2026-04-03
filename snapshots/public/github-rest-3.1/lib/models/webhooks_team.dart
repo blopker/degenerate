@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_team_parent.dart';final class WebhooksTeamPrivacy {const WebhooksTeamPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_team_parent.dart';@immutable final class WebhooksTeamPrivacy {const WebhooksTeamPrivacy._(this.value);
 
 factory WebhooksTeamPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksTeamPrivacy($value)'; } 
  }
-final class WebhooksTeamNotificationSetting {const WebhooksTeamNotificationSetting._(this.value);
+@immutable final class WebhooksTeamNotificationSetting {const WebhooksTeamNotificationSetting._(this.value);
 
 factory WebhooksTeamNotificationSetting.fromJson(String json) { return switch (json) {
   'notifications_enabled' => notificationsEnabled,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksTeamNotificationSetting($value)'; } 
  }
 /// The ownership type of the team
-final class WebhooksTeamType {const WebhooksTeamType._(this.value);
+@immutable final class WebhooksTeamType {const WebhooksTeamType._(this.value);
 
 factory WebhooksTeamType.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksTeamType($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class WebhooksTeam {const WebhooksTeam({this.deleted, this.description, this.htmlUrl, required this.id, this.membersUrl, required this.name, this.nodeId, this.parent, this.permission, this.privacy, this.notificationSetting, this.repositoriesUrl, this.slug, this.url, this.type, this.organizationId, this.enterpriseId, });
+@immutable final class WebhooksTeam {const WebhooksTeam({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.notificationSetting, this.repositoriesUrl, this.slug, this.url, this.type, this.organizationId, this.enterpriseId, });
 
 factory WebhooksTeam.fromJson(Map<String, dynamic> json) { return WebhooksTeam(
   deleted: json['deleted'] as bool?,

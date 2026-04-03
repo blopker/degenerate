@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesCreditNoteLinesRequest {const GetCreditNotesCreditNoteLinesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesCreditNoteLinesRequest {const GetCreditNotesCreditNoteLinesRequest();
 
 factory GetCreditNotesCreditNoteLinesRequest.fromJson(Map<String, dynamic> json) { return GetCreditNotesCreditNoteLinesRequest(
 

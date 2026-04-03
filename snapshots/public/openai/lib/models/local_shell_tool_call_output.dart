@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
 /// 
-final class LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus._(this.value);
+@immutable final class LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus._(this.value);
 
 factory LocalShellToolCallOutputStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a local shell tool call.
 /// 
-final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status, });
+@immutable final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status, });
 
 factory LocalShellToolCallOutput.fromJson(Map<String, dynamic> json) { return LocalShellToolCallOutput(
   type: json['type'] as String,

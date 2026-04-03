@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_click_listener_rule_settings.dart';final class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_click_listener_rule_settings.dart';@immutable final class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction._(this.value);
 
 factory ZarazClickListenerRuleAction.fromJson(String json) { return switch (json) {
   'clickListener' => clickListener,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazClickListenerRuleAction($value)'; } 
  }
-final class ZarazClickListenerRule {const ZarazClickListenerRule({required this.action, required this.id, required this.settings, });
+@immutable final class ZarazClickListenerRule {const ZarazClickListenerRule({required this.action, required this.id, required this.settings, });
 
 factory ZarazClickListenerRule.fromJson(Map<String, dynamic> json) { return ZarazClickListenerRule(
   action: ZarazClickListenerRuleAction.fromJson(json['action'] as String),

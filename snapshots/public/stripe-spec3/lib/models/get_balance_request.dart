@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBalanceRequest {const GetBalanceRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBalanceRequest {const GetBalanceRequest();
 
 factory GetBalanceRequest.fromJson(Map<String, dynamic> json) { return GetBalanceRequest(
 

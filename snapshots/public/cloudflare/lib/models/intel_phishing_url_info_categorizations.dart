@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPhishingUrlInfoCategorizations {const IntelPhishingUrlInfoCategorizations({this.category, this.verificationStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlInfoCategorizations {const IntelPhishingUrlInfoCategorizations({this.category, this.verificationStatus, });
 
 factory IntelPhishingUrlInfoCategorizations.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfoCategorizations(
   category: json['category'] as String?,

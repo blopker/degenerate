@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryValuesListRequestTimeframe {const TelemetryValuesListRequestTimeframe({required this.from, required this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryValuesListRequestTimeframe {const TelemetryValuesListRequestTimeframe({required this.from, required this.to, });
 
 factory TelemetryValuesListRequestTimeframe.fromJson(Map<String, dynamic> json) { return TelemetryValuesListRequestTimeframe(
   from: (json['from'] as num).toDouble(),

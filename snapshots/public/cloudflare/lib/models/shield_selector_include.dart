@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_host.dart';final class ShieldSelectorInclude {const ShieldSelectorInclude({this.host});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_host.dart';@immutable final class ShieldSelectorInclude {const ShieldSelectorInclude({this.host});
 
 factory ShieldSelectorInclude.fromJson(Map<String, dynamic> json) { return ShieldSelectorInclude(
   host: (json['host'] as List<dynamic>?)?.map((e) => ShieldHost.fromJson(e as String)).toList(),

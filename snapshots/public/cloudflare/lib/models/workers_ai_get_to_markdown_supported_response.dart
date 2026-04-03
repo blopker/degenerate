@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_get_to_markdown_supported_response_result.dart';final class WorkersAiGetToMarkdownSupportedResponse {const WorkersAiGetToMarkdownSupportedResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_get_to_markdown_supported_response_result.dart';@immutable final class WorkersAiGetToMarkdownSupportedResponse {const WorkersAiGetToMarkdownSupportedResponse({required this.result, required this.success, });
 
 factory WorkersAiGetToMarkdownSupportedResponse.fromJson(Map<String, dynamic> json) { return WorkersAiGetToMarkdownSupportedResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkersAiGetToMarkdownSupportedResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

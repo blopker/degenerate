@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metadata about the version.
-final class WorkersVersionAnnotations {const WorkersVersionAnnotations({this.workersMessage, this.workersTag, this.workersTriggeredBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the version.
+@immutable final class WorkersVersionAnnotations {const WorkersVersionAnnotations({this.workersMessage, this.workersTag, this.workersTriggeredBy, });
 
 factory WorkersVersionAnnotations.fromJson(Map<String, dynamic> json) { return WorkersVersionAnnotations(
   workersMessage: json['workers/message'] as String?,

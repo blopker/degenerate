@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedIssuingCardFeatures {const ConnectEmbeddedIssuingCardFeatures({required this.cardManagement, required this.cardSpendDisputeManagement, required this.cardholderManagement, required this.spendControlManagement, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedIssuingCardFeatures {const ConnectEmbeddedIssuingCardFeatures({required this.cardManagement, required this.cardSpendDisputeManagement, required this.cardholderManagement, required this.spendControlManagement, });
 
 factory ConnectEmbeddedIssuingCardFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedIssuingCardFeatures(
   cardManagement: json['card_management'] as bool,

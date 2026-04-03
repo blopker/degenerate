@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsCardWalletAmexExpressCheckout {const PaymentMethodDetailsCardWalletAmexExpressCheckout();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsCardWalletAmexExpressCheckout {const PaymentMethodDetailsCardWalletAmexExpressCheckout();
 
 factory PaymentMethodDetailsCardWalletAmexExpressCheckout.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardWalletAmexExpressCheckout(
 

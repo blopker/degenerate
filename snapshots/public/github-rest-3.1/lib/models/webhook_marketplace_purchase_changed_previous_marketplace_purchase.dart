@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_account.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_plan.dart';final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, this.nextBillingDate, required this.onFreeTrial, required this.plan, required this.unitCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_account.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_plan.dart';@immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.onFreeTrial, required this.plan, required this.unitCount, this.nextBillingDate, });
 
 factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
   account: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),

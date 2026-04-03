@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the mode/action of the rule when triggered. You must use a value from the `allowed_modes` array of the current rule.
-final class WafRulesUpdateAWafRuleRequestMode {const WafRulesUpdateAWafRuleRequestMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the mode/action of the rule when triggered. You must use a value from the `allowed_modes` array of the current rule.
+@immutable final class WafRulesUpdateAWafRuleRequestMode {const WafRulesUpdateAWafRuleRequestMode._(this.value);
 
 factory WafRulesUpdateAWafRuleRequestMode.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WafRulesUpdateAWafRuleRequestMode($value)'; } 
  }
-final class WafRulesUpdateAWafRuleRequest {const WafRulesUpdateAWafRuleRequest({this.mode});
+@immutable final class WafRulesUpdateAWafRuleRequest {const WafRulesUpdateAWafRuleRequest({this.mode});
 
 factory WafRulesUpdateAWafRuleRequest.fromJson(Map<String, dynamic> json) { return WafRulesUpdateAWafRuleRequest(
   mode: json['mode'] != null ? WafRulesUpdateAWafRuleRequestMode.fromJson(json['mode'] as String) : null,

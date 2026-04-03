@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When true, omits step details and returns only metadata with step_count.
-final class WorDescribeWorkflowInstanceSimple {const WorDescribeWorkflowInstanceSimple._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When true, omits step details and returns only metadata with step_count.
+@immutable final class WorDescribeWorkflowInstanceSimple {const WorDescribeWorkflowInstanceSimple._(this.value);
 
 factory WorDescribeWorkflowInstanceSimple.fromJson(String json) { return switch (json) {
   'true' => $true,

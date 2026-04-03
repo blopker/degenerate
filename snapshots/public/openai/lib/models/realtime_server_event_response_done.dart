@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_response.dart';/// The event type, must be `response.done`.
-final class RealtimeServerEventResponseDoneType {const RealtimeServerEventResponseDoneType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response.dart';/// The event type, must be `response.done`.
+@immutable final class RealtimeServerEventResponseDoneType {const RealtimeServerEventResponseDoneType._(this.value);
 
 factory RealtimeServerEventResponseDoneType.fromJson(String json) { return switch (json) {
   'response.done' => responseDone,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A response will contain all output items that were generated during the response, excluding
 /// any audio content.
 /// 
-final class RealtimeServerEventResponseDone {const RealtimeServerEventResponseDone({required this.eventId, required this.type, required this.response, });
+@immutable final class RealtimeServerEventResponseDone {const RealtimeServerEventResponseDone({required this.eventId, required this.type, required this.response, });
 
 factory RealtimeServerEventResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseDone(
   eventId: json['event_id'] as String,

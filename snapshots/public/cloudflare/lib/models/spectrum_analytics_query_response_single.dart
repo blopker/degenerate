@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'spectrum_analytics_query_response_single_result.dart';final class SpectrumAnalyticsQueryResponseSingle {const SpectrumAnalyticsQueryResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_query_response_single_result.dart';@immutable final class SpectrumAnalyticsQueryResponseSingle {const SpectrumAnalyticsQueryResponseSingle({this.result});
 
 factory SpectrumAnalyticsQueryResponseSingle.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQueryResponseSingle(
   result: json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null,

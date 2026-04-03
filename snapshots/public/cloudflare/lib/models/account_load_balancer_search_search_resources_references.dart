@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of references to include. "*" to include both referral and referrer references. "" to not include any reference information.
-final class AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of references to include. "*" to include both referral and referrer references. "" to not include any reference information.
+@immutable final class AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences._(this.value);
 
 factory AccountLoadBalancerSearchSearchResourcesReferences.fromJson(String json) { return switch (json) {
   '' => $empty,

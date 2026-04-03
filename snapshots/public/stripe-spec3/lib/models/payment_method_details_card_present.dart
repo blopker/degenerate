@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'payment_method_details_card_present_offline.dart';import 'payment_method_details_card_present_receipt.dart';/// How card details were read in this transaction.
-final class PaymentMethodDetailsCardPresentReadMethod {const PaymentMethodDetailsCardPresentReadMethod._(this.value);
+@immutable final class PaymentMethodDetailsCardPresentReadMethod {const PaymentMethodDetailsCardPresentReadMethod._(this.value);
 
 factory PaymentMethodDetailsCardPresentReadMethod.fromJson(String json) { return switch (json) {
   'contact_emv' => contactEmv,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardPresentReadMethod($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsCardPresent {const PaymentMethodDetailsCardPresent({this.amountAuthorized, this.brand, this.brandProduct, this.captureBefore, this.cardholderName, this.country, this.description, this.emvAuthData, required this.expMonth, required this.expYear, this.fingerprint, this.funding, this.generatedCard, required this.incrementalAuthorizationSupported, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.offline, required this.overcaptureSupported, this.preferredLocales, this.readMethod, this.reader, this.receipt, this.wallet, });
+@immutable final class PaymentMethodDetailsCardPresent {const PaymentMethodDetailsCardPresent({required this.expMonth, required this.expYear, required this.incrementalAuthorizationSupported, required this.overcaptureSupported, this.amountAuthorized, this.brand, this.brandProduct, this.captureBefore, this.cardholderName, this.country, this.description, this.emvAuthData, this.fingerprint, this.funding, this.generatedCard, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.offline, this.preferredLocales, this.readMethod, this.reader, this.receipt, this.wallet, });
 
 factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresent(
   amountAuthorized: json['amount_authorized'] != null ? (json['amount_authorized'] as num).toInt() : null,

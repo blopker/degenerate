@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
-final class ReposCreateRepoRulesetRequestTarget {const ReposCreateRepoRulesetRequestTarget._(this.value);
+@immutable final class ReposCreateRepoRulesetRequestTarget {const ReposCreateRepoRulesetRequestTarget._(this.value);
 
 factory ReposCreateRepoRulesetRequestTarget.fromJson(String json) { return switch (json) {
   'branch' => branch,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateRepoRulesetRequestTarget($value)'; } 
  }
-final class ReposCreateRepoRulesetRequest {const ReposCreateRepoRulesetRequest({required this.name, this.target = ReposCreateRepoRulesetRequestTarget.branch, required this.enforcement, this.bypassActors, this.conditions, this.rules, });
+@immutable final class ReposCreateRepoRulesetRequest {const ReposCreateRepoRulesetRequest({required this.name, required this.enforcement, this.target = ReposCreateRepoRulesetRequestTarget.branch, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposCreateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposCreateRepoRulesetRequest(
   name: json['name'] as String,

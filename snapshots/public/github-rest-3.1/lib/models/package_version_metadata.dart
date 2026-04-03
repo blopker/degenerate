@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package_version_metadata_container.dart';import 'package_version_metadata_docker.dart';final class PackageVersionMetadataPackageType {const PackageVersionMetadataPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_version_metadata_container.dart';import 'package_version_metadata_docker.dart';@immutable final class PackageVersionMetadataPackageType {const PackageVersionMetadataPackageType._(this.value);
 
 factory PackageVersionMetadataPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PackageVersionMetadataPackageType($value)'; } 
  }
-final class PackageVersionMetadata {const PackageVersionMetadata({required this.packageType, this.container, this.docker, });
+@immutable final class PackageVersionMetadata {const PackageVersionMetadata({required this.packageType, this.container, this.docker, });
 
 factory PackageVersionMetadata.fromJson(Map<String, dynamic> json) { return PackageVersionMetadata(
   packageType: PackageVersionMetadataPackageType.fromJson(json['package_type'] as String),

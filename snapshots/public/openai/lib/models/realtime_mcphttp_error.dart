@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType._(this.value);
 
 factory RealtimeMcphttpErrorType.fromJson(String json) { return switch (json) {
   'http_error' => httpError,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeMcphttpErrorType($value)'; } 
  }
-final class RealtimeMcphttpError {const RealtimeMcphttpError({required this.type, required this.code, required this.message, });
+@immutable final class RealtimeMcphttpError {const RealtimeMcphttpError({required this.type, required this.code, required this.message, });
 
 factory RealtimeMcphttpError.fromJson(Map<String, dynamic> json) { return RealtimeMcphttpError(
   type: RealtimeMcphttpErrorType.fromJson(json['type'] as String),

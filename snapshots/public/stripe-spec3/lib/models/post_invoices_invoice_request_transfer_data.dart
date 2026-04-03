@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs2.dart';final class PostInvoicesInvoiceRequestTransferDataVariant2 {const PostInvoicesInvoiceRequestTransferDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs2.dart';@immutable final class PostInvoicesInvoiceRequestTransferDataVariant2 {const PostInvoicesInvoiceRequestTransferDataVariant2._(this.value);
 
 factory PostInvoicesInvoiceRequestTransferDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

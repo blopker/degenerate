@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of device posture rule.
-final class TeamsDevicesType {const TeamsDevicesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device posture rule.
+@immutable final class TeamsDevicesType {const TeamsDevicesType._(this.value);
 
 factory TeamsDevicesType.fromJson(String json) { return switch (json) {
   'file' => file,

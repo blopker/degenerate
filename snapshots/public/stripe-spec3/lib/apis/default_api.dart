@@ -121,7 +121,7 @@ return execute(
 Future<ApiResult<GetAccountsResponse, ErrorModel>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1619,7 +1619,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -2073,7 +2073,7 @@ return execute(
 Future<ApiResult<GetBalanceHistoryResponse, ErrorModel>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceHistoryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -2239,7 +2239,7 @@ return execute(
 Future<ApiResult<GetBalanceTransactionsResponse, ErrorModel>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -3433,7 +3433,7 @@ return execute(
 Future<ApiResult<GetChargesResponse, ErrorModel>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, GetChargesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -4045,7 +4045,7 @@ return execute(
 Future<ApiResult<GetCheckoutSessionsResponse, ErrorModel>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, GetCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -4845,7 +4845,7 @@ return execute(
 Future<ApiResult<GetCouponsResponse, ErrorModel>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCouponsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -5044,7 +5044,7 @@ return execute(
 Future<ApiResult<GetCreditNotesResponse, ErrorModel>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCreditNotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -5498,7 +5498,7 @@ return execute(
 Future<ApiResult<GetCustomersResponse, ErrorModel>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, GetCustomersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (email != null) {
   queryParameters['email'] = email;
@@ -5808,7 +5808,7 @@ return execute(
 Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCustomersCustomerBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -7293,7 +7293,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -7745,7 +7745,7 @@ return execute(
 Future<ApiResult<GetEventsResponse, ErrorModel>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, GetEventsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (deliverySuccess != null) {
   queryParameters['delivery_success'] = deliverySuccess.toString();
@@ -7984,7 +7984,7 @@ return execute(
 Future<ApiResult<GetFileLinksResponse, ErrorModel>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, GetFileLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8139,7 +8139,7 @@ return execute(
 Future<ApiResult<GetFilesResponse, ErrorModel>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, GetFilesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8595,7 +8595,7 @@ if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
 }
 if (transactedAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'transacted_at', value: transactedAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'transacted_at', value: transactedAt.toString()));
 }
 if (transactionRefresh != null) {
 queryParameters['transaction_refresh[after]'] = transactionRefresh.after;
@@ -8792,7 +8792,7 @@ if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8883,7 +8883,7 @@ if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9150,7 +9150,7 @@ return execute(
 Future<ApiResult<GetInvoicePaymentsResponse, ErrorModel>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, GetInvoicePaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9386,7 +9386,7 @@ return execute(
 Future<ApiResult<GetInvoiceitemsResponse, ErrorModel>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, GetInvoiceitemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -9630,7 +9630,7 @@ if (collectionMethod != null) {
   queryParameters['collection_method'] = collectionMethod.toJson();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -9639,7 +9639,7 @@ if (customerAccount != null) {
   queryParameters['customer_account'] = customerAccount;
 }
 if (dueDate != null) {
-queryParametersList.add(ApiQueryParameter(name: 'due_date', value: dueDate.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'due_date', value: dueDate.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10448,7 +10448,7 @@ if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10564,7 +10564,7 @@ return execute(
 Future<ApiResult<GetIssuingCardholdersResponse, ErrorModel>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, GetIssuingCardholdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (email != null) {
   queryParameters['email'] = email;
@@ -10757,7 +10757,7 @@ if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10957,7 +10957,7 @@ return execute(
 Future<ApiResult<GetIssuingDisputesResponse, ErrorModel>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, GetIssuingDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11480,7 +11480,7 @@ Future<ApiResult<GetIssuingTokensResponse, ErrorModel>> getIssuingTokens({requir
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['card'] = card;
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11601,7 +11601,7 @@ if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -12092,7 +12092,7 @@ return execute(
 Future<ApiResult<GetPaymentIntentsResponse, ErrorModel>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -13079,7 +13079,7 @@ return execute(
 Future<ApiResult<GetPaymentMethodConfigurationsResponse, ErrorModel>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (application != null) {
-queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -14295,10 +14295,10 @@ return execute(
 Future<ApiResult<GetPayoutsResponse, ErrorModel>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, GetPayoutsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (arrivalDate != null) {
-queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString()));
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (destination != null) {
   queryParameters['destination'] = destination;
@@ -14531,7 +14531,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -14746,7 +14746,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -15000,7 +15000,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15419,7 +15419,7 @@ if (coupon != null) {
   queryParameters['coupon'] = coupon;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -16028,7 +16028,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16150,7 +16150,7 @@ return execute(
 Future<ApiResult<GetRadarValueListItemsResponse, ErrorModel>> getRadarValueListItems({GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, required String valueList, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16300,7 +16300,7 @@ if (contains != null) {
   queryParameters['contains'] = contains;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16482,7 +16482,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16692,7 +16692,7 @@ return execute(
 Future<ApiResult<GetReportingReportRunsResponse, ErrorModel>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReportingReportRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16876,7 +16876,7 @@ return execute(
 Future<ApiResult<GetReviewsResponse, ErrorModel>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReviewsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16987,7 +16987,7 @@ return execute(
 Future<ApiResult<GetSetupAttemptsResponse, ErrorModel>> getSetupAttempts({GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, required String setupIntent, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17038,7 +17038,7 @@ if (attachToSelf != null) {
   queryParameters['attach_to_self'] = attachToSelf.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -17392,7 +17392,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -18164,13 +18164,13 @@ return execute(
 Future<ApiResult<GetSubscriptionSchedulesResponse, ErrorModel>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, GetSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (canceledAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString()));
 }
 if (completedAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'completed_at', value: completedAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'completed_at', value: completedAt.toString()));
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -18188,7 +18188,7 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (releasedAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'released_at', value: releasedAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'released_at', value: releasedAt.toString()));
 }
 if (scheduled != null) {
   queryParameters['scheduled'] = scheduled.toString();
@@ -18420,13 +18420,13 @@ if (collectionMethod != null) {
   queryParameters['collection_method'] = collectionMethod.toJson();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currentPeriodEnd != null) {
-queryParametersList.add(ApiQueryParameter(name: 'current_period_end', value: currentPeriodEnd.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'current_period_end', value: currentPeriodEnd.toString()));
 }
 if (currentPeriodStart != null) {
-queryParametersList.add(ApiQueryParameter(name: 'current_period_start', value: currentPeriodStart.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'current_period_start', value: currentPeriodStart.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -19667,7 +19667,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22328,10 +22328,10 @@ return execute(
 Future<ApiResult<GetTopupsResponse, ErrorModel>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, GetTopupsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
-queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString()));
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22519,7 +22519,7 @@ return execute(
 Future<ApiResult<GetTransfersResponse, ErrorModel>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, GetTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (destination != null) {
   queryParameters['destination'] = destination;
@@ -23077,7 +23077,7 @@ return execute(
 Future<ApiResult<GetTreasuryFinancialAccountsResponse, ErrorModel>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, GetTreasuryFinancialAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23499,7 +23499,7 @@ return execute(
 Future<ApiResult<GetTreasuryOutboundPaymentsResponse, ErrorModel>> getTreasuryOutboundPayments({GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -23990,10 +23990,10 @@ return execute(
 Future<ApiResult<GetTreasuryTransactionEntriesResponse, ErrorModel>> getTreasuryTransactionEntries({GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (effectiveAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'effective_at', value: effectiveAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'effective_at', value: effectiveAt.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -24082,7 +24082,7 @@ return execute(
 Future<ApiResult<GetTreasuryTransactionsResponse, ErrorModel>> getTreasuryTransactions({GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;

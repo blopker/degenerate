@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TranscriptTextDoneEventLogprobs {const TranscriptTextDoneEventLogprobs({this.token, this.logprob, this.bytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptTextDoneEventLogprobs {const TranscriptTextDoneEventLogprobs({this.token, this.logprob, this.bytes, });
 
 factory TranscriptTextDoneEventLogprobs.fromJson(Map<String, dynamic> json) { return TranscriptTextDoneEventLogprobs(
   token: json['token'] as String?,

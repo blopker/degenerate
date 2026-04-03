@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountAvailablePhoneNumberCountry {const AccountAvailablePhoneNumberCountry({this.countryCode, this.country, this.uri, this.beta, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountAvailablePhoneNumberCountry {const AccountAvailablePhoneNumberCountry({this.countryCode, this.country, this.uri, this.beta, this.subresourceUris, });
 
 factory AccountAvailablePhoneNumberCountry.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountry(
   countryCode: json['country_code'] as String?,

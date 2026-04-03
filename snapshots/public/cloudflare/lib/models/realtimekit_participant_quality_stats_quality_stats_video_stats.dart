@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantQualityStatsQualityStatsVideoStats {const RealtimekitParticipantQualityStatsQualityStatsVideoStats({this.frameHeight, this.frameWidth, this.framesDropped, this.framesPerSecond, this.jitter, this.packetsLost, this.quality, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantQualityStatsQualityStatsVideoStats {const RealtimekitParticipantQualityStatsQualityStatsVideoStats({this.frameHeight, this.frameWidth, this.framesDropped, this.framesPerSecond, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 
 factory RealtimekitParticipantQualityStatsQualityStatsVideoStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStatsQualityStatsVideoStats(
   frameHeight: json['frame_height'] != null ? (json['frame_height'] as num).toDouble() : null,

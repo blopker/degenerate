@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeviceDexTestDetailsKind {const DeviceDexTestDetailsKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeviceDexTestDetailsKind {const DeviceDexTestDetailsKind._(this.value);
 
 factory DeviceDexTestDetailsKind.fromJson(String json) { return switch (json) {
   'http' => http,

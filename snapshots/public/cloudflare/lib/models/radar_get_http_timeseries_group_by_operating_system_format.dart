@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetHttpTimeseriesGroupByOperatingSystemFormat {const RadarGetHttpTimeseriesGroupByOperatingSystemFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemFormat {const RadarGetHttpTimeseriesGroupByOperatingSystemFormat._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByOperatingSystemFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

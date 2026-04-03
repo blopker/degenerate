@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZonesAutomaticPlatformOptimization {const ZonesAutomaticPlatformOptimization({required this.cacheByDeviceType, this.cf = false, this.enabled = false, required this.hostnames, this.wordpress = false, this.wpPlugin = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesAutomaticPlatformOptimization {const ZonesAutomaticPlatformOptimization({required this.cacheByDeviceType, required this.hostnames, this.cf = false, this.enabled = false, this.wordpress = false, this.wpPlugin = false, });
 
 factory ZonesAutomaticPlatformOptimization.fromJson(Map<String, dynamic> json) { return ZonesAutomaticPlatformOptimization(
   cacheByDeviceType: json['cache_by_device_type'] as bool,

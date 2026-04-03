@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpTopPrefixesResponse400Errors {const RadarGetBgpTopPrefixesResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopPrefixesResponse400Errors {const RadarGetBgpTopPrefixesResponse400Errors({required this.message});
 
 factory RadarGetBgpTopPrefixesResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopPrefixesResponse400Errors(
   message: json['message'] as String,

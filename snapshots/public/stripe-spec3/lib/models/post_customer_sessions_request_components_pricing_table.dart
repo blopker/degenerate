@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomerSessionsRequestComponentsPricingTable {const PostCustomerSessionsRequestComponentsPricingTable({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomerSessionsRequestComponentsPricingTable {const PostCustomerSessionsRequestComponentsPricingTable({required this.enabled});
 
 factory PostCustomerSessionsRequestComponentsPricingTable.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsPricingTable(
   enabled: json['enabled'] as bool,

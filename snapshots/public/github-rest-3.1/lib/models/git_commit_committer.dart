@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifying information for the git-user
-final class GitCommitCommitter {const GitCommitCommitter({required this.date, required this.email, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifying information for the git-user
+@immutable final class GitCommitCommitter {const GitCommitCommitter({required this.date, required this.email, required this.name, });
 
 factory GitCommitCommitter.fromJson(Map<String, dynamic> json) { return GitCommitCommitter(
   date: DateTime.parse(json['date'] as String),

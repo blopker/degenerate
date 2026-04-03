@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Hyperdrive binding.
-final class PagesDeploymentConfigValuesRequestHyperdriveBindingsValue {const PagesDeploymentConfigValuesRequestHyperdriveBindingsValue({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Hyperdrive binding.
+@immutable final class PagesDeploymentConfigValuesRequestHyperdriveBindingsValue {const PagesDeploymentConfigValuesRequestHyperdriveBindingsValue({required this.id});
 
 factory PagesDeploymentConfigValuesRequestHyperdriveBindingsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestHyperdriveBindingsValue(
   id: json['id'] as String,

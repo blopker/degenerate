@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_certificate_log_details_response_result_certificate_log.dart';final class RadarGetCertificateLogDetailsResponseResult {const RadarGetCertificateLogDetailsResponseResult({required this.certificateLog});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_log_details_response_result_certificate_log.dart';@immutable final class RadarGetCertificateLogDetailsResponseResult {const RadarGetCertificateLogDetailsResponseResult({required this.certificateLog});
 
 factory RadarGetCertificateLogDetailsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResult(
   certificateLog: RadarGetCertificateLogDetailsResponseResultCertificateLog.fromJson(json['certificateLog'] as Map<String, dynamic>),

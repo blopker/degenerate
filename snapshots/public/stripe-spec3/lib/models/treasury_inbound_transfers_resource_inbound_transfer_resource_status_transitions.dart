@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions {const TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions({this.canceledAt, this.failedAt, this.succeededAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions {const TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions({this.canceledAt, this.failedAt, this.succeededAt, });
 
 factory TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions(
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,

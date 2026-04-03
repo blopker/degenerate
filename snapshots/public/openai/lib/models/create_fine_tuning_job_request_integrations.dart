@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_fine_tuning_job_request_integrations_wandb.dart';/// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_integrations_wandb.dart';/// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
 /// 
-final class CreateFineTuningJobRequestIntegrationsType {const CreateFineTuningJobRequestIntegrationsType._(this.value);
+@immutable final class CreateFineTuningJobRequestIntegrationsType {const CreateFineTuningJobRequestIntegrationsType._(this.value);
 
 factory CreateFineTuningJobRequestIntegrationsType.fromJson(String json) { return switch (json) {
   'wandb' => wandb,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateFineTuningJobRequestIntegrationsType($value)'; } 
  }
-final class CreateFineTuningJobRequestIntegrations {const CreateFineTuningJobRequestIntegrations({required this.type, required this.wandb, });
+@immutable final class CreateFineTuningJobRequestIntegrations {const CreateFineTuningJobRequestIntegrations({required this.type, required this.wandb, });
 
 factory CreateFineTuningJobRequestIntegrations.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequestIntegrations(
   type: CreateFineTuningJobRequestIntegrationsType.fromJson(json['type'] as String),

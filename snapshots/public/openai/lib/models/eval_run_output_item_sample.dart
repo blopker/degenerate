@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model2.dart';import 'eval_run_output_item_sample_input.dart';import 'eval_run_output_item_sample_output.dart';import 'eval_run_output_item_sample_usage.dart';/// A sample containing the input and output of the evaluation run.
-final class EvalRunOutputItemSample {const EvalRunOutputItemSample({required this.input, required this.output, required this.finishReason, required this.model, required this.usage, required this.error, required this.temperature, required this.maxCompletionTokens, required this.topP, required this.seed, });
+@immutable final class EvalRunOutputItemSample {const EvalRunOutputItemSample({required this.input, required this.output, required this.finishReason, required this.model, required this.usage, required this.error, required this.temperature, required this.maxCompletionTokens, required this.topP, required this.seed, });
 
 factory EvalRunOutputItemSample.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemSample(
   input: (json['input'] as List<dynamic>).map((e) => EvalRunOutputItemSampleInput.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultStepsSleepError {const WorDescribeWorkflowInstanceResponseResultStepsSleepError({required this.message, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsSleepError {const WorDescribeWorkflowInstanceResponseResultStepsSleepError({required this.message, required this.name, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsSleepError.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsSleepError(
   message: json['message'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_session_resource_components_resource_customer_sheet_resource_features.dart';/// This hash contains whether the customer sheet is enabled and the features it supports.
-final class CustomerSessionResourceComponentsResourceCustomerSheet {const CustomerSessionResourceComponentsResourceCustomerSheet({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_session_resource_components_resource_customer_sheet_resource_features.dart';/// This hash contains whether the customer sheet is enabled and the features it supports.
+@immutable final class CustomerSessionResourceComponentsResourceCustomerSheet {const CustomerSessionResourceComponentsResourceCustomerSheet({required this.enabled, this.features, });
 
 factory CustomerSessionResourceComponentsResourceCustomerSheet.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceCustomerSheet(
   enabled: json['enabled'] as bool,

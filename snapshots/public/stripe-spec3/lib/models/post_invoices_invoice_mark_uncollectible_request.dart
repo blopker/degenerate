@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceMarkUncollectibleRequest {const PostInvoicesInvoiceMarkUncollectibleRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceMarkUncollectibleRequest {const PostInvoicesInvoiceMarkUncollectibleRequest({this.expand});
 
 factory PostInvoicesInvoiceMarkUncollectibleRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceMarkUncollectibleRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

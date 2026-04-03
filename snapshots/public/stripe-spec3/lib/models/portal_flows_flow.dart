@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_flow_after_completion.dart';import 'portal_flows_flow_subscription_cancel.dart';import 'portal_flows_flow_subscription_update.dart';import 'portal_flows_flow_subscription_update_confirm.dart';/// Type of flow that the customer will go through.
-final class PortalFlowsFlowType {const PortalFlowsFlowType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_flow_after_completion.dart';import 'portal_flows_flow_subscription_cancel.dart';import 'portal_flows_flow_subscription_update.dart';import 'portal_flows_flow_subscription_update_confirm.dart';/// Type of flow that the customer will go through.
+@immutable final class PortalFlowsFlowType {const PortalFlowsFlowType._(this.value);
 
 factory PortalFlowsFlowType.fromJson(String json) { return switch (json) {
   'payment_method_update' => paymentMethodUpdate,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalFlowsFlowType($value)'; } 
  }
 /// 
-final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, required this.type, });
+@immutable final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, required this.type, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, });
 
 factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) { return PortalFlowsFlow(
   afterCompletion: PortalFlowsFlowAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),

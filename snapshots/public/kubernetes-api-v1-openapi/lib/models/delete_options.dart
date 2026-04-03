@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'preconditions.dart';/// DeleteOptions may be provided when deleting an API object.
-final class DeleteOptions {const DeleteOptions({this.apiVersion, this.dryRun, this.gracePeriodSeconds, this.ignoreStoreReadErrorWithClusterBreakingPotential, this.kind, this.orphanDependents, this.preconditions, this.propagationPolicy, });
+@immutable final class DeleteOptions {const DeleteOptions({this.apiVersion, this.dryRun, this.gracePeriodSeconds, this.ignoreStoreReadErrorWithClusterBreakingPotential, this.kind, this.orphanDependents, this.preconditions, this.propagationPolicy, });
 
 factory DeleteOptions.fromJson(Map<String, dynamic> json) { return DeleteOptions(
   apiVersion: json['apiVersion'] as String?,

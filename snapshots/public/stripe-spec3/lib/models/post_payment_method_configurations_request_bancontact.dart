@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_bancontact_display_preference.dart';/// Bancontact is the most popular online payment method in Belgium, with over 15 million cards in circulation. [Customers](https://docs.stripe.com/api/customers) use a Bancontact card or mobile app linked to a Belgian bank account to make online payments that are secure, guaranteed, and confirmed immediately. Check this [page](https://docs.stripe.com/payments/bancontact) for more details.
-final class PostPaymentMethodConfigurationsRequestBancontact {const PostPaymentMethodConfigurationsRequestBancontact({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_bancontact_display_preference.dart';/// Bancontact is the most popular online payment method in Belgium, with over 15 million cards in circulation. [Customers](https://docs.stripe.com/api/customers) use a Bancontact card or mobile app linked to a Belgian bank account to make online payments that are secure, guaranteed, and confirmed immediately. Check this [page](https://docs.stripe.com/payments/bancontact) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestBancontact {const PostPaymentMethodConfigurationsRequestBancontact({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestBancontact.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBancontact(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestBancontactDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

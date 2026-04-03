@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_refund_payment_request_refund_payment_config.dart';final class PostTerminalReadersReaderRefundPaymentRequest {const PostTerminalReadersReaderRefundPaymentRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_refund_payment_request_refund_payment_config.dart';@immutable final class PostTerminalReadersReaderRefundPaymentRequest {const PostTerminalReadersReaderRefundPaymentRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
 factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRefundPaymentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

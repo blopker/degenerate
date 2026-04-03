@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_configuration_configuration_resource_cellular_config.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config.dart';import 'terminal_configuration_configuration_resource_offline_config.dart';import 'terminal_configuration_configuration_resource_reboot_window.dart';import 'terminal_configuration_configuration_resource_tipping.dart';import 'terminal_configuration_configuration_resource_wifi_config.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TerminalConfigurationObject {const TerminalConfigurationObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_cellular_config.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config.dart';import 'terminal_configuration_configuration_resource_offline_config.dart';import 'terminal_configuration_configuration_resource_reboot_window.dart';import 'terminal_configuration_configuration_resource_tipping.dart';import 'terminal_configuration_configuration_resource_wifi_config.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TerminalConfigurationObject {const TerminalConfigurationObject._(this.value);
 
 factory TerminalConfigurationObject.fromJson(String json) { return switch (json) {
   'terminal.configuration' => terminalConfiguration,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Configurations object represents how features should be configured for terminal readers.
 /// For information about how to use it, see the [Terminal configurations documentation](https://docs.stripe.com/terminal/fleet/configurations-overview).
-final class TerminalConfiguration {const TerminalConfiguration({this.bbposWisepad3, this.bbposWiseposE, this.cellular, required this.id, this.isAccountDefault, required this.livemode, this.name, required this.object, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
+@immutable final class TerminalConfiguration {const TerminalConfiguration({required this.id, required this.livemode, required this.object, this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.isAccountDefault, this.name, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
 factory TerminalConfiguration.fromJson(Map<String, dynamic> json) { return TerminalConfiguration(
   bbposWisepad3: json['bbpos_wisepad3'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingCreditBalanceSummaryRequest {const GetBillingCreditBalanceSummaryRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingCreditBalanceSummaryRequest {const GetBillingCreditBalanceSummaryRequest();
 
 factory GetBillingCreditBalanceSummaryRequest.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceSummaryRequest(
 

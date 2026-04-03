@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common72_result.dart';import 'vectorize_messages2.dart';final class ResponseCommon72 {const ResponseCommon72({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common72_result.dart';import 'vectorize_messages2.dart';@immutable final class ResponseCommon72 {const ResponseCommon72({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon72.fromJson(Map<String, dynamic> json) { return ResponseCommon72(
   errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),

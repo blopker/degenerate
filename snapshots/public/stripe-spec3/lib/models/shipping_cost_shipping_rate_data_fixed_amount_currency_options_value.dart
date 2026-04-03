@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShippingCostShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior {const ShippingCostShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingCostShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior {const ShippingCostShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
 
 factory ShippingCostShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingCostShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior($value)'; } 
  }
-final class ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue {const ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue({required this.amount, this.taxBehavior, });
+@immutable final class ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue {const ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue({required this.amount, this.taxBehavior, });
 
 factory ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue(
   amount: (json['amount'] as num).toInt(),

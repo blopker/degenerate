@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersTreasuryOutboundPaymentsIdFailRequest {const PostTestHelpersTreasuryOutboundPaymentsIdFailRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdFailRequest {const PostTestHelpersTreasuryOutboundPaymentsIdFailRequest({this.expand});
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdFailRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdFailRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

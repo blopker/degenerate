@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'deleted_customer.dart';import 'deleted_discount_customer.dart';import 'deleted_discount_promotion_code.dart';import 'discount_source.dart';import 'promotion_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class DeletedDiscountObject {const DeletedDiscountObject._(this.value);
+@immutable final class DeletedDiscountObject {const DeletedDiscountObject._(this.value);
 
 factory DeletedDiscountObject.fromJson(String json) { return switch (json) {
   'discount' => discount,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedDiscountObject($value)'; } 
  }
 /// 
-final class DeletedDiscount {const DeletedDiscount({this.checkoutSession, this.customer, this.customerAccount, required this.deleted, required this.id, this.invoice, this.invoiceItem, required this.object, this.promotionCode, required this.source, required this.start, this.subscription, this.subscriptionItem, });
+@immutable final class DeletedDiscount {const DeletedDiscount({required this.deleted, required this.id, required this.object, required this.source, required this.start, this.checkoutSession, this.customer, this.customerAccount, this.invoice, this.invoiceItem, this.promotionCode, this.subscription, this.subscriptionItem, });
 
 factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDiscount(
   checkoutSession: json['checkout_session'] as String?,

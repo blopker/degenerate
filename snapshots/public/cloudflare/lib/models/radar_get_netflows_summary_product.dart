@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsSummaryProduct {const RadarGetNetflowsSummaryProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsSummaryProduct {const RadarGetNetflowsSummaryProduct._(this.value);
 
 factory RadarGetNetflowsSummaryProduct.fromJson(String json) { return switch (json) {
   'HTTP' => http,

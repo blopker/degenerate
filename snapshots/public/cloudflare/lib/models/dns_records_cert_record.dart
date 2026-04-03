@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_cert_record_data.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsCertRecordType {const DnsRecordsCertRecordType._(this.value);
+@immutable final class DnsRecordsCertRecordType {const DnsRecordsCertRecordType._(this.value);
 
 factory DnsRecordsCertRecordType.fromJson(String json) { return switch (json) {
   'CERT' => cert,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsCertRecordType($value)'; } 
  }
-final class DnsRecordsCertRecord {const DnsRecordsCertRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+@immutable final class DnsRecordsCertRecord {const DnsRecordsCertRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsCertRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsCertRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

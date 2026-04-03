@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_object.dart';final class RunStepStreamEventThreadRunStepFailedEvent {const RunStepStreamEventThreadRunStepFailedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepFailedEvent {const RunStepStreamEventThreadRunStepFailedEvent._(this.value);
 
 factory RunStepStreamEventThreadRunStepFailedEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.failed' => threadRunStepFailed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepStreamEventThreadRunStepFailedEvent($value)'; } 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
-final class RunStepStreamEventThreadRunStepFailed {const RunStepStreamEventThreadRunStepFailed({required this.event, required this.data, });
+@immutable final class RunStepStreamEventThreadRunStepFailed {const RunStepStreamEventThreadRunStepFailed({required this.event, required this.data, });
 
 factory RunStepStreamEventThreadRunStepFailed.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepFailed(
   event: RunStepStreamEventThreadRunStepFailedEvent.fromJson(json['event'] as String),

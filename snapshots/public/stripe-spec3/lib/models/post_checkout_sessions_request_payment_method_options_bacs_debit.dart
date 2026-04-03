@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_bacs_debit_mandate_options.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_bacs_debit_mandate_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit(
   mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

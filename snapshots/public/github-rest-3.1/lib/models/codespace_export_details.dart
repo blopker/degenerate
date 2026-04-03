@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An export of a codespace. Also, latest export details for a codespace can be fetched with id = latest
-final class CodespaceExportDetails {const CodespaceExportDetails({this.state, this.completedAt, this.branch, this.sha, this.id, this.exportUrl, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An export of a codespace. Also, latest export details for a codespace can be fetched with id = latest
+@immutable final class CodespaceExportDetails {const CodespaceExportDetails({this.state, this.completedAt, this.branch, this.sha, this.id, this.exportUrl, this.htmlUrl, });
 
 factory CodespaceExportDetails.fromJson(Map<String, dynamic> json) { return CodespaceExportDetails(
   state: json['state'] as String?,

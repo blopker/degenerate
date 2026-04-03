@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_browser_family_response_result_meta_confidence_info_annotations.dart';final class RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo {const RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_browser_family_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo {const RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

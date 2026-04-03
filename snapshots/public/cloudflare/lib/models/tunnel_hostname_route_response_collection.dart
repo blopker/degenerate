@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_hostname_route.dart';final class TunnelHostnameRouteResponseCollection {const TunnelHostnameRouteResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_hostname_route.dart';@immutable final class TunnelHostnameRouteResponseCollection {const TunnelHostnameRouteResponseCollection({this.result});
 
 factory TunnelHostnameRouteResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelHostnameRouteResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TunnelHostnameRoute.fromJson(e as Map<String, dynamic>)).toList(),

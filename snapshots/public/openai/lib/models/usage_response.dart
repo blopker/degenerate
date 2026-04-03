@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_time_bucket.dart';final class UsageResponseObject {const UsageResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_time_bucket.dart';@immutable final class UsageResponseObject {const UsageResponseObject._(this.value);
 
 factory UsageResponseObject.fromJson(String json) { return switch (json) {
   'page' => page,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UsageResponseObject($value)'; } 
  }
-final class UsageResponse {const UsageResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
+@immutable final class UsageResponse {const UsageResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
 
 factory UsageResponse.fromJson(Map<String, dynamic> json) { return UsageResponse(
   object: UsageResponseObject.fromJson(json['object'] as String),

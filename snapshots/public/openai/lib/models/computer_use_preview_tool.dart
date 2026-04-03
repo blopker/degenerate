@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ComputerEnvironment {const ComputerEnvironment._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ComputerEnvironment {const ComputerEnvironment._(this.value);
 
 factory ComputerEnvironment.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ComputerEnvironment($value)'; } 
  }
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
-final class ComputerUsePreviewTool {const ComputerUsePreviewTool({this.type = 'computer_use_preview', required this.environment, required this.displayWidth, required this.displayHeight, });
+@immutable final class ComputerUsePreviewTool {const ComputerUsePreviewTool({required this.environment, required this.displayWidth, required this.displayHeight, this.type = 'computer_use_preview', });
 
 factory ComputerUsePreviewTool.fromJson(Map<String, dynamic> json) { return ComputerUsePreviewTool(
   type: json['type'] as String,

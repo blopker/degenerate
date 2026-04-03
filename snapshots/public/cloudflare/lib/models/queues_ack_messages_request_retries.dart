@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_lease_id.dart';import 'mq_retry_delay.dart';final class QueuesAckMessagesRequestRetries {const QueuesAckMessagesRequestRetries({this.delaySeconds, this.leaseId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_lease_id.dart';import 'mq_retry_delay.dart';@immutable final class QueuesAckMessagesRequestRetries {const QueuesAckMessagesRequestRetries({this.delaySeconds, this.leaseId, });
 
 factory QueuesAckMessagesRequestRetries.fromJson(Map<String, dynamic> json) { return QueuesAckMessagesRequestRetries(
   delaySeconds: json['delay_seconds'] != null ? MqRetryDelay.fromJson(json['delay_seconds'] as num) : null,

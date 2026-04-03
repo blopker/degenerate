@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullRequestReviewLinksPullRequest {const PullRequestReviewLinksPullRequest({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestReviewLinksPullRequest {const PullRequestReviewLinksPullRequest({required this.href});
 
 factory PullRequestReviewLinksPullRequest.fromJson(Map<String, dynamic> json) { return PullRequestReviewLinksPullRequest(
   href: json['href'] as String,

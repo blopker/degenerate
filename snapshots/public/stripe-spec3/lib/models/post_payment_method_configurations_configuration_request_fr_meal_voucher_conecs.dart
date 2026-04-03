@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_fr_meal_voucher_conecs_display_preference.dart';/// Meal vouchers in France, or “titres-restaurant”, is a local benefits program commonly offered by employers for their employees to purchase prepared food and beverages on working days. Check this [page](https://docs.stripe.com/payments/meal-vouchers/fr-meal-vouchers) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecs {const PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecs({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_fr_meal_voucher_conecs_display_preference.dart';/// Meal vouchers in France, or “titres-restaurant”, is a local benefits program commonly offered by employers for their employees to purchase prepared food and beverages on working days. Check this [page](https://docs.stripe.com/payments/meal-vouchers/fr-meal-vouchers) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecs {const PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecs({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecs.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecs(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_issuing_cards_list_features.dart';final class PostAccountSessionsRequestComponentsIssuingCardsList {const PostAccountSessionsRequestComponentsIssuingCardsList({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_issuing_cards_list_features.dart';@immutable final class PostAccountSessionsRequestComponentsIssuingCardsList {const PostAccountSessionsRequestComponentsIssuingCardsList({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsIssuingCardsList.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsIssuingCardsList(
   enabled: json['enabled'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of device posture integration.
-final class TeamsDevicesSchemasType {const TeamsDevicesSchemasType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device posture integration.
+@immutable final class TeamsDevicesSchemasType {const TeamsDevicesSchemasType._(this.value);
 
 factory TeamsDevicesSchemasType.fromJson(String json) { return switch (json) {
   'workspace_one' => workspaceOne,

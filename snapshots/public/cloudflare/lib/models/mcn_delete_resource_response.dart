@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_deleted_resource.dart';final class McnDeleteResourceResponse {const McnDeleteResourceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_deleted_resource.dart';@immutable final class McnDeleteResourceResponse {const McnDeleteResourceResponse({this.result});
 
 factory McnDeleteResourceResponse.fromJson(Map<String, dynamic> json) { return McnDeleteResourceResponse(
   result: json['result'] != null ? McnDeletedResource.fromJson(json['result'] as Map<String, dynamic>) : null,

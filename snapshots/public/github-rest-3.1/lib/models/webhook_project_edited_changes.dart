@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_project_edited_changes_body.dart';import 'webhook_project_edited_changes_name.dart';/// The changes to the project if the action was `edited`.
-final class WebhookProjectEditedChanges {const WebhookProjectEditedChanges({this.body, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_project_edited_changes_body.dart';import 'webhook_project_edited_changes_name.dart';/// The changes to the project if the action was `edited`.
+@immutable final class WebhookProjectEditedChanges {const WebhookProjectEditedChanges({this.body, this.name, });
 
 factory WebhookProjectEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectEditedChanges(
   body: json['body'] != null ? WebhookProjectEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

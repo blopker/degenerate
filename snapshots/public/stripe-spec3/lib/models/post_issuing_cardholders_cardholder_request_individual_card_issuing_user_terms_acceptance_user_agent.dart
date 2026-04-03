@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2 {const PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2 {const PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2._(this.value);
 
 factory PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

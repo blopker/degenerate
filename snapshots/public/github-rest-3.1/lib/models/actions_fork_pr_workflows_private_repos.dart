@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsForkPrWorkflowsPrivateRepos {const ActionsForkPrWorkflowsPrivateRepos({required this.runWorkflowsFromForkPullRequests, required this.sendWriteTokensToWorkflows, required this.sendSecretsAndVariables, required this.requireApprovalForForkPrWorkflows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsForkPrWorkflowsPrivateRepos {const ActionsForkPrWorkflowsPrivateRepos({required this.runWorkflowsFromForkPullRequests, required this.sendWriteTokensToWorkflows, required this.sendSecretsAndVariables, required this.requireApprovalForForkPrWorkflows, });
 
 factory ActionsForkPrWorkflowsPrivateRepos.fromJson(Map<String, dynamic> json) { return ActionsForkPrWorkflowsPrivateRepos(
   runWorkflowsFromForkPullRequests: json['run_workflows_from_fork_pull_requests'] as bool,

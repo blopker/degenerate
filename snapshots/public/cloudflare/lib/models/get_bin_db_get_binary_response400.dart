@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_bin_db_get_binary_response400_errors.dart';final class GetBinDbGetBinaryResponse400 {const GetBinDbGetBinaryResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_bin_db_get_binary_response400_errors.dart';@immutable final class GetBinDbGetBinaryResponse400 {const GetBinDbGetBinaryResponse400({required this.errors, required this.result, required this.success, });
 
 factory GetBinDbGetBinaryResponse400.fromJson(Map<String, dynamic> json) { return GetBinDbGetBinaryResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetBinDbGetBinaryResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

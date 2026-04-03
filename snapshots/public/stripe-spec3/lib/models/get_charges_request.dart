@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetChargesRequest {const GetChargesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetChargesRequest {const GetChargesRequest();
 
 factory GetChargesRequest.fromJson(Map<String, dynamic> json) { return GetChargesRequest(
 

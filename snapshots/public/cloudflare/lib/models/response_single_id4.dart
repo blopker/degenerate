@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_schemas_messages2.dart';import 'response_single_id4_result.dart';final class ResponseSingleId4 {const ResponseSingleId4({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_schemas_messages2.dart';import 'response_single_id4_result.dart';@immutable final class ResponseSingleId4 {const ResponseSingleId4({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseSingleId4.fromJson(Map<String, dynamic> json) { return ResponseSingleId4(
   errors: (json['errors'] as List<dynamic>).map((e) => IamSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

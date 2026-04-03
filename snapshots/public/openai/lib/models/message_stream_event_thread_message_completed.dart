@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_object.dart';final class MessageStreamEventThreadMessageCompletedEvent {const MessageStreamEventThreadMessageCompletedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';@immutable final class MessageStreamEventThreadMessageCompletedEvent {const MessageStreamEventThreadMessageCompletedEvent._(this.value);
 
 factory MessageStreamEventThreadMessageCompletedEvent.fromJson(String json) { return switch (json) {
   'thread.message.completed' => threadMessageCompleted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageStreamEventThreadMessageCompletedEvent($value)'; } 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
-final class MessageStreamEventThreadMessageCompleted {const MessageStreamEventThreadMessageCompleted({required this.event, required this.data, });
+@immutable final class MessageStreamEventThreadMessageCompleted {const MessageStreamEventThreadMessageCompleted({required this.event, required this.data, });
 
 factory MessageStreamEventThreadMessageCompleted.fromJson(Map<String, dynamic> json) { return MessageStreamEventThreadMessageCompleted(
   event: MessageStreamEventThreadMessageCompletedEvent.fromJson(json['event'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_pipeline_edge.dart';import 'cloudflare_pipelines_pipeline_node.dart';final class CloudflarePipelinesPipelineGraph {const CloudflarePipelinesPipelineGraph({required this.edges, required this.nodes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_pipeline_edge.dart';import 'cloudflare_pipelines_pipeline_node.dart';@immutable final class CloudflarePipelinesPipelineGraph {const CloudflarePipelinesPipelineGraph({required this.edges, required this.nodes, });
 
 factory CloudflarePipelinesPipelineGraph.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineGraph(
   edges: (json['edges'] as List<dynamic>).map((e) => CloudflarePipelinesPipelineEdge.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Additional info about the trigger.
-final class PagesDeploymentDeploymentTriggerMetadata {const PagesDeploymentDeploymentTriggerMetadata({required this.branch, required this.commitDirty, required this.commitHash, required this.commitMessage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional info about the trigger.
+@immutable final class PagesDeploymentDeploymentTriggerMetadata {const PagesDeploymentDeploymentTriggerMetadata({required this.branch, required this.commitDirty, required this.commitHash, required this.commitMessage, });
 
 factory PagesDeploymentDeploymentTriggerMetadata.fromJson(Map<String, dynamic> json) { return PagesDeploymentDeploymentTriggerMetadata(
   branch: json['branch'] as String,

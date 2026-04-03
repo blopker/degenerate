@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EnvironmentApprovalsEnvironments {const EnvironmentApprovalsEnvironments({this.id, this.nodeId, this.name, this.url, this.htmlUrl, this.createdAt, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnvironmentApprovalsEnvironments {const EnvironmentApprovalsEnvironments({this.id, this.nodeId, this.name, this.url, this.htmlUrl, this.createdAt, this.updatedAt, });
 
 factory EnvironmentApprovalsEnvironments.fromJson(Map<String, dynamic> json) { return EnvironmentApprovalsEnvironments(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

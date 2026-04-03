@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateKlarna {const MandateKlarna();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateKlarna {const MandateKlarna();
 
 factory MandateKlarna.fromJson(Map<String, dynamic> json) { return MandateKlarna(
 

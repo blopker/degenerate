@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates the progress as a percentage between 0 and 100.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the progress as a percentage between 0 and 100.
 extension type const StreamDownloadPercentComplete(double value) {
 factory StreamDownloadPercentComplete.fromJson(num json) => StreamDownloadPercentComplete(json.toDouble());
 
@@ -8,7 +8,7 @@ num toJson() => value;
 
 }
 /// The status of a generated download.
-final class StreamDownloadStatus {const StreamDownloadStatus._(this.value);
+@immutable final class StreamDownloadStatus {const StreamDownloadStatus._(this.value);
 
 factory StreamDownloadStatus.fromJson(String json) { return switch (json) {
   'ready' => ready,
@@ -42,7 +42,7 @@ factory StreamDownloadUrl.fromJson(String json) => StreamDownloadUrl(Uri.parse(j
 String toJson() => value.toString();
 
 }
-final class StreamDownloads {const StreamDownloads({this.percentComplete, this.status, this.url, });
+@immutable final class StreamDownloads {const StreamDownloads({this.percentComplete, this.status, this.url, });
 
 factory StreamDownloads.fromJson(Map<String, dynamic> json) { return StreamDownloads(
   percentComplete: json['percentComplete'] != null ? StreamDownloadPercentComplete.fromJson(json['percentComplete'] as num) : null,

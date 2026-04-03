@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zone_activation_messages2_source.dart';final class ZoneActivationMessages2 {const ZoneActivationMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zone_activation_messages2_source.dart';@immutable final class ZoneActivationMessages2 {const ZoneActivationMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory ZoneActivationMessages2.fromJson(Map<String, dynamic> json) { return ZoneActivationMessages2(
   code: (json['code'] as num).toInt(),

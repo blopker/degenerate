@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZeroTrustGatewayAccountLogOptions {const ZeroTrustGatewayAccountLogOptions({this.logAll = false, this.logBlocks = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayAccountLogOptions {const ZeroTrustGatewayAccountLogOptions({this.logAll = false, this.logBlocks = false, });
 
 factory ZeroTrustGatewayAccountLogOptions.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAccountLogOptions(
   logAll: json.containsKey('log_all') ? json['log_all'] as bool : false,

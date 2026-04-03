@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSourcesRequestMandateAcceptanceOffline {const PostSourcesRequestMandateAcceptanceOffline({required this.contactEmail});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesRequestMandateAcceptanceOffline {const PostSourcesRequestMandateAcceptanceOffline({required this.contactEmail});
 
 factory PostSourcesRequestMandateAcceptanceOffline.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandateAcceptanceOffline(
   contactEmail: json['contact_email'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryResultsCompareSeriesDataGroups {const WorkersObservabilityQueryResultsCompareSeriesDataGroups({required this.key, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryResultsCompareSeriesDataGroups {const WorkersObservabilityQueryResultsCompareSeriesDataGroups({required this.key, required this.value, });
 
 factory WorkersObservabilityQueryResultsCompareSeriesDataGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompareSeriesDataGroups(
   key: json['key'] as String,

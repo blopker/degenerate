@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class IssuingCardholderAddress {const IssuingCardholderAddress({required this.address});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class IssuingCardholderAddress {const IssuingCardholderAddress({required this.address});
 
 factory IssuingCardholderAddress.fromJson(Map<String, dynamic> json) { return IssuingCardholderAddress(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

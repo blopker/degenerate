@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Order By Column Name
-final class AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Column Name
+@immutable final class AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy._(this.value);
 
 factory AiSearchListInstancesOrderBy.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,

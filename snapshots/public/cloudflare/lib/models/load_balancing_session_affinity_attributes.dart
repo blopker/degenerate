@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
-final class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite._(this.value);
+@immutable final class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite._(this.value);
 
 factory LoadBalancingSessionAffinityAttributesSamesite.fromJson(String json) { return switch (json) {
   'Auto' => auto,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingSessionAffinityAttributesSamesite($value)'; } 
  }
 /// Configures the Secure attribute on session affinity cookie. Value "Always" indicates the Secure attribute will be set in the Set-Cookie header, "Never" indicates the Secure attribute will not be set, and "Auto" will set the Secure attribute depending if Always Use HTTPS is enabled.
-final class LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure._(this.value);
+@immutable final class LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure._(this.value);
 
 factory LoadBalancingSessionAffinityAttributesSecure.fromJson(String json) { return switch (json) {
   'Auto' => auto,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingSessionAffinityAttributesSecure($value)'; } 
  }
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
-final class LoadBalancingSessionAffinityAttributesZeroDowntimeFailover {const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._(this.value);
+@immutable final class LoadBalancingSessionAffinityAttributesZeroDowntimeFailover {const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._(this.value);
 
 factory LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingSessionAffinityAttributesZeroDowntimeFailover($value)'; } 
  }
 /// Configures attributes for session affinity.
-final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders = false, this.samesite = LoadBalancingSessionAffinityAttributesSamesite.auto, this.secure = LoadBalancingSessionAffinityAttributesSecure.auto, this.zeroDowntimeFailover = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.none, });
+@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders = false, this.samesite = LoadBalancingSessionAffinityAttributesSamesite.auto, this.secure = LoadBalancingSessionAffinityAttributesSecure.auto, this.zeroDowntimeFailover = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.none, });
 
 factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) { return LoadBalancingSessionAffinityAttributes(
   drainDuration: json['drain_duration'] != null ? (json['drain_duration'] as num).toDouble() : null,

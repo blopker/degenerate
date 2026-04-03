@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookTeamEditedChangesPrivacy {const WebhookTeamEditedChangesPrivacy({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookTeamEditedChangesPrivacy {const WebhookTeamEditedChangesPrivacy({required this.from});
 
 factory WebhookTeamEditedChangesPrivacy.fromJson(Map<String, dynamic> json) { return WebhookTeamEditedChangesPrivacy(
   from: json['from'] as String,

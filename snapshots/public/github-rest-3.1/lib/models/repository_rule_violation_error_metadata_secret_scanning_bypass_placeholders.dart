@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_scanning_push_protection_bypass_placeholder_id.dart';final class RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders {const RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders({this.placeholderId, this.tokenType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_push_protection_bypass_placeholder_id.dart';@immutable final class RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders {const RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders({this.placeholderId, this.tokenType, });
 
 factory RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders.fromJson(Map<String, dynamic> json) { return RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders(
   placeholderId: json['placeholder_id'] != null ? SecretScanningPushProtectionBypassPlaceholderId.fromJson(json['placeholder_id'] as String) : null,

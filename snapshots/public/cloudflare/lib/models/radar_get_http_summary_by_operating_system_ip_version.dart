@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByOperatingSystemIpVersion {const RadarGetHttpSummaryByOperatingSystemIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemIpVersion {const RadarGetHttpSummaryByOperatingSystemIpVersion._(this.value);
 
 factory RadarGetHttpSummaryByOperatingSystemIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

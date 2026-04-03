@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostFinancialConnectionsSessionsRequestAccountHolderType {const PostFinancialConnectionsSessionsRequestAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsSessionsRequestAccountHolderType {const PostFinancialConnectionsSessionsRequestAccountHolderType._(this.value);
 
 factory PostFinancialConnectionsSessionsRequestAccountHolderType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostFinancialConnectionsSessionsRequestAccountHolderType($value)'; } 
  }
 /// The account holder to link accounts for.
-final class PostFinancialConnectionsSessionsRequestAccountHolder {const PostFinancialConnectionsSessionsRequestAccountHolder({this.account, this.customer, this.customerAccount, required this.type, });
+@immutable final class PostFinancialConnectionsSessionsRequestAccountHolder {const PostFinancialConnectionsSessionsRequestAccountHolder({required this.type, this.account, this.customer, this.customerAccount, });
 
 factory PostFinancialConnectionsSessionsRequestAccountHolder.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsSessionsRequestAccountHolder(
   account: json['account'] as String?,

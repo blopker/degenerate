@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Parent container details
-final class IamAccountManagedBy {const IamAccountManagedBy({this.parentOrgId, this.parentOrgName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parent container details
+@immutable final class IamAccountManagedBy {const IamAccountManagedBy({this.parentOrgId, this.parentOrgName, });
 
 factory IamAccountManagedBy.fromJson(Map<String, dynamic> json) { return IamAccountManagedBy(
   parentOrgId: json['parent_org_id'] as String?,

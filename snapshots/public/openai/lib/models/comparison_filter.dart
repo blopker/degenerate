@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_f
 /// - `in`: in
 /// - `nin`: not in
 /// 
-final class ComparisonFilterType {const ComparisonFilterType._(this.value);
+@immutable final class ComparisonFilterType {const ComparisonFilterType._(this.value);
 
 factory ComparisonFilterType.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.
 /// 
-final class ComparisonFilter {const ComparisonFilter({this.type = ComparisonFilterType.eq, required this.key, required this.value, });
+@immutable final class ComparisonFilter {const ComparisonFilter({required this.key, required this.value, this.type = ComparisonFilterType.eq, });
 
 factory ComparisonFilter.fromJson(Map<String, dynamic> json) { return ComparisonFilter(
   type: ComparisonFilterType.fromJson(json['type'] as String),

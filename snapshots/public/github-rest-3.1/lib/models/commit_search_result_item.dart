@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_search_result_item_commit.dart';import 'commit_search_result_item_parents.dart';import 'git_user.dart';import 'minimal_repository.dart';import 'search_result_text_matches2.dart';import 'simple_user.dart';/// Commit Search Result Item
-final class CommitSearchResultItem {const CommitSearchResultItem({required this.url, required this.sha, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, required this.repository, required this.score, required this.nodeId, this.textMatches, });
+@immutable final class CommitSearchResultItem {const CommitSearchResultItem({required this.url, required this.sha, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, required this.repository, required this.score, required this.nodeId, this.textMatches, });
 
 factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) { return CommitSearchResultItem(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationSpecs {const DestinationSpecs({required this.account, this.amount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationSpecs {const DestinationSpecs({required this.account, this.amount, });
 
 factory DestinationSpecs.fromJson(Map<String, dynamic> json) { return DestinationSpecs(
   account: json['account'] as String,

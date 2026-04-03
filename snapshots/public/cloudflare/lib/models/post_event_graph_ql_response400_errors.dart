@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventGraphQlResponse400Errors {const PostEventGraphQlResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventGraphQlResponse400Errors {const PostEventGraphQlResponse400Errors({required this.message});
 
 factory PostEventGraphQlResponse400Errors.fromJson(Map<String, dynamic> json) { return PostEventGraphQlResponse400Errors(
   message: json['message'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turnstile_messages2.dart';import 'turnstile_result_info.dart';import 'turnstile_widget_detail.dart';final class AccountsTurnstileWidgetCreateResponse {const AccountsTurnstileWidgetCreateResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turnstile_messages2.dart';import 'turnstile_result_info.dart';import 'turnstile_widget_detail.dart';@immutable final class AccountsTurnstileWidgetCreateResponse {const AccountsTurnstileWidgetCreateResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
 factory AccountsTurnstileWidgetCreateResponse.fromJson(Map<String, dynamic> json) { return AccountsTurnstileWidgetCreateResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => TurnstileMessages2.fromJson(e as Map<String, dynamic>)).toList(),

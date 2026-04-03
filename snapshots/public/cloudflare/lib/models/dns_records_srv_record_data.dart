@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_records_priority.dart';/// Components of a SRV record.
-final class DnsRecordsSrvRecordData {const DnsRecordsSrvRecordData({this.port, this.priority, this.target, this.weight, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_priority.dart';/// Components of a SRV record.
+@immutable final class DnsRecordsSrvRecordData {const DnsRecordsSrvRecordData({this.port, this.priority, this.target, this.weight, });
 
 factory DnsRecordsSrvRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsSrvRecordData(
   port: json['port'] != null ? (json['port'] as num).toDouble() : null,

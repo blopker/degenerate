@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of data source. Always `custom`.
-final class EvalCustomDataSourceConfigType {const EvalCustomDataSourceConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `custom`.
+@immutable final class EvalCustomDataSourceConfigType {const EvalCustomDataSourceConfigType._(this.value);
 
 factory EvalCustomDataSourceConfigType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - Used to define your testing criteria and
 /// - What data is required when creating a run
 /// 
-final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({this.type = EvalCustomDataSourceConfigType.custom, required this.schema, });
+@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.schema, this.type = EvalCustomDataSourceConfigType.custom, });
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
   type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),

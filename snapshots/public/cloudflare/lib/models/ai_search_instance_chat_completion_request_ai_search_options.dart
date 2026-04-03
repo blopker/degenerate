@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_instance_chat_completion_request_ai_search_options_query_rewrite.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_reranking.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_retrieval.dart';final class AiSearchInstanceChatCompletionRequestAiSearchOptions {const AiSearchInstanceChatCompletionRequestAiSearchOptions({this.queryRewrite, this.reranking, this.retrieval, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_query_rewrite.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_reranking.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_retrieval.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptions {const AiSearchInstanceChatCompletionRequestAiSearchOptions({this.queryRewrite, this.reranking, this.retrieval, });
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptions.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptions(
   queryRewrite: json['query_rewrite'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite.fromJson(json['query_rewrite'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_answer_reactions.dart';import 'webhooks_answer_user.dart';/// How the author is associated with the repository.
-final class WebhooksAnswerAuthorAssociation {const WebhooksAnswerAuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_answer_reactions.dart';import 'webhooks_answer_user.dart';/// How the author is associated with the repository.
+@immutable final class WebhooksAnswerAuthorAssociation {const WebhooksAnswerAuthorAssociation._(this.value);
 
 factory WebhooksAnswerAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksAnswerAuthorAssociation($value)'; } 
  }
-final class WebhooksAnswer {const WebhooksAnswer({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, this.reactions, required this.repositoryUrl, required this.updatedAt, required this.user, });
+@immutable final class WebhooksAnswer {const WebhooksAnswer({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.repositoryUrl, required this.updatedAt, required this.user, this.reactions, });
 
 factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnswer(
   authorAssociation: WebhooksAnswerAuthorAssociation.fromJson(json['author_association'] as String),

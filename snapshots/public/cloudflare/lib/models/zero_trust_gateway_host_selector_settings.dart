@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enable host selection in egress policies.
-final class ZeroTrustGatewayHostSelectorSettings {const ZeroTrustGatewayHostSelectorSettings({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable host selection in egress policies.
+@immutable final class ZeroTrustGatewayHostSelectorSettings {const ZeroTrustGatewayHostSelectorSettings({this.enabled});
 
 factory ZeroTrustGatewayHostSelectorSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayHostSelectorSettings(
   enabled: json['enabled'] as bool?,

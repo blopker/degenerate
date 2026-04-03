@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_unlabeled_pull_request.dart';import 'webhooks_label.dart';import 'webhooks_number.dart';final class WebhookPullRequestUnlabeledAction {const WebhookPullRequestUnlabeledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_unlabeled_pull_request.dart';import 'webhooks_label.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestUnlabeledAction {const WebhookPullRequestUnlabeledAction._(this.value);
 
 factory WebhookPullRequestUnlabeledAction.fromJson(String json) { return switch (json) {
   'unlabeled' => unlabeled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestUnlabeledAction($value)'; } 
  }
-final class WebhookPullRequestUnlabeled {const WebhookPullRequestUnlabeled({required this.action, this.enterprise, this.installation, this.label, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestUnlabeled {const WebhookPullRequestUnlabeled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
 
 factory WebhookPullRequestUnlabeled.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlabeled(
   action: WebhookPullRequestUnlabeledAction.fromJson(json['action'] as String),

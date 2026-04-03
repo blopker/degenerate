@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force = false, });
 
 factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) { return GitUpdateRefRequest(
   sha: json['sha'] as String,

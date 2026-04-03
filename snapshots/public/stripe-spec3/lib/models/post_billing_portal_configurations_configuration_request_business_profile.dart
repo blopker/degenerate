@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_business_profile_headline.dart';import 'post_billing_portal_configurations_configuration_request_business_profile_privacy_policy_url.dart';import 'post_billing_portal_configurations_configuration_request_business_profile_terms_of_service_url.dart';/// The business information shown to customers in the portal.
-final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfile {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
+@immutable final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfile {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestBusinessProfile(
   headline: json['headline'] != null ? OneOf2.parse(json['headline'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2.fromJson(v as String),) : null,

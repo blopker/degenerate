@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorListWorkflowInstancesResponseMessages {const WorListWorkflowInstancesResponseMessages({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorListWorkflowInstancesResponseMessages {const WorListWorkflowInstancesResponseMessages({required this.code, required this.message, });
 
 factory WorListWorkflowInstancesResponseMessages.fromJson(Map<String, dynamic> json) { return WorListWorkflowInstancesResponseMessages(
   code: (json['code'] as num).toDouble(),

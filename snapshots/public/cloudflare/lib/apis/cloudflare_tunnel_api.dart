@@ -317,7 +317,7 @@ if (excludePrefix != null) {
 }
 if (tunTypes != null) {
 for (final item in tunTypes) {
-  queryParametersList.add(ApiQueryParameter(name: 'tun_types', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tun_types', value: item.toJson()));
 }
 }
 if (status != null) {

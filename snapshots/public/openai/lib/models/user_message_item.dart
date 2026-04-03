@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'attachment.dart';import 'inference_options.dart';import 'user_message_item_content.dart';/// Type discriminator that is always `chatkit.thread_item`.
-final class UserMessageItemObject {const UserMessageItemObject._(this.value);
+@immutable final class UserMessageItemObject {const UserMessageItemObject._(this.value);
 
 factory UserMessageItemObject.fromJson(String json) { return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserMessageItemObject($value)'; } 
  }
 /// User-authored messages within a thread.
-final class UserMessageItem {const UserMessageItem({required this.id, this.object = UserMessageItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.user_message', required this.content, required this.attachments, required this.inferenceOptions, });
+@immutable final class UserMessageItem {const UserMessageItem({required this.id, required this.createdAt, required this.threadId, required this.content, required this.attachments, required this.inferenceOptions, this.object = UserMessageItemObject.chatkitThreadItem, this.type = 'chatkit.user_message', });
 
 factory UserMessageItem.fromJson(Map<String, dynamic> json) { return UserMessageItem(
   id: json['id'] as String,

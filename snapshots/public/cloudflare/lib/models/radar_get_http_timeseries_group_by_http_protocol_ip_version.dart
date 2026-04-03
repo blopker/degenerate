@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByHttpProtocolIpVersion {const RadarGetHttpTimeseriesGroupByHttpProtocolIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByHttpProtocolIpVersion {const RadarGetHttpTimeseriesGroupByHttpProtocolIpVersion._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByHttpProtocolIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

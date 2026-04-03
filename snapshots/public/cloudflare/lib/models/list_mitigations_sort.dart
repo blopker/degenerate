@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListMitigationsSort {const ListMitigationsSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListMitigationsSort {const ListMitigationsSort._(this.value);
 
 factory ListMitigationsSort.fromJson(String json) { return switch (json) {
   'type,asc' => typeasc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEntitlementsActiveEntitlementsIdRequest {const GetEntitlementsActiveEntitlementsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEntitlementsActiveEntitlementsIdRequest {const GetEntitlementsActiveEntitlementsIdRequest();
 
 factory GetEntitlementsActiveEntitlementsIdRequest.fromJson(Map<String, dynamic> json) { return GetEntitlementsActiveEntitlementsIdRequest(
 

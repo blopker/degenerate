@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestTaxIdCollectionRequired {const PostPaymentLinksRequestTaxIdCollectionRequired._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestTaxIdCollectionRequired {const PostPaymentLinksRequestTaxIdCollectionRequired._(this.value);
 
 factory PostPaymentLinksRequestTaxIdCollectionRequired.fromJson(String json) { return switch (json) {
   'if_supported' => ifSupported,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestTaxIdCollectionRequired($value)'; } 
  }
 /// Controls tax ID collection during checkout.
-final class PostPaymentLinksRequestTaxIdCollection {const PostPaymentLinksRequestTaxIdCollection({required this.enabled, this.$required, });
+@immutable final class PostPaymentLinksRequestTaxIdCollection {const PostPaymentLinksRequestTaxIdCollection({required this.enabled, this.$required, });
 
 factory PostPaymentLinksRequestTaxIdCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestTaxIdCollection(
   enabled: json['enabled'] as bool,

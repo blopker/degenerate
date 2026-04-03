@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostProductsProductFeaturesRequest {const PostProductsProductFeaturesRequest({required this.entitlementFeature, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostProductsProductFeaturesRequest {const PostProductsProductFeaturesRequest({required this.entitlementFeature, this.expand, });
 
 factory PostProductsProductFeaturesRequest.fromJson(Map<String, dynamic> json) { return PostProductsProductFeaturesRequest(
   entitlementFeature: json['entitlement_feature'] as String,

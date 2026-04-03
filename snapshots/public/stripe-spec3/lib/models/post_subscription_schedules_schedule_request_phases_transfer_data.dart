@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionSchedulesScheduleRequestPhasesTransferData {const PostSubscriptionSchedulesScheduleRequestPhasesTransferData({this.amountPercent, required this.destination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesTransferData {const PostSubscriptionSchedulesScheduleRequestPhasesTransferData({required this.destination, this.amountPercent, });
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesTransferData.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhasesTransferData(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,

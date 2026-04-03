@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';import 'legal_entity_japan_address.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TerminalLocationObject {const TerminalLocationObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_japan_address.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TerminalLocationObject {const TerminalLocationObject._(this.value);
 
 factory TerminalLocationObject.fromJson(String json) { return switch (json) {
   'terminal.location' => terminalLocation,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A Location represents a grouping of readers.
 /// 
 /// Related guide: [Fleet management](https://docs.stripe.com/terminal/fleet/locations)
-final class TerminalLocation {const TerminalLocation({required this.address, this.addressKana, this.addressKanji, this.configurationOverrides, required this.displayName, this.displayNameKana, this.displayNameKanji, required this.id, required this.livemode, required this.metadata, required this.object, this.phone, });
+@immutable final class TerminalLocation {const TerminalLocation({required this.address, required this.displayName, required this.id, required this.livemode, required this.metadata, required this.object, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayNameKana, this.displayNameKanji, this.phone, });
 
 factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLocation(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

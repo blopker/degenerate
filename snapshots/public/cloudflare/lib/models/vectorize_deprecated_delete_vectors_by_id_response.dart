@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_index_delete_vectors_by_id_response.dart';final class VectorizeDeprecatedDeleteVectorsByIdResponse {const VectorizeDeprecatedDeleteVectorsByIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_delete_vectors_by_id_response.dart';@immutable final class VectorizeDeprecatedDeleteVectorsByIdResponse {const VectorizeDeprecatedDeleteVectorsByIdResponse({this.result});
 
 factory VectorizeDeprecatedDeleteVectorsByIdResponse.fromJson(Map<String, dynamic> json) { return VectorizeDeprecatedDeleteVectorsByIdResponse(
   result: json['result'] != null ? VectorizeIndexDeleteVectorsByIdResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

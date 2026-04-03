@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param30_financial_connections_filters.dart';final class InvoicePaymentMethodOptionsParam30FinancialConnectionsPermissions {const InvoicePaymentMethodOptionsParam30FinancialConnectionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param30_financial_connections_filters.dart';@immutable final class InvoicePaymentMethodOptionsParam30FinancialConnectionsPermissions {const InvoicePaymentMethodOptionsParam30FinancialConnectionsPermissions._(this.value);
 
 factory InvoicePaymentMethodOptionsParam30FinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam30FinancialConnectionsPermissions($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam30FinancialConnectionsPrefetch {const InvoicePaymentMethodOptionsParam30FinancialConnectionsPrefetch._(this.value);
+@immutable final class InvoicePaymentMethodOptionsParam30FinancialConnectionsPrefetch {const InvoicePaymentMethodOptionsParam30FinancialConnectionsPrefetch._(this.value);
 
 factory InvoicePaymentMethodOptionsParam30FinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam30FinancialConnectionsPrefetch($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam30FinancialConnections {const InvoicePaymentMethodOptionsParam30FinancialConnections({this.filters, this.permissions, this.prefetch, });
+@immutable final class InvoicePaymentMethodOptionsParam30FinancialConnections {const InvoicePaymentMethodOptionsParam30FinancialConnections({this.filters, this.permissions, this.prefetch, });
 
 factory InvoicePaymentMethodOptionsParam30FinancialConnections.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam30FinancialConnections(
   filters: json['filters'] != null ? InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

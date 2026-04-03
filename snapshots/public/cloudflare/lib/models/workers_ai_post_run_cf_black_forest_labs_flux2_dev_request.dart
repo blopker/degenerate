@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_ai_post_run_cf_black_forest_labs_flux2_dev_request_multipart.dart';final class WorkersAiPostRunCfBlackForestLabsFlux2DevRequest {const WorkersAiPostRunCfBlackForestLabsFlux2DevRequest({required this.multipart});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_black_forest_labs_flux2_dev_request_multipart.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux2DevRequest {const WorkersAiPostRunCfBlackForestLabsFlux2DevRequest({required this.multipart});
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2DevRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2DevRequest(
   multipart: WorkersAiPostRunCfBlackForestLabsFlux2DevRequestMultipart.fromJson(json['multipart'] as Map<String, dynamic>),

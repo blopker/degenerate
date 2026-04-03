@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'page_shield_enabled.dart';import 'page_shield_updated_at.dart';import 'page_shield_use_cloudflare_reporting_endpoint.dart';import 'page_shield_use_connection_url_path.dart';final class PageShieldUpdateZoneSettingsResponse {const PageShieldUpdateZoneSettingsResponse({required this.enabled, required this.updatedAt, required this.useCloudflareReportingEndpoint, required this.useConnectionUrlPath, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_enabled.dart';import 'page_shield_updated_at.dart';import 'page_shield_use_cloudflare_reporting_endpoint.dart';import 'page_shield_use_connection_url_path.dart';@immutable final class PageShieldUpdateZoneSettingsResponse {const PageShieldUpdateZoneSettingsResponse({required this.enabled, required this.updatedAt, required this.useCloudflareReportingEndpoint, required this.useConnectionUrlPath, });
 
 factory PageShieldUpdateZoneSettingsResponse.fromJson(Map<String, dynamic> json) { return PageShieldUpdateZoneSettingsResponse(
   enabled: PageShieldEnabled.fromJson(json['enabled'] as bool),

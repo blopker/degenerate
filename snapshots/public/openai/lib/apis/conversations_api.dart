@@ -24,7 +24,7 @@ if (after != null) {
 }
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 
@@ -53,7 +53,7 @@ Future<ApiResult<ConversationItemList, Never>> createConversationItems({required
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 
@@ -84,7 +84,7 @@ Future<ApiResult<ConversationItem, Never>> getConversationItem({required String 
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 

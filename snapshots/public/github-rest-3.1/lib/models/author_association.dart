@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// How the author is associated with the repository.
-final class AuthorAssociation {const AuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// How the author is associated with the repository.
+@immutable final class AuthorAssociation {const AuthorAssociation._(this.value);
 
 factory AuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,

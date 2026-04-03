@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIssuingCardholdersCardholderRequestIndividualDob {const PostIssuingCardholdersCardholderRequestIndividualDob({required this.day, required this.month, required this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardholdersCardholderRequestIndividualDob {const PostIssuingCardholdersCardholderRequestIndividualDob({required this.day, required this.month, required this.year, });
 
 factory PostIssuingCardholdersCardholderRequestIndividualDob.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestIndividualDob(
   day: (json['day'] as num).toInt(),

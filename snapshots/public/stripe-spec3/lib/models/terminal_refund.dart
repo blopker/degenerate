@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A Refund object returned by the Terminal refunds API.
-final class TerminalRefund {const TerminalRefund();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Refund object returned by the Terminal refunds API.
+@immutable final class TerminalRefund {const TerminalRefund();
 
 factory TerminalRefund.fromJson(Map<String, dynamic> json) { return TerminalRefund(
 

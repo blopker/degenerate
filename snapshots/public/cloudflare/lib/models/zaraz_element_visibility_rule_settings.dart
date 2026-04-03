@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazElementVisibilityRuleSettings {const ZarazElementVisibilityRuleSettings({required this.selector});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazElementVisibilityRuleSettings {const ZarazElementVisibilityRuleSettings({required this.selector});
 
 factory ZarazElementVisibilityRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazElementVisibilityRuleSettings(
   selector: json['selector'] as String,

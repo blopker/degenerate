@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'duplicate2_additional_documentation.dart';import 'duplicate2_card_statement.dart';import 'duplicate2_cash_receipt.dart';import 'duplicate2_check_image.dart';import 'duplicate2_explanation.dart';final class Duplicate2 {const Duplicate2({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'duplicate2_additional_documentation.dart';import 'duplicate2_card_statement.dart';import 'duplicate2_cash_receipt.dart';import 'duplicate2_check_image.dart';import 'duplicate2_explanation.dart';@immutable final class Duplicate2 {const Duplicate2({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory Duplicate2.fromJson(Map<String, dynamic> json) { return Duplicate2(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => Duplicate2AdditionalDocumentationVariant2.fromJson(v as String),) : null,

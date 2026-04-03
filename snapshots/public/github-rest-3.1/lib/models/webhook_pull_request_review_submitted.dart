@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_submitted_pull_request.dart';import 'webhooks_review.dart';final class WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_submitted_pull_request.dart';import 'webhooks_review.dart';@immutable final class WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction._(this.value);
 
 factory WebhookPullRequestReviewSubmittedAction.fromJson(String json) { return switch (json) {
   'submitted' => submitted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewSubmittedAction($value)'; } 
  }
-final class WebhookPullRequestReviewSubmitted {const WebhookPullRequestReviewSubmitted({required this.action, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, required this.review, required this.sender, });
+@immutable final class WebhookPullRequestReviewSubmitted {const WebhookPullRequestReviewSubmitted({required this.action, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewSubmitted.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewSubmitted(
   action: WebhookPullRequestReviewSubmittedAction.fromJson(json['action'] as String),

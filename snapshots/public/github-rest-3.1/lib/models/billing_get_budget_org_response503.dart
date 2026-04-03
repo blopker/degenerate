@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BillingGetBudgetOrgResponse503 {const BillingGetBudgetOrgResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingGetBudgetOrgResponse503 {const BillingGetBudgetOrgResponse503({this.code, this.message, this.documentationUrl, });
 
 factory BillingGetBudgetOrgResponse503.fromJson(Map<String, dynamic> json) { return BillingGetBudgetOrgResponse503(
   code: json['code'] as String?,

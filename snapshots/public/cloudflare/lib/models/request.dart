@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
-final class RequestReturnMetadata {const RequestReturnMetadata._(this.value);
+@immutable final class RequestReturnMetadata {const RequestReturnMetadata._(this.value);
 
 factory RequestReturnMetadata.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RequestReturnMetadata($value)'; } 
  }
-final class Request {const Request({this.filter, this.returnMetadata = RequestReturnMetadata.none, this.returnValues = false, this.topK = 5.0, required this.vector, });
+@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = RequestReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
 
 factory Request.fromJson(Map<String, dynamic> json) { return Request(
   filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

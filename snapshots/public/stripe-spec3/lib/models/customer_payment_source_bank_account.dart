@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomerPaymentSourceBankAccountAccountHolderType {const CustomerPaymentSourceBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerPaymentSourceBankAccountAccountHolderType {const CustomerPaymentSourceBankAccountAccountHolderType._(this.value);
 
 factory CustomerPaymentSourceBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomerPaymentSourceBankAccountAccountHolderType($value)'; } 
  }
-final class CustomerPaymentSourceBankAccountObject {const CustomerPaymentSourceBankAccountObject._(this.value);
+@immutable final class CustomerPaymentSourceBankAccountObject {const CustomerPaymentSourceBankAccountObject._(this.value);
 
 factory CustomerPaymentSourceBankAccountObject.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomerPaymentSourceBankAccountObject($value)'; } 
  }
-final class CustomerPaymentSourceBankAccount {const CustomerPaymentSourceBankAccount({this.accountHolderName, this.accountHolderType, required this.accountNumber, required this.country, this.currency, this.object, this.routingNumber, });
+@immutable final class CustomerPaymentSourceBankAccount {const CustomerPaymentSourceBankAccount({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.currency, this.object, this.routingNumber, });
 
 factory CustomerPaymentSourceBankAccount.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceBankAccount(
   accountHolderName: json['account_holder_name'] as String?,

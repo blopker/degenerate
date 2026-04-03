@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_response_cancelled_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_response_cancelled_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookResponseCancelledObject {const WebhookResponseCancelledObject._(this.value);
+@immutable final class WebhookResponseCancelledObject {const WebhookResponseCancelledObject._(this.value);
 
 factory WebhookResponseCancelledObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `response.cancelled`.
 /// 
-final class WebhookResponseCancelledType {const WebhookResponseCancelledType._(this.value);
+@immutable final class WebhookResponseCancelledType {const WebhookResponseCancelledType._(this.value);
 
 factory WebhookResponseCancelledType.fromJson(String json) { return switch (json) {
   'response.cancelled' => responseCancelled,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a background response has been cancelled.
 /// 
-final class WebhookResponseCancelled {const WebhookResponseCancelled({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookResponseCancelled {const WebhookResponseCancelled({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookResponseCancelled.fromJson(Map<String, dynamic> json) { return WebhookResponseCancelled(
   createdAt: (json['created_at'] as num).toInt(),

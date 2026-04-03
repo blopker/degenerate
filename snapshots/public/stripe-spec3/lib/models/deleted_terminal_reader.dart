@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Device type of the reader.
-final class DeletedTerminalReaderDeviceType {const DeletedTerminalReaderDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device type of the reader.
+@immutable final class DeletedTerminalReaderDeviceType {const DeletedTerminalReaderDeviceType._(this.value);
 
 factory DeletedTerminalReaderDeviceType.fromJson(String json) { return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedTerminalReaderDeviceType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class DeletedTerminalReaderObject {const DeletedTerminalReaderObject._(this.value);
+@immutable final class DeletedTerminalReaderObject {const DeletedTerminalReaderObject._(this.value);
 
 factory DeletedTerminalReaderObject.fromJson(String json) { return switch (json) {
   'terminal.reader' => terminalReader,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedTerminalReaderObject($value)'; } 
  }
 /// 
-final class DeletedTerminalReader {const DeletedTerminalReader({required this.deleted, required this.deviceType, required this.id, required this.object, required this.serialNumber, });
+@immutable final class DeletedTerminalReader {const DeletedTerminalReader({required this.deleted, required this.deviceType, required this.id, required this.object, required this.serialNumber, });
 
 factory DeletedTerminalReader.fromJson(Map<String, dynamic> json) { return DeletedTerminalReader(
   deleted: json['deleted'] as bool,

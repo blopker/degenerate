@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_custom_fields_dropdown.dart';import 'payment_links_resource_custom_fields_label.dart';import 'payment_links_resource_custom_fields_numeric.dart';import 'payment_links_resource_custom_fields_text.dart';/// The type of the field.
-final class PaymentLinksResourceCustomFieldsType {const PaymentLinksResourceCustomFieldsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_custom_fields_dropdown.dart';import 'payment_links_resource_custom_fields_label.dart';import 'payment_links_resource_custom_fields_numeric.dart';import 'payment_links_resource_custom_fields_text.dart';/// The type of the field.
+@immutable final class PaymentLinksResourceCustomFieldsType {const PaymentLinksResourceCustomFieldsType._(this.value);
 
 factory PaymentLinksResourceCustomFieldsType.fromJson(String json) { return switch (json) {
   'dropdown' => dropdown,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceCustomFieldsType($value)'; } 
  }
 /// 
-final class PaymentLinksResourceCustomFields {const PaymentLinksResourceCustomFields({this.dropdown, required this.key, required this.label, this.numeric, required this.optional, this.text, required this.type, });
+@immutable final class PaymentLinksResourceCustomFields {const PaymentLinksResourceCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });
 
 factory PaymentLinksResourceCustomFields.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFields(
   dropdown: json['dropdown'] != null ? PaymentLinksResourceCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,

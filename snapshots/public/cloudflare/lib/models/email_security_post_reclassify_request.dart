@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityPostReclassifyRequestExpectedDisposition {const EmailSecurityPostReclassifyRequestExpectedDisposition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostReclassifyRequestExpectedDisposition {const EmailSecurityPostReclassifyRequestExpectedDisposition._(this.value);
 
 factory EmailSecurityPostReclassifyRequestExpectedDisposition.fromJson(String json) { return switch (json) {
   'NONE' => none,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityPostReclassifyRequestExpectedDisposition($value)'; } 
  }
-final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({this.emlContent, this.escalatedSubmissionId, required this.expectedDisposition, });
+@immutable final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({required this.expectedDisposition, this.emlContent, this.escalatedSubmissionId, });
 
 factory EmailSecurityPostReclassifyRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostReclassifyRequest(
   emlContent: json['eml_content'] as String?,

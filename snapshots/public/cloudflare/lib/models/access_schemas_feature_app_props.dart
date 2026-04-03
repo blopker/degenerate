@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_components_schemas_domain.dart';import 'access_schemas_auto_redirect_to_identity.dart';/// The application type.
-final class AccessComponentsSchemasType {const AccessComponentsSchemasType._(this.value);
+@immutable final class AccessComponentsSchemasType {const AccessComponentsSchemasType._(this.value);
 
 factory AccessComponentsSchemasType.fromJson(String json) { return switch (json) {
   'self_hosted' => selfHosted,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessComponentsSchemasType($value)'; } 
  }
-final class AccessSchemasFeatureAppProps {const AccessSchemasFeatureAppProps({this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, required this.type, });
+@immutable final class AccessSchemasFeatureAppProps {const AccessSchemasFeatureAppProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });
 
 factory AccessSchemasFeatureAppProps.fromJson(Map<String, dynamic> json) { return AccessSchemasFeatureAppProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),

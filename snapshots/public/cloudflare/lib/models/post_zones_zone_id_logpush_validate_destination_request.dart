@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_destination_conf.dart';final class PostZonesZoneIdLogpushValidateDestinationRequest {const PostZonesZoneIdLogpushValidateDestinationRequest({required this.destinationConf});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';@immutable final class PostZonesZoneIdLogpushValidateDestinationRequest {const PostZonesZoneIdLogpushValidateDestinationRequest({required this.destinationConf});
 
 factory PostZonesZoneIdLogpushValidateDestinationRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushValidateDestinationRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),

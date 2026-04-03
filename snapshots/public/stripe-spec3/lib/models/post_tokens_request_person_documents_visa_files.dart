@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTokensRequestPersonDocumentsVisaFilesVariant2 {const PostTokensRequestPersonDocumentsVisaFilesVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestPersonDocumentsVisaFilesVariant2 {const PostTokensRequestPersonDocumentsVisaFilesVariant2._(this.value);
 
 factory PostTokensRequestPersonDocumentsVisaFilesVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

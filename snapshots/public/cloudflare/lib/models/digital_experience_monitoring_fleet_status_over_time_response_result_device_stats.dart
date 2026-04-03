@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_schemas_aggregate_stat.dart';import 'digital_experience_monitoring_unique_devices_total.dart';final class DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats {const DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats({this.byMode, this.byStatus, this.uniqueDevicesTotal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_schemas_aggregate_stat.dart';import 'digital_experience_monitoring_unique_devices_total.dart';@immutable final class DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats {const DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats({this.byMode, this.byStatus, this.uniqueDevicesTotal, });
 
 factory DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats(
   byMode: (json['byMode'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringSchemasAggregateStat.fromJson(e as Map<String, dynamic>)).toList(),

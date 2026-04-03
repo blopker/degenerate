@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionFleetTaxData {const IssuingTransactionFleetTaxData({this.localAmountDecimal, this.nationalAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionFleetTaxData {const IssuingTransactionFleetTaxData({this.localAmountDecimal, this.nationalAmountDecimal, });
 
 factory IssuingTransactionFleetTaxData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetTaxData(
   localAmountDecimal: json['local_amount_decimal'] as String?,

@@ -28,7 +28,7 @@ factory ZeroTrustGatewaySubdomain.fromJson(String json) => ZeroTrustGatewaySubdo
 String toJson() => value;
 
 }
-final class ZeroTrustGatewayLocations {const ZeroTrustGatewayLocations({this.clientDefault, this.createdAt, this.dnsDestinationIpsId, this.dnsDestinationIpv6BlockId, this.dohSubdomain, this.ecsSupport, this.endpoints, this.id, this.ip, this.ipv4Destination, this.ipv4DestinationBackup, this.name, this.networks, this.updatedAt, });
+@immutable final class ZeroTrustGatewayLocations {const ZeroTrustGatewayLocations({this.clientDefault, this.createdAt, this.dnsDestinationIpsId, this.dnsDestinationIpv6BlockId, this.dohSubdomain, this.ecsSupport, this.endpoints, this.id, this.ip, this.ipv4Destination, this.ipv4DestinationBackup, this.name, this.networks, this.updatedAt, });
 
 factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayLocations(
   clientDefault: json['client_default'] != null ? ZeroTrustGatewayClientDefault.fromJson(json['client_default'] as bool) : null,

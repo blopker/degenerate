@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_request7_variant1_text.dart';/// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
-final class $5Request7Variant1Pooling {const $5Request7Variant1Pooling._(this.value);
+@immutable final class $5Request7Variant1Pooling {const $5Request7Variant1Pooling._(this.value);
 
 factory $5Request7Variant1Pooling.fromJson(String json) { return switch (json) {
   'mean' => mean,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return '\$5Request7Variant1Pooling($value)'; } 
  }
-final class $5Request7Variant1 {const $5Request7Variant1({this.pooling = $5Request7Variant1Pooling.mean, required this.text, });
+@immutable final class $5Request7Variant1 {const $5Request7Variant1({required this.text, this.pooling = $5Request7Variant1Pooling.mean, });
 
 factory $5Request7Variant1.fromJson(Map<String, dynamic> json) { return $5Request7Variant1(
   pooling: json.containsKey('pooling') ? $5Request7Variant1Pooling.fromJson(json['pooling'] as String) : $5Request7Variant1Pooling.mean,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_update_gateway_dynamic_route_response400_route_elements_conditional_outputs.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_conditional_properties.dart';final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalType {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_conditional_outputs.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_conditional_properties.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalType {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalType._(this.value);
 
 factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditionalType($value)'; } 
  }
-final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional(
   id: json['id'] as String,

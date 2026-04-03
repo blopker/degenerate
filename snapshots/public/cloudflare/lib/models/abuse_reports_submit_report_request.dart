@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'abuse_reports_base_report_fields.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_base_report_fields.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
 
 /// Deserialize from JSON, dispatching on the `act` discriminator.
 factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { return switch (json['act']) {
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AbuseReportsSubmitReportRequest$Unknown; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseChildren extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseChildren(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseChildren extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseChildren(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseChildren.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -34,7 +34,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseDmca extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseDmca(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseDmca extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseDmca(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseDmca.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -47,7 +47,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseGeneral extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseGeneral(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseGeneral extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseGeneral(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseGeneral.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -60,7 +60,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseNcsei extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseNcsei(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseNcsei extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseNcsei(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseNcsei.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -73,7 +73,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbusePhishing extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbusePhishing(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbusePhishing extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbusePhishing(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbusePhishing.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -86,7 +86,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseRegistrarWhois extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseRegistrarWhois(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseRegistrarWhois extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseRegistrarWhois(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseRegistrarWhois.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -99,7 +99,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseThreat extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseThreat(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseThreat extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseThreat(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseThreat.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -112,7 +112,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
 @override String toString() { return 'AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
  }
-final class AbuseReportsSubmitReportRequestAbuseTrademark extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseTrademark(this.abuseReportsBaseReportFields);
+@immutable final class AbuseReportsSubmitReportRequestAbuseTrademark extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseTrademark(this.abuseReportsBaseReportFields);
 
 factory AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsBaseReportFields.fromJson(json)); }
 
@@ -127,7 +127,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class AbuseReportsSubmitReportRequest$Unknown extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest$Unknown(this.json);
+@immutable final class AbuseReportsSubmitReportRequest$Unknown extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

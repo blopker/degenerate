@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_updated_assignment_alert.dart';final class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_updated_assignment_alert.dart';@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(String json) { return switch (json) {
   'updated_assignment' => updatedAssignment,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignmentAction($value)'; } 
  }
-final class WebhookCodeScanningAlertUpdatedAssignment {const WebhookCodeScanningAlertUpdatedAssignment({required this.action, required this.alert, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookCodeScanningAlertUpdatedAssignment {const WebhookCodeScanningAlertUpdatedAssignment({required this.action, required this.alert, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertUpdatedAssignment.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignment(
   action: WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(json['action'] as String),

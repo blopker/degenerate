@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestPaymentIntentDataCaptureMethod {const PostPaymentLinksRequestPaymentIntentDataCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestPaymentIntentDataCaptureMethod {const PostPaymentLinksRequestPaymentIntentDataCaptureMethod._(this.value);
 
 factory PostPaymentLinksRequestPaymentIntentDataCaptureMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksRequestPaymentIntentDataCaptureMethod($value)'; } 
  }
-final class PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage {const PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage._(this.value);
+@immutable final class PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage {const PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage._(this.value);
 
 factory PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestPaymentIntentDataSetupFutureUsage($value)'; } 
  }
 /// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
-final class PostPaymentLinksRequestPaymentIntentData {const PostPaymentLinksRequestPaymentIntentData({this.captureMethod, this.description, this.metadata, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
+@immutable final class PostPaymentLinksRequestPaymentIntentData {const PostPaymentLinksRequestPaymentIntentData({this.captureMethod, this.description, this.metadata, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
 factory PostPaymentLinksRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestPaymentIntentData(
   captureMethod: json['capture_method'] != null ? PostPaymentLinksRequestPaymentIntentDataCaptureMethod.fromJson(json['capture_method'] as String) : null,

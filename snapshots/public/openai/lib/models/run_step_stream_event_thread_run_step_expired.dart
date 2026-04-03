@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_object.dart';final class RunStepStreamEventThreadRunStepExpiredEvent {const RunStepStreamEventThreadRunStepExpiredEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepExpiredEvent {const RunStepStreamEventThreadRunStepExpiredEvent._(this.value);
 
 factory RunStepStreamEventThreadRunStepExpiredEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.expired' => threadRunStepExpired,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepStreamEventThreadRunStepExpiredEvent($value)'; } 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
-final class RunStepStreamEventThreadRunStepExpired {const RunStepStreamEventThreadRunStepExpired({required this.event, required this.data, });
+@immutable final class RunStepStreamEventThreadRunStepExpired {const RunStepStreamEventThreadRunStepExpired({required this.event, required this.data, });
 
 factory RunStepStreamEventThreadRunStepExpired.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepExpired(
   event: RunStepStreamEventThreadRunStepExpiredEvent.fromJson(json['event'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The set of permissions that your ConnectApp requests.
-final class ConnectAppEnumPermission {const ConnectAppEnumPermission._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that your ConnectApp requests.
+@immutable final class ConnectAppEnumPermission {const ConnectAppEnumPermission._(this.value);
 
 factory ConnectAppEnumPermission.fromJson(String json) { return switch (json) {
   'get-all' => getAll,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by event type.
-final class RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by event type.
+@immutable final class RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType._(this.value);
 
 factory RadarGetAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,

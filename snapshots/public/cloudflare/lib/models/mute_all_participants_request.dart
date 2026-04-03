@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MuteAllParticipantsRequest {const MuteAllParticipantsRequest({required this.allowUnmute});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MuteAllParticipantsRequest {const MuteAllParticipantsRequest({required this.allowUnmute});
 
 factory MuteAllParticipantsRequest.fromJson(Map<String, dynamic> json) { return MuteAllParticipantsRequest(
   allowUnmute: json['allow_unmute'] as bool,

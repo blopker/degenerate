@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest({this.expand});
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodsRequestUsBankAccountAccountHolderType {const PostPaymentMethodsRequestUsBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestUsBankAccountAccountHolderType {const PostPaymentMethodsRequestUsBankAccountAccountHolderType._(this.value);
 
 factory PostPaymentMethodsRequestUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodsRequestUsBankAccountAccountHolderType($value)'; } 
  }
-final class PostPaymentMethodsRequestUsBankAccountAccountType {const PostPaymentMethodsRequestUsBankAccountAccountType._(this.value);
+@immutable final class PostPaymentMethodsRequestUsBankAccountAccountType {const PostPaymentMethodsRequestUsBankAccountAccountType._(this.value);
 
 factory PostPaymentMethodsRequestUsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentMethodsRequestUsBankAccountAccountType($value)'; } 
  }
 /// If this is an `us_bank_account` PaymentMethod, this hash contains details about the US bank account payment method.
-final class PostPaymentMethodsRequestUsBankAccount {const PostPaymentMethodsRequestUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
+@immutable final class PostPaymentMethodsRequestUsBankAccount {const PostPaymentMethodsRequestUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
 
 factory PostPaymentMethodsRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? PostPaymentMethodsRequestUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

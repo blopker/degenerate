@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PersonRelationship {const PersonRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PersonRelationship {const PersonRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
 
 factory PersonRelationship.fromJson(Map<String, dynamic> json) { return PersonRelationship(
   authorizer: json['authorizer'] as bool?,

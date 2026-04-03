@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_bgp_status_with_state.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_psk_metadata.dart';import 'magic_replay_protection.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';import 'magic_tunnel_health_check.dart';/// When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_bgp_status_with_state.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_psk_metadata.dart';import 'magic_replay_protection.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';import 'magic_tunnel_health_check.dart';/// When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
 extension type const MagicAllowNullCipher(bool value) {
 factory MagicAllowNullCipher.fromJson(bool json) => MagicAllowNullCipher(json);
 
 bool toJson() => value;
 
 }
-final class MagicIpsecTunnel {const MagicIpsecTunnel({this.allowNullCipher, this.automaticReturnRouting, this.bgp, this.bgpStatus, required this.cloudflareEndpoint, this.createdOn, this.customRemoteIdentities, this.customerEndpoint, this.description, this.healthCheck, required this.id, required this.interfaceAddress, this.interfaceAddress6, this.modifiedOn, required this.name, this.pskMetadata, this.replayProtection, });
+@immutable final class MagicIpsecTunnel {const MagicIpsecTunnel({required this.cloudflareEndpoint, required this.id, required this.interfaceAddress, required this.name, this.allowNullCipher, this.automaticReturnRouting, this.bgp, this.bgpStatus, this.createdOn, this.customRemoteIdentities, this.customerEndpoint, this.description, this.healthCheck, this.interfaceAddress6, this.modifiedOn, this.pskMetadata, this.replayProtection, });
 
 factory MagicIpsecTunnel.fromJson(Map<String, dynamic> json) { return MagicIpsecTunnel(
   allowNullCipher: json['allow_null_cipher'] != null ? MagicAllowNullCipher.fromJson(json['allow_null_cipher'] as bool) : null,

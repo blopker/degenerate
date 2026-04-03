@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_package_published_package_package_version_container_metadata_tag.dart';final class WebhookPackagePublishedPackagePackageVersionContainerMetadata {const WebhookPackagePublishedPackagePackageVersionContainerMetadata({this.labels, this.manifest, this.tag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_published_package_package_version_container_metadata_tag.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionContainerMetadata {const WebhookPackagePublishedPackagePackageVersionContainerMetadata({this.labels, this.manifest, this.tag, });
 
 factory WebhookPackagePublishedPackagePackageVersionContainerMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionContainerMetadata(
   labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),

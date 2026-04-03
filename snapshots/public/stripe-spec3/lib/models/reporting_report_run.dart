@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file.dart';import 'financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ReportingReportRunObject {const ReportingReportRunObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ReportingReportRunObject {const ReportingReportRunObject._(this.value);
 
 factory ReportingReportRunObject.fromJson(String json) { return switch (json) {
   'reporting.report_run' => reportingReportRun,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Note that certain report types can only be run based on your live-mode data (not test-mode
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
-final class ReportingReportRun {const ReportingReportRun({required this.created, this.error, required this.id, required this.livemode, required this.object, required this.parameters, required this.reportType, this.result, required this.status, this.succeededAt, });
+@immutable final class ReportingReportRun {const ReportingReportRun({required this.created, required this.id, required this.livemode, required this.object, required this.parameters, required this.reportType, required this.status, this.error, this.result, this.succeededAt, });
 
 factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return ReportingReportRun(
   created: (json['created'] as num).toInt(),

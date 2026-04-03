@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeScanningAutofixCommitsResponse {const CodeScanningAutofixCommitsResponse({this.targetRef, this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningAutofixCommitsResponse {const CodeScanningAutofixCommitsResponse({this.targetRef, this.sha, });
 
 factory CodeScanningAutofixCommitsResponse.fromJson(Map<String, dynamic> json) { return CodeScanningAutofixCommitsResponse(
   targetRef: json['target_ref'] as String?,

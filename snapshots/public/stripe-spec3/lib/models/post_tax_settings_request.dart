@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_settings_request_defaults.dart';import 'post_tax_settings_request_head_office.dart';final class PostTaxSettingsRequest {const PostTaxSettingsRequest({this.defaults, this.expand, this.headOffice, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_settings_request_defaults.dart';import 'post_tax_settings_request_head_office.dart';@immutable final class PostTaxSettingsRequest {const PostTaxSettingsRequest({this.defaults, this.expand, this.headOffice, });
 
 factory PostTaxSettingsRequest.fromJson(Map<String, dynamic> json) { return PostTaxSettingsRequest(
   defaults: json['defaults'] != null ? PostTaxSettingsRequestDefaults.fromJson(json['defaults'] as Map<String, dynamic>) : null,

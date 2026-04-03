@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_create_response400_errors.dart';final class PostDatasetCreateResponse400 {const PostDatasetCreateResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_create_response400_errors.dart';@immutable final class PostDatasetCreateResponse400 {const PostDatasetCreateResponse400({required this.errors, required this.result, required this.success, });
 
 factory PostDatasetCreateResponse400.fromJson(Map<String, dynamic> json) { return PostDatasetCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostDatasetCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

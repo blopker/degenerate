@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A URI path rewrite.
-final class RulesetsRewriteUriPath {const RulesetsRewriteUriPath({this.expression, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URI path rewrite.
+@immutable final class RulesetsRewriteUriPath {const RulesetsRewriteUriPath({this.expression, this.value, });
 
 factory RulesetsRewriteUriPath.fromJson(Map<String, dynamic> json) { return RulesetsRewriteUriPath(
   expression: json['expression'] as String?,

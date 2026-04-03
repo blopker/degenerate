@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MagicNetflowConfigRequest {const MagicNetflowConfigRequest({this.activeTimeout, this.collectorIp, this.collectorPort, this.inactiveTimeout, this.samplingRate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicNetflowConfigRequest {const MagicNetflowConfigRequest({this.activeTimeout, this.collectorIp, this.collectorPort, this.inactiveTimeout, this.samplingRate, });
 
 factory MagicNetflowConfigRequest.fromJson(Map<String, dynamic> json) { return MagicNetflowConfigRequest(
   activeTimeout: json['active_timeout'] != null ? (json['active_timeout'] as num).toInt() : null,

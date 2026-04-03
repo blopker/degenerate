@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_event_query_delete_response404_errors.dart';final class DeleteEventQueryDeleteResponse404 {const DeleteEventQueryDeleteResponse404({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_event_query_delete_response404_errors.dart';@immutable final class DeleteEventQueryDeleteResponse404 {const DeleteEventQueryDeleteResponse404({required this.errors, required this.result, required this.success, });
 
 factory DeleteEventQueryDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeleteEventQueryDeleteResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteEventQueryDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

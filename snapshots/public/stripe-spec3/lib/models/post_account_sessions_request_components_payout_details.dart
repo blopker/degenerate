@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_payout_details_features.dart';final class PostAccountSessionsRequestComponentsPayoutDetails {const PostAccountSessionsRequestComponentsPayoutDetails({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_payout_details_features.dart';@immutable final class PostAccountSessionsRequestComponentsPayoutDetails {const PostAccountSessionsRequestComponentsPayoutDetails({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsPayoutDetails.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsPayoutDetails(
   enabled: json['enabled'] as bool,

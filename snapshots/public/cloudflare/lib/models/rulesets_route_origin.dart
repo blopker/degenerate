@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An origin to route to.
-final class RulesetsRouteOrigin {const RulesetsRouteOrigin({this.host, this.port, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An origin to route to.
+@immutable final class RulesetsRouteOrigin {const RulesetsRouteOrigin({this.host, this.port, });
 
 factory RulesetsRouteOrigin.fromJson(Map<String, dynamic> json) { return RulesetsRouteOrigin(
   host: json['host'] as String?,

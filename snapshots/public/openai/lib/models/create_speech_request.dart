@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_speech_request_model.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-final class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat._(this.value);
+@immutable final class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat._(this.value);
 
 factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch (json) {
   'mp3' => mp3,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateSpeechRequestResponseFormat($value)'; } 
  }
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
-final class CreateSpeechRequestStreamFormat {const CreateSpeechRequestStreamFormat._(this.value);
+@immutable final class CreateSpeechRequestStreamFormat {const CreateSpeechRequestStreamFormat._(this.value);
 
 factory CreateSpeechRequestStreamFormat.fromJson(String json) { return switch (json) {
   'sse' => sse,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateSpeechRequestStreamFormat($value)'; } 
  }
-final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, this.instructions, required this.voice, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = CreateSpeechRequestStreamFormat.audio, });
+@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = CreateSpeechRequestStreamFormat.audio, });
 
 factory CreateSpeechRequest.fromJson(Map<String, dynamic> json) { return CreateSpeechRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateSpeechRequestModelVariant2.fromJson(v as String),),

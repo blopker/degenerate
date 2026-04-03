@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionTreasury {const IssuingTransactionTreasury({this.receivedCredit, this.receivedDebit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionTreasury {const IssuingTransactionTreasury({this.receivedCredit, this.receivedDebit, });
 
 factory IssuingTransactionTreasury.fromJson(Map<String, dynamic> json) { return IssuingTransactionTreasury(
   receivedCredit: json['received_credit'] as String?,
