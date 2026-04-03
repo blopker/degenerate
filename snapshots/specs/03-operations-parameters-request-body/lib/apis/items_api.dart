@@ -88,7 +88,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/token',
   headers: headers,
-  body: [
+  body: <String>[
     'grant_type=${Uri.encodeQueryComponent(body.grantType)}',
     if (body.scope case final scope$?)
       'scope=${Uri.encodeQueryComponent(scope$)}',

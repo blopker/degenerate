@@ -51,7 +51,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(credentialListSid)}/Credentials.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'Username=${Uri.encodeQueryComponent(body.username)}',
     'Password=${Uri.encodeQueryComponent(body.password)}',
   ].join('&'),
@@ -94,7 +94,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(credentialListSid)}/Credentials/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.password case final password$?)
       'Password=${Uri.encodeQueryComponent(password$)}',
   ].join('&'),

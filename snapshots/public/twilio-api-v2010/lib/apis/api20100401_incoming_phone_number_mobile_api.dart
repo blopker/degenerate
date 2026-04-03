@@ -63,7 +63,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/Mobile.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'PhoneNumber=${Uri.encodeQueryComponent(body.phoneNumber)}',
     if (body.apiVersion case final apiVersion$?)
       'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',

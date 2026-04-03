@@ -46,7 +46,7 @@ return execute(
 /// Retrieves a list of aggregate metrics grouped by time interval.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/bytime`
-Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {

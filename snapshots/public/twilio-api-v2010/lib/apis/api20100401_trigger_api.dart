@@ -37,7 +37,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.callbackMethod case final callbackMethod$?)
       'CallbackMethod=${Uri.encodeQueryComponent(callbackMethod$.toJson())}',
     if (body.callbackUrl case final callbackUrl$?)
@@ -124,7 +124,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'CallbackUrl=${Uri.encodeQueryComponent(body.callbackUrl.toString())}',
     'TriggerValue=${Uri.encodeQueryComponent(body.triggerValue)}',
     'UsageCategory=${Uri.encodeQueryComponent(body.usageCategory)}',

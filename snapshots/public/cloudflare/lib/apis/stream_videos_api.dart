@@ -67,7 +67,7 @@ return execute(
 /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
 ///
 /// `POST /accounts/{account_id}/stream`
-Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, StreamDirectUser? directUser, required StreamTusResumable tusResumable, StreamCreator? uploadCreator, required StreamUploadLength uploadLength, StreamUploadMetadata? uploadMetadata, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, required StreamTusResumable tusResumable, required StreamUploadLength uploadLength, StreamDirectUser? directUser, StreamCreator? uploadCreator, StreamUploadMetadata? uploadMetadata, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (directUser != null) {
   queryParameters['direct_user'] = directUser.toString();
@@ -212,7 +212,7 @@ return execute(
 /// Uploads a video to Stream from a provided URL.
 ///
 /// `POST /accounts/{account_id}/stream/copy`
-Future<ApiResult<StreamVideos?, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamVideoCopyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideos?, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, required StreamVideoCopyRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
   headers['Upload-Creator'] = uploadCreator.toString();
@@ -239,7 +239,7 @@ return execute(
 /// Creates a direct upload that allows video uploads without an API key.
 ///
 /// `POST /accounts/{account_id}/stream/direct_upload`
-Future<ApiResult<StreamDirectUploadResponseResult?, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDirectUploadResponseResult?, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, required StreamDirectUploadRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
   headers['Upload-Creator'] = uploadCreator.toString();

@@ -49,7 +49,7 @@ return execute(
 /// Create items in a conversation with the given ID.
 ///
 /// `POST /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, List<IncludeEnum>? include, required CreateConversationItemsRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, required CreateConversationItemsRequest body, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {

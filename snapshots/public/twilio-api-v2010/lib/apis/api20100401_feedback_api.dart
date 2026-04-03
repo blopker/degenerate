@@ -18,7 +18,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Messages/${Uri.encodeComponent(messageSid)}/Feedback.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.outcome case final outcome$?)
       'Outcome=${Uri.encodeQueryComponent(outcome$.toJson())}',
   ].join('&'),

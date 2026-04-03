@@ -60,7 +60,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.recordingStatusCallbackEvent case final recordingStatusCallbackEvent$?)
       'RecordingStatusCallbackEvent=${Uri.encodeQueryComponent(recordingStatusCallbackEvent$.toString())}',
     if (body.recordingStatusCallback case final recordingStatusCallback$?)
@@ -113,7 +113,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
     if (body.pauseBehavior case final pauseBehavior$?)
       'PauseBehavior=${Uri.encodeQueryComponent(pauseBehavior$)}',

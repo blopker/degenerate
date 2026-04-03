@@ -129,7 +129,7 @@ return execute(
 /// Revokes a user's access across all applications.
 ///
 /// `POST /accounts/{account_id}/access/organizations/revoke_user`
-Future<ApiResult<bool?, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, bool? devices, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<bool?, Never>> zeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessIdentifier accountId, required ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, bool? devices, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (devices != null) {
   queryParameters['devices'] = devices.toString();

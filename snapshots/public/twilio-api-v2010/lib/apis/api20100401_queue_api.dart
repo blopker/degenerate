@@ -37,7 +37,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
     if (body.maxSize case final maxSize$?)
@@ -113,7 +113,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
     if (body.maxSize case final maxSize$?)
       'MaxSize=${Uri.encodeQueryComponent(maxSize$.toString())}',

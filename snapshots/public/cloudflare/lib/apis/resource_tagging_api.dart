@@ -45,7 +45,7 @@ return execute(
 /// Creates or updates tags for a specific account-level resource.
 ///
 /// `PUT /accounts/{account_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingSetTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, required ResourceTaggingSetTagsRequestAccountLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -75,7 +75,7 @@ return execute(
 /// Removes all tags from a specific account-level resource.
 ///
 /// `DELETE /accounts/{account_id}/tags`
-Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingDeleteTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTaggingIdentifier accountId, required ResourceTaggingDeleteTagsRequestAccountLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -237,7 +237,7 @@ return execute(
 /// Creates or updates tags for a specific zone-level resource. Replaces all existing tags for the resource.
 ///
 /// `PUT /zones/{zone_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingSetTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingSetTagsRequestZoneLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -267,7 +267,7 @@ return execute(
 /// Removes all tags from a specific zone-level resource.
 ///
 /// `DELETE /zones/{zone_id}/tags`
-Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingDeleteTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, required ResourceTaggingDeleteTagsRequestZoneLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;

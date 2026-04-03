@@ -49,7 +49,7 @@ return execute(
 /// Upload a Worker Version without deploying to Cloudflare's network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<WorkersVersionItemUploaded, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionItemUploaded, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkerVersionsUploadVersionRequest body, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) {
   queryParameters['bindings_inherit'] = bindingsInherit.toJson();

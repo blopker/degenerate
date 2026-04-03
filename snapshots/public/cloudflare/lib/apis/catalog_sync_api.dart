@@ -38,7 +38,7 @@ return execute(
 /// Create a new Catalog Sync (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnCatalogSync?, McnBadResponse>> catalogSyncsCreate({required McnAccountId accountId, String? forwarded, required McnCreateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync?, McnBadResponse>> catalogSyncsCreate({required McnAccountId accountId, required McnCreateCatalogSyncRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;

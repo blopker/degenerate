@@ -54,7 +54,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.apiVersion case final apiVersion$?)
       'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
     if (body.voiceUrl case final voiceUrl$?)
@@ -127,7 +127,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Applications/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
     if (body.apiVersion case final apiVersion$?)

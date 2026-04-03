@@ -41,7 +41,7 @@ final AccessProtocolSelfHostedApp protocol;
 
 Map<String, dynamic> toJson() { return {
   'port': port.toJson(),
-  'target_attributes': targetAttributes.map((k, v) => MapEntry(k, v)),
+  'target_attributes': targetAttributes,
   'protocol': protocol.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&

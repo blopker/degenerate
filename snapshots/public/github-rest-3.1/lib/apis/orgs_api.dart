@@ -281,7 +281,7 @@ return execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /orgs/{org}/attestations/bulk-list`
-Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, int? perPage, String? before, String? after, required OrgsListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, required OrgsListAttestationsBulkRequest body, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1131,7 +1131,7 @@ return execute(
 /// Get the number of API requests and rate-limited requests made within an organization over a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, required String timestampIncrement, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) {
@@ -1163,7 +1163,7 @@ return execute(
 /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats/users/{user_id}`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, required String timestampIncrement, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) {
@@ -1195,7 +1195,7 @@ return execute(
 /// Get the number of API requests and rate-limited requests made within an organization by a specific actor within a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, required String timestampIncrement, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) {

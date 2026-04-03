@@ -51,7 +51,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
   ].join('&'),
   options: options,
@@ -93,7 +93,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/CredentialLists/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
   ].join('&'),
   options: options,

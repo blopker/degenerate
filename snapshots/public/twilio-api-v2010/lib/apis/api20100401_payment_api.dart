@@ -18,7 +18,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
     'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
     if (body.bankAccountType case final bankAccountType$?)
@@ -70,7 +70,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
     'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
     if (body.capture case final capture$?)

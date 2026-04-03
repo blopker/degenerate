@@ -223,7 +223,14 @@ class ApiEmitter {
       );
     }
 
-    // Per-request options
+    // Sort required named parameters before optional ones.
+    params.sort((a, b) {
+      final aReq = a.required ? 0 : 1;
+      final bReq = b.required ? 0 : 1;
+      return aReq.compareTo(bReq);
+    });
+
+    // Per-request options (always last, always optional)
     params.add(
       Parameter(
         (pb) => pb
@@ -381,10 +388,10 @@ class ApiEmitter {
         final sanitizedName = _paramNameLiteral(p.name);
         final cookieValue = _toStringExpr(p);
         if (p.isRequired) {
-          buf.writeln("cookies[$sanitizedName] = $cookieValue;");
+          buf.writeln('cookies[$sanitizedName] = $cookieValue;');
         } else {
           buf.writeln('if (${p.dartName} != null) {');
-          buf.writeln("  cookies[$sanitizedName] = $cookieValue;");
+          buf.writeln('  cookies[$sanitizedName] = $cookieValue;');
           buf.writeln('}');
         }
       }
@@ -409,10 +416,10 @@ class ApiEmitter {
       final sanitizedName = _paramNameLiteral(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
-        buf.writeln("headers[$sanitizedName] = $headerValue;");
+        buf.writeln('headers[$sanitizedName] = $headerValue;');
       } else {
         buf.writeln('if (${p.dartName} != null) {');
-        buf.writeln("  headers[$sanitizedName] = $headerValue;");
+        buf.writeln('  headers[$sanitizedName] = $headerValue;');
         buf.writeln('}');
       }
     }
@@ -589,10 +596,10 @@ class ApiEmitter {
     final sanitizedName = _paramNameLiteral(p.name);
     final queryValue = _toStringExpr(p);
     if (p.isRequired && !p.type.isNullable) {
-      buf.writeln("queryParameters[$sanitizedName] = $queryValue;");
+      buf.writeln('queryParameters[$sanitizedName] = $queryValue;');
     } else {
       buf.writeln('if (${p.dartName} != null) {');
-      buf.writeln("  queryParameters[$sanitizedName] = $queryValue;");
+      buf.writeln('  queryParameters[$sanitizedName] = $queryValue;');
       buf.writeln('}');
     }
   }
@@ -642,7 +649,7 @@ class ApiEmitter {
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, joined);
     } else {
-      buf.writeln("queryParameters[$nameLiteral] = $joined;");
+      buf.writeln('queryParameters[$nameLiteral] = $joined;');
     }
   }
 
@@ -919,6 +926,13 @@ class ApiEmitter {
       );
     }
 
+    // Sort required named parameters before optional ones.
+    params.sort((a, b) {
+      final aReq = a.required ? 0 : 1;
+      final bReq = b.required ? 0 : 1;
+      return aReq.compareTo(bReq);
+    });
+
     params.add(
       Parameter(
         (pb) => pb
@@ -1039,10 +1053,10 @@ class ApiEmitter {
         final sanitizedName = _paramNameLiteral(p.name);
         final cookieValue = _toStringExpr(p);
         if (p.isRequired) {
-          buf.writeln("cookies[$sanitizedName] = $cookieValue;");
+          buf.writeln('cookies[$sanitizedName] = $cookieValue;');
         } else {
           buf.writeln('if (${p.dartName} != null) {');
-          buf.writeln("  cookies[$sanitizedName] = $cookieValue;");
+          buf.writeln('  cookies[$sanitizedName] = $cookieValue;');
           buf.writeln('}');
         }
       }
@@ -1065,10 +1079,10 @@ class ApiEmitter {
       final sanitizedName = _paramNameLiteral(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
-        buf.writeln("headers[$sanitizedName] = $headerValue;");
+        buf.writeln('headers[$sanitizedName] = $headerValue;');
       } else {
         buf.writeln('if (${p.dartName} != null) {');
-        buf.writeln("  headers[$sanitizedName] = $headerValue;");
+        buf.writeln('  headers[$sanitizedName] = $headerValue;');
         buf.writeln('}');
       }
     }
@@ -1350,9 +1364,9 @@ class ApiEmitter {
     bool isRequired,
   ) {
     if (!isRequired) {
-      buf.writeln('  body: body == null ? null : [');
+      buf.writeln('  body: body == null ? null : <String>[');
     } else {
-      buf.writeln('  body: [');
+      buf.writeln('  body: <String>[');
     }
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';

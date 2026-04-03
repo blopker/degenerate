@@ -703,7 +703,8 @@ class FileEmitter {
             if (isDirectBytes(variant)) needsTypedData = true;
           }
         } else {
-          // AnyOf class: fromJson may inline OneOf.parse for variant types.
+          // AnyOf class: fromJson calls .fromJson()/.canParse() on variants,
+          // or inlines OneOf.parse for OneOf-eligible union variants.
           for (final variant in variants) {
             _collectTopLevelTypeName(variant, names, typeRegistry);
             if (isOneOfType(variant)) needsOneOf = true;

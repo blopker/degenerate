@@ -43,7 +43,7 @@ return execute(
 /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
 ///
 /// `PUT /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ShieldConfiguration, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, required ShieldConfiguration body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldConfiguration, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, required ShieldConfiguration body, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) {
   queryParameters['normalize'] = normalize.toString();

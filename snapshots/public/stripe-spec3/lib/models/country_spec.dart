@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'default_currency': defaultCurrency,
   'id': id,
   'object': object.toJson(),
-  'supported_bank_account_currencies': supportedBankAccountCurrencies.map((k, v) => MapEntry(k, v)),
+  'supported_bank_account_currencies': supportedBankAccountCurrencies,
   'supported_payment_currencies': supportedPaymentCurrencies,
   'supported_payment_methods': supportedPaymentMethods,
   'supported_transfer_countries': supportedTransferCountries,

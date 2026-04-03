@@ -37,7 +37,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants/${Uri.encodeComponent(callSid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.muted case final muted$?)
       'Muted=${Uri.encodeQueryComponent(muted$.toString())}',
     if (body.hold case final hold$?)
@@ -142,7 +142,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Participants.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'From=${Uri.encodeQueryComponent(body.from)}',
     'To=${Uri.encodeQueryComponent(body.to)}',
     if (body.statusCallback case final statusCallback$?)

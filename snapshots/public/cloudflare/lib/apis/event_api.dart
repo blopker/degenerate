@@ -246,7 +246,7 @@ return execute(
 /// The `event_id` must be defined (to list existing events (and their IDs), use the [`Filter and List Events`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/methods/list/) endpoint). Also, must provide query parameters.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/{event_id}/relationships`
-Future<ApiResult<List<GetEventRelationshipsResponse>, GetEventRelationshipsResponse400>> getEventRelationships({required String accountId, required String eventId, GetEventRelationshipsDirection? direction, double? maxDepth, GetEventRelationshipsRelationshipTypes? relationshipTypes, List<String>? indicatorTypeIds, required String datasetId, bool? includeParent, double? page, double? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GetEventRelationshipsResponse>, GetEventRelationshipsResponse400>> getEventRelationships({required String accountId, required String eventId, required String datasetId, GetEventRelationshipsDirection? direction, double? maxDepth, GetEventRelationshipsRelationshipTypes? relationshipTypes, List<String>? indicatorTypeIds, bool? includeParent, double? page, double? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();

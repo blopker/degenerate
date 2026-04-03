@@ -280,10 +280,13 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
       listItemNeedsToJson(items)
           ? '$accessor$q.map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
           : accessor,
-    IrMap(:final values) =>
-      mapValueNeedsToJson(values)
-          ? '$accessor$q.map((k, v) => MapEntry(k, ${buildToJsonCode(values, 'v', nullable: values.isNullable)}))'
-          : accessor,
+    IrMap(:final values) => () {
+      if (!mapValueNeedsToJson(values)) return accessor;
+      final valueExpr = buildToJsonCode(values, 'v', nullable: values.isNullable);
+      // Skip identity map transform.
+      if (valueExpr == 'v') return accessor;
+      return '$accessor$q.map((k, v) => MapEntry(k, $valueExpr))';
+    }(),
     // All named types with .toJson()
     IrEnum() ||
     IrObject() ||

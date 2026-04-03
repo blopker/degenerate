@@ -15,7 +15,7 @@ final Map<String,List<String>> targetAttributes;
 
 Map<String, dynamic> toJson() { return {
   'port': port.toJson(),
-  'target_attributes': targetAttributes.map((k, v) => MapEntry(k, v)),
+  'target_attributes': targetAttributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&
       json.containsKey('target_attributes'); } 

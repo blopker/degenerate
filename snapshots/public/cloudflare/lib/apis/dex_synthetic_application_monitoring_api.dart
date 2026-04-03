@@ -196,7 +196,7 @@ return execute(
 /// Get test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/http-tests/{test_id}`
-Future<ApiResult<DigitalExperienceMonitoringHttpDetailsResponse?, Never>> dexEndpointsHttpTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, List<String>? deviceId, required String from, required String to, required DexEndpointsHttpTestDetailsInterval interval, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringHttpDetailsResponse?, Never>> dexEndpointsHttpTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, required DexEndpointsHttpTestDetailsInterval interval, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -234,7 +234,7 @@ return execute(
 /// Get percentiles for an http test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/http-tests/{test_id}/percentiles`
-Future<ApiResult<DigitalExperienceMonitoringHttpDetailsPercentilesResponse?, Never>> dexEndpointsHttpTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, List<String>? deviceId, required String from, required String to, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringHttpDetailsPercentilesResponse?, Never>> dexEndpointsHttpTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -375,7 +375,7 @@ return execute(
 /// Get test details and aggregate performance metrics for an traceroute test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/traceroute-tests/{test_id}`
-Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsResponse?, Never>> dexEndpointsTracerouteTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, List<String>? deviceId, required String from, required String to, required DexEndpointsTracerouteTestDetailsInterval interval, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsResponse?, Never>> dexEndpointsTracerouteTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, required DexEndpointsTracerouteTestDetailsInterval interval, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -444,7 +444,7 @@ return execute(
 /// Get percentiles for a traceroute test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles`
-Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse?, Never>> dexEndpointsTracerouteTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, List<String>? deviceId, required String from, required String to, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse?, Never>> dexEndpointsTracerouteTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {

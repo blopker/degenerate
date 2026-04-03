@@ -50,7 +50,7 @@ final MemberSubjectUser user;
 Map<String, dynamic> toJson() { return {
   'create_time': createTime.toIso8601String(),
   'id': id.toJson(),
-  'meta': meta.map((k, v) => MapEntry(k, v)),
+  'meta': meta,
   'status': status.toJson(),
   'update_time': updateTime.toIso8601String(),
   'user': user.toJson(),

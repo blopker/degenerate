@@ -55,7 +55,7 @@ return execute(
 /// Create a new Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnProvider?, McnBadResponse>> providersCreate({required McnAccountId accountId, String? forwarded, required McnCreateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnProvider?, McnBadResponse>> providersCreate({required McnAccountId accountId, required McnCreateProviderRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;
