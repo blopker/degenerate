@@ -14,6 +14,9 @@ import 'package:yaml/yaml.dart';
 /// Throws [FormatException] if a circular external ref is detected.
 /// Throws [FileSystemException] if a referenced file cannot be found.
 class RefInliner {
+  /// Creates an inliner rooted at [_baseDir].
+  RefInliner(this._baseDir);
+
   /// The directory of the root spec file, used to resolve relative paths.
   final String _baseDir;
 
@@ -29,9 +32,8 @@ class RefInliner {
   /// Tracks names to avoid collisions.
   final _usedNames = <String>{};
 
-  RefInliner(this._baseDir);
-
-  /// Inline all external refs in [root], returning a new map with only local refs.
+  /// Inline all external refs in [root], returning a new
+  /// map with only local refs.
   Map<String, dynamic> inline(Map<String, dynamic> root) {
     // Pre-register existing schema names.
     final components = root['components'] as Map<String, dynamic>?;
@@ -92,10 +94,12 @@ class RefInliner {
       final resultComponents =
           result.putIfAbsent('components', () => <String, dynamic>{})
               as Map<String, dynamic>;
-      final resultSchemas =
-          resultComponents.putIfAbsent('schemas', () => <String, dynamic>{})
-              as Map<String, dynamic>;
-      resultSchemas.addAll(_collectedSchemas);
+      (resultComponents.putIfAbsent(
+                'schemas',
+                () => <String, dynamic>{},
+              )
+              as Map<String, dynamic>)
+          .addAll(_collectedSchemas);
     }
 
     return result;
@@ -156,7 +160,8 @@ class RefInliner {
     return value;
   }
 
-  /// Inline an external `$ref` directly (for path items and other non-schema refs).
+  /// Inline an external `$ref` directly (for path items
+  /// and other non-schema refs).
   Map<String, dynamic> _inlineExternalRef(
     String ref,
     String currentDir,

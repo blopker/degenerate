@@ -1,22 +1,21 @@
 import 'package:code_builder/code_builder.dart';
-
-import '../ir/ir_types.dart';
-import '../naming.dart';
-import 'emit_utils.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/naming.dart';
 
 /// Dart type name for an enum's value kind.
 String _dartValueType(PrimitiveKind kind) => switch (kind) {
-      PrimitiveKind.int => 'int',
-      PrimitiveKind.double => 'double',
-      _ => 'String',
-    };
+  PrimitiveKind.int => 'int',
+  PrimitiveKind.double => 'double',
+  _ => 'String',
+};
 
 /// Dart type name for the JSON parameter in fromJson.
 String _jsonParamType(PrimitiveKind kind) => switch (kind) {
-      PrimitiveKind.int => 'int',
-      PrimitiveKind.double => 'double',
-      _ => 'String',
-    };
+  PrimitiveKind.int => 'int',
+  PrimitiveKind.double => 'double',
+  _ => 'String',
+};
 
 /// Emits a `final class` from an [IrEnum] that behaves like an enhanced enum.
 ///
@@ -24,8 +23,11 @@ String _jsonParamType(PrimitiveKind kind) => switch (kind) {
 /// toJson method. Unknown server values are preserved via the raw `value`
 /// field, enabling round-trip fidelity.
 class EnumEmitter {
-  final IrEnum irEnum;
+  /// Creates an emitter for the given [irEnum].
   const EnumEmitter(this.irEnum);
+
+  /// The enum IR to emit.
+  final IrEnum irEnum;
 
   /// Computes deduplicated (originalValue, dartName) pairs for all enum values.
   List<(String, String)> _deduplicatedValues() {
@@ -40,6 +42,7 @@ class EnumEmitter {
     return result;
   }
 
+  /// Emit the enum class as code_builder specs.
   List<Spec> emit() {
     final deduped = _deduplicatedValues();
     final className = irEnum.name;
@@ -64,7 +67,7 @@ class EnumEmitter {
                   ..assignment = Code(
                     isString
                         ? "$className._('${escapeDartString(pair.$1)}')"
-                        : "$className._(${pair.$1})",
+                        : '$className._(${pair.$1})',
                   ),
               ),
             ),
@@ -130,9 +133,11 @@ class EnumEmitter {
           final key = isString ? "'${_escape(pair.$1)}'" : pair.$1;
           return seenCaseKeys.add(key);
         })
-        .map((pair) => isString
-            ? "  '${_escape(pair.$1)}' => ${pair.$2},"
-            : "  ${pair.$1} => ${pair.$2},")
+        .map(
+          (pair) => isString
+              ? "  '${_escape(pair.$1)}' => ${pair.$2},"
+              : '  ${pair.$1} => ${pair.$2},',
+        )
         .join('\n');
 
     return Constructor(
@@ -179,15 +184,15 @@ class EnumEmitter {
   }
 
   Method _buildEquals(String className) => buildEqualsOverride(
-        'return identical(this, other) ||\n'
-        '    other is $className && other.value == value;',
-      );
+    'return identical(this, other) ||\n'
+    '    other is $className && other.value == value;',
+  );
 
   Method _buildHashCode() => buildHashCodeOverride('return value.hashCode;');
 
   Method _buildToString(String className) => buildToStringOverride(
-        "return '${escapeNameForString(className)}(\$value)';",
-      );
+    "return '${escapeNameForString(className)}(\$value)';",
+  );
 
   String _valueName(String value) => enumValueName(value);
 

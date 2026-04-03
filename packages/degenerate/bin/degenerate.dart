@@ -45,26 +45,22 @@ ArgParser buildParser() {
     ..addFlag(
       'include-deprecated',
       help: 'Include deprecated operations.',
-      defaultsTo: false,
       negatable: false,
     )
     ..addFlag(
       'clean',
       help: 'Remove output directory before generating.',
-      defaultsTo: false,
       negatable: false,
     )
     ..addFlag(
       'verbose',
       abbr: 'v',
       help: 'Print IR and diagnostics.',
-      defaultsTo: false,
       negatable: false,
     )
     ..addFlag(
       'dry-run',
       help: 'Parse and validate without writing files.',
-      defaultsTo: false,
       negatable: false,
     )
     ..addFlag(
@@ -73,7 +69,6 @@ ArgParser buildParser() {
           'Generate a standalone package with pubspec.yaml\n'
           '(includes resolution: workspace for Dart workspaces).\n'
           'Default output: packages/<name>.',
-      defaultsTo: false,
       negatable: false,
     )
     ..addMultiOption(
@@ -89,15 +84,17 @@ ArgParser buildParser() {
 }
 
 void printUsage(ArgParser argParser) {
-  stderr.writeln(
-    'degenerate - Generate a Dart client from an OpenAPI specification.',
-  );
-  stderr.writeln();
-  stderr.writeln('Usage:');
-  stderr.writeln('  degenerate [options]');
-  stderr.writeln();
-  stderr.writeln('Options:');
-  stderr.writeln(argParser.usage);
+  stderr
+    ..writeln(
+      'degenerate - Generate a Dart client'
+      ' from an OpenAPI specification.',
+    )
+    ..writeln()
+    ..writeln('Usage:')
+    ..writeln('  degenerate [options]')
+    ..writeln()
+    ..writeln('Options:')
+    ..writeln(argParser.usage);
 }
 
 Future<void> main(List<String> arguments) async {
@@ -112,14 +109,15 @@ Future<void> main(List<String> arguments) async {
     }
 
     if (results.flag('version')) {
-      print('degenerate version: $packageVersion');
+      stderr.writeln('degenerate version: $packageVersion');
       return;
     }
 
     final input = results.option('input');
     if (input == null) {
-      stderr.writeln('Error: --input is required.');
-      stderr.writeln();
+      stderr
+        ..writeln('Error: --input is required.')
+        ..writeln();
       printUsage(argParser);
       exit(1);
     }
@@ -158,29 +156,36 @@ Future<void> main(List<String> arguments) async {
       final name = config.resolvedPackageName!;
       stderr.writeln();
       if (workspace) {
-        stderr.writeln('Add to your pubspec.yaml:');
-        stderr.writeln();
-        stderr.writeln('workspace:');
-        stderr.writeln('  - ${config.resolvedOutputDir}');
-        stderr.writeln();
-        stderr.writeln('dependencies:');
-        stderr.writeln('  $name:');
-        stderr.writeln(
-          '  degenerate_http: ^$packageVersion  # or degenerate_dio',
-        );
+        stderr
+          ..writeln('Add to your pubspec.yaml:')
+          ..writeln()
+          ..writeln('workspace:')
+          ..writeln('  - ${config.resolvedOutputDir}')
+          ..writeln()
+          ..writeln('dependencies:')
+          ..writeln('  $name:')
+          ..writeln(
+            '  degenerate_http:'
+            ' ^$packageVersion  # or degenerate_dio',
+          );
       } else {
-        stderr.writeln('Add to your pubspec.yaml:');
-        stderr.writeln();
-        stderr.writeln('dependencies:');
-        stderr.writeln(
-          '  degenerate_http: ^$packageVersion  # or degenerate_dio',
-        );
-        stderr.writeln('  degenerate_runtime: ^$packageVersion');
+        stderr
+          ..writeln('Add to your pubspec.yaml:')
+          ..writeln()
+          ..writeln('dependencies:')
+          ..writeln(
+            '  degenerate_http:'
+            ' ^$packageVersion  # or degenerate_dio',
+          )
+          ..writeln(
+            '  degenerate_runtime: ^$packageVersion',
+          );
       }
     }
   } on FormatException catch (e) {
-    stderr.writeln('Error: ${e.message}');
-    stderr.writeln();
+    stderr
+      ..writeln('Error: ${e.message}')
+      ..writeln();
     printUsage(argParser);
     exit(1);
   } on GeneratorException catch (e) {

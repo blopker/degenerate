@@ -1,19 +1,32 @@
-import 'package:code_builder/code_builder.dart';
+// Code-generating emitters use StringBuffer chains and long string templates
+// that inherently exceed 80 chars and resist cascading.
+// ignore_for_file: cascade_invocations, lines_longer_than_80_chars
 
-import '../ir/ir_types.dart';
-import 'emit_utils.dart';
-import 'media_type_utils.dart';
+import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits an API client class from an [IrApi].
 ///
 /// Each API tag becomes a `final class` with methods for each operation,
 /// returning `Future<ApiResult<T>>`.
 class ApiEmitter {
+  /// Creates an emitter for the given [api] group.
+  const ApiEmitter(
+    this.api, {
+    this.typeRegistry = const {},
+    this.unwrapFields = const [],
+  });
+
+  /// The API group to emit.
   final IrApi api;
+
+  /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
+
+  /// Fields to unwrap from response envelopes.
   final List<String> unwrapFields;
-  const ApiEmitter(this.api, {this.typeRegistry = const {},
-      this.unwrapFields = const []});
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -29,6 +42,7 @@ class ApiEmitter {
     typeRegistry: typeRegistry,
   );
 
+  /// Emit the API client class as code_builder specs.
   List<Spec> emit() {
     return [
       Class(
@@ -69,6 +83,7 @@ class ApiEmitter {
     ];
   }
 
+  /// Collect warnings about unsupported media types.
   List<String> collectWarnings() {
     final warnings = <String>[];
     for (final op in api.operations) {
@@ -139,7 +154,8 @@ class ApiEmitter {
       }
     }
 
-    // Path parameters (always required, never nullable - they're part of the URL)
+    // Path parameters (always required, never nullable - they're part of the
+    // URL)
     for (final p in pathParams) {
       params.add(
         Parameter(
@@ -190,7 +206,8 @@ class ApiEmitter {
       );
     }
 
-    // Request body (skip for GET/HEAD - bodies are not standard for these methods)
+    // Request body (skip for GET/HEAD - bodies are not standard for these
+    // methods)
     final requestBodyContent = op.requestBody != null
         ? _preferredRequestBodyContent(op.requestBody!)
         : null;
@@ -229,10 +246,12 @@ class ApiEmitter {
     final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
     final errorResponseContent = _errorResponseContent(op);
     final errorType = errorResponseContent?.$2.schema;
-    final needsNullableSuffix = unwrapResult.unwrappedField != null &&
+    final needsNullableSuffix =
+        unwrapResult.unwrappedField != null &&
         returnType != null &&
         returnType.isNullable &&
-        !(returnType is IrPrimitive && returnType.kind == PrimitiveKind.dynamic_);
+        !(returnType is IrPrimitive &&
+            returnType.kind == PrimitiveKind.dynamic_);
     final returnTypeStr = returnType != null
         ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
         : 'void';
@@ -260,12 +279,14 @@ class ApiEmitter {
       docs.addAll(formatDocComment(op.summary!));
     }
     if (op.description != null && op.description != op.summary) {
-      docs.add('///');
-      docs.addAll(formatDocComment(op.description!));
+      docs
+        ..add('///')
+        ..addAll(formatDocComment(op.description!));
     }
     final httpMethod = _httpMethodString(op);
-    docs.add('///');
-    docs.add('/// `$httpMethod ${op.path}`');
+    docs
+      ..add('///')
+      ..add('/// `$httpMethod ${op.path}`');
 
     return Method(
       (m) => m
@@ -290,14 +311,14 @@ class ApiEmitter {
   String _buildOperationBody(
     IrOperation op,
     IrType? returnType, {
-    (String, IrMediaType)? successResponseContent,
-    (String, IrMediaType)? errorResponseContent,
-    (String, IrMediaType)? requestBodyContent,
-    IrType? bodyType,
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
+    (String, IrMediaType)? successResponseContent,
+    (String, IrMediaType)? errorResponseContent,
+    (String, IrMediaType)? requestBodyContent,
+    IrType? bodyType,
     String? unwrappedField,
     bool unwrappedFieldIsOptional = false,
   }) {
@@ -329,7 +350,8 @@ class ApiEmitter {
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
-    // Check for unsupported body before building any variables to avoid dead code.
+    // Check for unsupported body before building any variables to avoid dead
+    // code.
     if (bodyType != null &&
         multipartFields == null &&
         formUrlencodedFields == null) {
@@ -365,7 +387,7 @@ class ApiEmitter {
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
-          buf.writeln("if (${p.dartName} != null) {");
+          buf.writeln('if (${p.dartName} != null) {');
           buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
           buf.writeln('}');
         }
@@ -380,7 +402,8 @@ class ApiEmitter {
       final mediaType,
       _,
     ) when !isMultipartMediaType(mediaType)) {
-      // Use application/json for wildcard content types since we serialize as JSON.
+      // Use application/json for wildcard content types since we serialize as
+      // JSON.
       final contentType = normalizeMediaType(mediaType) == '*/*'
           ? 'application/json'
           : mediaType;
@@ -392,7 +415,7 @@ class ApiEmitter {
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
-        buf.writeln("if (${p.dartName} != null) {");
+        buf.writeln('if (${p.dartName} != null) {');
         buf.writeln("  headers['$sanitizedName'] = $headerValue;");
         buf.writeln('}');
       }
@@ -443,8 +466,12 @@ class ApiEmitter {
       if (unwrappedField != null) {
         // Unwrap: parse full JSON, extract the field, deserialize it.
         final escaped = escapeDartString(unwrappedField);
-        buf.writeln("    final json = jsonDecode(response.body) as Map<String, dynamic>;");
-        buf.writeln("    return ${_fromJson(returnType, "json['$escaped']", isOptional: unwrappedFieldIsOptional)};");
+        buf.writeln(
+          '    final json = jsonDecode(response.body) as Map<String, dynamic>;',
+        );
+        buf.writeln(
+          "    return ${_fromJson(returnType, "json['$escaped']", isOptional: unwrappedFieldIsOptional)};",
+        );
       } else {
         final deserialize = _buildDeserializeExpr(
           successResponseContent!.$1,
@@ -568,7 +595,7 @@ class ApiEmitter {
     if (p.isRequired && !p.type.isNullable) {
       buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
     } else {
-      buf.writeln("if (${p.dartName} != null) {");
+      buf.writeln('if (${p.dartName} != null) {');
       buf.writeln("  queryParameters['$sanitizedName'] = $queryValue;");
       buf.writeln('}');
     }
@@ -707,7 +734,7 @@ class ApiEmitter {
     if (style == 'form' && explode) {
       buf.writeln('for (final entry in $accessor.entries) {');
       buf.writeln(
-        "  queryParametersList.add(ApiQueryParameter(name: entry.key, value: $valueExpr, allowReserved: ${p.allowReserved}));",
+        '  queryParametersList.add(ApiQueryParameter(name: entry.key, value: $valueExpr, allowReserved: ${p.allowReserved}));',
       );
       buf.writeln('}');
       return;
@@ -766,7 +793,7 @@ class ApiEmitter {
   /// with a matching field, return that field's type and the JSON key used
   /// to extract it. Otherwise returns the original type with no field name.
   ({IrType? type, String? unwrappedField, bool fieldIsOptional})
-      _maybeUnwrapResponseType(IrType? type) {
+  _maybeUnwrapResponseType(IrType? type) {
     if (type == null || unwrapFields.isEmpty) {
       return (type: type, unwrappedField: null, fieldIsOptional: false);
     }
@@ -938,13 +965,13 @@ class ApiEmitter {
   String _buildStreamingOperationBody(
     IrOperation op,
     IrType eventType, {
-    StreamKind streamKind = StreamKind.sse,
-    (String, IrMediaType)? requestBodyContent,
-    IrType? bodyType,
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
+    StreamKind streamKind = StreamKind.sse,
+    (String, IrMediaType)? requestBodyContent,
+    IrType? bodyType,
   }) {
     final buf = StringBuffer();
     final httpMethod = _httpMethodString(op);
@@ -973,7 +1000,8 @@ class ApiEmitter {
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
-    // Check for unsupported body before building any variables to avoid dead code.
+    // Check for unsupported body before building any variables to avoid dead
+    // code.
     if (bodyType != null &&
         multipartFields == null &&
         formUrlencodedFields == null) {
@@ -1009,7 +1037,7 @@ class ApiEmitter {
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
-          buf.writeln("if (${p.dartName} != null) {");
+          buf.writeln('if (${p.dartName} != null) {');
           buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
           buf.writeln('}');
         }
@@ -1035,7 +1063,7 @@ class ApiEmitter {
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
-        buf.writeln("if (${p.dartName} != null) {");
+        buf.writeln('if (${p.dartName} != null) {');
         buf.writeln("  headers['$sanitizedName'] = $headerValue;");
         buf.writeln('}');
       }
@@ -1295,7 +1323,8 @@ class ApiEmitter {
           (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
 
       if (isNullable) {
-        // Use a case-pattern variable to enable type promotion on nullable public fields.
+        // Use a case-pattern variable to enable type promotion on nullable
+        // public fields.
         final localVar = '${f.name}\$';
         buf.writeln('    if ($fieldAccessor case final $localVar?)');
         buf.write('  ');

@@ -1,7 +1,6 @@
 import 'package:code_builder/code_builder.dart';
-
-import '../ir/ir_types.dart';
-import 'emit_utils.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits a Dart extension type for a named primitive schema.
 ///
@@ -17,14 +16,18 @@ import 'emit_utils.dart';
 /// accepts the JSON wire type and parses, while `toJson` serializes back:
 /// ```dart
 /// extension type const Timestamp(DateTime value) {
-///   factory Timestamp.fromJson(String json) => Timestamp(DateTime.parse(json));
+/// factory Timestamp.fromJson(String json) => Timestamp(DateTime.parse(json));
 ///   String toJson() => value.toIso8601String();
 /// }
 /// ```
 class ExtensionTypeEmitter {
-  final IrExtensionType type;
+  /// Creates an emitter for the given extension [type].
   const ExtensionTypeEmitter(this.type);
 
+  /// The extension type IR to emit.
+  final IrExtensionType type;
+
+  /// Emit the extension type as code_builder specs.
   List<Spec> emit() {
     final innerRef = irTypeToReference(type.inner);
     final name = type.name;

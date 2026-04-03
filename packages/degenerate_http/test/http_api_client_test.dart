@@ -76,7 +76,7 @@ void main() {
       http.BaseRequest? capturedRequest;
       final inner = MockClient.streaming((request, _) async {
         capturedRequest = request;
-        return http.StreamedResponse(Stream.empty(), 200);
+        return http.StreamedResponse(const Stream.empty(), 200);
       });
 
       final client = HttpApiClient(
@@ -89,7 +89,7 @@ void main() {
           method: 'POST',
           path: '/upload',
           body: <ApiMultipartField>[
-            ApiMultipartField.text('name', 'photo.png'),
+            const ApiMultipartField.text('name', 'photo.png'),
             ApiMultipartField.file(
               'file',
               Uint8List.fromList([1, 2, 3]),
@@ -109,8 +109,7 @@ void main() {
     });
 
     test('cancel token races against in-flight request', () async {
-      final token = CancelToken();
-      token.cancel();
+      final token = CancelToken()..cancel();
 
       final inner = MockClient((request) async {
         return http.Response('', 200);

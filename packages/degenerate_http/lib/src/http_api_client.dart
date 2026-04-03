@@ -5,12 +5,14 @@ import 'package:http/http.dart' as http;
 
 /// [ApiClient] implementation backed by `package:http`.
 final class HttpApiClient implements ApiClient {
-  final http.Client _inner;
-  @override
-  final Uri baseUrl;
-
+  /// Creates an HTTP-backed API client.
   HttpApiClient({required this.baseUrl, http.Client? inner})
     : _inner = inner ?? http.Client();
+
+  final http.Client _inner;
+
+  @override
+  final Uri baseUrl;
 
   @override
   Future<ApiResponse> send(ApiRequest request) async {
@@ -26,7 +28,7 @@ final class HttpApiClient implements ApiClient {
         uri,
         abortTrigger: abortTrigger,
       )..headers.addAll(request.resolvedHeaders());
-      for (final field in request.body as List<ApiMultipartField>) {
+      for (final field in request.body! as List<ApiMultipartField>) {
         switch (field) {
           case ApiMultipartTextField():
             multipart.fields[field.name] = field.value;

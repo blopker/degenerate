@@ -1,14 +1,18 @@
-import 'package:code_builder/code_builder.dart';
+// Code-generating emitters use StringBuffer chains and long string templates
+// that inherently exceed 80 chars and resist cascading.
+// ignore_for_file: cascade_invocations, lines_longer_than_80_chars
 
-import '../ir/ir_types.dart';
-import '../naming.dart' show sanitizeDartName, sanitizeFieldName, toPascalCase;
-import 'api_emitter.dart';
-import 'emit_utils.dart';
-import 'enum_emitter.dart';
-import 'extension_type_emitter.dart';
-import 'media_type_utils.dart';
-import 'model_emitter.dart';
-import 'sealed_union_emitter.dart';
+import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/api_emitter.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/enum_emitter.dart';
+import 'package:degenerate/src/emitter/extension_type_emitter.dart';
+import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/naming.dart'
+    show sanitizeDartName, sanitizeFieldName, toPascalCase;
 
 /// Orchestrates all emitters to produce the full generated file structure.
 ///
@@ -20,9 +24,9 @@ class FileEmitter {
   Map<String, String> emitAll({
     required List<IrType> types,
     required List<IrApi> apis,
+    required String packageName,
     List<IrSecurityScheme> securitySchemes = const [],
     List<IrSecurityRequirement>? globalSecurity,
-    required String packageName,
     bool workspace = false,
     String? defaultServerUrl,
     List<String>? warnings,
@@ -54,7 +58,8 @@ class FileEmitter {
         (referencedBy[refName] ??= {}).add(parentName);
       }
     }
-    // Also count API references - if an API directly uses a type, it stays separate.
+    // Also count API references - if an API directly uses a type, it stays
+    // separate.
     // Don't resolve OneOf variant types here - variants can still be inlined
     // into their parent typedef file (the parent file provides the import).
     final apiReferencedTypes = <String>{};
@@ -77,7 +82,8 @@ class FileEmitter {
       final parent = parents.first;
       inlinedInto[name] = parent;
       (inlinedChildren[parent] ??= []).add(type);
-      // Redirect imports: anyone importing this type should import the parent's file
+      // Redirect imports: anyone importing this type should import the parent's
+      // file
       typeToFile[name] = typeToFile[parent]!;
     }
 
@@ -88,7 +94,7 @@ class FileEmitter {
       if (inlinedInto.containsKey(name)) continue; // emitted with parent
 
       final fileName = toSnakeCase(name);
-      final header = _header;
+      const header = _header;
 
       // Prepend inlined children before the parent type
       final specs = <Spec>[];
@@ -113,7 +119,7 @@ class FileEmitter {
 
       final sortedFiles =
           modelAnalysis.referencedNames
-              .where((n) => typeToFile.containsKey(n))
+              .where(typeToFile.containsKey)
               .map((n) => typeToFile[n]!)
               .toSet()
               .toList()
@@ -153,9 +159,12 @@ class FileEmitter {
     // Emit API files
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
-      final header = _header;
-      final apiEmitter = ApiEmitter(api,
-          typeRegistry: typeRegistry, unwrapFields: unwrapFields);
+      const header = _header;
+      final apiEmitter = ApiEmitter(
+        api,
+        typeRegistry: typeRegistry,
+        unwrapFields: unwrapFields,
+      );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
@@ -164,7 +173,7 @@ class FileEmitter {
       // Derive imports directly from referenced types using pre-built lookup
       final sortedApiFiles =
           analysis.referencedTypes
-              .where((n) => typeToFile.containsKey(n))
+              .where(typeToFile.containsKey)
               .map((n) => typeToFile[n]!)
               .toSet()
               .toList()
@@ -265,8 +274,10 @@ class FileEmitter {
 
   /// Emit a `typedef X = OneOfN<A, B, ...>;` for a union type.
   ///
-  /// For self-referencing types (e.g., `WorkersKvAny = OneOf6<..., List<WorkersKvAny>>`),
-  /// also emits a top-level `parseTypeName` function for recursive deserialization.
+  /// For self-referencing types (e.g.,
+  /// `WorkersKvAny = OneOf6<..., List<WorkersKvAny>>`),
+  /// also emits a top-level `parseTypeName` function for recursive
+  /// deserialization.
   List<Spec> _emitOneOfTypedef(
     String name,
     List<IrType> variants,
@@ -315,8 +326,11 @@ class FileEmitter {
   /// Single-pass analysis of an API: collects referenced types, and determines
   /// whether dart:convert and dart:typed_data imports are needed.
   ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
-  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry,
-      List<String> unwrapFields = const []]) {
+  _analyzeApi(
+    IrApi api, [
+    Map<String, IrType>? typeRegistry,
+    List<String> unwrapFields = const [],
+  ]) {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
@@ -385,7 +399,8 @@ class FileEmitter {
         _collectTopLevelTypeName(eventType, names, typeRegistry);
       }
       // Collect error response type (matching ApiEmitter._errorResponseContent
-      // logic: prefer default, then first 4xx+, only one error type per operation).
+      // logic: prefer default, then first 4xx+, only one error type per
+      // operation).
       {
         (String, IrMediaType)? errorContent;
         if (op.defaultResponse != null) {
@@ -415,7 +430,8 @@ class FileEmitter {
   /// Collect only the top-level type name from a type, without recursing
   /// into fields. For lists/maps, collect the item/value types.
   /// When [typeRegistry] is provided, resolves IrTypeRef to OneOf-eligible
-  /// unions and collects their variant type names (needed for parse code imports).
+  /// unions and collects their variant type names (needed for parse code
+  /// imports).
   ///
   /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
   /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
@@ -492,7 +508,8 @@ class FileEmitter {
         if (!skipUntagged) {
           names.add(name);
         }
-        // When resolving imports (typeRegistry provided), collect variant type names
+        // When resolving imports (typeRegistry provided), collect variant type
+        // names
         // because OneOf.parse() code references them directly.
         if (typeRegistry != null && isOneOfEligible(variants)) {
           for (final v in variants) {
@@ -536,7 +553,8 @@ class FileEmitter {
   }
 
   /// Single-pass model analysis: collects referenced type names and detects
-  /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are needed.
+  /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are
+  /// needed.
   ({
     Set<String> referencedNames,
     bool needsCollection,
@@ -559,9 +577,12 @@ class FileEmitter {
       _ => false,
     };
 
-    /// Deep bytes check (traverses OneOf-eligible unions and refs) - for needsConvert.
-    /// Only recurses into OneOf-eligible unions because their parse code is inlined
-    /// in the current file. Non-OneOf-eligible unions (sealed classes) handle bytes
+    /// Deep bytes check (traverses OneOf-eligible unions and refs) - for
+    /// needsConvert.
+    /// Only recurses into OneOf-eligible unions because their parse code is
+    /// inlined
+    /// in the current file. Non-OneOf-eligible unions (sealed classes) handle
+    /// bytes
     /// in their own fromJson method.
     final bytesVisited = <String>{};
     bool hasBytesAnywhere(IrType t) => switch (t) {
@@ -761,13 +782,14 @@ class FileEmitter {
     if (securitySchemes.isNotEmpty) {
       buf.writeln("import '${packageName}_security.dart';");
     }
-    // Deduplicate imports - multiple tags can resolve to the same API class name.
+    // Deduplicate imports - multiple tags can resolve to the same API class
+    // name.
     final seenImports = <String>{};
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final importLine = "'../apis/$fileName.dart'";
       if (seenImports.add(importLine)) {
-        buf.writeln("import $importLine;");
+        buf.writeln('import $importLine;');
       }
     }
     buf.writeln();
@@ -950,9 +972,9 @@ class FileEmitter {
       },
       'http' => switch (scheme.scheme) {
         'bearer' =>
-          '  static ApiConfig $methodName(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, \'Authorization\': \'Bearer \$token\'});',
+          "  static ApiConfig $methodName(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer \$token'});",
         'basic' =>
-          '  static ApiConfig $methodName(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, \'Authorization\': \'Basic \${base64Encode(utf8.encode(\'\$username:\$password\'))}\'});',
+          "  static ApiConfig $methodName(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic \${base64Encode(utf8.encode('\$username:\$password'))}'});",
         _ => null,
       },
       _ => null,
@@ -986,14 +1008,15 @@ class FileEmitter {
   String _securityMethodSuffix(String name) => name.isEmpty
       ? 'Security'
       : name
-            .split(RegExp(r'[^A-Za-z0-9]+'))
+            .split(RegExp('[^A-Za-z0-9]+'))
             .where((part) => part.isNotEmpty)
             .map((part) => part[0].toUpperCase() + part.substring(1))
             .join();
 
   /// Derive a clean field name from an API class name.
   ///
-  /// Drops a trailing "Api" suffix to avoid redundancy (e.g. `PetsApi` → `pets`).
+  /// Drops a trailing "Api" suffix to avoid redundancy (e.g. `PetsApi` →
+  /// `pets`).
   String _facadeFieldName(String apiClassName) {
     final stripped = apiClassName.endsWith('Api') && apiClassName.length > 3
         ? apiClassName.substring(0, apiClassName.length - 3)

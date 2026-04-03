@@ -1,16 +1,27 @@
-import 'package:code_builder/code_builder.dart';
+// Code-generating emitters use long string-interpolation templates
+// that inherently exceed 80 chars.
+// ignore_for_file: lines_longer_than_80_chars
 
-import '../ir/ir_types.dart';
-import 'emit_utils.dart';
+import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits a `final class` from an [IrObject].
 ///
 /// Generates: const constructor, fromJson factory, toJson, copyWith,
 /// operator ==, hashCode, toString, canParse.
 class ModelEmitter {
+  /// Creates an emitter for the given [model].
+  const ModelEmitter(
+    this.model, {
+    this.typeRegistry = const {},
+  });
+
+  /// The object IR to emit.
   final IrObject model;
+
+  /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
-  const ModelEmitter(this.model, {this.typeRegistry = const {}});
 
   /// Field name for the overflow map, avoiding collisions with fixed fields.
   String get _overflowFieldName {
@@ -30,6 +41,7 @@ class ModelEmitter {
     );
   }
 
+  /// Emit the model class as code_builder specs.
   List<Spec> emit() {
     return [
       Class(
@@ -115,8 +127,10 @@ class ModelEmitter {
           final accessor = "json['${escapeDartString(f.originalName)}']";
           // A field is "nullable in fromJson" if:
           // 1. It's not required AND has no default, OR
-          // 2. Its type is explicitly nullable (required + nullable is valid in OpenAPI).
-          // Fields with defaults have non-nullable types, so fromJson must not produce null.
+          // 2. Its type is explicitly nullable (required + nullable is valid in
+          // OpenAPI).
+          // Fields with defaults have non-nullable types, so fromJson must not
+          // produce null.
           final isOptional =
               (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
           final code = buildFromJsonCode(
@@ -130,7 +144,7 @@ class ModelEmitter {
             // The constructor default handles missing values.
             final defaultCode = _defaultCode(f);
             final defaultStr = defaultCode?.toString() ?? 'null';
-            return '  ${f.name}: json.containsKey(\'${escapeDartString(f.originalName)}\') ? $code : $defaultStr,';
+            return "  ${f.name}: json.containsKey('${escapeDartString(f.originalName)}') ? $code : $defaultStr,";
           }
           return '  ${f.name}: $code,';
         })
@@ -152,8 +166,11 @@ class ModelEmitter {
         args +=
             '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key))),';
       } else {
-        final valueExpr = buildFromJsonCode(valueType, 'e.value',
-            isOptional: false, typeRegistry: typeRegistry);
+        final valueExpr = buildFromJsonCode(
+          valueType,
+          'e.value',
+          typeRegistry: typeRegistry,
+        );
         args +=
             '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key)).map((e) => MapEntry(e.key, $valueExpr))),';
       }
@@ -188,9 +205,9 @@ class ModelEmitter {
             final nullableValue = _toJsonValueNullable(f);
             if (nullableValue == f.name) {
               // Use null-aware element syntax when value is the field itself.
-              return "  $key: ?${f.name},";
+              return '  $key: ?${f.name},';
             }
-            return "  if (${f.name} != null) $key: $nullableValue,";
+            return '  if (${f.name} != null) $key: $nullableValue,';
           }
           return '  $key: $value,';
         })
@@ -348,12 +365,14 @@ class ModelEmitter {
     var allAssignments = assignments;
     if (model.additionalProperties != null) {
       final valueTypeName = irTypeName(model.additionalProperties!);
-      allParams.add(Parameter(
-        (p) => p
-          ..name = _overflowFieldName
-          ..named = true
-          ..type = refer('Map<String, $valueTypeName>?'),
-      ));
+      allParams.add(
+        Parameter(
+          (p) => p
+            ..name = _overflowFieldName
+            ..named = true
+            ..type = refer('Map<String, $valueTypeName>?'),
+        ),
+      );
       allAssignments +=
           '\n  $_overflowFieldName: $_overflowFieldName ?? this.$_overflowFieldName,';
     }
@@ -388,8 +407,11 @@ class ModelEmitter {
 
     var allComparisons = comparisons;
     if (model.additionalProperties != null) {
-      final mapCmp = 'mapEquals($_overflowFieldName, other.$_overflowFieldName)';
-      allComparisons = allComparisons.isEmpty ? mapCmp : '$allComparisons &&\n          $mapCmp';
+      final mapCmp =
+          'mapEquals($_overflowFieldName, other.$_overflowFieldName)';
+      allComparisons = allComparisons.isEmpty
+          ? mapCmp
+          : '$allComparisons &&\n          $mapCmp';
     }
 
     final body = allComparisons.isEmpty
@@ -477,7 +499,8 @@ class ModelEmitter {
         // Non-string primitive with string default → skip
         return null;
       }
-      // Non-primitive type with string default (e.g., IrTypeRef to enum, IrList) → skip
+      // Non-primitive type with string default (e.g., IrTypeRef to enum,
+      // IrList) → skip
       return null;
     }
     if (v is bool) {

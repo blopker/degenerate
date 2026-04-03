@@ -102,7 +102,8 @@ const dartCoreTypeNames = <String>{
 ///
 /// These include constructor parameters (`json`, `value`), static members
 /// (`values`, `index`, `name`), and inherited Object members that we override
-/// (`hashCode`, `toString`, `runtimeType`, `noSuchMethod`, `identical`, `override`).
+/// (`hashCode`, `toString`, `runtimeType`, `noSuchMethod`, `identical`,
+/// `override`).
 const enumReservedNames = <String>{
   'json',
   'value',
@@ -131,11 +132,12 @@ const objectMemberNames = <String>{
 /// name collisions, and Object member conflicts.
 /// Uses `$` prefix for consistency with [sanitizeDartName].
 String sanitizeFieldName(String name) {
-  name = sanitizeDartName(name);
-  if (dartCoreTypeNames.contains(name) || objectMemberNames.contains(name)) {
-    name = '\$$name';
+  var result = sanitizeDartName(name);
+  if (dartCoreTypeNames.contains(result) ||
+      objectMemberNames.contains(result)) {
+    result = '\$$result';
   }
-  return name;
+  return result;
 }
 
 // Pre-compiled regexps for hot naming paths.
@@ -145,7 +147,7 @@ final _leadingTrailingSeparators = RegExp(r"^[\s_\-./']+'|[\s_\-./']+$");
 final _segmentSplitter = RegExp(r"[_\-.\s/']+");
 final _versionSegment = RegExp(r'^v\d+$');
 final _invalidIdentChars = RegExp(r'[^a-zA-Z0-9_$]');
-final _startsWithDigit = RegExp(r'^[0-9]');
+final _startsWithDigit = RegExp('^[0-9]');
 final _pathTemplateParam = RegExp(r'\{[^}]*\}');
 final _trailingSeparators = RegExp(r'[_\-.\s]+$');
 
@@ -154,12 +156,13 @@ final _trailingSeparators = RegExp(r'[_\-.\s]+$');
 /// Handles:
 /// - Underscore/hyphen/dot/space separators
 /// - camelCase boundaries (lowercase→uppercase)
-/// - Acronym boundaries (multiple uppercase followed by lowercase, e.g. HTTPSConnection → HTTPS, Connection)
+/// - Acronym boundaries (multiple uppercase followed by lowercase, e.g.
+/// HTTPSConnection → HTTPS, Connection)
 /// - Strips path prefixes and version segments (e.g. v1, v2, api)
 List<String> _splitWords(String input) {
   // Replace leading +/- before digits with words.
   // Prevents collisions like +1 and -1 both becoming $1.
-  var preprocessed = input
+  final preprocessed = input
       .replaceAllMapped(_leadingPlusDigit, (m) => 'plus${m[1]}')
       .replaceAllMapped(_leadingMinusDigit, (m) => 'minus${m[1]}');
   // Strip leading/trailing separators
@@ -168,7 +171,8 @@ List<String> _splitWords(String input) {
 
   final words = <String>[];
 
-  // First, split on explicit separators (underscore, hyphen, dot, space, slash, apostrophe)
+  // First, split on explicit separators (underscore, hyphen, dot, space, slash,
+  // apostrophe)
   final segments = cleaned.split(_segmentSplitter);
 
   for (final segment in segments) {
@@ -190,7 +194,8 @@ List<String> _splitWords(String input) {
         final next = segment[i + 1];
         if (!_isUpperCase(next) && _isLetter(next)) {
           // Acronym end: ABc → A | Bc (but we want HTTPS|Connection)
-          // At position of 'C' in HTTPSConnection: prev='S' (upper), curr='C' (upper), next='o' (lower)
+          // At position of 'C' in HTTPSConnection: prev='S' (upper), curr='C'
+          // (upper), next='o' (lower)
           // We break before curr
           breaks.add(i);
         }
@@ -409,20 +414,64 @@ String _transliterateToAscii(String input) {
 
 /// Latin-1 Supplement (U+00C0–U+00FF) to ASCII mappings.
 const _latinToAscii = <int, String>{
-  0xC0: 'A', 0xC1: 'A', 0xC2: 'A', 0xC3: 'A', 0xC4: 'A', 0xC5: 'A',
-  0xC6: 'AE', 0xC7: 'C',
-  0xC8: 'E', 0xC9: 'E', 0xCA: 'E', 0xCB: 'E',
-  0xCC: 'I', 0xCD: 'I', 0xCE: 'I', 0xCF: 'I',
-  0xD0: 'D', 0xD1: 'N',
-  0xD2: 'O', 0xD3: 'O', 0xD4: 'O', 0xD5: 'O', 0xD6: 'O', 0xD8: 'O',
-  0xD9: 'U', 0xDA: 'U', 0xDB: 'U', 0xDC: 'U',
-  0xDD: 'Y', 0xDF: 'ss',
-  0xE0: 'a', 0xE1: 'a', 0xE2: 'a', 0xE3: 'a', 0xE4: 'a', 0xE5: 'a',
-  0xE6: 'ae', 0xE7: 'c',
-  0xE8: 'e', 0xE9: 'e', 0xEA: 'e', 0xEB: 'e',
-  0xEC: 'i', 0xED: 'i', 0xEE: 'i', 0xEF: 'i',
-  0xF0: 'd', 0xF1: 'n',
-  0xF2: 'o', 0xF3: 'o', 0xF4: 'o', 0xF5: 'o', 0xF6: 'o', 0xF8: 'o',
-  0xF9: 'u', 0xFA: 'u', 0xFB: 'u', 0xFC: 'u',
-  0xFD: 'y', 0xFF: 'y',
+  0xC0: 'A',
+  0xC1: 'A',
+  0xC2: 'A',
+  0xC3: 'A',
+  0xC4: 'A',
+  0xC5: 'A',
+  0xC6: 'AE',
+  0xC7: 'C',
+  0xC8: 'E',
+  0xC9: 'E',
+  0xCA: 'E',
+  0xCB: 'E',
+  0xCC: 'I',
+  0xCD: 'I',
+  0xCE: 'I',
+  0xCF: 'I',
+  0xD0: 'D',
+  0xD1: 'N',
+  0xD2: 'O',
+  0xD3: 'O',
+  0xD4: 'O',
+  0xD5: 'O',
+  0xD6: 'O',
+  0xD8: 'O',
+  0xD9: 'U',
+  0xDA: 'U',
+  0xDB: 'U',
+  0xDC: 'U',
+  0xDD: 'Y',
+  0xDF: 'ss',
+  0xE0: 'a',
+  0xE1: 'a',
+  0xE2: 'a',
+  0xE3: 'a',
+  0xE4: 'a',
+  0xE5: 'a',
+  0xE6: 'ae',
+  0xE7: 'c',
+  0xE8: 'e',
+  0xE9: 'e',
+  0xEA: 'e',
+  0xEB: 'e',
+  0xEC: 'i',
+  0xED: 'i',
+  0xEE: 'i',
+  0xEF: 'i',
+  0xF0: 'd',
+  0xF1: 'n',
+  0xF2: 'o',
+  0xF3: 'o',
+  0xF4: 'o',
+  0xF5: 'o',
+  0xF6: 'o',
+  0xF8: 'o',
+  0xF9: 'u',
+  0xFA: 'u',
+  0xFB: 'u',
+  0xFC: 'u',
+  0xFD: 'y',
+  0xFF: 'y',
 };

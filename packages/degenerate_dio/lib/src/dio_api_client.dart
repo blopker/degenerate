@@ -1,29 +1,32 @@
 import 'dart:async';
 import 'dart:convert';
 
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:dio/dio.dart' as dio;
 
 /// [ApiClient] implementation backed by `package:dio`.
 ///
 /// Configure default headers, interceptors, and cancellation through
-/// [ApiConfig] rather than on the [Dio] instance - the generated client
-/// manages these concerns. Use the [Dio] instance for low-level settings
-/// like proxy configuration or custom [HttpClientAdapter]s.
+/// `ApiConfig` rather than on the `Dio` instance - the generated
+/// client manages these concerns. Use the `Dio` instance for
+/// low-level settings like proxy configuration or custom adapters.
 ///
-/// **Timeouts:** [ApiConfig.timeout] applies a single overall deadline to the
-/// entire request. For more granular control (separate connect, send, and
-/// receive timeouts), leave [ApiConfig.timeout] null and configure
-/// [Dio.options.connectTimeout], [Dio.options.sendTimeout], and
-/// [Dio.options.receiveTimeout] directly - they will surface as
-/// [TimeoutException] in [ApiException].
+/// **Timeouts:** `ApiConfig.timeout` applies a single overall
+/// deadline to the entire request. For more granular control
+/// (separate connect, send, and receive timeouts), leave
+/// `ApiConfig.timeout` null and configure timeouts directly on the
+/// `Dio` instance - they will surface as `TimeoutException` in
+/// `ApiException`.
 final class DioApiClient implements ApiClient {
-  final dio.Dio _inner;
-  @override
-  final Uri baseUrl;
-
+  /// Creates a Dio-backed API client.
   DioApiClient({required this.baseUrl, dio.Dio? inner})
     : _inner = inner ?? dio.Dio();
+
+  final dio.Dio _inner;
+
+  @override
+  final Uri baseUrl;
 
   @override
   Future<ApiResponse> send(ApiRequest request) async {
@@ -36,7 +39,7 @@ final class DioApiClient implements ApiClient {
       final Object? data;
       if (request.body is List<ApiMultipartField>) {
         final formData = dio.FormData();
-        for (final field in request.body as List<ApiMultipartField>) {
+        for (final field in request.body! as List<ApiMultipartField>) {
           switch (field) {
             case ApiMultipartTextField():
               formData.fields.add(MapEntry(field.name, field.value));
@@ -157,9 +160,9 @@ final class DioApiClient implements ApiClient {
     if (cancelToken == null) return null;
     if (cancelToken.isCancelled) throw const CancelledException();
     final dioCancelToken = dio.CancelToken();
-    cancelToken.whenCancelled.then((_) {
+    unawaited(cancelToken.whenCancelled.then((_) {
       if (!dioCancelToken.isCancelled) dioCancelToken.cancel();
-    });
+    }));
     return dioCancelToken;
   }
 

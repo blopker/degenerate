@@ -1,17 +1,19 @@
-import '../ir/ir_types.dart';
-import '../naming.dart';
-import '../parser/openapi_document.dart';
-import 'ir_mapper.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/lowering/ir_mapper.dart';
+import 'package:degenerate/src/naming.dart';
+import 'package:degenerate/src/parser/openapi_document.dart';
 
 /// Converts OpenAPI path items and operations into IR operation groups.
 ///
 /// Operations are grouped by their first tag into [IrApi] instances. Each
 /// [IrApi] corresponds to a generated API client class.
 class OperationLowerer {
+  /// Creates an operation lowerer with the given [irMapper].
+  OperationLowerer(this.irMapper, {OpenApiDocument? doc}) : _doc = doc;
+
+  /// The IR mapper for schema lowering.
   final IrMapper irMapper;
   final OpenApiDocument? _doc;
-
-  OperationLowerer(this.irMapper, {OpenApiDocument? doc}) : _doc = doc;
 
   /// Convenience accessor for the type registry.
   Map<String, IrType> get typeRegistry => irMapper.typeRegistry;
@@ -133,16 +135,16 @@ class OperationLowerer {
     }).toList();
   }
 
-  /// Lower a single operation.
-  ///
-  /// [pathParameters] are parameters defined at the path-item level that
-  /// should be merged with operation-level parameters.
   /// The current operation ID being lowered. Used for name hints.
-  String? _currentOperationId;
+  late String? _currentOperationId;
 
   /// Cached PascalCase of [_currentOperationId] to avoid recomputing.
-  String? _currentOpPascal;
+  late String? _currentOpPascal;
 
+  /// Lower a single operation.
+  ///
+  /// `pathParameters` are parameters defined at the path-item level that
+  /// should be merged with operation-level parameters.
   IrOperation lowerOperation(
     String path,
     String method,
@@ -210,7 +212,9 @@ class OperationLowerer {
       dartMethod,
       httpMethod,
       path,
-      customMethod: httpMethod == HttpMethod.custom ? method.toUpperCase() : null,
+      customMethod: httpMethod == HttpMethod.custom
+          ? method.toUpperCase()
+          : null,
       summary: summary,
       description: description,
       parameters: parameters,
@@ -247,7 +251,8 @@ class OperationLowerer {
     final rawName = param['name'] as String? ?? '';
     // Sanitize: strip newlines and excess whitespace from parameter names.
     final name = rawName.replaceAll(RegExp(r'[\n\r]+\s*'), ' ').trim();
-    // Handle special suffix characters common in OpenAPI (e.g. Twilio range filters).
+    // Handle special suffix characters common in OpenAPI (e.g. Twilio range
+    // filters).
     final suffixedName = _applyParamSuffix(name);
     var dartName = sanitizeDartName(toCamelCase(suffixedName));
     // Deduplicate within the current operation.
@@ -298,7 +303,8 @@ class OperationLowerer {
     );
   }
 
-  /// Applies a meaningful suffix for parameter names with special trailing characters.
+  /// Applies a meaningful suffix for parameter names with special trailing
+  /// characters.
   ///
   /// Common in OpenAPI specs like Twilio for range filters:
   /// - `ParamName<` → `ParamName_Before`
@@ -387,7 +393,8 @@ class OperationLowerer {
         nameHint: bodyNameHint,
       );
       // encoding is a map of property names to encoding objects, not a string.
-      // Ignore it for now - it's only relevant for multipart form serialization.
+      // Ignore it for now - it's only relevant for multipart form
+      // serialization.
       irContent[mediaType] = IrMediaType(irSchema);
     }
 
