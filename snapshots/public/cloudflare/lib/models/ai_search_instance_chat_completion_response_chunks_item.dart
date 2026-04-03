@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 
 factory AiSearchInstanceChatCompletionResponseChunksItem.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponseChunksItem(
   key: json['key'] as String,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toDouble() : null,
 ); }
 

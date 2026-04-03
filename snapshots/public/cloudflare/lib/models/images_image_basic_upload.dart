@@ -6,7 +6,7 @@ factory ImagesImageBasicUpload.fromJson(Map<String, dynamic> json) { return Imag
   creator: json['creator'] as String?,
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,
   id: json['id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   requireSignedUrLs: json.containsKey('requireSignedURLs') ? json['requireSignedURLs'] as bool : false,
   url: json['url'] as String?,
 ); }

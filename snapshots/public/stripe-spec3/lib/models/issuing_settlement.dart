@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement report. One of ["visa", "maestro"]
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement report. One of `["visa", "maestro"]`
 @immutable final class IssuingSettlementNetwork {const IssuingSettlementNetwork._(this.value);
 
 factory IssuingSettlementNetwork.fromJson(String json) { return switch (json) {
@@ -122,7 +122,7 @@ final Map<String,String> metadata;
 /// The total net amount required to settle with the network.
 final int netTotalAmount;
 
-/// The card network for this settlement report. One of ["visa", "maestro"]
+/// The card network for this settlement report. One of `["visa", "maestro"]`
 final IssuingSettlementNetwork network;
 
 /// The total amount of fees owed to the network.

@@ -253,7 +253,7 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   anonymousAccessEnabled: json.containsKey('anonymous_access_enabled') ? json['anonymous_access_enabled'] as bool : true,
   codeOfConduct: json['code_of_conduct'] != null ? CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,
   securityAndAnalysis: json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
-  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  customProperties: json['custom_properties'] as Map<String, dynamic>?,
 ); }
 
 final int id;

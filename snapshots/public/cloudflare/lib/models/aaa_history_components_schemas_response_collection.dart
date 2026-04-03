@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_history.
 
 factory AaaHistoryComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AaaHistoryComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AaaHistory.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: (json['result_info'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  resultInfo: json['result_info'] as Map<String, dynamic>?,
 ); }
 
 final List<AaaHistory>? result;

@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) { return ToolChoiceAllowed(
   type: ToolChoiceAllowedType.fromJson(json['type'] as String),
   mode: ToolChoiceAllowedMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 /// Allowed tool configuration type. Always `allowed_tools`.

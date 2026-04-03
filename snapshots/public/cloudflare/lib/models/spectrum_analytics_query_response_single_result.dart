@@ -30,7 +30,7 @@ final SpectrumAnalyticsQuery query;
 /// Total number of rows in the result.
 final double rows;
 
-/// List of time interval buckets: [start, end]
+/// List of time interval buckets: `[start, end]`
 final List<List<SpectrumAnalyticsTimestamp>>? timeIntervals;
 
 /// Total result for each selected metrics across all data.

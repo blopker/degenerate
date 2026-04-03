@@ -6,7 +6,7 @@ factory RulesetVersionWithState.fromJson(Map<String, dynamic> json) { return Rul
   versionId: (json['version_id'] as num).toInt(),
   actor: RulesetVersionWithStateActor.fromJson(json['actor'] as Map<String, dynamic>),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  state: (json['state'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  state: json['state'] as Map<String, dynamic>,
 ); }
 
 /// The ID of the previous version of the ruleset

@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodCardWalletApplePay {const PaymentMethodCardWalletApplePay();
 
-factory PaymentMethodCardWalletApplePay.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWalletApplePay(
-
-); }
+factory PaymentMethodCardWalletApplePay.fromJson(Map<String, dynamic> _) { return const PaymentMethodCardWalletApplePay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodCardWalletApplePay copyWith() { return PaymentMethodCardWalletApplePay(
+PaymentMethodCardWalletApplePay copyWith() { return const PaymentMethodCardWalletApplePay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodCardWalletApplePay; } 

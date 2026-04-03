@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_polic
 
 factory AccessPolicyCheckResponseResultUserIdentity.fromJson(Map<String, dynamic> json) { return AccessPolicyCheckResponseResultUserIdentity(
   accountId: json['account_id'] as String?,
-  deviceSessions: (json['device_sessions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  deviceSessions: json['device_sessions'] as Map<String, dynamic>?,
   email: json['email'] as String?,
   geo: json['geo'] != null ? AccessPolicyCheckResponseResultUserIdentityGeo.fromJson(json['geo'] as Map<String, dynamic>) : null,
   iat: json['iat'] != null ? (json['iat'] as num).toInt() : null,

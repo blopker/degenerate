@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { return LoadBalancingResourceReference(
   referenceType: json['reference_type'] != null ? LoadBalancingResourceReferenceReferenceType.fromJson(json['reference_type'] as String) : null,
-  references: (json['references'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  references: (json['references'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   resourceId: json['resource_id'] as String?,
   resourceName: json['resource_name'] as String?,
   resourceType: json['resource_type'] != null ? LoadBalancingResourceReferenceResourceType.fromJson(json['resource_type'] as String) : null,

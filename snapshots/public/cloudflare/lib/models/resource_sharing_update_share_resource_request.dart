@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingUpdateShareResourceRequest {const ResourceSharingUpdateShareResourceRequest({required this.meta});
 
 factory ResourceSharingUpdateShareResourceRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingUpdateShareResourceRequest(
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>,
 ); }
 
 /// Resource Metadata.

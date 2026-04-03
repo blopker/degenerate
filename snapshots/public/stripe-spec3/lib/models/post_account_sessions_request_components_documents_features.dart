@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsDocumentsFeatures {const PostAccountSessionsRequestComponentsDocumentsFeatures();
 
-factory PostAccountSessionsRequestComponentsDocumentsFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsDocumentsFeatures(
-
-); }
+factory PostAccountSessionsRequestComponentsDocumentsFeatures.fromJson(Map<String, dynamic> _) { return const PostAccountSessionsRequestComponentsDocumentsFeatures(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostAccountSessionsRequestComponentsDocumentsFeatures copyWith() { return PostAccountSessionsRequestComponentsDocumentsFeatures(
+PostAccountSessionsRequestComponentsDocumentsFeatures copyWith() { return const PostAccountSessionsRequestComponentsDocumentsFeatures(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostAccountSessionsRequestComponentsDocumentsFeatures; } 

@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountExternalAccountsIdRequest {const GetAccountsAccountExternalAccountsIdRequest();
 
-factory GetAccountsAccountExternalAccountsIdRequest.fromJson(Map<String, dynamic> json) { return GetAccountsAccountExternalAccountsIdRequest(
-
-); }
+factory GetAccountsAccountExternalAccountsIdRequest.fromJson(Map<String, dynamic> _) { return const GetAccountsAccountExternalAccountsIdRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetAccountsAccountExternalAccountsIdRequest copyWith() { return GetAccountsAccountExternalAccountsIdRequest(
+GetAccountsAccountExternalAccountsIdRequest copyWith() { return const GetAccountsAccountExternalAccountsIdRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetAccountsAccountExternalAccountsIdRequest; } 

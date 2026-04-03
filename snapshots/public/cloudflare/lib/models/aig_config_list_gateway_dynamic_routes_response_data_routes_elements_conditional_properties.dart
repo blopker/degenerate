@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalProperties {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalProperties({this.conditions});
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsConditionalProperties(
-  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  conditions: json['conditions'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? conditions;

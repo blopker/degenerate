@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n1_awq_respo
 
 factory $1AwqResponse4002.fromJson(Map<String, dynamic> json) { return $1AwqResponse4002(
   errors: (json['errors'] as List<dynamic>).map((e) => $1AwqResponse4002Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

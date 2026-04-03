@@ -28,7 +28,7 @@ factory AccountCall.fromJson(Map<String, dynamic> json) { return AccountCall(
   queueTime: json['queue_time'] as String?,
   trunkSid: json['trunk_sid'] as String?,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
 ); }
 
 /// The unique string that we created to identify this Call resource.

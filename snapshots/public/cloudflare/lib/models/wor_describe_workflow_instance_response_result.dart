@@ -48,7 +48,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   output: json['output'],
-  params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  params: json['params'] as Map<String, dynamic>,
   queued: DateTime.parse(json['queued'] as String),
   start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorDescribeWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),

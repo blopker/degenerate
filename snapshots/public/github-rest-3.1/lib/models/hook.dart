@@ -30,7 +30,7 @@ final String name;
 /// Determines whether the hook is actually triggered on pushes.
 final bool active;
 
-/// Determines what events the hook is triggered for. Default: ['push'].
+/// Determines what events the hook is triggered for. Default: `['push']`.
 final List<String> events;
 
 final WebhookConfig config;

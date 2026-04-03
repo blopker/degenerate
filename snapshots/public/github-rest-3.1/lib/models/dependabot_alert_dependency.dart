@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The vulnerable dependency's relationship to your project.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
 @immutable final class DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship._(this.value);
@@ -83,7 +83,7 @@ final DependabotAlertDependencyScope? scope;
 
 /// The vulnerable dependency's relationship to your project.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
 final DependabotAlertDependencyRelationship? relationship;

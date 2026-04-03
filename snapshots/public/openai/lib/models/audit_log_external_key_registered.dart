@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for 
 
 factory AuditLogExternalKeyRegistered.fromJson(Map<String, dynamic> json) { return AuditLogExternalKeyRegistered(
   id: json['id'] as String?,
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>?,
 ); }
 
 /// The ID of the external key configuration.

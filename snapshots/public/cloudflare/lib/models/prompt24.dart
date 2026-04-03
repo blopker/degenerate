@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt24_res
 
 factory Prompt24.fromJson(Map<String, dynamic> json) { return Prompt24(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
-  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  guidedJson: json['guided_json'] as Map<String, dynamic>?,
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String,

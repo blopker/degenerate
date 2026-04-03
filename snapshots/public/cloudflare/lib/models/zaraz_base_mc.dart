@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_base_m
 
 factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
-  defaultFields: (json['defaultFields'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  defaultFields: json['defaultFields'] as Map<String, dynamic>,
   defaultPurpose: json['defaultPurpose'] as String?,
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
@@ -14,7 +14,7 @@ factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
   component: json['component'] as String,
   neoEvents: (json['neoEvents'] as List<dynamic>?)?.map((e) => ZarazBaseMcNeoEvents.fromJson(e as Map<String, dynamic>)).toList(),
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
-  settings: (json['settings'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  settings: json['settings'] as Map<String, dynamic>,
 ); }
 
 /// List of blocking trigger IDs

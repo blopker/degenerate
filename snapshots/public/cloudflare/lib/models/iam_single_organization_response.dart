@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamSingleOrganizationResponse {const IamSingleOrganizationResponse({this.result});
 
 factory IamSingleOrganizationResponse.fromJson(Map<String, dynamic> json) { return IamSingleOrganizationResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

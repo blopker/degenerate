@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
   type: EvalResponsesSourceType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   model: json['model'] as String?,
   instructionsSearch: json['instructions_search'] as String?,
   createdAfter: json['created_after'] != null ? (json['created_after'] as num).toInt() : null,

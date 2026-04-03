@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_permiss
 
 factory PostPermissionCreateResponse400.fromJson(Map<String, dynamic> json) { return PostPermissionCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostPermissionCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -71,7 +71,7 @@ final ZeroTrustGatewayRuleSettingsForensicCopy? forensicCopy;
 /// Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules.
 final bool? ignoreCnameCategoryMatches;
 
-/// Specify whether to disable DNSSEC validation (for Allow actions) [INSECURE]. Settable only for `dns` rules.
+/// Specify whether to disable DNSSEC validation (for Allow actions) `[INSECURE]`. Settable only for `dns` rules.
 final bool? insecureDisableDnssecValidation;
 
 /// Enable IPs in DNS resolver category blocks. The system blocks only domain name categories unless you enable this setting. Settable only for `dns` and `dns_resolver` rules.

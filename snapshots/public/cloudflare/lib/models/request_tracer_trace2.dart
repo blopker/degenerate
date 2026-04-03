@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// List of steps ac
 
 factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return RequestTracerTrace2(
   action: json['action'] as String?,
-  actionParameters: (json['action_parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   description: json['description'] as String?,
   expression: json['expression'] as String?,
   kind: json['kind'] as String?,

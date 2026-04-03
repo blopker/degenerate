@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single56_result.dart';@immutable final class ResponseSingle56 {const ResponseSingle56({required this.result});
 
 factory ResponseSingle56.fromJson(Map<String, dynamic> json) { return ResponseSingle56(
-  result: OneOf2.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,),
+  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
 ); }
 
 final ResponseSingle56Result result;

@@ -6,7 +6,7 @@ factory WorkersCreateAssetsUploadSessionObject.fromJson(Map<String, dynamic> jso
   manifest: (json['manifest'] as Map<String, dynamic>).map((k, v) => MapEntry(k, WorkersManifestValue.fromJson(v as Map<String, dynamic>))),
 ); }
 
-/// A manifest ([path]: {hash, size}) map of files to upload. As an example, `/blog/hello-world.html` would be a valid path key.
+/// A manifest (`[path]`: {hash, size}) map of files to upload. As an example, `/blog/hello-world.html` would be a valid path key.
 final Map<String,WorkersManifestValue> manifest;
 
 Map<String, dynamic> toJson() { return {

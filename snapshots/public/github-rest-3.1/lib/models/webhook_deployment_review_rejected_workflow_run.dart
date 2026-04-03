@@ -88,7 +88,7 @@ factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic>
   createdAt: DateTime.parse(json['created_at'] as String),
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
-  headCommit: (json['head_commit'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  headCommit: json['head_commit'] as Map<String, dynamic>?,
   headRepository: json['head_repository'] != null ? WebhookDeploymentReviewRejectedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>) : null,
   headSha: json['head_sha'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),

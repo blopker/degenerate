@@ -189,7 +189,7 @@ final List<RealtimeBetaResponseModalities>? modalities;
 /// 
 final RealtimeBetaResponseOutputAudioFormat? outputAudioFormat;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
 final double? temperature;
 

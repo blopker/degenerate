@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi
 
 factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderRequest(
   grader: OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),),
-  item: (json['item'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  item: json['item'] as Map<String, dynamic>?,
   modelSample: json['model_sample'] as String,
 ); }
 

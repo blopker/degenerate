@@ -84,7 +84,7 @@ final String? filter;
 /// The list of field IDs that are visible in the view.
 final List<int> visibleFields;
 
-/// The sorting configuration for the view. Each element is a tuple of [field_id, direction] where direction is "asc" or "desc".
+/// The sorting configuration for the view. Each element is a tuple of `[field_id, direction]` where direction is "asc" or "desc".
 final List<List<dynamic>> sortBy;
 
 /// The list of field IDs used for horizontal grouping.

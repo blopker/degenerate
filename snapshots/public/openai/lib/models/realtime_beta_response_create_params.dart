@@ -72,7 +72,7 @@ factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final List<RealtimeBetaResponseCreateParamsModalities>? modalities;
 
@@ -111,7 +111,7 @@ final List<RealtimeBetaResponseCreateParamsTools>? tools;
 /// 
 final RealtimeBetaResponseCreateParamsToolChoice? toolChoice;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
 final double? temperature;
 

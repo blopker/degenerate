@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_status_t
 factory WorStatusTerminateWorkflowInstancesResponse400.fromJson(Map<String, dynamic> json) { return WorStatusTerminateWorkflowInstancesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorStatusTerminateWorkflowInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

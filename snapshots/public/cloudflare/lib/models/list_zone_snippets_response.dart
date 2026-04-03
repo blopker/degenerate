@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'snippets_message.dart';import 'snippets_result_info.dart';import 'snippets_snippet.dart';@immutable final class ListZoneSnippetsResponse {const ListZoneSnippetsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ListZoneSnippetsResponse.fromJson(Map<String, dynamic> json) { return ListZoneSnippetsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SnippetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => SnippetsSnippet.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,

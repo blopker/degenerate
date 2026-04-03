@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetQuotesQuotePdfRequest {const GetQuotesQuotePdfRequest();
 
-factory GetQuotesQuotePdfRequest.fromJson(Map<String, dynamic> json) { return GetQuotesQuotePdfRequest(
-
-); }
+factory GetQuotesQuotePdfRequest.fromJson(Map<String, dynamic> _) { return const GetQuotesQuotePdfRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetQuotesQuotePdfRequest copyWith() { return GetQuotesQuotePdfRequest(
+GetQuotesQuotePdfRequest copyWith() { return const GetQuotesQuotePdfRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetQuotesQuotePdfRequest; } 

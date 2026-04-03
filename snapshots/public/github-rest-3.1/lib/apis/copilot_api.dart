@@ -10,7 +10,7 @@ final class CopilotApi with ApiExecutor {const CopilotApi(this.apiConfig);
 
 /// Get Copilot seat information and settings for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets information about an organization's Copilot subscription, including seat breakdown
@@ -43,7 +43,7 @@ return execute(
  } 
 /// List all Copilot seat assignments for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Lists all Copilot seats for which an organization with a Copilot Business or Copilot Enterprise subscription is currently being billed.
@@ -87,7 +87,7 @@ return execute(
  } 
 /// Add teams to the Copilot subscription for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Purchases a GitHub Copilot seat for all users within each specified team.
@@ -125,7 +125,7 @@ return execute(
  } 
 /// Remove teams from the Copilot subscription for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Sets seats for all members of each team specified to "pending cancellation".
@@ -162,7 +162,7 @@ return execute(
  } 
 /// Add users to the Copilot subscription for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Purchases a GitHub Copilot seat for each user specified.
@@ -200,7 +200,7 @@ return execute(
  } 
 /// Remove users from the Copilot subscription for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Sets seats for all users specified to "pending cancellation".
@@ -237,7 +237,7 @@ return execute(
  } 
 /// Get Copilot content exclusion rules for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets information about an organization's Copilot content exclusion path rules.
@@ -248,7 +248,7 @@ return execute(
 /// 
 /// OAuth app tokens and personal access tokens (classic) need either the `copilot` or `read:org` scopes to use this endpoint.
 /// 
-/// > [!CAUTION]
+/// > `[!CAUTION]`
 /// > * At this time, the API does not support comments. This endpoint will not return any comments in the existing rules.
 /// > * At this time, the API does not support duplicate keys. If your content exclusion configuration contains duplicate keys, the API will return only the last occurrence of that key. For example, if duplicate entries are present, only the final value will be included in the response.
 ///
@@ -274,7 +274,7 @@ return execute(
  } 
 /// Set Copilot content exclusion rules for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Sets Copilot content exclusion path rules for an organization.
@@ -285,7 +285,7 @@ return execute(
 /// 
 /// OAuth app tokens and personal access tokens (classic) need the `copilot` scope to use this endpoint.
 /// 
-/// > [!CAUTION]
+/// > `[!CAUTION]`
 /// > * At this time, the API does not support comments. When using this endpoint, any existing comments in your rules will be deleted.
 /// > * At this time, the API does not support duplicate keys. If you submit content exclusions through the API with duplicate keys, only the last occurrence will be saved. Earlier entries with the same key will be overwritten.
 ///
@@ -315,7 +315,7 @@ return execute(
 ///
 /// Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint will only return results for a given day if the organization contained **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
 /// 
 /// The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,
@@ -367,7 +367,7 @@ return execute(
  } 
 /// Get Copilot seat assignment details for a user
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets the GitHub Copilot seat details for a member of an organization who currently has access to GitHub Copilot.
@@ -403,7 +403,7 @@ return execute(
 ///
 /// Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint will only return results for a given day if the team had **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
 /// 
 /// The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message3.dart';import 'tenant.dart';@immutable final class TenantsRetrieveTenantResponse {const TenantsRetrieveTenantResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TenantsRetrieveTenantResponse.fromJson(Map<String, dynamic> json) { return TenantsRetrieveTenantResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Message3.fromJson(e as Map<String, dynamic>)).toList(),
   result: Tenant.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,

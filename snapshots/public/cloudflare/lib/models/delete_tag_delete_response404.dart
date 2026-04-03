@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_tag_d
 
 factory DeleteTagDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeleteTagDeleteResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteTagDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

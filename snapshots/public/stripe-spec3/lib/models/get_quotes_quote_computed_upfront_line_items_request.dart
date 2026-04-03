@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetQuotesQuoteComputedUpfrontLineItemsRequest {const GetQuotesQuoteComputedUpfrontLineItemsRequest();
 
-factory GetQuotesQuoteComputedUpfrontLineItemsRequest.fromJson(Map<String, dynamic> json) { return GetQuotesQuoteComputedUpfrontLineItemsRequest(
-
-); }
+factory GetQuotesQuoteComputedUpfrontLineItemsRequest.fromJson(Map<String, dynamic> _) { return const GetQuotesQuoteComputedUpfrontLineItemsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetQuotesQuoteComputedUpfrontLineItemsRequest copyWith() { return GetQuotesQuoteComputedUpfrontLineItemsRequest(
+GetQuotesQuoteComputedUpfrontLineItemsRequest copyWith() { return const GetQuotesQuoteComputedUpfrontLineItemsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetQuotesQuoteComputedUpfrontLineItemsRequest; } 

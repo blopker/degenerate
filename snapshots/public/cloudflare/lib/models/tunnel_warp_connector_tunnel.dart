@@ -11,7 +11,7 @@ factory TunnelWarpConnectorTunnel.fromJson(Map<String, dynamic> json) { return T
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
   id: json['id'] != null ? TunnelTunnelId.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   name: json['name'] != null ? TunnelTunnelName.fromJson(json['name'] as String) : null,
   status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,
   tunType: json['tun_type'] != null ? TunnelTunnelType.fromJson(json['tun_type'] as String) : null,

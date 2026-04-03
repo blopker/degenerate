@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 factory Prompt43Functions.fromJson(Map<String, dynamic> json) { return Prompt43Functions(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: json['parameters'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

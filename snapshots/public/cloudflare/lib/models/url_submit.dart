@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlSubmit {const UrlSubmit({this.skippedUrls, this.submittedUrls, });
 
 factory UrlSubmit.fromJson(Map<String, dynamic> json) { return UrlSubmit(
-  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final List<Map<String,dynamic>>? skippedUrls;

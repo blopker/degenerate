@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSetupAttemptsRequest {const GetSetupAttemptsRequest();
 
-factory GetSetupAttemptsRequest.fromJson(Map<String, dynamic> json) { return GetSetupAttemptsRequest(
-
-); }
+factory GetSetupAttemptsRequest.fromJson(Map<String, dynamic> _) { return const GetSetupAttemptsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetSetupAttemptsRequest copyWith() { return GetSetupAttemptsRequest(
+GetSetupAttemptsRequest copyWith() { return const GetSetupAttemptsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetSetupAttemptsRequest; } 

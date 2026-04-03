@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches any vali
 @immutable final class AccessCertificateRule {const AccessCertificateRule({required this.certificate});
 
 factory AccessCertificateRule.fromJson(Map<String, dynamic> json) { return AccessCertificateRule(
-  certificate: (json['certificate'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  certificate: json['certificate'] as Map<String, dynamic>,
 ); }
 
 final Map<String,dynamic> certificate;

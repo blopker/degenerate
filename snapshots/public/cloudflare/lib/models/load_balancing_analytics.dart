@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balanci
 factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
   id: json.containsKey('id') ? (json['id'] as num).toInt() : 1,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
-  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  pool: json['pool'] as Map<String, dynamic>?,
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
 ); }
 

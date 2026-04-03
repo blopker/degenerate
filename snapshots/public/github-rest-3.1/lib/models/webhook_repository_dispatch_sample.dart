@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_w
 factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) { return WebhookRepositoryDispatchSample(
   action: json['action'] as String,
   branch: json['branch'] as String,
-  clientPayload: (json['client_payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  clientPayload: json['client_payload'] as Map<String, dynamic>?,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,

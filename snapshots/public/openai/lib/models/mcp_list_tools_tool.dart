@@ -7,8 +7,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool available
 factory McpListToolsTool.fromJson(Map<String, dynamic> json) { return McpListToolsTool(
   name: json['name'] as String,
   description: json['description'] as String?,
-  inputSchema: (json['input_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  inputSchema: json['input_schema'] as Map<String, dynamic>,
+  annotations: json['annotations'] as Map<String, dynamic>?,
 ); }
 
 /// The name of the tool.

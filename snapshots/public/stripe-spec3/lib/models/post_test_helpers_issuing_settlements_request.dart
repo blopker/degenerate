@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement. One of ["visa", "maestro"]
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement. One of `["visa", "maestro"]`
 @immutable final class PostTestHelpersIssuingSettlementsRequestNetwork {const PostTestHelpersIssuingSettlementsRequestNetwork._(this.value);
 
 factory PostTestHelpersIssuingSettlementsRequestNetwork.fromJson(String json) { return switch (json) {
@@ -58,7 +58,7 @@ final int? interchangeFeesAmount;
 /// The total net amount required to settle with the network.
 final int netTotalAmount;
 
-/// The card network for this settlement. One of ["visa", "maestro"]
+/// The card network for this settlement. One of `["visa", "maestro"]`
 final PostTestHelpersIssuingSettlementsRequestNetwork? network;
 
 /// The Settlement Identification Number assigned by the network.

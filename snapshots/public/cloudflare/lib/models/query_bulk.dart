@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QueryBulk {const QueryBulk({this.queries});
 
 factory QueryBulk.fromJson(Map<String, dynamic> json) { return QueryBulk(
-  queries: (json['queries'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  queries: (json['queries'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final List<Map<String,dynamic>>? queries;

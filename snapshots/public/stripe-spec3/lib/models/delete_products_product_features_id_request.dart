@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteProductsProductFeaturesIdRequest {const DeleteProductsProductFeaturesIdRequest();
 
-factory DeleteProductsProductFeaturesIdRequest.fromJson(Map<String, dynamic> json) { return DeleteProductsProductFeaturesIdRequest(
-
-); }
+factory DeleteProductsProductFeaturesIdRequest.fromJson(Map<String, dynamic> _) { return const DeleteProductsProductFeaturesIdRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteProductsProductFeaturesIdRequest copyWith() { return DeleteProductsProductFeaturesIdRequest(
+DeleteProductsProductFeaturesIdRequest copyWith() { return const DeleteProductsProductFeaturesIdRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is DeleteProductsProductFeaturesIdRequest; } 

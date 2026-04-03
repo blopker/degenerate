@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventGraphQlResponse {const PostEventGraphQlResponse({this.data, this.errors, });
 
 factory PostEventGraphQlResponse.fromJson(Map<String, dynamic> json) { return PostEventGraphQlResponse(
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  data: json['data'] as Map<String, dynamic>?,
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final Map<String,dynamic>? data;

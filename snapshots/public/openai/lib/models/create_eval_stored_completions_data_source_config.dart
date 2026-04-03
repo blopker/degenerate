@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory CreateEvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// The type of data source. Always `stored_completions`.

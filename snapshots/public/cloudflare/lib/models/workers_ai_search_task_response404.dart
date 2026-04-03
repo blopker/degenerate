@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiSearchTaskResponse404 {const WorkersAiSearchTaskResponse404({required this.errors, required this.success, });
 
 factory WorkersAiSearchTaskResponse404.fromJson(Map<String, dynamic> json) { return WorkersAiSearchTaskResponse404(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool,
 ); }
 

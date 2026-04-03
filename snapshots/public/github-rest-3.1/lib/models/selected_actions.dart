@@ -16,7 +16,7 @@ final bool? verifiedAllowed;
 
 /// Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > The `patterns_allowed` setting only applies to public repositories.
 final List<String>? patternsAllowed;
 

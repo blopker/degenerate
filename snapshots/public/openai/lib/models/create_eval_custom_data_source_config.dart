@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  itemSchema: (json['item_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  itemSchema: json['item_schema'] as Map<String, dynamic>,
   includeSampleSchema: json.containsKey('include_sample_schema') ? json['include_sample_schema'] as bool : false,
 ); }
 

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindJson {const WorkersBindingKindJson({required this.json, required this.name, required this.type, });
 
 factory WorkersBindingKindJson.fromJson(Map<String, dynamic> json) { return WorkersBindingKindJson(
-  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  json: json['json'] as Map<String, dynamic>,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
 ); }

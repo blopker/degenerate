@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesHttpSourceFormat($value)'; } 
  }
-/// [DEPRECATED] HTTP source configuration. Use the new streams API instead.
+/// `[DEPRECATED]` HTTP source configuration. Use the new streams API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesHttpSource {const CloudflarePipelinesWorkersPipelinesHttpSource({required this.format, required this.type, this.authentication, this.cors, });
 
 factory CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesHttpSource(

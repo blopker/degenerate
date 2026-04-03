@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldSchemaResponseWithThresholdsResult {const ShieldSchemaResponseWithThresholdsResult({this.schemas, this.timestamp, });
 
 factory ShieldSchemaResponseWithThresholdsResult.fromJson(Map<String, dynamic> json) { return ShieldSchemaResponseWithThresholdsResult(
-  schemas: (json['schemas'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  schemas: (json['schemas'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   timestamp: json['timestamp'] as String?,
 ); }
 

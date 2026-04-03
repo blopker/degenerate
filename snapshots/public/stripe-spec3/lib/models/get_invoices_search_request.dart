@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicesSearchRequest {const GetInvoicesSearchRequest();
 
-factory GetInvoicesSearchRequest.fromJson(Map<String, dynamic> json) { return GetInvoicesSearchRequest(
-
-); }
+factory GetInvoicesSearchRequest.fromJson(Map<String, dynamic> _) { return const GetInvoicesSearchRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetInvoicesSearchRequest copyWith() { return GetInvoicesSearchRequest(
+GetInvoicesSearchRequest copyWith() { return const GetInvoicesSearchRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetInvoicesSearchRequest; } 

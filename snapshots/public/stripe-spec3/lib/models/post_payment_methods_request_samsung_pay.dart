@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `samsung_pay` PaymentMethod, this hash contains details about the SamsungPay payment method.
 @immutable final class PostPaymentMethodsRequestSamsungPay {const PostPaymentMethodsRequestSamsungPay();
 
-factory PostPaymentMethodsRequestSamsungPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSamsungPay(
-
-); }
+factory PostPaymentMethodsRequestSamsungPay.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestSamsungPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestSamsungPay copyWith() { return PostPaymentMethodsRequestSamsungPay(
+PostPaymentMethodsRequestSamsungPay copyWith() { return const PostPaymentMethodsRequestSamsungPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestSamsungPay; } 

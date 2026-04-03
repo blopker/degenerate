@@ -28,7 +28,7 @@ factory RealtimeSessionCreateRequestTools.fromJson(Map<String, dynamic> json) { 
   type: json['type'] != null ? RealtimeSessionCreateRequestToolsType.fromJson(json['type'] as String) : null,
   name: json['name'] as String?,
   description: json['description'] as String?,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: json['parameters'] as Map<String, dynamic>?,
 ); }
 
 /// The type of the tool, i.e. `function`.

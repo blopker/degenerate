@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 factory Messages51ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return Messages51ResponseFormatVariant1JsonSchemaJsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  schema: json['schema'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

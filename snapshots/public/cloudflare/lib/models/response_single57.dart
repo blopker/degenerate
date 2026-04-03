@@ -5,9 +5,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_sin
 factory ResponseSingle57.fromJson(Map<String, dynamic> json) { return ResponseSingle57(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,),
+  result: OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? OneOf2.parse(json['result_info'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,) : null,
+  resultInfo: json['result_info'] != null ? OneOf2.parse(json['result_info'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,) : null,
 ); }
 
 final List<Web3Messages2> errors;

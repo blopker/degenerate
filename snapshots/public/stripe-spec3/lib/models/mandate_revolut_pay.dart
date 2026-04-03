@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class MandateRevolutPay {const MandateRevolutPay();
 
-factory MandateRevolutPay.fromJson(Map<String, dynamic> json) { return MandateRevolutPay(
-
-); }
+factory MandateRevolutPay.fromJson(Map<String, dynamic> _) { return const MandateRevolutPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-MandateRevolutPay copyWith() { return MandateRevolutPay(
+MandateRevolutPay copyWith() { return const MandateRevolutPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is MandateRevolutPay; } 

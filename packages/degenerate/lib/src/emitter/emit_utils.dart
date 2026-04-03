@@ -207,11 +207,16 @@ String? _simpleCastFromJson(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) =>
-      '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) => _isIdentityMapValue(values)
+        ? '$accessor as Map<String, dynamic>?'
+        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     _ => null,
   };
 }
+
+/// Whether a map value type produces an identity transform in `.map()`.
+bool _isIdentityMapValue(IrType type) =>
+    type is IrPrimitive && type.kind == PrimitiveKind.dynamic_;
 
 /// Core non-null fromJson expression for a given type.
 String _buildFromJsonNonNull(
@@ -232,8 +237,9 @@ String _buildFromJsonNonNull(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) =>
-      '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) => _isIdentityMapValue(values)
+        ? '$accessor as Map<String, dynamic>'
+        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(
         variants,
@@ -491,10 +497,18 @@ String escapeDocComment(String line) {
       // Inside backticks - pass through unchanged.
       buf.write('`${parts[i]}`');
     } else {
-      // Outside backticks - escape bare <...> tags.
-      buf.write(
-        parts[i].replaceAllMapped(RegExp('<([^>]+)>'), (m) => '`<${m[1]}>`'),
+      // Outside backticks - escape bare <...> tags and [references].
+      var prose = parts[i];
+      prose = prose.replaceAllMapped(
+        RegExp('<([^>]+)>'),
+        (m) => '`<${m[1]}>`',
       );
+      // Escape bare [text] that aren't markdown links [text](...).
+      prose = prose.replaceAllMapped(
+        RegExp(r'\[([^\]]+)\](?!\()'),
+        (m) => '`[${m[1]}]`',
+      );
+      buf.write(prose);
     }
   }
   return buf.toString();

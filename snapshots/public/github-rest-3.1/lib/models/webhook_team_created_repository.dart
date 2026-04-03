@@ -50,7 +50,7 @@ factory WebhookTeamCreatedRepository.fromJson(Map<String, dynamic> json) { retur
   contentsUrl: json['contents_url'] as String,
   contributorsUrl: Uri.parse(json['contributors_url'] as String),
   createdAt: json['created_at'],
-  customProperties: (json['custom_properties'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  customProperties: json['custom_properties'] as Map<String, dynamic>?,
   defaultBranch: json['default_branch'] as String,
   deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
   deploymentsUrl: Uri.parse(json['deployments_url'] as String),

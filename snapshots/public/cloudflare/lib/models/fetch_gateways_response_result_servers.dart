@@ -44,11 +44,11 @@ factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) {
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   onBehalf: json.containsKey('on_behalf') ? json['on_behalf'] as bool : true,
-  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  prompts: (json['prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
+  updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
+  updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final FetchGatewaysResponseResultServersAuthType authType;

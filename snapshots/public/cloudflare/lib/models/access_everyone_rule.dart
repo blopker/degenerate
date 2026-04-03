@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches everyone
 @immutable final class AccessEveryoneRule {const AccessEveryoneRule({required this.everyone});
 
 factory AccessEveryoneRule.fromJson(Map<String, dynamic> json) { return AccessEveryoneRule(
-  everyone: (json['everyone'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  everyone: json['everyone'] as Map<String, dynamic>,
 ); }
 
 /// An empty object which matches on all users.

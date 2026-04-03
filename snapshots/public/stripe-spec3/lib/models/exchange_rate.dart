@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ExchangeRateObject($value)'; } 
  }
-/// [Deprecated] The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.
+/// `[Deprecated]` The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.
 /// 
 /// `ExchangeRate` objects allow you to determine the rates that Stripe is currently
 /// using to convert from one currency to another. Since this number is variable
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Please refer to our [Exchange Rates API](https://docs.stripe.com/fx-rates) guide for more details.
 /// 
-/// *[Note: this integration path is supported but no longer recommended]* Additionally,
+/// *`[Note: this integration path is supported but no longer recommended]`* Additionally,
 /// you can guarantee that a charge is made with an exchange rate that you expect is
 /// current. To do so, you must pass in the exchange_rate to charges endpoints. If the
 /// value is no longer up to date, the charge won't go through. Please refer to our

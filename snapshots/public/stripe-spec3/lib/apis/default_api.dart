@@ -7830,7 +7830,7 @@ return execute(
  } 
 /// List all exchange rates
 ///
-/// `<p>`[Deprecated] The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
+/// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
 /// 
 /// `<p>`Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.`</p>`
 ///
@@ -7876,7 +7876,7 @@ return execute(
  } 
 /// Retrieve an exchange rate
 ///
-/// `<p>`[Deprecated] The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
+/// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
 /// 
 /// `<p>`Retrieves the exchange rates from the given currency to every supported currency.`</p>`
 ///
@@ -9111,7 +9111,7 @@ return execute(
 /// will be emitted.`</p>`
 /// 
 /// `<p>`Redaction is irreversible. Redacted objects are still accessible in the Stripe API, but all the
-/// fields that contain personal data will be replaced by the string `<code>`[redacted]`</code>` or a similar
+/// fields that contain personal data will be replaced by the string `<code>``[redacted]``</code>` or a similar
 /// placeholder. The `<code>`metadata`</code>` field will also be erased. Redacted objects cannot be updated or
 /// used for any purpose.`</p>`
 /// 

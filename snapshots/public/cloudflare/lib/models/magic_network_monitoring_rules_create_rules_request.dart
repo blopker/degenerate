@@ -17,7 +17,7 @@ final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
 /// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 final MagicVisibilityMnmMnmRuleBandwidthThreshold? bandwidth;
 
-/// The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values ["1m","5m","10m","15m","20m","30m","45m","60m"].
+/// The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values `["1m","5m","10m","15m","20m","30m","45m","60m"]`.
 final MagicVisibilityMnmMnmRuleDuration duration;
 
 /// The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.

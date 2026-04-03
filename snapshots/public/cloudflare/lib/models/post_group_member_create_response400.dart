@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_group_m
 
 factory PostGroupMemberCreateResponse400.fromJson(Map<String, dynamic> json) { return PostGroupMemberCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PostGroupMemberCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

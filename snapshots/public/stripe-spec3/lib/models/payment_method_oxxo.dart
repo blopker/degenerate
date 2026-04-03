@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodOxxo {const PaymentMethodOxxo();
 
-factory PaymentMethodOxxo.fromJson(Map<String, dynamic> json) { return PaymentMethodOxxo(
-
-); }
+factory PaymentMethodOxxo.fromJson(Map<String, dynamic> _) { return const PaymentMethodOxxo(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodOxxo copyWith() { return PaymentMethodOxxo(
+PaymentMethodOxxo copyWith() { return const PaymentMethodOxxo(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodOxxo; } 

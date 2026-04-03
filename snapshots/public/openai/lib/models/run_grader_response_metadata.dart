@@ -7,7 +7,7 @@ factory RunGraderResponseMetadata.fromJson(Map<String, dynamic> json) { return R
   type: json['type'] as String,
   errors: RunGraderResponseMetadataErrors.fromJson(json['errors'] as Map<String, dynamic>),
   executionTime: (json['execution_time'] as num).toDouble(),
-  scores: (json['scores'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  scores: json['scores'] as Map<String, dynamic>,
   tokenUsage: json['token_usage'] != null ? (json['token_usage'] as num).toInt() : null,
   sampledModelName: json['sampled_model_name'] as String?,
 ); }

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesSchemasIdResponse {const TeamsDevicesSchemasIdResponse({this.result});
 
 factory TeamsDevicesSchemasIdResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesSchemasIdResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

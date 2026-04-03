@@ -7,7 +7,7 @@ factory SetupIntentNextAction.fromJson(Map<String, dynamic> json) { return Setup
   cashappHandleRedirectOrDisplayQrCode: json['cashapp_handle_redirect_or_display_qr_code'] != null ? PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode.fromJson(json['cashapp_handle_redirect_or_display_qr_code'] as Map<String, dynamic>) : null,
   redirectToUrl: json['redirect_to_url'] != null ? SetupIntentNextActionRedirectToUrl.fromJson(json['redirect_to_url'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-  useStripeSdk: (json['use_stripe_sdk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  useStripeSdk: json['use_stripe_sdk'] as Map<String, dynamic>?,
   verifyWithMicrodeposits: json['verify_with_microdeposits'] != null ? SetupIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>) : null,
 ); }
 

@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory ChatCompletionAllowedTools.fromJson(Map<String, dynamic> json) { return ChatCompletionAllowedTools(
   mode: ChatCompletionAllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 /// Constrains the tools available to the model to a pre-defined set.

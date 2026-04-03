@@ -13,7 +13,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynami
   owner: WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
   packageType: json['package_type'] as String,
   packageVersion: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: (json['registry'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  registry: json['registry'] as Map<String, dynamic>?,
   updatedAt: json['updated_at'] as String,
 ); }
 

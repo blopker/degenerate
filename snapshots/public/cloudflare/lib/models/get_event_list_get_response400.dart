@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_li
 
 factory GetEventListGetResponse400.fromJson(Map<String, dynamic> json) { return GetEventListGetResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetEventListGetResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

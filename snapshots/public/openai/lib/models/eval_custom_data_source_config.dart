@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
   type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  schema: json['schema'] as Map<String, dynamic>,
 ); }
 
 /// The type of data source. Always `custom`.

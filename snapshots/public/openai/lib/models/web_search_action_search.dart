@@ -38,7 +38,7 @@ factory WebSearchActionSearch.fromJson(Map<String, dynamic> json) { return WebSe
 /// 
 final WebSearchActionSearchType type;
 
-/// [DEPRECATED] The search query.
+/// `[DEPRECATED]` The search query.
 /// 
 final String query;
 

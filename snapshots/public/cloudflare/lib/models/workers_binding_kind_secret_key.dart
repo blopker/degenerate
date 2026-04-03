@@ -76,10 +76,10 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, required this.name, required this.type, required this.usages, this.keyBase64, this.keyJwk, });
 
 factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretKey(
-  algorithm: (json['algorithm'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  algorithm: json['algorithm'] as Map<String, dynamic>,
   format: WorkersBindingKindSecretKeyFormat.fromJson(json['format'] as String),
   keyBase64: json['key_base64'] as String?,
-  keyJwk: (json['key_jwk'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  keyJwk: json['key_jwk'] as Map<String, dynamic>?,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
   usages: (json['usages'] as List<dynamic>).map((e) => WorkersBindingKindSecretKeyUsages.fromJson(e as String)).toList(),

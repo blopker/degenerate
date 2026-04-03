@@ -75,7 +75,7 @@ return execute(
  } 
 /// Delete a commit comment reaction
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`.
 /// 
 /// Delete a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
@@ -162,7 +162,7 @@ return execute(
  } 
 /// Delete an issue comment reaction
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.
 /// 
 /// Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
@@ -249,7 +249,7 @@ return execute(
  } 
 /// Delete an issue reaction
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.
 /// 
 /// Delete a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
@@ -336,7 +336,7 @@ return execute(
  } 
 /// Delete a pull request comment reaction
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`
 /// 
 /// Delete a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
@@ -423,7 +423,7 @@ return execute(
  } 
 /// Delete a release reaction
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.
 /// 
 /// Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).

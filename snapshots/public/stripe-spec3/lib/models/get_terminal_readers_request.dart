@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalReadersRequest {const GetTerminalReadersRequest();
 
-factory GetTerminalReadersRequest.fromJson(Map<String, dynamic> json) { return GetTerminalReadersRequest(
-
-); }
+factory GetTerminalReadersRequest.fromJson(Map<String, dynamic> _) { return const GetTerminalReadersRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTerminalReadersRequest copyWith() { return GetTerminalReadersRequest(
+GetTerminalReadersRequest copyWith() { return const GetTerminalReadersRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTerminalReadersRequest; } 

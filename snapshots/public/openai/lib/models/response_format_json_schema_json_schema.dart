@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Structured Outpu
 factory ResponseFormatJsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return ResponseFormatJsonSchemaJsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  schema: json['schema'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

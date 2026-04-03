@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_p
 
 factory WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

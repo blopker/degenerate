@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EvalJsonlFileContentSourceContent {const EvalJsonlFileContentSourceContent({required this.item, this.sample, });
 
 factory EvalJsonlFileContentSourceContent.fromJson(Map<String, dynamic> json) { return EvalJsonlFileContentSourceContent(
-  item: (json['item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  item: json['item'] as Map<String, dynamic>,
+  sample: json['sample'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic> item;

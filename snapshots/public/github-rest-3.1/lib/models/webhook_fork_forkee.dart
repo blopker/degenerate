@@ -56,7 +56,7 @@ factory WebhookForkForkee.fromJson(Map<String, dynamic> json) { return WebhookFo
   labelsUrl: json['labels_url'] as String,
   language: json['language'],
   languagesUrl: json['languages_url'] as String,
-  license: (json['license'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  license: json['license'] as Map<String, dynamic>?,
   masterBranch: json['master_branch'] as String?,
   mergesUrl: json['merges_url'] as String,
   milestonesUrl: json['milestones_url'] as String,

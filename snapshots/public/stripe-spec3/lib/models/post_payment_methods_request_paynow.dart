@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `paynow` PaymentMethod, this hash contains details about the PayNow payment method.
 @immutable final class PostPaymentMethodsRequestPaynow {const PostPaymentMethodsRequestPaynow();
 
-factory PostPaymentMethodsRequestPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestPaynow(
-
-); }
+factory PostPaymentMethodsRequestPaynow.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestPaynow(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestPaynow copyWith() { return PostPaymentMethodsRequestPaynow(
+PostPaymentMethodsRequestPaynow copyWith() { return const PostPaymentMethodsRequestPaynow(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestPaynow; } 

@@ -47,7 +47,7 @@ factory MagicTransitColoResult.fromJson(Map<String, dynamic> json) { return Magi
   colo: json['colo'] != null ? MagicTransitColo.fromJson(json['colo'] as Map<String, dynamic>) : null,
   error: json['error'] != null ? MagicTransitError.fromJson(json['error'] as String) : null,
   hops: (json['hops'] as List<dynamic>?)?.map((e) => MagicTransitHopResult.fromJson(e as Map<String, dynamic>)).toList(),
-  targetSummary: (json['target_summary'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  targetSummary: json['target_summary'] as Map<String, dynamic>?,
   tracerouteTimeMs: json['traceroute_time_ms'] != null ? MagicTransitTracerouteTimeMs.fromJson(json['traceroute_time_ms'] as num) : null,
 ); }
 

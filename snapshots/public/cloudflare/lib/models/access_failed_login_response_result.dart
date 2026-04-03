@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 
 factory AccessFailedLoginResponseResult.fromJson(Map<String, dynamic> json) { return AccessFailedLoginResponseResult(
   expiration: json['expiration'] != null ? (json['expiration'] as num).toInt() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 final int? expiration;

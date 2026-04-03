@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_at
 
 factory RadarGetAttacksLayer7TimeseriesGroupResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAttacksLayer7TimeseriesGroupResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

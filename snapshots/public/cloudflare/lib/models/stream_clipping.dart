@@ -16,7 +16,7 @@ factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClippi
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   endTimeSeconds: json['endTimeSeconds'] != null ? StreamEndTimeSeconds.fromJson(json['endTimeSeconds'] as num) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,

@@ -15,7 +15,7 @@ final String? parameter;
 /// for cases when there are multiple values for the same parameter.
 final int? parameterValueIndex;
 
-/// Pointer is a JSON Pointer [RFC6901] to the associated entity in the request document
+/// Pointer is a JSON Pointer `[RFC6901]` to the associated entity in the request document
 /// e.g. "/data" for a primary data object, or "/data/attributes/title" for a specific attribute.
 final List<String>? pointer;
 

@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HookDeliveryResponse {const HookDeliveryResponse({required this.headers, required this.payload, });
 
 factory HookDeliveryResponse.fromJson(Map<String, dynamic> json) { return HookDeliveryResponse(
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  payload: (json['payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  headers: json['headers'] as Map<String, dynamic>?,
+  payload: json['payload'] as Map<String, dynamic>?,
 ); }
 
 /// The response headers received when the delivery was made.

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_w
 
 factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return WebhookWorkflowDispatch(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
-  inputs: (json['inputs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  inputs: json['inputs'] as Map<String, dynamic>?,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String,

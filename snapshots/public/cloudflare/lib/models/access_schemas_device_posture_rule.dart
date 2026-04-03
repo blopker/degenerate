@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_devic
 
 factory AccessSchemasDevicePostureRule.fromJson(Map<String, dynamic> json) { return AccessSchemasDevicePostureRule(
   check: json['check'] != null ? AccessDevicePostureCheck.fromJson(json['check'] as Map<String, dynamic>) : null,
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>?,
   description: json['description'] as String?,
   error: json['error'] as String?,
   id: json['id'] as String?,

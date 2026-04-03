@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `multibanco` PaymentMethod, this hash contains details about the Multibanco payment method.
 @immutable final class PostPaymentMethodsRequestMultibanco {const PostPaymentMethodsRequestMultibanco();
 
-factory PostPaymentMethodsRequestMultibanco.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestMultibanco(
-
-); }
+factory PostPaymentMethodsRequestMultibanco.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestMultibanco(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestMultibanco copyWith() { return PostPaymentMethodsRequestMultibanco(
+PostPaymentMethodsRequestMultibanco copyWith() { return const PostPaymentMethodsRequestMultibanco(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestMultibanco; } 

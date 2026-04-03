@@ -156,7 +156,7 @@ final Uri? statusCallback;
 /// The SID of the associated [TwiML Application](https://www.twilio.com/docs/usage/api/applications). [Message status callback requests](https://www.twilio.com/docs/sms/api/message-resource#twilios-request-to-the-statuscallback-url) are sent to the TwiML App's `message_status_callback` URL. Note that the `status_callback` parameter of a request takes priority over the `application_sid` parameter; if both are included `application_sid` is ignored.
 final String? applicationSid;
 
-/// [OBSOLETE] This parameter will no longer have any effect as of 2024-06-03.
+/// `[OBSOLETE]` This parameter will no longer have any effect as of 2024-06-03.
 final double? maxPrice;
 
 /// Boolean indicating whether or not you intend to provide delivery confirmation feedback to Twilio (used in conjunction with the [Message Feedback subresource](https://www.twilio.com/docs/sms/api/message-feedback-resource)). Default value is `false`.

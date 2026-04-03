@@ -28,7 +28,7 @@ factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { retur
 final RealtimeSessionCreateRequestClientSecret clientSecret;
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final dynamic modalities;
 
@@ -89,7 +89,7 @@ final List<RealtimeSessionCreateRequestTools>? tools;
 /// 
 final String? toolChoice;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
 final double? temperature;
 

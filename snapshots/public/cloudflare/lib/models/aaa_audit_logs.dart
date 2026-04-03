@@ -7,7 +7,7 @@ factory AaaAuditLogs.fromJson(Map<String, dynamic> json) { return AaaAuditLogs(
   actor: json['actor'] != null ? AaaAuditLogsActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
   $interface: json['interface'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   newValue: json['newValue'] as String?,
   oldValue: json['oldValue'] as String?,
   owner: json['owner'] != null ? AaaAuditLogsOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,

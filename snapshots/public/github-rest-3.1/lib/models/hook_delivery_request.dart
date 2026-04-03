@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HookDeliveryRequest {const HookDeliveryRequest({required this.headers, required this.payload, });
 
 factory HookDeliveryRequest.fromJson(Map<String, dynamic> json) { return HookDeliveryRequest(
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  payload: (json['payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  headers: json['headers'] as Map<String, dynamic>?,
+  payload: json['payload'] as Map<String, dynamic>?,
 ); }
 
 /// The request headers sent with the webhook delivery.

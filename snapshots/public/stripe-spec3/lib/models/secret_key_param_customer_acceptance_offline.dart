@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretKeyParamCustomerAcceptanceOffline {const SecretKeyParamCustomerAcceptanceOffline();
 
-factory SecretKeyParamCustomerAcceptanceOffline.fromJson(Map<String, dynamic> json) { return SecretKeyParamCustomerAcceptanceOffline(
-
-); }
+factory SecretKeyParamCustomerAcceptanceOffline.fromJson(Map<String, dynamic> _) { return const SecretKeyParamCustomerAcceptanceOffline(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-SecretKeyParamCustomerAcceptanceOffline copyWith() { return SecretKeyParamCustomerAcceptanceOffline(
+SecretKeyParamCustomerAcceptanceOffline copyWith() { return const SecretKeyParamCustomerAcceptanceOffline(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is SecretKeyParamCustomerAcceptanceOffline; } 

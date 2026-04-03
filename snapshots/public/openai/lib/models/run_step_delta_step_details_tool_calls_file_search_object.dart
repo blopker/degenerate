@@ -28,7 +28,7 @@ factory RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dy
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
   type: RunStepDeltaStepDetailsToolCallsFileSearchObjectType.fromJson(json['type'] as String),
-  fileSearch: (json['file_search'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  fileSearch: json['file_search'] as Map<String, dynamic>,
 ); }
 
 /// The index of the tool call in the tool calls array.

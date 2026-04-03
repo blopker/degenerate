@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 
 factory ActionsCreateWorkflowDispatchRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateWorkflowDispatchRequest(
   ref: json['ref'] as String,
-  inputs: (json['inputs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  inputs: json['inputs'] as Map<String, dynamic>?,
   returnRunDetails: json['return_run_details'] as bool?,
 ); }
 

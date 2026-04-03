@@ -180,6 +180,8 @@ class ModelEmitter {
       }
     }
 
+    final hasAnyArgs =
+        model.fields.isNotEmpty || model.additionalProperties != null;
     return Constructor(
       (b) => b
         ..name = 'fromJson'
@@ -187,11 +189,16 @@ class ModelEmitter {
         ..requiredParameters.add(
           Parameter(
             (p) => p
-              ..name = 'json'
+              // Use _ for unused parameter when model has no fields.
+              ..name = hasAnyArgs ? 'json' : '_'
               ..type = refer('Map<String, dynamic>'),
           ),
         )
-        ..body = Code('return ${model.name}(\n$args\n);'),
+        ..body = Code(
+          hasAnyArgs
+              ? 'return ${model.name}(\n$args\n);'
+              : 'return const ${model.name}();',
+        ),
     );
   }
 
@@ -381,12 +388,13 @@ class ModelEmitter {
           '\n  $_overflowFieldName: $_overflowFieldName ?? this.$_overflowFieldName,';
     }
 
+    final constPrefix = allParams.isEmpty ? 'const ' : '';
     return Method(
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(model.name)
         ..optionalParameters.addAll(allParams)
-        ..body = Code('return ${model.name}(\n$allAssignments\n);'),
+        ..body = Code('return $constPrefix${model.name}(\n$allAssignments\n);'),
     );
   }
 

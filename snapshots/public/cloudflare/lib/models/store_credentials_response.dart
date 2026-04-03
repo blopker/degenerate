@@ -6,7 +6,7 @@ factory StoreCredentialsResponse.fromJson(Map<String, dynamic> json) { return St
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors3.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: ResponseSuccess.fromJson(json['success'] as bool),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 /// Contains errors if the API call was unsuccessful.

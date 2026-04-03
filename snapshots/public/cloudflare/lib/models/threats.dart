@@ -5,8 +5,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tot
 
 factory Threats.fromJson(Map<String, dynamic> json) { return Threats(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
-  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  type: (json['type'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  country: json['country'] as Map<String, dynamic>?,
+  type: json['type'] as Map<String, dynamic>?,
 ); }
 
 /// The total number of identifiable threats received over the time frame.

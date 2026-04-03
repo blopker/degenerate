@@ -34,7 +34,7 @@ factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOu
   createdAt: (json['created_at'] as num).toInt(),
   status: json['status'] as String,
   datasourceItemId: (json['datasource_item_id'] as num).toInt(),
-  datasourceItem: (json['datasource_item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  datasourceItem: json['datasource_item'] as Map<String, dynamic>,
   results: (json['results'] as List<dynamic>).map((e) => EvalRunOutputItemResult.fromJson(e as Map<String, dynamic>)).toList(),
   sample: EvalRunOutputItemSample.fromJson(json['sample'] as Map<String, dynamic>),
 ); }

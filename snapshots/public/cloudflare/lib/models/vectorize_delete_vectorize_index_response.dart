@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorizeDeleteVectorizeIndexResponse {const VectorizeDeleteVectorizeIndexResponse({this.result});
 
 factory VectorizeDeleteVectorizeIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeDeleteVectorizeIndexResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

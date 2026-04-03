@@ -57,7 +57,7 @@ final int requiredApprovingReviewCount;
 /// All conversations on code must be resolved before a pull request can be merged.
 final bool requiredReviewThreadResolution;
 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > `required_reviewers` is in beta and subject to change.
 /// 
 /// A collection of reviewers and associated file patterns. Each reviewer has a list of file patterns which determine the files that reviewer is required to review.

@@ -186,7 +186,7 @@ final String? description;
 /// The display name of the tax rates as it will appear to your customer on their receipt email, PDF, and the hosted invoice page.
 final String displayName;
 
-/// Actual/effective tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true,
+/// Actual/effective tax rate percentage out of 100. For tax calculations with automatic_tax`[enabled]`=true,
 /// this percentage reflects the rate actually used to calculate tax based on the product's taxability
 /// and whether the user is registered to collect taxes in the corresponding jurisdiction.
 final double? effectivePercentage;
@@ -215,7 +215,7 @@ final Map<String,String>? metadata;
 /// String representing the object's type. Objects of the same type share the same value.
 final TaxRateObject object;
 
-/// Tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true, this percentage includes the statutory tax rate of non-taxable jurisdictions.
+/// Tax rate percentage out of 100. For tax calculations with automatic_tax`[enabled]`=true, this percentage includes the statutory tax rate of non-taxable jurisdictions.
 final double percentage;
 
 /// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.

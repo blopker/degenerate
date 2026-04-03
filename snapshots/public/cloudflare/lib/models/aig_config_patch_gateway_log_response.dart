@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPatchGatewayLogResponse {const AigConfigPatchGatewayLogResponse({required this.result, required this.success, });
 
 factory AigConfigPatchGatewayLogResponse.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogResponse(
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -64,7 +64,7 @@ factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> jso
   status: json['status'] as String,
   headBranch: json['head_branch'] as String?,
   workflowName: json['workflow_name'] as String?,
-  steps: (json['steps'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  steps: (json['steps'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   url: json['url'] as String,
 ); }
 

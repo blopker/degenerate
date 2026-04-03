@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_container_metadata_tag.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata({this.labels, this.manifest, this.tag, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata(
-  labels: (json['labels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  manifest: (json['manifest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  labels: json['labels'] as Map<String, dynamic>?,
+  manifest: json['manifest'] as Map<String, dynamic>?,
   tag: json['tag'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag.fromJson(json['tag'] as Map<String, dynamic>) : null,
 ); }
 

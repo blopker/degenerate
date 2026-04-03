@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextGeneration2Variant1ToolCalls {const TextGeneration2Variant1ToolCalls({this.arguments, this.name, });
 
 factory TextGeneration2Variant1ToolCalls.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1ToolCalls(
-  arguments: (json['arguments'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  arguments: json['arguments'] as Map<String, dynamic>?,
   name: json['name'] as String?,
 ); }
 

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 
 factory ZarazBaseTool.fromJson(Map<String, dynamic> json) { return ZarazBaseTool(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
-  defaultFields: (json['defaultFields'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  defaultFields: json['defaultFields'] as Map<String, dynamic>,
   defaultPurpose: json['defaultPurpose'] as String?,
   enabled: json['enabled'] as bool,
   name: json['name'] as String,

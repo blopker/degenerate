@@ -24,7 +24,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
   onError: (response) {
     return WorkersAiSearchAuthorResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -104,7 +104,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
   onError: (response) {
     return WorkersAiSearchModelResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -159,7 +159,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
   onError: (response) {
     return WorkersAiSearchTaskResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 factory RadarGetReportsDatasetsResponseResultDatasets.fromJson(Map<String, dynamic> json) { return RadarGetReportsDatasetsResponseResultDatasets(
   description: json['description'] as String,
   id: (json['id'] as num).toInt(),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>,
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
   title: json['title'] as String,
   type: json['type'] as String,

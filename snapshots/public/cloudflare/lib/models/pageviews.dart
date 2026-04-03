@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tot
 
 factory Pageviews.fromJson(Map<String, dynamic> json) { return Pageviews(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
-  searchEngine: (json['search_engine'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  searchEngine: json['search_engine'] as Map<String, dynamic>?,
 ); }
 
 /// The total number of pageviews served within the time range.

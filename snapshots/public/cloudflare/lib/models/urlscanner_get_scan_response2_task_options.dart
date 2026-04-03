@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2TaskOptions {const UrlscannerGetScanResponse2TaskOptions({this.customHeaders, this.screenshotsResolutions, });
 
 factory UrlscannerGetScanResponse2TaskOptions.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2TaskOptions(
-  customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  customHeaders: json['customHeaders'] as Map<String, dynamic>?,
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 

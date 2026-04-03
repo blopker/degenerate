@@ -22,7 +22,7 @@ factory RealtimeTranscriptionSessionCreateResponse.fromJson(Map<String, dynamic>
 final RealtimeTranscriptionSessionCreateResponseClientSecret clientSecret;
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final dynamic modalities;
 

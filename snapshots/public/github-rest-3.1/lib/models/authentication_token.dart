@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 factory AuthenticationToken.fromJson(Map<String, dynamic> json) { return AuthenticationToken(
   token: json['token'] as String,
   expiresAt: DateTime.parse(json['expires_at'] as String),
-  permissions: (json['permissions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  permissions: json['permissions'] as Map<String, dynamic>?,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
   singleFile: json['single_file'] as String?,
   repositorySelection: json['repository_selection'] != null ? AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String) : null,

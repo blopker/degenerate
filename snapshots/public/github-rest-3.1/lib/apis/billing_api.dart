@@ -10,7 +10,7 @@ final class BillingApi with ApiExecutor {const BillingApi(this.apiConfig);
 
 /// Get all budgets for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets all budgets for an organization. The authenticated user must be an organization admin or billing manager.
@@ -52,7 +52,7 @@ return execute(
  } 
 /// Get a budget by ID for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
@@ -79,7 +79,7 @@ return execute(
  } 
 /// Update a budget for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
@@ -108,7 +108,7 @@ return execute(
  } 
 /// Delete a budget for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
@@ -224,7 +224,7 @@ return execute(
  } 
 /// Get billing usage summary for an organization
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets a summary report of usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.
@@ -362,7 +362,7 @@ return execute(
  } 
 /// Get billing usage summary for a user
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint is in public preview and is subject to change.
 /// 
 /// Gets a summary report of usage for a user.

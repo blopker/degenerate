@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_com
 
 factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure55(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ResponseCommonFailure55Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  messages: (json['messages'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool?,
 ); }
 

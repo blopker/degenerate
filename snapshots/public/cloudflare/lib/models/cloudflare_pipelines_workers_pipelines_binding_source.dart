@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesBindingSourceFormat($value)'; } 
  }
-/// [DEPRECATED] Worker binding source configuration. Use the new streams API instead.
+/// `[DEPRECATED]` Worker binding source configuration. Use the new streams API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesBindingSource {const CloudflarePipelinesWorkersPipelinesBindingSource({required this.format, required this.type, });
 
 factory CloudflarePipelinesWorkersPipelinesBindingSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesBindingSource(

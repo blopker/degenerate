@@ -1997,7 +1997,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2029,7 +2029,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2061,7 +2061,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2093,7 +2093,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2125,7 +2125,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2157,7 +2157,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2189,7 +2189,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2221,7 +2221,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2253,7 +2253,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2285,7 +2285,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2317,7 +2317,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2349,7 +2349,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2381,7 +2381,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2413,7 +2413,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2445,7 +2445,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2477,7 +2477,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2509,7 +2509,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2541,7 +2541,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2573,7 +2573,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2605,7 +2605,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2637,7 +2637,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2669,7 +2669,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2701,7 +2701,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2733,7 +2733,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2765,7 +2765,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2797,7 +2797,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2829,7 +2829,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2861,7 +2861,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2893,7 +2893,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2925,7 +2925,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2957,7 +2957,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -2989,7 +2989,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3021,7 +3021,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3053,7 +3053,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3085,7 +3085,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3117,7 +3117,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3149,7 +3149,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3181,7 +3181,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3213,7 +3213,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3245,7 +3245,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3277,7 +3277,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3309,7 +3309,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3341,7 +3341,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3373,7 +3373,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3405,7 +3405,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3437,7 +3437,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3469,7 +3469,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3501,7 +3501,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3533,7 +3533,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 
@@ -3565,7 +3565,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return (jsonDecode(data) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(data) as Map<String, dynamic>;
   },
 );
  } 

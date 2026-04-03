@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.da
 factory AsnIntelligenceGetAsnSubnetsResponse4Xx.fromJson(Map<String, dynamic> json) { return AsnIntelligenceGetAsnSubnetsResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
   asn: json['asn'] != null ? IntelAsn.fromJson(json['asn'] as num) : null,
   count: json['count'] != null ? IntelCount.fromJson(json['count'] as num) : null,

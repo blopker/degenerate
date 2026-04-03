@@ -51,7 +51,7 @@ return execute(
 ///
 /// Allows you to add a new gist with one or more files.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
 ///
 /// `POST /gists`

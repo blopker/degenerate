@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency.d
 factory Manifest.fromJson(Map<String, dynamic> json) { return Manifest(
   name: json['name'] as String,
   file: json['file'] != null ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   resolved: (json['resolved'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Dependency.fromJson(v as Map<String, dynamic>))),
 ); }
 

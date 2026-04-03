@@ -11,7 +11,7 @@ factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) {
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
-  payload: OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,),
+  payload: OneOf2.parse(json['payload'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
   performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,

@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 factory GetEventRawReadResponse.fromJson(Map<String, dynamic> json) { return GetEventRawReadResponse(
   accountId: (json['accountId'] as num).toDouble(),
   created: json['created'] as String,
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>,
   id: json['id'] as String,
   source: json['source'] as String,
   tlp: json['tlp'] as String,

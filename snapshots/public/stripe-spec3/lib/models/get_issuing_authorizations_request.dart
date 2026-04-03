@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingAuthorizationsRequest {const GetIssuingAuthorizationsRequest();
 
-factory GetIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return GetIssuingAuthorizationsRequest(
-
-); }
+factory GetIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> _) { return const GetIssuingAuthorizationsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetIssuingAuthorizationsRequest copyWith() { return GetIssuingAuthorizationsRequest(
+GetIssuingAuthorizationsRequest copyWith() { return const GetIssuingAuthorizationsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetIssuingAuthorizationsRequest; } 

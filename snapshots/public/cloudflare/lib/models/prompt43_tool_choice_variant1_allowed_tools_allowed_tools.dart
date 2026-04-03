@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Prompt43ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1AllowedToolsAllowedTools(
   mode: Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode.fromJson(json['mode'] as String),
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final Prompt43ToolChoiceVariant1AllowedToolsAllowedToolsMode mode;

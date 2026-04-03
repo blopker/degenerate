@@ -9,7 +9,7 @@ factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
   sha: json['sha'] as String,
   ref: json['ref'] as String,
   detector: SnapshotDetector.fromJson(json['detector'] as Map<String, dynamic>),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   manifests: (json['manifests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Manifest.fromJson(v as Map<String, dynamic>))),
   scanned: DateTime.parse(json['scanned'] as String),
 ); }

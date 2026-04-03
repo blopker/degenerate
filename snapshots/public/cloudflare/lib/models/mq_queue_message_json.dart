@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });
 
 factory MqQueueMessageJson.fromJson(Map<String, dynamic> json) { return MqQueueMessageJson(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  body: json['body'] as Map<String, dynamic>?,
   contentType: json['content_type'] != null ? MqQueueMessageJsonContentType.fromJson(json['content_type'] as String) : null,
 ); }
 

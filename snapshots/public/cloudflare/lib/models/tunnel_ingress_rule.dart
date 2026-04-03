@@ -18,7 +18,7 @@ final TunnelOriginRequest? originRequest;
 /// Requests with this path route to this public hostname.
 final String? path;
 
-/// Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. 'http_status:404'.
+/// Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:`[code]` e.g. 'http_status:404'.
 /// 
 final String service;
 

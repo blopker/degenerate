@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Dependency.fromJson(Map<String, dynamic> json) { return Dependency(
   packageUrl: json['package_url'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   relationship: json['relationship'] != null ? DependencyRelationship.fromJson(json['relationship'] as String) : null,
   scope: json['scope'] != null ? DependencyScope.fromJson(json['scope'] as String) : null,
   dependencies: (json['dependencies'] as List<dynamic>?)?.map((e) => e as String).toList(),

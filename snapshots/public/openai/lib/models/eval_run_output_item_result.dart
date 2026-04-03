@@ -9,7 +9,7 @@ factory EvalRunOutputItemResult.fromJson(Map<String, dynamic> json) { return Eva
   type: json['type'] as String?,
   score: (json['score'] as num).toDouble(),
   passed: json['passed'] as bool,
-  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  sample: json['sample'] as Map<String, dynamic>?,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'name', 'type', 'score', 'passed', 'sample'}.contains(e.key))),
 ); }
 

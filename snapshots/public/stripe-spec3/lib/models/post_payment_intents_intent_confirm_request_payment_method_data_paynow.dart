@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow();
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow(
-
-); }
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow.fromJson(Map<String, dynamic> _) { return const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow copyWith() { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow(
+PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow copyWith() { return const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataPaynow; } 

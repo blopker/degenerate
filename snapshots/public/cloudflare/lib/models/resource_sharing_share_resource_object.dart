@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sha
 factory ResourceSharingShareResourceObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareResourceObject(
   created: ResourceSharingCreated.fromJson(json['created'] as String),
   id: ResourceSharingResourceId.fromJson(json['id'] as String),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>,
   modified: ResourceSharingModified.fromJson(json['modified'] as String),
   resourceAccountId: ResourceSharingAccountId.fromJson(json['resource_account_id'] as String),
   resourceId: ResourceSharingResourceResourceId.fromJson(json['resource_id'] as String),

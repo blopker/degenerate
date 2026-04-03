@@ -21,7 +21,7 @@ final class CredentialsApi with ApiExecutor {const CredentialsApi(this.apiConfig
 /// 
 /// To prevent abuse, this API is limited to only 60 unauthenticated requests per hour and a max of 1000 tokens per API request.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Any authenticated requests will return a 403.
 ///
 /// `POST /credentials/revoke`

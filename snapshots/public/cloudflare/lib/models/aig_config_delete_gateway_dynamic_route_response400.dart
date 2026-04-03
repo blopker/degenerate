@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_d
 
 factory AigConfigDeleteGatewayDynamicRouteResponse400.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigDeleteGatewayDynamicRouteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

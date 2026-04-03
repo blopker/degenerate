@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPhysicalBundlesRequest {const GetIssuingPhysicalBundlesRequest();
 
-factory GetIssuingPhysicalBundlesRequest.fromJson(Map<String, dynamic> json) { return GetIssuingPhysicalBundlesRequest(
-
-); }
+factory GetIssuingPhysicalBundlesRequest.fromJson(Map<String, dynamic> _) { return const GetIssuingPhysicalBundlesRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetIssuingPhysicalBundlesRequest copyWith() { return GetIssuingPhysicalBundlesRequest(
+GetIssuingPhysicalBundlesRequest copyWith() { return const GetIssuingPhysicalBundlesRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetIssuingPhysicalBundlesRequest; } 

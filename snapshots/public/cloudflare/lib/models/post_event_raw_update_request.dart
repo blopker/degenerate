@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventRawUpdateRequest {const PostEventRawUpdateRequest({this.data, this.source, this.tlp, });
 
 factory PostEventRawUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventRawUpdateRequest(
-  data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>?,
   source: json['source'] as String?,
   tlp: json['tlp'] as String?,
 ); }

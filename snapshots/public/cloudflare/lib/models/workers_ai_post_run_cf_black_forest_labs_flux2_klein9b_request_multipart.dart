@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart {const WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart({this.body, this.contentType, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  body: json['body'] as Map<String, dynamic>?,
   contentType: json['contentType'] as String?,
 ); }
 

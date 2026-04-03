@@ -3,9 +3,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiSearchModelResponse {const WorkersAiSearchModelResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorkersAiSearchModelResponse.fromJson(Map<String, dynamic> json) { return WorkersAiSearchModelResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool,
 ); }
 

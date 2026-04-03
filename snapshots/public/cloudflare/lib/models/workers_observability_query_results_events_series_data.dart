@@ -6,7 +6,7 @@ factory WorkersObservabilityQueryResultsEventsSeriesData.fromJson(Map<String, dy
   aggregates: WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(json['aggregates'] as Map<String, dynamic>),
   count: (json['count'] as num).toDouble(),
   errors: json['errors'] != null ? (json['errors'] as num).toDouble() : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  groups: json['groups'] as Map<String, dynamic>?,
   interval: (json['interval'] as num).toDouble(),
   sampleInterval: (json['sampleInterval'] as num).toDouble(),
 ); }

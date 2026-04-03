@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LoadBalancingComponentsSchemasSingleResponse {const LoadBalancingComponentsSchemasSingleResponse({this.result});
 
 factory LoadBalancingComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return LoadBalancingComponentsSchemasSingleResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 /// A list of countries and subdivisions mapped to a region.

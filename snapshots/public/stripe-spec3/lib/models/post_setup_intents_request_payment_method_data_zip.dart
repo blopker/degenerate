@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataZip {const PostSetupIntentsRequestPaymentMethodDataZip();
 
-factory PostSetupIntentsRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataZip(
-
-); }
+factory PostSetupIntentsRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsRequestPaymentMethodDataZip(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsRequestPaymentMethodDataZip copyWith() { return PostSetupIntentsRequestPaymentMethodDataZip(
+PostSetupIntentsRequestPaymentMethodDataZip copyWith() { return const PostSetupIntentsRequestPaymentMethodDataZip(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataZip; } 

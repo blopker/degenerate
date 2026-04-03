@@ -7,7 +7,7 @@ factory ImageVolumeStatus.fromJson(Map<String, dynamic> json) { return ImageVolu
   imageRef: json['imageRef'] as String,
 ); }
 
-/// ImageRef is the digest of the image used for this volume. It should have a value that's similar to the pod's status.containerStatuses[i].imageID. The ImageRef length should not exceed 256 characters.
+/// ImageRef is the digest of the image used for this volume. It should have a value that's similar to the pod's status.containerStatuses`[i]`.imageID. The ImageRef length should not exceed 256 characters.
 final String imageRef;
 
 Map<String, dynamic> toJson() { return {

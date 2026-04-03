@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'accounts_by_
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  results: (json['results'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  results: json['results'] as Map<String, dynamic>?,
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
 ); }
 

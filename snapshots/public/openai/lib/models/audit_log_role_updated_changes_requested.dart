@@ -10,7 +10,7 @@ factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) 
   permissionsAdded: (json['permissions_added'] as List<dynamic>?)?.map((e) => e as String).toList(),
   permissionsRemoved: (json['permissions_removed'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// The updated role name, when provided.

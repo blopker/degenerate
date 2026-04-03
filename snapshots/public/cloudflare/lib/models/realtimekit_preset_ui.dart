@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_ui_design_tokens.dart';@immutable final class RealtimekitPresetUi {const RealtimekitPresetUi({required this.designTokens, this.configDiff, });
 
 factory RealtimekitPresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUi(
-  configDiff: (json['config_diff'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  configDiff: json['config_diff'] as Map<String, dynamic>?,
   designTokens: RealtimekitPresetUiDesignTokens.fromJson(json['design_tokens'] as Map<String, dynamic>),
 ); }
 

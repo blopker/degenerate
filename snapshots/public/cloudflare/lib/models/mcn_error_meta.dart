@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 factory McnErrorMeta.fromJson(Map<String, dynamic> json) { return McnErrorMeta(
   l10nKey: json['l10n_key'] as String?,
   loggableError: json['loggable_error'] as String?,
-  templateData: (json['template_data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  templateData: json['template_data'] as Map<String, dynamic>?,
   traceId: json['trace_id'] as String?,
 ); }
 

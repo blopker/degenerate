@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEntitlementsFeaturesRequest {const GetEntitlementsFeaturesRequest();
 
-factory GetEntitlementsFeaturesRequest.fromJson(Map<String, dynamic> json) { return GetEntitlementsFeaturesRequest(
-
-); }
+factory GetEntitlementsFeaturesRequest.fromJson(Map<String, dynamic> _) { return const GetEntitlementsFeaturesRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetEntitlementsFeaturesRequest copyWith() { return GetEntitlementsFeaturesRequest(
+GetEntitlementsFeaturesRequest copyWith() { return const GetEntitlementsFeaturesRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetEntitlementsFeaturesRequest; } 

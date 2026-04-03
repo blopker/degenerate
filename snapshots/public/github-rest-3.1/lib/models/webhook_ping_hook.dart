@@ -54,7 +54,7 @@ final DateTime createdAt;
 
 final Uri? deliveriesUrl;
 
-/// Determines what events the hook is triggered for. Default: ['push'].
+/// Determines what events the hook is triggered for. Default: `['push']`.
 final List<String> events;
 
 /// Unique identifier of the webhook.

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesDeletedResponse {const ImagesDeletedResponse({this.result});
 
 factory ImagesDeletedResponse.fromJson(Map<String, dynamic> json) { return ImagesDeletedResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

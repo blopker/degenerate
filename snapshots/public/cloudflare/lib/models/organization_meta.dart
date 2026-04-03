@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization
 factory OrganizationMeta.fromJson(Map<String, dynamic> json) { return OrganizationMeta(
   flags: json['flags'] != null ? OrganizationFlags.fromJson(json['flags'] as Map<String, dynamic>) : null,
   managedBy: json['managed_by'] as String?,
-  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'flags', 'managed_by'}.contains(e.key)).map((e) => MapEntry(e.key, (e.value as Map<String, dynamic>).map((k, v) => MapEntry(k, v))))),
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'flags', 'managed_by'}.contains(e.key)).map((e) => MapEntry(e.key, e.value as Map<String, dynamic>))),
 ); }
 
 final OrganizationFlags? flags;

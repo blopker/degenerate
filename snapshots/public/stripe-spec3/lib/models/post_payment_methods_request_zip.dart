@@ -3,15 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `zip` PaymentMethod, this hash contains details about the Zip payment method.
 @immutable final class PostPaymentMethodsRequestZip {const PostPaymentMethodsRequestZip();
 
-factory PostPaymentMethodsRequestZip.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestZip(
-
-); }
+factory PostPaymentMethodsRequestZip.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestZip(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestZip copyWith() { return PostPaymentMethodsRequestZip(
+PostPaymentMethodsRequestZip copyWith() { return const PostPaymentMethodsRequestZip(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestZip; } 

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsDnsResponseReviewScanObject {const DnsRecordsDnsResponseReviewScanObject({this.accepts, this.rejects, });
 
 factory DnsRecordsDnsResponseReviewScanObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseReviewScanObject(
-  accepts: (json['accepts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  accepts: (json['accepts'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   rejects: (json['rejects'] as List<dynamic>?)?.map((e) => DnsRecordsIdentifier.fromJson(e as String)).toList(),
 ); }
 

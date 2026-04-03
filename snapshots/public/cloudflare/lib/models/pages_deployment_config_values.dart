@@ -34,7 +34,7 @@ factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesAiBindingsValue.fromJson(v as Map<String, dynamic>))),
   alwaysUseLatestCompatibilityDate: json['always_use_latest_compatibility_date'] as bool,
   analyticsEngineDatasets: (json['analytics_engine_datasets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue.fromJson(v as Map<String, dynamic>))),
-  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
+  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
   buildImageMajorVersion: (json['build_image_major_version'] as num).toInt(),
   compatibilityDate: json['compatibility_date'] as String,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>).map((e) => e as String).toList(),

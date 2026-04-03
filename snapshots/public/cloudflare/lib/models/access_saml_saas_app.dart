@@ -94,7 +94,7 @@ final String? nameIdTransformJsonata;
 /// The Access public certificate that will be used to verify your identity.
 final String? publicKey;
 
-/// A [JSONata] (https://jsonata.org/) expression that transforms an application's user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.
+/// A `[JSONata]` (https://jsonata.org/) expression that transforms an application's user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.
 /// 
 final String? samlAttributeTransformJsonata;
 

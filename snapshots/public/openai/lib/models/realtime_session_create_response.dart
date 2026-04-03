@@ -60,7 +60,7 @@ final List<RealtimeSessionCreateResponseInclude>? include;
 final String? model;
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final dynamic outputModalities;
 

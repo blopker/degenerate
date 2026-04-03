@@ -7,7 +7,7 @@ factory AccessPolicyCheckResponseResultAppState.fromJson(Map<String, dynamic> js
   aud: json['aud'] as String?,
   hostname: json['hostname'] as String?,
   name: json['name'] as String?,
-  policies: (json['policies'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   status: json['status'] as String?,
 ); }
 

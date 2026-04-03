@@ -46,7 +46,7 @@ final String? deviceFingerprint;
 /// The IP address of the device at provisioning time.
 final String? ipAddress;
 
-/// The geographic latitude/longitude coordinates of the device at provisioning time. The format is [+-]decimal/[+-]decimal.
+/// The geographic latitude/longitude coordinates of the device at provisioning time. The format is `[+-]`decimal/`[+-]`decimal.
 final String? location;
 
 /// The name of the device used for tokenization.

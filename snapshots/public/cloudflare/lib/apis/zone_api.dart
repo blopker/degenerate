@@ -193,11 +193,11 @@ return execute(
 /// 
 /// Single file purge example with files:
 /// ````
-/// {"files": ["http://www.example.com/css/styles.css", "http://www.example.com/js/index.js"]}
+/// {"files": `["http://www.example.com/css/styles.css", "http://www.example.com/js/index.js"]`}
 /// ````
 /// Single file purge example with url and header pairs:
 /// ````
-/// {"files": [{url: "http://www.example.com/cat_picture.jpg", headers: { "CF-IPCountry": "US", "CF-Device-Type": "desktop", "Accept-Language": "zh-CN" }}, {url: "http://www.example.com/dog_picture.jpg", headers: { "CF-IPCountry": "EU", "CF-Device-Type": "mobile", "Accept-Language": "en-US" }}]}
+/// {"files": `[{url: "http://www.example.com/cat_picture.jpg", headers: { "CF-IPCountry": "US", "CF-Device-Type": "desktop", "Accept-Language": "zh-CN" }}, {url: "http://www.example.com/dog_picture.jpg", headers: { "CF-IPCountry": "EU", "CF-Device-Type": "mobile", "Accept-Language": "en-US" }}]`}
 /// ````
 /// 
 /// ### Purge Cached Content by Tag, Host or Prefix
@@ -205,15 +205,15 @@ return execute(
 /// 
 /// Flex purge with tags:
 /// ````
-/// {"tags": ["a-cache-tag", "another-cache-tag"]}
+/// {"tags": `["a-cache-tag", "another-cache-tag"]`}
 /// ````
 /// Flex purge with hosts:
 /// ````
-/// {"hosts": ["www.example.com", "images.example.com"]}
+/// {"hosts": `["www.example.com", "images.example.com"]`}
 /// ````
 /// Flex purge with prefixes:
 /// ````
-/// {"prefixes": ["www.example.com/foo", "images.example.com/bar/baz"]}
+/// {"prefixes": `["www.example.com/foo", "images.example.com/bar/baz"]`}
 /// ````
 /// 
 /// ### Availability and limits

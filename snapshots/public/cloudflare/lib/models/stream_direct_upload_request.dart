@@ -7,7 +7,7 @@ factory StreamDirectUploadRequest.fromJson(Map<String, dynamic> json) { return S
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   maxDurationSeconds: StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num),
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,

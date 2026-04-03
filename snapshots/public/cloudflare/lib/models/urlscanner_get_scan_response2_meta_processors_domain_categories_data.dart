@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData {const UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData({required this.inherited, required this.isPrimary, required this.name, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData(
-  inherited: (json['inherited'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  inherited: json['inherited'] as Map<String, dynamic>,
   isPrimary: json['isPrimary'] as bool,
   name: json['name'] as String,
 ); }

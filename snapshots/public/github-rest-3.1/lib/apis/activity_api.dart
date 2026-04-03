@@ -10,7 +10,7 @@ final class ActivityApi with ApiExecutor {const ActivityApi(this.apiConfig);
 
 /// List public events
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /events`
@@ -59,7 +59,7 @@ return execute(
 /// 
 /// By default, timeline resources are returned in JSON. You can specify the `application/atom+xml` type in the `Accept` header to return timeline resources in Atom format. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Private feeds are only returned when [authenticating via Basic Auth](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) since current feed URIs use the older, non revocable auth tokens.
 ///
 /// `GET /feeds`
@@ -81,7 +81,7 @@ return execute(
  } 
 /// List public events for a network of repositories
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /networks/{owner}/{repo}/events`
@@ -335,7 +335,7 @@ return execute(
  } 
 /// List public organization events
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /orgs/{org}/events`
@@ -369,7 +369,7 @@ return execute(
  } 
 /// List repository events
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /repos/{owner}/{repo}/events`
@@ -759,7 +759,7 @@ return execute(
 ///
 /// If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read).
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events`
@@ -795,7 +795,7 @@ return execute(
 ///
 /// This is the user's organization dashboard. You must be authenticated as the user to view this.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events/orgs/{org}`
@@ -829,7 +829,7 @@ return execute(
  } 
 /// List public events for a user
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events/public`
@@ -866,7 +866,7 @@ return execute(
 /// These are events that you've received by watching repositories and following users. If you are authenticated as the
 /// given user, you will see private events. Otherwise, you'll only see public events.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/received_events`
@@ -900,7 +900,7 @@ return execute(
  } 
 /// List public events received by a user
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/received_events/public`

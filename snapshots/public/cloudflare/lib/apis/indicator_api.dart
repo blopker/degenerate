@@ -195,7 +195,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return json.map((e) => e as Map<String, dynamic>).toList();
   },
   onError: (response) {
     return GetIndicatorTagsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

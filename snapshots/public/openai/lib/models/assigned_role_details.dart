@@ -13,8 +13,8 @@ factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return Assigne
   createdAt: json['created_at'] != null ? (json['created_at'] as num).toInt() : null,
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
   createdBy: json['created_by'] as String?,
-  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  createdByUserObj: json['created_by_user_obj'] as Map<String, dynamic>?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// Identifier for the role.

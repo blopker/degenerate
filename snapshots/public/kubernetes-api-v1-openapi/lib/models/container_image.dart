@@ -8,7 +8,7 @@ factory ContainerImage.fromJson(Map<String, dynamic> json) { return ContainerIma
   sizeBytes: json['sizeBytes'] != null ? (json['sizeBytes'] as num).toInt() : null,
 ); }
 
-/// Names by which this image is known. e.g. ["kubernetes.example/hyperkube:v1.0.7", "cloud-vendor.registry.example/cloud-vendor/hyperkube:v1.0.7"]
+/// Names by which this image is known. e.g. `["kubernetes.example/hyperkube:v1.0.7", "cloud-vendor.registry.example/cloud-vendor/hyperkube:v1.0.7"]`
 final List<String>? names;
 
 /// The size of the image in bytes.

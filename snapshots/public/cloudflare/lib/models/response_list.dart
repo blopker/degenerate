@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_errors2.d
 factory ResponseList.fromJson(Map<String, dynamic> json) { return ResponseList(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? R2ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }

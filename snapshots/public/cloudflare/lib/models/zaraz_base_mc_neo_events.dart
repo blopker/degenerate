@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 factory ZarazBaseMcNeoEvents.fromJson(Map<String, dynamic> json) { return ZarazBaseMcNeoEvents(
   actionType: json['actionType'] as String,
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>,
   firingTriggers: (json['firingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 

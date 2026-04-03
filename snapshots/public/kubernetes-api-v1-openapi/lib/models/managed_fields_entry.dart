@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/
 factory ManagedFieldsEntry.fromJson(Map<String, dynamic> json) { return ManagedFieldsEntry(
   apiVersion: json['apiVersion'] as String?,
   fieldsType: json['fieldsType'] as String?,
-  fieldsV1: (json['fieldsV1'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  fieldsV1: json['fieldsV1'] as Map<String, dynamic>?,
   manager: json['manager'] as String?,
   operation: json['operation'] as String?,
   subresource: json['subresource'] as String?,

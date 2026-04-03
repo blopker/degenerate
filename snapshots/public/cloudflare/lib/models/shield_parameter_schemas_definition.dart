@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// An operation sch
 @immutable final class ShieldParameterSchemasDefinition {const ShieldParameterSchemasDefinition({this.parameters, this.responses, });
 
 factory ShieldParameterSchemasDefinition.fromJson(Map<String, dynamic> json) { return ShieldParameterSchemasDefinition(
-  parameters: (json['parameters'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  responses: (json['responses'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: (json['parameters'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  responses: json['responses'] as Map<String, dynamic>?,
 ); }
 
 /// An array containing the learned parameter schemas.

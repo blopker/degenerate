@@ -86,7 +86,7 @@ return execute(
 /// Lists the repositories Dependabot can access in an organization
 ///
 /// Lists repositories that organization admins have allowed Dependabot to access when updating dependencies.
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// >    This operation supports both server-to-server and user-to-server access.
 /// Unauthorized users will not see the existence of this endpoint.
 ///
@@ -125,15 +125,15 @@ return execute(
 ///
 /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// >    This operation supports both server-to-server and user-to-server access.
 /// Unauthorized users will not see the existence of this endpoint.
 /// 
 /// **Example request body:**
 /// ```json`
 /// {
-///   "repository_ids_to_add": [123, 456],
-///   "repository_ids_to_remove": [789]
+///   "repository_ids_to_add": `[123, 456]`,
+///   "repository_ids_to_remove": `[789]`
 /// }
 /// ````
 ///

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_g
 
 factory UrlscannerGetScanResponse2DataRequestsResponseResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponseResponse(
   charset: json['charset'] as String,
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  headers: json['headers'] as Map<String, dynamic>?,
   mimeType: json['mimeType'] as String,
   protocol: json['protocol'] as String,
   remoteIpAddress: json['remoteIPAddress'] as String,

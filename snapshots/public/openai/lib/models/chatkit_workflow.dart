@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chatkit_work
 factory ChatkitWorkflow.fromJson(Map<String, dynamic> json) { return ChatkitWorkflow(
   id: json['id'] as String,
   version: json['version'] as String?,
-  stateVariables: (json['state_variables'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  stateVariables: json['state_variables'] as Map<String, dynamic>?,
   tracing: ChatkitWorkflowTracing.fromJson(json['tracing'] as Map<String, dynamic>),
 ); }
 

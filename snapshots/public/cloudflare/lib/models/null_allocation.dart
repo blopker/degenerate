@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory NullAllocation.fromJson(Map<String, dynamic> json) { return NullAllocation(
   type: NullAllocationType.fromJson(json['type'] as String),
-  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  value: json['value'] as Map<String, dynamic>?,
 ); }
 
 final NullAllocationType type;

@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay();
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay(
-
-); }
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay.fromJson(Map<String, dynamic> _) { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay copyWith() { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay copyWith() { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataMobilepay; } 

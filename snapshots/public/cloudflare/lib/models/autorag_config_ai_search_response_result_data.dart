@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_ai_search_response_result_data_content.dart';@immutable final class AutoragConfigAiSearchResponseResultData {const AutoragConfigAiSearchResponseResultData({required this.score, this.attributes, this.content, this.fileId, this.filename, });
 
 factory AutoragConfigAiSearchResponseResultData.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchResponseResultData(
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  attributes: json['attributes'] as Map<String, dynamic>?,
   content: (json['content'] as List<dynamic>?)?.map((e) => AutoragConfigAiSearchResponseResultDataContent.fromJson(e as Map<String, dynamic>)).toList(),
   fileId: json['file_id'] as String?,
   filename: json['filename'] as String?,

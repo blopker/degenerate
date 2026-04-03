@@ -45,7 +45,7 @@ final String? customerAccountId;
 /// Unique identifier of the cardholder’s device derived from a combination of at least two hardware and software attributes. Must be at least 20 characters.
 final String? customerDeviceFingerprint;
 
-/// Unique identifier of the cardholder’s device such as a device serial number (e.g., International Mobile Equipment Identity [IMEI]). Must be at least 15 characters.
+/// Unique identifier of the cardholder’s device such as a device serial number (e.g., International Mobile Equipment Identity `[IMEI]`). Must be at least 15 characters.
 final String? customerDeviceId;
 
 /// The email address of the customer.

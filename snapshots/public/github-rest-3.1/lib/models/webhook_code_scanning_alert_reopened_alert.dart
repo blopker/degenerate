@@ -38,7 +38,7 @@ factory WebhookCodeScanningAlertReopenedAlert.fromJson(Map<String, dynamic> json
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'] as String?,
-  dismissedBy: (json['dismissed_by'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  dismissedBy: json['dismissed_by'] as Map<String, dynamic>?,
   dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
   dismissedReason: json['dismissed_reason'] as String?,
   fixedAt: json['fixed_at'],

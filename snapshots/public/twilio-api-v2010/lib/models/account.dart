@@ -35,7 +35,7 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   ownerAccountSid: json['owner_account_sid'] as String?,
   sid: json['sid'] as String?,
   status: json['status'] != null ? AccountEnumStatus.fromJson(json['status'] as String) : null,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
   type: json['type'] != null ? AccountEnumType.fromJson(json['type'] as String) : null,
   uri: json['uri'] as String?,
 ); }

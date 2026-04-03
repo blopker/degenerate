@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpZtRiskScoreIntegrationDeleteResponse {const DlpZtRiskScoreIntegrationDeleteResponse({this.result});
 
 factory DlpZtRiskScoreIntegrationDeleteResponse.fromJson(Map<String, dynamic> json) { return DlpZtRiskScoreIntegrationDeleteResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

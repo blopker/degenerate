@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schem
 
 factory AccessSchemasPolicyCheckResponseResultUserIdentity.fromJson(Map<String, dynamic> json) { return AccessSchemasPolicyCheckResponseResultUserIdentity(
   accountId: json['account_id'] as String?,
-  deviceSessions: (json['device_sessions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  deviceSessions: json['device_sessions'] as Map<String, dynamic>?,
   email: json['email'] as String?,
   geo: json['geo'] != null ? AccessSchemasPolicyCheckResponseResultUserIdentityGeo.fromJson(json['geo'] as Map<String, dynamic>) : null,
   iat: json['iat'] != null ? (json['iat'] as num).toInt() : null,

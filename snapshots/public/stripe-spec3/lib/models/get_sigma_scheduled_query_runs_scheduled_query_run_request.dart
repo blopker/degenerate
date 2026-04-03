@@ -2,15 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSigmaScheduledQueryRunsScheduledQueryRunRequest {const GetSigmaScheduledQueryRunsScheduledQueryRunRequest();
 
-factory GetSigmaScheduledQueryRunsScheduledQueryRunRequest.fromJson(Map<String, dynamic> json) { return GetSigmaScheduledQueryRunsScheduledQueryRunRequest(
-
-); }
+factory GetSigmaScheduledQueryRunsScheduledQueryRunRequest.fromJson(Map<String, dynamic> _) { return const GetSigmaScheduledQueryRunsScheduledQueryRunRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetSigmaScheduledQueryRunsScheduledQueryRunRequest copyWith() { return GetSigmaScheduledQueryRunsScheduledQueryRunRequest(
+GetSigmaScheduledQueryRunsScheduledQueryRunRequest copyWith() { return const GetSigmaScheduledQueryRunsScheduledQueryRunRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetSigmaScheduledQueryRunsScheduledQueryRunRequest; } 

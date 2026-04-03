@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamResponseCollection {const IamResponseCollection({this.result});
 
 factory IamResponseCollection.fromJson(Map<String, dynamic> json) { return IamResponseCollection(
-  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final List<Map<String,dynamic>>? result;

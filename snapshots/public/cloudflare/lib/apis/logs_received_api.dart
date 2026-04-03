@@ -82,7 +82,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
   },
 );
  } 
@@ -124,7 +124,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
   },
 );
  } 

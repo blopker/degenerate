@@ -6,7 +6,7 @@ factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) { ret
   creator: json['creator'] as String?,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   id: json['id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   requireSignedUrLs: json.containsKey('requireSignedURLs') ? json['requireSignedURLs'] as bool : false,
 ); }
 

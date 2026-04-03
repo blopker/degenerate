@@ -37,11 +37,11 @@ final List<String>? accessModes;
 /// 		State set when resizing has failed in kubelet with a terminal error. Transient errors don't set
 /// 		NodeResizeFailed.
 /// For example: if expanding a PVC for more capacity - this field can be one of the following states:
-/// 	- pvc.status.allocatedResourceStatus['storage'] = "ControllerResizeInProgress"
-///      - pvc.status.allocatedResourceStatus['storage'] = "ControllerResizeFailed"
-///      - pvc.status.allocatedResourceStatus['storage'] = "NodeResizePending"
-///      - pvc.status.allocatedResourceStatus['storage'] = "NodeResizeInProgress"
-///      - pvc.status.allocatedResourceStatus['storage'] = "NodeResizeFailed"
+/// 	- pvc.status.allocatedResourceStatus`['storage']` = "ControllerResizeInProgress"
+///      - pvc.status.allocatedResourceStatus`['storage']` = "ControllerResizeFailed"
+///      - pvc.status.allocatedResourceStatus`['storage']` = "NodeResizePending"
+///      - pvc.status.allocatedResourceStatus`['storage']` = "NodeResizeInProgress"
+///      - pvc.status.allocatedResourceStatus`['storage']` = "NodeResizeFailed"
 /// When this field is not set, it means that no resize operation is in progress for the given PVC.
 /// 
 /// A controller that receives PVC update with previously unknown resourceName or ClaimResourceStatus should ignore the update for the purpose it was designed. For example - a controller that only is responsible for resizing capacity of the volume, should ignore PVC updates that change other valid resources associated with PVC.

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event represents
 @immutable final class WatchEvent {const WatchEvent({required this.object, this.type = '', });
 
 factory WatchEvent.fromJson(Map<String, dynamic> json) { return WatchEvent(
-  object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  object: json['object'] as Map<String, dynamic>,
   type: json['type'] as String,
 ); }
 

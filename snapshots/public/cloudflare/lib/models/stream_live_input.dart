@@ -53,7 +53,7 @@ factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveI
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   recording: json['recording'] != null ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>) : null,
   rtmps: json['rtmps'] != null ? StreamInputRtmps.fromJson(json['rtmps'] as Map<String, dynamic>) : null,

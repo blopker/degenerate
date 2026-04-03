@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = RequestReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
 
 factory Request.fromJson(Map<String, dynamic> json) { return Request(
-  filter: (json['filter'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  filter: json['filter'] as Map<String, dynamic>?,
   returnMetadata: json.containsKey('returnMetadata') ? RequestReturnMetadata.fromJson(json['returnMetadata'] as String) : RequestReturnMetadata.none,
   returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
   topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,

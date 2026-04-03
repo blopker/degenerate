@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnControllerUpdateDeviceResponse {const MconnControllerUpdateDeviceResponse({this.result});
 
 factory MconnControllerUpdateDeviceResponse.fromJson(Map<String, dynamic> json) { return MconnControllerUpdateDeviceResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseBatchObject {const DnsRecordsDnsResponseBatchObject({this.deletes, this.patches, this.posts, this.puts, });
 
 factory DnsRecordsDnsResponseBatchObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseBatchObject(
-  deletes: (json['deletes'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  patches: (json['patches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  posts: (json['posts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  puts: (json['puts'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  deletes: (json['deletes'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  patches: (json['patches'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  posts: (json['posts'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  puts: (json['puts'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final List<Map<String,dynamic>>? deletes;

@@ -147,7 +147,7 @@ factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures.
 
 /// A list of [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) values that controls which saved payment methods the Payment Element displays by filtering to only show payment methods with an `allow_redisplay` value that is present in this list.
 /// 
-/// If not specified, defaults to ["always"]. In order to display all saved payment methods, specify ["always", "limited", "unspecified"].
+/// If not specified, defaults to `["always"]`. In order to display all saved payment methods, specify `["always", "limited", "unspecified"]`.
 final List<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters> paymentMethodAllowRedisplayFilters;
 
 /// Controls whether or not the Payment Element shows saved payment methods. This parameter defaults to `disabled`.

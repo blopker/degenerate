@@ -13,7 +13,7 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
 ); }
 
 /// The unique string that that we created to identify the resource.

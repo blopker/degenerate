@@ -8,7 +8,7 @@ factory AccountSipSipIpAccessControlList.fromJson(Map<String, dynamic> json) { r
   friendlyName: json['friendly_name'] as String?,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
   uri: json['uri'] as String?,
 ); }
 

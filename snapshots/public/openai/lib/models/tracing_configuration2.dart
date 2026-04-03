@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Granular configu
 factory TracingConfiguration2.fromJson(Map<String, dynamic> json) { return TracingConfiguration2(
   workflowName: json['workflow_name'] as String?,
   groupId: json['group_id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// The name of the workflow to attach to this trace. This is used to

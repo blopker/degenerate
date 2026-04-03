@@ -138,7 +138,7 @@ final String? id;
 final RealtimeSessionObject? object;
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final dynamic modalities;
 
@@ -214,7 +214,7 @@ final List<RealtimeFunctionTool>? tools;
 /// 
 final String toolChoice;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. For audio models a temperature of 0.8 is highly recommended for best performance.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. For audio models a temperature of 0.8 is highly recommended for best performance.
 /// 
 final double temperature;
 

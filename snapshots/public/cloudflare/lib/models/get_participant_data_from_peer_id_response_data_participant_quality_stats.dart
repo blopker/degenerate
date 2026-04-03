@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantQualityStats(
   audioBandwidth: json['audio_bandwidth'] != null ? (json['audio_bandwidth'] as num).toInt() : null,
-  audioStats: (json['audio_stats'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  audioStats: (json['audio_stats'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   averageQuality: json['average_quality'] != null ? (json['average_quality'] as num).toInt() : null,
   end: json['end'] as String?,
   firstAudioPacketReceived: json['first_audio_packet_received'] as String?,
@@ -18,7 +18,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantQualityStats.fromJson
   totalVideoPackets: json['total_video_packets'] != null ? (json['total_video_packets'] as num).toInt() : null,
   totalVideoPacketsLost: json['total_video_packets_lost'] != null ? (json['total_video_packets_lost'] as num).toInt() : null,
   videoBandwidth: json['video_bandwidth'] != null ? (json['video_bandwidth'] as num).toInt() : null,
-  videoStats: (json['video_stats'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  videoStats: (json['video_stats'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final int? audioBandwidth;
