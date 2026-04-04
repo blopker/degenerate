@@ -1,6 +1,6 @@
 name: degenerate_dio
 description: Dio HTTP adapter for degenerate-generated OpenAPI Dart clients.
-version: 0.4.0
+version: 0.4.1
 repository: https://github.com/blopker/degenerate
 resolution: workspace
 

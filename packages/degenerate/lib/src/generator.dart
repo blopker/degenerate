@@ -18,7 +18,7 @@ import 'package:path/path.dart' as p;
 
 // packageVersion updated by scripts/release.dart
 /// Current package version.
-const packageVersion = '0.4.0';
+const packageVersion = '0.4.1';
 
 /// Default name for generated API client packages.
 const defaultPackageName = 'api_client';
