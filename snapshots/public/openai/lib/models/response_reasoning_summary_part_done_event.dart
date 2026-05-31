@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_reasoning_summary_part_done_event_part.dart';/// The type of the event. Always `response.reasoning_summary_part.done`.
-/// 
-@immutable final class ResponseReasoningSummaryPartDoneEventType {const ResponseReasoningSummaryPartDoneEventType._(this.value);
-
-factory ResponseReasoningSummaryPartDoneEventType.fromJson(String json) { return switch (json) {
-  'response.reasoning_summary_part.done' => responseReasoningSummaryPartDone,
-  _ => ResponseReasoningSummaryPartDoneEventType._(json),
-}; }
-
-static const ResponseReasoningSummaryPartDoneEventType responseReasoningSummaryPartDone = ResponseReasoningSummaryPartDoneEventType._('response.reasoning_summary_part.done');
-
-static const List<ResponseReasoningSummaryPartDoneEventType> values = [responseReasoningSummaryPartDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseReasoningSummaryPartDoneEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseReasoningSummaryPartDoneEventType($value)'; } 
- }
-/// Emitted when a reasoning summary part is completed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_reasoning_summary_part_done_event_part.dart';/// Emitted when a reasoning summary part is completed.
 @immutable final class ResponseReasoningSummaryPartDoneEvent {const ResponseReasoningSummaryPartDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.sequenceNumber, required this.$part, });
 
 factory ResponseReasoningSummaryPartDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryPartDoneEvent(
-  type: ResponseReasoningSummaryPartDoneEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   summaryIndex: (json['summary_index'] as num).toInt(),
@@ -37,7 +14,7 @@ factory ResponseReasoningSummaryPartDoneEvent.fromJson(Map<String, dynamic> json
 
 /// The type of the event. Always `response.reasoning_summary_part.done`.
 /// 
-final ResponseReasoningSummaryPartDoneEventType type;
+final String type;
 
 /// The ID of the item this summary part is associated with.
 /// 
@@ -60,20 +37,20 @@ final int sequenceNumber;
 final ResponseReasoningSummaryPartDoneEventPart $part;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'summary_index': summaryIndex,
   'sequence_number': sequenceNumber,
   'part': $part.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('summary_index') && json['summary_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('part'); } 
-ResponseReasoningSummaryPartDoneEvent copyWith({ResponseReasoningSummaryPartDoneEventType? type, String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartDoneEventPart? $part, }) { return ResponseReasoningSummaryPartDoneEvent(
+ResponseReasoningSummaryPartDoneEvent copyWith({String? type, String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartDoneEventPart? $part, }) { return ResponseReasoningSummaryPartDoneEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,

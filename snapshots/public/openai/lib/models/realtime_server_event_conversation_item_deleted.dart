@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.deleted`.
-@immutable final class RealtimeServerEventConversationItemDeletedType {const RealtimeServerEventConversationItemDeletedType._(this.value);
-
-factory RealtimeServerEventConversationItemDeletedType.fromJson(String json) { return switch (json) {
-  'conversation.item.deleted' => conversationItemDeleted,
-  _ => RealtimeServerEventConversationItemDeletedType._(json),
-}; }
-
-static const RealtimeServerEventConversationItemDeletedType conversationItemDeleted = RealtimeServerEventConversationItemDeletedType._('conversation.item.deleted');
-
-static const List<RealtimeServerEventConversationItemDeletedType> values = [conversationItemDeleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemDeletedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemDeletedType($value)'; } 
- }
-/// Returned when an item in the conversation is deleted by the client with a
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an item in the conversation is deleted by the client with a
 /// `conversation.item.delete` event. This event is used to synchronize the
 /// server's understanding of the conversation history with the client's view.
 /// 
@@ -30,7 +8,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventConversationItemDeleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemDeleted(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventConversationItemDeletedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
 ); }
 
@@ -38,20 +16,20 @@ factory RealtimeServerEventConversationItemDeleted.fromJson(Map<String, dynamic>
 final String eventId;
 
 /// The event type, must be `conversation.item.deleted`.
-final RealtimeServerEventConversationItemDeletedType type;
+final String type;
 
 /// The ID of the item that was deleted.
 final String itemId;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventConversationItemDeleted copyWith({String? eventId, RealtimeServerEventConversationItemDeletedType? type, String? itemId, }) { return RealtimeServerEventConversationItemDeleted(
+RealtimeServerEventConversationItemDeleted copyWith({String? eventId, String? type, String? itemId, }) { return RealtimeServerEventConversationItemDeleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

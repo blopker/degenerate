@@ -22,28 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemFunctionCallObject($value)'; } 
  }
-/// The type of the item. Always `function_call`.
-@immutable final class RealtimeConversationItemFunctionCallType {const RealtimeConversationItemFunctionCallType._(this.value);
-
-factory RealtimeConversationItemFunctionCallType.fromJson(String json) { return switch (json) {
-  'function_call' => functionCall,
-  _ => RealtimeConversationItemFunctionCallType._(json),
-}; }
-
-static const RealtimeConversationItemFunctionCallType functionCall = RealtimeConversationItemFunctionCallType._('function_call');
-
-static const List<RealtimeConversationItemFunctionCallType> values = [functionCall];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallType($value)'; } 
- }
 /// The status of the item. Has no effect on the conversation.
 @immutable final class RealtimeConversationItemFunctionCallStatus {const RealtimeConversationItemFunctionCallStatus._(this.value);
 
@@ -78,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RealtimeConversationItemFunctionCall.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCall(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
-  type: RealtimeConversationItemFunctionCallType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   status: json['status'] != null ? RealtimeConversationItemFunctionCallStatus.fromJson(json['status'] as String) : null,
   callId: json['call_id'] as String?,
   name: json['name'] as String,
@@ -92,7 +70,7 @@ final String? id;
 final RealtimeConversationItemFunctionCallObject? object;
 
 /// The type of the item. Always `function_call`.
-final RealtimeConversationItemFunctionCallType type;
+final String type;
 
 /// The status of the item. Has no effect on the conversation.
 final RealtimeConversationItemFunctionCallStatus? status;
@@ -109,16 +87,16 @@ final String arguments;
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
-  'type': type.toJson(),
+  'type': type,
   if (status != null) 'status': status?.toJson(),
   'call_id': ?callId,
   'name': name,
   'arguments': arguments,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeConversationItemFunctionCall copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, RealtimeConversationItemFunctionCallType? type, RealtimeConversationItemFunctionCallStatus Function()? status, String Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall(
+RealtimeConversationItemFunctionCall copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, String? type, RealtimeConversationItemFunctionCallStatus Function()? status, String Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.done`.
-@immutable final class RealtimeServerEventResponseMcpCallArgumentsDoneType {const RealtimeServerEventResponseMcpCallArgumentsDoneType._(this.value);
-
-factory RealtimeServerEventResponseMcpCallArgumentsDoneType.fromJson(String json) { return switch (json) {
-  'response.mcp_call_arguments.done' => responseMcpCallArgumentsDone,
-  _ => RealtimeServerEventResponseMcpCallArgumentsDoneType._(json),
-}; }
-
-static const RealtimeServerEventResponseMcpCallArgumentsDoneType responseMcpCallArgumentsDone = RealtimeServerEventResponseMcpCallArgumentsDoneType._('response.mcp_call_arguments.done');
-
-static const List<RealtimeServerEventResponseMcpCallArgumentsDoneType> values = [responseMcpCallArgumentsDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseMcpCallArgumentsDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallArgumentsDoneType($value)'; } 
- }
-/// Returned when MCP tool call arguments are finalized during response generation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when MCP tool call arguments are finalized during response generation.
 @immutable final class RealtimeServerEventResponseMcpCallArgumentsDone {const RealtimeServerEventResponseMcpCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.arguments, });
 
 factory RealtimeServerEventResponseMcpCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallArgumentsDone(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventResponseMcpCallArgumentsDoneType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -38,7 +16,7 @@ factory RealtimeServerEventResponseMcpCallArgumentsDone.fromJson(Map<String, dyn
 final String eventId;
 
 /// The event type, must be `response.mcp_call_arguments.done`.
-final RealtimeServerEventResponseMcpCallArgumentsDoneType type;
+final String type;
 
 /// The ID of the response.
 final String responseId;
@@ -54,19 +32,19 @@ final String arguments;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
   'arguments': arguments,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeServerEventResponseMcpCallArgumentsDone copyWith({String? eventId, RealtimeServerEventResponseMcpCallArgumentsDoneType? type, String? responseId, String? itemId, int? outputIndex, String? arguments, }) { return RealtimeServerEventResponseMcpCallArgumentsDone(
+RealtimeServerEventResponseMcpCallArgumentsDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? arguments, }) { return RealtimeServerEventResponseMcpCallArgumentsDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

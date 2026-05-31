@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_image_request.dart';import '../models/create_image_variation_request.dart';import '../models/edit_image_body_json_param.dart';import '../models/image_edit_completed_event.dart';import '../models/image_edit_partial_image_event.dart';import '../models/image_edit_stream_event.dart';import '../models/image_gen_completed_event.dart';import '../models/image_gen_partial_image_event.dart';import '../models/image_gen_stream_event.dart';import '../models/images_response.dart';/// ImagesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_image_request.dart';import '../models/create_image_variation_request.dart';import '../models/edit_image_body_json_param.dart';import '../models/image_edit_stream_event.dart';import '../models/image_gen_stream_event.dart';import '../models/images_response.dart';/// ImagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -109,7 +109,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return OneOf2.parse(jsonDecode(data), fromA: (v) => ImageEditPartialImageEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => ImageEditCompletedEvent.fromJson(v as Map<String, dynamic>),);
+    return ImageEditStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
  } 
@@ -131,7 +131,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return OneOf2.parse(jsonDecode(data), fromA: (v) => ImageGenPartialImageEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => ImageGenCompletedEvent.fromJson(v as Map<String, dynamic>),);
+    return ImageGenStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
  } 

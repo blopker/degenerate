@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response_create_params.dart';/// The event type, must be `response.create`.
-@immutable final class RealtimeClientEventResponseCreateType {const RealtimeClientEventResponseCreateType._(this.value);
-
-factory RealtimeClientEventResponseCreateType.fromJson(String json) { return switch (json) {
-  'response.create' => responseCreate,
-  _ => RealtimeClientEventResponseCreateType._(json),
-}; }
-
-static const RealtimeClientEventResponseCreateType responseCreate = RealtimeClientEventResponseCreateType._('response.create');
-
-static const List<RealtimeClientEventResponseCreateType> values = [responseCreate];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventResponseCreateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeClientEventResponseCreateType($value)'; } 
- }
-/// This event instructs the server to create a Response, which means triggering
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response_create_params.dart';/// This event instructs the server to create a Response, which means triggering
 /// model inference. When in Server VAD mode, the server will create Responses
 /// automatically.
 /// 
@@ -52,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventResponseCreate(
   eventId: json['event_id'] as String?,
-  type: RealtimeClientEventResponseCreateType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   response: json['response'] != null ? RealtimeResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>) : null,
 ); }
 
@@ -60,17 +38,17 @@ factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) { 
 final String? eventId;
 
 /// The event type, must be `response.create`.
-final RealtimeClientEventResponseCreateType type;
+final String type;
 
 final RealtimeResponseCreateParams? response;
 
 Map<String, dynamic> toJson() { return {
   'event_id': ?eventId,
-  'type': type.toJson(),
+  'type': type,
   if (response != null) 'response': response?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeClientEventResponseCreate copyWith({String Function()? eventId, RealtimeClientEventResponseCreateType? type, RealtimeResponseCreateParams Function()? response, }) { return RealtimeClientEventResponseCreate(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+RealtimeClientEventResponseCreate copyWith({String Function()? eventId, String? type, RealtimeResponseCreateParams Function()? response, }) { return RealtimeClientEventResponseCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   response: response != null ? response() : this.response,

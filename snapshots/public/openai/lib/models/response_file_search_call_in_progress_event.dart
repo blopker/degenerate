@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.file_search_call.in_progress`.
-/// 
-@immutable final class ResponseFileSearchCallInProgressEventType {const ResponseFileSearchCallInProgressEventType._(this.value);
-
-factory ResponseFileSearchCallInProgressEventType.fromJson(String json) { return switch (json) {
-  'response.file_search_call.in_progress' => responseFileSearchCallInProgress,
-  _ => ResponseFileSearchCallInProgressEventType._(json),
-}; }
-
-static const ResponseFileSearchCallInProgressEventType responseFileSearchCallInProgress = ResponseFileSearchCallInProgressEventType._('response.file_search_call.in_progress');
-
-static const List<ResponseFileSearchCallInProgressEventType> values = [responseFileSearchCallInProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseFileSearchCallInProgressEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseFileSearchCallInProgressEventType($value)'; } 
- }
-/// Emitted when a file search call is initiated.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a file search call is initiated.
 @immutable final class ResponseFileSearchCallInProgressEvent {const ResponseFileSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseFileSearchCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseFileSearchCallInProgressEvent(
-  type: ResponseFileSearchCallInProgressEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
@@ -35,7 +12,7 @@ factory ResponseFileSearchCallInProgressEvent.fromJson(Map<String, dynamic> json
 
 /// The type of the event. Always `response.file_search_call.in_progress`.
 /// 
-final ResponseFileSearchCallInProgressEventType type;
+final String type;
 
 /// The index of the output item that the file search call is initiated.
 /// 
@@ -49,16 +26,16 @@ final String itemId;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseFileSearchCallInProgressEvent copyWith({ResponseFileSearchCallInProgressEventType? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseFileSearchCallInProgressEvent(
+ResponseFileSearchCallInProgressEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseFileSearchCallInProgressEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,

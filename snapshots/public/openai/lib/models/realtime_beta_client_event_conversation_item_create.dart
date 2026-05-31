@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.create`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';/// The event type, must be `conversation.item.create`.
 @immutable final class RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType._(this.value);
 
 factory RealtimeBetaClientEventConversationItemCreateType.fromJson(String json) { return switch (json) {
@@ -36,7 +36,7 @@ factory RealtimeBetaClientEventConversationItemCreate.fromJson(Map<String, dynam
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventConversationItemCreateType.fromJson(json['type'] as String),
   previousItemId: json['previous_item_id'] as String?,
-  item: OneOf9.parse(json['item'], fromA: (v) => RealtimeConversationItemMessageSystem.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeConversationItemMessageUser.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeConversationItemMessageAssistant.fromJson(v as Map<String, dynamic>), fromD: (v) => RealtimeConversationItemFunctionCall.fromJson(v as Map<String, dynamic>), fromE: (v) => RealtimeConversationItemFunctionCallOutput.fromJson(v as Map<String, dynamic>), fromF: (v) => RealtimeMcpApprovalResponse.fromJson(v as Map<String, dynamic>), fromG: (v) => RealtimeMcpListTools.fromJson(v as Map<String, dynamic>), fromH: (v) => RealtimeMcpToolCall.fromJson(v as Map<String, dynamic>), fromI: (v) => RealtimeMcpApprovalRequest.fromJson(v as Map<String, dynamic>),),
+  item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
 ); }
 
 /// Optional client-generated ID used to identify this event.

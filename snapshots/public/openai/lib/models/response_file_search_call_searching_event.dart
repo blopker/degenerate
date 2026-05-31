@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.file_search_call.searching`.
-/// 
-@immutable final class ResponseFileSearchCallSearchingEventType {const ResponseFileSearchCallSearchingEventType._(this.value);
-
-factory ResponseFileSearchCallSearchingEventType.fromJson(String json) { return switch (json) {
-  'response.file_search_call.searching' => responseFileSearchCallSearching,
-  _ => ResponseFileSearchCallSearchingEventType._(json),
-}; }
-
-static const ResponseFileSearchCallSearchingEventType responseFileSearchCallSearching = ResponseFileSearchCallSearchingEventType._('response.file_search_call.searching');
-
-static const List<ResponseFileSearchCallSearchingEventType> values = [responseFileSearchCallSearching];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseFileSearchCallSearchingEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseFileSearchCallSearchingEventType($value)'; } 
- }
-/// Emitted when a file search is currently searching.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a file search is currently searching.
 @immutable final class ResponseFileSearchCallSearchingEvent {const ResponseFileSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseFileSearchCallSearchingEvent.fromJson(Map<String, dynamic> json) { return ResponseFileSearchCallSearchingEvent(
-  type: ResponseFileSearchCallSearchingEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
@@ -35,7 +12,7 @@ factory ResponseFileSearchCallSearchingEvent.fromJson(Map<String, dynamic> json)
 
 /// The type of the event. Always `response.file_search_call.searching`.
 /// 
-final ResponseFileSearchCallSearchingEventType type;
+final String type;
 
 /// The index of the output item that the file search call is searching.
 /// 
@@ -49,16 +26,16 @@ final String itemId;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseFileSearchCallSearchingEvent copyWith({ResponseFileSearchCallSearchingEventType? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseFileSearchCallSearchingEvent(
+ResponseFileSearchCallSearchingEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseFileSearchCallSearchingEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,

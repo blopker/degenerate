@@ -1,30 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';import 'realtime_server_event_conversation_item_input_audio_transcription_completed_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// The event type, must be
-/// `conversation.item.input_audio_transcription.completed`.
-/// 
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType._(this.value);
-
-factory RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(String json) { return switch (json) {
-  'conversation.item.input_audio_transcription.completed' => conversationItemInputAudioTranscriptionCompleted,
-  _ => RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType._(json),
-}; }
-
-static const RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType conversationItemInputAudioTranscriptionCompleted = RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType._('conversation.item.input_audio_transcription.completed');
-
-static const List<RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType> values = [conversationItemInputAudioTranscriptionCompleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType($value)'; } 
- }
-/// This event is the output of audio transcription for user audio written to the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';import 'realtime_server_event_conversation_item_input_audio_transcription_completed_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// This event is the output of audio transcription for user audio written to the
 /// user audio buffer. Transcription begins when the input audio buffer is
 /// committed by the client or server (when VAD is enabled). Transcription runs
 /// asynchronously with Response creation, so this event may come before or after
@@ -39,7 +15,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   transcript: json['transcript'] as String,
@@ -53,7 +29,7 @@ final String eventId;
 /// The event type, must be
 /// `conversation.item.input_audio_transcription.completed`.
 /// 
-final RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type;
+final String type;
 
 /// The ID of the item containing the audio that is being transcribed.
 final String itemId;
@@ -72,7 +48,7 @@ final RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage u
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'transcript': transcript,
@@ -80,12 +56,12 @@ Map<String, dynamic> toJson() { return {
   'usage': usage.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('transcript') && json['transcript'] is String &&
       json.containsKey('usage'); } 
-RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType? type, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
+RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

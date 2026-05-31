@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log_prob.dart';/// The type of the event. Always `response.output_text.delta`.
-/// 
-@immutable final class ResponseTextDeltaEventType {const ResponseTextDeltaEventType._(this.value);
-
-factory ResponseTextDeltaEventType.fromJson(String json) { return switch (json) {
-  'response.output_text.delta' => responseOutputTextDelta,
-  _ => ResponseTextDeltaEventType._(json),
-}; }
-
-static const ResponseTextDeltaEventType responseOutputTextDelta = ResponseTextDeltaEventType._('response.output_text.delta');
-
-static const List<ResponseTextDeltaEventType> values = [responseOutputTextDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseTextDeltaEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseTextDeltaEventType($value)'; } 
- }
-/// Emitted when there is an additional text delta.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log_prob.dart';/// Emitted when there is an additional text delta.
 @immutable final class ResponseTextDeltaEvent {const ResponseTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, required this.logprobs, });
 
 factory ResponseTextDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseTextDeltaEvent(
-  type: ResponseTextDeltaEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
@@ -38,7 +15,7 @@ factory ResponseTextDeltaEvent.fromJson(Map<String, dynamic> json) { return Resp
 
 /// The type of the event. Always `response.output_text.delta`.
 /// 
-final ResponseTextDeltaEventType type;
+final String type;
 
 /// The ID of the output item that the text delta was added to.
 /// 
@@ -64,7 +41,7 @@ final int sequenceNumber;
 final List<ResponseLogProb> logprobs;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'content_index': contentIndex,
@@ -72,14 +49,14 @@ Map<String, dynamic> toJson() { return {
   'sequence_number': sequenceNumber,
   'logprobs': logprobs.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('delta') && json['delta'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('logprobs'); } 
-ResponseTextDeltaEvent copyWith({ResponseTextDeltaEventType? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseTextDeltaEvent(
+ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseTextDeltaEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,

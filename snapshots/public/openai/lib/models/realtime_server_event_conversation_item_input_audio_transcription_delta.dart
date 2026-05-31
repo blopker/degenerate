@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// The event type, must be `conversation.item.input_audio_transcription.delta`.
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType._(this.value);
-
-factory RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(String json) { return switch (json) {
-  'conversation.item.input_audio_transcription.delta' => conversationItemInputAudioTranscriptionDelta,
-  _ => RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType._(json),
-}; }
-
-static const RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType conversationItemInputAudioTranscriptionDelta = RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType._('conversation.item.input_audio_transcription.delta');
-
-static const List<RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType> values = [conversationItemInputAudioTranscriptionDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType($value)'; } 
- }
-/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
 /// 
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
 
 factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: json['content_index'] != null ? (json['content_index'] as num).toInt() : null,
   delta: json['delta'] as String?,
@@ -39,7 +17,7 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson
 final String eventId;
 
 /// The event type, must be `conversation.item.input_audio_transcription.delta`.
-final RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType type;
+final String type;
 
 /// The ID of the item containing the audio that is being transcribed.
 final String itemId;
@@ -55,16 +33,16 @@ final List<LogProbProperties>? logprobs;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'content_index': ?contentIndex,
   'delta': ?delta,
   if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
+RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, String? type, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

@@ -1,40 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.audio.transcript.delta`.
-/// 
-@immutable final class ResponseAudioTranscriptDeltaEventType {const ResponseAudioTranscriptDeltaEventType._(this.value);
-
-factory ResponseAudioTranscriptDeltaEventType.fromJson(String json) { return switch (json) {
-  'response.audio.transcript.delta' => responseAudioTranscriptDelta,
-  _ => ResponseAudioTranscriptDeltaEventType._(json),
-}; }
-
-static const ResponseAudioTranscriptDeltaEventType responseAudioTranscriptDelta = ResponseAudioTranscriptDeltaEventType._('response.audio.transcript.delta');
-
-static const List<ResponseAudioTranscriptDeltaEventType> values = [responseAudioTranscriptDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseAudioTranscriptDeltaEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseAudioTranscriptDeltaEventType($value)'; } 
- }
-/// Emitted when there is a partial transcript of audio.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a partial transcript of audio.
 @immutable final class ResponseAudioTranscriptDeltaEvent {const ResponseAudioTranscriptDeltaEvent({required this.type, required this.delta, required this.sequenceNumber, });
 
 factory ResponseAudioTranscriptDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseAudioTranscriptDeltaEvent(
-  type: ResponseAudioTranscriptDeltaEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   delta: json['delta'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
 /// The type of the event. Always `response.audio.transcript.delta`.
 /// 
-final ResponseAudioTranscriptDeltaEventType type;
+final String type;
 
 /// The partial transcript of the audio response.
 /// 
@@ -44,14 +21,14 @@ final String delta;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'delta': delta,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('delta') && json['delta'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseAudioTranscriptDeltaEvent copyWith({ResponseAudioTranscriptDeltaEventType? type, String? delta, int? sequenceNumber, }) { return ResponseAudioTranscriptDeltaEvent(
+ResponseAudioTranscriptDeltaEvent copyWith({String? type, String? delta, int? sequenceNumber, }) { return ResponseAudioTranscriptDeltaEvent(
   type: type ?? this.type,
   delta: delta ?? this.delta,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

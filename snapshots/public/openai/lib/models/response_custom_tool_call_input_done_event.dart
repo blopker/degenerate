@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type identifier.
-@immutable final class ResponseCustomToolCallInputDoneEventType {const ResponseCustomToolCallInputDoneEventType._(this.value);
-
-factory ResponseCustomToolCallInputDoneEventType.fromJson(String json) { return switch (json) {
-  'response.custom_tool_call_input.done' => responseCustomToolCallInputDone,
-  _ => ResponseCustomToolCallInputDoneEventType._(json),
-}; }
-
-static const ResponseCustomToolCallInputDoneEventType responseCustomToolCallInputDone = ResponseCustomToolCallInputDoneEventType._('response.custom_tool_call_input.done');
-
-static const List<ResponseCustomToolCallInputDoneEventType> values = [responseCustomToolCallInputDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseCustomToolCallInputDoneEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseCustomToolCallInputDoneEventType($value)'; } 
- }
-/// Event indicating that input for a custom tool call is complete.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event indicating that input for a custom tool call is complete.
 /// 
 @immutable final class ResponseCustomToolCallInputDoneEvent {const ResponseCustomToolCallInputDoneEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, required this.input, });
 
 factory ResponseCustomToolCallInputDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseCustomToolCallInputDoneEvent(
-  type: ResponseCustomToolCallInputDoneEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
@@ -35,7 +13,7 @@ factory ResponseCustomToolCallInputDoneEvent.fromJson(Map<String, dynamic> json)
 ); }
 
 /// The event type identifier.
-final ResponseCustomToolCallInputDoneEventType type;
+final String type;
 
 /// The sequence number of this event.
 final int sequenceNumber;
@@ -50,18 +28,18 @@ final String itemId;
 final String input;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'sequence_number': sequenceNumber,
   'output_index': outputIndex,
   'item_id': itemId,
   'input': input,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('input') && json['input'] is String; } 
-ResponseCustomToolCallInputDoneEvent copyWith({ResponseCustomToolCallInputDoneEventType? type, int? sequenceNumber, int? outputIndex, String? itemId, String? input, }) { return ResponseCustomToolCallInputDoneEvent(
+ResponseCustomToolCallInputDoneEvent copyWith({String? type, int? sequenceNumber, int? outputIndex, String? itemId, String? input, }) { return ResponseCustomToolCallInputDoneEvent(
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   outputIndex: outputIndex ?? this.outputIndex,

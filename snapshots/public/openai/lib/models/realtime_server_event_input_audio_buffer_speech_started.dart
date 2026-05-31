@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_started`.
-@immutable final class RealtimeServerEventInputAudioBufferSpeechStartedType {const RealtimeServerEventInputAudioBufferSpeechStartedType._(this.value);
-
-factory RealtimeServerEventInputAudioBufferSpeechStartedType.fromJson(String json) { return switch (json) {
-  'input_audio_buffer.speech_started' => inputAudioBufferSpeechStarted,
-  _ => RealtimeServerEventInputAudioBufferSpeechStartedType._(json),
-}; }
-
-static const RealtimeServerEventInputAudioBufferSpeechStartedType inputAudioBufferSpeechStarted = RealtimeServerEventInputAudioBufferSpeechStartedType._('input_audio_buffer.speech_started');
-
-static const List<RealtimeServerEventInputAudioBufferSpeechStartedType> values = [inputAudioBufferSpeechStarted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferSpeechStartedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferSpeechStartedType($value)'; } 
- }
-/// Sent by the server when in `server_vad` mode to indicate that speech has been
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sent by the server when in `server_vad` mode to indicate that speech has been
 /// detected in the audio buffer. This can happen any time audio is added to the
 /// buffer (unless speech is already detected). The client may want to use this
 /// event to interrupt audio playback or provide visual feedback to the user.
@@ -37,7 +15,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStarted(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventInputAudioBufferSpeechStartedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   audioStartMs: (json['audio_start_ms'] as num).toInt(),
   itemId: json['item_id'] as String,
 ); }
@@ -46,7 +24,7 @@ factory RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dy
 final String eventId;
 
 /// The event type, must be `input_audio_buffer.speech_started`.
-final RealtimeServerEventInputAudioBufferSpeechStartedType type;
+final String type;
 
 /// Milliseconds from the start of all audio written to the buffer during the
 /// session when speech was first detected. This will correspond to the
@@ -61,15 +39,15 @@ final String itemId;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'audio_start_ms': audioStartMs,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio_start_ms') && json['audio_start_ms'] is num &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, RealtimeServerEventInputAudioBufferSpeechStartedType? type, int? audioStartMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStarted(
+RealtimeServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, String? type, int? audioStartMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStarted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   audioStartMs: audioStartMs ?? this.audioStartMs,

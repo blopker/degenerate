@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.failed`.
-@immutable final class RealtimeServerEventMcpListToolsFailedType {const RealtimeServerEventMcpListToolsFailedType._(this.value);
-
-factory RealtimeServerEventMcpListToolsFailedType.fromJson(String json) { return switch (json) {
-  'mcp_list_tools.failed' => mcpListToolsFailed,
-  _ => RealtimeServerEventMcpListToolsFailedType._(json),
-}; }
-
-static const RealtimeServerEventMcpListToolsFailedType mcpListToolsFailed = RealtimeServerEventMcpListToolsFailedType._('mcp_list_tools.failed');
-
-static const List<RealtimeServerEventMcpListToolsFailedType> values = [mcpListToolsFailed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventMcpListToolsFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventMcpListToolsFailedType($value)'; } 
- }
-/// Returned when listing MCP tools has failed for an item.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when listing MCP tools has failed for an item.
 @immutable final class RealtimeServerEventMcpListToolsFailed {const RealtimeServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
 
 factory RealtimeServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventMcpListToolsFailed(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventMcpListToolsFailedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
 ); }
 
@@ -35,20 +13,20 @@ factory RealtimeServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json
 final String eventId;
 
 /// The event type, must be `mcp_list_tools.failed`.
-final RealtimeServerEventMcpListToolsFailedType type;
+final String type;
 
 /// The ID of the MCP list tools item.
 final String itemId;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeServerEventMcpListToolsFailedType? type, String? itemId, }) { return RealtimeServerEventMcpListToolsFailed(
+RealtimeServerEventMcpListToolsFailed copyWith({String? eventId, String? type, String? itemId, }) { return RealtimeServerEventMcpListToolsFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

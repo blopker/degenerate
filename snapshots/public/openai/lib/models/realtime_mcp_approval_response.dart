@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the item. Always `mcp_approval_response`.
-@immutable final class RealtimeMcpApprovalResponseType {const RealtimeMcpApprovalResponseType._(this.value);
-
-factory RealtimeMcpApprovalResponseType.fromJson(String json) { return switch (json) {
-  'mcp_approval_response' => mcpApprovalResponse,
-  _ => RealtimeMcpApprovalResponseType._(json),
-}; }
-
-static const RealtimeMcpApprovalResponseType mcpApprovalResponse = RealtimeMcpApprovalResponseType._('mcp_approval_response');
-
-static const List<RealtimeMcpApprovalResponseType> values = [mcpApprovalResponse];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeMcpApprovalResponseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeMcpApprovalResponseType($value)'; } 
- }
-/// A Realtime item responding to an MCP approval request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Realtime item responding to an MCP approval request.
 /// 
 @immutable final class RealtimeMcpApprovalResponse {const RealtimeMcpApprovalResponse({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason, });
 
 factory RealtimeMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return RealtimeMcpApprovalResponse(
-  type: RealtimeMcpApprovalResponseType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   id: json['id'] as String,
   approvalRequestId: json['approval_request_id'] as String,
   approve: json['approve'] as bool,
@@ -35,7 +13,7 @@ factory RealtimeMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The type of the item. Always `mcp_approval_response`.
-final RealtimeMcpApprovalResponseType type;
+final String type;
 
 /// The unique ID of the approval response.
 final String id;
@@ -50,17 +28,17 @@ final bool approve;
 final String? reason;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'id': id,
   'approval_request_id': approvalRequestId,
   'approve': approve,
   'reason': ?reason,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('approval_request_id') && json['approval_request_id'] is String &&
       json.containsKey('approve') && json['approve'] is bool; } 
-RealtimeMcpApprovalResponse copyWith({RealtimeMcpApprovalResponseType? type, String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return RealtimeMcpApprovalResponse(
+RealtimeMcpApprovalResponse copyWith({String? type, String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return RealtimeMcpApprovalResponse(
   type: type ?? this.type,
   id: id ?? this.id,
   approvalRequestId: approvalRequestId ?? this.approvalRequestId,

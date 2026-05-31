@@ -347,10 +347,27 @@ class IrMapper {
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
-    // oneOf with discriminator → IrDiscriminatedUnion.
+    // oneOf with discriminator → IrDiscriminatedUnion (existing behavior).
     if (flattened.containsKey('oneOf') &&
         flattened.containsKey('discriminator')) {
       return _lowerDiscriminatedUnion(name, flattened);
+    }
+
+    // anyOf with discriminator → IrDiscriminatedUnion, but only when every
+    // variant is a `$ref` to a named schema. Inline-object variants would
+    // produce poorly-named wrapper types (e.g. FooVariant1/2), so those fall
+    // through to the untagged-union handling below and stay as OneOfN.
+    if (flattened.containsKey('anyOf') &&
+        flattened.containsKey('discriminator')) {
+      final variants = flattened['anyOf'] as List;
+      final allRefs =
+          variants.isNotEmpty &&
+          variants.every(
+            (v) => v is Map<String, dynamic> && v.containsKey(r'$ref'),
+          );
+      if (allRefs) {
+        return _lowerDiscriminatedUnion(name, flattened);
+      }
     }
 
     // oneOf without discriminator → IrUntaggedUnion.
@@ -723,7 +740,8 @@ class IrMapper {
     final mapping = <String, IrType>{};
 
     final explicitMapping = discriminator['mapping'] as Map<String, dynamic>?;
-    final oneOf = schema['oneOf'] as List;
+    // A discriminated union may be declared with `oneOf` or `anyOf`.
+    final oneOf = (schema['oneOf'] ?? schema['anyOf']) as List;
 
     // Collect oneOf ref names for cross-referencing when mapping values
     // don't match any known schema (some specs have mismatched mapping refs).

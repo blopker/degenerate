@@ -1,40 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.image_generation_call.in_progress'.
-@immutable final class ResponseImageGenCallInProgressEventType {const ResponseImageGenCallInProgressEventType._(this.value);
-
-factory ResponseImageGenCallInProgressEventType.fromJson(String json) { return switch (json) {
-  'response.image_generation_call.in_progress' => responseImageGenerationCallInProgress,
-  _ => ResponseImageGenCallInProgressEventType._(json),
-}; }
-
-static const ResponseImageGenCallInProgressEventType responseImageGenerationCallInProgress = ResponseImageGenCallInProgressEventType._('response.image_generation_call.in_progress');
-
-static const List<ResponseImageGenCallInProgressEventType> values = [responseImageGenerationCallInProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseImageGenCallInProgressEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseImageGenCallInProgressEventType($value)'; } 
- }
-/// Emitted when an image generation tool call is in progress.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an image generation tool call is in progress.
 /// 
 @immutable final class ResponseImageGenCallInProgressEvent {const ResponseImageGenCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseImageGenCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallInProgressEvent(
-  type: ResponseImageGenCallInProgressEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
 /// The type of the event. Always 'response.image_generation_call.in_progress'.
-final ResponseImageGenCallInProgressEventType type;
+final String type;
 
 /// The index of the output item in the response's output array.
 final int outputIndex;
@@ -46,16 +24,16 @@ final String itemId;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseImageGenCallInProgressEvent copyWith({ResponseImageGenCallInProgressEventType? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseImageGenCallInProgressEvent(
+ResponseImageGenCallInProgressEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseImageGenCallInProgressEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,

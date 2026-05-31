@@ -22,28 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessageSystemObject($value)'; } 
  }
-/// The type of the item. Always `message`.
-@immutable final class RealtimeConversationItemMessageSystemType {const RealtimeConversationItemMessageSystemType._(this.value);
-
-factory RealtimeConversationItemMessageSystemType.fromJson(String json) { return switch (json) {
-  'message' => message,
-  _ => RealtimeConversationItemMessageSystemType._(json),
-}; }
-
-static const RealtimeConversationItemMessageSystemType message = RealtimeConversationItemMessageSystemType._('message');
-
-static const List<RealtimeConversationItemMessageSystemType> values = [message];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageSystemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageSystemType($value)'; } 
- }
 /// The status of the item. Has no effect on the conversation.
 @immutable final class RealtimeConversationItemMessageSystemStatus {const RealtimeConversationItemMessageSystemStatus._(this.value);
 
@@ -100,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RealtimeConversationItemMessageSystem.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageSystem(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemMessageSystemObject.fromJson(json['object'] as String) : null,
-  type: RealtimeConversationItemMessageSystemType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   status: json['status'] != null ? RealtimeConversationItemMessageSystemStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageSystemRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageSystemContent.fromJson(e as Map<String, dynamic>)).toList(),
@@ -113,7 +91,7 @@ final String? id;
 final RealtimeConversationItemMessageSystemObject? object;
 
 /// The type of the item. Always `message`.
-final RealtimeConversationItemMessageSystemType type;
+final String type;
 
 /// The status of the item. Has no effect on the conversation.
 final RealtimeConversationItemMessageSystemStatus? status;
@@ -127,15 +105,15 @@ final List<RealtimeConversationItemMessageSystemContent> content;
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
-  'type': type.toJson(),
+  'type': type,
   if (status != null) 'status': status?.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageSystem copyWith({String Function()? id, RealtimeConversationItemMessageSystemObject Function()? object, RealtimeConversationItemMessageSystemType? type, RealtimeConversationItemMessageSystemStatus Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) { return RealtimeConversationItemMessageSystem(
+RealtimeConversationItemMessageSystem copyWith({String Function()? id, RealtimeConversationItemMessageSystemObject Function()? object, String? type, RealtimeConversationItemMessageSystemStatus Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) { return RealtimeConversationItemMessageSystem(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

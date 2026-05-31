@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `error`.
-/// 
-@immutable final class ResponseErrorEventType {const ResponseErrorEventType._(this.value);
-
-factory ResponseErrorEventType.fromJson(String json) { return switch (json) {
-  'error' => error,
-  _ => ResponseErrorEventType._(json),
-}; }
-
-static const ResponseErrorEventType error = ResponseErrorEventType._('error');
-
-static const List<ResponseErrorEventType> values = [error];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseErrorEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseErrorEventType($value)'; } 
- }
-/// Emitted when an error occurs.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an error occurs.
 @immutable final class ResponseErrorEvent {const ResponseErrorEvent({required this.type, required this.code, required this.message, required this.param, required this.sequenceNumber, });
 
 factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) { return ResponseErrorEvent(
-  type: ResponseErrorEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   code: json['code'] as String?,
   message: json['message'] as String,
   param: json['param'] as String?,
@@ -36,7 +13,7 @@ factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) { return Response
 
 /// The type of the event. Always `error`.
 /// 
-final ResponseErrorEventType type;
+final String type;
 
 /// The error code.
 /// 
@@ -54,18 +31,18 @@ final String? param;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'code': ?code,
   'message': message,
   'param': ?param,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('code') && json['code'] is String &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('param') && json['param'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseErrorEvent copyWith({ResponseErrorEventType? type, String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseErrorEvent(
+ResponseErrorEvent copyWith({String? type, String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseErrorEvent(
   type: type ?? this.type,
   code: code != null ? code() : this.code,
   message: message ?? this.message,

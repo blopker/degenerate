@@ -1,40 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_call.in_progress'.
-@immutable final class ResponseMcpCallInProgressEventType {const ResponseMcpCallInProgressEventType._(this.value);
-
-factory ResponseMcpCallInProgressEventType.fromJson(String json) { return switch (json) {
-  'response.mcp_call.in_progress' => responseMcpCallInProgress,
-  _ => ResponseMcpCallInProgressEventType._(json),
-}; }
-
-static const ResponseMcpCallInProgressEventType responseMcpCallInProgress = ResponseMcpCallInProgressEventType._('response.mcp_call.in_progress');
-
-static const List<ResponseMcpCallInProgressEventType> values = [responseMcpCallInProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseMcpCallInProgressEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseMcpCallInProgressEventType($value)'; } 
- }
-/// Emitted when an MCP  tool call is in progress.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an MCP  tool call is in progress.
 /// 
 @immutable final class ResponseMcpCallInProgressEvent {const ResponseMcpCallInProgressEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, });
 
 factory ResponseMcpCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallInProgressEvent(
-  type: ResponseMcpCallInProgressEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
 ); }
 
 /// The type of the event. Always 'response.mcp_call.in_progress'.
-final ResponseMcpCallInProgressEventType type;
+final String type;
 
 /// The sequence number of this event.
 final int sequenceNumber;
@@ -46,16 +24,16 @@ final int outputIndex;
 final String itemId;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'sequence_number': sequenceNumber,
   'output_index': outputIndex,
   'item_id': itemId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-ResponseMcpCallInProgressEvent copyWith({ResponseMcpCallInProgressEventType? type, int? sequenceNumber, int? outputIndex, String? itemId, }) { return ResponseMcpCallInProgressEvent(
+ResponseMcpCallInProgressEvent copyWith({String? type, int? sequenceNumber, int? outputIndex, String? itemId, }) { return ResponseMcpCallInProgressEvent(
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   outputIndex: outputIndex ?? this.outputIndex,

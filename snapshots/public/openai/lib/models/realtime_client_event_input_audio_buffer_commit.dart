@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.commit`.
-@immutable final class RealtimeClientEventInputAudioBufferCommitType {const RealtimeClientEventInputAudioBufferCommitType._(this.value);
-
-factory RealtimeClientEventInputAudioBufferCommitType.fromJson(String json) { return switch (json) {
-  'input_audio_buffer.commit' => inputAudioBufferCommit,
-  _ => RealtimeClientEventInputAudioBufferCommitType._(json),
-}; }
-
-static const RealtimeClientEventInputAudioBufferCommitType inputAudioBufferCommit = RealtimeClientEventInputAudioBufferCommitType._('input_audio_buffer.commit');
-
-static const List<RealtimeClientEventInputAudioBufferCommitType> values = [inputAudioBufferCommit];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventInputAudioBufferCommitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeClientEventInputAudioBufferCommitType($value)'; } 
- }
-/// Send this event to commit the user input audio buffer, which will create a  new user message item in the conversation. This event will produce an error  if the input audio buffer is empty. When in Server VAD mode, the client does  not need to send this event, the server will commit the audio buffer  automatically.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event to commit the user input audio buffer, which will create a  new user message item in the conversation. This event will produce an error  if the input audio buffer is empty. When in Server VAD mode, the client does  not need to send this event, the server will commit the audio buffer  automatically.
 /// 
 /// Committing the input audio buffer will trigger input audio transcription  (if enabled in session configuration), but it will not create a response  from the model. The server will respond with an `input_audio_buffer.committed` event.
 /// 
@@ -30,21 +8,21 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeClientEventInputAudioBufferCommit.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferCommit(
   eventId: json['event_id'] as String?,
-  type: RealtimeClientEventInputAudioBufferCommitType.fromJson(json['type'] as String),
+  type: json['type'] as String,
 ); }
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
 
 /// The event type, must be `input_audio_buffer.commit`.
-final RealtimeClientEventInputAudioBufferCommitType type;
+final String type;
 
 Map<String, dynamic> toJson() { return {
   'event_id': ?eventId,
-  'type': type.toJson(),
+  'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeClientEventInputAudioBufferCommit copyWith({String Function()? eventId, RealtimeClientEventInputAudioBufferCommitType? type, }) { return RealtimeClientEventInputAudioBufferCommit(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+RealtimeClientEventInputAudioBufferCommit copyWith({String Function()? eventId, String? type, }) { return RealtimeClientEventInputAudioBufferCommit(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
 ); } 

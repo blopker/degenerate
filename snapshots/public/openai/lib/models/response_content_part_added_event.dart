@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_content.dart';/// The type of the event. Always `response.content_part.added`.
-/// 
-@immutable final class ResponseContentPartAddedEventType {const ResponseContentPartAddedEventType._(this.value);
-
-factory ResponseContentPartAddedEventType.fromJson(String json) { return switch (json) {
-  'response.content_part.added' => responseContentPartAdded,
-  _ => ResponseContentPartAddedEventType._(json),
-}; }
-
-static const ResponseContentPartAddedEventType responseContentPartAdded = ResponseContentPartAddedEventType._('response.content_part.added');
-
-static const List<ResponseContentPartAddedEventType> values = [responseContentPartAdded];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseContentPartAddedEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseContentPartAddedEventType($value)'; } 
- }
-/// Emitted when a new content part is added.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_content.dart';/// Emitted when a new content part is added.
 @immutable final class ResponseContentPartAddedEvent {const ResponseContentPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, required this.sequenceNumber, });
 
 factory ResponseContentPartAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseContentPartAddedEvent(
-  type: ResponseContentPartAddedEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
@@ -37,7 +14,7 @@ factory ResponseContentPartAddedEvent.fromJson(Map<String, dynamic> json) { retu
 
 /// The type of the event. Always `response.content_part.added`.
 /// 
-final ResponseContentPartAddedEventType type;
+final String type;
 
 /// The ID of the output item that the content part was added to.
 /// 
@@ -59,20 +36,20 @@ final OutputContent $part;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'content_index': contentIndex,
   'part': $part.toJson(),
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('part') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseContentPartAddedEvent copyWith({ResponseContentPartAddedEventType? type, String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) { return ResponseContentPartAddedEvent(
+ResponseContentPartAddedEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) { return ResponseContentPartAddedEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,

@@ -1,51 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `speech.audio.delta`.
-/// 
-@immutable final class SpeechAudioDeltaEventType {const SpeechAudioDeltaEventType._(this.value);
-
-factory SpeechAudioDeltaEventType.fromJson(String json) { return switch (json) {
-  'speech.audio.delta' => speechAudioDelta,
-  _ => SpeechAudioDeltaEventType._(json),
-}; }
-
-static const SpeechAudioDeltaEventType speechAudioDelta = SpeechAudioDeltaEventType._('speech.audio.delta');
-
-static const List<SpeechAudioDeltaEventType> values = [speechAudioDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpeechAudioDeltaEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpeechAudioDeltaEventType($value)'; } 
- }
-/// Emitted for each chunk of audio data generated during speech synthesis.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted for each chunk of audio data generated during speech synthesis.
 @immutable final class SpeechAudioDeltaEvent {const SpeechAudioDeltaEvent({required this.type, required this.audio, });
 
 factory SpeechAudioDeltaEvent.fromJson(Map<String, dynamic> json) { return SpeechAudioDeltaEvent(
-  type: SpeechAudioDeltaEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   audio: json['audio'] as String,
 ); }
 
 /// The type of the event. Always `speech.audio.delta`.
 /// 
-final SpeechAudioDeltaEventType type;
+final String type;
 
 /// A chunk of Base64-encoded audio data.
 /// 
 final String audio;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'audio': audio,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio') && json['audio'] is String; } 
-SpeechAudioDeltaEvent copyWith({SpeechAudioDeltaEventType? type, String? audio, }) { return SpeechAudioDeltaEvent(
+SpeechAudioDeltaEvent copyWith({String? type, String? audio, }) { return SpeechAudioDeltaEvent(
   type: type ?? this.type,
   audio: audio ?? this.audio,
 ); } 

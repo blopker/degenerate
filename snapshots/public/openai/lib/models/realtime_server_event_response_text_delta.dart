@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.delta`.
-@immutable final class RealtimeServerEventResponseTextDeltaType {const RealtimeServerEventResponseTextDeltaType._(this.value);
-
-factory RealtimeServerEventResponseTextDeltaType.fromJson(String json) { return switch (json) {
-  'response.output_text.delta' => responseOutputTextDelta,
-  _ => RealtimeServerEventResponseTextDeltaType._(json),
-}; }
-
-static const RealtimeServerEventResponseTextDeltaType responseOutputTextDelta = RealtimeServerEventResponseTextDeltaType._('response.output_text.delta');
-
-static const List<RealtimeServerEventResponseTextDeltaType> values = [responseOutputTextDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseTextDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseTextDeltaType($value)'; } 
- }
-/// Returned when the text value of an "output_text" content part is updated.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the text value of an "output_text" content part is updated.
 @immutable final class RealtimeServerEventResponseTextDelta {const RealtimeServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
 factory RealtimeServerEventResponseTextDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseTextDelta(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventResponseTextDeltaType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -39,7 +17,7 @@ factory RealtimeServerEventResponseTextDelta.fromJson(Map<String, dynamic> json)
 final String eventId;
 
 /// The event type, must be `response.output_text.delta`.
-final RealtimeServerEventResponseTextDeltaType type;
+final String type;
 
 /// The ID of the response.
 final String responseId;
@@ -58,7 +36,7 @@ final String delta;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
@@ -66,13 +44,13 @@ Map<String, dynamic> toJson() { return {
   'delta': delta,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('delta') && json['delta'] is String; } 
-RealtimeServerEventResponseTextDelta copyWith({String? eventId, RealtimeServerEventResponseTextDeltaType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseTextDelta(
+RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseTextDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

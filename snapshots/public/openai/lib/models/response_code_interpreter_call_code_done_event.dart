@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.code_interpreter_call_code.done`.
-@immutable final class ResponseCodeInterpreterCallCodeDoneEventType {const ResponseCodeInterpreterCallCodeDoneEventType._(this.value);
-
-factory ResponseCodeInterpreterCallCodeDoneEventType.fromJson(String json) { return switch (json) {
-  'response.code_interpreter_call_code.done' => responseCodeInterpreterCallCodeDone,
-  _ => ResponseCodeInterpreterCallCodeDoneEventType._(json),
-}; }
-
-static const ResponseCodeInterpreterCallCodeDoneEventType responseCodeInterpreterCallCodeDone = ResponseCodeInterpreterCallCodeDoneEventType._('response.code_interpreter_call_code.done');
-
-static const List<ResponseCodeInterpreterCallCodeDoneEventType> values = [responseCodeInterpreterCallCodeDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseCodeInterpreterCallCodeDoneEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseCodeInterpreterCallCodeDoneEventType($value)'; } 
- }
-/// Emitted when the code snippet is finalized by the code interpreter.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the code snippet is finalized by the code interpreter.
 @immutable final class ResponseCodeInterpreterCallCodeDoneEvent {const ResponseCodeInterpreterCallCodeDoneEvent({required this.type, required this.outputIndex, required this.itemId, required this.code, required this.sequenceNumber, });
 
 factory ResponseCodeInterpreterCallCodeDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallCodeDoneEvent(
-  type: ResponseCodeInterpreterCallCodeDoneEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   code: json['code'] as String,
@@ -34,7 +12,7 @@ factory ResponseCodeInterpreterCallCodeDoneEvent.fromJson(Map<String, dynamic> j
 ); }
 
 /// The type of the event. Always `response.code_interpreter_call_code.done`.
-final ResponseCodeInterpreterCallCodeDoneEventType type;
+final String type;
 
 /// The index of the output item in the response for which the code is finalized.
 final int outputIndex;
@@ -49,18 +27,18 @@ final String code;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'code': code,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('code') && json['code'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseCodeInterpreterCallCodeDoneEvent copyWith({ResponseCodeInterpreterCallCodeDoneEventType? type, int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) { return ResponseCodeInterpreterCallCodeDoneEvent(
+ResponseCodeInterpreterCallCodeDoneEvent copyWith({String? type, int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) { return ResponseCodeInterpreterCallCodeDoneEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,

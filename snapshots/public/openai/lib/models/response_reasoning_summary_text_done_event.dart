@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.reasoning_summary_text.done`.
-/// 
-@immutable final class ResponseReasoningSummaryTextDoneEventType {const ResponseReasoningSummaryTextDoneEventType._(this.value);
-
-factory ResponseReasoningSummaryTextDoneEventType.fromJson(String json) { return switch (json) {
-  'response.reasoning_summary_text.done' => responseReasoningSummaryTextDone,
-  _ => ResponseReasoningSummaryTextDoneEventType._(json),
-}; }
-
-static const ResponseReasoningSummaryTextDoneEventType responseReasoningSummaryTextDone = ResponseReasoningSummaryTextDoneEventType._('response.reasoning_summary_text.done');
-
-static const List<ResponseReasoningSummaryTextDoneEventType> values = [responseReasoningSummaryTextDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseReasoningSummaryTextDoneEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseReasoningSummaryTextDoneEventType($value)'; } 
- }
-/// Emitted when a reasoning summary text is completed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a reasoning summary text is completed.
 @immutable final class ResponseReasoningSummaryTextDoneEvent {const ResponseReasoningSummaryTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.text, required this.sequenceNumber, });
 
 factory ResponseReasoningSummaryTextDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryTextDoneEvent(
-  type: ResponseReasoningSummaryTextDoneEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   summaryIndex: (json['summary_index'] as num).toInt(),
@@ -37,7 +14,7 @@ factory ResponseReasoningSummaryTextDoneEvent.fromJson(Map<String, dynamic> json
 
 /// The type of the event. Always `response.reasoning_summary_text.done`.
 /// 
-final ResponseReasoningSummaryTextDoneEventType type;
+final String type;
 
 /// The ID of the item this summary text is associated with.
 /// 
@@ -60,20 +37,20 @@ final String text;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'summary_index': summaryIndex,
   'text': text,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('summary_index') && json['summary_index'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseReasoningSummaryTextDoneEvent copyWith({ResponseReasoningSummaryTextDoneEventType? type, String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) { return ResponseReasoningSummaryTextDoneEvent(
+ResponseReasoningSummaryTextDoneEvent copyWith({String? type, String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) { return ResponseReasoningSummaryTextDoneEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,

@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_stopped`.
-@immutable final class RealtimeServerEventInputAudioBufferSpeechStoppedType {const RealtimeServerEventInputAudioBufferSpeechStoppedType._(this.value);
-
-factory RealtimeServerEventInputAudioBufferSpeechStoppedType.fromJson(String json) { return switch (json) {
-  'input_audio_buffer.speech_stopped' => inputAudioBufferSpeechStopped,
-  _ => RealtimeServerEventInputAudioBufferSpeechStoppedType._(json),
-}; }
-
-static const RealtimeServerEventInputAudioBufferSpeechStoppedType inputAudioBufferSpeechStopped = RealtimeServerEventInputAudioBufferSpeechStoppedType._('input_audio_buffer.speech_stopped');
-
-static const List<RealtimeServerEventInputAudioBufferSpeechStoppedType> values = [inputAudioBufferSpeechStopped];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferSpeechStoppedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferSpeechStoppedType($value)'; } 
- }
-/// Returned in `server_vad` mode when the server detects the end of speech in
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned in `server_vad` mode when the server detects the end of speech in
 /// the audio buffer. The server will also send an `conversation.item.created`
 /// event with the user message item that is created from the audio buffer.
 /// 
@@ -30,7 +8,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStopped(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventInputAudioBufferSpeechStoppedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
   itemId: json['item_id'] as String,
 ); }
@@ -39,7 +17,7 @@ factory RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(Map<String, dy
 final String eventId;
 
 /// The event type, must be `input_audio_buffer.speech_stopped`.
-final RealtimeServerEventInputAudioBufferSpeechStoppedType type;
+final String type;
 
 /// Milliseconds since the session started when speech stopped. This will
 /// correspond to the end of audio sent to the model, and thus includes the
@@ -52,15 +30,15 @@ final String itemId;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'audio_end_ms': audioEndMs,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventInputAudioBufferSpeechStopped copyWith({String? eventId, RealtimeServerEventInputAudioBufferSpeechStoppedType? type, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStopped(
+RealtimeServerEventInputAudioBufferSpeechStopped copyWith({String? eventId, String? type, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStopped(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   audioEndMs: audioEndMs ?? this.audioEndMs,

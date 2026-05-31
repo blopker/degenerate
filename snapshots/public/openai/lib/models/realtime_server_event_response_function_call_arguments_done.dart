@@ -1,36 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.function_call_arguments.done`.
-/// 
-@immutable final class RealtimeServerEventResponseFunctionCallArgumentsDoneType {const RealtimeServerEventResponseFunctionCallArgumentsDoneType._(this.value);
-
-factory RealtimeServerEventResponseFunctionCallArgumentsDoneType.fromJson(String json) { return switch (json) {
-  'response.function_call_arguments.done' => responseFunctionCallArgumentsDone,
-  _ => RealtimeServerEventResponseFunctionCallArgumentsDoneType._(json),
-}; }
-
-static const RealtimeServerEventResponseFunctionCallArgumentsDoneType responseFunctionCallArgumentsDone = RealtimeServerEventResponseFunctionCallArgumentsDoneType._('response.function_call_arguments.done');
-
-static const List<RealtimeServerEventResponseFunctionCallArgumentsDoneType> values = [responseFunctionCallArgumentsDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseFunctionCallArgumentsDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDoneType($value)'; } 
- }
-/// Returned when the model-generated function call arguments are done streaming.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the model-generated function call arguments are done streaming.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 /// 
 @immutable final class RealtimeServerEventResponseFunctionCallArgumentsDone {const RealtimeServerEventResponseFunctionCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.name, required this.arguments, });
 
 factory RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseFunctionCallArgumentsDone(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventResponseFunctionCallArgumentsDoneType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -44,7 +21,7 @@ final String eventId;
 
 /// The event type, must be `response.function_call_arguments.done`.
 /// 
-final RealtimeServerEventResponseFunctionCallArgumentsDoneType type;
+final String type;
 
 /// The ID of the response.
 final String responseId;
@@ -66,7 +43,7 @@ final String arguments;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
@@ -75,14 +52,14 @@ Map<String, dynamic> toJson() { return {
   'arguments': arguments,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, RealtimeServerEventResponseFunctionCallArgumentsDoneType? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) { return RealtimeServerEventResponseFunctionCallArgumentsDone(
+RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) { return RealtimeServerEventResponseFunctionCallArgumentsDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

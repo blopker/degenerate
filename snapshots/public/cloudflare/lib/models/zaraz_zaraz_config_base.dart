@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_secret_variable.dart';import 'zaraz_string_variable.dart';import 'zaraz_worker_variable.dart';import 'zaraz_zaraz_config_base_analytics.dart';import 'zaraz_zaraz_config_base_consent.dart';import 'zaraz_zaraz_config_base_settings.dart';import 'zaraz_zaraz_config_base_triggers_value.dart';import 'zaraz_zaraz_config_base_variables_value.dart';/// Zaraz configuration
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_base_analytics.dart';import 'zaraz_zaraz_config_base_consent.dart';import 'zaraz_zaraz_config_base_settings.dart';import 'zaraz_zaraz_config_base_triggers_value.dart';import 'zaraz_zaraz_config_base_variables_value.dart';/// Zaraz configuration
 @immutable final class ZarazZarazConfigBase {const ZarazZarazConfigBase({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, this.analytics, this.consent, this.historyChange, });
 
 factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(
@@ -11,7 +11,7 @@ factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZ
   historyChange: json['historyChange'] as bool?,
   settings: ZarazZarazConfigBaseSettings.fromJson(json['settings'] as Map<String, dynamic>),
   triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBaseTriggersValue.fromJson(v as Map<String, dynamic>))),
-  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf3.parse(v, fromA: (v) => ZarazStringVariable.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazSecretVariable.fromJson(v as Map<String, dynamic>), fromC: (v) => ZarazWorkerVariable.fromJson(v as Map<String, dynamic>),))),
+  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBaseVariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
 ); }
 

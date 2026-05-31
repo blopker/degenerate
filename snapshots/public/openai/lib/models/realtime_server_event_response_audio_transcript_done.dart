@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio_transcript.done`.
-@immutable final class RealtimeServerEventResponseAudioTranscriptDoneType {const RealtimeServerEventResponseAudioTranscriptDoneType._(this.value);
-
-factory RealtimeServerEventResponseAudioTranscriptDoneType.fromJson(String json) { return switch (json) {
-  'response.output_audio_transcript.done' => responseOutputAudioTranscriptDone,
-  _ => RealtimeServerEventResponseAudioTranscriptDoneType._(json),
-}; }
-
-static const RealtimeServerEventResponseAudioTranscriptDoneType responseOutputAudioTranscriptDone = RealtimeServerEventResponseAudioTranscriptDoneType._('response.output_audio_transcript.done');
-
-static const List<RealtimeServerEventResponseAudioTranscriptDoneType> values = [responseOutputAudioTranscriptDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseAudioTranscriptDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseAudioTranscriptDoneType($value)'; } 
- }
-/// Returned when the model-generated transcription of audio output is done
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the model-generated transcription of audio output is done
 /// streaming. Also emitted when a Response is interrupted, incomplete, or
 /// cancelled.
 /// 
@@ -30,7 +8,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventResponseAudioTranscriptDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseAudioTranscriptDone(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventResponseAudioTranscriptDoneType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -42,7 +20,7 @@ factory RealtimeServerEventResponseAudioTranscriptDone.fromJson(Map<String, dyna
 final String eventId;
 
 /// The event type, must be `response.output_audio_transcript.done`.
-final RealtimeServerEventResponseAudioTranscriptDoneType type;
+final String type;
 
 /// The ID of the response.
 final String responseId;
@@ -61,7 +39,7 @@ final String transcript;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
@@ -69,13 +47,13 @@ Map<String, dynamic> toJson() { return {
   'transcript': transcript,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('transcript') && json['transcript'] is String; } 
-RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, RealtimeServerEventResponseAudioTranscriptDoneType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) { return RealtimeServerEventResponseAudioTranscriptDone(
+RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) { return RealtimeServerEventResponseAudioTranscriptDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

@@ -1,30 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// The event type, must be
-/// `conversation.item.input_audio_transcription.failed`.
-/// 
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeServerEventConversationItemInputAudioTranscriptionFailedType._(this.value);
-
-factory RealtimeServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(String json) { return switch (json) {
-  'conversation.item.input_audio_transcription.failed' => conversationItemInputAudioTranscriptionFailed,
-  _ => RealtimeServerEventConversationItemInputAudioTranscriptionFailedType._(json),
-}; }
-
-static const RealtimeServerEventConversationItemInputAudioTranscriptionFailedType conversationItemInputAudioTranscriptionFailed = RealtimeServerEventConversationItemInputAudioTranscriptionFailedType._('conversation.item.input_audio_transcription.failed');
-
-static const List<RealtimeServerEventConversationItemInputAudioTranscriptionFailedType> values = [conversationItemInputAudioTranscriptionFailed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailedType($value)'; } 
- }
-/// Returned when input audio transcription is configured, and a transcription
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// Returned when input audio transcription is configured, and a transcription
 /// request for a user message failed. These events are separate from other
 /// `error` events so that the client can identify the related Item.
 /// 
@@ -32,7 +8,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   error: RealtimeServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(json['error'] as Map<String, dynamic>),
@@ -44,7 +20,7 @@ final String eventId;
 /// The event type, must be
 /// `conversation.item.input_audio_transcription.failed`.
 /// 
-final RealtimeServerEventConversationItemInputAudioTranscriptionFailedType type;
+final String type;
 
 /// The ID of the user message item.
 final String itemId;
@@ -57,17 +33,17 @@ final RealtimeServerEventConversationItemInputAudioTranscriptionFailedError erro
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'error': error.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('error'); } 
-RealtimeServerEventConversationItemInputAudioTranscriptionFailed copyWith({String? eventId, RealtimeServerEventConversationItemInputAudioTranscriptionFailedType? type, String? itemId, int? contentIndex, RealtimeServerEventConversationItemInputAudioTranscriptionFailedError? error, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
+RealtimeServerEventConversationItemInputAudioTranscriptionFailed copyWith({String? eventId, String? type, String? itemId, int? contentIndex, RealtimeServerEventConversationItemInputAudioTranscriptionFailedError? error, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

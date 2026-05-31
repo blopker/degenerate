@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_max_output_tokens.dart';import 'realtime_beta_response_status_details.dart';import 'realtime_beta_response_usage.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';import 'voice_ids_shared.dart';/// The object type, must be `realtime.response`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_max_output_tokens.dart';import 'realtime_beta_response_status_details.dart';import 'realtime_beta_response_usage.dart';import 'realtime_conversation_item.dart';import 'voice_ids_shared.dart';/// The object type, must be `realtime.response`.
 @immutable final class RealtimeBetaResponseObject {const RealtimeBetaResponseObject._(this.value);
 
 factory RealtimeBetaResponseObject.fromJson(String json) { return switch (json) {
@@ -119,7 +119,7 @@ factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return Realti
   object: json['object'] != null ? RealtimeBetaResponseObject.fromJson(json['object'] as String) : null,
   status: json['status'] != null ? RealtimeBetaResponseStatus.fromJson(json['status'] as String) : null,
   statusDetails: json['status_details'] != null ? RealtimeBetaResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
-  output: (json['output'] as List<dynamic>?)?.map((e) => OneOf9.parse(e, fromA: (v) => RealtimeConversationItemMessageSystem.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeConversationItemMessageUser.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeConversationItemMessageAssistant.fromJson(v as Map<String, dynamic>), fromD: (v) => RealtimeConversationItemFunctionCall.fromJson(v as Map<String, dynamic>), fromE: (v) => RealtimeConversationItemFunctionCallOutput.fromJson(v as Map<String, dynamic>), fromF: (v) => RealtimeMcpApprovalResponse.fromJson(v as Map<String, dynamic>), fromG: (v) => RealtimeMcpListTools.fromJson(v as Map<String, dynamic>), fromH: (v) => RealtimeMcpToolCall.fromJson(v as Map<String, dynamic>), fromI: (v) => RealtimeMcpApprovalRequest.fromJson(v as Map<String, dynamic>),)).toList(),
+  output: (json['output'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: json['usage'] != null ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,

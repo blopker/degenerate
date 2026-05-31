@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// The type of the event. Always `response.output_item.added`.
-/// 
-@immutable final class ResponseOutputItemAddedEventType {const ResponseOutputItemAddedEventType._(this.value);
-
-factory ResponseOutputItemAddedEventType.fromJson(String json) { return switch (json) {
-  'response.output_item.added' => responseOutputItemAdded,
-  _ => ResponseOutputItemAddedEventType._(json),
-}; }
-
-static const ResponseOutputItemAddedEventType responseOutputItemAdded = ResponseOutputItemAddedEventType._('response.output_item.added');
-
-static const List<ResponseOutputItemAddedEventType> values = [responseOutputItemAdded];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseOutputItemAddedEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseOutputItemAddedEventType($value)'; } 
- }
-/// Emitted when a new output item is added.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// Emitted when a new output item is added.
 @immutable final class ResponseOutputItemAddedEvent {const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
 factory ResponseOutputItemAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemAddedEvent(
-  type: ResponseOutputItemAddedEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   item: OutputItem.fromJson(json['item'] as Map<String, dynamic>),
@@ -35,7 +12,7 @@ factory ResponseOutputItemAddedEvent.fromJson(Map<String, dynamic> json) { retur
 
 /// The type of the event. Always `response.output_item.added`.
 /// 
-final ResponseOutputItemAddedEventType type;
+final String type;
 
 /// The index of the output item that was added.
 /// 
@@ -50,16 +27,16 @@ final int sequenceNumber;
 final OutputItem item;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'sequence_number': sequenceNumber,
   'item': item.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('item'); } 
-ResponseOutputItemAddedEvent copyWith({ResponseOutputItemAddedEventType? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseOutputItemAddedEvent(
+ResponseOutputItemAddedEvent copyWith({String? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseOutputItemAddedEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

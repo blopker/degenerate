@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.input_audio_transcription.segment`.
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType._(this.value);
-
-factory RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(String json) { return switch (json) {
-  'conversation.item.input_audio_transcription.segment' => conversationItemInputAudioTranscriptionSegment,
-  _ => RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType._(json),
-}; }
-
-static const RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType conversationItemInputAudioTranscriptionSegment = RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType._('conversation.item.input_audio_transcription.segment');
-
-static const List<RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType> values = [conversationItemInputAudioTranscriptionSegment];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType($value)'; } 
- }
-/// Returned when an input audio transcription segment is identified for an item.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an input audio transcription segment is identified for an item.
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });
 
 factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   text: json['text'] as String,
@@ -41,7 +19,7 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJs
 final String eventId;
 
 /// The event type, must be `conversation.item.input_audio_transcription.segment`.
-final RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType type;
+final String type;
 
 /// The ID of the item containing the input audio content.
 final String itemId;
@@ -66,7 +44,7 @@ final double end;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'text': text,
@@ -76,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'end': end,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('text') && json['text'] is String &&
@@ -84,7 +62,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('speaker') && json['speaker'] is String &&
       json.containsKey('start') && json['start'] is num &&
       json.containsKey('end') && json['end'] is num; } 
-RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({String? eventId, RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType? type, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
+RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

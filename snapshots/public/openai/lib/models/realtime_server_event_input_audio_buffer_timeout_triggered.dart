@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.timeout_triggered`.
-@immutable final class RealtimeServerEventInputAudioBufferTimeoutTriggeredType {const RealtimeServerEventInputAudioBufferTimeoutTriggeredType._(this.value);
-
-factory RealtimeServerEventInputAudioBufferTimeoutTriggeredType.fromJson(String json) { return switch (json) {
-  'input_audio_buffer.timeout_triggered' => inputAudioBufferTimeoutTriggered,
-  _ => RealtimeServerEventInputAudioBufferTimeoutTriggeredType._(json),
-}; }
-
-static const RealtimeServerEventInputAudioBufferTimeoutTriggeredType inputAudioBufferTimeoutTriggered = RealtimeServerEventInputAudioBufferTimeoutTriggeredType._('input_audio_buffer.timeout_triggered');
-
-static const List<RealtimeServerEventInputAudioBufferTimeoutTriggeredType> values = [inputAudioBufferTimeoutTriggered];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferTimeoutTriggeredType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferTimeoutTriggeredType($value)'; } 
- }
-/// Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured
 /// with `idle_timeout_ms` in the `turn_detection` settings of the session, and it indicates that
 /// there hasn't been any speech detected for the configured duration.
 /// 
@@ -40,7 +18,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventInputAudioBufferTimeoutTriggeredType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   audioStartMs: (json['audio_start_ms'] as num).toInt(),
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
   itemId: json['item_id'] as String,
@@ -50,7 +28,7 @@ factory RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(Map<String,
 final String eventId;
 
 /// The event type, must be `input_audio_buffer.timeout_triggered`.
-final RealtimeServerEventInputAudioBufferTimeoutTriggeredType type;
+final String type;
 
 /// Millisecond offset of audio written to the input audio buffer that was after the playback time of the last model response.
 final int audioStartMs;
@@ -63,17 +41,17 @@ final String itemId;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'audio_start_ms': audioStartMs,
   'audio_end_ms': audioEndMs,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio_start_ms') && json['audio_start_ms'] is num &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventInputAudioBufferTimeoutTriggered copyWith({String? eventId, RealtimeServerEventInputAudioBufferTimeoutTriggeredType? type, int? audioStartMs, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(
+RealtimeServerEventInputAudioBufferTimeoutTriggered copyWith({String? eventId, String? type, int? audioStartMs, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   audioStartMs: audioStartMs ?? this.audioStartMs,

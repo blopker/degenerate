@@ -1,35 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response.dart';/// The event type, must be `response.created`.
-@immutable final class RealtimeServerEventResponseCreatedType {const RealtimeServerEventResponseCreatedType._(this.value);
-
-factory RealtimeServerEventResponseCreatedType.fromJson(String json) { return switch (json) {
-  'response.created' => responseCreated,
-  _ => RealtimeServerEventResponseCreatedType._(json),
-}; }
-
-static const RealtimeServerEventResponseCreatedType responseCreated = RealtimeServerEventResponseCreatedType._('response.created');
-
-static const List<RealtimeServerEventResponseCreatedType> values = [responseCreated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseCreatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseCreatedType($value)'; } 
- }
-/// Returned when a new Response is created. The first event of response creation,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response.dart';/// Returned when a new Response is created. The first event of response creation,
 /// where the response is in an initial state of `in_progress`.
 /// 
 @immutable final class RealtimeServerEventResponseCreated {const RealtimeServerEventResponseCreated({required this.eventId, required this.type, required this.response, });
 
 factory RealtimeServerEventResponseCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseCreated(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventResponseCreatedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   response: RealtimeResponse.fromJson(json['response'] as Map<String, dynamic>),
 ); }
 
@@ -37,19 +15,19 @@ factory RealtimeServerEventResponseCreated.fromJson(Map<String, dynamic> json) {
 final String eventId;
 
 /// The event type, must be `response.created`.
-final RealtimeServerEventResponseCreatedType type;
+final String type;
 
 final RealtimeResponse response;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response': response.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response'); } 
-RealtimeServerEventResponseCreated copyWith({String? eventId, RealtimeServerEventResponseCreatedType? type, RealtimeResponse? response, }) { return RealtimeServerEventResponseCreated(
+RealtimeServerEventResponseCreated copyWith({String? eventId, String? type, RealtimeResponse? response, }) { return RealtimeServerEventResponseCreated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   response: response ?? this.response,

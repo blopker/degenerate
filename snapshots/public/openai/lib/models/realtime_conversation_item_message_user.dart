@@ -22,28 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessageUserObject($value)'; } 
  }
-/// The type of the item. Always `message`.
-@immutable final class RealtimeConversationItemMessageUserType {const RealtimeConversationItemMessageUserType._(this.value);
-
-factory RealtimeConversationItemMessageUserType.fromJson(String json) { return switch (json) {
-  'message' => message,
-  _ => RealtimeConversationItemMessageUserType._(json),
-}; }
-
-static const RealtimeConversationItemMessageUserType message = RealtimeConversationItemMessageUserType._('message');
-
-static const List<RealtimeConversationItemMessageUserType> values = [message];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserType($value)'; } 
- }
 /// The status of the item. Has no effect on the conversation.
 @immutable final class RealtimeConversationItemMessageUserStatus {const RealtimeConversationItemMessageUserStatus._(this.value);
 
@@ -100,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUser(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemMessageUserObject.fromJson(json['object'] as String) : null,
-  type: RealtimeConversationItemMessageUserType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   status: json['status'] != null ? RealtimeConversationItemMessageUserStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageUserRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageUserContent.fromJson(e as Map<String, dynamic>)).toList(),
@@ -113,7 +91,7 @@ final String? id;
 final RealtimeConversationItemMessageUserObject? object;
 
 /// The type of the item. Always `message`.
-final RealtimeConversationItemMessageUserType type;
+final String type;
 
 /// The status of the item. Has no effect on the conversation.
 final RealtimeConversationItemMessageUserStatus? status;
@@ -127,15 +105,15 @@ final List<RealtimeConversationItemMessageUserContent> content;
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
-  'type': type.toJson(),
+  'type': type,
   if (status != null) 'status': status?.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageUser copyWith({String Function()? id, RealtimeConversationItemMessageUserObject Function()? object, RealtimeConversationItemMessageUserType? type, RealtimeConversationItemMessageUserStatus Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
+RealtimeConversationItemMessageUser copyWith({String Function()? id, RealtimeConversationItemMessageUserObject Function()? object, String? type, RealtimeConversationItemMessageUserStatus Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.truncate`.
-@immutable final class RealtimeClientEventConversationItemTruncateType {const RealtimeClientEventConversationItemTruncateType._(this.value);
-
-factory RealtimeClientEventConversationItemTruncateType.fromJson(String json) { return switch (json) {
-  'conversation.item.truncate' => conversationItemTruncate,
-  _ => RealtimeClientEventConversationItemTruncateType._(json),
-}; }
-
-static const RealtimeClientEventConversationItemTruncateType conversationItemTruncate = RealtimeClientEventConversationItemTruncateType._('conversation.item.truncate');
-
-static const List<RealtimeClientEventConversationItemTruncateType> values = [conversationItemTruncate];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventConversationItemTruncateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeClientEventConversationItemTruncateType($value)'; } 
- }
-/// Send this event to truncate a previous assistant message’s audio. The server
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event to truncate a previous assistant message’s audio. The server
 /// will produce audio faster than realtime, so this event is useful when the user
 /// interrupts to truncate audio that has already been sent to the client but not
 /// yet played. This will synchronize the server's understanding of the audio with
@@ -38,7 +16,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeClientEventConversationItemTruncate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemTruncate(
   eventId: json['event_id'] as String?,
-  type: RealtimeClientEventConversationItemTruncateType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
@@ -48,7 +26,7 @@ factory RealtimeClientEventConversationItemTruncate.fromJson(Map<String, dynamic
 final String? eventId;
 
 /// The event type, must be `conversation.item.truncate`.
-final RealtimeClientEventConversationItemTruncateType type;
+final String type;
 
 /// The ID of the assistant message item to truncate. Only assistant message
 /// items can be truncated.
@@ -66,16 +44,16 @@ final int audioEndMs;
 
 Map<String, dynamic> toJson() { return {
   'event_id': ?eventId,
-  'type': type.toJson(),
+  'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'audio_end_ms': audioEndMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 
-RealtimeClientEventConversationItemTruncate copyWith({String Function()? eventId, RealtimeClientEventConversationItemTruncateType? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeClientEventConversationItemTruncate(
+RealtimeClientEventConversationItemTruncate copyWith({String Function()? eventId, String? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeClientEventConversationItemTruncate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

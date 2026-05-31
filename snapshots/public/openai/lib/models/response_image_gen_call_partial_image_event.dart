@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.image_generation_call.partial_image'.
-@immutable final class ResponseImageGenCallPartialImageEventType {const ResponseImageGenCallPartialImageEventType._(this.value);
-
-factory ResponseImageGenCallPartialImageEventType.fromJson(String json) { return switch (json) {
-  'response.image_generation_call.partial_image' => responseImageGenerationCallPartialImage,
-  _ => ResponseImageGenCallPartialImageEventType._(json),
-}; }
-
-static const ResponseImageGenCallPartialImageEventType responseImageGenerationCallPartialImage = ResponseImageGenCallPartialImageEventType._('response.image_generation_call.partial_image');
-
-static const List<ResponseImageGenCallPartialImageEventType> values = [responseImageGenerationCallPartialImage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseImageGenCallPartialImageEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseImageGenCallPartialImageEventType($value)'; } 
- }
-/// Emitted when a partial image is available during image generation streaming.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a partial image is available during image generation streaming.
 /// 
 @immutable final class ResponseImageGenCallPartialImageEvent {const ResponseImageGenCallPartialImageEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, required this.partialImageIndex, required this.partialImageB64, });
 
 factory ResponseImageGenCallPartialImageEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallPartialImageEvent(
-  type: ResponseImageGenCallPartialImageEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
@@ -36,7 +14,7 @@ factory ResponseImageGenCallPartialImageEvent.fromJson(Map<String, dynamic> json
 ); }
 
 /// The type of the event. Always 'response.image_generation_call.partial_image'.
-final ResponseImageGenCallPartialImageEventType type;
+final String type;
 
 /// The index of the output item in the response's output array.
 final int outputIndex;
@@ -54,20 +32,20 @@ final int partialImageIndex;
 final String partialImageB64;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
   'partial_image_index': partialImageIndex,
   'partial_image_b64': partialImageB64,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('partial_image_index') && json['partial_image_index'] is num &&
       json.containsKey('partial_image_b64') && json['partial_image_b64'] is String; } 
-ResponseImageGenCallPartialImageEvent copyWith({ResponseImageGenCallPartialImageEventType? type, int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) { return ResponseImageGenCallPartialImageEvent(
+ResponseImageGenCallPartialImageEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) { return ResponseImageGenCallPartialImageEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,

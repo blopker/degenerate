@@ -22,28 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemFunctionCallOutputObject($value)'; } 
  }
-/// The type of the item. Always `function_call_output`.
-@immutable final class RealtimeConversationItemFunctionCallOutputType {const RealtimeConversationItemFunctionCallOutputType._(this.value);
-
-factory RealtimeConversationItemFunctionCallOutputType.fromJson(String json) { return switch (json) {
-  'function_call_output' => functionCallOutput,
-  _ => RealtimeConversationItemFunctionCallOutputType._(json),
-}; }
-
-static const RealtimeConversationItemFunctionCallOutputType functionCallOutput = RealtimeConversationItemFunctionCallOutputType._('function_call_output');
-
-static const List<RealtimeConversationItemFunctionCallOutputType> values = [functionCallOutput];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallOutputType($value)'; } 
- }
 /// The status of the item. Has no effect on the conversation.
 @immutable final class RealtimeConversationItemFunctionCallOutputStatus {const RealtimeConversationItemFunctionCallOutputStatus._(this.value);
 
@@ -78,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RealtimeConversationItemFunctionCallOutput.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCallOutput(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallOutputObject.fromJson(json['object'] as String) : null,
-  type: RealtimeConversationItemFunctionCallOutputType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   status: json['status'] != null ? RealtimeConversationItemFunctionCallOutputStatus.fromJson(json['status'] as String) : null,
   callId: json['call_id'] as String,
   output: json['output'] as String,
@@ -91,7 +69,7 @@ final String? id;
 final RealtimeConversationItemFunctionCallOutputObject? object;
 
 /// The type of the item. Always `function_call_output`.
-final RealtimeConversationItemFunctionCallOutputType type;
+final String type;
 
 /// The status of the item. Has no effect on the conversation.
 final RealtimeConversationItemFunctionCallOutputStatus? status;
@@ -105,15 +83,15 @@ final String output;
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
-  'type': type.toJson(),
+  'type': type,
   if (status != null) 'status': status?.toJson(),
   'call_id': callId,
   'output': output,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output') && json['output'] is String; } 
-RealtimeConversationItemFunctionCallOutput copyWith({String Function()? id, RealtimeConversationItemFunctionCallOutputObject Function()? object, RealtimeConversationItemFunctionCallOutputType? type, RealtimeConversationItemFunctionCallOutputStatus Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
+RealtimeConversationItemFunctionCallOutput copyWith({String Function()? id, RealtimeConversationItemFunctionCallOutputObject Function()? object, String? type, RealtimeConversationItemFunctionCallOutputStatus Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

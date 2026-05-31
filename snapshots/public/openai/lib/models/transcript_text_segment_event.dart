@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `transcript.text.segment`.
-@immutable final class TranscriptTextSegmentEventType {const TranscriptTextSegmentEventType._(this.value);
-
-factory TranscriptTextSegmentEventType.fromJson(String json) { return switch (json) {
-  'transcript.text.segment' => transcriptTextSegment,
-  _ => TranscriptTextSegmentEventType._(json),
-}; }
-
-static const TranscriptTextSegmentEventType transcriptTextSegment = TranscriptTextSegmentEventType._('transcript.text.segment');
-
-static const List<TranscriptTextSegmentEventType> values = [transcriptTextSegment];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptTextSegmentEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptTextSegmentEventType($value)'; } 
- }
-/// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
 /// 
 @immutable final class TranscriptTextSegmentEvent {const TranscriptTextSegmentEvent({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
 
 factory TranscriptTextSegmentEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextSegmentEvent(
-  type: TranscriptTextSegmentEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   id: json['id'] as String,
   start: (json['start'] as num).toDouble(),
   end: (json['end'] as num).toDouble(),
@@ -36,7 +14,7 @@ factory TranscriptTextSegmentEvent.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The type of the event. Always `transcript.text.segment`.
-final TranscriptTextSegmentEventType type;
+final String type;
 
 /// Unique identifier for the segment.
 final String id;
@@ -54,20 +32,20 @@ final String text;
 final String speaker;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'id': id,
   'start': start,
   'end': end,
   'text': text,
   'speaker': speaker,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('start') && json['start'] is num &&
       json.containsKey('end') && json['end'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('speaker') && json['speaker'] is String; } 
-TranscriptTextSegmentEvent copyWith({TranscriptTextSegmentEventType? type, String? id, double? start, double? end, String? text, String? speaker, }) { return TranscriptTextSegmentEvent(
+TranscriptTextSegmentEvent copyWith({String? type, String? id, double? start, double? end, String? text, String? speaker, }) { return TranscriptTextSegmentEvent(
   type: type ?? this.type,
   id: id ?? this.id,
   start: start ?? this.start,

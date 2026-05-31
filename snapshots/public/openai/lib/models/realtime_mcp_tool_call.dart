@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_mcp_protocol_error.dart';import 'realtime_mcp_tool_call_error.dart';import 'realtime_mcp_tool_execution_error.dart';import 'realtime_mcphttp_error.dart';/// The type of the item. Always `mcp_call`.
-@immutable final class RealtimeMcpToolCallType {const RealtimeMcpToolCallType._(this.value);
-
-factory RealtimeMcpToolCallType.fromJson(String json) { return switch (json) {
-  'mcp_call' => mcpCall,
-  _ => RealtimeMcpToolCallType._(json),
-}; }
-
-static const RealtimeMcpToolCallType mcpCall = RealtimeMcpToolCallType._('mcp_call');
-
-static const List<RealtimeMcpToolCallType> values = [mcpCall];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeMcpToolCallType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeMcpToolCallType($value)'; } 
- }
-/// A Realtime item representing an invocation of a tool on an MCP server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_mcp_protocol_error.dart';import 'realtime_mcp_tool_call_error.dart';import 'realtime_mcp_tool_execution_error.dart';import 'realtime_mcphttp_error.dart';/// A Realtime item representing an invocation of a tool on an MCP server.
 /// 
 @immutable final class RealtimeMcpToolCall {const RealtimeMcpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.approvalRequestId, this.output, this.error, });
 
 factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return RealtimeMcpToolCall(
-  type: RealtimeMcpToolCallType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   id: json['id'] as String,
   serverLabel: json['server_label'] as String,
   name: json['name'] as String,
@@ -38,7 +16,7 @@ factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return Realtim
 ); }
 
 /// The type of the item. Always `mcp_call`.
-final RealtimeMcpToolCallType type;
+final String type;
 
 /// The unique ID of the tool call.
 final String id;
@@ -62,7 +40,7 @@ final String? output;
 final RealtimeMcpToolCallError? error;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'id': id,
   'server_label': serverLabel,
   'name': name,
@@ -71,12 +49,12 @@ Map<String, dynamic> toJson() { return {
   'output': ?output,
   if (error != null) 'error': error?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeMcpToolCall copyWith({RealtimeMcpToolCallType? type, String? id, String? serverLabel, String? name, String? arguments, String? Function()? approvalRequestId, String? Function()? output, RealtimeMcpToolCallError? Function()? error, }) { return RealtimeMcpToolCall(
+RealtimeMcpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, String? Function()? approvalRequestId, String? Function()? output, RealtimeMcpToolCallError? Function()? error, }) { return RealtimeMcpToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,

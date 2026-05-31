@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `image_generation.partial_image`.
-/// 
-@immutable final class ImageGenPartialImageEventType {const ImageGenPartialImageEventType._(this.value);
-
-factory ImageGenPartialImageEventType.fromJson(String json) { return switch (json) {
-  'image_generation.partial_image' => imageGenerationPartialImage,
-  _ => ImageGenPartialImageEventType._(json),
-}; }
-
-static const ImageGenPartialImageEventType imageGenerationPartialImage = ImageGenPartialImageEventType._('image_generation.partial_image');
-
-static const List<ImageGenPartialImageEventType> values = [imageGenerationPartialImage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenPartialImageEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenPartialImageEventType($value)'; } 
- }
-/// The size of the requested image.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The size of the requested image.
 /// 
 @immutable final class ImageGenPartialImageEventSize {const ImageGenPartialImageEventSize._(this.value);
 
@@ -150,7 +127,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class ImageGenPartialImageEvent {const ImageGenPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
 
 factory ImageGenPartialImageEvent.fromJson(Map<String, dynamic> json) { return ImageGenPartialImageEvent(
-  type: ImageGenPartialImageEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   b64Json: json['b64_json'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   size: ImageGenPartialImageEventSize.fromJson(json['size'] as String),
@@ -162,7 +139,7 @@ factory ImageGenPartialImageEvent.fromJson(Map<String, dynamic> json) { return I
 
 /// The type of the event. Always `image_generation.partial_image`.
 /// 
-final ImageGenPartialImageEventType type;
+final String type;
 
 /// Base64-encoded partial image data, suitable for rendering as an image.
 /// 
@@ -193,7 +170,7 @@ final ImageGenPartialImageEventOutputFormat outputFormat;
 final int partialImageIndex;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'b64_json': b64Json,
   'created_at': createdAt,
   'size': size.toJson(),
@@ -202,7 +179,7 @@ Map<String, dynamic> toJson() { return {
   'output_format': outputFormat.toJson(),
   'partial_image_index': partialImageIndex,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('b64_json') && json['b64_json'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('size') &&
@@ -210,7 +187,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('background') &&
       json.containsKey('output_format') &&
       json.containsKey('partial_image_index') && json['partial_image_index'] is num; } 
-ImageGenPartialImageEvent copyWith({ImageGenPartialImageEventType? type, String? b64Json, int? createdAt, ImageGenPartialImageEventSize? size, ImageGenPartialImageEventQuality? quality, ImageGenPartialImageEventBackground? background, ImageGenPartialImageEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageGenPartialImageEvent(
+ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdAt, ImageGenPartialImageEventSize? size, ImageGenPartialImageEventQuality? quality, ImageGenPartialImageEventBackground? background, ImageGenPartialImageEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageGenPartialImageEvent(
   type: type ?? this.type,
   b64Json: b64Json ?? this.b64Json,
   createdAt: createdAt ?? this.createdAt,

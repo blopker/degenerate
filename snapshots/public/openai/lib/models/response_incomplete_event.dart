@@ -1,41 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// The type of the event. Always `response.incomplete`.
-/// 
-@immutable final class ResponseIncompleteEventType {const ResponseIncompleteEventType._(this.value);
-
-factory ResponseIncompleteEventType.fromJson(String json) { return switch (json) {
-  'response.incomplete' => responseIncomplete,
-  _ => ResponseIncompleteEventType._(json),
-}; }
-
-static const ResponseIncompleteEventType responseIncomplete = ResponseIncompleteEventType._('response.incomplete');
-
-static const List<ResponseIncompleteEventType> values = [responseIncomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseIncompleteEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseIncompleteEventType($value)'; } 
- }
-/// An event that is emitted when a response finishes as incomplete.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// An event that is emitted when a response finishes as incomplete.
 /// 
 @immutable final class ResponseIncompleteEvent {const ResponseIncompleteEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseIncompleteEvent.fromJson(Map<String, dynamic> json) { return ResponseIncompleteEvent(
-  type: ResponseIncompleteEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   response: Response.fromJson(json['response'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
 /// The type of the event. Always `response.incomplete`.
 /// 
-final ResponseIncompleteEventType type;
+final String type;
 
 /// The response that was incomplete.
 /// 
@@ -45,14 +22,14 @@ final Response response;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'response': response.toJson(),
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('response') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseIncompleteEvent copyWith({ResponseIncompleteEventType? type, Response? response, int? sequenceNumber, }) { return ResponseIncompleteEvent(
+ResponseIncompleteEvent copyWith({String? type, Response? response, int? sequenceNumber, }) { return ResponseIncompleteEvent(
   type: type ?? this.type,
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

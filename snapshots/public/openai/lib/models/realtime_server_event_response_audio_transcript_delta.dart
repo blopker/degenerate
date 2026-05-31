@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio_transcript.delta`.
-@immutable final class RealtimeServerEventResponseAudioTranscriptDeltaType {const RealtimeServerEventResponseAudioTranscriptDeltaType._(this.value);
-
-factory RealtimeServerEventResponseAudioTranscriptDeltaType.fromJson(String json) { return switch (json) {
-  'response.output_audio_transcript.delta' => responseOutputAudioTranscriptDelta,
-  _ => RealtimeServerEventResponseAudioTranscriptDeltaType._(json),
-}; }
-
-static const RealtimeServerEventResponseAudioTranscriptDeltaType responseOutputAudioTranscriptDelta = RealtimeServerEventResponseAudioTranscriptDeltaType._('response.output_audio_transcript.delta');
-
-static const List<RealtimeServerEventResponseAudioTranscriptDeltaType> values = [responseOutputAudioTranscriptDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseAudioTranscriptDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseAudioTranscriptDeltaType($value)'; } 
- }
-/// Returned when the model-generated transcription of audio output is updated.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the model-generated transcription of audio output is updated.
 /// 
 @immutable final class RealtimeServerEventResponseAudioTranscriptDelta {const RealtimeServerEventResponseAudioTranscriptDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
 factory RealtimeServerEventResponseAudioTranscriptDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseAudioTranscriptDelta(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventResponseAudioTranscriptDeltaType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -40,7 +18,7 @@ factory RealtimeServerEventResponseAudioTranscriptDelta.fromJson(Map<String, dyn
 final String eventId;
 
 /// The event type, must be `response.output_audio_transcript.delta`.
-final RealtimeServerEventResponseAudioTranscriptDeltaType type;
+final String type;
 
 /// The ID of the response.
 final String responseId;
@@ -59,7 +37,7 @@ final String delta;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
@@ -67,13 +45,13 @@ Map<String, dynamic> toJson() { return {
   'delta': delta,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('delta') && json['delta'] is String; } 
-RealtimeServerEventResponseAudioTranscriptDelta copyWith({String? eventId, RealtimeServerEventResponseAudioTranscriptDeltaType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseAudioTranscriptDelta(
+RealtimeServerEventResponseAudioTranscriptDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseAudioTranscriptDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

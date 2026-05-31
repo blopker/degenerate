@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage.dart';/// The type of the event. Always `image_generation.completed`.
-/// 
-@immutable final class ImageGenCompletedEventType {const ImageGenCompletedEventType._(this.value);
-
-factory ImageGenCompletedEventType.fromJson(String json) { return switch (json) {
-  'image_generation.completed' => imageGenerationCompleted,
-  _ => ImageGenCompletedEventType._(json),
-}; }
-
-static const ImageGenCompletedEventType imageGenerationCompleted = ImageGenCompletedEventType._('image_generation.completed');
-
-static const List<ImageGenCompletedEventType> values = [imageGenerationCompleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenCompletedEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenCompletedEventType($value)'; } 
- }
-/// The size of the generated image.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage.dart';/// The size of the generated image.
 /// 
 @immutable final class ImageGenCompletedEventSize {const ImageGenCompletedEventSize._(this.value);
 
@@ -150,7 +127,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class ImageGenCompletedEvent {const ImageGenCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
 
 factory ImageGenCompletedEvent.fromJson(Map<String, dynamic> json) { return ImageGenCompletedEvent(
-  type: ImageGenCompletedEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   b64Json: json['b64_json'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   size: ImageGenCompletedEventSize.fromJson(json['size'] as String),
@@ -162,7 +139,7 @@ factory ImageGenCompletedEvent.fromJson(Map<String, dynamic> json) { return Imag
 
 /// The type of the event. Always `image_generation.completed`.
 /// 
-final ImageGenCompletedEventType type;
+final String type;
 
 /// Base64-encoded image data, suitable for rendering as an image.
 /// 
@@ -191,7 +168,7 @@ final ImageGenCompletedEventOutputFormat outputFormat;
 final ImagesUsage usage;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'b64_json': b64Json,
   'created_at': createdAt,
   'size': size.toJson(),
@@ -200,7 +177,7 @@ Map<String, dynamic> toJson() { return {
   'output_format': outputFormat.toJson(),
   'usage': usage.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('b64_json') && json['b64_json'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('size') &&
@@ -208,7 +185,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('background') &&
       json.containsKey('output_format') &&
       json.containsKey('usage'); } 
-ImageGenCompletedEvent copyWith({ImageGenCompletedEventType? type, String? b64Json, int? createdAt, ImageGenCompletedEventSize? size, ImageGenCompletedEventQuality? quality, ImageGenCompletedEventBackground? background, ImageGenCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageGenCompletedEvent(
+ImageGenCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, ImageGenCompletedEventSize? size, ImageGenCompletedEventQuality? quality, ImageGenCompletedEventBackground? background, ImageGenCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageGenCompletedEvent(
   type: type ?? this.type,
   b64Json: b64Json ?? this.b64Json,
   createdAt: createdAt ?? this.createdAt,

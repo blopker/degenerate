@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// The type of the event. Always `response.output_item.done`.
-/// 
-@immutable final class ResponseOutputItemDoneEventType {const ResponseOutputItemDoneEventType._(this.value);
-
-factory ResponseOutputItemDoneEventType.fromJson(String json) { return switch (json) {
-  'response.output_item.done' => responseOutputItemDone,
-  _ => ResponseOutputItemDoneEventType._(json),
-}; }
-
-static const ResponseOutputItemDoneEventType responseOutputItemDone = ResponseOutputItemDoneEventType._('response.output_item.done');
-
-static const List<ResponseOutputItemDoneEventType> values = [responseOutputItemDone];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseOutputItemDoneEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseOutputItemDoneEventType($value)'; } 
- }
-/// Emitted when an output item is marked done.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// Emitted when an output item is marked done.
 @immutable final class ResponseOutputItemDoneEvent {const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
 factory ResponseOutputItemDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemDoneEvent(
-  type: ResponseOutputItemDoneEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   item: OutputItem.fromJson(json['item'] as Map<String, dynamic>),
@@ -35,7 +12,7 @@ factory ResponseOutputItemDoneEvent.fromJson(Map<String, dynamic> json) { return
 
 /// The type of the event. Always `response.output_item.done`.
 /// 
-final ResponseOutputItemDoneEventType type;
+final String type;
 
 /// The index of the output item that was marked done.
 /// 
@@ -50,16 +27,16 @@ final int sequenceNumber;
 final OutputItem item;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'sequence_number': sequenceNumber,
   'item': item.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('item'); } 
-ResponseOutputItemDoneEvent copyWith({ResponseOutputItemDoneEventType? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseOutputItemDoneEvent(
+ResponseOutputItemDoneEvent copyWith({String? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseOutputItemDoneEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

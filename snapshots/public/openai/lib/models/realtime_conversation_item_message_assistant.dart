@@ -22,28 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessageAssistantObject($value)'; } 
  }
-/// The type of the item. Always `message`.
-@immutable final class RealtimeConversationItemMessageAssistantType {const RealtimeConversationItemMessageAssistantType._(this.value);
-
-factory RealtimeConversationItemMessageAssistantType.fromJson(String json) { return switch (json) {
-  'message' => message,
-  _ => RealtimeConversationItemMessageAssistantType._(json),
-}; }
-
-static const RealtimeConversationItemMessageAssistantType message = RealtimeConversationItemMessageAssistantType._('message');
-
-static const List<RealtimeConversationItemMessageAssistantType> values = [message];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageAssistantType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageAssistantType($value)'; } 
- }
 /// The status of the item. Has no effect on the conversation.
 @immutable final class RealtimeConversationItemMessageAssistantStatus {const RealtimeConversationItemMessageAssistantStatus._(this.value);
 
@@ -100,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RealtimeConversationItemMessageAssistant.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageAssistant(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemMessageAssistantObject.fromJson(json['object'] as String) : null,
-  type: RealtimeConversationItemMessageAssistantType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   status: json['status'] != null ? RealtimeConversationItemMessageAssistantStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageAssistantRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageAssistantContent.fromJson(e as Map<String, dynamic>)).toList(),
@@ -113,7 +91,7 @@ final String? id;
 final RealtimeConversationItemMessageAssistantObject? object;
 
 /// The type of the item. Always `message`.
-final RealtimeConversationItemMessageAssistantType type;
+final String type;
 
 /// The status of the item. Has no effect on the conversation.
 final RealtimeConversationItemMessageAssistantStatus? status;
@@ -127,15 +105,15 @@ final List<RealtimeConversationItemMessageAssistantContent> content;
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
-  'type': type.toJson(),
+  'type': type,
   if (status != null) 'status': status?.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageAssistant copyWith({String Function()? id, RealtimeConversationItemMessageAssistantObject Function()? object, RealtimeConversationItemMessageAssistantType? type, RealtimeConversationItemMessageAssistantStatus Function()? status, RealtimeConversationItemMessageAssistantRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessageAssistant(
+RealtimeConversationItemMessageAssistant copyWith({String Function()? id, RealtimeConversationItemMessageAssistantObject Function()? object, String? type, RealtimeConversationItemMessageAssistantStatus Function()? status, RealtimeConversationItemMessageAssistantRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessageAssistant(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

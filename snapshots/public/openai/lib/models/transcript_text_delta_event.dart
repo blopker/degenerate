@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_delta_event_logprobs.dart';/// The type of the event. Always `transcript.text.delta`.
-/// 
-@immutable final class TranscriptTextDeltaEventType {const TranscriptTextDeltaEventType._(this.value);
-
-factory TranscriptTextDeltaEventType.fromJson(String json) { return switch (json) {
-  'transcript.text.delta' => transcriptTextDelta,
-  _ => TranscriptTextDeltaEventType._(json),
-}; }
-
-static const TranscriptTextDeltaEventType transcriptTextDelta = TranscriptTextDeltaEventType._('transcript.text.delta');
-
-static const List<TranscriptTextDeltaEventType> values = [transcriptTextDelta];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptTextDeltaEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptTextDeltaEventType($value)'; } 
- }
-/// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_delta_event_logprobs.dart';/// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
 @immutable final class TranscriptTextDeltaEvent {const TranscriptTextDeltaEvent({required this.type, required this.delta, this.logprobs, this.segmentId, });
 
 factory TranscriptTextDeltaEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextDeltaEvent(
-  type: TranscriptTextDeltaEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   delta: json['delta'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => TranscriptTextDeltaEventLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
   segmentId: json['segment_id'] as String?,
@@ -35,7 +12,7 @@ factory TranscriptTextDeltaEvent.fromJson(Map<String, dynamic> json) { return Tr
 
 /// The type of the event. Always `transcript.text.delta`.
 /// 
-final TranscriptTextDeltaEventType type;
+final String type;
 
 /// The text delta that was additionally transcribed.
 /// 
@@ -50,14 +27,14 @@ final List<TranscriptTextDeltaEventLogprobs>? logprobs;
 final String? segmentId;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'delta': delta,
   if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
   'segment_id': ?segmentId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('delta') && json['delta'] is String; } 
-TranscriptTextDeltaEvent copyWith({TranscriptTextDeltaEventType? type, String? delta, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, String Function()? segmentId, }) { return TranscriptTextDeltaEvent(
+TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, String Function()? segmentId, }) { return TranscriptTextDeltaEvent(
   type: type ?? this.type,
   delta: delta ?? this.delta,
   logprobs: logprobs != null ? logprobs() : this.logprobs,

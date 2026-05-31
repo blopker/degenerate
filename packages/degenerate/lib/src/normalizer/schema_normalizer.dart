@@ -51,7 +51,11 @@ class SchemaNormalizer {
     for (final entry in schemas.entries) {
       final schema = entry.value;
       if (schema is! Map<String, dynamic>) continue;
-      if (schema.containsKey('oneOf') && schema.containsKey('discriminator')) {
+      // A discriminator can sit on either `oneOf` or `anyOf` (the OpenAPI
+      // spec allows both); treat them identically.
+      final hasUnion =
+          schema.containsKey('oneOf') || schema.containsKey('anyOf');
+      if (hasUnion && schema.containsKey('discriminator')) {
         final disc = schema['discriminator'] as Map<String, dynamic>;
         final propName = disc['propertyName'] as String;
         final mapping = disc['mapping'] as Map<String, dynamic>?;
@@ -63,8 +67,8 @@ class SchemaNormalizer {
             }
           }
         } else {
-          final oneOf = schema['oneOf'] as List;
-          for (final variant in oneOf) {
+          final variants = (schema['oneOf'] ?? schema['anyOf']) as List;
+          for (final variant in variants) {
             if (variant is Map<String, dynamic> &&
                 variant.containsKey(r'$ref')) {
               final refName = (variant[r'$ref'] as String).split('/').last;

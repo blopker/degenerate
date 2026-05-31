@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `output_audio_buffer.stopped`.
-@immutable final class RealtimeServerEventOutputAudioBufferStoppedType {const RealtimeServerEventOutputAudioBufferStoppedType._(this.value);
-
-factory RealtimeServerEventOutputAudioBufferStoppedType.fromJson(String json) { return switch (json) {
-  'output_audio_buffer.stopped' => outputAudioBufferStopped,
-  _ => RealtimeServerEventOutputAudioBufferStoppedType._(json),
-}; }
-
-static const RealtimeServerEventOutputAudioBufferStoppedType outputAudioBufferStopped = RealtimeServerEventOutputAudioBufferStoppedType._('output_audio_buffer.stopped');
-
-static const List<RealtimeServerEventOutputAudioBufferStoppedType> values = [outputAudioBufferStopped];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventOutputAudioBufferStoppedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventOutputAudioBufferStoppedType($value)'; } 
- }
-/// **WebRTC/SIP Only:** Emitted when the output audio buffer has been completely drained on the server,
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// **WebRTC/SIP Only:** Emitted when the output audio buffer has been completely drained on the server,
 /// and no more audio is forthcoming. This event is emitted after the full response
 /// data has been sent to the client (`response.done`).
 /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
@@ -31,7 +9,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventOutputAudioBufferStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEventOutputAudioBufferStopped(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventOutputAudioBufferStoppedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   responseId: json['response_id'] as String,
 ); }
 
@@ -39,20 +17,20 @@ factory RealtimeServerEventOutputAudioBufferStopped.fromJson(Map<String, dynamic
 final String eventId;
 
 /// The event type, must be `output_audio_buffer.stopped`.
-final RealtimeServerEventOutputAudioBufferStoppedType type;
+final String type;
 
 /// The unique ID of the response that produced the audio.
 final String responseId;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'response_id': responseId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String; } 
-RealtimeServerEventOutputAudioBufferStopped copyWith({String? eventId, RealtimeServerEventOutputAudioBufferStoppedType? type, String? responseId, }) { return RealtimeServerEventOutputAudioBufferStopped(
+RealtimeServerEventOutputAudioBufferStopped copyWith({String? eventId, String? type, String? responseId, }) { return RealtimeServerEventOutputAudioBufferStopped(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

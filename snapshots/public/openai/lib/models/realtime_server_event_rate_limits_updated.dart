@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_rate_limits_updated_rate_limits.dart';/// The event type, must be `rate_limits.updated`.
-@immutable final class RealtimeServerEventRateLimitsUpdatedType {const RealtimeServerEventRateLimitsUpdatedType._(this.value);
-
-factory RealtimeServerEventRateLimitsUpdatedType.fromJson(String json) { return switch (json) {
-  'rate_limits.updated' => rateLimitsUpdated,
-  _ => RealtimeServerEventRateLimitsUpdatedType._(json),
-}; }
-
-static const RealtimeServerEventRateLimitsUpdatedType rateLimitsUpdated = RealtimeServerEventRateLimitsUpdatedType._('rate_limits.updated');
-
-static const List<RealtimeServerEventRateLimitsUpdatedType> values = [rateLimitsUpdated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventRateLimitsUpdatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventRateLimitsUpdatedType($value)'; } 
- }
-/// Emitted at the beginning of a Response to indicate the updated rate limits.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_rate_limits_updated_rate_limits.dart';/// Emitted at the beginning of a Response to indicate the updated rate limits.
 /// When a Response is created some tokens will be "reserved" for the output
 /// tokens, the rate limits shown here reflect that reservation, which is then
 /// adjusted accordingly once the Response is completed.
@@ -31,7 +9,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdated(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventRateLimitsUpdatedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   rateLimits: (json['rate_limits'] as List<dynamic>).map((e) => RealtimeServerEventRateLimitsUpdatedRateLimits.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -39,20 +17,20 @@ factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json)
 final String eventId;
 
 /// The event type, must be `rate_limits.updated`.
-final RealtimeServerEventRateLimitsUpdatedType type;
+final String type;
 
 /// List of rate limit information.
 final List<RealtimeServerEventRateLimitsUpdatedRateLimits> rateLimits;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'rate_limits': rateLimits.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('rate_limits'); } 
-RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeServerEventRateLimitsUpdatedType? type, List<RealtimeServerEventRateLimitsUpdatedRateLimits>? rateLimits, }) { return RealtimeServerEventRateLimitsUpdated(
+RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, List<RealtimeServerEventRateLimitsUpdatedRateLimits>? rateLimits, }) { return RealtimeServerEventRateLimitsUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,

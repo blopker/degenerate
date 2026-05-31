@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_session_created_session.dart';import 'realtime_session_create_request_ga.dart';import 'realtime_transcription_session_create_request_ga.dart';/// The event type, must be `session.created`.
-@immutable final class RealtimeServerEventSessionCreatedType {const RealtimeServerEventSessionCreatedType._(this.value);
-
-factory RealtimeServerEventSessionCreatedType.fromJson(String json) { return switch (json) {
-  'session.created' => sessionCreated,
-  _ => RealtimeServerEventSessionCreatedType._(json),
-}; }
-
-static const RealtimeServerEventSessionCreatedType sessionCreated = RealtimeServerEventSessionCreatedType._('session.created');
-
-static const List<RealtimeServerEventSessionCreatedType> values = [sessionCreated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventSessionCreatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventSessionCreatedType($value)'; } 
- }
-/// Returned when a Session is created. Emitted automatically when a new
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_session_created_session.dart';import 'realtime_session_create_request_ga.dart';import 'realtime_transcription_session_create_request_ga.dart';/// Returned when a Session is created. Emitted automatically when a new
 /// connection is established as the first server event. This event will contain
 /// the default Session configuration.
 /// 
@@ -30,7 +8,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventSessionCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventSessionCreated(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventSessionCreatedType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   session: OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),),
 ); }
 
@@ -38,20 +16,20 @@ factory RealtimeServerEventSessionCreated.fromJson(Map<String, dynamic> json) { 
 final String eventId;
 
 /// The event type, must be `session.created`.
-final RealtimeServerEventSessionCreatedType type;
+final String type;
 
 /// The session configuration.
 final RealtimeServerEventSessionCreatedSession session;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'session': session.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('session'); } 
-RealtimeServerEventSessionCreated copyWith({String? eventId, RealtimeServerEventSessionCreatedType? type, RealtimeServerEventSessionCreatedSession? session, }) { return RealtimeServerEventSessionCreated(
+RealtimeServerEventSessionCreated copyWith({String? eventId, String? type, RealtimeServerEventSessionCreatedSession? session, }) { return RealtimeServerEventSessionCreated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,

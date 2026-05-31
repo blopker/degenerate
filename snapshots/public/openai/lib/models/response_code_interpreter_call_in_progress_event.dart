@@ -1,39 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.code_interpreter_call.in_progress`.
-@immutable final class ResponseCodeInterpreterCallInProgressEventType {const ResponseCodeInterpreterCallInProgressEventType._(this.value);
-
-factory ResponseCodeInterpreterCallInProgressEventType.fromJson(String json) { return switch (json) {
-  'response.code_interpreter_call.in_progress' => responseCodeInterpreterCallInProgress,
-  _ => ResponseCodeInterpreterCallInProgressEventType._(json),
-}; }
-
-static const ResponseCodeInterpreterCallInProgressEventType responseCodeInterpreterCallInProgress = ResponseCodeInterpreterCallInProgressEventType._('response.code_interpreter_call.in_progress');
-
-static const List<ResponseCodeInterpreterCallInProgressEventType> values = [responseCodeInterpreterCallInProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseCodeInterpreterCallInProgressEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseCodeInterpreterCallInProgressEventType($value)'; } 
- }
-/// Emitted when a code interpreter call is in progress.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a code interpreter call is in progress.
 @immutable final class ResponseCodeInterpreterCallInProgressEvent {const ResponseCodeInterpreterCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseCodeInterpreterCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallInProgressEvent(
-  type: ResponseCodeInterpreterCallInProgressEventType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
 /// The type of the event. Always `response.code_interpreter_call.in_progress`.
-final ResponseCodeInterpreterCallInProgressEventType type;
+final String type;
 
 /// The index of the output item in the response for which the code interpreter call is in progress.
 final int outputIndex;
@@ -45,16 +23,16 @@ final String itemId;
 final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseCodeInterpreterCallInProgressEvent copyWith({ResponseCodeInterpreterCallInProgressEventType? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseCodeInterpreterCallInProgressEvent(
+ResponseCodeInterpreterCallInProgressEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseCodeInterpreterCallInProgressEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,

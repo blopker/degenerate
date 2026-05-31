@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_error_error.dart';/// The event type, must be `error`.
-@immutable final class RealtimeServerEventErrorType {const RealtimeServerEventErrorType._(this.value);
-
-factory RealtimeServerEventErrorType.fromJson(String json) { return switch (json) {
-  'error' => error,
-  _ => RealtimeServerEventErrorType._(json),
-}; }
-
-static const RealtimeServerEventErrorType error = RealtimeServerEventErrorType._('error');
-
-static const List<RealtimeServerEventErrorType> values = [error];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventErrorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventErrorType($value)'; } 
- }
-/// Returned when an error occurs, which could be a client problem or a server
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_error_error.dart';/// Returned when an error occurs, which could be a client problem or a server
 /// problem. Most errors are recoverable and the session will stay open, we
 /// recommend to implementors to monitor and log error messages by default.
 /// 
@@ -30,7 +8,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeServerEventError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventError(
   eventId: json['event_id'] as String,
-  type: RealtimeServerEventErrorType.fromJson(json['type'] as String),
+  type: json['type'] as String,
   error: RealtimeServerEventErrorError.fromJson(json['error'] as Map<String, dynamic>),
 ); }
 
@@ -38,20 +16,20 @@ factory RealtimeServerEventError.fromJson(Map<String, dynamic> json) { return Re
 final String eventId;
 
 /// The event type, must be `error`.
-final RealtimeServerEventErrorType type;
+final String type;
 
 /// Details of the error.
 final RealtimeServerEventErrorError error;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
-  'type': type.toJson(),
+  'type': type,
   'error': error.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
-      json.containsKey('type') &&
+      json.containsKey('type') && json['type'] is String &&
       json.containsKey('error'); } 
-RealtimeServerEventError copyWith({String? eventId, RealtimeServerEventErrorType? type, RealtimeServerEventErrorError? error, }) { return RealtimeServerEventError(
+RealtimeServerEventError copyWith({String? eventId, String? type, RealtimeServerEventErrorError? error, }) { return RealtimeServerEventError(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   error: error ?? this.error,

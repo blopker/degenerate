@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_custom_managed_component.dart';import 'zaraz_managed_component.dart';import 'zaraz_secret_variable.dart';import 'zaraz_string_variable.dart';import 'zaraz_worker_variable.dart';import 'zaraz_zaraz_config_body_analytics.dart';import 'zaraz_zaraz_config_body_consent.dart';import 'zaraz_zaraz_config_body_settings.dart';import 'zaraz_zaraz_config_body_tools_value.dart';import 'zaraz_zaraz_config_body_triggers_value.dart';import 'zaraz_zaraz_config_body_variables_value.dart';@immutable final class ZarazZarazConfigBody {const ZarazZarazConfigBody({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, required this.tools, this.analytics, this.consent, this.historyChange, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_custom_managed_component.dart';import 'zaraz_managed_component.dart';import 'zaraz_zaraz_config_body_analytics.dart';import 'zaraz_zaraz_config_body_consent.dart';import 'zaraz_zaraz_config_body_settings.dart';import 'zaraz_zaraz_config_body_tools_value.dart';import 'zaraz_zaraz_config_body_triggers_value.dart';import 'zaraz_zaraz_config_body_variables_value.dart';@immutable final class ZarazZarazConfigBody {const ZarazZarazConfigBody({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, required this.tools, this.analytics, this.consent, this.historyChange, });
 
 factory ZarazZarazConfigBody.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBody(
   analytics: json['analytics'] != null ? ZarazZarazConfigBodyAnalytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
@@ -10,7 +10,7 @@ factory ZarazZarazConfigBody.fromJson(Map<String, dynamic> json) { return ZarazZ
   historyChange: json['historyChange'] as bool?,
   settings: ZarazZarazConfigBodySettings.fromJson(json['settings'] as Map<String, dynamic>),
   triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBodyTriggersValue.fromJson(v as Map<String, dynamic>))),
-  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf3.parse(v, fromA: (v) => ZarazStringVariable.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazSecretVariable.fromJson(v as Map<String, dynamic>), fromC: (v) => ZarazWorkerVariable.fromJson(v as Map<String, dynamic>),))),
+  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBodyVariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
   tools: (json['tools'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ZarazManagedComponent.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazCustomManagedComponent.fromJson(v as Map<String, dynamic>),))),
 ); }
