@@ -98,7 +98,12 @@ void _writeOneOf(StringBuffer buf, int n) {
   for (var i = 0; i < n; i++) {
     buf.writeln('    try {');
     buf.writeln('      return OneOf$n._(from${letters[i]}(json!));');
-    buf.writeln('    } on Exception catch (e) {');
+    // Catch Object, not just Exception: a variant's fromJson discriminates by
+    // casting (e.g. `json['x'] as String`), which throws a TypeError — an
+    // Error, not an Exception — when the payload is a different variant. An
+    // `on Exception` guard lets that escape and aborts the whole parse instead
+    // of falling through to the next variant.
+    buf.writeln('    } on Object catch (e) {');
     buf.writeln("      errors.add(('\$${letters[i]}', e));");
     buf.writeln('    }');
   }

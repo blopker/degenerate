@@ -48,12 +48,12 @@ final class OneOf2<A, B> {
     final errors = <(String, Object)>[];
     try {
       return OneOf2._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf2._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -115,17 +115,17 @@ final class OneOf3<A, B, C> {
     final errors = <(String, Object)>[];
     try {
       return OneOf3._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf3._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf3._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -193,22 +193,22 @@ final class OneOf4<A, B, C, D> {
     final errors = <(String, Object)>[];
     try {
       return OneOf4._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf4._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf4._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
       return OneOf4._(fromD(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$D', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -281,27 +281,27 @@ final class OneOf5<A, B, C, D, E> {
     final errors = <(String, Object)>[];
     try {
       return OneOf5._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf5._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf5._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
       return OneOf5._(fromD(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
       return OneOf5._(fromE(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$E', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -379,32 +379,32 @@ final class OneOf6<A, B, C, D, E, F> {
     final errors = <(String, Object)>[];
     try {
       return OneOf6._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf6._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf6._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
       return OneOf6._(fromD(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
       return OneOf6._(fromE(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
       return OneOf6._(fromF(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$F', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -487,37 +487,37 @@ final class OneOf7<A, B, C, D, E, F, G> {
     final errors = <(String, Object)>[];
     try {
       return OneOf7._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf7._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf7._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
       return OneOf7._(fromD(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
       return OneOf7._(fromE(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
       return OneOf7._(fromF(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$F', e));
     }
     try {
       return OneOf7._(fromG(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$G', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -607,42 +607,42 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     final errors = <(String, Object)>[];
     try {
       return OneOf8._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf8._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf8._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
       return OneOf8._(fromD(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
       return OneOf8._(fromE(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
       return OneOf8._(fromF(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$F', e));
     }
     try {
       return OneOf8._(fromG(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$G', e));
     }
     try {
       return OneOf8._(fromH(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$H', e));
     }
     throw ArgumentError(_oneOfError(json, errors));
@@ -737,47 +737,47 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     final errors = <(String, Object)>[];
     try {
       return OneOf9._(fromA(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
       return OneOf9._(fromB(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
       return OneOf9._(fromC(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
       return OneOf9._(fromD(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
       return OneOf9._(fromE(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
       return OneOf9._(fromF(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$F', e));
     }
     try {
       return OneOf9._(fromG(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$G', e));
     }
     try {
       return OneOf9._(fromH(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$H', e));
     }
     try {
       return OneOf9._(fromI(json!));
-    } on Exception catch (e) {
+    } on Object catch (e) {
       errors.add(('$I', e));
     }
     throw ArgumentError(_oneOfError(json, errors));

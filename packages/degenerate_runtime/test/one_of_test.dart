@@ -118,6 +118,20 @@ void main() {
       expect(v.value, 42);
     });
 
+    test('falls through when a variant throws an Error (not Exception)', () {
+      // _Business.fromJson discriminates by casting a non-null field that is
+      // absent on an _Individual payload, throwing a TypeError (an Error, not
+      // an Exception). parse() must still fall through to the matching variant.
+      final individualJson = {'kind': 'INDIVIDUAL', 'firstName': 'Jane'};
+      final v = OneOf2.parse<_Business, _Individual>(
+        individualJson,
+        fromA: _Business.fromJson,
+        fromB: _Individual.fromJson,
+      );
+      expect(v.value, isA<_Individual>());
+      expect((v.value! as _Individual).firstName, 'Jane');
+    });
+
     test('parse throws ArgumentError listing all variants when none match', () {
       expect(
         () => OneOf2.parse<_Cat, _Dog>(
@@ -159,4 +173,28 @@ class _Dog {
   }
 
   final String name;
+}
+
+class _Business {
+  _Business(this.legalName);
+
+  // Casts a field that is absent on an _Individual payload, throwing a
+  // TypeError (Error, not Exception) — mirrors a real discriminated variant.
+  factory _Business.fromJson(Object? json) {
+    final map = json! as Map<String, dynamic>;
+    return _Business(map['legalName'] as String);
+  }
+
+  final String legalName;
+}
+
+class _Individual {
+  _Individual(this.firstName);
+
+  factory _Individual.fromJson(Object? json) {
+    final map = json! as Map<String, dynamic>;
+    return _Individual(map['firstName'] as String);
+  }
+
+  final String firstName;
 }
