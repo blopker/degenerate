@@ -194,7 +194,9 @@ void main() {
 
     test('deduplicates consecutive repeated segments', () {
       expect(
-        operationMethodName('totem_spaces_mobile_api_mobile_api_get_recommended_spaces'),
+        operationMethodName(
+          'totem_spaces_mobile_api_mobile_api_get_recommended_spaces',
+        ),
         'totemSpacesMobileApiGetRecommendedSpaces',
       );
     });
@@ -282,12 +284,15 @@ void main() {
       expect(sanitizeFieldName('class'), r'$class');
     });
 
-    test('escapes Object member names that conflict with generated methods', () {
-      expect(sanitizeFieldName('toString'), r'$toString');
-      expect(sanitizeFieldName('hashCode'), r'$hashCode');
-      expect(sanitizeFieldName('runtimeType'), r'$runtimeType');
-      expect(sanitizeFieldName('noSuchMethod'), r'$noSuchMethod');
-    });
+    test(
+      'escapes Object member names that conflict with generated methods',
+      () {
+        expect(sanitizeFieldName('toString'), r'$toString');
+        expect(sanitizeFieldName('hashCode'), r'$hashCode');
+        expect(sanitizeFieldName('runtimeType'), r'$runtimeType');
+        expect(sanitizeFieldName('noSuchMethod'), r'$noSuchMethod');
+      },
+    );
   });
 
   group('dartReservedWords', () {

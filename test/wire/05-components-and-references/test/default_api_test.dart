@@ -60,7 +60,9 @@ void main() {
         equals('application/json'),
       );
 
-      final sentBody = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      final sentBody =
+          jsonDecode(client.lastRequest!.body! as String)
+              as Map<String, dynamic>;
       expect(sentBody['id'], equals('u1'));
       expect(sentBody['email'], equals('a@b.com'));
     });

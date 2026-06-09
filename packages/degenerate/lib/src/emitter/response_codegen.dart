@@ -109,7 +109,10 @@ ResponseDeserialize buildResponseDeserialize(
 
 /// Render a [ResponseDeserialize] as statements ending in a `return` (or a
 /// bare `throw` for unsupported schemas).
-String renderDeserializeStatements(ResponseDeserialize d, {String indent = ''}) {
+String renderDeserializeStatements(
+  ResponseDeserialize d, {
+  String indent = '',
+}) {
   final ret = d.expression.startsWith('throw ')
       ? '${d.expression};'
       : 'return ${d.expression};';

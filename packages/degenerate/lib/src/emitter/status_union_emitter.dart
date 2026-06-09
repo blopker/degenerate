@@ -58,7 +58,9 @@ class StatusUnionEmitter {
     }
     for (final v in union.variants.where((v) => _isRange(v.key))) {
       final low = int.parse(v.key[0]) * 100;
-      cases.add('  >= $low && <= ${low + 99} => ${v.className}.parse(response),');
+      cases.add(
+        '  >= $low && <= ${low + 99} => ${v.className}.parse(response),',
+      );
     }
     final fallback = _defaultVariant != null
         ? '  _ => ${_defaultVariant!.className}.parse(response),'
@@ -211,8 +213,10 @@ class StatusUnionEmitter {
         ..modifier = ClassModifier.final$
         ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..docs.add('/// A response with a status code not declared in the '
-            'OpenAPI spec.')
+        ..docs.add(
+          '/// A response with a status code not declared in the '
+          'OpenAPI spec.',
+        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -264,8 +268,7 @@ class StatusUnionEmitter {
 
   String _variantDoc(IrStatusVariant variant) => switch (variant.key) {
     'default' => '/// The `default` response.',
-    _ when _isRange(variant.key) =>
-      '/// The `${variant.key}` range response.',
+    _ when _isRange(variant.key) => '/// The `${variant.key}` range response.',
     _ => '/// The `${variant.key}` response.',
   };
 

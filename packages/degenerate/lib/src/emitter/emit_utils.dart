@@ -209,9 +209,10 @@ String? _simpleCastFromJson(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) => _isIdentityMapValue(values)
-        ? '$accessor as Map<String, dynamic>?'
-        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) =>
+      _isIdentityMapValue(values)
+          ? '$accessor as Map<String, dynamic>?'
+          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     _ => null,
   };
 }
@@ -251,9 +252,10 @@ String _buildFromJsonNonNull(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) => _isIdentityMapValue(values)
-        ? '$accessor as Map<String, dynamic>'
-        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) =>
+      _isIdentityMapValue(values)
+          ? '$accessor as Map<String, dynamic>'
+          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(
         variants,
@@ -309,7 +311,11 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     }(),
     IrMap(:final values) => () {
       if (!mapValueNeedsToJson(values)) return accessor;
-      final valueExpr = buildToJsonCode(values, 'v', nullable: values.isNullable);
+      final valueExpr = buildToJsonCode(
+        values,
+        'v',
+        nullable: values.isNullable,
+      );
       // Skip identity map transform.
       if (valueExpr == 'v') return accessor;
       return '$accessor$q.map((k, v) => MapEntry(k, $valueExpr))';
@@ -485,7 +491,8 @@ String dartStringLiteral(String value) {
   final hasDoubleQuote = value.contains('"');
   final hasDollar = value.contains(r'$');
   final hasBackslash = value.contains(r'\');
-  final hasControl = value.contains('\n') ||
+  final hasControl =
+      value.contains('\n') ||
       value.contains('\r') ||
       value.contains('\t') ||
       _unicodeControlChars.hasMatch(value);

@@ -744,7 +744,9 @@ class ApiEmitter {
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join(',')");
     } else {
-      buf.writeln("queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');");
+      buf.writeln(
+        "queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');",
+      );
     }
   }
 

@@ -456,8 +456,7 @@ class OperationLowerer {
             // pascal-casing; `4XX` would be mangled to `4Xx`.
             final suffix = switch (statusCode) {
               'default' => 'Default',
-              _ when statusCode.endsWith('XX') =>
-                statusCode.toLowerCase(),
+              _ when statusCode.endsWith('XX') => statusCode.toLowerCase(),
               _ => statusCode,
             };
             nameHint = '${_currentOpPascal!}Response$suffix';

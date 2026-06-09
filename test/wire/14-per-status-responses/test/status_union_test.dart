@@ -24,9 +24,7 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final success = (result as ApiSuccess<PostAuthSuccess, PostAuthError>)
-          .data;
-      final variant = success as PostAuthSuccess200;
+      final variant = result.dataOrThrow as PostAuthSuccess200;
       expect(variant.data.accessToken, 'jwt');
     });
 
@@ -35,9 +33,7 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final success = (result as ApiSuccess<PostAuthSuccess, PostAuthError>)
-          .data;
-      final variant = success as PostAuthSuccess201;
+      final variant = result.dataOrThrow as PostAuthSuccess201;
       expect(variant.data.userId, 42);
     });
 
@@ -46,9 +42,7 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final success = (result as ApiSuccess<PostAuthSuccess, PostAuthError>)
-          .data;
-      final variant = success as PostAuthSuccessDefault;
+      final variant = result.dataOrThrow as PostAuthSuccessDefault;
       expect(variant.data.defaultErrorMessage, 'odd');
     });
 
@@ -85,10 +79,8 @@ void main() {
       client.nextResponse = json(201, {'userId': 7});
 
       final result = await api.postAuth(body: body);
-      final success = (result as ApiSuccess<PostAuthSuccess, PostAuthError>)
-          .data;
 
-      final label = switch (success) {
+      final label = switch (result.dataOrThrow) {
         PostAuthSuccess200(:final data) => 'token:${data.accessToken}',
         PostAuthSuccess201(:final data) => 'user:${data.userId}',
         PostAuthSuccessDefault() => 'default',
@@ -103,9 +95,7 @@ void main() {
 
       final result = await api.deleteItem(id: 'x');
 
-      final success = (result as ApiSuccess<DeleteItemSuccess, DeleteItemError>)
-          .data;
-      final variant = success as DeleteItemSuccess200;
+      final variant = result.dataOrThrow as DeleteItemSuccess200;
       expect(variant.data.deleted, isTrue);
     });
 
@@ -114,9 +104,7 @@ void main() {
 
       final result = await api.deleteItem(id: 'x');
 
-      final success = (result as ApiSuccess<DeleteItemSuccess, DeleteItemError>)
-          .data;
-      expect(success, isA<DeleteItemSuccess204>());
+      expect(result.dataOrThrow, isA<DeleteItemSuccess204>());
     });
 
     test('404 matches the 4XX range variant', () async {
@@ -139,26 +127,26 @@ void main() {
       expect(variant.data.trace, 'boom');
     });
 
-    test(r'status outside all ranges becomes $Unknown with the raw body',
-        () async {
-      client.nextResponse = ApiResponse(statusCode: 302, body: 'moved');
+    test(
+      r'status outside all ranges becomes $Unknown with the raw body',
+      () async {
+        client.nextResponse = ApiResponse(statusCode: 302, body: 'moved');
 
-      final result = await api.deleteItem(id: 'x');
+        final result = await api.deleteItem(id: 'x');
 
-      final error = result as ApiError<DeleteItemSuccess, DeleteItemError>;
-      final variant = error.error! as DeleteItemError$Unknown;
-      expect(variant.statusCode, 302);
-      expect(variant.body, 'moved');
-    });
+        final error = result as ApiError<DeleteItemSuccess, DeleteItemError>;
+        final variant = error.error! as DeleteItemError$Unknown;
+        expect(variant.statusCode, 302);
+        expect(variant.body, 'moved');
+      },
+    );
 
     test(r'undeclared 2xx becomes the success $Unknown variant', () async {
       client.nextResponse = ApiResponse(statusCode: 250, body: 'surprise');
 
       final result = await api.deleteItem(id: 'x');
 
-      final success = (result as ApiSuccess<DeleteItemSuccess, DeleteItemError>)
-          .data;
-      final variant = success as DeleteItemSuccess$Unknown;
+      final variant = result.dataOrThrow as DeleteItemSuccess$Unknown;
       expect(variant.statusCode, 250);
       expect(variant.body, 'surprise');
     });
@@ -170,10 +158,7 @@ void main() {
 
       final result = await api.getSingle();
 
-      final success =
-          (result as ApiSuccess<GetSingleResponse, GetSingleResponseDefault>)
-              .data;
-      expect(success.value, 'v');
+      expect(result.dataOrThrow.value, 'v');
     });
   });
 }
