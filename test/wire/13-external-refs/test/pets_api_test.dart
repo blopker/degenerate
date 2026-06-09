@@ -55,7 +55,9 @@ void main() {
       expect(client.lastRequest!.method, equals('POST'));
       expect(client.lastRequest!.path, equals('/pets'));
 
-      final body = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      final body =
+          jsonDecode(client.lastRequest!.body! as String)
+              as Map<String, dynamic>;
       expect(body['id'], equals(1));
       expect(body['name'], equals('Buddy'));
     });
@@ -69,7 +71,9 @@ void main() {
         ),
       );
 
-      final body = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      final body =
+          jsonDecode(client.lastRequest!.body! as String)
+              as Map<String, dynamic>;
       final owner = body['owner'] as Map<String, dynamic>;
       expect(owner['name'], equals('Alice'));
       expect(owner['email'], equals('alice@example.com'));
@@ -90,7 +94,9 @@ void main() {
 
       await api.createPet(body: pet);
 
-      final body = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      final body =
+          jsonDecode(client.lastRequest!.body! as String)
+              as Map<String, dynamic>;
       final owner = body['owner'] as Map<String, dynamic>;
       final pets = owner['pets'] as List<dynamic>;
       expect(pets, hasLength(2));

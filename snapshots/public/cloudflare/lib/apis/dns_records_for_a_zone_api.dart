@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_records_direction.dart';import '../models/dns_records_dns_record_patch.dart';import '../models/dns_records_dns_record_post.dart';import '../models/dns_records_dns_request_batch_object.dart';import '../models/dns_records_dns_request_review_scan_object.dart';import '../models/dns_records_dns_response_batch_object.dart';import '../models/dns_records_dns_response_import_scan_result.dart';import '../models/dns_records_dns_response_review_scan_object.dart';import '../models/dns_records_dns_response_zone_usage_result.dart';import '../models/dns_records_for_a_zone_delete_dns_record_response_result.dart';import '../models/dns_records_for_a_zone_import_dns_records_request.dart';import '../models/dns_records_identifier.dart';import '../models/dns_records_match.dart';import '../models/dns_records_order.dart';import '../models/dns_records_page.dart';import '../models/dns_records_per_page.dart';import '../models/dns_records_proxied.dart';import '../models/dns_records_search.dart';import '../models/dns_records_tag_match.dart';import '../models/dns_records_type.dart';import '../models/response_common25.dart';/// DnsRecordsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_records_direction.dart';import '../models/dns_records_dns_record_patch.dart';import '../models/dns_records_dns_record_post.dart';import '../models/dns_records_dns_request_batch_object.dart';import '../models/dns_records_dns_request_review_scan_object.dart';import '../models/dns_records_dns_response_batch_object.dart';import '../models/dns_records_dns_response_collection.dart';import '../models/dns_records_dns_response_import_scan.dart';import '../models/dns_records_dns_response_import_scan_result.dart';import '../models/dns_records_dns_response_review_scan_object.dart';import '../models/dns_records_dns_response_single.dart';import '../models/dns_records_dns_response_zone_usage.dart';import '../models/dns_records_dns_response_zone_usage_result.dart';import '../models/dns_records_for_a_zone_delete_dns_record_response_result.dart';import '../models/dns_records_for_a_zone_import_dns_records_request.dart';import '../models/dns_records_identifier.dart';import '../models/dns_records_match.dart';import '../models/dns_records_order.dart';import '../models/dns_records_page.dart';import '../models/dns_records_per_page.dart';import '../models/dns_records_proxied.dart';import '../models/dns_records_search.dart';import '../models/dns_records_tag_match.dart';import '../models/dns_records_type.dart';import '../models/response_common25.dart';import '../models/response_common_failure30.dart';/// DnsRecordsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnsRecordsForAZoneApi with ApiExecutor {const DnsRecordsForAZoneApi(
 /// List, search, sort, and filter a zones' DNS records.
 ///
 /// `GET /zones/{zone_id}/dns_records`
-Future<ApiResult<List<Map<String, dynamic>>?, Never>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? contentEndswith, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? name, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, DnsRecordsDirection? direction, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, String? tag, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Map<String, dynamic>>?, DnsRecordsDnsResponseCollection>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? contentEndswith, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? name, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, DnsRecordsDirection? direction, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, String? tag, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -132,6 +132,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
   },
+  onError: (response) {
+    return DnsRecordsDnsResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create DNS Record
@@ -146,7 +149,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records`
-Future<ApiResult<Map<String, dynamic>?, Never>> dnsRecordsForAZoneCreateDnsRecord({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DnsRecordsDnsResponseSingle>> dnsRecordsForAZoneCreateDnsRecord({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -163,12 +166,15 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: (response) {
+    return DnsRecordsDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// DNS Record Details
 ///
 /// `GET /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> dnsRecordsForAZoneDnsRecordDetails({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DnsRecordsDnsResponseSingle>> dnsRecordsForAZoneDnsRecordDetails({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -182,6 +188,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
+  },
+  onError: (response) {
+    return DnsRecordsDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -197,7 +206,7 @@ return execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> dnsRecordsForAZoneUpdateDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DnsRecordsDnsResponseSingle>> dnsRecordsForAZoneUpdateDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPost body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -214,6 +223,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: (response) {
+    return DnsRecordsDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update DNS Record
@@ -228,7 +240,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> dnsRecordsForAZonePatchDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DnsRecordsDnsResponseSingle>> dnsRecordsForAZonePatchDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRecordPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -245,12 +257,15 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: (response) {
+    return DnsRecordsDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete DNS Record
 ///
 /// `DELETE /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponseResult?, Never>> dnsRecordsForAZoneDeleteDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponseResult?, ResponseCommonFailure30>> dnsRecordsForAZoneDeleteDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -264,6 +279,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -282,7 +300,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records/batch`
-Future<ApiResult<DnsRecordsDnsResponseBatchObject?, Never>> dnsRecordsForAZoneBatchDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestBatchObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsDnsResponseBatchObject?, ResponseCommonFailure30>> dnsRecordsForAZoneBatchDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestBatchObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -299,6 +317,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsRecordsDnsResponseBatchObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Export DNS Records
@@ -308,7 +329,7 @@ return execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `GET /zones/{zone_id}/dns_records/export`
-Future<ApiResult<String, Never>> dnsRecordsForAZoneExportDnsRecords({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, ResponseCommonFailure30>> dnsRecordsForAZoneExportDnsRecords({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -322,6 +343,9 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
+  onError: (response) {
+    return ResponseCommonFailure30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Import DNS Records
@@ -331,7 +355,7 @@ return execute(
 /// See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ "Import and export records") for more information.
 ///
 /// `POST /zones/{zone_id}/dns_records/import`
-Future<ApiResult<DnsRecordsDnsResponseImportScanResult?, Never>> dnsRecordsForAZoneImportDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsDnsResponseImportScanResult?, DnsRecordsDnsResponseImportScan>> dnsRecordsForAZoneImportDnsRecords({required DnsRecordsIdentifier zoneId, required DnsRecordsForAZoneImportDnsRecordsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -351,6 +375,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsRecordsDnsResponseImportScanResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsRecordsDnsResponseImportScan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// List Scanned DNS Records
@@ -359,7 +386,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/dns_records/scan/review`
-Future<ApiResult<List<Map<String, dynamic>>?, Never>> dnsRecordsForAZoneReviewDnsScan({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>?, ResponseCommonFailure30>> dnsRecordsForAZoneReviewDnsScan({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -374,6 +401,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Review Scanned DNS Records
@@ -382,7 +412,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/dns_records/scan/review`
-Future<ApiResult<DnsRecordsDnsResponseReviewScanObject?, Never>> dnsRecordsForAZoneApplyDnsScanResults({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestReviewScanObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsDnsResponseReviewScanObject?, ResponseCommonFailure30>> dnsRecordsForAZoneApplyDnsScanResults({required DnsRecordsIdentifier zoneId, required DnsRecordsDnsRequestReviewScanObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -399,6 +429,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsRecordsDnsResponseReviewScanObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Trigger DNS Record Scan
@@ -406,7 +439,7 @@ return execute(
 /// Initiates an asynchronous scan for common DNS records on your domain. Note that this **does not** automatically add records to your zone. The scan runs in the background, and results can be reviewed later using the `/scan/review` endpoints. Useful if you haven't updated your nameservers yet.
 ///
 /// `POST /zones/{zone_id}/dns_records/scan/trigger`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneTriggerDnsScan({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon25, ResponseCommon25>> dnsRecordsForAZoneTriggerDnsScan({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -420,6 +453,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon25.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommon25.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get DNS Record Usage
@@ -427,7 +463,7 @@ return execute(
 /// Get the current DNS record usage for a zone, including the number of records and the quota limit.
 ///
 /// `GET /zones/{zone_id}/dns_records/usage`
-Future<ApiResult<DnsRecordsDnsResponseZoneUsageResult?, Never>> dnsRecordsForAZoneGetUsage({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsDnsResponseZoneUsageResult?, DnsRecordsDnsResponseZoneUsage>> dnsRecordsForAZoneGetUsage({required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -441,6 +477,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsRecordsDnsResponseZoneUsageResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return DnsRecordsDnsResponseZoneUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

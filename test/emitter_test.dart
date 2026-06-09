@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/status_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
@@ -18,8 +19,7 @@ import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:test/test.dart';
 
 /// Full pipeline helper: parse YAML -> normalize -> lower types -> lower operations.
-({List<IrType> types, List<IrApi> apis, IrMapper irMapper})
-_lowerPetstore() {
+({List<IrType> types, List<IrApi> apis, IrMapper irMapper}) _lowerPetstore() {
   final yamlContent = File(
     'test/fixtures/public/petstore-v3.0-oai.yaml',
   ).readAsStringSync();
@@ -178,12 +178,18 @@ void main() {
         const model = IrObject(
           'Config',
           [
-            IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
-                isRequired: true),
+            IrField(
+              'id',
+              'id',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
           ],
           requiredFields: ['id'],
-          additionalProperties:
-              IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
+          additionalProperties: IrPrimitive(
+            PrimitiveKind.dynamic_,
+            isNullable: true,
+          ),
         );
         final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
@@ -216,7 +222,10 @@ void main() {
       });
 
       test('does not return unconditional true', () {
-        expect(source, isNot(contains('canParse(Map<String, dynamic> json) { return true;')));
+        expect(
+          source,
+          isNot(contains('canParse(Map<String, dynamic> json) { return true;')),
+        );
       });
 
       test('checks for known property keys', () {
@@ -265,8 +274,10 @@ void main() {
           IrField(
             'data',
             'data',
-            IrPrimitive(PrimitiveKind.dynamic_,
-                description: 'One of: String, int'),
+            IrPrimitive(
+              PrimitiveKind.dynamic_,
+              description: 'One of: String, int',
+            ),
             description: 'One of: String, int',
           ),
           IrField('payload', 'payload', IrPrimitive(PrimitiveKind.dynamic_)),
@@ -390,8 +401,11 @@ void main() {
     });
 
     test('emits integer enum with int value field', () {
-      const irEnum = IrEnum('Priority', ['0', '1', '2'],
-          valueKind: PrimitiveKind.int);
+      const irEnum = IrEnum('Priority', [
+        '0',
+        '1',
+        '2',
+      ], valueKind: PrimitiveKind.int);
       final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
@@ -404,8 +418,11 @@ void main() {
     });
 
     test('integer enum is valid Dart', () {
-      const irEnum = IrEnum('Priority', ['0', '-1', '42'],
-          valueKind: PrimitiveKind.int);
+      const irEnum = IrEnum('Priority', [
+        '0',
+        '-1',
+        '42',
+      ], valueKind: PrimitiveKind.int);
       final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
@@ -501,7 +518,7 @@ void main() {
       expect(
         source,
         contains(
-          r"'conversation.item.create' => "
+          "'conversation.item.create' => "
           r'RealtimeClientEvent$ConversationItemCreate.fromJson(json)',
         ),
       );
@@ -516,8 +533,10 @@ void main() {
       // Non-colliding ref variants keep the derived name.
       expect(
         source,
-        contains('final class RealtimeClientEventResponseCreate '
-            'extends RealtimeClientEvent'),
+        contains(
+          'final class RealtimeClientEventResponseCreate '
+          'extends RealtimeClientEvent',
+        ),
       );
     });
 
@@ -547,6 +566,262 @@ void main() {
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  // ─── API methods with status unions (issue #5) ────────────────
+
+  group('ApiEmitter - status unions', () {
+    test('union-bearing operations return ApiResult of the unions and '
+        'delegate parsing', () {
+      const success = IrStatusUnion('PostAuthSuccess', [
+        IrStatusVariant(
+          '200',
+          'PostAuthSuccess200',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse'),
+        ),
+        IrStatusVariant(
+          '201',
+          'PostAuthSuccess201',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse201'),
+        ),
+      ]);
+      const error = IrStatusUnion('PostAuthError', [
+        IrStatusVariant(
+          '401',
+          'PostAuthError401',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse401'),
+        ),
+        IrStatusVariant(
+          'default',
+          'PostAuthErrorDefault',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponseDefault'),
+        ),
+      ]);
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'postAuth',
+          'postAuth',
+          HttpMethod.post,
+          '/auth',
+          responses: {200: IrResponse(), 201: IrResponse()},
+          successUnion: success,
+          errorUnion: error,
+        ),
+      ]);
+
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains('Future<ApiResult<PostAuthSuccess, PostAuthError>>'),
+      );
+      expect(source, contains('return PostAuthSuccess.parse(response);'));
+      expect(source, contains('return PostAuthError.parse(response);'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  // ─── Range responses on the plain (non-union) path ────────────
+
+  group('ApiEmitter - single-type range responses', () {
+    const fooResponse = IrResponse(
+      content: {
+        'application/json': IrMediaType(IrTypeRef('Foo')),
+      },
+    );
+    const errResponse = IrResponse(
+      content: {
+        'application/json': IrMediaType(IrTypeRef('Err')),
+      },
+    );
+
+    test('a lone 2XX range response becomes the plain success type', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getThing',
+          'getThing',
+          HttpMethod.get,
+          '/thing',
+          rangeResponses: {'2XX': fooResponse},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains('Future<ApiResult<Foo, Never>>'));
+      expect(source, contains('Foo.fromJson'));
+    });
+
+    test('a lone 4XX range response becomes the plain error type', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getThing',
+          'getThing',
+          HttpMethod.get,
+          '/thing',
+          responses: {200: fooResponse},
+          rangeResponses: {'4XX': errResponse},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains('Future<ApiResult<Foo, Err>>'));
+      expect(source, contains('onError: (response)'));
+      expect(source, contains('Err.fromJson'));
+    });
+  });
+
+  // ─── Status union emission (issue #5) ────────────────────────
+
+  group('StatusUnionEmitter', () {
+    const authResponse = IrObject(
+      'PostAuthResponse',
+      [
+        IrField(
+          'accessToken',
+          'accessToken',
+          IrPrimitive(PrimitiveKind.string),
+          isRequired: true,
+        ),
+      ],
+      requiredFields: ['accessToken'],
+    );
+
+    test(
+      'emits sealed class with per-status variants and default fallback',
+      () {
+        const union = IrStatusUnion('PostAuthSuccess', [
+          IrStatusVariant(
+            '200',
+            'PostAuthSuccess200',
+            mediaType: 'application/json',
+            schema: IrTypeRef('PostAuthResponse'),
+          ),
+          IrStatusVariant(
+            '201',
+            'PostAuthSuccess201',
+            mediaType: 'application/json',
+            schema: IrTypeRef('PostAuthResponse201'),
+          ),
+          IrStatusVariant(
+            '2XX',
+            'PostAuthSuccess2xx',
+            mediaType: 'application/json',
+            schema: IrTypeRef('PostAuthResponse2xx'),
+          ),
+          IrStatusVariant(
+            'default',
+            'PostAuthSuccessDefault',
+            mediaType: 'application/json',
+            schema: IrTypeRef('PostAuthResponseDefault'),
+          ),
+        ]);
+
+        final specs = const StatusUnionEmitter(union).emit();
+        final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+        expect(source, contains('sealed class PostAuthSuccess'));
+        expect(
+          source,
+          contains('factory PostAuthSuccess.parse(ApiResponse response)'),
+        );
+        // Exact codes dispatch first, then ranges, then the default fallback.
+        expect(source, contains('200 => PostAuthSuccess200.parse(response)'));
+        expect(source, contains('201 => PostAuthSuccess201.parse(response)'));
+        expect(
+          source,
+          contains('>= 200 && <= 299 => PostAuthSuccess2xx.parse(response)'),
+        );
+        expect(source, contains('_ => PostAuthSuccessDefault.parse(response)'));
+        // Exact codes must dispatch before the covering range, and the range
+        // before the fallback — switch expression cases match in order.
+        expect(
+          source.indexOf('200 => '),
+          lessThan(source.indexOf('>= 200 && <= 299')),
+        );
+        expect(
+          source.indexOf('>= 200 && <= 299'),
+          lessThan(source.indexOf('_ => PostAuthSuccessDefault')),
+        );
+        expect(
+          source,
+          contains('final class PostAuthSuccess200 extends PostAuthSuccess'),
+        );
+        expect(
+          source,
+          contains(
+            'PostAuthSuccess200(PostAuthResponse.fromJson('
+            'jsonDecode(response.body) as Map<String, dynamic>))',
+          ),
+        );
+        expect(source, contains('final PostAuthResponse data;'));
+        // With a default variant there is no $Unknown fallback.
+        expect(source, isNot(contains(r'$Unknown')));
+        expect(() => _formatOrFail(source), returnsNormally);
+      },
+    );
+
+    test(r'emits $Unknown fallback when no default variant exists', () {
+      const union = IrStatusUnion('PostAuthError', [
+        IrStatusVariant(
+          '401',
+          'PostAuthError401',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse401'),
+        ),
+      ]);
+
+      final specs = const StatusUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('401 => PostAuthError401.parse(response)'));
+      expect(
+        source,
+        contains(
+          r'_ => PostAuthError$Unknown(response.statusCode, '
+          'response.body)',
+        ),
+      );
+      expect(
+        source,
+        contains(r'final class PostAuthError$Unknown extends PostAuthError'),
+      );
+      expect(source, contains('final int statusCode;'));
+      expect(source, contains('final String body;'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits payload-free variants for no-content responses', () {
+      const union = IrStatusUnion('DeletePetSuccess', [
+        IrStatusVariant(
+          '200',
+          'DeletePetSuccess200',
+          mediaType: 'application/json',
+          schema: authResponse,
+        ),
+        IrStatusVariant('204', 'DeletePetSuccess204'),
+      ]);
+
+      final specs = const StatusUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('204 => DeletePetSuccess204.parse('));
+      expect(
+        source,
+        contains('final class DeletePetSuccess204 extends DeletePetSuccess'),
+      );
+      expect(source, contains('const DeletePetSuccess204();'));
       expect(() => _formatOrFail(source), returnsNormally);
     });
   });
@@ -774,8 +1049,7 @@ void main() {
         packageName: 'petstore_client',
         defaultServerUrl: 'https://petstore.swagger.io/v1',
       );
-      final sdkFile =
-          filesWithServer['client/petstore_client_api.dart']!;
+      final sdkFile = filesWithServer['client/petstore_client_api.dart']!;
       expect(
         sdkFile,
         contains(
@@ -889,7 +1163,10 @@ void main() {
         Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
-      expect(source, contains(r"path: '/items/${Uri.encodeComponent(color.value)}'"));
+      expect(
+        source,
+        contains(r"path: '/items/${Uri.encodeComponent(color.value)}'"),
+      );
       expect(source, isNot(contains('color.toString()')));
     });
 
@@ -918,7 +1195,9 @@ void main() {
 
       expect(
         source,
-        contains(r"path: '/items/${Uri.encodeComponent(code.value.toString())}'"),
+        contains(
+          r"path: '/items/${Uri.encodeComponent(code.value.toString())}'",
+        ),
       );
     });
 
@@ -1034,7 +1313,9 @@ void main() {
 
       expect(
         source,
-        contains("queryParameters['filter[code]'] = filter.code.value.toString();"),
+        contains(
+          "queryParameters['filter[code]'] = filter.code.value.toString();",
+        ),
       );
       expect(source, contains('value: item.value.toString()'));
     });
@@ -1073,7 +1354,9 @@ void main() {
 
       expect(
         source,
-        contains("queryParameters['filter[id]'] = filter.id.toJson().toString();"),
+        contains(
+          "queryParameters['filter[id]'] = filter.id.toJson().toString();",
+        ),
       );
     });
 
@@ -1925,8 +2208,10 @@ void main() {
       // Should NOT throw UnsupportedError
       expect(source, isNot(contains('UnsupportedError')));
       // Content-Type set via headers
-      expect(source,
-          contains("'Content-Type'] = 'application/x-www-form-urlencoded'"));
+      expect(
+        source,
+        contains("'Content-Type'] = 'application/x-www-form-urlencoded'"),
+      );
       // Should build key=value pairs joined by &
       expect(source, contains('grant_type'));
       expect(source, contains('Uri.encodeQueryComponent'));
@@ -2301,7 +2586,9 @@ void main() {
       final securityFile = files['client/test_client_security.dart']!;
       expect(
         securityFile,
-        contains('static final getMeRequirements = <ApiSecurityRequirement>[];'),
+        contains(
+          'static final getMeRequirements = <ApiSecurityRequirement>[];',
+        ),
       );
     });
 
@@ -2534,7 +2821,9 @@ void main() {
   group('preferredContent', () {
     test('prefers JSON over other types', () {
       final result = preferredContent({
-        'application/octet-stream': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/octet-stream': const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
         'application/json': const IrMediaType(IrTypeRef('Item')),
       });
       expect(result!.$1, equals('application/json'));
@@ -2544,9 +2833,13 @@ void main() {
       final result = preferredContent({
         'application/octet-stream': const IrMediaType(IrTypeRef('Value')),
         'multipart/form-data': const IrMediaType(
-          IrObject('Request', [
-            IrField('value', 'value', IrTypeRef('Value'), isRequired: true),
-          ], requiredFields: ['value']),
+          IrObject(
+            'Request',
+            [
+              IrField('value', 'value', IrTypeRef('Value'), isRequired: true),
+            ],
+            requiredFields: ['value'],
+          ),
         ),
       });
       expect(result!.$1, equals('multipart/form-data'));
@@ -2554,7 +2847,9 @@ void main() {
 
     test('prefers form-urlencoded over octet-stream', () {
       final result = preferredContent({
-        'application/octet-stream': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/octet-stream': const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
         'application/x-www-form-urlencoded': const IrMediaType(
           IrObject('Request', []),
         ),
@@ -2573,7 +2868,9 @@ void main() {
     test('prefers octet-stream over unknown types', () {
       final result = preferredContent({
         'image/png': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        'application/octet-stream': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/octet-stream': const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
       });
       expect(result!.$1, equals('application/octet-stream'));
     });
@@ -2607,7 +2904,10 @@ void main() {
                 'value': {
                   'anyOf': [
                     {'type': 'integer'},
-                    {'type': 'string', 'enum': ['']},
+                    {
+                      'type': 'string',
+                      'enum': [''],
+                    },
                   ],
                 },
               },
@@ -2630,14 +2930,17 @@ void main() {
           IrExtensionType(:final name) => name,
           _ => null,
         };
-        if (name != null && !allTypes.any((t) => switch (t) {
-          IrObject(:final name) => name == entry.key,
-          IrEnum(:final name) => name == entry.key,
-          IrUntaggedUnion(:final name) => name == entry.key,
-          IrAnyOf(:final name) => name == entry.key,
-          IrExtensionType(:final name) => name == entry.key,
-          _ => false,
-        })) {
+        if (name != null &&
+            !allTypes.any(
+              (t) => switch (t) {
+                IrObject(:final name) => name == entry.key,
+                IrEnum(:final name) => name == entry.key,
+                IrUntaggedUnion(:final name) => name == entry.key,
+                IrAnyOf(:final name) => name == entry.key,
+                IrExtensionType(:final name) => name == entry.key,
+                _ => false,
+              },
+            )) {
           allTypes.add(entry.value);
         }
       }
@@ -2651,11 +2954,16 @@ void main() {
 
     test('enum variant is inlined into typedef file, not separate', () {
       // The enum variant should NOT have its own file
-      final variantFiles = files.keys.where(
-        (k) => k.contains('variant') && k.endsWith('.dart'),
-      ).toList();
-      expect(variantFiles, isEmpty,
-          reason: 'Enum variant should be inlined, not a separate file');
+      final variantFiles = files.keys
+          .where(
+            (k) => k.contains('variant') && k.endsWith('.dart'),
+          )
+          .toList();
+      expect(
+        variantFiles,
+        isEmpty,
+        reason: 'Enum variant should be inlined, not a separate file',
+      );
 
       // The typedef file should contain both the enum class and the typedef
       final typedefFile = files['models/container_value.dart'];
@@ -2685,10 +2993,20 @@ void main() {
       // InnerOneOf should NOT be imported by Parent because it's inlined.
       final types = <IrType>[
         const IrObject('A', [
-          IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
+          IrField(
+            'id',
+            'id',
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
         ]),
         const IrObject('B', [
-          IrField('name', 'name', IrPrimitive(PrimitiveKind.string), isRequired: true),
+          IrField(
+            'name',
+            'name',
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
         ]),
         const IrUntaggedUnion('InnerOneOf', [
           IrTypeRef('A'),
@@ -2758,44 +3076,47 @@ void main() {
     });
   });
 
-  group('FileEmitter does not import dart:convert for model with non-OneOf bytes ref', () {
-    late Map<String, String> files;
+  group(
+    'FileEmitter does not import dart:convert for model with non-OneOf bytes ref',
+    () {
+      late Map<String, String> files;
 
-    setUpAll(() {
-      // Create a sealed class (non-OneOf-eligible, 10 variants) that has bytes.
-      // Parent model should NOT import dart:convert because it just calls .fromJson().
-      final variants = <IrType>[
-        const IrPrimitive(PrimitiveKind.string),
-        const IrPrimitive(PrimitiveKind.int),
-        const IrPrimitive(PrimitiveKind.double),
-        const IrPrimitive(PrimitiveKind.bool),
-        const IrPrimitive(PrimitiveKind.bytes),
-        const IrPrimitive(PrimitiveKind.string),
-        const IrPrimitive(PrimitiveKind.int),
-        const IrPrimitive(PrimitiveKind.double),
-        const IrPrimitive(PrimitiveKind.bool),
-        const IrPrimitive(PrimitiveKind.num),
-      ];
-      final types = <IrType>[
-        IrAnyOf('BigResult', variants),
-        const IrObject('ParentModel', [
-          IrField('result', 'result', IrTypeRef('BigResult')),
-        ]),
-      ];
+      setUpAll(() {
+        // Create a sealed class (non-OneOf-eligible, 10 variants) that has bytes.
+        // Parent model should NOT import dart:convert because it just calls .fromJson().
+        final variants = <IrType>[
+          const IrPrimitive(PrimitiveKind.string),
+          const IrPrimitive(PrimitiveKind.int),
+          const IrPrimitive(PrimitiveKind.double),
+          const IrPrimitive(PrimitiveKind.bool),
+          const IrPrimitive(PrimitiveKind.bytes),
+          const IrPrimitive(PrimitiveKind.string),
+          const IrPrimitive(PrimitiveKind.int),
+          const IrPrimitive(PrimitiveKind.double),
+          const IrPrimitive(PrimitiveKind.bool),
+          const IrPrimitive(PrimitiveKind.num),
+        ];
+        final types = <IrType>[
+          IrAnyOf('BigResult', variants),
+          const IrObject('ParentModel', [
+            IrField('result', 'result', IrTypeRef('BigResult')),
+          ]),
+        ];
 
-      files = FileEmitter().emitAll(
-        types: types,
-        apis: [],
-        packageName: 'big_result_test',
-      );
-    });
+        files = FileEmitter().emitAll(
+          types: types,
+          apis: [],
+          packageName: 'big_result_test',
+        );
+      });
 
-    test('parent model does not import dart:convert', () {
-      final file = files['models/parent_model.dart']!;
-      // The parent just calls BigResult.fromJson() - no direct base64 usage
-      expect(file, isNot(contains("import 'dart:convert'")));
-    });
-  });
+      test('parent model does not import dart:convert', () {
+        final file = files['models/parent_model.dart']!;
+        // The parent just calls BigResult.fromJson() - no direct base64 usage
+        expect(file, isNot(contains("import 'dart:convert'")));
+      });
+    },
+  );
 
   group('ApiEmitter early throw does not emit unused variables', () {
     late Map<String, String> files;
@@ -2803,7 +3124,12 @@ void main() {
     setUpAll(() {
       final types = <IrType>[
         const IrObject('SomeResponse', [
-          IrField('ok', 'ok', IrPrimitive(PrimitiveKind.bool), isRequired: true),
+          IrField(
+            'ok',
+            'ok',
+            IrPrimitive(PrimitiveKind.bool),
+            isRequired: true,
+          ),
         ]),
       ];
 
@@ -2867,7 +3193,12 @@ void main() {
 
     setUpAll(() {
       const bodyType = IrObject('CreateRequest', [
-        IrField('name', 'Name', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField(
+          'name',
+          'Name',
+          IrPrimitive(PrimitiveKind.string),
+          isRequired: true,
+        ),
         IrField('tag', 'Tag', IrPrimitive(PrimitiveKind.string)),
       ]);
       final types = <IrType>[bodyType];
@@ -2984,8 +3315,7 @@ void main() {
         ],
         packageName: 'pub_petstore_v3_0_oai',
       );
-      final sdkFile =
-          files['client/pub_petstore_v3_0_oai_api.dart']!;
+      final sdkFile = files['client/pub_petstore_v3_0_oai_api.dart']!;
       // Class name must be a valid Dart identifier (not start with digit without $)
       expect(sdkFile, isNot(contains('class 0')));
       // $0OaiApi is valid: $ prefix makes leading digit ok
@@ -3041,7 +3371,10 @@ void main() {
       expect(source, contains("queryParameters['scope[type]'] = scope.type;"));
       // Optional field must NOT use raw property access after null check
       // (would fail dart analyze: can't promote public property)
-      expect(source, isNot(contains("queryParameters['scope[user]'] = scope.user;")));
+      expect(
+        source,
+        isNot(contains("queryParameters['scope[user]'] = scope.user;")),
+      );
       // Should use case-final pattern for promotion
       expect(source, contains(r'case final user$?'));
     });
@@ -3103,7 +3436,8 @@ void main() {
           'getWithBody',
           HttpMethod.get,
           '/test',
-          requestBody: IrRequestBody({
+          requestBody: IrRequestBody(
+            {
               'application/json': IrMediaType(
                 IrList(IrPrimitive(PrimitiveKind.string)),
               ),
@@ -3149,11 +3483,18 @@ void main() {
   group('ApiEmitter - unwrapFields', () {
     test('unwraps response envelope to result field type', () {
       const envelopeType = IrObject('GetZoneResponse', [
-        IrField('success', 'success', IrPrimitive(PrimitiveKind.bool),
-            isRequired: true),
-        IrField('errors', 'errors',
-            IrList(IrPrimitive(PrimitiveKind.dynamic_)),
-            isRequired: true),
+        IrField(
+          'success',
+          'success',
+          IrPrimitive(PrimitiveKind.bool),
+          isRequired: true,
+        ),
+        IrField(
+          'errors',
+          'errors',
+          IrList(IrPrimitive(PrimitiveKind.dynamic_)),
+          isRequired: true,
+        ),
         IrField('result', 'result', IrTypeRef('Zone')),
       ]);
       const api = IrApi('ZonesApi', [
@@ -3174,13 +3515,19 @@ void main() {
       final typeRegistry = <String, IrType>{
         'GetZoneResponse': envelopeType,
         'Zone': const IrObject('Zone', [
-          IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
-              isRequired: true),
+          IrField(
+            'id',
+            'id',
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
         ]),
       };
-      final specs = ApiEmitter(api,
-              typeRegistry: typeRegistry, unwrapFields: ['result'])
-          .emit();
+      final specs = ApiEmitter(
+        api,
+        typeRegistry: typeRegistry,
+        unwrapFields: ['result'],
+      ).emit();
       final source = emitRaw(
         Library(
           (b) => b

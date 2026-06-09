@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/email.dart';import '../models/gpg_key.dart';import '../models/hovercard.dart';import '../models/key.dart';import '../models/key_simple.dart';import '../models/private_user.dart';import '../models/simple_user.dart';import '../models/social_account.dart';import '../models/ssh_signing_key.dart';import '../models/users_add_email_for_authenticated_user_request.dart';import '../models/users_add_social_account_for_authenticated_user_request.dart';import '../models/users_create_gpg_key_for_authenticated_user_request.dart';import '../models/users_create_public_ssh_key_for_authenticated_user_request.dart';import '../models/users_create_ssh_signing_key_for_authenticated_user_request.dart';import '../models/users_delete_attestations_bulk_request.dart';import '../models/users_delete_email_for_authenticated_user_request.dart';import '../models/users_delete_social_account_for_authenticated_user_request.dart';import '../models/users_get_authenticated_response.dart';import '../models/users_get_by_id_response.dart';import '../models/users_get_by_username_response.dart';import '../models/users_get_context_for_user_subject_type.dart';import '../models/users_list_attestations_bulk_request.dart';import '../models/users_list_attestations_bulk_response.dart';import '../models/users_list_attestations_response.dart';import '../models/users_set_primary_email_visibility_for_authenticated_user_request.dart';import '../models/users_update_authenticated_request.dart';import '../models/validation_error.dart';/// UsersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/email.dart';import '../models/gpg_key.dart';import '../models/hovercard.dart';import '../models/key.dart';import '../models/key_simple.dart';import '../models/private_user.dart';import '../models/simple_user.dart';import '../models/social_account.dart';import '../models/ssh_signing_key.dart';import '../models/users_add_email_for_authenticated_user_error.dart';import '../models/users_add_email_for_authenticated_user_request.dart';import '../models/users_add_social_account_for_authenticated_user_error.dart';import '../models/users_add_social_account_for_authenticated_user_request.dart';import '../models/users_block_error.dart';import '../models/users_check_blocked_error.dart';import '../models/users_check_person_is_followed_by_authenticated_error.dart';import '../models/users_create_gpg_key_for_authenticated_user_error.dart';import '../models/users_create_gpg_key_for_authenticated_user_request.dart';import '../models/users_create_public_ssh_key_for_authenticated_user_error.dart';import '../models/users_create_public_ssh_key_for_authenticated_user_request.dart';import '../models/users_create_ssh_signing_key_for_authenticated_user_error.dart';import '../models/users_create_ssh_signing_key_for_authenticated_user_request.dart';import '../models/users_delete_attestations_bulk_request.dart';import '../models/users_delete_email_for_authenticated_user_error.dart';import '../models/users_delete_email_for_authenticated_user_request.dart';import '../models/users_delete_gpg_key_for_authenticated_user_error.dart';import '../models/users_delete_public_ssh_key_for_authenticated_user_error.dart';import '../models/users_delete_social_account_for_authenticated_user_error.dart';import '../models/users_delete_social_account_for_authenticated_user_request.dart';import '../models/users_delete_ssh_signing_key_for_authenticated_user_error.dart';import '../models/users_follow_error.dart';import '../models/users_get_authenticated_error.dart';import '../models/users_get_authenticated_response.dart';import '../models/users_get_by_id_response.dart';import '../models/users_get_by_username_response.dart';import '../models/users_get_context_for_user_error.dart';import '../models/users_get_context_for_user_subject_type.dart';import '../models/users_get_gpg_key_for_authenticated_user_error.dart';import '../models/users_get_public_ssh_key_for_authenticated_user_error.dart';import '../models/users_get_ssh_signing_key_for_authenticated_user_error.dart';import '../models/users_list_attestations_bulk_request.dart';import '../models/users_list_attestations_bulk_response.dart';import '../models/users_list_attestations_success.dart';import '../models/users_list_blocked_by_authenticated_user_error.dart';import '../models/users_list_emails_for_authenticated_user_error.dart';import '../models/users_list_followed_by_authenticated_user_error.dart';import '../models/users_list_followers_for_authenticated_user_error.dart';import '../models/users_list_gpg_keys_for_authenticated_user_error.dart';import '../models/users_list_public_emails_for_authenticated_user_error.dart';import '../models/users_list_public_ssh_keys_for_authenticated_user_error.dart';import '../models/users_list_social_accounts_for_authenticated_user_error.dart';import '../models/users_list_ssh_signing_keys_for_authenticated_user_error.dart';import '../models/users_set_primary_email_visibility_for_authenticated_user_error.dart';import '../models/users_set_primary_email_visibility_for_authenticated_user_request.dart';import '../models/users_unblock_error.dart';import '../models/users_unfollow_error.dart';import '../models/users_update_authenticated_error.dart';import '../models/users_update_authenticated_request.dart';/// UsersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class UsersApi with ApiExecutor {const UsersApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
 ///
 /// `GET /user`
-Future<ApiResult<UsersGetAuthenticatedResponse, BasicError>> usersGetAuthenticated({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UsersGetAuthenticatedResponse, UsersGetAuthenticatedError>> usersGetAuthenticated({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,7 +28,7 @@ return execute(
     return UsersGetAuthenticatedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersGetAuthenticatedError.parse(response);
   },
 );
  } 
@@ -37,7 +37,7 @@ return execute(
 /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
 ///
 /// `PATCH /user`
-Future<ApiResult<PrivateUser, BasicError>> usersUpdateAuthenticated({UsersUpdateAuthenticatedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PrivateUser, UsersUpdateAuthenticatedError>> usersUpdateAuthenticated({UsersUpdateAuthenticatedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,7 +54,7 @@ return execute(
     return PrivateUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersUpdateAuthenticatedError.parse(response);
   },
 );
  } 
@@ -63,7 +63,7 @@ return execute(
 /// List the users you've blocked on your personal account.
 ///
 /// `GET /user/blocks`
-Future<ApiResult<List<SimpleUser>, BasicError>> usersListBlockedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, UsersListBlockedByAuthenticatedUserError>> usersListBlockedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -90,7 +90,7 @@ return execute(
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListBlockedByAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -99,7 +99,7 @@ return execute(
 /// Returns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.
 ///
 /// `GET /user/blocks/{username}`
-Future<ApiResult<void, BasicError>> usersCheckBlocked({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersCheckBlockedError>> usersCheckBlocked({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,7 +112,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersCheckBlockedError.parse(response);
   },
 );
  } 
@@ -121,7 +121,7 @@ return execute(
 /// Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.
 ///
 /// `PUT /user/blocks/{username}`
-Future<ApiResult<void, BasicError>> usersBlock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersBlockError>> usersBlock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -134,7 +134,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersBlockError.parse(response);
   },
 );
  } 
@@ -143,7 +143,7 @@ return execute(
 /// Unblocks the given user and returns a 204.
 ///
 /// `DELETE /user/blocks/{username}`
-Future<ApiResult<void, BasicError>> usersUnblock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersUnblockError>> usersUnblock({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -156,7 +156,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersUnblockError.parse(response);
   },
 );
  } 
@@ -165,7 +165,7 @@ return execute(
 /// Sets the visibility for your primary email addresses.
 ///
 /// `PATCH /user/email/visibility`
-Future<ApiResult<List<Email>, BasicError>> usersSetPrimaryEmailVisibilityForAuthenticatedUser({required UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Email>, UsersSetPrimaryEmailVisibilityForAuthenticatedUserError>> usersSetPrimaryEmailVisibilityForAuthenticatedUser({required UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,7 +183,7 @@ return execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersSetPrimaryEmailVisibilityForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -195,7 +195,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 ///
 /// `GET /user/emails`
-Future<ApiResult<List<Email>, BasicError>> usersListEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Email>, UsersListEmailsForAuthenticatedUserError>> usersListEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -222,7 +222,7 @@ return execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListEmailsForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -231,7 +231,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `POST /user/emails`
-Future<ApiResult<List<Email>, ValidationError>> usersAddEmailForAuthenticatedUser({UsersAddEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Email>, UsersAddEmailForAuthenticatedUserError>> usersAddEmailForAuthenticatedUser({UsersAddEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -249,7 +249,7 @@ return execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersAddEmailForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -258,7 +258,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `DELETE /user/emails`
-Future<ApiResult<void, BasicError>> usersDeleteEmailForAuthenticatedUser({UsersDeleteEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersDeleteEmailForAuthenticatedUserError>> usersDeleteEmailForAuthenticatedUser({UsersDeleteEmailForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -273,7 +273,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersDeleteEmailForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -282,7 +282,7 @@ return execute(
 /// Lists the people following the authenticated user.
 ///
 /// `GET /user/followers`
-Future<ApiResult<List<SimpleUser>, BasicError>> usersListFollowersForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, UsersListFollowersForAuthenticatedUserError>> usersListFollowersForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -309,7 +309,7 @@ return execute(
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListFollowersForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -318,7 +318,7 @@ return execute(
 /// Lists the people who the authenticated user follows.
 ///
 /// `GET /user/following`
-Future<ApiResult<List<SimpleUser>, BasicError>> usersListFollowedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, UsersListFollowedByAuthenticatedUserError>> usersListFollowedByAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -345,7 +345,7 @@ return execute(
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListFollowedByAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -354,7 +354,7 @@ return execute(
 /// 
 ///
 /// `GET /user/following/{username}`
-Future<ApiResult<void, BasicError>> usersCheckPersonIsFollowedByAuthenticated({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersCheckPersonIsFollowedByAuthenticatedError>> usersCheckPersonIsFollowedByAuthenticated({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -367,7 +367,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersCheckPersonIsFollowedByAuthenticatedError.parse(response);
   },
 );
  } 
@@ -378,7 +378,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 ///
 /// `PUT /user/following/{username}`
-Future<ApiResult<void, BasicError>> usersFollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersFollowError>> usersFollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -391,7 +391,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersFollowError.parse(response);
   },
 );
  } 
@@ -400,7 +400,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 ///
 /// `DELETE /user/following/{username}`
-Future<ApiResult<void, BasicError>> usersUnfollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersUnfollowError>> usersUnfollow({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -413,7 +413,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersUnfollowError.parse(response);
   },
 );
  } 
@@ -424,7 +424,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 ///
 /// `GET /user/gpg_keys`
-Future<ApiResult<List<GpgKey>, BasicError>> usersListGpgKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GpgKey>, UsersListGpgKeysForAuthenticatedUserError>> usersListGpgKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -451,7 +451,7 @@ return execute(
     return json.map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListGpgKeysForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -462,7 +462,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
 ///
 /// `POST /user/gpg_keys`
-Future<ApiResult<GpgKey, ValidationError>> usersCreateGpgKeyForAuthenticatedUser({required UsersCreateGpgKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GpgKey, UsersCreateGpgKeyForAuthenticatedUserError>> usersCreateGpgKeyForAuthenticatedUser({required UsersCreateGpgKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -479,7 +479,7 @@ return execute(
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersCreateGpgKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -490,7 +490,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 ///
 /// `GET /user/gpg_keys/{gpg_key_id}`
-Future<ApiResult<GpgKey, BasicError>> usersGetGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GpgKey, UsersGetGpgKeyForAuthenticatedUserError>> usersGetGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -505,7 +505,7 @@ return execute(
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersGetGpgKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -516,7 +516,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.
 ///
 /// `DELETE /user/gpg_keys/{gpg_key_id}`
-Future<ApiResult<void, BasicError>> usersDeleteGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersDeleteGpgKeyForAuthenticatedUserError>> usersDeleteGpgKeyForAuthenticatedUser({required int gpgKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -529,7 +529,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersDeleteGpgKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -540,7 +540,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
 ///
 /// `GET /user/keys`
-Future<ApiResult<List<Key>, BasicError>> usersListPublicSshKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Key>, UsersListPublicSshKeysForAuthenticatedUserError>> usersListPublicSshKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -567,7 +567,7 @@ return execute(
     return json.map((e) => Key.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListPublicSshKeysForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -578,7 +578,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:public_key` scope to use this endpoint.
 ///
 /// `POST /user/keys`
-Future<ApiResult<Key, ValidationError>> usersCreatePublicSshKeyForAuthenticatedUser({required UsersCreatePublicSshKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Key, UsersCreatePublicSshKeyForAuthenticatedUserError>> usersCreatePublicSshKeyForAuthenticatedUser({required UsersCreatePublicSshKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -595,7 +595,7 @@ return execute(
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersCreatePublicSshKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -606,7 +606,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
 ///
 /// `GET /user/keys/{key_id}`
-Future<ApiResult<Key, BasicError>> usersGetPublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Key, UsersGetPublicSshKeyForAuthenticatedUserError>> usersGetPublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -621,7 +621,7 @@ return execute(
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersGetPublicSshKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -632,7 +632,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:public_key` scope to use this endpoint.
 ///
 /// `DELETE /user/keys/{key_id}`
-Future<ApiResult<void, BasicError>> usersDeletePublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersDeletePublicSshKeyForAuthenticatedUserError>> usersDeletePublicSshKeyForAuthenticatedUser({required int keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -645,7 +645,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersDeletePublicSshKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -658,7 +658,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 ///
 /// `GET /user/public_emails`
-Future<ApiResult<List<Email>, BasicError>> usersListPublicEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Email>, UsersListPublicEmailsForAuthenticatedUserError>> usersListPublicEmailsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -685,7 +685,7 @@ return execute(
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListPublicEmailsForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -694,7 +694,7 @@ return execute(
 /// Lists all of your social accounts.
 ///
 /// `GET /user/social_accounts`
-Future<ApiResult<List<SocialAccount>, BasicError>> usersListSocialAccountsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SocialAccount>, UsersListSocialAccountsForAuthenticatedUserError>> usersListSocialAccountsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -721,7 +721,7 @@ return execute(
     return json.map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListSocialAccountsForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -732,7 +732,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `POST /user/social_accounts`
-Future<ApiResult<List<SocialAccount>, ValidationError>> usersAddSocialAccountForAuthenticatedUser({required UsersAddSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SocialAccount>, UsersAddSocialAccountForAuthenticatedUserError>> usersAddSocialAccountForAuthenticatedUser({required UsersAddSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -750,7 +750,7 @@ return execute(
     return json.map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersAddSocialAccountForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -761,7 +761,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// `DELETE /user/social_accounts`
-Future<ApiResult<void, ValidationError>> usersDeleteSocialAccountForAuthenticatedUser({required UsersDeleteSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersDeleteSocialAccountForAuthenticatedUserError>> usersDeleteSocialAccountForAuthenticatedUser({required UsersDeleteSocialAccountForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -776,7 +776,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersDeleteSocialAccountForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -787,7 +787,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 ///
 /// `GET /user/ssh_signing_keys`
-Future<ApiResult<List<SshSigningKey>, BasicError>> usersListSshSigningKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SshSigningKey>, UsersListSshSigningKeysForAuthenticatedUserError>> usersListSshSigningKeysForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -814,7 +814,7 @@ return execute(
     return json.map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListSshSigningKeysForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -825,7 +825,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.
 ///
 /// `POST /user/ssh_signing_keys`
-Future<ApiResult<SshSigningKey, ValidationError>> usersCreateSshSigningKeyForAuthenticatedUser({required UsersCreateSshSigningKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SshSigningKey, UsersCreateSshSigningKeyForAuthenticatedUserError>> usersCreateSshSigningKeyForAuthenticatedUser({required UsersCreateSshSigningKeyForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -842,7 +842,7 @@ return execute(
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersCreateSshSigningKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -853,7 +853,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 ///
 /// `GET /user/ssh_signing_keys/{ssh_signing_key_id}`
-Future<ApiResult<SshSigningKey, BasicError>> usersGetSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SshSigningKey, UsersGetSshSigningKeyForAuthenticatedUserError>> usersGetSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -868,7 +868,7 @@ return execute(
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersGetSshSigningKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -879,7 +879,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.
 ///
 /// `DELETE /user/ssh_signing_keys/{ssh_signing_key_id}`
-Future<ApiResult<void, BasicError>> usersDeleteSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, UsersDeleteSshSigningKeyForAuthenticatedUserError>> usersDeleteSshSigningKeyForAuthenticatedUser({required int sshSigningKeyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -892,7 +892,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersDeleteSshSigningKeyForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -1109,7 +1109,7 @@ return execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `GET /users/{username}/attestations/{subject_digest}`
-Future<ApiResult<UsersListAttestationsResponse, BasicError>> usersListAttestations({required String username, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UsersListAttestationsSuccess, BasicError>> usersListAttestations({required String username, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1138,7 +1138,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UsersListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersListAttestationsSuccess.parse(response);
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -1272,7 +1272,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /users/{username}/hovercard`
-Future<ApiResult<Hovercard, BasicError>> usersGetContextForUser({required String username, UsersGetContextForUserSubjectType? subjectType, String? subjectId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Hovercard, UsersGetContextForUserError>> usersGetContextForUser({required String username, UsersGetContextForUserSubjectType? subjectType, String? subjectId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subjectType != null) {
   queryParameters['subject_type'] = subjectType.toJson();
@@ -1298,7 +1298,7 @@ return execute(
     return Hovercard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UsersGetContextForUserError.parse(response);
   },
 );
  } 

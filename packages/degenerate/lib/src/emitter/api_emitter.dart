@@ -1,6 +1,7 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/response_codegen.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits an API client class from an [IrApi].
@@ -240,15 +241,19 @@ class ApiEmitter {
       ),
     );
 
-    // Determine return type from success response
+    // Determine return type from success response. Operations with multiple
+    // distinct response body types use their synthesized status unions and
+    // skip envelope unwrapping.
     final successResponseContent = _successResponseContent(op);
-    var returnType = successResponseContent?.$2.schema;
+    var returnType = op.successUnion ?? successResponseContent?.$2.schema;
     // Unwrap response envelope if configured.
-    final unwrapResult = _maybeUnwrapResponseType(returnType);
+    final unwrapResult = op.successUnion == null
+        ? _maybeUnwrapResponseType(returnType)
+        : (type: returnType, unwrappedField: null, fieldIsOptional: false);
     returnType = unwrapResult.type;
     final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
     final errorResponseContent = _errorResponseContent(op);
-    final errorType = errorResponseContent?.$2.schema;
+    final errorType = op.errorUnion ?? errorResponseContent?.$2.schema;
     final needsNullableSuffix =
         unwrapResult.unwrappedField != null &&
         returnType != null &&
@@ -477,7 +482,9 @@ class ApiEmitter {
       buf.writeln('return execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
-      if (unwrappedField != null) {
+      if (returnType is IrStatusUnion) {
+        buf.writeln('    return ${returnType.name}.parse(response);');
+      } else if (unwrappedField != null) {
         // Unwrap: parse full JSON, extract the field, deserialize it.
         final escaped = escapeDartString(unwrappedField);
         buf.writeln(
@@ -499,7 +506,11 @@ class ApiEmitter {
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }
-    if (errorResponseContent != null) {
+    if (op.errorUnion != null) {
+      buf.writeln('  onError: (response) {');
+      buf.writeln('    return ${op.errorUnion!.name}.parse(response);');
+      buf.writeln('  },');
+    } else if (errorResponseContent != null) {
       final errorDeserialize = _buildErrorDeserializeExpr(
         errorResponseContent.$1,
         errorResponseContent.$2.schema,
@@ -514,51 +525,14 @@ class ApiEmitter {
   }
 
   String _buildDeserializeExpr(String mediaType, IrType returnType) {
-    if (isJsonLikeMediaType(mediaType)) {
-      return switch (returnType) {
-        IrList(:final items) =>
-          'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
-        IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v');
-          if (valueExpr == 'v') {
-            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
-          }
-          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
-        }(),
-        IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string => 'return response.body;',
-          PrimitiveKind.int => 'return int.parse(response.body);',
-          PrimitiveKind.double => 'return double.parse(response.body);',
-          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-          PrimitiveKind.bytes =>
-            'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-          _ => 'return jsonDecode(response.body);',
-        },
-        IrExtensionType() =>
-          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-        // All named types with .fromJson(Map)
-        _ => 'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-      };
-    }
-
-    final unsupportedMessage =
-        'Cannot decode $mediaType response into ${irTypeName(returnType)}';
-    return switch (returnType) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ ||
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => "throw UnsupportedError('$unsupportedMessage');",
-      },
-      IrEnum(:final name) => 'return $name.fromJson(response.body);',
-      IrExtensionType() => 'return ${_fromJson(returnType, 'response.body')};',
-      _ =>
-        "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
-    };
+    return renderDeserializeStatements(
+      buildResponseDeserialize(
+        mediaType,
+        returnType,
+        typeRegistry: typeRegistry,
+      ),
+      indent: '    ',
+    );
   }
 
   /// Convert a parameter to its string representation for headers/query values.
@@ -770,7 +744,9 @@ class ApiEmitter {
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join(',')");
     } else {
-      buf.writeln("queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');");
+      buf.writeln(
+        "queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');",
+      );
     }
   }
 
@@ -1179,54 +1155,27 @@ class ApiEmitter {
         if (content != null) return content;
       }
     }
+    // Fall back to error range responses, most specific first.
+    for (final key in const ['4XX', '5XX', '3XX', '1XX']) {
+      final range = op.rangeResponses[key];
+      if (range != null) {
+        final content = preferredContent(range.content);
+        if (content != null) return content;
+      }
+    }
     return null;
   }
 
   String _buildErrorDeserializeExpr(String mediaType, IrType errorType) {
-    if (isJsonLikeMediaType(mediaType)) {
-      return switch (errorType) {
-        IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string => 'return response.body;',
-          PrimitiveKind.int => 'return int.parse(response.body);',
-          PrimitiveKind.double => 'return double.parse(response.body);',
-          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-          PrimitiveKind.bytes =>
-            'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
-          _ => 'return jsonDecode(response.body);',
-        },
-        IrEnum(:final name) =>
-          'return $name.fromJson(jsonDecode(response.body) as String);',
-        IrList(:final items) =>
-          'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
-        IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v');
-          if (valueExpr == 'v') {
-            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
-          }
-          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
-        }(),
-        // All named types with .fromJson(Map)
-        _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
-      };
-    }
-
-    final unsupportedMessage =
-        'Cannot decode $mediaType error into ${irTypeName(errorType)}';
-    return switch (errorType) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ ||
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => 'return null;',
-      },
-      IrEnum(:final name) => 'return $name.fromJson(response.body);',
-      _ =>
-        '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;',
-    };
+    return renderDeserializeStatements(
+      buildResponseDeserialize(
+        mediaType,
+        errorType,
+        isError: true,
+        typeRegistry: typeRegistry,
+      ),
+      indent: '    ',
+    );
   }
 
   (String, IrMediaType)? _successResponseContent(IrOperation op) {
@@ -1252,6 +1201,9 @@ class ApiEmitter {
         if (entry.value.content.isEmpty) return null;
       }
     }
+    // Fall back to a 2XX range response.
+    final range = op.rangeResponses['2XX'];
+    if (range != null) return preferredContent(range.content);
     return null;
   }
 

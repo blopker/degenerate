@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_dataset_request.dart';import '../models/aig_config_create_dataset_response400.dart';import '../models/aig_config_create_dataset_response_result.dart';import '../models/aig_config_delete_dataset_response404.dart';import '../models/aig_config_delete_dataset_response_result.dart';import '../models/aig_config_fetch_dataset_response404.dart';import '../models/aig_config_fetch_dataset_response_result.dart';import '../models/aig_config_list_dataset_response400.dart';import '../models/aig_config_list_dataset_response_result.dart';import '../models/aig_config_update_dataset_request.dart';import '../models/aig_config_update_dataset_response400.dart';import '../models/aig_config_update_dataset_response_result.dart';/// AiGatewayDatasetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_dataset_request.dart';import '../models/aig_config_create_dataset_response400.dart';import '../models/aig_config_create_dataset_response_result.dart';import '../models/aig_config_delete_dataset_response404.dart';import '../models/aig_config_delete_dataset_response_result.dart';import '../models/aig_config_fetch_dataset_response404.dart';import '../models/aig_config_fetch_dataset_response_result.dart';import '../models/aig_config_list_dataset_response400.dart';import '../models/aig_config_list_dataset_response_result.dart';import '../models/aig_config_update_dataset_error.dart';import '../models/aig_config_update_dataset_request.dart';import '../models/aig_config_update_dataset_response_result.dart';/// AiGatewayDatasetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -110,7 +110,7 @@ return execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigUpdateDatasetResponseResult, AigConfigUpdateDatasetResponse400>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateDatasetResponseResult, AigConfigUpdateDatasetError>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -128,7 +128,7 @@ return execute(
     return AigConfigUpdateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigUpdateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AigConfigUpdateDatasetError.parse(response);
   },
 );
  } 

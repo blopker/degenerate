@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/domain_name.dart';import '../models/domain_properties.dart';import '../models/domain_update_properties.dart';import '../models/identifier3.dart';/// RegistrarDomainsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/domain_name.dart';import '../models/domain_properties.dart';import '../models/domain_response_collection.dart';import '../models/domain_response_single.dart';import '../models/domain_update_properties.dart';import '../models/identifier3.dart';/// RegistrarDomainsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RegistrarDomainsApi with ApiExecutor {const RegistrarDomainsApi(this
 /// List domains handled by Registrar.
 ///
 /// `GET /accounts/{account_id}/registrar/domains`
-Future<ApiResult<List<DomainProperties>?, Never>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DomainProperties>?, DomainResponseCollection>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DomainProperties.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return DomainResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get domain
@@ -35,7 +38,7 @@ return execute(
 /// Show individual domain.
 ///
 /// `GET /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>?, Never>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DomainResponseSingle>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -50,6 +53,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: (response) {
+    return DomainResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update domain
@@ -57,7 +63,7 @@ return execute(
 /// Update individual domain.
 ///
 /// `PUT /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>?, Never>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DomainResponseSingle>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,6 +79,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
+  },
+  onError: (response) {
+    return DomainResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

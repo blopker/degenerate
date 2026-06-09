@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/abuse_reports_abuse_report.dart';import '../models/abuse_reports_mitigated_entity_type.dart';import '../models/abuse_reports_mitigation_appeal_request.dart';import '../models/abuse_reports_mitigation_list_item.dart';import '../models/abuse_reports_mitigation_status.dart';import '../models/abuse_reports_mitigation_type.dart';import '../models/abuse_reports_report_status.dart';import '../models/abuse_reports_report_type.dart';import '../models/abuse_reports_submission_report_type.dart';import '../models/abuse_reports_submit_error_response.dart';import '../models/abuse_reports_submit_report_request.dart';import '../models/get_abuse_report_response400.dart';import '../models/list_abuse_reports_response500.dart';import '../models/list_abuse_reports_response_result.dart';import '../models/list_emails_response400.dart';import '../models/list_emails_response_result.dart';import '../models/list_mitigations_response500.dart';import '../models/list_mitigations_response_result.dart';import '../models/list_mitigations_sort.dart';import '../models/request_review_response500.dart';/// TsengAbuseComplaintProcessorOtherApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/abuse_reports_abuse_report.dart';import '../models/abuse_reports_mitigated_entity_type.dart';import '../models/abuse_reports_mitigation_appeal_request.dart';import '../models/abuse_reports_mitigation_list_item.dart';import '../models/abuse_reports_mitigation_status.dart';import '../models/abuse_reports_mitigation_type.dart';import '../models/abuse_reports_report_status.dart';import '../models/abuse_reports_report_type.dart';import '../models/abuse_reports_submission_report_type.dart';import '../models/abuse_reports_submit_error_response.dart';import '../models/abuse_reports_submit_report_request.dart';import '../models/get_abuse_report_error.dart';import '../models/list_abuse_reports_response500.dart';import '../models/list_abuse_reports_response_result.dart';import '../models/list_emails_error.dart';import '../models/list_emails_response_result.dart';import '../models/list_mitigations_response500.dart';import '../models/list_mitigations_response_result.dart';import '../models/list_mitigations_sort.dart';import '../models/request_review_response500.dart';/// TsengAbuseComplaintProcessorOtherApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -70,7 +70,7 @@ return execute(
 /// List emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/emails`
-Future<ApiResult<ListEmailsResponseResult?, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListEmailsResponseResult?, ListEmailsError>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -97,7 +97,7 @@ return execute(
     return json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return ListEmailsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListEmailsError.parse(response);
   },
 );
  } 
@@ -187,7 +187,7 @@ return execute(
 /// Retrieve the details of an abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<AbuseReportsAbuseReport, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AbuseReportsAbuseReport, GetAbuseReportError>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -203,7 +203,7 @@ return execute(
     return AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetAbuseReportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return GetAbuseReportError.parse(response);
   },
 );
  } 

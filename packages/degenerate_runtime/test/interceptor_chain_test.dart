@@ -109,7 +109,9 @@ void main() {
         },
       );
 
-      final response = await chain(const ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
 
       expect(response.statusCode, 418);
       expect(response.body, 'short-circuited');
@@ -130,7 +132,9 @@ void main() {
         },
       );
 
-      final response = await chain(const ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
 
       expect(response.statusCode, 200);
       expect(callCount, 2);

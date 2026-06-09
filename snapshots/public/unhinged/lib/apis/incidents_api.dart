@@ -3,7 +3,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/error_model.dart';
+import '../models/list_incidents_v2draft_error.dart';
 import '../models/n3_incident.dart';
 import '../models/new.dart';
 import '../models/phase.dart';
@@ -22,7 +22,7 @@ final class IncidentsApi with ApiExecutor {
   /// List incidents
   ///
   /// `GET /incidents`
-  Future<ApiResult<True, ErrorModel>> listIncidentsV2draft({
+  Future<ApiResult<True, ListIncidentsV2draftError>> listIncidentsV2draft({
     String? $class,
     String? $filter,
     int? kebabCaseParam,
@@ -75,9 +75,7 @@ final class IncidentsApi with ApiExecutor {
         return True.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorModel.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        return ListIncidentsV2draftError.parse(response);
       },
     );
   }

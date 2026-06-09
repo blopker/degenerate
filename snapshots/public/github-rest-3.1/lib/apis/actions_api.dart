@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_response.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_response.dart';import '../models/actions_artifact_and_log_retention.dart';import '../models/actions_artifact_and_log_retention_response.dart';import '../models/actions_cache_list.dart';import '../models/actions_cache_retention_limit_for_enterprise.dart';import '../models/actions_cache_retention_limit_for_organization.dart';import '../models/actions_cache_retention_limit_for_repository.dart';import '../models/actions_cache_storage_limit_for_enterprise.dart';import '../models/actions_cache_storage_limit_for_organization.dart';import '../models/actions_cache_storage_limit_for_repository.dart';import '../models/actions_cache_usage_by_repository.dart';import '../models/actions_cache_usage_org_enterprise.dart';import '../models/actions_create_environment_variable_request.dart';import '../models/actions_create_hosted_runner_for_org_request.dart';import '../models/actions_create_or_update_environment_secret_request.dart';import '../models/actions_create_or_update_org_secret_request.dart';import '../models/actions_create_or_update_repo_secret_request.dart';import '../models/actions_create_org_variable_request.dart';import '../models/actions_create_repo_variable_request.dart';import '../models/actions_create_self_hosted_runner_group_for_org_request.dart';import '../models/actions_create_workflow_dispatch_request.dart';import '../models/actions_fork_pr_contributor_approval.dart';import '../models/actions_fork_pr_workflows_private_repos.dart';import '../models/actions_fork_pr_workflows_private_repos_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_response.dart';import '../models/actions_generate_runner_jitconfig_for_repo_request.dart';import '../models/actions_generate_runner_jitconfig_for_repo_response.dart';import '../models/actions_get_actions_cache_list_direction.dart';import '../models/actions_get_actions_cache_list_sort.dart';import '../models/actions_get_actions_cache_usage_by_repo_for_org_response.dart';import '../models/actions_get_default_workflow_permissions.dart';import '../models/actions_get_hosted_runners_github_owned_images_for_org_response.dart';import '../models/actions_get_hosted_runners_machine_specs_for_org_response.dart';import '../models/actions_get_hosted_runners_partner_images_for_org_response.dart';import '../models/actions_get_hosted_runners_platforms_for_org_response.dart';import '../models/actions_hosted_runner.dart';import '../models/actions_hosted_runner_custom_image.dart';import '../models/actions_hosted_runner_custom_image_version.dart';import '../models/actions_hosted_runner_limits.dart';import '../models/actions_list_artifacts_for_repo_response.dart';import '../models/actions_list_custom_image_versions_for_org_response.dart';import '../models/actions_list_custom_images_for_org_response.dart';import '../models/actions_list_environment_secrets_response.dart';import '../models/actions_list_environment_variables_response.dart';import '../models/actions_list_github_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_hosted_runners_for_org_response.dart';import '../models/actions_list_jobs_for_workflow_run_attempt_response.dart';import '../models/actions_list_jobs_for_workflow_run_filter.dart';import '../models/actions_list_jobs_for_workflow_run_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_list_org_secrets_response.dart';import '../models/actions_list_org_variables_response.dart';import '../models/actions_list_repo_access_to_self_hosted_runner_group_in_org_response.dart';import '../models/actions_list_repo_organization_secrets_response.dart';import '../models/actions_list_repo_organization_variables_response.dart';import '../models/actions_list_repo_secrets_response.dart';import '../models/actions_list_repo_variables_response.dart';import '../models/actions_list_repo_workflows_response.dart';import '../models/actions_list_selected_repos_for_org_secret_response.dart';import '../models/actions_list_selected_repos_for_org_variable_response.dart';import '../models/actions_list_selected_repositories_enabled_github_actions_organization_response.dart';import '../models/actions_list_selected_repositories_self_hosted_runners_organization_response.dart';import '../models/actions_list_self_hosted_runner_groups_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_repo_response.dart';import '../models/actions_list_self_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_workflow_run_artifacts_direction.dart';import '../models/actions_list_workflow_run_artifacts_response.dart';import '../models/actions_list_workflow_runs_for_repo_response.dart';import '../models/actions_list_workflow_runs_for_repo_status.dart';import '../models/actions_list_workflow_runs_response.dart';import '../models/actions_list_workflow_runs_status.dart';import '../models/actions_organization_permissions.dart';import '../models/actions_public_key.dart';import '../models/actions_re_run_job_for_workflow_run_request.dart';import '../models/actions_re_run_workflow_failed_jobs_request.dart';import '../models/actions_re_run_workflow_request.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_repository_permissions.dart';import '../models/actions_review_custom_gates_for_run_request.dart';import '../models/actions_review_pending_deployments_for_run_request.dart';import '../models/actions_secret.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_set_custom_oidc_sub_claim_for_repo_request.dart';import '../models/actions_set_default_workflow_permissions.dart';import '../models/actions_set_github_actions_permissions_organization_request.dart';import '../models/actions_set_github_actions_permissions_repository_request.dart';import '../models/actions_set_repo_access_to_self_hosted_runner_group_in_org_request.dart';import '../models/actions_set_selected_repos_for_org_secret_request.dart';import '../models/actions_set_selected_repos_for_org_variable_request.dart';import '../models/actions_set_selected_repositories_enabled_github_actions_organization_request.dart';import '../models/actions_set_selected_repositories_self_hosted_runners_organization_request.dart';import '../models/actions_set_self_hosted_runners_in_group_for_org_request.dart';import '../models/actions_set_self_hosted_runners_permissions_organization_request.dart';import '../models/actions_update_environment_variable_request.dart';import '../models/actions_update_hosted_runner_for_org_request.dart';import '../models/actions_update_org_variable_request.dart';import '../models/actions_update_repo_variable_request.dart';import '../models/actions_update_self_hosted_runner_group_for_org_request.dart';import '../models/actions_variable.dart';import '../models/actions_workflow_access_to_repository.dart';import '../models/artifact.dart';import '../models/authentication_token.dart';import '../models/basic_error.dart';import '../models/deployment.dart';import '../models/empty_object.dart';import '../models/environment_approvals.dart';import '../models/job.dart';import '../models/oidc_custom_sub_repo.dart';import '../models/organization_actions_secret.dart';import '../models/organization_actions_variable.dart';import '../models/pending_deployment.dart';import '../models/runner.dart';import '../models/runner_application.dart';import '../models/runner_groups_org.dart';import '../models/selected_actions.dart';import '../models/self_hosted_runners_settings.dart';import '../models/validation_error_simple.dart';import '../models/workflow.dart';import '../models/workflow_dispatch_response.dart';import '../models/workflow_run.dart';import '../models/workflow_run_usage.dart';import '../models/workflow_usage.dart';/// ActionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_error.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_response.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_error.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_response.dart';import '../models/actions_artifact_and_log_retention.dart';import '../models/actions_artifact_and_log_retention_response.dart';import '../models/actions_cache_list.dart';import '../models/actions_cache_retention_limit_for_enterprise.dart';import '../models/actions_cache_retention_limit_for_organization.dart';import '../models/actions_cache_retention_limit_for_repository.dart';import '../models/actions_cache_storage_limit_for_enterprise.dart';import '../models/actions_cache_storage_limit_for_organization.dart';import '../models/actions_cache_storage_limit_for_repository.dart';import '../models/actions_cache_usage_by_repository.dart';import '../models/actions_cache_usage_org_enterprise.dart';import '../models/actions_create_environment_variable_request.dart';import '../models/actions_create_hosted_runner_for_org_request.dart';import '../models/actions_create_or_update_environment_secret_request.dart';import '../models/actions_create_or_update_environment_secret_success.dart';import '../models/actions_create_or_update_org_secret_request.dart';import '../models/actions_create_or_update_org_secret_success.dart';import '../models/actions_create_or_update_repo_secret_request.dart';import '../models/actions_create_or_update_repo_secret_success.dart';import '../models/actions_create_org_variable_request.dart';import '../models/actions_create_repo_variable_request.dart';import '../models/actions_create_self_hosted_runner_group_for_org_request.dart';import '../models/actions_create_workflow_dispatch_request.dart';import '../models/actions_create_workflow_dispatch_success.dart';import '../models/actions_disable_selected_repository_self_hosted_runners_organization_error.dart';import '../models/actions_download_artifact_error.dart';import '../models/actions_enable_selected_repository_self_hosted_runners_organization_error.dart';import '../models/actions_fork_pr_contributor_approval.dart';import '../models/actions_fork_pr_workflows_private_repos.dart';import '../models/actions_fork_pr_workflows_private_repos_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_error.dart';import '../models/actions_generate_runner_jitconfig_for_org_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_response.dart';import '../models/actions_generate_runner_jitconfig_for_repo_error.dart';import '../models/actions_generate_runner_jitconfig_for_repo_request.dart';import '../models/actions_generate_runner_jitconfig_for_repo_response.dart';import '../models/actions_get_actions_cache_list_direction.dart';import '../models/actions_get_actions_cache_list_sort.dart';import '../models/actions_get_actions_cache_usage_by_repo_for_org_response.dart';import '../models/actions_get_default_workflow_permissions.dart';import '../models/actions_get_hosted_runners_github_owned_images_for_org_response.dart';import '../models/actions_get_hosted_runners_machine_specs_for_org_response.dart';import '../models/actions_get_hosted_runners_partner_images_for_org_response.dart';import '../models/actions_get_hosted_runners_platforms_for_org_response.dart';import '../models/actions_hosted_runner.dart';import '../models/actions_hosted_runner_custom_image.dart';import '../models/actions_hosted_runner_custom_image_version.dart';import '../models/actions_hosted_runner_limits.dart';import '../models/actions_list_artifacts_for_repo_response.dart';import '../models/actions_list_custom_image_versions_for_org_response.dart';import '../models/actions_list_custom_images_for_org_response.dart';import '../models/actions_list_environment_secrets_response.dart';import '../models/actions_list_environment_variables_response.dart';import '../models/actions_list_github_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_hosted_runners_for_org_response.dart';import '../models/actions_list_jobs_for_workflow_run_attempt_response.dart';import '../models/actions_list_jobs_for_workflow_run_filter.dart';import '../models/actions_list_jobs_for_workflow_run_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_list_org_secrets_response.dart';import '../models/actions_list_org_variables_response.dart';import '../models/actions_list_repo_access_to_self_hosted_runner_group_in_org_response.dart';import '../models/actions_list_repo_organization_secrets_response.dart';import '../models/actions_list_repo_organization_variables_response.dart';import '../models/actions_list_repo_secrets_response.dart';import '../models/actions_list_repo_variables_response.dart';import '../models/actions_list_repo_workflows_response.dart';import '../models/actions_list_selected_repos_for_org_secret_response.dart';import '../models/actions_list_selected_repos_for_org_variable_response.dart';import '../models/actions_list_selected_repositories_enabled_github_actions_organization_response.dart';import '../models/actions_list_selected_repositories_self_hosted_runners_organization_response.dart';import '../models/actions_list_self_hosted_runner_groups_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_repo_response.dart';import '../models/actions_list_self_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_workflow_run_artifacts_direction.dart';import '../models/actions_list_workflow_run_artifacts_response.dart';import '../models/actions_list_workflow_runs_for_repo_response.dart';import '../models/actions_list_workflow_runs_for_repo_status.dart';import '../models/actions_list_workflow_runs_response.dart';import '../models/actions_list_workflow_runs_status.dart';import '../models/actions_organization_permissions.dart';import '../models/actions_public_key.dart';import '../models/actions_re_run_job_for_workflow_run_request.dart';import '../models/actions_re_run_workflow_failed_jobs_request.dart';import '../models/actions_re_run_workflow_request.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_org_error.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_repo_error.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_repository_permissions.dart';import '../models/actions_review_custom_gates_for_run_request.dart';import '../models/actions_review_pending_deployments_for_run_request.dart';import '../models/actions_secret.dart';import '../models/actions_set_artifact_and_log_retention_settings_organization_error.dart';import '../models/actions_set_artifact_and_log_retention_settings_repository_error.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_error.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_error.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_set_custom_oidc_sub_claim_for_repo_error.dart';import '../models/actions_set_custom_oidc_sub_claim_for_repo_request.dart';import '../models/actions_set_default_workflow_permissions.dart';import '../models/actions_set_fork_pr_contributor_approval_permissions_organization_error.dart';import '../models/actions_set_fork_pr_contributor_approval_permissions_repository_error.dart';import '../models/actions_set_github_actions_permissions_organization_request.dart';import '../models/actions_set_github_actions_permissions_repository_request.dart';import '../models/actions_set_private_repo_fork_pr_workflows_settings_organization_error.dart';import '../models/actions_set_private_repo_fork_pr_workflows_settings_repository_error.dart';import '../models/actions_set_repo_access_to_self_hosted_runner_group_in_org_request.dart';import '../models/actions_set_selected_repos_for_org_secret_request.dart';import '../models/actions_set_selected_repos_for_org_variable_request.dart';import '../models/actions_set_selected_repositories_enabled_github_actions_organization_request.dart';import '../models/actions_set_selected_repositories_self_hosted_runners_organization_error.dart';import '../models/actions_set_selected_repositories_self_hosted_runners_organization_request.dart';import '../models/actions_set_self_hosted_runners_in_group_for_org_request.dart';import '../models/actions_set_self_hosted_runners_permissions_organization_error.dart';import '../models/actions_set_self_hosted_runners_permissions_organization_request.dart';import '../models/actions_update_environment_variable_request.dart';import '../models/actions_update_hosted_runner_for_org_request.dart';import '../models/actions_update_org_variable_request.dart';import '../models/actions_update_repo_variable_request.dart';import '../models/actions_update_self_hosted_runner_group_for_org_request.dart';import '../models/actions_variable.dart';import '../models/actions_workflow_access_to_repository.dart';import '../models/artifact.dart';import '../models/authentication_token.dart';import '../models/basic_error.dart';import '../models/deployment.dart';import '../models/empty_object.dart';import '../models/environment_approvals.dart';import '../models/job.dart';import '../models/oidc_custom_sub_repo.dart';import '../models/organization_actions_secret.dart';import '../models/organization_actions_variable.dart';import '../models/pending_deployment.dart';import '../models/runner.dart';import '../models/runner_application.dart';import '../models/runner_groups_org.dart';import '../models/selected_actions.dart';import '../models/self_hosted_runners_settings.dart';import '../models/validation_error_simple.dart';import '../models/workflow.dart';import '../models/workflow_run.dart';import '../models/workflow_run_usage.dart';import '../models/workflow_usage.dart';/// ActionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -727,7 +727,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetArtifactAndLogRetentionSettingsOrganizationError>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -742,7 +742,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetArtifactAndLogRetentionSettingsOrganizationError.parse(response);
   },
 );
  } 
@@ -779,7 +779,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetForkPrContributorApprovalPermissionsOrganizationError>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -794,7 +794,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetForkPrContributorApprovalPermissionsOrganizationError.parse(response);
   },
 );
  } 
@@ -827,7 +827,7 @@ return execute(
 /// Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
 ///
 /// `PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -842,7 +842,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.parse(response);
   },
 );
  } 
@@ -1025,7 +1025,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners`
-Future<ApiResult<void, BasicError>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetSelfHostedRunnersPermissionsOrganizationError>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1040,7 +1040,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetSelfHostedRunnersPermissionsOrganizationError.parse(response);
   },
 );
  } 
@@ -1088,7 +1088,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories`
-Future<ApiResult<void, BasicError>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1103,7 +1103,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError.parse(response);
   },
 );
  } 
@@ -1114,7 +1114,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsEnableSelectedRepositorySelfHostedRunnersOrganizationError>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1127,7 +1127,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsEnableSelectedRepositorySelfHostedRunnersOrganizationError.parse(response);
   },
 );
  } 
@@ -1138,7 +1138,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1151,7 +1151,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.parse(response);
   },
 );
  } 
@@ -1642,7 +1642,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/generate-jitconfig`
-Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, BasicError>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, ActionsGenerateRunnerJitconfigForOrgError>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1659,7 +1659,7 @@ return execute(
     return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsGenerateRunnerJitconfigForOrgError.parse(response);
   },
 );
  } 
@@ -1813,7 +1813,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, ActionsAddCustomLabelsToSelfHostedRunnerForOrgError>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1830,7 +1830,7 @@ return execute(
     return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.parse(response);
   },
 );
  } 
@@ -1844,7 +1844,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `PUT /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, ActionsSetCustomLabelsForSelfHostedRunnerForOrgError>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1861,7 +1861,7 @@ return execute(
     return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetCustomLabelsForSelfHostedRunnerForOrgError.parse(response);
   },
 );
  } 
@@ -1907,7 +1907,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}`
-Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgError>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1922,7 +1922,7 @@ return execute(
     return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgError.parse(response);
   },
 );
  } 
@@ -2024,7 +2024,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsCreateOrUpdateOrgSecretSuccess, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2038,7 +2038,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsCreateOrUpdateOrgSecretSuccess.parse(response);
   },
 );
  } 
@@ -2520,7 +2520,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}`
-Future<ApiResult<void, BasicError>> actionsDownloadArtifact({required String owner, required String repo, required int artifactId, required String archiveFormat, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsDownloadArtifactError>> actionsDownloadArtifact({required String owner, required String repo, required int artifactId, required String archiveFormat, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2533,7 +2533,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsDownloadArtifactError.parse(response);
   },
 );
  } 
@@ -2880,7 +2880,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/oidc/customization/sub`
-Future<ApiResult<EmptyObject, BasicError>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, ActionsSetCustomOidcSubClaimForRepoError>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2897,7 +2897,7 @@ return execute(
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetCustomOidcSubClaimForRepoError.parse(response);
   },
 );
  } 
@@ -3103,7 +3103,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3118,7 +3118,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetArtifactAndLogRetentionSettingsRepositoryError.parse(response);
   },
 );
  } 
@@ -3155,7 +3155,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetForkPrContributorApprovalPermissionsRepositoryError>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3170,7 +3170,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetForkPrContributorApprovalPermissionsRepositoryError.parse(response);
   },
 );
  } 
@@ -3207,7 +3207,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetPrivateRepoForkPrWorkflowsSettingsRepositoryError>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3222,7 +3222,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetPrivateRepoForkPrWorkflowsSettingsRepositoryError.parse(response);
   },
 );
  } 
@@ -3396,7 +3396,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig`
-Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, BasicError>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, ActionsGenerateRunnerJitconfigForRepoError>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3413,7 +3413,7 @@ return execute(
     return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsGenerateRunnerJitconfigForRepoError.parse(response);
   },
 );
  } 
@@ -3567,7 +3567,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, ActionsAddCustomLabelsToSelfHostedRunnerForRepoError>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3584,7 +3584,7 @@ return execute(
     return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsAddCustomLabelsToSelfHostedRunnerForRepoError.parse(response);
   },
 );
  } 
@@ -3598,7 +3598,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, ActionsSetCustomLabelsForSelfHostedRunnerForRepoError>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3615,7 +3615,7 @@ return execute(
     return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsSetCustomLabelsForSelfHostedRunnerForRepoError.parse(response);
   },
 );
  } 
@@ -3661,7 +3661,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}`
-Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3676,7 +3676,7 @@ return execute(
     return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError.parse(response);
   },
 );
  } 
@@ -4384,7 +4384,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsCreateOrUpdateRepoSecretSuccess, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4398,7 +4398,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsCreateOrUpdateRepoSecretSuccess.parse(response);
   },
 );
  } 
@@ -4653,7 +4653,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`
-Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsCreateWorkflowDispatchSuccess, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4667,7 +4667,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkflowDispatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsCreateWorkflowDispatchSuccess.parse(response);
   },
 );
  } 
@@ -4882,7 +4882,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsCreateOrUpdateEnvironmentSecretSuccess, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4896,7 +4896,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActionsCreateOrUpdateEnvironmentSecretSuccess.parse(response);
   },
 );
  } 

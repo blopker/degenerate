@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_command_id.dart';import '../models/digital_experience_monitoring_commands_devices_response.dart';import '../models/digital_experience_monitoring_get_commands_quota_response.dart';import '../models/digital_experience_monitoring_get_commands_response.dart';import '../models/digital_experience_monitoring_post_commands_response.dart';import '../models/get_commands_status.dart';import '../models/post_commands_request.dart';/// DexRemoteCommandsApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_command_id.dart';import '../models/digital_experience_monitoring_commands_devices_response.dart';import '../models/digital_experience_monitoring_get_commands_quota_response.dart';import '../models/digital_experience_monitoring_get_commands_response.dart';import '../models/digital_experience_monitoring_post_commands_response.dart';import '../models/get_commands_status.dart';import '../models/post_commands_request.dart';import '../models/response_common_failure24.dart';/// DexRemoteCommandsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DexRemoteCommandsApi with ApiExecutor {const DexRemoteCommandsApi(th
 /// Retrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters
 ///
 /// `GET /accounts/{account_id}/dex/commands`
-Future<ApiResult<DigitalExperienceMonitoringGetCommandsResponse?, Never>> getCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, DateTime? from, DateTime? to, String? deviceId, String? userEmail, String? commandType, GetCommandsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringGetCommandsResponse?, ResponseCommonFailure24>> getCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, DateTime? from, DateTime? to, String? deviceId, String? userEmail, String? commandType, GetCommandsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -53,6 +53,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringGetCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure24.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create account commands
@@ -60,7 +63,7 @@ return execute(
 /// Initiate commands for up to 10 devices per account
 ///
 /// `POST /accounts/{account_id}/dex/commands`
-Future<ApiResult<DigitalExperienceMonitoringPostCommandsResponse?, Never>> postCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required PostCommandsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringPostCommandsResponse?, ResponseCommonFailure24>> postCommands({required DigitalExperienceMonitoringAccountIdentifier accountId, required PostCommandsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,6 +80,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringPostCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure24.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Download command output file
@@ -84,7 +90,7 @@ return execute(
 /// Downloads artifacts for an executed command. Bulk downloads are not supported
 ///
 /// `GET /accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}`
-Future<ApiResult<Uint8List, Never>> getCommandsCommandIdDownloadsFilename({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCommandId commandId, required String filename, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Uint8List, ResponseCommonFailure24>> getCommandsCommandIdDownloadsFilename({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringCommandId commandId, required String filename, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,6 +104,9 @@ return execute(
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
+  onError: (response) {
+    return ResponseCommonFailure24.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// List devices eligible for remote captures
@@ -105,7 +114,7 @@ return execute(
 /// List devices with WARP client support for remote captures which have been connected in the last 1 hour.
 ///
 /// `GET /accounts/{account_id}/dex/commands/devices`
-Future<ApiResult<DigitalExperienceMonitoringCommandsDevicesResponse?, Never>> getCommandsEligibleDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringCommandsDevicesResponse?, ResponseCommonFailure24>> getCommandsEligibleDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -130,6 +139,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringCommandsDevicesResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure24.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Returns account commands usage, quota, and reset time
@@ -137,7 +149,7 @@ return execute(
 /// Retrieves the current quota usage and limits for device commands within a specific account, including the time when the quota will reset
 ///
 /// `GET /accounts/{account_id}/dex/commands/quota`
-Future<ApiResult<DigitalExperienceMonitoringGetCommandsQuotaResponse?, Never>> getCommandsQuota({required DigitalExperienceMonitoringAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringGetCommandsQuotaResponse?, ResponseCommonFailure24>> getCommandsQuota({required DigitalExperienceMonitoringAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -151,6 +163,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringGetCommandsQuotaResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure24.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

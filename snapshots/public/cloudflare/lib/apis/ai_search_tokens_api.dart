@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_response400.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response400.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_error.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_error.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -78,7 +78,7 @@ return execute(
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensResponse400>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -94,14 +94,14 @@ return execute(
     return AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchFetchTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AiSearchFetchTokensError.parse(response);
   },
 );
  } 
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensResponse400>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -119,7 +119,7 @@ return execute(
     return AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchUpdateTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AiSearchUpdateTokensError.parse(response);
   },
 );
  } 

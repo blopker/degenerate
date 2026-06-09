@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/images_account_identifier.dart';import '../models/images_signing_key_identifier.dart';import '../models/response_common36_result.dart';/// CloudflareImagesKeysApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/images_account_identifier.dart';import '../models/images_signing_key_identifier.dart';import '../models/response_common36.dart';import '../models/response_common36_result.dart';/// CloudflareImagesKeysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareImagesKeysApi with ApiExecutor {const CloudflareImagesKeys
 /// Lists your signing keys. These can be found on your Cloudflare Images dashboard.
 ///
 /// `GET /accounts/{account_id}/images/v1/keys`
-Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, ResponseCommon36>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
+  onError: (response) {
+    return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create a new Signing Key
@@ -35,7 +38,7 @@ return execute(
 /// Create a new signing key with specified name. Returns all keys available.
 ///
 /// `PUT /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, ResponseCommon36>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -50,6 +53,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
+  onError: (response) {
+    return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Signing Key
@@ -59,7 +65,7 @@ return execute(
 /// 
 ///
 /// `DELETE /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, ResponseCommon36>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -73,6 +79,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
+  },
+  onError: (response) {
+    return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_servers_request.dart';import '../models/create_servers_response400.dart';import '../models/create_servers_response_result.dart';import '../models/delete_servers_response404.dart';import '../models/delete_servers_response_result.dart';import '../models/fetch_servers_response404.dart';import '../models/fetch_servers_response_result.dart';import '../models/list_servers_response400.dart';import '../models/list_servers_response_result.dart';import '../models/sync_server_response404.dart';import '../models/update_servers_request.dart';import '../models/update_servers_response400.dart';import '../models/update_servers_response_result.dart';/// McpPortalServersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_servers_request.dart';import '../models/create_servers_response400.dart';import '../models/create_servers_response_result.dart';import '../models/delete_servers_response404.dart';import '../models/delete_servers_response_result.dart';import '../models/fetch_servers_response404.dart';import '../models/fetch_servers_response_result.dart';import '../models/list_servers_response400.dart';import '../models/list_servers_response_result.dart';import '../models/sync_server_response404.dart';import '../models/update_servers_error.dart';import '../models/update_servers_request.dart';import '../models/update_servers_response_result.dart';/// McpPortalServersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -96,7 +96,7 @@ return execute(
 /// Update a MCP Server
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<UpdateServersResponseResult, UpdateServersResponse400>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdateServersResponseResult, UpdateServersError>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -114,7 +114,7 @@ return execute(
     return UpdateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return UpdateServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UpdateServersError.parse(response);
   },
 );
  } 

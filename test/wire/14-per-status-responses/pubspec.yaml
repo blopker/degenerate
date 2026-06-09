@@ -1,0 +1,14 @@
+name: wire_14_per_status_responses
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  degenerate_runtime:
+  spec_14_per_status_responses:
+    path: ../../../snapshots/specs/14-per-status-responses
+
+dev_dependencies:
+  test: ^1.25.6

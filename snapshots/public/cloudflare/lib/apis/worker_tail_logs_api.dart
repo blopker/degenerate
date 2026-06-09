@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common80.dart';import '../models/workers_identifier.dart';import '../models/workers_script_name.dart';import '../models/workers_tail.dart';/// WorkerTailLogsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common80.dart';import '../models/response_common_failure82.dart';import '../models/workers_identifier.dart';import '../models/workers_script_name.dart';import '../models/workers_tail.dart';/// WorkerTailLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkerTailLogsApi with ApiExecutor {const WorkerTailLogsApi(this.api
 /// Get list of tails currently deployed on a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<WorkersTail, Never>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersTail, ResponseCommonFailure82>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersTail.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Start Tail
@@ -35,7 +38,7 @@ return execute(
 /// Starts a tail that receives logs and exception from a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<WorkersTail, Never>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersTail, ResponseCommonFailure82>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -50,6 +53,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersTail.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Tail
@@ -57,7 +63,7 @@ return execute(
 /// Deletes a tail from a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/tails/{id}`
-Future<ApiResult<ResponseCommon80, Never>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -70,6 +76,9 @@ return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
+import 'package:degenerate/src/lowering/status_union_lowerer.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:test/test.dart';
@@ -633,6 +634,302 @@ void main() {
         () => opLowerer.lowerPaths(doc.paths),
         throwsA(isA<UnsupportedError>()),
       );
+    });
+  });
+
+  // ─── Per-status responses (issue #5) ────────────────────────────
+
+  group('OperationLowerer - per-status responses', () {
+    (IrOperation, IrMapper) lowerSingleOp(Map<String, dynamic> responses) {
+      final doc = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'paths': {
+          '/auth': {
+            'post': {'operationId': 'postAuth', 'responses': responses},
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      return (opLowerer.lowerPaths(doc.paths).first.operations.first, mapper);
+    }
+
+    Set<String> inlineTypeNames(IrMapper mapper) => {
+      for (final t in mapper.inlineTypes)
+        if (t is IrObject) t.name,
+    };
+
+    Map<String, dynamic> jsonResponse(String requiredProp) => {
+      'description': 'r',
+      'content': {
+        'application/json': {
+          'schema': {
+            'type': 'object',
+            'required': [requiredProp],
+            'properties': {
+              requiredProp: {'type': 'string'},
+            },
+          },
+        },
+      },
+    };
+
+    test('wildcard range responses survive lowering', () {
+      final (op, _) = lowerSingleOp({
+        '200': jsonResponse('ok'),
+        '4XX': jsonResponse('clientError'),
+        '5XX': jsonResponse('serverError'),
+      });
+
+      expect(op.rangeResponses.keys, containsAll(['4XX', '5XX']));
+      expect(op.rangeResponses['4XX']!.content, isNotEmpty);
+    });
+
+    test('lowercase wildcard keys are normalized to uppercase', () {
+      final (op, _) = lowerSingleOp({
+        '200': jsonResponse('ok'),
+        '4xx': jsonResponse('clientError'),
+      });
+
+      expect(op.rangeResponses.keys, contains('4XX'));
+    });
+
+    test('inline response schemas are named by status code', () {
+      final (_, mapper) = lowerSingleOp({
+        '200': jsonResponse('accessToken'),
+        '201': jsonResponse('userId'),
+        '401': jsonResponse('errorMessage'),
+        '4XX': jsonResponse('clientError'),
+        'default': jsonResponse('defaultErrorMessage'),
+      });
+
+      final names = inlineTypeNames(mapper);
+      // Primary success keeps the bare name; everything else is coded.
+      expect(names, contains('PostAuthResponse'));
+      expect(names, contains('PostAuthResponse201'));
+      expect(names, contains('PostAuthResponse401'));
+      expect(names, contains('PostAuthResponse4xx'));
+      expect(names, contains('PostAuthResponseDefault'));
+      expect(names, isNot(contains('PostAuthResponse2')));
+      expect(names, isNot(contains('PostAuthResponsedefault')));
+    });
+
+    test('201-only operation keeps the bare response name', () {
+      final (_, mapper) = lowerSingleOp({
+        '201': jsonResponse('userId'),
+        'default': jsonResponse('defaultErrorMessage'),
+      });
+
+      final names = inlineTypeNames(mapper);
+      expect(names, contains('PostAuthResponse'));
+      expect(names, isNot(contains('PostAuthResponse201')));
+    });
+  });
+
+  // ─── Status union lowering (issue #5) ───────────────────────────
+
+  group('StatusUnionLowerer', () {
+    (IrOperation, List<IrType>) lowerWithUnions(
+      Map<String, dynamic> responses,
+    ) {
+      final doc = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'paths': {
+          '/auth': {
+            'post': {'operationId': 'postAuth', 'responses': responses},
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+      final unionTypes = <IrType>[];
+      final lowered = StatusUnionLowerer(mapper).lower(apis, unionTypes);
+      return (lowered.first.operations.first, unionTypes);
+    }
+
+    Map<String, dynamic> jsonResponse(String requiredProp) => {
+      'description': 'r',
+      'content': {
+        'application/json': {
+          'schema': {
+            'type': 'object',
+            'required': [requiredProp],
+            'properties': {
+              requiredProp: {'type': 'string'},
+            },
+          },
+        },
+      },
+    };
+
+    test('issue #5 repro produces success and error unions', () {
+      final (op, types) = lowerWithUnions({
+        '200': jsonResponse('accessToken'),
+        '201': jsonResponse('userId'),
+        '401': jsonResponse('errorMessage'),
+        'default': jsonResponse('defaultErrorMessage'),
+      });
+
+      final success = op.successUnion!;
+      expect(success.name, 'PostAuthSuccess');
+      expect(success.variants.map((v) => v.key), ['200', '201', 'default']);
+      expect(
+        success.variants.map((v) => v.className),
+        ['PostAuthSuccess200', 'PostAuthSuccess201', 'PostAuthSuccessDefault'],
+      );
+
+      final error = op.errorUnion!;
+      expect(error.name, 'PostAuthError');
+      expect(error.variants.map((v) => v.key), ['401', 'default']);
+
+      expect(types, containsAll([success, error]));
+    });
+
+    test('single success type produces no union', () {
+      final (op, types) = lowerWithUnions({
+        '200': jsonResponse('ok'),
+        'default': jsonResponse('error'),
+      });
+
+      expect(op.successUnion, isNull);
+      expect(op.errorUnion, isNull);
+      expect(types, isEmpty);
+    });
+
+    test(r'two codes sharing one $ref type produce no union', () {
+      final shared = {
+        'description': 'r',
+        'content': {
+          'application/json': {
+            'schema': {r'$ref': '#/components/schemas/Thing'},
+          },
+        },
+      };
+      final doc = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'components': {
+          'schemas': {
+            'Thing': {
+              'type': 'object',
+              'properties': {
+                'id': {'type': 'string'},
+              },
+            },
+          },
+        },
+        'paths': {
+          '/auth': {
+            'post': {
+              'operationId': 'postAuth',
+              'responses': {'200': shared, '201': shared},
+            },
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+      final unionTypes = <IrType>[];
+      final lowered = StatusUnionLowerer(mapper).lower(apis, unionTypes);
+      final op = lowered.first.operations.first;
+
+      expect(op.successUnion, isNull);
+      expect(unionTypes, isEmpty);
+    });
+
+    test('content and no-content success codes produce a union with a '
+        'payload-free variant', () {
+      final (op, _) = lowerWithUnions({
+        '200': jsonResponse('ok'),
+        '204': {'description': 'no content'},
+      });
+
+      final success = op.successUnion!;
+      expect(success.variants.map((v) => v.key), ['200', '204']);
+      expect(success.variants.last.schema, isNull);
+      // No default declared: emitter adds $Unknown.
+      expect(success.variants.any((v) => v.key == 'default'), isFalse);
+    });
+
+    test('range responses become range variants', () {
+      final (op, _) = lowerWithUnions({
+        '200': jsonResponse('ok'),
+        '2XX': jsonResponse('other'),
+        '401': jsonResponse('authError'),
+        '4XX': jsonResponse('clientError'),
+      });
+
+      final success = op.successUnion!;
+      expect(success.variants.map((v) => v.key), ['200', '2XX']);
+      expect(
+        success.variants.map((v) => v.className),
+        ['PostAuthSuccess200', 'PostAuthSuccess2xx'],
+      );
+
+      final error = op.errorUnion!;
+      expect(error.variants.map((v) => v.key), ['401', '4XX']);
+    });
+
+    test('error union forms when exact code type differs from default', () {
+      final (op, _) = lowerWithUnions({
+        '200': jsonResponse('ok'),
+        '401': jsonResponse('authError'),
+        '500': jsonResponse('authError'),
+        'default': jsonResponse('generalError'),
+      });
+
+      expect(op.successUnion, isNull);
+      final error = op.errorUnion!;
+      expect(error.variants.map((v) => v.key), ['401', '500', 'default']);
+    });
+
+    test('union names are deduplicated against schema names', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'components': {
+          'schemas': {
+            'PostAuthSuccess': {
+              'type': 'object',
+              'properties': {
+                'id': {'type': 'string'},
+              },
+            },
+          },
+        },
+        'paths': {
+          '/auth': {
+            'post': {
+              'operationId': 'postAuth',
+              'responses': {
+                '200': jsonResponse('accessToken'),
+                '201': jsonResponse('userId'),
+              },
+            },
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+      final unionTypes = <IrType>[];
+      final lowered = StatusUnionLowerer(mapper).lower(apis, unionTypes);
+      final op = lowered.first.operations.first;
+
+      expect(op.successUnion!.name, isNot('PostAuthSuccess'));
+      expect(op.successUnion!.name, 'PostAuthSuccess2');
     });
   });
 

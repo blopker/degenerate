@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity.dart';import '../models/autolink.dart';import '../models/basic_error.dart';import '../models/branch_protection.dart';import '../models/branch_restriction_policy.dart';import '../models/branch_short.dart';import '../models/branch_with_protection.dart';import '../models/check_automated_security_fixes.dart';import '../models/check_immutable_releases.dart';import '../models/clone_traffic.dart';import '../models/codeowners_errors.dart';import '../models/collaborator.dart';import '../models/combined_commit_status.dart';import '../models/commit.dart';import '../models/commit_activity.dart';import '../models/commit_comment.dart';import '../models/commit_comparison.dart';import '../models/community_profile.dart';import '../models/content_file.dart';import '../models/content_traffic.dart';import '../models/contributor.dart';import '../models/contributor_activity.dart';import '../models/custom_property_value.dart';import '../models/deploy_key.dart';import '../models/deployment.dart';import '../models/deployment_branch_policy.dart';import '../models/deployment_branch_policy_name_pattern.dart';import '../models/deployment_branch_policy_name_pattern_with_type.dart';import '../models/deployment_protection_rule.dart';import '../models/deployment_status.dart';import '../models/environment.dart';import '../models/file_commit.dart';import '../models/full_repository.dart';import '../models/hook.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/integration.dart';import '../models/merged_upstream.dart';import '../models/minimal_repository.dart';import '../models/page.dart';import '../models/page_build.dart';import '../models/page_build_status.dart';import '../models/page_deployment.dart';import '../models/pages_deployment_status.dart';import '../models/pages_health_check.dart';import '../models/participation_stats.dart';import '../models/protected_branch.dart';import '../models/protected_branch_admin_enforced.dart';import '../models/protected_branch_pull_request_review.dart';import '../models/pull_request_simple.dart';import '../models/referrer_traffic.dart';import '../models/release.dart';import '../models/release_asset.dart';import '../models/release_notes_content.dart';import '../models/repos_add_app_access_restrictions_request.dart';import '../models/repos_add_collaborator_request.dart';import '../models/repos_add_status_check_contexts_request.dart';import '../models/repos_add_team_access_restrictions_request.dart';import '../models/repos_add_user_access_restrictions_request.dart';import '../models/repos_check_private_vulnerability_reporting_response.dart';import '../models/repos_create_attestation_request.dart';import '../models/repos_create_attestation_response.dart';import '../models/repos_create_autolink_request.dart';import '../models/repos_create_commit_comment_request.dart';import '../models/repos_create_commit_status_request.dart';import '../models/repos_create_deploy_key_request.dart';import '../models/repos_create_deployment_protection_rule_request.dart';import '../models/repos_create_deployment_request.dart';import '../models/repos_create_deployment_status_request.dart';import '../models/repos_create_dispatch_event_request.dart';import '../models/repos_create_for_authenticated_user_request.dart';import '../models/repos_create_fork_request.dart';import '../models/repos_create_in_org_request.dart';import '../models/repos_create_or_update_environment_request.dart';import '../models/repos_create_or_update_file_contents_request.dart';import '../models/repos_create_org_ruleset_request.dart';import '../models/repos_create_pages_deployment_request.dart';import '../models/repos_create_release_request.dart';import '../models/repos_create_repo_ruleset_request.dart';import '../models/repos_create_using_template_request.dart';import '../models/repos_create_webhook_request.dart';import '../models/repos_custom_properties_for_repos_create_or_update_repository_values_request.dart';import '../models/repos_delete_file_request.dart';import '../models/repos_delete_response403.dart';import '../models/repos_generate_release_notes_request.dart';import '../models/repos_get_all_deployment_protection_rules_response.dart';import '../models/repos_get_all_environments_response.dart';import '../models/repos_get_clones_per.dart';import '../models/repos_get_content_response.dart';import '../models/repos_get_org_rule_suites_rule_suite_result.dart';import '../models/repos_get_org_rule_suites_time_period.dart';import '../models/repos_get_repo_rule_suites_rule_suite_result.dart';import '../models/repos_get_repo_rule_suites_time_period.dart';import '../models/repos_get_views_per.dart';import '../models/repos_list_activities_activity_type.dart';import '../models/repos_list_activities_direction.dart';import '../models/repos_list_activities_time_period.dart';import '../models/repos_list_attestations_response.dart';import '../models/repos_list_collaborators_affiliation.dart';import '../models/repos_list_collaborators_permission.dart';import '../models/repos_list_custom_deployment_rule_integrations_response.dart';import '../models/repos_list_deployment_branch_policies_response.dart';import '../models/repos_list_for_authenticated_user_direction.dart';import '../models/repos_list_for_authenticated_user_sort.dart';import '../models/repos_list_for_authenticated_user_type.dart';import '../models/repos_list_for_authenticated_user_visibility.dart';import '../models/repos_list_for_org_direction.dart';import '../models/repos_list_for_org_sort.dart';import '../models/repos_list_for_org_type.dart';import '../models/repos_list_for_user_direction.dart';import '../models/repos_list_for_user_sort.dart';import '../models/repos_list_for_user_type.dart';import '../models/repos_list_forks_sort.dart';import '../models/repos_merge_request.dart';import '../models/repos_merge_upstream_request.dart';import '../models/repos_remove_app_access_restrictions_request.dart';import '../models/repos_remove_status_check_contexts_request.dart';import '../models/repos_remove_team_access_restrictions_request.dart';import '../models/repos_remove_user_access_restrictions_request.dart';import '../models/repos_rename_branch_request.dart';import '../models/repos_replace_all_topics_request.dart';import '../models/repos_set_app_access_restrictions_request.dart';import '../models/repos_set_status_check_contexts_request.dart';import '../models/repos_set_team_access_restrictions_request.dart';import '../models/repos_set_user_access_restrictions_request.dart';import '../models/repos_transfer_request.dart';import '../models/repos_update_branch_protection_request.dart';import '../models/repos_update_commit_comment_request.dart';import '../models/repos_update_invitation_request.dart';import '../models/repos_update_org_ruleset_request.dart';import '../models/repos_update_pull_request_review_protection_request.dart';import '../models/repos_update_release_asset_request.dart';import '../models/repos_update_release_request.dart';import '../models/repos_update_repo_ruleset_request.dart';import '../models/repos_update_request.dart';import '../models/repos_update_status_check_protection_request.dart';import '../models/repos_update_webhook_config_for_repo_request.dart';import '../models/repos_update_webhook_request.dart';import '../models/repository.dart';import '../models/repository_collaborator_permission.dart';import '../models/repository_invitation.dart';import '../models/repository_rule_detailed.dart';import '../models/repository_ruleset.dart';import '../models/rule_suite.dart';import '../models/rule_suites2.dart';import '../models/ruleset_version.dart';import '../models/ruleset_version_with_state.dart';import '../models/short_branch.dart';import '../models/simple_user.dart';import '../models/status.dart';import '../models/status_check_policy.dart';import '../models/tag.dart';import '../models/team.dart';import '../models/topic.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/view_traffic.dart';import '../models/webhook_config.dart';/// ReposApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity.dart';import '../models/autolink.dart';import '../models/basic_error.dart';import '../models/branch_protection.dart';import '../models/branch_restriction_policy.dart';import '../models/branch_short.dart';import '../models/branch_with_protection.dart';import '../models/check_automated_security_fixes.dart';import '../models/check_immutable_releases.dart';import '../models/clone_traffic.dart';import '../models/codeowners_errors.dart';import '../models/collaborator.dart';import '../models/combined_commit_status.dart';import '../models/commit.dart';import '../models/commit_comment.dart';import '../models/commit_comparison.dart';import '../models/community_profile.dart';import '../models/content_file.dart';import '../models/content_traffic.dart';import '../models/custom_property_value.dart';import '../models/deploy_key.dart';import '../models/deployment.dart';import '../models/deployment_branch_policy.dart';import '../models/deployment_branch_policy_name_pattern.dart';import '../models/deployment_branch_policy_name_pattern_with_type.dart';import '../models/deployment_protection_rule.dart';import '../models/deployment_status.dart';import '../models/environment.dart';import '../models/file_commit.dart';import '../models/full_repository.dart';import '../models/hook.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/integration.dart';import '../models/merged_upstream.dart';import '../models/minimal_repository.dart';import '../models/page.dart';import '../models/page_build.dart';import '../models/page_build_status.dart';import '../models/page_deployment.dart';import '../models/pages_deployment_status.dart';import '../models/participation_stats.dart';import '../models/protected_branch.dart';import '../models/protected_branch_admin_enforced.dart';import '../models/protected_branch_pull_request_review.dart';import '../models/pull_request_simple.dart';import '../models/referrer_traffic.dart';import '../models/release.dart';import '../models/release_asset.dart';import '../models/release_notes_content.dart';import '../models/repos_accept_invitation_for_authenticated_user_error.dart';import '../models/repos_add_app_access_restrictions_request.dart';import '../models/repos_add_collaborator_error.dart';import '../models/repos_add_collaborator_request.dart';import '../models/repos_add_collaborator_success.dart';import '../models/repos_add_status_check_contexts_error.dart';import '../models/repos_add_status_check_contexts_request.dart';import '../models/repos_add_team_access_restrictions_request.dart';import '../models/repos_add_user_access_restrictions_request.dart';import '../models/repos_check_private_vulnerability_reporting_response.dart';import '../models/repos_compare_commits_error.dart';import '../models/repos_create_attestation_error.dart';import '../models/repos_create_attestation_request.dart';import '../models/repos_create_attestation_response.dart';import '../models/repos_create_autolink_request.dart';import '../models/repos_create_commit_comment_error.dart';import '../models/repos_create_commit_comment_request.dart';import '../models/repos_create_commit_status_request.dart';import '../models/repos_create_deploy_key_request.dart';import '../models/repos_create_deployment_error.dart';import '../models/repos_create_deployment_protection_rule_request.dart';import '../models/repos_create_deployment_request.dart';import '../models/repos_create_deployment_status_request.dart';import '../models/repos_create_deployment_success.dart';import '../models/repos_create_dispatch_event_error.dart';import '../models/repos_create_dispatch_event_request.dart';import '../models/repos_create_for_authenticated_user_error.dart';import '../models/repos_create_for_authenticated_user_request.dart';import '../models/repos_create_fork_error.dart';import '../models/repos_create_fork_request.dart';import '../models/repos_create_in_org_error.dart';import '../models/repos_create_in_org_request.dart';import '../models/repos_create_or_update_environment_request.dart';import '../models/repos_create_or_update_file_contents_error.dart';import '../models/repos_create_or_update_file_contents_request.dart';import '../models/repos_create_org_ruleset_error.dart';import '../models/repos_create_org_ruleset_request.dart';import '../models/repos_create_pages_deployment_error.dart';import '../models/repos_create_pages_deployment_request.dart';import '../models/repos_create_pages_site_error.dart';import '../models/repos_create_release_error.dart';import '../models/repos_create_release_request.dart';import '../models/repos_create_repo_ruleset_error.dart';import '../models/repos_create_repo_ruleset_request.dart';import '../models/repos_create_using_template_request.dart';import '../models/repos_create_webhook_error.dart';import '../models/repos_create_webhook_request.dart';import '../models/repos_custom_properties_for_repos_create_or_update_repository_values_error.dart';import '../models/repos_custom_properties_for_repos_create_or_update_repository_values_request.dart';import '../models/repos_decline_invitation_for_authenticated_user_error.dart';import '../models/repos_delete_deployment_error.dart';import '../models/repos_delete_error.dart';import '../models/repos_delete_file_error.dart';import '../models/repos_delete_file_request.dart';import '../models/repos_delete_pages_site_error.dart';import '../models/repos_generate_release_notes_request.dart';import '../models/repos_get_all_deployment_protection_rules_response.dart';import '../models/repos_get_all_environments_response.dart';import '../models/repos_get_clones_per.dart';import '../models/repos_get_code_frequency_stats_success.dart';import '../models/repos_get_commit_activity_stats_success.dart';import '../models/repos_get_commit_error.dart';import '../models/repos_get_content_error.dart';import '../models/repos_get_content_response.dart';import '../models/repos_get_contributors_stats_success.dart';import '../models/repos_get_org_rule_suites_rule_suite_result.dart';import '../models/repos_get_org_rule_suites_time_period.dart';import '../models/repos_get_pages_health_check_error.dart';import '../models/repos_get_pages_health_check_success.dart';import '../models/repos_get_punch_card_stats_success.dart';import '../models/repos_get_readme_error.dart';import '../models/repos_get_readme_in_directory_error.dart';import '../models/repos_get_release_asset_error.dart';import '../models/repos_get_repo_rule_suites_rule_suite_result.dart';import '../models/repos_get_repo_rule_suites_time_period.dart';import '../models/repos_get_views_per.dart';import '../models/repos_get_webhook_delivery_error.dart';import '../models/repos_list_activities_activity_type.dart';import '../models/repos_list_activities_direction.dart';import '../models/repos_list_activities_time_period.dart';import '../models/repos_list_attestations_response.dart';import '../models/repos_list_branches_for_head_commit_error.dart';import '../models/repos_list_collaborators_affiliation.dart';import '../models/repos_list_collaborators_permission.dart';import '../models/repos_list_contributors_success.dart';import '../models/repos_list_custom_deployment_rule_integrations_response.dart';import '../models/repos_list_deployment_branch_policies_response.dart';import '../models/repos_list_for_authenticated_user_direction.dart';import '../models/repos_list_for_authenticated_user_error.dart';import '../models/repos_list_for_authenticated_user_sort.dart';import '../models/repos_list_for_authenticated_user_type.dart';import '../models/repos_list_for_authenticated_user_visibility.dart';import '../models/repos_list_for_org_direction.dart';import '../models/repos_list_for_org_sort.dart';import '../models/repos_list_for_org_type.dart';import '../models/repos_list_for_user_direction.dart';import '../models/repos_list_for_user_sort.dart';import '../models/repos_list_for_user_type.dart';import '../models/repos_list_forks_sort.dart';import '../models/repos_list_invitations_for_authenticated_user_error.dart';import '../models/repos_list_public_error.dart';import '../models/repos_list_webhook_deliveries_error.dart';import '../models/repos_merge_error.dart';import '../models/repos_merge_request.dart';import '../models/repos_merge_success.dart';import '../models/repos_merge_upstream_request.dart';import '../models/repos_redeliver_webhook_delivery_error.dart';import '../models/repos_remove_app_access_restrictions_request.dart';import '../models/repos_remove_collaborator_error.dart';import '../models/repos_remove_status_check_contexts_error.dart';import '../models/repos_remove_status_check_contexts_request.dart';import '../models/repos_remove_team_access_restrictions_request.dart';import '../models/repos_remove_user_access_restrictions_request.dart';import '../models/repos_rename_branch_error.dart';import '../models/repos_rename_branch_request.dart';import '../models/repos_replace_all_topics_error.dart';import '../models/repos_replace_all_topics_request.dart';import '../models/repos_set_app_access_restrictions_request.dart';import '../models/repos_set_status_check_contexts_error.dart';import '../models/repos_set_status_check_contexts_request.dart';import '../models/repos_set_team_access_restrictions_request.dart';import '../models/repos_set_user_access_restrictions_request.dart';import '../models/repos_transfer_request.dart';import '../models/repos_update_branch_protection_error.dart';import '../models/repos_update_branch_protection_request.dart';import '../models/repos_update_commit_comment_request.dart';import '../models/repos_update_error.dart';import '../models/repos_update_information_about_pages_site_error.dart';import '../models/repos_update_invitation_request.dart';import '../models/repos_update_org_ruleset_error.dart';import '../models/repos_update_org_ruleset_request.dart';import '../models/repos_update_pull_request_review_protection_request.dart';import '../models/repos_update_release_asset_request.dart';import '../models/repos_update_release_request.dart';import '../models/repos_update_repo_ruleset_error.dart';import '../models/repos_update_repo_ruleset_request.dart';import '../models/repos_update_request.dart';import '../models/repos_update_status_check_protection_error.dart';import '../models/repos_update_status_check_protection_request.dart';import '../models/repos_update_webhook_config_for_repo_request.dart';import '../models/repos_update_webhook_error.dart';import '../models/repos_update_webhook_request.dart';import '../models/repository.dart';import '../models/repository_collaborator_permission.dart';import '../models/repository_invitation.dart';import '../models/repository_rule_detailed.dart';import '../models/repository_ruleset.dart';import '../models/rule_suite.dart';import '../models/rule_suites2.dart';import '../models/ruleset_version.dart';import '../models/ruleset_version_with_state.dart';import '../models/short_branch.dart';import '../models/simple_user.dart';import '../models/status.dart';import '../models/status_check_policy.dart';import '../models/tag.dart';import '../models/team.dart';import '../models/topic.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/view_traffic.dart';import '../models/webhook_config.dart';/// ReposApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -60,7 +60,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
 /// `POST /orgs/{org}/repos`
-Future<ApiResult<FullRepository, BasicError>> reposCreateInOrg({required String org, required ReposCreateInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FullRepository, ReposCreateInOrgError>> reposCreateInOrg({required String org, required ReposCreateInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +77,7 @@ return execute(
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateInOrgError.parse(response);
   },
 );
  } 
@@ -125,7 +125,7 @@ return execute(
 /// Create a repository ruleset for an organization.
 ///
 /// `POST /orgs/{org}/rulesets`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposCreateOrgRuleset({required String org, required ReposCreateOrgRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, ReposCreateOrgRulesetError>> reposCreateOrgRuleset({required String org, required ReposCreateOrgRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,7 +142,7 @@ return execute(
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateOrgRulesetError.parse(response);
   },
 );
  } 
@@ -255,7 +255,7 @@ return execute(
 /// Update a ruleset for an organization.
 ///
 /// `PUT /orgs/{org}/rulesets/{ruleset_id}`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposUpdateOrgRuleset({required String org, required int rulesetId, ReposUpdateOrgRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, ReposUpdateOrgRulesetError>> reposUpdateOrgRuleset({required String org, required int rulesetId, ReposUpdateOrgRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -272,7 +272,7 @@ return execute(
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateOrgRulesetError.parse(response);
   },
 );
  } 
@@ -331,7 +331,7 @@ return execute(
 /// **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}`
-Future<ApiResult<FullRepository, BasicError>> reposUpdate({required String owner, required String repo, ReposUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FullRepository, ReposUpdateError>> reposUpdate({required String owner, required String repo, ReposUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -348,7 +348,7 @@ return execute(
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateError.parse(response);
   },
 );
  } 
@@ -362,7 +362,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}`
-Future<ApiResult<void, ReposDeleteResponse403>> reposDelete({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposDeleteError>> reposDelete({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -375,7 +375,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ReposDeleteResponse403.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposDeleteError.parse(response);
   },
 );
  } 
@@ -445,7 +445,7 @@ return execute(
 /// Artifact attestations are meant to be created using the [attest action](https://github.com/actions/attest). For more information, see our guide on [using artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /repos/{owner}/{repo}/attestations`
-Future<ApiResult<ReposCreateAttestationResponse, BasicError>> reposCreateAttestation({required String owner, required String repo, required ReposCreateAttestationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposCreateAttestationResponse, ReposCreateAttestationError>> reposCreateAttestation({required String owner, required String repo, required ReposCreateAttestationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -462,7 +462,7 @@ return execute(
     return ReposCreateAttestationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateAttestationError.parse(response);
   },
 );
  } 
@@ -767,7 +767,7 @@ return execute(
 /// > The list of users, apps, and teams in total is limited to 100 items.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection`
-Future<ApiResult<ProtectedBranch, BasicError>> reposUpdateBranchProtection({required String owner, required String repo, required String branch, required ReposUpdateBranchProtectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProtectedBranch, ReposUpdateBranchProtectionError>> reposUpdateBranchProtection({required String owner, required String repo, required String branch, required ReposUpdateBranchProtectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -784,7 +784,7 @@ return execute(
     return ProtectedBranch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateBranchProtectionError.parse(response);
   },
 );
  } 
@@ -1062,7 +1062,7 @@ return execute(
 /// Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
 /// `PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks`
-Future<ApiResult<StatusCheckPolicy, BasicError>> reposUpdateStatusCheckProtection({required String owner, required String repo, required String branch, ReposUpdateStatusCheckProtectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StatusCheckPolicy, ReposUpdateStatusCheckProtectionError>> reposUpdateStatusCheckProtection({required String owner, required String repo, required String branch, ReposUpdateStatusCheckProtectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1079,7 +1079,7 @@ return execute(
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateStatusCheckProtectionError.parse(response);
   },
 );
  } 
@@ -1132,7 +1132,7 @@ return execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, ValidationError>> reposAddStatusCheckContexts({required String owner, required String repo, required String branch, ReposAddStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, ReposAddStatusCheckContextsError>> reposAddStatusCheckContexts({required String owner, required String repo, required String branch, ReposAddStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1150,7 +1150,7 @@ return execute(
     return json.map((e) => e as String).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposAddStatusCheckContextsError.parse(response);
   },
 );
  } 
@@ -1159,7 +1159,7 @@ return execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, ValidationError>> reposSetStatusCheckContexts({required String owner, required String repo, required String branch, ReposSetStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, ReposSetStatusCheckContextsError>> reposSetStatusCheckContexts({required String owner, required String repo, required String branch, ReposSetStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1177,7 +1177,7 @@ return execute(
     return json.map((e) => e as String).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposSetStatusCheckContextsError.parse(response);
   },
 );
  } 
@@ -1186,7 +1186,7 @@ return execute(
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// `DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts`
-Future<ApiResult<List<String>, BasicError>> reposRemoveStatusCheckContexts({required String owner, required String repo, required String branch, ReposRemoveStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, ReposRemoveStatusCheckContextsError>> reposRemoveStatusCheckContexts({required String owner, required String repo, required String branch, ReposRemoveStatusCheckContextsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1204,7 +1204,7 @@ return execute(
     return json.map((e) => e as String).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposRemoveStatusCheckContextsError.parse(response);
   },
 );
  } 
@@ -1624,7 +1624,7 @@ return execute(
 /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
 ///
 /// `POST /repos/{owner}/{repo}/branches/{branch}/rename`
-Future<ApiResult<BranchWithProtection, BasicError>> reposRenameBranch({required String owner, required String repo, required String branch, required ReposRenameBranchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BranchWithProtection, ReposRenameBranchError>> reposRenameBranch({required String owner, required String repo, required String branch, required ReposRenameBranchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1641,7 +1641,7 @@ return execute(
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposRenameBranchError.parse(response);
   },
 );
  } 
@@ -1781,7 +1781,7 @@ return execute(
 /// You are limited to sending 50 invitations to a repository per 24 hour period. Note there is no limit if you are inviting organization members to an organization repository.
 ///
 /// `PUT /repos/{owner}/{repo}/collaborators/{username}`
-Future<ApiResult<RepositoryInvitation, ValidationError>> reposAddCollaborator({required String owner, required String repo, required String username, ReposAddCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposAddCollaboratorSuccess, ReposAddCollaboratorError>> reposAddCollaborator({required String owner, required String repo, required String username, ReposAddCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1795,10 +1795,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RepositoryInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposAddCollaboratorSuccess.parse(response);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposAddCollaboratorError.parse(response);
   },
 );
  } 
@@ -1828,7 +1828,7 @@ return execute(
 /// For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
 ///
 /// `DELETE /repos/{owner}/{repo}/collaborators/{username}`
-Future<ApiResult<void, ValidationError>> reposRemoveCollaborator({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposRemoveCollaboratorError>> reposRemoveCollaborator({required String owner, required String repo, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1841,7 +1841,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposRemoveCollaboratorError.parse(response);
   },
 );
  } 
@@ -2092,7 +2092,7 @@ return execute(
 /// Returns all branches where the given commit SHA is the HEAD, or latest commit for the branch.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head`
-Future<ApiResult<List<BranchShort>, ValidationError>> reposListBranchesForHeadCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BranchShort>, ReposListBranchesForHeadCommitError>> reposListBranchesForHeadCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2108,7 +2108,7 @@ return execute(
     return json.map((e) => BranchShort.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposListBranchesForHeadCommitError.parse(response);
   },
 );
  } 
@@ -2166,7 +2166,7 @@ return execute(
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/commits/{commit_sha}/comments`
-Future<ApiResult<CommitComment, BasicError>> reposCreateCommitComment({required String owner, required String repo, required String commitSha, required ReposCreateCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CommitComment, ReposCreateCommitCommentError>> reposCreateCommitComment({required String owner, required String repo, required String commitSha, required ReposCreateCommitCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2183,7 +2183,7 @@ return execute(
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateCommitCommentError.parse(response);
   },
 );
  } 
@@ -2269,7 +2269,7 @@ return execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}`
-Future<ApiResult<Commit, ValidationError>> reposGetCommit({required String owner, required String repo, required String ref, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Commit, ReposGetCommitError>> reposGetCommit({required String owner, required String repo, required String ref, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -2295,7 +2295,7 @@ return execute(
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetCommitError.parse(response);
   },
 );
  } 
@@ -2462,7 +2462,7 @@ return execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/compare/{basehead}`
-Future<ApiResult<CommitComparison, BasicError>> reposCompareCommits({required String owner, required String repo, required String basehead, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CommitComparison, ReposCompareCommitsError>> reposCompareCommits({required String owner, required String repo, required String basehead, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -2488,7 +2488,7 @@ return execute(
     return CommitComparison.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCompareCommitsError.parse(response);
   },
 );
  } 
@@ -2521,7 +2521,7 @@ return execute(
 ///   - Greater than 100 MB: This endpoint is not supported.
 ///
 /// `GET /repos/{owner}/{repo}/contents/{path}`
-Future<ApiResult<ReposGetContentResponse, BasicError>> reposGetContent({required String owner, required String repo, required String path, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReposGetContentResponse, ReposGetContentError>> reposGetContent({required String owner, required String repo, required String path, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) {
   queryParameters['ref'] = ref;
@@ -2544,7 +2544,7 @@ return execute(
     return ReposGetContentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetContentError.parse(response);
   },
 );
  } 
@@ -2558,7 +2558,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
 ///
 /// `PUT /repos/{owner}/{repo}/contents/{path}`
-Future<ApiResult<FileCommit, BasicError>> reposCreateOrUpdateFileContents({required String owner, required String repo, required String path, required ReposCreateOrUpdateFileContentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileCommit, ReposCreateOrUpdateFileContentsError>> reposCreateOrUpdateFileContents({required String owner, required String repo, required String path, required ReposCreateOrUpdateFileContentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2575,7 +2575,7 @@ return execute(
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateOrUpdateFileContentsError.parse(response);
   },
 );
  } 
@@ -2593,7 +2593,7 @@ return execute(
 /// > If you use this endpoint and the "[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
 ///
 /// `DELETE /repos/{owner}/{repo}/contents/{path}`
-Future<ApiResult<FileCommit, ValidationError>> reposDeleteFile({required String owner, required String repo, required String path, required ReposDeleteFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileCommit, ReposDeleteFileError>> reposDeleteFile({required String owner, required String repo, required String path, required ReposDeleteFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2610,7 +2610,7 @@ return execute(
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposDeleteFileError.parse(response);
   },
 );
  } 
@@ -2621,7 +2621,7 @@ return execute(
 /// GitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.
 ///
 /// `GET /repos/{owner}/{repo}/contributors`
-Future<ApiResult<List<Contributor>, BasicError>> reposListContributors({required String owner, required String repo, String? anon, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReposListContributorsSuccess, BasicError>> reposListContributors({required String owner, required String repo, String? anon, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (anon != null) {
   queryParameters['anon'] = anon;
@@ -2647,8 +2647,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Contributor.fromJson(e as Map<String, dynamic>)).toList();
+    return ReposListContributorsSuccess.parse(response);
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2752,7 +2751,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/deployments`
-Future<ApiResult<Deployment, ValidationError>> reposCreateDeployment({required String owner, required String repo, required ReposCreateDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposCreateDeploymentSuccess, ReposCreateDeploymentError>> reposCreateDeployment({required String owner, required String repo, required ReposCreateDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2766,10 +2765,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateDeploymentSuccess.parse(response);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateDeploymentError.parse(response);
   },
 );
  } 
@@ -2811,7 +2810,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/deployments/{deployment_id}`
-Future<ApiResult<void, BasicError>> reposDeleteDeployment({required String owner, required String repo, required int deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposDeleteDeploymentError>> reposDeleteDeployment({required String owner, required String repo, required int deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2824,7 +2823,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposDeleteDeploymentError.parse(response);
   },
 );
  } 
@@ -2927,7 +2926,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/dispatches`
-Future<ApiResult<void, BasicError>> reposCreateDispatchEvent({required String owner, required String repo, required ReposCreateDispatchEventRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposCreateDispatchEventError>> reposCreateDispatchEvent({required String owner, required String repo, required ReposCreateDispatchEventRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2942,7 +2941,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateDispatchEventError.parse(response);
   },
 );
  } 
@@ -3385,7 +3384,7 @@ return execute(
 /// > Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
 ///
 /// `POST /repos/{owner}/{repo}/forks`
-Future<ApiResult<FullRepository, BasicError>> reposCreateFork({required String owner, required String repo, ReposCreateForkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FullRepository, ReposCreateForkError>> reposCreateFork({required String owner, required String repo, ReposCreateForkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3402,7 +3401,7 @@ return execute(
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateForkError.parse(response);
   },
 );
  } 
@@ -3448,7 +3447,7 @@ return execute(
 /// share the same `config` as long as those webhooks do not have any `events` that overlap.
 ///
 /// `POST /repos/{owner}/{repo}/hooks`
-Future<ApiResult<Hook, BasicError>> reposCreateWebhook({required String owner, required String repo, ReposCreateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Hook, ReposCreateWebhookError>> reposCreateWebhook({required String owner, required String repo, ReposCreateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3465,7 +3464,7 @@ return execute(
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateWebhookError.parse(response);
   },
 );
  } 
@@ -3498,7 +3497,7 @@ return execute(
 /// Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository)."
 ///
 /// `PATCH /repos/{owner}/{repo}/hooks/{hook_id}`
-Future<ApiResult<Hook, ValidationError>> reposUpdateWebhook({required String owner, required String repo, required int hookId, required ReposUpdateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Hook, ReposUpdateWebhookError>> reposUpdateWebhook({required String owner, required String repo, required int hookId, required ReposUpdateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3515,7 +3514,7 @@ return execute(
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateWebhookError.parse(response);
   },
 );
  } 
@@ -3596,7 +3595,7 @@ return execute(
 /// Returns a list of webhook deliveries for a webhook configured in a repository.
 ///
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries`
-Future<ApiResult<List<HookDeliveryItem>, BasicError>> reposListWebhookDeliveries({required String owner, required String repo, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<HookDeliveryItem>, ReposListWebhookDeliveriesError>> reposListWebhookDeliveries({required String owner, required String repo, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -3623,7 +3622,7 @@ return execute(
     return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposListWebhookDeliveriesError.parse(response);
   },
 );
  } 
@@ -3632,7 +3631,7 @@ return execute(
 /// Returns a delivery for a webhook configured in a repository.
 ///
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}`
-Future<ApiResult<HookDelivery, BasicError>> reposGetWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HookDelivery, ReposGetWebhookDeliveryError>> reposGetWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -3647,7 +3646,7 @@ return execute(
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetWebhookDeliveryError.parse(response);
   },
 );
  } 
@@ -3656,7 +3655,7 @@ return execute(
 /// Redeliver a webhook delivery for a webhook configured in a repository.
 ///
 /// `POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, dynamic>, BasicError>> reposRedeliverWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, ReposRedeliverWebhookDeliveryError>> reposRedeliverWebhookDelivery({required String owner, required String repo, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -3671,7 +3670,7 @@ return execute(
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposRedeliverWebhookDeliveryError.parse(response);
   },
 );
  } 
@@ -4014,7 +4013,7 @@ return execute(
 /// 
 ///
 /// `POST /repos/{owner}/{repo}/merges`
-Future<ApiResult<Commit, BasicError>> reposMerge({required String owner, required String repo, required ReposMergeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposMergeSuccess, ReposMergeError>> reposMerge({required String owner, required String repo, required ReposMergeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4028,10 +4027,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposMergeSuccess.parse(response);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposMergeError.parse(response);
   },
 );
  } 
@@ -4070,7 +4069,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/pages`
-Future<ApiResult<Page, ValidationError>> reposCreatePagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Page, ReposCreatePagesSiteError>> reposCreatePagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4087,7 +4086,7 @@ return execute(
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreatePagesSiteError.parse(response);
   },
 );
  } 
@@ -4100,7 +4099,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/pages`
-Future<ApiResult<void, ValidationError>> reposUpdateInformationAboutPagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposUpdateInformationAboutPagesSiteError>> reposUpdateInformationAboutPagesSite({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4115,7 +4114,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateInformationAboutPagesSiteError.parse(response);
   },
 );
  } 
@@ -4128,7 +4127,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/pages`
-Future<ApiResult<void, ValidationError>> reposDeletePagesSite({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposDeletePagesSiteError>> reposDeletePagesSite({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -4141,7 +4140,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposDeletePagesSiteError.parse(response);
   },
 );
  } 
@@ -4256,7 +4255,7 @@ return execute(
 /// The authenticated user must have write permission to the repository.
 ///
 /// `POST /repos/{owner}/{repo}/pages/deployments`
-Future<ApiResult<PageDeployment, BasicError>> reposCreatePagesDeployment({required String owner, required String repo, required ReposCreatePagesDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PageDeployment, ReposCreatePagesDeploymentError>> reposCreatePagesDeployment({required String owner, required String repo, required ReposCreatePagesDeploymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4273,7 +4272,7 @@ return execute(
     return PageDeployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreatePagesDeploymentError.parse(response);
   },
 );
  } 
@@ -4338,7 +4337,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/pages/health`
-Future<ApiResult<PagesHealthCheck, BasicError>> reposGetPagesHealthCheck({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposGetPagesHealthCheckSuccess, ReposGetPagesHealthCheckError>> reposGetPagesHealthCheck({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4350,10 +4349,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PagesHealthCheck.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetPagesHealthCheckSuccess.parse(response);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetPagesHealthCheckError.parse(response);
   },
 );
  } 
@@ -4459,7 +4458,7 @@ return execute(
 /// Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/properties/values`
-Future<ApiResult<void, BasicError>> reposCustomPropertiesForReposCreateOrUpdateRepositoryValues({required String owner, required String repo, required ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesError>> reposCustomPropertiesForReposCreateOrUpdateRepositoryValues({required String owner, required String repo, required ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4474,7 +4473,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesError.parse(response);
   },
 );
  } 
@@ -4488,7 +4487,7 @@ return execute(
 /// - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/readme`
-Future<ApiResult<ContentFile, BasicError>> reposGetReadme({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ContentFile, ReposGetReadmeError>> reposGetReadme({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) {
   queryParameters['ref'] = ref;
@@ -4511,7 +4510,7 @@ return execute(
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetReadmeError.parse(response);
   },
 );
  } 
@@ -4525,7 +4524,7 @@ return execute(
 /// - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/readme/{dir}`
-Future<ApiResult<ContentFile, BasicError>> reposGetReadmeInDirectory({required String owner, required String repo, required String dir, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ContentFile, ReposGetReadmeInDirectoryError>> reposGetReadmeInDirectory({required String owner, required String repo, required String dir, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) {
   queryParameters['ref'] = ref;
@@ -4548,7 +4547,7 @@ return execute(
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetReadmeInDirectoryError.parse(response);
   },
 );
  } 
@@ -4597,7 +4596,7 @@ return execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /repos/{owner}/{repo}/releases`
-Future<ApiResult<Release, BasicError>> reposCreateRelease({required String owner, required String repo, required ReposCreateReleaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Release, ReposCreateReleaseError>> reposCreateRelease({required String owner, required String repo, required ReposCreateReleaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4614,7 +4613,7 @@ return execute(
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateReleaseError.parse(response);
   },
 );
  } 
@@ -4629,7 +4628,7 @@ return execute(
 ///   API clients should handle both a `200` or `302` response.
 ///
 /// `GET /repos/{owner}/{repo}/releases/assets/{asset_id}`
-Future<ApiResult<ReleaseAsset, BasicError>> reposGetReleaseAsset({required String owner, required String repo, required int assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReleaseAsset, ReposGetReleaseAssetError>> reposGetReleaseAsset({required String owner, required String repo, required int assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -4644,7 +4643,7 @@ return execute(
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposGetReleaseAssetError.parse(response);
   },
 );
  } 
@@ -4998,7 +4997,7 @@ return execute(
 /// Create a ruleset for a repository.
 ///
 /// `POST /repos/{owner}/{repo}/rulesets`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposCreateRepoRuleset({required String owner, required String repo, required ReposCreateRepoRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, ReposCreateRepoRulesetError>> reposCreateRepoRuleset({required String owner, required String repo, required ReposCreateRepoRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5015,7 +5014,7 @@ return execute(
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateRepoRulesetError.parse(response);
   },
 );
  } 
@@ -5133,7 +5132,7 @@ return execute(
 /// Update a ruleset for a repository.
 ///
 /// `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}`
-Future<ApiResult<RepositoryRuleset, BasicError>> reposUpdateRepoRuleset({required String owner, required String repo, required int rulesetId, ReposUpdateRepoRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryRuleset, ReposUpdateRepoRulesetError>> reposUpdateRepoRuleset({required String owner, required String repo, required int rulesetId, ReposUpdateRepoRulesetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5150,7 +5149,7 @@ return execute(
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposUpdateRepoRulesetError.parse(response);
   },
 );
  } 
@@ -5244,7 +5243,7 @@ return execute(
 /// > This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.
 ///
 /// `GET /repos/{owner}/{repo}/stats/code_frequency`
-Future<ApiResult<List<List<int>>, Never>> reposGetCodeFrequencyStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposGetCodeFrequencyStatsSuccess, Never>> reposGetCodeFrequencyStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5256,8 +5255,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList();
+    return ReposGetCodeFrequencyStatsSuccess.parse(response);
   },
 );
  } 
@@ -5266,7 +5264,7 @@ return execute(
 /// Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.
 ///
 /// `GET /repos/{owner}/{repo}/stats/commit_activity`
-Future<ApiResult<List<CommitActivity>, Never>> reposGetCommitActivityStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposGetCommitActivityStatsSuccess, Never>> reposGetCommitActivityStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5278,8 +5276,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CommitActivity.fromJson(e as Map<String, dynamic>)).toList();
+    return ReposGetCommitActivityStatsSuccess.parse(response);
   },
 );
  } 
@@ -5297,7 +5294,7 @@ return execute(
 /// > This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
 ///
 /// `GET /repos/{owner}/{repo}/stats/contributors`
-Future<ApiResult<List<ContributorActivity>, Never>> reposGetContributorsStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposGetContributorsStatsSuccess, Never>> reposGetContributorsStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5309,8 +5306,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => ContributorActivity.fromJson(e as Map<String, dynamic>)).toList();
+    return ReposGetContributorsStatsSuccess.parse(response);
   },
 );
  } 
@@ -5353,7 +5349,7 @@ return execute(
 /// For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
 ///
 /// `GET /repos/{owner}/{repo}/stats/punch_card`
-Future<ApiResult<List<List<int>>, Never>> reposGetPunchCardStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReposGetPunchCardStatsSuccess, Never>> reposGetPunchCardStats({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5365,8 +5361,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList();
+    return ReposGetPunchCardStatsSuccess.parse(response);
   },
 );
  } 
@@ -5532,7 +5527,7 @@ return execute(
 /// 
 ///
 /// `PUT /repos/{owner}/{repo}/topics`
-Future<ApiResult<Topic, BasicError>> reposReplaceAllTopics({required String owner, required String repo, required ReposReplaceAllTopicsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topic, ReposReplaceAllTopicsError>> reposReplaceAllTopics({required String owner, required String repo, required ReposReplaceAllTopicsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5549,7 +5544,7 @@ return execute(
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposReplaceAllTopicsError.parse(response);
   },
 );
  } 
@@ -5807,7 +5802,7 @@ return execute(
 /// - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
 ///
 /// `GET /repositories`
-Future<ApiResult<List<MinimalRepository>, ValidationError>> reposListPublic({int? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, ReposListPublicError>> reposListPublic({int? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since.toString();
@@ -5831,7 +5826,7 @@ return execute(
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposListPublicError.parse(response);
   },
 );
  } 
@@ -5842,7 +5837,7 @@ return execute(
 /// The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
 ///
 /// `GET /user/repos`
-Future<ApiResult<List<Repository>, ValidationError>> reposListForAuthenticatedUser({ReposListForAuthenticatedUserVisibility? visibility, String? affiliation, ReposListForAuthenticatedUserType? type, ReposListForAuthenticatedUserSort? sort, ReposListForAuthenticatedUserDirection? direction, int? perPage, int? page, DateTime? since, DateTime? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Repository>, ReposListForAuthenticatedUserError>> reposListForAuthenticatedUser({ReposListForAuthenticatedUserVisibility? visibility, String? affiliation, ReposListForAuthenticatedUserType? type, ReposListForAuthenticatedUserSort? sort, ReposListForAuthenticatedUserDirection? direction, int? perPage, int? page, DateTime? since, DateTime? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (visibility != null) {
   queryParameters['visibility'] = visibility.toJson();
@@ -5890,7 +5885,7 @@ return execute(
     return json.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposListForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -5901,7 +5896,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
 /// `POST /user/repos`
-Future<ApiResult<FullRepository, BasicError>> reposCreateForAuthenticatedUser({required ReposCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FullRepository, ReposCreateForAuthenticatedUserError>> reposCreateForAuthenticatedUser({required ReposCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -5918,7 +5913,7 @@ return execute(
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposCreateForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -5927,7 +5922,7 @@ return execute(
 /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
 ///
 /// `GET /user/repository_invitations`
-Future<ApiResult<List<RepositoryInvitation>, BasicError>> reposListInvitationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<RepositoryInvitation>, ReposListInvitationsForAuthenticatedUserError>> reposListInvitationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -5954,7 +5949,7 @@ return execute(
     return json.map((e) => RepositoryInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposListInvitationsForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -5963,7 +5958,7 @@ return execute(
 /// 
 ///
 /// `PATCH /user/repository_invitations/{invitation_id}`
-Future<ApiResult<void, BasicError>> reposAcceptInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposAcceptInvitationForAuthenticatedUserError>> reposAcceptInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -5976,7 +5971,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposAcceptInvitationForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -5985,7 +5980,7 @@ return execute(
 /// 
 ///
 /// `DELETE /user/repository_invitations/{invitation_id}`
-Future<ApiResult<void, BasicError>> reposDeclineInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ReposDeclineInvitationForAuthenticatedUserError>> reposDeclineInvitationForAuthenticatedUser({required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -5998,7 +5993,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ReposDeclineInvitationForAuthenticatedUserError.parse(response);
   },
 );
  } 

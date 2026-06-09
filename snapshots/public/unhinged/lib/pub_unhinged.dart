@@ -7,6 +7,7 @@ export 'apis/incidents_api.dart';
 export 'client/pub_unhinged_api.dart';
 export 'client/pub_unhinged_security.dart';
 export 'models/error_model.dart';
+export 'models/list_incidents_v2draft_error.dart';
 export 'models/list_model.dart';
 export 'models/n3_incident.dart';
 export 'models/new.dart';

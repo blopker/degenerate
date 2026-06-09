@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_images_list_images_sort_order.dart';import '../models/images_account_identifier.dart';import '../models/images_image.dart';import '../models/images_image_basic_upload.dart';import '../models/images_image_direct_upload_request.dart';import '../models/images_image_direct_upload_response_result.dart';import '../models/images_image_identifier.dart';import '../models/images_image_patch_request.dart';import '../models/images_images_list_continuation_token.dart';import '../models/images_images_list_response2.dart';import '../models/images_images_list_response2_result.dart';import '../models/images_images_stats.dart';/// CloudflareImagesApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_images_list_images_sort_order.dart';import '../models/images_account_identifier.dart';import '../models/images_deleted_response.dart';import '../models/images_image.dart';import '../models/images_image_basic_upload.dart';import '../models/images_image_direct_upload_request.dart';import '../models/images_image_direct_upload_response.dart';import '../models/images_image_direct_upload_response_result.dart';import '../models/images_image_identifier.dart';import '../models/images_image_patch_request.dart';import '../models/images_image_response_blob.dart';import '../models/images_image_response_single.dart';import '../models/images_images_list_continuation_token.dart';import '../models/images_images_list_response2.dart';import '../models/images_images_list_response2_result.dart';import '../models/images_images_stats.dart';import '../models/images_images_stats_response.dart';/// CloudflareImagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class CloudflareImagesApi with ApiExecutor {const CloudflareImagesApi(this
 /// 
 ///
 /// `POST /accounts/{account_id}/images/v1`
-Future<ApiResult<ImagesImage?, Never>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImage?, ImagesImageResponseSingle>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -44,6 +44,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImage.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ImagesImageResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Image details
@@ -51,7 +54,7 @@ return execute(
 /// Fetch details for a single image.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ImagesImage?, Never>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImage?, ImagesImageResponseSingle>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,6 +69,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImage.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ImagesImageResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update image
@@ -73,7 +79,7 @@ return execute(
 /// Update image access control. On access control change, all copies of the image are purged from cache.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ImagesImage?, Never>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImage?, ImagesImageResponseSingle>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,6 +96,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImage.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ImagesImageResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete image
@@ -97,7 +106,7 @@ return execute(
 /// Delete an image on Cloudflare Images. On success, all copies of the image are deleted and purged from cache.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ImagesDeletedResponse>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -112,6 +121,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: (response) {
+    return ImagesDeletedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Base image
@@ -119,7 +131,7 @@ return execute(
 /// Fetch base image. For most images this will be the originally uploaded file. For larger images it can be a near-lossless version of the original.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}/blob`
-Future<ApiResult<Uint8List, Never>> cloudflareImagesBaseImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Uint8List, ImagesImageResponseBlob>> cloudflareImagesBaseImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -133,6 +145,9 @@ return execute(
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
+  onError: (response) {
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
+  },
 );
  } 
 /// Images usage statistics
@@ -140,7 +155,7 @@ return execute(
 /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account's allowance.
 ///
 /// `GET /accounts/{account_id}/images/v1/stats`
-Future<ApiResult<ImagesImagesStats?, Never>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImagesStats?, ImagesImagesStatsResponse>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -154,6 +169,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImagesStats.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ImagesImagesStatsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -247,7 +265,7 @@ return execute(
 /// Direct uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a draft record for a future image. It returns an upload URL and an image identifier. To verify if the image itself has been uploaded, send an image details request (accounts/:account_identifier/images/v1/:identifier), and check that the `draft: true` property is not present.
 ///
 /// `POST /accounts/{account_id}/images/v2/direct_upload`
-Future<ApiResult<ImagesImageDirectUploadResponseResult?, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageDirectUploadResponseResult?, ImagesImageDirectUploadResponse>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -273,6 +291,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImageDirectUploadResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ImagesImageDirectUploadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

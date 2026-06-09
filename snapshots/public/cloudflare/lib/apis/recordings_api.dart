@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_all_recordings_sort_by.dart';import '../models/get_all_recordings_sort_order.dart';import '../models/get_all_recordings_status.dart';import '../models/pause_resume_stop_recording_request.dart';import '../models/realtimekit_account_identifier.dart';import '../models/realtimekit_app_id.dart';import '../models/realtimekit_generic_error_response.dart';import '../models/realtimekit_generic_success_response.dart';import '../models/realtimekit_paging_response.dart';import '../models/start_recording_request.dart';import '../models/start_track_recording_for_a_meeting_request.dart';/// RecordingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_all_recordings_sort_by.dart';import '../models/get_all_recordings_sort_order.dart';import '../models/get_all_recordings_status.dart';import '../models/get_all_recordings_success.dart';import '../models/pause_resume_stop_recording_request.dart';import '../models/realtimekit_account_identifier.dart';import '../models/realtimekit_app_id.dart';import '../models/realtimekit_generic_error_response.dart';import '../models/realtimekit_generic_success_response.dart';import '../models/start_recording_request.dart';import '../models/start_track_recording_for_a_meeting_request.dart';/// RecordingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RecordingsApi with ApiExecutor {const RecordingsApi(this.apiConfig);
 /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<RealtimekitPagingResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAllRecordingsSuccess, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (meetingId != null) {
   queryParameters['meeting_id'] = meetingId;
@@ -60,7 +60,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RealtimekitPagingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return GetAllRecordingsSuccess.parse(response);
   },
 );
  } 

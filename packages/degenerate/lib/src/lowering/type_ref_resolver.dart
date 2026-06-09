@@ -30,6 +30,7 @@ class TypeRefResolver {
       IrDiscriminatedUnion(:final name) => name,
       IrUntaggedUnion(:final name) => name,
       IrAnyOf(:final name) => name,
+      IrStatusUnion(:final name) => name,
       _ => null,
     };
     if (key != null && !_resolving.add(key)) return type; // cycle detected
@@ -111,6 +112,29 @@ class TypeRefResolver {
           description: type.description,
           isNullable: type.isNullable,
         );
+      case IrStatusUnion():
+        var changed = false;
+        final newVariants = type.variants.map((v) {
+          final schema = v.schema;
+          if (schema == null) return v;
+          var resolved = resolveRef(schema);
+          resolved = _resolveInType(resolved);
+          if (identical(resolved, schema)) return v;
+          changed = true;
+          return IrStatusVariant(
+            v.key,
+            v.className,
+            mediaType: v.mediaType,
+            schema: resolved,
+          );
+        }).toList();
+        if (!changed) return type;
+        return IrStatusUnion(
+          type.name,
+          newVariants,
+          description: type.description,
+          isNullable: type.isNullable,
+        );
       case IrUntaggedUnion():
         var changed = false;
         final newVariants = type.variants.map((v) {
@@ -166,7 +190,8 @@ class TypeRefResolver {
       if (resolved is IrObject ||
           resolved is IrDiscriminatedUnion ||
           resolved is IrUntaggedUnion ||
-          resolved is IrAnyOf) {
+          resolved is IrAnyOf ||
+          resolved is IrStatusUnion) {
         return current; // keep the ref - these get their own emitted files
       }
       // Extension types are emittable but resolve like enums - the

@@ -26,6 +26,7 @@ Reference irTypeToReference(
   return switch (type) {
     IrPrimitive(:final kind) => _primitiveRef(kind, nullable),
     IrEnum(:final name) => _maybeNullable(refer(name), nullable),
+    IrStatusUnion(:final name) => _maybeNullable(refer(name), nullable),
     IrList(:final items) => _maybeNullable(
       TypeReference(
         (b) => b
@@ -89,6 +90,7 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 /// Get the Dart type name string for an [IrType].
 String irTypeName(IrType type) {
   return switch (type) {
+    IrStatusUnion(:final name) => name,
     IrPrimitive(:final kind) => switch (kind) {
       PrimitiveKind.dynamic_ => 'dynamic',
       PrimitiveKind.string => 'String',
@@ -207,9 +209,10 @@ String? _simpleCastFromJson(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) => _isIdentityMapValue(values)
-        ? '$accessor as Map<String, dynamic>?'
-        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) =>
+      _isIdentityMapValue(values)
+          ? '$accessor as Map<String, dynamic>?'
+          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     _ => null,
   };
 }
@@ -249,9 +252,10 @@ String _buildFromJsonNonNull(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) => _isIdentityMapValue(values)
-        ? '$accessor as Map<String, dynamic>'
-        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) =>
+      _isIdentityMapValue(values)
+          ? '$accessor as Map<String, dynamic>'
+          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(
         variants,
@@ -281,6 +285,10 @@ String _buildFromJsonNonNull(
     IrDiscriminatedUnion(:final name) ||
     IrAnyOf(:final name) =>
       '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
+    // Status unions parse from a full ApiResponse, never from a JSON field.
+    IrStatusUnion(:final name) => throw ArgumentError(
+      'Status union $name cannot appear in a JSON field context',
+    ),
   };
 }
 
@@ -303,7 +311,11 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     }(),
     IrMap(:final values) => () {
       if (!mapValueNeedsToJson(values)) return accessor;
-      final valueExpr = buildToJsonCode(values, 'v', nullable: values.isNullable);
+      final valueExpr = buildToJsonCode(
+        values,
+        'v',
+        nullable: values.isNullable,
+      );
       // Skip identity map transform.
       if (valueExpr == 'v') return accessor;
       return '$accessor$q.map((k, v) => MapEntry(k, $valueExpr))';
@@ -316,6 +328,10 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     IrUntaggedUnion() ||
     IrAnyOf() ||
     IrExtensionType() => '$accessor$q.toJson()',
+    // Status unions parse from a full ApiResponse, never serialize to JSON.
+    IrStatusUnion(:final name) => throw ArgumentError(
+      'Status union $name cannot appear in a JSON field context',
+    ),
   };
 }
 
@@ -336,7 +352,8 @@ bool listItemNeedsToJson(IrType type) {
     IrDiscriminatedUnion() ||
     IrUntaggedUnion() ||
     IrAnyOf() ||
-    IrExtensionType() => true,
+    IrExtensionType() ||
+    IrStatusUnion() => true,
     IrList() || IrMap() => true,
   };
 }
@@ -474,7 +491,8 @@ String dartStringLiteral(String value) {
   final hasDoubleQuote = value.contains('"');
   final hasDollar = value.contains(r'$');
   final hasBackslash = value.contains(r'\');
-  final hasControl = value.contains('\n') ||
+  final hasControl =
+      value.contains('\n') ||
       value.contains('\r') ||
       value.contains('\t') ||
       _unicodeControlChars.hasMatch(value);

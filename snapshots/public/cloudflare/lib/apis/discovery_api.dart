@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/discovery_origin.dart';import '../models/discovery_patch_multiple_request_entry.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_direction.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_order.dart';import '../models/discovery_state.dart';import '../models/patch_discovered_operation_request.dart';import '../models/shield_discovery_operation.dart';import '../models/shield_identifier.dart';import '../models/shield_patch_discovery_response_result.dart';import '../models/shield_schema_response_discovery_result.dart';import '../models/shield_uuid.dart';/// DiscoveryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/discovery_origin.dart';import '../models/discovery_patch_multiple_request_entry.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_direction.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_order.dart';import '../models/discovery_state.dart';import '../models/patch_discovered_operation_request.dart';import '../models/response_common_failure7.dart';import '../models/shield_discovery_operation.dart';import '../models/shield_identifier.dart';import '../models/shield_patch_discovery_response_result.dart';import '../models/shield_schema_response_discovery.dart';import '../models/shield_schema_response_discovery_result.dart';import '../models/shield_uuid.dart';/// DiscoveryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DiscoveryApi with ApiExecutor {const DiscoveryApi(this.apiConfig);
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ShieldSchemaResponseDiscoveryResult, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldSchemaResponseDiscoveryResult, ShieldSchemaResponseDiscovery>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return ShieldSchemaResponseDiscoveryResult.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ShieldSchemaResponseDiscovery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Retrieve discovered operations on a zone
@@ -35,7 +38,7 @@ return execute(
 /// Retrieve the most up to date view of discovered operations
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<List<ShieldDiscoveryOperation>, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldDiscoveryOperation>, ResponseCommonFailure7>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -89,6 +92,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ShieldDiscoveryOperation.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure7.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Patch discovered operations
@@ -96,7 +102,7 @@ return execute(
 /// Update the `state` on one or more discovered operations
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<Map<String, DiscoveryPatchMultipleRequestEntry>, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, DiscoveryPatchMultipleRequestEntry>, ResponseCommonFailure7>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,6 +119,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, DiscoveryPatchMultipleRequestEntry.fromJson(v as Map<String, dynamic>)));
   },
+  onError: (response) {
+    return ResponseCommonFailure7.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Patch discovered operation
@@ -120,7 +129,7 @@ return execute(
 /// Update the `state` on a discovered operation
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations/{operation_id}`
-Future<ApiResult<ShieldPatchDiscoveryResponseResult, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPatchDiscoveryResponseResult, ResponseCommonFailure7>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,6 +145,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return ShieldPatchDiscoveryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ResponseCommonFailure7.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

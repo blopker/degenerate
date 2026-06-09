@@ -258,8 +258,11 @@ class ModelEmitter {
       IrEnum() => '${f.name}${_q}toJson()',
       IrList(:final items) => () {
         if (!listItemNeedsToJson(items)) return f.name;
-        final itemExpr =
-            buildToJsonCode(items, 'e', nullable: items.isNullable);
+        final itemExpr = buildToJsonCode(
+          items,
+          'e',
+          nullable: items.isNullable,
+        );
         final tearoff = asTearoff(itemExpr, 'e');
         if (tearoff != null) {
           return '${f.name}${_q}map($tearoff).toList()';
@@ -268,8 +271,11 @@ class ModelEmitter {
       }(),
       IrMap(:final values) => () {
         if (!mapValueNeedsToJson(values)) return f.name;
-        final valueExpr =
-            buildToJsonCode(values, 'v', nullable: values.isNullable);
+        final valueExpr = buildToJsonCode(
+          values,
+          'v',
+          nullable: values.isNullable,
+        );
         if (valueExpr == 'v') return f.name;
         return '${f.name}${_q}map((k, v) => MapEntry(k, $valueExpr))';
       }(),
@@ -279,6 +285,10 @@ class ModelEmitter {
       IrUntaggedUnion() => '${f.name}${_q}toJson()',
       IrAnyOf() => '${f.name}${_q}toJson()',
       IrExtensionType() => '${f.name}${_q}toJson()',
+      // Status unions parse from a full ApiResponse, never appear as fields.
+      IrStatusUnion(:final name) => throw ArgumentError(
+        'Status union $name cannot appear in a JSON field context',
+      ),
     };
   }
 

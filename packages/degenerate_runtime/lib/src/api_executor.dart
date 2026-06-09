@@ -42,9 +42,11 @@ mixin ApiExecutor {
       if (adapterToken != null) {
         if (userCancelToken != null) {
           final token = adapterToken;
-          unawaited(userCancelToken.whenCancelled.then((_) {
-            if (!token.isCancelled) token.cancel();
-          }));
+          unawaited(
+            userCancelToken.whenCancelled.then((_) {
+              if (!token.isCancelled) token.cancel();
+            }),
+          );
         }
         if (effectiveTimeout != null) {
           final token = adapterToken;
@@ -123,9 +125,11 @@ mixin ApiExecutor {
     if (adapterToken != null) {
       if (userCancelToken != null) {
         final token = adapterToken;
-        unawaited(userCancelToken.whenCancelled.then((_) {
-          if (!token.isCancelled) token.cancel();
-        }));
+        unawaited(
+          userCancelToken.whenCancelled.then((_) {
+            if (!token.isCancelled) token.cancel();
+          }),
+        );
       }
       if (effectiveTimeout != null) {
         final token = adapterToken;
@@ -173,8 +177,9 @@ mixin ApiExecutor {
         );
       }
 
-      yield* parseStream(streamedResponse.byteStream)
-          .map((data) => onEvent(data));
+      yield* parseStream(
+        streamedResponse.byteStream,
+      ).map((data) => onEvent(data));
     } on CancelledException {
       timeoutTimer?.cancel();
       if (timedOut) {
@@ -197,13 +202,11 @@ mixin ApiExecutor {
   Stream<T> executeStreaming<T>(
     ApiRequest request, {
     required T Function(String data) onEvent,
-  }) =>
-      _executeStreamingImpl(
-        request,
-        onEvent: onEvent,
-        parseStream: (bytes) =>
-            parseSseStream(bytes).map((event) => event.data),
-      );
+  }) => _executeStreamingImpl(
+    request,
+    onEvent: onEvent,
+    parseStream: (bytes) => parseSseStream(bytes).map((event) => event.data),
+  );
 
   /// JSONL streaming pipeline: send -> line parse -> deserialize.
   ///
@@ -212,10 +215,9 @@ mixin ApiExecutor {
   Stream<T> executeJsonlStreaming<T>(
     ApiRequest request, {
     required T Function(String data) onEvent,
-  }) =>
-      _executeStreamingImpl(
-        request,
-        onEvent: onEvent,
-        parseStream: parseJsonlStream,
-      );
+  }) => _executeStreamingImpl(
+    request,
+    onEvent: onEvent,
+    parseStream: parseJsonlStream,
+  );
 }

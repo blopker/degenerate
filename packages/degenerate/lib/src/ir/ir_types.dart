@@ -25,6 +25,7 @@ sealed class IrType {
     IrUntaggedUnion(:final name) => name,
     IrAnyOf(:final name) => name,
     IrExtensionType(:final name) => name,
+    IrStatusUnion(:final name) => name,
     _ => null,
   };
 
@@ -314,6 +315,70 @@ final class IrExtensionType extends IrType {
         );
 }
 
+/// A sealed union over an operation's response status codes.
+///
+/// Synthesized when an operation declares multiple distinct response body
+/// types on the success or error side (issue #5). Each variant wraps the
+/// body type of one status code (or range, or the `default` response).
+final class IrStatusUnion extends IrType {
+  /// Creates a status union IR node.
+  const IrStatusUnion(
+    this.name,
+    this.variants, {
+    super.description,
+    super.isNullable,
+  });
+
+  /// The Dart sealed class name (e.g. `PostAuthSuccess`).
+  final String name;
+
+  /// The variants in dispatch order: exact codes, then ranges, then
+  /// `default`. When no `default` variant is present, the emitter adds a
+  /// `$Unknown` fallback carrying the raw response.
+  final List<IrStatusVariant> variants;
+
+  @override
+  IrStatusUnion copyAsNullable() => isNullable
+      ? this
+      : IrStatusUnion(
+          name,
+          variants,
+          description: description,
+          isNullable: true,
+        );
+}
+
+/// One variant of an [IrStatusUnion].
+final class IrStatusVariant {
+  /// Creates a status union variant.
+  ///
+  /// [mediaType] and [schema] are either both present (a body-bearing
+  /// variant) or both null (a no-content variant).
+  const IrStatusVariant(
+    this.key,
+    this.className, {
+    this.mediaType,
+    this.schema,
+  }) : assert(
+         (mediaType == null) == (schema == null),
+         'mediaType and schema must both be set or both be null',
+       );
+
+  /// The response key: an exact code (`'200'`), a range (`'2XX'`), or
+  /// `'default'`.
+  final String key;
+
+  /// The generated variant class name (e.g. `PostAuthSuccess200`).
+  final String className;
+
+  /// The media type of the variant's body, or null for no-content
+  /// responses.
+  final String? mediaType;
+
+  /// The body type, or null for no-content responses.
+  final IrType? schema;
+}
+
 /// A reference to a named type (resolved during IR construction).
 final class IrTypeRef extends IrType {
   /// Creates a type reference to the named type [name].
@@ -439,7 +504,10 @@ final class IrOperation {
     this.parameters = const [],
     this.requestBody,
     this.responses = const {},
+    this.rangeResponses = const {},
     this.defaultResponse,
+    this.successUnion,
+    this.errorUnion,
     this.isDeprecated = false,
     this.securityRequirements,
   });
@@ -475,14 +543,59 @@ final class IrOperation {
   /// Status code to response mapping.
   final Map<int, IrResponse> responses;
 
+  /// Status range to response mapping, keyed by the normalized OpenAPI
+  /// wildcard form (`1XX`..`5XX`). Exact codes in [responses] take
+  /// precedence over a matching range.
+  final Map<String, IrResponse> rangeResponses;
+
   /// The default response (for unmatched status codes).
   final IrResponse? defaultResponse;
+
+  /// Sealed union over the success responses, synthesized when the 2xx
+  /// responses declare multiple distinct body types. Null when a single
+  /// plain success type suffices.
+  final IrStatusUnion? successUnion;
+
+  /// Sealed union over the error responses, synthesized when the non-2xx
+  /// responses (including `default`) declare multiple distinct body types.
+  final IrStatusUnion? errorUnion;
 
   /// Whether this operation is marked deprecated.
   final bool isDeprecated;
 
   /// Operation-level security requirements.
   final List<IrSecurityRequirement>? securityRequirements;
+
+  /// Copy with selected fields replaced; unspecified fields are preserved.
+  IrOperation copyWith({
+    String? dartMethodName,
+    List<IrParameter>? parameters,
+    IrRequestBody? requestBody,
+    Map<int, IrResponse>? responses,
+    Map<String, IrResponse>? rangeResponses,
+    IrResponse? defaultResponse,
+    IrStatusUnion? successUnion,
+    IrStatusUnion? errorUnion,
+  }) {
+    return IrOperation(
+      operationId,
+      dartMethodName ?? this.dartMethodName,
+      method,
+      path,
+      customMethod: customMethod,
+      summary: summary,
+      description: description,
+      parameters: parameters ?? this.parameters,
+      requestBody: requestBody ?? this.requestBody,
+      responses: responses ?? this.responses,
+      rangeResponses: rangeResponses ?? this.rangeResponses,
+      defaultResponse: defaultResponse ?? this.defaultResponse,
+      successUnion: successUnion ?? this.successUnion,
+      errorUnion: errorUnion ?? this.errorUnion,
+      isDeprecated: isDeprecated,
+      securityRequirements: securityRequirements,
+    );
+  }
 }
 
 /// A single operation parameter.

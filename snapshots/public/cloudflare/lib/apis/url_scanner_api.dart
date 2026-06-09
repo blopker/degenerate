@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/urlscanner_create_scan_bulk_request.dart';import '../models/urlscanner_create_scan_bulk_response.dart';import '../models/urlscanner_create_scan_bulk_response400.dart';import '../models/urlscanner_create_scan_request2.dart';import '../models/urlscanner_create_scan_response4002.dart';import '../models/urlscanner_get_response_response400.dart';import '../models/urlscanner_get_scan_dom_response400.dart';import '../models/urlscanner_get_scan_har_response2.dart';import '../models/urlscanner_get_scan_har_response4002.dart';import '../models/urlscanner_get_scan_response2.dart';import '../models/urlscanner_get_scan_response4002.dart';import '../models/urlscanner_get_scan_screenshot_resolution2.dart';import '../models/urlscanner_get_scan_screenshot_response4002.dart';import '../models/urlscanner_search_scans_response2.dart';import '../models/urlscanner_search_scans_response4002.dart';/// UrlScannerApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/urlscanner_create_scan_bulk_error.dart';import '../models/urlscanner_create_scan_bulk_request.dart';import '../models/urlscanner_create_scan_bulk_response.dart';import '../models/urlscanner_create_scan_error.dart';import '../models/urlscanner_create_scan_request2.dart';import '../models/urlscanner_get_response_response400.dart';import '../models/urlscanner_get_scan_dom_error.dart';import '../models/urlscanner_get_scan_error.dart';import '../models/urlscanner_get_scan_har_error.dart';import '../models/urlscanner_get_scan_har_response2.dart';import '../models/urlscanner_get_scan_response2.dart';import '../models/urlscanner_get_scan_screenshot_error.dart';import '../models/urlscanner_get_scan_screenshot_resolution2.dart';import '../models/urlscanner_search_scans_response2.dart';import '../models/urlscanner_search_scans_response4002.dart';/// UrlScannerApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class UrlScannerApi with ApiExecutor {const UrlScannerApi(this.apiConfig);
 /// Submit URLs to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/ and take into account scans submitted in bulk have lower priority and may take longer to finish.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/bulk`
-Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkResponse400>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkError>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,7 +31,7 @@ return execute(
     return json.map((e) => UrlscannerCreateScanBulkResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return UrlscannerCreateScanBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UrlscannerCreateScanBulkError.parse(response);
   },
 );
  } 
@@ -40,7 +40,7 @@ return execute(
 /// Returns a plain text response, with the scan's DOM content as rendered by Chrome.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/dom/{scan_id}`
-Future<ApiResult<String, UrlscannerGetScanDomResponse400>> urlscannerGetScanDomV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, UrlscannerGetScanDomError>> urlscannerGetScanDomV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -55,7 +55,7 @@ return execute(
     return response.body;
   },
   onError: (response) {
-    return UrlscannerGetScanDomResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UrlscannerGetScanDomError.parse(response);
   },
 );
  } 
@@ -64,7 +64,7 @@ return execute(
 /// Get a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/har/{scan_id}`
-Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarResponse4002>> urlscannerGetScanHarV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarError>> urlscannerGetScanHarV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,7 +79,7 @@ return execute(
     return UrlscannerGetScanHarResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return UrlscannerGetScanHarResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UrlscannerGetScanHarError.parse(response);
   },
 );
  } 
@@ -112,7 +112,7 @@ return execute(
 /// Get URL scan by uuid
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/result/{scan_id}`
-Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanResponse4002>> urlscannerGetScanV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanError>> urlscannerGetScanV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -127,7 +127,7 @@ return execute(
     return UrlscannerGetScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return UrlscannerGetScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UrlscannerGetScanError.parse(response);
   },
 );
  } 
@@ -136,7 +136,7 @@ return execute(
 /// Submit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/scan`
-Future<ApiResult<String, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, UrlscannerCreateScanError>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,7 +154,7 @@ return execute(
     return json['result'] as String;
   },
   onError: (response) {
-    return UrlscannerCreateScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UrlscannerCreateScanError.parse(response);
   },
 );
  } 
@@ -163,7 +163,7 @@ return execute(
 /// Get scan's screenshot by resolution (desktop/mobile/tablet).
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png`
-Future<ApiResult<String, UrlscannerGetScanScreenshotResponse4002>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, UrlscannerGetScanScreenshotError>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (resolution != null) {
   queryParameters['resolution'] = resolution.toJson();
@@ -186,7 +186,7 @@ return execute(
     return response.body;
   },
   onError: (response) {
-    return UrlscannerGetScanScreenshotResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UrlscannerGetScanScreenshotError.parse(response);
   },
 );
  } 

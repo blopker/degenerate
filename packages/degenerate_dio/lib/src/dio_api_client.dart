@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 
-
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:dio/dio.dart' as dio;
 
@@ -160,9 +159,11 @@ final class DioApiClient implements ApiClient {
     if (cancelToken == null) return null;
     if (cancelToken.isCancelled) throw const CancelledException();
     final dioCancelToken = dio.CancelToken();
-    unawaited(cancelToken.whenCancelled.then((_) {
-      if (!dioCancelToken.isCancelled) dioCancelToken.cancel();
-    }));
+    unawaited(
+      cancelToken.whenCancelled.then((_) {
+        if (!dioCancelToken.isCancelled) dioCancelToken.cancel();
+      }),
+    );
     return dioCancelToken;
   }
 

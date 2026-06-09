@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/org_private_registry_configuration.dart';import '../models/org_private_registry_configuration_with_selected_repositories.dart';import '../models/private_registries_create_org_private_registry_request.dart';import '../models/private_registries_get_org_public_key_response.dart';import '../models/private_registries_list_org_private_registries_response.dart';import '../models/private_registries_update_org_private_registry_request.dart';/// PrivateRegistriesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/org_private_registry_configuration.dart';import '../models/org_private_registry_configuration_with_selected_repositories.dart';import '../models/private_registries_create_org_private_registry_error.dart';import '../models/private_registries_create_org_private_registry_request.dart';import '../models/private_registries_get_org_public_key_response.dart';import '../models/private_registries_list_org_private_registries_response.dart';import '../models/private_registries_update_org_private_registry_error.dart';import '../models/private_registries_update_org_private_registry_request.dart';/// PrivateRegistriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -55,7 +55,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/private-registries`
-Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, BasicError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, PrivateRegistriesCreateOrgPrivateRegistryError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,7 +72,7 @@ return execute(
     return OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PrivateRegistriesCreateOrgPrivateRegistryError.parse(response);
   },
 );
  } 
@@ -138,7 +138,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, PrivateRegistriesUpdateOrgPrivateRegistryError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,7 +153,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PrivateRegistriesUpdateOrgPrivateRegistryError.parse(response);
   },
 );
  } 

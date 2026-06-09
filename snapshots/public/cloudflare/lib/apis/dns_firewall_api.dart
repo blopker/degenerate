@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_firewall_delete_dns_firewall_cluster_response_result.dart';import '../models/dns_firewall_dns_firewall_cluster.dart';import '../models/dns_firewall_dns_firewall_cluster_response.dart';import '../models/dns_firewall_dns_firewall_reverse_dns.dart';import '../models/dns_firewall_identifier.dart';/// DnsFirewallApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_firewall_delete_dns_firewall_cluster_response4xx.dart';import '../models/dns_firewall_delete_dns_firewall_cluster_response_result.dart';import '../models/dns_firewall_dns_firewall_cluster.dart';import '../models/dns_firewall_dns_firewall_cluster_response.dart';import '../models/dns_firewall_dns_firewall_response_collection.dart';import '../models/dns_firewall_dns_firewall_reverse_dns.dart';import '../models/dns_firewall_dns_firewall_reverse_dns_response2.dart';import '../models/dns_firewall_dns_firewall_single_response.dart';import '../models/dns_firewall_identifier.dart';/// DnsFirewallApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnsFirewallApi with ApiExecutor {const DnsFirewallApi(this.apiConfig
 /// List DNS Firewall clusters for an account
 ///
 /// `GET /accounts/{account_id}/dns_firewall`
-Future<ApiResult<List<DnsFirewallDnsFirewallClusterResponse>?, Never>> dnsFirewallListDnsFirewallClusters({required DnsFirewallIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DnsFirewallDnsFirewallClusterResponse>?, DnsFirewallDnsFirewallResponseCollection>> dnsFirewallListDnsFirewallClusters({required DnsFirewallIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -39,6 +39,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DnsFirewallDnsFirewallClusterResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return DnsFirewallDnsFirewallResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create DNS Firewall Cluster
@@ -46,7 +49,7 @@ return execute(
 /// Create a DNS Firewall cluster
 ///
 /// `POST /accounts/{account_id}/dns_firewall`
-Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, Never>> dnsFirewallCreateDnsFirewallCluster({required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallDnsFirewallSingleResponse>> dnsFirewallCreateDnsFirewallCluster({required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,6 +66,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsFirewallDnsFirewallClusterResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsFirewallDnsFirewallSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// DNS Firewall Cluster Details
@@ -70,7 +76,7 @@ return execute(
 /// Show a single DNS Firewall cluster for an account
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, Never>> dnsFirewallClusterDetails({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallDnsFirewallSingleResponse>> dnsFirewallClusterDetails({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -85,6 +91,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsFirewallDnsFirewallClusterResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsFirewallDnsFirewallSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update DNS Firewall Cluster
@@ -92,7 +101,7 @@ return execute(
 /// Modify the configuration of a DNS Firewall cluster
 ///
 /// `PATCH /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, Never>> dnsFirewallUpdateDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallDnsFirewallSingleResponse>> dnsFirewallUpdateDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,6 +118,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsFirewallDnsFirewallClusterResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsFirewallDnsFirewallSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete DNS Firewall Cluster
@@ -116,7 +128,7 @@ return execute(
 /// Delete a DNS Firewall cluster
 ///
 /// `DELETE /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<DnsFirewallDeleteDnsFirewallClusterResponseResult?, Never>> dnsFirewallDeleteDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDeleteDnsFirewallClusterResponseResult?, DnsFirewallDeleteDnsFirewallClusterResponse4xx>> dnsFirewallDeleteDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -131,6 +143,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsFirewallDeleteDnsFirewallClusterResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsFirewallDeleteDnsFirewallClusterResponse4xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Show DNS Firewall Cluster Reverse DNS
@@ -138,7 +153,7 @@ return execute(
 /// Show reverse DNS configuration (PTR records) for a DNS Firewall cluster
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns`
-Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, Never>> dnsFirewallShowDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, DnsFirewallDnsFirewallReverseDnsResponse2>> dnsFirewallShowDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -153,6 +168,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsFirewallDnsFirewallReverseDns.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsFirewallDnsFirewallReverseDnsResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update DNS Firewall Cluster Reverse DNS
@@ -160,7 +178,7 @@ return execute(
 /// Update reverse DNS configuration (PTR records) for a DNS Firewall cluster
 ///
 /// `PATCH /accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns`
-Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, Never>> dnsFirewallUpdateDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallReverseDns body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, DnsFirewallDnsFirewallReverseDnsResponse2>> dnsFirewallUpdateDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallReverseDns body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -176,6 +194,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsFirewallDnsFirewallReverseDns.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return DnsFirewallDnsFirewallReverseDnsResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

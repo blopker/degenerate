@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/turbo_request.dart';import '../models/turbo_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_flux_request.dart';import '../models/workers_ai_post_run_cf_deepgram_flux_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_nova3_request.dart';import '../models/workers_ai_post_run_cf_deepgram_nova3_response400.dart';import '../models/workers_ai_post_run_cf_openai_whisper_response400.dart';import '../models/workers_ai_post_run_cf_openai_whisper_tiny_en_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_flux_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_nova3_internal_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_nova3_response400.dart';/// WorkersAiAutomaticSpeechRecognitionApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/turbo_request.dart';import '../models/turbo_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_flux_request.dart';import '../models/workers_ai_post_run_cf_deepgram_flux_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_nova3_request.dart';import '../models/workers_ai_post_run_cf_deepgram_nova3_response400.dart';import '../models/workers_ai_post_run_cf_openai_whisper_response400.dart';import '../models/workers_ai_post_run_cf_openai_whisper_tiny_en_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_flux_error.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_nova3_error.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_nova3_internal_error.dart';/// WorkersAiAutomaticSpeechRecognitionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiAutomaticSpeechRecognitionApi with ApiExecutor {const Worke
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/flux model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/flux`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramFluxResponse400>> workersAiPostWebsocketRunCfDeepgramFlux({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramFluxError>> workersAiPostWebsocketRunCfDeepgramFlux({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramFluxResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersAiPostWebsocketRunCfDeepgramFluxError.parse(response);
   },
 );
  } 
@@ -72,7 +72,7 @@ return execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/nova-3`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3Response400>> workersAiPostWebsocketRunCfDeepgramNova3({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3Error>> workersAiPostWebsocketRunCfDeepgramNova3({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -85,7 +85,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramNova3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersAiPostWebsocketRunCfDeepgramNova3Error.parse(response);
   },
 );
  } 
@@ -131,7 +131,7 @@ return execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3-internal model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/nova-3-internal`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400>> workersAiPostWebsocketRunCfDeepgramNova3Internal({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3InternalError>> workersAiPostWebsocketRunCfDeepgramNova3Internal({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -144,7 +144,7 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersAiPostWebsocketRunCfDeepgramNova3InternalError.parse(response);
   },
 );
  } 

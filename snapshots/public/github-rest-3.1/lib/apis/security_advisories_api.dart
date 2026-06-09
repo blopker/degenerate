@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/full_repository.dart';import '../models/global_advisory.dart';import '../models/private_vulnerability_report_create.dart';import '../models/repository_advisory.dart';import '../models/repository_advisory_create.dart';import '../models/repository_advisory_update.dart';import '../models/security_advisories_list_global_advisories_affects.dart';import '../models/security_advisories_list_global_advisories_cwes.dart';import '../models/security_advisories_list_global_advisories_direction.dart';import '../models/security_advisories_list_global_advisories_severity.dart';import '../models/security_advisories_list_global_advisories_sort.dart';import '../models/security_advisories_list_global_advisories_type.dart';import '../models/security_advisories_list_org_repository_advisories_direction.dart';import '../models/security_advisories_list_org_repository_advisories_sort.dart';import '../models/security_advisories_list_org_repository_advisories_state.dart';import '../models/security_advisories_list_repository_advisories_direction.dart';import '../models/security_advisories_list_repository_advisories_sort.dart';import '../models/security_advisories_list_repository_advisories_state.dart';import '../models/security_advisory_ecosystems.dart';/// SecurityAdvisoriesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/full_repository.dart';import '../models/global_advisory.dart';import '../models/private_vulnerability_report_create.dart';import '../models/repository_advisory.dart';import '../models/repository_advisory_create.dart';import '../models/repository_advisory_update.dart';import '../models/security_advisories_create_fork_error.dart';import '../models/security_advisories_create_private_vulnerability_report_error.dart';import '../models/security_advisories_create_repository_advisory_cve_request_error.dart';import '../models/security_advisories_create_repository_advisory_error.dart';import '../models/security_advisories_list_global_advisories_affects.dart';import '../models/security_advisories_list_global_advisories_cwes.dart';import '../models/security_advisories_list_global_advisories_direction.dart';import '../models/security_advisories_list_global_advisories_error.dart';import '../models/security_advisories_list_global_advisories_severity.dart';import '../models/security_advisories_list_global_advisories_sort.dart';import '../models/security_advisories_list_global_advisories_type.dart';import '../models/security_advisories_list_org_repository_advisories_direction.dart';import '../models/security_advisories_list_org_repository_advisories_sort.dart';import '../models/security_advisories_list_org_repository_advisories_state.dart';import '../models/security_advisories_list_repository_advisories_direction.dart';import '../models/security_advisories_list_repository_advisories_sort.dart';import '../models/security_advisories_list_repository_advisories_state.dart';import '../models/security_advisories_update_repository_advisory_error.dart';import '../models/security_advisory_ecosystems.dart';/// SecurityAdvisoriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class SecurityAdvisoriesApi with ApiExecutor {const SecurityAdvisoriesApi(
 /// By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
 ///
 /// `GET /advisories`
-Future<ApiResult<List<GlobalAdvisory>, BasicError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GlobalAdvisory>, SecurityAdvisoriesListGlobalAdvisoriesError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ghsaId != null) {
   queryParameters['ghsa_id'] = ghsaId;
@@ -90,7 +90,7 @@ return execute(
     return json.map((e) => GlobalAdvisory.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SecurityAdvisoriesListGlobalAdvisoriesError.parse(response);
   },
 );
  } 
@@ -231,7 +231,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesCreateRepositoryAdvisory({required String owner, required String repo, required RepositoryAdvisoryCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesCreateRepositoryAdvisoryError>> securityAdvisoriesCreateRepositoryAdvisory({required String owner, required String repo, required RepositoryAdvisoryCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -248,7 +248,7 @@ return execute(
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SecurityAdvisoriesCreateRepositoryAdvisoryError.parse(response);
   },
 );
  } 
@@ -258,7 +258,7 @@ return execute(
 /// See "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)" for more information about private vulnerability reporting.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/reports`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesCreatePrivateVulnerabilityReport({required String owner, required String repo, required PrivateVulnerabilityReportCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesCreatePrivateVulnerabilityReportError>> securityAdvisoriesCreatePrivateVulnerabilityReport({required String owner, required String repo, required PrivateVulnerabilityReportCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -275,7 +275,7 @@ return execute(
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SecurityAdvisoriesCreatePrivateVulnerabilityReportError.parse(response);
   },
 );
  } 
@@ -320,7 +320,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesUpdateRepositoryAdvisory({required String owner, required String repo, required String ghsaId, required RepositoryAdvisoryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesUpdateRepositoryAdvisoryError>> securityAdvisoriesUpdateRepositoryAdvisory({required String owner, required String repo, required String ghsaId, required RepositoryAdvisoryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -337,7 +337,7 @@ return execute(
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SecurityAdvisoriesUpdateRepositoryAdvisoryError.parse(response);
   },
 );
  } 
@@ -352,7 +352,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve`
-Future<ApiResult<Map<String, dynamic>, BasicError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -367,7 +367,7 @@ return execute(
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError.parse(response);
   },
 );
  } 
@@ -379,7 +379,7 @@ return execute(
 /// > Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks`
-Future<ApiResult<FullRepository, BasicError>> securityAdvisoriesCreateFork({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FullRepository, SecurityAdvisoriesCreateForkError>> securityAdvisoriesCreateFork({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -394,7 +394,7 @@ return execute(
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SecurityAdvisoriesCreateForkError.parse(response);
   },
 );
  } 

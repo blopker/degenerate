@@ -13,7 +13,7 @@ final class MiscategorizationApi with ApiExecutor {const MiscategorizationApi(th
 /// Allows you to submit requests to change a domain’s category.
 ///
 /// `POST /accounts/{account_id}/intel/miscategorization`
-Future<ApiResult<ResponseCommon40, Never>> miscategorizationCreateMiscategorization({required IntelIdentifier accountId, required IntelMiscategorization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon40, ResponseCommon40>> miscategorizationCreateMiscategorization({required IntelIdentifier accountId, required IntelMiscategorization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,6 +27,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
+    return ResponseCommon40.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
     return ResponseCommon40.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );

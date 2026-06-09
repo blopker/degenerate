@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/rulesets_managed_transforms.dart';import '../models/rulesets_zone_id.dart';/// ManagedTransformsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/rulesets_managed_transforms.dart';import '../models/rulesets_response.dart';import '../models/rulesets_zone_id.dart';/// ManagedTransformsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ManagedTransformsApi with ApiExecutor {const ManagedTransformsApi(th
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<dynamic, Never>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<dynamic, RulesetsResponse>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'];
   },
+  onError: (response) {
+    return RulesetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update Managed Transforms
@@ -35,7 +38,7 @@ return execute(
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<dynamic, Never>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<dynamic, RulesetsResponse>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'];
   },
+  onError: (response) {
+    return RulesetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Managed Transforms
@@ -59,7 +65,7 @@ return execute(
 /// Disables all Managed Transforms.
 ///
 /// `DELETE /zones/{zone_id}/managed_headers`
-Future<ApiResult<void, Never>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, RulesetsResponse>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -71,6 +77,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: (response) {
+    return RulesetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
  }

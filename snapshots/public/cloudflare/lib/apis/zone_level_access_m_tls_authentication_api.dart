@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_components_schemas_certificates.dart';import '../models/access_components_schemas_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_schemas_settings.dart';import '../models/access_uuid.dart';import '../models/zone_level_access_mtls_authentication_add_an_mtls_certificate_request.dart';import '../models/zone_level_access_mtls_authentication_update_an_mtls_certificate_request.dart';import '../models/zone_level_access_mtls_authentication_update_an_mtls_certificate_settings_request.dart';/// ZoneLevelAccessMTlsAuthenticationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_components_schemas_certificates.dart';import '../models/access_components_schemas_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_schemas_settings.dart';import '../models/access_uuid.dart';import '../models/response_common_failure4.dart';import '../models/zone_level_access_mtls_authentication_add_an_mtls_certificate_request.dart';import '../models/zone_level_access_mtls_authentication_update_an_mtls_certificate_request.dart';import '../models/zone_level_access_mtls_authentication_update_an_mtls_certificate_settings_request.dart';/// ZoneLevelAccessMTlsAuthenticationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneLevelAccessMTlsAuthenticationApi with ApiExecutor {const ZoneLev
 /// Lists all mTLS certificates.
 ///
 /// `GET /zones/{zone_id}/access/certificates`
-Future<ApiResult<List<AccessComponentsSchemasCertificates>?, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessComponentsSchemasCertificates>?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessComponentsSchemasCertificates.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Add an mTLS certificate
@@ -35,7 +38,7 @@ return execute(
 /// Adds a new mTLS root certificate to Access.
 ///
 /// `POST /zones/{zone_id}/access/certificates`
-Future<ApiResult<AccessComponentsSchemasCertificates?, Never>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasCertificates?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessComponentsSchemasCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get an mTLS certificate
@@ -59,7 +65,7 @@ return execute(
 /// Fetches a single mTLS certificate.
 ///
 /// `GET /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasCertificates?, Never>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasCertificates?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,6 +80,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessComponentsSchemasCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update an mTLS certificate
@@ -81,7 +90,7 @@ return execute(
 /// Updates a configured mTLS certificate.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasCertificates?, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasCertificates?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,6 +107,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessComponentsSchemasCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete an mTLS certificate
@@ -105,7 +117,7 @@ return execute(
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasIdResponseResult?, Never>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasIdResponseResult?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,6 +132,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// List all mTLS hostname settings
@@ -127,7 +142,7 @@ return execute(
 /// List all mTLS hostname settings for this zone.
 ///
 /// `GET /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<List<AccessSchemasSettings>?, Never>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasSettings>?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -142,6 +157,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessSchemasSettings.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update an mTLS certificate's hostname settings
@@ -149,7 +167,7 @@ return execute(
 /// Updates an mTLS certificate's hostname settings.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<List<AccessSchemasSettings>?, Never>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasSettings>?, ResponseCommonFailure4>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,6 +183,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessSchemasSettings.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

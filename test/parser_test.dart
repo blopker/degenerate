@@ -7,8 +7,9 @@ void main() {
   late OpenApiDocument doc;
 
   setUp(() {
-    final yamlContent =
-        File('test/fixtures/public/petstore-v3.0-oai.yaml').readAsStringSync();
+    final yamlContent = File(
+      'test/fixtures/public/petstore-v3.0-oai.yaml',
+    ).readAsStringSync();
     doc = OpenApiDocument.parseYaml(yamlContent);
   });
 
@@ -89,7 +90,9 @@ void main() {
 
     test('throws for URL-based external ref', () {
       expect(
-        () => doc.resolveRef('https://example.com/spec.yaml#/components/schemas/Pet'),
+        () => doc.resolveRef(
+          'https://example.com/spec.yaml#/components/schemas/Pet',
+        ),
         throwsA(isA<UnsupportedError>()),
       );
     });
@@ -113,17 +116,26 @@ void main() {
 
   group('missing components', () {
     test('returns empty schemas when components is missing', () {
-      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': <String, dynamic>{}});
+      final minimal = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': <String, dynamic>{},
+      });
       expect(minimal.schemas, isEmpty);
     });
 
     test('returns empty paths when paths is missing', () {
-      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': <String, dynamic>{}});
+      final minimal = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': <String, dynamic>{},
+      });
       expect(minimal.paths, isEmpty);
     });
 
     test('returns empty servers when servers is missing', () {
-      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': <String, dynamic>{}});
+      final minimal = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': <String, dynamic>{},
+      });
       expect(minimal.servers, isEmpty);
     });
   });

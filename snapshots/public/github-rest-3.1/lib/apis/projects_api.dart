@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/field.dart';import '../models/item_simple.dart';import '../models/item_with_content.dart';import '../models/projects.dart';import '../models/projects_add_field_for_org_request.dart';import '../models/projects_add_field_for_user_request.dart';import '../models/projects_create_draft_item_for_authenticated_user_request.dart';import '../models/projects_create_draft_item_for_org_request.dart';import '../models/projects_create_view_for_org_request.dart';import '../models/projects_create_view_for_user_request.dart';import '../models/projects_get_org_item_fields.dart';import '../models/projects_get_user_item_fields.dart';import '../models/projects_list_items_for_org_fields.dart';import '../models/projects_list_items_for_user_fields.dart';import '../models/projects_list_view_items_for_org_fields.dart';import '../models/projects_list_view_items_for_user_fields.dart';import '../models/projects_update_item_for_org_request.dart';import '../models/projects_update_item_for_user_request.dart';import '../models/view.dart';/// ProjectsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/field.dart';import '../models/item_simple.dart';import '../models/item_with_content.dart';import '../models/projects.dart';import '../models/projects_add_field_for_org_error.dart';import '../models/projects_add_field_for_org_request.dart';import '../models/projects_add_field_for_user_error.dart';import '../models/projects_add_field_for_user_request.dart';import '../models/projects_add_item_for_org_error.dart';import '../models/projects_add_item_for_user_error.dart';import '../models/projects_create_draft_item_for_authenticated_user_error.dart';import '../models/projects_create_draft_item_for_authenticated_user_request.dart';import '../models/projects_create_draft_item_for_org_error.dart';import '../models/projects_create_draft_item_for_org_request.dart';import '../models/projects_create_view_for_org_error.dart';import '../models/projects_create_view_for_org_request.dart';import '../models/projects_create_view_for_user_error.dart';import '../models/projects_create_view_for_user_request.dart';import '../models/projects_get_field_for_org_error.dart';import '../models/projects_get_field_for_user_error.dart';import '../models/projects_get_for_org_error.dart';import '../models/projects_get_for_user_error.dart';import '../models/projects_get_org_item_error.dart';import '../models/projects_get_org_item_fields.dart';import '../models/projects_get_user_item_error.dart';import '../models/projects_get_user_item_fields.dart';import '../models/projects_list_fields_for_org_error.dart';import '../models/projects_list_fields_for_user_error.dart';import '../models/projects_list_for_org_error.dart';import '../models/projects_list_for_user_error.dart';import '../models/projects_list_items_for_org_error.dart';import '../models/projects_list_items_for_org_fields.dart';import '../models/projects_list_items_for_user_error.dart';import '../models/projects_list_items_for_user_fields.dart';import '../models/projects_list_view_items_for_org_error.dart';import '../models/projects_list_view_items_for_org_fields.dart';import '../models/projects_list_view_items_for_user_error.dart';import '../models/projects_list_view_items_for_user_fields.dart';import '../models/projects_update_item_for_org_error.dart';import '../models/projects_update_item_for_org_request.dart';import '../models/projects_update_item_for_user_error.dart';import '../models/projects_update_item_for_user_request.dart';import '../models/view.dart';/// ProjectsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ProjectsApi with ApiExecutor {const ProjectsApi(this.apiConfig);
 /// List all projects owned by a specific organization accessible by the authenticated user.
 ///
 /// `GET /orgs/{org}/projectsV2`
-Future<ApiResult<List<Projects>, BasicError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Projects>, ProjectsListForOrgError>> projectsListForOrg({required String org, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (q != null) {
   queryParameters['q'] = q;
@@ -46,7 +46,7 @@ return execute(
     return json.map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListForOrgError.parse(response);
   },
 );
  } 
@@ -55,7 +55,7 @@ return execute(
 /// Get a specific organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}`
-Future<ApiResult<Projects, BasicError>> projectsGetForOrg({required int projectNumber, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Projects, ProjectsGetForOrgError>> projectsGetForOrg({required int projectNumber, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -70,7 +70,7 @@ return execute(
     return Projects.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsGetForOrgError.parse(response);
   },
 );
  } 
@@ -79,7 +79,7 @@ return execute(
 /// Create draft issue item for the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/drafts`
-Future<ApiResult<ItemSimple, BasicError>> projectsCreateDraftItemForOrg({required String org, required int projectNumber, required ProjectsCreateDraftItemForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ProjectsCreateDraftItemForOrgError>> projectsCreateDraftItemForOrg({required String org, required int projectNumber, required ProjectsCreateDraftItemForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ return execute(
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsCreateDraftItemForOrgError.parse(response);
   },
 );
  } 
@@ -105,7 +105,7 @@ return execute(
 /// List all fields for a specific organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields`
-Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Field>, ProjectsListFieldsForOrgError>> projectsListFieldsForOrg({required int projectNumber, required String org, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -135,14 +135,14 @@ return execute(
     return json.map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListFieldsForOrgError.parse(response);
   },
 );
  } 
 /// Add a field to an organization-owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/fields`
-Future<ApiResult<Field, BasicError>> projectsAddFieldForOrg({required int projectNumber, required String org, required ProjectsAddFieldForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ProjectsAddFieldForOrgError>> projectsAddFieldForOrg({required int projectNumber, required String org, required ProjectsAddFieldForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,7 +159,7 @@ return execute(
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsAddFieldForOrgError.parse(response);
   },
 );
  } 
@@ -168,7 +168,7 @@ return execute(
 /// Get a specific field for an organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}`
-Future<ApiResult<Field, BasicError>> projectsGetFieldForOrg({required int projectNumber, required int fieldId, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ProjectsGetFieldForOrgError>> projectsGetFieldForOrg({required int projectNumber, required int fieldId, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -183,7 +183,7 @@ return execute(
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsGetFieldForOrgError.parse(response);
   },
 );
  } 
@@ -192,7 +192,7 @@ return execute(
 /// List all items for a specific organization-owned project accessible by the authenticated user.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ProjectsListItemsForOrgError>> projectsListItemsForOrg({required int projectNumber, required String org, String? q, ProjectsListItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (q != null) {
   queryParameters['q'] = q;
@@ -228,7 +228,7 @@ return execute(
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListItemsForOrgError.parse(response);
   },
 );
  } 
@@ -237,7 +237,7 @@ return execute(
 /// Add an issue or pull request item to the specified organization owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForOrg({required String org, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ProjectsAddItemForOrgError>> projectsAddItemForOrg({required String org, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -254,7 +254,7 @@ return execute(
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsAddItemForOrgError.parse(response);
   },
 );
  } 
@@ -263,7 +263,7 @@ return execute(
 /// Get a specific item from an organization-owned project.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ItemWithContent, ProjectsGetOrgItemError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -286,7 +286,7 @@ return execute(
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsGetOrgItemError.parse(response);
   },
 );
  } 
@@ -295,7 +295,7 @@ return execute(
 /// Update a specific item in an organization-owned project.
 ///
 /// `PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsUpdateItemForOrg({required int projectNumber, required String org, required int itemId, required ProjectsUpdateItemForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemWithContent, ProjectsUpdateItemForOrgError>> projectsUpdateItemForOrg({required int projectNumber, required String org, required int itemId, required ProjectsUpdateItemForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -312,7 +312,7 @@ return execute(
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsUpdateItemForOrgError.parse(response);
   },
 );
  } 
@@ -343,7 +343,7 @@ return execute(
 /// Create a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/views`
-Future<ApiResult<View, BasicError>> projectsCreateViewForOrg({required String org, required int projectNumber, required ProjectsCreateViewForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<View, ProjectsCreateViewForOrgError>> projectsCreateViewForOrg({required String org, required int projectNumber, required ProjectsCreateViewForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -360,7 +360,7 @@ return execute(
     return View.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsCreateViewForOrgError.parse(response);
   },
 );
  } 
@@ -369,7 +369,7 @@ return execute(
 /// List items in an organization project with the saved view's filter applied.
 ///
 /// `GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ProjectsListViewItemsForOrgError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -402,7 +402,7 @@ return execute(
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListViewItemsForOrgError.parse(response);
   },
 );
  } 
@@ -411,7 +411,7 @@ return execute(
 /// Create draft issue item for the specified user owned project.
 ///
 /// `POST /user/{user_id}/projectsV2/{project_number}/drafts`
-Future<ApiResult<ItemSimple, BasicError>> projectsCreateDraftItemForAuthenticatedUser({required String userId, required int projectNumber, required ProjectsCreateDraftItemForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ProjectsCreateDraftItemForAuthenticatedUserError>> projectsCreateDraftItemForAuthenticatedUser({required String userId, required int projectNumber, required ProjectsCreateDraftItemForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -428,7 +428,7 @@ return execute(
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsCreateDraftItemForAuthenticatedUserError.parse(response);
   },
 );
  } 
@@ -437,7 +437,7 @@ return execute(
 /// Create a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
 /// `POST /users/{user_id}/projectsV2/{project_number}/views`
-Future<ApiResult<View, BasicError>> projectsCreateViewForUser({required String userId, required int projectNumber, required ProjectsCreateViewForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<View, ProjectsCreateViewForUserError>> projectsCreateViewForUser({required String userId, required int projectNumber, required ProjectsCreateViewForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -454,7 +454,7 @@ return execute(
     return View.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsCreateViewForUserError.parse(response);
   },
 );
  } 
@@ -463,7 +463,7 @@ return execute(
 /// List all projects owned by a specific user accessible by the authenticated user.
 ///
 /// `GET /users/{username}/projectsV2`
-Future<ApiResult<List<Projects>, BasicError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Projects>, ProjectsListForUserError>> projectsListForUser({required String username, String? q, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (q != null) {
   queryParameters['q'] = q;
@@ -496,7 +496,7 @@ return execute(
     return json.map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListForUserError.parse(response);
   },
 );
  } 
@@ -505,7 +505,7 @@ return execute(
 /// Get a specific user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}`
-Future<ApiResult<Projects, BasicError>> projectsGetForUser({required int projectNumber, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Projects, ProjectsGetForUserError>> projectsGetForUser({required int projectNumber, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -520,7 +520,7 @@ return execute(
     return Projects.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsGetForUserError.parse(response);
   },
 );
  } 
@@ -529,7 +529,7 @@ return execute(
 /// List all fields for a specific user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/fields`
-Future<ApiResult<List<Field>, BasicError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Field>, ProjectsListFieldsForUserError>> projectsListFieldsForUser({required int projectNumber, required String username, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -559,7 +559,7 @@ return execute(
     return json.map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListFieldsForUserError.parse(response);
   },
 );
  } 
@@ -568,7 +568,7 @@ return execute(
 /// Add a field to a specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/fields`
-Future<ApiResult<Field, BasicError>> projectsAddFieldForUser({required String username, required int projectNumber, required ProjectsAddFieldForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ProjectsAddFieldForUserError>> projectsAddFieldForUser({required String username, required int projectNumber, required ProjectsAddFieldForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -585,7 +585,7 @@ return execute(
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsAddFieldForUserError.parse(response);
   },
 );
  } 
@@ -594,7 +594,7 @@ return execute(
 /// Get a specific field for a user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/fields/{field_id}`
-Future<ApiResult<Field, BasicError>> projectsGetFieldForUser({required int projectNumber, required int fieldId, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Field, ProjectsGetFieldForUserError>> projectsGetFieldForUser({required int projectNumber, required int fieldId, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -609,7 +609,7 @@ return execute(
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsGetFieldForUserError.parse(response);
   },
 );
  } 
@@ -618,7 +618,7 @@ return execute(
 /// List all items for a specific user-owned project accessible by the authenticated user.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ProjectsListItemsForUserError>> projectsListItemsForUser({required int projectNumber, required String username, String? before, String? after, int? perPage, String? q, ProjectsListItemsForUserFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (before != null) {
   queryParameters['before'] = before;
@@ -654,7 +654,7 @@ return execute(
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListItemsForUserError.parse(response);
   },
 );
  } 
@@ -663,7 +663,7 @@ return execute(
 /// Add an issue or pull request item to the specified user owned project.
 ///
 /// `POST /users/{username}/projectsV2/{project_number}/items`
-Future<ApiResult<ItemSimple, BasicError>> projectsAddItemForUser({required String username, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemSimple, ProjectsAddItemForUserError>> projectsAddItemForUser({required String username, required int projectNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -680,7 +680,7 @@ return execute(
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsAddItemForUserError.parse(response);
   },
 );
  } 
@@ -689,7 +689,7 @@ return execute(
 /// Get a specific item from a user-owned project.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ItemWithContent, ProjectsGetUserItemError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -712,7 +712,7 @@ return execute(
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsGetUserItemError.parse(response);
   },
 );
  } 
@@ -721,7 +721,7 @@ return execute(
 /// Update a specific item in a user-owned project.
 ///
 /// `PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}`
-Future<ApiResult<ItemWithContent, BasicError>> projectsUpdateItemForUser({required int projectNumber, required String username, required int itemId, required ProjectsUpdateItemForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ItemWithContent, ProjectsUpdateItemForUserError>> projectsUpdateItemForUser({required int projectNumber, required String username, required int itemId, required ProjectsUpdateItemForUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -738,7 +738,7 @@ return execute(
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsUpdateItemForUserError.parse(response);
   },
 );
  } 
@@ -769,7 +769,7 @@ return execute(
 /// List items in a user project with the saved view's filter applied.
 ///
 /// `GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items`
-Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ItemWithContent>, ProjectsListViewItemsForUserError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
@@ -802,7 +802,7 @@ return execute(
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ProjectsListViewItemsForUserError.parse(response);
   },
 );
  } 
