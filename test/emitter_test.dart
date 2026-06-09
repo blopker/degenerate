@@ -474,6 +474,53 @@ void main() {
       expect(source, contains("'circle' => ShapeCircle.fromJson(json)"));
     });
 
+    test('ref variant whose model name matches the derived variant name '
+        'gets a collision-free wrapper name', () {
+      // OpenAI's Realtime schemas are named `<UnionName><PascalCase(value)>`,
+      // exactly the derived wrapper name. A same-named wrapper would shadow
+      // the model inside the union library, making fromJson self-recursive
+      // and the barrel exports ambiguous.
+      const union = IrDiscriminatedUnion('RealtimeClientEvent', 'type', {
+        'conversation.item.create': IrTypeRef(
+          'RealtimeClientEventConversationItemCreate',
+        ),
+        'response.create': IrTypeRef('CreateResponse'),
+      });
+
+      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      expect(
+        source,
+        contains(
+          r'final class RealtimeClientEvent$ConversationItemCreate '
+          'extends RealtimeClientEvent',
+        ),
+      );
+      expect(
+        source,
+        contains(
+          r"'conversation.item.create' => "
+          r'RealtimeClientEvent$ConversationItemCreate.fromJson(json)',
+        ),
+      );
+      // The wrapper must still construct the referenced model.
+      expect(
+        source,
+        contains(
+          r'RealtimeClientEvent$ConversationItemCreate('
+          'RealtimeClientEventConversationItemCreate.fromJson(json))',
+        ),
+      );
+      // Non-colliding ref variants keep the derived name.
+      expect(
+        source,
+        contains('final class RealtimeClientEventResponseCreate '
+            'extends RealtimeClientEvent'),
+      );
+    });
+
     test('discriminated union is valid Dart', () {
       const union = IrDiscriminatedUnion('Animal', 'kind', {
         'dog': IrObject(

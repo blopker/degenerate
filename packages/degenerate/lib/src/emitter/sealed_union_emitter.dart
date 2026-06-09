@@ -17,6 +17,23 @@ class DiscriminatedUnionEmitter {
   /// The Dart getter name for the discriminator property.
   String get _discDartName => toCamelCase(union.discriminatorProperty);
 
+  /// Class name for the variant wrapping [type], keyed by discriminator
+  /// value.
+  ///
+  /// The derived `<UnionName><PascalCase(value)>` name can be identical to
+  /// the referenced model's own class name (e.g. OpenAI's
+  /// `RealtimeClientEventSessionUpdate`). A same-named wrapper would shadow
+  /// the model inside the union's library — making the wrapper's fromJson
+  /// self-recursive — and make the barrel exports ambiguous, so insert a `$`
+  /// separator in that case (matching the `$Unknown` variant style).
+  String _variantClassName(String key, IrType type) {
+    final derived = variantClassName(union.name, key);
+    if (derived == irTypeName(type)) {
+      return '${union.name}\$${toPascalCase(key)}';
+    }
+    return derived;
+  }
+
   /// The original JSON key for the discriminator property.
   String get _discJsonKey => union.discriminatorProperty;
 
@@ -86,7 +103,7 @@ class DiscriminatedUnionEmitter {
   Constructor _buildFromJson(String unknownClassName) {
     final cases = union.mapping.entries
         .map((e) {
-          final className = variantClassName(union.name, e.key);
+          final className = _variantClassName(e.key, e.value);
           return "  '${e.key}' => $className.fromJson(json),";
         })
         .join('\n');
@@ -181,7 +198,7 @@ class DiscriminatedUnionEmitter {
   }
 
   List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
-    final className = variantClassName(union.name, discriminatorValue);
+    final className = _variantClassName(discriminatorValue, variantType);
 
     // If the variant is an IrObject, emit it as a subclass with all its fields
     if (variantType is IrObject) {

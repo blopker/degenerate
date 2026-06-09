@@ -6,8 +6,8 @@ sealed class RealtimeConversationItem {const RealtimeConversationItem();
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory RealtimeConversationItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
   'message' => RealtimeConversationItemMessage.fromJson(json),
-  'function_call' => RealtimeConversationItemFunctionCall.fromJson(json),
-  'function_call_output' => RealtimeConversationItemFunctionCallOutput.fromJson(json),
+  'function_call' => RealtimeConversationItem$FunctionCall.fromJson(json),
+  'function_call_output' => RealtimeConversationItem$FunctionCallOutput.fromJson(json),
   'mcp_approval_response' => RealtimeConversationItemMcpApprovalResponse.fromJson(json),
   'mcp_list_tools' => RealtimeConversationItemMcpListTools.fromJson(json),
   'mcp_call' => RealtimeConversationItemMcpCall.fromJson(json),
@@ -34,31 +34,31 @@ final RealtimeConversationItemMessageAssistant realtimeConversationItemMessageAs
 @override int get hashCode { return realtimeConversationItemMessageAssistant.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant: $realtimeConversationItemMessageAssistant)'; } 
  }
-@immutable final class RealtimeConversationItemFunctionCall extends RealtimeConversationItem {const RealtimeConversationItemFunctionCall(this.realtimeConversationItemFunctionCall);
+@immutable final class RealtimeConversationItem$FunctionCall extends RealtimeConversationItem {const RealtimeConversationItem$FunctionCall(this.realtimeConversationItemFunctionCall);
 
-factory RealtimeConversationItemFunctionCall.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCall(RealtimeConversationItemFunctionCall.fromJson(json)); }
+factory RealtimeConversationItem$FunctionCall.fromJson(Map<String, dynamic> json) { return RealtimeConversationItem$FunctionCall(RealtimeConversationItemFunctionCall.fromJson(json)); }
 
 final RealtimeConversationItemFunctionCall realtimeConversationItemFunctionCall;
 
 @override String get type { return 'function_call'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemFunctionCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCall && realtimeConversationItemFunctionCall == other.realtimeConversationItemFunctionCall; } 
+    other is RealtimeConversationItem$FunctionCall && realtimeConversationItemFunctionCall == other.realtimeConversationItemFunctionCall; } 
 @override int get hashCode { return realtimeConversationItemFunctionCall.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCall(realtimeConversationItemFunctionCall: $realtimeConversationItemFunctionCall)'; } 
+@override String toString() { return 'RealtimeConversationItem\$FunctionCall(realtimeConversationItemFunctionCall: $realtimeConversationItemFunctionCall)'; } 
  }
-@immutable final class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationItem {const RealtimeConversationItemFunctionCallOutput(this.realtimeConversationItemFunctionCallOutput);
+@immutable final class RealtimeConversationItem$FunctionCallOutput extends RealtimeConversationItem {const RealtimeConversationItem$FunctionCallOutput(this.realtimeConversationItemFunctionCallOutput);
 
-factory RealtimeConversationItemFunctionCallOutput.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCallOutput(RealtimeConversationItemFunctionCallOutput.fromJson(json)); }
+factory RealtimeConversationItem$FunctionCallOutput.fromJson(Map<String, dynamic> json) { return RealtimeConversationItem$FunctionCallOutput(RealtimeConversationItemFunctionCallOutput.fromJson(json)); }
 
 final RealtimeConversationItemFunctionCallOutput realtimeConversationItemFunctionCallOutput;
 
 @override String get type { return 'function_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemFunctionCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallOutput && realtimeConversationItemFunctionCallOutput == other.realtimeConversationItemFunctionCallOutput; } 
+    other is RealtimeConversationItem$FunctionCallOutput && realtimeConversationItemFunctionCallOutput == other.realtimeConversationItemFunctionCallOutput; } 
 @override int get hashCode { return realtimeConversationItemFunctionCallOutput.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallOutput(realtimeConversationItemFunctionCallOutput: $realtimeConversationItemFunctionCallOutput)'; } 
+@override String toString() { return 'RealtimeConversationItem\$FunctionCallOutput(realtimeConversationItemFunctionCallOutput: $realtimeConversationItemFunctionCallOutput)'; } 
  }
 @immutable final class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationItem {const RealtimeConversationItemMcpApprovalResponse(this.realtimeMcpApprovalResponse);
 

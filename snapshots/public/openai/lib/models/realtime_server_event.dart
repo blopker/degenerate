@@ -6,52 +6,52 @@ sealed class RealtimeServerEvent {const RealtimeServerEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory RealtimeServerEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'conversation.created' => RealtimeServerEventConversationCreated.fromJson(json),
-  'conversation.item.created' => RealtimeServerEventConversationItemCreated.fromJson(json),
-  'conversation.item.deleted' => RealtimeServerEventConversationItemDeleted.fromJson(json),
-  'conversation.item.input_audio_transcription.completed' => RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(json),
-  'conversation.item.input_audio_transcription.delta' => RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(json),
-  'conversation.item.input_audio_transcription.failed' => RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(json),
-  'conversation.item.retrieved' => RealtimeServerEventConversationItemRetrieved.fromJson(json),
-  'conversation.item.truncated' => RealtimeServerEventConversationItemTruncated.fromJson(json),
-  'error' => RealtimeServerEventError.fromJson(json),
-  'input_audio_buffer.cleared' => RealtimeServerEventInputAudioBufferCleared.fromJson(json),
-  'input_audio_buffer.committed' => RealtimeServerEventInputAudioBufferCommitted.fromJson(json),
-  'input_audio_buffer.dtmf_event_received' => RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(json),
-  'input_audio_buffer.speech_started' => RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(json),
-  'input_audio_buffer.speech_stopped' => RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(json),
-  'rate_limits.updated' => RealtimeServerEventRateLimitsUpdated.fromJson(json),
+  'conversation.created' => RealtimeServerEvent$ConversationCreated.fromJson(json),
+  'conversation.item.created' => RealtimeServerEvent$ConversationItemCreated.fromJson(json),
+  'conversation.item.deleted' => RealtimeServerEvent$ConversationItemDeleted.fromJson(json),
+  'conversation.item.input_audio_transcription.completed' => RealtimeServerEvent$ConversationItemInputAudioTranscriptionCompleted.fromJson(json),
+  'conversation.item.input_audio_transcription.delta' => RealtimeServerEvent$ConversationItemInputAudioTranscriptionDelta.fromJson(json),
+  'conversation.item.input_audio_transcription.failed' => RealtimeServerEvent$ConversationItemInputAudioTranscriptionFailed.fromJson(json),
+  'conversation.item.retrieved' => RealtimeServerEvent$ConversationItemRetrieved.fromJson(json),
+  'conversation.item.truncated' => RealtimeServerEvent$ConversationItemTruncated.fromJson(json),
+  'error' => RealtimeServerEvent$Error.fromJson(json),
+  'input_audio_buffer.cleared' => RealtimeServerEvent$InputAudioBufferCleared.fromJson(json),
+  'input_audio_buffer.committed' => RealtimeServerEvent$InputAudioBufferCommitted.fromJson(json),
+  'input_audio_buffer.dtmf_event_received' => RealtimeServerEvent$InputAudioBufferDtmfEventReceived.fromJson(json),
+  'input_audio_buffer.speech_started' => RealtimeServerEvent$InputAudioBufferSpeechStarted.fromJson(json),
+  'input_audio_buffer.speech_stopped' => RealtimeServerEvent$InputAudioBufferSpeechStopped.fromJson(json),
+  'rate_limits.updated' => RealtimeServerEvent$RateLimitsUpdated.fromJson(json),
   'response.output_audio.delta' => RealtimeServerEventResponseOutputAudioDelta.fromJson(json),
   'response.output_audio.done' => RealtimeServerEventResponseOutputAudioDone.fromJson(json),
   'response.output_audio_transcript.delta' => RealtimeServerEventResponseOutputAudioTranscriptDelta.fromJson(json),
   'response.output_audio_transcript.done' => RealtimeServerEventResponseOutputAudioTranscriptDone.fromJson(json),
-  'response.content_part.added' => RealtimeServerEventResponseContentPartAdded.fromJson(json),
-  'response.content_part.done' => RealtimeServerEventResponseContentPartDone.fromJson(json),
-  'response.created' => RealtimeServerEventResponseCreated.fromJson(json),
-  'response.done' => RealtimeServerEventResponseDone.fromJson(json),
-  'response.function_call_arguments.delta' => RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(json),
-  'response.function_call_arguments.done' => RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(json),
-  'response.output_item.added' => RealtimeServerEventResponseOutputItemAdded.fromJson(json),
-  'response.output_item.done' => RealtimeServerEventResponseOutputItemDone.fromJson(json),
+  'response.content_part.added' => RealtimeServerEvent$ResponseContentPartAdded.fromJson(json),
+  'response.content_part.done' => RealtimeServerEvent$ResponseContentPartDone.fromJson(json),
+  'response.created' => RealtimeServerEvent$ResponseCreated.fromJson(json),
+  'response.done' => RealtimeServerEvent$ResponseDone.fromJson(json),
+  'response.function_call_arguments.delta' => RealtimeServerEvent$ResponseFunctionCallArgumentsDelta.fromJson(json),
+  'response.function_call_arguments.done' => RealtimeServerEvent$ResponseFunctionCallArgumentsDone.fromJson(json),
+  'response.output_item.added' => RealtimeServerEvent$ResponseOutputItemAdded.fromJson(json),
+  'response.output_item.done' => RealtimeServerEvent$ResponseOutputItemDone.fromJson(json),
   'response.output_text.delta' => RealtimeServerEventResponseOutputTextDelta.fromJson(json),
   'response.output_text.done' => RealtimeServerEventResponseOutputTextDone.fromJson(json),
-  'session.created' => RealtimeServerEventSessionCreated.fromJson(json),
-  'session.updated' => RealtimeServerEventSessionUpdated.fromJson(json),
-  'output_audio_buffer.started' => RealtimeServerEventOutputAudioBufferStarted.fromJson(json),
-  'output_audio_buffer.stopped' => RealtimeServerEventOutputAudioBufferStopped.fromJson(json),
-  'output_audio_buffer.cleared' => RealtimeServerEventOutputAudioBufferCleared.fromJson(json),
-  'conversation.item.added' => RealtimeServerEventConversationItemAdded.fromJson(json),
-  'conversation.item.done' => RealtimeServerEventConversationItemDone.fromJson(json),
-  'input_audio_buffer.timeout_triggered' => RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(json),
-  'conversation.item.input_audio_transcription.segment' => RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(json),
-  'mcp_list_tools.in_progress' => RealtimeServerEventMcpListToolsInProgress.fromJson(json),
-  'mcp_list_tools.completed' => RealtimeServerEventMcpListToolsCompleted.fromJson(json),
-  'mcp_list_tools.failed' => RealtimeServerEventMcpListToolsFailed.fromJson(json),
-  'response.mcp_call_arguments.delta' => RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(json),
-  'response.mcp_call_arguments.done' => RealtimeServerEventResponseMcpCallArgumentsDone.fromJson(json),
-  'response.mcp_call.in_progress' => RealtimeServerEventResponseMcpCallInProgress.fromJson(json),
-  'response.mcp_call.completed' => RealtimeServerEventResponseMcpCallCompleted.fromJson(json),
-  'response.mcp_call.failed' => RealtimeServerEventResponseMcpCallFailed.fromJson(json),
+  'session.created' => RealtimeServerEvent$SessionCreated.fromJson(json),
+  'session.updated' => RealtimeServerEvent$SessionUpdated.fromJson(json),
+  'output_audio_buffer.started' => RealtimeServerEvent$OutputAudioBufferStarted.fromJson(json),
+  'output_audio_buffer.stopped' => RealtimeServerEvent$OutputAudioBufferStopped.fromJson(json),
+  'output_audio_buffer.cleared' => RealtimeServerEvent$OutputAudioBufferCleared.fromJson(json),
+  'conversation.item.added' => RealtimeServerEvent$ConversationItemAdded.fromJson(json),
+  'conversation.item.done' => RealtimeServerEvent$ConversationItemDone.fromJson(json),
+  'input_audio_buffer.timeout_triggered' => RealtimeServerEvent$InputAudioBufferTimeoutTriggered.fromJson(json),
+  'conversation.item.input_audio_transcription.segment' => RealtimeServerEvent$ConversationItemInputAudioTranscriptionSegment.fromJson(json),
+  'mcp_list_tools.in_progress' => RealtimeServerEvent$McpListToolsInProgress.fromJson(json),
+  'mcp_list_tools.completed' => RealtimeServerEvent$McpListToolsCompleted.fromJson(json),
+  'mcp_list_tools.failed' => RealtimeServerEvent$McpListToolsFailed.fromJson(json),
+  'response.mcp_call_arguments.delta' => RealtimeServerEvent$ResponseMcpCallArgumentsDelta.fromJson(json),
+  'response.mcp_call_arguments.done' => RealtimeServerEvent$ResponseMcpCallArgumentsDone.fromJson(json),
+  'response.mcp_call.in_progress' => RealtimeServerEvent$ResponseMcpCallInProgress.fromJson(json),
+  'response.mcp_call.completed' => RealtimeServerEvent$ResponseMcpCallCompleted.fromJson(json),
+  'response.mcp_call.failed' => RealtimeServerEvent$ResponseMcpCallFailed.fromJson(json),
   _ => RealtimeServerEvent$Unknown(json),
 }; }
 
@@ -61,200 +61,200 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeServerEvent$Unknown; } 
  }
-@immutable final class RealtimeServerEventConversationCreated extends RealtimeServerEvent {const RealtimeServerEventConversationCreated(this.realtimeServerEventConversationCreated);
+@immutable final class RealtimeServerEvent$ConversationCreated extends RealtimeServerEvent {const RealtimeServerEvent$ConversationCreated(this.realtimeServerEventConversationCreated);
 
-factory RealtimeServerEventConversationCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationCreated(RealtimeServerEventConversationCreated.fromJson(json)); }
+factory RealtimeServerEvent$ConversationCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationCreated(RealtimeServerEventConversationCreated.fromJson(json)); }
 
 final RealtimeServerEventConversationCreated realtimeServerEventConversationCreated;
 
 @override String get type { return 'conversation.created'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationCreated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationCreated && realtimeServerEventConversationCreated == other.realtimeServerEventConversationCreated; } 
+    other is RealtimeServerEvent$ConversationCreated && realtimeServerEventConversationCreated == other.realtimeServerEventConversationCreated; } 
 @override int get hashCode { return realtimeServerEventConversationCreated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationCreated(realtimeServerEventConversationCreated: $realtimeServerEventConversationCreated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationCreated(realtimeServerEventConversationCreated: $realtimeServerEventConversationCreated)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent {const RealtimeServerEventConversationItemCreated(this.realtimeServerEventConversationItemCreated);
+@immutable final class RealtimeServerEvent$ConversationItemCreated extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemCreated(this.realtimeServerEventConversationItemCreated);
 
-factory RealtimeServerEventConversationItemCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemCreated(RealtimeServerEventConversationItemCreated.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemCreated(RealtimeServerEventConversationItemCreated.fromJson(json)); }
 
 final RealtimeServerEventConversationItemCreated realtimeServerEventConversationItemCreated;
 
 @override String get type { return 'conversation.item.created'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemCreated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemCreated && realtimeServerEventConversationItemCreated == other.realtimeServerEventConversationItemCreated; } 
+    other is RealtimeServerEvent$ConversationItemCreated && realtimeServerEventConversationItemCreated == other.realtimeServerEventConversationItemCreated; } 
 @override int get hashCode { return realtimeServerEventConversationItemCreated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemCreated(realtimeServerEventConversationItemCreated: $realtimeServerEventConversationItemCreated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemCreated(realtimeServerEventConversationItemCreated: $realtimeServerEventConversationItemCreated)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent {const RealtimeServerEventConversationItemDeleted(this.realtimeServerEventConversationItemDeleted);
+@immutable final class RealtimeServerEvent$ConversationItemDeleted extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemDeleted(this.realtimeServerEventConversationItemDeleted);
 
-factory RealtimeServerEventConversationItemDeleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemDeleted(RealtimeServerEventConversationItemDeleted.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemDeleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemDeleted(RealtimeServerEventConversationItemDeleted.fromJson(json)); }
 
 final RealtimeServerEventConversationItemDeleted realtimeServerEventConversationItemDeleted;
 
 @override String get type { return 'conversation.item.deleted'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemDeleted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemDeleted && realtimeServerEventConversationItemDeleted == other.realtimeServerEventConversationItemDeleted; } 
+    other is RealtimeServerEvent$ConversationItemDeleted && realtimeServerEventConversationItemDeleted == other.realtimeServerEventConversationItemDeleted; } 
 @override int get hashCode { return realtimeServerEventConversationItemDeleted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemDeleted(realtimeServerEventConversationItemDeleted: $realtimeServerEventConversationItemDeleted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemDeleted(realtimeServerEventConversationItemDeleted: $realtimeServerEventConversationItemDeleted)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent {const RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(this.realtimeServerEventConversationItemInputAudioTranscriptionCompleted);
+@immutable final class RealtimeServerEvent$ConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemInputAudioTranscriptionCompleted(this.realtimeServerEventConversationItemInputAudioTranscriptionCompleted);
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemInputAudioTranscriptionCompleted(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(json)); }
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionCompleted realtimeServerEventConversationItemInputAudioTranscriptionCompleted;
 
 @override String get type { return 'conversation.item.input_audio_transcription.completed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionCompleted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionCompleted && realtimeServerEventConversationItemInputAudioTranscriptionCompleted == other.realtimeServerEventConversationItemInputAudioTranscriptionCompleted; } 
+    other is RealtimeServerEvent$ConversationItemInputAudioTranscriptionCompleted && realtimeServerEventConversationItemInputAudioTranscriptionCompleted == other.realtimeServerEventConversationItemInputAudioTranscriptionCompleted; } 
 @override int get hashCode { return realtimeServerEventConversationItemInputAudioTranscriptionCompleted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(realtimeServerEventConversationItemInputAudioTranscriptionCompleted: $realtimeServerEventConversationItemInputAudioTranscriptionCompleted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemInputAudioTranscriptionCompleted(realtimeServerEventConversationItemInputAudioTranscriptionCompleted: $realtimeServerEventConversationItemInputAudioTranscriptionCompleted)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends RealtimeServerEvent {const RealtimeServerEventConversationItemInputAudioTranscriptionDelta(this.realtimeServerEventConversationItemInputAudioTranscriptionDelta);
+@immutable final class RealtimeServerEvent$ConversationItemInputAudioTranscriptionDelta extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemInputAudioTranscriptionDelta(this.realtimeServerEventConversationItemInputAudioTranscriptionDelta);
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemInputAudioTranscriptionDelta(RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(json)); }
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionDelta realtimeServerEventConversationItemInputAudioTranscriptionDelta;
 
 @override String get type { return 'conversation.item.input_audio_transcription.delta'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionDelta.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionDelta && realtimeServerEventConversationItemInputAudioTranscriptionDelta == other.realtimeServerEventConversationItemInputAudioTranscriptionDelta; } 
+    other is RealtimeServerEvent$ConversationItemInputAudioTranscriptionDelta && realtimeServerEventConversationItemInputAudioTranscriptionDelta == other.realtimeServerEventConversationItemInputAudioTranscriptionDelta; } 
 @override int get hashCode { return realtimeServerEventConversationItemInputAudioTranscriptionDelta.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionDelta(realtimeServerEventConversationItemInputAudioTranscriptionDelta: $realtimeServerEventConversationItemInputAudioTranscriptionDelta)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemInputAudioTranscriptionDelta(realtimeServerEventConversationItemInputAudioTranscriptionDelta: $realtimeServerEventConversationItemInputAudioTranscriptionDelta)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent {const RealtimeServerEventConversationItemInputAudioTranscriptionFailed(this.realtimeServerEventConversationItemInputAudioTranscriptionFailed);
+@immutable final class RealtimeServerEvent$ConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemInputAudioTranscriptionFailed(this.realtimeServerEventConversationItemInputAudioTranscriptionFailed);
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemInputAudioTranscriptionFailed(RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(json)); }
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionFailed realtimeServerEventConversationItemInputAudioTranscriptionFailed;
 
 @override String get type { return 'conversation.item.input_audio_transcription.failed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionFailed.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionFailed && realtimeServerEventConversationItemInputAudioTranscriptionFailed == other.realtimeServerEventConversationItemInputAudioTranscriptionFailed; } 
+    other is RealtimeServerEvent$ConversationItemInputAudioTranscriptionFailed && realtimeServerEventConversationItemInputAudioTranscriptionFailed == other.realtimeServerEventConversationItemInputAudioTranscriptionFailed; } 
 @override int get hashCode { return realtimeServerEventConversationItemInputAudioTranscriptionFailed.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailed(realtimeServerEventConversationItemInputAudioTranscriptionFailed: $realtimeServerEventConversationItemInputAudioTranscriptionFailed)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemInputAudioTranscriptionFailed(realtimeServerEventConversationItemInputAudioTranscriptionFailed: $realtimeServerEventConversationItemInputAudioTranscriptionFailed)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemRetrieved extends RealtimeServerEvent {const RealtimeServerEventConversationItemRetrieved(this.realtimeServerEventConversationItemRetrieved);
+@immutable final class RealtimeServerEvent$ConversationItemRetrieved extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemRetrieved(this.realtimeServerEventConversationItemRetrieved);
 
-factory RealtimeServerEventConversationItemRetrieved.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemRetrieved(RealtimeServerEventConversationItemRetrieved.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemRetrieved.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemRetrieved(RealtimeServerEventConversationItemRetrieved.fromJson(json)); }
 
 final RealtimeServerEventConversationItemRetrieved realtimeServerEventConversationItemRetrieved;
 
 @override String get type { return 'conversation.item.retrieved'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemRetrieved.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemRetrieved && realtimeServerEventConversationItemRetrieved == other.realtimeServerEventConversationItemRetrieved; } 
+    other is RealtimeServerEvent$ConversationItemRetrieved && realtimeServerEventConversationItemRetrieved == other.realtimeServerEventConversationItemRetrieved; } 
 @override int get hashCode { return realtimeServerEventConversationItemRetrieved.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemRetrieved(realtimeServerEventConversationItemRetrieved: $realtimeServerEventConversationItemRetrieved)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemRetrieved(realtimeServerEventConversationItemRetrieved: $realtimeServerEventConversationItemRetrieved)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemTruncated extends RealtimeServerEvent {const RealtimeServerEventConversationItemTruncated(this.realtimeServerEventConversationItemTruncated);
+@immutable final class RealtimeServerEvent$ConversationItemTruncated extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemTruncated(this.realtimeServerEventConversationItemTruncated);
 
-factory RealtimeServerEventConversationItemTruncated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemTruncated(RealtimeServerEventConversationItemTruncated.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemTruncated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemTruncated(RealtimeServerEventConversationItemTruncated.fromJson(json)); }
 
 final RealtimeServerEventConversationItemTruncated realtimeServerEventConversationItemTruncated;
 
 @override String get type { return 'conversation.item.truncated'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemTruncated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemTruncated && realtimeServerEventConversationItemTruncated == other.realtimeServerEventConversationItemTruncated; } 
+    other is RealtimeServerEvent$ConversationItemTruncated && realtimeServerEventConversationItemTruncated == other.realtimeServerEventConversationItemTruncated; } 
 @override int get hashCode { return realtimeServerEventConversationItemTruncated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemTruncated(realtimeServerEventConversationItemTruncated: $realtimeServerEventConversationItemTruncated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemTruncated(realtimeServerEventConversationItemTruncated: $realtimeServerEventConversationItemTruncated)'; } 
  }
-@immutable final class RealtimeServerEventError extends RealtimeServerEvent {const RealtimeServerEventError(this.realtimeServerEventError);
+@immutable final class RealtimeServerEvent$Error extends RealtimeServerEvent {const RealtimeServerEvent$Error(this.realtimeServerEventError);
 
-factory RealtimeServerEventError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventError(RealtimeServerEventError.fromJson(json)); }
+factory RealtimeServerEvent$Error.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$Error(RealtimeServerEventError.fromJson(json)); }
 
 final RealtimeServerEventError realtimeServerEventError;
 
 @override String get type { return 'error'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventError.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventError && realtimeServerEventError == other.realtimeServerEventError; } 
+    other is RealtimeServerEvent$Error && realtimeServerEventError == other.realtimeServerEventError; } 
 @override int get hashCode { return realtimeServerEventError.hashCode; } 
-@override String toString() { return 'RealtimeServerEventError(realtimeServerEventError: $realtimeServerEventError)'; } 
+@override String toString() { return 'RealtimeServerEvent\$Error(realtimeServerEventError: $realtimeServerEventError)'; } 
  }
-@immutable final class RealtimeServerEventInputAudioBufferCleared extends RealtimeServerEvent {const RealtimeServerEventInputAudioBufferCleared(this.realtimeServerEventInputAudioBufferCleared);
+@immutable final class RealtimeServerEvent$InputAudioBufferCleared extends RealtimeServerEvent {const RealtimeServerEvent$InputAudioBufferCleared(this.realtimeServerEventInputAudioBufferCleared);
 
-factory RealtimeServerEventInputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferCleared(RealtimeServerEventInputAudioBufferCleared.fromJson(json)); }
+factory RealtimeServerEvent$InputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$InputAudioBufferCleared(RealtimeServerEventInputAudioBufferCleared.fromJson(json)); }
 
 final RealtimeServerEventInputAudioBufferCleared realtimeServerEventInputAudioBufferCleared;
 
 @override String get type { return 'input_audio_buffer.cleared'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferCleared.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferCleared && realtimeServerEventInputAudioBufferCleared == other.realtimeServerEventInputAudioBufferCleared; } 
+    other is RealtimeServerEvent$InputAudioBufferCleared && realtimeServerEventInputAudioBufferCleared == other.realtimeServerEventInputAudioBufferCleared; } 
 @override int get hashCode { return realtimeServerEventInputAudioBufferCleared.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferCleared(realtimeServerEventInputAudioBufferCleared: $realtimeServerEventInputAudioBufferCleared)'; } 
+@override String toString() { return 'RealtimeServerEvent\$InputAudioBufferCleared(realtimeServerEventInputAudioBufferCleared: $realtimeServerEventInputAudioBufferCleared)'; } 
  }
-@immutable final class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent {const RealtimeServerEventInputAudioBufferCommitted(this.realtimeServerEventInputAudioBufferCommitted);
+@immutable final class RealtimeServerEvent$InputAudioBufferCommitted extends RealtimeServerEvent {const RealtimeServerEvent$InputAudioBufferCommitted(this.realtimeServerEventInputAudioBufferCommitted);
 
-factory RealtimeServerEventInputAudioBufferCommitted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferCommitted(RealtimeServerEventInputAudioBufferCommitted.fromJson(json)); }
+factory RealtimeServerEvent$InputAudioBufferCommitted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$InputAudioBufferCommitted(RealtimeServerEventInputAudioBufferCommitted.fromJson(json)); }
 
 final RealtimeServerEventInputAudioBufferCommitted realtimeServerEventInputAudioBufferCommitted;
 
 @override String get type { return 'input_audio_buffer.committed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferCommitted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferCommitted && realtimeServerEventInputAudioBufferCommitted == other.realtimeServerEventInputAudioBufferCommitted; } 
+    other is RealtimeServerEvent$InputAudioBufferCommitted && realtimeServerEventInputAudioBufferCommitted == other.realtimeServerEventInputAudioBufferCommitted; } 
 @override int get hashCode { return realtimeServerEventInputAudioBufferCommitted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferCommitted(realtimeServerEventInputAudioBufferCommitted: $realtimeServerEventInputAudioBufferCommitted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$InputAudioBufferCommitted(realtimeServerEventInputAudioBufferCommitted: $realtimeServerEventInputAudioBufferCommitted)'; } 
  }
-@immutable final class RealtimeServerEventInputAudioBufferDtmfEventReceived extends RealtimeServerEvent {const RealtimeServerEventInputAudioBufferDtmfEventReceived(this.realtimeServerEventInputAudioBufferDtmfEventReceived);
+@immutable final class RealtimeServerEvent$InputAudioBufferDtmfEventReceived extends RealtimeServerEvent {const RealtimeServerEvent$InputAudioBufferDtmfEventReceived(this.realtimeServerEventInputAudioBufferDtmfEventReceived);
 
-factory RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferDtmfEventReceived(RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(json)); }
+factory RealtimeServerEvent$InputAudioBufferDtmfEventReceived.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$InputAudioBufferDtmfEventReceived(RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(json)); }
 
 final RealtimeServerEventInputAudioBufferDtmfEventReceived realtimeServerEventInputAudioBufferDtmfEventReceived;
 
 @override String get type { return 'input_audio_buffer.dtmf_event_received'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferDtmfEventReceived.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferDtmfEventReceived && realtimeServerEventInputAudioBufferDtmfEventReceived == other.realtimeServerEventInputAudioBufferDtmfEventReceived; } 
+    other is RealtimeServerEvent$InputAudioBufferDtmfEventReceived && realtimeServerEventInputAudioBufferDtmfEventReceived == other.realtimeServerEventInputAudioBufferDtmfEventReceived; } 
 @override int get hashCode { return realtimeServerEventInputAudioBufferDtmfEventReceived.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferDtmfEventReceived(realtimeServerEventInputAudioBufferDtmfEventReceived: $realtimeServerEventInputAudioBufferDtmfEventReceived)'; } 
+@override String toString() { return 'RealtimeServerEvent\$InputAudioBufferDtmfEventReceived(realtimeServerEventInputAudioBufferDtmfEventReceived: $realtimeServerEventInputAudioBufferDtmfEventReceived)'; } 
  }
-@immutable final class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEvent {const RealtimeServerEventInputAudioBufferSpeechStarted(this.realtimeServerEventInputAudioBufferSpeechStarted);
+@immutable final class RealtimeServerEvent$InputAudioBufferSpeechStarted extends RealtimeServerEvent {const RealtimeServerEvent$InputAudioBufferSpeechStarted(this.realtimeServerEventInputAudioBufferSpeechStarted);
 
-factory RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStarted(RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(json)); }
+factory RealtimeServerEvent$InputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$InputAudioBufferSpeechStarted(RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(json)); }
 
 final RealtimeServerEventInputAudioBufferSpeechStarted realtimeServerEventInputAudioBufferSpeechStarted;
 
 @override String get type { return 'input_audio_buffer.speech_started'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferSpeechStarted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferSpeechStarted && realtimeServerEventInputAudioBufferSpeechStarted == other.realtimeServerEventInputAudioBufferSpeechStarted; } 
+    other is RealtimeServerEvent$InputAudioBufferSpeechStarted && realtimeServerEventInputAudioBufferSpeechStarted == other.realtimeServerEventInputAudioBufferSpeechStarted; } 
 @override int get hashCode { return realtimeServerEventInputAudioBufferSpeechStarted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferSpeechStarted(realtimeServerEventInputAudioBufferSpeechStarted: $realtimeServerEventInputAudioBufferSpeechStarted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$InputAudioBufferSpeechStarted(realtimeServerEventInputAudioBufferSpeechStarted: $realtimeServerEventInputAudioBufferSpeechStarted)'; } 
  }
-@immutable final class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEvent {const RealtimeServerEventInputAudioBufferSpeechStopped(this.realtimeServerEventInputAudioBufferSpeechStopped);
+@immutable final class RealtimeServerEvent$InputAudioBufferSpeechStopped extends RealtimeServerEvent {const RealtimeServerEvent$InputAudioBufferSpeechStopped(this.realtimeServerEventInputAudioBufferSpeechStopped);
 
-factory RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStopped(RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(json)); }
+factory RealtimeServerEvent$InputAudioBufferSpeechStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$InputAudioBufferSpeechStopped(RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(json)); }
 
 final RealtimeServerEventInputAudioBufferSpeechStopped realtimeServerEventInputAudioBufferSpeechStopped;
 
 @override String get type { return 'input_audio_buffer.speech_stopped'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferSpeechStopped.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferSpeechStopped && realtimeServerEventInputAudioBufferSpeechStopped == other.realtimeServerEventInputAudioBufferSpeechStopped; } 
+    other is RealtimeServerEvent$InputAudioBufferSpeechStopped && realtimeServerEventInputAudioBufferSpeechStopped == other.realtimeServerEventInputAudioBufferSpeechStopped; } 
 @override int get hashCode { return realtimeServerEventInputAudioBufferSpeechStopped.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferSpeechStopped(realtimeServerEventInputAudioBufferSpeechStopped: $realtimeServerEventInputAudioBufferSpeechStopped)'; } 
+@override String toString() { return 'RealtimeServerEvent\$InputAudioBufferSpeechStopped(realtimeServerEventInputAudioBufferSpeechStopped: $realtimeServerEventInputAudioBufferSpeechStopped)'; } 
  }
-@immutable final class RealtimeServerEventRateLimitsUpdated extends RealtimeServerEvent {const RealtimeServerEventRateLimitsUpdated(this.realtimeServerEventRateLimitsUpdated);
+@immutable final class RealtimeServerEvent$RateLimitsUpdated extends RealtimeServerEvent {const RealtimeServerEvent$RateLimitsUpdated(this.realtimeServerEventRateLimitsUpdated);
 
-factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdated(RealtimeServerEventRateLimitsUpdated.fromJson(json)); }
+factory RealtimeServerEvent$RateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$RateLimitsUpdated(RealtimeServerEventRateLimitsUpdated.fromJson(json)); }
 
 final RealtimeServerEventRateLimitsUpdated realtimeServerEventRateLimitsUpdated;
 
 @override String get type { return 'rate_limits.updated'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventRateLimitsUpdated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventRateLimitsUpdated && realtimeServerEventRateLimitsUpdated == other.realtimeServerEventRateLimitsUpdated; } 
+    other is RealtimeServerEvent$RateLimitsUpdated && realtimeServerEventRateLimitsUpdated == other.realtimeServerEventRateLimitsUpdated; } 
 @override int get hashCode { return realtimeServerEventRateLimitsUpdated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventRateLimitsUpdated(realtimeServerEventRateLimitsUpdated: $realtimeServerEventRateLimitsUpdated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$RateLimitsUpdated(realtimeServerEventRateLimitsUpdated: $realtimeServerEventRateLimitsUpdated)'; } 
  }
 @immutable final class RealtimeServerEventResponseOutputAudioDelta extends RealtimeServerEvent {const RealtimeServerEventResponseOutputAudioDelta(this.realtimeServerEventResponseAudioDelta);
 
@@ -308,109 +308,109 @@ final RealtimeServerEventResponseAudioTranscriptDone realtimeServerEventResponse
 @override int get hashCode { return realtimeServerEventResponseAudioTranscriptDone.hashCode; } 
 @override String toString() { return 'RealtimeServerEventResponseOutputAudioTranscriptDone(realtimeServerEventResponseAudioTranscriptDone: $realtimeServerEventResponseAudioTranscriptDone)'; } 
  }
-@immutable final class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent {const RealtimeServerEventResponseContentPartAdded(this.realtimeServerEventResponseContentPartAdded);
+@immutable final class RealtimeServerEvent$ResponseContentPartAdded extends RealtimeServerEvent {const RealtimeServerEvent$ResponseContentPartAdded(this.realtimeServerEventResponseContentPartAdded);
 
-factory RealtimeServerEventResponseContentPartAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseContentPartAdded(RealtimeServerEventResponseContentPartAdded.fromJson(json)); }
+factory RealtimeServerEvent$ResponseContentPartAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseContentPartAdded(RealtimeServerEventResponseContentPartAdded.fromJson(json)); }
 
 final RealtimeServerEventResponseContentPartAdded realtimeServerEventResponseContentPartAdded;
 
 @override String get type { return 'response.content_part.added'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseContentPartAdded.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseContentPartAdded && realtimeServerEventResponseContentPartAdded == other.realtimeServerEventResponseContentPartAdded; } 
+    other is RealtimeServerEvent$ResponseContentPartAdded && realtimeServerEventResponseContentPartAdded == other.realtimeServerEventResponseContentPartAdded; } 
 @override int get hashCode { return realtimeServerEventResponseContentPartAdded.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseContentPartAdded(realtimeServerEventResponseContentPartAdded: $realtimeServerEventResponseContentPartAdded)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseContentPartAdded(realtimeServerEventResponseContentPartAdded: $realtimeServerEventResponseContentPartAdded)'; } 
  }
-@immutable final class RealtimeServerEventResponseContentPartDone extends RealtimeServerEvent {const RealtimeServerEventResponseContentPartDone(this.realtimeServerEventResponseContentPartDone);
+@immutable final class RealtimeServerEvent$ResponseContentPartDone extends RealtimeServerEvent {const RealtimeServerEvent$ResponseContentPartDone(this.realtimeServerEventResponseContentPartDone);
 
-factory RealtimeServerEventResponseContentPartDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseContentPartDone(RealtimeServerEventResponseContentPartDone.fromJson(json)); }
+factory RealtimeServerEvent$ResponseContentPartDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseContentPartDone(RealtimeServerEventResponseContentPartDone.fromJson(json)); }
 
 final RealtimeServerEventResponseContentPartDone realtimeServerEventResponseContentPartDone;
 
 @override String get type { return 'response.content_part.done'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseContentPartDone.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseContentPartDone && realtimeServerEventResponseContentPartDone == other.realtimeServerEventResponseContentPartDone; } 
+    other is RealtimeServerEvent$ResponseContentPartDone && realtimeServerEventResponseContentPartDone == other.realtimeServerEventResponseContentPartDone; } 
 @override int get hashCode { return realtimeServerEventResponseContentPartDone.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseContentPartDone(realtimeServerEventResponseContentPartDone: $realtimeServerEventResponseContentPartDone)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseContentPartDone(realtimeServerEventResponseContentPartDone: $realtimeServerEventResponseContentPartDone)'; } 
  }
-@immutable final class RealtimeServerEventResponseCreated extends RealtimeServerEvent {const RealtimeServerEventResponseCreated(this.realtimeServerEventResponseCreated);
+@immutable final class RealtimeServerEvent$ResponseCreated extends RealtimeServerEvent {const RealtimeServerEvent$ResponseCreated(this.realtimeServerEventResponseCreated);
 
-factory RealtimeServerEventResponseCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseCreated(RealtimeServerEventResponseCreated.fromJson(json)); }
+factory RealtimeServerEvent$ResponseCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseCreated(RealtimeServerEventResponseCreated.fromJson(json)); }
 
 final RealtimeServerEventResponseCreated realtimeServerEventResponseCreated;
 
 @override String get type { return 'response.created'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseCreated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseCreated && realtimeServerEventResponseCreated == other.realtimeServerEventResponseCreated; } 
+    other is RealtimeServerEvent$ResponseCreated && realtimeServerEventResponseCreated == other.realtimeServerEventResponseCreated; } 
 @override int get hashCode { return realtimeServerEventResponseCreated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseCreated(realtimeServerEventResponseCreated: $realtimeServerEventResponseCreated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseCreated(realtimeServerEventResponseCreated: $realtimeServerEventResponseCreated)'; } 
  }
-@immutable final class RealtimeServerEventResponseDone extends RealtimeServerEvent {const RealtimeServerEventResponseDone(this.realtimeServerEventResponseDone);
+@immutable final class RealtimeServerEvent$ResponseDone extends RealtimeServerEvent {const RealtimeServerEvent$ResponseDone(this.realtimeServerEventResponseDone);
 
-factory RealtimeServerEventResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseDone(RealtimeServerEventResponseDone.fromJson(json)); }
+factory RealtimeServerEvent$ResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseDone(RealtimeServerEventResponseDone.fromJson(json)); }
 
 final RealtimeServerEventResponseDone realtimeServerEventResponseDone;
 
 @override String get type { return 'response.done'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseDone.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseDone && realtimeServerEventResponseDone == other.realtimeServerEventResponseDone; } 
+    other is RealtimeServerEvent$ResponseDone && realtimeServerEventResponseDone == other.realtimeServerEventResponseDone; } 
 @override int get hashCode { return realtimeServerEventResponseDone.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseDone(realtimeServerEventResponseDone: $realtimeServerEventResponseDone)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseDone(realtimeServerEventResponseDone: $realtimeServerEventResponseDone)'; } 
  }
-@immutable final class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServerEvent {const RealtimeServerEventResponseFunctionCallArgumentsDelta(this.realtimeServerEventResponseFunctionCallArgumentsDelta);
+@immutable final class RealtimeServerEvent$ResponseFunctionCallArgumentsDelta extends RealtimeServerEvent {const RealtimeServerEvent$ResponseFunctionCallArgumentsDelta(this.realtimeServerEventResponseFunctionCallArgumentsDelta);
 
-factory RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseFunctionCallArgumentsDelta(RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(json)); }
+factory RealtimeServerEvent$ResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseFunctionCallArgumentsDelta(RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(json)); }
 
 final RealtimeServerEventResponseFunctionCallArgumentsDelta realtimeServerEventResponseFunctionCallArgumentsDelta;
 
 @override String get type { return 'response.function_call_arguments.delta'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseFunctionCallArgumentsDelta.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseFunctionCallArgumentsDelta && realtimeServerEventResponseFunctionCallArgumentsDelta == other.realtimeServerEventResponseFunctionCallArgumentsDelta; } 
+    other is RealtimeServerEvent$ResponseFunctionCallArgumentsDelta && realtimeServerEventResponseFunctionCallArgumentsDelta == other.realtimeServerEventResponseFunctionCallArgumentsDelta; } 
 @override int get hashCode { return realtimeServerEventResponseFunctionCallArgumentsDelta.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDelta(realtimeServerEventResponseFunctionCallArgumentsDelta: $realtimeServerEventResponseFunctionCallArgumentsDelta)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseFunctionCallArgumentsDelta(realtimeServerEventResponseFunctionCallArgumentsDelta: $realtimeServerEventResponseFunctionCallArgumentsDelta)'; } 
  }
-@immutable final class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServerEvent {const RealtimeServerEventResponseFunctionCallArgumentsDone(this.realtimeServerEventResponseFunctionCallArgumentsDone);
+@immutable final class RealtimeServerEvent$ResponseFunctionCallArgumentsDone extends RealtimeServerEvent {const RealtimeServerEvent$ResponseFunctionCallArgumentsDone(this.realtimeServerEventResponseFunctionCallArgumentsDone);
 
-factory RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseFunctionCallArgumentsDone(RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(json)); }
+factory RealtimeServerEvent$ResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseFunctionCallArgumentsDone(RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(json)); }
 
 final RealtimeServerEventResponseFunctionCallArgumentsDone realtimeServerEventResponseFunctionCallArgumentsDone;
 
 @override String get type { return 'response.function_call_arguments.done'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseFunctionCallArgumentsDone.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseFunctionCallArgumentsDone && realtimeServerEventResponseFunctionCallArgumentsDone == other.realtimeServerEventResponseFunctionCallArgumentsDone; } 
+    other is RealtimeServerEvent$ResponseFunctionCallArgumentsDone && realtimeServerEventResponseFunctionCallArgumentsDone == other.realtimeServerEventResponseFunctionCallArgumentsDone; } 
 @override int get hashCode { return realtimeServerEventResponseFunctionCallArgumentsDone.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDone(realtimeServerEventResponseFunctionCallArgumentsDone: $realtimeServerEventResponseFunctionCallArgumentsDone)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseFunctionCallArgumentsDone(realtimeServerEventResponseFunctionCallArgumentsDone: $realtimeServerEventResponseFunctionCallArgumentsDone)'; } 
  }
-@immutable final class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent {const RealtimeServerEventResponseOutputItemAdded(this.realtimeServerEventResponseOutputItemAdded);
+@immutable final class RealtimeServerEvent$ResponseOutputItemAdded extends RealtimeServerEvent {const RealtimeServerEvent$ResponseOutputItemAdded(this.realtimeServerEventResponseOutputItemAdded);
 
-factory RealtimeServerEventResponseOutputItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseOutputItemAdded(RealtimeServerEventResponseOutputItemAdded.fromJson(json)); }
+factory RealtimeServerEvent$ResponseOutputItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseOutputItemAdded(RealtimeServerEventResponseOutputItemAdded.fromJson(json)); }
 
 final RealtimeServerEventResponseOutputItemAdded realtimeServerEventResponseOutputItemAdded;
 
 @override String get type { return 'response.output_item.added'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseOutputItemAdded.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseOutputItemAdded && realtimeServerEventResponseOutputItemAdded == other.realtimeServerEventResponseOutputItemAdded; } 
+    other is RealtimeServerEvent$ResponseOutputItemAdded && realtimeServerEventResponseOutputItemAdded == other.realtimeServerEventResponseOutputItemAdded; } 
 @override int get hashCode { return realtimeServerEventResponseOutputItemAdded.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseOutputItemAdded(realtimeServerEventResponseOutputItemAdded: $realtimeServerEventResponseOutputItemAdded)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseOutputItemAdded(realtimeServerEventResponseOutputItemAdded: $realtimeServerEventResponseOutputItemAdded)'; } 
  }
-@immutable final class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent {const RealtimeServerEventResponseOutputItemDone(this.realtimeServerEventResponseOutputItemDone);
+@immutable final class RealtimeServerEvent$ResponseOutputItemDone extends RealtimeServerEvent {const RealtimeServerEvent$ResponseOutputItemDone(this.realtimeServerEventResponseOutputItemDone);
 
-factory RealtimeServerEventResponseOutputItemDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseOutputItemDone(RealtimeServerEventResponseOutputItemDone.fromJson(json)); }
+factory RealtimeServerEvent$ResponseOutputItemDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseOutputItemDone(RealtimeServerEventResponseOutputItemDone.fromJson(json)); }
 
 final RealtimeServerEventResponseOutputItemDone realtimeServerEventResponseOutputItemDone;
 
 @override String get type { return 'response.output_item.done'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseOutputItemDone.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseOutputItemDone && realtimeServerEventResponseOutputItemDone == other.realtimeServerEventResponseOutputItemDone; } 
+    other is RealtimeServerEvent$ResponseOutputItemDone && realtimeServerEventResponseOutputItemDone == other.realtimeServerEventResponseOutputItemDone; } 
 @override int get hashCode { return realtimeServerEventResponseOutputItemDone.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseOutputItemDone(realtimeServerEventResponseOutputItemDone: $realtimeServerEventResponseOutputItemDone)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseOutputItemDone(realtimeServerEventResponseOutputItemDone: $realtimeServerEventResponseOutputItemDone)'; } 
  }
 @immutable final class RealtimeServerEventResponseOutputTextDelta extends RealtimeServerEvent {const RealtimeServerEventResponseOutputTextDelta(this.realtimeServerEventResponseTextDelta);
 
@@ -438,226 +438,226 @@ final RealtimeServerEventResponseTextDone realtimeServerEventResponseTextDone;
 @override int get hashCode { return realtimeServerEventResponseTextDone.hashCode; } 
 @override String toString() { return 'RealtimeServerEventResponseOutputTextDone(realtimeServerEventResponseTextDone: $realtimeServerEventResponseTextDone)'; } 
  }
-@immutable final class RealtimeServerEventSessionCreated extends RealtimeServerEvent {const RealtimeServerEventSessionCreated(this.realtimeServerEventSessionCreated);
+@immutable final class RealtimeServerEvent$SessionCreated extends RealtimeServerEvent {const RealtimeServerEvent$SessionCreated(this.realtimeServerEventSessionCreated);
 
-factory RealtimeServerEventSessionCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventSessionCreated(RealtimeServerEventSessionCreated.fromJson(json)); }
+factory RealtimeServerEvent$SessionCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$SessionCreated(RealtimeServerEventSessionCreated.fromJson(json)); }
 
 final RealtimeServerEventSessionCreated realtimeServerEventSessionCreated;
 
 @override String get type { return 'session.created'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventSessionCreated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventSessionCreated && realtimeServerEventSessionCreated == other.realtimeServerEventSessionCreated; } 
+    other is RealtimeServerEvent$SessionCreated && realtimeServerEventSessionCreated == other.realtimeServerEventSessionCreated; } 
 @override int get hashCode { return realtimeServerEventSessionCreated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventSessionCreated(realtimeServerEventSessionCreated: $realtimeServerEventSessionCreated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$SessionCreated(realtimeServerEventSessionCreated: $realtimeServerEventSessionCreated)'; } 
  }
-@immutable final class RealtimeServerEventSessionUpdated extends RealtimeServerEvent {const RealtimeServerEventSessionUpdated(this.realtimeServerEventSessionUpdated);
+@immutable final class RealtimeServerEvent$SessionUpdated extends RealtimeServerEvent {const RealtimeServerEvent$SessionUpdated(this.realtimeServerEventSessionUpdated);
 
-factory RealtimeServerEventSessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventSessionUpdated(RealtimeServerEventSessionUpdated.fromJson(json)); }
+factory RealtimeServerEvent$SessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$SessionUpdated(RealtimeServerEventSessionUpdated.fromJson(json)); }
 
 final RealtimeServerEventSessionUpdated realtimeServerEventSessionUpdated;
 
 @override String get type { return 'session.updated'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventSessionUpdated.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventSessionUpdated && realtimeServerEventSessionUpdated == other.realtimeServerEventSessionUpdated; } 
+    other is RealtimeServerEvent$SessionUpdated && realtimeServerEventSessionUpdated == other.realtimeServerEventSessionUpdated; } 
 @override int get hashCode { return realtimeServerEventSessionUpdated.hashCode; } 
-@override String toString() { return 'RealtimeServerEventSessionUpdated(realtimeServerEventSessionUpdated: $realtimeServerEventSessionUpdated)'; } 
+@override String toString() { return 'RealtimeServerEvent\$SessionUpdated(realtimeServerEventSessionUpdated: $realtimeServerEventSessionUpdated)'; } 
  }
-@immutable final class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent {const RealtimeServerEventOutputAudioBufferStarted(this.realtimeServerEventOutputAudioBufferStarted);
+@immutable final class RealtimeServerEvent$OutputAudioBufferStarted extends RealtimeServerEvent {const RealtimeServerEvent$OutputAudioBufferStarted(this.realtimeServerEventOutputAudioBufferStarted);
 
-factory RealtimeServerEventOutputAudioBufferStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventOutputAudioBufferStarted(RealtimeServerEventOutputAudioBufferStarted.fromJson(json)); }
+factory RealtimeServerEvent$OutputAudioBufferStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$OutputAudioBufferStarted(RealtimeServerEventOutputAudioBufferStarted.fromJson(json)); }
 
 final RealtimeServerEventOutputAudioBufferStarted realtimeServerEventOutputAudioBufferStarted;
 
 @override String get type { return 'output_audio_buffer.started'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventOutputAudioBufferStarted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventOutputAudioBufferStarted && realtimeServerEventOutputAudioBufferStarted == other.realtimeServerEventOutputAudioBufferStarted; } 
+    other is RealtimeServerEvent$OutputAudioBufferStarted && realtimeServerEventOutputAudioBufferStarted == other.realtimeServerEventOutputAudioBufferStarted; } 
 @override int get hashCode { return realtimeServerEventOutputAudioBufferStarted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventOutputAudioBufferStarted(realtimeServerEventOutputAudioBufferStarted: $realtimeServerEventOutputAudioBufferStarted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$OutputAudioBufferStarted(realtimeServerEventOutputAudioBufferStarted: $realtimeServerEventOutputAudioBufferStarted)'; } 
  }
-@immutable final class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent {const RealtimeServerEventOutputAudioBufferStopped(this.realtimeServerEventOutputAudioBufferStopped);
+@immutable final class RealtimeServerEvent$OutputAudioBufferStopped extends RealtimeServerEvent {const RealtimeServerEvent$OutputAudioBufferStopped(this.realtimeServerEventOutputAudioBufferStopped);
 
-factory RealtimeServerEventOutputAudioBufferStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEventOutputAudioBufferStopped(RealtimeServerEventOutputAudioBufferStopped.fromJson(json)); }
+factory RealtimeServerEvent$OutputAudioBufferStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$OutputAudioBufferStopped(RealtimeServerEventOutputAudioBufferStopped.fromJson(json)); }
 
 final RealtimeServerEventOutputAudioBufferStopped realtimeServerEventOutputAudioBufferStopped;
 
 @override String get type { return 'output_audio_buffer.stopped'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventOutputAudioBufferStopped.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventOutputAudioBufferStopped && realtimeServerEventOutputAudioBufferStopped == other.realtimeServerEventOutputAudioBufferStopped; } 
+    other is RealtimeServerEvent$OutputAudioBufferStopped && realtimeServerEventOutputAudioBufferStopped == other.realtimeServerEventOutputAudioBufferStopped; } 
 @override int get hashCode { return realtimeServerEventOutputAudioBufferStopped.hashCode; } 
-@override String toString() { return 'RealtimeServerEventOutputAudioBufferStopped(realtimeServerEventOutputAudioBufferStopped: $realtimeServerEventOutputAudioBufferStopped)'; } 
+@override String toString() { return 'RealtimeServerEvent\$OutputAudioBufferStopped(realtimeServerEventOutputAudioBufferStopped: $realtimeServerEventOutputAudioBufferStopped)'; } 
  }
-@immutable final class RealtimeServerEventOutputAudioBufferCleared extends RealtimeServerEvent {const RealtimeServerEventOutputAudioBufferCleared(this.realtimeServerEventOutputAudioBufferCleared);
+@immutable final class RealtimeServerEvent$OutputAudioBufferCleared extends RealtimeServerEvent {const RealtimeServerEvent$OutputAudioBufferCleared(this.realtimeServerEventOutputAudioBufferCleared);
 
-factory RealtimeServerEventOutputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeServerEventOutputAudioBufferCleared(RealtimeServerEventOutputAudioBufferCleared.fromJson(json)); }
+factory RealtimeServerEvent$OutputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$OutputAudioBufferCleared(RealtimeServerEventOutputAudioBufferCleared.fromJson(json)); }
 
 final RealtimeServerEventOutputAudioBufferCleared realtimeServerEventOutputAudioBufferCleared;
 
 @override String get type { return 'output_audio_buffer.cleared'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventOutputAudioBufferCleared.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventOutputAudioBufferCleared && realtimeServerEventOutputAudioBufferCleared == other.realtimeServerEventOutputAudioBufferCleared; } 
+    other is RealtimeServerEvent$OutputAudioBufferCleared && realtimeServerEventOutputAudioBufferCleared == other.realtimeServerEventOutputAudioBufferCleared; } 
 @override int get hashCode { return realtimeServerEventOutputAudioBufferCleared.hashCode; } 
-@override String toString() { return 'RealtimeServerEventOutputAudioBufferCleared(realtimeServerEventOutputAudioBufferCleared: $realtimeServerEventOutputAudioBufferCleared)'; } 
+@override String toString() { return 'RealtimeServerEvent\$OutputAudioBufferCleared(realtimeServerEventOutputAudioBufferCleared: $realtimeServerEventOutputAudioBufferCleared)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemAdded extends RealtimeServerEvent {const RealtimeServerEventConversationItemAdded(this.realtimeServerEventConversationItemAdded);
+@immutable final class RealtimeServerEvent$ConversationItemAdded extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemAdded(this.realtimeServerEventConversationItemAdded);
 
-factory RealtimeServerEventConversationItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemAdded(RealtimeServerEventConversationItemAdded.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemAdded(RealtimeServerEventConversationItemAdded.fromJson(json)); }
 
 final RealtimeServerEventConversationItemAdded realtimeServerEventConversationItemAdded;
 
 @override String get type { return 'conversation.item.added'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemAdded.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemAdded && realtimeServerEventConversationItemAdded == other.realtimeServerEventConversationItemAdded; } 
+    other is RealtimeServerEvent$ConversationItemAdded && realtimeServerEventConversationItemAdded == other.realtimeServerEventConversationItemAdded; } 
 @override int get hashCode { return realtimeServerEventConversationItemAdded.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemAdded(realtimeServerEventConversationItemAdded: $realtimeServerEventConversationItemAdded)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemAdded(realtimeServerEventConversationItemAdded: $realtimeServerEventConversationItemAdded)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemDone extends RealtimeServerEvent {const RealtimeServerEventConversationItemDone(this.realtimeServerEventConversationItemDone);
+@immutable final class RealtimeServerEvent$ConversationItemDone extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemDone(this.realtimeServerEventConversationItemDone);
 
-factory RealtimeServerEventConversationItemDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemDone(RealtimeServerEventConversationItemDone.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemDone(RealtimeServerEventConversationItemDone.fromJson(json)); }
 
 final RealtimeServerEventConversationItemDone realtimeServerEventConversationItemDone;
 
 @override String get type { return 'conversation.item.done'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemDone.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemDone && realtimeServerEventConversationItemDone == other.realtimeServerEventConversationItemDone; } 
+    other is RealtimeServerEvent$ConversationItemDone && realtimeServerEventConversationItemDone == other.realtimeServerEventConversationItemDone; } 
 @override int get hashCode { return realtimeServerEventConversationItemDone.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemDone(realtimeServerEventConversationItemDone: $realtimeServerEventConversationItemDone)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemDone(realtimeServerEventConversationItemDone: $realtimeServerEventConversationItemDone)'; } 
  }
-@immutable final class RealtimeServerEventInputAudioBufferTimeoutTriggered extends RealtimeServerEvent {const RealtimeServerEventInputAudioBufferTimeoutTriggered(this.realtimeServerEventInputAudioBufferTimeoutTriggered);
+@immutable final class RealtimeServerEvent$InputAudioBufferTimeoutTriggered extends RealtimeServerEvent {const RealtimeServerEvent$InputAudioBufferTimeoutTriggered(this.realtimeServerEventInputAudioBufferTimeoutTriggered);
 
-factory RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(json)); }
+factory RealtimeServerEvent$InputAudioBufferTimeoutTriggered.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$InputAudioBufferTimeoutTriggered(RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(json)); }
 
 final RealtimeServerEventInputAudioBufferTimeoutTriggered realtimeServerEventInputAudioBufferTimeoutTriggered;
 
 @override String get type { return 'input_audio_buffer.timeout_triggered'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferTimeoutTriggered.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventInputAudioBufferTimeoutTriggered && realtimeServerEventInputAudioBufferTimeoutTriggered == other.realtimeServerEventInputAudioBufferTimeoutTriggered; } 
+    other is RealtimeServerEvent$InputAudioBufferTimeoutTriggered && realtimeServerEventInputAudioBufferTimeoutTriggered == other.realtimeServerEventInputAudioBufferTimeoutTriggered; } 
 @override int get hashCode { return realtimeServerEventInputAudioBufferTimeoutTriggered.hashCode; } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferTimeoutTriggered(realtimeServerEventInputAudioBufferTimeoutTriggered: $realtimeServerEventInputAudioBufferTimeoutTriggered)'; } 
+@override String toString() { return 'RealtimeServerEvent\$InputAudioBufferTimeoutTriggered(realtimeServerEventInputAudioBufferTimeoutTriggered: $realtimeServerEventInputAudioBufferTimeoutTriggered)'; } 
  }
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionSegment extends RealtimeServerEvent {const RealtimeServerEventConversationItemInputAudioTranscriptionSegment(this.realtimeServerEventConversationItemInputAudioTranscriptionSegment);
+@immutable final class RealtimeServerEvent$ConversationItemInputAudioTranscriptionSegment extends RealtimeServerEvent {const RealtimeServerEvent$ConversationItemInputAudioTranscriptionSegment(this.realtimeServerEventConversationItemInputAudioTranscriptionSegment);
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(json)); }
+factory RealtimeServerEvent$ConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ConversationItemInputAudioTranscriptionSegment(RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(json)); }
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionSegment realtimeServerEventConversationItemInputAudioTranscriptionSegment;
 
 @override String get type { return 'conversation.item.input_audio_transcription.segment'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionSegment.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventConversationItemInputAudioTranscriptionSegment && realtimeServerEventConversationItemInputAudioTranscriptionSegment == other.realtimeServerEventConversationItemInputAudioTranscriptionSegment; } 
+    other is RealtimeServerEvent$ConversationItemInputAudioTranscriptionSegment && realtimeServerEventConversationItemInputAudioTranscriptionSegment == other.realtimeServerEventConversationItemInputAudioTranscriptionSegment; } 
 @override int get hashCode { return realtimeServerEventConversationItemInputAudioTranscriptionSegment.hashCode; } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(realtimeServerEventConversationItemInputAudioTranscriptionSegment: $realtimeServerEventConversationItemInputAudioTranscriptionSegment)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ConversationItemInputAudioTranscriptionSegment(realtimeServerEventConversationItemInputAudioTranscriptionSegment: $realtimeServerEventConversationItemInputAudioTranscriptionSegment)'; } 
  }
-@immutable final class RealtimeServerEventMcpListToolsInProgress extends RealtimeServerEvent {const RealtimeServerEventMcpListToolsInProgress(this.realtimeServerEventMcpListToolsInProgress);
+@immutable final class RealtimeServerEvent$McpListToolsInProgress extends RealtimeServerEvent {const RealtimeServerEvent$McpListToolsInProgress(this.realtimeServerEventMcpListToolsInProgress);
 
-factory RealtimeServerEventMcpListToolsInProgress.fromJson(Map<String, dynamic> json) { return RealtimeServerEventMcpListToolsInProgress(RealtimeServerEventMcpListToolsInProgress.fromJson(json)); }
+factory RealtimeServerEvent$McpListToolsInProgress.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$McpListToolsInProgress(RealtimeServerEventMcpListToolsInProgress.fromJson(json)); }
 
 final RealtimeServerEventMcpListToolsInProgress realtimeServerEventMcpListToolsInProgress;
 
 @override String get type { return 'mcp_list_tools.in_progress'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventMcpListToolsInProgress.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventMcpListToolsInProgress && realtimeServerEventMcpListToolsInProgress == other.realtimeServerEventMcpListToolsInProgress; } 
+    other is RealtimeServerEvent$McpListToolsInProgress && realtimeServerEventMcpListToolsInProgress == other.realtimeServerEventMcpListToolsInProgress; } 
 @override int get hashCode { return realtimeServerEventMcpListToolsInProgress.hashCode; } 
-@override String toString() { return 'RealtimeServerEventMcpListToolsInProgress(realtimeServerEventMcpListToolsInProgress: $realtimeServerEventMcpListToolsInProgress)'; } 
+@override String toString() { return 'RealtimeServerEvent\$McpListToolsInProgress(realtimeServerEventMcpListToolsInProgress: $realtimeServerEventMcpListToolsInProgress)'; } 
  }
-@immutable final class RealtimeServerEventMcpListToolsCompleted extends RealtimeServerEvent {const RealtimeServerEventMcpListToolsCompleted(this.realtimeServerEventMcpListToolsCompleted);
+@immutable final class RealtimeServerEvent$McpListToolsCompleted extends RealtimeServerEvent {const RealtimeServerEvent$McpListToolsCompleted(this.realtimeServerEventMcpListToolsCompleted);
 
-factory RealtimeServerEventMcpListToolsCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventMcpListToolsCompleted(RealtimeServerEventMcpListToolsCompleted.fromJson(json)); }
+factory RealtimeServerEvent$McpListToolsCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$McpListToolsCompleted(RealtimeServerEventMcpListToolsCompleted.fromJson(json)); }
 
 final RealtimeServerEventMcpListToolsCompleted realtimeServerEventMcpListToolsCompleted;
 
 @override String get type { return 'mcp_list_tools.completed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventMcpListToolsCompleted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventMcpListToolsCompleted && realtimeServerEventMcpListToolsCompleted == other.realtimeServerEventMcpListToolsCompleted; } 
+    other is RealtimeServerEvent$McpListToolsCompleted && realtimeServerEventMcpListToolsCompleted == other.realtimeServerEventMcpListToolsCompleted; } 
 @override int get hashCode { return realtimeServerEventMcpListToolsCompleted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventMcpListToolsCompleted(realtimeServerEventMcpListToolsCompleted: $realtimeServerEventMcpListToolsCompleted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$McpListToolsCompleted(realtimeServerEventMcpListToolsCompleted: $realtimeServerEventMcpListToolsCompleted)'; } 
  }
-@immutable final class RealtimeServerEventMcpListToolsFailed extends RealtimeServerEvent {const RealtimeServerEventMcpListToolsFailed(this.realtimeServerEventMcpListToolsFailed);
+@immutable final class RealtimeServerEvent$McpListToolsFailed extends RealtimeServerEvent {const RealtimeServerEvent$McpListToolsFailed(this.realtimeServerEventMcpListToolsFailed);
 
-factory RealtimeServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventMcpListToolsFailed(RealtimeServerEventMcpListToolsFailed.fromJson(json)); }
+factory RealtimeServerEvent$McpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$McpListToolsFailed(RealtimeServerEventMcpListToolsFailed.fromJson(json)); }
 
 final RealtimeServerEventMcpListToolsFailed realtimeServerEventMcpListToolsFailed;
 
 @override String get type { return 'mcp_list_tools.failed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventMcpListToolsFailed.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventMcpListToolsFailed && realtimeServerEventMcpListToolsFailed == other.realtimeServerEventMcpListToolsFailed; } 
+    other is RealtimeServerEvent$McpListToolsFailed && realtimeServerEventMcpListToolsFailed == other.realtimeServerEventMcpListToolsFailed; } 
 @override int get hashCode { return realtimeServerEventMcpListToolsFailed.hashCode; } 
-@override String toString() { return 'RealtimeServerEventMcpListToolsFailed(realtimeServerEventMcpListToolsFailed: $realtimeServerEventMcpListToolsFailed)'; } 
+@override String toString() { return 'RealtimeServerEvent\$McpListToolsFailed(realtimeServerEventMcpListToolsFailed: $realtimeServerEventMcpListToolsFailed)'; } 
  }
-@immutable final class RealtimeServerEventResponseMcpCallArgumentsDelta extends RealtimeServerEvent {const RealtimeServerEventResponseMcpCallArgumentsDelta(this.realtimeServerEventResponseMcpCallArgumentsDelta);
+@immutable final class RealtimeServerEvent$ResponseMcpCallArgumentsDelta extends RealtimeServerEvent {const RealtimeServerEvent$ResponseMcpCallArgumentsDelta(this.realtimeServerEventResponseMcpCallArgumentsDelta);
 
-factory RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallArgumentsDelta(RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(json)); }
+factory RealtimeServerEvent$ResponseMcpCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseMcpCallArgumentsDelta(RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(json)); }
 
 final RealtimeServerEventResponseMcpCallArgumentsDelta realtimeServerEventResponseMcpCallArgumentsDelta;
 
 @override String get type { return 'response.mcp_call_arguments.delta'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallArgumentsDelta.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseMcpCallArgumentsDelta && realtimeServerEventResponseMcpCallArgumentsDelta == other.realtimeServerEventResponseMcpCallArgumentsDelta; } 
+    other is RealtimeServerEvent$ResponseMcpCallArgumentsDelta && realtimeServerEventResponseMcpCallArgumentsDelta == other.realtimeServerEventResponseMcpCallArgumentsDelta; } 
 @override int get hashCode { return realtimeServerEventResponseMcpCallArgumentsDelta.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallArgumentsDelta(realtimeServerEventResponseMcpCallArgumentsDelta: $realtimeServerEventResponseMcpCallArgumentsDelta)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseMcpCallArgumentsDelta(realtimeServerEventResponseMcpCallArgumentsDelta: $realtimeServerEventResponseMcpCallArgumentsDelta)'; } 
  }
-@immutable final class RealtimeServerEventResponseMcpCallArgumentsDone extends RealtimeServerEvent {const RealtimeServerEventResponseMcpCallArgumentsDone(this.realtimeServerEventResponseMcpCallArgumentsDone);
+@immutable final class RealtimeServerEvent$ResponseMcpCallArgumentsDone extends RealtimeServerEvent {const RealtimeServerEvent$ResponseMcpCallArgumentsDone(this.realtimeServerEventResponseMcpCallArgumentsDone);
 
-factory RealtimeServerEventResponseMcpCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallArgumentsDone(RealtimeServerEventResponseMcpCallArgumentsDone.fromJson(json)); }
+factory RealtimeServerEvent$ResponseMcpCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseMcpCallArgumentsDone(RealtimeServerEventResponseMcpCallArgumentsDone.fromJson(json)); }
 
 final RealtimeServerEventResponseMcpCallArgumentsDone realtimeServerEventResponseMcpCallArgumentsDone;
 
 @override String get type { return 'response.mcp_call_arguments.done'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallArgumentsDone.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseMcpCallArgumentsDone && realtimeServerEventResponseMcpCallArgumentsDone == other.realtimeServerEventResponseMcpCallArgumentsDone; } 
+    other is RealtimeServerEvent$ResponseMcpCallArgumentsDone && realtimeServerEventResponseMcpCallArgumentsDone == other.realtimeServerEventResponseMcpCallArgumentsDone; } 
 @override int get hashCode { return realtimeServerEventResponseMcpCallArgumentsDone.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallArgumentsDone(realtimeServerEventResponseMcpCallArgumentsDone: $realtimeServerEventResponseMcpCallArgumentsDone)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseMcpCallArgumentsDone(realtimeServerEventResponseMcpCallArgumentsDone: $realtimeServerEventResponseMcpCallArgumentsDone)'; } 
  }
-@immutable final class RealtimeServerEventResponseMcpCallInProgress extends RealtimeServerEvent {const RealtimeServerEventResponseMcpCallInProgress(this.realtimeServerEventResponseMcpCallInProgress);
+@immutable final class RealtimeServerEvent$ResponseMcpCallInProgress extends RealtimeServerEvent {const RealtimeServerEvent$ResponseMcpCallInProgress(this.realtimeServerEventResponseMcpCallInProgress);
 
-factory RealtimeServerEventResponseMcpCallInProgress.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallInProgress(RealtimeServerEventResponseMcpCallInProgress.fromJson(json)); }
+factory RealtimeServerEvent$ResponseMcpCallInProgress.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseMcpCallInProgress(RealtimeServerEventResponseMcpCallInProgress.fromJson(json)); }
 
 final RealtimeServerEventResponseMcpCallInProgress realtimeServerEventResponseMcpCallInProgress;
 
 @override String get type { return 'response.mcp_call.in_progress'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallInProgress.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseMcpCallInProgress && realtimeServerEventResponseMcpCallInProgress == other.realtimeServerEventResponseMcpCallInProgress; } 
+    other is RealtimeServerEvent$ResponseMcpCallInProgress && realtimeServerEventResponseMcpCallInProgress == other.realtimeServerEventResponseMcpCallInProgress; } 
 @override int get hashCode { return realtimeServerEventResponseMcpCallInProgress.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallInProgress(realtimeServerEventResponseMcpCallInProgress: $realtimeServerEventResponseMcpCallInProgress)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseMcpCallInProgress(realtimeServerEventResponseMcpCallInProgress: $realtimeServerEventResponseMcpCallInProgress)'; } 
  }
-@immutable final class RealtimeServerEventResponseMcpCallCompleted extends RealtimeServerEvent {const RealtimeServerEventResponseMcpCallCompleted(this.realtimeServerEventResponseMcpCallCompleted);
+@immutable final class RealtimeServerEvent$ResponseMcpCallCompleted extends RealtimeServerEvent {const RealtimeServerEvent$ResponseMcpCallCompleted(this.realtimeServerEventResponseMcpCallCompleted);
 
-factory RealtimeServerEventResponseMcpCallCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallCompleted(RealtimeServerEventResponseMcpCallCompleted.fromJson(json)); }
+factory RealtimeServerEvent$ResponseMcpCallCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseMcpCallCompleted(RealtimeServerEventResponseMcpCallCompleted.fromJson(json)); }
 
 final RealtimeServerEventResponseMcpCallCompleted realtimeServerEventResponseMcpCallCompleted;
 
 @override String get type { return 'response.mcp_call.completed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallCompleted.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseMcpCallCompleted && realtimeServerEventResponseMcpCallCompleted == other.realtimeServerEventResponseMcpCallCompleted; } 
+    other is RealtimeServerEvent$ResponseMcpCallCompleted && realtimeServerEventResponseMcpCallCompleted == other.realtimeServerEventResponseMcpCallCompleted; } 
 @override int get hashCode { return realtimeServerEventResponseMcpCallCompleted.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallCompleted(realtimeServerEventResponseMcpCallCompleted: $realtimeServerEventResponseMcpCallCompleted)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseMcpCallCompleted(realtimeServerEventResponseMcpCallCompleted: $realtimeServerEventResponseMcpCallCompleted)'; } 
  }
-@immutable final class RealtimeServerEventResponseMcpCallFailed extends RealtimeServerEvent {const RealtimeServerEventResponseMcpCallFailed(this.realtimeServerEventResponseMcpCallFailed);
+@immutable final class RealtimeServerEvent$ResponseMcpCallFailed extends RealtimeServerEvent {const RealtimeServerEvent$ResponseMcpCallFailed(this.realtimeServerEventResponseMcpCallFailed);
 
-factory RealtimeServerEventResponseMcpCallFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallFailed(RealtimeServerEventResponseMcpCallFailed.fromJson(json)); }
+factory RealtimeServerEvent$ResponseMcpCallFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEvent$ResponseMcpCallFailed(RealtimeServerEventResponseMcpCallFailed.fromJson(json)); }
 
 final RealtimeServerEventResponseMcpCallFailed realtimeServerEventResponseMcpCallFailed;
 
 @override String get type { return 'response.mcp_call.failed'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallFailed.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseMcpCallFailed && realtimeServerEventResponseMcpCallFailed == other.realtimeServerEventResponseMcpCallFailed; } 
+    other is RealtimeServerEvent$ResponseMcpCallFailed && realtimeServerEventResponseMcpCallFailed == other.realtimeServerEventResponseMcpCallFailed; } 
 @override int get hashCode { return realtimeServerEventResponseMcpCallFailed.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallFailed(realtimeServerEventResponseMcpCallFailed: $realtimeServerEventResponseMcpCallFailed)'; } 
+@override String toString() { return 'RealtimeServerEvent\$ResponseMcpCallFailed(realtimeServerEventResponseMcpCallFailed: $realtimeServerEventResponseMcpCallFailed)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
