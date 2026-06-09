@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account.dart';import '../models/delete_organization_response.dart';import '../models/organization.dart';import '../models/organization_id.dart';import '../models/organization_list_organizations_parent_id.dart';import '../models/profile.dart';/// OrganizationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account.dart';import '../models/delete_organization_response.dart';import '../models/error_response.dart';import '../models/organization.dart';import '../models/organization_id.dart';import '../models/organization_list_organizations_parent_id.dart';import '../models/profile.dart';/// OrganizationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class OrganizationsApi with ApiExecutor {const OrganizationsApi(this.apiCo
 /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations`
-Future<ApiResult<List<Organization>, Never>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Organization>, ErrorResponse>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
 queryParameters['id'] = id.map((item) => item.toJson()).join(',');
@@ -66,6 +66,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => Organization.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create organization
@@ -73,7 +76,7 @@ return execute(
 /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations`
-Future<ApiResult<Organization, Never>> organizationsCreateUserOrganization({required Organization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Organization, ErrorResponse>> organizationsCreateUserOrganization({required Organization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,6 +93,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return Organization.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get organization
@@ -97,7 +103,7 @@ return execute(
 /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}`
-Future<ApiResult<Organization, Never>> organizationsRetrieve({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Organization, ErrorResponse>> organizationsRetrieve({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,6 +118,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return Organization.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Modify organization.
@@ -119,7 +128,7 @@ return execute(
 /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}`
-Future<ApiResult<Organization, Never>> organizationsModify({required OrganizationId organizationId, required Organization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Organization, ErrorResponse>> organizationsModify({required OrganizationId organizationId, required Organization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,6 +145,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return Organization.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete organization.
@@ -144,7 +156,7 @@ return execute(
 /// It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}`
-Future<ApiResult<DeleteOrganizationResponse, Never>> organizationsDelete({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteOrganizationResponse, ErrorResponse>> organizationsDelete({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -159,6 +171,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DeleteOrganizationResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get organization accounts
@@ -166,7 +181,7 @@ return execute(
 /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/accounts`
-Future<ApiResult<List<Account>, Never>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Account>, ErrorResponse>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountPubname != null) {
   queryParameters['account_pubname'] = accountPubname;
@@ -216,6 +231,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => Account.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get organization profile
@@ -223,7 +241,7 @@ return execute(
 /// Get an organizations profile if it exists. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/profile`
-Future<ApiResult<Profile, Never>> organizationsGetProfile({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Profile, ErrorResponse>> organizationsGetProfile({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -238,6 +256,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return Profile.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Modify organization profile.
@@ -245,7 +266,7 @@ return execute(
 /// Modify organization profile. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}/profile`
-Future<ApiResult<void, Never>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorResponse>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -259,6 +280,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: (response) {
+    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
  }

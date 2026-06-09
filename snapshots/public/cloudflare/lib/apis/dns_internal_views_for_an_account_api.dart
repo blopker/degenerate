@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_direction.dart';import '../models/dns_settings_dns_view.dart';import '../models/dns_settings_dns_view_response.dart';import '../models/dns_settings_identifier.dart';import '../models/dns_settings_match.dart';import '../models/dns_settings_order.dart';import '../models/dns_settings_page.dart';import '../models/dns_settings_per_page.dart';import '../models/dns_views_for_an_account_delete_internal_dns_view_response_result.dart';/// DnsInternalViewsForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_direction.dart';import '../models/dns_settings_dns_view.dart';import '../models/dns_settings_dns_view_response.dart';import '../models/dns_settings_dns_view_response_collection.dart';import '../models/dns_settings_dns_view_response_single.dart';import '../models/dns_settings_identifier.dart';import '../models/dns_settings_match.dart';import '../models/dns_settings_order.dart';import '../models/dns_settings_page.dart';import '../models/dns_settings_per_page.dart';import '../models/dns_views_for_an_account_delete_internal_dns_view_response_result.dart';import '../models/response_common_failure31.dart';/// DnsInternalViewsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnsInternalViewsForAnAccountApi with ApiExecutor {const DnsInternalV
 /// List DNS Internal Views for an Account
 ///
 /// `GET /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<List<DnsSettingsDnsViewResponse>?, Never>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DnsSettingsDnsViewResponse>?, DnsSettingsDnsViewResponseCollection>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -69,6 +69,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DnsSettingsDnsViewResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return DnsSettingsDnsViewResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create Internal DNS View
@@ -76,7 +79,7 @@ return execute(
 /// Create Internal DNS View for an account
 ///
 /// `POST /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<DnsSettingsDnsViewResponse?, Never>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsSettingsDnsViewResponseSingle>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,6 +96,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsSettingsDnsViewResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsSettingsDnsViewResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// DNS Internal View Details
@@ -100,7 +106,7 @@ return execute(
 /// Get DNS Internal View
 ///
 /// `GET /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsSettingsDnsViewResponse?, Never>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsSettingsDnsViewResponseSingle>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -115,6 +121,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsSettingsDnsViewResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsSettingsDnsViewResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update Internal DNS View
@@ -122,7 +131,7 @@ return execute(
 /// Update an existing Internal DNS View
 ///
 /// `PATCH /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsSettingsDnsViewResponse?, Never>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsSettingsDnsViewResponseSingle>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsView body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,6 +148,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsSettingsDnsViewResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnsSettingsDnsViewResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Internal DNS View
@@ -146,7 +158,7 @@ return execute(
 /// Delete an existing Internal DNS View
 ///
 /// `DELETE /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponseResult?, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponseResult?, ResponseCommonFailure31>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -160,6 +172,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure31.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

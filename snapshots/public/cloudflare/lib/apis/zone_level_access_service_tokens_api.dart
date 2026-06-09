@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_schemas_create_response_result.dart';import '../models/access_schemas_service_tokens.dart';import '../models/access_uuid.dart';import '../models/zone_level_access_service_tokens_create_a_service_token_request.dart';import '../models/zone_level_access_service_tokens_update_a_service_token_request.dart';/// ZoneLevelAccessServiceTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_schemas_create_response_result.dart';import '../models/access_schemas_service_tokens.dart';import '../models/access_uuid.dart';import '../models/response_common_failure4.dart';import '../models/zone_level_access_service_tokens_create_a_service_token_request.dart';import '../models/zone_level_access_service_tokens_update_a_service_token_request.dart';/// ZoneLevelAccessServiceTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneLevelAccessServiceTokensApi with ApiExecutor {const ZoneLevelAcc
 /// Lists all service tokens.
 ///
 /// `GET /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<List<AccessSchemasServiceTokens>?, Never>> zoneLevelAccessServiceTokensListServiceTokens({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasServiceTokens>?, ResponseCommonFailure4>> zoneLevelAccessServiceTokensListServiceTokens({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessSchemasServiceTokens.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create a service token
@@ -35,7 +38,7 @@ return execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to create a new service token.
 ///
 /// `POST /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<AccessSchemasCreateResponseResult?, Never>> zoneLevelAccessServiceTokensCreateAServiceToken({required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasCreateResponseResult?, ResponseCommonFailure4>> zoneLevelAccessServiceTokensCreateAServiceToken({required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get a service token
@@ -59,7 +65,7 @@ return execute(
 /// Fetches a single service token.
 ///
 /// `GET /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<AccessSchemasServiceTokens?, Never>> zoneLevelAccessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasServiceTokens?, ResponseCommonFailure4>> zoneLevelAccessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,6 +80,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update a service token
@@ -81,7 +90,7 @@ return execute(
 /// Updates a configured service token.
 ///
 /// `PUT /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<AccessSchemasServiceTokens?, Never>> zoneLevelAccessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasServiceTokens?, ResponseCommonFailure4>> zoneLevelAccessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,6 +107,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete a service token
@@ -105,7 +117,7 @@ return execute(
 /// Deletes a service token.
 ///
 /// `DELETE /zones/{zone_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<AccessSchemasServiceTokens?, Never>> zoneLevelAccessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasServiceTokens?, ResponseCommonFailure4>> zoneLevelAccessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,6 +131,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

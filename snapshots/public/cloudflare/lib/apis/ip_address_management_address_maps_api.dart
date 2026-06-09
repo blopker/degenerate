@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_address_map_identifier.dart';import '../models/addressing_address_maps.dart';import '../models/addressing_full_response_result.dart';import '../models/addressing_ip_address.dart';import '../models/addressing_zone_identifier.dart';import '../models/ip_address_management_address_maps_create_address_map_request.dart';import '../models/ip_address_management_address_maps_update_address_map_request.dart';import '../models/response_collection4.dart';/// IpAddressManagementAddressMapsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_address_map_identifier.dart';import '../models/addressing_address_maps.dart';import '../models/addressing_components_schemas_response_collection.dart';import '../models/addressing_components_schemas_single_response.dart';import '../models/addressing_full_response.dart';import '../models/addressing_full_response_result.dart';import '../models/addressing_ip_address.dart';import '../models/addressing_zone_identifier.dart';import '../models/ip_address_management_address_maps_create_address_map_request.dart';import '../models/ip_address_management_address_maps_update_address_map_request.dart';import '../models/response_collection4.dart';/// IpAddressManagementAddressMapsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpAddressManagementAddressMapsApi with ApiExecutor {const IpAddressM
 /// List all address maps owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/address_maps`
-Future<ApiResult<List<AddressingAddressMaps>?, Never>> ipAddressManagementAddressMapsListAddressMaps({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingAddressMaps>?, AddressingComponentsSchemasResponseCollection>> ipAddressManagementAddressMapsListAddressMaps({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AddressingAddressMaps.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return AddressingComponentsSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create Address Map
@@ -35,7 +38,7 @@ return execute(
 /// Create a new address map under the account.
 ///
 /// `POST /accounts/{account_id}/addressing/address_maps`
-Future<ApiResult<AddressingFullResponseResult?, Never>> ipAddressManagementAddressMapsCreateAddressMap({required AddressingAccountIdentifier accountId, required IpAddressManagementAddressMapsCreateAddressMapRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingFullResponseResult?, AddressingFullResponse>> ipAddressManagementAddressMapsCreateAddressMap({required AddressingAccountIdentifier accountId, required IpAddressManagementAddressMapsCreateAddressMapRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return AddressingFullResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Address Map Details
@@ -59,7 +65,7 @@ return execute(
 /// Show a particular address map owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/address_maps/{address_map_id}`
-Future<ApiResult<AddressingFullResponseResult?, Never>> ipAddressManagementAddressMapsAddressMapDetails({required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingFullResponseResult?, AddressingFullResponse>> ipAddressManagementAddressMapsAddressMapDetails({required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,6 +80,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return AddressingFullResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update Address Map
@@ -81,7 +90,7 @@ return execute(
 /// Modify properties of an address map owned by the account.
 ///
 /// `PATCH /accounts/{account_id}/addressing/address_maps/{address_map_id}`
-Future<ApiResult<AddressingAddressMaps?, Never>> ipAddressManagementAddressMapsUpdateAddressMap({required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, required IpAddressManagementAddressMapsUpdateAddressMapRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingAddressMaps?, AddressingComponentsSchemasSingleResponse>> ipAddressManagementAddressMapsUpdateAddressMap({required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, required IpAddressManagementAddressMapsUpdateAddressMapRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,6 +107,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AddressingAddressMaps.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return AddressingComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Address Map
@@ -105,7 +117,7 @@ return execute(
 /// Delete a particular address map owned by the account. An Address Map must be disabled before it can be deleted.
 ///
 /// `DELETE /accounts/{account_id}/addressing/address_maps/{address_map_id}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsDeleteAddressMap({required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsDeleteAddressMap({required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,6 +131,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Add an account membership to an Address Map
@@ -126,7 +141,7 @@ return execute(
 /// Add an account as a member of a particular address map.
 ///
 /// `PUT /accounts/{account_id}/addressing/address_maps/{address_map_id}/accounts/{account_id}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsAddAnAccountMembershipToAnAddressMap({required AddressingAccountIdentifier accountId, required AddressingAddressMapIdentifier addressMapId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsAddAnAccountMembershipToAnAddressMap({required AddressingAccountIdentifier accountId, required AddressingAddressMapIdentifier addressMapId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -138,6 +153,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
@@ -147,7 +165,7 @@ return execute(
 /// Remove an account as a member of a particular address map.
 ///
 /// `DELETE /accounts/{account_id}/addressing/address_maps/{address_map_id}/accounts/{account_id}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsRemoveAnAccountMembershipFromAnAddressMap({required AddressingAccountIdentifier accountId, required AddressingAddressMapIdentifier addressMapId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsRemoveAnAccountMembershipFromAnAddressMap({required AddressingAccountIdentifier accountId, required AddressingAddressMapIdentifier addressMapId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -161,6 +179,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Add an IP to an Address Map
@@ -168,7 +189,7 @@ return execute(
 /// Add an IP from a prefix owned by the account to a particular address map.
 ///
 /// `PUT /accounts/{account_id}/addressing/address_maps/{address_map_id}/ips/{ip_address}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsAddAnIpToAnAddressMap({required AddressingIpAddress ipAddress, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsAddAnIpToAnAddressMap({required AddressingIpAddress ipAddress, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -180,6 +201,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
@@ -189,7 +213,7 @@ return execute(
 /// Remove an IP from a particular address map.
 ///
 /// `DELETE /accounts/{account_id}/addressing/address_maps/{address_map_id}/ips/{ip_address}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsRemoveAnIpFromAnAddressMap({required AddressingIpAddress ipAddress, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsRemoveAnIpFromAnAddressMap({required AddressingIpAddress ipAddress, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -203,6 +227,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Add a zone membership to an Address Map
@@ -210,7 +237,7 @@ return execute(
 /// Add a zone as a member of a particular address map.
 ///
 /// `PUT /accounts/{account_id}/addressing/address_maps/{address_map_id}/zones/{zone_id}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsAddAZoneMembershipToAnAddressMap({required AddressingZoneIdentifier zoneId, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsAddAZoneMembershipToAnAddressMap({required AddressingZoneIdentifier zoneId, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -224,6 +251,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Remove a zone membership from an Address Map
@@ -231,7 +261,7 @@ return execute(
 /// Remove a zone as a member of a particular address map.
 ///
 /// `DELETE /accounts/{account_id}/addressing/address_maps/{address_map_id}/zones/{zone_id}`
-Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMap({required AddressingZoneIdentifier zoneId, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection4, ResponseCollection4>> ipAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMap({required AddressingZoneIdentifier zoneId, required AddressingAddressMapIdentifier addressMapId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -243,6 +273,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
+    return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
     return ResponseCollection4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );

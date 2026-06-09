@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/brapi_post_content_request.dart';import '../models/brapi_post_content_response400.dart';import '../models/brapi_post_json_request.dart';import '../models/brapi_post_json_response400.dart';import '../models/brapi_post_links_request.dart';import '../models/brapi_post_links_response400.dart';import '../models/brapi_post_markdown_request.dart';import '../models/brapi_post_markdown_response400.dart';import '../models/brapi_post_pdf_request.dart';import '../models/brapi_post_pdf_response400.dart';import '../models/brapi_post_scrape_request.dart';import '../models/brapi_post_scrape_response400.dart';import '../models/brapi_post_scrape_response_result.dart';import '../models/brapi_post_screenshot_request.dart';import '../models/brapi_post_screenshot_response.dart';import '../models/brapi_post_screenshot_response400.dart';import '../models/brapi_post_snapshot_request.dart';import '../models/brapi_post_snapshot_response400.dart';import '../models/brapi_post_snapshot_response_result.dart';/// BrapiApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/brapi_post_content_error.dart';import '../models/brapi_post_content_request.dart';import '../models/brapi_post_json_error.dart';import '../models/brapi_post_json_request.dart';import '../models/brapi_post_links_error.dart';import '../models/brapi_post_links_request.dart';import '../models/brapi_post_markdown_error.dart';import '../models/brapi_post_markdown_request.dart';import '../models/brapi_post_pdf_error.dart';import '../models/brapi_post_pdf_request.dart';import '../models/brapi_post_scrape_error.dart';import '../models/brapi_post_scrape_request.dart';import '../models/brapi_post_scrape_response_result.dart';import '../models/brapi_post_screenshot_error.dart';import '../models/brapi_post_screenshot_request.dart';import '../models/brapi_post_screenshot_response.dart';import '../models/brapi_post_snapshot_error.dart';import '../models/brapi_post_snapshot_request.dart';import '../models/brapi_post_snapshot_response_result.dart';/// BrapiApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class BrapiApi with ApiExecutor {const BrapiApi(this.apiConfig);
 /// Fetches rendered HTML content from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/content`
-Future<ApiResult<String?, BrapiPostContentResponse400>> brapiPostContent({required String accountId, required BrapiPostContentRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String?, BrapiPostContentError>> brapiPostContent({required String accountId, required BrapiPostContentRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -39,7 +39,7 @@ return execute(
     return json['result'] as String?;
   },
   onError: (response) {
-    return BrapiPostContentResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostContentError.parse(response);
   },
 );
  } 
@@ -48,7 +48,7 @@ return execute(
 /// Gets json from a webpage from a provided URL or HTML. Pass `prompt` or `schema` in the body. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/json`
-Future<ApiResult<Map<String, Map<String, dynamic>>, BrapiPostJsonResponse400>> brapiPostJson({required String accountId, required BrapiPostJsonRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, Map<String, dynamic>>, BrapiPostJsonError>> brapiPostJson({required String accountId, required BrapiPostJsonRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -74,7 +74,7 @@ return execute(
     return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>));
   },
   onError: (response) {
-    return BrapiPostJsonResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostJsonError.parse(response);
   },
 );
  } 
@@ -83,7 +83,7 @@ return execute(
 /// Get links from a web page.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/links`
-Future<ApiResult<List<String>, BrapiPostLinksResponse400>> brapiPostLinks({required String accountId, required BrapiPostLinksRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<String>, BrapiPostLinksError>> brapiPostLinks({required String accountId, required BrapiPostLinksRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -109,7 +109,7 @@ return execute(
     return (json['result'] as List<dynamic>).map((e) => e as String).toList();
   },
   onError: (response) {
-    return BrapiPostLinksResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostLinksError.parse(response);
   },
 );
  } 
@@ -118,7 +118,7 @@ return execute(
 /// Gets markdown of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/markdown`
-Future<ApiResult<String?, BrapiPostMarkdownResponse400>> brapiPostMarkdown({required String accountId, required BrapiPostMarkdownRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String?, BrapiPostMarkdownError>> brapiPostMarkdown({required String accountId, required BrapiPostMarkdownRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -144,7 +144,7 @@ return execute(
     return json['result'] as String?;
   },
   onError: (response) {
-    return BrapiPostMarkdownResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostMarkdownError.parse(response);
   },
 );
  } 
@@ -153,7 +153,7 @@ return execute(
 /// Fetches rendered PDF from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/pdf`
-Future<ApiResult<String, BrapiPostPdfResponse400>> brapiPostPdf({required String accountId, required BrapiPostPdfRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, BrapiPostPdfError>> brapiPostPdf({required String accountId, required BrapiPostPdfRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -178,7 +178,7 @@ return execute(
     return response.body;
   },
   onError: (response) {
-    return BrapiPostPdfResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostPdfError.parse(response);
   },
 );
  } 
@@ -187,7 +187,7 @@ return execute(
 /// Get meta attributes like height, width, text and others of selected elements.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/scrape`
-Future<ApiResult<List<BrapiPostScrapeResponseResult>, BrapiPostScrapeResponse400>> brapiPostScrape({required String accountId, required BrapiPostScrapeRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BrapiPostScrapeResponseResult>, BrapiPostScrapeError>> brapiPostScrape({required String accountId, required BrapiPostScrapeRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -213,7 +213,7 @@ return execute(
     return (json['result'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BrapiPostScrapeResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostScrapeError.parse(response);
   },
 );
  } 
@@ -222,7 +222,7 @@ return execute(
 /// Takes a screenshot of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/screenshot`
-Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotResponse400>> brapiPostScreenshot({required String accountId, required BrapiPostScreenshotRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotError>> brapiPostScreenshot({required String accountId, required BrapiPostScreenshotRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -247,7 +247,7 @@ return execute(
     return BrapiPostScreenshotResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BrapiPostScreenshotResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostScreenshotError.parse(response);
   },
 );
  } 
@@ -256,7 +256,7 @@ return execute(
 /// Returns the page's HTML content and screenshot. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/snapshot`
-Future<ApiResult<BrapiPostSnapshotResponseResult?, BrapiPostSnapshotResponse400>> brapiPostSnapshot({required String accountId, required BrapiPostSnapshotRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BrapiPostSnapshotResponseResult?, BrapiPostSnapshotError>> brapiPostSnapshot({required String accountId, required BrapiPostSnapshotRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -282,7 +282,7 @@ return execute(
     return json['result'] != null ? BrapiPostSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return BrapiPostSnapshotResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return BrapiPostSnapshotError.parse(response);
   },
 );
  } 

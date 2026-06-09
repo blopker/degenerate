@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common78.dart';import 'web3_collection_response.dart';/// Error responses of `DELETE /zones/{zone_id}/web3/hostnames/{identifier}`.
+sealed class Web3HostnameDeleteWeb3HostnameError {const Web3HostnameDeleteWeb3HostnameError();
+
+/// Parse the variant matching the response status code.
+factory Web3HostnameDeleteWeb3HostnameError.parse(ApiResponse response) { return switch (response.statusCode) {
+  >= 400 && <= 499 => Web3HostnameDeleteWeb3HostnameError4xx.parse(response),
+  >= 500 && <= 599 => Web3HostnameDeleteWeb3HostnameError5xx.parse(response),
+  _ => Web3HostnameDeleteWeb3HostnameError$Unknown(response.statusCode, response.body),
+}; }
+
+ }
+/// The `4XX` range response.
+@immutable final class Web3HostnameDeleteWeb3HostnameError4xx extends Web3HostnameDeleteWeb3HostnameError {const Web3HostnameDeleteWeb3HostnameError4xx(this.data);
+
+factory Web3HostnameDeleteWeb3HostnameError4xx.parse(ApiResponse response) { return Web3HostnameDeleteWeb3HostnameError4xx(Web3CollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>)); }
+
+final Web3CollectionResponse data;
+
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Web3HostnameDeleteWeb3HostnameError4xx && data == other.data; } 
+@override int get hashCode { return data.hashCode; } 
+@override String toString() { return 'Web3HostnameDeleteWeb3HostnameError4xx($data)'; } 
+ }
+/// The `5XX` range response.
+@immutable final class Web3HostnameDeleteWeb3HostnameError5xx extends Web3HostnameDeleteWeb3HostnameError {const Web3HostnameDeleteWeb3HostnameError5xx(this.data);
+
+factory Web3HostnameDeleteWeb3HostnameError5xx.parse(ApiResponse response) { return Web3HostnameDeleteWeb3HostnameError5xx(ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>)); }
+
+final ResponseCommon78 data;
+
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Web3HostnameDeleteWeb3HostnameError5xx && data == other.data; } 
+@override int get hashCode { return data.hashCode; } 
+@override String toString() { return 'Web3HostnameDeleteWeb3HostnameError5xx($data)'; } 
+ }
+/// A response with a status code not declared in the OpenAPI spec.
+@immutable final class Web3HostnameDeleteWeb3HostnameError$Unknown extends Web3HostnameDeleteWeb3HostnameError {const Web3HostnameDeleteWeb3HostnameError$Unknown(this.statusCode, this.body, );
+
+final int statusCode;
+
+final String body;
+
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Web3HostnameDeleteWeb3HostnameError$Unknown && statusCode == other.statusCode && body == other.body; } 
+@override int get hashCode { return Object.hash(statusCode, body); } 
+@override String toString() { return 'Web3HostnameDeleteWeb3HostnameError.unknown($statusCode)'; } 
+ }

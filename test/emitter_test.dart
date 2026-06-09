@@ -552,6 +552,118 @@ void main() {
     });
   });
 
+  // ─── API methods with status unions (issue #5) ────────────────
+
+  group('ApiEmitter - status unions', () {
+    test('union-bearing operations return ApiResult of the unions and '
+        'delegate parsing', () {
+      const success = IrStatusUnion('PostAuthSuccess', [
+        IrStatusVariant(
+          '200',
+          'PostAuthSuccess200',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse'),
+        ),
+        IrStatusVariant(
+          '201',
+          'PostAuthSuccess201',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse201'),
+        ),
+      ]);
+      const error = IrStatusUnion('PostAuthError', [
+        IrStatusVariant(
+          '401',
+          'PostAuthError401',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse401'),
+        ),
+        IrStatusVariant(
+          'default',
+          'PostAuthErrorDefault',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponseDefault'),
+        ),
+      ]);
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'postAuth',
+          'postAuth',
+          HttpMethod.post,
+          '/auth',
+          responses: {200: IrResponse(), 201: IrResponse()},
+          successUnion: success,
+          errorUnion: error,
+        ),
+      ]);
+
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains('Future<ApiResult<PostAuthSuccess, PostAuthError>>'),
+      );
+      expect(source, contains('return PostAuthSuccess.parse(response);'));
+      expect(source, contains('return PostAuthError.parse(response);'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  // ─── Range responses on the plain (non-union) path ────────────
+
+  group('ApiEmitter - single-type range responses', () {
+    const fooResponse = IrResponse(
+      content: {
+        'application/json': IrMediaType(IrTypeRef('Foo')),
+      },
+    );
+    const errResponse = IrResponse(
+      content: {
+        'application/json': IrMediaType(IrTypeRef('Err')),
+      },
+    );
+
+    test('a lone 2XX range response becomes the plain success type', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getThing',
+          'getThing',
+          HttpMethod.get,
+          '/thing',
+          rangeResponses: {'2XX': fooResponse},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains('Future<ApiResult<Foo, Never>>'));
+      expect(source, contains('Foo.fromJson'));
+    });
+
+    test('a lone 4XX range response becomes the plain error type', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getThing',
+          'getThing',
+          HttpMethod.get,
+          '/thing',
+          responses: {200: fooResponse},
+          rangeResponses: {'4XX': errResponse},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains('Future<ApiResult<Foo, Err>>'));
+      expect(source, contains('onError: (response)'));
+      expect(source, contains('Err.fromJson'));
+    });
+  });
+
   // ─── Status union emission (issue #5) ────────────────────────
 
   group('StatusUnionEmitter', () {
@@ -609,6 +721,16 @@ void main() {
         contains('>= 200 && <= 299 => PostAuthSuccess2xx.parse(response)'),
       );
       expect(source, contains('_ => PostAuthSuccessDefault.parse(response)'));
+      // Exact codes must dispatch before the covering range, and the range
+      // before the fallback — switch expression cases match in order.
+      expect(
+        source.indexOf('200 => '),
+        lessThan(source.indexOf('>= 200 && <= 299')),
+      );
+      expect(
+        source.indexOf('>= 200 && <= 299'),
+        lessThan(source.indexOf('_ => PostAuthSuccessDefault')),
+      );
       expect(
         source,
         contains('final class PostAuthSuccess200 extends PostAuthSuccess'),

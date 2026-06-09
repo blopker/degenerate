@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_providers_request.dart';import '../models/aig_config_create_providers_response400.dart';import '../models/aig_config_create_providers_response_result.dart';import '../models/aig_config_delete_providers_response404.dart';import '../models/aig_config_delete_providers_response_result.dart';import '../models/aig_config_list_providers_response400.dart';import '../models/aig_config_list_providers_response_result.dart';import '../models/aig_config_update_providers_request.dart';import '../models/aig_config_update_providers_response400.dart';import '../models/aig_config_update_providers_response_result.dart';/// AiGatewayProviderConfigsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_providers_request.dart';import '../models/aig_config_create_providers_response400.dart';import '../models/aig_config_create_providers_response_result.dart';import '../models/aig_config_delete_providers_response404.dart';import '../models/aig_config_delete_providers_response_result.dart';import '../models/aig_config_list_providers_response400.dart';import '../models/aig_config_list_providers_response_result.dart';import '../models/aig_config_update_providers_error.dart';import '../models/aig_config_update_providers_request.dart';import '../models/aig_config_update_providers_response_result.dart';/// AiGatewayProviderConfigsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -76,7 +76,7 @@ return execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}`
-Future<ApiResult<AigConfigUpdateProvidersResponseResult, AigConfigUpdateProvidersResponse400>> aigConfigUpdateProviders({required String accountId, required String gatewayId, required String id, AigConfigUpdateProvidersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateProvidersResponseResult, AigConfigUpdateProvidersError>> aigConfigUpdateProviders({required String accountId, required String gatewayId, required String id, AigConfigUpdateProvidersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,7 +94,7 @@ return execute(
     return AigConfigUpdateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigUpdateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AigConfigUpdateProvidersError.parse(response);
   },
 );
  } 

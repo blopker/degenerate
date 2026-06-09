@@ -351,12 +351,18 @@ final class IrStatusUnion extends IrType {
 /// One variant of an [IrStatusUnion].
 final class IrStatusVariant {
   /// Creates a status union variant.
+  ///
+  /// [mediaType] and [schema] are either both present (a body-bearing
+  /// variant) or both null (a no-content variant).
   const IrStatusVariant(
     this.key,
     this.className, {
     this.mediaType,
     this.schema,
-  });
+  }) : assert(
+         (mediaType == null) == (schema == null),
+         'mediaType and schema must both be set or both be null',
+       );
 
   /// The response key: an exact code (`'200'`), a range (`'2XX'`), or
   /// `'default'`.
@@ -500,6 +506,8 @@ final class IrOperation {
     this.responses = const {},
     this.rangeResponses = const {},
     this.defaultResponse,
+    this.successUnion,
+    this.errorUnion,
     this.isDeprecated = false,
     this.securityRequirements,
   });
@@ -543,6 +551,15 @@ final class IrOperation {
   /// The default response (for unmatched status codes).
   final IrResponse? defaultResponse;
 
+  /// Sealed union over the success responses, synthesized when the 2xx
+  /// responses declare multiple distinct body types. Null when a single
+  /// plain success type suffices.
+  final IrStatusUnion? successUnion;
+
+  /// Sealed union over the error responses, synthesized when the non-2xx
+  /// responses (including `default`) declare multiple distinct body types.
+  final IrStatusUnion? errorUnion;
+
   /// Whether this operation is marked deprecated.
   final bool isDeprecated;
 
@@ -557,6 +574,8 @@ final class IrOperation {
     Map<int, IrResponse>? responses,
     Map<String, IrResponse>? rangeResponses,
     IrResponse? defaultResponse,
+    IrStatusUnion? successUnion,
+    IrStatusUnion? errorUnion,
   }) {
     return IrOperation(
       operationId,
@@ -571,6 +590,8 @@ final class IrOperation {
       responses: responses ?? this.responses,
       rangeResponses: rangeResponses ?? this.rangeResponses,
       defaultResponse: defaultResponse ?? this.defaultResponse,
+      successUnion: successUnion ?? this.successUnion,
+      errorUnion: errorUnion ?? this.errorUnion,
       isDeprecated: isDeprecated,
       securityRequirements: securityRequirements,
     );

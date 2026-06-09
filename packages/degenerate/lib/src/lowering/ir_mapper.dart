@@ -1058,6 +1058,12 @@ class IrMapper {
     return null;
   }
 
+  /// Allocate a globally unique Dart type name from [hint].
+  ///
+  /// Used by later lowering stages (e.g. status unions) that synthesize
+  /// types outside the schema-lowering pass.
+  String allocateTypeName(String hint) => _uniqueTypeName(hint);
+
   String _uniqueTypeName(String rawName) {
     final pascal = toPascalCase(rawName);
     final sanitized = sanitizeDartName(pascal);

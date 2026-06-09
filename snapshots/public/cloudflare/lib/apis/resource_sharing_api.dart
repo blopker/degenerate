@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/organization_shares_list_direction.dart';import '../models/organization_shares_list_order.dart';import '../models/resource_sharing_account_id.dart';import '../models/resource_sharing_create_share_recipient_request.dart';import '../models/resource_sharing_create_share_request.dart';import '../models/resource_sharing_create_share_resource_request.dart';import '../models/resource_sharing_organization_id.dart';import '../models/resource_sharing_recipient_id.dart';import '../models/resource_sharing_resource_id.dart';import '../models/resource_sharing_resource_status.dart';import '../models/resource_sharing_resource_type.dart';import '../models/resource_sharing_share_id.dart';import '../models/resource_sharing_share_kind.dart';import '../models/resource_sharing_share_object.dart';import '../models/resource_sharing_share_recipient_object.dart';import '../models/resource_sharing_share_resource_object.dart';import '../models/resource_sharing_share_status.dart';import '../models/resource_sharing_share_target_type.dart';import '../models/resource_sharing_update_share_request.dart';import '../models/resource_sharing_update_share_resource_request.dart';import '../models/response_common55_result.dart';import '../models/shares_list_direction.dart';import '../models/shares_list_order.dart';/// ResourceSharingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/organization_shares_list_direction.dart';import '../models/organization_shares_list_order.dart';import '../models/resource_sharing_account_id.dart';import '../models/resource_sharing_create_share_recipient_request.dart';import '../models/resource_sharing_create_share_request.dart';import '../models/resource_sharing_create_share_resource_request.dart';import '../models/resource_sharing_organization_id.dart';import '../models/resource_sharing_recipient_id.dart';import '../models/resource_sharing_resource_id.dart';import '../models/resource_sharing_resource_status.dart';import '../models/resource_sharing_resource_type.dart';import '../models/resource_sharing_share_id.dart';import '../models/resource_sharing_share_kind.dart';import '../models/resource_sharing_share_object.dart';import '../models/resource_sharing_share_recipient_object.dart';import '../models/resource_sharing_share_resource_object.dart';import '../models/resource_sharing_share_status.dart';import '../models/resource_sharing_share_target_type.dart';import '../models/resource_sharing_update_share_request.dart';import '../models/resource_sharing_update_share_resource_request.dart';import '../models/response_common55_result.dart';import '../models/response_common_failure58.dart';import '../models/shares_list_direction.dart';import '../models/shares_list_order.dart';/// ResourceSharingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ResourceSharingApi with ApiExecutor {const ResourceSharingApi(this.a
 /// Lists all account shares.
 ///
 /// `GET /accounts/{account_id}/shares`
-Future<ApiResult<List<ResourceSharingShareObject>?, Never>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareObject>?, ResponseCommonFailure58>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -65,6 +65,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create a new share
@@ -72,7 +75,7 @@ return execute(
 /// Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.
 ///
 /// `POST /accounts/{account_id}/shares`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareCreate({required ResourceSharingAccountId accountId, required ResourceSharingCreateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareCreate({required ResourceSharingAccountId accountId, required ResourceSharingCreateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -89,6 +92,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get account share by ID
@@ -96,7 +102,7 @@ return execute(
 /// Fetches share by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -122,6 +128,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update a share
@@ -129,7 +138,7 @@ return execute(
 /// Updating is not immediate, an updated share object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingUpdateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingUpdateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,6 +155,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete a share
@@ -153,7 +165,7 @@ return execute(
 /// Deletion is not immediate, an updated share object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -168,6 +180,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// List share recipients by share ID
@@ -175,7 +190,7 @@ return execute(
 /// List share recipients by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<List<ResourceSharingShareRecipientObject>?, Never>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareRecipientObject>?, ResponseCommonFailure58>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -204,6 +219,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareRecipientObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create a new share recipient
@@ -211,7 +229,7 @@ return execute(
 /// Adds a recipient to a resource share, granting them access to the shared resources.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareRecipientCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareRecipientRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareRecipientCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareRecipientRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -228,6 +246,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update a share's recipients
@@ -235,7 +256,7 @@ return execute(
 /// Changes a share's recipients to match the given list. Returns an error if the share targets an organization.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<void, Never>> shareRecipientsUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required List<ResourceSharingCreateShareRecipientRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure58>> shareRecipientsUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required List<ResourceSharingCreateShareRecipientRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -249,6 +270,9 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get share recipient by ID
@@ -256,7 +280,7 @@ return execute(
 /// Get share recipient by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -279,6 +303,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete a share recipient
@@ -286,7 +313,7 @@ return execute(
 /// Deletion is not immediate, an updated share recipient object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareRecipientDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareRecipientDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -301,6 +328,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// List share resources by share ID
@@ -308,7 +338,7 @@ return execute(
 /// List share resources by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<List<ResourceSharingShareResourceObject>?, Never>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareResourceObject>?, ResponseCommonFailure58>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -340,6 +370,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareResourceObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create a new share resource
@@ -347,7 +380,7 @@ return execute(
 /// Adds a resource to an existing share, making it available to share recipients.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourceCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareResourceCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -364,6 +397,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get share resource by ID
@@ -371,7 +407,7 @@ return execute(
 /// Get share resource by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourcesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareResourcesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -386,6 +422,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update a share resource
@@ -393,7 +432,7 @@ return execute(
 /// Update is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourceUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, required ResourceSharingUpdateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareResourceUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, required ResourceSharingUpdateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -410,6 +449,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete a share resource
@@ -417,7 +459,7 @@ return execute(
 /// Deletion is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourceDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon55Result?, ResponseCommonFailure58>> shareResourceDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -432,6 +474,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// List organization shares
@@ -439,7 +484,7 @@ return execute(
 /// Lists all organization shares.
 ///
 /// `GET /organizations/{organization_id}/shares`
-Future<ApiResult<List<ResourceSharingShareObject>?, Never>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareObject>?, ResponseCommonFailure58>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -484,6 +529,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareObject.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return ResponseCommonFailure58.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

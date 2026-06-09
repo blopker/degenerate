@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_scanning_ref.dart';import '../models/license.dart';import '../models/license_content.dart';import '../models/license_simple.dart';/// LicensesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_scanning_ref.dart';import '../models/license.dart';import '../models/license_content.dart';import '../models/license_simple.dart';import '../models/licenses_get_error.dart';/// LicensesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -49,7 +49,7 @@ return execute(
 /// Gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses/{license}`
-Future<ApiResult<License, BasicError>> licensesGet({required String license, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<License, LicensesGetError>> licensesGet({required String license, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -64,7 +64,7 @@ return execute(
     return License.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LicensesGetError.parse(response);
   },
 );
  } 

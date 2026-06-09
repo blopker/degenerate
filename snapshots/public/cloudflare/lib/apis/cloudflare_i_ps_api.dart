@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_ips_cloudflare_ip_details_response_result.dart';import '../models/public_ip_ips.dart';import '../models/public_ip_ips_jdcloud.dart';/// CloudflareIPsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_ips_cloudflare_ip_details_response_result.dart';import '../models/public_ip_ips.dart';import '../models/public_ip_ips_jdcloud.dart';import '../models/response_common_failure54.dart';/// CloudflareIPsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareIPsApi with ApiExecutor {const CloudflareIPsApi(this.apiCo
 /// Get IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs.
 ///
 /// `GET /ips`
-Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, Never>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, ResponseCommonFailure54>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (networks != null) {
   queryParameters['networks'] = networks;
@@ -35,6 +35,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => PublicIpIps.fromJson(v as Map<String, dynamic>), fromB: (v) => PublicIpIpsJdcloud.fromJson(v as Map<String, dynamic>),) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure54.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

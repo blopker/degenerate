@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_permission_delete_response.dart';import '../models/delete_permission_delete_response400.dart';import '../models/get_permission_list_response.dart';import '../models/get_permission_list_response400.dart';import '../models/post_permission_create_request.dart';import '../models/post_permission_create_response.dart';import '../models/post_permission_create_response400.dart';import '../models/put_permission_update_request.dart';import '../models/put_permission_update_response.dart';import '../models/put_permission_update_response400.dart';/// PermissionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_permission_delete_error.dart';import '../models/delete_permission_delete_response.dart';import '../models/get_permission_list_error.dart';import '../models/get_permission_list_response.dart';import '../models/post_permission_create_request.dart';import '../models/post_permission_create_response.dart';import '../models/post_permission_create_response400.dart';import '../models/put_permission_update_error.dart';import '../models/put_permission_update_request.dart';import '../models/put_permission_update_response.dart';/// PermissionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class PermissionsApi with ApiExecutor {const PermissionsApi(this.apiConfig
 /// List permissions
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions`
-Future<ApiResult<List<GetPermissionListResponse>, GetPermissionListResponse400>> getPermissionList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetPermissionListResponse>, GetPermissionListError>> getPermissionList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,7 +29,7 @@ return execute(
     return json.map((e) => GetPermissionListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return GetPermissionListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return GetPermissionListError.parse(response);
   },
 );
  } 
@@ -64,7 +64,7 @@ return execute(
 /// Update a permission
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}`
-Future<ApiResult<PutPermissionUpdateResponse, PutPermissionUpdateResponse400>> putPermissionUpdate({required String accountId, required String datasetId, required String grantId, PutPermissionUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutPermissionUpdateResponse, PutPermissionUpdateError>> putPermissionUpdate({required String accountId, required String datasetId, required String grantId, PutPermissionUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,7 +81,7 @@ return execute(
     return PutPermissionUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PutPermissionUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PutPermissionUpdateError.parse(response);
   },
 );
  } 
@@ -90,7 +90,7 @@ return execute(
 /// Delete a permission
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}`
-Future<ApiResult<DeletePermissionDeleteResponse, DeletePermissionDeleteResponse400>> deletePermissionDelete({required String accountId, required String datasetId, required String grantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletePermissionDeleteResponse, DeletePermissionDeleteError>> deletePermissionDelete({required String accountId, required String datasetId, required String grantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,7 +105,7 @@ return execute(
     return DeletePermissionDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return DeletePermissionDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DeletePermissionDeleteError.parse(response);
   },
 );
  } 

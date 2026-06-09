@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_worker_version_include.dart';import '../models/response_common80.dart';import '../models/workers_identifier.dart';import '../models/workers_version.dart';/// VersionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_worker_version_include.dart';import '../models/response_common80.dart';import '../models/response_common_failure82.dart';import '../models/workers_identifier.dart';import '../models/workers_version.dart';/// VersionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class VersionsApi with ApiExecutor {const VersionsApi(this.apiConfig);
 /// List all versions for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<List<WorkersVersion>, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersVersion>, ResponseCommonFailure82>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -39,6 +39,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create Version
@@ -46,7 +49,7 @@ return execute(
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<WorkersVersion, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, required WorkersVersion body, bool? deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersion, ResponseCommonFailure82>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, required WorkersVersion body, bool? deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deploy != null) {
   queryParameters['deploy'] = deploy.toString();
@@ -71,6 +74,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersVersion.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get Version
@@ -78,7 +84,7 @@ return execute(
 /// Get details about a specific version.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<WorkersVersion, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersion, ResponseCommonFailure82>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
   queryParameters['include'] = include.toJson();
@@ -101,6 +107,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersVersion.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Version
@@ -108,7 +117,7 @@ return execute(
 /// Delete a version.
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, Never>> deleteWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> deleteWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -121,6 +130,9 @@ return execute(
   request,
   onSuccess: (response) {
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

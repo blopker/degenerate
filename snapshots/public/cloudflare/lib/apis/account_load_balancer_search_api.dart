@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_load_balancer_search_search_resources_references.dart';import '../models/load_balancing_components_schemas_identifier.dart';import '../models/paginated_response_collection.dart';/// AccountLoadBalancerSearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_load_balancer_search_search_resources_references.dart';import '../models/load_balancing_components_schemas_identifier.dart';import '../models/paginated_response_collection.dart';import '../models/response_common_failure43.dart';/// AccountLoadBalancerSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountLoadBalancerSearchApi with ApiExecutor {const AccountLoadBala
 /// Search for Load Balancing resources.
 ///
 /// `GET /accounts/{account_id}/load_balancers/search`
-Future<ApiResult<PaginatedResponseCollection, Never>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaginatedResponseCollection, ResponseCommonFailure43>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (query != null) {
   queryParameters['query'] = query;
@@ -43,6 +43,9 @@ return execute(
   request,
   onSuccess: (response) {
     return PaginatedResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ResponseCommonFailure43.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_certificates.dart';import '../models/zero_trust_gateway_generate_cert_request.dart';import '../models/zero_trust_gateway_schemas_identifier.dart';import '../models/zero_trust_gateway_uuid.dart';/// ZeroTrustCertificatesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_certificates.dart';import '../models/zero_trust_gateway_generate_cert_request.dart';import '../models/zero_trust_gateway_response_collection.dart';import '../models/zero_trust_gateway_schemas_identifier.dart';import '../models/zero_trust_gateway_single_response.dart';import '../models/zero_trust_gateway_uuid.dart';/// ZeroTrustCertificatesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustCertificatesApi with ApiExecutor {const ZeroTrustCertificat
 /// List all Zero Trust certificates for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/certificates`
-Future<ApiResult<List<ZeroTrustGatewayCertificates>?, Never>> zeroTrustCertificatesListZeroTrustCertificates({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayCertificates>?, ZeroTrustGatewayResponseCollection>> zeroTrustCertificatesListZeroTrustCertificates({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayCertificates.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ZeroTrustGatewayResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create Zero Trust certificate
@@ -35,7 +38,7 @@ return execute(
 /// Create a new Zero Trust certificate.
 ///
 /// `POST /accounts/{account_id}/gateway/certificates`
-Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesCreateZeroTrustCertificate({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewayGenerateCertRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayCertificates?, ZeroTrustGatewaySingleResponse>> zeroTrustCertificatesCreateZeroTrustCertificate({required ZeroTrustGatewaySchemasIdentifier accountId, ZeroTrustGatewayGenerateCertRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ZeroTrustGatewaySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get Zero Trust certificate details
@@ -59,7 +65,7 @@ return execute(
 /// Get a single Zero Trust certificate.
 ///
 /// `GET /accounts/{account_id}/gateway/certificates/{certificate_id}`
-Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesZeroTrustCertificateDetails({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayCertificates?, ZeroTrustGatewaySingleResponse>> zeroTrustCertificatesZeroTrustCertificateDetails({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,6 +80,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ZeroTrustGatewaySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Zero Trust certificate
@@ -81,7 +90,7 @@ return execute(
 /// Delete a gateway-managed Zero Trust certificate. You must deactivate the certificate from the edge (inactive) before deleting it.
 ///
 /// `DELETE /accounts/{account_id}/gateway/certificates/{certificate_id}`
-Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesDeleteZeroTrustCertificate({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayCertificates?, ZeroTrustGatewaySingleResponse>> zeroTrustCertificatesDeleteZeroTrustCertificate({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -96,6 +105,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ZeroTrustGatewaySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Activate a Zero Trust certificate
@@ -103,7 +115,7 @@ return execute(
 /// Bind a single Zero Trust certificate to the edge.
 ///
 /// `POST /accounts/{account_id}/gateway/certificates/{certificate_id}/activate`
-Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesActivateZeroTrustCertificate({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayCertificates?, ZeroTrustGatewaySingleResponse>> zeroTrustCertificatesActivateZeroTrustCertificate({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -118,6 +130,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ZeroTrustGatewaySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Deactivate a Zero Trust certificate
@@ -125,7 +140,7 @@ return execute(
 /// Unbind a single Zero Trust certificate from the edge.
 ///
 /// `POST /accounts/{account_id}/gateway/certificates/{certificate_id}/deactivate`
-Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesDeactivateZeroTrustCertificate({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayCertificates?, ZeroTrustGatewaySingleResponse>> zeroTrustCertificatesDeactivateZeroTrustCertificate({required ZeroTrustGatewayUuid certificateId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -139,6 +154,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayCertificates.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ZeroTrustGatewaySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

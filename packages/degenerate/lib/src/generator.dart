@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
+import 'package:degenerate/src/lowering/status_union_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
@@ -273,6 +274,18 @@ class Generator {
         '  Filtered to ${irApis.length} API groups'
         ' matching paths: ${config.paths}',
       );
+    }
+
+    // Synthesize per-operation status unions for operations with multiple
+    // distinct response body types (issue #5). Runs after the deprecated/
+    // tag/path filters so filtered-out operations don't leave orphan types.
+    final statusUnionTypes = <IrType>[];
+    irApis = StatusUnionLowerer(irMapper).lower(irApis, statusUnionTypes);
+    for (final t in statusUnionTypes) {
+      irTypes.add(refResolver.resolve(t));
+    }
+    if (config.verbose && statusUnionTypes.isNotEmpty) {
+      _log('  ${statusUnionTypes.length} status unions synthesized');
     }
 
     // Tree-shake types: only emit types reachable from the remaining APIs
@@ -653,10 +666,21 @@ class Generator {
             _collectTypeRefs(c.schema, reachable);
           }
         }
+        for (final r in op.rangeResponses.values) {
+          for (final c in r.content.values) {
+            _collectTypeRefs(c.schema, reachable);
+          }
+        }
         if (op.defaultResponse != null) {
           for (final c in op.defaultResponse!.content.values) {
             _collectTypeRefs(c.schema, reachable);
           }
+        }
+        if (op.successUnion != null) {
+          _collectTypeRefs(op.successUnion!, reachable);
+        }
+        if (op.errorUnion != null) {
+          _collectTypeRefs(op.errorUnion!, reachable);
         }
       }
     }

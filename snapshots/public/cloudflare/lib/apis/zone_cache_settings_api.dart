@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_base.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_result_object.dart';import '../models/response_common10.dart';import '../models/zone_cache_settings_change_cache_reserve_setting_request.dart';import '../models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import '../models/zone_cache_settings_change_variants_setting_request.dart';/// ZoneCacheSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_base.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_result_object.dart';import '../models/response_common10.dart';import '../models/response_common_failure14.dart';import '../models/zone_cache_settings_change_cache_reserve_setting_request.dart';import '../models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import '../models/zone_cache_settings_change_variants_setting_request.dart';/// ZoneCacheSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneCacheSettingsApi with ApiExecutor {const ZoneCacheSettingsApi(th
 /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
 ///
 /// `GET /zones/{zone_id}/cache/cache_reserve`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetCacheReserveSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObject?, ResponseCommonFailure14>> zoneCacheSettingsGetCacheReserveSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Change Cache Reserve setting
@@ -35,7 +38,7 @@ return execute(
 /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
 ///
 /// `PATCH /zones/{zone_id}/cache/cache_reserve`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsChangeCacheReserveSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeCacheReserveSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObject?, ResponseCommonFailure14>> zoneCacheSettingsChangeCacheReserveSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeCacheReserveSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get Cache Reserve Clear
@@ -59,7 +65,7 @@ return execute(
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `GET /zones/{zone_id}/cache/cache_reserve_clear`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetCacheReserveClear({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon10, ResponseCommonFailure14>> zoneCacheSettingsGetCacheReserveClear({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,6 +79,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Start Cache Reserve Clear
@@ -80,7 +89,7 @@ return execute(
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `POST /zones/{zone_id}/cache/cache_reserve_clear`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsStartCacheReserveClear({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon10, ResponseCommonFailure14>> zoneCacheSettingsStartCacheReserveClear({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -94,6 +103,9 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get Regional Tiered Cache setting
@@ -101,7 +113,7 @@ return execute(
 /// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
 ///
 /// `GET /zones/{zone_id}/cache/regional_tiered_cache`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetRegionalTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObject?, ResponseCommonFailure14>> zoneCacheSettingsGetRegionalTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -115,6 +127,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -123,7 +138,7 @@ return execute(
 /// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
 ///
 /// `PATCH /zones/{zone_id}/cache/regional_tiered_cache`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsChangeRegionalTieredCacheSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObject?, ResponseCommonFailure14>> zoneCacheSettingsChangeRegionalTieredCacheSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,6 +155,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get variants setting
@@ -147,7 +165,7 @@ return execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `GET /zones/{zone_id}/cache/variants`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObject?, ResponseCommonFailure14>> zoneCacheSettingsGetVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -162,6 +180,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Change variants setting
@@ -169,7 +190,7 @@ return execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `PATCH /zones/{zone_id}/cache/variants`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsChangeVariantsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeVariantsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObject?, ResponseCommonFailure14>> zoneCacheSettingsChangeVariantsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeVariantsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,6 +207,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete variants setting
@@ -193,7 +217,7 @@ return execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `DELETE /zones/{zone_id}/cache/variants`
-Future<ApiResult<CacheRulesBase?, Never>> zoneCacheSettingsDeleteVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesBase?, ResponseCommonFailure14>> zoneCacheSettingsDeleteVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -207,6 +231,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

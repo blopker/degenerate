@@ -1,0 +1,130 @@
+# Issue #5: operations whose responses declare different body types per
+# status code generate sealed status unions (<Op>Success / <Op>Error).
+openapi: 3.0.0
+info:
+  title: Per-status responses
+  version: 0.0.0
+paths:
+  /auth:
+    post:
+      operationId: postAuth
+      summary: Sign in or sign up
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [accessToken]
+                properties:
+                  accessToken:
+                    type: string
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [userId]
+                properties:
+                  userId:
+                    type: integer
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [errorMessage]
+                properties:
+                  errorMessage:
+                    type: string
+        default:
+          description: Default error
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [defaultErrorMessage]
+                properties:
+                  defaultErrorMessage:
+                    type: string
+  /items/{id}:
+    delete:
+      operationId: deleteItem
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deleted with body
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [deleted]
+                properties:
+                  deleted:
+                    type: boolean
+        '204':
+          description: Deleted without body
+        '4XX':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [code]
+                properties:
+                  code:
+                    type: integer
+        '5XX':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [trace]
+                properties:
+                  trace:
+                    type: string
+  /single:
+    get:
+      operationId: getSingle
+      responses:
+        '200':
+          description: Single success type keeps the plain signature
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [value]
+                properties:
+                  value:
+                    type: string
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [message]
+                properties:
+                  message:
+                    type: string

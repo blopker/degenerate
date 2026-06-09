@@ -2,6 +2,20 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## 0.5.0
+
+**Per-status response types: operations with multiple response body types now return sealed status unions (#5).**
+
+### Breaking changes
+
+- **Status unions**: an operation whose 2xx responses declare more than one distinct body type now returns `ApiResult<<Op>Success, E>` where `<Op>Success` is a sealed class with one variant per status code (`<Op>Success200(data)`, `<Op>Success201(data)`, payload-free variants for no-content codes). The same applies to the error side (`<Op>Error`) when the non-2xx responses plus `default` declare multiple types. Previously every response parsed with the first 2xx schema (and the `default` error schema), silently corrupting or failing on the other codes. Operations with a single body type per side keep their existing plain `ApiResult<T, E>` signature.
+- **Response naming**: inline response schemas are now named by status code. The primary success response keeps the bare `<Op>Response` name; other codes get `<Op>Response<Code>` (previously deduplicated as `<Op>Response2`), ranges get `<Op>Response4xx`, and the default response is `<Op>ResponseDefault` (previously `<Op>Responsedefault`).
+
+### Improvements
+
+- **`2XX`/`4XX`/`5XX` wildcard response keys are supported**: previously dropped silently, range responses now dispatch via relational patterns (`>= 400 && <= 499`) in the union's `parse`, with exact codes taking precedence.
+- **Forward-compatible fallbacks**: undeclared status codes parse as the `default` variant when the spec declares one, or as a generated `<Union>$Unknown(statusCode, body)` variant otherwise — a server adding a new status code never breaks deployed clients.
+
 ## 0.4.2
 
 **Bug fixes for enum parameter serialization, generated security helpers, and union parsing; `anyOf` + `discriminator` support.**

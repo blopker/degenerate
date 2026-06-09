@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/stream_account_identifier.dart';import '../models/stream_watermark_basic_upload.dart';import '../models/stream_watermark_identifier.dart';import '../models/stream_watermarks.dart';/// StreamWatermarkProfileApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure69.dart';import '../models/stream_account_identifier.dart';import '../models/stream_watermark_basic_upload.dart';import '../models/stream_watermark_identifier.dart';import '../models/stream_watermarks.dart';/// StreamWatermarkProfileApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class StreamWatermarkProfileApi with ApiExecutor {const StreamWatermarkPro
 /// Lists all watermark profiles for an account.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<List<StreamWatermarks>?, Never>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamWatermarks>?, ResponseCommonFailure69>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => StreamWatermarks.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return ResponseCommonFailure69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create watermark profiles via basic upload
@@ -35,7 +38,7 @@ return execute(
 /// Creates watermark profiles using a single `HTTP POST multipart/form-data` request.
 ///
 /// `POST /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<StreamWatermarks?, Never>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamWatermarks?, ResponseCommonFailure69>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -64,6 +67,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? StreamWatermarks.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Watermark profile details
@@ -71,7 +77,7 @@ return execute(
 /// Retrieves details for a single watermark profile.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<StreamWatermarks?, Never>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamWatermarks?, ResponseCommonFailure69>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,6 +92,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? StreamWatermarks.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete watermark profiles
@@ -93,7 +102,7 @@ return execute(
 /// Deletes a watermark profile.
 ///
 /// `DELETE /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<String?, Never>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, ResponseCommonFailure69>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -107,6 +116,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
+  },
+  onError: (response) {
+    return ResponseCommonFailure69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

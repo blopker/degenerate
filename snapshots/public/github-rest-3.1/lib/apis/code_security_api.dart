@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_security_attach_configuration_request.dart';import '../models/code_security_attach_enterprise_configuration_request.dart';import '../models/code_security_configuration.dart';import '../models/code_security_configuration_for_repository.dart';import '../models/code_security_configuration_repositories.dart';import '../models/code_security_create_configuration_for_enterprise_request.dart';import '../models/code_security_create_configuration_request.dart';import '../models/code_security_default_configurations2.dart';import '../models/code_security_detach_configuration_request.dart';import '../models/code_security_get_configurations_for_org_target_type.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_request.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_response.dart';import '../models/code_security_set_configuration_as_default_request.dart';import '../models/code_security_set_configuration_as_default_response.dart';import '../models/code_security_update_configuration_request.dart';import '../models/code_security_update_enterprise_configuration_request.dart';/// CodeSecurityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_security_attach_configuration_request.dart';import '../models/code_security_attach_enterprise_configuration_request.dart';import '../models/code_security_configuration.dart';import '../models/code_security_configuration_repositories.dart';import '../models/code_security_create_configuration_for_enterprise_request.dart';import '../models/code_security_create_configuration_request.dart';import '../models/code_security_default_configurations2.dart';import '../models/code_security_detach_configuration_request.dart';import '../models/code_security_get_configuration_error.dart';import '../models/code_security_get_configuration_for_repository_error.dart';import '../models/code_security_get_configuration_for_repository_success.dart';import '../models/code_security_get_configurations_for_org_target_type.dart';import '../models/code_security_get_default_configurations_error.dart';import '../models/code_security_get_single_configuration_for_enterprise_error.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_request.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_response.dart';import '../models/code_security_set_configuration_as_default_request.dart';import '../models/code_security_set_configuration_as_default_response.dart';import '../models/code_security_update_configuration_request.dart';import '../models/code_security_update_configuration_success.dart';import '../models/code_security_update_enterprise_configuration_error.dart';import '../models/code_security_update_enterprise_configuration_request.dart';/// CodeSecurityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -116,7 +116,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, BasicError>> codeSecurityGetSingleConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityGetSingleConfigurationForEnterpriseError>> codeSecurityGetSingleConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -131,7 +131,7 @@ return execute(
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityGetSingleConfigurationForEnterpriseError.parse(response);
   },
 );
  } 
@@ -144,7 +144,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, BasicError>> codeSecurityUpdateEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityUpdateEnterpriseConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityUpdateEnterpriseConfigurationError>> codeSecurityUpdateEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityUpdateEnterpriseConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -161,7 +161,7 @@ return execute(
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityUpdateEnterpriseConfigurationError.parse(response);
   },
 );
  } 
@@ -385,7 +385,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/code-security/configurations/defaults`
-Future<ApiResult<List<CodeSecurityDefaultConfigurations2>, BasicError>> codeSecurityGetDefaultConfigurations({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CodeSecurityDefaultConfigurations2>, CodeSecurityGetDefaultConfigurationsError>> codeSecurityGetDefaultConfigurations({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -401,7 +401,7 @@ return execute(
     return json.map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityGetDefaultConfigurationsError.parse(response);
   },
 );
  } 
@@ -443,7 +443,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, BasicError>> codeSecurityGetConfiguration({required String org, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityGetConfigurationError>> codeSecurityGetConfiguration({required String org, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -458,7 +458,7 @@ return execute(
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityGetConfigurationError.parse(response);
   },
 );
  } 
@@ -471,7 +471,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, Never>> codeSecurityUpdateConfiguration({required String org, required int configurationId, required CodeSecurityUpdateConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityUpdateConfigurationSuccess, Never>> codeSecurityUpdateConfiguration({required String org, required int configurationId, required CodeSecurityUpdateConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -485,7 +485,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityUpdateConfigurationSuccess.parse(response);
   },
 );
  } 
@@ -633,7 +633,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/code-security-configuration`
-Future<ApiResult<CodeSecurityConfigurationForRepository, BasicError>> codeSecurityGetConfigurationForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityGetConfigurationForRepositorySuccess, CodeSecurityGetConfigurationForRepositoryError>> codeSecurityGetConfigurationForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -645,10 +645,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfigurationForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityGetConfigurationForRepositorySuccess.parse(response);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CodeSecurityGetConfigurationForRepositoryError.parse(response);
   },
 );
  } 

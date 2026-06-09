@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dnssec_dnssec.dart';import '../models/dnssec_edit_dnssec_status_request.dart';import '../models/dnssec_identifier.dart';/// DnssecApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dnssec_delete_dnssec_response_single.dart';import '../models/dnssec_dnssec.dart';import '../models/dnssec_dnssec_response_single.dart';import '../models/dnssec_edit_dnssec_status_request.dart';import '../models/dnssec_identifier.dart';/// DnssecApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnssecApi with ApiExecutor {const DnssecApi(this.apiConfig);
 /// Details about DNSSEC status and configuration.
 ///
 /// `GET /zones/{zone_id}/dnssec`
-Future<ApiResult<DnssecDnssec?, Never>> dnssecDetails({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnssecDnssec?, DnssecDnssecResponseSingle>> dnssecDetails({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnssecDnssec.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnssecDnssecResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Edit DNSSEC Status
@@ -35,7 +38,7 @@ return execute(
 /// Enable or disable DNSSEC.
 ///
 /// `PATCH /zones/{zone_id}/dnssec`
-Future<ApiResult<DnssecDnssec?, Never>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnssecDnssec?, DnssecDnssecResponseSingle>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnssecDnssec.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return DnssecDnssecResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete DNSSEC records
@@ -59,7 +65,7 @@ return execute(
 /// Delete DNSSEC.
 ///
 /// `DELETE /zones/{zone_id}/dnssec`
-Future<ApiResult<String?, Never>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, DnssecDeleteDnssecResponseSingle>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -73,6 +79,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
+  },
+  onError: (response) {
+    return DnssecDeleteDnssecResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

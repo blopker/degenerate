@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_event_delete_response400.dart';import '../models/delete_event_query_alert_delete_response404.dart';import '../models/delete_event_query_delete_response404.dart';import '../models/delete_event_reference_delete_request.dart';import '../models/delete_event_reference_delete_response400.dart';import '../models/delete_event_reference_delete_response_result.dart';import '../models/delete_event_tag_delete_request.dart';import '../models/delete_event_tag_delete_response400.dart';import '../models/delete_event_tag_delete_response_result.dart';import '../models/get_event_aggregate_dataset_id.dart';import '../models/get_event_aggregate_response.dart';import '../models/get_event_aggregate_response400.dart';import '../models/get_event_list_get_format.dart';import '../models/get_event_list_get_order.dart';import '../models/get_event_list_get_response.dart';import '../models/get_event_list_get_response400.dart';import '../models/get_event_list_get_search.dart';import '../models/get_event_query_alert_list_response.dart';import '../models/get_event_query_alert_list_response500.dart';import '../models/get_event_query_alert_read_response.dart';import '../models/get_event_query_alert_read_response404.dart';import '../models/get_event_query_list_response.dart';import '../models/get_event_query_list_response500.dart';import '../models/get_event_query_read_response.dart';import '../models/get_event_query_read_response404.dart';import '../models/get_event_raw_read_ds_response.dart';import '../models/get_event_raw_read_ds_response404.dart';import '../models/get_event_raw_read_response.dart';import '../models/get_event_raw_read_response400.dart';import '../models/get_event_read_response.dart';import '../models/get_event_read_response404.dart';import '../models/get_event_relationships_direction.dart';import '../models/get_event_relationships_relationship_types.dart';import '../models/get_event_relationships_response.dart';import '../models/get_event_relationships_response400.dart';import '../models/patch_event_query_alert_update_request.dart';import '../models/patch_event_query_alert_update_response.dart';import '../models/patch_event_query_alert_update_response400.dart';import '../models/patch_event_query_update_request.dart';import '../models/patch_event_query_update_response.dart';import '../models/patch_event_query_update_response400.dart';import '../models/patch_event_raw_update_request.dart';import '../models/patch_event_raw_update_response.dart';import '../models/patch_event_raw_update_response400.dart';import '../models/patch_event_update_request.dart';import '../models/patch_event_update_response.dart';import '../models/patch_event_update_response400.dart';import '../models/post_create_event_relationship_request.dart';import '../models/post_create_event_relationship_response.dart';import '../models/post_create_event_relationship_response400.dart';import '../models/post_event_create_bulk_request.dart';import '../models/post_event_create_bulk_response.dart';import '../models/post_event_create_bulk_response400.dart';import '../models/post_event_create_request.dart';import '../models/post_event_create_response.dart';import '../models/post_event_create_response400.dart';import '../models/post_event_do_revert_request.dart';import '../models/post_event_do_revert_response.dart';import '../models/post_event_do_revert_response400.dart';import '../models/post_event_graph_ql_response.dart';import '../models/post_event_graph_ql_response400.dart';import '../models/post_event_move_to_new_ds_request.dart';import '../models/post_event_move_to_new_ds_response400.dart';import '../models/post_event_query_alert_create_request.dart';import '../models/post_event_query_alert_create_response.dart';import '../models/post_event_query_alert_create_response400.dart';import '../models/post_event_query_alert_update_request.dart';import '../models/post_event_query_alert_update_response.dart';import '../models/post_event_query_alert_update_response400.dart';import '../models/post_event_query_create_request.dart';import '../models/post_event_query_create_response.dart';import '../models/post_event_query_create_response400.dart';import '../models/post_event_query_update_request.dart';import '../models/post_event_query_update_response.dart';import '../models/post_event_query_update_response400.dart';import '../models/post_event_raw_update_request.dart';import '../models/post_event_raw_update_response.dart';import '../models/post_event_raw_update_response400.dart';import '../models/post_event_reference_create_request.dart';import '../models/post_event_reference_create_response400.dart';import '../models/post_event_reference_create_response_result.dart';import '../models/post_event_tag_create_request.dart';import '../models/post_event_tag_create_response400.dart';import '../models/post_event_tag_create_response_result.dart';import '../models/post_event_update_request.dart';import '../models/post_event_update_response.dart';import '../models/post_event_update_response400.dart';/// EventApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_event_delete_response400.dart';import '../models/delete_event_query_alert_delete_response404.dart';import '../models/delete_event_query_delete_response404.dart';import '../models/delete_event_reference_delete_request.dart';import '../models/delete_event_reference_delete_response400.dart';import '../models/delete_event_reference_delete_response_result.dart';import '../models/delete_event_tag_delete_request.dart';import '../models/delete_event_tag_delete_response400.dart';import '../models/delete_event_tag_delete_response_result.dart';import '../models/get_event_aggregate_dataset_id.dart';import '../models/get_event_aggregate_response.dart';import '../models/get_event_aggregate_response400.dart';import '../models/get_event_list_get_format.dart';import '../models/get_event_list_get_order.dart';import '../models/get_event_list_get_response.dart';import '../models/get_event_list_get_response400.dart';import '../models/get_event_list_get_search.dart';import '../models/get_event_query_alert_list_response.dart';import '../models/get_event_query_alert_list_response500.dart';import '../models/get_event_query_alert_read_response.dart';import '../models/get_event_query_alert_read_response404.dart';import '../models/get_event_query_list_response.dart';import '../models/get_event_query_list_response500.dart';import '../models/get_event_query_read_response.dart';import '../models/get_event_query_read_response404.dart';import '../models/get_event_raw_read_ds_error.dart';import '../models/get_event_raw_read_ds_response.dart';import '../models/get_event_raw_read_response.dart';import '../models/get_event_raw_read_response400.dart';import '../models/get_event_read_response.dart';import '../models/get_event_read_response404.dart';import '../models/get_event_relationships_direction.dart';import '../models/get_event_relationships_relationship_types.dart';import '../models/get_event_relationships_response.dart';import '../models/get_event_relationships_response400.dart';import '../models/patch_event_query_alert_update_error.dart';import '../models/patch_event_query_alert_update_request.dart';import '../models/patch_event_query_alert_update_response.dart';import '../models/patch_event_query_update_error.dart';import '../models/patch_event_query_update_request.dart';import '../models/patch_event_query_update_response.dart';import '../models/patch_event_raw_update_request.dart';import '../models/patch_event_raw_update_response.dart';import '../models/patch_event_raw_update_response400.dart';import '../models/patch_event_update_request.dart';import '../models/patch_event_update_response.dart';import '../models/patch_event_update_response400.dart';import '../models/post_create_event_relationship_request.dart';import '../models/post_create_event_relationship_response.dart';import '../models/post_create_event_relationship_response400.dart';import '../models/post_event_create_bulk_request.dart';import '../models/post_event_create_bulk_response.dart';import '../models/post_event_create_bulk_response400.dart';import '../models/post_event_create_request.dart';import '../models/post_event_create_response.dart';import '../models/post_event_create_response400.dart';import '../models/post_event_do_revert_request.dart';import '../models/post_event_do_revert_response.dart';import '../models/post_event_do_revert_response400.dart';import '../models/post_event_graph_ql_response.dart';import '../models/post_event_graph_ql_response400.dart';import '../models/post_event_move_to_new_ds_request.dart';import '../models/post_event_move_to_new_ds_response400.dart';import '../models/post_event_query_alert_create_request.dart';import '../models/post_event_query_alert_create_response.dart';import '../models/post_event_query_alert_create_response400.dart';import '../models/post_event_query_alert_update_error.dart';import '../models/post_event_query_alert_update_request.dart';import '../models/post_event_query_alert_update_response.dart';import '../models/post_event_query_create_request.dart';import '../models/post_event_query_create_response.dart';import '../models/post_event_query_create_response400.dart';import '../models/post_event_query_update_error.dart';import '../models/post_event_query_update_request.dart';import '../models/post_event_query_update_response.dart';import '../models/post_event_raw_update_request.dart';import '../models/post_event_raw_update_response.dart';import '../models/post_event_raw_update_response400.dart';import '../models/post_event_reference_create_request.dart';import '../models/post_event_reference_create_response400.dart';import '../models/post_event_reference_create_response_result.dart';import '../models/post_event_tag_create_request.dart';import '../models/post_event_tag_create_response400.dart';import '../models/post_event_tag_create_response_result.dart';import '../models/post_event_update_request.dart';import '../models/post_event_update_response.dart';import '../models/post_event_update_response400.dart';/// EventApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -552,7 +552,7 @@ return execute(
 /// Update an existing saved event query by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PostEventQueryUpdateResponse, PostEventQueryUpdateResponse400>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventQueryUpdateResponse, PostEventQueryUpdateError>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -569,7 +569,7 @@ return execute(
     return PostEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventQueryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PostEventQueryUpdateError.parse(response);
   },
 );
  } 
@@ -578,7 +578,7 @@ return execute(
 /// Update an existing saved event query by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PatchEventQueryUpdateResponse, PatchEventQueryUpdateResponse400>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchEventQueryUpdateResponse, PatchEventQueryUpdateError>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -595,7 +595,7 @@ return execute(
     return PatchEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchEventQueryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PatchEventQueryUpdateError.parse(response);
   },
 );
  } 
@@ -675,7 +675,7 @@ return execute(
 /// Update an existing event query alert by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PostEventQueryAlertUpdateResponse, PostEventQueryAlertUpdateResponse400>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventQueryAlertUpdateResponse, PostEventQueryAlertUpdateError>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -692,7 +692,7 @@ return execute(
     return PostEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventQueryAlertUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PostEventQueryAlertUpdateError.parse(response);
   },
 );
  } 
@@ -701,7 +701,7 @@ return execute(
 /// Update an existing event query alert by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PatchEventQueryAlertUpdateResponse, PatchEventQueryAlertUpdateResponse400>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchEventQueryAlertUpdateResponse, PatchEventQueryAlertUpdateError>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -718,7 +718,7 @@ return execute(
     return PatchEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchEventQueryAlertUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PatchEventQueryAlertUpdateError.parse(response);
   },
 );
  } 
@@ -801,7 +801,7 @@ return execute(
 /// Retrieves the raw data associated with an event. Searches across all shards in the dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}`
-Future<ApiResult<GetEventRawReadDsResponse, GetEventRawReadDsResponse404>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetEventRawReadDsResponse, GetEventRawReadDsError>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -816,7 +816,7 @@ return execute(
     return GetEventRawReadDsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventRawReadDsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return GetEventRawReadDsError.parse(response);
   },
 );
  } 

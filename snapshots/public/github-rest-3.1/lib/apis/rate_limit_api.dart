@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/rate_limit_overview.dart';/// RateLimitApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/rate_limit_get_error.dart';import '../models/rate_limit_overview.dart';/// RateLimitApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -29,7 +29,7 @@ final class RateLimitApi with ApiExecutor {const RateLimitApi(this.apiConfig);
 /// > The `rate` object is closing down. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.
 ///
 /// `GET /rate_limit`
-Future<ApiResult<RateLimitOverview, BasicError>> rateLimitGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RateLimitOverview, RateLimitGetError>> rateLimitGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,7 +44,7 @@ return execute(
     return RateLimitOverview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RateLimitGetError.parse(response);
   },
 );
  } 

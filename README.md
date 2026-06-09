@@ -185,6 +185,8 @@ dart run degenerate -i cloudflare.yaml --unwrap-fields=result
 
 Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.
 
+Envelope unwrapping applies to operations with a single success body type; operations that return a [status union](#per-status-response-types) keep their full per-variant payloads.
+
 ## Packages
 
 The generator itself is a command-line tool (desktop only), but the generated code and runtime packages work on all Dart and Flutter platforms including iOS, Android, web, and desktop.
@@ -360,6 +362,32 @@ sealed class Shape {
   bool get isUnknown => this is Shape$Unknown;
 }
 ```
+
+### Per-Status Response Types
+
+An operation whose responses declare different body types per status code returns a sealed status union instead of a single type — one variant per code, range variants for `2XX`-style keys, and a forward-compatible fallback (the `default` response when declared, otherwise `$Unknown` with the raw body):
+
+```dart
+final result = await sdk.auth.postAuth(body: credentials);
+switch (result) {
+  case ApiSuccess(:final data):
+    switch (data) {
+      case PostAuthSuccess200(:final data): print('token: ${data.accessToken}');
+      case PostAuthSuccess201(:final data): print('created user ${data.userId}');
+      case PostAuthSuccessDefault(): print('unexpected success shape');
+    }
+  case ApiError(:final error):
+    switch (error) {
+      case PostAuthError401(:final data): print(data.errorMessage);
+      case PostAuthErrorDefault(:final data): print(data.defaultErrorMessage);
+      case null: print('no error body');
+    }
+  case ApiException(:final exception):
+    print('network error: $exception');
+}
+```
+
+Operations with a single response body type keep the plain `ApiResult<T, E>` signature.
 
 ### API Client
 

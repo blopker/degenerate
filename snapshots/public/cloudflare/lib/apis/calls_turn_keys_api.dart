@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/calls_account_identifier.dart';import '../models/calls_identifier.dart';import '../models/calls_turn_key_editable_fields.dart';import '../models/calls_turn_key_object.dart';import '../models/calls_turn_key_with_key.dart';/// CallsTurnKeysApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/calls_account_identifier.dart';import '../models/calls_identifier.dart';import '../models/calls_turn_key_editable_fields.dart';import '../models/calls_turn_key_object.dart';import '../models/calls_turn_key_with_key.dart';import '../models/response_common_failure16.dart';/// CallsTurnKeysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CallsTurnKeysApi with ApiExecutor {const CallsTurnKeysApi(this.apiCo
 /// Lists all TURN keys in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<List<CallsTurnKeyObject>?, Never>> callsTurnKeyList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CallsTurnKeyObject>?, ResponseCommonFailure16>> callsTurnKeyList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,6 +27,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => CallsTurnKeyObject.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return ResponseCommonFailure16.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -59,7 +62,7 @@ return execute(
 /// Fetches details for a single TURN key.
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<CallsTurnKeyObject?, Never>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyObject?, ResponseCommonFailure16>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,6 +77,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CallsTurnKeyObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return ResponseCommonFailure16.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Edit TURN key details
@@ -81,7 +87,7 @@ return execute(
 /// Edit details for a single TURN key.
 ///
 /// `PUT /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<CallsTurnKeyObject?, Never>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyObject?, ResponseCommonFailure16>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,6 +103,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CallsTurnKeyObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return ResponseCommonFailure16.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

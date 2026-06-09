@@ -11,7 +11,7 @@ final class R2SuperSlurperApi with ApiExecutor {const R2SuperSlurperApi(this.api
 /// List jobs
 ///
 /// `GET /accounts/{account_id}/slurper/jobs`
-Future<ApiResult<List<R2SlurperJobResponse>?, Never>> slurperListJobs({required String accountId, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<R2SlurperJobResponse>?, Failure2>> slurperListJobs({required String accountId, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -36,6 +36,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => R2SlurperJobResponse.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -67,7 +70,7 @@ return execute(
 /// Get job details
 ///
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}`
-Future<ApiResult<R2SlurperJobResponse?, Never>> slurperGetJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2SlurperJobResponse?, Failure2>> slurperGetJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -82,12 +85,15 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2SlurperJobResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Abort a job
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/{job_id}/abort`
-Future<ApiResult<String?, Never>> slurperAbortJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, Failure2>> slurperAbortJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -102,12 +108,15 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Get job logs
 ///
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}/logs`
-Future<ApiResult<List<R2SlurperJobLogResponse>?, Never>> slurperGetJobLogs({required String accountId, required String jobId, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<R2SlurperJobLogResponse>?, Failure2>> slurperGetJobLogs({required String accountId, required String jobId, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -132,6 +141,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => R2SlurperJobLogResponse.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -161,7 +173,7 @@ return execute(
 /// Get job progress
 ///
 /// `GET /accounts/{account_id}/slurper/jobs/{job_id}/progress`
-Future<ApiResult<R2SlurperJobProgressResponse?, Never>> slurperGetJobProgress({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2SlurperJobProgressResponse?, Failure2>> slurperGetJobProgress({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -176,12 +188,15 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2SlurperJobProgressResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Resume a job
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/{job_id}/resume`
-Future<ApiResult<String?, Never>> slurperResumeJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, Failure2>> slurperResumeJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -196,12 +211,15 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Abort all jobs
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/abortAll`
-Future<ApiResult<String?, Never>> slurperAbortAllJobs({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, Failure2>> slurperAbortAllJobs({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -216,6 +234,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Check source connectivity
@@ -223,7 +244,7 @@ return execute(
 /// Check whether tokens are valid against the source bucket
 ///
 /// `PUT /accounts/{account_id}/slurper/source/connectivity-precheck`
-Future<ApiResult<R2SlurperConnectivityResponse?, Never>> slurperCheckSourceConnectivity({required String accountId, required R2SlurperSourceJobSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2SlurperConnectivityResponse?, Failure2>> slurperCheckSourceConnectivity({required String accountId, required R2SlurperSourceJobSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -240,6 +261,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2SlurperConnectivityResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Check target connectivity
@@ -247,7 +271,7 @@ return execute(
 /// Check whether tokens are valid against the target bucket
 ///
 /// `PUT /accounts/{account_id}/slurper/target/connectivity-precheck`
-Future<ApiResult<R2SlurperConnectivityResponse?, Never>> slurperCheckTargetConnectivity({required String accountId, required R2SlurperR2TargetSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2SlurperConnectivityResponse?, Failure2>> slurperCheckTargetConnectivity({required String accountId, required R2SlurperR2TargetSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -263,6 +287,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2SlurperConnectivityResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

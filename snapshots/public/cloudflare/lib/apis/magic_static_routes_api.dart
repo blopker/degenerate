@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_create_route_request.dart';import '../models/magic_identifier.dart';import '../models/magic_multiple_route_delete_response_result.dart';import '../models/magic_multiple_route_modified_response_result.dart';import '../models/magic_route.dart';import '../models/magic_route_add_single_request.dart';import '../models/magic_route_delete_many_request.dart';import '../models/magic_route_deleted_response_result.dart';import '../models/magic_route_modified_response_result.dart';import '../models/magic_route_single_response_result.dart';import '../models/magic_route_update_many_request.dart';import '../models/magic_routes_collection_response_result.dart';/// MagicStaticRoutesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_create_route_request.dart';import '../models/magic_identifier.dart';import '../models/magic_multiple_route_delete_response.dart';import '../models/magic_multiple_route_delete_response_result.dart';import '../models/magic_multiple_route_modified_response.dart';import '../models/magic_multiple_route_modified_response_result.dart';import '../models/magic_route.dart';import '../models/magic_route_add_single_request.dart';import '../models/magic_route_delete_many_request.dart';import '../models/magic_route_deleted_response.dart';import '../models/magic_route_deleted_response_result.dart';import '../models/magic_route_modified_response.dart';import '../models/magic_route_modified_response_result.dart';import '../models/magic_route_single_response.dart';import '../models/magic_route_single_response_result.dart';import '../models/magic_route_update_many_request.dart';import '../models/magic_routes_collection_response.dart';import '../models/magic_routes_collection_response_result.dart';/// MagicStaticRoutesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MagicStaticRoutesApi with ApiExecutor {const MagicStaticRoutesApi(th
 /// List all Magic static routes.
 ///
 /// `GET /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicRoutesCollectionResponseResult?, Never>> magicStaticRoutesListRoutes({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRoutesCollectionResponseResult?, MagicRoutesCollectionResponse>> magicStaticRoutesListRoutes({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicRoutesCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return MagicRoutesCollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create a Route
@@ -35,7 +38,7 @@ return execute(
 /// Creates a new Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicRoute?, Never>> magicStaticRoutesCreateRoutes({required MagicIdentifier accountId, required MagicCreateRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRoute?, MagicRoutesCollectionResponse>> magicStaticRoutesCreateRoutes({required MagicIdentifier accountId, required MagicCreateRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicRoute.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return MagicRoutesCollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update Many Routes
@@ -59,7 +65,7 @@ return execute(
 /// Update multiple Magic static routes. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes. Only fields for a route that need to be changed need be provided.
 ///
 /// `PUT /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicMultipleRouteModifiedResponseResult?, Never>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicMultipleRouteModifiedResponseResult?, MagicMultipleRouteModifiedResponse>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,6 +82,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicMultipleRouteModifiedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return MagicMultipleRouteModifiedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Many Routes
@@ -83,7 +92,7 @@ return execute(
 /// Delete multiple Magic static routes.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicMultipleRouteDeleteResponseResult?, Never>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicMultipleRouteDeleteResponseResult?, MagicMultipleRouteDeleteResponse>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,6 +109,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicMultipleRouteDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return MagicMultipleRouteDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Route Details
@@ -107,7 +119,7 @@ return execute(
 /// Get a specific Magic static route.
 ///
 /// `GET /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<MagicRouteSingleResponseResult?, Never>> magicStaticRoutesRouteDetails({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRouteSingleResponseResult?, MagicRouteSingleResponse>> magicStaticRoutesRouteDetails({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,6 +134,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicRouteSingleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return MagicRouteSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update Route
@@ -129,7 +144,7 @@ return execute(
 /// Update a specific Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<MagicRouteModifiedResponseResult?, Never>> magicStaticRoutesUpdateRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, required MagicRouteAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRouteModifiedResponseResult?, MagicRouteModifiedResponse>> magicStaticRoutesUpdateRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, required MagicRouteAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,6 +161,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicRouteModifiedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return MagicRouteModifiedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Route
@@ -153,7 +171,7 @@ return execute(
 /// Disable and remove a specific Magic static route.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<MagicRouteDeletedResponseResult?, Never>> magicStaticRoutesDeleteRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRouteDeletedResponseResult?, MagicRouteDeletedResponse>> magicStaticRoutesDeleteRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -167,6 +185,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicRouteDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return MagicRouteDeletedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

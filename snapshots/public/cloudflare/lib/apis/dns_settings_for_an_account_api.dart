@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_account_settings.dart';import '../models/dns_settings_account_settings_patch.dart';import '../models/dns_settings_identifier.dart';/// DnsSettingsForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_account_settings.dart';import '../models/dns_settings_account_settings_patch.dart';import '../models/dns_settings_dns_response_single.dart';import '../models/dns_settings_identifier.dart';/// DnsSettingsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnsSettingsForAnAccountApi with ApiExecutor {const DnsSettingsForAnA
 /// Show DNS settings for an account
 ///
 /// `GET /accounts/{account_id}/dns_settings`
-Future<ApiResult<DnsSettingsAccountSettings, Never>> dnsSettingsForAnAccountListDnsSettings({required DnsSettingsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsAccountSettings, DnsSettingsDnsResponseSingle>> dnsSettingsForAnAccountListDnsSettings({required DnsSettingsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DnsSettingsAccountSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: (response) {
+    return DnsSettingsDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Update DNS Settings
@@ -35,7 +38,7 @@ return execute(
 /// Update DNS settings for an account
 ///
 /// `PATCH /accounts/{account_id}/dns_settings`
-Future<ApiResult<DnsSettingsAccountSettings, Never>> dnsSettingsForAnAccountUpdateDnsSettings({required DnsSettingsIdentifier accountId, required DnsSettingsAccountSettingsPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsAccountSettings, DnsSettingsDnsResponseSingle>> dnsSettingsForAnAccountUpdateDnsSettings({required DnsSettingsIdentifier accountId, required DnsSettingsAccountSettingsPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,6 +54,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DnsSettingsAccountSettings.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return DnsSettingsDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

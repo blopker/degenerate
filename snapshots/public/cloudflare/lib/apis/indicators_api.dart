@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/post_indicator_type_create_request.dart';import '../models/post_indicator_type_create_response.dart';import '../models/post_indicator_type_create_response400.dart';/// IndicatorsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/post_indicator_type_create_error.dart';import '../models/post_indicator_type_create_request.dart';import '../models/post_indicator_type_create_response.dart';/// IndicatorsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IndicatorsApi with ApiExecutor {const IndicatorsApi(this.apiConfig);
 /// Creates a new indicator type and initializes its dedicated Durable Object
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create`
-Future<ApiResult<PostIndicatorTypeCreateResponse, PostIndicatorTypeCreateResponse400>> postIndicatorTypeCreate({required String accountId, required String datasetId, PostIndicatorTypeCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostIndicatorTypeCreateResponse, PostIndicatorTypeCreateError>> postIndicatorTypeCreate({required String accountId, required String datasetId, PostIndicatorTypeCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -30,7 +30,7 @@ return execute(
     return PostIndicatorTypeCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostIndicatorTypeCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PostIndicatorTypeCreateError.parse(response);
   },
 );
  } 

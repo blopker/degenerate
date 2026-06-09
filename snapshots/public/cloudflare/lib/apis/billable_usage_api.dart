@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/identifier2.dart';import '../models/usage_record.dart';/// BillableUsageApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/identifier2.dart';import '../models/response_common_failure11.dart';import '../models/usage_record.dart';/// BillableUsageApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -27,7 +27,7 @@ final class BillableUsageApi with ApiExecutor {const BillableUsageApi(this.apiCo
 /// 
 ///
 /// `GET /accounts/{account_id}/billing/usage/paygo`
-Future<ApiResult<List<UsageRecord>, Never>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<UsageRecord>, ResponseCommonFailure11>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (from != null) {
   queryParameters['from'] = from;
@@ -58,6 +58,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => UsageRecord.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return ResponseCommonFailure11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

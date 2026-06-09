@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_alert_types.dart';/// NotificationAlertTypesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_alert_types.dart';import '../models/response_common_failure2.dart';/// NotificationAlertTypesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class NotificationAlertTypesApi with ApiExecutor {const NotificationAlertT
 /// Gets a list of all alert types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/available_alerts`
-Future<ApiResult<Map<String, List<AaaAlertTypes>>?, Never>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<AaaAlertTypes>>?, ResponseCommonFailure2>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,6 +27,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => AaaAlertTypes.fromJson(e as Map<String, dynamic>)).toList()));
+  },
+  onError: (response) {
+    return ResponseCommonFailure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

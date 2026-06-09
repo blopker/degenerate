@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_delegation_identifier.dart';import '../models/addressing_id_response_result.dart';import '../models/addressing_ipam_delegations.dart';import '../models/addressing_prefix_identifier.dart';import '../models/ip_address_management_prefix_delegation_create_prefix_delegation_request.dart';/// IpAddressManagementPrefixDelegationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_delegation_identifier.dart';import '../models/addressing_id_response.dart';import '../models/addressing_id_response_result.dart';import '../models/addressing_ipam_delegations.dart';import '../models/addressing_prefix_identifier.dart';import '../models/addressing_schemas_response_collection.dart';import '../models/addressing_schemas_single_response.dart';import '../models/ip_address_management_prefix_delegation_create_prefix_delegation_request.dart';/// IpAddressManagementPrefixDelegationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpAddressManagementPrefixDelegationApi with ApiExecutor {const IpAdd
 /// List all delegations for a given account IP prefix.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations`
-Future<ApiResult<List<AddressingIpamDelegations>?, Never>> ipAddressManagementPrefixDelegationListPrefixDelegations({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingIpamDelegations>?, AddressingSchemasResponseCollection>> ipAddressManagementPrefixDelegationListPrefixDelegations({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,6 +28,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AddressingIpamDelegations.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: (response) {
+    return AddressingSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Create Prefix Delegation
@@ -35,7 +38,7 @@ return execute(
 /// Create a new account delegation for a given IP prefix.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations`
-Future<ApiResult<AddressingIpamDelegations?, Never>> ipAddressManagementPrefixDelegationCreatePrefixDelegation({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamDelegations?, AddressingSchemasSingleResponse>> ipAddressManagementPrefixDelegationCreatePrefixDelegation({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,6 +55,9 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AddressingIpamDelegations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: (response) {
+    return AddressingSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Delete Prefix Delegation
@@ -59,7 +65,7 @@ return execute(
 /// Delete an account delegation for a given IP prefix.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations/{delegation_id}`
-Future<ApiResult<AddressingIdResponseResult?, Never>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIdResponseResult?, AddressingIdResponse>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -73,6 +79,9 @@ return execute(
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AddressingIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+    return AddressingIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

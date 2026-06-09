@@ -396,20 +396,38 @@ class FileEmitter {
         _collectTopLevelTypeName(schema, names);
         if (isBytesType(schema)) needsTypedData = true;
       }
-      // Collect types from success responses (2xx)
-      // Response deserialization generates parse code that references variant
-      // types directly, so resolve OneOf refs via typeRegistry.
-      for (final code in [200, 201, 202, 203, 204]) {
-        final resp = op.responses[code];
-        if (resp != null) {
-          final content = preferredContent(resp.content);
-          if (content != null) {
-            if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            final schema = maybeUnwrap(content.$2.schema);
-            _collectTopLevelTypeName(schema, names, typeRegistry);
-            if (isBytesType(schema)) needsTypedData = true;
-            break;
+      // Collect types from success responses (2xx). Union-bearing
+      // operations reference only the union type; parsing is delegated to
+      // the union's own file.
+      if (op.successUnion != null) {
+        names.add(op.successUnion!.name);
+      } else {
+        // Response deserialization generates parse code that references
+        // variant types directly, so resolve OneOf refs via typeRegistry.
+        (String, IrMediaType)? successContent;
+        var successIsVoid = false;
+        for (final code in [200, 201, 202, 203, 204]) {
+          final resp = op.responses[code];
+          if (resp != null) {
+            successContent = preferredContent(resp.content);
+            if (successContent != null) break;
+            // A no-content priority response makes the operation void.
+            if (resp.content.isEmpty) {
+              successIsVoid = true;
+              break;
+            }
           }
+        }
+        if (successContent == null &&
+            !successIsVoid &&
+            op.rangeResponses['2XX'] != null) {
+          successContent = preferredContent(op.rangeResponses['2XX']!.content);
+        }
+        if (successContent != null) {
+          if (isJsonLikeMediaType(successContent.$1)) needsConvert = true;
+          final schema = maybeUnwrap(successContent.$2.schema);
+          _collectTopLevelTypeName(schema, names, typeRegistry);
+          if (isBytesType(schema)) needsTypedData = true;
         }
       }
       // Collect types from streaming responses (SSE, JSONL)
@@ -421,8 +439,10 @@ class FileEmitter {
       }
       // Collect error response type (matching ApiEmitter._errorResponseContent
       // logic: prefer default, then first 4xx+, only one error type per
-      // operation).
-      {
+      // operation). Union-bearing operations reference only the union type.
+      if (op.errorUnion != null) {
+        names.add(op.errorUnion!.name);
+      } else {
         (String, IrMediaType)? errorContent;
         if (op.defaultResponse != null) {
           errorContent = preferredContent(op.defaultResponse!.content);
@@ -431,6 +451,15 @@ class FileEmitter {
           for (final entry in op.responses.entries) {
             if (entry.key >= 400) {
               errorContent = preferredContent(entry.value.content);
+              if (errorContent != null) break;
+            }
+          }
+        }
+        if (errorContent == null) {
+          for (final key in const ['4XX', '5XX', '3XX', '1XX']) {
+            final range = op.rangeResponses[key];
+            if (range != null) {
+              errorContent = preferredContent(range.content);
               if (errorContent != null) break;
             }
           }
