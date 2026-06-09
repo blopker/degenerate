@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/commit.dart';import '../models/diff_entry.dart';import '../models/pull_request.dart';import '../models/pull_request_merge_result.dart';import '../models/pull_request_review.dart';import '../models/pull_request_review_comment.dart';import '../models/pull_request_review_request.dart';import '../models/pull_request_simple.dart';import '../models/pulls_create_reply_for_review_comment_request.dart';import '../models/pulls_create_request.dart';import '../models/pulls_create_review_comment_request.dart';import '../models/pulls_create_review_request.dart';import '../models/pulls_dismiss_review_request.dart';import '../models/pulls_list_direction.dart';import '../models/pulls_list_review_comments_direction.dart';import '../models/pulls_list_review_comments_for_repo_direction.dart';import '../models/pulls_list_review_comments_for_repo_sort.dart';import '../models/pulls_list_review_comments_sort.dart';import '../models/pulls_list_sort.dart';import '../models/pulls_list_state.dart';import '../models/pulls_merge_request.dart';import '../models/pulls_merge_response405.dart';import '../models/pulls_remove_requested_reviewers_request.dart';import '../models/pulls_submit_review_request.dart';import '../models/pulls_update_branch_request.dart';import '../models/pulls_update_branch_response202.dart';import '../models/pulls_update_request.dart';import '../models/pulls_update_review_comment_request.dart';import '../models/pulls_update_review_request.dart';import '../models/review_comment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// PullsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/commit.dart';import '../models/diff_entry.dart';import '../models/pull_request.dart';import '../models/pull_request_merge_result.dart';import '../models/pull_request_review.dart';import '../models/pull_request_review_comment.dart';import '../models/pull_request_review_request.dart';import '../models/pull_request_simple.dart';import '../models/pulls_create_reply_for_review_comment_request.dart';import '../models/pulls_create_request.dart';import '../models/pulls_create_review_comment_request.dart';import '../models/pulls_create_review_request.dart';import '../models/pulls_dismiss_review_request.dart';import '../models/pulls_list_direction.dart';import '../models/pulls_list_review_comments_direction.dart';import '../models/pulls_list_review_comments_for_repo_direction.dart';import '../models/pulls_list_review_comments_for_repo_sort.dart';import '../models/pulls_list_review_comments_sort.dart';import '../models/pulls_list_sort.dart';import '../models/pulls_list_state.dart';import '../models/pulls_merge_request.dart';import '../models/pulls_merge_response405.dart';import '../models/pulls_remove_requested_reviewers_request.dart';import '../models/pulls_submit_review_request.dart';import '../models/pulls_update_branch_request.dart';import '../models/pulls_update_branch_response.dart';import '../models/pulls_update_request.dart';import '../models/pulls_update_review_comment_request.dart';import '../models/pulls_update_review_request.dart';import '../models/review_comment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// PullsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -952,7 +952,7 @@ return execute(
 /// Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch`
-Future<ApiResult<PullsUpdateBranchResponse202, ValidationError>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullsUpdateBranchResponse, ValidationError>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -966,7 +966,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PullsUpdateBranchResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PullsUpdateBranchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

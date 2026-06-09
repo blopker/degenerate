@@ -5,7 +5,9 @@ import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/response_codegen.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/status_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
     show sanitizeDartName, sanitizeFieldName, toPascalCase;
@@ -256,6 +258,10 @@ class FileEmitter {
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
       IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),
+      IrStatusUnion() => StatusUnionEmitter(
+        type,
+        typeRegistry: typeRegistry,
+      ).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>
@@ -326,6 +332,7 @@ class FileEmitter {
     IrEnum() => true,
     IrDiscriminatedUnion() => true,
     IrUntaggedUnion() => true,
+    IrStatusUnion() => true,
     _ => false,
   };
 
@@ -512,6 +519,20 @@ class FileEmitter {
         }
       case IrDiscriminatedUnion(:final name):
         names.add(name);
+      case IrStatusUnion(:final name, :final variants):
+        names.add(name);
+        for (final variant in variants) {
+          final schema = variant.schema;
+          if (schema != null) {
+            _collectTopLevelTypeName(
+              schema,
+              names,
+              typeRegistry,
+              resolving,
+              skipInlinedOneOfRefs,
+            );
+          }
+        }
       case IrUntaggedUnion(:final name, :final variants):
         // Skip adding the name if this is a non-self-referencing OneOf typedef
         // that will be inlined in parse code.
@@ -684,6 +705,25 @@ class FileEmitter {
             }
           }
           if (isDirectBytes(variant)) needsTypedData = true;
+        }
+      case IrStatusUnion(:final name, :final variants):
+        names.add(name);
+        for (final variant in variants) {
+          final schema = variant.schema;
+          if (schema == null) continue;
+          checkField(schema);
+          // The variant parse factories inline body deserialization; only
+          // import dart:convert / dart:typed_data when that code uses them.
+          final deserialize = buildResponseDeserialize(
+            variant.mediaType!,
+            schema,
+            typeRegistry: typeRegistry ?? const {},
+          );
+          final code = '${deserialize.preamble}${deserialize.expression}';
+          if (code.contains('jsonDecode') || code.contains('base64')) {
+            needsConvert = true;
+          }
+          if (code.contains('Uint8List')) needsTypedData = true;
         }
       case IrUntaggedUnion(:final name, :final variants):
         names.add(name);

@@ -26,6 +26,7 @@ Reference irTypeToReference(
   return switch (type) {
     IrPrimitive(:final kind) => _primitiveRef(kind, nullable),
     IrEnum(:final name) => _maybeNullable(refer(name), nullable),
+    IrStatusUnion(:final name) => _maybeNullable(refer(name), nullable),
     IrList(:final items) => _maybeNullable(
       TypeReference(
         (b) => b
@@ -89,6 +90,7 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 /// Get the Dart type name string for an [IrType].
 String irTypeName(IrType type) {
   return switch (type) {
+    IrStatusUnion(:final name) => name,
     IrPrimitive(:final kind) => switch (kind) {
       PrimitiveKind.dynamic_ => 'dynamic',
       PrimitiveKind.string => 'String',
@@ -281,6 +283,10 @@ String _buildFromJsonNonNull(
     IrDiscriminatedUnion(:final name) ||
     IrAnyOf(:final name) =>
       '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
+    // Status unions parse from a full ApiResponse, never from a JSON field.
+    IrStatusUnion(:final name) => throw ArgumentError(
+      'Status union $name cannot appear in a JSON field context',
+    ),
   };
 }
 
@@ -316,6 +322,10 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     IrUntaggedUnion() ||
     IrAnyOf() ||
     IrExtensionType() => '$accessor$q.toJson()',
+    // Status unions parse from a full ApiResponse, never serialize to JSON.
+    IrStatusUnion(:final name) => throw ArgumentError(
+      'Status union $name cannot appear in a JSON field context',
+    ),
   };
 }
 
@@ -336,7 +346,8 @@ bool listItemNeedsToJson(IrType type) {
     IrDiscriminatedUnion() ||
     IrUntaggedUnion() ||
     IrAnyOf() ||
-    IrExtensionType() => true,
+    IrExtensionType() ||
+    IrStatusUnion() => true,
     IrList() || IrMap() => true,
   };
 }

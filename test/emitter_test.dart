@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/status_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
@@ -501,7 +502,7 @@ void main() {
       expect(
         source,
         contains(
-          r"'conversation.item.create' => "
+          "'conversation.item.create' => "
           r'RealtimeClientEvent$ConversationItemCreate.fromJson(json)',
         ),
       );
@@ -547,6 +548,132 @@ void main() {
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  // ─── Status union emission (issue #5) ────────────────────────
+
+  group('StatusUnionEmitter', () {
+    const authResponse = IrObject('PostAuthResponse', [
+      IrField(
+        'accessToken',
+        'accessToken',
+        IrPrimitive(PrimitiveKind.string),
+        isRequired: true,
+      ),
+    ], requiredFields: ['accessToken']);
+
+    test('emits sealed class with per-status variants and default fallback',
+        () {
+      const union = IrStatusUnion('PostAuthSuccess', [
+        IrStatusVariant(
+          '200',
+          'PostAuthSuccess200',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse'),
+        ),
+        IrStatusVariant(
+          '201',
+          'PostAuthSuccess201',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse201'),
+        ),
+        IrStatusVariant(
+          '2XX',
+          'PostAuthSuccess2xx',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse2xx'),
+        ),
+        IrStatusVariant(
+          'default',
+          'PostAuthSuccessDefault',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponseDefault'),
+        ),
+      ]);
+
+      final specs = const StatusUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('sealed class PostAuthSuccess'));
+      expect(
+        source,
+        contains('factory PostAuthSuccess.parse(ApiResponse response)'),
+      );
+      // Exact codes dispatch first, then ranges, then the default fallback.
+      expect(source, contains('200 => PostAuthSuccess200.parse(response)'));
+      expect(source, contains('201 => PostAuthSuccess201.parse(response)'));
+      expect(
+        source,
+        contains('>= 200 && <= 299 => PostAuthSuccess2xx.parse(response)'),
+      );
+      expect(source, contains('_ => PostAuthSuccessDefault.parse(response)'));
+      expect(
+        source,
+        contains('final class PostAuthSuccess200 extends PostAuthSuccess'),
+      );
+      expect(
+        source,
+        contains(
+          'PostAuthSuccess200(PostAuthResponse.fromJson('
+          'jsonDecode(response.body) as Map<String, dynamic>))',
+        ),
+      );
+      expect(source, contains('final PostAuthResponse data;'));
+      // With a default variant there is no $Unknown fallback.
+      expect(source, isNot(contains(r'$Unknown')));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test(r'emits $Unknown fallback when no default variant exists', () {
+      const union = IrStatusUnion('PostAuthError', [
+        IrStatusVariant(
+          '401',
+          'PostAuthError401',
+          mediaType: 'application/json',
+          schema: IrTypeRef('PostAuthResponse401'),
+        ),
+      ]);
+
+      final specs = const StatusUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('401 => PostAuthError401.parse(response)'));
+      expect(
+        source,
+        contains(r'_ => PostAuthError$Unknown(response.statusCode, '
+            'response.body)'),
+      );
+      expect(
+        source,
+        contains(r'final class PostAuthError$Unknown extends PostAuthError'),
+      );
+      expect(source, contains('final int statusCode;'));
+      expect(source, contains('final String body;'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits payload-free variants for no-content responses', () {
+      const union = IrStatusUnion('DeletePetSuccess', [
+        IrStatusVariant(
+          '200',
+          'DeletePetSuccess200',
+          mediaType: 'application/json',
+          schema: authResponse,
+        ),
+        IrStatusVariant('204', 'DeletePetSuccess204'),
+      ]);
+
+      final specs = const StatusUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('204 => DeletePetSuccess204.parse('));
+      expect(
+        source,
+        contains('final class DeletePetSuccess204 extends DeletePetSuccess'),
+      );
+      expect(source, contains('const DeletePetSuccess204();'));
       expect(() => _formatOrFail(source), returnsNormally);
     });
   });

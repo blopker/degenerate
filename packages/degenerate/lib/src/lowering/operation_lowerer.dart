@@ -111,22 +111,7 @@ class OperationLowerer {
         final uniqueName = deduplicateName(op.dartMethodName, usedMethodNames);
         usedMethodNames.add(uniqueName);
         if (uniqueName != op.dartMethodName) {
-          dedupedOps.add(
-            IrOperation(
-              op.operationId,
-              uniqueName,
-              op.method,
-              op.path,
-              summary: op.summary,
-              description: op.description,
-              parameters: op.parameters,
-              requestBody: op.requestBody,
-              responses: op.responses,
-              defaultResponse: op.defaultResponse,
-              isDeprecated: op.isDeprecated,
-              securityRequirements: op.securityRequirements,
-            ),
-          );
+          dedupedOps.add(op.copyWith(dartMethodName: uniqueName));
         } else {
           dedupedOps.add(op);
         }
@@ -182,9 +167,13 @@ class OperationLowerer {
 
     // Responses.
     final responses = <int, IrResponse>{};
+    final rangeResponses = <String, IrResponse>{};
     IrResponse? defaultResponse;
     final rawResponses = op['responses'] as Map<String, dynamic>?;
     if (rawResponses != null) {
+      // The primary success response keeps the bare `<Op>Response` name;
+      // every other response is named by its status code.
+      final primaryKey = _primarySuccessKey(rawResponses);
       for (final entry in rawResponses.entries) {
         final statusKey = entry.key;
         var responseMap = entry.value;
@@ -195,9 +184,17 @@ class OperationLowerer {
           if (resolved is Map<String, dynamic>) responseMap = resolved;
         }
 
-        final irResponse = _lowerResponse(responseMap, statusCode: statusKey);
+        final isRange = _rangeKeyPattern.hasMatch(statusKey);
+        final normalizedKey = isRange ? statusKey.toUpperCase() : statusKey;
+        final irResponse = _lowerResponse(
+          responseMap,
+          statusCode: normalizedKey,
+          isPrimarySuccess: statusKey == primaryKey,
+        );
         if (statusKey == 'default') {
           defaultResponse = irResponse;
+        } else if (isRange) {
+          rangeResponses[normalizedKey] = irResponse;
         } else {
           final statusCode = int.tryParse(statusKey);
           if (statusCode != null) {
@@ -220,10 +217,33 @@ class OperationLowerer {
       parameters: parameters,
       requestBody: requestBody,
       responses: responses,
+      rangeResponses: rangeResponses,
       defaultResponse: defaultResponse,
       isDeprecated: deprecated,
       securityRequirements: securityRequirements,
     );
+  }
+
+  /// Matches OpenAPI status range keys like `2XX` (case-insensitive).
+  static final _rangeKeyPattern = RegExp(r'^[1-5][xX]{2}$');
+
+  /// The response key the generated method treats as the primary success:
+  /// first of 200..204, then the lowest remaining 2xx code, then a `2XX`
+  /// range key.
+  String? _primarySuccessKey(Map<String, dynamic> rawResponses) {
+    const priority = ['200', '201', '202', '203', '204'];
+    for (final key in priority) {
+      if (rawResponses.containsKey(key)) return key;
+    }
+    final other2xx = rawResponses.keys.where((k) {
+      final code = int.tryParse(k);
+      return code != null && code >= 200 && code < 300;
+    }).toList()..sort();
+    if (other2xx.isNotEmpty) return other2xx.first;
+    for (final key in rawResponses.keys) {
+      if (key.toUpperCase() == '2XX') return key;
+    }
+    return null;
   }
 
   List<IrSecurityRequirement>? _lowerSecurityRequirements(dynamic value) {
@@ -408,6 +428,7 @@ class OperationLowerer {
   IrResponse _lowerResponse(
     Map<String, dynamic> response, {
     String? statusCode,
+    bool isPrimarySuccess = false,
   }) {
     final description = response['description'] as String?;
     final content = response['content'] as Map<String, dynamic>?;
@@ -423,14 +444,23 @@ class OperationLowerer {
         final rawItemSchema = mediaMap['itemSchema'];
         if (rawSchema == null && rawItemSchema == null) continue;
 
-        // Generate a name hint for inline schemas based on the operation
+        // Generate a name hint for inline schemas based on the operation.
+        // The primary success response keeps the bare `<Op>Response` name;
+        // all other responses are suffixed with their status code (or
+        // `Default` for the default response).
         String? nameHint;
         if (_currentOperationId != null) {
           nameHint = '${_currentOpPascal!}Response';
-          if (statusCode != null &&
-              statusCode != '200' &&
-              statusCode != '201') {
-            nameHint = '${_currentOpPascal!}Response$statusCode';
+          if (!isPrimarySuccess && statusCode != null) {
+            // Range keys use lowercase `xx` (`4xx`) so the name survives
+            // pascal-casing; `4XX` would be mangled to `4Xx`.
+            final suffix = switch (statusCode) {
+              'default' => 'Default',
+              _ when statusCode.endsWith('XX') =>
+                statusCode.toLowerCase(),
+              _ => statusCode,
+            };
+            nameHint = '${_currentOpPascal!}Response$suffix';
           }
         }
 

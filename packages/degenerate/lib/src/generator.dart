@@ -522,9 +522,9 @@ class Generator {
           var rbChanged = false;
           final newContent = <String, IrMediaType>{};
           for (final entry in rb.content.entries) {
-            final resolved = resolver.resolve(entry.value.schema);
-            if (!identical(resolved, entry.value.schema)) rbChanged = true;
-            newContent[entry.key] = IrMediaType(resolved);
+            final resolved = _resolveMediaType(resolver, entry.value);
+            if (!identical(resolved, entry.value)) rbChanged = true;
+            newContent[entry.key] = resolved;
           }
           if (rbChanged) {
             opChanged = true;
@@ -535,67 +535,87 @@ class Generator {
         final responses = <int, IrResponse>{};
         var respChanged = false;
         for (final entry in op.responses.entries) {
-          final resp = entry.value;
-          var entryChanged = false;
-          final newContent = <String, IrMediaType>{};
-          for (final ce in resp.content.entries) {
-            final resolved = resolver.resolve(ce.value.schema);
-            if (!identical(resolved, ce.value.schema)) entryChanged = true;
-            newContent[ce.key] = IrMediaType(resolved);
-          }
-          if (entryChanged) {
-            respChanged = true;
-            responses[entry.key] = IrResponse(
-              description: resp.description,
-              content: newContent,
-              headers: resp.headers,
-            );
-          } else {
-            responses[entry.key] = resp;
-          }
+          final resolved = _resolveResponse(resolver, entry.value);
+          if (!identical(resolved, entry.value)) respChanged = true;
+          responses[entry.key] = resolved;
         }
         if (respChanged) opChanged = true;
 
+        final rangeResponses = <String, IrResponse>{};
+        var rangeChanged = false;
+        for (final entry in op.rangeResponses.entries) {
+          final resolved = _resolveResponse(resolver, entry.value);
+          if (!identical(resolved, entry.value)) rangeChanged = true;
+          rangeResponses[entry.key] = resolved;
+        }
+        if (rangeChanged) opChanged = true;
+
         IrResponse? defaultResp;
         if (op.defaultResponse != null) {
-          final resp = op.defaultResponse!;
-          var drChanged = false;
-          final newContent = <String, IrMediaType>{};
-          for (final ce in resp.content.entries) {
-            final resolved = resolver.resolve(ce.value.schema);
-            if (!identical(resolved, ce.value.schema)) drChanged = true;
-            newContent[ce.key] = IrMediaType(resolved);
-          }
-          if (drChanged) {
+          final resolved = _resolveResponse(resolver, op.defaultResponse!);
+          if (!identical(resolved, op.defaultResponse)) {
             opChanged = true;
-            defaultResp = IrResponse(
-              description: resp.description,
-              content: newContent,
-              headers: resp.headers,
-            );
+            defaultResp = resolved;
           }
         }
 
         if (!opChanged) return op;
         apiChanged = true;
-        return IrOperation(
-          op.operationId,
-          op.dartMethodName,
-          op.method,
-          op.path,
-          summary: op.summary,
-          description: op.description,
+        return op.copyWith(
           parameters: params,
           requestBody: reqBody ?? op.requestBody,
           responses: responses,
+          rangeResponses: rangeResponses,
           defaultResponse: defaultResp ?? op.defaultResponse,
-          isDeprecated: op.isDeprecated,
-          securityRequirements: op.securityRequirements,
         );
       }).toList();
       if (!apiChanged) return api;
       return IrApi(api.name, ops);
     }).toList();
+  }
+
+  /// Resolve type refs in a media type, preserving itemSchema and encoding.
+  ///
+  /// Returns the original instance when nothing changed.
+  static IrMediaType _resolveMediaType(
+    TypeRefResolver resolver,
+    IrMediaType mediaType,
+  ) {
+    final schema = resolver.resolve(mediaType.schema);
+    final itemSchema = mediaType.itemSchema != null
+        ? resolver.resolve(mediaType.itemSchema!)
+        : null;
+    if (identical(schema, mediaType.schema) &&
+        identical(itemSchema, mediaType.itemSchema)) {
+      return mediaType;
+    }
+    return IrMediaType(
+      schema,
+      itemSchema: itemSchema,
+      encoding: mediaType.encoding,
+    );
+  }
+
+  /// Resolve type refs in a response's content schemas.
+  ///
+  /// Returns the original instance when nothing changed.
+  static IrResponse _resolveResponse(
+    TypeRefResolver resolver,
+    IrResponse response,
+  ) {
+    var changed = false;
+    final newContent = <String, IrMediaType>{};
+    for (final entry in response.content.entries) {
+      final resolved = _resolveMediaType(resolver, entry.value);
+      if (!identical(resolved, entry.value)) changed = true;
+      newContent[entry.key] = resolved;
+    }
+    if (!changed) return response;
+    return IrResponse(
+      description: response.description,
+      content: newContent,
+      headers: response.headers,
+    );
   }
 
   /// Collect all type names transitively reachable from the given APIs.
@@ -678,6 +698,11 @@ class Generator {
         for (final v in mapping.values) {
           _collectTypeRefs(v, names);
         }
+      case IrStatusUnion(:final name, :final variants):
+        names.add(name);
+        for (final v in variants) {
+          if (v.schema != null) _collectTypeRefs(v.schema!, names);
+        }
       case IrUntaggedUnion(:final name, :final variants):
         names.add(name);
         for (final v in variants) {
@@ -705,6 +730,7 @@ class Generator {
       IrObject(:final name) => 'Object($name)',
       IrEnum(:final name) => 'Enum($name)',
       IrDiscriminatedUnion(:final name) => 'DiscriminatedUnion($name)',
+      IrStatusUnion(:final name) => 'StatusUnion($name)',
       IrUntaggedUnion(:final name) => 'UntaggedUnion($name)',
       IrAnyOf(:final name) => 'AnyOf($name)',
       IrExtensionType(:final name) => 'ExtensionType($name)',

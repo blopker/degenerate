@@ -279,6 +279,10 @@ class ModelEmitter {
       IrUntaggedUnion() => '${f.name}${_q}toJson()',
       IrAnyOf() => '${f.name}${_q}toJson()',
       IrExtensionType() => '${f.name}${_q}toJson()',
+      // Status unions parse from a full ApiResponse, never appear as fields.
+      IrStatusUnion(:final name) => throw ArgumentError(
+        'Status union $name cannot appear in a JSON field context',
+      ),
     };
   }
 

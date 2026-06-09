@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity_list_repos_starred_by_authenticated_user_direction.dart';import '../models/activity_list_repos_starred_by_authenticated_user_sort.dart';import '../models/activity_list_repos_starred_by_user_direction.dart';import '../models/activity_list_repos_starred_by_user_response.dart';import '../models/activity_list_repos_starred_by_user_sort.dart';import '../models/activity_list_stargazers_for_repo_response.dart';import '../models/activity_mark_notifications_as_read_request.dart';import '../models/activity_mark_notifications_as_read_response202.dart';import '../models/activity_mark_repo_notifications_as_read_request.dart';import '../models/activity_mark_repo_notifications_as_read_response202.dart';import '../models/activity_set_repo_subscription_request.dart';import '../models/activity_set_thread_subscription_request.dart';import '../models/basic_error.dart';import '../models/event.dart';import '../models/feed.dart';import '../models/minimal_repository.dart';import '../models/repository.dart';import '../models/repository_subscription.dart';import '../models/simple_user.dart';import '../models/stargazer.dart';import '../models/starred_repository.dart';import '../models/thread.dart';import '../models/thread_subscription.dart';import '../models/validation_error.dart';/// ActivityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity_list_repos_starred_by_authenticated_user_direction.dart';import '../models/activity_list_repos_starred_by_authenticated_user_sort.dart';import '../models/activity_list_repos_starred_by_user_direction.dart';import '../models/activity_list_repos_starred_by_user_response.dart';import '../models/activity_list_repos_starred_by_user_sort.dart';import '../models/activity_list_stargazers_for_repo_response.dart';import '../models/activity_mark_notifications_as_read_request.dart';import '../models/activity_mark_notifications_as_read_response.dart';import '../models/activity_mark_repo_notifications_as_read_request.dart';import '../models/activity_mark_repo_notifications_as_read_response.dart';import '../models/activity_set_repo_subscription_request.dart';import '../models/activity_set_thread_subscription_request.dart';import '../models/basic_error.dart';import '../models/event.dart';import '../models/feed.dart';import '../models/minimal_repository.dart';import '../models/repository.dart';import '../models/repository_subscription.dart';import '../models/simple_user.dart';import '../models/stargazer.dart';import '../models/starred_repository.dart';import '../models/thread.dart';import '../models/thread_subscription.dart';import '../models/validation_error.dart';/// ActivityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -169,7 +169,7 @@ return execute(
 /// Marks all notifications as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /notifications`
-Future<ApiResult<ActivityMarkNotificationsAsReadResponse202, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActivityMarkNotificationsAsReadResponse, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,7 +183,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActivityMarkNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActivityMarkNotificationsAsReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -451,7 +451,7 @@ return execute(
 /// Marks all notifications in a repository as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /repos/{owner}/{repo}/notifications`
-Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse202, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -465,7 +465,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ActivityMarkRepoNotificationsAsReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

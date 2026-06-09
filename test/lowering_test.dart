@@ -636,6 +636,98 @@ void main() {
     });
   });
 
+  // ─── Per-status responses (issue #5) ────────────────────────────
+
+  group('OperationLowerer - per-status responses', () {
+    (IrOperation, IrMapper) lowerSingleOp(Map<String, dynamic> responses) {
+      final doc = OpenApiDocument({
+        'openapi': '3.0.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'paths': {
+          '/auth': {
+            'post': {'operationId': 'postAuth', 'responses': responses},
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      return (opLowerer.lowerPaths(doc.paths).first.operations.first, mapper);
+    }
+
+    Set<String> inlineTypeNames(IrMapper mapper) => {
+      for (final t in mapper.inlineTypes)
+        if (t is IrObject) t.name,
+    };
+
+    Map<String, dynamic> jsonResponse(String requiredProp) => {
+      'description': 'r',
+      'content': {
+        'application/json': {
+          'schema': {
+            'type': 'object',
+            'required': [requiredProp],
+            'properties': {
+              requiredProp: {'type': 'string'},
+            },
+          },
+        },
+      },
+    };
+
+    test('wildcard range responses survive lowering', () {
+      final (op, _) = lowerSingleOp({
+        '200': jsonResponse('ok'),
+        '4XX': jsonResponse('clientError'),
+        '5XX': jsonResponse('serverError'),
+      });
+
+      expect(op.rangeResponses.keys, containsAll(['4XX', '5XX']));
+      expect(op.rangeResponses['4XX']!.content, isNotEmpty);
+    });
+
+    test('lowercase wildcard keys are normalized to uppercase', () {
+      final (op, _) = lowerSingleOp({
+        '200': jsonResponse('ok'),
+        '4xx': jsonResponse('clientError'),
+      });
+
+      expect(op.rangeResponses.keys, contains('4XX'));
+    });
+
+    test('inline response schemas are named by status code', () {
+      final (_, mapper) = lowerSingleOp({
+        '200': jsonResponse('accessToken'),
+        '201': jsonResponse('userId'),
+        '401': jsonResponse('errorMessage'),
+        '4XX': jsonResponse('clientError'),
+        'default': jsonResponse('defaultErrorMessage'),
+      });
+
+      final names = inlineTypeNames(mapper);
+      // Primary success keeps the bare name; everything else is coded.
+      expect(names, contains('PostAuthResponse'));
+      expect(names, contains('PostAuthResponse201'));
+      expect(names, contains('PostAuthResponse401'));
+      expect(names, contains('PostAuthResponse4xx'));
+      expect(names, contains('PostAuthResponseDefault'));
+      expect(names, isNot(contains('PostAuthResponse2')));
+      expect(names, isNot(contains('PostAuthResponsedefault')));
+    });
+
+    test('201-only operation keeps the bare response name', () {
+      final (_, mapper) = lowerSingleOp({
+        '201': jsonResponse('userId'),
+        'default': jsonResponse('defaultErrorMessage'),
+      });
+
+      final names = inlineTypeNames(mapper);
+      expect(names, contains('PostAuthResponse'));
+      expect(names, isNot(contains('PostAuthResponse201')));
+    });
+  });
+
   group('primitive-only union collapse', () {
     test('oneOf of only primitives collapses to dynamic', () {
       final lowerer = IrMapper(

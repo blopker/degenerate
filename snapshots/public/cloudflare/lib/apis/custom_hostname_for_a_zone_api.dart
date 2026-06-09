@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_hostname_for_a_zone_create_custom_hostname_request.dart';import '../models/custom_hostname_for_a_zone_delete_custom_hostname_and_any_issued_ssl_certificates_response.dart';import '../models/custom_hostname_for_a_zone_delete_single_certificate_and_key_in_a_custom_hostname_response202.dart';import '../models/custom_hostname_for_a_zone_edit_custom_hostname_request.dart';import '../models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import '../models/tls_certificates_and_hostnames_customhostname.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomHostnameForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_hostname_for_a_zone_create_custom_hostname_request.dart';import '../models/custom_hostname_for_a_zone_delete_custom_hostname_and_any_issued_ssl_certificates_response.dart';import '../models/custom_hostname_for_a_zone_delete_single_certificate_and_key_in_a_custom_hostname_response.dart';import '../models/custom_hostname_for_a_zone_edit_custom_hostname_request.dart';import '../models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import '../models/tls_certificates_and_hostnames_customhostname.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomHostnameForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -176,7 +176,7 @@ return execute(
 /// Delete a single custom certificate from a certificate pack that contains two bundled certificates. Deletion is subject to the following constraints. You cannot delete a certificate if it is the only remaining certificate in the pack. At least one certificate must remain in the pack.
 ///
 /// `DELETE /zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}`
-Future<ApiResult<CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202, Never>> customHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse, Never>> customHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostname({required TlsCertificatesAndHostnamesIdentifier customHostnameId, required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -188,7 +188,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
