@@ -307,7 +307,10 @@ class Generator {
 
     final fileEmitter = FileEmitter();
     final emitterWarnings = <String>[];
-    final securitySchemes = _lowerSecuritySchemes(inlinedDoc.securitySchemes);
+    final securitySchemes = _lowerSecuritySchemes(
+      inlinedDoc.securitySchemes,
+      warnings: emitterWarnings,
+    );
     final globalSecurity = _lowerSecurityRequirements(inlinedDoc.security);
     final defaultServerUrl = inlinedDoc.servers.isNotEmpty
         ? inlinedDoc.servers.first['url'] as String?
@@ -394,7 +397,10 @@ class Generator {
     return files;
   }
 
-  List<IrSecurityScheme> _lowerSecuritySchemes(Map<String, dynamic> raw) {
+  List<IrSecurityScheme> _lowerSecuritySchemes(
+    Map<String, dynamic> raw, {
+    List<String>? warnings,
+  }) {
     final schemes = <IrSecurityScheme>[];
     for (final entry in raw.entries) {
       final value = entry.value;
@@ -424,14 +430,37 @@ class Generator {
           );
         }
       }
+      final type = value['type'] as String? ?? 'unknown';
+      var parameterName = value['name'] as String?;
+      var location = value['in'] as String?;
+      if (type == 'apiKey') {
+        // `name` and `in` are required on apiKey schemes; fill in sensible
+        // defaults so the generated with*/apply* helpers stay consistent.
+        if (parameterName == null) {
+          parameterName = entry.key;
+          warnings?.add(
+            "Security scheme '${entry.key}' (apiKey) is missing the required "
+            "'name' field; using the scheme name '${entry.key}'.",
+          );
+        }
+        if (location == null ||
+            !const {'header', 'query', 'cookie'}.contains(location)) {
+          warnings?.add(
+            "Security scheme '${entry.key}' (apiKey) is missing the required "
+            "'in' field${location == null ? '' : " (got '$location')"}; "
+            "assuming 'in: header'.",
+          );
+          location = 'header';
+        }
+      }
       schemes.add(
         IrSecurityScheme(
           name: entry.key,
-          type: value['type'] as String? ?? 'unknown',
+          type: type,
           scheme: value['scheme'] as String?,
           bearerFormat: value['bearerFormat'] as String?,
-          parameterName: value['name'] as String?,
-          location: value['in'] as String?,
+          parameterName: parameterName,
+          location: location,
           openIdConnectUrl: value['openIdConnectUrl'] as String?,
           flows: flows,
         ),

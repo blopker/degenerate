@@ -11,7 +11,7 @@ final class PubStripeSpec3Security {
     'bearerAuth': const ApiSecurityScheme(name: 'bearerAuth', type: ApiSecuritySchemeType.http, scheme: 'bearer', bearerFormat: 'auth-scheme'),
   };
 
-  static final globalRequirements = [const ApiSecurityRequirement({'basicAuth': []}), const ApiSecurityRequirement({'bearerAuth': []})];
+  static final globalRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'basicAuth': []}), const ApiSecurityRequirement({'bearerAuth': []})];
 
   static ApiConfig applyBasicAuth(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});
 

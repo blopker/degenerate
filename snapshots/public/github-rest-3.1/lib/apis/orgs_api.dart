@@ -973,7 +973,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/route-stats/${Uri.encodeComponent(actorType.toString())}/${Uri.encodeComponent(actorId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/route-stats/${Uri.encodeComponent(actorType.value)}/${Uri.encodeComponent(actorId.toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1112,7 +1112,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/summary-stats/${Uri.encodeComponent(actorType.toString())}/${Uri.encodeComponent(actorId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/summary-stats/${Uri.encodeComponent(actorType.value)}/${Uri.encodeComponent(actorId.toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1207,7 +1207,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/time-stats/${Uri.encodeComponent(actorType.toString())}/${Uri.encodeComponent(actorId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/time-stats/${Uri.encodeComponent(actorType.value)}/${Uri.encodeComponent(actorId.toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

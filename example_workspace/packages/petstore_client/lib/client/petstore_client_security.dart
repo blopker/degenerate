@@ -10,15 +10,15 @@ final class PetstoreClientSecurity {
     'api_key': const ApiSecurityScheme(name: 'api_key', type: ApiSecuritySchemeType.apiKey, parameterName: 'api_key', location: ApiKeyLocation.header),
   };
 
-  static final addPetRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final updatePetRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final findPetsByStatusRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final findPetsByTagsRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final getPetByIdRequirements = [const ApiSecurityRequirement({'api_key': []}), const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final updatePetWithFormRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final deletePetRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final uploadFileRequirements = [const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
-  static final getInventoryRequirements = [const ApiSecurityRequirement({'api_key': []})];
+  static final addPetRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final updatePetRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final findPetsByStatusRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final findPetsByTagsRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final getPetByIdRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'api_key': []}), const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final updatePetWithFormRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final deletePetRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final uploadFileRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'petstore_auth': ['write:pets', 'read:pets']})];
+  static final getInventoryRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'api_key': []})];
 
   static ApiConfig applyApiKey(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'api_key': value});
 

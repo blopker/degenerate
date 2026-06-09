@@ -996,7 +996,7 @@ class FileEmitter {
           return 'const ApiSecurityRequirement({$entries})';
         })
         .join(', ');
-    return '[$pieces]';
+    return '<ApiSecurityRequirement>[$pieces]';
   }
 
   String _oauthFlowType(String type) => switch (type) {
@@ -1023,6 +1023,8 @@ class FileEmitter {
 
   String? _securityApplyMethod(IrSecurityScheme scheme) {
     final methodName = 'apply${_securityMethodSuffix(scheme.name)}';
+    // An apiKey scheme without a parameter name can't be applied anywhere.
+    if (scheme.type == 'apiKey' && scheme.parameterName == null) return null;
     return switch (scheme.type) {
       'apiKey' => switch (scheme.location) {
         'header' =>
@@ -1051,6 +1053,9 @@ class FileEmitter {
   ) {
     final securityClass =
         '${sanitizeDartName(toPascalCase(packageName))}Security';
+    // Only emit a `with*` helper when the matching `apply*` method exists,
+    // so the facade never references an undefined method.
+    if (_securityApplyMethod(scheme) == null) return null;
     final suffix = _securityMethodSuffix(scheme.name);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';

@@ -101,7 +101,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/summary/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/http/summary/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -337,7 +337,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/http/timeseries_groups/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -564,7 +564,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/bot_class/${Uri.encodeComponent(botClass.toString())}',
+  path: '/radar/http/top/ases/bot_class/${Uri.encodeComponent(botClass.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -675,7 +675,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/browser_family/${Uri.encodeComponent(browserFamily.toString())}',
+  path: '/radar/http/top/ases/browser_family/${Uri.encodeComponent(browserFamily.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -786,7 +786,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/device_type/${Uri.encodeComponent(deviceType.toString())}',
+  path: '/radar/http/top/ases/device_type/${Uri.encodeComponent(deviceType.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -897,7 +897,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/http_protocol/${Uri.encodeComponent(httpProtocol.toString())}',
+  path: '/radar/http/top/ases/http_protocol/${Uri.encodeComponent(httpProtocol.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1008,7 +1008,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/http_version/${Uri.encodeComponent(httpVersion.toString())}',
+  path: '/radar/http/top/ases/http_version/${Uri.encodeComponent(httpVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1119,7 +1119,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/ip_version/${Uri.encodeComponent(ipVersion.toString())}',
+  path: '/radar/http/top/ases/ip_version/${Uri.encodeComponent(ipVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1230,7 +1230,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/os/${Uri.encodeComponent(os.toString())}',
+  path: '/radar/http/top/ases/os/${Uri.encodeComponent(os.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1341,7 +1341,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/tls_version/${Uri.encodeComponent(tlsVersion.toString())}',
+  path: '/radar/http/top/ases/tls_version/${Uri.encodeComponent(tlsVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1568,7 +1568,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/bot_class/${Uri.encodeComponent(botClass.toString())}',
+  path: '/radar/http/top/locations/bot_class/${Uri.encodeComponent(botClass.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1679,7 +1679,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/browser_family/${Uri.encodeComponent(browserFamily.toString())}',
+  path: '/radar/http/top/locations/browser_family/${Uri.encodeComponent(browserFamily.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1790,7 +1790,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/device_type/${Uri.encodeComponent(deviceType.toString())}',
+  path: '/radar/http/top/locations/device_type/${Uri.encodeComponent(deviceType.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1901,7 +1901,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/http_protocol/${Uri.encodeComponent(httpProtocol.toString())}',
+  path: '/radar/http/top/locations/http_protocol/${Uri.encodeComponent(httpProtocol.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2012,7 +2012,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/http_version/${Uri.encodeComponent(httpVersion.toString())}',
+  path: '/radar/http/top/locations/http_version/${Uri.encodeComponent(httpVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2123,7 +2123,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/ip_version/${Uri.encodeComponent(ipVersion.toString())}',
+  path: '/radar/http/top/locations/ip_version/${Uri.encodeComponent(ipVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2234,7 +2234,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/os/${Uri.encodeComponent(os.toString())}',
+  path: '/radar/http/top/locations/os/${Uri.encodeComponent(os.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2345,7 +2345,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/tls_version/${Uri.encodeComponent(tlsVersion.toString())}',
+  path: '/radar/http/top/locations/tls_version/${Uri.encodeComponent(tlsVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

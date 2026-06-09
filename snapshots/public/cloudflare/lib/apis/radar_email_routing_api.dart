@@ -76,7 +76,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/routing/summary/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/email/routing/summary/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -165,7 +165,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/routing/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/email/routing/timeseries_groups/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

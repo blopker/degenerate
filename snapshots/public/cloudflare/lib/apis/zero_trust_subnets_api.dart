@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/cloudflare_source/${Uri.encodeComponent(addressFamily.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/cloudflare_source/${Uri.encodeComponent(addressFamily.value)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

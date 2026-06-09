@@ -816,6 +816,251 @@ void main() {
     });
   });
 
+  // ─── Enum parameter serialization (issue #7) ───────────────────
+
+  group('ApiEmitter - enum parameters', () {
+    test('string-enum path params interpolate .value, not toString()', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items/{color}',
+          parameters: [
+            IrParameter(
+              'color',
+              'color',
+              ParameterLocation.path,
+              IrEnum('Color', ['red', 'green', 'blue']),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains(r"path: '/items/${Uri.encodeComponent(color.value)}'"));
+      expect(source, isNot(contains('color.toString()')));
+    });
+
+    test('int-enum path params interpolate .value.toString()', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items/{code}',
+          parameters: [
+            IrParameter(
+              'code',
+              'code',
+              ParameterLocation.path,
+              IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains(r"path: '/items/${Uri.encodeComponent(code.value.toString())}'"),
+      );
+    });
+
+    test('string-enum query and header params serialize via toJson()', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrEnum('Color', ['red', 'green', 'blue']),
+              isRequired: true,
+            ),
+            IrParameter(
+              'X-Color',
+              'xColor',
+              ParameterLocation.header,
+              IrEnum('Color', ['red', 'green', 'blue']),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains("queryParameters['filter'] = filter.toJson();"));
+      expect(source, contains("headers['X-Color'] = xColor.toJson();"));
+    });
+
+    test('int-enum query and header params serialize to String', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              'code',
+              'code',
+              ParameterLocation.query,
+              IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int),
+              isRequired: true,
+            ),
+            IrParameter(
+              'X-Code',
+              'xCode',
+              ParameterLocation.header,
+              IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains("queryParameters['code'] = code.value.toString();"),
+      );
+      expect(source, contains("headers['X-Code'] = xCode.value.toString();"));
+    });
+
+    test('int-enum deepObject fields and list items serialize to String', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrObject('Filter', [
+                IrField(
+                  'code',
+                  'code',
+                  IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int),
+                  isRequired: true,
+                ),
+              ]),
+              isRequired: true,
+              style: 'deepObject',
+              explode: true,
+            ),
+            IrParameter(
+              'ids',
+              'ids',
+              ParameterLocation.query,
+              IrList(IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int)),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains("queryParameters['filter[code]'] = filter.code.value.toString();"),
+      );
+      expect(source, contains('value: item.value.toString()'));
+    });
+
+    test('int-backed extension type query fields serialize to String', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              'filter',
+              'filter',
+              ParameterLocation.query,
+              IrObject('Filter', [
+                IrField(
+                  'id',
+                  'id',
+                  IrExtensionType('ItemId', IrPrimitive(PrimitiveKind.int)),
+                  isRequired: true,
+                ),
+              ]),
+              isRequired: true,
+              style: 'deepObject',
+              explode: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(
+        source,
+        contains("queryParameters['filter[id]'] = filter.id.toJson().toString();"),
+      );
+    });
+
+    test('int-enum multipart text fields serialize to String', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'upload',
+          'upload',
+          HttpMethod.post,
+          '/upload',
+          requestBody: IrRequestBody({
+            'multipart/form-data': IrMediaType(
+              IrObject('UploadRequest', [
+                IrField(
+                  'code',
+                  'code',
+                  IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int),
+                  isRequired: true,
+                ),
+              ]),
+            ),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains('body.code.value.toString()'));
+      expect(source, isNot(contains('body.code.toJson())')));
+    });
+  });
+
   group('ApiEmitter - query serialization', () {
     test('serializes exploded form arrays as repeated query parameters', () {
       const api = IrApi('TestApi', [
@@ -1940,13 +2185,13 @@ void main() {
       expect(
         securityFile,
         contains(
-          "static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': []})];",
+          "static final globalRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'ApiKeyAuth': []})];",
         ),
       );
       expect(
         securityFile,
         contains(
-          "static final secureReadRequirements = [const ApiSecurityRequirement({'HttpBearer': []})];",
+          "static final secureReadRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'HttpBearer': []})];",
         ),
       );
       expect(
@@ -1981,6 +2226,105 @@ void main() {
         contains("export 'client/test_client_security.dart';"),
       );
     });
+
+    test('empty per-operation requirements lists are typed (issue #9)', () {
+      final files = FileEmitter().emitAll(
+        types: const [],
+        apis: [
+          const IrApi('DefaultApi', [
+            IrOperation(
+              'getMe',
+              'getMe',
+              HttpMethod.get,
+              '/me',
+              responses: {200: IrResponse()},
+              securityRequirements: [],
+            ),
+          ]),
+        ],
+        securitySchemes: const [
+          IrSecurityScheme(name: 'bearerAuth', type: 'http', scheme: 'bearer'),
+        ],
+        globalSecurity: const [
+          IrSecurityRequirement({'bearerAuth': []}),
+        ],
+        packageName: 'test_client',
+      );
+
+      final securityFile = files['client/test_client_security.dart']!;
+      expect(
+        securityFile,
+        contains('static final getMeRequirements = <ApiSecurityRequirement>[];'),
+      );
+    });
+
+    test(
+      'apiKey scheme without location emits neither with nor apply helper '
+      '(issue #8)',
+      () {
+        final files = FileEmitter().emitAll(
+          types: const [],
+          apis: [
+            const IrApi('DefaultApi', [
+              IrOperation(
+                'getMe',
+                'getMe',
+                HttpMethod.get,
+                '/me',
+                responses: {200: IrResponse()},
+              ),
+            ]),
+          ],
+          securitySchemes: const [
+            IrSecurityScheme(
+              name: 'Authorization',
+              type: 'apiKey',
+              parameterName: 'Authorization',
+            ),
+          ],
+          packageName: 'test_client',
+        );
+
+        final securityFile = files['client/test_client_security.dart']!;
+        final sdkFile = files['client/test_client_api.dart']!;
+        expect(securityFile, isNot(contains('applyAuthorization')));
+        expect(sdkFile, isNot(contains('withAuthorization')));
+      },
+    );
+
+    test(
+      'apiKey scheme without parameter name emits neither with nor apply '
+      'helper (issue #8)',
+      () {
+        final files = FileEmitter().emitAll(
+          types: const [],
+          apis: [
+            const IrApi('DefaultApi', [
+              IrOperation(
+                'getMe',
+                'getMe',
+                HttpMethod.get,
+                '/me',
+                responses: {200: IrResponse()},
+              ),
+            ]),
+          ],
+          securitySchemes: const [
+            IrSecurityScheme(
+              name: 'Authorization',
+              type: 'apiKey',
+              location: 'header',
+            ),
+          ],
+          packageName: 'test_client',
+        );
+
+        final securityFile = files['client/test_client_security.dart']!;
+        final sdkFile = files['client/test_client_api.dart']!;
+        expect(securityFile, isNot(contains('applyAuthorization')));
+        expect(sdkFile, isNot(contains('withAuthorization')));
+      },
+    );
   });
 
   // ─── Extension type emission ──────────────────────────────────

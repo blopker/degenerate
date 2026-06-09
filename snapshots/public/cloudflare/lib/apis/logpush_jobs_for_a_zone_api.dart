@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> getZonesZoneIdLogpushDatasetsDat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/fields',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.value)}/fields',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<List<LogpushLogpushJob>?, Never>> getZonesZoneIdLogpushDatasets
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/jobs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.value)}/jobs',
   headers: headers,
   options: options,
 );

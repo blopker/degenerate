@@ -17,7 +17,7 @@ Future<ApiResult<List<TlsCertificatesAndHostnamesPerHostnameSettingsResponseColl
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.value)}',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesSettingObject?, Never>> perHostnameT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.value)}/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.value)}/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -85,7 +85,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesSettingObjectDelete?, Never>> perHos
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.toString())}/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/hostnames/settings/${Uri.encodeComponent(settingId.value)}/${Uri.encodeComponent(hostname.toString())}',
   headers: headers,
   options: options,
 );

@@ -9,7 +9,7 @@ final class PubOpenaiSecurity {
     'ApiKeyAuth': const ApiSecurityScheme(name: 'ApiKeyAuth', type: ApiSecuritySchemeType.http, scheme: 'bearer'),
   };
 
-  static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': []})];
+  static final globalRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'ApiKeyAuth': []})];
 
   static ApiConfig applyApiKeyAuth(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});
 

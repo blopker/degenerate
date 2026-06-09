@@ -71,7 +71,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/summary/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/email/security/summary/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -155,7 +155,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/email/security/timeseries_groups/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -323,7 +323,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/top/tlds/malicious/${Uri.encodeComponent(malicious.toString())}',
+  path: '/radar/email/security/top/tlds/malicious/${Uri.encodeComponent(malicious.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -407,7 +407,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/top/tlds/spam/${Uri.encodeComponent(spam.toString())}',
+  path: '/radar/email/security/top/tlds/spam/${Uri.encodeComponent(spam.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -491,7 +491,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/top/tlds/spoof/${Uri.encodeComponent(spoof.toString())}',
+  path: '/radar/email/security/top/tlds/spoof/${Uri.encodeComponent(spoof.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

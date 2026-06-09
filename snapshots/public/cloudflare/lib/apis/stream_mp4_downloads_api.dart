@@ -83,7 +83,7 @@ Future<ApiResult<StreamDownloadsResponseResult?, Never>> streamDownloadsCreateTy
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent(downloadType.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent(downloadType.value)}',
   headers: headers,
   options: options,
 );
@@ -105,7 +105,7 @@ Future<ApiResult<String?, Never>> streamDownloadsDeleteTypeSpecificDownloads({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent(downloadType.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent(downloadType.value)}',
   headers: headers,
   options: options,
 );

@@ -24,7 +24,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/${Uri.encodeComponent(providerType.toString())}/${Uri.encodeComponent(providerAccountId.toString())}/${Uri.encodeComponent(repoId.toString())}/config_autofill',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/${Uri.encodeComponent(providerType.value)}/${Uri.encodeComponent(providerAccountId.toString())}/${Uri.encodeComponent(repoId.toString())}/config_autofill',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

@@ -72,7 +72,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/summary/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/as112/summary/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -239,7 +239,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/as112/timeseries_groups/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -371,7 +371,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/top/locations/dnssec/${Uri.encodeComponent(dnssec.toString())}',
+  path: '/radar/as112/top/locations/dnssec/${Uri.encodeComponent(dnssec.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -437,7 +437,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/top/locations/edns/${Uri.encodeComponent(edns.toString())}',
+  path: '/radar/as112/top/locations/edns/${Uri.encodeComponent(edns.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -503,7 +503,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/top/locations/ip_version/${Uri.encodeComponent(ipVersion.toString())}',
+  path: '/radar/as112/top/locations/ip_version/${Uri.encodeComponent(ipVersion.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

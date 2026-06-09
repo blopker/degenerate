@@ -122,7 +122,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/dns/summary/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/dns/summary/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -392,7 +392,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/dns/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
+  path: '/radar/dns/timeseries_groups/${Uri.encodeComponent(dimension.value)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

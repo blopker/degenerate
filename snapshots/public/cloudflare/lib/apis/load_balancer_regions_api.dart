@@ -53,7 +53,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> loadBalancerRegionsGetRegion({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions/${Uri.encodeComponent(regionId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions/${Uri.encodeComponent(regionId.value)}',
   headers: headers,
   options: options,
 );

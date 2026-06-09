@@ -88,7 +88,7 @@ Future<ApiResult<Package, Never>> packagesGetPackageForOrganization({required Pa
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -113,7 +113,7 @@ Future<ApiResult<void, BasicError>> packagesDeletePackageForOrg({required Packag
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -149,7 +149,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/restore',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -187,7 +187,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -216,7 +216,7 @@ Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForOrganizatio
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -241,7 +241,7 @@ Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForOrg({required
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -271,7 +271,7 @@ Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForOrg({require
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
   options: options,
 );
@@ -358,7 +358,7 @@ Future<ApiResult<Package, Never>> packagesGetPackageForAuthenticatedUser({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -381,7 +381,7 @@ Future<ApiResult<void, BasicError>> packagesDeletePackageForAuthenticatedUser({r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -415,7 +415,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/restore',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -453,7 +453,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -482,7 +482,7 @@ Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForAuthenticat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -507,7 +507,7 @@ Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForAuthenticated
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -535,7 +535,7 @@ Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForAuthenticate
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
+  path: '/user/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
   options: options,
 );
@@ -628,7 +628,7 @@ Future<ApiResult<Package, Never>> packagesGetPackageForUser({required PackagesGe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -653,7 +653,7 @@ Future<ApiResult<void, BasicError>> packagesDeletePackageForUser({required Packa
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -689,7 +689,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/restore',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -715,7 +715,7 @@ Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersion
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
   options: options,
 );
@@ -742,7 +742,7 @@ Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForUser({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -767,7 +767,7 @@ Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForUser({require
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -797,7 +797,7 @@ Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForUser({requir
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.value)}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
   options: options,
 );

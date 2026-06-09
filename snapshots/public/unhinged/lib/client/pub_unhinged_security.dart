@@ -44,7 +44,7 @@ final class PubUnhingedSecurity {
     ),
   };
 
-  static final globalRequirements = [
+  static final globalRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'ectoplasmToken': []}),
     const ApiSecurityRequirement({
       'goatOAuth': ['bleat:read', 'delete', ''],

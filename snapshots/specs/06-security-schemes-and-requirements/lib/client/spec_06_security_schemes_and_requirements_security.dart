@@ -15,9 +15,9 @@ final class Spec06SecuritySchemesAndRequirementsSecurity {
     'OpenId': const ApiSecurityScheme(name: 'OpenId', type: ApiSecuritySchemeType.openIdConnect, openIdConnectUrl: 'https://auth.example.com/.well-known/openid-configuration'),
   };
 
-  static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': []}), const ApiSecurityRequirement({'OAuth2Auth': ['read:items']})];
+  static final globalRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'ApiKeyAuth': []}), const ApiSecurityRequirement({'OAuth2Auth': ['read:items']})];
 
-  static final secureReadRequirements = [const ApiSecurityRequirement({'HttpBearer': []}), const ApiSecurityRequirement({'MutualTLS': []}), const ApiSecurityRequirement({'OpenId': []})];
+  static final secureReadRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({'HttpBearer': []}), const ApiSecurityRequirement({'MutualTLS': []}), const ApiSecurityRequirement({'OpenId': []})];
 
   static ApiConfig applyApiKeyAuth(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});
 

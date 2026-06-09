@@ -311,6 +311,27 @@ class ApiEmitter {
 
   static final _pathParamPattern = RegExp(r'\{([^}]+)\}');
 
+  /// Interpolate path parameters into [path], URL-encoding each value.
+  ///
+  /// Enum wrappers expose the wire value via `value`; their `toString()` is a
+  /// debug form (`ClassName(value)`) that must never reach the URL.
+  String _interpolatePath(String path, List<IrParameter> pathParams) {
+    final pathParamsByName = {for (final p in pathParams) p.name: p};
+    return path.replaceAllMapped(_pathParamPattern, (m) {
+      final p = pathParamsByName[m[1]];
+      if (p == null) return m[0]!;
+      final encodeExpr = switch (p.type) {
+        IrPrimitive(kind: PrimitiveKind.string) =>
+          'Uri.encodeComponent(${p.dartName})',
+        IrEnum(valueKind: PrimitiveKind.string) =>
+          'Uri.encodeComponent(${p.dartName}.value)',
+        IrEnum() => 'Uri.encodeComponent(${p.dartName}.value.toString())',
+        _ => 'Uri.encodeComponent(${p.dartName}.toString())',
+      };
+      return '\${$encodeExpr}';
+    });
+  }
+
   String _buildOperationBody(
     IrOperation op,
     IrType? returnType, {
@@ -329,17 +350,7 @@ class ApiEmitter {
     final httpMethod = _httpMethodString(op);
 
     // Build path with parameter interpolation (URL-encoded)
-    final pathParamsByName = {for (final p in pathParams) p.name: p};
-    final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
-      final p = pathParamsByName[m[1]];
-      if (p == null) return m[0]!;
-      final type = p.type;
-      final isString = type is IrPrimitive && type.kind == PrimitiveKind.string;
-      final encodeExpr = isString
-          ? 'Uri.encodeComponent(${p.dartName})'
-          : 'Uri.encodeComponent(${p.dartName}.toString())';
-      return '\${$encodeExpr}';
-    });
+    final path = _interpolatePath(op.path, pathParams);
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
@@ -558,7 +569,8 @@ class ApiEmitter {
         PrimitiveKind.string => p.dartName,
         _ => '${p.dartName}.toString()',
       },
-      IrEnum() => '${p.dartName}.toJson()',
+      IrEnum(valueKind: PrimitiveKind.string) => '${p.dartName}.toJson()',
+      IrEnum() => '${p.dartName}.value.toString()',
       _ => '${p.dartName}.toString()',
     };
   }
@@ -773,7 +785,12 @@ class ApiEmitter {
         PrimitiveKind.bytes => 'base64Encode($accessor)',
         _ => '$accessor.toString()',
       },
-      IrEnum() || IrExtensionType() => '$accessor.toJson()',
+      IrEnum(valueKind: PrimitiveKind.string) => '$accessor.toJson()',
+      IrEnum() => '$accessor.value.toString()',
+      IrExtensionType(:final inner) =>
+        inner.kind == PrimitiveKind.string
+            ? '$accessor.toJson()'
+            : '$accessor.toJson().toString()',
       _ => '$accessor.toString()',
     };
   }
@@ -1000,17 +1017,7 @@ class ApiEmitter {
     final httpMethod = _httpMethodString(op);
 
     // Reuse path interpolation logic
-    final pathParamsByName = {for (final p in pathParams) p.name: p};
-    final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
-      final p = pathParamsByName[m[1]];
-      if (p == null) return m[0]!;
-      final type = p.type;
-      final isString = type is IrPrimitive && type.kind == PrimitiveKind.string;
-      final encodeExpr = isString
-          ? 'Uri.encodeComponent(${p.dartName})'
-          : 'Uri.encodeComponent(${p.dartName}.toString())';
-      return '\${$encodeExpr}';
-    });
+    final path = _interpolatePath(op.path, pathParams);
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
@@ -1465,7 +1472,8 @@ class ApiEmitter {
         PrimitiveKind.duration => '$accessor.inMilliseconds.toString()',
         PrimitiveKind.bytes => accessor, // handled separately as file
       },
-      IrEnum() => '$accessor.toJson()',
+      IrEnum(valueKind: PrimitiveKind.string) => '$accessor.toJson()',
+      IrEnum() => '$accessor.value.toString()',
       IrExtensionType(:final inner) =>
         inner.kind == PrimitiveKind.string
             ? '$accessor.toJson()'

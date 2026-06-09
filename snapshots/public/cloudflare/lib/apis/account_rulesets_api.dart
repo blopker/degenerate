@@ -294,7 +294,7 @@ Future<ApiResult<dynamic, Never>> getAccountEntrypointRuleset({required Rulesets
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.value)}/entrypoint',
   headers: headers,
   options: options,
 );
@@ -317,7 +317,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.value)}/entrypoint',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -340,7 +340,7 @@ Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint/versions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.value)}/entrypoint/versions',
   headers: headers,
   options: options,
 );
@@ -362,7 +362,7 @@ Future<ApiResult<dynamic, Never>> getAccountEntrypointRulesetVersion({required R
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toString())}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.value)}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
   headers: headers,
   options: options,
 );

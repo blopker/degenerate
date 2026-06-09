@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> getAccountsAccountIdLogpushDatas
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/fields',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.value)}/fields',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<List<LogpushLogpushJob>?, Never>> getAccountsAccountIdLogpushDa
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/jobs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.value)}/jobs',
   headers: headers,
   options: options,
 );

@@ -39,7 +39,7 @@ Future<ApiResult<CustomPagesCustomPage?, Never>> customPagesForAnAccountGetACust
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.value)}',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.value)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

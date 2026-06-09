@@ -9,7 +9,7 @@ final class Spec02RootInfoServersTagsSecurity {
     'apiKeyAuth': const ApiSecurityScheme(name: 'apiKeyAuth', type: ApiSecuritySchemeType.apiKey, parameterName: 'x-api-key', location: ApiKeyLocation.header),
   };
 
-  static final globalRequirements = [const ApiSecurityRequirement({}), const ApiSecurityRequirement({'apiKeyAuth': []})];
+  static final globalRequirements = <ApiSecurityRequirement>[const ApiSecurityRequirement({}), const ApiSecurityRequirement({'apiKeyAuth': []})];
 
   static ApiConfig applyApiKeyAuth(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});
 

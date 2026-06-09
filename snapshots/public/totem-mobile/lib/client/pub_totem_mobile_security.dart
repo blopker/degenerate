@@ -13,130 +13,164 @@ final class PubTotemMobileSecurity {
     ),
   };
 
-  static final totemApiMobileApiRegisterFcmTokenRequirements = [
+  static final totemApiMobileApiRegisterFcmTokenRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemApiMobileApiUnregisterFcmTokenRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemOnboardMobileApiOnboardGetRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemOnboardMobileApiOnboardPostRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemUsersMobileApiGetCurrentUserRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemUsersMobileApiGetUserProfileRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemUsersMobileApiUpdateCurrentUserRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemUsersMobileApiUpdateCurrentUserImageRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemUsersMobileApiDeleteCurrentUserRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemUsersMobileApiKeeperRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemApiMobileApiUnregisterFcmTokenRequirements = [
+  static final totemUsersMobileApiSubmitFeedbackRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiSubscribeToSpaceRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiUnsubscribeToSpaceRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiListSubscriptionsRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiListSpacesRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiGetSpaceDetailRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiGetKeeperSpacesRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiGetSessionDetailRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiPostSessionFeedbackRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiGetSessionsHistoryRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiGetRecommendedSpacesRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiGetSpacesSummaryRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiRsvpConfirmRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemSpacesMobileApiRsvpCancelRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemBlogMobileApiListPostsRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemBlogMobileApiPostRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemOnboardMobileApiOnboardGetRequirements = [
+  static final totemMeetingsMobileApiGetLivekitTokenRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiPassTotemEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiAcceptTotemEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiStartRoomEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiEndRoomEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiMuteParticipantEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiMuteAllParticipantsEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiRemoveParticipantEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiReorderParticipantsEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemMeetingsMobileApiGetRoomStateEndpointRequirements =
+      <ApiSecurityRequirement>[
+        const ApiSecurityRequirement({'JWTAuth': []}),
+      ];
+  static final totemRoomsApiPostEventRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemOnboardMobileApiOnboardPostRequirements = [
+  static final totemRoomsApiGetStateRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemUsersMobileApiGetCurrentUserRequirements = [
+  static final totemRoomsApiJoinRoomRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemUsersMobileApiGetUserProfileRequirements = [
+  static final totemRoomsApiMuteRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemUsersMobileApiUpdateCurrentUserRequirements = [
+  static final totemRoomsApiMuteAllRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
-  static final totemUsersMobileApiUpdateCurrentUserImageRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemUsersMobileApiDeleteCurrentUserRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemUsersMobileApiKeeperRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemUsersMobileApiSubmitFeedbackRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiSubscribeToSpaceRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiUnsubscribeToSpaceRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiListSubscriptionsRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiListSpacesRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiGetSpaceDetailRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiGetKeeperSpacesRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiGetSessionDetailRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiPostSessionFeedbackRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiGetSessionsHistoryRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiGetRecommendedSpacesRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiGetSpacesSummaryRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiRsvpConfirmRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemSpacesMobileApiRsvpCancelRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemBlogMobileApiListPostsRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemBlogMobileApiPostRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiGetLivekitTokenRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiPassTotemEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiAcceptTotemEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiStartRoomEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiEndRoomEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiMuteParticipantEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiMuteAllParticipantsEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiRemoveParticipantEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiReorderParticipantsEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemMeetingsMobileApiGetRoomStateEndpointRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemRoomsApiPostEventRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemRoomsApiGetStateRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemRoomsApiJoinRoomRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemRoomsApiMuteRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemRoomsApiMuteAllRequirements = [
-    const ApiSecurityRequirement({'JWTAuth': []}),
-  ];
-  static final totemRoomsApiRemoveRequirements = [
+  static final totemRoomsApiRemoveRequirements = <ApiSecurityRequirement>[
     const ApiSecurityRequirement({'JWTAuth': []}),
   ];
 

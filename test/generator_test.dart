@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:degenerate/src/generator.dart';
@@ -337,6 +338,127 @@ void main() {
           reason: 'Workspace mode should emit pubspec.yaml');
       expect(files['pubspec.yaml'], contains('resolution: workspace'));
     });
+
+    test(
+      'apiKey scheme missing `in` defaults to header and warns (issue #8)',
+      () async {
+        final specFile = File(p.join(tempDir.path, 'missing-in.json'));
+        specFile.writeAsStringSync('''
+{
+  "openapi": "3.0.0",
+  "info": { "title": "repro", "version": "0.0.0" },
+  "paths": {
+    "/me": {
+      "get": {
+        "operationId": "getMe",
+        "security": [{ "Authorization": [] }],
+        "responses": { "200": { "description": "ok" } }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Authorization": {
+        "type": "apiKey",
+        "name": "Authorization"
+      }
+    }
+  }
+}
+''');
+
+        final config = GeneratorConfig(
+          inputPath: specFile.path,
+          outputDir: tempDir.path,
+          packageName: 'my_api',
+          dryRun: true,
+        );
+
+        final logs = <String>[];
+        final files = await runZoned(
+          () => Generator(config).generate(),
+          zoneSpecification: ZoneSpecification(
+            print: (_, _, _, line) => logs.add(line),
+          ),
+        );
+
+        final securityFile = files['client/my_api_security.dart']!;
+        final sdkFile = files['client/my_api_api.dart']!;
+
+        // The with/apply pair must be consistent: either both or neither.
+        // With the header default, both should be emitted.
+        expect(
+          securityFile,
+          contains(
+            'static ApiConfig applyAuthorization(ApiConfig config, String value)',
+          ),
+        );
+        expect(securityFile, contains('location: ApiKeyLocation.header'));
+        expect(sdkFile, contains('withAuthorization(String value)'));
+
+        expect(
+          logs.join('\n'),
+          contains("missing the required 'in' field"),
+          reason: 'Non-conforming specs should generate code with a warning',
+        );
+      },
+    );
+
+    test(
+      'apiKey scheme missing `name` defaults to the scheme key and warns '
+      '(issue #8)',
+      () async {
+        final specFile = File(p.join(tempDir.path, 'missing-name.json'));
+        specFile.writeAsStringSync('''
+{
+  "openapi": "3.0.0",
+  "info": { "title": "repro", "version": "0.0.0" },
+  "paths": {
+    "/me": {
+      "get": {
+        "operationId": "getMe",
+        "security": [{ "X-Api-Key": [] }],
+        "responses": { "200": { "description": "ok" } }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "X-Api-Key": {
+        "type": "apiKey",
+        "in": "header"
+      }
+    }
+  }
+}
+''');
+
+        final config = GeneratorConfig(
+          inputPath: specFile.path,
+          outputDir: tempDir.path,
+          packageName: 'my_api',
+          dryRun: true,
+        );
+
+        final logs = <String>[];
+        final files = await runZoned(
+          () => Generator(config).generate(),
+          zoneSpecification: ZoneSpecification(
+            print: (_, _, _, line) => logs.add(line),
+          ),
+        );
+
+        final securityFile = files['client/my_api_security.dart']!;
+        expect(
+          securityFile,
+          contains(
+            'static ApiConfig applyXApiKey(ApiConfig config, String value)',
+          ),
+        );
+        expect(securityFile, contains("'X-Api-Key': value"));
+        expect(logs.join('\n'), contains("missing the required 'name' field"));
+      },
+    );
 
     test('output dir defaults to lib/<name>', () async {
       final specPath = p.join(

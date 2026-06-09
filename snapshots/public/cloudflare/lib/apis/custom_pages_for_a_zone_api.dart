@@ -39,7 +39,7 @@ Future<ApiResult<CustomPagesCustomPage, Never>> customPagesForAZoneGetACustomPag
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.value)}',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneIdentifier.toString())}/custom_pages/${Uri.encodeComponent(identifier.value)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
