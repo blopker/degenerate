@@ -24,8 +24,11 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final variant = result.dataOrThrow as PostAuthSuccess200;
-      expect(variant.data.accessToken, 'jwt');
+      if (result.dataOrThrow case PostAuthSuccess200(:final data)) {
+        expect(data.accessToken, 'jwt');
+      } else {
+        fail('expected PostAuthSuccess200, got $result');
+      }
     });
 
     test('201 parses the 201 variant', () async {
@@ -33,8 +36,11 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final variant = result.dataOrThrow as PostAuthSuccess201;
-      expect(variant.data.userId, 42);
+      if (result.dataOrThrow case PostAuthSuccess201(:final data)) {
+        expect(data.userId, 42);
+      } else {
+        fail('expected PostAuthSuccess201, got $result');
+      }
     });
 
     test('undeclared 2xx falls back to the default variant', () async {
@@ -42,8 +48,11 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final variant = result.dataOrThrow as PostAuthSuccessDefault;
-      expect(variant.data.defaultErrorMessage, 'odd');
+      if (result.dataOrThrow case PostAuthSuccessDefault(:final data)) {
+        expect(data.defaultErrorMessage, 'odd');
+      } else {
+        fail('expected PostAuthSuccessDefault, got $result');
+      }
     });
 
     test('401 parses the 401 error variant', () async {
@@ -51,10 +60,14 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final error = result as ApiError<PostAuthSuccess, PostAuthError>;
-      expect(error.statusCode, 401);
-      final variant = error.error! as PostAuthError401;
-      expect(variant.data.errorMessage, 'denied');
+      if (result case ApiError(
+        statusCode: 401,
+        error: PostAuthError401(:final data),
+      )) {
+        expect(data.errorMessage, 'denied');
+      } else {
+        fail('expected ApiError with PostAuthError401, got $result');
+      }
     });
 
     test('undeclared error code falls back to the default variant', () async {
@@ -62,9 +75,11 @@ void main() {
 
       final result = await api.postAuth(body: body);
 
-      final error = result as ApiError<PostAuthSuccess, PostAuthError>;
-      final variant = error.error! as PostAuthErrorDefault;
-      expect(variant.data.defaultErrorMessage, 'teapot');
+      if (result case ApiError(error: PostAuthErrorDefault(:final data))) {
+        expect(data.defaultErrorMessage, 'teapot');
+      } else {
+        fail('expected ApiError with PostAuthErrorDefault, got $result');
+      }
     });
 
     test('malformed body surfaces as ApiParseException', () async {
@@ -95,8 +110,11 @@ void main() {
 
       final result = await api.deleteItem(id: 'x');
 
-      final variant = result.dataOrThrow as DeleteItemSuccess200;
-      expect(variant.data.deleted, isTrue);
+      if (result.dataOrThrow case DeleteItemSuccess200(:final data)) {
+        expect(data.deleted, isTrue);
+      } else {
+        fail('expected DeleteItemSuccess200, got $result');
+      }
     });
 
     test('204 parses the payload-free variant', () async {
@@ -112,9 +130,11 @@ void main() {
 
       final result = await api.deleteItem(id: 'x');
 
-      final error = result as ApiError<DeleteItemSuccess, DeleteItemError>;
-      final variant = error.error! as DeleteItemError4xx;
-      expect(variant.data.code, 404);
+      if (result case ApiError(error: DeleteItemError4xx(:final data))) {
+        expect(data.code, 404);
+      } else {
+        fail('expected ApiError with DeleteItemError4xx, got $result');
+      }
     });
 
     test('503 matches the 5XX range variant', () async {
@@ -122,9 +142,11 @@ void main() {
 
       final result = await api.deleteItem(id: 'x');
 
-      final error = result as ApiError<DeleteItemSuccess, DeleteItemError>;
-      final variant = error.error! as DeleteItemError5xx;
-      expect(variant.data.trace, 'boom');
+      if (result case ApiError(error: DeleteItemError5xx(:final data))) {
+        expect(data.trace, 'boom');
+      } else {
+        fail('expected ApiError with DeleteItemError5xx, got $result');
+      }
     });
 
     test(
@@ -134,10 +156,17 @@ void main() {
 
         final result = await api.deleteItem(id: 'x');
 
-        final error = result as ApiError<DeleteItemSuccess, DeleteItemError>;
-        final variant = error.error! as DeleteItemError$Unknown;
-        expect(variant.statusCode, 302);
-        expect(variant.body, 'moved');
+        if (result case ApiError(
+          error: DeleteItemError$Unknown(:final statusCode, :final body),
+        )) {
+          expect(statusCode, 302);
+          expect(body, 'moved');
+        } else {
+          fail(
+            r'expected ApiError with DeleteItemError$Unknown, '
+            'got $result',
+          );
+        }
       },
     );
 
@@ -146,9 +175,18 @@ void main() {
 
       final result = await api.deleteItem(id: 'x');
 
-      final variant = result.dataOrThrow as DeleteItemSuccess$Unknown;
-      expect(variant.statusCode, 250);
-      expect(variant.body, 'surprise');
+      if (result.dataOrThrow case DeleteItemSuccess$Unknown(
+        :final statusCode,
+        :final body,
+      )) {
+        expect(statusCode, 250);
+        expect(body, 'surprise');
+      } else {
+        fail(
+          r'expected DeleteItemSuccess$Unknown, '
+          'got $result',
+        );
+      }
     });
   });
 
