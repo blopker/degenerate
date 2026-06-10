@@ -211,12 +211,12 @@ class OperationLowerer {
       operationId,
       dartMethod,
       httpMethod,
-      path,
+      SpecString(path),
       customMethod: httpMethod == HttpMethod.custom
-          ? method.toUpperCase()
+          ? SpecString(method.toUpperCase())
           : null,
-      summary: summary,
-      description: description,
+      summary: SpecString.orNull(summary),
+      description: SpecString.orNull(description),
       parameters: parameters,
       requestBody: requestBody,
       responses: responses,
@@ -229,12 +229,12 @@ class OperationLowerer {
   List<IrSecurityRequirement>? _lowerSecurityRequirements(dynamic value) {
     if (value is! List) return null;
     return value.whereType<Map<String, dynamic>>().map((requirement) {
-      final schemes = <String, List<String>>{};
+      final schemes = <SpecString, List<String>>{};
       for (final entry in requirement.entries) {
         final scopes = entry.value is List
             ? (entry.value as List).map((e) => e.toString()).toList()
             : const <String>[];
-        schemes[entry.key] = scopes;
+        schemes[SpecString(entry.key)] = scopes;
       }
       return IrSecurityRequirement(schemes);
     }).toList();
@@ -291,7 +291,7 @@ class OperationLowerer {
         (rawSchema is Map<String, dynamic> ? rawSchema['default'] : null);
 
     return IrParameter(
-      name,
+      SpecString(name),
       dartName,
       location,
       type,
@@ -374,7 +374,7 @@ class OperationLowerer {
     final content = raw['content'] as Map<String, dynamic>?;
     if (content == null) return IrRequestBody({}, isRequired: required);
 
-    final irContent = <String, IrMediaType>{};
+    final irContent = <SpecString, IrMediaType>{};
     for (final entry in content.entries) {
       final mediaType = entry.key;
       final mediaMap = entry.value;
@@ -395,7 +395,7 @@ class OperationLowerer {
       // encoding is a map of property names to encoding objects, not a string.
       // Ignore it for now - it's only relevant for multipart form
       // serialization.
-      irContent[mediaType] = IrMediaType(irSchema);
+      irContent[SpecString(mediaType)] = IrMediaType(irSchema);
     }
 
     return IrRequestBody(irContent, isRequired: required);
@@ -411,7 +411,7 @@ class OperationLowerer {
   }) {
     final description = response['description'] as String?;
     final content = response['content'] as Map<String, dynamic>?;
-    final irContent = <String, IrMediaType>{};
+    final irContent = <SpecString, IrMediaType>{};
 
     if (content != null) {
       for (final entry in content.entries) {
@@ -450,7 +450,8 @@ class OperationLowerer {
         final irSchema = rawSchema != null
             ? irMapper.lowerUntypedInlineSchema(rawSchema, nameHint: nameHint)
             : irItemSchema!;
-        irContent[mediaType] = IrMediaType(irSchema, itemSchema: irItemSchema);
+        irContent[SpecString(mediaType)] =
+            IrMediaType(irSchema, itemSchema: irItemSchema);
       }
     }
 
@@ -472,16 +473,16 @@ class OperationLowerer {
         headers.add(
           IrField(
             sanitizeDartName(toCamelCase(headerName)),
-            headerName,
+            SpecString(headerName),
             headerType,
-            description: headerDescription,
+            description: SpecString.orNull(headerDescription),
           ),
         );
       }
     }
 
     return IrResponse(
-      description: description,
+      description: SpecString.orNull(description),
       content: irContent,
       headers: headers,
     );

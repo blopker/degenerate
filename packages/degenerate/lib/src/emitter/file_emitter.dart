@@ -259,7 +259,7 @@ class FileEmitter {
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
+        _emitOneOfTypedef(type.name, variants, typeRegistry),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
         typeRegistry: typeRegistry,
@@ -267,7 +267,7 @@ class FileEmitter {
       IrAnyOf(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
+        _emitOneOfTypedef(type.name, variants, typeRegistry),
       IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
       _ => [],
@@ -283,7 +283,6 @@ class FileEmitter {
   List<Spec> _emitOneOfTypedef(
     String name,
     List<IrType> variants,
-    String? description,
     Map<String, IrType> typeRegistry,
   ) {
     final oneOfRef = oneOfTypeReference(variants);
@@ -368,7 +367,7 @@ class FileEmitter {
       if (obj == null) return type;
       for (final fieldName in unwrapFields) {
         for (final f in obj.fields) {
-          if (f.originalName == fieldName) return f.type;
+          if (f.originalName.test((s) => s == fieldName)) return f.type;
         }
       }
       return type;
@@ -383,7 +382,7 @@ class FileEmitter {
       // prefer application/json, fallback to first content type.
       if (op.requestBody != null && op.requestBody!.content.isNotEmpty) {
         final bodyContent = preferredContent(op.requestBody!.content)!;
-        if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
+        if (bodyContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
         final schema = bodyContent.$2.schema;
         // Request bodies use .toJson() only - don't resolve OneOf variants.
         _collectTopLevelTypeName(schema, names);
@@ -397,7 +396,7 @@ class FileEmitter {
         if (resp != null) {
           final content = preferredContent(resp.content);
           if (content != null) {
-            if (isJsonLikeMediaType(content.$1)) needsConvert = true;
+            if (content.$1.test(isJsonLikeMediaType)) needsConvert = true;
             final schema = maybeUnwrap(content.$2.schema);
             _collectTopLevelTypeName(schema, names, typeRegistry);
             if (isBytesType(schema)) needsTypedData = true;
@@ -416,7 +415,7 @@ class FileEmitter {
       // logic: prefer default, then first 4xx+, only one error type per
       // operation).
       {
-        (String, IrMediaType)? errorContent;
+        (SpecString, IrMediaType)? errorContent;
         if (op.defaultResponse != null) {
           errorContent = preferredContent(op.defaultResponse!.content);
         }
@@ -429,7 +428,7 @@ class FileEmitter {
           }
         }
         if (errorContent != null) {
-          if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
+          if (errorContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
           _collectTopLevelTypeName(errorContent.$2.schema, names, typeRegistry);
         }
       }
@@ -882,7 +881,7 @@ class FileEmitter {
       '  static final securitySchemes = <String, ApiSecurityScheme>{',
     );
     for (final scheme in securitySchemes) {
-      buf.writeln("    '${scheme.name}': ${_securitySchemeLiteral(scheme)},");
+      buf.writeln('    ${scheme.name.literal}: ${_securitySchemeLiteral(scheme)},');
     }
     buf.writeln('  };');
     buf.writeln();
@@ -927,7 +926,7 @@ class FileEmitter {
     };
     // Only include optional parameters that differ from their defaults.
     final args = <String>[
-      "name: '${escapeDartString(scheme.name)}'",
+      "name: '${scheme.name.escaped}'",
       'type: $type',
     ];
     if (scheme.scheme != null) {
@@ -990,7 +989,7 @@ class FileEmitter {
           final entries = requirement.schemes.entries
               .map(
                 (entry) =>
-                    "'${entry.key}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
+                    "${entry.key.literal}: [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
           return 'const ApiSecurityRequirement({$entries})';
@@ -1022,7 +1021,7 @@ class FileEmitter {
   }
 
   String? _securityApplyMethod(IrSecurityScheme scheme) {
-    final methodName = 'apply${_securityMethodSuffix(scheme.name)}';
+    final methodName = 'apply${scheme.name.toIdentifier(_securityMethodSuffix)}';
     // An apiKey scheme without a parameter name can't be applied anywhere.
     if (scheme.type == 'apiKey' && scheme.parameterName == null) return null;
     return switch (scheme.type) {
@@ -1056,7 +1055,7 @@ class FileEmitter {
     // Only emit a `with*` helper when the matching `apply*` method exists,
     // so the facade never references an undefined method.
     if (_securityApplyMethod(scheme) == null) return null;
-    final suffix = _securityMethodSuffix(scheme.name);
+    final suffix = scheme.name.toIdentifier(_securityMethodSuffix);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
     return switch (scheme.type) {

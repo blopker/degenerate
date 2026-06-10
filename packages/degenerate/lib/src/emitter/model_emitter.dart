@@ -61,7 +61,7 @@ class ModelEmitter {
 
   List<String> _buildDocs() {
     if (model.description == null) return [];
-    return formatDocComment(model.description!);
+    return model.description!.docComment;
   }
 
   Iterable<Field> _buildFields() {
@@ -75,7 +75,7 @@ class ModelEmitter {
             forceNullable: !f.isRequired && !_hasDefault(f),
           )
           ..docs.addAll(
-            f.description != null ? formatDocComment(f.description!) : [],
+            f.description != null ? f.description!.docComment : [],
           ),
       ),
     );
@@ -128,7 +128,7 @@ class ModelEmitter {
   Constructor _buildFromJson() {
     var args = model.fields
         .map((f) {
-          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
+          final accessor = 'json[${f.originalName.literal}]';
           // A field is "nullable in fromJson" if:
           // 1. It's not required AND has no default, OR
           // 2. Its type is explicitly nullable (required + nullable is valid in
@@ -148,7 +148,7 @@ class ModelEmitter {
             // The constructor default handles missing values.
             final defaultCode = _defaultCode(f);
             final defaultStr = defaultCode?.toString() ?? 'null';
-            return '  ${f.name}: json.containsKey(${dartStringLiteral(f.originalName)}) ? $code : $defaultStr,';
+            return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? $code : $defaultStr,';
           }
           return '  ${f.name}: $code,';
         })
@@ -157,7 +157,7 @@ class ModelEmitter {
     // Append overflow map extraction if additionalProperties is defined.
     if (model.additionalProperties != null) {
       final knownKeysList = model.fields
-          .map((f) => dartStringLiteral(f.originalName))
+          .map((f) => f.originalName.literal)
           .toList();
       // Use explicit <String>{} to avoid Dart parsing empty const {} as a Map.
       final knownKeys = knownKeysList.isEmpty
@@ -205,7 +205,7 @@ class ModelEmitter {
   Method _buildToJson() {
     final entries = model.fields
         .map((f) {
-          final key = dartStringLiteral(f.originalName);
+          final key = f.originalName.literal;
 
           final value = buildToJsonCode(f.type, f.name);
           // Only use null check if the Dart field type is actually nullable.
@@ -292,10 +292,10 @@ class ModelEmitter {
     final checks = requiredFieldObjects
         .map((f) {
           final keyCheck =
-              'json.containsKey(${dartStringLiteral(f.originalName)})';
+              'json.containsKey(${f.originalName.literal})';
           final typeCheck = _canParseTypeCheck(
             f.type,
-            'json[${dartStringLiteral(f.originalName)}]',
+            'json[${f.originalName.literal}]',
           );
           if (typeCheck != null) {
             return '$keyCheck && $typeCheck';
@@ -309,7 +309,7 @@ class ModelEmitter {
     } else if (model.fields.isNotEmpty) {
       // No required fields — check that at least one known property key exists.
       final knownKeys = model.fields
-          .map((f) => dartStringLiteral(f.originalName))
+          .map((f) => f.originalName.literal)
           .join(', ');
       body = 'return json.keys.any((key) => const {$knownKeys}.contains(key));';
     } else {

@@ -15,7 +15,7 @@ class DiscriminatedUnionEmitter {
   final IrDiscriminatedUnion union;
 
   /// The Dart getter name for the discriminator property.
-  String get _discDartName => toCamelCase(union.discriminatorProperty);
+  String get _discDartName => union.discriminatorProperty.toIdentifier(toCamelCase);
 
   /// Class name for the variant wrapping [type], keyed by discriminator
   /// value.
@@ -26,16 +26,16 @@ class DiscriminatedUnionEmitter {
   /// the model inside the union's library — making the wrapper's fromJson
   /// self-recursive — and make the barrel exports ambiguous, so insert a `$`
   /// separator in that case (matching the `$Unknown` variant style).
-  String _variantClassName(String key, IrType type) {
-    final derived = variantClassName(union.name, key);
+  String _variantClassName(SpecString key, IrType type) {
+    final derived = key.toIdentifier((k) => variantClassName(union.name, k));
     if (derived == irTypeName(type)) {
-      return '${union.name}\$${toPascalCase(key)}';
+      return key.toIdentifier((k) => '${union.name}\$${toPascalCase(k)}');
     }
     return derived;
   }
 
   /// The original JSON key for the discriminator property.
-  String get _discJsonKey => union.discriminatorProperty;
+  SpecString get _discJsonKey => union.discriminatorProperty;
 
   /// Emit the sealed class hierarchy as code_builder specs.
   List<Spec> emit() {
@@ -97,14 +97,14 @@ class DiscriminatedUnionEmitter {
 
   List<String> _buildDocs() {
     if (union.description == null) return [];
-    return formatDocComment(union.description!);
+    return union.description!.docComment;
   }
 
   Constructor _buildFromJson(String unknownClassName) {
     final cases = union.mapping.entries
         .map((e) {
           final className = _variantClassName(e.key, e.value);
-          return "  '${e.key}' => $className.fromJson(json),";
+          return '  ${e.key.literal} => $className.fromJson(json),';
         })
         .join('\n');
 
@@ -120,10 +120,10 @@ class DiscriminatedUnionEmitter {
           ),
         )
         ..docs.add(
-          '/// Deserialize from JSON, dispatching on the `$_discJsonKey` discriminator.',
+          '/// Deserialize from JSON, dispatching on the `${_discJsonKey.commentText}` discriminator.',
         )
         ..body = Code(
-          "return switch (json['$_discJsonKey']) {\n"
+          'return switch (json[${_discJsonKey.literal}]) {\n'
           '$cases\n'
           '  _ => $unknownClassName(json),\n'
           '};',
@@ -170,7 +170,7 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return json['$_discJsonKey'] as String? ?? '';"),
+              ..body = Code("return json[${_discJsonKey.literal}] as String? ?? '';"),
           ),
         )
         ..methods.add(
@@ -197,7 +197,7 @@ class DiscriminatedUnionEmitter {
     );
   }
 
-  List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
+  List<Spec> _buildVariant(SpecString discriminatorValue, IrType variantType) {
     final className = _variantClassName(discriminatorValue, variantType);
 
     // If the variant is an IrObject, emit it as a subclass with all its fields
@@ -213,7 +213,7 @@ class DiscriminatedUnionEmitter {
     return [_buildRefVariant(className, discriminatorValue, variantType)];
   }
 
-  Class _buildObjectVariant(String className, String discValue, IrObject obj) {
+  Class _buildObjectVariant(String className, SpecString discValue, IrObject obj) {
     // Filter out the discriminator field from the object's fields
     final fields = obj.fields
         .where((f) => f.originalName != _discJsonKey)
@@ -240,15 +240,15 @@ class DiscriminatedUnionEmitter {
 
     final fromJsonArgs = fields
         .map((f) {
-          final accessor = "json['${f.originalName}']";
+          final accessor = 'json[${f.originalName.literal}]';
           final isOptional = !f.isRequired;
           return '  ${f.name}: ${buildFromJsonCode(f.type, accessor, isOptional: isOptional)},';
         })
         .join('\n');
 
-    final toJsonEntries = <String>["  '$_discJsonKey': $_discDartName,"];
+    final toJsonEntries = <String>['  ${_discJsonKey.literal}: $_discDartName,'];
     for (final f in fields) {
-      final key = "'${f.originalName}'";
+      final key = f.originalName.literal;
       final isNullable = !f.isRequired || f.type.isNullable;
       final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
       if (!f.isRequired) {
@@ -320,7 +320,7 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
+              ..body = Code('return ${discValue.literal};'),
           ),
         )
         ..methods.add(
@@ -352,12 +352,12 @@ class DiscriminatedUnionEmitter {
       IrDiscriminatedUnion() ||
       IrUntaggedUnion() ||
       // Spread first so the discriminator key always wins.
-      IrAnyOf() => "return {...$toJsonExpr, '$_discJsonKey': $_discDartName};",
-      _ => "return {'$_discJsonKey': $_discDartName, 'data': $toJsonExpr};",
+      IrAnyOf() => 'return {...$toJsonExpr, ${_discJsonKey.literal}: $_discDartName};',
+      _ => "return {${_discJsonKey.literal}: $_discDartName, 'data': $toJsonExpr};",
     };
   }
 
-  Class _buildRefVariant(String className, String discValue, IrType type) {
+  Class _buildRefVariant(String className, SpecString discValue, IrType type) {
     final typeName = irTypeName(type);
     // Sanitize type names like "List<String>" by removing angle brackets
     final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
@@ -414,7 +414,7 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
+              ..body = Code('return ${discValue.literal};'),
           ),
         )
         ..methods.add(
@@ -858,7 +858,7 @@ class AnyOfEmitter {
 
   List<String> _buildDocs() {
     if (anyOf.description == null) return [];
-    return formatDocComment(anyOf.description!);
+    return anyOf.description!.docComment;
   }
 
   Constructor _buildFromJson(

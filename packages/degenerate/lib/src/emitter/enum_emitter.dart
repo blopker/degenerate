@@ -121,7 +121,7 @@ class EnumEmitter {
 
   List<String> _buildDocs() {
     if (irEnum.description == null) return [];
-    return formatDocComment(irEnum.description!);
+    return irEnum.description!.docComment;
   }
 
   Constructor _buildFromJson(String className, List<(String, String)> deduped) {

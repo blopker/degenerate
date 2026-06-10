@@ -21,24 +21,28 @@ bool isJsonLikeMediaType(String mediaType) {
 ///
 /// Preference order: JSON > text/plain > multipart/form-data >
 /// form-urlencoded > application/octet-stream > first entry.
-(String, IrMediaType)? preferredContent(Map<String, IrMediaType> content) {
+(SpecString, IrMediaType)? preferredContent(
+  Map<SpecString, IrMediaType> content,
+) {
   if (content.isEmpty) return null;
   for (final entry in content.entries) {
-    if (isJsonLikeMediaType(entry.key)) return (entry.key, entry.value);
+    if (entry.key.test(isJsonLikeMediaType)) return (entry.key, entry.value);
   }
   for (final entry in content.entries) {
-    if (normalizeMediaType(entry.key) == _textPlainMediaType) {
+    if (entry.key.test((s) => normalizeMediaType(s) == _textPlainMediaType)) {
       return (entry.key, entry.value);
     }
   }
   for (final entry in content.entries) {
-    if (isMultipartMediaType(entry.key)) return (entry.key, entry.value);
+    if (entry.key.test(isMultipartMediaType)) return (entry.key, entry.value);
   }
   for (final entry in content.entries) {
-    if (isFormUrlencodedMediaType(entry.key)) return (entry.key, entry.value);
+    if (entry.key.test(isFormUrlencodedMediaType)) {
+      return (entry.key, entry.value);
+    }
   }
   for (final entry in content.entries) {
-    if (isOctetStreamMediaType(entry.key)) return (entry.key, entry.value);
+    if (entry.key.test(isOctetStreamMediaType)) return (entry.key, entry.value);
   }
   final first = content.entries.first;
   return (first.key, first.value);
@@ -82,12 +86,12 @@ enum StreamKind {
 }
 
 /// Find the `text/event-stream` response content for an operation, if any.
-(String, IrMediaType)? eventStreamContent(IrOperation op) {
+(SpecString, IrMediaType)? eventStreamContent(IrOperation op) {
   // Check 2xx responses for text/event-stream content type.
   for (final entry in op.responses.entries) {
     if (entry.key >= 200 && entry.key < 300) {
       for (final content in entry.value.content.entries) {
-        if (isEventStreamMediaType(content.key)) {
+        if (content.key.test(isEventStreamMediaType)) {
           return (content.key, content.value);
         }
       }
@@ -97,14 +101,14 @@ enum StreamKind {
 }
 
 /// Find any streaming response content (SSE or JSONL) for an operation.
-(String, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
+(SpecString, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
   for (final entry in op.responses.entries) {
     if (entry.key >= 200 && entry.key < 300) {
       for (final content in entry.value.content.entries) {
-        if (isEventStreamMediaType(content.key)) {
+        if (content.key.test(isEventStreamMediaType)) {
           return (content.key, content.value, StreamKind.sse);
         }
-        if (isJsonlMediaType(content.key)) {
+        if (content.key.test(isJsonlMediaType)) {
           return (content.key, content.value, StreamKind.jsonl);
         }
       }
