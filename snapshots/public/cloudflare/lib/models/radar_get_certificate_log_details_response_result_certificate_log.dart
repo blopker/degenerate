@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_log_details_response_result_certificate_log_performance.dart';import 'radar_get_certificate_log_details_response_result_certificate_log_related.dart';/// The API standard that the certificate log follows.
-@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogApi {const RadarGetCertificateLogDetailsResponseResultCertificateLogApi._(this.value);
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLog2 {const RadarGetCertificateLogDetailsResponseResultCertificateLog2._(this.value);
 
-factory RadarGetCertificateLogDetailsResponseResultCertificateLogApi.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateLogDetailsResponseResultCertificateLog2.fromJson(String json) { return switch (json) {
   'RFC6962' => rfc6962,
   'STATIC' => $static,
-  _ => RadarGetCertificateLogDetailsResponseResultCertificateLogApi._(json),
+  _ => RadarGetCertificateLogDetailsResponseResultCertificateLog2._(json),
 }; }
 
-static const RadarGetCertificateLogDetailsResponseResultCertificateLogApi rfc6962 = RadarGetCertificateLogDetailsResponseResultCertificateLogApi._('RFC6962');
+static const RadarGetCertificateLogDetailsResponseResultCertificateLog2 rfc6962 = RadarGetCertificateLogDetailsResponseResultCertificateLog2._('RFC6962');
 
-static const RadarGetCertificateLogDetailsResponseResultCertificateLogApi $static = RadarGetCertificateLogDetailsResponseResultCertificateLogApi._('STATIC');
+static const RadarGetCertificateLogDetailsResponseResultCertificateLog2 $static = RadarGetCertificateLogDetailsResponseResultCertificateLog2._('STATIC');
 
-static const List<RadarGetCertificateLogDetailsResponseResultCertificateLogApi> values = [rfc6962, $static];
+static const List<RadarGetCertificateLogDetailsResponseResultCertificateLog2> values = [rfc6962, $static];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateLogDetailsResponseResultCertificateLogApi && other.value == value; } 
+    other is RadarGetCertificateLogDetailsResponseResultCertificateLog2 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogApi($value)'; } 
+@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLog2($value)'; } 
  }
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
 @immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogState {const RadarGetCertificateLogDetailsResponseResultCertificateLogState._(this.value);
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLog {const RadarGetCertificateLogDetailsResponseResultCertificateLog({required this.api, required this.avgThroughput, required this.description, required this.endExclusive, required this.lastUpdate, required this.$operator, required this.performance, required this.related, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.submittableCertCount, required this.submittedCertCount, required this.url, });
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLog.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLog(
-  api: RadarGetCertificateLogDetailsResponseResultCertificateLogApi.fromJson(json['api'] as String),
+  api: RadarGetCertificateLogDetailsResponseResultCertificateLog2.fromJson(json['api'] as String),
   avgThroughput: (json['avgThroughput'] as num).toDouble(),
   description: json['description'] as String,
   endExclusive: DateTime.parse(json['endExclusive'] as String),
@@ -83,7 +83,7 @@ factory RadarGetCertificateLogDetailsResponseResultCertificateLog.fromJson(Map<S
 ); }
 
 /// The API standard that the certificate log follows.
-final RadarGetCertificateLogDetailsResponseResultCertificateLogApi api;
+final RadarGetCertificateLogDetailsResponseResultCertificateLog2 api;
 
 /// The average throughput of the CT log, measured in certificates per hour (certs/hour).
 final double avgThroughput;
@@ -159,7 +159,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('submittableCertCount') && json['submittableCertCount'] is String &&
       json.containsKey('submittedCertCount') && json['submittedCertCount'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-RadarGetCertificateLogDetailsResponseResultCertificateLog copyWith({RadarGetCertificateLogDetailsResponseResultCertificateLogApi? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance? Function()? performance, List<RadarGetCertificateLogDetailsResponseResultCertificateLogRelated>? related, String? slug, DateTime? startInclusive, RadarGetCertificateLogDetailsResponseResultCertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) { return RadarGetCertificateLogDetailsResponseResultCertificateLog(
+RadarGetCertificateLogDetailsResponseResultCertificateLog copyWith({RadarGetCertificateLogDetailsResponseResultCertificateLog2? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance? Function()? performance, List<RadarGetCertificateLogDetailsResponseResultCertificateLogRelated>? related, String? slug, DateTime? startInclusive, RadarGetCertificateLogDetailsResponseResultCertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) { return RadarGetCertificateLogDetailsResponseResultCertificateLog(
   api: api ?? this.api,
   avgThroughput: avgThroughput ?? this.avgThroughput,
   description: description ?? this.description,

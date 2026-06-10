@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
+extension type const ListsItemIp(String value) {
+factory ListsItemIp.fromJson(String json) => ListsItemIp(json);
+
+String toJson() => value;
+
+}

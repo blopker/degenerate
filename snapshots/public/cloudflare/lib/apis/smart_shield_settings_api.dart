@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common62_result.dart';import '../models/response_common_failure65.dart';import '../models/smartshield_identifier.dart';import '../models/smartshield_smart_shield_settings_patch_body.dart';/// SmartShieldSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure65.dart';import '../models/smartshield_identifier.dart';import '../models/smartshield_smart_shield_settings_get_response.dart';import '../models/smartshield_smart_shield_settings_patch_body.dart';import '../models/smartshield_smart_shield_settings_patch_response.dart';/// SmartShieldSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class SmartShieldSettingsApi with ApiExecutor {const SmartShieldSettingsAp
 /// Retrieve Smart Shield Settings.
 ///
 /// `GET /zones/{zone_id}/smart_shield`
-Future<ApiResult<ResponseCommon62Result, ResponseCommonFailure65>> smartShieldGetSettings({required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartshieldSmartShieldSettingsGetResponse, ResponseCommonFailure65>> smartShieldGetSettings({required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
+    return SmartshieldSmartShieldSettingsGetResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -38,7 +38,7 @@ return execute(
 /// Set Smart Shield Settings.
 ///
 /// `PATCH /zones/{zone_id}/smart_shield`
-Future<ApiResult<ResponseCommon62Result, ResponseCommonFailure65>> smartShieldPatchSettings({required SmartshieldIdentifier zoneId, required SmartshieldSmartShieldSettingsPatchBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartshieldSmartShieldSettingsPatchResponse, ResponseCommonFailure65>> smartShieldPatchSettings({required SmartshieldIdentifier zoneId, required SmartshieldSmartShieldSettingsPatchBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,7 +53,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
+    return SmartshieldSmartShieldSettingsPatchResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

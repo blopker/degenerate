@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_cache_reserve_value.dart';@immutable final class ZoneCacheSettingsChangeCacheReserveSettingResponseResult {const ZoneCacheSettingsChangeCacheReserveSettingResponseResult({required this.value});
+
+factory ZoneCacheSettingsChangeCacheReserveSettingResponseResult.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeCacheReserveSettingResponseResult(
+  value: CacheRulesCacheReserveValue.fromJson(json['value'] as String),
+); }
+
+/// Value of the Cache Reserve zone setting.
+final CacheRulesCacheReserveValue value;
+
+Map<String, dynamic> toJson() { return {
+  'value': value.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
+ZoneCacheSettingsChangeCacheReserveSettingResponseResult copyWith({CacheRulesCacheReserveValue? value}) { return ZoneCacheSettingsChangeCacheReserveSettingResponseResult(
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZoneCacheSettingsChangeCacheReserveSettingResponseResult &&
+          value == other.value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZoneCacheSettingsChangeCacheReserveSettingResponseResult(value: $value)'; } 
+ }

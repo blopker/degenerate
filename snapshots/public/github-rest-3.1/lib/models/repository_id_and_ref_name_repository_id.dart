@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryIdAndRefNameRepositoryId {const RepositoryIdAndRefNameRepositoryId({this.repositoryIds});
+
+factory RepositoryIdAndRefNameRepositoryId.fromJson(Map<String, dynamic> json) { return RepositoryIdAndRefNameRepositoryId(
+  repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+); }
+
+/// The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass.
+final List<int>? repositoryIds;
+
+Map<String, dynamic> toJson() { return {
+  'repository_ids': ?repositoryIds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'repository_ids'}.contains(key)); } 
+RepositoryIdAndRefNameRepositoryId copyWith({List<int> Function()? repositoryIds}) { return RepositoryIdAndRefNameRepositoryId(
+  repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryIdAndRefNameRepositoryId &&
+          listEquals(repositoryIds, other.repositoryIds); } 
+@override int get hashCode { return Object.hashAll(repositoryIds ?? const []).hashCode; } 
+@override String toString() { return 'RepositoryIdAndRefNameRepositoryId(repositoryIds: $repositoryIds)'; } 
+ }

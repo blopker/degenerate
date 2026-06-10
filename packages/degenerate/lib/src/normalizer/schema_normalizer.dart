@@ -59,19 +59,19 @@ class SchemaNormalizer {
         final disc = schema['discriminator'] as Map<String, dynamic>;
         final propName = disc['propertyName'] as String;
         final mapping = disc['mapping'] as Map<String, dynamic>?;
+        // An explicit mapping only overrides/adds to the implicit one —
+        // every ref variant is a discriminator variant regardless.
+        final variants = (schema['oneOf'] ?? schema['anyOf']) as List;
+        for (final variant in variants) {
+          if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
+            final refName = (variant[r'$ref'] as String).split('/').last;
+            discriminatorProperties[refName] = propName;
+          }
+        }
         if (mapping != null) {
           for (final ref in mapping.values) {
             if (ref is String) {
               final refName = ref.split('/').last;
-              discriminatorProperties[refName] = propName;
-            }
-          }
-        } else {
-          final variants = (schema['oneOf'] ?? schema['anyOf']) as List;
-          for (final variant in variants) {
-            if (variant is Map<String, dynamic> &&
-                variant.containsKey(r'$ref')) {
-              final refName = (variant[r'$ref'] as String).split('/').last;
               discriminatorProperties[refName] = propName;
             }
           }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_scanned_repositories.dart';import 'code_scanning_variant_analysis_skipped_repositories.dart';import 'code_scanning_variant_analysis_status.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The language targeted by the CodeQL query
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_scanned_repositories.dart';import 'code_scanning_variant_analysis_skipped_repositories.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The language targeted by the CodeQL query
 @immutable final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
 
 factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
@@ -49,6 +49,36 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningVariantAnalysisLanguage($value)'; } 
  }
+@immutable final class CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2._(this.value);
+
+factory CodeScanningVariantAnalysisStatus2.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'succeeded' => succeeded,
+  'failed' => failed,
+  'cancelled' => cancelled,
+  _ => CodeScanningVariantAnalysisStatus2._(json),
+}; }
+
+static const CodeScanningVariantAnalysisStatus2 inProgress = CodeScanningVariantAnalysisStatus2._('in_progress');
+
+static const CodeScanningVariantAnalysisStatus2 succeeded = CodeScanningVariantAnalysisStatus2._('succeeded');
+
+static const CodeScanningVariantAnalysisStatus2 failed = CodeScanningVariantAnalysisStatus2._('failed');
+
+static const CodeScanningVariantAnalysisStatus2 cancelled = CodeScanningVariantAnalysisStatus2._('cancelled');
+
+static const List<CodeScanningVariantAnalysisStatus2> values = [inProgress, succeeded, failed, cancelled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningVariantAnalysisStatus2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningVariantAnalysisStatus2($value)'; } 
+ }
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
 @immutable final class CodeScanningVariantAnalysisFailureReason {const CodeScanningVariantAnalysisFailureReason._(this.value);
 
@@ -89,7 +119,7 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
-  status: CodeScanningVariantAnalysisStatus.fromJson(json['status'] as String),
+  status: CodeScanningVariantAnalysisStatus2.fromJson(json['status'] as String),
   actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
   failureReason: json['failure_reason'] != null ? CodeScanningVariantAnalysisFailureReason.fromJson(json['failure_reason'] as String) : null,
   scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => CodeScanningVariantAnalysisScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
@@ -118,7 +148,7 @@ final DateTime? updatedAt;
 /// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
 final DateTime? completedAt;
 
-final CodeScanningVariantAnalysisStatus status;
+final CodeScanningVariantAnalysisStatus2 status;
 
 /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
 final int? actionsWorkflowRunId;
@@ -152,7 +182,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
       json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories> Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus2? status, int Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories> Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,

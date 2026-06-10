@@ -1,0 +1,99 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_details_response_data_participant_peer_stats.dart';import 'get_participant_details_response_data_participant_quality_stats.dart';@immutable final class GetParticipantDetailsResponseDataParticipant {const GetParticipantDetailsResponseDataParticipant({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.presetName, this.updatedAt, this.userId, this.peerStats, this.qualityStats, });
+
+factory GetParticipantDetailsResponseDataParticipant.fromJson(Map<String, dynamic> json) { return GetParticipantDetailsResponseDataParticipant(
+  createdAt: json['created_at'] as String?,
+  customParticipantId: json['custom_participant_id'] as String?,
+  displayName: json['display_name'] as String?,
+  duration: json['duration'] != null ? (json['duration'] as num).toDouble() : null,
+  id: json['id'] as String?,
+  joinedAt: json['joined_at'] as String?,
+  leftAt: json['left_at'] as String?,
+  presetName: json['preset_name'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  userId: json['user_id'] as String?,
+  peerStats: json['peer_stats'] != null ? GetParticipantDetailsResponseDataParticipantPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>) : null,
+  qualityStats: (json['quality_stats'] as List<dynamic>?)?.map((e) => GetParticipantDetailsResponseDataParticipantQualityStats.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// timestamp when this participant was created.
+final String? createdAt;
+
+/// ID passed by client to create this participant.
+final String? customParticipantId;
+
+/// Display name of participant when joining the session.
+final String? displayName;
+
+/// number of minutes for which the participant was in the session.
+final double? duration;
+
+/// Participant ID. This maps to the corresponding peerId.
+final String? id;
+
+/// timestamp at which participant joined the session.
+final String? joinedAt;
+
+/// timestamp at which participant left the session.
+final String? leftAt;
+
+/// Name of the preset associated with the participant.
+final String? presetName;
+
+/// timestamp when this participant's data was last updated.
+final String? updatedAt;
+
+/// User id for this participant.
+final String? userId;
+
+final GetParticipantDetailsResponseDataParticipantPeerStats? peerStats;
+
+final List<GetParticipantDetailsResponseDataParticipantQualityStats>? qualityStats;
+
+Map<String, dynamic> toJson() { return {
+  'created_at': ?createdAt,
+  'custom_participant_id': ?customParticipantId,
+  'display_name': ?displayName,
+  'duration': ?duration,
+  'id': ?id,
+  'joined_at': ?joinedAt,
+  'left_at': ?leftAt,
+  'preset_name': ?presetName,
+  'updated_at': ?updatedAt,
+  'user_id': ?userId,
+  if (peerStats != null) 'peer_stats': peerStats?.toJson(),
+  if (qualityStats != null) 'quality_stats': qualityStats?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'custom_participant_id', 'display_name', 'duration', 'id', 'joined_at', 'left_at', 'preset_name', 'updated_at', 'user_id', 'peer_stats', 'quality_stats'}.contains(key)); } 
+GetParticipantDetailsResponseDataParticipant copyWith({String Function()? createdAt, String Function()? customParticipantId, String Function()? displayName, double Function()? duration, String Function()? id, String Function()? joinedAt, String Function()? leftAt, String Function()? presetName, String Function()? updatedAt, String Function()? userId, GetParticipantDetailsResponseDataParticipantPeerStats Function()? peerStats, List<GetParticipantDetailsResponseDataParticipantQualityStats> Function()? qualityStats, }) { return GetParticipantDetailsResponseDataParticipant(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  customParticipantId: customParticipantId != null ? customParticipantId() : this.customParticipantId,
+  displayName: displayName != null ? displayName() : this.displayName,
+  duration: duration != null ? duration() : this.duration,
+  id: id != null ? id() : this.id,
+  joinedAt: joinedAt != null ? joinedAt() : this.joinedAt,
+  leftAt: leftAt != null ? leftAt() : this.leftAt,
+  presetName: presetName != null ? presetName() : this.presetName,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  userId: userId != null ? userId() : this.userId,
+  peerStats: peerStats != null ? peerStats() : this.peerStats,
+  qualityStats: qualityStats != null ? qualityStats() : this.qualityStats,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetParticipantDetailsResponseDataParticipant &&
+          createdAt == other.createdAt &&
+          customParticipantId == other.customParticipantId &&
+          displayName == other.displayName &&
+          duration == other.duration &&
+          id == other.id &&
+          joinedAt == other.joinedAt &&
+          leftAt == other.leftAt &&
+          presetName == other.presetName &&
+          updatedAt == other.updatedAt &&
+          userId == other.userId &&
+          peerStats == other.peerStats &&
+          listEquals(qualityStats, other.qualityStats); } 
+@override int get hashCode { return Object.hash(createdAt, customParticipantId, displayName, duration, id, joinedAt, leftAt, presetName, updatedAt, userId, peerStats, Object.hashAll(qualityStats ?? const [])); } 
+@override String toString() { return 'GetParticipantDetailsResponseDataParticipant(createdAt: $createdAt, customParticipantId: $customParticipantId, displayName: $displayName, duration: $duration, id: $id, joinedAt: $joinedAt, leftAt: $leftAt, presetName: $presetName, updatedAt: $updatedAt, userId: $userId, peerStats: $peerStats, qualityStats: $qualityStats)'; } 
+ }

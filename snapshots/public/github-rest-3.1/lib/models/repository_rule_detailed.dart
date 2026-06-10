@@ -1,73 +1,73 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_branch_name_pattern.dart';import 'repository_rule_code_scanning.dart';import 'repository_rule_commit_author_email_pattern.dart';import 'repository_rule_commit_message_pattern.dart';import 'repository_rule_committer_email_pattern.dart';import 'repository_rule_copilot_code_review.dart';import 'repository_rule_creation.dart';import 'repository_rule_deletion.dart';import 'repository_rule_file_extension_restriction.dart';import 'repository_rule_file_path_restriction.dart';import 'repository_rule_max_file_path_length.dart';import 'repository_rule_max_file_size.dart';import 'repository_rule_merge_queue.dart';import 'repository_rule_non_fast_forward.dart';import 'repository_rule_pull_request.dart';import 'repository_rule_required_deployments.dart';import 'repository_rule_required_linear_history.dart';import 'repository_rule_required_signatures.dart';import 'repository_rule_required_status_checks.dart';import 'repository_rule_tag_name_pattern.dart';import 'repository_rule_update.dart';import 'repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleMergeQueue`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_detailed_variant1.dart';import 'repository_rule_detailed_variant10.dart';import 'repository_rule_detailed_variant11.dart';import 'repository_rule_detailed_variant12.dart';import 'repository_rule_detailed_variant13.dart';import 'repository_rule_detailed_variant14.dart';import 'repository_rule_detailed_variant15.dart';import 'repository_rule_detailed_variant16.dart';import 'repository_rule_detailed_variant17.dart';import 'repository_rule_detailed_variant18.dart';import 'repository_rule_detailed_variant19.dart';import 'repository_rule_detailed_variant2.dart';import 'repository_rule_detailed_variant20.dart';import 'repository_rule_detailed_variant21.dart';import 'repository_rule_detailed_variant22.dart';import 'repository_rule_detailed_variant3.dart';import 'repository_rule_detailed_variant4.dart';import 'repository_rule_detailed_variant5.dart';import 'repository_rule_detailed_variant6.dart';import 'repository_rule_detailed_variant7.dart';import 'repository_rule_detailed_variant8.dart';import 'repository_rule_detailed_variant9.dart';/// A value that is one of: `RepositoryRuleDetailedVariant1`, `RepositoryRuleDetailedVariant2`, `RepositoryRuleDetailedVariant3`, `RepositoryRuleDetailedVariant4`, `RepositoryRuleDetailedVariant5`, `RepositoryRuleDetailedVariant6`, `RepositoryRuleDetailedVariant7`, `RepositoryRuleDetailedVariant8`, `RepositoryRuleDetailedVariant9`, `RepositoryRuleDetailedVariant10`, `RepositoryRuleDetailedVariant11`, `RepositoryRuleDetailedVariant12`, `RepositoryRuleDetailedVariant13`, `RepositoryRuleDetailedVariant14`, `RepositoryRuleDetailedVariant15`, `RepositoryRuleDetailedVariant16`, `RepositoryRuleDetailedVariant17`, `RepositoryRuleDetailedVariant18`, `RepositoryRuleDetailedVariant19`, `RepositoryRuleDetailedVariant20`, `RepositoryRuleDetailedVariant21`, `RepositoryRuleDetailedVariant22`.
 sealed class RepositoryRuleDetailed {const RepositoryRuleDetailed();
 
-factory RepositoryRuleDetailed.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreation.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleCreation(RepositoryRuleCreation.fromJson(json));
+factory RepositoryRuleDetailed.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleDetailedVariant1.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant1(RepositoryRuleDetailedVariant1.fromJson(json));
   }
-  if (RepositoryRuleUpdate.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleUpdate(RepositoryRuleUpdate.fromJson(json));
+  if (RepositoryRuleDetailedVariant2.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant2(RepositoryRuleDetailedVariant2.fromJson(json));
   }
-  if (RepositoryRuleDeletion.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleDeletion(RepositoryRuleDeletion.fromJson(json));
+  if (RepositoryRuleDetailedVariant3.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant3(RepositoryRuleDetailedVariant3.fromJson(json));
   }
-  if (RepositoryRuleRequiredLinearHistory.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory(RepositoryRuleRequiredLinearHistory.fromJson(json));
+  if (RepositoryRuleDetailedVariant4.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant4(RepositoryRuleDetailedVariant4.fromJson(json));
   }
-  if (RepositoryRuleMergeQueue.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleMergeQueue(RepositoryRuleMergeQueue.fromJson(json));
+  if (RepositoryRuleDetailedVariant5.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant5(RepositoryRuleDetailedVariant5.fromJson(json));
   }
-  if (RepositoryRuleRequiredDeployments.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleRequiredDeployments(RepositoryRuleRequiredDeployments.fromJson(json));
+  if (RepositoryRuleDetailedVariant6.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant6(RepositoryRuleDetailedVariant6.fromJson(json));
   }
-  if (RepositoryRuleRequiredSignatures.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleRequiredSignatures(RepositoryRuleRequiredSignatures.fromJson(json));
+  if (RepositoryRuleDetailedVariant7.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant7(RepositoryRuleDetailedVariant7.fromJson(json));
   }
-  if (RepositoryRulePullRequest.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRulePullRequest(RepositoryRulePullRequest.fromJson(json));
+  if (RepositoryRuleDetailedVariant8.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant8(RepositoryRuleDetailedVariant8.fromJson(json));
   }
-  if (RepositoryRuleRequiredStatusChecks.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks(RepositoryRuleRequiredStatusChecks.fromJson(json));
+  if (RepositoryRuleDetailedVariant9.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant9(RepositoryRuleDetailedVariant9.fromJson(json));
   }
-  if (RepositoryRuleNonFastForward.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleNonFastForward(RepositoryRuleNonFastForward.fromJson(json));
+  if (RepositoryRuleDetailedVariant10.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant10(RepositoryRuleDetailedVariant10.fromJson(json));
   }
-  if (RepositoryRuleCommitMessagePattern.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleCommitMessagePattern(RepositoryRuleCommitMessagePattern.fromJson(json));
+  if (RepositoryRuleDetailedVariant11.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant11(RepositoryRuleDetailedVariant11.fromJson(json));
   }
-  if (RepositoryRuleCommitAuthorEmailPattern.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern(RepositoryRuleCommitAuthorEmailPattern.fromJson(json));
+  if (RepositoryRuleDetailedVariant12.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant12(RepositoryRuleDetailedVariant12.fromJson(json));
   }
-  if (RepositoryRuleCommitterEmailPattern.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern(RepositoryRuleCommitterEmailPattern.fromJson(json));
+  if (RepositoryRuleDetailedVariant13.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant13(RepositoryRuleDetailedVariant13.fromJson(json));
   }
-  if (RepositoryRuleBranchNamePattern.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleBranchNamePattern(RepositoryRuleBranchNamePattern.fromJson(json));
+  if (RepositoryRuleDetailedVariant14.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant14(RepositoryRuleDetailedVariant14.fromJson(json));
   }
-  if (RepositoryRuleTagNamePattern.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleTagNamePattern(RepositoryRuleTagNamePattern.fromJson(json));
+  if (RepositoryRuleDetailedVariant15.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant15(RepositoryRuleDetailedVariant15.fromJson(json));
   }
-  if (RepositoryRuleFilePathRestriction.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleFilePathRestriction(RepositoryRuleFilePathRestriction.fromJson(json));
+  if (RepositoryRuleDetailedVariant16.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant16(RepositoryRuleDetailedVariant16.fromJson(json));
   }
-  if (RepositoryRuleMaxFilePathLength.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleMaxFilePathLength(RepositoryRuleMaxFilePathLength.fromJson(json));
+  if (RepositoryRuleDetailedVariant17.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant17(RepositoryRuleDetailedVariant17.fromJson(json));
   }
-  if (RepositoryRuleFileExtensionRestriction.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction(RepositoryRuleFileExtensionRestriction.fromJson(json));
+  if (RepositoryRuleDetailedVariant18.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant18(RepositoryRuleDetailedVariant18.fromJson(json));
   }
-  if (RepositoryRuleMaxFileSize.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleMaxFileSize(RepositoryRuleMaxFileSize.fromJson(json));
+  if (RepositoryRuleDetailedVariant19.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant19(RepositoryRuleDetailedVariant19.fromJson(json));
   }
-  if (RepositoryRuleWorkflows.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleWorkflows(RepositoryRuleWorkflows.fromJson(json));
+  if (RepositoryRuleDetailedVariant20.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant20(RepositoryRuleDetailedVariant20.fromJson(json));
   }
-  if (RepositoryRuleCodeScanning.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleCodeScanning(RepositoryRuleCodeScanning.fromJson(json));
+  if (RepositoryRuleDetailedVariant21.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant21(RepositoryRuleDetailedVariant21.fromJson(json));
   }
-  if (RepositoryRuleCopilotCodeReview.canParse(json)) {
-    return RepositoryRuleDetailedRepositoryRuleCopilotCodeReview(RepositoryRuleCopilotCodeReview.fromJson(json));
+  if (RepositoryRuleDetailedVariant22.canParse(json)) {
+    return RepositoryRuleDetailedRepositoryRuleDetailedVariant22(RepositoryRuleDetailedVariant22.fromJson(json));
   }
   return RepositoryRuleDetailed$Unknown(json); }
 
@@ -75,225 +75,225 @@ factory RepositoryRuleDetailed.fromJson(Map<String, dynamic> json) {   if (Repos
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleCreation extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCreation(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant1 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant1(this._value);
 
-final RepositoryRuleCreation _value;
+final RepositoryRuleDetailedVariant1 _value;
 
-@override RepositoryRuleCreation get value { return _value; } 
+@override RepositoryRuleDetailedVariant1 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleCreation && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant1 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCreation($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant1($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleUpdate extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleUpdate(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant2 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant2(this._value);
 
-final RepositoryRuleUpdate _value;
+final RepositoryRuleDetailedVariant2 _value;
 
-@override RepositoryRuleUpdate get value { return _value; } 
+@override RepositoryRuleDetailedVariant2 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleUpdate && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant2 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleUpdate($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant2($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleDeletion extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDeletion(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant3 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant3(this._value);
 
-final RepositoryRuleDeletion _value;
+final RepositoryRuleDetailedVariant3 _value;
 
-@override RepositoryRuleDeletion get value { return _value; } 
+@override RepositoryRuleDetailedVariant3 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleDeletion && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant3 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDeletion($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant3($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant4 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant4(this._value);
 
-final RepositoryRuleRequiredLinearHistory _value;
+final RepositoryRuleDetailedVariant4 _value;
 
-@override RepositoryRuleRequiredLinearHistory get value { return _value; } 
+@override RepositoryRuleDetailedVariant4 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleRequiredLinearHistory && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant4 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredLinearHistory($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant4($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleMergeQueue extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMergeQueue(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant5 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant5(this._value);
 
-final RepositoryRuleMergeQueue _value;
+final RepositoryRuleDetailedVariant5 _value;
 
-@override RepositoryRuleMergeQueue get value { return _value; } 
+@override RepositoryRuleDetailedVariant5 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleMergeQueue && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant5 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleMergeQueue($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant5($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredDeployments extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredDeployments(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant6 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant6(this._value);
 
-final RepositoryRuleRequiredDeployments _value;
+final RepositoryRuleDetailedVariant6 _value;
 
-@override RepositoryRuleRequiredDeployments get value { return _value; } 
+@override RepositoryRuleDetailedVariant6 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleRequiredDeployments && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant6 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredDeployments($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant6($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredSignatures extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredSignatures(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant7 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant7(this._value);
 
-final RepositoryRuleRequiredSignatures _value;
+final RepositoryRuleDetailedVariant7 _value;
 
-@override RepositoryRuleRequiredSignatures get value { return _value; } 
+@override RepositoryRuleDetailedVariant7 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleRequiredSignatures && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant7 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredSignatures($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant7($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRulePullRequest extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRulePullRequest(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant8 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant8(this._value);
 
-final RepositoryRulePullRequest _value;
+final RepositoryRuleDetailedVariant8 _value;
 
-@override RepositoryRulePullRequest get value { return _value; } 
+@override RepositoryRuleDetailedVariant8 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRulePullRequest && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant8 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRulePullRequest($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant8($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant9 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant9(this._value);
 
-final RepositoryRuleRequiredStatusChecks _value;
+final RepositoryRuleDetailedVariant9 _value;
 
-@override RepositoryRuleRequiredStatusChecks get value { return _value; } 
+@override RepositoryRuleDetailedVariant9 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleRequiredStatusChecks && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant9 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleRequiredStatusChecks($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant9($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleNonFastForward extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleNonFastForward(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant10 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant10(this._value);
 
-final RepositoryRuleNonFastForward _value;
+final RepositoryRuleDetailedVariant10 _value;
 
-@override RepositoryRuleNonFastForward get value { return _value; } 
+@override RepositoryRuleDetailedVariant10 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleNonFastForward && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant10 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleNonFastForward($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant10($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleCommitMessagePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitMessagePattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant11 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant11(this._value);
 
-final RepositoryRuleCommitMessagePattern _value;
+final RepositoryRuleDetailedVariant11 _value;
 
-@override RepositoryRuleCommitMessagePattern get value { return _value; } 
+@override RepositoryRuleDetailedVariant11 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleCommitMessagePattern && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant11 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCommitMessagePattern($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant11($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant12 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant12(this._value);
 
-final RepositoryRuleCommitAuthorEmailPattern _value;
+final RepositoryRuleDetailedVariant12 _value;
 
-@override RepositoryRuleCommitAuthorEmailPattern get value { return _value; } 
+@override RepositoryRuleDetailedVariant12 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleCommitAuthorEmailPattern && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant12 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCommitAuthorEmailPattern($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant12($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant13 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant13(this._value);
 
-final RepositoryRuleCommitterEmailPattern _value;
+final RepositoryRuleDetailedVariant13 _value;
 
-@override RepositoryRuleCommitterEmailPattern get value { return _value; } 
+@override RepositoryRuleDetailedVariant13 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleCommitterEmailPattern && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant13 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCommitterEmailPattern($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant13($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleBranchNamePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleBranchNamePattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant14 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant14(this._value);
 
-final RepositoryRuleBranchNamePattern _value;
+final RepositoryRuleDetailedVariant14 _value;
 
-@override RepositoryRuleBranchNamePattern get value { return _value; } 
+@override RepositoryRuleDetailedVariant14 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleBranchNamePattern && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant14 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleBranchNamePattern($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant14($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleTagNamePattern extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleTagNamePattern(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant15 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant15(this._value);
 
-final RepositoryRuleTagNamePattern _value;
+final RepositoryRuleDetailedVariant15 _value;
 
-@override RepositoryRuleTagNamePattern get value { return _value; } 
+@override RepositoryRuleDetailedVariant15 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleTagNamePattern && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant15 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleTagNamePattern($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant15($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleFilePathRestriction extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleFilePathRestriction(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant16 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant16(this._value);
 
-final RepositoryRuleFilePathRestriction _value;
+final RepositoryRuleDetailedVariant16 _value;
 
-@override RepositoryRuleFilePathRestriction get value { return _value; } 
+@override RepositoryRuleDetailedVariant16 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleFilePathRestriction && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant16 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleFilePathRestriction($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant16($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleMaxFilePathLength extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMaxFilePathLength(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant17 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant17(this._value);
 
-final RepositoryRuleMaxFilePathLength _value;
+final RepositoryRuleDetailedVariant17 _value;
 
-@override RepositoryRuleMaxFilePathLength get value { return _value; } 
+@override RepositoryRuleDetailedVariant17 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleMaxFilePathLength && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant17 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleMaxFilePathLength($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant17($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant18 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant18(this._value);
 
-final RepositoryRuleFileExtensionRestriction _value;
+final RepositoryRuleDetailedVariant18 _value;
 
-@override RepositoryRuleFileExtensionRestriction get value { return _value; } 
+@override RepositoryRuleDetailedVariant18 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleFileExtensionRestriction && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant18 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleFileExtensionRestriction($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant18($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleMaxFileSize extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleMaxFileSize(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant19 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant19(this._value);
 
-final RepositoryRuleMaxFileSize _value;
+final RepositoryRuleDetailedVariant19 _value;
 
-@override RepositoryRuleMaxFileSize get value { return _value; } 
+@override RepositoryRuleDetailedVariant19 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleMaxFileSize && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant19 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleMaxFileSize($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant19($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleWorkflows extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleWorkflows(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant20 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant20(this._value);
 
-final RepositoryRuleWorkflows _value;
+final RepositoryRuleDetailedVariant20 _value;
 
-@override RepositoryRuleWorkflows get value { return _value; } 
+@override RepositoryRuleDetailedVariant20 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleWorkflows && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant20 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleWorkflows($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant20($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleCodeScanning extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCodeScanning(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant21 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant21(this._value);
 
-final RepositoryRuleCodeScanning _value;
+final RepositoryRuleDetailedVariant21 _value;
 
-@override RepositoryRuleCodeScanning get value { return _value; } 
+@override RepositoryRuleDetailedVariant21 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleCodeScanning && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant21 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCodeScanning($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant21($_value)'; } 
  }
-@immutable final class RepositoryRuleDetailedRepositoryRuleCopilotCodeReview extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleCopilotCodeReview(this._value);
+@immutable final class RepositoryRuleDetailedRepositoryRuleDetailedVariant22 extends RepositoryRuleDetailed {const RepositoryRuleDetailedRepositoryRuleDetailedVariant22(this._value);
 
-final RepositoryRuleCopilotCodeReview _value;
+final RepositoryRuleDetailedVariant22 _value;
 
-@override RepositoryRuleCopilotCodeReview get value { return _value; } 
+@override RepositoryRuleDetailedVariant22 get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedRepositoryRuleCopilotCodeReview && _value == other._value; } 
+    other is RepositoryRuleDetailedRepositoryRuleDetailedVariant22 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleCopilotCodeReview($_value)'; } 
+@override String toString() { return 'RepositoryRuleDetailed.repositoryRuleDetailedVariant22($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class RepositoryRuleDetailed$Unknown extends RepositoryRuleDetailed {const RepositoryRuleDetailed$Unknown(this._value);

@@ -1,7 +1,33 @@
 import 'package:degenerate/src/normalizer/allof_flattener.dart';
+import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:test/test.dart';
 
 void main() {
+  group('SchemaNormalizer discriminator pre-scan', () {
+    test('partial mapping still registers all ref variants', () {
+      final ctx = SchemaNormalizer().normalize({
+        'Event': {
+          'oneOf': [
+            {r'$ref': '#/components/schemas/Deposit'},
+            {r'$ref': '#/components/schemas/Withdrawal'},
+          ],
+          'discriminator': {
+            'propertyName': 'kind',
+            'mapping': {
+              'dep': '#/components/schemas/Deposit',
+            },
+          },
+        },
+        'Deposit': {'type': 'object'},
+        'Withdrawal': {'type': 'object'},
+      });
+
+      expect(ctx.discriminatorProperties['Deposit'], equals('kind'));
+      // Unmapped variants are still discriminator variants.
+      expect(ctx.discriminatorProperties['Withdrawal'], equals('kind'));
+    });
+  });
+
   group('AllOfFlattener', () {
     late AllOfFlattener flattener;
 

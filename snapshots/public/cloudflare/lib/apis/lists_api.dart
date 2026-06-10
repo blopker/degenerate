@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/lists_account_id.dart';import '../models/lists_create_a_list_request.dart';import '../models/lists_delete_list_items_request.dart';import '../models/lists_item.dart';import '../models/lists_item_id.dart';import '../models/lists_items_update_request_collection2.dart';import '../models/lists_list.dart';import '../models/lists_list_id.dart';import '../models/lists_list_item_asn_object.dart';import '../models/lists_list_item_hostname_object.dart';import '../models/lists_list_item_ip_object.dart';import '../models/lists_list_item_redirect_object.dart';import '../models/lists_lists_async_response_result.dart';import '../models/lists_operation_id.dart';import '../models/lists_update_a_list_request.dart';import '../models/response_common41_result.dart';/// ListsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/lists_account_id.dart';import '../models/lists_create_a_list_request.dart';import '../models/lists_delete_list_items_request.dart';import '../models/lists_item.dart';import '../models/lists_item_id.dart';import '../models/lists_items_update_request_collection2.dart';import '../models/lists_list.dart';import '../models/lists_list_id.dart';import '../models/lists_list_item_asn_full.dart';import '../models/lists_list_item_hostname_full.dart';import '../models/lists_list_item_ip_full.dart';import '../models/lists_list_item_redirect_full.dart';import '../models/lists_lists_async_response_result.dart';import '../models/lists_operation_id.dart';import '../models/lists_update_a_list_request.dart';import '../models/response_common41_result.dart';/// ListsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -154,7 +154,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf4.parse(e, fromA: (v) => ListsListItemIpObject.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsListItemHostnameObject.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsListItemRedirectObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ListsListItemAsnObject.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => OneOf4.parse(e, fromA: (v) => ListsListItemIpFull.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsListItemHostnameFull.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsListItemRedirectFull.fromJson(v as Map<String, dynamic>), fromD: (v) => ListsListItemAsnFull.fromJson(v as Map<String, dynamic>),)).toList();
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_service_common.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_http_service_config.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -14,18 +14,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InfraServiceConfig$Unknown; } 
  }
-@immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraServiceCommon);
+@immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraHttpServiceConfig);
 
-factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return InfraServiceConfigHttp(InfraServiceCommon.fromJson(json)); }
+factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return InfraServiceConfigHttp(InfraHttpServiceConfig.fromJson(json)); }
 
-final InfraServiceCommon infraServiceCommon;
+final InfraHttpServiceConfig infraHttpServiceConfig;
 
 @override String get type { return 'http'; } 
-@override Map<String, dynamic> toJson() { return {...infraServiceCommon.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...infraHttpServiceConfig.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InfraServiceConfigHttp && infraServiceCommon == other.infraServiceCommon; } 
-@override int get hashCode { return infraServiceCommon.hashCode; } 
-@override String toString() { return 'InfraServiceConfigHttp(infraServiceCommon: $infraServiceCommon)'; } 
+    other is InfraServiceConfigHttp && infraHttpServiceConfig == other.infraHttpServiceConfig; } 
+@override int get hashCode { return infraHttpServiceConfig.hashCode; } 
+@override String toString() { return 'InfraServiceConfigHttp(infraHttpServiceConfig: $infraHttpServiceConfig)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

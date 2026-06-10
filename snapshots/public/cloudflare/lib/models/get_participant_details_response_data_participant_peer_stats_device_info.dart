@@ -1,0 +1,89 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo {const GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.memory, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
+
+factory GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) { return GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo(
+  browser: json['browser'] as String?,
+  browserVersion: json['browser_version'] as String?,
+  cpus: json['cpus'] != null ? (json['cpus'] as num).toDouble() : null,
+  engine: json['engine'] as String?,
+  isMobile: json['is_mobile'] as bool?,
+  memory: json['memory'] != null ? (json['memory'] as num).toDouble() : null,
+  os: json['os'] as String?,
+  osVersion: json['os_version'] as String?,
+  sdkName: json['sdk_name'] as String?,
+  sdkVersion: json['sdk_version'] as String?,
+  userAgent: json['user_agent'] as String?,
+  webglSupport: json['webgl_support'] as String?,
+); }
+
+final String? browser;
+
+final String? browserVersion;
+
+final double? cpus;
+
+final String? engine;
+
+final bool? isMobile;
+
+final double? memory;
+
+final String? os;
+
+final String? osVersion;
+
+final String? sdkName;
+
+final String? sdkVersion;
+
+final String? userAgent;
+
+final String? webglSupport;
+
+Map<String, dynamic> toJson() { return {
+  'browser': ?browser,
+  'browser_version': ?browserVersion,
+  'cpus': ?cpus,
+  'engine': ?engine,
+  'is_mobile': ?isMobile,
+  'memory': ?memory,
+  'os': ?os,
+  'os_version': ?osVersion,
+  'sdk_name': ?sdkName,
+  'sdk_version': ?sdkVersion,
+  'user_agent': ?userAgent,
+  'webgl_support': ?webglSupport,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'browser_version', 'cpus', 'engine', 'is_mobile', 'memory', 'os', 'os_version', 'sdk_name', 'sdk_version', 'user_agent', 'webgl_support'}.contains(key)); } 
+GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo copyWith({String Function()? browser, String Function()? browserVersion, double Function()? cpus, String Function()? engine, bool Function()? isMobile, double Function()? memory, String Function()? os, String Function()? osVersion, String Function()? sdkName, String Function()? sdkVersion, String Function()? userAgent, String Function()? webglSupport, }) { return GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo(
+  browser: browser != null ? browser() : this.browser,
+  browserVersion: browserVersion != null ? browserVersion() : this.browserVersion,
+  cpus: cpus != null ? cpus() : this.cpus,
+  engine: engine != null ? engine() : this.engine,
+  isMobile: isMobile != null ? isMobile() : this.isMobile,
+  memory: memory != null ? memory() : this.memory,
+  os: os != null ? os() : this.os,
+  osVersion: osVersion != null ? osVersion() : this.osVersion,
+  sdkName: sdkName != null ? sdkName() : this.sdkName,
+  sdkVersion: sdkVersion != null ? sdkVersion() : this.sdkVersion,
+  userAgent: userAgent != null ? userAgent() : this.userAgent,
+  webglSupport: webglSupport != null ? webglSupport() : this.webglSupport,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo &&
+          browser == other.browser &&
+          browserVersion == other.browserVersion &&
+          cpus == other.cpus &&
+          engine == other.engine &&
+          isMobile == other.isMobile &&
+          memory == other.memory &&
+          os == other.os &&
+          osVersion == other.osVersion &&
+          sdkName == other.sdkName &&
+          sdkVersion == other.sdkVersion &&
+          userAgent == other.userAgent &&
+          webglSupport == other.webglSupport; } 
+@override int get hashCode { return Object.hash(browser, browserVersion, cpus, engine, isMobile, memory, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport); } 
+@override String toString() { return 'GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, memory: $memory, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)'; } 
+ }
