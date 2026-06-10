@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_organizations.dart';import '../models/zero_trust_organization_create_your_zero_trust_organization_request.dart';import '../models/zero_trust_organization_get_your_zero_trust_organization_doh_settings_response_result.dart';import '../models/zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_response_result.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZeroTrustOrganizationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_organizations.dart';import '../models/access_service_tokens.dart';import '../models/zero_trust_organization_create_your_zero_trust_organization_request.dart';import '../models/zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZeroTrustOrganizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -83,7 +83,7 @@ return execute(
 /// Returns the DoH settings for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult?, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessServiceTokens?, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -96,7 +96,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -105,7 +105,7 @@ return execute(
 /// Updates the DoH settings for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult?, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessServiceTokens?, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -120,7 +120,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/lists_account_id.dart';import '../models/lists_create_a_list_request.dart';import '../models/lists_delete_list_items_request.dart';import '../models/lists_item.dart';import '../models/lists_item_id.dart';import '../models/lists_items_update_request_collection2.dart';import '../models/lists_list.dart';import '../models/lists_list_id.dart';import '../models/lists_list_item_asn_full.dart';import '../models/lists_list_item_hostname_full.dart';import '../models/lists_list_item_ip_full.dart';import '../models/lists_list_item_redirect_full.dart';import '../models/lists_lists_async_response_result.dart';import '../models/lists_operation_id.dart';import '../models/lists_update_a_list_request.dart';import '../models/response_common41_result.dart';/// ListsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/lists_account_id.dart';import '../models/lists_create_a_list_request.dart';import '../models/lists_delete_list_items_request.dart';import '../models/lists_item.dart';import '../models/lists_item_id.dart';import '../models/lists_items_update_request_collection2.dart';import '../models/lists_list_id.dart';import '../models/lists_list_item_asn_full.dart';import '../models/lists_list_item_hostname_full.dart';import '../models/lists_list_item_ip_full.dart';import '../models/lists_list_item_redirect_full.dart';import '../models/lists_operation_id.dart';import '../models/lists_update_a_list_request.dart';import '../models/response_common41_result.dart';/// ListsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ListsApi with ApiExecutor {const ListsApi(this.apiConfig);
 /// Fetches all lists in the account.
 ///
 /// `GET /accounts/{account_id}/rules/lists`
-Future<ApiResult<List<ListsList>?, Never>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon41Result, Never>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => ListsList.fromJson(e as Map<String, dynamic>)).toList();
+    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),);
   },
 );
  } 
@@ -127,7 +127,7 @@ return execute(
 /// Fetches all the items in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<List<ListsItem>?, Never>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListsItem>, Never>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor;
@@ -154,7 +154,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf4.parse(e, fromA: (v) => ListsListItemIpFull.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsListItemHostnameFull.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsListItemRedirectFull.fromJson(v as Map<String, dynamic>), fromD: (v) => ListsListItemAsnFull.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => ListsListItemIpFull.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsListItemHostnameFull.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsListItemRedirectFull.fromJson(v as Map<String, dynamic>), fromD: (v) => ListsListItemAsnFull.fromJson(v as Map<String, dynamic>),)).toList();
   },
 );
  } 
@@ -167,7 +167,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `POST /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ListsListsAsyncResponseResult?, Never>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon41Result, Never>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -182,7 +182,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),);
   },
 );
  } 
@@ -195,7 +195,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ListsListsAsyncResponseResult?, Never>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon41Result, Never>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -210,7 +210,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),);
   },
 );
  } 
@@ -223,7 +223,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ListsListsAsyncResponseResult?, Never>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon41Result, Never>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -238,7 +238,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),);
   },
 );
  } 

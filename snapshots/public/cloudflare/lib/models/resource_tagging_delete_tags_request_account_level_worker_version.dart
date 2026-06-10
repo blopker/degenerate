@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_worker_id.dart';/// Enum for worker_version resource type.
-@immutable final class ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum._(this.value);
-
-factory ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson(String json) { return switch (json) {
-  'worker_version' => workerVersion,
-  _ => ResourceTaggingAccountResourceTypeWorkerVersionEnum._(json),
-}; }
-
-static const ResourceTaggingAccountResourceTypeWorkerVersionEnum workerVersion = ResourceTaggingAccountResourceTypeWorkerVersionEnum._('worker_version');
-
-static const List<ResourceTaggingAccountResourceTypeWorkerVersionEnum> values = [workerVersion];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingAccountResourceTypeWorkerVersionEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingAccountResourceTypeWorkerVersionEnum($value)'; } 
- }
-/// Request body schema for deleting tags from worker_version resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_account_resource_type_worker_version_enum.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_worker_id.dart';/// Request body schema for deleting tags from worker_version resources.
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion {const ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion({required this.resourceId, required this.resourceType, required this.workerId, });
 
 factory ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(

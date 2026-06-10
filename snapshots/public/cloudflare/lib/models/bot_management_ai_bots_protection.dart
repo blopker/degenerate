@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
+@immutable final class BotManagementAiBotsProtection {const BotManagementAiBotsProtection._(this.value);
+
+factory BotManagementAiBotsProtection.fromJson(String json) { return switch (json) {
+  'block' => block,
+  'disabled' => disabled,
+  'only_on_ad_pages' => onlyOnAdPages,
+  _ => BotManagementAiBotsProtection._(json),
+}; }
+
+static const BotManagementAiBotsProtection block = BotManagementAiBotsProtection._('block');
+
+static const BotManagementAiBotsProtection disabled = BotManagementAiBotsProtection._('disabled');
+
+static const BotManagementAiBotsProtection onlyOnAdPages = BotManagementAiBotsProtection._('only_on_ad_pages');
+
+static const List<BotManagementAiBotsProtection> values = [block, disabled, onlyOnAdPages];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BotManagementAiBotsProtection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BotManagementAiBotsProtection($value)'; } 
+ }

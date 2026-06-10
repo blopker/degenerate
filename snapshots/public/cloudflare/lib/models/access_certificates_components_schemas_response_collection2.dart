@@ -1,23 +1,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_certificates.dart';@immutable final class AccessCertificatesComponentsSchemasResponseCollection2 {const AccessCertificatesComponentsSchemasResponseCollection2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_response_collection2_result_info.dart';import 'access_components_schemas_certificates.dart';import 'access_messages2.dart';@immutable final class AccessCertificatesComponentsSchemasResponseCollection2 {const AccessCertificatesComponentsSchemasResponseCollection2({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
 factory AccessCertificatesComponentsSchemasResponseCollection2.fromJson(Map<String, dynamic> json) { return AccessCertificatesComponentsSchemasResponseCollection2(
+  errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  resultInfo: json['result_info'] != null ? AccessCertificatesComponentsSchemasResponseCollection2ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessComponentsSchemasCertificates.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
+
+final List<AccessMessages2> errors;
+
+final List<AccessMessages2> messages;
+
+/// Whether the API call was successful.
+final bool success;
+
+final AccessCertificatesComponentsSchemasResponseCollection2ResultInfo? resultInfo;
 
 final List<AccessComponentsSchemasCertificates>? result;
 
 Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-AccessCertificatesComponentsSchemasResponseCollection2 copyWith({List<AccessComponentsSchemasCertificates> Function()? result}) { return AccessCertificatesComponentsSchemasResponseCollection2(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AccessCertificatesComponentsSchemasResponseCollection2 copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessCertificatesComponentsSchemasResponseCollection2ResultInfo Function()? resultInfo, List<AccessComponentsSchemasCertificates> Function()? result, }) { return AccessCertificatesComponentsSchemasResponseCollection2(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessCertificatesComponentsSchemasResponseCollection2 &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          resultInfo == other.resultInfo &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
-@override String toString() { return 'AccessCertificatesComponentsSchemasResponseCollection2(result: $result)'; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const [])); } 
+@override String toString() { return 'AccessCertificatesComponentsSchemasResponseCollection2(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)'; } 
  }

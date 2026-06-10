@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_base.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_smart_tiered_cache_patch.dart';import '../models/smart_tiered_cache_get_smart_tiered_cache_setting_response_result.dart';import '../models/smart_tiered_cache_patch_smart_tiered_cache_setting_response_result.dart';/// SmartTieredCacheApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_result_object_delete.dart';import '../models/cache_rules_smart_tiered_cache_patch.dart';import '../models/smart_tiered_cache_get_smart_tiered_cache_setting_response_result.dart';import '../models/smart_tiered_cache_patch_smart_tiered_cache_setting_response_result.dart';/// SmartTieredCacheApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -59,7 +59,7 @@ return execute(
 /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
 ///
 /// `DELETE /zones/{zone_id}/cache/tiered_cache_smart_topology_enable`
-Future<ApiResult<CacheRulesBase?, Never>> smartTieredCacheDeleteSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObjectDelete?, Never>> smartTieredCacheDeleteSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -72,7 +72,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesResultObjectDelete.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

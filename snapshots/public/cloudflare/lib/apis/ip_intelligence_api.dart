@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_schemas_ip.dart';/// IpIntelligenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/response_collection24_result.dart';/// IpIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpIntelligenceApi with ApiExecutor {const IpIntelligenceApi(this.api
 /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`.
 ///
 /// `GET /accounts/{account_id}/intel/ip`
-Future<ApiResult<List<IntelSchemasIp>?, Never>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResponseCollection24Result>?, Never>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ipv4 != null) {
   queryParameters['ipv4'] = ipv4;
@@ -37,7 +37,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => IntelSchemasIp.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,)).toList();
   },
 );
  } 

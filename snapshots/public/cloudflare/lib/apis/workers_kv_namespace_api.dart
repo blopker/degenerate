@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_kv_any.dart';import '../models/workers_kv_bulk_get_result.dart';import '../models/workers_kv_bulk_get_result_with_metadata.dart';import '../models/workers_kv_bulk_result.dart';import '../models/workers_kv_bulk_write2.dart';import '../models/workers_kv_create_rename_namespace_body.dart';import '../models/workers_kv_expiration.dart';import '../models/workers_kv_expiration_ttl.dart';import '../models/workers_kv_identifier.dart';import '../models/workers_kv_key.dart';import '../models/workers_kv_key_name.dart';import '../models/workers_kv_key_name_bulk.dart';import '../models/workers_kv_namespace.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_request.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_response_result.dart';import '../models/workers_kv_namespace_identifier.dart';import '../models/workers_kv_namespace_list_namespaces_direction.dart';import '../models/workers_kv_namespace_list_namespaces_order.dart';import '../models/workers_kv_namespace_write_key_value_pair_with_metadata_request.dart';import '../models/workers_kv_value.dart';/// WorkersKvNamespaceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_kv_any.dart';import '../models/workers_kv_bulk_write2.dart';import '../models/workers_kv_create_rename_namespace_body.dart';import '../models/workers_kv_expiration.dart';import '../models/workers_kv_expiration_ttl.dart';import '../models/workers_kv_identifier.dart';import '../models/workers_kv_key.dart';import '../models/workers_kv_key_name.dart';import '../models/workers_kv_key_name_bulk.dart';import '../models/workers_kv_namespace.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_request.dart';import '../models/workers_kv_namespace_identifier.dart';import '../models/workers_kv_namespace_list_namespaces_direction.dart';import '../models/workers_kv_namespace_list_namespaces_order.dart';import '../models/workers_kv_namespace_write_key_value_pair_with_metadata_request.dart';import '../models/workers_kv_value.dart';/// WorkersKvNamespaceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -144,7 +144,7 @@ return execute(
 /// Write multiple keys and values at once. Body should be an array of up to 10,000 key-value pairs to be stored, along with optional expiration information. Existing values and expirations will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored. The entire request size must be 100 megabytes or less.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk`
-Future<ApiResult<WorkersKvBulkResult?, Never>> workersKvNamespaceWriteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvBulkWrite2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceWriteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvBulkWrite2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,7 +159,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -168,7 +168,7 @@ return execute(
 /// Remove multiple KV pairs from the namespace. Body should be an array of up to 10,000 keys to be removed.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/delete`
-Future<ApiResult<WorkersKvBulkResult?, Never>> workersKvNamespaceDeleteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvKeyNameBulk> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceDeleteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvKeyNameBulk> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,7 +183,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -192,7 +192,7 @@ return execute(
 /// Retrieve up to 100 KV pairs from the namespace. Keys must contain text-based values. JSON values can optionally be parsed instead of being returned as a string value. Metadata can be included if `withMetadata` is true.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/get`
-Future<ApiResult<WorkersKvNamespaceGetMultipleKeyValuePairsResponseResult?, Never>> workersKvNamespaceGetMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceGetMultipleKeyValuePairsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceGetMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceGetMultipleKeyValuePairsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -207,7 +207,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => WorkersKvBulkGetResult.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersKvBulkGetResultWithMetadata.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 

@@ -299,8 +299,14 @@ class IrMapper {
           sanitizeDartName(toPascalCase(rawRefName));
 
       // Check if the allOf added properties beyond what the $ref target has.
-      // If so, merge the ref's properties and treat as a full object.
-      final refSchema = _rawSchemas[rawRefName];
+      // If so, merge the ref's properties and treat as a full object. The
+      // target may itself be an allOf chain (multi-level inheritance) —
+      // expand it first or its own and inherited properties are invisible
+      // to the merge.
+      final rawTarget = _rawSchemas[rawRefName];
+      final refSchema = rawTarget is Map<String, dynamic>
+          ? _expandNestedAllOf(rawTarget, {rawRefName})
+          : rawTarget;
       final refPropKeys = refSchema is Map<String, dynamic>
           ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
                 <String>{}

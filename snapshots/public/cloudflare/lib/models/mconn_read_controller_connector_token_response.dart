@@ -1,23 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnReadControllerConnectorTokenResponse {const MconnReadControllerConnectorTokenResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';@immutable final class MconnReadControllerConnectorTokenResponse {const MconnReadControllerConnectorTokenResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
 factory MconnReadControllerConnectorTokenResponse.fromJson(Map<String, dynamic> json) { return MconnReadControllerConnectorTokenResponse(
-  result: json['result'] as String?,
+  messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  result: json['result'] as String,
 ); }
 
-final String? result;
+final List<MconnCodedMessage> messages;
+
+final bool success;
+
+final List<MconnCodedMessage> errors;
+
+final String result;
 
 Map<String, dynamic> toJson() { return {
-  'result': ?result,
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnReadControllerConnectorTokenResponse copyWith({String Function()? result}) { return MconnReadControllerConnectorTokenResponse(
-  result: result != null ? result() : this.result,
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result') && json['result'] is String; } 
+MconnReadControllerConnectorTokenResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, String? result, }) { return MconnReadControllerConnectorTokenResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MconnReadControllerConnectorTokenResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'MconnReadControllerConnectorTokenResponse(result: $result)'; } 
+@override int get hashCode { return Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result); } 
+@override String toString() { return 'MconnReadControllerConnectorTokenResponse(messages: $messages, success: $success, errors: $errors, result: $result)'; } 
  }

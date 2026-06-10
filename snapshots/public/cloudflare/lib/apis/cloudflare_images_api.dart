@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_images_list_images_response400.dart';import '../models/cloudflare_images_list_images_sort_order.dart';import '../models/images_account_identifier.dart';import '../models/images_image.dart';import '../models/images_image_basic_upload.dart';import '../models/images_image_direct_upload_request.dart';import '../models/images_image_direct_upload_response_result.dart';import '../models/images_image_identifier.dart';import '../models/images_image_patch_request.dart';import '../models/images_images_list_continuation_token.dart';import '../models/images_images_list_response2_result.dart';import '../models/images_images_stats.dart';/// CloudflareImagesApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_images_list_images_response400.dart';import '../models/cloudflare_images_list_images_sort_order.dart';import '../models/images_account_identifier.dart';import '../models/images_image_basic_upload.dart';import '../models/images_image_direct_upload_request.dart';import '../models/images_image_identifier.dart';import '../models/images_image_patch_request.dart';import '../models/images_images_list_continuation_token.dart';import '../models/response_common36_result.dart';/// CloudflareImagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class CloudflareImagesApi with ApiExecutor {const CloudflareImagesApi(this
 /// 
 ///
 /// `POST /accounts/{account_id}/images/v1`
-Future<ApiResult<ImagesImage?, Never>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -42,7 +42,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ImagesImage.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Fetch details for a single image.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ImagesImage?, Never>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -64,7 +64,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ImagesImage.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -73,7 +73,7 @@ return execute(
 /// Update image access control. On access control change, all copies of the image are purged from cache.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ImagesImage?, Never>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,7 +88,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ImagesImage.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -97,7 +97,7 @@ return execute(
 /// Delete an image on Cloudflare Images. On success, all copies of the image are deleted and purged from cache.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -110,7 +110,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -140,7 +140,7 @@ return execute(
 /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account's allowance.
 ///
 /// `GET /accounts/{account_id}/images/v1/stats`
-Future<ApiResult<ImagesImagesStats?, Never>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -153,7 +153,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ImagesImagesStats.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -202,7 +202,7 @@ return execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`
-Future<ApiResult<ImagesImagesListResponse2Result?, CloudflareImagesListImagesResponse400>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon36Result, CloudflareImagesListImagesResponse400>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (continuationToken != null) {
   queryParameters['continuation_token'] = continuationToken.toString();
@@ -235,7 +235,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
   onError: (response) {
     return CloudflareImagesListImagesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -247,7 +247,7 @@ return execute(
 /// Direct uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a draft record for a future image. It returns an upload URL and an image identifier. To verify if the image itself has been uploaded, send an image details request (accounts/:account_identifier/images/v1/:identifier), and check that the `draft: true` property is not present.
 ///
 /// `POST /accounts/{account_id}/images/v2/direct_upload`
-Future<ApiResult<ImagesImageDirectUploadResponseResult?, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -272,7 +272,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ImagesImageDirectUploadResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 

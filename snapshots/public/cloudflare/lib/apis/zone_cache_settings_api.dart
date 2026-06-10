@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_base.dart';import '../models/cache_rules_identifier.dart';import '../models/zone_cache_settings_change_cache_reserve_setting_request.dart';import '../models/zone_cache_settings_change_cache_reserve_setting_response_result.dart';import '../models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import '../models/zone_cache_settings_change_regional_tiered_cache_setting_response_result.dart';import '../models/zone_cache_settings_change_variants_setting_request.dart';import '../models/zone_cache_settings_change_variants_setting_response_result.dart';import '../models/zone_cache_settings_get_cache_reserve_clear_response_result.dart';import '../models/zone_cache_settings_get_cache_reserve_setting_response_result.dart';import '../models/zone_cache_settings_get_regional_tiered_cache_setting_response_result.dart';import '../models/zone_cache_settings_get_variants_setting_response_result.dart';import '../models/zone_cache_settings_start_cache_reserve_clear_response_result.dart';/// ZoneCacheSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_result_object_delete.dart';import '../models/zone_cache_settings_change_cache_reserve_setting_request.dart';import '../models/zone_cache_settings_change_cache_reserve_setting_response_result.dart';import '../models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import '../models/zone_cache_settings_change_regional_tiered_cache_setting_response_result.dart';import '../models/zone_cache_settings_change_variants_setting_request.dart';import '../models/zone_cache_settings_change_variants_setting_response_result.dart';import '../models/zone_cache_settings_get_cache_reserve_clear_response_result.dart';import '../models/zone_cache_settings_get_cache_reserve_setting_response_result.dart';import '../models/zone_cache_settings_get_regional_tiered_cache_setting_response_result.dart';import '../models/zone_cache_settings_get_variants_setting_response_result.dart';import '../models/zone_cache_settings_start_cache_reserve_clear_response_result.dart';/// ZoneCacheSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -195,7 +195,7 @@ return execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `DELETE /zones/{zone_id}/cache/variants`
-Future<ApiResult<CacheRulesBase?, Never>> zoneCacheSettingsDeleteVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesResultObjectDelete?, Never>> zoneCacheSettingsDeleteVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -208,7 +208,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesResultObjectDelete.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

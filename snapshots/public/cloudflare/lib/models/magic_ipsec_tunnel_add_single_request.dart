@@ -1,6 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_psk.dart';import 'magic_replay_protection.dart';import 'magic_tunnel_health_check.dart';@immutable final class MagicIpsecTunnelAddSingleRequest {const MagicIpsecTunnelAddSingleRequest({required this.cloudflareEndpoint, required this.interfaceAddress, required this.name, this.automaticReturnRouting, this.bgp, this.customRemoteIdentities, this.customerEndpoint, this.description, this.healthCheck, this.interfaceAddress6, this.psk, this.replayProtection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_replay_protection.dart';import 'magic_tunnel_health_check.dart';/// A randomly generated or provided string for use in the IPsec tunnel.
+extension type const MagicPsk(String value) {
+factory MagicPsk.fromJson(String json) => MagicPsk(json);
+
+String toJson() => value;
+
+}
+@immutable final class MagicIpsecTunnelAddSingleRequest {const MagicIpsecTunnelAddSingleRequest({required this.cloudflareEndpoint, required this.interfaceAddress, required this.name, this.automaticReturnRouting, this.bgp, this.customRemoteIdentities, this.customerEndpoint, this.description, this.healthCheck, this.interfaceAddress6, this.psk, this.replayProtection, });
 
 factory MagicIpsecTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicIpsecTunnelAddSingleRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,

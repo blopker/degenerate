@@ -1,6 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_allowed_tools_choice.dart';import 'chat_completion_function_call_option.dart';import 'chat_completion_functions.dart';import 'chat_completion_named_tool_choice.dart';import 'chat_completion_named_tool_choice_custom.dart';import 'chat_completion_request_message.dart';import 'chat_completion_stream_options.dart';import 'chat_completion_tool.dart';import 'chat_completion_tool_choice_option.dart';import 'create_chat_completion_request_audio.dart';import 'create_chat_completion_request_function_call.dart';import 'create_chat_completion_request_response_format.dart';import 'create_chat_completion_request_tools.dart';import 'create_chat_completion_request_web_search_options.dart';import 'custom_tool_chat_completions.dart';import 'model_ids_shared.dart';import 'parallel_tool_calls.dart';import 'prediction_content.dart';import 'reasoning_effort.dart';import 'stop_configuration.dart';import 'tool_choice_mode.dart';import 'verbosity.dart';@immutable final class ResponseModalities2 {const ResponseModalities2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_allowed_tools_choice.dart';import 'chat_completion_function_call_option.dart';import 'chat_completion_functions.dart';import 'chat_completion_named_tool_choice.dart';import 'chat_completion_named_tool_choice_custom.dart';import 'chat_completion_request_message.dart';import 'chat_completion_stream_options.dart';import 'chat_completion_tool.dart';import 'chat_completion_tool_choice_option.dart';import 'create_chat_completion_request_audio.dart';import 'create_chat_completion_request_function_call.dart';import 'create_chat_completion_request_response_format.dart';import 'create_chat_completion_request_tools.dart';import 'create_chat_completion_request_web_search_options.dart';import 'custom_tool_chat_completions.dart';import 'model_ids_shared.dart';import 'parallel_tool_calls.dart';import 'prediction_content.dart';import 'reasoning_effort.dart';import 'service_tier.dart';import 'stop_configuration.dart';import 'tool_choice_mode.dart';import 'verbosity.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+/// 
+@immutable final class CreateChatCompletionRequestPromptCacheRetention {const CreateChatCompletionRequestPromptCacheRetention._(this.value);
+
+factory CreateChatCompletionRequestPromptCacheRetention.fromJson(String json) { return switch (json) {
+  'in-memory' => inMemory,
+  '24h' => $24h,
+  _ => CreateChatCompletionRequestPromptCacheRetention._(json),
+}; }
+
+static const CreateChatCompletionRequestPromptCacheRetention inMemory = CreateChatCompletionRequestPromptCacheRetention._('in-memory');
+
+static const CreateChatCompletionRequestPromptCacheRetention $24h = CreateChatCompletionRequestPromptCacheRetention._('24h');
+
+static const List<CreateChatCompletionRequestPromptCacheRetention> values = [inMemory, $24h];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateChatCompletionRequestPromptCacheRetention && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateChatCompletionRequestPromptCacheRetention($value)'; } 
+ }
+@immutable final class ResponseModalities2 {const ResponseModalities2._(this.value);
 
 factory ResponseModalities2.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -24,9 +50,18 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponseModalities2($value)'; } 
  }
-@immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.messages, required this.model, this.modalities, this.verbosity, this.reasoningEffort, this.maxCompletionTokens, this.frequencyPenalty = 0.0, this.presencePenalty = 0.0, this.webSearchOptions, this.topLogprobs, this.responseFormat, this.audio, this.store = false, this.stream = false, this.stop, this.logitBias, this.logprobs = false, this.maxTokens, this.n = 1, this.prediction, this.seed, this.streamOptions, this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.functions, });
+@immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.model, required this.messages, this.verbosity, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.topLogprobs, this.temperature, this.modalities, this.metadata, this.reasoningEffort, this.maxCompletionTokens, this.frequencyPenalty = 0.0, this.presencePenalty = 0.0, this.webSearchOptions, this.responseFormat, this.audio, this.store = false, this.stream = false, this.functions, this.logitBias, this.logprobs = false, this.maxTokens, this.n = 1, this.prediction, this.seed, this.streamOptions, this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.stop, });
 
 factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequest(
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  user: json['user'] as String?,
+  safetyIdentifier: json['safety_identifier'] as String?,
+  promptCacheKey: json['prompt_cache_key'] as String?,
+  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  promptCacheRetention: json['prompt_cache_retention'] != null ? CreateChatCompletionRequestPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
   messages: (json['messages'] as List<dynamic>).map((e) => ChatCompletionRequestMessage.fromJson(e as Map<String, dynamic>)).toList(),
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),),
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => ResponseModalities2.fromJson(e as String)).toList(),
@@ -36,7 +71,6 @@ factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
   frequencyPenalty: json.containsKey('frequency_penalty') ? json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null : 0.0,
   presencePenalty: json.containsKey('presence_penalty') ? json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null : 0.0,
   webSearchOptions: json['web_search_options'] != null ? CreateChatCompletionRequestWebSearchOptions.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
-  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
   responseFormat: json['response_format'] != null ? CreateChatCompletionRequestResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   audio: json['audio'] != null ? CreateChatCompletionRequestAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   store: json.containsKey('store') ? json['store'] as bool? : false,
@@ -55,6 +89,49 @@ factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
   functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => CreateChatCompletionRequestFunctionCallVariant1.fromJson(v as String), fromB: (v) => ChatCompletionFunctionCallOption.fromJson(v as Map<String, dynamic>),) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => ChatCompletionFunctions.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
+
+final Map<String,String>? metadata;
+
+/// An integer between 0 and 20 specifying the number of most likely tokens to
+/// return at each token position, each with an associated log probability.
+/// `logprobs` must be set to `true` if this parameter is used.
+/// 
+final int? topLogprobs;
+
+/// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+/// We generally recommend altering this or `top_p` but not both.
+/// 
+final double? temperature;
+
+/// An alternative to sampling with temperature, called nucleus sampling,
+/// where the model considers the results of the tokens with top_p probability
+/// mass. So 0.1 means only the tokens comprising the top 10% probability mass
+/// are considered.
+/// 
+/// We generally recommend altering this or `temperature` but not both.
+/// 
+final double? topP;
+
+/// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.
+/// A stable identifier for your end-users.
+/// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
+/// 
+final String? user;
+
+/// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.
+/// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
+/// 
+final String? safetyIdentifier;
+
+/// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).
+/// 
+final String? promptCacheKey;
+
+final ServiceTier? serviceTier;
+
+/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+/// 
+final CreateChatCompletionRequestPromptCacheRetention? promptCacheRetention;
 
 /// A list of messages comprising the conversation so far. Depending on the
 /// [model](/docs/models) you use, different message types (modalities) are
@@ -96,12 +173,6 @@ final double? presencePenalty;
 /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
 /// 
 final CreateChatCompletionRequestWebSearchOptions? webSearchOptions;
-
-/// An integer between 0 and 20 specifying the number of most likely tokens to
-/// return at each token position, each with an associated log probability.
-/// `logprobs` must be set to `true` if this parameter is used.
-/// 
-final int? topLogprobs;
 
 /// An object specifying the format that the model must output.
 /// 
@@ -218,6 +289,15 @@ final CreateChatCompletionRequestFunctionCall? functionCall;
 final List<ChatCompletionFunctions>? functions;
 
 Map<String, dynamic> toJson() { return {
+  'metadata': ?metadata,
+  'top_logprobs': ?topLogprobs,
+  'temperature': ?temperature,
+  'top_p': ?topP,
+  'user': ?user,
+  'safety_identifier': ?safetyIdentifier,
+  'prompt_cache_key': ?promptCacheKey,
+  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'model': model.toJson(),
   if (modalities != null) 'modalities': modalities?.map((e) => e.toJson()).toList(),
@@ -227,7 +307,6 @@ Map<String, dynamic> toJson() { return {
   'frequency_penalty': ?frequencyPenalty,
   'presence_penalty': ?presencePenalty,
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
-  'top_logprobs': ?topLogprobs,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   if (audio != null) 'audio': audio?.toJson(),
   'store': ?store,
@@ -248,7 +327,16 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
       json.containsKey('model'); } 
-CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, List<ResponseModalities2>? Function()? modalities, Verbosity? Function()? verbosity, ReasoningEffort? Function()? reasoningEffort, int? Function()? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, CreateChatCompletionRequestWebSearchOptions Function()? webSearchOptions, int? Function()? topLogprobs, CreateChatCompletionRequestResponseFormat Function()? responseFormat, CreateChatCompletionRequestAudio? Function()? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration Function()? stop, Map<String, int>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, PredictionContent? Function()? prediction, int? Function()? seed, ChatCompletionStreamOptions Function()? streamOptions, List<CreateChatCompletionRequestTools> Function()? tools, ChatCompletionToolChoiceOption Function()? toolChoice, ParallelToolCalls Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall Function()? functionCall, List<ChatCompletionFunctions> Function()? functions, }) { return CreateChatCompletionRequest(
+CreateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, CreateChatCompletionRequestPromptCacheRetention? Function()? promptCacheRetention, List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, List<ResponseModalities2>? Function()? modalities, Verbosity? Function()? verbosity, ReasoningEffort? Function()? reasoningEffort, int? Function()? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, CreateChatCompletionRequestWebSearchOptions Function()? webSearchOptions, CreateChatCompletionRequestResponseFormat Function()? responseFormat, CreateChatCompletionRequestAudio? Function()? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration Function()? stop, Map<String, int>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, PredictionContent? Function()? prediction, int? Function()? seed, ChatCompletionStreamOptions Function()? streamOptions, List<CreateChatCompletionRequestTools> Function()? tools, ChatCompletionToolChoiceOption Function()? toolChoice, ParallelToolCalls Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall Function()? functionCall, List<ChatCompletionFunctions> Function()? functions, }) { return CreateChatCompletionRequest(
+  metadata: metadata != null ? metadata() : this.metadata,
+  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
+  temperature: temperature != null ? temperature() : this.temperature,
+  topP: topP != null ? topP() : this.topP,
+  user: user != null ? user() : this.user,
+  safetyIdentifier: safetyIdentifier != null ? safetyIdentifier() : this.safetyIdentifier,
+  promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
+  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
   messages: messages ?? this.messages,
   model: model ?? this.model,
   modalities: modalities != null ? modalities() : this.modalities,
@@ -258,7 +346,6 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   presencePenalty: presencePenalty != null ? presencePenalty() : this.presencePenalty,
   webSearchOptions: webSearchOptions != null ? webSearchOptions() : this.webSearchOptions,
-  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   audio: audio != null ? audio() : this.audio,
   store: store != null ? store() : this.store,
@@ -279,6 +366,15 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateChatCompletionRequest &&
+          metadata == other.metadata &&
+          topLogprobs == other.topLogprobs &&
+          temperature == other.temperature &&
+          topP == other.topP &&
+          user == other.user &&
+          safetyIdentifier == other.safetyIdentifier &&
+          promptCacheKey == other.promptCacheKey &&
+          serviceTier == other.serviceTier &&
+          promptCacheRetention == other.promptCacheRetention &&
           listEquals(messages, other.messages) &&
           model == other.model &&
           listEquals(modalities, other.modalities) &&
@@ -288,7 +384,6 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
           frequencyPenalty == other.frequencyPenalty &&
           presencePenalty == other.presencePenalty &&
           webSearchOptions == other.webSearchOptions &&
-          topLogprobs == other.topLogprobs &&
           responseFormat == other.responseFormat &&
           audio == other.audio &&
           store == other.store &&
@@ -306,6 +401,6 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
           parallelToolCalls == other.parallelToolCalls &&
           functionCall == other.functionCall &&
           listEquals(functions, other.functions); } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(messages), model, Object.hashAll(modalities ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, topLogprobs, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]); } 
-@override String toString() { return 'CreateChatCompletionRequest(messages: $messages, model: $model, modalities: $modalities, verbosity: $verbosity, reasoningEffort: $reasoningEffort, maxCompletionTokens: $maxCompletionTokens, frequencyPenalty: $frequencyPenalty, presencePenalty: $presencePenalty, webSearchOptions: $webSearchOptions, topLogprobs: $topLogprobs, responseFormat: $responseFormat, audio: $audio, store: $store, stream: $stream, stop: $stop, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, prediction: $prediction, seed: $seed, streamOptions: $streamOptions, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, functionCall: $functionCall, functions: $functions)'; } 
+@override int get hashCode { return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, Object.hashAll(messages), model, Object.hashAll(modalities ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]); } 
+@override String toString() { return 'CreateChatCompletionRequest(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, messages: $messages, model: $model, modalities: $modalities, verbosity: $verbosity, reasoningEffort: $reasoningEffort, maxCompletionTokens: $maxCompletionTokens, frequencyPenalty: $frequencyPenalty, presencePenalty: $presencePenalty, webSearchOptions: $webSearchOptions, responseFormat: $responseFormat, audio: $audio, store: $store, stream: $stream, stop: $stop, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, prediction: $prediction, seed: $seed, streamOptions: $streamOptions, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, functionCall: $functionCall, functions: $functions)'; } 
  }

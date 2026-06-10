@@ -1,23 +1,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_schemas_certificate_object.dart';@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_collection_result_info.dart';import 'tls_certificates_and_hostnames_messages2.dart';import 'tls_certificates_and_hostnames_schemas_certificate_object.dart';@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
 factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(
+  errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  resultInfo: json['result_info'] != null ? TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
+
+final List<TlsCertificatesAndHostnamesMessages2> errors;
+
+final List<TlsCertificatesAndHostnamesMessages2> messages;
+
+/// Whether the API call was successful.
+final bool success;
+
+final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollectionResultInfo? resultInfo;
 
 final List<TlsCertificatesAndHostnamesSchemasCertificateObject>? result;
 
 Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection copyWith({List<TlsCertificatesAndHostnamesSchemasCertificateObject> Function()? result}) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollectionResultInfo Function()? resultInfo, List<TlsCertificatesAndHostnamesSchemasCertificateObject> Function()? result, }) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          resultInfo == other.resultInfo &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(result: $result)'; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const [])); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)'; } 
  }

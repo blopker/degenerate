@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_approval_group.dart';import 'access_approval_required.dart';import 'access_components_schemas_session_duration.dart';import 'access_connection_rules.dart';import 'access_isolation_required.dart';import 'access_mfa_config.dart';import 'access_purpose_justification_prompt.dart';import 'access_purpose_justification_required.dart';/// Number of access applications currently using this policy.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_approval_group.dart';import 'access_approval_required.dart';import 'access_components_schemas_session_duration.dart';import 'access_connection_rules.dart';import 'access_decision.dart';import 'access_isolation_required.dart';import 'access_mfa_config.dart';import 'access_policy_components_schemas_name.dart';import 'access_purpose_justification_prompt.dart';import 'access_purpose_justification_required.dart';import 'access_rule.dart';import 'access_schemas_uuid.dart';import 'access_timestamp.dart';/// Number of access applications currently using this policy.
 extension type const AccessAppCount(int value) {
 factory AccessAppCount.fromJson(num json) => AccessAppCount(json.toInt());
 
 num toJson() => value;
 
 }
-@immutable final class AccessReusablePolicyResp {const AccessReusablePolicyResp({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.appCount, this.reusable, });
+@immutable final class AccessReusablePolicyResp {const AccessReusablePolicyResp({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.appCount, this.reusable, });
 
 factory AccessReusablePolicyResp.fromJson(Map<String, dynamic> json) { return AccessReusablePolicyResp(
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
@@ -18,6 +18,14 @@ factory AccessReusablePolicyResp.fromJson(Map<String, dynamic> json) { return Ac
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
   sessionDuration: json['session_duration'] != null ? AccessComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  decision: json['decision'] != null ? AccessDecision.fromJson(json['decision'] as String) : null,
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,
+  include: (json['include'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  name: json['name'] != null ? AccessPolicyComponentsSchemasName.fromJson(json['name'] as String) : null,
+  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   appCount: json['app_count'] != null ? AccessAppCount.fromJson(json['app_count'] as num) : null,
   reusable: json['reusable'] as bool?,
 ); }
@@ -44,6 +52,24 @@ final AccessPurposeJustificationRequired? purposeJustificationRequired;
 /// The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 final AccessComponentsSchemasSessionDuration? sessionDuration;
 
+final AccessTimestamp? createdAt;
+
+/// The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
+final AccessDecision? decision;
+
+final List<AccessRule>? exclude;
+
+final AccessSchemasUuid? id;
+
+final List<AccessRule>? include;
+
+/// The name of the Access policy.
+final AccessPolicyComponentsSchemasName? name;
+
+final List<AccessRule>? require;
+
+final AccessTimestamp? updatedAt;
+
 /// Number of access applications currently using this policy.
 final AccessAppCount? appCount;
 
@@ -58,11 +84,19 @@ Map<String, dynamic> toJson() { return {
   if (purposeJustificationPrompt != null) 'purpose_justification_prompt': purposeJustificationPrompt?.toJson(),
   if (purposeJustificationRequired != null) 'purpose_justification_required': purposeJustificationRequired?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (decision != null) 'decision': decision?.toJson(),
+  if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
+  if (id != null) 'id': id?.toJson(),
+  if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
+  if (name != null) 'name': name?.toJson(),
+  if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (appCount != null) 'app_count': appCount?.toJson(),
   'reusable': ?reusable,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration', 'app_count', 'reusable'}.contains(key)); } 
-AccessReusablePolicyResp copyWith({List<AccessApprovalGroup> Function()? approvalGroups, AccessApprovalRequired Function()? approvalRequired, AccessConnectionRules Function()? connectionRules, AccessIsolationRequired Function()? isolationRequired, AccessMfaConfig Function()? mfaConfig, AccessPurposeJustificationPrompt Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration Function()? sessionDuration, AccessAppCount Function()? appCount, bool Function()? reusable, }) { return AccessReusablePolicyResp(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration', 'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'app_count', 'reusable'}.contains(key)); } 
+AccessReusablePolicyResp copyWith({List<AccessApprovalGroup> Function()? approvalGroups, AccessApprovalRequired Function()? approvalRequired, AccessConnectionRules Function()? connectionRules, AccessIsolationRequired Function()? isolationRequired, AccessMfaConfig Function()? mfaConfig, AccessPurposeJustificationPrompt Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration Function()? sessionDuration, AccessTimestamp Function()? createdAt, AccessDecision Function()? decision, List<AccessRule> Function()? exclude, AccessSchemasUuid Function()? id, List<AccessRule> Function()? include, AccessPolicyComponentsSchemasName Function()? name, List<AccessRule> Function()? require, AccessTimestamp Function()? updatedAt, AccessAppCount Function()? appCount, bool Function()? reusable, }) { return AccessReusablePolicyResp(
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
   connectionRules: connectionRules != null ? connectionRules() : this.connectionRules,
@@ -71,6 +105,14 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup> Function()? approva
   purposeJustificationPrompt: purposeJustificationPrompt != null ? purposeJustificationPrompt() : this.purposeJustificationPrompt,
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  decision: decision != null ? decision() : this.decision,
+  exclude: exclude != null ? exclude() : this.exclude,
+  id: id != null ? id() : this.id,
+  include: include != null ? include() : this.include,
+  name: name != null ? name() : this.name,
+  require: require != null ? require() : this.require,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   appCount: appCount != null ? appCount() : this.appCount,
   reusable: reusable != null ? reusable() : this.reusable,
 ); } 
@@ -84,8 +126,16 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup> Function()? approva
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
           sessionDuration == other.sessionDuration &&
+          createdAt == other.createdAt &&
+          decision == other.decision &&
+          listEquals(exclude, other.exclude) &&
+          id == other.id &&
+          listEquals(include, other.include) &&
+          name == other.name &&
+          listEquals(require, other.require) &&
+          updatedAt == other.updatedAt &&
           appCount == other.appCount &&
           reusable == other.reusable; } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, appCount, reusable); } 
-@override String toString() { return 'AccessReusablePolicyResp(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, appCount: $appCount, reusable: $reusable)'; } 
+@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, appCount, reusable); } 
+@override String toString() { return 'AccessReusablePolicyResp(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt, appCount: $appCount, reusable: $reusable)'; } 
  }
