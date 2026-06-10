@@ -90,30 +90,30 @@ class ApiEmitter {
       final errorResponseContent = _errorResponseContent(op);
 
       if (requestBodyContent != null &&
-          !isJsonLikeMediaType(requestBodyContent.$1) &&
-          !(isMultipartMediaType(requestBodyContent.$1) &&
+          !requestBodyContent.$1.test(isJsonLikeMediaType) &&
+          !(requestBodyContent.$1.test(isMultipartMediaType) &&
               _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
-          !(isFormUrlencodedMediaType(requestBodyContent.$1) &&
+          !(requestBodyContent.$1.test(isFormUrlencodedMediaType) &&
               _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
           !_supportsNonJsonEncode(requestBodyContent.$2.schema)) {
         warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON request body media type ${requestBodyContent.$1} with type ${irTypeName(requestBodyContent.$2.schema)}.',
+          'Operation ${op.operationId} uses unsupported non-JSON request body media type ${requestBodyContent.$1.forDiagnostics} with type ${irTypeName(requestBodyContent.$2.schema)}.',
         );
       }
 
       if (successResponseContent != null &&
-          !isJsonLikeMediaType(successResponseContent.$1) &&
+          !successResponseContent.$1.test(isJsonLikeMediaType) &&
           !_supportsNonJsonDecode(successResponseContent.$2.schema)) {
         warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON success response media type ${successResponseContent.$1} with type ${irTypeName(successResponseContent.$2.schema)}.',
+          'Operation ${op.operationId} uses unsupported non-JSON success response media type ${successResponseContent.$1.forDiagnostics} with type ${irTypeName(successResponseContent.$2.schema)}.',
         );
       }
 
       if (errorResponseContent != null &&
-          !isJsonLikeMediaType(errorResponseContent.$1) &&
+          !errorResponseContent.$1.test(isJsonLikeMediaType) &&
           !_supportsNonJsonDecode(errorResponseContent.$2.schema)) {
         warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON error response media type ${errorResponseContent.$1} with type ${irTypeName(errorResponseContent.$2.schema)}.',
+          'Operation ${op.operationId} uses unsupported non-JSON error response media type ${errorResponseContent.$1.forDiagnostics} with type ${irTypeName(errorResponseContent.$2.schema)}.',
         );
       }
     }
@@ -279,17 +279,17 @@ class ApiEmitter {
 
     final docs = <String>[];
     if (op.summary != null) {
-      docs.addAll(formatDocComment(op.summary!));
+      docs.addAll(op.summary!.docComment);
     }
     if (op.description != null && op.description != op.summary) {
       docs
         ..add('///')
-        ..addAll(formatDocComment(op.description!));
+        ..addAll(op.description!.docComment);
     }
     final httpMethod = _httpMethodString(op);
     docs
       ..add('///')
-      ..add('/// `$httpMethod ${op.path}`');
+      ..add('/// `${httpMethod.commentText} ${op.path.commentText}`');
 
     return Method(
       (m) => m
@@ -311,18 +311,25 @@ class ApiEmitter {
 
   static final _pathParamPattern = RegExp(r'\{([^}]+)\}');
 
-  /// Interpolate path parameters into [path], URL-encoding each value.
+  /// Build the Dart string literal for [path] with `{param}` placeholders
+  /// replaced by URL-encoding interpolation expressions.
+  ///
+  /// [SpecString.interpolatedLiteral] escapes the literal path segments while
+  /// passing the generated `${...}` expressions through verbatim, so the
+  /// quotes/`$`/`\` that can appear in a spec path can't break out of the
+  /// literal or be mistaken for interpolation.
   ///
   /// Enum wrappers expose the wire value via `value`; their `toString()` is a
   /// debug form (`ClassName(value)`) that must never reach the URL. Arrays,
   /// objects, and maps serialize per the `simple` style (the only one
   /// supported here): comma-joined items / `k,v` pairs (explode=false) or
   /// `k=v` pairs (explode=true) — never the Dart debug `toString()`.
-  String _interpolatePath(String path, List<IrParameter> pathParams) {
-    final pathParamsByName = {for (final p in pathParams) p.name: p};
-    return path.replaceAllMapped(_pathParamPattern, (m) {
-      final p = pathParamsByName[m[1]];
-      if (p == null) return m[0]!;
+  String _interpolatePath(SpecString path, List<IrParameter> pathParams) {
+    return path.interpolatedLiteral(_pathParamPattern, (m) {
+      final p = pathParams
+          .where((p) => p.name.test((s) => s == m[1]))
+          .firstOrNull;
+      if (p == null) return escapeDartString(m[0]!);
       final explode = p.explode ?? false;
       // Resolve refs: a $ref to an object/array schema must serialize per
       // the simple style, not stringify via the scalar default.
@@ -351,11 +358,11 @@ class ApiEmitter {
             if (explode) {
               // Interpolation stringifies — a trailing .toString() is a no-op.
               parts.add(
-                "'${escapeDartString(f.originalName)}=\${${_interpolatable(value)}}'",
+                "'${f.originalName.escaped}=\${${_interpolatable(value)}}'",
               );
             } else {
               parts
-                ..add("'${escapeDartString(f.originalName)}'")
+                ..add("'${f.originalName.escaped}'")
                 ..add(value);
             }
           }
@@ -398,9 +405,9 @@ class ApiEmitter {
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
-    (String, IrMediaType)? successResponseContent,
-    (String, IrMediaType)? errorResponseContent,
-    (String, IrMediaType)? requestBodyContent,
+    (SpecString, IrMediaType)? successResponseContent,
+    (SpecString, IrMediaType)? errorResponseContent,
+    (SpecString, IrMediaType)? requestBodyContent,
     IrType? bodyType,
     String? unwrappedField,
     bool unwrappedFieldIsOptional = false,
@@ -414,12 +421,12 @@ class ApiEmitter {
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
     final multipartFields =
-        bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
+        bodyType != null && requestBodyContent!.$1.test(isMultipartMediaType)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
     final formUrlencodedFields =
-        bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
+        bodyType != null && requestBodyContent!.$1.test(isFormUrlencodedMediaType)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
@@ -474,13 +481,13 @@ class ApiEmitter {
     if (requestBodyContent case (
       final mediaType,
       _,
-    ) when !isMultipartMediaType(mediaType)) {
+    ) when !mediaType.test(isMultipartMediaType)) {
       // Use application/json for wildcard content types since we serialize as
       // JSON.
-      final contentType = normalizeMediaType(mediaType) == '*/*'
-          ? 'application/json'
+      final contentType = mediaType.test((s) => normalizeMediaType(s) == '*/*')
+          ? const SpecString('application/json')
           : mediaType;
-      buf.writeln("headers['Content-Type'] = '$contentType';");
+      buf.writeln("headers['Content-Type'] = ${contentType.literal};");
     }
     for (final p in headerParams) {
       final sanitizedName = _paramNameLiteral(p.name);
@@ -496,8 +503,8 @@ class ApiEmitter {
     buf.writeln();
 
     buf.writeln('final request = ApiRequest(');
-    buf.writeln("  method: '$httpMethod',");
-    buf.writeln("  path: '$path',");
+    buf.writeln('  method: ${httpMethod.literal},');
+    buf.writeln('  path: $path,');
     buf.writeln('  headers: headers,');
 
     if (queryParams.isNotEmpty) {
@@ -572,8 +579,8 @@ class ApiEmitter {
     return buf.toString();
   }
 
-  String _buildDeserializeExpr(String mediaType, IrType returnType) {
-    if (isJsonLikeMediaType(mediaType)) {
+  String _buildDeserializeExpr(SpecString mediaType, IrType returnType) {
+    if (mediaType.test(isJsonLikeMediaType)) {
       return switch (returnType) {
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
@@ -601,8 +608,9 @@ class ApiEmitter {
       };
     }
 
-    final unsupportedMessage =
-        'Cannot decode $mediaType response into ${irTypeName(returnType)}';
+    final unsupportedMessage = mediaType.rebuild(
+      (m) => 'Cannot decode $m response into ${irTypeName(returnType)}',
+    );
     return switch (returnType) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.dynamic_ ||
@@ -611,12 +619,13 @@ class ApiEmitter {
         PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
         PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => "throw UnsupportedError('$unsupportedMessage');",
+        _ => 'throw UnsupportedError(${unsupportedMessage.literal});',
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
       IrExtensionType() => 'return ${_fromJson(returnType, 'response.body')};',
       _ =>
-        "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
+        '// TODO: Unsupported non-JSON response schema ${unsupportedMessage.commentText}\n'
+            'throw UnsupportedError(${unsupportedMessage.literal});',
     };
   }
 
@@ -747,7 +756,7 @@ class ApiEmitter {
     final name = _sanitizeParameterName(p.name);
     if (style == 'deepObject') {
       for (final field in fields) {
-        final key = '$name[${escapeDartString(field.originalName)}]';
+        final key = '$name[${field.originalName.escaped}]';
         if (!field.isRequired) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
@@ -767,7 +776,7 @@ class ApiEmitter {
 
     if (style == 'form' && explode) {
       for (final field in fields) {
-        final fieldNameLiteral = dartStringLiteral(field.originalName);
+        final fieldNameLiteral = field.originalName.literal;
         if (!field.isRequired) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
@@ -790,7 +799,7 @@ class ApiEmitter {
     final parts = <String>[];
     for (final field in fields) {
       final valueExpr = _queryScalarExpr(field.type, '$accessor.${field.name}');
-      parts.add("'${escapeDartString(field.originalName)}'");
+      parts.add("'${field.originalName.escaped}'");
       parts.add(valueExpr);
     }
     final delimiter = _joinDelimiter(style);
@@ -879,18 +888,21 @@ class ApiEmitter {
   bool _queryExplode(IrParameter p, String style) =>
       p.explode ?? (style == 'form');
 
-  /// Escape a parameter name for use inside a Dart string literal.
-  String _sanitizeParameterName(String value) =>
-      escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+  /// Normalize a parameter name (strip newlines/whitespace) for embedding.
+  SpecString _normalizeParamName(SpecString name) =>
+      name.rebuild((s) => s.replaceAll('\n', '').replaceAll('\r', '').trim());
+
+  /// Escape a parameter name for use inside a larger Dart string literal.
+  String _sanitizeParameterName(SpecString name) =>
+      _normalizeParamName(name).escaped;
 
   /// Returns a full Dart string literal (with quotes) for a parameter name,
   /// using raw strings when possible to avoid unnecessary escapes.
-  String _paramNameLiteral(String value) =>
-      dartStringLiteral(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+  String _paramNameLiteral(SpecString name) => _normalizeParamName(name).literal;
 
   /// Returns the HTTP method string for an operation (e.g. 'GET', 'HAUNT').
-  static String _httpMethodString(IrOperation op) =>
-      op.customMethod ?? op.method.name.toUpperCase();
+  static SpecString _httpMethodString(IrOperation op) =>
+      op.customMethod ?? SpecString(op.method.name.toUpperCase());
 
   /// If [unwrapFields] is configured and [type] is an object (or ref to one)
   /// with a matching field, return that field's type and the JSON key used
@@ -906,7 +918,7 @@ class ApiEmitter {
     }
     for (final fieldName in unwrapFields) {
       for (final f in obj.fields) {
-        if (f.originalName == fieldName) {
+        if (f.originalName.test((s) => s == fieldName)) {
           final isOptional = !f.isRequired || f.type.isNullable;
           var fieldType = f.type;
           if (isOptional && !fieldType.isNullable) {
@@ -1054,13 +1066,13 @@ class ApiEmitter {
 
     final docs = <String>[];
     if (op.summary != null) {
-      docs.addAll(formatDocComment('${op.summary!} (streaming)'));
+      docs.addAll(op.summary!.rebuild((s) => '$s (streaming)').docComment);
     } else {
       docs.add('/// Stream response.');
     }
     final httpMethod = _httpMethodString(op);
     docs.add('///');
-    docs.add('/// `$httpMethod ${op.path}`');
+    docs.add('/// `${httpMethod.commentText} ${op.path.commentText}`');
 
     return Method(
       (m) => m
@@ -1080,7 +1092,7 @@ class ApiEmitter {
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
     StreamKind streamKind = StreamKind.sse,
-    (String, IrMediaType)? requestBodyContent,
+    (SpecString, IrMediaType)? requestBodyContent,
     IrType? bodyType,
   }) {
     final buf = StringBuffer();
@@ -1092,11 +1104,11 @@ class ApiEmitter {
     // Pre-compute multipart/form/unsupported body before emitting variables,
     // so we can return early for unsupported bodies without unused locals.
     final multipartFields =
-        bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
+        bodyType != null && requestBodyContent!.$1.test(isMultipartMediaType)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
     final formUrlencodedFields =
-        bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
+        bodyType != null && requestBodyContent!.$1.test(isFormUrlencodedMediaType)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
 
@@ -1151,11 +1163,11 @@ class ApiEmitter {
     if (requestBodyContent case (
       final mediaType,
       _,
-    ) when !isMultipartMediaType(mediaType)) {
-      final contentType = normalizeMediaType(mediaType) == '*/*'
-          ? 'application/json'
+    ) when !mediaType.test(isMultipartMediaType)) {
+      final contentType = mediaType.test((s) => normalizeMediaType(s) == '*/*')
+          ? const SpecString('application/json')
           : mediaType;
-      buf.writeln("headers['Content-Type'] = '$contentType';");
+      buf.writeln("headers['Content-Type'] = ${contentType.literal};");
     }
     for (final p in headerParams) {
       final sanitizedName = _paramNameLiteral(p.name);
@@ -1171,8 +1183,8 @@ class ApiEmitter {
     buf.writeln();
 
     buf.writeln('final request = ApiRequest(');
-    buf.writeln("  method: '$httpMethod',");
-    buf.writeln("  path: '$path',");
+    buf.writeln('  method: ${httpMethod.literal},');
+    buf.writeln('  path: $path,');
     buf.writeln('  headers: headers,');
     if (queryParams.isNotEmpty) {
       buf.writeln('  queryParameters: queryParameters,');
@@ -1221,7 +1233,7 @@ class ApiEmitter {
     return 'return ${_fromJson(eventType, 'jsonDecode(data)')};';
   }
 
-  (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
+  (SpecString, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
       preferredContent(body.content);
 
   bool _typeNeedsToJson(IrType type) {
@@ -1236,7 +1248,7 @@ class ApiEmitter {
     };
   }
 
-  (String, IrMediaType)? _errorResponseContent(IrOperation op) {
+  (SpecString, IrMediaType)? _errorResponseContent(IrOperation op) {
     // Check for a default error response first (most common pattern)
     if (op.defaultResponse != null) {
       final content = preferredContent(op.defaultResponse!.content);
@@ -1252,8 +1264,8 @@ class ApiEmitter {
     return null;
   }
 
-  String _buildErrorDeserializeExpr(String mediaType, IrType errorType) {
-    if (isJsonLikeMediaType(mediaType)) {
+  String _buildErrorDeserializeExpr(SpecString mediaType, IrType errorType) {
+    if (mediaType.test(isJsonLikeMediaType)) {
       return switch (errorType) {
         IrPrimitive(:final kind) => switch (kind) {
           PrimitiveKind.string => 'return response.body;',
@@ -1281,8 +1293,9 @@ class ApiEmitter {
       };
     }
 
-    final unsupportedMessage =
-        'Cannot decode $mediaType error into ${irTypeName(errorType)}';
+    final unsupportedMessage = mediaType.rebuild(
+      (m) => 'Cannot decode $m error into ${irTypeName(errorType)}',
+    );
     return switch (errorType) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.dynamic_ ||
@@ -1295,11 +1308,11 @@ class ApiEmitter {
       },
       IrEnum(:final name) => 'return $name.fromJson(response.body);',
       _ =>
-        '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;',
+        '// TODO: Unsupported non-JSON error schema ${unsupportedMessage.commentText}\nreturn null;',
     };
   }
 
-  (String, IrMediaType)? _successResponseContent(IrOperation op) {
+  (SpecString, IrMediaType)? _successResponseContent(IrOperation op) {
     // Find the first 2xx response with content.
     // Check common codes first, then any other 2xx code.
     final priorityCodes = [200, 201, 202, 203, 204];
@@ -1326,11 +1339,11 @@ class ApiEmitter {
   }
 
   String _buildRequestBodyExpr(
-    String mediaType,
+    SpecString mediaType,
     IrType bodyType,
     bool isRequired,
   ) {
-    if (isJsonLikeMediaType(mediaType)) {
+    if (mediaType.test(isJsonLikeMediaType)) {
       final nullAware = (!isRequired || bodyType.isNullable) ? '?' : '';
       final toJsonCall = _typeNeedsToJson(bodyType)
           ? '$nullAware.toJson()'
@@ -1338,8 +1351,9 @@ class ApiEmitter {
       return 'jsonEncode(body$toJsonCall)';
     }
 
-    final unsupportedMessage =
-        'Cannot encode non-JSON $mediaType request body from ${irTypeName(bodyType)}';
+    final unsupportedMessage = mediaType.rebuild(
+      (m) => 'Cannot encode non-JSON $m request body from ${irTypeName(bodyType)}',
+    );
     return switch (bodyType) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.dynamic_ => 'body',
@@ -1349,7 +1363,7 @@ class ApiEmitter {
       },
       IrEnum() => 'body.toJson()',
       IrExtensionType() => 'body.toJson()',
-      _ => "throw UnsupportedError('$unsupportedMessage')",
+      _ => 'throw UnsupportedError(${unsupportedMessage.literal})',
     };
   }
 
@@ -1461,13 +1475,13 @@ class ApiEmitter {
           (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
-          "'${f.originalName}=\${Uri.encodeQueryComponent($valueExpr)}'";
+          "'${f.originalName.escaped}=\${Uri.encodeQueryComponent($valueExpr)}'";
 
       if (isNullable) {
         final localVar = '${f.name}\$';
         final localValueExpr = _formFieldValueExpr(f.type, localVar);
         final localEncoded =
-            "'${f.originalName}=\${Uri.encodeQueryComponent($localValueExpr)}'";
+            "'${f.originalName.escaped}=\${Uri.encodeQueryComponent($localValueExpr)}'";
         buf.writeln('    if ($fieldAccessor case final $localVar?)');
         buf.writeln('      $localEncoded,');
       } else {
@@ -1494,12 +1508,12 @@ class ApiEmitter {
   ) {
     if (isBytes) {
       buf.writeln(
-        "    ApiMultipartField.file('${f.originalName}', $accessor),",
+        '    ApiMultipartField.file(${f.originalName.literal}, $accessor),',
       );
     } else {
       final valueExpr = _multipartFieldValueExpr(f.type, accessor);
       buf.writeln(
-        "    ApiMultipartField.text('${f.originalName}', $valueExpr),",
+        '    ApiMultipartField.text(${f.originalName.literal}, $valueExpr),',
       );
     }
   }

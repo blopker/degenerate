@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:degenerate/src/generator.dart';
@@ -551,6 +552,249 @@ void main() {
           File(p.join(config.resolvedOutputDir!, 'api_client.dart'));
       expect(barrelFile.existsSync(), isTrue,
           reason: 'Barrel file should use api_client as default name');
+    });
+
+    test('adversarial spec strings cannot inject source code', () async {
+      // Every spec-controlled string that flows into generated source:
+      // descriptions/summaries/examples (CR injection), operation paths,
+      // media type keys, multipart/form field names, security scheme names,
+      // discriminator mapping keys. Quotes and `$` must be escaped; a raw
+      // `\r` must never survive into a generated file (Dart's scanner treats
+      // a bare CR as a line terminator, which would end a `///` comment
+      // mid-line and turn the rest of the string into live source code).
+      final spec = <String, dynamic>{
+        'openapi': '3.1.0',
+        'info': {'title': 'Adversarial', 'version': '1.0.0'},
+        'security': [
+          {"key'] /* pwn */": <String>[]},
+        ],
+        'paths': {
+          "/it's/{id}": {
+            'get': {
+              'operationId': 'getQuoted',
+              'summary': "Line one\rString injected = 'pwned';",
+              'description': 'Desc\rint alsoInjected = 1;',
+              'parameters': [
+                {
+                  'name': 'id',
+                  'in': 'path',
+                  'required': true,
+                  'schema': {'type': 'string'},
+                },
+              ],
+              'responses': {
+                '200': {
+                  'description': 'OK',
+                  'content': {
+                    'application/json': {
+                      'schema': {r'$ref': '#/components/schemas/CrDoc'},
+                    },
+                  },
+                },
+              },
+            },
+          },
+          '/weird-media': {
+            'post': {
+              'operationId': 'postWeirdMedia',
+              'requestBody': {
+                'content': {
+                  "application/vnd.a'b+json": {
+                    'schema': {r'$ref': '#/components/schemas/CrDoc'},
+                  },
+                },
+              },
+              'responses': {
+                '204': {'description': 'No content'},
+              },
+            },
+          },
+          '/multipart': {
+            'post': {
+              'operationId': 'postMultipart',
+              'requestBody': {
+                'content': {
+                  'multipart/form-data': {
+                    'schema': {
+                      'type': 'object',
+                      'properties': {
+                        "a'b": {'type': 'string'},
+                        r'c$d': {'type': 'string'},
+                      },
+                    },
+                  },
+                },
+              },
+              'responses': {
+                '204': {'description': 'No content'},
+              },
+            },
+          },
+          '/form': {
+            'post': {
+              'operationId': 'postForm',
+              'requestBody': {
+                'content': {
+                  'application/x-www-form-urlencoded': {
+                    'schema': {
+                      'type': 'object',
+                      'properties': {
+                        "e'f": {'type': 'string'},
+                      },
+                    },
+                  },
+                },
+              },
+              'responses': {
+                '204': {'description': 'No content'},
+              },
+            },
+          },
+        },
+        'components': {
+          'securitySchemes': {
+            "key'] /* pwn */": {
+              'type': 'apiKey',
+              'name': 'X-Api-Key',
+              'in': 'header',
+            },
+          },
+          'schemas': {
+            'CrDoc': {
+              'type': 'object',
+              'description': "Type doc\rString classInjected = 'pwned';",
+              'properties': {
+                'note': {
+                  'type': 'string',
+                  'description': 'Field doc\rint fieldInjected = 2;',
+                  'example': 'ex\rint exampleInjected = 3;',
+                },
+              },
+            },
+            'Tagged': {
+              'oneOf': [
+                {r'$ref': '#/components/schemas/TagA'},
+                {r'$ref': '#/components/schemas/TagB'},
+              ],
+              'discriminator': {
+                'propertyName': 'kind',
+                'mapping': {
+                  "it's": '#/components/schemas/TagA',
+                  r'a$b': '#/components/schemas/TagB',
+                },
+              },
+            },
+            'TagA': {
+              'type': 'object',
+              'properties': {
+                'kind': {'type': 'string'},
+              },
+              'required': ['kind'],
+            },
+            'TagB': {
+              'type': 'object',
+              'properties': {
+                'kind': {'type': 'string'},
+              },
+              'required': ['kind'],
+            },
+            'KvAny': {
+              'anyOf': [
+                {'type': 'string'},
+                {'type': 'number'},
+                {'type': 'boolean'},
+                {
+                  'type': 'object',
+                  'properties': {
+                    'x': {'type': 'string'},
+                  },
+                },
+              ],
+            },
+          },
+        },
+      };
+
+      final specFile = File(p.join(tempDir.path, 'adversarial.json'));
+      specFile.writeAsStringSync(jsonEncode(spec));
+
+      final config = GeneratorConfig(
+        inputPath: specFile.path,
+        outputDir: p.join(tempDir.path, 'out'),
+        packageName: 'adversarial_api',
+        workspace: true,
+        quiet: true,
+      );
+
+      await Generator(config).generate();
+      final outDir = config.resolvedOutputDir!;
+
+      // Content-level assertions: a raw CR must never survive into a
+      // generated file, and the injected payload text may only appear
+      // inside `///` doc comments (escaped), never as live source.
+      final dartFiles = Directory(p.join(outDir, 'lib'))
+          .listSync(recursive: true)
+          .whereType<File>()
+          .where((f) => f.path.endsWith('.dart'));
+      expect(dartFiles, isNotEmpty);
+      for (final file in dartFiles) {
+        final content = file.readAsStringSync();
+        expect(content.contains('\r'), isFalse,
+            reason: 'raw carriage return survived into ${file.path}');
+        for (final line in content.split('\n')) {
+          if (line.contains('Injected') || line.contains('injected =')) {
+            expect(line.trimLeft(), startsWith('///'),
+                reason:
+                    'injected payload reached ${file.path} as live source: '
+                    '$line');
+          }
+        }
+      }
+
+      // Overwrite pubspec without resolution:workspace so it runs
+      // standalone, and add dependency_overrides for the local runtime.
+      final runtimeDir =
+          p.join(Directory.current.path, 'packages', 'degenerate_runtime');
+      File(p.join(outDir, 'pubspec.yaml')).writeAsStringSync(
+        'name: adversarial_api\n'
+        'publish_to: none\n'
+        'environment:\n'
+        '  sdk: ^3.8.0\n'
+        'dependencies:\n'
+        '  degenerate_runtime: ^0.1.0\n'
+        'dependency_overrides:\n'
+        '  degenerate_runtime:\n'
+        '    path: $runtimeDir\n',
+      );
+
+      final pubGetResult = Process.runSync(
+        'dart',
+        ['pub', 'get'],
+        workingDirectory: outDir,
+      );
+      expect(pubGetResult.exitCode, equals(0),
+          reason:
+              'dart pub get failed:\nstdout: ${pubGetResult.stdout}\nstderr: ${pubGetResult.stderr}');
+
+      // `dart analyze` (not --fatal-infos: adversarial names may trigger
+      // style lints) must report no errors — any unescaped spec string
+      // shows up as a syntax/semantic error in the generated source.
+      final analyzeResult = Process.runSync(
+        'dart',
+        ['analyze'],
+        workingDirectory: outDir,
+      );
+
+      if (analyzeResult.exitCode != 0) {
+        // ignore: avoid_print -- diagnostic output for failing analyze
+        print('dart analyze stdout:\n${analyzeResult.stdout}');
+        // ignore: avoid_print -- diagnostic output for failing analyze
+        print('dart analyze stderr:\n${analyzeResult.stderr}');
+      }
+
+      expect(analyzeResult.exitCode, equals(0),
+          reason:
+              'dart analyze failed with errors:\n${analyzeResult.stdout}\n${analyzeResult.stderr}');
     });
   });
 }

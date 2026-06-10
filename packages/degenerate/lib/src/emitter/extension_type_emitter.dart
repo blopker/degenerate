@@ -36,7 +36,7 @@ class ExtensionTypeEmitter {
 
     final ext = ExtensionType((b) {
       if (type.description != null) {
-        b.docs.addAll(formatDocComment(type.description!));
+        b.docs.addAll(type.description!.docComment);
       }
       b
         ..name = name

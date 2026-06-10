@@ -27,9 +27,9 @@ final List<WorkersKvAny>? listWorkersKvAny;
 bool get isValid { return string != null || $double != null || $int != null || $bool != null || mapStringDynamic != null || listWorkersKvAny != null; } 
 Map<String, dynamic> toJson() { return {
   'string': ?string,
-  '$double': ?$double,
-  '$int': ?$int,
-  '$bool': ?$bool,
+  r'$double': ?$double,
+  r'$int': ?$int,
+  r'$bool': ?$bool,
   'mapStringDynamic': ?mapStringDynamic,
   'listWorkersKvAny': ?listWorkersKvAny,
 }; } 

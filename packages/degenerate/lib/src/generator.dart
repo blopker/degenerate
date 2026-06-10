@@ -262,7 +262,7 @@ class Generator {
       final filtered = <IrApi>[];
       for (final api in irApis) {
         final ops = api.operations.where((op) {
-          return config.paths.any((prefix) => op.path.startsWith(prefix));
+          return config.paths.any((prefix) => op.path.test((s) => s.startsWith(prefix)));
         }).toList();
         if (ops.isNotEmpty) {
           filtered.add(IrApi(api.name, ops));
@@ -455,7 +455,7 @@ class Generator {
       }
       schemes.add(
         IrSecurityScheme(
-          name: entry.key,
+          name: SpecString(entry.key),
           type: type,
           scheme: value['scheme'] as String?,
           bearerFormat: value['bearerFormat'] as String?,
@@ -474,9 +474,9 @@ class Generator {
   ) {
     if (raw == null) return null;
     return raw.map((requirement) {
-      final schemes = <String, List<String>>{};
+      final schemes = <SpecString, List<String>>{};
       for (final entry in requirement.entries) {
-        schemes[entry.key] = entry.value is List
+        schemes[SpecString(entry.key)] = entry.value is List
             ? (entry.value as List).map((e) => e.toString()).toList()
             : const <String>[];
       }
@@ -520,7 +520,7 @@ class Generator {
         if (op.requestBody != null) {
           final rb = op.requestBody!;
           var rbChanged = false;
-          final newContent = <String, IrMediaType>{};
+          final newContent = <SpecString, IrMediaType>{};
           for (final entry in rb.content.entries) {
             final resolved = resolver.resolve(entry.value.schema);
             if (!identical(resolved, entry.value.schema)) rbChanged = true;
@@ -537,7 +537,7 @@ class Generator {
         for (final entry in op.responses.entries) {
           final resp = entry.value;
           var entryChanged = false;
-          final newContent = <String, IrMediaType>{};
+          final newContent = <SpecString, IrMediaType>{};
           for (final ce in resp.content.entries) {
             final resolved = resolver.resolve(ce.value.schema);
             if (!identical(resolved, ce.value.schema)) entryChanged = true;
@@ -560,7 +560,7 @@ class Generator {
         if (op.defaultResponse != null) {
           final resp = op.defaultResponse!;
           var drChanged = false;
-          final newContent = <String, IrMediaType>{};
+          final newContent = <SpecString, IrMediaType>{};
           for (final ce in resp.content.entries) {
             final resolved = resolver.resolve(ce.value.schema);
             if (!identical(resolved, ce.value.schema)) drChanged = true;
