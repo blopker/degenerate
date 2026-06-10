@@ -107,7 +107,7 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookIssuesUnlockedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesUnlockedIssue(
   activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesUnlockedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   assignee: json['assignee'] != null ? WebhookIssuesUnlockedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookIssuesUnlockedIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhookIssuesUnlockedIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookIssuesUnlockedIssueAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
@@ -118,7 +118,7 @@ factory WebhookIssuesUnlockedIssue.fromJson(Map<String, dynamic> json) { return 
   eventsUrl: Uri.parse(json['events_url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
-  labels: (json['labels'] as List<dynamic>?)?.map((e) => WebhookIssuesUnlockedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
+  labels: (json['labels'] as List<dynamic>?)?.map((e) => e == null ? null : WebhookIssuesUnlockedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool,
   milestone: json['milestone'] != null ? WebhookIssuesUnlockedIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
@@ -278,7 +278,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssuesUnlockedIssue copyWith({WebhookIssuesUnlockedIssueActiveLockReason? Function()? activeLockReason, WebhookIssuesUnlockedIssueAssignee? Function()? assignee, List<WebhookIssuesUnlockedIssueAssignees?>? assignees, WebhookIssuesUnlockedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesUnlockedIssueLabels> Function()? labels, String? labelsUrl, bool? locked, WebhookIssuesUnlockedIssueMilestone? Function()? milestone, String? nodeId, int? number, WebhookIssuesUnlockedIssuePerformedViaGithubApp? Function()? performedViaGithubApp, WebhookIssuesUnlockedIssuePullRequest Function()? pullRequest, WebhookIssuesUnlockedIssueReactions? reactions, Uri? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, WebhookIssuesUnlockedIssueState Function()? state, String? Function()? stateReason, Uri Function()? timelineUrl, String? title, IssueType Function()? type, DateTime? updatedAt, Uri? url, WebhookIssuesUnlockedIssueUser? Function()? user, }) { return WebhookIssuesUnlockedIssue(
+WebhookIssuesUnlockedIssue copyWith({WebhookIssuesUnlockedIssueActiveLockReason? Function()? activeLockReason, WebhookIssuesUnlockedIssueAssignee? Function()? assignee, List<WebhookIssuesUnlockedIssueAssignees?>? assignees, WebhookIssuesUnlockedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesUnlockedIssueLabels?> Function()? labels, String? labelsUrl, bool? locked, WebhookIssuesUnlockedIssueMilestone? Function()? milestone, String? nodeId, int? number, WebhookIssuesUnlockedIssuePerformedViaGithubApp? Function()? performedViaGithubApp, WebhookIssuesUnlockedIssuePullRequest Function()? pullRequest, WebhookIssuesUnlockedIssueReactions? reactions, Uri? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, WebhookIssuesUnlockedIssueState Function()? state, String? Function()? stateReason, Uri Function()? timelineUrl, String? title, IssueType Function()? type, DateTime? updatedAt, Uri? url, WebhookIssuesUnlockedIssueUser? Function()? user, }) { return WebhookIssuesUnlockedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees ?? this.assignees,

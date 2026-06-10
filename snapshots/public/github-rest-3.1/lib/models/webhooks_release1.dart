@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_rel
 @immutable final class WebhooksRelease1 {const WebhooksRelease1({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.updatedAt, required this.uploadUrl, required this.url, required this.zipballUrl, this.discussionUrl, this.reactions, });
 
 factory WebhooksRelease1.fromJson(Map<String, dynamic> json) { return WebhooksRelease1(
-  assets: (json['assets'] as List<dynamic>).map((e) => WebhooksRelease1Assets.fromJson(e as Map<String, dynamic>)).toList(),
+  assets: (json['assets'] as List<dynamic>).map((e) => e == null ? null : WebhooksRelease1Assets.fromJson(e as Map<String, dynamic>)).toList(),
   assetsUrl: Uri.parse(json['assets_url'] as String),
   author: json['author'] != null ? WebhooksRelease1Author.fromJson(json['author'] as Map<String, dynamic>) : null,
   body: json['body'] as String?,

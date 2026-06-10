@@ -102,7 +102,7 @@ factory WebhookWorkflowRunInProgressWorkflowRun.fromJson(Map<String, dynamic> js
   nodeId: json['node_id'] as String,
   path: json['path'] as String,
   previousAttemptUrl: json['previous_attempt_url'] != null ? Uri.parse(json['previous_attempt_url'] as String) : null,
-  pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookWorkflowRunInProgressWorkflowRunPullRequests.fromJson(e as Map<String, dynamic>)).toList(),
+  pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => e == null ? null : WebhookWorkflowRunInProgressWorkflowRunPullRequests.fromJson(e as Map<String, dynamic>)).toList(),
   referencedWorkflows: (json['referenced_workflows'] as List<dynamic>?)?.map((e) => WebhookWorkflowRunInProgressWorkflowRunReferencedWorkflows.fromJson(e as Map<String, dynamic>)).toList(),
   repository: WebhookWorkflowRunInProgressWorkflowRunRepository.fromJson(json['repository'] as Map<String, dynamic>),
   rerunUrl: Uri.parse(json['rerun_url'] as String),

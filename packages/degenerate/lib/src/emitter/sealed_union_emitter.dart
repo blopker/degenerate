@@ -4,7 +4,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
 /// Regex to strip angle brackets, commas, and whitespace from type names.
-final _unsafeTypeNameChars = RegExp(r'[<>,\s]');
+final _unsafeTypeNameChars = RegExp(r'[<>,?\s]');
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 class DiscriminatedUnionEmitter {

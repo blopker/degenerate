@@ -108,7 +108,7 @@ factory WebhookPullRequestReviewRequestedReviewRequestedPullRequest.fromJson(Map
   activeLockReason: json['active_lock_reason'] != null ? WebhookPullRequestReviewRequestedReviewRequestedPullRequestActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   additions: json['additions'] != null ? (json['additions'] as num).toInt() : null,
   assignee: json['assignee'] != null ? WebhookPullRequestReviewRequestedReviewRequestedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookPullRequestReviewRequestedReviewRequestedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhookPullRequestReviewRequestedReviewRequestedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookPullRequestReviewRequestedReviewRequestedPullRequestAuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: json['auto_merge'] != null ? WebhookPullRequestReviewRequestedReviewRequestedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   base: WebhookPullRequestReviewRequestedReviewRequestedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>),

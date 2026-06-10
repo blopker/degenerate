@@ -32,7 +32,7 @@ factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeploy
   buildConfig: PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>),
   createdOn: DateTime.parse(json['created_on'] as String),
   deploymentTrigger: PagesDeploymentDeploymentTrigger.fromJson(json['deployment_trigger'] as Map<String, dynamic>),
-  envVars: (json['env_vars'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
+  envVars: (json['env_vars'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
   environment: PagesDeploymentEnvironment.fromJson(json['environment'] as String),
   id: json['id'] as String,
   isSkipped: json['is_skipped'] as bool,
@@ -128,7 +128,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('source') &&
       json.containsKey('stages') &&
       json.containsKey('url') && json['url'] is String; } 
-PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, PagesDeploymentDeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue>? Function()? envVars, PagesDeploymentEnvironment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, bool? Function()? usesFunctions, }) { return PagesDeployment(
+PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, PagesDeploymentDeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, PagesDeploymentEnvironment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, bool? Function()? usesFunctions, }) { return PagesDeployment(
   aliases: aliases != null ? aliases() : this.aliases,
   buildConfig: buildConfig ?? this.buildConfig,
   createdOn: createdOn ?? this.createdOn,

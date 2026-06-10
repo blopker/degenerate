@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gists_update
 
 factory GistsUpdateRequest.fromJson(Map<String, dynamic> json) { return GistsUpdateRequest(
   description: json['description'] as String?,
-  files: (json['files'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, GistsUpdateRequestFilesValue.fromJson(v as Map<String, dynamic>))),
+  files: (json['files'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : GistsUpdateRequestFilesValue.fromJson(v as Map<String, dynamic>))),
 ); }
 
 /// The description of the gist.
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (files != null) 'files': files?.map((k, v) => MapEntry(k, v?.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'files'}.contains(key)); } 
-GistsUpdateRequest copyWith({String Function()? description, Map<String, GistsUpdateRequestFilesValue> Function()? files, }) { return GistsUpdateRequest(
+GistsUpdateRequest copyWith({String Function()? description, Map<String, GistsUpdateRequestFilesValue?> Function()? files, }) { return GistsUpdateRequest(
   description: description != null ? description() : this.description,
   files: files != null ? files() : this.files,
 ); } 

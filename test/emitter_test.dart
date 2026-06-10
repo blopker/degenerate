@@ -328,6 +328,152 @@ void main() {
       });
     });
 
+    group('collections of nullable items', () {
+      String emitModel(IrObject model) {
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        return emitRaw(library);
+      }
+
+      test('fromJson null-guards List of nullable strings', () {
+        // {type: array, items: {type: string, nullable: true}} declares
+        // List<String?> but must not cast elements with `as String`, which
+        // throws on null elements (toJson handles them fine, so
+        // fromJson(toJson(x)) would crash).
+        const model = IrObject(
+          'TagList',
+          [
+            IrField(
+              'tags',
+              'tags',
+              IrList(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['tags'],
+        );
+        final source = emitModel(model);
+
+        expect(source, contains('final List<String?> tags;'));
+        expect(source, contains('.map((e) => e as String?).toList()'));
+        expect(source, isNot(contains('e as String)')));
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+
+      test('fromJson null-guards List of nullable ints', () {
+        const model = IrObject(
+          'CountList',
+          [
+            IrField(
+              'counts',
+              'counts',
+              IrList(IrPrimitive(PrimitiveKind.int, isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['counts'],
+        );
+        final source = emitModel(model);
+
+        expect(source, contains('final List<int?> counts;'));
+        expect(
+          source,
+          contains('.map((e) => e == null ? null : (e as num).toInt())'),
+        );
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+
+      test('fromJson null-guards List of nullable model refs', () {
+        const model = IrObject(
+          'PetList',
+          [
+            IrField(
+              'pets',
+              'pets',
+              IrList(IrTypeRef('Pet', isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['pets'],
+        );
+        final source = emitModel(model);
+
+        expect(source, contains('final List<Pet?> pets;'));
+        expect(
+          source,
+          contains(
+            'e == null ? null : Pet.fromJson(e as Map<String, dynamic>)',
+          ),
+        );
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+
+      test('fromJson null-guards Map of nullable model values', () {
+        const model = IrObject(
+          'PetsByName',
+          [
+            IrField(
+              'pets',
+              'pets',
+              IrMap(IrTypeRef('Pet', isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['pets'],
+        );
+        final source = emitModel(model);
+
+        // Raw (unformatted) code_builder output omits the space after ','.
+        expect(source, contains('final Map<String,Pet?> pets;'));
+        expect(
+          source,
+          contains(
+            'v == null ? null : Pet.fromJson(v as Map<String, dynamic>)',
+          ),
+        );
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+
+      test('optional List of nullable strings keeps element null-guard', () {
+        const model = IrObject('OptTagList', [
+          IrField(
+            'tags',
+            'tags',
+            IrList(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+          ),
+        ]);
+        final source = emitModel(model);
+
+        expect(source, contains('final List<String?>? tags;'));
+        expect(source, contains('.map((e) => e as String?).toList()'));
+        expect(source, isNot(contains('e as String)')));
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+
+      test('irTypeName renders collection item nullability', () {
+        // API return types and copyWith signatures derive from irTypeName;
+        // dropping item nullability there would reject the null elements
+        // fromJson produces.
+        expect(
+          irTypeName(
+            const IrList(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+          ),
+          'List<String?>',
+        );
+        expect(
+          irTypeName(const IrMap(IrTypeRef('Pet', isNullable: true))),
+          'Map<String, Pet?>',
+        );
+        // dynamic is already nullable — never `dynamic?`.
+        expect(
+          irTypeName(
+            const IrList(IrPrimitive(PrimitiveKind.dynamic_, isNullable: true)),
+          ),
+          'List<dynamic>',
+        );
+      });
+    });
+
     group('ErrorModel model', () {
       late String source;
 
@@ -1074,6 +1220,64 @@ void main() {
       expect(
         source,
         contains("queryParameters['filter[id]'] = filter.id.toJson().toString();"),
+      );
+    });
+
+    test('List response with nullable items null-guards element decode', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'listNames',
+          'listNames',
+          HttpMethod.get,
+          '/names',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrList(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // Return type must carry item nullability, and the element decode
+      // must not cast with `as String` (throws on null elements).
+      expect(source, contains('ApiResult<List<String?>, Never>'));
+      expect(source, contains('json.map((e) => e as String?).toList()'));
+      expect(source, isNot(contains('e as String)')));
+    });
+
+    test('Map response with nullable model values null-guards decode', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'mapPets',
+          'mapPets',
+          HttpMethod.get,
+          '/pets-by-name',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrMap(IrTypeRef('Pet', isNullable: true)),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      expect(source, contains('ApiResult<Map<String, Pet?>, Never>'));
+      expect(
+        source,
+        contains('v != null ? Pet.fromJson(v as Map<String, dynamic>) : null'),
       );
     });
 

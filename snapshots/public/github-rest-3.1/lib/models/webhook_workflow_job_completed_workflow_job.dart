@@ -50,7 +50,7 @@ factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> jso
   headSha: json['head_sha'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
-  labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
+  labels: (json['labels'] as List<dynamic>).map((e) => e as String?).toList(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   runAttempt: (json['run_attempt'] as num).toInt(),
@@ -64,7 +64,7 @@ factory WebhookWorkflowJobCompletedWorkflowJob.fromJson(Map<String, dynamic> jso
   status: json['status'] as String,
   headBranch: json['head_branch'] as String?,
   workflowName: json['workflow_name'] as String?,
-  steps: (json['steps'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
+  steps: (json['steps'] as List<dynamic>).map((e) => e as Map<String, dynamic>?).toList(),
   url: json['url'] as String,
 ); }
 

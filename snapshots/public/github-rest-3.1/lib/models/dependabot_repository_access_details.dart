@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory DependabotRepositoryAccessDetails.fromJson(Map<String, dynamic> json) { return DependabotRepositoryAccessDetails(
   defaultLevel: json['default_level'] != null ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(json['default_level'] as String) : null,
-  accessibleRepositories: (json['accessible_repositories'] as List<dynamic>?)?.map((e) => SimpleRepository.fromJson(e as Map<String, dynamic>)).toList(),
+  accessibleRepositories: (json['accessible_repositories'] as List<dynamic>?)?.map((e) => e == null ? null : SimpleRepository.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The default repository access level for Dependabot updates.
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (accessibleRepositories != null) 'accessible_repositories': accessibleRepositories?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_level', 'accessible_repositories'}.contains(key)); } 
-DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDefaultLevel? Function()? defaultLevel, List<SimpleRepository> Function()? accessibleRepositories, }) { return DependabotRepositoryAccessDetails(
+DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDefaultLevel? Function()? defaultLevel, List<SimpleRepository?> Function()? accessibleRepositories, }) { return DependabotRepositoryAccessDetails(
   defaultLevel: defaultLevel != null ? defaultLevel() : this.defaultLevel,
   accessibleRepositories: accessibleRepositories != null ? accessibleRepositories() : this.accessibleRepositories,
 ); } 

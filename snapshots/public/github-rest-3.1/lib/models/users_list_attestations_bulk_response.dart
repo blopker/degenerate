@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'users_list_attestations_bulk_response_attestations_subject_digests_value.dart';import 'users_list_attestations_bulk_response_page_info.dart';@immutable final class UsersListAttestationsBulkResponse {const UsersListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
 
 factory UsersListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponse(
-  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
+  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>?)?.map((e) => UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
   pageInfo: json['page_info'] != null ? UsersListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
 ); }
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (pageInfo != null) 'page_info': pageInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attestations_subject_digests', 'page_info'}.contains(key)); } 
-UsersListAttestationsBulkResponse copyWith({Map<String, List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>> Function()? attestationsSubjectDigests, UsersListAttestationsBulkResponsePageInfo Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
+UsersListAttestationsBulkResponse copyWith({Map<String, List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>?> Function()? attestationsSubjectDigests, UsersListAttestationsBulkResponsePageInfo Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
   attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
   pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
 ); } 

@@ -87,7 +87,17 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 }
 
 /// Get the Dart type name string for an [IrType].
+///
+/// Collection item nullability is part of the rendered type
+/// (`List<String?>`); the top-level type's own nullability is the caller's
+/// concern (declaration sites append `?` themselves).
 String irTypeName(IrType type) {
+  String item(IrType t) {
+    final name = irTypeName(t);
+    // `dynamic` is already nullable — `dynamic?` is a lint.
+    return (t.isNullable && name != 'dynamic') ? '$name?' : name;
+  }
+
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
       PrimitiveKind.dynamic_ => 'dynamic',
@@ -103,8 +113,8 @@ String irTypeName(IrType type) {
       PrimitiveKind.bytes => 'Uint8List',
     },
     IrEnum(:final name) => name,
-    IrList(:final items) => 'List<${irTypeName(items)}>',
-    IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
+    IrList(:final items) => 'List<${item(items)}>',
+    IrMap(:final values) => 'Map<String, ${item(values)}>',
     IrObject(:final name) => name,
     IrTypeRef(:final name) => name,
     IrDiscriminatedUnion(:final name) => name,
@@ -206,12 +216,47 @@ String? _simpleCastFromJson(
       _ => null, // needs null-check wrapper
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>?)?.map((e) => ${_elementFromJson(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
     IrMap(:final values) => _isIdentityMapValue(values)
         ? '$accessor as Map<String, dynamic>?'
-        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     _ => null,
   };
+}
+
+/// fromJson expression for a collection element of [type], null-guarding
+/// when the element type itself is nullable (`List<String?>`,
+/// `Map<String, Model?>`): the non-null builder's casts would throw on a
+/// null element.
+String _elementFromJson(
+  IrType type,
+  String accessor, {
+  Map<String, IrType> typeRegistry = const {},
+  Set<String>? resolving,
+}) {
+  final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
+  if (!type.isNullable && !resolved.isNullable) {
+    return _buildFromJsonNonNull(
+      resolved,
+      accessor,
+      typeRegistry: typeRegistry,
+      resolving: resolving,
+    );
+  }
+  final simpleCast = _simpleCastFromJson(
+    resolved,
+    accessor,
+    typeRegistry: typeRegistry,
+    resolving: resolving,
+  );
+  if (simpleCast != null) return simpleCast;
+  final expr = _buildFromJsonNonNull(
+    resolved,
+    accessor,
+    typeRegistry: typeRegistry,
+    resolving: resolving,
+  );
+  return '$accessor == null ? null : $expr';
 }
 
 /// Whether a map value type produces an identity transform in `.map()`.
@@ -248,10 +293,10 @@ String _buildFromJsonNonNull(
       _ => '$name.fromJson($accessor as String)',
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>).map((e) => ${_elementFromJson(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
     IrMap(:final values) => _isIdentityMapValue(values)
         ? '$accessor as Map<String, dynamic>'
-        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(
         variants,

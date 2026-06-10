@@ -518,9 +518,9 @@ class ApiEmitter {
       return switch (returnType) {
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
+              '    return json.map((e) => ${_fromJson(items, 'e', isOptional: items.isNullable)}).toList();',
         IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v');
+          final valueExpr = _fromJson(values, 'v', isOptional: values.isNullable);
           if (valueExpr == 'v') {
             return 'return jsonDecode(response.body) as Map<String, dynamic>;';
           }
@@ -1198,9 +1198,9 @@ class ApiEmitter {
           'return $name.fromJson(jsonDecode(response.body) as String);',
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
+              '    return json.map((e) => ${_fromJson(items, 'e', isOptional: items.isNullable)}).toList();',
         IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v');
+          final valueExpr = _fromJson(values, 'v', isOptional: values.isNullable);
           if (valueExpr == 'v') {
             return 'return jsonDecode(response.body) as Map<String, dynamic>;';
           }

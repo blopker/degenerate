@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesClosedIssue(
   activeLockReason: json['active_lock_reason'] as String?,
   assignee: json['assignee'] as Map<String, dynamic>?,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e as Map<String, dynamic>?).toList(),
   authorAssociation: json['author_association'] as String,
   body: json['body'] as String?,
   closedAt: json['closed_at'] as String?,
@@ -41,7 +41,7 @@ factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return We
   eventsUrl: json['events_url'] as String,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
-  labels: (json['labels'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  labels: (json['labels'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>?).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool?,
   milestone: json['milestone'] as Map<String, dynamic>?,
@@ -194,7 +194,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssuesClosedIssue copyWith({String? Function()? activeLockReason, Map<String, dynamic>? Function()? assignee, List<Map<String,dynamic>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<Map<String, dynamic>> Function()? labels, String? labelsUrl, bool Function()? locked, Map<String, dynamic>? Function()? milestone, String? nodeId, int? number, Map<String, dynamic>? Function()? performedViaGithubApp, WebhookIssuesClosedIssuePullRequest Function()? pullRequest, WebhookIssuesClosedIssueReactions? reactions, String? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, WebhookIssuesClosedIssueState? state, String? Function()? stateReason, String Function()? timelineUrl, String? title, IssueType Function()? type, String? updatedAt, String? url, WebhookIssuesClosedIssueUser? user, }) { return WebhookIssuesClosedIssue(
+WebhookIssuesClosedIssue copyWith({String? Function()? activeLockReason, Map<String, dynamic>? Function()? assignee, List<Map<String,dynamic>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<Map<String, dynamic>?> Function()? labels, String? labelsUrl, bool Function()? locked, Map<String, dynamic>? Function()? milestone, String? nodeId, int? number, Map<String, dynamic>? Function()? performedViaGithubApp, WebhookIssuesClosedIssuePullRequest Function()? pullRequest, WebhookIssuesClosedIssueReactions? reactions, String? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, WebhookIssuesClosedIssueState? state, String? Function()? stateReason, String Function()? timelineUrl, String? title, IssueType Function()? type, String? updatedAt, String? url, WebhookIssuesClosedIssueUser? user, }) { return WebhookIssuesClosedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees ?? this.assignees,

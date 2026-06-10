@@ -106,7 +106,7 @@ factory WebhookPullRequestReviewCommentCreatedPullRequest.fromJson(Map<String, d
   links: WebhookPullRequestReviewCommentCreatedPullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
   activeLockReason: json['active_lock_reason'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   assignee: json['assignee'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => WebhookPullRequestReviewCommentCreatedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhookPullRequestReviewCommentCreatedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: json['auto_merge'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   base: WebhookPullRequestReviewCommentCreatedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>),

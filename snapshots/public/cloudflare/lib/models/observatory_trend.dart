@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryTrend {const ObservatoryTrend({this.cls, this.fcp, this.lcp, this.performanceScore, this.si, this.tbt, this.ttfb, this.tti, });
 
 factory ObservatoryTrend.fromJson(Map<String, dynamic> json) { return ObservatoryTrend(
-  cls: (json['cls'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  fcp: (json['fcp'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  lcp: (json['lcp'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  performanceScore: (json['performanceScore'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  si: (json['si'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  tbt: (json['tbt'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  ttfb: (json['ttfb'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-  tti: (json['tti'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
+  cls: (json['cls'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  fcp: (json['fcp'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  lcp: (json['lcp'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  performanceScore: (json['performanceScore'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  si: (json['si'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  tbt: (json['tbt'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  ttfb: (json['ttfb'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
+  tti: (json['tti'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
 ); }
 
 /// Cumulative Layout Shift trend.
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'tti': ?tti,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cls', 'fcp', 'lcp', 'performanceScore', 'si', 'tbt', 'ttfb', 'tti'}.contains(key)); } 
-ObservatoryTrend copyWith({List<double> Function()? cls, List<double> Function()? fcp, List<double> Function()? lcp, List<double> Function()? performanceScore, List<double> Function()? si, List<double> Function()? tbt, List<double> Function()? ttfb, List<double> Function()? tti, }) { return ObservatoryTrend(
+ObservatoryTrend copyWith({List<double?> Function()? cls, List<double?> Function()? fcp, List<double?> Function()? lcp, List<double?> Function()? performanceScore, List<double?> Function()? si, List<double?> Function()? tbt, List<double?> Function()? ttfb, List<double?> Function()? tti, }) { return ObservatoryTrend(
   cls: cls != null ? cls() : this.cls,
   fcp: fcp != null ? fcp() : this.fcp,
   lcp: lcp != null ? lcp() : this.lcp,

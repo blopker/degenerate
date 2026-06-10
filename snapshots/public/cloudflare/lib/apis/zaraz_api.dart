@@ -165,7 +165,7 @@ return execute(
 /// Gets a history of published Zaraz configurations by ID(s) for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/zaraz/history/configs`
-Future<ApiResult<Map<String, ZarazZarazConfigHistoryResponseResultValue>, Never>> getZonesZoneIdentifierZarazConfigHistory({required ZarazIdentifier zoneId, required List<int> ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, ZarazZarazConfigHistoryResponseResultValue?>, Never>> getZonesZoneIdentifierZarazConfigHistory({required ZarazIdentifier zoneId, required List<int> ids, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ids'] = ids.map((item) => item.toString()).join(',');
 
@@ -184,7 +184,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>)));
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>)));
   },
 );
  } 

@@ -12,7 +12,7 @@ factory CodeScanningAlertInstance.fromJson(Map<String, dynamic> json) { return C
   message: json['message'] != null ? CodeScanningAlertInstanceMessage.fromJson(json['message'] as Map<String, dynamic>) : null,
   location: json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
-  classifications: (json['classifications'] as List<dynamic>?)?.map((e) => CodeScanningAlertClassification.fromJson(e as String)).toList(),
+  classifications: (json['classifications'] as List<dynamic>?)?.map((e) => e == null ? null : CodeScanningAlertClassification.fromJson(e as String)).toList(),
 ); }
 
 /// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (classifications != null) 'classifications': classifications?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key)); } 
-CodeScanningAlertInstance copyWith({CodeScanningRef Function()? ref, CodeScanningAnalysisAnalysisKey Function()? analysisKey, CodeScanningAlertEnvironment Function()? environment, CodeScanningAnalysisCategory Function()? category, CodeScanningAlertState? Function()? state, String Function()? commitSha, CodeScanningAlertInstanceMessage Function()? message, CodeScanningAlertLocation Function()? location, String Function()? htmlUrl, List<CodeScanningAlertClassification> Function()? classifications, }) { return CodeScanningAlertInstance(
+CodeScanningAlertInstance copyWith({CodeScanningRef Function()? ref, CodeScanningAnalysisAnalysisKey Function()? analysisKey, CodeScanningAlertEnvironment Function()? environment, CodeScanningAnalysisCategory Function()? category, CodeScanningAlertState? Function()? state, String Function()? commitSha, CodeScanningAlertInstanceMessage Function()? message, CodeScanningAlertLocation Function()? location, String Function()? htmlUrl, List<CodeScanningAlertClassification?> Function()? classifications, }) { return CodeScanningAlertInstance(
   ref: ref != null ? ref() : this.ref,
   analysisKey: analysisKey != null ? analysisKey() : this.analysisKey,
   environment: environment != null ? environment() : this.environment,

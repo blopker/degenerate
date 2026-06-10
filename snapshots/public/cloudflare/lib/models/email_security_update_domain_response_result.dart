@@ -125,7 +125,7 @@ factory EmailSecurityUpdateDomainResponseResult.fromJson(Map<String, dynamic> js
   createdAt: DateTime.parse(json['created_at'] as String),
   dmarcStatus: json['dmarc_status'] != null ? EmailSecurityUpdateDomainResponseResultDmarcStatus.fromJson(json['dmarc_status'] as String) : null,
   domain: json['domain'] as String,
-  dropDispositions: (json['drop_dispositions'] as List<dynamic>).map((e) => EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
+  dropDispositions: (json['drop_dispositions'] as List<dynamic>).map((e) => e == null ? null : EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
   emailsProcessed: json['emails_processed'] != null ? EmailSecurityUpdateDomainResponseResultEmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>) : null,
   folder: json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null,
   id: (json['id'] as num).toInt(),

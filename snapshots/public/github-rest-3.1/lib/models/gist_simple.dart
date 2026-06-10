@@ -15,7 +15,7 @@ factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
   gitPullUrl: json['git_pull_url'] as String?,
   gitPushUrl: json['git_push_url'] as String?,
   htmlUrl: json['html_url'] as String?,
-  files: (json['files'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, GistSimpleFilesValue.fromJson(v as Map<String, dynamic>))),
+  files: (json['files'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : GistSimpleFilesValue.fromJson(v as Map<String, dynamic>))),
   public: json['public'] as bool?,
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'truncated': ?truncated,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'forks', 'history', 'fork_of', 'url', 'forks_url', 'commits_url', 'id', 'node_id', 'git_pull_url', 'git_push_url', 'html_url', 'files', 'public', 'created_at', 'updated_at', 'description', 'comments', 'comments_enabled', 'user', 'comments_url', 'owner', 'truncated'}.contains(key)); } 
-GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>? Function()? history, GistSimpleForkOf? Function()? forkOf, String Function()? url, String Function()? forksUrl, String Function()? commitsUrl, String Function()? id, String Function()? nodeId, String Function()? gitPullUrl, String Function()? gitPushUrl, String Function()? htmlUrl, Map<String, GistSimpleFilesValue> Function()? files, bool Function()? public, String Function()? createdAt, String Function()? updatedAt, String? Function()? description, int Function()? comments, bool Function()? commentsEnabled, String? Function()? user, String Function()? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, }) { return GistSimple(
+GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>? Function()? history, GistSimpleForkOf? Function()? forkOf, String Function()? url, String Function()? forksUrl, String Function()? commitsUrl, String Function()? id, String Function()? nodeId, String Function()? gitPullUrl, String Function()? gitPushUrl, String Function()? htmlUrl, Map<String, GistSimpleFilesValue?> Function()? files, bool Function()? public, String Function()? createdAt, String Function()? updatedAt, String? Function()? description, int Function()? comments, bool Function()? commentsEnabled, String? Function()? user, String Function()? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, }) { return GistSimple(
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,
   forkOf: forkOf != null ? forkOf() : this.forkOf,

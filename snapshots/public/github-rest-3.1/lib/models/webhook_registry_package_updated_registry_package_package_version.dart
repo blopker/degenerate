@@ -8,7 +8,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(Map<
   bodyHtml: json['body_html'] as String,
   createdAt: json['created_at'] as String,
   description: json['description'] as String,
-  dockerMetadata: (json['docker_metadata'] as List<dynamic>?)?.map((e) => WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata.fromJson(e as Map<String, dynamic>)).toList(),
+  dockerMetadata: (json['docker_metadata'] as List<dynamic>?)?.map((e) => e == null ? null : WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata.fromJson(e as Map<String, dynamic>)).toList(),
   draft: json['draft'] as bool?,
   htmlUrl: json['html_url'] as String,
   id: (json['id'] as num).toInt(),
@@ -120,7 +120,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('target_oid') && json['target_oid'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersion copyWith({WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor? author, String? body, String? bodyHtml, String? createdAt, String? description, List<WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, List<WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersion copyWith({WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor? author, String? body, String? bodyHtml, String? createdAt, String? description, List<WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata?> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, List<WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
   author: author ?? this.author,
   body: body ?? this.body,
   bodyHtml: bodyHtml ?? this.bodyHtml,

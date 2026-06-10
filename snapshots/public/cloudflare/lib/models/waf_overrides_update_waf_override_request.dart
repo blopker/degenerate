@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_ide
 factory WafOverridesUpdateWafOverrideRequest.fromJson(Map<String, dynamic> json) { return WafOverridesUpdateWafOverrideRequest(
   id: FirewallIdentifier.fromJson(json['id'] as String),
   rewriteAction: FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>),
-  rules: (json['rules'] as Map<String, dynamic>).map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as dynamic))),
+  rules: (json['rules'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : FirewallWafAction.fromJson(v as dynamic))),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 

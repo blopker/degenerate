@@ -30,7 +30,7 @@ factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOv
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallPriority.fromJson(json['priority'] as num) : null,
   rewriteAction: json['rewrite_action'] != null ? FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>) : null,
-  rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, FirewallWafAction.fromJson(v as dynamic))),
+  rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : FirewallWafAction.fromJson(v as dynamic))),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'urls': ?urls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'groups', 'id', 'paused', 'priority', 'rewrite_action', 'rules', 'urls'}.contains(key)); } 
-FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, dynamic> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
+FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, dynamic> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction?> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
   description: description != null ? description() : this.description,
   groups: groups != null ? groups() : this.groups,
   id: id != null ? id() : this.id,

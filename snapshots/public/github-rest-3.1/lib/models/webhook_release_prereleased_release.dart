@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_rele
 @immutable final class WebhookReleasePrereleasedRelease {const WebhookReleasePrereleasedRelease({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.uploadUrl, required this.updatedAt, required this.url, required this.zipballUrl, this.discussionUrl, this.reactions, });
 
 factory WebhookReleasePrereleasedRelease.fromJson(Map<String, dynamic> json) { return WebhookReleasePrereleasedRelease(
-  assets: (json['assets'] as List<dynamic>).map((e) => WebhookReleasePrereleasedReleaseAssets.fromJson(e as Map<String, dynamic>)).toList(),
+  assets: (json['assets'] as List<dynamic>).map((e) => e == null ? null : WebhookReleasePrereleasedReleaseAssets.fromJson(e as Map<String, dynamic>)).toList(),
   assetsUrl: Uri.parse(json['assets_url'] as String),
   author: json['author'] != null ? WebhookReleasePrereleasedReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   body: json['body'] as String?,

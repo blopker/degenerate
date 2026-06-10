@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookIssueCommentCreatedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreatedIssue(
   activeLockReason: json['active_lock_reason'] as String?,
   assignee: json['assignee'] != null ? WebhookIssueCommentCreatedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e as Map<String, dynamic>?).toList(),
   authorAssociation: json['author_association'] as String,
   body: json['body'] as String?,
   closedAt: json['closed_at'] as String?,

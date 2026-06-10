@@ -6,7 +6,7 @@ factory ZarazZarazConfigHistoryResponse.fromJson(Map<String, dynamic> json) { re
   errors: (json['errors'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>))),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>))),
 ); }
 
 final List<ZarazMessages2> errors;
