@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_provider.dart';import 'access_identity_providers.dart';import 'access_messages2.dart';@immutable final class AccessComponentsSchemasSingleResponse {const AccessComponentsSchemasSingleResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_providers.dart';import 'access_messages2.dart';@immutable final class AccessComponentsSchemasSingleResponse {const AccessComponentsSchemasSingleResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory AccessComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessComponentsSchemasSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null,
+  result: json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<AccessMessages2> errors;

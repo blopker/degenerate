@@ -13,7 +13,7 @@ final class ManagedTransformsApi with ApiExecutor {const ManagedTransformsApi(th
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<dynamic, Never>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, Never>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -35,7 +35,7 @@ return execute(
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<dynamic, Never>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, Never>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,7 +50,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

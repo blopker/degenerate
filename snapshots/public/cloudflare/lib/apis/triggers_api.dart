@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_create_build_request.dart';import '../models/builds_create_trigger_request.dart';import '../models/builds_error_response.dart';import '../models/builds_trigger_uuid.dart';import '../models/builds_update_trigger_request.dart';/// TriggersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_create_build_request.dart';import '../models/builds_create_trigger_request.dart';import '../models/builds_error_response.dart';import '../models/builds_insert_build_response.dart';import '../models/builds_trigger_response.dart';import '../models/builds_trigger_uuid.dart';import '../models/builds_update_trigger_request.dart';/// TriggersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TriggersApi with ApiExecutor {const TriggersApi(this.apiConfig);
 /// Create a new CI/CD trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers`
-Future<ApiResult<Map<String, dynamic>?, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsTriggerResponse, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -28,7 +28,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return BuildsTriggerResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -37,7 +37,7 @@ return execute(
 /// Update an existing CI/CD trigger
 ///
 /// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsTriggerResponse, BuildsErrorResponse>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return BuildsTriggerResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -89,7 +89,7 @@ return execute(
 /// Trigger a manual build for a specific trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/builds`
-Future<ApiResult<Map<String, dynamic>?, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsInsertBuildResponse, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,7 +104,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return BuildsInsertBuildResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

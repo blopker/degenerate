@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// How often the subscription is renewed automatically.
+@immutable final class Frequency {const Frequency._(this.value);
+
+factory Frequency.fromJson(String json) { return switch (json) {
+  'weekly' => weekly,
+  'monthly' => monthly,
+  'quarterly' => quarterly,
+  'yearly' => yearly,
+  _ => Frequency._(json),
+}; }
+
+static const Frequency weekly = Frequency._('weekly');
+
+static const Frequency monthly = Frequency._('monthly');
+
+static const Frequency quarterly = Frequency._('quarterly');
+
+static const Frequency yearly = Frequency._('yearly');
+
+static const List<Frequency> values = [weekly, monthly, quarterly, yearly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Frequency && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Frequency($value)'; } 
+ }

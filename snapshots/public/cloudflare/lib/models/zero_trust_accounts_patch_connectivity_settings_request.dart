@@ -1,20 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// A flag to enable the ICMP proxy for the account network.
-extension type const TunnelIcmpProxyEnabled(bool value) {
-factory TunnelIcmpProxyEnabled.fromJson(bool json) => TunnelIcmpProxyEnabled(json);
-
-bool toJson() => value;
-
-}
-/// A flag to enable WARP to WARP traffic.
-extension type const TunnelOfframpWarpEnabled(bool value) {
-factory TunnelOfframpWarpEnabled.fromJson(bool json) => TunnelOfframpWarpEnabled(json);
-
-bool toJson() => value;
-
-}
-@immutable final class ZeroTrustAccountsPatchConnectivitySettingsRequest {const ZeroTrustAccountsPatchConnectivitySettingsRequest({this.icmpProxyEnabled, this.offrampWarpEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_icmp_proxy_enabled.dart';import 'tunnel_offramp_warp_enabled.dart';@immutable final class ZeroTrustAccountsPatchConnectivitySettingsRequest {const ZeroTrustAccountsPatchConnectivitySettingsRequest({this.icmpProxyEnabled, this.offrampWarpEnabled, });
 
 factory ZeroTrustAccountsPatchConnectivitySettingsRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustAccountsPatchConnectivitySettingsRequest(
   icmpProxyEnabled: json['icmp_proxy_enabled'] != null ? TunnelIcmpProxyEnabled.fromJson(json['icmp_proxy_enabled'] as bool) : null,

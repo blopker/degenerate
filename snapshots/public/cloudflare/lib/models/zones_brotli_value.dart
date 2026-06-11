@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesBrotliValue {const ZonesBrotliValue._(this.value);
+
+factory ZonesBrotliValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'on' => $on,
+  _ => ZonesBrotliValue._(json),
+}; }
+
+static const ZonesBrotliValue off = ZonesBrotliValue._('off');
+
+static const ZonesBrotliValue $on = ZonesBrotliValue._('on');
+
+static const List<ZonesBrotliValue> values = [off, $on];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesBrotliValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesBrotliValue($value)'; } 
+ }

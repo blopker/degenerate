@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filters_components_schemas_id.dart';/// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
-extension type const FirewallExpression(String value) {
-factory FirewallExpression.fromJson(String json) => FirewallExpression(json);
-
-String toJson() => value;
-
-}
-/// An informative summary of the filter.
-extension type const FirewallFiltersComponentsSchemasDescription(String value) {
-factory FirewallFiltersComponentsSchemasDescription.fromJson(String json) => FirewallFiltersComponentsSchemasDescription(json);
-
-String toJson() => value;
-
-}
-/// When true, indicates that the filter is currently paused.
-extension type const FirewallFiltersComponentsSchemasPaused(bool value) {
-factory FirewallFiltersComponentsSchemasPaused.fromJson(bool json) => FirewallFiltersComponentsSchemasPaused(json);
-
-bool toJson() => value;
-
-}
-/// A short reference tag. Allows you to select related filters.
-extension type const FirewallSchemasRef(String value) {
-factory FirewallSchemasRef.fromJson(String json) => FirewallSchemasRef(json);
-
-String toJson() => value;
-
-}
-@immutable final class FirewallFilter {const FirewallFilter({this.description, this.expression, this.id, this.paused, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_expression.dart';import 'firewall_filters_components_schemas_description.dart';import 'firewall_filters_components_schemas_id.dart';import 'firewall_filters_components_schemas_paused.dart';import 'firewall_schemas_ref.dart';@immutable final class FirewallFilter {const FirewallFilter({this.description, this.expression, this.id, this.paused, this.ref, });
 
 factory FirewallFilter.fromJson(Map<String, dynamic> json) { return FirewallFilter(
   description: json['description'] != null ? FirewallFiltersComponentsSchemasDescription.fromJson(json['description'] as String) : null,

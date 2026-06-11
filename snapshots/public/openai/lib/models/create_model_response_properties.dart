@@ -1,0 +1,121 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_tier.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+/// 
+@immutable final class CreateModelResponsePropertiesPromptCacheRetention {const CreateModelResponsePropertiesPromptCacheRetention._(this.value);
+
+factory CreateModelResponsePropertiesPromptCacheRetention.fromJson(String json) { return switch (json) {
+  'in-memory' => inMemory,
+  '24h' => $24h,
+  _ => CreateModelResponsePropertiesPromptCacheRetention._(json),
+}; }
+
+static const CreateModelResponsePropertiesPromptCacheRetention inMemory = CreateModelResponsePropertiesPromptCacheRetention._('in-memory');
+
+static const CreateModelResponsePropertiesPromptCacheRetention $24h = CreateModelResponsePropertiesPromptCacheRetention._('24h');
+
+static const List<CreateModelResponsePropertiesPromptCacheRetention> values = [inMemory, $24h];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModelResponsePropertiesPromptCacheRetention && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModelResponsePropertiesPromptCacheRetention($value)'; } 
+ }
+@immutable final class CreateModelResponseProperties {const CreateModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
+
+factory CreateModelResponseProperties.fromJson(Map<String, dynamic> json) { return CreateModelResponseProperties(
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  user: json['user'] as String?,
+  safetyIdentifier: json['safety_identifier'] as String?,
+  promptCacheKey: json['prompt_cache_key'] as String?,
+  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  promptCacheRetention: json['prompt_cache_retention'] != null ? CreateModelResponsePropertiesPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
+); }
+
+final Map<String,String>? metadata;
+
+/// An integer between 0 and 20 specifying the number of most likely tokens to
+/// return at each token position, each with an associated log probability.
+/// 
+final int? topLogprobs;
+
+/// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+/// We generally recommend altering this or `top_p` but not both.
+/// 
+final double? temperature;
+
+/// An alternative to sampling with temperature, called nucleus sampling,
+/// where the model considers the results of the tokens with top_p probability
+/// mass. So 0.1 means only the tokens comprising the top 10% probability mass
+/// are considered.
+/// 
+/// We generally recommend altering this or `temperature` but not both.
+/// 
+final double? topP;
+
+/// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.
+/// A stable identifier for your end-users.
+/// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
+/// 
+final String? user;
+
+/// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.
+/// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
+/// 
+final String? safetyIdentifier;
+
+/// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).
+/// 
+final String? promptCacheKey;
+
+final ServiceTier? serviceTier;
+
+/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+/// 
+final CreateModelResponsePropertiesPromptCacheRetention? promptCacheRetention;
+
+Map<String, dynamic> toJson() { return {
+  'metadata': ?metadata,
+  'top_logprobs': ?topLogprobs,
+  'temperature': ?temperature,
+  'top_p': ?topP,
+  'user': ?user,
+  'safety_identifier': ?safetyIdentifier,
+  'prompt_cache_key': ?promptCacheKey,
+  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key)); } 
+CreateModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, CreateModelResponsePropertiesPromptCacheRetention? Function()? promptCacheRetention, }) { return CreateModelResponseProperties(
+  metadata: metadata != null ? metadata() : this.metadata,
+  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
+  temperature: temperature != null ? temperature() : this.temperature,
+  topP: topP != null ? topP() : this.topP,
+  user: user != null ? user() : this.user,
+  safetyIdentifier: safetyIdentifier != null ? safetyIdentifier() : this.safetyIdentifier,
+  promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
+  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModelResponseProperties &&
+          metadata == other.metadata &&
+          topLogprobs == other.topLogprobs &&
+          temperature == other.temperature &&
+          topP == other.topP &&
+          user == other.user &&
+          safetyIdentifier == other.safetyIdentifier &&
+          promptCacheKey == other.promptCacheKey &&
+          serviceTier == other.serviceTier &&
+          promptCacheRetention == other.promptCacheRetention; } 
+@override int get hashCode { return Object.hash(metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention); } 
+@override String toString() { return 'CreateModelResponseProperties(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention)'; } 
+ }

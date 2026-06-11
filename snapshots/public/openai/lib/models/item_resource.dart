@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'input_message_resource.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'output_message.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// Content item used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output_resource.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call_output_resource.dart';import 'function_tool_call_resource.dart';import 'image_gen_tool_call.dart';import 'input_message_resource.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'output_message.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// Content item used to generate a response.
 /// 
 sealed class ItemResource {const ItemResource();
 
@@ -89,18 +89,18 @@ final ComputerToolCall computerToolCall;
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ItemResourceComputerCall(computerToolCall: $computerToolCall)'; } 
  }
-@immutable final class ItemResourceComputerToolCallOutputResource extends ItemResource {const ItemResourceComputerToolCallOutputResource(this.computerToolCallOutput);
+@immutable final class ItemResourceComputerToolCallOutputResource extends ItemResource {const ItemResourceComputerToolCallOutputResource(this.computerToolCallOutputResource);
 
-factory ItemResourceComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemResourceComputerToolCallOutputResource(ComputerToolCallOutput.fromJson(json)); }
+factory ItemResourceComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemResourceComputerToolCallOutputResource(ComputerToolCallOutputResource.fromJson(json)); }
 
-final ComputerToolCallOutput computerToolCallOutput;
+final ComputerToolCallOutputResource computerToolCallOutputResource;
 
 @override String get type { return 'ComputerToolCallOutputResource'; } 
-@override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...computerToolCallOutputResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
-@override int get hashCode { return computerToolCallOutput.hashCode; } 
-@override String toString() { return 'ItemResourceComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
+    other is ItemResourceComputerToolCallOutputResource && computerToolCallOutputResource == other.computerToolCallOutputResource; } 
+@override int get hashCode { return computerToolCallOutputResource.hashCode; } 
+@override String toString() { return 'ItemResourceComputerToolCallOutputResource(computerToolCallOutputResource: $computerToolCallOutputResource)'; } 
  }
 @immutable final class ItemResourceWebSearchCall extends ItemResource {const ItemResourceWebSearchCall(this.webSearchToolCall);
 
@@ -115,31 +115,31 @@ final WebSearchToolCall webSearchToolCall;
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemResourceWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
  }
-@immutable final class ItemResourceFunctionToolCallResource extends ItemResource {const ItemResourceFunctionToolCallResource(this.functionToolCall);
+@immutable final class ItemResourceFunctionToolCallResource extends ItemResource {const ItemResourceFunctionToolCallResource(this.functionToolCallResource);
 
-factory ItemResourceFunctionToolCallResource.fromJson(Map<String, dynamic> json) { return ItemResourceFunctionToolCallResource(FunctionToolCall.fromJson(json)); }
+factory ItemResourceFunctionToolCallResource.fromJson(Map<String, dynamic> json) { return ItemResourceFunctionToolCallResource(FunctionToolCallResource.fromJson(json)); }
 
-final FunctionToolCall functionToolCall;
+final FunctionToolCallResource functionToolCallResource;
 
 @override String get type { return 'FunctionToolCallResource'; } 
-@override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolCallResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
-@override int get hashCode { return functionToolCall.hashCode; } 
-@override String toString() { return 'ItemResourceFunctionToolCallResource(functionToolCall: $functionToolCall)'; } 
+    other is ItemResourceFunctionToolCallResource && functionToolCallResource == other.functionToolCallResource; } 
+@override int get hashCode { return functionToolCallResource.hashCode; } 
+@override String toString() { return 'ItemResourceFunctionToolCallResource(functionToolCallResource: $functionToolCallResource)'; } 
  }
-@immutable final class ItemResourceFunctionToolCallOutputResource extends ItemResource {const ItemResourceFunctionToolCallOutputResource(this.functionToolCallOutput);
+@immutable final class ItemResourceFunctionToolCallOutputResource extends ItemResource {const ItemResourceFunctionToolCallOutputResource(this.functionToolCallOutputResource);
 
-factory ItemResourceFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemResourceFunctionToolCallOutputResource(FunctionToolCallOutput.fromJson(json)); }
+factory ItemResourceFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemResourceFunctionToolCallOutputResource(FunctionToolCallOutputResource.fromJson(json)); }
 
-final FunctionToolCallOutput functionToolCallOutput;
+final FunctionToolCallOutputResource functionToolCallOutputResource;
 
 @override String get type { return 'FunctionToolCallOutputResource'; } 
-@override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolCallOutputResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
-@override int get hashCode { return functionToolCallOutput.hashCode; } 
-@override String toString() { return 'ItemResourceFunctionToolCallOutputResource(functionToolCallOutput: $functionToolCallOutput)'; } 
+    other is ItemResourceFunctionToolCallOutputResource && functionToolCallOutputResource == other.functionToolCallOutputResource; } 
+@override int get hashCode { return functionToolCallOutputResource.hashCode; } 
+@override String toString() { return 'ItemResourceFunctionToolCallOutputResource(functionToolCallOutputResource: $functionToolCallOutputResource)'; } 
  }
 @immutable final class ItemResourceToolSearchCall extends ItemResource {const ItemResourceToolSearchCall(this.toolSearchCall);
 

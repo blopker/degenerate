@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Poll permissions
+@immutable final class PostPresetsResponseDataPermissionsPolls {const PostPresetsResponseDataPermissionsPolls({required this.canCreate, required this.canView, required this.canVote, });
+
+factory PostPresetsResponseDataPermissionsPolls.fromJson(Map<String, dynamic> json) { return PostPresetsResponseDataPermissionsPolls(
+  canCreate: json['can_create'] as bool,
+  canView: json['can_view'] as bool,
+  canVote: json['can_vote'] as bool,
+); }
+
+/// Can create polls
+final bool canCreate;
+
+/// Can view polls
+final bool canView;
+
+/// Can vote on polls
+final bool canVote;
+
+Map<String, dynamic> toJson() { return {
+  'can_create': canCreate,
+  'can_view': canView,
+  'can_vote': canVote,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_create') && json['can_create'] is bool &&
+      json.containsKey('can_view') && json['can_view'] is bool &&
+      json.containsKey('can_vote') && json['can_vote'] is bool; } 
+PostPresetsResponseDataPermissionsPolls copyWith({bool? canCreate, bool? canView, bool? canVote, }) { return PostPresetsResponseDataPermissionsPolls(
+  canCreate: canCreate ?? this.canCreate,
+  canView: canView ?? this.canView,
+  canVote: canVote ?? this.canVote,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPresetsResponseDataPermissionsPolls &&
+          canCreate == other.canCreate &&
+          canView == other.canView &&
+          canVote == other.canVote; } 
+@override int get hashCode { return Object.hash(canCreate, canView, canVote); } 
+@override String toString() { return 'PostPresetsResponseDataPermissionsPolls(canCreate: $canCreate, canView: $canView, canVote: $canVote)'; } 
+ }

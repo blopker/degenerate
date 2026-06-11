@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output_resource.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call_output_resource.dart';import 'function_tool_call_resource.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
 sealed class ConversationItem {const ConversationItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -51,31 +51,31 @@ final Message message;
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ConversationItemMessage(message: $message)'; } 
  }
-@immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCall);
+@immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCallResource);
 
-factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallResource(FunctionToolCall.fromJson(json)); }
+factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallResource(FunctionToolCallResource.fromJson(json)); }
 
-final FunctionToolCall functionToolCall;
+final FunctionToolCallResource functionToolCallResource;
 
 @override String get type { return 'FunctionToolCallResource'; } 
-@override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolCallResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
-@override int get hashCode { return functionToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemFunctionToolCallResource(functionToolCall: $functionToolCall)'; } 
+    other is ConversationItemFunctionToolCallResource && functionToolCallResource == other.functionToolCallResource; } 
+@override int get hashCode { return functionToolCallResource.hashCode; } 
+@override String toString() { return 'ConversationItemFunctionToolCallResource(functionToolCallResource: $functionToolCallResource)'; } 
  }
-@immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutput);
+@immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutputResource);
 
-factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutput.fromJson(json)); }
+factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutputResource.fromJson(json)); }
 
-final FunctionToolCallOutput functionToolCallOutput;
+final FunctionToolCallOutputResource functionToolCallOutputResource;
 
 @override String get type { return 'FunctionToolCallOutputResource'; } 
-@override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolCallOutputResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
-@override int get hashCode { return functionToolCallOutput.hashCode; } 
-@override String toString() { return 'ConversationItemFunctionToolCallOutputResource(functionToolCallOutput: $functionToolCallOutput)'; } 
+    other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutputResource == other.functionToolCallOutputResource; } 
+@override int get hashCode { return functionToolCallOutputResource.hashCode; } 
+@override String toString() { return 'ConversationItemFunctionToolCallOutputResource(functionToolCallOutputResource: $functionToolCallOutputResource)'; } 
  }
 @immutable final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
@@ -129,18 +129,18 @@ final ComputerToolCall computerToolCall;
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemComputerCall(computerToolCall: $computerToolCall)'; } 
  }
-@immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
+@immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutputResource);
 
-factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutput.fromJson(json)); }
+factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutputResource.fromJson(json)); }
 
-final ComputerToolCallOutput computerToolCallOutput;
+final ComputerToolCallOutputResource computerToolCallOutputResource;
 
 @override String get type { return 'ComputerToolCallOutputResource'; } 
-@override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...computerToolCallOutputResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
-@override int get hashCode { return computerToolCallOutput.hashCode; } 
-@override String toString() { return 'ConversationItemComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
+    other is ConversationItemComputerToolCallOutputResource && computerToolCallOutputResource == other.computerToolCallOutputResource; } 
+@override int get hashCode { return computerToolCallOutputResource.hashCode; } 
+@override String toString() { return 'ConversationItemComputerToolCallOutputResource(computerToolCallOutputResource: $computerToolCallOutputResource)'; } 
  }
 @immutable final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
 

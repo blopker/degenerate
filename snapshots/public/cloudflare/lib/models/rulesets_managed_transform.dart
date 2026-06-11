@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The human-readable identifier of the Managed Transform.
-extension type const RulesetsManagedTransformId(String value) {
-factory RulesetsManagedTransformId.fromJson(String json) => RulesetsManagedTransformId(json);
-
-String toJson() => value;
-
-}
-/// A Managed Transform object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_managed_transform_id.dart';/// A Managed Transform object.
 @immutable final class RulesetsManagedTransform {const RulesetsManagedTransform({required this.enabled, required this.hasConflict, required this.id, this.conflictsWith, });
 
 factory RulesetsManagedTransform.fromJson(Map<String, dynamic> json) { return RulesetsManagedTransform(

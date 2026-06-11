@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_provider.dart';import 'access_messages2.dart';import 'access_response_collection_result.dart';import 'access_response_collection_result_info.dart';@immutable final class AccessResponseCollection {const AccessResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_messages2.dart';import 'access_response_collection_result.dart';import 'access_response_collection_result_info.dart';@immutable final class AccessResponseCollection {const AccessResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
 factory AccessResponseCollection.fromJson(Map<String, dynamic> json) { return AccessResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => AccessResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<AccessMessages2> errors;

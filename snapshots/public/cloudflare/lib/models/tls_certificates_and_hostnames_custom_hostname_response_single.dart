@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_customhostname.dart';import 'tls_certificates_and_hostnames_messages2.dart';@immutable final class TlsCertificatesAndHostnamesCustomHostnameResponseSingle {const TlsCertificatesAndHostnamesCustomHostnameResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_custom_hostname.dart';import 'tls_certificates_and_hostnames_messages2.dart';@immutable final class TlsCertificatesAndHostnamesCustomHostnameResponseSingle {const TlsCertificatesAndHostnamesCustomHostnameResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory TlsCertificatesAndHostnamesCustomHostnameResponseSingle.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomHostnameResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? TlsCertificatesAndHostnamesCustomhostname.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? TlsCertificatesAndHostnamesCustomHostname.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<TlsCertificatesAndHostnamesMessages2> errors;
@@ -16,7 +16,7 @@ final List<TlsCertificatesAndHostnamesMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final TlsCertificatesAndHostnamesCustomhostname? result;
+final TlsCertificatesAndHostnamesCustomHostname? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-TlsCertificatesAndHostnamesCustomHostnameResponseSingle copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesCustomhostname Function()? result, }) { return TlsCertificatesAndHostnamesCustomHostnameResponseSingle(
+TlsCertificatesAndHostnamesCustomHostnameResponseSingle copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesCustomHostname Function()? result, }) { return TlsCertificatesAndHostnamesCustomHostnameResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

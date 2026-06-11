@@ -1,9 +1,0 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
-/// A delta to change the score by, which can be either positive or negative.
-extension type const RulesetsScoreIncrement(int value) {
-factory RulesetsScoreIncrement.fromJson(num json) => RulesetsScoreIncrement(json.toInt());
-
-num toJson() => value;
-
-}

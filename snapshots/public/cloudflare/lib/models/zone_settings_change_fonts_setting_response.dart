@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speed_base.dart';import 'speed_messages2.dart';@immutable final class ZoneSettingsChangeFontsSettingResponse {const ZoneSettingsChangeFontsSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speed_cloudflare_fonts.dart';import 'speed_messages2.dart';@immutable final class ZoneSettingsChangeFontsSettingResponse {const ZoneSettingsChangeFontsSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ZoneSettingsChangeFontsSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneSettingsChangeFontsSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? SpeedCloudflareFonts.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SpeedMessages2> errors;
@@ -16,10 +16,7 @@ final List<SpeedMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-/// Enhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain,
-/// boost performance, and enhance user privacy. Refer to the Cloudflare Fonts documentation for more information.
-/// 
-final SpeedBase? result;
+final SpeedCloudflareFonts? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ZoneSettingsChangeFontsSettingResponse copyWith({List<SpeedMessages2>? errors, List<SpeedMessages2>? messages, bool? success, SpeedBase Function()? result, }) { return ZoneSettingsChangeFontsSettingResponse(
+ZoneSettingsChangeFontsSettingResponse copyWith({List<SpeedMessages2>? errors, List<SpeedMessages2>? messages, bool? success, SpeedCloudflareFonts Function()? result, }) { return ZoneSettingsChangeFontsSettingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_aegis.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_origin_h2_max_streams.dart';import '../models/cache_rules_origin_max_http_version.dart';import '../models/speed_base.dart';import '../models/speed_identifier.dart';import '../models/zone_cache_settings_change_aegis_setting_request.dart';import '../models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import '../models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import '../models/zone_settings_change_fonts_setting_request.dart';import '../models/zone_settings_change_speed_brain_setting_request.dart';import '../models/zones_identifier.dart';import '../models/zones_setting.dart';import '../models/zones_setting_name.dart';import '../models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_aegis.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_origin_h2_max_streams.dart';import '../models/cache_rules_origin_max_http_version.dart';import '../models/speed_cloudflare_fonts.dart';import '../models/speed_cloudflare_speed_brain_response.dart';import '../models/speed_identifier.dart';import '../models/zone_cache_settings_change_aegis_setting_request.dart';import '../models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import '../models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import '../models/zone_settings_change_fonts_setting_request.dart';import '../models/zone_settings_change_speed_brain_setting_request.dart';import '../models/zones_identifier.dart';import '../models/zones_setting.dart';import '../models/zones_setting_name.dart';import '../models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -107,7 +107,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/fonts`
-Future<ApiResult<SpeedBase?, Never>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareFonts?, Never>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -120,7 +120,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareFonts.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -131,7 +131,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/fonts`
-Future<ApiResult<SpeedBase?, Never>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareFonts?, Never>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,7 +146,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareFonts.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -249,7 +249,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<SpeedBase?, Never>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, Never>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -262,7 +262,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareSpeedBrainResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -273,7 +273,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<SpeedBase?, Never>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, Never>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -288,7 +288,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareSpeedBrainResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
