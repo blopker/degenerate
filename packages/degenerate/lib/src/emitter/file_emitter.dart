@@ -380,6 +380,17 @@ class FileEmitter {
           needsTypedData = true;
           // Bytes params serialize via base64Encode.
           needsConvert = true;
+        } else {
+          // Styled object params serialize bytes fields via base64Encode,
+          // but the signature references the model class, not Uint8List —
+          // dart:convert is needed, dart:typed_data is not.
+          final resolved = param.type is IrTypeRef
+              ? (typeRegistry?[(param.type as IrTypeRef).name] ?? param.type)
+              : param.type;
+          if (resolved is IrObject &&
+              resolved.fields.any((f) => isBytesType(f.type))) {
+            needsConvert = true;
+          }
         }
       }
       // Match the type selection logic used by ApiEmitter:

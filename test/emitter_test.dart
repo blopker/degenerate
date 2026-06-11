@@ -3333,6 +3333,17 @@ void main() {
           isRequired: true),
     ], requiredFields: ['a', 'b']);
 
+    // Required-but-nullable field: the generated model declares `t` as
+    // DateTime?, so unguarded serialization would not compile.
+    const nullableFieldObj = IrObject('NFilter', [
+      IrField(
+        't',
+        SpecString('t'),
+        IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+        isRequired: true,
+      ),
+    ], requiredFields: ['t']);
+
     String emitFor(IrParameter p) {
       final api = IrApi('TestApi', [
         IrOperation(
@@ -3350,8 +3361,10 @@ void main() {
         Library(
           (b) => b
             ..body.addAll(
-              ApiEmitter(api, typeRegistry: const {'Filter': filterObj})
-                  .emit(),
+              ApiEmitter(api, typeRegistry: const {
+                'Filter': filterObj,
+                'NFilter': nullableFieldObj,
+              }).emit(),
             ),
         ),
       );
@@ -3367,9 +3380,32 @@ void main() {
           isRequired: true,
         ),
       );
-      // List.toString() is '[1, 2]' — simple style is '1,2'.
-      expect(source, contains("v.map((item) => item.toString()).join(',')"));
+      // List.toString() is '[1, 2]' — simple style is '1,2'. RFC 6570
+      // percent-encodes the values, not the `,` separators: encoding the
+      // joined string would send 1%2C2 to a server that splits on `,`.
+      expect(
+        source,
+        contains("v.map((item) => Uri.encodeComponent(item.toString()))"),
+      );
+      expect(source, contains(".join(',')"));
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
+      expect(source, isNot(contains('Uri.encodeComponent(v.map')));
+    });
+
+    test('nullable path array items are skipped, not dereferenced', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrList(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+        ),
+      );
+      // Items are DateTime?; calling toIso8601String() on the bare item
+      // would not compile. RFC 6570 omits undefined values.
+      expect(source, contains('v.nonNulls'));
+      expect(source, contains('item.toIso8601String()'));
     });
 
     test('object path params serialize simple-style pairs', () {
@@ -3399,9 +3435,10 @@ void main() {
           explode: true,
         ),
       );
-      // simple, explode=true: a=<value>,b=<value>
+      // simple, explode=true: a=<value>,b=<value> — value encoded, the
+      // `=` and `,` delimiters literal.
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
-      expect(source, contains(r"'a=${v.a}'"));
+      expect(source, contains(r"'a=${Uri.encodeComponent(v.a)}'"));
     });
 
     test('map path params serialize simple-style pairs', () {
@@ -3414,12 +3451,60 @@ void main() {
           isRequired: true,
         ),
       );
-      // simple, explode=false: k1,v1,k2,v2
+      // simple, explode=false: k1,v1,k2,v2 — keys and values encoded,
+      // the `,` separators literal.
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
       expect(
         source,
-        contains('v.entries.expand((entry) => [entry.key, entry.value])'),
+        contains(
+          '[Uri.encodeComponent(entry.key), Uri.encodeComponent(entry.value)]',
+        ),
       );
+    });
+
+    test('nullable map values are skipped in path params', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('v'),
+          'v',
+          ParameterLocation.path,
+          IrMap(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+        ),
+      );
+      expect(source, contains('entry.value != null'));
+      expect(source, contains('entry.value!.toIso8601String()'));
+    });
+
+    test('required-but-nullable object fields are null-guarded in query', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('filter'),
+          'filter',
+          ParameterLocation.query,
+          IrTypeRef('NFilter'),
+          isRequired: true,
+        ),
+      );
+      // The model declares `t` as DateTime? (required-but-nullable); an
+      // unguarded toIso8601String() would not compile.
+      expect(source, contains(r'if (filter.t case final t$?)'));
+      expect(source, contains(r't$.toIso8601String()'));
+    });
+
+    test('nullable list items are skipped in joined query form', () {
+      final source = emitFor(
+        const IrParameter(
+          SpecString('ids'),
+          'ids',
+          ParameterLocation.query,
+          IrList(IrPrimitive(PrimitiveKind.dateTime, isNullable: true)),
+          isRequired: true,
+          explode: false,
+        ),
+      );
+      expect(source, contains('ids.nonNulls'));
+      expect(source, contains('item.toIso8601String()'));
     });
 
     test('ref query params take the styled object path', () {
@@ -3657,6 +3742,48 @@ void main() {
       // base64Encode requires dart:convert.
       expect(file, contains("import 'dart:convert'"));
       expect(file, contains("import 'dart:typed_data'"));
+    });
+
+    test('API file imports dart:convert for bytes fields of object params',
+        () {
+      const blob = IrObject('Blob', [
+        IrField(
+          'data',
+          SpecString('data'),
+          IrPrimitive(PrimitiveKind.bytes),
+          isRequired: true,
+        ),
+      ], requiredFields: ['data']);
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          SpecString('/send'),
+          parameters: [
+            IrParameter(
+              SpecString('q'),
+              'q',
+              ParameterLocation.query,
+              IrTypeRef('Blob'),
+              isRequired: true,
+              style: 'deepObject',
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final files = FileEmitter().emitAll(
+        types: [blob],
+        apis: [api],
+        packageName: 'bytes_field_test',
+      );
+      final file = files['apis/test_api.dart']!;
+      // The styled object serialization emits base64Encode for the bytes
+      // field, which requires dart:convert even though the signature only
+      // references the model class.
+      expect(file, contains('base64Encode'));
+      expect(file, contains("import 'dart:convert'"));
     });
   });
 
