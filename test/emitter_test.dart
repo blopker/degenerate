@@ -18,8 +18,7 @@ import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:test/test.dart';
 
 /// Full pipeline helper: parse YAML -> normalize -> lower types -> lower operations.
-({List<IrType> types, List<IrApi> apis, IrMapper irMapper})
-_lowerPetstore() {
+({List<IrType> types, List<IrApi> apis, IrMapper irMapper}) _lowerPetstore() {
   final yamlContent = File(
     'test/fixtures/public/petstore-v3.0-oai.yaml',
   ).readAsStringSync();
@@ -178,12 +177,18 @@ void main() {
         const model = IrObject(
           'Config',
           [
-            IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string),
-                isRequired: true),
+            IrField(
+              'id',
+              SpecString('id'),
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
           ],
           requiredFields: ['id'],
-          additionalProperties:
-              IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
+          additionalProperties: IrPrimitive(
+            PrimitiveKind.dynamic_,
+            isNullable: true,
+          ),
         );
         final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
@@ -216,7 +221,10 @@ void main() {
       });
 
       test('does not return unconditional true', () {
-        expect(source, isNot(contains('canParse(Map<String, dynamic> json) { return true;')));
+        expect(
+          source,
+          isNot(contains('canParse(Map<String, dynamic> json) { return true;')),
+        );
       });
 
       test('checks for known property keys', () {
@@ -265,11 +273,17 @@ void main() {
           IrField(
             'data',
             SpecString('data'),
-            IrPrimitive(PrimitiveKind.dynamic_,
-                description: SpecString('One of: String, int')),
+            IrPrimitive(
+              PrimitiveKind.dynamic_,
+              description: SpecString('One of: String, int'),
+            ),
             description: SpecString('One of: String, int'),
           ),
-          IrField('payload', SpecString('payload'), IrPrimitive(PrimitiveKind.dynamic_)),
+          IrField(
+            'payload',
+            SpecString('payload'),
+            IrPrimitive(PrimitiveKind.dynamic_),
+          ),
         ]);
         final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
@@ -536,8 +550,11 @@ void main() {
     });
 
     test('emits integer enum with int value field', () {
-      const irEnum = IrEnum('Priority', ['0', '1', '2'],
-          valueKind: PrimitiveKind.int);
+      const irEnum = IrEnum('Priority', [
+        '0',
+        '1',
+        '2',
+      ], valueKind: PrimitiveKind.int);
       final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
@@ -550,8 +567,11 @@ void main() {
     });
 
     test('integer enum is valid Dart', () {
-      const irEnum = IrEnum('Priority', ['0', '-1', '42'],
-          valueKind: PrimitiveKind.int);
+      const irEnum = IrEnum('Priority', [
+        '0',
+        '-1',
+        '42',
+      ], valueKind: PrimitiveKind.int);
       final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
@@ -626,12 +646,18 @@ void main() {
       // exactly the derived wrapper name. A same-named wrapper would shadow
       // the model inside the union library, making fromJson self-recursive
       // and the barrel exports ambiguous.
-      final union = IrDiscriminatedUnion('RealtimeClientEvent', const SpecString('type'), {
-        const SpecString('conversation.item.create'): const IrTypeRef(
-          'RealtimeClientEventConversationItemCreate',
-        ),
-        const SpecString('response.create'): const IrTypeRef('CreateResponse'),
-      });
+      final union = IrDiscriminatedUnion(
+        'RealtimeClientEvent',
+        const SpecString('type'),
+        {
+          const SpecString('conversation.item.create'): const IrTypeRef(
+            'RealtimeClientEventConversationItemCreate',
+          ),
+          const SpecString('response.create'): const IrTypeRef(
+            'CreateResponse',
+          ),
+        },
+      );
 
       final specs = DiscriminatedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
@@ -662,8 +688,10 @@ void main() {
       // Non-colliding ref variants keep the derived name.
       expect(
         source,
-        contains('final class RealtimeClientEventResponseCreate '
-            'extends RealtimeClientEvent'),
+        contains(
+          'final class RealtimeClientEventResponseCreate '
+          'extends RealtimeClientEvent',
+        ),
       );
     });
 
@@ -939,8 +967,7 @@ void main() {
         packageName: 'petstore_client',
         defaultServerUrl: 'https://petstore.swagger.io/v1',
       );
-      final sdkFile =
-          filesWithServer['client/petstore_client_api.dart']!;
+      final sdkFile = filesWithServer['client/petstore_client_api.dart']!;
       expect(
         sdkFile,
         contains(
@@ -1054,7 +1081,10 @@ void main() {
         Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
-      expect(source, contains(r"path: '/items/${Uri.encodeComponent(color.value)}'"));
+      expect(
+        source,
+        contains(r"path: '/items/${Uri.encodeComponent(color.value)}'"),
+      );
       expect(source, isNot(contains('color.toString()')));
     });
 
@@ -1083,7 +1113,9 @@ void main() {
 
       expect(
         source,
-        contains(r"path: '/items/${Uri.encodeComponent(code.value.toString())}'"),
+        contains(
+          r"path: '/items/${Uri.encodeComponent(code.value.toString())}'",
+        ),
       );
     });
 
@@ -1199,7 +1231,9 @@ void main() {
 
       expect(
         source,
-        contains("queryParameters['filter[code]'] = filter.code.value.toString();"),
+        contains(
+          "queryParameters['filter[code]'] = filter.code.value.toString();",
+        ),
       );
       expect(source, contains('value: item.value.toString()'));
     });
@@ -1238,7 +1272,9 @@ void main() {
 
       expect(
         source,
-        contains("queryParameters['filter[id]'] = filter.id.toJson().toString();"),
+        contains(
+          "queryParameters['filter[id]'] = filter.id.toJson().toString();",
+        ),
       );
     });
 
@@ -1661,7 +1697,9 @@ void main() {
           },
           defaultResponse: IrResponse(
             content: {
-              const SpecString('application/json'): const IrMediaType(IrPrimitive(PrimitiveKind.int)),
+              const SpecString('application/json'): const IrMediaType(
+                IrPrimitive(PrimitiveKind.int),
+              ),
             },
           ),
         ),
@@ -1845,7 +1883,9 @@ void main() {
           responses: {
             200: IrResponse(
               content: {
-                const SpecString('text/plain'): const IrMediaType(IrPrimitive(PrimitiveKind.string)),
+                const SpecString('text/plain'): const IrMediaType(
+                  IrPrimitive(PrimitiveKind.string),
+                ),
               },
             ),
           },
@@ -1873,7 +1913,9 @@ void main() {
           HttpMethod.post,
           const SpecString('/test'),
           requestBody: IrRequestBody({
-            const SpecString('text/plain'): const IrMediaType(IrPrimitive(PrimitiveKind.string)),
+            const SpecString('text/plain'): const IrMediaType(
+              IrPrimitive(PrimitiveKind.string),
+            ),
           }, isRequired: true),
           responses: {200: const IrResponse()},
         ),
@@ -1943,7 +1985,9 @@ void main() {
           responses: {
             200: IrResponse(
               content: {
-                const SpecString('application/json; charset=utf-8'): const IrMediaType(
+                const SpecString(
+                  'application/json; charset=utf-8',
+                ): const IrMediaType(
                   IrObject(
                     'Payload',
                     [
@@ -2114,7 +2158,9 @@ void main() {
           HttpMethod.post,
           const SpecString('/token'),
           requestBody: IrRequestBody({
-            const SpecString('application/x-www-form-urlencoded'): const IrMediaType(
+            const SpecString(
+              'application/x-www-form-urlencoded',
+            ): const IrMediaType(
               IrObject(
                 'TokenRequest',
                 [
@@ -2148,8 +2194,10 @@ void main() {
       // Should NOT throw UnsupportedError
       expect(source, isNot(contains('UnsupportedError')));
       // Content-Type set via headers
-      expect(source,
-          contains("'Content-Type'] = 'application/x-www-form-urlencoded'"));
+      expect(
+        source,
+        contains("'Content-Type'] = 'application/x-www-form-urlencoded'"),
+      );
       // Should build key=value pairs joined by &
       expect(source, contains('grant_type'));
       expect(source, contains('Uri.encodeQueryComponent'));
@@ -2435,8 +2483,16 @@ void main() {
             parameterName: 'x-api-key',
             location: 'header',
           ),
-          IrSecurityScheme(name: SpecString('HttpBearer'), type: 'http', scheme: 'bearer'),
-          IrSecurityScheme(name: SpecString('HttpBasic'), type: 'http', scheme: 'basic'),
+          IrSecurityScheme(
+            name: SpecString('HttpBearer'),
+            type: 'http',
+            scheme: 'bearer',
+          ),
+          IrSecurityScheme(
+            name: SpecString('HttpBasic'),
+            type: 'http',
+            scheme: 'basic',
+          ),
         ],
         globalSecurity: [
           IrSecurityRequirement({const SpecString('ApiKeyAuth'): []}),
@@ -2513,7 +2569,11 @@ void main() {
           ]),
         ],
         securitySchemes: const [
-          IrSecurityScheme(name: SpecString('bearerAuth'), type: 'http', scheme: 'bearer'),
+          IrSecurityScheme(
+            name: SpecString('bearerAuth'),
+            type: 'http',
+            scheme: 'bearer',
+          ),
         ],
         globalSecurity: [
           IrSecurityRequirement({const SpecString('bearerAuth'): []}),
@@ -2524,7 +2584,9 @@ void main() {
       final securityFile = files['client/test_client_security.dart']!;
       expect(
         securityFile,
-        contains('static final getMeRequirements = <ApiSecurityRequirement>[];'),
+        contains(
+          'static final getMeRequirements = <ApiSecurityRequirement>[];',
+        ),
       );
     });
 
@@ -2757,19 +2819,34 @@ void main() {
   group('preferredContent', () {
     test('prefers JSON over other types', () {
       final result = preferredContent({
-        const SpecString('application/octet-stream'): const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        const SpecString('application/json'): const IrMediaType(IrTypeRef('Item')),
+        const SpecString('application/octet-stream'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
+        const SpecString('application/json'): const IrMediaType(
+          IrTypeRef('Item'),
+        ),
       });
       expect(result!.$1, equals(const SpecString('application/json')));
     });
 
     test('prefers multipart over octet-stream', () {
       final result = preferredContent({
-        const SpecString('application/octet-stream'): const IrMediaType(IrTypeRef('Value')),
+        const SpecString('application/octet-stream'): const IrMediaType(
+          IrTypeRef('Value'),
+        ),
         const SpecString('multipart/form-data'): const IrMediaType(
-          IrObject('Request', [
-            IrField('value', SpecString('value'), IrTypeRef('Value'), isRequired: true),
-          ], requiredFields: ['value']),
+          IrObject(
+            'Request',
+            [
+              IrField(
+                'value',
+                SpecString('value'),
+                IrTypeRef('Value'),
+                isRequired: true,
+              ),
+            ],
+            requiredFields: ['value'],
+          ),
         ),
       });
       expect(result!.$1, equals(const SpecString('multipart/form-data')));
@@ -2777,34 +2854,53 @@ void main() {
 
     test('prefers form-urlencoded over octet-stream', () {
       final result = preferredContent({
-        const SpecString('application/octet-stream'): const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        const SpecString('application/x-www-form-urlencoded'): const IrMediaType(
+        const SpecString('application/octet-stream'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
+        const SpecString(
+          'application/x-www-form-urlencoded',
+        ): const IrMediaType(
           IrObject('Request', []),
         ),
       });
-      expect(result!.$1, equals(const SpecString('application/x-www-form-urlencoded')));
+      expect(
+        result!.$1,
+        equals(const SpecString('application/x-www-form-urlencoded')),
+      );
     });
 
     test('prefers text/plain over multipart', () {
       final result = preferredContent({
-        const SpecString('multipart/form-data'): const IrMediaType(IrTypeRef('Item')),
-        const SpecString('text/plain'): const IrMediaType(IrPrimitive(PrimitiveKind.string)),
+        const SpecString('multipart/form-data'): const IrMediaType(
+          IrTypeRef('Item'),
+        ),
+        const SpecString('text/plain'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.string),
+        ),
       });
       expect(result!.$1, equals(const SpecString('text/plain')));
     });
 
     test('prefers octet-stream over unknown types', () {
       final result = preferredContent({
-        const SpecString('image/png'): const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        const SpecString('application/octet-stream'): const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        const SpecString('image/png'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
+        const SpecString('application/octet-stream'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
       });
       expect(result!.$1, equals(const SpecString('application/octet-stream')));
     });
 
     test('falls back to first entry for unknown types', () {
       final result = preferredContent({
-        const SpecString('image/png'): const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        const SpecString('video/mp4'): const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        const SpecString('image/png'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
+        const SpecString('video/mp4'): const IrMediaType(
+          IrPrimitive(PrimitiveKind.bytes),
+        ),
       });
       expect(result!.$1, equals(const SpecString('image/png')));
     });
@@ -2830,7 +2926,10 @@ void main() {
                 'value': {
                   'anyOf': [
                     {'type': 'integer'},
-                    {'type': 'string', 'enum': ['']},
+                    {
+                      'type': 'string',
+                      'enum': [''],
+                    },
                   ],
                 },
               },
@@ -2853,14 +2952,17 @@ void main() {
           IrExtensionType(:final name) => name,
           _ => null,
         };
-        if (name != null && !allTypes.any((t) => switch (t) {
-          IrObject(:final name) => name == entry.key,
-          IrEnum(:final name) => name == entry.key,
-          IrUntaggedUnion(:final name) => name == entry.key,
-          IrAnyOf(:final name) => name == entry.key,
-          IrExtensionType(:final name) => name == entry.key,
-          _ => false,
-        })) {
+        if (name != null &&
+            !allTypes.any(
+              (t) => switch (t) {
+                IrObject(:final name) => name == entry.key,
+                IrEnum(:final name) => name == entry.key,
+                IrUntaggedUnion(:final name) => name == entry.key,
+                IrAnyOf(:final name) => name == entry.key,
+                IrExtensionType(:final name) => name == entry.key,
+                _ => false,
+              },
+            )) {
           allTypes.add(entry.value);
         }
       }
@@ -2874,11 +2976,16 @@ void main() {
 
     test('enum variant is inlined into typedef file, not separate', () {
       // The enum variant should NOT have its own file
-      final variantFiles = files.keys.where(
-        (k) => k.contains('variant') && k.endsWith('.dart'),
-      ).toList();
-      expect(variantFiles, isEmpty,
-          reason: 'Enum variant should be inlined, not a separate file');
+      final variantFiles = files.keys
+          .where(
+            (k) => k.contains('variant') && k.endsWith('.dart'),
+          )
+          .toList();
+      expect(
+        variantFiles,
+        isEmpty,
+        reason: 'Enum variant should be inlined, not a separate file',
+      );
 
       // The typedef file should contain both the enum class and the typedef
       final typedefFile = files['models/container_value.dart'];
@@ -2908,10 +3015,20 @@ void main() {
       // InnerOneOf should NOT be imported by Parent because it's inlined.
       final types = <IrType>[
         const IrObject('A', [
-          IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string), isRequired: true),
+          IrField(
+            'id',
+            SpecString('id'),
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
         ]),
         const IrObject('B', [
-          IrField('name', SpecString('name'), IrPrimitive(PrimitiveKind.string), isRequired: true),
+          IrField(
+            'name',
+            SpecString('name'),
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
         ]),
         const IrUntaggedUnion('InnerOneOf', [
           IrTypeRef('A'),
@@ -2922,7 +3039,12 @@ void main() {
           IrPrimitive(PrimitiveKind.string),
         ]),
         const IrObject('Parent', [
-          IrField('value', SpecString('value'), IrTypeRef('OuterOneOf'), isRequired: true),
+          IrField(
+            'value',
+            SpecString('value'),
+            IrTypeRef('OuterOneOf'),
+            isRequired: true,
+          ),
         ]),
       ];
 
@@ -2981,44 +3103,47 @@ void main() {
     });
   });
 
-  group('FileEmitter does not import dart:convert for model with non-OneOf bytes ref', () {
-    late Map<String, String> files;
+  group(
+    'FileEmitter does not import dart:convert for model with non-OneOf bytes ref',
+    () {
+      late Map<String, String> files;
 
-    setUpAll(() {
-      // Create a sealed class (non-OneOf-eligible, 10 variants) that has bytes.
-      // Parent model should NOT import dart:convert because it just calls .fromJson().
-      final variants = <IrType>[
-        const IrPrimitive(PrimitiveKind.string),
-        const IrPrimitive(PrimitiveKind.int),
-        const IrPrimitive(PrimitiveKind.double),
-        const IrPrimitive(PrimitiveKind.bool),
-        const IrPrimitive(PrimitiveKind.bytes),
-        const IrPrimitive(PrimitiveKind.string),
-        const IrPrimitive(PrimitiveKind.int),
-        const IrPrimitive(PrimitiveKind.double),
-        const IrPrimitive(PrimitiveKind.bool),
-        const IrPrimitive(PrimitiveKind.num),
-      ];
-      final types = <IrType>[
-        IrAnyOf('BigResult', variants),
-        const IrObject('ParentModel', [
-          IrField('result', SpecString('result'), IrTypeRef('BigResult')),
-        ]),
-      ];
+      setUpAll(() {
+        // Create a sealed class (non-OneOf-eligible, 10 variants) that has bytes.
+        // Parent model should NOT import dart:convert because it just calls .fromJson().
+        final variants = <IrType>[
+          const IrPrimitive(PrimitiveKind.string),
+          const IrPrimitive(PrimitiveKind.int),
+          const IrPrimitive(PrimitiveKind.double),
+          const IrPrimitive(PrimitiveKind.bool),
+          const IrPrimitive(PrimitiveKind.bytes),
+          const IrPrimitive(PrimitiveKind.string),
+          const IrPrimitive(PrimitiveKind.int),
+          const IrPrimitive(PrimitiveKind.double),
+          const IrPrimitive(PrimitiveKind.bool),
+          const IrPrimitive(PrimitiveKind.num),
+        ];
+        final types = <IrType>[
+          IrAnyOf('BigResult', variants),
+          const IrObject('ParentModel', [
+            IrField('result', SpecString('result'), IrTypeRef('BigResult')),
+          ]),
+        ];
 
-      files = FileEmitter().emitAll(
-        types: types,
-        apis: [],
-        packageName: 'big_result_test',
-      );
-    });
+        files = FileEmitter().emitAll(
+          types: types,
+          apis: [],
+          packageName: 'big_result_test',
+        );
+      });
 
-    test('parent model does not import dart:convert', () {
-      final file = files['models/parent_model.dart']!;
-      // The parent just calls BigResult.fromJson() - no direct base64 usage
-      expect(file, isNot(contains("import 'dart:convert'")));
-    });
-  });
+      test('parent model does not import dart:convert', () {
+        final file = files['models/parent_model.dart']!;
+        // The parent just calls BigResult.fromJson() - no direct base64 usage
+        expect(file, isNot(contains("import 'dart:convert'")));
+      });
+    },
+  );
 
   group('ApiEmitter early throw does not emit unused variables', () {
     late Map<String, String> files;
@@ -3026,7 +3151,12 @@ void main() {
     setUpAll(() {
       final types = <IrType>[
         const IrObject('SomeResponse', [
-          IrField('ok', SpecString('ok'), IrPrimitive(PrimitiveKind.bool), isRequired: true),
+          IrField(
+            'ok',
+            SpecString('ok'),
+            IrPrimitive(PrimitiveKind.bool),
+            isRequired: true,
+          ),
         ]),
       ];
 
@@ -3090,7 +3220,12 @@ void main() {
 
     setUpAll(() {
       const bodyType = IrObject('CreateRequest', [
-        IrField('name', SpecString('Name'), IrPrimitive(PrimitiveKind.string), isRequired: true),
+        IrField(
+          'name',
+          SpecString('Name'),
+          IrPrimitive(PrimitiveKind.string),
+          isRequired: true,
+        ),
         IrField('tag', SpecString('Tag'), IrPrimitive(PrimitiveKind.string)),
       ]);
       final types = <IrType>[bodyType];
@@ -3104,7 +3239,9 @@ void main() {
             const SpecString('/things'),
             requestBody: IrRequestBody(
               {
-                const SpecString('application/x-www-form-urlencoded'): const IrMediaType(
+                const SpecString(
+                  'application/x-www-form-urlencoded',
+                ): const IrMediaType(
                   IrTypeRef('CreateRequest'),
                 ),
               },
@@ -3142,7 +3279,11 @@ void main() {
 
     setUpAll(() {
       const bodyType = IrObject('ObjRequest', [
-        IrField('data', SpecString('Data'), IrPrimitive(PrimitiveKind.dynamic_)),
+        IrField(
+          'data',
+          SpecString('Data'),
+          IrPrimitive(PrimitiveKind.dynamic_),
+        ),
       ]);
       final types = <IrType>[bodyType];
 
@@ -3155,7 +3296,9 @@ void main() {
             const SpecString('/data'),
             requestBody: IrRequestBody(
               {
-                const SpecString('application/x-www-form-urlencoded'): const IrMediaType(
+                const SpecString(
+                  'application/x-www-form-urlencoded',
+                ): const IrMediaType(
                   IrTypeRef('ObjRequest'),
                 ),
               },
@@ -3207,8 +3350,7 @@ void main() {
         ],
         packageName: 'pub_petstore_v3_0_oai',
       );
-      final sdkFile =
-          files['client/pub_petstore_v3_0_oai_api.dart']!;
+      final sdkFile = files['client/pub_petstore_v3_0_oai_api.dart']!;
       // Class name must be a valid Dart identifier (not start with digit without $)
       expect(sdkFile, isNot(contains('class 0')));
       // $0OaiApi is valid: $ prefix makes leading digit ok
@@ -3264,7 +3406,10 @@ void main() {
       expect(source, contains("queryParameters['scope[type]'] = scope.type;"));
       // Optional field must NOT use raw property access after null check
       // (would fail dart analyze: can't promote public property)
-      expect(source, isNot(contains("queryParameters['scope[user]'] = scope.user;")));
+      expect(
+        source,
+        isNot(contains("queryParameters['scope[user]'] = scope.user;")),
+      );
       // Should use case-final pattern for promotion
       expect(source, contains(r'case final user$?'));
     });
@@ -3326,7 +3471,8 @@ void main() {
           'getWithBody',
           HttpMethod.get,
           const SpecString('/test'),
-          requestBody: IrRequestBody({
+          requestBody: IrRequestBody(
+            {
               const SpecString('application/json'): const IrMediaType(
                 IrList(IrPrimitive(PrimitiveKind.string)),
               ),
@@ -3372,11 +3518,18 @@ void main() {
   group('ApiEmitter - unwrapFields', () {
     test('unwraps response envelope to result field type', () {
       const envelopeType = IrObject('GetZoneResponse', [
-        IrField('success', SpecString('success'), IrPrimitive(PrimitiveKind.bool),
-            isRequired: true),
-        IrField('errors', SpecString('errors'),
-            IrList(IrPrimitive(PrimitiveKind.dynamic_)),
-            isRequired: true),
+        IrField(
+          'success',
+          SpecString('success'),
+          IrPrimitive(PrimitiveKind.bool),
+          isRequired: true,
+        ),
+        IrField(
+          'errors',
+          SpecString('errors'),
+          IrList(IrPrimitive(PrimitiveKind.dynamic_)),
+          isRequired: true,
+        ),
         IrField('result', SpecString('result'), IrTypeRef('Zone')),
       ]);
       final api = IrApi('ZonesApi', [
@@ -3388,7 +3541,9 @@ void main() {
           responses: {
             200: IrResponse(
               content: {
-                const SpecString('application/json'): const IrMediaType(IrTypeRef('GetZoneResponse')),
+                const SpecString('application/json'): const IrMediaType(
+                  IrTypeRef('GetZoneResponse'),
+                ),
               },
             ),
           },
@@ -3397,13 +3552,19 @@ void main() {
       final typeRegistry = <String, IrType>{
         'GetZoneResponse': envelopeType,
         'Zone': const IrObject('Zone', [
-          IrField('id', SpecString('id'), IrPrimitive(PrimitiveKind.string),
-              isRequired: true),
+          IrField(
+            'id',
+            SpecString('id'),
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
         ]),
       };
-      final specs = ApiEmitter(api,
-              typeRegistry: typeRegistry, unwrapFields: ['result'])
-          .emit();
+      final specs = ApiEmitter(
+        api,
+        typeRegistry: typeRegistry,
+        unwrapFields: ['result'],
+      ).emit();
       final source = emitRaw(
         Library(
           (b) => b
@@ -3549,23 +3710,39 @@ void main() {
   });
 
   group('ApiEmitter - object/array styled parameters', () {
-    const filterObj = IrObject('Filter', [
-      IrField('a', SpecString('a'), IrPrimitive(PrimitiveKind.string),
-          isRequired: true),
-      IrField('b', SpecString('b'), IrPrimitive(PrimitiveKind.int),
-          isRequired: true),
-    ], requiredFields: ['a', 'b']);
+    const filterObj = IrObject(
+      'Filter',
+      [
+        IrField(
+          'a',
+          SpecString('a'),
+          IrPrimitive(PrimitiveKind.string),
+          isRequired: true,
+        ),
+        IrField(
+          'b',
+          SpecString('b'),
+          IrPrimitive(PrimitiveKind.int),
+          isRequired: true,
+        ),
+      ],
+      requiredFields: ['a', 'b'],
+    );
 
     // Required-but-nullable field: the generated model declares `t` as
     // DateTime?, so unguarded serialization would not compile.
-    const nullableFieldObj = IrObject('NFilter', [
-      IrField(
-        't',
-        SpecString('t'),
-        IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
-        isRequired: true,
-      ),
-    ], requiredFields: ['t']);
+    const nullableFieldObj = IrObject(
+      'NFilter',
+      [
+        IrField(
+          't',
+          SpecString('t'),
+          IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+          isRequired: true,
+        ),
+      ],
+      requiredFields: ['t'],
+    );
 
     String emitFor(IrParameter p) {
       final api = IrApi('TestApi', [
@@ -3584,10 +3761,13 @@ void main() {
         Library(
           (b) => b
             ..body.addAll(
-              ApiEmitter(api, typeRegistry: const {
-                'Filter': filterObj,
-                'NFilter': nullableFieldObj,
-              }).emit(),
+              ApiEmitter(
+                api,
+                typeRegistry: const {
+                  'Filter': filterObj,
+                  'NFilter': nullableFieldObj,
+                },
+              ).emit(),
             ),
         ),
       );
@@ -3608,7 +3788,7 @@ void main() {
       // joined string would send 1%2C2 to a server that splits on `,`.
       expect(
         source,
-        contains("v.map((item) => Uri.encodeComponent(item.toString()))"),
+        contains('v.map((item) => Uri.encodeComponent(item.toString()))'),
       );
       expect(source, contains(".join(',')"));
       expect(source, isNot(contains('Uri.encodeComponent(v.toString())')));
@@ -3928,9 +4108,15 @@ void main() {
       // Uint8List.toString() is '[1, 2, 3]' \u2014 not base64;
       // Duration.toString() is 'Duration: ...' \u2014 not a number.
       expect(source, contains('Uri.encodeComponent(when.toIso8601String())'));
-      expect(source, contains("queryParameters['since'] = since.toIso8601String();"));
+      expect(
+        source,
+        contains("queryParameters['since'] = since.toIso8601String();"),
+      );
       expect(source, contains("headers['X-Sig'] = base64Encode(xSig);"));
-      expect(source, contains("cookies['ttl'] = ttl.inMilliseconds.toString();"));
+      expect(
+        source,
+        contains("cookies['ttl'] = ttl.inMilliseconds.toString();"),
+      );
       expect(source, isNot(contains('when.toString()')));
       expect(source, isNot(contains('since.toString()')));
       expect(source, isNot(contains('xSig.toString()')));
@@ -3967,16 +4153,19 @@ void main() {
       expect(file, contains("import 'dart:typed_data'"));
     });
 
-    test('API file imports dart:convert for bytes fields of object params',
-        () {
-      const blob = IrObject('Blob', [
-        IrField(
-          'data',
-          SpecString('data'),
-          IrPrimitive(PrimitiveKind.bytes),
-          isRequired: true,
-        ),
-      ], requiredFields: ['data']);
+    test('API file imports dart:convert for bytes fields of object params', () {
+      const blob = IrObject(
+        'Blob',
+        [
+          IrField(
+            'data',
+            SpecString('data'),
+            IrPrimitive(PrimitiveKind.bytes),
+            isRequired: true,
+          ),
+        ],
+        requiredFields: ['data'],
+      );
       const api = IrApi('TestApi', [
         IrOperation(
           'send',
