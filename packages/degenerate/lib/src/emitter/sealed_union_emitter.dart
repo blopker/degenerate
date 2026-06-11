@@ -4,7 +4,15 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
 /// Regex to strip angle brackets, commas, and whitespace from type names.
-final _unsafeTypeNameChars = RegExp(r'[<>,?\s]');
+final _unsafeTypeNameChars = RegExp(r'[<>,\s]');
+
+/// Turn a rendered type name into a valid identifier fragment.
+///
+/// Item nullability is rendered as `OrNull` (`List<String?>` →
+/// `ListStringOrNull`) rather than stripped, so a union over both
+/// `List<String>` and `List<String?>` gets distinct variant class names.
+String _safeTypeName(String typeName) =>
+    typeName.replaceAll('?', 'OrNull').replaceAll(_unsafeTypeNameChars, '');
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 class DiscriminatedUnionEmitter {
@@ -360,7 +368,7 @@ class DiscriminatedUnionEmitter {
   Class _buildRefVariant(String className, String discValue, IrType type) {
     final typeName = irTypeName(type);
     // Sanitize type names like "List<String>" by removing angle brackets
-    final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+    final safeTypeName = _safeTypeName(typeName);
     final fieldName = sanitizeFieldName(toCamelCase(safeTypeName));
 
     return Class(
@@ -547,7 +555,7 @@ class UntaggedUnionEmitter {
         .where((v) => seenTypes.add(irTypeName(v)))
         .map((v) {
           final typeName = irTypeName(v);
-          final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+          final safeTypeName = _safeTypeName(typeName);
           final className = '${union.name}${toPascalCase(safeTypeName)}';
           return '  final $typeName v => $className(v),';
         })
@@ -583,7 +591,7 @@ class UntaggedUnionEmitter {
       }
       final typeName = irTypeName(variant);
       if (!seenTypes.add(typeName)) continue;
-      final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+      final safeTypeName = _safeTypeName(typeName);
       final className = '${union.name}${toPascalCase(safeTypeName)}';
       if (variant is IrObject || variant is IrTypeRef) {
         final refName = typeName;
@@ -626,7 +634,7 @@ class UntaggedUnionEmitter {
     final typeName = irTypeName(variant);
     // Sanitize type names like "List<String>" or "Map<String, int>"
     // by removing angle brackets and their contents for the class name.
-    final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+    final safeTypeName = _safeTypeName(typeName);
     final className = '${union.name}${toPascalCase(safeTypeName)}';
     return Class(
       (b) => b

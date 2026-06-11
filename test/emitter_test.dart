@@ -727,6 +727,25 @@ void main() {
 
       expect(() => _formatOrFail(source), returnsNormally);
     });
+
+    test('nullable-item collection variants get distinct class names', () {
+      // irTypeName renders item nullability (List<String?>), so a union of
+      // List<String> and List<String?> no longer dedupes to one variant.
+      // Stripping the `?` from the safe name would emit two classes both
+      // named ThingListString — a compile error. Render it as `OrNull`.
+      const union = IrUntaggedUnion('Thing', [
+        IrList(IrPrimitive(PrimitiveKind.string)),
+        IrList(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      expect(source, contains('class ThingListString '));
+      expect(source, contains('class ThingListStringOrNull '));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
   });
 
   // ─── API emission ────────────────────────────────────────────
