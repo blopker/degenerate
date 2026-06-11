@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_account_level_base.dart';/// Request body schema for deleting tags from account-level resources. Use /zones/{zone_id}/tags for zone-level resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_account_level_base.dart';import 'resource_tagging_delete_tags_request_account_level_worker_version.dart';/// Request body schema for deleting tags from account-level resources. Use /zones/{zone_id}/tags for zone-level resources.
 sealed class ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevel();
 
 /// Deserialize from JSON, dispatching on the `resource_type` discriminator.
@@ -24,7 +24,7 @@ factory ResourceTaggingDeleteTagsRequestAccountLevel.fromJson(Map<String, dynami
   'stream_live_input' => ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput.fromJson(json),
   'stream_video' => ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo.fromJson(json),
   'worker' => ResourceTaggingDeleteTagsRequestAccountLevelWorker.fromJson(json),
-  'worker_version' => ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.fromJson(json),
+  'worker_version' => ResourceTaggingDeleteTagsRequestAccountLevel$WorkerVersion.fromJson(json),
   _ => ResourceTaggingDeleteTagsRequestAccountLevel$Unknown(json),
 }; }
 
@@ -281,18 +281,18 @@ final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTags
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestAccountLevelWorker(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
  }
-@immutable final class ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
+@immutable final class ResourceTaggingDeleteTagsRequestAccountLevel$WorkerVersion extends ResourceTaggingDeleteTagsRequestAccountLevel {const ResourceTaggingDeleteTagsRequestAccountLevel$WorkerVersion(this.resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion);
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestAccountLevel$WorkerVersion.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevel$WorkerVersion(ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.fromJson(json)); }
 
-final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
+final ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion;
 
 @override String get resourceType { return 'worker_version'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.toJson(), 'resource_type': resourceType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+    other is ResourceTaggingDeleteTagsRequestAccountLevel$WorkerVersion && resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion == other.resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion; } 
+@override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion.hashCode; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestAccountLevel\$WorkerVersion(resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion: $resourceTaggingDeleteTagsRequestAccountLevelWorkerVersion)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

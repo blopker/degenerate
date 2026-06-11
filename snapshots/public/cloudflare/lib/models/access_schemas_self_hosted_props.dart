@@ -1,20 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_components_schemas_domain.dart';import 'access_custom_deny_message.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_cors_headers.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';/// The custom URL a user is redirected to when they are denied access to the application.
-extension type const AccessSchemasCustomDenyUrl(String value) {
-factory AccessSchemasCustomDenyUrl.fromJson(String json) => AccessSchemasCustomDenyUrl(json);
-
-String toJson() => value;
-
-}
-/// Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.
-extension type const AccessSchemasOptionsPreflightBypass(bool value) {
-factory AccessSchemasOptionsPreflightBypass.fromJson(bool json) => AccessSchemasOptionsPreflightBypass(json);
-
-bool toJson() => value;
-
-}
-@immutable final class AccessSchemasSelfHostedProps {const AccessSchemasSelfHostedProps({required this.domain, required this.type, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.useClientlessIsolationAppLauncherUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_components_schemas_domain.dart';import 'access_custom_deny_message.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_cors_headers.dart';import 'access_schemas_custom_deny_url.dart';import 'access_schemas_options_preflight_bypass.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';@immutable final class AccessSchemasSelfHostedProps {const AccessSchemasSelfHostedProps({required this.domain, required this.type, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.useClientlessIsolationAppLauncherUrl, });
 
 factory AccessSchemasSelfHostedProps.fromJson(Map<String, dynamic> json) { return AccessSchemasSelfHostedProps(
   allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,

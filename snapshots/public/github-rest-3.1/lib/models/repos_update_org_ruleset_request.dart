@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_rules.dart';import 'org_ruleset_conditions.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_rules.dart';import 'org_ruleset_conditions.dart';import 'repository_id_and_ref_name.dart';import 'repository_name_and_ref_name.dart';import 'repository_property_and_ref_name.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';/// The target of the ruleset
 @immutable final class ReposUpdateOrgRulesetRequestTarget {const ReposUpdateOrgRulesetRequestTarget._(this.value);
 
 factory ReposUpdateOrgRulesetRequestTarget.fromJson(String json) { return switch (json) {
@@ -38,7 +38,7 @@ factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { retur
   target: json['target'] != null ? ReposUpdateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null,
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
-  conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>),) : null,
+  conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => OrgRules.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

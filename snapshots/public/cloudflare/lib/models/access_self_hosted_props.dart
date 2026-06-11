@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_cors_headers.dart';import 'access_custom_deny_message.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_destinations2.dart';import 'access_domain.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_mfa_config.dart';import 'access_oauth_configuration.dart';import 'access_options_preflight_bypass.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_allow_authenticate_via_warp.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_scim_config.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_type.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';import 'private_destination.dart';import 'public_destination.dart';import 'via_mcp_server_portal_destination.dart';/// Enables cookie paths to scope an application's JWT to the application path. If disabled, the JWT will scope to the hostname by default
-extension type const AccessPathCookieAttribute(bool value) {
-factory AccessPathCookieAttribute.fromJson(bool json) => AccessPathCookieAttribute(json);
-
-bool toJson() => value;
-
-}
-/// Allows matching Access Service Tokens passed HTTP in a single header with this name.
-/// This works as an alternative to the (CF-Access-Client-Id, CF-Access-Client-Secret) pair of headers.
-/// The header value will be interpreted as a json object similar to:
-///   {
-///     "cf-access-client-id": "88bf3b6d86161464f6509f7219099e57.access.example.com",
-///     "cf-access-client-secret": "bdd31cbc4dec990953e39163fbbb194c93313ca9f0a6e420346af9d326b1d2a5"
-///   }
-/// 
-extension type const AccessReadServiceTokensFromHeader(String value) {
-factory AccessReadServiceTokensFromHeader.fromJson(String json) => AccessReadServiceTokensFromHeader(json);
-
-String toJson() => value;
-
-}
-@immutable final class AccessSelfHostedProps {const AccessSelfHostedProps({required this.domain, required this.type, this.allowAuthenticateViaWarp, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.mfaConfig, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.pathCookieAttribute, this.readServiceTokensFromHeader, this.sameSiteCookieAttribute, this.scimConfig, this.selfHostedDomains, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.tags, this.useClientlessIsolationAppLauncherUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_cors_headers.dart';import 'access_custom_deny_message.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_destinations2.dart';import 'access_domain.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_mfa_config.dart';import 'access_oauth_configuration.dart';import 'access_options_preflight_bypass.dart';import 'access_path_cookie_attribute.dart';import 'access_read_service_tokens_from_header.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_allow_authenticate_via_warp.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_scim_config.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_type.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';import 'private_destination.dart';import 'public_destination.dart';import 'via_mcp_server_portal_destination.dart';@immutable final class AccessSelfHostedProps {const AccessSelfHostedProps({required this.domain, required this.type, this.allowAuthenticateViaWarp, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.mfaConfig, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.pathCookieAttribute, this.readServiceTokensFromHeader, this.sameSiteCookieAttribute, this.scimConfig, this.selfHostedDomains, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.tags, this.useClientlessIsolationAppLauncherUrl, });
 
 factory AccessSelfHostedProps.fromJson(Map<String, dynamic> json) { return AccessSelfHostedProps(
   allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessSchemasAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,

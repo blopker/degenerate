@@ -15,6 +15,7 @@ factory CodeScanningVariantAnalysisRepoTask.fromJson(Map<String, dynamic> json) 
 
 final SimpleRepository repository;
 
+/// The new status of the CodeQL variant analysis repository task.
 final CodeScanningVariantAnalysisStatus analysisStatus;
 
 /// The size of the artifact. This is only available for successful analyses.

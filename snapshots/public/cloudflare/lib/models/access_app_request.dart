@@ -1,48 +1,64 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_app_launcher_props.dart';import 'access_bookmark_props.dart';import 'access_feature_app_props.dart';import 'access_infra_props.dart';import 'access_mcp_portal_props.dart';import 'access_mcp_props.dart';import 'access_rdp_props.dart';import 'access_saas_props.dart';import 'access_self_hosted_props.dart';final class AccessAppRequest {const AccessAppRequest({this.accessSelfHostedProps, this.accessSaasProps, this.accessAppLauncherProps, this.accessFeatureAppProps, this.accessBookmarkProps, this.accessInfraProps, this.accessRdpProps, this.accessMcpProps, this.accessMcpPortalProps, });
+import 'app_launcher_application.dart';import 'bookmark_application.dart';import 'browser_isolation_permissions_application.dart';import 'browser_rdp_application.dart';import 'browser_ssh_application.dart';import 'browser_vnc_application.dart';import 'device_enrollment_permissions_application.dart';import 'gateway_identity_proxy_endpoint_application.dart';import 'infrastructure_application.dart';import 'mcp_server_application.dart';import 'mcp_server_portal_application.dart';import 'saa_s_application.dart';import 'self_hosted_application.dart';final class AccessAppRequest {const AccessAppRequest({this.selfHostedApplication, this.saaSApplication, this.browserSshApplication, this.browserVncApplication, this.appLauncherApplication, this.deviceEnrollmentPermissionsApplication, this.browserIsolationPermissionsApplication, this.gatewayIdentityProxyEndpointApplication, this.bookmarkApplication, this.infrastructureApplication, this.browserRdpApplication, this.mcpServerApplication, this.mcpServerPortalApplication, });
 
 factory AccessAppRequest.fromJson(Map<String, dynamic> json) { return AccessAppRequest(
-  accessSelfHostedProps: AccessSelfHostedProps.canParse(json) ? AccessSelfHostedProps.fromJson(json) : null,
-  accessSaasProps: AccessSaasProps.canParse(json) ? AccessSaasProps.fromJson(json) : null,
-  accessAppLauncherProps: AccessAppLauncherProps.canParse(json) ? AccessAppLauncherProps.fromJson(json) : null,
-  accessFeatureAppProps: AccessFeatureAppProps.canParse(json) ? AccessFeatureAppProps.fromJson(json) : null,
-  accessBookmarkProps: AccessBookmarkProps.canParse(json) ? AccessBookmarkProps.fromJson(json) : null,
-  accessInfraProps: AccessInfraProps.canParse(json) ? AccessInfraProps.fromJson(json) : null,
-  accessRdpProps: AccessRdpProps.canParse(json) ? AccessRdpProps.fromJson(json) : null,
-  accessMcpProps: AccessMcpProps.canParse(json) ? AccessMcpProps.fromJson(json) : null,
-  accessMcpPortalProps: AccessMcpPortalProps.canParse(json) ? AccessMcpPortalProps.fromJson(json) : null,
+  selfHostedApplication: SelfHostedApplication.canParse(json) ? SelfHostedApplication.fromJson(json) : null,
+  saaSApplication: SaaSApplication.canParse(json) ? SaaSApplication.fromJson(json) : null,
+  browserSshApplication: BrowserSshApplication.canParse(json) ? BrowserSshApplication.fromJson(json) : null,
+  browserVncApplication: BrowserVncApplication.canParse(json) ? BrowserVncApplication.fromJson(json) : null,
+  appLauncherApplication: AppLauncherApplication.canParse(json) ? AppLauncherApplication.fromJson(json) : null,
+  deviceEnrollmentPermissionsApplication: DeviceEnrollmentPermissionsApplication.canParse(json) ? DeviceEnrollmentPermissionsApplication.fromJson(json) : null,
+  browserIsolationPermissionsApplication: BrowserIsolationPermissionsApplication.canParse(json) ? BrowserIsolationPermissionsApplication.fromJson(json) : null,
+  gatewayIdentityProxyEndpointApplication: GatewayIdentityProxyEndpointApplication.canParse(json) ? GatewayIdentityProxyEndpointApplication.fromJson(json) : null,
+  bookmarkApplication: BookmarkApplication.canParse(json) ? BookmarkApplication.fromJson(json) : null,
+  infrastructureApplication: InfrastructureApplication.canParse(json) ? InfrastructureApplication.fromJson(json) : null,
+  browserRdpApplication: BrowserRdpApplication.canParse(json) ? BrowserRdpApplication.fromJson(json) : null,
+  mcpServerApplication: McpServerApplication.canParse(json) ? McpServerApplication.fromJson(json) : null,
+  mcpServerPortalApplication: McpServerPortalApplication.canParse(json) ? McpServerPortalApplication.fromJson(json) : null,
 ); }
 
-final AccessSelfHostedProps? accessSelfHostedProps;
+final SelfHostedApplication? selfHostedApplication;
 
-final AccessSaasProps? accessSaasProps;
+final SaaSApplication? saaSApplication;
 
-final AccessAppLauncherProps? accessAppLauncherProps;
+final BrowserSshApplication? browserSshApplication;
 
-final AccessFeatureAppProps? accessFeatureAppProps;
+final BrowserVncApplication? browserVncApplication;
 
-final AccessBookmarkProps? accessBookmarkProps;
+final AppLauncherApplication? appLauncherApplication;
 
-final AccessInfraProps? accessInfraProps;
+final DeviceEnrollmentPermissionsApplication? deviceEnrollmentPermissionsApplication;
 
-final AccessRdpProps? accessRdpProps;
+final BrowserIsolationPermissionsApplication? browserIsolationPermissionsApplication;
 
-final AccessMcpProps? accessMcpProps;
+final GatewayIdentityProxyEndpointApplication? gatewayIdentityProxyEndpointApplication;
 
-final AccessMcpPortalProps? accessMcpPortalProps;
+final BookmarkApplication? bookmarkApplication;
+
+final InfrastructureApplication? infrastructureApplication;
+
+final BrowserRdpApplication? browserRdpApplication;
+
+final McpServerApplication? mcpServerApplication;
+
+final McpServerPortalApplication? mcpServerPortalApplication;
 
 /// At least one variant must be present.
-bool get isValid { return accessSelfHostedProps != null || accessSaasProps != null || accessAppLauncherProps != null || accessFeatureAppProps != null || accessBookmarkProps != null || accessInfraProps != null || accessRdpProps != null || accessMcpProps != null || accessMcpPortalProps != null; } 
+bool get isValid { return selfHostedApplication != null || saaSApplication != null || browserSshApplication != null || browserVncApplication != null || appLauncherApplication != null || deviceEnrollmentPermissionsApplication != null || browserIsolationPermissionsApplication != null || gatewayIdentityProxyEndpointApplication != null || bookmarkApplication != null || infrastructureApplication != null || browserRdpApplication != null || mcpServerApplication != null || mcpServerPortalApplication != null; } 
 Map<String, dynamic> toJson() { return {
-  ...?accessSelfHostedProps?.toJson(),
-  ...?accessSaasProps?.toJson(),
-  ...?accessAppLauncherProps?.toJson(),
-  ...?accessFeatureAppProps?.toJson(),
-  ...?accessBookmarkProps?.toJson(),
-  ...?accessInfraProps?.toJson(),
-  ...?accessRdpProps?.toJson(),
-  ...?accessMcpProps?.toJson(),
-  ...?accessMcpPortalProps?.toJson(),
+  ...?selfHostedApplication?.toJson(),
+  ...?saaSApplication?.toJson(),
+  ...?browserSshApplication?.toJson(),
+  ...?browserVncApplication?.toJson(),
+  ...?appLauncherApplication?.toJson(),
+  ...?deviceEnrollmentPermissionsApplication?.toJson(),
+  ...?browserIsolationPermissionsApplication?.toJson(),
+  ...?gatewayIdentityProxyEndpointApplication?.toJson(),
+  ...?bookmarkApplication?.toJson(),
+  ...?infrastructureApplication?.toJson(),
+  ...?browserRdpApplication?.toJson(),
+  ...?mcpServerApplication?.toJson(),
+  ...?mcpServerPortalApplication?.toJson(),
 }; } 
  }

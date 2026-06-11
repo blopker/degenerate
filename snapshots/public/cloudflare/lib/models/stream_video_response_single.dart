@@ -1,23 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_videos.dart';@immutable final class StreamVideoResponseSingle {const StreamVideoResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_messages2.dart';import 'stream_videos.dart';@immutable final class StreamVideoResponseSingle {const StreamVideoResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamVideoResponseSingle.fromJson(Map<String, dynamic> json) { return StreamVideoResponseSingle(
+  errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
   result: json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
+
+final List<StreamMessages2> errors;
+
+final List<StreamMessages2> messages;
+
+/// Whether the API call was successful.
+final bool success;
 
 final StreamVideos? result;
 
 Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
   if (result != null) 'result': result?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-StreamVideoResponseSingle copyWith({StreamVideos Function()? result}) { return StreamVideoResponseSingle(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+StreamVideoResponseSingle copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamVideos Function()? result, }) { return StreamVideoResponseSingle(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is StreamVideoResponseSingle &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
           result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'StreamVideoResponseSingle(result: $result)'; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result); } 
+@override String toString() { return 'StreamVideoResponseSingle(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
  }

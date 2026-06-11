@@ -1,23 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorCreateResponse {const MconnCustomerConnectorCreateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorCreateResponse {const MconnCustomerConnectorCreateResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
 factory MconnCustomerConnectorCreateResponse.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorCreateResponse(
-  result: json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null,
+  messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+  errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  result: MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
-final MconnCustomerConnector? result;
+final List<MconnCodedMessage> messages;
+
+final bool success;
+
+final List<MconnCodedMessage> errors;
+
+final MconnCustomerConnector result;
 
 Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnCustomerConnectorCreateResponse copyWith({MconnCustomerConnector Function()? result}) { return MconnCustomerConnectorCreateResponse(
-  result: result != null ? result() : this.result,
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('errors') &&
+      json.containsKey('result'); } 
+MconnCustomerConnectorCreateResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, MconnCustomerConnector? result, }) { return MconnCustomerConnectorCreateResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MconnCustomerConnectorCreateResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success &&
+          listEquals(errors, other.errors) &&
           result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'MconnCustomerConnectorCreateResponse(result: $result)'; } 
+@override int get hashCode { return Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result); } 
+@override String toString() { return 'MconnCustomerConnectorCreateResponse(messages: $messages, success: $success, errors: $errors, result: $result)'; } 
  }

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The API standard that the certificate log follows.
-@immutable final class RadarGetCertificateLogsResponseResultCertificateLogsApi {const RadarGetCertificateLogsResponseResultCertificateLogsApi._(this.value);
+@immutable final class RadarGetCertificateLogsResponseResultCertificateLogs2 {const RadarGetCertificateLogsResponseResultCertificateLogs2._(this.value);
 
-factory RadarGetCertificateLogsResponseResultCertificateLogsApi.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateLogsResponseResultCertificateLogs2.fromJson(String json) { return switch (json) {
   'RFC6962' => rfc6962,
   'STATIC' => $static,
-  _ => RadarGetCertificateLogsResponseResultCertificateLogsApi._(json),
+  _ => RadarGetCertificateLogsResponseResultCertificateLogs2._(json),
 }; }
 
-static const RadarGetCertificateLogsResponseResultCertificateLogsApi rfc6962 = RadarGetCertificateLogsResponseResultCertificateLogsApi._('RFC6962');
+static const RadarGetCertificateLogsResponseResultCertificateLogs2 rfc6962 = RadarGetCertificateLogsResponseResultCertificateLogs2._('RFC6962');
 
-static const RadarGetCertificateLogsResponseResultCertificateLogsApi $static = RadarGetCertificateLogsResponseResultCertificateLogsApi._('STATIC');
+static const RadarGetCertificateLogsResponseResultCertificateLogs2 $static = RadarGetCertificateLogsResponseResultCertificateLogs2._('STATIC');
 
-static const List<RadarGetCertificateLogsResponseResultCertificateLogsApi> values = [rfc6962, $static];
+static const List<RadarGetCertificateLogsResponseResultCertificateLogs2> values = [rfc6962, $static];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateLogsResponseResultCertificateLogsApi && other.value == value; } 
+    other is RadarGetCertificateLogsResponseResultCertificateLogs2 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogsResponseResultCertificateLogsApi($value)'; } 
+@override String toString() { return 'RadarGetCertificateLogsResponseResultCertificateLogs2($value)'; } 
  }
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
 @immutable final class RadarGetCertificateLogsResponseResultCertificateLogsState {const RadarGetCertificateLogsResponseResultCertificateLogsState._(this.value);
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class RadarGetCertificateLogsResponseResultCertificateLogs {const RadarGetCertificateLogsResponseResultCertificateLogs({required this.api, required this.description, required this.endExclusive, required this.$operator, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.url, });
 
 factory RadarGetCertificateLogsResponseResultCertificateLogs.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogsResponseResultCertificateLogs(
-  api: RadarGetCertificateLogsResponseResultCertificateLogsApi.fromJson(json['api'] as String),
+  api: RadarGetCertificateLogsResponseResultCertificateLogs2.fromJson(json['api'] as String),
   description: json['description'] as String,
   endExclusive: DateTime.parse(json['endExclusive'] as String),
   $operator: json['operator'] as String,
@@ -77,7 +77,7 @@ factory RadarGetCertificateLogsResponseResultCertificateLogs.fromJson(Map<String
 ); }
 
 /// The API standard that the certificate log follows.
-final RadarGetCertificateLogsResponseResultCertificateLogsApi api;
+final RadarGetCertificateLogsResponseResultCertificateLogs2 api;
 
 /// A brief description of the certificate log.
 final String description;
@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('state') &&
       json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-RadarGetCertificateLogsResponseResultCertificateLogs copyWith({RadarGetCertificateLogsResponseResultCertificateLogsApi? api, String? description, DateTime? endExclusive, String? $operator, String? slug, DateTime? startInclusive, RadarGetCertificateLogsResponseResultCertificateLogsState? state, DateTime? stateTimestamp, String? url, }) { return RadarGetCertificateLogsResponseResultCertificateLogs(
+RadarGetCertificateLogsResponseResultCertificateLogs copyWith({RadarGetCertificateLogsResponseResultCertificateLogs2? api, String? description, DateTime? endExclusive, String? $operator, String? slug, DateTime? startInclusive, RadarGetCertificateLogsResponseResultCertificateLogsState? state, DateTime? stateTimestamp, String? url, }) { return RadarGetCertificateLogsResponseResultCertificateLogs(
   api: api ?? this.api,
   description: description ?? this.description,
   endExclusive: endExclusive ?? this.endExclusive,

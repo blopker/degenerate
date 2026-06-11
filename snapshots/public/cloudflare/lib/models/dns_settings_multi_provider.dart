@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Whether to enable multi-provider DNS, which causes Cloudflare to activate the zone even when non-Cloudflare NS records exist, and to respect NS records at the zone apex during outbound zone transfers.
+extension type const DnsSettingsMultiProvider(bool value) {
+factory DnsSettingsMultiProvider.fromJson(bool json) => DnsSettingsMultiProvider(json);
+
+bool toJson() => value;
+
+}

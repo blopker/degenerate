@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_zone_level_base.dart';/// Request body schema for deleting tags from zone-level resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_zone_level_access_application_policy.dart';import 'resource_tagging_delete_tags_request_zone_level_base.dart';/// Request body schema for deleting tags from zone-level resources.
 sealed class ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevel();
 
 /// Deserialize from JSON, dispatching on the `resource_type` discriminator.
 factory ResourceTaggingDeleteTagsRequestZoneLevel.fromJson(Map<String, dynamic> json) { return switch (json['resource_type']) {
-  'access_application_policy' => ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy.fromJson(json),
+  'access_application_policy' => ResourceTaggingDeleteTagsRequestZoneLevel$AccessApplicationPolicy.fromJson(json),
   'api_gateway_operation' => ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation.fromJson(json),
   'custom_certificate' => ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate.fromJson(json),
   'custom_hostname' => ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname.fromJson(json),
@@ -21,18 +21,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingDeleteTagsRequestZoneLevel$Unknown; } 
  }
-@immutable final class ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingDeleteTagsRequestZoneLevel$AccessApplicationPolicy extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevel$AccessApplicationPolicy(this.resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy);
 
-factory ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingDeleteTagsRequestZoneLevel$AccessApplicationPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestZoneLevel$AccessApplicationPolicy(ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy.fromJson(json)); }
 
-final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsRequestZoneLevelBase;
+final ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy;
 
 @override String get resourceType { return 'access_application_policy'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy.toJson(), 'resource_type': resourceType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+    other is ResourceTaggingDeleteTagsRequestZoneLevel$AccessApplicationPolicy && resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy == other.resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy; } 
+@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy.hashCode; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel\$AccessApplicationPolicy(resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy: $resourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy)'; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 

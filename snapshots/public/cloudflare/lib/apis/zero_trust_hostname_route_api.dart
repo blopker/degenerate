@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_components_schemas_tunnel_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_hostname.dart';import '../models/tunnel_hostname_query_comment.dart';import '../models/tunnel_hostname_route.dart';import '../models/tunnel_hostname_route_id.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/zero_trust_networks_route_hostname_create_request.dart';import '../models/zero_trust_networks_route_hostname_update_request.dart';/// ZeroTrustHostnameRouteApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_components_schemas_tunnel_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_hostname.dart';import '../models/tunnel_hostname_query_comment.dart';import '../models/tunnel_hostname_route_id.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/zero_trust_networks_route_hostname_create_request.dart';import '../models/zero_trust_networks_route_hostname_update_request.dart';/// ZeroTrustHostnameRouteApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustHostnameRouteApi with ApiExecutor {const ZeroTrustHostnameR
 /// Lists and filters hostname routes in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<List<TunnelHostnameRoute>?, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, Never>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toString();
@@ -55,7 +55,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelHostnameRoute.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
 );
  } 

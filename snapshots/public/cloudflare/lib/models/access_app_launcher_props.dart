@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_footer_links2.dart';import 'access_landing_page_design.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_type.dart';/// The image URL of the logo shown in the App Launcher header.
-extension type const AccessAppLauncherLogoUrl(String value) {
-factory AccessAppLauncherLogoUrl.fromJson(String json) => AccessAppLauncherLogoUrl(json);
-
-String toJson() => value;
-
-}
-/// The background color of the App Launcher page.
-extension type const AccessBgColor(String value) {
-factory AccessBgColor.fromJson(String json) => AccessBgColor(json);
-
-String toJson() => value;
-
-}
-/// The background color of the App Launcher header.
-extension type const AccessHeaderBgColor(String value) {
-factory AccessHeaderBgColor.fromJson(String json) => AccessHeaderBgColor(json);
-
-String toJson() => value;
-
-}
-/// Determines when to skip the App Launcher landing page.
-extension type const AccessSkipAppLauncherLoginPage(bool value) {
-factory AccessSkipAppLauncherLoginPage.fromJson(bool json) => AccessSkipAppLauncherLoginPage(json);
-
-bool toJson() => value;
-
-}
-@immutable final class AccessAppLauncherProps {const AccessAppLauncherProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, this.appLauncherLogoUrl, this.bgColor, this.footerLinks, this.headerBgColor, this.landingPageDesign, this.skipAppLauncherLoginPage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_logo_url.dart';import 'access_bg_color.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_footer_links2.dart';import 'access_header_bg_color.dart';import 'access_landing_page_design.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_skip_app_launcher_login_page.dart';import 'access_type.dart';@immutable final class AccessAppLauncherProps {const AccessAppLauncherProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, this.appLauncherLogoUrl, this.bgColor, this.footerLinks, this.headerBgColor, this.landingPageDesign, this.skipAppLauncherLoginPage, });
 
 factory AccessAppLauncherProps.fromJson(Map<String, dynamic> json) { return AccessAppLauncherProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),

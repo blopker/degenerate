@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_nel_value.dart';import 'zones_security_header_value.dart';/// Value of the 0-RTT setting.
 @immutable final class Zones0rttValue {const Zones0rttValue._(this.value);
 
 factory Zones0rttValue.fromJson(String json) { return switch (json) {
@@ -102,6 +102,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesAlwaysUseHttpsValue($value)'; } 
  }
 /// Value of the zone setting.
+/// Notes: Default value depends on the zone's plan level.
+@immutable final class ZonesAutomaticHttpsRewritesValue {const ZonesAutomaticHttpsRewritesValue._(this.value);
+
+factory ZonesAutomaticHttpsRewritesValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesAutomaticHttpsRewritesValue._(json),
+}; }
+
+static const ZonesAutomaticHttpsRewritesValue $on = ZonesAutomaticHttpsRewritesValue._('on');
+
+static const ZonesAutomaticHttpsRewritesValue off = ZonesAutomaticHttpsRewritesValue._('off');
+
+static const List<ZonesAutomaticHttpsRewritesValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesAutomaticHttpsRewritesValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesAutomaticHttpsRewritesValue($value)'; } 
+ }
+/// Value of the zone setting.
 @immutable final class ZonesBrotliValue {const ZonesBrotliValue._(this.value);
 
 factory ZonesBrotliValue.fromJson(String json) { return switch (json) {
@@ -139,6 +165,59 @@ factory ZonesBrowserCacheTtlValue.fromJson(num json) => ZonesBrowserCacheTtlValu
 num toJson() => value;
 
 }
+/// Value of the zone setting.
+@immutable final class ZonesBrowserCheckValue {const ZonesBrowserCheckValue._(this.value);
+
+factory ZonesBrowserCheckValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesBrowserCheckValue._(json),
+}; }
+
+static const ZonesBrowserCheckValue $on = ZonesBrowserCheckValue._('on');
+
+static const ZonesBrowserCheckValue off = ZonesBrowserCheckValue._('off');
+
+static const List<ZonesBrowserCheckValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesBrowserCheckValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesBrowserCheckValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesCacheLevelValue {const ZonesCacheLevelValue._(this.value);
+
+factory ZonesCacheLevelValue.fromJson(String json) { return switch (json) {
+  'aggressive' => aggressive,
+  'basic' => basic,
+  'simplified' => simplified,
+  _ => ZonesCacheLevelValue._(json),
+}; }
+
+static const ZonesCacheLevelValue aggressive = ZonesCacheLevelValue._('aggressive');
+
+static const ZonesCacheLevelValue basic = ZonesCacheLevelValue._('basic');
+
+static const ZonesCacheLevelValue simplified = ZonesCacheLevelValue._('simplified');
+
+static const List<ZonesCacheLevelValue> values = [aggressive, basic, simplified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesCacheLevelValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesCacheLevelValue($value)'; } 
+ }
 /// Value of the zone setting.
 @immutable final class ZonesChallengeTtlValue {const ZonesChallengeTtlValue._(this.value);
 
@@ -384,6 +463,31 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesEdgeCacheTtlValue($value)'; } 
  }
 /// Value of the zone setting.
+@immutable final class ZonesEmailObfuscationValue {const ZonesEmailObfuscationValue._(this.value);
+
+factory ZonesEmailObfuscationValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesEmailObfuscationValue._(json),
+}; }
+
+static const ZonesEmailObfuscationValue $on = ZonesEmailObfuscationValue._('on');
+
+static const ZonesEmailObfuscationValue off = ZonesEmailObfuscationValue._('off');
+
+static const List<ZonesEmailObfuscationValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesEmailObfuscationValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesEmailObfuscationValue($value)'; } 
+ }
+/// Value of the zone setting.
 @immutable final class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue._(this.value);
 
 factory ZonesH2PrioritizationValue.fromJson(String json) { return switch (json) {
@@ -513,6 +617,31 @@ bool get isUnknown { return !values.contains(this); }
     other is ZonesImageResizingValue && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesImageResizingValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesIpGeolocationValue {const ZonesIpGeolocationValue._(this.value);
+
+factory ZonesIpGeolocationValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesIpGeolocationValue._(json),
+}; }
+
+static const ZonesIpGeolocationValue $on = ZonesIpGeolocationValue._('on');
+
+static const ZonesIpGeolocationValue off = ZonesIpGeolocationValue._('off');
+
+static const List<ZonesIpGeolocationValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesIpGeolocationValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesIpGeolocationValue($value)'; } 
  }
 /// Value of the zone setting.
 @immutable final class ZonesIpv6Value {const ZonesIpv6Value._(this.value);
@@ -645,6 +774,57 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesMinTlsVersionValue($value)'; } 
  }
 /// Value of the zone setting.
+@immutable final class ZonesMirageValue {const ZonesMirageValue._(this.value);
+
+factory ZonesMirageValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesMirageValue._(json),
+}; }
+
+static const ZonesMirageValue $on = ZonesMirageValue._('on');
+
+static const ZonesMirageValue off = ZonesMirageValue._('off');
+
+static const List<ZonesMirageValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesMirageValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesMirageValue($value)'; } 
+ }
+/// Value of the zone setting.
+/// Notes: Default value depends on the zone's plan level.
+@immutable final class ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue._(this.value);
+
+factory ZonesOpportunisticEncryptionValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesOpportunisticEncryptionValue._(json),
+}; }
+
+static const ZonesOpportunisticEncryptionValue $on = ZonesOpportunisticEncryptionValue._('on');
+
+static const ZonesOpportunisticEncryptionValue off = ZonesOpportunisticEncryptionValue._('off');
+
+static const List<ZonesOpportunisticEncryptionValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesOpportunisticEncryptionValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesOpportunisticEncryptionValue($value)'; } 
+ }
+/// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
 @immutable final class ZonesOpportunisticOnionValue {const ZonesOpportunisticOnionValue._(this.value);
 
@@ -694,6 +874,59 @@ bool get isUnknown { return !values.contains(this); }
     other is ZonesOrangeToOrangeValue && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesOrangeToOrangeValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesOriginErrorPagePassThruValue {const ZonesOriginErrorPagePassThruValue._(this.value);
+
+factory ZonesOriginErrorPagePassThruValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesOriginErrorPagePassThruValue._(json),
+}; }
+
+static const ZonesOriginErrorPagePassThruValue $on = ZonesOriginErrorPagePassThruValue._('on');
+
+static const ZonesOriginErrorPagePassThruValue off = ZonesOriginErrorPagePassThruValue._('off');
+
+static const List<ZonesOriginErrorPagePassThruValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesOriginErrorPagePassThruValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesOriginErrorPagePassThruValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesPolishValue {const ZonesPolishValue._(this.value);
+
+factory ZonesPolishValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'lossless' => lossless,
+  'lossy' => lossy,
+  _ => ZonesPolishValue._(json),
+}; }
+
+static const ZonesPolishValue off = ZonesPolishValue._('off');
+
+static const ZonesPolishValue lossless = ZonesPolishValue._('lossless');
+
+static const ZonesPolishValue lossy = ZonesPolishValue._('lossy');
+
+static const List<ZonesPolishValue> values = [off, lossless, lossy];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesPolishValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesPolishValue($value)'; } 
  }
 /// Value of the zone setting.
 @immutable final class ZonesPrefetchPreloadValue {const ZonesPrefetchPreloadValue._(this.value);
@@ -824,6 +1057,93 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesReplaceInsecureJsValue($value)'; } 
  }
 /// Value of the zone setting.
+@immutable final class ZonesResponseBufferingValue {const ZonesResponseBufferingValue._(this.value);
+
+factory ZonesResponseBufferingValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesResponseBufferingValue._(json),
+}; }
+
+static const ZonesResponseBufferingValue $on = ZonesResponseBufferingValue._('on');
+
+static const ZonesResponseBufferingValue off = ZonesResponseBufferingValue._('off');
+
+static const List<ZonesResponseBufferingValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesResponseBufferingValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesResponseBufferingValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesRocketLoaderValue {const ZonesRocketLoaderValue._(this.value);
+
+factory ZonesRocketLoaderValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesRocketLoaderValue._(json),
+}; }
+
+static const ZonesRocketLoaderValue $on = ZonesRocketLoaderValue._('on');
+
+static const ZonesRocketLoaderValue off = ZonesRocketLoaderValue._('off');
+
+static const List<ZonesRocketLoaderValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesRocketLoaderValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesRocketLoaderValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesSecurityLevelValue {const ZonesSecurityLevelValue._(this.value);
+
+factory ZonesSecurityLevelValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'essentially_off' => essentiallyOff,
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  'under_attack' => underAttack,
+  _ => ZonesSecurityLevelValue._(json),
+}; }
+
+static const ZonesSecurityLevelValue off = ZonesSecurityLevelValue._('off');
+
+static const ZonesSecurityLevelValue essentiallyOff = ZonesSecurityLevelValue._('essentially_off');
+
+static const ZonesSecurityLevelValue low = ZonesSecurityLevelValue._('low');
+
+static const ZonesSecurityLevelValue medium = ZonesSecurityLevelValue._('medium');
+
+static const ZonesSecurityLevelValue high = ZonesSecurityLevelValue._('high');
+
+static const ZonesSecurityLevelValue underAttack = ZonesSecurityLevelValue._('under_attack');
+
+static const List<ZonesSecurityLevelValue> values = [off, essentiallyOff, low, medium, high, underAttack];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSecurityLevelValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesSecurityLevelValue($value)'; } 
+ }
+/// Value of the zone setting.
 @immutable final class ZonesServerSideExcludeValue {const ZonesServerSideExcludeValue._(this.value);
 
 factory ZonesServerSideExcludeValue.fromJson(String json) { return switch (json) {
@@ -872,6 +1192,63 @@ bool get isUnknown { return !values.contains(this); }
     other is ZonesSha1SupportValue && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesSha1SupportValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue._(this.value);
+
+factory ZonesSortQueryStringForCacheValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesSortQueryStringForCacheValue._(json),
+}; }
+
+static const ZonesSortQueryStringForCacheValue $on = ZonesSortQueryStringForCacheValue._('on');
+
+static const ZonesSortQueryStringForCacheValue off = ZonesSortQueryStringForCacheValue._('off');
+
+static const List<ZonesSortQueryStringForCacheValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSortQueryStringForCacheValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesSortQueryStringForCacheValue($value)'; } 
+ }
+/// Value of the zone setting.
+/// Notes: Depends on the zone's plan level
+@immutable final class ZonesSslValue {const ZonesSslValue._(this.value);
+
+factory ZonesSslValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'flexible' => flexible,
+  'full' => full,
+  'strict' => strict,
+  _ => ZonesSslValue._(json),
+}; }
+
+static const ZonesSslValue off = ZonesSslValue._('off');
+
+static const ZonesSslValue flexible = ZonesSslValue._('flexible');
+
+static const ZonesSslValue full = ZonesSslValue._('full');
+
+static const ZonesSslValue strict = ZonesSslValue._('strict');
+
+static const List<ZonesSslValue> values = [off, flexible, full, strict];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSslValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesSslValue($value)'; } 
  }
 /// Value of the zone setting.
 @immutable final class ZonesTls12OnlyValue {const ZonesTls12OnlyValue._(this.value);
@@ -951,6 +1328,56 @@ bool get isUnknown { return !values.contains(this); }
     other is ZonesTlsClientAuthValue && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesTlsClientAuthValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesTrueClientIpHeaderValue {const ZonesTrueClientIpHeaderValue._(this.value);
+
+factory ZonesTrueClientIpHeaderValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesTrueClientIpHeaderValue._(json),
+}; }
+
+static const ZonesTrueClientIpHeaderValue $on = ZonesTrueClientIpHeaderValue._('on');
+
+static const ZonesTrueClientIpHeaderValue off = ZonesTrueClientIpHeaderValue._('off');
+
+static const List<ZonesTrueClientIpHeaderValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesTrueClientIpHeaderValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesTrueClientIpHeaderValue($value)'; } 
+ }
+/// Value of the zone setting.
+@immutable final class ZonesWafValue {const ZonesWafValue._(this.value);
+
+factory ZonesWafValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesWafValue._(json),
+}; }
+
+static const ZonesWafValue $on = ZonesWafValue._('on');
+
+static const ZonesWafValue off = ZonesWafValue._('off');
+
+static const List<ZonesWafValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesWafValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesWafValue($value)'; } 
  }
 /// Value of the zone setting.
 @immutable final class ZonesWebpValue {const ZonesWebpValue._(this.value);

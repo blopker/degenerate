@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_level_value.dart';/// Apply custom caching based on the option selected.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply custom caching based on the option selected.
 /// 
 @immutable final class ZonesCacheLevelId {const ZonesCacheLevelId._(this.value);
 
@@ -23,11 +23,54 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheLevelId($value)'; } 
  }
+/// * `bypass`: Cloudflare does not cache.
+/// * `basic`: Delivers resources from cache when there is no query
+///   string.
+/// * `simplified`: Delivers the same resource to everyone independent
+///   of the query string.
+/// * `aggressive`: Caches all static content that has a query string.
+/// * `cache_everything`: Treats all content as static and caches all
+///   file types beyond the [Cloudflare default cached
+///   content](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/#default-cached-file-extensions).
+/// 
+@immutable final class ZonesCacheLevelValue2 {const ZonesCacheLevelValue2._(this.value);
+
+factory ZonesCacheLevelValue2.fromJson(String json) { return switch (json) {
+  'bypass' => bypass,
+  'basic' => basic,
+  'simplified' => simplified,
+  'aggressive' => aggressive,
+  'cache_everything' => cacheEverything,
+  _ => ZonesCacheLevelValue2._(json),
+}; }
+
+static const ZonesCacheLevelValue2 bypass = ZonesCacheLevelValue2._('bypass');
+
+static const ZonesCacheLevelValue2 basic = ZonesCacheLevelValue2._('basic');
+
+static const ZonesCacheLevelValue2 simplified = ZonesCacheLevelValue2._('simplified');
+
+static const ZonesCacheLevelValue2 aggressive = ZonesCacheLevelValue2._('aggressive');
+
+static const ZonesCacheLevelValue2 cacheEverything = ZonesCacheLevelValue2._('cache_everything');
+
+static const List<ZonesCacheLevelValue2> values = [bypass, basic, simplified, aggressive, cacheEverything];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesCacheLevelValue2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesCacheLevelValue2($value)'; } 
+ }
 @immutable final class ZonesCacheLevel {const ZonesCacheLevel({this.id, this.value, });
 
 factory ZonesCacheLevel.fromJson(Map<String, dynamic> json) { return ZonesCacheLevel(
   id: json['id'] != null ? ZonesCacheLevelId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesCacheLevelValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? ZonesCacheLevelValue2.fromJson(json['value'] as String) : null,
 ); }
 
 /// Apply custom caching based on the option selected.
@@ -44,14 +87,14 @@ final ZonesCacheLevelId? id;
 ///   file types beyond the [Cloudflare default cached
 ///   content](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/#default-cached-file-extensions).
 /// 
-final ZonesCacheLevelValue? value;
+final ZonesCacheLevelValue2? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheLevel copyWith({ZonesCacheLevelId Function()? id, ZonesCacheLevelValue Function()? value, }) { return ZonesCacheLevel(
+ZonesCacheLevel copyWith({ZonesCacheLevelId Function()? id, ZonesCacheLevelValue2 Function()? value, }) { return ZonesCacheLevel(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

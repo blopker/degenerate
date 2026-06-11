@@ -282,8 +282,12 @@ class IrMapper {
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
+    // Resolve $ref entries inside allOf so the flattener can merge
+    // properties (multi-parent / multi-level inheritance).
+    final preResolved = _resolveAllOfRefs(schema);
+
     // Flatten allOf before further processing.
-    final flattened = _flattener.flatten(schema);
+    final flattened = _flattener.flatten(preResolved);
 
     // After flattening, check for $ref surfaced from allOf (e.g. allOf: [{$ref:
     // ...}]).
@@ -295,24 +299,31 @@ class IrMapper {
           sanitizeDartName(toPascalCase(rawRefName));
 
       // Check if the allOf added properties beyond what the $ref target has.
-      // If so, merge the ref's properties and treat as a full object.
-      final refSchema = _rawSchemas[rawRefName];
+      // If so, merge the ref's properties and treat as a full object. The
+      // target may itself be an allOf chain (multi-level inheritance) —
+      // expand it first or its own and inherited properties are invisible
+      // to the merge.
+      final rawTarget = _rawSchemas[rawRefName];
+      final refSchema = rawTarget is Map<String, dynamic>
+          ? _expandNestedAllOf(rawTarget, {rawRefName})
+          : rawTarget;
       final refPropKeys = refSchema is Map<String, dynamic>
           ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
                 <String>{}
           : <String>{};
       final flatProps = flattened['properties'] as Map<String, dynamic>? ?? {};
-      final hasExtraProperties = flatProps.keys
-          .toSet()
-          .difference(refPropKeys)
-          .isNotEmpty;
+      final extraProperties = flatProps.keys.toSet().difference(refPropKeys);
 
-      // Don't expand discriminator variants — they should stay as refs so
-      // the sealed union emitter can wrap them correctly.
-      final isDiscriminatorVariant = discriminatorProperty != null;
-      if (hasExtraProperties &&
-          !isDiscriminatorVariant &&
-          refSchema is Map<String, dynamic>) {
+      // A discriminator variant whose only extra property is the
+      // discriminator itself stays a bare ref so the union emitter wraps
+      // the base payload. Variants with real extra properties (the
+      // canonical `allOf: [$ref Base, {properties: ...}]` inheritance
+      // pattern) merge — otherwise their own fields would be silently
+      // dropped.
+      if (discriminatorProperty != null) {
+        extraProperties.remove(discriminatorProperty);
+      }
+      if (extraProperties.isNotEmpty && refSchema is Map<String, dynamic>) {
         // Merge ref target's properties into the flattened schema.
         final refProps = refSchema['properties'] as Map<String, dynamic>? ?? {};
         flattened['properties'] = <String, dynamic>{
@@ -649,7 +660,12 @@ class IrMapper {
           // Override the schema to remove the enum so it lowers as a primitive.
         } else {
           // Non-discriminator inline enum - generate a named enum.
-          inlineEnumName = '$objectName${toPascalCase(fieldOriginalName)}';
+          // Unique-name it like every other inline type — a same-named
+          // schema (Order.status vs an `OrderStatus` schema) would
+          // otherwise silently merge with it.
+          inlineEnumName = _uniqueTypeName(
+            '$objectName${toPascalCase(fieldOriginalName)}',
+          );
         }
       }
 
@@ -756,12 +772,17 @@ class IrMapper {
       }
     }
 
+    // Raw schema names covered by the explicit mapping. Per OAS, an explicit
+    // mapping only overrides/adds to the implicit one — oneOf variants it
+    // doesn't list still participate, keyed implicitly below.
+    final coveredRefNames = <String>{};
     if (explicitMapping != null) {
       for (final entry in explicitMapping.entries) {
         final value = entry.key;
         final refOrSchema = entry.value;
         if (refOrSchema is String) {
           final rawRefName = _extractRefName(refOrSchema);
+          coveredRefNames.add(rawRefName);
           var dartRefName = _nameMapping[rawRefName];
           if (dartRefName == null) {
             // Try to match against oneOf refs by suffix (handles specs where
@@ -771,6 +792,7 @@ class IrMapper {
               if (oneOfRef.endsWith(rawRefName) &&
                   _nameMapping.containsKey(oneOfRef)) {
                 dartRefName = _nameMapping[oneOfRef];
+                coveredRefNames.add(oneOfRef);
                 break;
               }
             }
@@ -788,46 +810,67 @@ class IrMapper {
           );
         }
       }
-    } else {
-      // Infer mapping from oneOf entries.
-      for (var i = 0; i < oneOf.length; i++) {
-        final variant = oneOf[i];
-        if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
-          final rawRefName = _extractRefName(variant[r'$ref'] as String);
-          final dartRefName =
-              _nameMapping[rawRefName] ??
-              sanitizeDartName(toPascalCase(rawRefName));
-          // Try to extract the actual discriminator enum value from the
-          // referenced schema (e.g. role: enum: ['system'] → 'system').
-          var key = rawRefName;
-          final refSchema = _rawSchemas[rawRefName];
-          if (refSchema is Map<String, dynamic>) {
-            final flatRef = _flattener.flatten(refSchema);
-            final refProps = flatRef['properties'] as Map<String, dynamic>?;
-            final discProp = refProps?[propertyName] as Map<String, dynamic>?;
-            final enumVals = discProp?['enum'] as List?;
-            if (enumVals != null && enumVals.isNotEmpty) {
-              key = enumVals.first.toString();
-            }
-          }
-          mapping[SpecString(key)] = IrTypeRef(dartRefName);
-        } else if (variant is Map<String, dynamic> &&
-            (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
-          final hint =
-              (variant['title'] as String?) ?? '${unionName}Variant${i + 1}';
-          final lowered = lowerInlineSchema(variant, nameHint: hint);
-          // Derive the mapping key from the discriminator enum value if
-          // available, otherwise use the type name.
-          final props = variant['properties'] as Map<String, dynamic>?;
-          final discProp = props?[propertyName] as Map<String, dynamic>?;
-          final enumVals = discProp?['enum'] as List?;
-          final key = (enumVals != null && enumVals.isNotEmpty)
-              ? enumVals.first.toString()
-              : (lowered is IrObject ? lowered.name : hint);
-          mapping[SpecString(key)] = lowered is IrObject
-              ? IrTypeRef(lowered.name)
-              : lowered;
+    }
+
+    // Infer implicit mapping entries from oneOf variants not covered by the
+    // explicit mapping (all of them when no mapping is present). Explicit
+    // entries always win; among implicit duplicates the LAST declared
+    // variant wins (long-standing behavior deployed clients depend on) with
+    // a warning surfacing the spec ambiguity.
+    final explicitKeys = mapping.keys.toSet();
+    for (var i = 0; i < oneOf.length; i++) {
+      final variant = oneOf[i];
+      if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
+        final rawRefName = _extractRefName(variant[r'$ref'] as String);
+        if (coveredRefNames.contains(rawRefName)) continue;
+        final dartRefName =
+            _nameMapping[rawRefName] ??
+            sanitizeDartName(toPascalCase(rawRefName));
+        // Try to extract the actual discriminator enum value from the
+        // referenced schema (e.g. role: enum: ['system'] → 'system').
+        var key = rawRefName;
+        final refSchema = _rawSchemas[rawRefName];
+        if (refSchema is Map<String, dynamic>) {
+          final flatRef = _flattener.flatten(refSchema);
+          final refProps = flatRef['properties'] as Map<String, dynamic>?;
+          key = _discriminatorEnumValue(refProps, propertyName) ?? key;
         }
+        final specKey = SpecString(key);
+        if (explicitKeys.contains(specKey)) continue;
+        if (mapping.containsKey(specKey)) {
+          warnings.add(
+            'Union $unionName: duplicate discriminator value "$key" — '
+            'keeping the last declared variant ($dartRefName).',
+          );
+        }
+        mapping[specKey] = IrTypeRef(dartRefName);
+      } else if (variant is Map<String, dynamic> &&
+          (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
+        final hint =
+            (variant['title'] as String?) ?? '${unionName}Variant${i + 1}';
+        // Derive the mapping key from the discriminator enum value if
+        // available — BEFORE lowering, so an explicit-mapping collision
+        // doesn't register an orphan type.
+        final enumKey = _discriminatorEnumValue(
+          variant['properties'] as Map<String, dynamic>?,
+          propertyName,
+        );
+        if (enumKey != null && explicitKeys.contains(SpecString(enumKey))) {
+          continue;
+        }
+        final lowered = lowerInlineSchema(variant, nameHint: hint);
+        final key = enumKey ?? (lowered is IrObject ? lowered.name : hint);
+        final specKey = SpecString(key);
+        if (explicitKeys.contains(specKey)) continue;
+        if (mapping.containsKey(specKey)) {
+          warnings.add(
+            'Union $unionName: duplicate discriminator value "$key" — '
+            'keeping the last declared variant.',
+          );
+        }
+        mapping[specKey] = lowered is IrObject
+            ? IrTypeRef(lowered.name)
+            : lowered;
       }
     }
 
@@ -1068,6 +1111,89 @@ class IrMapper {
       }
     }
     return null;
+  }
+
+  /// Extract the single discriminator enum value from a property map, e.g.
+  /// `{kind: {enum: ['deposit']}}` with property `kind` → `'deposit'`.
+  /// Returns null when the property has no enum values.
+  static String? _discriminatorEnumValue(
+    Map<String, dynamic>? properties,
+    String propertyName,
+  ) {
+    final discProp = properties?[propertyName];
+    if (discProp is! Map<String, dynamic>) return null;
+    final enumVals = discProp['enum'] as List?;
+    if (enumVals == null || enumVals.isEmpty) return null;
+    return enumVals.first.toString();
+  }
+
+  /// Pre-resolve `$ref` entries inside an `allOf` array so the flattener can
+  /// merge their properties. Only activates when **multiple** entries are
+  /// pure `$ref`s — a single ref mixed with inline schemas is handled
+  /// downstream by the surfaced-$ref logic in [_lowerSchemaImpl].
+  Map<String, dynamic> _resolveAllOfRefs(Map<String, dynamic> schema) {
+    final allOf = schema['allOf'];
+    if (allOf is! List || allOf.length < 2) return schema;
+    final refCount = allOf
+        .where(
+          (sub) =>
+              sub is Map<String, dynamic> &&
+              sub.containsKey(r'$ref') &&
+              sub.length == 1,
+        )
+        .length;
+    if (refCount < 2) return schema;
+    var changed = false;
+    final resolved = <dynamic>[];
+    for (final sub in allOf) {
+      if (sub is Map<String, dynamic> &&
+          sub.containsKey(r'$ref') &&
+          sub.length == 1) {
+        final refPath = sub[r'$ref'] as String;
+        final rawName = _extractRefName(refPath);
+        final target = _rawSchemas[rawName];
+        if (target is Map<String, dynamic>) {
+          // A target may itself use allOf (multi-level inheritance). Expand
+          // it fully, or the flattener would skip the nested allOf and drop
+          // every property it carries.
+          resolved.add(_expandNestedAllOf(target, {rawName}));
+          changed = true;
+          continue;
+        }
+      }
+      resolved.add(sub);
+    }
+    if (!changed) return schema;
+    return {...schema, 'allOf': resolved};
+  }
+
+  /// Recursively resolve `$ref` entries inside a schema's `allOf` and
+  /// flatten the result into a plain object schema. [seen] guards against
+  /// circular allOf chains.
+  Map<String, dynamic> _expandNestedAllOf(
+    Map<String, dynamic> schema,
+    Set<String> seen,
+  ) {
+    final allOf = schema['allOf'];
+    if (allOf is! List) return schema;
+    final resolved = <dynamic>[];
+    for (final sub in allOf) {
+      if (sub is Map<String, dynamic> &&
+          sub.containsKey(r'$ref') &&
+          sub.length == 1) {
+        final rawName = _extractRefName(sub[r'$ref'] as String);
+        if (!seen.add(rawName)) continue;
+        final target = _rawSchemas[rawName];
+        if (target is Map<String, dynamic>) {
+          resolved.add(_expandNestedAllOf(target, seen));
+          continue;
+        }
+      }
+      resolved.add(
+        sub is Map<String, dynamic> ? _expandNestedAllOf(sub, seen) : sub,
+      );
+    }
+    return _flattener.flatten({...schema, 'allOf': resolved});
   }
 
   String _uniqueTypeName(String rawName) {

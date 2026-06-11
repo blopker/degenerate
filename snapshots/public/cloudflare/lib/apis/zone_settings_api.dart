@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_origin_h2_max_streams.dart';import '../models/cache_rules_result_object.dart';import '../models/speed_base.dart';import '../models/speed_identifier.dart';import '../models/zone_cache_settings_change_aegis_setting_request.dart';import '../models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import '../models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import '../models/zone_settings_change_fonts_setting_request.dart';import '../models/zone_settings_change_speed_brain_setting_request.dart';import '../models/zones_identifier.dart';import '../models/zones_setting.dart';import '../models/zones_setting_name.dart';import '../models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_aegis.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_origin_h2_max_streams.dart';import '../models/cache_rules_origin_max_http_version.dart';import '../models/speed_base.dart';import '../models/speed_identifier.dart';import '../models/zone_cache_settings_change_aegis_setting_request.dart';import '../models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import '../models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import '../models/zone_settings_change_fonts_setting_request.dart';import '../models/zone_settings_change_speed_brain_setting_request.dart';import '../models/zones_identifier.dart';import '../models/zones_setting.dart';import '../models/zones_setting_name.dart';import '../models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -59,7 +59,7 @@ return execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `GET /zones/{zone_id}/settings/aegis`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesAegis?, Never>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,7 +72,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesAegis.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -81,7 +81,7 @@ return execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `PATCH /zones/{zone_id}/settings/aegis`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesAegis?, Never>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesAegis.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -201,7 +201,7 @@ return execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `GET /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginMaxHttpVersion?, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -214,7 +214,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesOriginMaxHttpVersion.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -223,7 +223,7 @@ return execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginMaxHttpVersion?, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -238,7 +238,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesOriginMaxHttpVersion.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common62_result.dart';import '../models/smartshield_identifier.dart';/// CacheReserveClearApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/smart_shield_settings_get_cache_reserve_clear_response_result.dart';import '../models/smart_shield_settings_start_cache_reserve_clear_response_result.dart';import '../models/smartshield_identifier.dart';/// CacheReserveClearApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CacheReserveClearApi with ApiExecutor {const CacheReserveClearApi(th
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `GET /zones/{zone_id}/smart_shield/cache_reserve_clear`
-Future<ApiResult<ResponseCommon62Result, Never>> smartShieldSettingsGetCacheReserveClear({required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartShieldSettingsGetCacheReserveClearResponseResult, Never>> smartShieldSettingsGetCacheReserveClear({required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
+    return SmartShieldSettingsGetCacheReserveClearResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -35,7 +35,7 @@ return execute(
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
 ///
 /// `POST /zones/{zone_id}/smart_shield/cache_reserve_clear`
-Future<ApiResult<ResponseCommon62Result, Never>> smartShieldSettingsStartCacheReserveClear({required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartShieldSettingsStartCacheReserveClearResponseResult, Never>> smartShieldSettingsStartCacheReserveClear({required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -48,7 +48,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
+    return SmartShieldSettingsStartCacheReserveClearResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

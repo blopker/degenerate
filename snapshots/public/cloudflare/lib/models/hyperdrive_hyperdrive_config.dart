@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_database.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';import 'hyperdrive_identifier.dart';@immutable final class HyperdriveHyperdriveConfig {const HyperdriveHyperdriveConfig({required this.id, required this.name, required this.origin, this.caching, this.createdOn, this.modifiedOn, this.mtls, this.originConnectionLimit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_protected_database_behind_cloudflare_tunnel.dart';import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_config_origin.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';import 'hyperdrive_identifier.dart';import 'public_database.dart';@immutable final class HyperdriveHyperdriveConfig {const HyperdriveHyperdriveConfig({required this.id, required this.name, required this.origin, this.caching, this.createdOn, this.modifiedOn, this.mtls, this.originConnectionLimit, });
 
 factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveConfig(
   caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,
@@ -9,7 +9,7 @@ factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return 
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   mtls: json['mtls'] != null ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>) : null,
   name: HyperdriveHyperdriveName.fromJson(json['name'] as String),
-  origin: HyperdriveHyperdriveDatabase.fromJson(json['origin'] as Map<String, dynamic>),
+  origin: OneOf2.parse(json['origin'], fromA: (v) => PublicDatabase.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessProtectedDatabaseBehindCloudflareTunnel.fromJson(v as Map<String, dynamic>),),
   originConnectionLimit: json['origin_connection_limit'] != null ? HyperdriveHyperdriveOriginConnectionLimit.fromJson(json['origin_connection_limit'] as num) : null,
 ); }
 
@@ -27,7 +27,7 @@ final HyperdriveHyperdriveMtls? mtls;
 
 final HyperdriveHyperdriveName name;
 
-final HyperdriveHyperdriveDatabase origin;
+final HyperdriveHyperdriveConfigOrigin origin;
 
 final HyperdriveHyperdriveOriginConnectionLimit? originConnectionLimit;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('origin'); } 
-HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching Function()? caching, DateTime Function()? createdOn, HyperdriveIdentifier? id, DateTime Function()? modifiedOn, HyperdriveHyperdriveMtls Function()? mtls, HyperdriveHyperdriveName? name, HyperdriveHyperdriveDatabase? origin, HyperdriveHyperdriveOriginConnectionLimit Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfig(
+HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching Function()? caching, DateTime Function()? createdOn, HyperdriveIdentifier? id, DateTime Function()? modifiedOn, HyperdriveHyperdriveMtls Function()? mtls, HyperdriveHyperdriveName? name, HyperdriveHyperdriveConfigOrigin? origin, HyperdriveHyperdriveOriginConnectionLimit Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfig(
   caching: caching != null ? caching() : this.caching,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id ?? this.id,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'input_message.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'output_message.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// Content item used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'input_message_resource.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'output_message.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// Content item used to generate a response.
 /// 
 sealed class ItemResource {const ItemResource();
 
@@ -37,18 +37,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ItemResource$Unknown; } 
  }
-@immutable final class ItemResourceInputMessageResource extends ItemResource {const ItemResourceInputMessageResource(this.inputMessage);
+@immutable final class ItemResourceInputMessageResource extends ItemResource {const ItemResourceInputMessageResource(this.inputMessageResource);
 
-factory ItemResourceInputMessageResource.fromJson(Map<String, dynamic> json) { return ItemResourceInputMessageResource(InputMessage.fromJson(json)); }
+factory ItemResourceInputMessageResource.fromJson(Map<String, dynamic> json) { return ItemResourceInputMessageResource(InputMessageResource.fromJson(json)); }
 
-final InputMessage inputMessage;
+final InputMessageResource inputMessageResource;
 
 @override String get type { return 'InputMessageResource'; } 
-@override Map<String, dynamic> toJson() { return {...inputMessage.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...inputMessageResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceInputMessageResource && inputMessage == other.inputMessage; } 
-@override int get hashCode { return inputMessage.hashCode; } 
-@override String toString() { return 'ItemResourceInputMessageResource(inputMessage: $inputMessage)'; } 
+    other is ItemResourceInputMessageResource && inputMessageResource == other.inputMessageResource; } 
+@override int get hashCode { return inputMessageResource.hashCode; } 
+@override String toString() { return 'ItemResourceInputMessageResource(inputMessageResource: $inputMessageResource)'; } 
  }
 @immutable final class ItemResourceMessage extends ItemResource {const ItemResourceMessage(this.outputMessage);
 

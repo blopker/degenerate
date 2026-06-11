@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_cfd_tunnel.dart';import '../models/tunnel_client_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_status.dart';import '../models/tunnel_tunnel_client.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_name.dart';import '../models/tunnel_tunnel_response_collection_result.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_warp_connector_tunnel.dart';/// CloudflareTunnelApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_client_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_status.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_name.dart';import '../models/tunnel_tunnel_type.dart';/// CloudflareTunnelApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareTunnelApi with ApiExecutor {const CloudflareTunnelApi(this
 /// Lists and filters Cloudflare Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<List<TunnelCfdTunnel>?, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name.toString();
@@ -64,7 +64,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelCfdTunnel.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
 );
  } 
@@ -167,7 +167,7 @@ return execute(
 /// Fetches connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<List<TunnelTunnelClient>?, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<dynamic>?, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -180,7 +180,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelTunnelClient.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
 );
  } 
@@ -289,7 +289,7 @@ return execute(
 /// Lists and filters all types of Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/tunnels`
-Future<ApiResult<List<TunnelTunnelResponseCollectionResult>?, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -345,7 +345,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TunnelCfdTunnel.fromJson(v as Map<String, dynamic>), fromB: (v) => TunnelWarpConnectorTunnel.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
 );
  } 
@@ -354,7 +354,7 @@ return execute(
 /// Lists and filters Warp Connector Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/warp_connector`
-Future<ApiResult<List<TunnelWarpConnectorTunnel>?, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<dynamic>?, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -405,7 +405,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => TunnelWarpConnectorTunnel.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
   },
 );
  } 
