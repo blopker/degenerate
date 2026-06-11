@@ -1413,6 +1413,68 @@ void main() {
     );
 
     test(
+      'allOf overriding a base property with a narrower type still merges',
+      () {
+        // The Cloudflare envelope pattern: the base declares a generic
+        // `result`, and each response narrows it via allOf override WITHOUT
+        // adding new keys. The override must trigger the merge — collapsing
+        // to a bare ref of the base loses the typed result.
+        final schemas = <String, dynamic>{
+          'Envelope': {
+            'type': 'object',
+            'properties': {
+              'success': {'type': 'boolean'},
+              'result': <String, dynamic>{},
+            },
+            'required': ['success'],
+          },
+          'Subscription': {
+            'type': 'object',
+            'properties': {
+              'id': {'type': 'string'},
+            },
+          },
+          'SubscriptionResponse': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Envelope'},
+              {
+                'type': 'object',
+                'properties': {
+                  'result': {r'$ref': '#/components/schemas/Subscription'},
+                },
+              },
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final response = mapper.typeRegistry['SubscriptionResponse'];
+        expect(
+          response,
+          isA<IrObject>(),
+          reason: 'an overriding variant must not collapse to a bare ref',
+        );
+        final fields = (response! as IrObject).fields;
+        expect(
+          fields.map((f) => f.name).toSet(),
+          containsAll(['success', 'result']),
+        );
+        final result = fields.firstWhere((f) => f.name == 'result');
+        expect(
+          result.type,
+          isA<IrTypeRef>().having(
+            (t) => t.name,
+            'name',
+            'Subscription',
+          ),
+          reason: 'the override must keep the narrowed result type',
+        );
+      },
+    );
+
+    test(
       'multi-level allOf inheritance keeps all inherited properties',
       () {
         // Combined: allOf [Base1, Base2] where Base1 itself extends Grand.

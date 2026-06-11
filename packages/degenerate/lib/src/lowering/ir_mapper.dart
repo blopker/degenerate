@@ -307,23 +307,21 @@ class IrMapper {
       final refSchema = rawTarget is Map<String, dynamic>
           ? _expandNestedAllOf(rawTarget, {rawRefName})
           : rawTarget;
-      final refPropKeys = refSchema is Map<String, dynamic>
-          ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
-                <String>{}
-          : <String>{};
       final flatProps = flattened['properties'] as Map<String, dynamic>? ?? {};
-      final extraProperties = flatProps.keys.toSet().difference(refPropKeys);
+      final ownProperties = flatProps.keys.toSet();
 
-      // A discriminator variant whose only extra property is the
+      // A discriminator variant whose only declared property is the
       // discriminator itself stays a bare ref so the union emitter wraps
-      // the base payload. Variants with real extra properties (the
-      // canonical `allOf: [$ref Base, {properties: ...}]` inheritance
-      // pattern) merge — otherwise their own fields would be silently
-      // dropped.
+      // the base payload. Variants that declare anything else merge —
+      // whether they ADD properties (canonical allOf inheritance) or
+      // OVERRIDE a base property with a narrower type (e.g. Cloudflare's
+      // generic `result` envelopes). A keys-only "extra properties" check
+      // would treat overrides as no-ops and collapse them to the generic
+      // base, losing the narrowed type.
       if (discriminatorProperty != null) {
-        extraProperties.remove(discriminatorProperty);
+        ownProperties.remove(discriminatorProperty);
       }
-      if (extraProperties.isNotEmpty && refSchema is Map<String, dynamic>) {
+      if (ownProperties.isNotEmpty && refSchema is Map<String, dynamic>) {
         // Merge ref target's properties into the flattened schema.
         final refProps = refSchema['properties'] as Map<String, dynamic>? ?? {};
         flattened['properties'] = <String, dynamic>{
