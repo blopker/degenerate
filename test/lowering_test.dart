@@ -1687,6 +1687,14 @@ void main() {
           (union.mapping[const SpecString('message')]! as IrTypeRef).name,
           equals('A'),
         );
+        // B is unreachable (its only discriminator value dispatches to A) —
+        // that's spec-conformant, but dropping a oneOf variant deserves a
+        // warning, not silence.
+        expect(
+          mapper.warnings.join('\n'),
+          allOf(contains('B'), contains('message')),
+          reason: 'dropping an unreachable variant should warn',
+        );
       },
     );
 
