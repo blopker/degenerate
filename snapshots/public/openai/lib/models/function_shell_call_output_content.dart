@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('stdout') && json['stdout'] is String &&
       json.containsKey('stderr') && json['stderr'] is String &&
       json.containsKey('outcome'); } 
-FunctionShellCallOutputContent copyWith({String? stdout, String? stderr, FunctionShellCallOutputContentOutcome? outcome, String Function()? createdBy, }) { return FunctionShellCallOutputContent(
+FunctionShellCallOutputContent copyWith({String? stdout, String? stderr, FunctionShellCallOutputContentOutcome? outcome, String? Function()? createdBy, }) { return FunctionShellCallOutputContent(
   stdout: stdout ?? this.stdout,
   stderr: stderr ?? this.stderr,
   outcome: outcome ?? this.outcome,

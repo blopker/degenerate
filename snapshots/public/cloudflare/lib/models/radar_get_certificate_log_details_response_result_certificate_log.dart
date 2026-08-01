@@ -134,14 +134,14 @@ Map<String, dynamic> toJson() { return {
   'endExclusive': endExclusive.toIso8601String(),
   'lastUpdate': lastUpdate.toIso8601String(),
   'operator': $operator,
-  if (performance != null) 'performance': performance?.toJson(),
+  'performance': performance?.toJson(),
   'related': related.map((e) => e.toJson()).toList(),
   'slug': slug,
   'startInclusive': startInclusive.toIso8601String(),
   'state': state.toJson(),
   'stateTimestamp': stateTimestamp.toIso8601String(),
-  'submittableCertCount': ?submittableCertCount,
-  'submittedCertCount': ?submittedCertCount,
+  'submittableCertCount': submittableCertCount,
+  'submittedCertCount': submittedCertCount,
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') &&

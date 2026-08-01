@@ -53,30 +53,30 @@ bool get isUnknown { return !values.contains(this); }
 /// A coupon contains information about a percent-off or amount-off discount you
 /// might want to apply to a customer. Coupons may be applied to [subscriptions](https://api.stripe.com#subscriptions), [invoices](https://api.stripe.com#invoices),
 /// [checkout sessions](https://docs.stripe.com/api/checkout/sessions), [quotes](https://api.stripe.com#quotes), and more. Coupons do not work with conventional one-off [charges](https://api.stripe.com#create_charge) or [payment intents](https://docs.stripe.com/api/payment_intents).
-@immutable final class Coupon {const Coupon({required this.created, required this.duration, required this.id, required this.livemode, required this.object, required this.timesRedeemed, required this.valid, this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.durationInMonths, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
+@immutable final class Coupon {const Coupon({required this.created, required this.duration, required this.id, required this.livemode, required this.object, required this.timesRedeemed, required this.valid, this.amountOff = const Omittable.absent(), this.appliesTo, this.currency = const Omittable.absent(), this.currencyOptions, this.durationInMonths = const Omittable.absent(), this.maxRedemptions = const Omittable.absent(), this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), this.percentOff = const Omittable.absent(), this.redeemBy = const Omittable.absent(), });
 
 factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
-  amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,
+  amountOff: json.containsKey('amount_off') ? Omittable(json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null) : const Omittable.absent(),
   appliesTo: json['applies_to'] != null ? CouponAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
-  currency: json['currency'] as String?,
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, CouponCurrencyOption.fromJson(v as Map<String, dynamic>))),
   duration: CouponDuration.fromJson(json['duration'] as String),
-  durationInMonths: json['duration_in_months'] != null ? (json['duration_in_months'] as num).toInt() : null,
+  durationInMonths: json.containsKey('duration_in_months') ? Omittable(json['duration_in_months'] != null ? (json['duration_in_months'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] as String?,
+  maxRedemptions: json.containsKey('max_redemptions') ? Omittable(json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: CouponObject.fromJson(json['object'] as String),
-  percentOff: json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null,
-  redeemBy: json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null,
+  percentOff: json.containsKey('percent_off') ? Omittable(json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null) : const Omittable.absent(),
+  redeemBy: json.containsKey('redeem_by') ? Omittable(json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null) : const Omittable.absent(),
   timesRedeemed: (json['times_redeemed'] as num).toInt(),
   valid: json['valid'] as bool,
 ); }
 
 /// Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer.
-final int? amountOff;
+final Omittable<int?> amountOff;
 
 final CouponAppliesTo? appliesTo;
 
@@ -84,7 +84,7 @@ final CouponAppliesTo? appliesTo;
 final int created;
 
 /// If `amount_off` has been set, the three-letter [ISO code for the currency](https://stripe.com/docs/currencies) of the amount to take off.
-final String? currency;
+final Omittable<String?> currency;
 
 /// Coupons defined in each available currency option. Each key must be a three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) and a [supported currency](https://stripe.com/docs/currencies).
 final Map<String,CouponCurrencyOption>? currencyOptions;
@@ -93,7 +93,7 @@ final Map<String,CouponCurrencyOption>? currencyOptions;
 final CouponDuration duration;
 
 /// If `duration` is `repeating`, the number of months the coupon applies. Null if coupon `duration` is `forever` or `once`.
-final int? durationInMonths;
+final Omittable<int?> durationInMonths;
 
 /// Unique identifier for the object.
 final String id;
@@ -102,22 +102,22 @@ final String id;
 final bool livemode;
 
 /// Maximum number of times this coupon can be redeemed, in total, across all customers, before it is no longer valid.
-final int? maxRedemptions;
+final Omittable<int?> maxRedemptions;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// Name of the coupon displayed to customers on for instance invoices or receipts.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final CouponObject object;
 
 /// Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon. For example, a coupon with percent_off of 50 will make a $ (or local equivalent)100 invoice $ (or local equivalent)50 instead.
-final double? percentOff;
+final Omittable<double?> percentOff;
 
 /// Date after which the coupon can no longer be redeemed.
-final int? redeemBy;
+final Omittable<int?> redeemBy;
 
 /// Number of times this coupon has been applied to a customer.
 final int timesRedeemed;
@@ -126,21 +126,21 @@ final int timesRedeemed;
 final bool valid;
 
 Map<String, dynamic> toJson() { return {
-  'amount_off': ?amountOff,
+  if (amountOff.isPresent) 'amount_off': amountOff.value,
   if (appliesTo != null) 'applies_to': appliesTo?.toJson(),
   'created': created,
-  'currency': ?currency,
+  if (currency.isPresent) 'currency': currency.value,
   if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
   'duration': duration.toJson(),
-  'duration_in_months': ?durationInMonths,
+  if (durationInMonths.isPresent) 'duration_in_months': durationInMonths.value,
   'id': id,
   'livemode': livemode,
-  'max_redemptions': ?maxRedemptions,
-  'metadata': ?metadata,
-  'name': ?name,
+  if (maxRedemptions.isPresent) 'max_redemptions': maxRedemptions.value,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
-  'percent_off': ?percentOff,
-  'redeem_by': ?redeemBy,
+  if (percentOff.isPresent) 'percent_off': percentOff.value,
+  if (redeemBy.isPresent) 'redeem_by': redeemBy.value,
   'times_redeemed': timesRedeemed,
   'valid': valid,
 }; } 
@@ -151,22 +151,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('times_redeemed') && json['times_redeemed'] is num &&
       json.containsKey('valid') && json['valid'] is bool; } 
-Coupon copyWith({int? Function()? amountOff, CouponAppliesTo Function()? appliesTo, int? created, String? Function()? currency, Map<String, CouponCurrencyOption> Function()? currencyOptions, CouponDuration? duration, int? Function()? durationInMonths, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, String? Function()? name, CouponObject? object, double? Function()? percentOff, int? Function()? redeemBy, int? timesRedeemed, bool? valid, }) { return Coupon(
-  amountOff: amountOff != null ? amountOff() : this.amountOff,
+Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? appliesTo, int? created, Omittable<String?>? currency, Map<String, CouponCurrencyOption>? Function()? currencyOptions, CouponDuration? duration, Omittable<int?>? durationInMonths, String? id, bool? livemode, Omittable<int?>? maxRedemptions, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, CouponObject? object, Omittable<double?>? percentOff, Omittable<int?>? redeemBy, int? timesRedeemed, bool? valid, }) { return Coupon(
+  amountOff: amountOff ?? this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,
   created: created ?? this.created,
-  currency: currency != null ? currency() : this.currency,
+  currency: currency ?? this.currency,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   duration: duration ?? this.duration,
-  durationInMonths: durationInMonths != null ? durationInMonths() : this.durationInMonths,
+  durationInMonths: durationInMonths ?? this.durationInMonths,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  maxRedemptions: maxRedemptions != null ? maxRedemptions() : this.maxRedemptions,
-  metadata: metadata != null ? metadata() : this.metadata,
-  name: name != null ? name() : this.name,
+  maxRedemptions: maxRedemptions ?? this.maxRedemptions,
+  metadata: metadata ?? this.metadata,
+  name: name ?? this.name,
   object: object ?? this.object,
-  percentOff: percentOff != null ? percentOff() : this.percentOff,
-  redeemBy: redeemBy != null ? redeemBy() : this.redeemBy,
+  percentOff: percentOff ?? this.percentOff,
+  redeemBy: redeemBy ?? this.redeemBy,
   timesRedeemed: timesRedeemed ?? this.timesRedeemed,
   valid: valid ?? this.valid,
 ); } 

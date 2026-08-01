@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'review_on_push': ?reviewOnPush,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'review_draft_pull_requests', 'review_on_push'}.contains(key)); } 
-RepositoryRuleDetailedVariant22Parameters copyWith({bool Function()? reviewDraftPullRequests, bool Function()? reviewOnPush, }) { return RepositoryRuleDetailedVariant22Parameters(
+RepositoryRuleDetailedVariant22Parameters copyWith({bool? Function()? reviewDraftPullRequests, bool? Function()? reviewOnPush, }) { return RepositoryRuleDetailedVariant22Parameters(
   reviewDraftPullRequests: reviewDraftPullRequests != null ? reviewDraftPullRequests() : this.reviewDraftPullRequests,
   reviewOnPush: reviewOnPush != null ? reviewOnPush() : this.reviewOnPush,
 ); } 

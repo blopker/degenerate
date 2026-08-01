@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostPaymentIntentsRequestAutomaticPaymentMethods copyWith({PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects Function()? allowRedirects, bool? enabled, }) { return PostPaymentIntentsRequestAutomaticPaymentMethods(
+PostPaymentIntentsRequestAutomaticPaymentMethods copyWith({PostPaymentIntentsRequestAutomaticPaymentMethodsAllowRedirects? Function()? allowRedirects, bool? enabled, }) { return PostPaymentIntentsRequestAutomaticPaymentMethods(
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
   enabled: enabled ?? this.enabled,
 ); } 

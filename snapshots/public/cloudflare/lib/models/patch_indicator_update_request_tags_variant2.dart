@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-PatchIndicatorUpdateRequestTagsVariant2 copyWith({String Function()? categoryName, String? value, }) { return PatchIndicatorUpdateRequestTagsVariant2(
+PatchIndicatorUpdateRequestTagsVariant2 copyWith({String? Function()? categoryName, String? value, }) { return PatchIndicatorUpdateRequestTagsVariant2(
   categoryName: categoryName != null ? categoryName() : this.categoryName,
   value: value ?? this.value,
 ); } 

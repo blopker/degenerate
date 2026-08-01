@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'is_attributable', 'is_downloadable', 'is_public', 'name'}.contains(key)); } 
-CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String Function()? description, bool Function()? isAttributable, bool Function()? isDownloadable, bool Function()? isPublic, String Function()? name, }) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
+CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String? Function()? description, bool? Function()? isAttributable, bool? Function()? isDownloadable, bool? Function()? isPublic, String? Function()? name, }) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
   description: description != null ? description() : this.description,
   isAttributable: isAttributable != null ? isAttributable() : this.isAttributable,
   isDownloadable: isDownloadable != null ? isDownloadable() : this.isDownloadable,

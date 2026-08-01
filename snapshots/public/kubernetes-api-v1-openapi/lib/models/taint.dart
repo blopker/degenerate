@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('effect') && json['effect'] is String &&
       json.containsKey('key') && json['key'] is String; } 
-Taint copyWith({String? effect, String? key, Time Function()? timeAdded, String Function()? value, }) { return Taint(
+Taint copyWith({String? effect, String? key, Time? Function()? timeAdded, String? Function()? value, }) { return Taint(
   effect: effect ?? this.effect,
   key: key ?? this.key,
   timeAdded: timeAdded != null ? timeAdded() : this.timeAdded,

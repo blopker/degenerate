@@ -50,8 +50,8 @@ final bool hasMore;
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
-  'first_id': ?firstId,
-  'last_id': ?lastId,
+  'first_id': firstId,
+  'last_id': lastId,
   'has_more': hasMore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (reconciliationMode != null) 'reconciliation_mode': reconciliationMode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reconciliation_mode'}.contains(key)); } 
-PostCustomersCustomerRequestCashBalanceSettings copyWith({PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode Function()? reconciliationMode}) { return PostCustomersCustomerRequestCashBalanceSettings(
+PostCustomersCustomerRequestCashBalanceSettings copyWith({PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode? Function()? reconciliationMode}) { return PostCustomersCustomerRequestCashBalanceSettings(
   reconciliationMode: reconciliationMode != null ? reconciliationMode() : this.reconciliationMode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

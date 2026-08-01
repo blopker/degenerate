@@ -24,7 +24,7 @@ final QueryResponse? query;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (query != null) 'query': query?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ZoneAnalyticsDeprecatedGetAnalyticsByCoLocationsResponse4Xx copyWith({List<Messages42>? errors, List<Messages42>? messages, Map<String, dynamic>? Function()? result, bool? success, QueryResponse Function()? query, }) { return ZoneAnalyticsDeprecatedGetAnalyticsByCoLocationsResponse4Xx(
+ZoneAnalyticsDeprecatedGetAnalyticsByCoLocationsResponse4Xx copyWith({List<Messages42>? errors, List<Messages42>? messages, Map<String, dynamic>? Function()? result, bool? success, QueryResponse? Function()? query, }) { return ZoneAnalyticsDeprecatedGetAnalyticsByCoLocationsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

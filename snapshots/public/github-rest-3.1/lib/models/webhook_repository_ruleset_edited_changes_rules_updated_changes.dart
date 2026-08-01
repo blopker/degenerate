@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (pattern != null) 'pattern': pattern?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'rule_type', 'pattern'}.contains(key)); } 
-WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges copyWith({WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration Function()? configuration, WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesRuleType Function()? ruleType, WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesPattern Function()? pattern, }) { return WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges(
+WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges copyWith({WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration? Function()? configuration, WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesRuleType? Function()? ruleType, WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesPattern? Function()? pattern, }) { return WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges(
   configuration: configuration != null ? configuration() : this.configuration,
   ruleType: ruleType != null ? ruleType() : this.ruleType,
   pattern: pattern != null ? pattern() : this.pattern,

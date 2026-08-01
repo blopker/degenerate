@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (preference != null) 'preference': preference?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestAcssDebitDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestAcssDebitDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsRequestAcssDebitDisplayPreference(
+PostPaymentMethodConfigurationsRequestAcssDebitDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestAcssDebitDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsRequestAcssDebitDisplayPreference(
   preference: preference != null ? preference() : this.preference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

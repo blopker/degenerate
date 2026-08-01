@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude', 'include'}.contains(key)); } 
-RulesetsSetCacheSettingsCustomCacheKeyQueryString copyWith({RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude Function()? exclude, RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyQueryString(
+RulesetsSetCacheSettingsCustomCacheKeyQueryString copyWith({RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude? Function()? exclude, RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude? Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyQueryString(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,
 ); } 

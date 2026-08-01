@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
-SmartshieldSmartShieldSettingsPatchBodySmartRouting copyWith({SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue Function()? value}) { return SmartshieldSmartShieldSettingsPatchBodySmartRouting(
+SmartshieldSmartShieldSettingsPatchBodySmartRouting copyWith({SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue? Function()? value}) { return SmartshieldSmartShieldSettingsPatchBodySmartRouting(
   value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

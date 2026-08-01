@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (archivedAt != null) 'archived_at': archivedAt?.toIso8601String(),
+  'archived_at': archivedAt?.toIso8601String(),
   if (projectUrl != null) 'project_url': projectUrl?.toString(),
   if (itemUrl != null) 'item_url': itemUrl?.toString(),
 }; } 
@@ -62,7 +62,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('archived_at') && json['archived_at'] is String; } 
-ItemSimple copyWith({double? id, String Function()? nodeId, ItemSimpleContent Function()? content, ItemContentType? contentType, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri Function()? projectUrl, Uri Function()? itemUrl, }) { return ItemSimple(
+ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? Function()? content, ItemContentType? contentType, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? projectUrl, Uri? Function()? itemUrl, }) { return ItemSimple(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   content: content != null ? content() : this.content,

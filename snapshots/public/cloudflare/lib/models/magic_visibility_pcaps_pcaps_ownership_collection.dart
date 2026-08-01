@@ -24,7 +24,7 @@ final MagicVisibilityPcapsResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
+  'result': result?.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-MagicVisibilityPcapsPcapsOwnershipCollection copyWith({List<MagicVisibilityPcapsMessages2>? errors, List<MagicVisibilityPcapsMessages2>? messages, List<MagicVisibilityPcapsPcapsOwnershipResponse>? Function()? result, bool? success, MagicVisibilityPcapsResultInfo Function()? resultInfo, }) { return MagicVisibilityPcapsPcapsOwnershipCollection(
+MagicVisibilityPcapsPcapsOwnershipCollection copyWith({List<MagicVisibilityPcapsMessages2>? errors, List<MagicVisibilityPcapsMessages2>? messages, List<MagicVisibilityPcapsPcapsOwnershipResponse>? Function()? result, bool? success, MagicVisibilityPcapsResultInfo? Function()? resultInfo, }) { return MagicVisibilityPcapsPcapsOwnershipCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

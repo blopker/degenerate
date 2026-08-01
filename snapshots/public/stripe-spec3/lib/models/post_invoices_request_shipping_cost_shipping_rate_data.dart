@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
-PostInvoicesRequestShippingCostShippingRateData copyWith({PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimate Function()? deliveryEstimate, String? displayName, PostInvoicesRequestShippingCostShippingRateDataFixedAmount Function()? fixedAmount, Map<String, String> Function()? metadata, PostInvoicesRequestShippingCostShippingRateDataTaxBehavior Function()? taxBehavior, String Function()? taxCode, PostInvoicesRequestShippingCostShippingRateDataType Function()? type, }) { return PostInvoicesRequestShippingCostShippingRateData(
+PostInvoicesRequestShippingCostShippingRateData copyWith({PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimate? Function()? deliveryEstimate, String? displayName, PostInvoicesRequestShippingCostShippingRateDataFixedAmount? Function()? fixedAmount, Map<String, String>? Function()? metadata, PostInvoicesRequestShippingCostShippingRateDataTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, PostInvoicesRequestShippingCostShippingRateDataType? Function()? type, }) { return PostInvoicesRequestShippingCostShippingRateData(
   deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,
   displayName: displayName ?? this.displayName,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,

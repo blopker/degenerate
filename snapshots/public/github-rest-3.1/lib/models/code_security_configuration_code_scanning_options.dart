@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Feature options for code scanning
-@immutable final class CodeSecurityConfigurationCodeScanningOptions {const CodeSecurityConfigurationCodeScanningOptions({this.allowAdvanced});
+@immutable final class CodeSecurityConfigurationCodeScanningOptions {const CodeSecurityConfigurationCodeScanningOptions({this.allowAdvanced = const Omittable.absent()});
 
 factory CodeSecurityConfigurationCodeScanningOptions.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationCodeScanningOptions(
-  allowAdvanced: json['allow_advanced'] as bool?,
+  allowAdvanced: json.containsKey('allow_advanced') ? Omittable(json['allow_advanced'] as bool?) : const Omittable.absent(),
 ); }
 
 /// Whether to allow repos which use advanced setup
-final bool? allowAdvanced;
+final Omittable<bool?> allowAdvanced;
 
 Map<String, dynamic> toJson() { return {
-  'allow_advanced': ?allowAdvanced,
+  if (allowAdvanced.isPresent) 'allow_advanced': allowAdvanced.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_advanced'}.contains(key)); } 
-CodeSecurityConfigurationCodeScanningOptions copyWith({bool? Function()? allowAdvanced}) { return CodeSecurityConfigurationCodeScanningOptions(
-  allowAdvanced: allowAdvanced != null ? allowAdvanced() : this.allowAdvanced,
+CodeSecurityConfigurationCodeScanningOptions copyWith({Omittable<bool?>? allowAdvanced}) { return CodeSecurityConfigurationCodeScanningOptions(
+  allowAdvanced: allowAdvanced ?? this.allowAdvanced,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeSecurityConfigurationCodeScanningOptions &&

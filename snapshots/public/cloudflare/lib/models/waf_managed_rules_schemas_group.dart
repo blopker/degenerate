@@ -38,7 +38,7 @@ final List<WafManagedRulesMode>? allowedModes;
 final WafManagedRulesMode mode;
 
 Map<String, dynamic> toJson() { return {
-  if (description != null) 'description': description?.toJson(),
+  'description': description?.toJson(),
   'id': id.toJson(),
   if (modifiedRulesCount != null) 'modified_rules_count': modifiedRulesCount?.toJson(),
   'name': name.toJson(),
@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('name') &&
       json.containsKey('rules_count') &&
       json.containsKey('mode'); } 
-WafManagedRulesSchemasGroup copyWith({WafManagedRulesDescription? Function()? description, WafManagedRulesComponentsSchemasIdentifier? id, WafManagedRulesModifiedRulesCount Function()? modifiedRulesCount, WafManagedRulesName? name, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesRulesCount? rulesCount, List<WafManagedRulesMode> Function()? allowedModes, WafManagedRulesMode? mode, }) { return WafManagedRulesSchemasGroup(
+WafManagedRulesSchemasGroup copyWith({WafManagedRulesDescription? Function()? description, WafManagedRulesComponentsSchemasIdentifier? id, WafManagedRulesModifiedRulesCount? Function()? modifiedRulesCount, WafManagedRulesName? name, WafManagedRulesIdentifier? Function()? packageId, WafManagedRulesRulesCount? rulesCount, List<WafManagedRulesMode>? Function()? allowedModes, WafManagedRulesMode? mode, }) { return WafManagedRulesSchemasGroup(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   modifiedRulesCount: modifiedRulesCount != null ? modifiedRulesCount() : this.modifiedRulesCount,

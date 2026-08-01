@@ -7,33 +7,33 @@ factory CodeScanningAnalysisToolVersion.fromJson(String json) => CodeScanningAna
 String toJson() => value;
 
 }
-@immutable final class CodeScanningAnalysisTool {const CodeScanningAnalysisTool({this.name, this.version, this.guid, });
+@immutable final class CodeScanningAnalysisTool {const CodeScanningAnalysisTool({this.name, this.version = const Omittable.absent(), this.guid = const Omittable.absent(), });
 
 factory CodeScanningAnalysisTool.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysisTool(
   name: json['name'] != null ? CodeScanningAnalysisToolName.fromJson(json['name'] as String) : null,
-  version: json['version'] != null ? CodeScanningAnalysisToolVersion.fromJson(json['version'] as String) : null,
-  guid: json['guid'] != null ? CodeScanningAnalysisToolGuid.fromJson(json['guid'] as String) : null,
+  version: json.containsKey('version') ? Omittable(json['version'] != null ? CodeScanningAnalysisToolVersion.fromJson(json['version'] as String) : null) : const Omittable.absent(),
+  guid: json.containsKey('guid') ? Omittable(json['guid'] != null ? CodeScanningAnalysisToolGuid.fromJson(json['guid'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The name of the tool used to generate the code scanning analysis.
 final CodeScanningAnalysisToolName? name;
 
 /// The version of the tool used to generate the code scanning analysis.
-final CodeScanningAnalysisToolVersion? version;
+final Omittable<CodeScanningAnalysisToolVersion?> version;
 
 /// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
-final CodeScanningAnalysisToolGuid? guid;
+final Omittable<CodeScanningAnalysisToolGuid?> guid;
 
 Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
-  if (version != null) 'version': version?.toJson(),
-  if (guid != null) 'guid': guid?.toJson(),
+  if (version.isPresent) 'version': version.value?.toJson(),
+  if (guid.isPresent) 'guid': guid.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'version', 'guid'}.contains(key)); } 
-CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName Function()? name, CodeScanningAnalysisToolVersion? Function()? version, CodeScanningAnalysisToolGuid? Function()? guid, }) { return CodeScanningAnalysisTool(
+CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName? Function()? name, Omittable<CodeScanningAnalysisToolVersion?>? version, Omittable<CodeScanningAnalysisToolGuid?>? guid, }) { return CodeScanningAnalysisTool(
   name: name != null ? name() : this.name,
-  version: version != null ? version() : this.version,
-  guid: guid != null ? guid() : this.guid,
+  version: version ?? this.version,
+  guid: guid ?? this.guid,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeScanningAnalysisTool &&

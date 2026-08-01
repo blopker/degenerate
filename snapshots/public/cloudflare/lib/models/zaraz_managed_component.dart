@@ -100,7 +100,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('block
       json.containsKey('permissions') &&
       json.containsKey('settings') &&
       json.containsKey('type'); } 
-ZarazManagedComponent copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String Function()? defaultPurpose, bool? enabled, String? name, String Function()? vendorName, String Function()? vendorPolicyUrl, Map<String, ZarazManagedComponentActionsValue> Function()? actions, String? component, List<ZarazManagedComponentNeoEvents> Function()? neoEvents, List<String>? permissions, Map<String,dynamic>? settings, ZarazManagedComponentType? type, }) { return ZarazManagedComponent(
+ZarazManagedComponent copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String? Function()? defaultPurpose, bool? enabled, String? name, String? Function()? vendorName, String? Function()? vendorPolicyUrl, Map<String, ZarazManagedComponentActionsValue>? Function()? actions, String? component, List<ZarazManagedComponentNeoEvents>? Function()? neoEvents, List<String>? permissions, Map<String,dynamic>? settings, ZarazManagedComponentType? type, }) { return ZarazManagedComponent(
   blockingTriggers: blockingTriggers ?? this.blockingTriggers,
   defaultFields: defaultFields ?? this.defaultFields,
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,

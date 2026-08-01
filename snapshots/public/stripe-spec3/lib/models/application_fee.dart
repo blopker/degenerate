@@ -23,22 +23,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplicationFeeObject($value)'; } 
  }
 /// 
-@immutable final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, required this.charge, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.refunded, required this.refunds, this.balanceTransaction, this.feeSource, this.originatingTransaction, });
+@immutable final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, required this.charge, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.refunded, required this.refunds, this.balanceTransaction = const Omittable.absent(), this.feeSource = const Omittable.absent(), this.originatingTransaction = const Omittable.absent(), });
 
 factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationFee(
   account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
   amount: (json['amount'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
   application: OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),),
-  balanceTransaction: json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  feeSource: json['fee_source'] != null ? PlatformEarningFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>) : null,
+  feeSource: json.containsKey('fee_source') ? Omittable(json['fee_source'] != null ? PlatformEarningFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ApplicationFeeObject.fromJson(json['object'] as String),
-  originatingTransaction: json['originating_transaction'] != null ? OneOf2.parse(json['originating_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  originatingTransaction: json.containsKey('originating_transaction') ? Omittable(json['originating_transaction'] != null ? OneOf2.parse(json['originating_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   refunded: json['refunded'] as bool,
   refunds: ApplicationFeeRefunds.fromJson(json['refunds'] as Map<String, dynamic>),
 ); }
@@ -56,7 +56,7 @@ final int amountRefunded;
 final ApplicationFeeApplication application;
 
 /// Balance transaction that describes the impact of this collected application fee on your account balance (not including refunds).
-final ApplicationFeeBalanceTransaction? balanceTransaction;
+final Omittable<ApplicationFeeBalanceTransaction?> balanceTransaction;
 
 /// ID of the charge that the application fee was taken from.
 final ApplicationFeeCharge charge;
@@ -68,7 +68,7 @@ final int created;
 final String currency;
 
 /// Polymorphic source of the application fee. Includes the ID of the object the application fee was created from.
-final PlatformEarningFeeSource? feeSource;
+final Omittable<PlatformEarningFeeSource?> feeSource;
 
 /// Unique identifier for the object.
 final String id;
@@ -80,7 +80,7 @@ final bool livemode;
 final ApplicationFeeObject object;
 
 /// ID of the corresponding charge on the platform account, if this fee was the result of a charge using the `destination` parameter.
-final ApplicationFeeOriginatingTransaction? originatingTransaction;
+final Omittable<ApplicationFeeOriginatingTransaction?> originatingTransaction;
 
 /// Whether the fee has been fully refunded. If the fee is only partially refunded, this attribute will still be false.
 final bool refunded;
@@ -93,15 +93,15 @@ Map<String, dynamic> toJson() { return {
   'amount': amount,
   'amount_refunded': amountRefunded,
   'application': application.toJson(),
-  if (balanceTransaction != null) 'balance_transaction': balanceTransaction?.toJson(),
+  if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'charge': charge.toJson(),
   'created': created,
   'currency': currency,
-  if (feeSource != null) 'fee_source': feeSource?.toJson(),
+  if (feeSource.isPresent) 'fee_source': feeSource.value?.toJson(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-  if (originatingTransaction != null) 'originating_transaction': originatingTransaction?.toJson(),
+  if (originatingTransaction.isPresent) 'originating_transaction': originatingTransaction.value?.toJson(),
   'refunded': refunded,
   'refunds': refunds.toJson(),
 }; } 
@@ -117,20 +117,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object') &&
       json.containsKey('refunded') && json['refunded'] is bool &&
       json.containsKey('refunds'); } 
-ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, PlatformEarningFeeSource? Function()? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, ApplicationFeeOriginatingTransaction? Function()? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
+ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, Omittable<PlatformEarningFeeSource?>? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, Omittable<ApplicationFeeOriginatingTransaction?>? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
   account: account ?? this.account,
   amount: amount ?? this.amount,
   amountRefunded: amountRefunded ?? this.amountRefunded,
   application: application ?? this.application,
-  balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
+  balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   charge: charge ?? this.charge,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  feeSource: feeSource != null ? feeSource() : this.feeSource,
+  feeSource: feeSource ?? this.feeSource,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-  originatingTransaction: originatingTransaction != null ? originatingTransaction() : this.originatingTransaction,
+  originatingTransaction: originatingTransaction ?? this.originatingTransaction,
   refunded: refunded ?? this.refunded,
   refunds: refunds ?? this.refunds,
 ); } 

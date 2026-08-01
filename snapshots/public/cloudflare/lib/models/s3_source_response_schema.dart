@@ -21,48 +21,49 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'S3SourceResponseSchemaVendor($value)'; } 
  }
-@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint, this.keys, this.pathPrefix, this.vendor, });
+@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint = const Omittable.absent(), this.keys = const Omittable.absent(), this.pathPrefix = const Omittable.absent(), this.vendor, });
 
 factory S3SourceResponseSchema.fromJson(Map<String, dynamic> json) { return S3SourceResponseSchema(
   bucket: json['bucket'] as String?,
-  endpoint: json['endpoint'] as String?,
-  keys: (json['keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  pathPrefix: json['pathPrefix'] as String?,
+  endpoint: json.containsKey('endpoint') ? Omittable(json['endpoint'] as String?) : const Omittable.absent(),
+  keys: json.containsKey('keys') ? Omittable((json['keys'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
+  pathPrefix: json.containsKey('pathPrefix') ? Omittable(json['pathPrefix'] as String?) : const Omittable.absent(),
   vendor: json['vendor'] != null ? S3SourceResponseSchemaVendor.fromJson(json['vendor'] as String) : null,
 ); }
 
 final String? bucket;
 
-final String? endpoint;
+final Omittable<String?> endpoint;
 
-final List<String>? keys;
+final Omittable<List<String>?> keys;
 
-final String? pathPrefix;
+final Omittable<String?> pathPrefix;
 
 final S3SourceResponseSchemaVendor? vendor;
 
 Map<String, dynamic> toJson() { return {
   'bucket': ?bucket,
-  'endpoint': ?endpoint,
-  'keys': ?keys,
-  'pathPrefix': ?pathPrefix,
+  if (endpoint.isPresent) 'endpoint': endpoint.value,
+  if (keys.isPresent) 'keys': keys.value,
+  if (pathPrefix.isPresent) 'pathPrefix': pathPrefix.value,
   if (vendor != null) 'vendor': vendor?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'endpoint', 'keys', 'pathPrefix', 'vendor'}.contains(key)); } 
-S3SourceResponseSchema copyWith({String Function()? bucket, String? Function()? endpoint, List<String>? Function()? keys, String? Function()? pathPrefix, S3SourceResponseSchemaVendor Function()? vendor, }) { return S3SourceResponseSchema(
+S3SourceResponseSchema copyWith({String? Function()? bucket, Omittable<String?>? endpoint, Omittable<List<String>?>? keys, Omittable<String?>? pathPrefix, S3SourceResponseSchemaVendor? Function()? vendor, }) { return S3SourceResponseSchema(
   bucket: bucket != null ? bucket() : this.bucket,
-  endpoint: endpoint != null ? endpoint() : this.endpoint,
-  keys: keys != null ? keys() : this.keys,
-  pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,
+  endpoint: endpoint ?? this.endpoint,
+  keys: keys ?? this.keys,
+  pathPrefix: pathPrefix ?? this.pathPrefix,
   vendor: vendor != null ? vendor() : this.vendor,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is S3SourceResponseSchema &&
           bucket == other.bucket &&
           endpoint == other.endpoint &&
-          listEquals(keys, other.keys) &&
+          keys.isPresent == other.keys.isPresent &&
+          listEquals(keys.value, other.keys.value) &&
           pathPrefix == other.pathPrefix &&
           vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, endpoint, Object.hashAll(keys ?? const []), pathPrefix, vendor); } 
+@override int get hashCode { return Object.hash(bucket, endpoint, Object.hashAll(keys.value ?? const []), pathPrefix, vendor); } 
 @override String toString() { return 'S3SourceResponseSchema(bucket: $bucket, endpoint: $endpoint, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)'; } 
  }

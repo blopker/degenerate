@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('table_name') && json['table_name'] is String &&
       json.containsKey('token') && json['token'] is String; } 
-CloudflarePipelinesR2DataCatalogTable copyWith({Uri? accountId, String? bucket, String Function()? namespace, CloudflarePipelinesR2DataCatalogTableRollingPolicy Function()? rollingPolicy, String? tableName, String? token, }) { return CloudflarePipelinesR2DataCatalogTable(
+CloudflarePipelinesR2DataCatalogTable copyWith({Uri? accountId, String? bucket, String? Function()? namespace, CloudflarePipelinesR2DataCatalogTableRollingPolicy? Function()? rollingPolicy, String? tableName, String? token, }) { return CloudflarePipelinesR2DataCatalogTable(
   accountId: accountId ?? this.accountId,
   bucket: bucket ?? this.bucket,
   namespace: namespace != null ? namespace() : this.namespace,

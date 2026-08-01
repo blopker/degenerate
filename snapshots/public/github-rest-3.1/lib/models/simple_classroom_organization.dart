@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'login': login,
   'node_id': nodeId,
   'html_url': htmlUrl.toString(),
-  'name': ?name,
+  'name': name,
   'avatar_url': avatarUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&

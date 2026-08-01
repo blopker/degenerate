@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('text') && json['text'] is String; } 
-PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices copyWith({String? id, PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle Function()? style, String? text, }) { return PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices(
+PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices copyWith({String? id, PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoicesStyle? Function()? style, String? text, }) { return PostTerminalReadersReaderCollectInputsRequestInputsSelectionChoices(
   id: id ?? this.id,
   style: style != null ? style() : this.style,
   text: text ?? this.text,

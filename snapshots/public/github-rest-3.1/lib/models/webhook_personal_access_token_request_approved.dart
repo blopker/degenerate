@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('sender') &&
       json.containsKey('installation'); } 
-WebhookPersonalAccessTokenRequestApproved copyWith({WebhookPersonalAccessTokenRequestApprovedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestApproved(
+WebhookPersonalAccessTokenRequestApproved copyWith({WebhookPersonalAccessTokenRequestApprovedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestApproved(
   action: action ?? this.action,
   personalAccessTokenRequest: personalAccessTokenRequest ?? this.personalAccessTokenRequest,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

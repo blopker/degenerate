@@ -112,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   if (whitelistedPatternType != null) 'whitelisted_pattern_type': whitelistedPatternType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowlisted_pattern', 'allowlisted_pattern_type', 'blocklisted_message', 'blocklisted_pattern', 'whitelisted_pattern_type'}.contains(key)); } 
-EmailSecurityGetMessageResponseResultProperties copyWith({String Function()? allowlistedPattern, EmailSecurityGetMessageResponseResultPropertiesAllowlistedPatternType Function()? allowlistedPatternType, bool Function()? blocklistedMessage, String Function()? blocklistedPattern, EmailSecurityGetMessageResponseResultPropertiesWhitelistedPatternType Function()? whitelistedPatternType, }) { return EmailSecurityGetMessageResponseResultProperties(
+EmailSecurityGetMessageResponseResultProperties copyWith({String? Function()? allowlistedPattern, EmailSecurityGetMessageResponseResultPropertiesAllowlistedPatternType? Function()? allowlistedPatternType, bool? Function()? blocklistedMessage, String? Function()? blocklistedPattern, EmailSecurityGetMessageResponseResultPropertiesWhitelistedPatternType? Function()? whitelistedPatternType, }) { return EmailSecurityGetMessageResponseResultProperties(
   allowlistedPattern: allowlistedPattern != null ? allowlistedPattern() : this.allowlistedPattern,
   allowlistedPatternType: allowlistedPatternType != null ? allowlistedPatternType() : this.allowlistedPatternType,
   blocklistedMessage: blocklistedMessage != null ? blocklistedMessage() : this.blocklistedMessage,

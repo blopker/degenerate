@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (reasoning != null) 'reasoning': reasoning?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-ResponsesAsync2Requests copyWith({ResponsesAsync2RequestsInput? input, ResponsesAsync2RequestsReasoning Function()? reasoning, }) { return ResponsesAsync2Requests(
+ResponsesAsync2Requests copyWith({ResponsesAsync2RequestsInput? input, ResponsesAsync2RequestsReasoning? Function()? reasoning, }) { return ResponsesAsync2Requests(
   input: input ?? this.input,
   reasoning: reasoning != null ? reasoning() : this.reasoning,
 ); } 

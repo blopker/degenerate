@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num; } 
-ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String> Function()? locations, String Function()? message, }) { return ShieldOldSchemaUploadLogEvent(
+ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? locations, String? Function()? message, }) { return ShieldOldSchemaUploadLogEvent(
   code: code ?? this.code,
   locations: locations != null ? locations() : this.locations,
   message: message != null ? message() : this.message,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (requests != null) 'requests': requests?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'limits', 'requests'}.contains(key)); } 
-VolumeResourceRequirements copyWith({Map<String, ResourceQuantity> Function()? limits, Map<String, ResourceQuantity> Function()? requests, }) { return VolumeResourceRequirements(
+VolumeResourceRequirements copyWith({Map<String, ResourceQuantity>? Function()? limits, Map<String, ResourceQuantity>? Function()? requests, }) { return VolumeResourceRequirements(
   limits: limits != null ? limits() : this.limits,
   requests: requests != null ? requests() : this.requests,
 ); } 

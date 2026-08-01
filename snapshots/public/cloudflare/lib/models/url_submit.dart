@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (submittedUrls != null) 'submitted_urls': submittedUrls?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'skipped_urls', 'submitted_urls'}.contains(key)); } 
-UrlSubmit copyWith({List<Map<String, dynamic>> Function()? skippedUrls, List<Map<String, dynamic>> Function()? submittedUrls, }) { return UrlSubmit(
+UrlSubmit copyWith({List<Map<String, dynamic>>? Function()? skippedUrls, List<Map<String, dynamic>>? Function()? submittedUrls, }) { return UrlSubmit(
   skippedUrls: skippedUrls != null ? skippedUrls() : this.skippedUrls,
   submittedUrls: submittedUrls != null ? submittedUrls() : this.submittedUrls,
 ); } 

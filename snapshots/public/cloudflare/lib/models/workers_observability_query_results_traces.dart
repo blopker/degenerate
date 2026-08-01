@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('rootS
       json.containsKey('traceEndMs') && json['traceEndMs'] is num &&
       json.containsKey('traceId') && json['traceId'] is String &&
       json.containsKey('traceStartMs') && json['traceStartMs'] is num; } 
-WorkersObservabilityQueryResultsTraces copyWith({List<String> Function()? errors, String? rootSpanName, String? rootTransactionName, List<String>? service, double? spans, double? traceDurationMs, double? traceEndMs, String? traceId, double? traceStartMs, }) { return WorkersObservabilityQueryResultsTraces(
+WorkersObservabilityQueryResultsTraces copyWith({List<String>? Function()? errors, String? rootSpanName, String? rootTransactionName, List<String>? service, double? spans, double? traceDurationMs, double? traceEndMs, String? traceId, double? traceStartMs, }) { return WorkersObservabilityQueryResultsTraces(
   errors: errors != null ? errors() : this.errors,
   rootSpanName: rootSpanName ?? this.rootSpanName,
   rootTransactionName: rootTransactionName ?? this.rootTransactionName,

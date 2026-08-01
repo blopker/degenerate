@@ -73,10 +73,10 @@ final String workflowId;
 
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
-  if (endedOn != null) 'ended_on': endedOn?.toIso8601String(),
+  'ended_on': endedOn?.toIso8601String(),
   'id': id,
   'modified_on': modifiedOn.toIso8601String(),
-  if (startedOn != null) 'started_on': startedOn?.toIso8601String(),
+  'started_on': startedOn?.toIso8601String(),
   'status': status.toJson(),
   'version_id': versionId,
   'workflow_id': workflowId,

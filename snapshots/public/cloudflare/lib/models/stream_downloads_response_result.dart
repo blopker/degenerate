@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if ($default != null) 'default': $default?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio', 'default'}.contains(key)); } 
-StreamDownloadsResponseResult copyWith({StreamDownloads Function()? audio, StreamDownloads Function()? $default, }) { return StreamDownloadsResponseResult(
+StreamDownloadsResponseResult copyWith({StreamDownloads? Function()? audio, StreamDownloads? Function()? $default, }) { return StreamDownloadsResponseResult(
   audio: audio != null ? audio() : this.audio,
   $default: $default != null ? $default() : this.$default,
 ); } 

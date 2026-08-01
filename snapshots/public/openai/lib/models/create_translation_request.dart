@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('model'); } 
-CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String Function()? prompt, CreateTranslationRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return CreateTranslationRequest(
+CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return CreateTranslationRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,

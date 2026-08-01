@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetInvoicePaymentsPayment copyWith({String Function()? paymentIntent, String Function()? paymentRecord, GetInvoicePaymentsPaymentType? type, }) { return GetInvoicePaymentsPayment(
+GetInvoicePaymentsPayment copyWith({String? Function()? paymentIntent, String? Function()? paymentRecord, GetInvoicePaymentsPaymentType? type, }) { return GetInvoicePaymentsPayment(
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,
   type: type ?? this.type,

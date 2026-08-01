@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-CommitParents copyWith({String? sha, Uri? url, Uri Function()? htmlUrl, }) { return CommitParents(
+CommitParents copyWith({String? sha, Uri? url, Uri? Function()? htmlUrl, }) { return CommitParents(
   sha: sha ?? this.sha,
   url: url ?? this.url,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reaction_rollup.dart';import 'simple_user.dart';@immutable final class CommitCommentEventComment {const CommitCommentEventComment({this.htmlUrl, this.url, this.id, this.nodeId, this.body, this.path, this.position, this.line, this.commitId, this.user, this.createdAt, this.updatedAt, this.reactions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reaction_rollup.dart';import 'simple_user.dart';@immutable final class CommitCommentEventComment {const CommitCommentEventComment({this.htmlUrl, this.url, this.id, this.nodeId, this.body, this.path = const Omittable.absent(), this.position = const Omittable.absent(), this.line = const Omittable.absent(), this.commitId, this.user = const Omittable.absent(), this.createdAt, this.updatedAt, this.reactions, });
 
 factory CommitCommentEventComment.fromJson(Map<String, dynamic> json) { return CommitCommentEventComment(
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
@@ -8,11 +8,11 @@ factory CommitCommentEventComment.fromJson(Map<String, dynamic> json) { return C
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   body: json['body'] as String?,
-  path: json['path'] as String?,
-  position: json['position'] != null ? (json['position'] as num).toInt() : null,
-  line: json['line'] != null ? (json['line'] as num).toInt() : null,
+  path: json.containsKey('path') ? Omittable(json['path'] as String?) : const Omittable.absent(),
+  position: json.containsKey('position') ? Omittable(json['position'] != null ? (json['position'] as num).toInt() : null) : const Omittable.absent(),
+  line: json.containsKey('line') ? Omittable(json['line'] != null ? (json['line'] as num).toInt() : null) : const Omittable.absent(),
   commitId: json['commit_id'] as String?,
-  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json.containsKey('user') ? Omittable(json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
@@ -28,15 +28,15 @@ final String? nodeId;
 
 final String? body;
 
-final String? path;
+final Omittable<String?> path;
 
-final int? position;
+final Omittable<int?> position;
 
-final int? line;
+final Omittable<int?> line;
 
 final String? commitId;
 
-final SimpleUser? user;
+final Omittable<SimpleUser?> user;
 
 final DateTime? createdAt;
 
@@ -50,27 +50,27 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'node_id': ?nodeId,
   'body': ?body,
-  'path': ?path,
-  'position': ?position,
-  'line': ?line,
+  if (path.isPresent) 'path': path.value,
+  if (position.isPresent) 'position': position.value,
+  if (line.isPresent) 'line': line.value,
   'commit_id': ?commitId,
-  if (user != null) 'user': user?.toJson(),
+  if (user.isPresent) 'user': user.value?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   if (reactions != null) 'reactions': reactions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'html_url', 'url', 'id', 'node_id', 'body', 'path', 'position', 'line', 'commit_id', 'user', 'created_at', 'updated_at', 'reactions'}.contains(key)); } 
-CommitCommentEventComment copyWith({Uri Function()? htmlUrl, Uri Function()? url, int Function()? id, String Function()? nodeId, String Function()? body, String? Function()? path, int? Function()? position, int? Function()? line, String Function()? commitId, SimpleUser? Function()? user, DateTime Function()? createdAt, DateTime Function()? updatedAt, ReactionRollup Function()? reactions, }) { return CommitCommentEventComment(
+CommitCommentEventComment copyWith({Uri? Function()? htmlUrl, Uri? Function()? url, int? Function()? id, String? Function()? nodeId, String? Function()? body, Omittable<String?>? path, Omittable<int?>? position, Omittable<int?>? line, String? Function()? commitId, Omittable<SimpleUser?>? user, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, ReactionRollup? Function()? reactions, }) { return CommitCommentEventComment(
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   url: url != null ? url() : this.url,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   body: body != null ? body() : this.body,
-  path: path != null ? path() : this.path,
-  position: position != null ? position() : this.position,
-  line: line != null ? line() : this.line,
+  path: path ?? this.path,
+  position: position ?? this.position,
+  line: line ?? this.line,
   commitId: commitId != null ? commitId() : this.commitId,
-  user: user != null ? user() : this.user,
+  user: user ?? this.user,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   reactions: reactions != null ? reactions() : this.reactions,

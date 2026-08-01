@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('start
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-RadarGetTrafficAnomaliesResponseResultTrafficAnomalies copyWith({RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails Function()? asnDetails, DateTime Function()? endDate, RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesLocationDetails Function()? locationDetails, RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails Function()? originDetails, String? startDate, String? status, String? type, String? uuid, List<String> Function()? visibleInDataSources, }) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(
+RadarGetTrafficAnomaliesResponseResultTrafficAnomalies copyWith({RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails? Function()? asnDetails, DateTime? Function()? endDate, RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesLocationDetails? Function()? locationDetails, RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails? Function()? originDetails, String? startDate, String? status, String? type, String? uuid, List<String>? Function()? visibleInDataSources, }) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(
   asnDetails: asnDetails != null ? asnDetails() : this.asnDetails,
   endDate: endDate != null ? endDate() : this.endDate,
   locationDetails: locationDetails != null ? locationDetails() : this.locationDetails,

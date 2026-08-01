@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'sampling_rate': ?samplingRate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_timeout', 'collector_ip', 'collector_port', 'inactive_timeout', 'sampling_rate'}.contains(key)); } 
-MagicNetflowConfigRequest copyWith({int Function()? activeTimeout, String Function()? collectorIp, int Function()? collectorPort, int Function()? inactiveTimeout, int Function()? samplingRate, }) { return MagicNetflowConfigRequest(
+MagicNetflowConfigRequest copyWith({int? Function()? activeTimeout, String? Function()? collectorIp, int? Function()? collectorPort, int? Function()? inactiveTimeout, int? Function()? samplingRate, }) { return MagicNetflowConfigRequest(
   activeTimeout: activeTimeout != null ? activeTimeout() : this.activeTimeout,
   collectorIp: collectorIp != null ? collectorIp() : this.collectorIp,
   collectorPort: collectorPort != null ? collectorPort() : this.collectorPort,

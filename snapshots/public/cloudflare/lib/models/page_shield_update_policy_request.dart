@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'value'}.contains(key)); } 
-PageShieldUpdatePolicyRequest copyWith({PageShieldPolicyAction Function()? action, PageShieldPolicyDescription Function()? description, PageShieldPolicyEnabled Function()? enabled, PageShieldPolicyExpression Function()? expression, PageShieldPolicyValue Function()? value, }) { return PageShieldUpdatePolicyRequest(
+PageShieldUpdatePolicyRequest copyWith({PageShieldPolicyAction? Function()? action, PageShieldPolicyDescription? Function()? description, PageShieldPolicyEnabled? Function()? enabled, PageShieldPolicyExpression? Function()? expression, PageShieldPolicyValue? Function()? value, }) { return PageShieldUpdatePolicyRequest(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,

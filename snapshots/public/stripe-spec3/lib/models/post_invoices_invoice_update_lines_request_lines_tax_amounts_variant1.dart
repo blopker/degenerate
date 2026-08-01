@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('tax_rate_data') &&
       json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
-PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1 copyWith({int? amount, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData? taxRateData, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason Function()? taxabilityReason, int? taxableAmount, }) { return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1(
+PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1 copyWith({int? amount, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData? taxRateData, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason? Function()? taxabilityReason, int? taxableAmount, }) { return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1(
   amount: amount ?? this.amount,
   taxRateData: taxRateData ?? this.taxRateData,
   taxabilityReason: taxabilityReason != null ? taxabilityReason() : this.taxabilityReason,

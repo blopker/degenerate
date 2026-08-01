@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('label') &&
       json.containsKey('optional') && json['optional'] is bool &&
       json.containsKey('type'); } 
-PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropdown Function()? dropdown, String? key, PaymentLinksResourceCustomFieldsLabel? label, PaymentLinksResourceCustomFieldsNumeric Function()? numeric, bool? optional, PaymentLinksResourceCustomFieldsText Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PaymentLinksResourceCustomFields(
+PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropdown? Function()? dropdown, String? key, PaymentLinksResourceCustomFieldsLabel? label, PaymentLinksResourceCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentLinksResourceCustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PaymentLinksResourceCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,

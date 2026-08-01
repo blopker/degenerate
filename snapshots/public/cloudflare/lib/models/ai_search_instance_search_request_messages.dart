@@ -48,7 +48,7 @@ final AiSearchInstanceSearchRequestMessagesRole role;
 final Map<String,dynamic> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
-  'content': ?content,
+  'content': content,
   'role': role.toJson(),
   ...additionalProperties,
 }; } 

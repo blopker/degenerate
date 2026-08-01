@@ -38,7 +38,7 @@ final String? reason;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'reason': ?reason,
+  'reason': reason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('reason') && json['reason'] is String; } 

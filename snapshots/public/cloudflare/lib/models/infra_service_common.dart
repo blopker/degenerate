@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-InfraServiceCommon copyWith({DateTime Function()? createdAt, InfraServiceHost? host, String? name, String Function()? serviceId, InfraServiceType? type, DateTime Function()? updatedAt, }) { return InfraServiceCommon(
+InfraServiceCommon copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, InfraServiceType? type, DateTime? Function()? updatedAt, }) { return InfraServiceCommon(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   host: host ?? this.host,
   name: name ?? this.name,

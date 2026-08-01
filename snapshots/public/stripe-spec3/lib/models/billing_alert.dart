@@ -73,16 +73,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingAlertStatus($value)'; } 
  }
 /// A billing alert is a resource that notifies you when a certain usage threshold on a meter is crossed. For example, you might create a billing alert to notify you when a certain user made 100 API requests.
-@immutable final class BillingAlert {const BillingAlert({required this.alertType, required this.id, required this.livemode, required this.object, required this.title, this.status, this.usageThreshold, });
+@immutable final class BillingAlert {const BillingAlert({required this.alertType, required this.id, required this.livemode, required this.object, required this.title, this.status = const Omittable.absent(), this.usageThreshold = const Omittable.absent(), });
 
 factory BillingAlert.fromJson(Map<String, dynamic> json) { return BillingAlert(
   alertType: BillingAlertAlertType.fromJson(json['alert_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: BillingAlertObject.fromJson(json['object'] as String),
-  status: json['status'] != null ? BillingAlertStatus.fromJson(json['status'] as String) : null,
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? BillingAlertStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   title: json['title'] as String,
-  usageThreshold: json['usage_threshold'] != null ? ThresholdsResourceUsageThresholdConfig.fromJson(json['usage_threshold'] as Map<String, dynamic>) : null,
+  usageThreshold: json.containsKey('usage_threshold') ? Omittable(json['usage_threshold'] != null ? ThresholdsResourceUsageThresholdConfig.fromJson(json['usage_threshold'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Defines the type of the alert.
@@ -98,36 +98,36 @@ final bool livemode;
 final BillingAlertObject object;
 
 /// Status of the alert. This can be active, inactive or archived.
-final BillingAlertStatus? status;
+final Omittable<BillingAlertStatus?> status;
 
 /// Title of the alert.
 final String title;
 
 /// Encapsulates configuration of the alert to monitor usage on a specific [Billing Meter](https://docs.stripe.com/api/billing/meter).
-final ThresholdsResourceUsageThresholdConfig? usageThreshold;
+final Omittable<ThresholdsResourceUsageThresholdConfig?> usageThreshold;
 
 Map<String, dynamic> toJson() { return {
   'alert_type': alertType.toJson(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-  if (status != null) 'status': status?.toJson(),
+  if (status.isPresent) 'status': status.value?.toJson(),
   'title': title,
-  if (usageThreshold != null) 'usage_threshold': usageThreshold?.toJson(),
+  if (usageThreshold.isPresent) 'usage_threshold': usageThreshold.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('title') && json['title'] is String; } 
-BillingAlert copyWith({BillingAlertAlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, BillingAlertStatus? Function()? status, String? title, ThresholdsResourceUsageThresholdConfig? Function()? usageThreshold, }) { return BillingAlert(
+BillingAlert copyWith({BillingAlertAlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, Omittable<BillingAlertStatus?>? status, String? title, Omittable<ThresholdsResourceUsageThresholdConfig?>? usageThreshold, }) { return BillingAlert(
   alertType: alertType ?? this.alertType,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
   title: title ?? this.title,
-  usageThreshold: usageThreshold != null ? usageThreshold() : this.usageThreshold,
+  usageThreshold: usageThreshold ?? this.usageThreshold,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BillingAlert &&

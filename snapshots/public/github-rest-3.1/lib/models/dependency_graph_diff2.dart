@@ -94,9 +94,9 @@ Map<String, dynamic> toJson() { return {
   'ecosystem': ecosystem,
   'name': name,
   'version': version,
-  'package_url': ?packageUrl,
-  'license': ?license,
-  'source_repository_url': ?sourceRepositoryUrl,
+  'package_url': packageUrl,
+  'license': license,
+  'source_repository_url': sourceRepositoryUrl,
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
   'scope': scope.toJson(),
 }; } 

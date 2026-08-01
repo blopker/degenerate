@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('target_criteria'); } 
-InfrastructureApplication2 copyWith({AccessSchemasAud Function()? aud, AccessTimestamp Function()? createdAt, AccessUuid Function()? id, AccessTimestamp Function()? updatedAt, AccessAppsComponentsSchemasName Function()? name, AccessType? type, List<AccessTargetCriteriaInfraApp>? targetCriteria, List<AccessInfraPolicyResp> Function()? policies, }) { return InfrastructureApplication2(
+InfrastructureApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, AccessAppsComponentsSchemasName? Function()? name, AccessType? type, List<AccessTargetCriteriaInfraApp>? targetCriteria, List<AccessInfraPolicyResp>? Function()? policies, }) { return InfrastructureApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,

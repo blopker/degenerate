@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomProfileType($value)'; } 
  }
-@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
+@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description = const Omittable.absent(), this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 
 factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
@@ -31,7 +31,7 @@ factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile
   createdAt: DateTime.parse(json['created_at'] as String),
   dataClasses: (json['data_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dataTags: (json['data_tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   entries: (json['entries'] as List<dynamic>?)?.map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,
   name: json['name'] as String,
@@ -61,7 +61,7 @@ final List<String>? dataClasses;
 final List<String>? dataTags;
 
 /// The description of the profile.
-final String? description;
+final Omittable<String?> description;
 
 final List<DlpEntry>? entries;
 
@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'data_classes': ?dataClasses,
   'data_tags': ?dataTags,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
   'id': id,
   'name': name,
@@ -108,7 +108,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('ocr_enabled') && json['ocr_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('type'); } 
-CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, DateTime? createdAt, List<String> Function()? dataClasses, List<String> Function()? dataTags, String? Function()? description, List<DlpEntry> Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>> Function()? sensitivityLevels, List<DlpEntry> Function()? sharedEntries, DateTime? updatedAt, CustomProfileType? type, }) { return CustomProfile(
+CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, Omittable<String?>? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, CustomProfileType? type, }) { return CustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,
@@ -116,7 +116,7 @@ CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCoun
   createdAt: createdAt ?? this.createdAt,
   dataClasses: dataClasses != null ? dataClasses() : this.dataClasses,
   dataTags: dataTags != null ? dataTags() : this.dataTags,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   entries: entries != null ? entries() : this.entries,
   id: id ?? this.id,
   name: name ?? this.name,

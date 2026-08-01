@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_receive', 'can_send', 'files', 'text'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsChatPrivate copyWith({bool Function()? canReceive, bool Function()? canSend, bool Function()? files, bool Function()? text, }) { return RealtimekitUpdatePresetPermissionsChatPrivate(
+RealtimekitUpdatePresetPermissionsChatPrivate copyWith({bool? Function()? canReceive, bool? Function()? canSend, bool? Function()? files, bool? Function()? text, }) { return RealtimekitUpdatePresetPermissionsChatPrivate(
   canReceive: canReceive != null ? canReceive() : this.canReceive,
   canSend: canSend != null ? canSend() : this.canSend,
   files: files != null ? files() : this.files,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (annotations != null) 'annotations': annotations?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations'}.contains(key)); } 
-WorkerScriptUploadWorkerModuleRequestMetadata copyWith({WorkerScriptUploadWorkerModuleRequestMetadataAnnotations Function()? annotations}) { return WorkerScriptUploadWorkerModuleRequestMetadata(
+WorkerScriptUploadWorkerModuleRequestMetadata copyWith({WorkerScriptUploadWorkerModuleRequestMetadataAnnotations? Function()? annotations}) { return WorkerScriptUploadWorkerModuleRequestMetadata(
   annotations: annotations != null ? annotations() : this.annotations,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindInherit copyWith({String? name, String Function()? oldName, String? type, String Function()? versionId, }) { return WorkersBindingKindInherit(
+WorkersBindingKindInherit copyWith({String? name, String? Function()? oldName, String? type, String Function()? versionId, }) { return WorkersBindingKindInherit(
   name: name ?? this.name,
   oldName: oldName != null ? oldName() : this.oldName,
   type: type ?? this.type,

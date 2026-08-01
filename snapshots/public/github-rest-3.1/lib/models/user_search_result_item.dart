@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2.dart';/// User Search Result Item
-@immutable final class UserSearchResultItem {const UserSearchResultItem({required this.type, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.receivedEventsUrl, required this.login, required this.score, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.eventsUrl, required this.siteAdmin, this.publicGists, this.followers, this.following, this.userViewType, this.updatedAt, this.name, this.bio, this.email, this.location, this.publicRepos, this.hireable, this.textMatches, this.blog, this.company, this.suspendedAt, this.createdAt, });
+@immutable final class UserSearchResultItem {const UserSearchResultItem({required this.type, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.receivedEventsUrl, required this.login, required this.score, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.eventsUrl, required this.siteAdmin, this.publicGists, this.followers, this.following, this.userViewType, this.updatedAt, this.name = const Omittable.absent(), this.bio = const Omittable.absent(), this.email = const Omittable.absent(), this.location = const Omittable.absent(), this.publicRepos, this.hireable = const Omittable.absent(), this.textMatches, this.blog = const Omittable.absent(), this.company = const Omittable.absent(), this.suspendedAt = const Omittable.absent(), this.createdAt, });
 
 factory UserSearchResultItem.fromJson(Map<String, dynamic> json) { return UserSearchResultItem(
   login: json['login'] as String,
@@ -28,16 +28,16 @@ factory UserSearchResultItem.fromJson(Map<String, dynamic> json) { return UserSe
   following: json['following'] != null ? (json['following'] as num).toInt() : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  name: json['name'] as String?,
-  bio: json['bio'] as String?,
-  email: json['email'] as String?,
-  location: json['location'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  bio: json.containsKey('bio') ? Omittable(json['bio'] as String?) : const Omittable.absent(),
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  location: json.containsKey('location') ? Omittable(json['location'] as String?) : const Omittable.absent(),
   siteAdmin: json['site_admin'] as bool,
-  hireable: json['hireable'] as bool?,
+  hireable: json.containsKey('hireable') ? Omittable(json['hireable'] as bool?) : const Omittable.absent(),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-  blog: json['blog'] as String?,
-  company: json['company'] as String?,
-  suspendedAt: json['suspended_at'] != null ? DateTime.parse(json['suspended_at'] as String) : null,
+  blog: json.containsKey('blog') ? Omittable(json['blog'] as String?) : const Omittable.absent(),
+  company: json.containsKey('company') ? Omittable(json['company'] as String?) : const Omittable.absent(),
+  suspendedAt: json.containsKey('suspended_at') ? Omittable(json['suspended_at'] != null ? DateTime.parse(json['suspended_at'] as String) : null) : const Omittable.absent(),
   userViewType: json['user_view_type'] as String?,
 ); }
 
@@ -89,25 +89,25 @@ final DateTime? createdAt;
 
 final DateTime? updatedAt;
 
-final String? name;
+final Omittable<String?> name;
 
-final String? bio;
+final Omittable<String?> bio;
 
-final String? email;
+final Omittable<String?> email;
 
-final String? location;
+final Omittable<String?> location;
 
 final bool siteAdmin;
 
-final bool? hireable;
+final Omittable<bool?> hireable;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-final String? blog;
+final Omittable<String?> blog;
 
-final String? company;
+final Omittable<String?> company;
 
-final DateTime? suspendedAt;
+final Omittable<DateTime?> suspendedAt;
 
 final String? userViewType;
 
@@ -116,7 +116,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'avatar_url': avatarUrl.toString(),
-  'gravatar_id': ?gravatarId,
+  'gravatar_id': gravatarId,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'followers_url': followersUrl.toString(),
@@ -136,16 +136,16 @@ Map<String, dynamic> toJson() { return {
   'following': ?following,
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  'name': ?name,
-  'bio': ?bio,
-  'email': ?email,
-  'location': ?location,
+  if (name.isPresent) 'name': name.value,
+  if (bio.isPresent) 'bio': bio.value,
+  if (email.isPresent) 'email': email.value,
+  if (location.isPresent) 'location': location.value,
   'site_admin': siteAdmin,
-  'hireable': ?hireable,
+  if (hireable.isPresent) 'hireable': hireable.value,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
-  'blog': ?blog,
-  'company': ?company,
-  if (suspendedAt != null) 'suspended_at': suspendedAt?.toIso8601String(),
+  if (blog.isPresent) 'blog': blog.value,
+  if (company.isPresent) 'company': company.value,
+  if (suspendedAt.isPresent) 'suspended_at': suspendedAt.value?.toIso8601String(),
   'user_view_type': ?userViewType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
@@ -167,7 +167,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('starred_url') && json['starred_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool; } 
-UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, Uri? receivedEventsUrl, String? type, double? score, String? followingUrl, String? gistsUrl, String? starredUrl, String? eventsUrl, int Function()? publicRepos, int Function()? publicGists, int Function()? followers, int Function()? following, DateTime Function()? createdAt, DateTime Function()? updatedAt, String? Function()? name, String? Function()? bio, String? Function()? email, String? Function()? location, bool? siteAdmin, bool? Function()? hireable, List<SearchResultTextMatches2> Function()? textMatches, String? Function()? blog, String? Function()? company, DateTime? Function()? suspendedAt, String Function()? userViewType, }) { return UserSearchResultItem(
+UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, Uri? receivedEventsUrl, String? type, double? score, String? followingUrl, String? gistsUrl, String? starredUrl, String? eventsUrl, int? Function()? publicRepos, int? Function()? publicGists, int? Function()? followers, int? Function()? following, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<String?>? name, Omittable<String?>? bio, Omittable<String?>? email, Omittable<String?>? location, bool? siteAdmin, Omittable<bool?>? hireable, List<SearchResultTextMatches2>? Function()? textMatches, Omittable<String?>? blog, Omittable<String?>? company, Omittable<DateTime?>? suspendedAt, String? Function()? userViewType, }) { return UserSearchResultItem(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -192,16 +192,16 @@ UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avat
   following: following != null ? following() : this.following,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  name: name != null ? name() : this.name,
-  bio: bio != null ? bio() : this.bio,
-  email: email != null ? email() : this.email,
-  location: location != null ? location() : this.location,
+  name: name ?? this.name,
+  bio: bio ?? this.bio,
+  email: email ?? this.email,
+  location: location ?? this.location,
   siteAdmin: siteAdmin ?? this.siteAdmin,
-  hireable: hireable != null ? hireable() : this.hireable,
+  hireable: hireable ?? this.hireable,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
-  blog: blog != null ? blog() : this.blog,
-  company: company != null ? company() : this.company,
-  suspendedAt: suspendedAt != null ? suspendedAt() : this.suspendedAt,
+  blog: blog ?? this.blog,
+  company: company ?? this.company,
+  suspendedAt: suspendedAt ?? this.suspendedAt,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

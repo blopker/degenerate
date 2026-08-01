@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (sensitivityLevel != null) 'sensitivity_level': sensitivityLevel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('category'); } 
-RulesetsExecuteCategoryOverrides2 copyWith({RulesetsRuleAction Function()? action, RulesetsRuleCategory? category, RulesetsRuleEnabled Function()? enabled, RulesetsExecuteSensitivityLevel Function()? sensitivityLevel, }) { return RulesetsExecuteCategoryOverrides2(
+RulesetsExecuteCategoryOverrides2 copyWith({RulesetsRuleAction? Function()? action, RulesetsRuleCategory? category, RulesetsRuleEnabled? Function()? enabled, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) { return RulesetsExecuteCategoryOverrides2(
   action: action != null ? action() : this.action,
   category: category ?? this.category,
   enabled: enabled != null ? enabled() : this.enabled,

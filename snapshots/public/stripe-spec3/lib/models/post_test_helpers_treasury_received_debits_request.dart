@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
       json.containsKey('network'); } 
-PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String Function()? description, List<String> Function()? expand, String? financialAccount, PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails Function()? initiatingPaymentMethodDetails, PostTestHelpersTreasuryReceivedDebitsRequestNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
+PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, PostTestHelpersTreasuryReceivedDebitsRequestNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

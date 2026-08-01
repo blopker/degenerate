@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'risk_level': riskLevel.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('risk_level'); } 
-PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk copyWith({int Function()? invalidAccountNumberDeclineRatePastHour, int Function()? invalidCredentialsDeclineRatePastHour, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel? riskLevel, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(
+PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk copyWith({int? Function()? invalidAccountNumberDeclineRatePastHour, int? Function()? invalidCredentialsDeclineRatePastHour, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel? riskLevel, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(
   invalidAccountNumberDeclineRatePastHour: invalidAccountNumberDeclineRatePastHour != null ? invalidAccountNumberDeclineRatePastHour() : this.invalidAccountNumberDeclineRatePastHour,
   invalidCredentialsDeclineRatePastHour: invalidCredentialsDeclineRatePastHour != null ? invalidCredentialsDeclineRatePastHour() : this.invalidCredentialsDeclineRatePastHour,
   riskLevel: riskLevel ?? this.riskLevel,

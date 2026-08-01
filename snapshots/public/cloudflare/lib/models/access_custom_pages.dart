@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'identity_denied': ?identityDenied,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'forbidden', 'identity_denied'}.contains(key)); } 
-AccessCustomPages copyWith({String Function()? forbidden, String Function()? identityDenied, }) { return AccessCustomPages(
+AccessCustomPages copyWith({String? Function()? forbidden, String? Function()? identityDenied, }) { return AccessCustomPages(
   forbidden: forbidden != null ? forbidden() : this.forbidden,
   identityDenied: identityDenied != null ? identityDenied() : this.identityDenied,
 ); } 

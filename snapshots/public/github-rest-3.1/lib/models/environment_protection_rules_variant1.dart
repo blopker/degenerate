@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-EnvironmentProtectionRulesVariant1 copyWith({int? id, String? nodeId, String? type, WaitTimer Function()? waitTimer, }) { return EnvironmentProtectionRulesVariant1(
+EnvironmentProtectionRulesVariant1 copyWith({int? id, String? nodeId, String? type, WaitTimer? Function()? waitTimer, }) { return EnvironmentProtectionRulesVariant1(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   type: type ?? this.type,

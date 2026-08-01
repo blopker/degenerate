@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('domains'); } 
-PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? description, List<String>? domains, String Function()? expiresAt, }) { return PagesHttpsCertificate(
+PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? description, List<String>? domains, String? Function()? expiresAt, }) { return PagesHttpsCertificate(
   state: state ?? this.state,
   description: description ?? this.description,
   domains: domains ?? this.domains,

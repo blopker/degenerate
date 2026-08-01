@@ -40,32 +40,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PersonEthnicityDetailsEthnicity($value)'; } 
  }
 /// 
-@immutable final class PersonEthnicityDetails {const PersonEthnicityDetails({this.ethnicity, this.ethnicityOther, });
+@immutable final class PersonEthnicityDetails {const PersonEthnicityDetails({this.ethnicity = const Omittable.absent(), this.ethnicityOther = const Omittable.absent(), });
 
 factory PersonEthnicityDetails.fromJson(Map<String, dynamic> json) { return PersonEthnicityDetails(
-  ethnicity: (json['ethnicity'] as List<dynamic>?)?.map((e) => PersonEthnicityDetailsEthnicity.fromJson(e as String)).toList(),
-  ethnicityOther: json['ethnicity_other'] as String?,
+  ethnicity: json.containsKey('ethnicity') ? Omittable((json['ethnicity'] as List<dynamic>?)?.map((e) => PersonEthnicityDetailsEthnicity.fromJson(e as String)).toList()) : const Omittable.absent(),
+  ethnicityOther: json.containsKey('ethnicity_other') ? Omittable(json['ethnicity_other'] as String?) : const Omittable.absent(),
 ); }
 
 /// The persons ethnicity
-final List<PersonEthnicityDetailsEthnicity>? ethnicity;
+final Omittable<List<PersonEthnicityDetailsEthnicity>?> ethnicity;
 
 /// Please specify your origin, when other is selected.
-final String? ethnicityOther;
+final Omittable<String?> ethnicityOther;
 
 Map<String, dynamic> toJson() { return {
-  if (ethnicity != null) 'ethnicity': ethnicity?.map((e) => e.toJson()).toList(),
-  'ethnicity_other': ?ethnicityOther,
+  if (ethnicity.isPresent) 'ethnicity': ethnicity.value?.map((e) => e.toJson()).toList(),
+  if (ethnicityOther.isPresent) 'ethnicity_other': ethnicityOther.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ethnicity', 'ethnicity_other'}.contains(key)); } 
-PersonEthnicityDetails copyWith({List<PersonEthnicityDetailsEthnicity>? Function()? ethnicity, String? Function()? ethnicityOther, }) { return PersonEthnicityDetails(
-  ethnicity: ethnicity != null ? ethnicity() : this.ethnicity,
-  ethnicityOther: ethnicityOther != null ? ethnicityOther() : this.ethnicityOther,
+PersonEthnicityDetails copyWith({Omittable<List<PersonEthnicityDetailsEthnicity>?>? ethnicity, Omittable<String?>? ethnicityOther, }) { return PersonEthnicityDetails(
+  ethnicity: ethnicity ?? this.ethnicity,
+  ethnicityOther: ethnicityOther ?? this.ethnicityOther,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PersonEthnicityDetails &&
-          listEquals(ethnicity, other.ethnicity) &&
+          ethnicity.isPresent == other.ethnicity.isPresent &&
+          listEquals(ethnicity.value, other.ethnicity.value) &&
           ethnicityOther == other.ethnicityOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ethnicity ?? const []), ethnicityOther); } 
+@override int get hashCode { return Object.hash(Object.hashAll(ethnicity.value ?? const []), ethnicityOther); } 
 @override String toString() { return 'PersonEthnicityDetails(ethnicity: $ethnicity, ethnicityOther: $ethnicityOther)'; } 
  }

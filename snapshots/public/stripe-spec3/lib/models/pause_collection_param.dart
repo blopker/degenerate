@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'resumes_at': ?resumesAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('behavior'); } 
-PauseCollectionParam copyWith({PauseCollectionParamBehavior? behavior, int Function()? resumesAt, }) { return PauseCollectionParam(
+PauseCollectionParam copyWith({PauseCollectionParamBehavior? behavior, int? Function()? resumesAt, }) { return PauseCollectionParam(
   behavior: behavior ?? this.behavior,
   resumesAt: resumesAt != null ? resumesAt() : this.resumesAt,
 ); } 

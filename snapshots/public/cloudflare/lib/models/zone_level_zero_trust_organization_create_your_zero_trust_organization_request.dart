@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_domain') &&
       json.containsKey('name'); } 
-ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest copyWith({AccessSchemasAuthDomain? authDomain, AccessSchemasIsUiReadOnly Function()? isUiReadOnly, AccessSchemasLoginDesign Function()? loginDesign, AccessOrganizationsComponentsSchemasName? name, AccessUiReadOnlyToggleReason Function()? uiReadOnlyToggleReason, AccessSchemasUserSeatExpirationInactiveTime Function()? userSeatExpirationInactiveTime, }) { return ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(
+ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest copyWith({AccessSchemasAuthDomain? authDomain, AccessSchemasIsUiReadOnly? Function()? isUiReadOnly, AccessSchemasLoginDesign? Function()? loginDesign, AccessOrganizationsComponentsSchemasName? name, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessSchemasUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, }) { return ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(
   authDomain: authDomain ?? this.authDomain,
   isUiReadOnly: isUiReadOnly != null ? isUiReadOnly() : this.isUiReadOnly,
   loginDesign: loginDesign != null ? loginDesign() : this.loginDesign,

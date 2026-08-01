@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentPagesCheckoutSessionBrandingSettingsLogo copyWith({String Function()? file, PaymentPagesCheckoutSessionBrandingSettingsLogoType? type, String Function()? url, }) { return PaymentPagesCheckoutSessionBrandingSettingsLogo(
+PaymentPagesCheckoutSessionBrandingSettingsLogo copyWith({String? Function()? file, PaymentPagesCheckoutSessionBrandingSettingsLogoType? type, String? Function()? url, }) { return PaymentPagesCheckoutSessionBrandingSettingsLogo(
   file: file != null ? file() : this.file,
   type: type ?? this.type,
   url: url != null ? url() : this.url,

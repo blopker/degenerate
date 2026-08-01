@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') && json['model'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-WorkersAiCreateFinetuneRequest copyWith({String Function()? description, String? model, String? name, bool Function()? public, }) { return WorkersAiCreateFinetuneRequest(
+WorkersAiCreateFinetuneRequest copyWith({String? Function()? description, String? model, String? name, bool Function()? public, }) { return WorkersAiCreateFinetuneRequest(
   description: description != null ? description() : this.description,
   model: model ?? this.model,
   name: name ?? this.name,

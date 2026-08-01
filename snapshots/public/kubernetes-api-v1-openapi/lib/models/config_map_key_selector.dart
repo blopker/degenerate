@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-ConfigMapKeySelector copyWith({String? key, String Function()? name, bool Function()? optional, }) { return ConfigMapKeySelector(
+ConfigMapKeySelector copyWith({String? key, String Function()? name, bool? Function()? optional, }) { return ConfigMapKeySelector(
   key: key ?? this.key,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,

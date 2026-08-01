@@ -34,7 +34,7 @@ final bool? success;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
-  'success': ?success,
+  'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
       json.containsKey('success') && json['success'] is bool; } 

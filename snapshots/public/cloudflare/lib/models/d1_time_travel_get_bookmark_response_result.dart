@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (bookmark != null) 'bookmark': bookmark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bookmark'}.contains(key)); } 
-D1TimeTravelGetBookmarkResponseResult copyWith({D1TimeTravelBookmark Function()? bookmark}) { return D1TimeTravelGetBookmarkResponseResult(
+D1TimeTravelGetBookmarkResponseResult copyWith({D1TimeTravelBookmark? Function()? bookmark}) { return D1TimeTravelGetBookmarkResponseResult(
   bookmark: bookmark != null ? bookmark() : this.bookmark,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

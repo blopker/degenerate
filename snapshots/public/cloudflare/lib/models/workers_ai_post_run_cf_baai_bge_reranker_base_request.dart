@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts') &&
       json.containsKey('query') && json['query'] is String; } 
-WorkersAiPostRunCfBaaiBgeRerankerBaseRequest copyWith({List<WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts>? contexts, String? query, int Function()? topK, }) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(
+WorkersAiPostRunCfBaaiBgeRerankerBaseRequest copyWith({List<WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts>? contexts, String? query, int? Function()? topK, }) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(
   contexts: contexts ?? this.contexts,
   query: query ?? this.query,
   topK: topK != null ? topK() : this.topK,

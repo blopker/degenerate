@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'payment_record': ?paymentRecord,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payment_intent', 'payment_record'}.contains(key)); } 
-PostInvoicesInvoiceAttachPaymentRequest copyWith({List<String> Function()? expand, String Function()? paymentIntent, String Function()? paymentRecord, }) { return PostInvoicesInvoiceAttachPaymentRequest(
+PostInvoicesInvoiceAttachPaymentRequest copyWith({List<String>? Function()? expand, String? Function()? paymentIntent, String? Function()? paymentRecord, }) { return PostInvoicesInvoiceAttachPaymentRequest(
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,

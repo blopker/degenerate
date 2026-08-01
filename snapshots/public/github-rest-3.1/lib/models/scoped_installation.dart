@@ -55,7 +55,7 @@ final SimpleUser account;
 Map<String, dynamic> toJson() { return {
   'permissions': permissions.toJson(),
   'repository_selection': repositorySelection.toJson(),
-  'single_file_name': ?singleFileName,
+  'single_file_name': singleFileName,
   'has_multiple_single_files': ?hasMultipleSingleFiles,
   'single_file_paths': ?singleFilePaths,
   'repositories_url': repositoriesUrl.toString(),
@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('permi
       json.containsKey('single_file_name') && json['single_file_name'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('account'); } 
-ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepositorySelection? repositorySelection, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
+ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepositorySelection? repositorySelection, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
   permissions: permissions ?? this.permissions,
   repositorySelection: repositorySelection ?? this.repositorySelection,
   singleFileName: singleFileName != null ? singleFileName() : this.singleFileName,

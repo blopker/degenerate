@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (pro != null) 'pro': pro?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'enterprise', 'free', 'pro'}.contains(key)); } 
-ObservatoryAvailabilitiesRegionsPerPlan copyWith({List<ObservatoryLabeledRegion> Function()? business, List<ObservatoryLabeledRegion> Function()? enterprise, List<ObservatoryLabeledRegion> Function()? free, List<ObservatoryLabeledRegion> Function()? pro, }) { return ObservatoryAvailabilitiesRegionsPerPlan(
+ObservatoryAvailabilitiesRegionsPerPlan copyWith({List<ObservatoryLabeledRegion>? Function()? business, List<ObservatoryLabeledRegion>? Function()? enterprise, List<ObservatoryLabeledRegion>? Function()? free, List<ObservatoryLabeledRegion>? Function()? pro, }) { return ObservatoryAvailabilitiesRegionsPerPlan(
   business: business != null ? business() : this.business,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   free: free != null ? free() : this.free,

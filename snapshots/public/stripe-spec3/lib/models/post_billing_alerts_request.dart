@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_type') &&
       json.containsKey('title') && json['title'] is String; } 
-PostBillingAlertsRequest copyWith({PostBillingAlertsRequestAlertType? alertType, List<String> Function()? expand, String? title, PostBillingAlertsRequestUsageThreshold Function()? usageThreshold, }) { return PostBillingAlertsRequest(
+PostBillingAlertsRequest copyWith({PostBillingAlertsRequestAlertType? alertType, List<String>? Function()? expand, String? title, PostBillingAlertsRequestUsageThreshold? Function()? usageThreshold, }) { return PostBillingAlertsRequest(
   alertType: alertType ?? this.alertType,
   expand: expand != null ? expand() : this.expand,
   title: title ?? this.title,

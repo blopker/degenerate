@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'reset_seconds': ?resetSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'limit', 'remaining', 'reset_seconds'}.contains(key)); } 
-RealtimeBetaServerEventRateLimitsUpdatedRateLimits copyWith({RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName Function()? name, int Function()? limit, int Function()? remaining, double Function()? resetSeconds, }) { return RealtimeBetaServerEventRateLimitsUpdatedRateLimits(
+RealtimeBetaServerEventRateLimitsUpdatedRateLimits copyWith({RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName? Function()? name, int? Function()? limit, int? Function()? remaining, double? Function()? resetSeconds, }) { return RealtimeBetaServerEventRateLimitsUpdatedRateLimits(
   name: name != null ? name() : this.name,
   limit: limit != null ? limit() : this.limit,
   remaining: remaining != null ? remaining() : this.remaining,

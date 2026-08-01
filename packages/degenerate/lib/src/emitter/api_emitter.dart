@@ -13,6 +13,7 @@ class ApiEmitter {
     this.api, {
     this.typeRegistry = const {},
     this.unwrapFields = const [],
+    this.omittable = OmittableMode.nullableOnly,
   });
 
   /// The API group to emit.
@@ -23,6 +24,9 @@ class ApiEmitter {
 
   /// Fields to unwrap from response envelopes.
   final List<String> unwrapFields;
+
+  /// How optional model fields represent "omitted" vs "set to null".
+  final OmittableMode omittable;
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -1472,7 +1476,13 @@ class ApiEmitter {
       buf.writeln('  body: [');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
+      // Omittable fields are presence-wrapped; multipart cannot represent null, so
+      // absent and explicit null are both skipped via the null guard on
+      // `.value`.
+      final isOmittable = isOmittableField(f, omittable);
+      final fieldAccessor = isOmittable
+          ? 'body.${f.name}.value'
+          : 'body.${f.name}';
       final isBytes =
           f.type is IrPrimitive &&
           (f.type as IrPrimitive).kind == PrimitiveKind.bytes;
@@ -1480,7 +1490,9 @@ class ApiEmitter {
       // Fields with defaults are non-nullable even if not required,
       // but only if the default can be represented as a Dart constant.
       final isNullable =
-          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
+          isOmittable ||
+          (!f.isRequired && !hasUsableDartDefault(f)) ||
+          f.type.isNullable;
 
       if (isNullable) {
         // Use a case-pattern variable to enable type promotion on nullable
@@ -1511,9 +1523,16 @@ class ApiEmitter {
       buf.writeln('  body: <String>[');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
+      // See _writeMultipartBody: omittable fields read `.value`; absent and
+      // explicit null are both skipped (form encoding cannot express null).
+      final isOmittable = isOmittableField(f, omittable);
+      final fieldAccessor = isOmittable
+          ? 'body.${f.name}.value'
+          : 'body.${f.name}';
       final isNullable =
-          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
+          isOmittable ||
+          (!f.isRequired && !hasUsableDartDefault(f)) ||
+          f.type.isNullable;
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
           "'${f.originalName.escaped}=\${Uri.encodeQueryComponent($valueExpr)}'";
@@ -1557,29 +1576,6 @@ class ApiEmitter {
         '    ApiMultipartField.text(${f.originalName.literal}, $valueExpr),',
       );
     }
-  }
-
-  /// Whether a field has a default value that the model emitter can represent
-  /// as a Dart compile-time constant. Only these defaults produce non-nullable
-  /// fields in the generated model class.
-  static bool _hasUsableDartDefault(IrField f) {
-    if (f.defaultValue == null) return false;
-    final v = f.defaultValue;
-    return switch (f.type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.bool => v is bool,
-        PrimitiveKind.int ||
-        PrimitiveKind.double ||
-        PrimitiveKind.num => v is num,
-        PrimitiveKind.string => v is String,
-        _ => false,
-      },
-      IrEnum(:final valueKind) => switch (valueKind) {
-        PrimitiveKind.int || PrimitiveKind.double => v is num,
-        _ => v is String,
-      },
-      _ => false,
-    };
   }
 
   /// Get the string expression for a multipart text field value.

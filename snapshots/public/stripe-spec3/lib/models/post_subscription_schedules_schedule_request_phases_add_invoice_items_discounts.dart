@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'promotion_code': ?promotionCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'discount', 'promotion_code'}.contains(key)); } 
-PostSubscriptionSchedulesScheduleRequestPhasesAddInvoiceItemsDiscounts copyWith({String Function()? coupon, String Function()? discount, String Function()? promotionCode, }) { return PostSubscriptionSchedulesScheduleRequestPhasesAddInvoiceItemsDiscounts(
+PostSubscriptionSchedulesScheduleRequestPhasesAddInvoiceItemsDiscounts copyWith({String? Function()? coupon, String? Function()? discount, String? Function()? promotionCode, }) { return PostSubscriptionSchedulesScheduleRequestPhasesAddInvoiceItemsDiscounts(
   coupon: coupon != null ? coupon() : this.coupon,
   discount: discount != null ? discount() : this.discount,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,

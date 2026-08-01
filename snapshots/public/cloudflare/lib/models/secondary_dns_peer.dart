@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('name'); } 
-SecondaryDnsPeer copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIp Function()? ip, SecondaryDnsIxfrEnable Function()? ixfrEnable, SecondaryDnsComponentsSchemasName? name, SecondaryDnsPort Function()? port, SecondaryDnsTsigId Function()? tsigId, }) { return SecondaryDnsPeer(
+SecondaryDnsPeer copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIp? Function()? ip, SecondaryDnsIxfrEnable? Function()? ixfrEnable, SecondaryDnsComponentsSchemasName? name, SecondaryDnsPort? Function()? port, SecondaryDnsTsigId? Function()? tsigId, }) { return SecondaryDnsPeer(
   id: id ?? this.id,
   ip: ip != null ? ip() : this.ip,
   ixfrEnable: ixfrEnable != null ? ixfrEnable() : this.ixfrEnable,

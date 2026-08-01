@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'service': service,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('service') && json['service'] is String; } 
-WorkersTailConsumersScript copyWith({String Function()? environment, String Function()? namespace, String? service, }) { return WorkersTailConsumersScript(
+WorkersTailConsumersScript copyWith({String? Function()? environment, String? Function()? namespace, String? service, }) { return WorkersTailConsumersScript(
   environment: environment != null ? environment() : this.environment,
   namespace: namespace != null ? namespace() : this.namespace,
   service: service ?? this.service,

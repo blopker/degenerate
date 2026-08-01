@@ -3,27 +3,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom Payment Methods represent Payment Method types not modeled directly in
 /// the Stripe API. This resource consists of details about the custom payment method
 /// used for this payment attempt.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type = const Omittable.absent(), });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: json['display_name'] as String,
-  type: json['type'] as String?,
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
 ); }
 
 /// Display name for the custom (user-defined) payment method type used to make this payment.
 final String displayName;
 
 /// The custom payment method type associated with this payment.
-final String? type;
+final Omittable<String?> type;
 
 Map<String, dynamic> toJson() { return {
   'display_name': displayName,
-  'type': ?type,
+  if (type.isPresent) 'type': type.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, String? Function()? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, Omittable<String?>? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: displayName ?? this.displayName,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails &&

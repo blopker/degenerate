@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageUser copyWith({String Function()? id, RealtimeConversationItemMessageUserObject Function()? object, String? type, RealtimeConversationItemMessageUserStatus Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
+RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeConversationItemMessageUserObject? Function()? object, String? type, RealtimeConversationItemMessageUserStatus? Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

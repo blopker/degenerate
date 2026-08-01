@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (document != null) 'document': document?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_document', 'document'}.contains(key)); } 
-PostAccountsAccountPersonsPersonRequestVerification copyWith({PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument Function()? additionalDocument, PostAccountsAccountPersonsPersonRequestVerificationDocument Function()? document, }) { return PostAccountsAccountPersonsPersonRequestVerification(
+PostAccountsAccountPersonsPersonRequestVerification copyWith({PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument? Function()? additionalDocument, PostAccountsAccountPersonsPersonRequestVerificationDocument? Function()? document, }) { return PostAccountsAccountPersonsPersonRequestVerification(
   additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
   document: document != null ? document() : this.document,
 ); } 

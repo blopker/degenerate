@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'amount': ?amount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount'}.contains(key)); } 
-PostChargesChargeCaptureRequestTransferData copyWith({int Function()? amount}) { return PostChargesChargeCaptureRequestTransferData(
+PostChargesChargeCaptureRequestTransferData copyWith({int? Function()? amount}) { return PostChargesChargeCaptureRequestTransferData(
   amount: amount != null ? amount() : this.amount,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

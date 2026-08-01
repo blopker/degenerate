@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'body': body,
-  'path': ?path,
-  'position': ?position,
-  'line': ?line,
+  'path': path,
+  'position': position,
+  'line': line,
   'commit_id': commitId,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'author_association': authorAssociation.toJson(),
@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('author_association'); } 
-CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String? body, String? Function()? path, int? Function()? position, int? Function()? line, String? commitId, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, ReactionRollup Function()? reactions, }) { return CommitComment(
+CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String? body, String? Function()? path, int? Function()? position, int? Function()? line, String? commitId, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, ReactionRollup? Function()? reactions, }) { return CommitComment(
   htmlUrl: htmlUrl ?? this.htmlUrl,
   url: url ?? this.url,
   id: id ?? this.id,

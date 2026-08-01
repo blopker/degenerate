@@ -62,9 +62,9 @@ final class $3Incident {
     String? $1id,
     Phase? $2species,
     double Function()? $3DreadLevel,
-    String Function()? cafe,
-    String Function()? gnirts,
-    String Function()? ab,
+    String? Function()? cafe,
+    String? Function()? gnirts,
+    String? Function()? ab,
   }) {
     return $3Incident(
       $1id: $1id ?? this.$1id,

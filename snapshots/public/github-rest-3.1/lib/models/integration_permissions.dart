@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'issues', 'checks', 'metadata', 'contents', 'deployments'}.contains(key)); } 
-IntegrationPermissions copyWith({String Function()? issues, String Function()? checks, String Function()? metadata, String Function()? contents, String Function()? deployments, Map<String, String>? additionalProperties, }) { return IntegrationPermissions(
+IntegrationPermissions copyWith({String? Function()? issues, String? Function()? checks, String? Function()? metadata, String? Function()? contents, String? Function()? deployments, Map<String, String>? additionalProperties, }) { return IntegrationPermissions(
   issues: issues != null ? issues() : this.issues,
   checks: checks != null ? checks() : this.checks,
   metadata: metadata != null ? metadata() : this.metadata,

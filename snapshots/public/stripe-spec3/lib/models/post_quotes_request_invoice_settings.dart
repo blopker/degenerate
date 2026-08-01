@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'days_until_due', 'issuer'}.contains(key)); } 
-PostQuotesRequestInvoiceSettings copyWith({int Function()? daysUntilDue, PostQuotesRequestInvoiceSettingsIssuer Function()? issuer, }) { return PostQuotesRequestInvoiceSettings(
+PostQuotesRequestInvoiceSettings copyWith({int? Function()? daysUntilDue, PostQuotesRequestInvoiceSettingsIssuer? Function()? issuer, }) { return PostQuotesRequestInvoiceSettings(
   daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 

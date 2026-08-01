@@ -51,14 +51,14 @@ Map<String, dynamic> toJson() { return {
   'sha': sha,
   'size': size,
   'url': url.toString(),
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (gitUrl != null) 'git_url': gitUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'git_url': gitUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   'type': type,
   'content': content,
   'encoding': encoding,
   '_links': links.toJson(),
-  if (license != null) 'license': license?.toJson(),
+  'license': license?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&

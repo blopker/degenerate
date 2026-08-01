@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_livestreaming_request_video_config.dart';@immutable final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name, this.videoConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_livestreaming_request_video_config.dart';@immutable final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name = const Omittable.absent(), this.videoConfig, });
 
 factory StartLivestreamingRequest.fromJson(Map<String, dynamic> json) { return StartLivestreamingRequest(
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   videoConfig: json['video_config'] != null ? StartLivestreamingRequestVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
 ); }
 
-final String? name;
+final Omittable<String?> name;
 
 final StartLivestreamingRequestVideoConfig? videoConfig;
 
 Map<String, dynamic> toJson() { return {
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'video_config'}.contains(key)); } 
-StartLivestreamingRequest copyWith({String? Function()? name, StartLivestreamingRequestVideoConfig Function()? videoConfig, }) { return StartLivestreamingRequest(
-  name: name != null ? name() : this.name,
+StartLivestreamingRequest copyWith({Omittable<String?>? name, StartLivestreamingRequestVideoConfig? Function()? videoConfig, }) { return StartLivestreamingRequest(
+  name: name ?? this.name,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

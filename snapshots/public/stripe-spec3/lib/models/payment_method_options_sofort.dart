@@ -72,15 +72,15 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsSofortSetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsSofort(
-  preferredLanguage: json['preferred_language'] != null ? PaymentMethodOptionsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null,
+  preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] != null ? PaymentMethodOptionsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsSofortSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// Preferred language of the SOFORT authorization page that the customer is redirected to.
-final PaymentMethodOptionsSofortPreferredLanguage? preferredLanguage;
+final Omittable<PaymentMethodOptionsSofortPreferredLanguage?> preferredLanguage;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -92,12 +92,12 @@ final PaymentMethodOptionsSofortPreferredLanguage? preferredLanguage;
 final PaymentMethodOptionsSofortSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
-  if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
+  if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsSofort copyWith({PaymentMethodOptionsSofortPreferredLanguage? Function()? preferredLanguage, PaymentMethodOptionsSofortSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsSofort(
-  preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
+PaymentMethodOptionsSofort copyWith({Omittable<PaymentMethodOptionsSofortPreferredLanguage?>? preferredLanguage, PaymentMethodOptionsSofortSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsSofort(
+  preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

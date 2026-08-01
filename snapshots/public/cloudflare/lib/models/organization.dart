@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') &&
       json.containsKey('meta') &&
       json.containsKey('name') && json['name'] is String; } 
-Organization copyWith({DateTime? createTime, OrganizationId? id, OrganizationMeta? meta, String? name, OrganizationParent Function()? parent, Profile Function()? profile, }) { return Organization(
+Organization copyWith({DateTime? createTime, OrganizationId? id, OrganizationMeta? meta, String? name, OrganizationParent? Function()? parent, Profile? Function()? profile, }) { return Organization(
   createTime: createTime ?? this.createTime,
   id: id ?? this.id,
   meta: meta ?? this.meta,

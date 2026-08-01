@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (grader != null) 'grader': grader?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'grader'}.contains(key)); } 
-ValidateGraderResponse copyWith({ValidateGraderResponseGrader Function()? grader}) { return ValidateGraderResponse(
+ValidateGraderResponse copyWith({ValidateGraderResponseGrader? Function()? grader}) { return ValidateGraderResponse(
   grader: grader != null ? grader() : this.grader,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

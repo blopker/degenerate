@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('head') && json['head'] is String &&
       json.containsKey('base') && json['base'] is String; } 
-PullsCreateRequest copyWith({String Function()? title, String? head, String Function()? headRepo, String? base, String Function()? body, bool Function()? maintainerCanModify, bool Function()? draft, int Function()? issue, }) { return PullsCreateRequest(
+PullsCreateRequest copyWith({String? Function()? title, String? head, String? Function()? headRepo, String? base, String? Function()? body, bool? Function()? maintainerCanModify, bool? Function()? draft, int? Function()? issue, }) { return PullsCreateRequest(
   title: title != null ? title() : this.title,
   head: head ?? this.head,
   headRepo: headRepo != null ? headRepo() : this.headRepo,

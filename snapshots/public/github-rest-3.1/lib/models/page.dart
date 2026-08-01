@@ -91,17 +91,17 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PageBuildType($value)'; } 
  }
 /// The configuration for GitHub Pages for a repository.
-@immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.public, this.protectedDomainState, this.pendingDomainUnverifiedAt, this.custom404 = false, this.htmlUrl, this.buildType, this.source, this.httpsCertificate, this.httpsEnforced, });
+@immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.public, this.protectedDomainState = const Omittable.absent(), this.pendingDomainUnverifiedAt = const Omittable.absent(), this.custom404 = false, this.htmlUrl, this.buildType = const Omittable.absent(), this.source, this.httpsCertificate, this.httpsEnforced, });
 
 factory Page.fromJson(Map<String, dynamic> json) { return Page(
   url: Uri.parse(json['url'] as String),
   status: json['status'] != null ? PageStatus.fromJson(json['status'] as String) : null,
   cname: json['cname'] as String?,
-  protectedDomainState: json['protected_domain_state'] != null ? PageProtectedDomainState.fromJson(json['protected_domain_state'] as String) : null,
-  pendingDomainUnverifiedAt: json['pending_domain_unverified_at'] != null ? DateTime.parse(json['pending_domain_unverified_at'] as String) : null,
+  protectedDomainState: json.containsKey('protected_domain_state') ? Omittable(json['protected_domain_state'] != null ? PageProtectedDomainState.fromJson(json['protected_domain_state'] as String) : null) : const Omittable.absent(),
+  pendingDomainUnverifiedAt: json.containsKey('pending_domain_unverified_at') ? Omittable(json['pending_domain_unverified_at'] != null ? DateTime.parse(json['pending_domain_unverified_at'] as String) : null) : const Omittable.absent(),
   custom404: json['custom_404'] as bool,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
-  buildType: json['build_type'] != null ? PageBuildType.fromJson(json['build_type'] as String) : null,
+  buildType: json.containsKey('build_type') ? Omittable(json['build_type'] != null ? PageBuildType.fromJson(json['build_type'] as String) : null) : const Omittable.absent(),
   source: json['source'] != null ? PagesSourceHash.fromJson(json['source'] as Map<String, dynamic>) : null,
   public: json['public'] as bool,
   httpsCertificate: json['https_certificate'] != null ? PagesHttpsCertificate.fromJson(json['https_certificate'] as Map<String, dynamic>) : null,
@@ -118,10 +118,10 @@ final PageStatus? status;
 final String? cname;
 
 /// The state if the domain is verified
-final PageProtectedDomainState? protectedDomainState;
+final Omittable<PageProtectedDomainState?> protectedDomainState;
 
 /// The timestamp when a pending domain becomes unverified.
-final DateTime? pendingDomainUnverifiedAt;
+final Omittable<DateTime?> pendingDomainUnverifiedAt;
 
 /// Whether the Page has a custom 404 page.
 final bool custom404;
@@ -130,7 +130,7 @@ final bool custom404;
 final Uri? htmlUrl;
 
 /// The process in which the Page will be built.
-final PageBuildType? buildType;
+final Omittable<PageBuildType?> buildType;
 
 final PagesSourceHash? source;
 
@@ -144,13 +144,13 @@ final bool? httpsEnforced;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
-  if (status != null) 'status': status?.toJson(),
-  'cname': ?cname,
-  if (protectedDomainState != null) 'protected_domain_state': protectedDomainState?.toJson(),
-  if (pendingDomainUnverifiedAt != null) 'pending_domain_unverified_at': pendingDomainUnverifiedAt?.toIso8601String(),
+  'status': status?.toJson(),
+  'cname': cname,
+  if (protectedDomainState.isPresent) 'protected_domain_state': protectedDomainState.value?.toJson(),
+  if (pendingDomainUnverifiedAt.isPresent) 'pending_domain_unverified_at': pendingDomainUnverifiedAt.value?.toIso8601String(),
   'custom_404': custom404,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (buildType != null) 'build_type': buildType?.toJson(),
+  if (buildType.isPresent) 'build_type': buildType.value?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'public': public,
   if (httpsCertificate != null) 'https_certificate': httpsCertificate?.toJson(),
@@ -161,15 +161,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('cname') && json['cname'] is String &&
       json.containsKey('custom_404') && json['custom_404'] is bool &&
       json.containsKey('public') && json['public'] is bool; } 
-Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, PageProtectedDomainState? Function()? protectedDomainState, DateTime? Function()? pendingDomainUnverifiedAt, bool? custom404, Uri Function()? htmlUrl, PageBuildType? Function()? buildType, PagesSourceHash Function()? source, bool? public, PagesHttpsCertificate Function()? httpsCertificate, bool Function()? httpsEnforced, }) { return Page(
+Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, Omittable<PageProtectedDomainState?>? protectedDomainState, Omittable<DateTime?>? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, Omittable<PageBuildType?>? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) { return Page(
   url: url ?? this.url,
   status: status != null ? status() : this.status,
   cname: cname != null ? cname() : this.cname,
-  protectedDomainState: protectedDomainState != null ? protectedDomainState() : this.protectedDomainState,
-  pendingDomainUnverifiedAt: pendingDomainUnverifiedAt != null ? pendingDomainUnverifiedAt() : this.pendingDomainUnverifiedAt,
+  protectedDomainState: protectedDomainState ?? this.protectedDomainState,
+  pendingDomainUnverifiedAt: pendingDomainUnverifiedAt ?? this.pendingDomainUnverifiedAt,
   custom404: custom404 ?? this.custom404,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-  buildType: buildType != null ? buildType() : this.buildType,
+  buildType: buildType ?? this.buildType,
   source: source != null ? source() : this.source,
   public: public ?? this.public,
   httpsCertificate: httpsCertificate != null ? httpsCertificate() : this.httpsCertificate,

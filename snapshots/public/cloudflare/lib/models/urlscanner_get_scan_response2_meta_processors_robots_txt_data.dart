@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('rules') &&
       json.containsKey('sitemaps'); } 
-UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData copyWith({String Function()? hash, UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules? rules, List<String>? sitemaps, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData(
+UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData copyWith({String? Function()? hash, UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules? rules, List<String>? sitemaps, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData(
   hash: hash != null ? hash() : this.hash,
   rules: rules ?? this.rules,
   sitemaps: sitemaps ?? this.sitemaps,

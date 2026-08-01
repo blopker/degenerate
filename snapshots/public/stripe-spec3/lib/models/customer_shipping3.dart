@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-CustomerShipping3 copyWith({CustomerShipping3Address? address, String? name, String Function()? phone, }) { return CustomerShipping3(
+CustomerShipping3 copyWith({CustomerShipping3Address? address, String? name, String? Function()? phone, }) { return CustomerShipping3(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,

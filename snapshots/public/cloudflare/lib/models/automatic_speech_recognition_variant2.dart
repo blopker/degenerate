@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'target_lang': ?targetLang,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
-AutomaticSpeechRecognitionVariant2 copyWith({List<double>? audio, String Function()? sourceLang, String Function()? targetLang, }) { return AutomaticSpeechRecognitionVariant2(
+AutomaticSpeechRecognitionVariant2 copyWith({List<double>? audio, String? Function()? sourceLang, String? Function()? targetLang, }) { return AutomaticSpeechRecognitionVariant2(
   audio: audio ?? this.audio,
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,
   targetLang: targetLang != null ? targetLang() : this.targetLang,

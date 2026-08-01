@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'id': id,
   'name': name,
-  'description': ?description,
+  'description': description,
   'permissions': permissions,
   'resource_type': resourceType,
   'predefined_role': predefinedRole,

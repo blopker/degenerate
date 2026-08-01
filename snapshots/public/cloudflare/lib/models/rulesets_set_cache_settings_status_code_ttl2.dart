@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is num; } 
-RulesetsSetCacheSettingsStatusCodeTtl2 copyWith({int Function()? statusCode, RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange Function()? statusCodeRange, int? value, }) { return RulesetsSetCacheSettingsStatusCodeTtl2(
+RulesetsSetCacheSettingsStatusCodeTtl2 copyWith({int? Function()? statusCode, RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange? Function()? statusCodeRange, int? value, }) { return RulesetsSetCacheSettingsStatusCodeTtl2(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   statusCodeRange: statusCodeRange != null ? statusCodeRange() : this.statusCodeRange,
   value: value ?? this.value,

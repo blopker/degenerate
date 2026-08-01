@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'since': since,
   'workflow_job_run': workflowJobRun.toJson(),
-  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+  'workflow_run': workflowRun?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('environment') && json['environment'] is String &&
@@ -86,7 +86,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('since') && json['since'] is String &&
       json.containsKey('workflow_job_run') &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewRequested copyWith({WebhookDeploymentReviewRequestedAction? action, EnterpriseWebhooks Function()? enterprise, String? environment, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, WebhooksUser? requestor, List<WebhookDeploymentReviewRequestedReviewers>? reviewers, SimpleUser? sender, String? since, WebhookDeploymentReviewRequestedWorkflowJobRun? workflowJobRun, WebhookDeploymentReviewRequestedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRequested(
+WebhookDeploymentReviewRequested copyWith({WebhookDeploymentReviewRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, String? environment, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, WebhooksUser? requestor, List<WebhookDeploymentReviewRequestedReviewers>? reviewers, SimpleUser? sender, String? since, WebhookDeploymentReviewRequestedWorkflowJobRun? workflowJobRun, WebhookDeploymentReviewRequestedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   environment: environment ?? this.environment,

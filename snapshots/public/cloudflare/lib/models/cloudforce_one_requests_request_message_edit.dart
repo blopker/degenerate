@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (content != null) 'content': content?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content'}.contains(key)); } 
-CloudforceOneRequestsRequestMessageEdit copyWith({CloudforceOneRequestsMessageContent Function()? content}) { return CloudforceOneRequestsRequestMessageEdit(
+CloudforceOneRequestsRequestMessageEdit copyWith({CloudforceOneRequestsMessageContent? Function()? content}) { return CloudforceOneRequestsRequestMessageEdit(
   content: content != null ? content() : this.content,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

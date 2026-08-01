@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_expiration_after.dart';@immutable final class UpdateVectorStoreRequest {const UpdateVectorStoreRequest({this.name, this.expiresAfter, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_expiration_after.dart';@immutable final class UpdateVectorStoreRequest {const UpdateVectorStoreRequest({this.name = const Omittable.absent(), this.expiresAfter = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
 factory UpdateVectorStoreRequest.fromJson(Map<String, dynamic> json) { return UpdateVectorStoreRequest(
-  name: json['name'] as String?,
-  expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  expiresAfter: json.containsKey('expires_after') ? Omittable(json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
 /// The name of the vector store.
-final String? name;
+final Omittable<String?> name;
 
-final VectorStoreExpirationAfter? expiresAfter;
+final Omittable<VectorStoreExpirationAfter?> expiresAfter;
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -20,18 +20,18 @@ final VectorStoreExpirationAfter? expiresAfter;
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 Map<String, dynamic> toJson() { return {
-  'name': ?name,
-  if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
-  'metadata': ?metadata,
+  if (name.isPresent) 'name': name.value,
+  if (expiresAfter.isPresent) 'expires_after': expiresAfter.value?.toJson(),
+  if (metadata.isPresent) 'metadata': metadata.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'expires_after', 'metadata'}.contains(key)); } 
-UpdateVectorStoreRequest copyWith({String? Function()? name, VectorStoreExpirationAfter? Function()? expiresAfter, Map<String, String>? Function()? metadata, }) { return UpdateVectorStoreRequest(
-  name: name != null ? name() : this.name,
-  expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
-  metadata: metadata != null ? metadata() : this.metadata,
+UpdateVectorStoreRequest copyWith({Omittable<String?>? name, Omittable<VectorStoreExpirationAfter?>? expiresAfter, Omittable<Map<String,String>?>? metadata, }) { return UpdateVectorStoreRequest(
+  name: name ?? this.name,
+  expiresAfter: expiresAfter ?? this.expiresAfter,
+  metadata: metadata ?? this.metadata,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UpdateVectorStoreRequest &&

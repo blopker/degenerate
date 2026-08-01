@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   if (usersErrored != null) 'users_errored': usersErrored?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'percent_approved', 'percent_blocked', 'percent_errored', 'percent_users_processed', 'status', 'total_users', 'users_approved', 'users_blocked', 'users_errored'}.contains(key)); } 
-AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId Function()? id, AccessPercentApproved Function()? percentApproved, AccessPercentBlocked Function()? percentBlocked, AccessPercentErrored Function()? percentErrored, AccessPercentUsersProcessed Function()? percentUsersProcessed, AccessUpdateStatus Function()? status, AccessTotalUsers Function()? totalUsers, AccessUsersApproved Function()? usersApproved, AccessUsersBlocked Function()? usersBlocked, AccessUsersErrored Function()? usersErrored, }) { return AccessPolicyUpdateRespResult(
+AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, AccessPercentApproved? Function()? percentApproved, AccessPercentBlocked? Function()? percentBlocked, AccessPercentErrored? Function()? percentErrored, AccessPercentUsersProcessed? Function()? percentUsersProcessed, AccessUpdateStatus? Function()? status, AccessTotalUsers? Function()? totalUsers, AccessUsersApproved? Function()? usersApproved, AccessUsersBlocked? Function()? usersBlocked, AccessUsersErrored? Function()? usersErrored, }) { return AccessPolicyUpdateRespResult(
   id: id != null ? id() : this.id,
   percentApproved: percentApproved != null ? percentApproved() : this.percentApproved,
   percentBlocked: percentBlocked != null ? percentBlocked() : this.percentBlocked,

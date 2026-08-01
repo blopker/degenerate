@@ -197,7 +197,7 @@ Map<String, dynamic> toJson() { return {
   'owner': owner.toJson(),
   'private': private,
   'html_url': htmlUrl.toString(),
-  'description': ?description,
+  'description': description,
   'fork': fork,
   'url': url.toString(),
   'archive_url': archiveUrl,

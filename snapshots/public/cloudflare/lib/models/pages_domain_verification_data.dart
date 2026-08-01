@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PagesDomainVerificationData copyWith({String Function()? errorMessage, PagesDomainVerificationDataStatus? status, }) { return PagesDomainVerificationData(
+PagesDomainVerificationData copyWith({String? Function()? errorMessage, PagesDomainVerificationDataStatus? status, }) { return PagesDomainVerificationData(
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
   status: status ?? this.status,
 ); } 

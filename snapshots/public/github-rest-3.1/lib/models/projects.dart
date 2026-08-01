@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectsState($value)'; } 
  }
 /// A projects v2 project
-@immutable final class Projects {const Projects({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state, this.latestStatusUpdate, this.isTemplate, });
+@immutable final class Projects {const Projects({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state, this.latestStatusUpdate = const Omittable.absent(), this.isTemplate, });
 
 factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
   id: (json['id'] as num).toDouble(),
@@ -44,7 +44,7 @@ factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
   deletedAt: json['deleted_at'] != null ? DateTime.parse(json['deleted_at'] as String) : null,
   deletedBy: json['deleted_by'] != null ? SimpleUser.fromJson(json['deleted_by'] as Map<String, dynamic>) : null,
   state: json['state'] != null ? ProjectsState.fromJson(json['state'] as String) : null,
-  latestStatusUpdate: json['latest_status_update'] != null ? StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>) : null,
+  latestStatusUpdate: json.containsKey('latest_status_update') ? Omittable(json['latest_status_update'] != null ? StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   isTemplate: json['is_template'] as bool?,
 ); }
 
@@ -90,7 +90,7 @@ final SimpleUser? deletedBy;
 /// The current state of the project.
 final ProjectsState? state;
 
-final StatusUpdate? latestStatusUpdate;
+final Omittable<StatusUpdate?> latestStatusUpdate;
 
 /// Whether this project is a template
 final bool? isTemplate;
@@ -101,17 +101,17 @@ Map<String, dynamic> toJson() { return {
   'owner': owner.toJson(),
   'creator': creator.toJson(),
   'title': title,
-  'description': ?description,
+  'description': description,
   'public': public,
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'number': number,
-  'short_description': ?shortDescription,
-  if (deletedAt != null) 'deleted_at': deletedAt?.toIso8601String(),
-  if (deletedBy != null) 'deleted_by': deletedBy?.toJson(),
+  'short_description': shortDescription,
+  'deleted_at': deletedAt?.toIso8601String(),
+  'deleted_by': deletedBy?.toJson(),
   if (state != null) 'state': state?.toJson(),
-  if (latestStatusUpdate != null) 'latest_status_update': latestStatusUpdate?.toJson(),
+  if (latestStatusUpdate.isPresent) 'latest_status_update': latestStatusUpdate.value?.toJson(),
   'is_template': ?isTemplate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -128,7 +128,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('short_description') && json['short_description'] is String &&
       json.containsKey('deleted_at') && json['deleted_at'] is String &&
       json.containsKey('deleted_by'); } 
-Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, ProjectsState Function()? state, StatusUpdate? Function()? latestStatusUpdate, bool Function()? isTemplate, }) { return Projects(
+Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, ProjectsState? Function()? state, Omittable<StatusUpdate?>? latestStatusUpdate, bool? Function()? isTemplate, }) { return Projects(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   owner: owner ?? this.owner,
@@ -144,7 +144,7 @@ Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? cr
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
   deletedBy: deletedBy != null ? deletedBy() : this.deletedBy,
   state: state != null ? state() : this.state,
-  latestStatusUpdate: latestStatusUpdate != null ? latestStatusUpdate() : this.latestStatusUpdate,
+  latestStatusUpdate: latestStatusUpdate ?? this.latestStatusUpdate,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

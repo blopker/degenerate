@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-LimitRangeItem copyWith({Map<String, ResourceQuantity> Function()? $default, Map<String, ResourceQuantity> Function()? defaultRequest, Map<String, ResourceQuantity> Function()? max, Map<String, ResourceQuantity> Function()? maxLimitRequestRatio, Map<String, ResourceQuantity> Function()? min, String? type, }) { return LimitRangeItem(
+LimitRangeItem copyWith({Map<String, ResourceQuantity>? Function()? $default, Map<String, ResourceQuantity>? Function()? defaultRequest, Map<String, ResourceQuantity>? Function()? max, Map<String, ResourceQuantity>? Function()? maxLimitRequestRatio, Map<String, ResourceQuantity>? Function()? min, String? type, }) { return LimitRangeItem(
   $default: $default != null ? $default() : this.$default,
   defaultRequest: defaultRequest != null ? defaultRequest() : this.defaultRequest,
   max: max != null ? max() : this.max,

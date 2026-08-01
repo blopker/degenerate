@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessPingone copyWith({AccessPingoneConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessPingoneScimConfig Function()? scimConfig, AccessPingoneType? type, }) { return AccessPingone(
+AccessPingone copyWith({AccessPingoneConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessPingoneScimConfig? Function()? scimConfig, AccessPingoneType? type, }) { return AccessPingone(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

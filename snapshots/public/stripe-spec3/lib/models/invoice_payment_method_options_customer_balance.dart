@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsCustomerBalanceFundingType($value)'; } 
  }
 /// 
-@immutable final class InvoicePaymentMethodOptionsCustomerBalance {const InvoicePaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, });
+@immutable final class InvoicePaymentMethodOptionsCustomerBalance {const InvoicePaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType = const Omittable.absent(), });
 
 factory InvoicePaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCustomerBalance(
   bankTransfer: json['bank_transfer'] != null ? InvoicePaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
-  fundingType: json['funding_type'] != null ? InvoicePaymentMethodOptionsCustomerBalanceFundingType.fromJson(json['funding_type'] as String) : null,
+  fundingType: json.containsKey('funding_type') ? Omittable(json['funding_type'] != null ? InvoicePaymentMethodOptionsCustomerBalanceFundingType.fromJson(json['funding_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 final InvoicePaymentMethodOptionsCustomerBalanceBankTransfer? bankTransfer;
 
 /// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
-final InvoicePaymentMethodOptionsCustomerBalanceFundingType? fundingType;
+final Omittable<InvoicePaymentMethodOptionsCustomerBalanceFundingType?> fundingType;
 
 Map<String, dynamic> toJson() { return {
   if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
-  if (fundingType != null) 'funding_type': fundingType?.toJson(),
+  if (fundingType.isPresent) 'funding_type': fundingType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsCustomerBalance copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransfer Function()? bankTransfer, InvoicePaymentMethodOptionsCustomerBalanceFundingType? Function()? fundingType, }) { return InvoicePaymentMethodOptionsCustomerBalance(
+InvoicePaymentMethodOptionsCustomerBalance copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransfer? Function()? bankTransfer, Omittable<InvoicePaymentMethodOptionsCustomerBalanceFundingType?>? fundingType, }) { return InvoicePaymentMethodOptionsCustomerBalance(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
-  fundingType: fundingType != null ? fundingType() : this.fundingType,
+  fundingType: fundingType ?? this.fundingType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicePaymentMethodOptionsCustomerBalance &&

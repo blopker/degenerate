@@ -68,31 +68,31 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningAlertRuleSummarySecuritySeverityLevel($value)'; } 
  }
-@immutable final class CodeScanningAlertRuleSummary {const CodeScanningAlertRuleSummary({this.id, this.name, this.severity, this.securitySeverityLevel, this.description, this.fullDescription, this.tags, this.help, this.helpUri, });
+@immutable final class CodeScanningAlertRuleSummary {const CodeScanningAlertRuleSummary({this.id = const Omittable.absent(), this.name, this.severity = const Omittable.absent(), this.securitySeverityLevel = const Omittable.absent(), this.description, this.fullDescription, this.tags = const Omittable.absent(), this.help = const Omittable.absent(), this.helpUri = const Omittable.absent(), });
 
 factory CodeScanningAlertRuleSummary.fromJson(Map<String, dynamic> json) { return CodeScanningAlertRuleSummary(
-  id: json['id'] as String?,
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   name: json['name'] as String?,
-  severity: json['severity'] != null ? CodeScanningAlertRuleSummarySeverity.fromJson(json['severity'] as String) : null,
-  securitySeverityLevel: json['security_severity_level'] != null ? CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(json['security_severity_level'] as String) : null,
+  severity: json.containsKey('severity') ? Omittable(json['severity'] != null ? CodeScanningAlertRuleSummarySeverity.fromJson(json['severity'] as String) : null) : const Omittable.absent(),
+  securitySeverityLevel: json.containsKey('security_severity_level') ? Omittable(json['security_severity_level'] != null ? CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(json['security_severity_level'] as String) : null) : const Omittable.absent(),
   description: json['description'] as String?,
   fullDescription: json['full_description'] as String?,
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  help: json['help'] as String?,
-  helpUri: json['help_uri'] as String?,
+  tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
+  help: json.containsKey('help') ? Omittable(json['help'] as String?) : const Omittable.absent(),
+  helpUri: json.containsKey('help_uri') ? Omittable(json['help_uri'] as String?) : const Omittable.absent(),
 ); }
 
 /// A unique identifier for the rule used to detect the alert.
-final String? id;
+final Omittable<String?> id;
 
 /// The name of the rule used to detect the alert.
 final String? name;
 
 /// The severity of the alert.
-final CodeScanningAlertRuleSummarySeverity? severity;
+final Omittable<CodeScanningAlertRuleSummarySeverity?> severity;
 
 /// The security severity of the alert.
-final CodeScanningAlertRuleSummarySecuritySeverityLevel? securitySeverityLevel;
+final Omittable<CodeScanningAlertRuleSummarySecuritySeverityLevel?> securitySeverityLevel;
 
 /// A short description of the rule used to detect the alert.
 final String? description;
@@ -101,36 +101,36 @@ final String? description;
 final String? fullDescription;
 
 /// A set of tags applicable for the rule.
-final List<String>? tags;
+final Omittable<List<String>?> tags;
 
 /// Detailed documentation for the rule as GitHub Flavored Markdown.
-final String? help;
+final Omittable<String?> help;
 
 /// A link to the documentation for the rule used to detect the alert.
-final String? helpUri;
+final Omittable<String?> helpUri;
 
 Map<String, dynamic> toJson() { return {
-  'id': ?id,
+  if (id.isPresent) 'id': id.value,
   'name': ?name,
-  if (severity != null) 'severity': severity?.toJson(),
-  if (securitySeverityLevel != null) 'security_severity_level': securitySeverityLevel?.toJson(),
+  if (severity.isPresent) 'severity': severity.value?.toJson(),
+  if (securitySeverityLevel.isPresent) 'security_severity_level': securitySeverityLevel.value?.toJson(),
   'description': ?description,
   'full_description': ?fullDescription,
-  'tags': ?tags,
-  'help': ?help,
-  'help_uri': ?helpUri,
+  if (tags.isPresent) 'tags': tags.value,
+  if (help.isPresent) 'help': help.value,
+  if (helpUri.isPresent) 'help_uri': helpUri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'severity', 'security_severity_level', 'description', 'full_description', 'tags', 'help', 'help_uri'}.contains(key)); } 
-CodeScanningAlertRuleSummary copyWith({String? Function()? id, String Function()? name, CodeScanningAlertRuleSummarySeverity? Function()? severity, CodeScanningAlertRuleSummarySecuritySeverityLevel? Function()? securitySeverityLevel, String Function()? description, String Function()? fullDescription, List<String>? Function()? tags, String? Function()? help, String? Function()? helpUri, }) { return CodeScanningAlertRuleSummary(
-  id: id != null ? id() : this.id,
+CodeScanningAlertRuleSummary copyWith({Omittable<String?>? id, String? Function()? name, Omittable<CodeScanningAlertRuleSummarySeverity?>? severity, Omittable<CodeScanningAlertRuleSummarySecuritySeverityLevel?>? securitySeverityLevel, String? Function()? description, String? Function()? fullDescription, Omittable<List<String>?>? tags, Omittable<String?>? help, Omittable<String?>? helpUri, }) { return CodeScanningAlertRuleSummary(
+  id: id ?? this.id,
   name: name != null ? name() : this.name,
-  severity: severity != null ? severity() : this.severity,
-  securitySeverityLevel: securitySeverityLevel != null ? securitySeverityLevel() : this.securitySeverityLevel,
+  severity: severity ?? this.severity,
+  securitySeverityLevel: securitySeverityLevel ?? this.securitySeverityLevel,
   description: description != null ? description() : this.description,
   fullDescription: fullDescription != null ? fullDescription() : this.fullDescription,
-  tags: tags != null ? tags() : this.tags,
-  help: help != null ? help() : this.help,
-  helpUri: helpUri != null ? helpUri() : this.helpUri,
+  tags: tags ?? this.tags,
+  help: help ?? this.help,
+  helpUri: helpUri ?? this.helpUri,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeScanningAlertRuleSummary &&
@@ -140,9 +140,10 @@ CodeScanningAlertRuleSummary copyWith({String? Function()? id, String Function()
           securitySeverityLevel == other.securitySeverityLevel &&
           description == other.description &&
           fullDescription == other.fullDescription &&
-          listEquals(tags, other.tags) &&
+          tags.isPresent == other.tags.isPresent &&
+          listEquals(tags.value, other.tags.value) &&
           help == other.help &&
           helpUri == other.helpUri; } 
-@override int get hashCode { return Object.hash(id, name, severity, securitySeverityLevel, description, fullDescription, Object.hashAll(tags ?? const []), help, helpUri); } 
+@override int get hashCode { return Object.hash(id, name, severity, securitySeverityLevel, description, fullDescription, Object.hashAll(tags.value ?? const []), help, helpUri); } 
 @override String toString() { return 'CodeScanningAlertRuleSummary(id: $id, name: $name, severity: $severity, securitySeverityLevel: $securitySeverityLevel, description: $description, fullDescription: $fullDescription, tags: $tags, help: $help, helpUri: $helpUri)'; } 
  }

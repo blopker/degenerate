@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (reviewers != null) 'reviewers': reviewers?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewers'}.contains(key)); } 
-SecurityAndAnalysisSecretScanningDelegatedBypassOptions copyWith({List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers> Function()? reviewers}) { return SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+SecurityAndAnalysisSecretScanningDelegatedBypassOptions copyWith({List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers>? Function()? reviewers}) { return SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
   reviewers: reviewers != null ? reviewers() : this.reviewers,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

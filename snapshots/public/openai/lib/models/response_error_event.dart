@@ -32,9 +32,9 @@ final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'code': ?code,
+  'code': code,
   'message': message,
-  'param': ?param,
+  'param': param,
   'sequence_number': sequenceNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&

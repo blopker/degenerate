@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'selected_usernames': ?selectedUsernames,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
-CodespacesSetCodespacesAccessRequest copyWith({CodespacesSetCodespacesAccessRequestVisibility? visibility, List<String> Function()? selectedUsernames, }) { return CodespacesSetCodespacesAccessRequest(
+CodespacesSetCodespacesAccessRequest copyWith({CodespacesSetCodespacesAccessRequestVisibility? visibility, List<String>? Function()? selectedUsernames, }) { return CodespacesSetCodespacesAccessRequest(
   visibility: visibility ?? this.visibility,
   selectedUsernames: selectedUsernames != null ? selectedUsernames() : this.selectedUsernames,
 ); } 

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('expression'); } 
-WaitingroomPatchRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDescription Function()? description, WaitingroomRuleEnabled Function()? enabled, WaitingroomRuleExpression? expression, WaitingroomRulePosition Function()? position, }) { return WaitingroomPatchRule(
+WaitingroomPatchRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? expression, WaitingroomRulePosition? Function()? position, }) { return WaitingroomPatchRule(
   action: action ?? this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,

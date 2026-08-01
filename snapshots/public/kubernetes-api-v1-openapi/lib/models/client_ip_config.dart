@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'timeoutSeconds': ?timeoutSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timeoutSeconds'}.contains(key)); } 
-ClientIpConfig copyWith({int Function()? timeoutSeconds}) { return ClientIpConfig(
+ClientIpConfig copyWith({int? Function()? timeoutSeconds}) { return ClientIpConfig(
   timeoutSeconds: timeoutSeconds != null ? timeoutSeconds() : this.timeoutSeconds,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

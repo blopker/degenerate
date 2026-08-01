@@ -106,7 +106,7 @@ Map<String, dynamic> toJson() { return {
   'race_other': ?raceOther,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
-PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPeopleRequestUsCfpbDataRaceDetailsRace> Function()? race, String Function()? raceOther, }) { return PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails(
+PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPeopleRequestUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) { return PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails(
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,
 ); } 

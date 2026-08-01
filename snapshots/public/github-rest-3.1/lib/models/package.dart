@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PackageVisibility($value)'; } 
  }
 /// A software package
-@immutable final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, required this.createdAt, required this.updatedAt, this.owner, this.repository, });
+@immutable final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, required this.createdAt, required this.updatedAt, this.owner = const Omittable.absent(), this.repository = const Omittable.absent(), });
 
 factory Package.fromJson(Map<String, dynamic> json) { return Package(
   id: (json['id'] as num).toInt(),
@@ -71,8 +71,8 @@ factory Package.fromJson(Map<String, dynamic> json) { return Package(
   htmlUrl: json['html_url'] as String,
   versionCount: (json['version_count'] as num).toInt(),
   visibility: PackageVisibility.fromJson(json['visibility'] as String),
-  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
-  repository: json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  owner: json.containsKey('owner') ? Omittable(json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }
@@ -94,9 +94,9 @@ final int versionCount;
 
 final PackageVisibility visibility;
 
-final SimpleUser? owner;
+final Omittable<SimpleUser?> owner;
 
-final MinimalRepository? repository;
+final Omittable<MinimalRepository?> repository;
 
 final DateTime createdAt;
 
@@ -110,8 +110,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl,
   'version_count': versionCount,
   'visibility': visibility.toJson(),
-  if (owner != null) 'owner': owner?.toJson(),
-  if (repository != null) 'repository': repository?.toJson(),
+  if (owner.isPresent) 'owner': owner.value?.toJson(),
+  if (repository.isPresent) 'repository': repository.value?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
 }; } 
@@ -124,7 +124,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-Package copyWith({int? id, String? name, PackagePackageType? packageType, String? url, String? htmlUrl, int? versionCount, PackageVisibility? visibility, SimpleUser? Function()? owner, MinimalRepository? Function()? repository, DateTime? createdAt, DateTime? updatedAt, }) { return Package(
+Package copyWith({int? id, String? name, PackagePackageType? packageType, String? url, String? htmlUrl, int? versionCount, PackageVisibility? visibility, Omittable<SimpleUser?>? owner, Omittable<MinimalRepository?>? repository, DateTime? createdAt, DateTime? updatedAt, }) { return Package(
   id: id ?? this.id,
   name: name ?? this.name,
   packageType: packageType ?? this.packageType,
@@ -132,8 +132,8 @@ Package copyWith({int? id, String? name, PackagePackageType? packageType, String
   htmlUrl: htmlUrl ?? this.htmlUrl,
   versionCount: versionCount ?? this.versionCount,
   visibility: visibility ?? this.visibility,
-  owner: owner != null ? owner() : this.owner,
-  repository: repository != null ? repository() : this.repository,
+  owner: owner ?? this.owner,
+  repository: repository ?? this.repository,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 

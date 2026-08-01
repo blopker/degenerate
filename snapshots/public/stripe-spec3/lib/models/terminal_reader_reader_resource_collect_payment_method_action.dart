@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethod != null) 'payment_method': paymentMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderReaderResourceCollectConfig Function()? collectConfig, TerminalReaderReaderResourceCollectPaymentMethodActionPaymentIntent? paymentIntent, PaymentMethod Function()? paymentMethod, }) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
+TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderReaderResourceCollectConfig? Function()? collectConfig, TerminalReaderReaderResourceCollectPaymentMethodActionPaymentIntent? paymentIntent, PaymentMethod? Function()? paymentMethod, }) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
   collectConfig: collectConfig != null ? collectConfig() : this.collectConfig,
   paymentIntent: paymentIntent ?? this.paymentIntent,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,

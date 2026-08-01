@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'message_retention_period': ?messageRetentionPeriod,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delivery_delay', 'delivery_paused', 'message_retention_period'}.contains(key)); } 
-MqQueueSettings copyWith({double Function()? deliveryDelay, bool Function()? deliveryPaused, double Function()? messageRetentionPeriod, }) { return MqQueueSettings(
+MqQueueSettings copyWith({double? Function()? deliveryDelay, bool? Function()? deliveryPaused, double? Function()? messageRetentionPeriod, }) { return MqQueueSettings(
   deliveryDelay: deliveryDelay != null ? deliveryDelay() : this.deliveryDelay,
   deliveryPaused: deliveryPaused != null ? deliveryPaused() : this.deliveryPaused,
   messageRetentionPeriod: messageRetentionPeriod != null ? messageRetentionPeriod() : this.messageRetentionPeriod,

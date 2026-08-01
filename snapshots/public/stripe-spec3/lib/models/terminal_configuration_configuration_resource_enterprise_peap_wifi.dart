@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
       json.containsKey('ssid') && json['ssid'] is String &&
       json.containsKey('username') && json['username'] is String; } 
-TerminalConfigurationConfigurationResourceEnterprisePeapWifi copyWith({String Function()? caCertificateFile, String? password, String? ssid, String? username, }) { return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
+TerminalConfigurationConfigurationResourceEnterprisePeapWifi copyWith({String? Function()? caCertificateFile, String? password, String? ssid, String? username, }) { return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,
   password: password ?? this.password,
   ssid: ssid ?? this.ssid,

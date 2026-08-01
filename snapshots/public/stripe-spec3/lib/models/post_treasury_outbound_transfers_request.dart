@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String; } 
-PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String Function()? description, String Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData Function()? destinationPaymentMethodData, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions Function()? destinationPaymentMethodOptions, List<String> Function()? expand, String? financialAccount, Map<String, String> Function()? metadata, String Function()? statementDescriptor, }) { return PostTreasuryOutboundTransfersRequest(
+PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) { return PostTreasuryOutboundTransfersRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

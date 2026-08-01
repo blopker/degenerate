@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsNaverPay {const PaymentMethodDetailsNaverPay({this.buyerId, this.transactionId, });
+@immutable final class PaymentMethodDetailsNaverPay {const PaymentMethodDetailsNaverPay({this.buyerId = const Omittable.absent(), this.transactionId = const Omittable.absent(), });
 
 factory PaymentMethodDetailsNaverPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsNaverPay(
-  buyerId: json['buyer_id'] as String?,
-  transactionId: json['transaction_id'] as String?,
+  buyerId: json.containsKey('buyer_id') ? Omittable(json['buyer_id'] as String?) : const Omittable.absent(),
+  transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// A unique identifier for the buyer as determined by the local payment processor.
-final String? buyerId;
+final Omittable<String?> buyerId;
 
 /// The Naver Pay transaction ID associated with this payment.
-final String? transactionId;
+final Omittable<String?> transactionId;
 
 Map<String, dynamic> toJson() { return {
-  'buyer_id': ?buyerId,
-  'transaction_id': ?transactionId,
+  if (buyerId.isPresent) 'buyer_id': buyerId.value,
+  if (transactionId.isPresent) 'transaction_id': transactionId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'transaction_id'}.contains(key)); } 
-PaymentMethodDetailsNaverPay copyWith({String? Function()? buyerId, String? Function()? transactionId, }) { return PaymentMethodDetailsNaverPay(
-  buyerId: buyerId != null ? buyerId() : this.buyerId,
-  transactionId: transactionId != null ? transactionId() : this.transactionId,
+PaymentMethodDetailsNaverPay copyWith({Omittable<String?>? buyerId, Omittable<String?>? transactionId, }) { return PaymentMethodDetailsNaverPay(
+  buyerId: buyerId ?? this.buyerId,
+  transactionId: transactionId ?? this.transactionId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsNaverPay &&

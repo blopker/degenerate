@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
-Scale copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, ScaleSpec Function()? spec, ScaleStatus Function()? status, }) { return Scale(
+Scale copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ScaleSpec? Function()? spec, ScaleStatus? Function()? status, }) { return Scale(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,

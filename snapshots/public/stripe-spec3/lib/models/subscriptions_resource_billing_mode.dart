@@ -26,16 +26,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionsResourceBillingModeType($value)'; } 
  }
 /// The billing mode of the subscription.
-@immutable final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({required this.type, this.flexible, this.updatedAt, });
+@immutable final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({required this.type, this.flexible = const Omittable.absent(), this.updatedAt, });
 
 factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingMode(
-  flexible: json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
+  flexible: json.containsKey('flexible') ? Omittable(json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: SubscriptionsResourceBillingModeType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
 ); }
 
 /// Configure behavior for flexible billing mode
-final SubscriptionsResourceBillingModeFlexible? flexible;
+final Omittable<SubscriptionsResourceBillingModeFlexible?> flexible;
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 final SubscriptionsResourceBillingModeType type;
@@ -44,13 +44,13 @@ final SubscriptionsResourceBillingModeType type;
 final int? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  if (flexible != null) 'flexible': flexible?.toJson(),
+  if (flexible.isPresent) 'flexible': flexible.value?.toJson(),
   'type': type.toJson(),
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible? Function()? flexible, SubscriptionsResourceBillingModeType? type, int Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
-  flexible: flexible != null ? flexible() : this.flexible,
+SubscriptionsResourceBillingMode copyWith({Omittable<SubscriptionsResourceBillingModeFlexible?>? flexible, SubscriptionsResourceBillingModeType? type, int? Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
+  flexible: flexible ?? this.flexible,
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 

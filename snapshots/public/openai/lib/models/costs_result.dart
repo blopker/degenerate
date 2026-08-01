@@ -22,13 +22,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CostsResultObject($value)'; } 
  }
 /// The aggregated costs details of the specific time bucket.
-@immutable final class CostsResult {const CostsResult({required this.object, this.amount, this.lineItem, this.projectId, });
+@immutable final class CostsResult {const CostsResult({required this.object, this.amount, this.lineItem = const Omittable.absent(), this.projectId = const Omittable.absent(), });
 
 factory CostsResult.fromJson(Map<String, dynamic> json) { return CostsResult(
   object: CostsResultObject.fromJson(json['object'] as String),
   amount: json['amount'] != null ? CostsResultAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
-  lineItem: json['line_item'] as String?,
-  projectId: json['project_id'] as String?,
+  lineItem: json.containsKey('line_item') ? Omittable(json['line_item'] as String?) : const Omittable.absent(),
+  projectId: json.containsKey('project_id') ? Omittable(json['project_id'] as String?) : const Omittable.absent(),
 ); }
 
 final CostsResultObject object;
@@ -37,23 +37,23 @@ final CostsResultObject object;
 final CostsResultAmount? amount;
 
 /// When `group_by=line_item`, this field provides the line item of the grouped costs result.
-final String? lineItem;
+final Omittable<String?> lineItem;
 
 /// When `group_by=project_id`, this field provides the project ID of the grouped costs result.
-final String? projectId;
+final Omittable<String?> projectId;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   if (amount != null) 'amount': amount?.toJson(),
-  'line_item': ?lineItem,
-  'project_id': ?projectId,
+  if (lineItem.isPresent) 'line_item': lineItem.value,
+  if (projectId.isPresent) 'project_id': projectId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
-CostsResult copyWith({CostsResultObject? object, CostsResultAmount Function()? amount, String? Function()? lineItem, String? Function()? projectId, }) { return CostsResult(
+CostsResult copyWith({CostsResultObject? object, CostsResultAmount? Function()? amount, Omittable<String?>? lineItem, Omittable<String?>? projectId, }) { return CostsResult(
   object: object ?? this.object,
   amount: amount != null ? amount() : this.amount,
-  lineItem: lineItem != null ? lineItem() : this.lineItem,
-  projectId: projectId != null ? projectId() : this.projectId,
+  lineItem: lineItem ?? this.lineItem,
+  projectId: projectId ?? this.projectId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CostsResult &&

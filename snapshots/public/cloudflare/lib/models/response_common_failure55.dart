@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
-ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors> Function()? errors, List<Map<String, dynamic>> Function()? messages, bool Function()? success, }) { return ResponseCommonFailure55(
+ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

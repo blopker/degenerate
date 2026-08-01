@@ -50,9 +50,9 @@ final WebhookPullRequestSynchronizePullRequestAutoMergeEnabledBy? enabledBy;
 final WebhookPullRequestSynchronizePullRequestAutoMergeMergeMethod mergeMethod;
 
 Map<String, dynamic> toJson() { return {
-  'commit_message': ?commitMessage,
-  'commit_title': ?commitTitle,
-  if (enabledBy != null) 'enabled_by': enabledBy?.toJson(),
+  'commit_message': commitMessage,
+  'commit_title': commitTitle,
+  'enabled_by': enabledBy?.toJson(),
   'merge_method': mergeMethod.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_message') && json['commit_message'] is String &&

@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksAlertState($value)'; } 
  }
 /// The security alert of the vulnerable dependency.
-@immutable final class WebhooksAlert {const WebhooksAlert({required this.affectedPackageName, required this.affectedRange, required this.createdAt, required this.externalIdentifier, required this.externalReference, required this.ghsaId, required this.id, required this.nodeId, required this.number, required this.severity, required this.state, this.dismissReason, this.dismissedAt, this.dismisser, this.fixReason, this.fixedAt, this.fixedIn, });
+@immutable final class WebhooksAlert {const WebhooksAlert({required this.affectedPackageName, required this.affectedRange, required this.createdAt, required this.externalIdentifier, required this.externalReference, required this.ghsaId, required this.id, required this.nodeId, required this.number, required this.severity, required this.state, this.dismissReason, this.dismissedAt, this.dismisser = const Omittable.absent(), this.fixReason, this.fixedAt, this.fixedIn, });
 
 factory WebhooksAlert.fromJson(Map<String, dynamic> json) { return WebhooksAlert(
   affectedPackageName: json['affected_package_name'] as String,
@@ -33,7 +33,7 @@ factory WebhooksAlert.fromJson(Map<String, dynamic> json) { return WebhooksAlert
   createdAt: json['created_at'] as String,
   dismissReason: json['dismiss_reason'] as String?,
   dismissedAt: json['dismissed_at'] as String?,
-  dismisser: json['dismisser'] != null ? WebhooksAlertDismisser.fromJson(json['dismisser'] as Map<String, dynamic>) : null,
+  dismisser: json.containsKey('dismisser') ? Omittable(json['dismisser'] != null ? WebhooksAlertDismisser.fromJson(json['dismisser'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   externalIdentifier: json['external_identifier'] as String,
   externalReference: json['external_reference'] != null ? Uri.parse(json['external_reference'] as String) : null,
   fixReason: json['fix_reason'] as String?,
@@ -57,7 +57,7 @@ final String? dismissReason;
 
 final String? dismissedAt;
 
-final WebhooksAlertDismisser? dismisser;
+final Omittable<WebhooksAlertDismisser?> dismisser;
 
 final String externalIdentifier;
 
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'dismiss_reason': ?dismissReason,
   'dismissed_at': ?dismissedAt,
-  if (dismisser != null) 'dismisser': dismisser?.toJson(),
+  if (dismisser.isPresent) 'dismisser': dismisser.value?.toJson(),
   'external_identifier': externalIdentifier,
-  if (externalReference != null) 'external_reference': externalReference?.toString(),
+  'external_reference': externalReference?.toString(),
   'fix_reason': ?fixReason,
   if (fixedAt != null) 'fixed_at': fixedAt?.toIso8601String(),
   'fixed_in': ?fixedIn,
@@ -111,13 +111,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('affec
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('severity') && json['severity'] is String &&
       json.containsKey('state'); } 
-WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, String? createdAt, String Function()? dismissReason, String Function()? dismissedAt, WebhooksAlertDismisser? Function()? dismisser, String? externalIdentifier, Uri? Function()? externalReference, String Function()? fixReason, DateTime Function()? fixedAt, String Function()? fixedIn, String? ghsaId, int? id, String? nodeId, int? number, String? severity, WebhooksAlertState? state, }) { return WebhooksAlert(
+WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, String? createdAt, String? Function()? dismissReason, String? Function()? dismissedAt, Omittable<WebhooksAlertDismisser?>? dismisser, String? externalIdentifier, Uri? Function()? externalReference, String? Function()? fixReason, DateTime? Function()? fixedAt, String? Function()? fixedIn, String? ghsaId, int? id, String? nodeId, int? number, String? severity, WebhooksAlertState? state, }) { return WebhooksAlert(
   affectedPackageName: affectedPackageName ?? this.affectedPackageName,
   affectedRange: affectedRange ?? this.affectedRange,
   createdAt: createdAt ?? this.createdAt,
   dismissReason: dismissReason != null ? dismissReason() : this.dismissReason,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
-  dismisser: dismisser != null ? dismisser() : this.dismisser,
+  dismisser: dismisser ?? this.dismisser,
   externalIdentifier: externalIdentifier ?? this.externalIdentifier,
   externalReference: externalReference != null ? externalReference() : this.externalReference,
   fixReason: fixReason != null ? fixReason() : this.fixReason,

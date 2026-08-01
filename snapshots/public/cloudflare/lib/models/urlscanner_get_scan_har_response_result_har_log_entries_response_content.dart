@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mimeType') && json['mimeType'] is String &&
       json.containsKey('size') && json['size'] is num; } 
-UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent copyWith({int Function()? compression, String? mimeType, double? size, }) { return UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(
+UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent copyWith({int? Function()? compression, String? mimeType, double? size, }) { return UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(
   compression: compression != null ? compression() : this.compression,
   mimeType: mimeType ?? this.mimeType,
   size: size ?? this.size,

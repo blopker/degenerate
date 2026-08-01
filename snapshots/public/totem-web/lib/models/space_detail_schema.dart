@@ -41,14 +41,14 @@ final int price;
 Map<String, dynamic> toJson() { return {
   'slug': slug,
   'title': title,
-  'image_link': ?imageLink,
+  'image_link': imageLink,
   'short_description': shortDescription,
   'content': content,
   'author': author.toJson(),
-  if (nextEvent != null) 'next_event': nextEvent?.toJson(),
-  'category': ?category,
+  'next_event': nextEvent?.toJson(),
+  'category': category,
   'subscribers': subscribers,
-  'recurring': ?recurring,
+  'recurring': recurring,
   'price': price,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&

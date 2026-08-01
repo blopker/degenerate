@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax'}.contains(key)); } 
-PostPaymentIntentsIntentRequestHooksInputs copyWith({PostPaymentIntentsIntentRequestHooksInputsTax Function()? tax}) { return PostPaymentIntentsIntentRequestHooksInputs(
+PostPaymentIntentsIntentRequestHooksInputs copyWith({PostPaymentIntentsIntentRequestHooksInputsTax? Function()? tax}) { return PostPaymentIntentsIntentRequestHooksInputs(
   tax: tax != null ? tax() : this.tax,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

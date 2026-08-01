@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-ReposUpdateRequestSecurityAndAnalysisSecretScanning copyWith({String Function()? status}) { return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
+ReposUpdateRequestSecurityAndAnalysisSecretScanning copyWith({String? Function()? status}) { return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

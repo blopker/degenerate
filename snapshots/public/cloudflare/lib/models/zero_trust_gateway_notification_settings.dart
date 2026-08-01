@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'support_url': ?supportUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'include_context', 'msg', 'support_url'}.contains(key)); } 
-ZeroTrustGatewayNotificationSettings copyWith({bool Function()? enabled, bool Function()? includeContext, String Function()? msg, String Function()? supportUrl, }) { return ZeroTrustGatewayNotificationSettings(
+ZeroTrustGatewayNotificationSettings copyWith({bool? Function()? enabled, bool? Function()? includeContext, String? Function()? msg, String? Function()? supportUrl, }) { return ZeroTrustGatewayNotificationSettings(
   enabled: enabled != null ? enabled() : this.enabled,
   includeContext: includeContext != null ? includeContext() : this.includeContext,
   msg: msg != null ? msg() : this.msg,

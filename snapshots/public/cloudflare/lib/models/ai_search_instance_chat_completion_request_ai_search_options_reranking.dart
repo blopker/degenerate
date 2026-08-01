@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'match_threshold', 'model'}.contains(key)); } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking copyWith({bool Function()? enabled, double Function()? matchThreshold, AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel Function()? model, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
+AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking copyWith({bool? Function()? enabled, double Function()? matchThreshold, AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? Function()? model, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,
   model: model != null ? model() : this.model,

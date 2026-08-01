@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('purpose'); } 
-PostFilesRequest copyWith({List<String> Function()? expand, Uint8List? file, PostFilesRequestFileLinkData Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
+PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, PostFilesRequestFileLinkData? Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
   expand: expand != null ? expand() : this.expand,
   file: file ?? this.file,
   fileLinkData: fileLinkData != null ? fileLinkData() : this.fileLinkData,

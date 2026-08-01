@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'main_module': ?mainModule,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body_part', 'main_module'}.contains(key)); } 
-NamespaceWorkerPutScriptContentRequestMetadata copyWith({String Function()? bodyPart, String Function()? mainModule, }) { return NamespaceWorkerPutScriptContentRequestMetadata(
+NamespaceWorkerPutScriptContentRequestMetadata copyWith({String? Function()? bodyPart, String? Function()? mainModule, }) { return NamespaceWorkerPutScriptContentRequestMetadata(
   bodyPart: bodyPart != null ? bodyPart() : this.bodyPart,
   mainModule: mainModule != null ? mainModule() : this.mainModule,
 ); } 

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (condition != null) 'condition': condition?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition'}.contains(key)); } 
-R2LifecycleRuleDeleteObjectsTransition copyWith({R2LifecycleRuleDeleteObjectsTransitionCondition Function()? condition}) { return R2LifecycleRuleDeleteObjectsTransition(
+R2LifecycleRuleDeleteObjectsTransition copyWith({R2LifecycleRuleDeleteObjectsTransitionCondition? Function()? condition}) { return R2LifecycleRuleDeleteObjectsTransition(
   condition: condition != null ? condition() : this.condition,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (headerTitle != null) 'header_title': headerTitle?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'footer_body', 'footer_title', 'header_body', 'header_title'}.contains(key)); } 
-PostIssuingPersonalizationDesignsRequestCarrierText copyWith({PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody Function()? footerBody, PostIssuingPersonalizationDesignsRequestCarrierTextFooterTitle Function()? footerTitle, PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBody Function()? headerBody, PostIssuingPersonalizationDesignsRequestCarrierTextHeaderTitle Function()? headerTitle, }) { return PostIssuingPersonalizationDesignsRequestCarrierText(
+PostIssuingPersonalizationDesignsRequestCarrierText copyWith({PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody? Function()? footerBody, PostIssuingPersonalizationDesignsRequestCarrierTextFooterTitle? Function()? footerTitle, PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBody? Function()? headerBody, PostIssuingPersonalizationDesignsRequestCarrierTextHeaderTitle? Function()? headerTitle, }) { return PostIssuingPersonalizationDesignsRequestCarrierText(
   footerBody: footerBody != null ? footerBody() : this.footerBody,
   footerTitle: footerTitle != null ? footerTitle() : this.footerTitle,
   headerBody: headerBody != null ? headerBody() : this.headerBody,

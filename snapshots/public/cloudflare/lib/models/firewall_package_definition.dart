@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('zone_id'); } 
-FirewallPackageDefinition copyWith({FirewallSchemasDescription? description, FirewallDetectionMode? detectionMode, FirewallIdentifier? id, FirewallName? name, FirewallStatus Function()? status, FirewallIdentifier? zoneId, }) { return FirewallPackageDefinition(
+FirewallPackageDefinition copyWith({FirewallSchemasDescription? description, FirewallDetectionMode? detectionMode, FirewallIdentifier? id, FirewallName? name, FirewallStatus? Function()? status, FirewallIdentifier? zoneId, }) { return FirewallPackageDefinition(
   description: description ?? this.description,
   detectionMode: detectionMode ?? this.detectionMode,
   id: id ?? this.id,

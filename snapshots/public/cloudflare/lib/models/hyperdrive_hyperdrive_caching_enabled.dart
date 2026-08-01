@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'stale_while_revalidate': ?staleWhileRevalidate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled', 'max_age', 'stale_while_revalidate'}.contains(key)); } 
-HyperdriveHyperdriveCachingEnabled copyWith({bool Function()? disabled, int Function()? maxAge, int Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingEnabled(
+HyperdriveHyperdriveCachingEnabled copyWith({bool? Function()? disabled, int? Function()? maxAge, int? Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingEnabled(
   disabled: disabled != null ? disabled() : this.disabled,
   maxAge: maxAge != null ? maxAge() : this.maxAge,
   staleWhileRevalidate: staleWhileRevalidate != null ? staleWhileRevalidate() : this.staleWhileRevalidate,

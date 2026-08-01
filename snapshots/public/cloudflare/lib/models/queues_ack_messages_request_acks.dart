@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (leaseId != null) 'lease_id': leaseId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lease_id'}.contains(key)); } 
-QueuesAckMessagesRequestAcks copyWith({MqLeaseId Function()? leaseId}) { return QueuesAckMessagesRequestAcks(
+QueuesAckMessagesRequestAcks copyWith({MqLeaseId? Function()? leaseId}) { return QueuesAckMessagesRequestAcks(
   leaseId: leaseId != null ? leaseId() : this.leaseId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

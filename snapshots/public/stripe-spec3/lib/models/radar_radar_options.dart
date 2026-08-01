@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'session': ?session,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'session'}.contains(key)); } 
-RadarRadarOptions copyWith({String Function()? session}) { return RadarRadarOptions(
+RadarRadarOptions copyWith({String? Function()? session}) { return RadarRadarOptions(
   session: session != null ? session() : this.session,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -28,7 +28,7 @@ final List<PendingDeploymentReviewers> reviewers;
 Map<String, dynamic> toJson() { return {
   'environment': environment.toJson(),
   'wait_timer': waitTimer,
-  if (waitTimerStartedAt != null) 'wait_timer_started_at': waitTimerStartedAt?.toIso8601String(),
+  'wait_timer_started_at': waitTimerStartedAt?.toIso8601String(),
   'current_user_can_approve': currentUserCanApprove,
   'reviewers': reviewers.map((e) => e.toJson()).toList(),
 }; } 

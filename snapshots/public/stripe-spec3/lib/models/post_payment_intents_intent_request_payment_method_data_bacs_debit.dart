@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'sort_code': ?sortCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number', 'sort_code'}.contains(key)); } 
-PostPaymentIntentsIntentRequestPaymentMethodDataBacsDebit copyWith({String Function()? accountNumber, String Function()? sortCode, }) { return PostPaymentIntentsIntentRequestPaymentMethodDataBacsDebit(
+PostPaymentIntentsIntentRequestPaymentMethodDataBacsDebit copyWith({String? Function()? accountNumber, String? Function()? sortCode, }) { return PostPaymentIntentsIntentRequestPaymentMethodDataBacsDebit(
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   sortCode: sortCode != null ? sortCode() : this.sortCode,
 ); } 

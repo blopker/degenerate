@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'source'}.contains(key)); } 
-CloudforceOneRequestsRequestAssetEdit copyWith({CloudforceOneRequestsAssetContent Function()? source}) { return CloudforceOneRequestsRequestAssetEdit(
+CloudforceOneRequestsRequestAssetEdit copyWith({CloudforceOneRequestsAssetContent? Function()? source}) { return CloudforceOneRequestsRequestAssetEdit(
   source: source != null ? source() : this.source,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

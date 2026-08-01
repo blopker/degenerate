@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_stream_options.dart';import 'create_completion_request_model.dart';import 'create_completion_request_prompt.dart';import 'stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = 1, this.echo = false, this.frequencyPenalty = 0.0, this.logitBias, this.logprobs, this.maxTokens = 16, this.n = 1, this.presencePenalty = 0.0, this.seed, this.stop, this.stream = false, this.streamOptions, this.suffix, this.temperature = 1.0, this.topP = 1.0, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_stream_options.dart';import 'create_completion_request_model.dart';import 'create_completion_request_prompt.dart';import 'stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = 1, this.echo = false, this.frequencyPenalty = 0.0, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxTokens = 16, this.n = 1, this.presencePenalty = 0.0, this.seed = const Omittable.absent(), this.stop, this.stream = false, this.streamOptions, this.suffix = const Omittable.absent(), this.temperature = 1.0, this.topP = 1.0, this.user, });
 
 factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateCompletionRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateCompletionRequestModelVariant2.fromJson(v as String),),
@@ -8,16 +8,16 @@ factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return Cre
   bestOf: json.containsKey('best_of') ? json['best_of'] != null ? (json['best_of'] as num).toInt() : null : 1,
   echo: json.containsKey('echo') ? json['echo'] as bool? : false,
   frequencyPenalty: json.containsKey('frequency_penalty') ? json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null : 0.0,
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
-  logprobs: json['logprobs'] != null ? (json['logprobs'] as num).toInt() : null,
+  logitBias: json.containsKey('logit_bias') ? Omittable((json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt()))) : const Omittable.absent(),
+  logprobs: json.containsKey('logprobs') ? Omittable(json['logprobs'] != null ? (json['logprobs'] as num).toInt() : null) : const Omittable.absent(),
   maxTokens: json.containsKey('max_tokens') ? json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null : 16,
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
   presencePenalty: json.containsKey('presence_penalty') ? json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null : 0.0,
-  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
+  seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
   stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
   streamOptions: json['stream_options'] != null ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
-  suffix: json['suffix'] as String?,
+  suffix: json.containsKey('suffix') ? Omittable(json['suffix'] as String?) : const Omittable.absent(),
   temperature: json.containsKey('temperature') ? json['temperature'] != null ? (json['temperature'] as num).toDouble() : null : 1.0,
   topP: json.containsKey('top_p') ? json['top_p'] != null ? (json['top_p'] as num).toDouble() : null : 1.0,
   user: json['user'] as String?,
@@ -57,13 +57,13 @@ final double? frequencyPenalty;
 /// 
 /// As an example, you can pass `{"50256": -100}` to prevent the `<|endoftext|>` token from being generated.
 /// 
-final Map<String,int>? logitBias;
+final Omittable<Map<String,int>?> logitBias;
 
 /// Include the log probabilities on the `logprobs` most likely output tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
 /// 
 /// The maximum value for `logprobs` is 5.
 /// 
-final int? logprobs;
+final Omittable<int?> logprobs;
 
 /// The maximum number of [tokens](/tokenizer) that can be generated in the completion.
 /// 
@@ -87,7 +87,7 @@ final double? presencePenalty;
 /// 
 /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
 /// 
-final int? seed;
+final Omittable<int?> seed;
 
 final StopConfiguration? stop;
 
@@ -101,7 +101,7 @@ final ChatCompletionStreamOptions? streamOptions;
 /// 
 /// This parameter is only supported for `gpt-3.5-turbo-instruct`.
 /// 
-final String? suffix;
+final Omittable<String?> suffix;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// 
@@ -121,42 +121,42 @@ final String? user;
 
 Map<String, dynamic> toJson() { return {
   'model': model.toJson(),
-  if (prompt != null) 'prompt': prompt?.toJson(),
+  'prompt': prompt?.toJson(),
   'best_of': ?bestOf,
   'echo': ?echo,
   'frequency_penalty': ?frequencyPenalty,
-  'logit_bias': ?logitBias,
-  'logprobs': ?logprobs,
+  if (logitBias.isPresent) 'logit_bias': logitBias.value,
+  if (logprobs.isPresent) 'logprobs': logprobs.value,
   'max_tokens': ?maxTokens,
   'n': ?n,
   'presence_penalty': ?presencePenalty,
-  'seed': ?seed,
+  if (seed.isPresent) 'seed': seed.value,
   if (stop != null) 'stop': stop?.toJson(),
   'stream': ?stream,
   if (streamOptions != null) 'stream_options': streamOptions?.toJson(),
-  'suffix': ?suffix,
+  if (suffix.isPresent) 'suffix': suffix.value,
   'temperature': ?temperature,
   'top_p': ?topP,
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('prompt'); } 
-CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, int? Function()? bestOf, bool? Function()? echo, double? Function()? frequencyPenalty, Map<String, int>? Function()? logitBias, int? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, double? Function()? presencePenalty, int? Function()? seed, StopConfiguration Function()? stop, bool? Function()? stream, ChatCompletionStreamOptions Function()? streamOptions, String? Function()? suffix, double? Function()? temperature, double? Function()? topP, String Function()? user, }) { return CreateCompletionRequest(
+CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, int? Function()? bestOf, bool? Function()? echo, double? Function()? frequencyPenalty, Omittable<Map<String,int>?>? logitBias, Omittable<int?>? logprobs, int? Function()? maxTokens, int? Function()? n, double? Function()? presencePenalty, Omittable<int?>? seed, StopConfiguration? Function()? stop, bool? Function()? stream, ChatCompletionStreamOptions? Function()? streamOptions, Omittable<String?>? suffix, double? Function()? temperature, double? Function()? topP, String? Function()? user, }) { return CreateCompletionRequest(
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
   bestOf: bestOf != null ? bestOf() : this.bestOf,
   echo: echo != null ? echo() : this.echo,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
-  logitBias: logitBias != null ? logitBias() : this.logitBias,
-  logprobs: logprobs != null ? logprobs() : this.logprobs,
+  logitBias: logitBias ?? this.logitBias,
+  logprobs: logprobs ?? this.logprobs,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
   n: n != null ? n() : this.n,
   presencePenalty: presencePenalty != null ? presencePenalty() : this.presencePenalty,
-  seed: seed != null ? seed() : this.seed,
+  seed: seed ?? this.seed,
   stop: stop != null ? stop() : this.stop,
   stream: stream != null ? stream() : this.stream,
   streamOptions: streamOptions != null ? streamOptions() : this.streamOptions,
-  suffix: suffix != null ? suffix() : this.suffix,
+  suffix: suffix ?? this.suffix,
   temperature: temperature != null ? temperature() : this.temperature,
   topP: topP != null ? topP() : this.topP,
   user: user != null ? user() : this.user,

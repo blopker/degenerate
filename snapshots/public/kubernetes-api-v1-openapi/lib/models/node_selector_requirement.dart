@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operator') && json['operator'] is String; } 
-NodeSelectorRequirement copyWith({String? key, String? $operator, List<String> Function()? values, }) { return NodeSelectorRequirement(
+NodeSelectorRequirement copyWith({String? key, String? $operator, List<String>? Function()? values, }) { return NodeSelectorRequirement(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,

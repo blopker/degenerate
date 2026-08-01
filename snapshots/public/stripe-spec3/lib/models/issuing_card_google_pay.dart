@@ -29,27 +29,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardGooglePayIneligibleReason($value)'; } 
  }
 /// 
-@immutable final class IssuingCardGooglePay {const IssuingCardGooglePay({required this.eligible, this.ineligibleReason, });
+@immutable final class IssuingCardGooglePay {const IssuingCardGooglePay({required this.eligible, this.ineligibleReason = const Omittable.absent(), });
 
 factory IssuingCardGooglePay.fromJson(Map<String, dynamic> json) { return IssuingCardGooglePay(
   eligible: json['eligible'] as bool,
-  ineligibleReason: json['ineligible_reason'] != null ? IssuingCardGooglePayIneligibleReason.fromJson(json['ineligible_reason'] as String) : null,
+  ineligibleReason: json.containsKey('ineligible_reason') ? Omittable(json['ineligible_reason'] != null ? IssuingCardGooglePayIneligibleReason.fromJson(json['ineligible_reason'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Google Pay Eligibility
 final bool eligible;
 
 /// Reason the card is ineligible for Google Pay
-final IssuingCardGooglePayIneligibleReason? ineligibleReason;
+final Omittable<IssuingCardGooglePayIneligibleReason?> ineligibleReason;
 
 Map<String, dynamic> toJson() { return {
   'eligible': eligible,
-  if (ineligibleReason != null) 'ineligible_reason': ineligibleReason?.toJson(),
+  if (ineligibleReason.isPresent) 'ineligible_reason': ineligibleReason.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('eligible') && json['eligible'] is bool; } 
-IssuingCardGooglePay copyWith({bool? eligible, IssuingCardGooglePayIneligibleReason? Function()? ineligibleReason, }) { return IssuingCardGooglePay(
+IssuingCardGooglePay copyWith({bool? eligible, Omittable<IssuingCardGooglePayIneligibleReason?>? ineligibleReason, }) { return IssuingCardGooglePay(
   eligible: eligible ?? this.eligible,
-  ineligibleReason: ineligibleReason != null ? ineligibleReason() : this.ineligibleReason,
+  ineligibleReason: ineligibleReason ?? this.ineligibleReason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingCardGooglePay &&

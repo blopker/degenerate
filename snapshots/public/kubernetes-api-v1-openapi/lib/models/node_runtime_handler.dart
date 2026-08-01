@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'features', 'name'}.contains(key)); } 
-NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures Function()? features, String Function()? name, }) { return NodeRuntimeHandler(
+NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String Function()? name, }) { return NodeRuntimeHandler(
   features: features != null ? features() : this.features,
   name: name != null ? name() : this.name,
 ); } 

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-HostPathVolumeSource copyWith({String? path, String Function()? type, }) { return HostPathVolumeSource(
+HostPathVolumeSource copyWith({String? path, String? Function()? type, }) { return HostPathVolumeSource(
   path: path ?? this.path,
   type: type != null ? type() : this.type,
 ); } 

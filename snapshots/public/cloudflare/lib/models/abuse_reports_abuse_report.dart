@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cdate
       json.containsKey('mitigation_summary') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, String Function()? justification, AbuseReportsMitigationSummary? mitigationSummary, String Function()? originalWork, AbuseReportsReportStatus? status, AbuseReportsSubmitterDetails Function()? submitter, AbuseReportsReportType? type, List<String> Function()? urls, }) { return AbuseReportsAbuseReport(
+AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, String? Function()? justification, AbuseReportsMitigationSummary? mitigationSummary, String? Function()? originalWork, AbuseReportsReportStatus? status, AbuseReportsSubmitterDetails? Function()? submitter, AbuseReportsReportType? type, List<String>? Function()? urls, }) { return AbuseReportsAbuseReport(
   cdate: cdate ?? this.cdate,
   domain: domain ?? this.domain,
   id: id ?? this.id,

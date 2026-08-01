@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Team5Privacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-@immutable final class Team5 {const Team5({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
+@immutable final class Team5 {const Team5({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent = const Omittable.absent(), });
 
 factory Team5.fromJson(Map<String, dynamic> json) { return Team5(
   deleted: json['deleted'] as bool?,
@@ -38,7 +38,7 @@ factory Team5.fromJson(Map<String, dynamic> json) { return Team5(
   membersUrl: json['members_url'] as String,
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-  parent: json['parent'] != null ? Team5Parent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? Team5Parent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permission: json['permission'] as String,
   privacy: Team5Privacy.fromJson(json['privacy'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
@@ -63,7 +63,7 @@ final String name;
 
 final String nodeId;
 
-final Team5Parent? parent;
+final Omittable<Team5Parent?> parent;
 
 /// Permission that the team will have for its repositories
 final String permission;
@@ -79,13 +79,13 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'deleted': ?deleted,
-  'description': ?description,
+  'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
   'members_url': membersUrl,
   'name': name,
   'node_id': nodeId,
-  if (parent != null) 'parent': parent?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'permission': permission,
   'privacy': privacy.toJson(),
   'repositories_url': repositoriesUrl.toString(),
@@ -103,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-Team5 copyWith({bool Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Team5Parent? Function()? parent, String? permission, Team5Privacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team5(
+Team5 copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Omittable<Team5Parent?>? parent, String? permission, Team5Privacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team5(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -111,7 +111,7 @@ Team5 copyWith({bool Function()? deleted, String? Function()? description, Uri? 
   membersUrl: membersUrl ?? this.membersUrl,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
-  parent: parent != null ? parent() : this.parent,
+  parent: parent ?? this.parent,
   permission: permission ?? this.permission,
   privacy: privacy ?? this.privacy,
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,

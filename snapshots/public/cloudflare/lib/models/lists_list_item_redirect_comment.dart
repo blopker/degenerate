@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('redirect'); } 
-ListsListItemRedirectComment copyWith({ListsItemRedirect? redirect, ListsItemComment Function()? comment, }) { return ListsListItemRedirectComment(
+ListsListItemRedirectComment copyWith({ListsItemRedirect? redirect, ListsItemComment? Function()? comment, }) { return ListsListItemRedirectComment(
   redirect: redirect ?? this.redirect,
   comment: comment != null ? comment() : this.comment,
 ); } 

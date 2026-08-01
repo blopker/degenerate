@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (soaSerial != null) 'soa_serial': soaSerial?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_refresh_seconds', 'checked_time', 'created_time', 'id', 'modified_time', 'name', 'peers', 'soa_serial'}.contains(key)); } 
-SecondaryDnsSingleResponseIncomingResult copyWith({SecondaryDnsAutoRefreshSeconds Function()? autoRefreshSeconds, SecondaryDnsTime Function()? checkedTime, SecondaryDnsTime Function()? createdTime, SecondaryDnsIdentifier Function()? id, SecondaryDnsTime Function()? modifiedTime, SecondaryDnsName Function()? name, List<SecondaryDnsIdentifier> Function()? peers, SecondaryDnsSoaSerial Function()? soaSerial, }) { return SecondaryDnsSingleResponseIncomingResult(
+SecondaryDnsSingleResponseIncomingResult copyWith({SecondaryDnsAutoRefreshSeconds? Function()? autoRefreshSeconds, SecondaryDnsTime? Function()? checkedTime, SecondaryDnsTime? Function()? createdTime, SecondaryDnsIdentifier? Function()? id, SecondaryDnsTime? Function()? modifiedTime, SecondaryDnsName? Function()? name, List<SecondaryDnsIdentifier>? Function()? peers, SecondaryDnsSoaSerial? Function()? soaSerial, }) { return SecondaryDnsSingleResponseIncomingResult(
   autoRefreshSeconds: autoRefreshSeconds != null ? autoRefreshSeconds() : this.autoRefreshSeconds,
   checkedTime: checkedTime != null ? checkedTime() : this.checkedTime,
   createdTime: createdTime != null ? createdTime() : this.createdTime,

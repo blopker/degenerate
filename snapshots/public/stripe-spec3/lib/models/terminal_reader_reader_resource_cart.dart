@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_line_item.dart';/// Represents a cart to be displayed on the reader
-@immutable final class TerminalReaderReaderResourceCart {const TerminalReaderReaderResourceCart({required this.currency, required this.lineItems, required this.total, this.tax, });
+@immutable final class TerminalReaderReaderResourceCart {const TerminalReaderReaderResourceCart({required this.currency, required this.lineItems, required this.total, this.tax = const Omittable.absent(), });
 
 factory TerminalReaderReaderResourceCart.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCart(
   currency: json['currency'] as String,
   lineItems: (json['line_items'] as List<dynamic>).map((e) => TerminalReaderReaderResourceLineItem.fromJson(e as Map<String, dynamic>)).toList(),
-  tax: json['tax'] != null ? (json['tax'] as num).toInt() : null,
+  tax: json.containsKey('tax') ? Omittable(json['tax'] != null ? (json['tax'] as num).toInt() : null) : const Omittable.absent(),
   total: (json['total'] as num).toInt(),
 ); }
 
@@ -17,7 +17,7 @@ final String currency;
 final List<TerminalReaderReaderResourceLineItem> lineItems;
 
 /// Tax amount for the entire cart. A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final int? tax;
+final Omittable<int?> tax;
 
 /// Total amount for the entire cart, including tax. A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int total;
@@ -25,16 +25,16 @@ final int total;
 Map<String, dynamic> toJson() { return {
   'currency': currency,
   'line_items': lineItems.map((e) => e.toJson()).toList(),
-  'tax': ?tax,
+  if (tax.isPresent) 'tax': tax.value,
   'total': total,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('line_items') &&
       json.containsKey('total') && json['total'] is num; } 
-TerminalReaderReaderResourceCart copyWith({String? currency, List<TerminalReaderReaderResourceLineItem>? lineItems, int? Function()? tax, int? total, }) { return TerminalReaderReaderResourceCart(
+TerminalReaderReaderResourceCart copyWith({String? currency, List<TerminalReaderReaderResourceLineItem>? lineItems, Omittable<int?>? tax, int? total, }) { return TerminalReaderReaderResourceCart(
   currency: currency ?? this.currency,
   lineItems: lineItems ?? this.lineItems,
-  tax: tax != null ? tax() : this.tax,
+  tax: tax ?? this.tax,
   total: total ?? this.total,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'user_email': ?userEmail,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_id', 'device_registration', 'from', 'hostname', 'serial_number', 'timestamp', 'to', 'user_email'}.contains(key)); } 
-DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMonitoringUuid Function()? deviceId, DigitalExperienceMonitoringUuid Function()? deviceRegistration, DigitalExperienceMonitoringWarpConfigDetails Function()? from, String Function()? hostname, String Function()? serialNumber, DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringWarpConfigDetails Function()? to, String Function()? userEmail, }) { return DigitalExperienceMonitoringWarpConfigChangeEvent(
+DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMonitoringUuid? Function()? deviceId, DigitalExperienceMonitoringUuid? Function()? deviceRegistration, DigitalExperienceMonitoringWarpConfigDetails? Function()? from, String? Function()? hostname, String? Function()? serialNumber, DigitalExperienceMonitoringTimestamp? Function()? timestamp, DigitalExperienceMonitoringWarpConfigDetails? Function()? to, String? Function()? userEmail, }) { return DigitalExperienceMonitoringWarpConfigChangeEvent(
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   deviceRegistration: deviceRegistration != null ? deviceRegistration() : this.deviceRegistration,
   from: from != null ? from() : this.from,

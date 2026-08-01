@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostTestHelpersConfirmationTokensRequestShipping copyWith({PostTestHelpersConfirmationTokensRequestShippingAddress? address, String? name, PostTestHelpersConfirmationTokensRequestShippingPhone Function()? phone, }) { return PostTestHelpersConfirmationTokensRequestShipping(
+PostTestHelpersConfirmationTokensRequestShipping copyWith({PostTestHelpersConfirmationTokensRequestShippingAddress? address, String? name, PostTestHelpersConfirmationTokensRequestShippingPhone? Function()? phone, }) { return PostTestHelpersConfirmationTokensRequestShipping(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,

@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'resource_type': ?resourceType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_type', 'resource_id', 'resource_name', 'resource_type'}.contains(key)); } 
-LoadBalancingMonitorGroupReferencesResponseResult copyWith({LoadBalancingMonitorGroupReferencesResponseResultReferenceType Function()? referenceType, String Function()? resourceId, String Function()? resourceName, String Function()? resourceType, }) { return LoadBalancingMonitorGroupReferencesResponseResult(
+LoadBalancingMonitorGroupReferencesResponseResult copyWith({LoadBalancingMonitorGroupReferencesResponseResultReferenceType? Function()? referenceType, String? Function()? resourceId, String? Function()? resourceName, String? Function()? resourceType, }) { return LoadBalancingMonitorGroupReferencesResponseResult(
   referenceType: referenceType != null ? referenceType() : this.referenceType,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceName: resourceName != null ? resourceName() : this.resourceName,

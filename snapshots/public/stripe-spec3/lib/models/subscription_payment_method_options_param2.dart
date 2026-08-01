@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure'}.contains(key)); } 
-SubscriptionPaymentMethodOptionsParam2 copyWith({SubscriptionPaymentMethodOptionsParam2MandateOptions Function()? mandateOptions, SubscriptionPaymentMethodOptionsParam2Network Function()? network, SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure Function()? requestThreeDSecure, }) { return SubscriptionPaymentMethodOptionsParam2(
+SubscriptionPaymentMethodOptionsParam2 copyWith({SubscriptionPaymentMethodOptionsParam2MandateOptions? Function()? mandateOptions, SubscriptionPaymentMethodOptionsParam2Network? Function()? network, SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure? Function()? requestThreeDSecure, }) { return SubscriptionPaymentMethodOptionsParam2(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,

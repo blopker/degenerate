@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (blocked != null) 'blocked': blocked?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'blocked'}.contains(key)); } 
-PaymentMethodUsBankAccountStatusDetails copyWith({PaymentMethodUsBankAccountBlocked Function()? blocked}) { return PaymentMethodUsBankAccountStatusDetails(
+PaymentMethodUsBankAccountStatusDetails copyWith({PaymentMethodUsBankAccountBlocked? Function()? blocked}) { return PaymentMethodUsBankAccountStatusDetails(
   blocked: blocked != null ? blocked() : this.blocked,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

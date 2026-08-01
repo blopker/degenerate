@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (riskTypes != null) 'risk_types': riskTypes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'belongs_to_ref', 'ip', 'risk_types'}.contains(key)); } 
-IntelSchemasIp copyWith({IntelSchemasIpBelongsToRef Function()? belongsToRef, IntelIp Function()? ip, List<IntelSchemasIpRiskTypes> Function()? riskTypes, }) { return IntelSchemasIp(
+IntelSchemasIp copyWith({IntelSchemasIpBelongsToRef? Function()? belongsToRef, IntelIp? Function()? ip, List<IntelSchemasIpRiskTypes>? Function()? riskTypes, }) { return IntelSchemasIp(
   belongsToRef: belongsToRef != null ? belongsToRef() : this.belongsToRef,
   ip: ip != null ? ip() : this.ip,
   riskTypes: riskTypes != null ? riskTypes() : this.riskTypes,

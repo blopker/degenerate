@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('packe
       json.containsKey('system') &&
       json.containsKey('time_limit') &&
       json.containsKey('type'); } 
-MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter Function()? filterV1, MagicVisibilityPcapsPcapsOffsetTime Function()? offsetTime, MagicVisibilityPcapsPcapsPacketLimit? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestSimple(
+MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsOffsetTime? Function()? offsetTime, MagicVisibilityPcapsPcapsPacketLimit? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestSimple(
   filterV1: filterV1 != null ? filterV1() : this.filterV1,
   offsetTime: offsetTime != null ? offsetTime() : this.offsetTime,
   packetLimit: packetLimit ?? this.packetLimit,

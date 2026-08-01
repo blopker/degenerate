@@ -157,28 +157,28 @@ final List<GlobalAdvisoryCredits>? credits;
 
 Map<String, dynamic> toJson() { return {
   'ghsa_id': ghsaId,
-  'cve_id': ?cveId,
+  'cve_id': cveId,
   'url': url,
   'html_url': htmlUrl.toString(),
-  if (repositoryAdvisoryUrl != null) 'repository_advisory_url': repositoryAdvisoryUrl?.toString(),
+  'repository_advisory_url': repositoryAdvisoryUrl?.toString(),
   'summary': summary,
-  'description': ?description,
+  'description': description,
   'type': type.toJson(),
   'severity': severity.toJson(),
-  if (sourceCodeLocation != null) 'source_code_location': sourceCodeLocation?.toString(),
-  if (identifiers != null) 'identifiers': identifiers?.map((e) => e.toJson()).toList(),
-  'references': ?references,
+  'source_code_location': sourceCodeLocation?.toString(),
+  'identifiers': identifiers?.map((e) => e.toJson()).toList(),
+  'references': references,
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (githubReviewedAt != null) 'github_reviewed_at': githubReviewedAt?.toIso8601String(),
-  if (nvdPublishedAt != null) 'nvd_published_at': nvdPublishedAt?.toIso8601String(),
-  if (withdrawnAt != null) 'withdrawn_at': withdrawnAt?.toIso8601String(),
-  if (vulnerabilities != null) 'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
-  if (cvss != null) 'cvss': cvss?.toJson(),
+  'github_reviewed_at': githubReviewedAt?.toIso8601String(),
+  'nvd_published_at': nvdPublishedAt?.toIso8601String(),
+  'withdrawn_at': withdrawnAt?.toIso8601String(),
+  'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
+  'cvss': cvss?.toJson(),
   if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
   if (epss != null) 'epss': epss?.toJson(),
-  if (cwes != null) 'cwes': cwes?.map((e) => e.toJson()).toList(),
-  if (credits != null) 'credits': credits?.map((e) => e.toJson()).toList(),
+  'cwes': cwes?.map((e) => e.toJson()).toList(),
+  'credits': credits?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && json['cve_id'] is String &&
@@ -201,7 +201,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&
       json.containsKey('credits'); } 
-GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
+GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,

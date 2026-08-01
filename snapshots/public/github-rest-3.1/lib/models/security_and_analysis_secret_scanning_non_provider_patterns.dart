@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisSecretScanningNonProviderPatterns copyWith({SecurityAndAnalysisSecretScanningNonProviderPatternsStatus Function()? status}) { return SecurityAndAnalysisSecretScanningNonProviderPatterns(
+SecurityAndAnalysisSecretScanningNonProviderPatterns copyWith({SecurityAndAnalysisSecretScanningNonProviderPatternsStatus? Function()? status}) { return SecurityAndAnalysisSecretScanningNonProviderPatterns(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

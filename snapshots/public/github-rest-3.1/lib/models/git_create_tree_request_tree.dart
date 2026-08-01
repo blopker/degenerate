@@ -62,13 +62,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GitCreateTreeRequestTreeType($value)'; } 
  }
-@immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha, this.content, });
+@immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha = const Omittable.absent(), this.content, });
 
 factory GitCreateTreeRequestTree.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequestTree(
   path: json['path'] as String?,
   mode: json['mode'] != null ? GitCreateTreeRequestTreeMode.fromJson(json['mode'] as String) : null,
   type: json['type'] != null ? GitCreateTreeRequestTreeType.fromJson(json['type'] as String) : null,
-  sha: json['sha'] as String?,
+  sha: json.containsKey('sha') ? Omittable(json['sha'] as String?) : const Omittable.absent(),
   content: json['content'] as String?,
 ); }
 
@@ -84,7 +84,7 @@ final GitCreateTreeRequestTreeType? type;
 /// The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.
 /// 
 /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
-final String? sha;
+final Omittable<String?> sha;
 
 /// The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.
 /// 
@@ -95,15 +95,15 @@ Map<String, dynamic> toJson() { return {
   'path': ?path,
   if (mode != null) 'mode': mode?.toJson(),
   if (type != null) 'type': type?.toJson(),
-  'sha': ?sha,
+  if (sha.isPresent) 'sha': sha.value,
   'content': ?content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key)); } 
-GitCreateTreeRequestTree copyWith({String Function()? path, GitCreateTreeRequestTreeMode Function()? mode, GitCreateTreeRequestTreeType Function()? type, String? Function()? sha, String Function()? content, }) { return GitCreateTreeRequestTree(
+GitCreateTreeRequestTree copyWith({String? Function()? path, GitCreateTreeRequestTreeMode? Function()? mode, GitCreateTreeRequestTreeType? Function()? type, Omittable<String?>? sha, String? Function()? content, }) { return GitCreateTreeRequestTree(
   path: path != null ? path() : this.path,
   mode: mode != null ? mode() : this.mode,
   type: type != null ? type() : this.type,
-  sha: sha != null ? sha() : this.sha,
+  sha: sha ?? this.sha,
   content: content != null ? content() : this.content,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

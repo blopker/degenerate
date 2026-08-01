@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tos_acceptance'}.contains(key)); } 
-PostAccountsRequestSettingsTreasury copyWith({PostAccountsRequestSettingsTreasuryTosAcceptance Function()? tosAcceptance}) { return PostAccountsRequestSettingsTreasury(
+PostAccountsRequestSettingsTreasury copyWith({PostAccountsRequestSettingsTreasuryTosAcceptance? Function()? tosAcceptance}) { return PostAccountsRequestSettingsTreasury(
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

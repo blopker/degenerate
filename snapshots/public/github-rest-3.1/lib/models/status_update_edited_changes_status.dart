@@ -72,25 +72,25 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StatusUpdateEditedChangesStatusTo($value)'; } 
  }
-@immutable final class StatusUpdateEditedChangesStatus {const StatusUpdateEditedChangesStatus({this.from, this.to, });
+@immutable final class StatusUpdateEditedChangesStatus {const StatusUpdateEditedChangesStatus({this.from = const Omittable.absent(), this.to = const Omittable.absent(), });
 
 factory StatusUpdateEditedChangesStatus.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChangesStatus(
-  from: json['from'] != null ? StatusUpdateEditedChangesStatusFrom.fromJson(json['from'] as String) : null,
-  to: json['to'] != null ? StatusUpdateEditedChangesStatusTo.fromJson(json['to'] as String) : null,
+  from: json.containsKey('from') ? Omittable(json['from'] != null ? StatusUpdateEditedChangesStatusFrom.fromJson(json['from'] as String) : null) : const Omittable.absent(),
+  to: json.containsKey('to') ? Omittable(json['to'] != null ? StatusUpdateEditedChangesStatusTo.fromJson(json['to'] as String) : null) : const Omittable.absent(),
 ); }
 
-final StatusUpdateEditedChangesStatusFrom? from;
+final Omittable<StatusUpdateEditedChangesStatusFrom?> from;
 
-final StatusUpdateEditedChangesStatusTo? to;
+final Omittable<StatusUpdateEditedChangesStatusTo?> to;
 
 Map<String, dynamic> toJson() { return {
-  if (from != null) 'from': from?.toJson(),
-  if (to != null) 'to': to?.toJson(),
+  if (from.isPresent) 'from': from.value?.toJson(),
+  if (to.isPresent) 'to': to.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-StatusUpdateEditedChangesStatus copyWith({StatusUpdateEditedChangesStatusFrom? Function()? from, StatusUpdateEditedChangesStatusTo? Function()? to, }) { return StatusUpdateEditedChangesStatus(
-  from: from != null ? from() : this.from,
-  to: to != null ? to() : this.to,
+StatusUpdateEditedChangesStatus copyWith({Omittable<StatusUpdateEditedChangesStatusFrom?>? from, Omittable<StatusUpdateEditedChangesStatusTo?>? to, }) { return StatusUpdateEditedChangesStatus(
+  from: from ?? this.from,
+  to: to ?? this.to,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is StatusUpdateEditedChangesStatus &&

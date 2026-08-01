@@ -40,12 +40,12 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'start_line': startLine,
   'end_line': endLine,
-  'start_column': ?startColumn,
-  'end_column': ?endColumn,
-  'annotation_level': ?annotationLevel,
-  'title': ?title,
-  'message': ?message,
-  'raw_details': ?rawDetails,
+  'start_column': startColumn,
+  'end_column': endColumn,
+  'annotation_level': annotationLevel,
+  'title': title,
+  'message': message,
+  'raw_details': rawDetails,
   'blob_href': blobHref,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&

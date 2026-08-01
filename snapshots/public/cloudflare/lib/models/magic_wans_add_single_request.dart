@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('physport'); } 
-MagicWansAddSingleRequest copyWith({String Function()? name, MagicPort? physport, int Function()? priority, MagicWanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicWansAddSingleRequest(
+MagicWansAddSingleRequest copyWith({String? Function()? name, MagicPort? physport, int? Function()? priority, MagicWanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicWansAddSingleRequest(
   name: name != null ? name() : this.name,
   physport: physport ?? this.physport,
   priority: priority != null ? priority() : this.priority,

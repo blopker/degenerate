@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text'}.contains(key)); } 
-WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage copyWith({String Function()? text}) { return WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(
+WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage copyWith({String? Function()? text}) { return WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(
   text: text != null ? text() : this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

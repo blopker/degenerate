@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay(
+PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPayCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPaySetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAmazonPay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

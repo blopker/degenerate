@@ -48,8 +48,8 @@ final bool featured;
 Map<String, dynamic> toJson() { return {
   'key': key,
   'name': name,
-  'spdx_id': ?spdxId,
-  if (url != null) 'url': url?.toString(),
+  'spdx_id': spdxId,
+  'url': url?.toString(),
   'node_id': nodeId,
   'html_url': htmlUrl.toString(),
   'description': description,

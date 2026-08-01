@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (purchaseDetails != null) 'purchase_details': purchaseDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_amount', 'close_authorization', 'expand', 'purchase_details'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest copyWith({int Function()? captureAmount, bool Function()? closeAuthorization, List<String> Function()? expand, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(
+PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest copyWith({int? Function()? captureAmount, bool? Function()? closeAuthorization, List<String>? Function()? expand, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails? Function()? purchaseDetails, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(
   captureAmount: captureAmount != null ? captureAmount() : this.captureAmount,
   closeAuthorization: closeAuthorization != null ? closeAuthorization() : this.closeAuthorization,
   expand: expand != null ? expand() : this.expand,

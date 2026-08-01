@@ -84,11 +84,11 @@ final bool verified;
 final String? verifiedAt;
 
 Map<String, dynamic> toJson() { return {
-  'payload': ?payload,
+  'payload': payload,
   'reason': reason.toJson(),
-  'signature': ?signature,
+  'signature': signature,
   'verified': verified,
-  'verified_at': ?verifiedAt,
+  'verified_at': verifiedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && json['payload'] is String &&
       json.containsKey('reason') &&

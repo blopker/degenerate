@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'repository_ids': ?repositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'repository_ids'}.contains(key)); } 
-RepositoryRulesetConditionsRepositoryIdTargetRepositoryId copyWith({List<int> Function()? repositoryIds}) { return RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
+RepositoryRulesetConditionsRepositoryIdTargetRepositoryId copyWith({List<int>? Function()? repositoryIds}) { return RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

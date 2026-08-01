@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('algor
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('usages'); } 
-WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, dynamic> Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) { return WorkersBindingKindSecretKey(
+WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) { return WorkersBindingKindSecretKey(
   algorithm: algorithm ?? this.algorithm,
   format: format ?? this.format,
   keyBase64: keyBase64 != null ? keyBase64() : this.keyBase64,

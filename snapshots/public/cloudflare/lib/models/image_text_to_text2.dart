@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
-ImageTextToText2 copyWith({String Function()? description}) { return ImageTextToText2(
+ImageTextToText2 copyWith({String? Function()? description}) { return ImageTextToText2(
   description: description != null ? description() : this.description,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

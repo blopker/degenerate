@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam22 copyWith({PaymentIntentPaymentMethodOptionsParam22CaptureMethod Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam22SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam22(
+PaymentIntentPaymentMethodOptionsParam22 copyWith({PaymentIntentPaymentMethodOptionsParam22CaptureMethod? Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam22SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam22(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('product_name') && json['product_name'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
       json.containsKey('unit_cost') && json['unit_cost'] is num; } 
-AmountDetailsParam2LineItemsVariant1 copyWith({int Function()? discountAmount, AmountDetailsParam2LineItemsVariant1PaymentMethodOptions Function()? paymentMethodOptions, String Function()? productCode, String? productName, int? quantity, AmountDetailsParam2LineItemsVariant1Tax Function()? tax, int? unitCost, String Function()? unitOfMeasure, }) { return AmountDetailsParam2LineItemsVariant1(
+AmountDetailsParam2LineItemsVariant1 copyWith({int? Function()? discountAmount, AmountDetailsParam2LineItemsVariant1PaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, AmountDetailsParam2LineItemsVariant1Tax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) { return AmountDetailsParam2LineItemsVariant1(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   productCode: productCode != null ? productCode() : this.productCode,

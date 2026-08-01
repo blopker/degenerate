@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-SinksRequest copyWith({SinksRequestConfig Function()? config, CloudflarePipelinesFormat Function()? format, String? name, CloudflarePipelinesConnectionSchema Function()? schema, SinksRequestType? type, }) { return SinksRequest(
+SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelinesFormat? Function()? format, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) { return SinksRequest(
   config: config != null ? config() : this.config,
   format: format != null ? format() : this.format,
   name: name ?? this.name,

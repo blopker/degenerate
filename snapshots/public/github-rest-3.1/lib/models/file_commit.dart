@@ -13,7 +13,7 @@ final FileCommitContent? content;
 final FileCommitCommit commit;
 
 Map<String, dynamic> toJson() { return {
-  if (content != null) 'content': content?.toJson(),
+  'content': content?.toJson(),
   'commit': commit.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&

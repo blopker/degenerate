@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-FirewallFirewalluablockResponseCollection copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, List<FirewallFirewalluablock>? result, bool? success, FirewallResultInfo Function()? resultInfo, }) { return FirewallFirewalluablockResponseCollection(
+FirewallFirewalluablockResponseCollection copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, List<FirewallFirewalluablock>? result, bool? success, FirewallResultInfo? Function()? resultInfo, }) { return FirewallFirewalluablockResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

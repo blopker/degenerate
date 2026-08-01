@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (providerName != null) 'provider_name': providerName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gateway_tag', 'id', 'provider_name'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountResult copyWith({ZeroTrustGatewayGatewayTag Function()? gatewayTag, ZeroTrustGatewayCfAccountId Function()? id, ZeroTrustGatewayProviderName Function()? providerName, }) { return ZeroTrustGatewayGatewayAccountResult(
+ZeroTrustGatewayGatewayAccountResult copyWith({ZeroTrustGatewayGatewayTag? Function()? gatewayTag, ZeroTrustGatewayCfAccountId? Function()? id, ZeroTrustGatewayProviderName? Function()? providerName, }) { return ZeroTrustGatewayGatewayAccountResult(
   gatewayTag: gatewayTag != null ? gatewayTag() : this.gatewayTag,
   id: id != null ? id() : this.id,
   providerName: providerName != null ? providerName() : this.providerName,

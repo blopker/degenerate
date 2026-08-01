@@ -181,22 +181,22 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'head_sha': headSha,
   'url': url,
-  'html_url': ?htmlUrl,
+  'html_url': htmlUrl,
   'status': status.toJson(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'conclusion': conclusion?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'started_at': startedAt.toIso8601String(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
+  'completed_at': completedAt?.toIso8601String(),
   'name': name,
   if (steps != null) 'steps': steps?.map((e) => e.toJson()).toList(),
   'check_run_url': checkRunUrl,
   'labels': labels,
-  'runner_id': ?runnerId,
-  'runner_name': ?runnerName,
-  'runner_group_id': ?runnerGroupId,
-  'runner_group_name': ?runnerGroupName,
-  'workflow_name': ?workflowName,
-  'head_branch': ?headBranch,
+  'runner_id': runnerId,
+  'runner_name': runnerName,
+  'runner_group_id': runnerGroupId,
+  'runner_group_name': runnerGroupName,
+  'workflow_name': workflowName,
+  'head_branch': headBranch,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('run_id') && json['run_id'] is num &&
@@ -219,7 +219,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
       json.containsKey('workflow_name') && json['workflow_name'] is String &&
       json.containsKey('head_branch') && json['head_branch'] is String; } 
-Job copyWith({int? id, int? runId, String? runUrl, int Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, JobStatus? status, JobConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps> Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
+Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, JobStatus? status, JobConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps>? Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
   id: id ?? this.id,
   runId: runId ?? this.runId,
   runUrl: runUrl ?? this.runUrl,

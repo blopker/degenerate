@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PostSourcesSourceRequestMandateAcceptance copyWith({int Function()? date, String Function()? ip, PostSourcesSourceRequestMandateAcceptanceOffline Function()? offline, PostSourcesSourceRequestMandateAcceptanceOnline Function()? online, PostSourcesSourceRequestMandateAcceptanceStatus? status, PostSourcesSourceRequestMandateAcceptanceType Function()? type, String Function()? userAgent, }) { return PostSourcesSourceRequestMandateAcceptance(
+PostSourcesSourceRequestMandateAcceptance copyWith({int? Function()? date, String? Function()? ip, PostSourcesSourceRequestMandateAcceptanceOffline? Function()? offline, PostSourcesSourceRequestMandateAcceptanceOnline? Function()? online, PostSourcesSourceRequestMandateAcceptanceStatus? status, PostSourcesSourceRequestMandateAcceptanceType? Function()? type, String? Function()? userAgent, }) { return PostSourcesSourceRequestMandateAcceptance(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   offline: offline != null ? offline() : this.offline,

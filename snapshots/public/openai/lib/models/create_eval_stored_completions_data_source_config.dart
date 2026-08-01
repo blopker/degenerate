@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CreateEvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, dynamic> Function()? metadata, }) { return CreateEvalStoredCompletionsDataSourceConfig(
+CreateEvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, dynamic>? Function()? metadata, }) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

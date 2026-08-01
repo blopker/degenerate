@@ -87,51 +87,51 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxRateDetailsTaxType($value)'; } 
  }
 /// 
-@immutable final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDetails({required this.percentageDecimal, this.country, this.flatAmount, this.rateType, this.state, this.taxType, });
+@immutable final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDetails({required this.percentageDecimal, this.country = const Omittable.absent(), this.flatAmount = const Omittable.absent(), this.rateType = const Omittable.absent(), this.state = const Omittable.absent(), this.taxType = const Omittable.absent(), });
 
 factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxRateDetails(
-  country: json['country'] as String?,
-  flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  flatAmount: json.containsKey('flat_amount') ? Omittable(json['flat_amount'] != null ? TaxRateFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   percentageDecimal: json['percentage_decimal'] as String,
-  rateType: json['rate_type'] != null ? TaxProductResourceTaxRateDetailsRateType.fromJson(json['rate_type'] as String) : null,
-  state: json['state'] as String?,
-  taxType: json['tax_type'] != null ? TaxProductResourceTaxRateDetailsTaxType.fromJson(json['tax_type'] as String) : null,
+  rateType: json.containsKey('rate_type') ? Omittable(json['rate_type'] != null ? TaxProductResourceTaxRateDetailsRateType.fromJson(json['rate_type'] as String) : null) : const Omittable.absent(),
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
+  taxType: json.containsKey('tax_type') ? Omittable(json['tax_type'] != null ? TaxProductResourceTaxRateDetailsTaxType.fromJson(json['tax_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
-final String? country;
+final Omittable<String?> country;
 
 /// The amount of the tax rate when the `rate_type` is `flat_amount`. Tax rates with `rate_type` `percentage` can vary based on the transaction, resulting in this field being `null`. This field exposes the amount and currency of the flat tax rate.
-final TaxRateFlatAmount? flatAmount;
+final Omittable<TaxRateFlatAmount?> flatAmount;
 
 /// The tax rate percentage as a string. For example, 8.5% is represented as `"8.5"`.
 final String percentageDecimal;
 
 /// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
-final TaxProductResourceTaxRateDetailsRateType? rateType;
+final Omittable<TaxProductResourceTaxRateDetailsRateType?> rateType;
 
 /// State, county, province, or region ([ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)).
-final String? state;
+final Omittable<String?> state;
 
 /// The tax type, such as `vat` or `sales_tax`.
-final TaxProductResourceTaxRateDetailsTaxType? taxType;
+final Omittable<TaxProductResourceTaxRateDetailsTaxType?> taxType;
 
 Map<String, dynamic> toJson() { return {
-  'country': ?country,
-  if (flatAmount != null) 'flat_amount': flatAmount?.toJson(),
+  if (country.isPresent) 'country': country.value,
+  if (flatAmount.isPresent) 'flat_amount': flatAmount.value?.toJson(),
   'percentage_decimal': percentageDecimal,
-  if (rateType != null) 'rate_type': rateType?.toJson(),
-  'state': ?state,
-  if (taxType != null) 'tax_type': taxType?.toJson(),
+  if (rateType.isPresent) 'rate_type': rateType.value?.toJson(),
+  if (state.isPresent) 'state': state.value,
+  if (taxType.isPresent) 'tax_type': taxType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('percentage_decimal') && json['percentage_decimal'] is String; } 
-TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxRateFlatAmount? Function()? flatAmount, String? percentageDecimal, TaxProductResourceTaxRateDetailsRateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxProductResourceTaxRateDetails(
-  country: country != null ? country() : this.country,
-  flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
+TaxProductResourceTaxRateDetails copyWith({Omittable<String?>? country, Omittable<TaxRateFlatAmount?>? flatAmount, String? percentageDecimal, Omittable<TaxProductResourceTaxRateDetailsRateType?>? rateType, Omittable<String?>? state, Omittable<TaxProductResourceTaxRateDetailsTaxType?>? taxType, }) { return TaxProductResourceTaxRateDetails(
+  country: country ?? this.country,
+  flatAmount: flatAmount ?? this.flatAmount,
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,
-  rateType: rateType != null ? rateType() : this.rateType,
-  state: state != null ? state() : this.state,
-  taxType: taxType != null ? taxType() : this.taxType,
+  rateType: rateType ?? this.rateType,
+  state: state ?? this.state,
+  taxType: taxType ?? this.taxType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TaxProductResourceTaxRateDetails &&

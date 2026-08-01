@@ -64,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag')
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('object') && json['object'] is String &&
       json.containsKey('type'); } 
-GitCreateTagRequest copyWith({String? tag, String? message, String? object, GitCreateTagRequestType? type, GitCreateTagRequestTagger Function()? tagger, }) { return GitCreateTagRequest(
+GitCreateTagRequest copyWith({String? tag, String? message, String? object, GitCreateTagRequestType? type, GitCreateTagRequestTagger? Function()? tagger, }) { return GitCreateTagRequest(
   tag: tag ?? this.tag,
   message: message ?? this.message,
   object: object ?? this.object,

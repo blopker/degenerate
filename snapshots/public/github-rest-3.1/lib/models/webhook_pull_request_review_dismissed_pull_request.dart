@@ -218,14 +218,14 @@ final WebhookPullRequestReviewDismissedPullRequestUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
-  if (activeLockReason != null) 'active_lock_reason': activeLockReason?.toJson(),
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  'active_lock_reason': activeLockReason?.toJson(),
+  'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
-  if (autoMerge != null) 'auto_merge': autoMerge?.toJson(),
+  'auto_merge': autoMerge?.toJson(),
   'base': base.toJson(),
-  'body': ?body,
-  'closed_at': ?closedAt,
+  'body': body,
+  'closed_at': closedAt,
   'comments_url': commentsUrl.toString(),
   'commits_url': commitsUrl.toString(),
   'created_at': createdAt,
@@ -237,9 +237,9 @@ Map<String, dynamic> toJson() { return {
   'issue_url': issueUrl.toString(),
   'labels': labels.map((e) => e.toJson()).toList(),
   'locked': locked,
-  'merge_commit_sha': ?mergeCommitSha,
-  'merged_at': ?mergedAt,
-  if (milestone != null) 'milestone': milestone?.toJson(),
+  'merge_commit_sha': mergeCommitSha,
+  'merged_at': mergedAt,
+  'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
   'patch_url': patchUrl.toString(),
@@ -252,7 +252,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt,
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&

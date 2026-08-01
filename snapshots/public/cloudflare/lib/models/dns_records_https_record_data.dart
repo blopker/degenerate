@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'priority', 'target', 'value'}.contains(key)); } 
-DnsRecordsHttpsRecordData copyWith({double Function()? priority, String Function()? target, String Function()? value, }) { return DnsRecordsHttpsRecordData(
+DnsRecordsHttpsRecordData copyWith({double? Function()? priority, String? Function()? target, String? Function()? value, }) { return DnsRecordsHttpsRecordData(
   priority: priority != null ? priority() : this.priority,
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,

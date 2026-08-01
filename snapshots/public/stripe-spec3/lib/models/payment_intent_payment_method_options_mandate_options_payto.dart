@@ -121,51 +121,51 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose($value)'; } 
  }
 /// 
-@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsPayto {const PaymentIntentPaymentMethodOptionsMandateOptionsPayto({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, });
+@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsPayto {const PaymentIntentPaymentMethodOptionsMandateOptionsPayto({this.amount = const Omittable.absent(), this.amountType = const Omittable.absent(), this.endDate = const Omittable.absent(), this.paymentSchedule = const Omittable.absent(), this.paymentsPerPeriod = const Omittable.absent(), this.purpose = const Omittable.absent(), });
 
 factory PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
-  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountType: json['amount_type'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] as String?,
-  paymentSchedule: json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null,
-  purpose: json['purpose'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null,
+  amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
+  amountType: json.containsKey('amount_type') ? Omittable(json['amount_type'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null) : const Omittable.absent(),
+  endDate: json.containsKey('end_date') ? Omittable(json['end_date'] as String?) : const Omittable.absent(),
+  paymentSchedule: json.containsKey('payment_schedule') ? Omittable(json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(json['payment_schedule'] as String) : null) : const Omittable.absent(),
+  paymentsPerPeriod: json.containsKey('payments_per_period') ? Omittable(json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null) : const Omittable.absent(),
+  purpose: json.containsKey('purpose') ? Omittable(json['purpose'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Amount that will be collected. It is required when `amount_type` is `fixed`.
-final int? amount;
+final Omittable<int?> amount;
 
 /// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
-final PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType? amountType;
+final Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType?> amountType;
 
 /// Date, in YYYY-MM-DD format, after which payments will not be collected. Defaults to no end date.
-final String? endDate;
+final Omittable<String?> endDate;
 
 /// The periodicity at which payments will be collected. Defaults to `adhoc`.
-final PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule? paymentSchedule;
+final Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule?> paymentSchedule;
 
 /// The number of payments that will be made during a payment period. Defaults to 1 except for when `payment_schedule` is `adhoc`. In that case, it defaults to no limit.
-final int? paymentsPerPeriod;
+final Omittable<int?> paymentsPerPeriod;
 
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose? purpose;
+final Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose?> purpose;
 
 Map<String, dynamic> toJson() { return {
-  'amount': ?amount,
-  if (amountType != null) 'amount_type': amountType?.toJson(),
-  'end_date': ?endDate,
-  if (paymentSchedule != null) 'payment_schedule': paymentSchedule?.toJson(),
-  'payments_per_period': ?paymentsPerPeriod,
-  if (purpose != null) 'purpose': purpose?.toJson(),
+  if (amount.isPresent) 'amount': amount.value,
+  if (amountType.isPresent) 'amount_type': amountType.value?.toJson(),
+  if (endDate.isPresent) 'end_date': endDate.value,
+  if (paymentSchedule.isPresent) 'payment_schedule': paymentSchedule.value?.toJson(),
+  if (paymentsPerPeriod.isPresent) 'payments_per_period': paymentsPerPeriod.value,
+  if (purpose.isPresent) 'purpose': purpose.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsMandateOptionsPayto copyWith({int? Function()? amount, PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType? Function()? amountType, String? Function()? endDate, PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule? Function()? paymentSchedule, int? Function()? paymentsPerPeriod, PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose? Function()? purpose, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
-  amount: amount != null ? amount() : this.amount,
-  amountType: amountType != null ? amountType() : this.amountType,
-  endDate: endDate != null ? endDate() : this.endDate,
-  paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,
-  paymentsPerPeriod: paymentsPerPeriod != null ? paymentsPerPeriod() : this.paymentsPerPeriod,
-  purpose: purpose != null ? purpose() : this.purpose,
+PaymentIntentPaymentMethodOptionsMandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType?>? amountType, Omittable<String?>? endDate, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule?>? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose?>? purpose, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
+  amount: amount ?? this.amount,
+  amountType: amountType ?? this.amountType,
+  endDate: endDate ?? this.endDate,
+  paymentSchedule: paymentSchedule ?? this.paymentSchedule,
+  paymentsPerPeriod: paymentsPerPeriod ?? this.paymentsPerPeriod,
+  purpose: purpose ?? this.purpose,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsMandateOptionsPayto &&

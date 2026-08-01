@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull') && json['pull'] is bool &&
       json.containsKey('push') && json['push'] is bool &&
       json.containsKey('admin') && json['admin'] is bool; } 
-CollaboratorPermissions copyWith({bool? pull, bool Function()? triage, bool? push, bool Function()? maintain, bool? admin, }) { return CollaboratorPermissions(
+CollaboratorPermissions copyWith({bool? pull, bool? Function()? triage, bool? push, bool? Function()? maintain, bool? admin, }) { return CollaboratorPermissions(
   pull: pull ?? this.pull,
   triage: triage != null ? triage() : this.triage,
   push: push ?? this.push,

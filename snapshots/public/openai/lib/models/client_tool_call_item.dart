@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
   'call_id': callId,
   'name': name,
   'arguments': arguments,
-  'output': ?output,
+  'output': output,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&

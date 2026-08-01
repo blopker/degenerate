@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type', 'insecure_ssl', 'secret', 'url'}.contains(key)); } 
-WebhookPingHookConfig copyWith({WebhookConfigContentType Function()? contentType, WebhookConfigInsecureSsl Function()? insecureSsl, WebhookConfigSecret Function()? secret, WebhookConfigUrl Function()? url, }) { return WebhookPingHookConfig(
+WebhookPingHookConfig copyWith({WebhookConfigContentType? Function()? contentType, WebhookConfigInsecureSsl? Function()? insecureSsl, WebhookConfigSecret? Function()? secret, WebhookConfigUrl? Function()? url, }) { return WebhookPingHookConfig(
   contentType: contentType != null ? contentType() : this.contentType,
   insecureSsl: insecureSsl != null ? insecureSsl() : this.insecureSsl,
   secret: secret != null ? secret() : this.secret,

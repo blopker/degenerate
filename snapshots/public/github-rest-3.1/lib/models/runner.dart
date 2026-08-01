@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('busy') && json['busy'] is bool &&
       json.containsKey('labels'); } 
-Runner copyWith({int? id, int Function()? runnerGroupId, String? name, String? os, String? status, bool? busy, List<RunnerLabel>? labels, bool Function()? ephemeral, }) { return Runner(
+Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? os, String? status, bool? busy, List<RunnerLabel>? labels, bool? Function()? ephemeral, }) { return Runner(
   id: id ?? this.id,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,
   name: name ?? this.name,

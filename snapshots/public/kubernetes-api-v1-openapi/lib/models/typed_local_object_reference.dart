@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-TypedLocalObjectReference copyWith({String Function()? apiGroup, String? kind, String? name, }) { return TypedLocalObjectReference(
+TypedLocalObjectReference copyWith({String? Function()? apiGroup, String? kind, String? name, }) { return TypedLocalObjectReference(
   apiGroup: apiGroup != null ? apiGroup() : this.apiGroup,
   kind: kind ?? this.kind,
   name: name ?? this.name,

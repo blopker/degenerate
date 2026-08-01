@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cdate
       json.containsKey('tenant_tag') && json['tenant_tag'] is String &&
       json.containsKey('tenant_type') && json['tenant_type'] is String &&
       json.containsKey('tenant_units'); } 
-Tenant copyWith({DateTime? cdate, String Function()? customerId, DateTime? edate, TenantTenantContacts? tenantContacts, List<String>? tenantLabels, TenantTenantMetadata? tenantMetadata, String? tenantName, Map<String,dynamic>? tenantNetwork, String? tenantStatus, String? tenantTag, String? tenantType, List<TenantUnit>? tenantUnits, }) { return Tenant(
+Tenant copyWith({DateTime? cdate, String? Function()? customerId, DateTime? edate, TenantTenantContacts? tenantContacts, List<String>? tenantLabels, TenantTenantMetadata? tenantMetadata, String? tenantName, Map<String,dynamic>? tenantNetwork, String? tenantStatus, String? tenantTag, String? tenantType, List<TenantUnit>? tenantUnits, }) { return Tenant(
   cdate: cdate ?? this.cdate,
   customerId: customerId != null ? customerId() : this.customerId,
   edate: edate ?? this.edate,

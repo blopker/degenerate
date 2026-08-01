@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotIdeChatEditorsModels {const CopilotIdeChatEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.totalChats, this.totalChatInsertionEvents, this.totalChatCopyEvents, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotIdeChatEditorsModels {const CopilotIdeChatEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate = const Omittable.absent(), this.totalEngagedUsers, this.totalChats, this.totalChatInsertionEvents, this.totalChatCopyEvents, });
 
 factory CopilotIdeChatEditorsModels.fromJson(Map<String, dynamic> json) { return CopilotIdeChatEditorsModels(
   name: json['name'] as String?,
   isCustomModel: json['is_custom_model'] as bool?,
-  customModelTrainingDate: json['custom_model_training_date'] as String?,
+  customModelTrainingDate: json.containsKey('custom_model_training_date') ? Omittable(json['custom_model_training_date'] as String?) : const Omittable.absent(),
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   totalChats: json['total_chats'] != null ? (json['total_chats'] as num).toInt() : null,
   totalChatInsertionEvents: json['total_chat_insertion_events'] != null ? (json['total_chat_insertion_events'] as num).toInt() : null,
@@ -19,7 +19,7 @@ final String? name;
 final bool? isCustomModel;
 
 /// The training date for the custom model.
-final String? customModelTrainingDate;
+final Omittable<String?> customModelTrainingDate;
 
 /// The number of users who prompted Copilot Chat in the given editor and model.
 final int? totalEngagedUsers;
@@ -36,17 +36,17 @@ final int? totalChatCopyEvents;
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'is_custom_model': ?isCustomModel,
-  'custom_model_training_date': ?customModelTrainingDate,
+  if (customModelTrainingDate.isPresent) 'custom_model_training_date': customModelTrainingDate.value,
   'total_engaged_users': ?totalEngagedUsers,
   'total_chats': ?totalChats,
   'total_chat_insertion_events': ?totalChatInsertionEvents,
   'total_chat_copy_events': ?totalChatCopyEvents,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'total_chats', 'total_chat_insertion_events', 'total_chat_copy_events'}.contains(key)); } 
-CopilotIdeChatEditorsModels copyWith({String Function()? name, bool Function()? isCustomModel, String? Function()? customModelTrainingDate, int Function()? totalEngagedUsers, int Function()? totalChats, int Function()? totalChatInsertionEvents, int Function()? totalChatCopyEvents, }) { return CopilotIdeChatEditorsModels(
+CopilotIdeChatEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalEngagedUsers, int? Function()? totalChats, int? Function()? totalChatInsertionEvents, int? Function()? totalChatCopyEvents, }) { return CopilotIdeChatEditorsModels(
   name: name != null ? name() : this.name,
   isCustomModel: isCustomModel != null ? isCustomModel() : this.isCustomModel,
-  customModelTrainingDate: customModelTrainingDate != null ? customModelTrainingDate() : this.customModelTrainingDate,
+  customModelTrainingDate: customModelTrainingDate ?? this.customModelTrainingDate,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   totalChats: totalChats != null ? totalChats() : this.totalChats,
   totalChatInsertionEvents: totalChatInsertionEvents != null ? totalChatInsertionEvents() : this.totalChatInsertionEvents,

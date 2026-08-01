@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'repos_update_branch_protection_request_required_status_checks.dart';import 'repos_update_branch_protection_request_restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes, this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'repos_update_branch_protection_request_required_status_checks.dart';import 'repos_update_branch_protection_request_restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes = const Omittable.absent(), this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
 
 factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: json['required_status_checks'] != null ? ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
@@ -8,7 +8,7 @@ factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) {
   requiredPullRequestReviews: json['required_pull_request_reviews'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null,
   restrictions: json['restrictions'] != null ? ReposUpdateBranchProtectionRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
   requiredLinearHistory: json['required_linear_history'] as bool?,
-  allowForcePushes: json['allow_force_pushes'] as bool?,
+  allowForcePushes: json.containsKey('allow_force_pushes') ? Omittable(json['allow_force_pushes'] as bool?) : const Omittable.absent(),
   allowDeletions: json['allow_deletions'] as bool?,
   blockCreations: json['block_creations'] as bool?,
   requiredConversationResolution: json['required_conversation_resolution'] as bool?,
@@ -32,7 +32,7 @@ final ReposUpdateBranchProtectionRequestRestrictions? restrictions;
 final bool? requiredLinearHistory;
 
 /// Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
-final bool? allowForcePushes;
+final Omittable<bool?> allowForcePushes;
 
 /// Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
 final bool? allowDeletions;
@@ -50,12 +50,12 @@ final bool lockBranch;
 final bool allowForkSyncing;
 
 Map<String, dynamic> toJson() { return {
-  if (requiredStatusChecks != null) 'required_status_checks': requiredStatusChecks?.toJson(),
-  'enforce_admins': ?enforceAdmins,
-  if (requiredPullRequestReviews != null) 'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
-  if (restrictions != null) 'restrictions': restrictions?.toJson(),
+  'required_status_checks': requiredStatusChecks?.toJson(),
+  'enforce_admins': enforceAdmins,
+  'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
+  'restrictions': restrictions?.toJson(),
   'required_linear_history': ?requiredLinearHistory,
-  'allow_force_pushes': ?allowForcePushes,
+  if (allowForcePushes.isPresent) 'allow_force_pushes': allowForcePushes.value,
   'allow_deletions': ?allowDeletions,
   'block_creations': ?blockCreations,
   'required_conversation_resolution': ?requiredConversationResolution,
@@ -66,13 +66,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('requi
       json.containsKey('enforce_admins') && json['enforce_admins'] is bool &&
       json.containsKey('required_pull_request_reviews') &&
       json.containsKey('restrictions'); } 
-ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestRestrictions? Function()? restrictions, bool Function()? requiredLinearHistory, bool? Function()? allowForcePushes, bool Function()? allowDeletions, bool Function()? blockCreations, bool Function()? requiredConversationResolution, bool Function()? lockBranch, bool Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
+ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestRestrictions? Function()? restrictions, bool? Function()? requiredLinearHistory, Omittable<bool?>? allowForcePushes, bool? Function()? allowDeletions, bool? Function()? blockCreations, bool? Function()? requiredConversationResolution, bool Function()? lockBranch, bool Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
   enforceAdmins: enforceAdmins != null ? enforceAdmins() : this.enforceAdmins,
   requiredPullRequestReviews: requiredPullRequestReviews != null ? requiredPullRequestReviews() : this.requiredPullRequestReviews,
   restrictions: restrictions != null ? restrictions() : this.restrictions,
   requiredLinearHistory: requiredLinearHistory != null ? requiredLinearHistory() : this.requiredLinearHistory,
-  allowForcePushes: allowForcePushes != null ? allowForcePushes() : this.allowForcePushes,
+  allowForcePushes: allowForcePushes ?? this.allowForcePushes,
   allowDeletions: allowDeletions != null ? allowDeletions() : this.allowDeletions,
   blockCreations: blockCreations != null ? blockCreations() : this.blockCreations,
   requiredConversationResolution: requiredConversationResolution != null ? requiredConversationResolution() : this.requiredConversationResolution,

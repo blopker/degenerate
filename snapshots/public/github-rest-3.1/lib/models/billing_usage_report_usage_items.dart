@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('date'
       json.containsKey('discountAmount') && json['discountAmount'] is num &&
       json.containsKey('netAmount') && json['netAmount'] is num &&
       json.containsKey('organizationName') && json['organizationName'] is String; } 
-BillingUsageReportUsageItems copyWith({String? date, String? product, String? sku, int? quantity, String? unitType, double? pricePerUnit, double? grossAmount, double? discountAmount, double? netAmount, String? organizationName, String Function()? repositoryName, }) { return BillingUsageReportUsageItems(
+BillingUsageReportUsageItems copyWith({String? date, String? product, String? sku, int? quantity, String? unitType, double? pricePerUnit, double? grossAmount, double? discountAmount, double? netAmount, String? organizationName, String? Function()? repositoryName, }) { return BillingUsageReportUsageItems(
   date: date ?? this.date,
   product: product ?? this.product,
   sku: sku ?? this.sku,

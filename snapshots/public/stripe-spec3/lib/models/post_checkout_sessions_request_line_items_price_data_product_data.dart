@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'unit_label': ?unitLabel,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostCheckoutSessionsRequestLineItemsPriceDataProductData copyWith({String Function()? description, List<String> Function()? images, Map<String, String> Function()? metadata, String? name, String Function()? taxCode, String Function()? unitLabel, }) { return PostCheckoutSessionsRequestLineItemsPriceDataProductData(
+PostCheckoutSessionsRequestLineItemsPriceDataProductData copyWith({String? Function()? description, List<String>? Function()? images, Map<String, String>? Function()? metadata, String? name, String? Function()? taxCode, String? Function()? unitLabel, }) { return PostCheckoutSessionsRequestLineItemsPriceDataProductData(
   description: description != null ? description() : this.description,
   images: images != null ? images() : this.images,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-CreatePortalsRequest copyWith({String Function()? description, String? hostname, String? id, String? name, bool Function()? secureWebGateway, List<CreatePortalsRequestServers> Function()? servers, }) { return CreatePortalsRequest(
+CreatePortalsRequest copyWith({String? Function()? description, String? hostname, String? id, String? name, bool? Function()? secureWebGateway, List<CreatePortalsRequestServers>? Function()? servers, }) { return CreatePortalsRequest(
   description: description != null ? description() : this.description,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,

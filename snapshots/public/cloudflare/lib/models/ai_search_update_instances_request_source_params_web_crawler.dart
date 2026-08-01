@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (storeOptions != null) 'store_options': storeOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key)); } 
-AiSearchUpdateInstancesRequestSourceParamsWebCrawler copyWith({AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions Function()? crawlOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions Function()? parseOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType Function()? parseType, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions Function()? storeOptions, }) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
+AiSearchUpdateInstancesRequestSourceParamsWebCrawler copyWith({AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType Function()? parseType, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
   crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
   parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,
   parseType: parseType != null ? parseType() : this.parseType,

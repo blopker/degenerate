@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'score': score,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num; } 
-AutoragConfigSearchResponseResultData copyWith({Map<String, dynamic> Function()? attributes, List<AutoragConfigSearchResponseResultDataContent> Function()? content, String Function()? fileId, String Function()? filename, double? score, }) { return AutoragConfigSearchResponseResultData(
+AutoragConfigSearchResponseResultData copyWith({Map<String, dynamic>? Function()? attributes, List<AutoragConfigSearchResponseResultDataContent>? Function()? content, String? Function()? fileId, String? Function()? filename, double? score, }) { return AutoragConfigSearchResponseResultData(
   attributes: attributes != null ? attributes() : this.attributes,
   content: content != null ? content() : this.content,
   fileId: fileId != null ? fileId() : this.fileId,

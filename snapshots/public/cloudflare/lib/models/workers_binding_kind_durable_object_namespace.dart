@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindDurableObjectNamespace copyWith({String Function()? className, String Function()? dispatchNamespace, String Function()? environment, WorkersBindingName? name, WorkersNamespaceIdentifier Function()? namespaceId, String Function()? scriptName, String? type, }) { return WorkersBindingKindDurableObjectNamespace(
+WorkersBindingKindDurableObjectNamespace copyWith({String? Function()? className, String? Function()? dispatchNamespace, String? Function()? environment, WorkersBindingName? name, WorkersNamespaceIdentifier? Function()? namespaceId, String? Function()? scriptName, String? type, }) { return WorkersBindingKindDurableObjectNamespace(
   className: className != null ? className() : this.className,
   dispatchNamespace: dispatchNamespace != null ? dispatchNamespace() : this.dispatchNamespace,
   environment: environment != null ? environment() : this.environment,

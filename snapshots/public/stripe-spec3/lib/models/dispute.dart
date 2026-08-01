@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 /// evidence that shows that the charge is legitimate.
 /// 
 /// Related guide: [Disputes and fraud](https://docs.stripe.com/disputes)
-@immutable final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, required this.reason, required this.status, this.paymentIntent, this.paymentMethodDetails, });
+@immutable final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, required this.reason, required this.status, this.paymentIntent = const Omittable.absent(), this.paymentMethodDetails, });
 
 factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   amount: (json['amount'] as num).toInt(),
@@ -110,7 +110,7 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DisputeObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
   status: DisputeStatus.fromJson(json['status'] as String),
@@ -154,7 +154,7 @@ final Map<String,String> metadata;
 final DisputeObject object;
 
 /// ID of the PaymentIntent that's disputed.
-final DisputePaymentIntent? paymentIntent;
+final Omittable<DisputePaymentIntent?> paymentIntent;
 
 final DisputePaymentMethodDetails? paymentMethodDetails;
 
@@ -178,7 +178,7 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'metadata': metadata,
   'object': object.toJson(),
-  if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
+  if (paymentIntent.isPresent) 'payment_intent': paymentIntent.value?.toJson(),
   if (paymentMethodDetails != null) 'payment_method_details': paymentMethodDetails?.toJson(),
   'reason': reason,
   'status': status.toJson(),
@@ -198,7 +198,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('status'); } 
-Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, DisputeCharge? charge, int? created, String? currency, List<DisputeEnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, DisputePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
+Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, DisputeCharge? charge, int? created, String? currency, List<DisputeEnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, Omittable<DisputePaymentIntent?>? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
   amount: amount ?? this.amount,
   balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   charge: charge ?? this.charge,
@@ -212,7 +212,7 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Di
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
+  paymentIntent: paymentIntent ?? this.paymentIntent,
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
   reason: reason ?? this.reason,
   status: status ?? this.status,

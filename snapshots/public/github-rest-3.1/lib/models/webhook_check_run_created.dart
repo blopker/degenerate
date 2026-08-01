@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCheckRunCreated copyWith({WebhookCheckRunCreatedAction Function()? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation Function()? installation, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckRunCreated(
+WebhookCheckRunCreated copyWith({WebhookCheckRunCreatedAction? Function()? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation? Function()? installation, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckRunCreated(
   action: action != null ? action() : this.action,
   checkRun: checkRun ?? this.checkRun,
   installation: installation != null ? installation() : this.installation,

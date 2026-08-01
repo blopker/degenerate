@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest copyWith({WorkersKvAny Function()? metadata, WorkersKvValue? value, }) { return WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest(
+WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest copyWith({WorkersKvAny? Function()? metadata, WorkersKvValue? value, }) { return WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest(
   metadata: metadata != null ? metadata() : this.metadata,
   value: value ?? this.value,
 ); } 

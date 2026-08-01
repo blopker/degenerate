@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('heigh
       json.containsKey('width') && json['width'] is num &&
       json.containsKey('x') && json['x'] is num &&
       json.containsKey('y') && json['y'] is num; } 
-BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip copyWith({double? height, double Function()? scale, double? width, double? x, double? y, }) { return BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip(
+BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip copyWith({double? height, double? Function()? scale, double? width, double? x, double? y, }) { return BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip(
   height: height ?? this.height,
   scale: scale != null ? scale() : this.scale,
   width: width ?? this.width,

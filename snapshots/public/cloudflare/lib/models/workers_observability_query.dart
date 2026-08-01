@@ -42,11 +42,11 @@ final String workspaceId;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
-  'description': ?description,
+  'description': description,
   'environmentId': environmentId,
-  'generated': ?generated,
+  'generated': generated,
   'id': id,
-  'name': ?name,
+  'name': name,
   'parameters': parameters.toJson(),
   'updated': updated,
   'userId': userId,

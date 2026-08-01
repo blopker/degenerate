@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'expires_on', 'id', 'issued_on', 'last_used_on', 'modified_on', 'name', 'not_before', 'policies', 'status', 'value'}.contains(key)); } 
-IamTokenWithValue copyWith({IamCondition Function()? condition, IamExpiresOn Function()? expiresOn, IamTokenIdentifier Function()? id, IamIssuedOn Function()? issuedOn, IamLastUsedOn Function()? lastUsedOn, IamModifiedOn Function()? modifiedOn, IamName Function()? name, IamNotBefore Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources> Function()? policies, IamTokenStatus Function()? status, IamValue Function()? value, }) { return IamTokenWithValue(
+IamTokenWithValue copyWith({IamCondition? Function()? condition, IamExpiresOn? Function()? expiresOn, IamTokenIdentifier? Function()? id, IamIssuedOn? Function()? issuedOn, IamLastUsedOn? Function()? lastUsedOn, IamModifiedOn? Function()? modifiedOn, IamName? Function()? name, IamNotBefore? Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? Function()? policies, IamTokenStatus? Function()? status, IamValue? Function()? value, }) { return IamTokenWithValue(
   condition: condition != null ? condition() : this.condition,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,

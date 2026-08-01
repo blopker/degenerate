@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (refName != null) 'ref_name': refName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref_name'}.contains(key)); } 
-RepositoryRulesetConditions copyWith({RepositoryRulesetConditionsRefName Function()? refName}) { return RepositoryRulesetConditions(
+RepositoryRulesetConditions copyWith({RepositoryRulesetConditionsRefName? Function()? refName}) { return RepositoryRulesetConditions(
   refName: refName != null ? refName() : this.refName,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

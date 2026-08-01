@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'delete_messages_permanently': ?deleteMessagesPermanently,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delete_messages_permanently'}.contains(key)); } 
-QueuesPurgeRequest copyWith({bool Function()? deleteMessagesPermanently}) { return QueuesPurgeRequest(
+QueuesPurgeRequest copyWith({bool? Function()? deleteMessagesPermanently}) { return QueuesPurgeRequest(
   deleteMessagesPermanently: deleteMessagesPermanently != null ? deleteMessagesPermanently() : this.deleteMessagesPermanently,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

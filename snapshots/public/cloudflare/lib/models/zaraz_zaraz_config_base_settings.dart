@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'trackPath': ?trackPath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('autoInjectScript') && json['autoInjectScript'] is bool; } 
-ZarazZarazConfigBaseSettings copyWith({bool? autoInjectScript, ZarazZarazConfigBaseSettingsContextEnricher Function()? contextEnricher, String Function()? cookieDomain, bool Function()? ecommerce, String Function()? eventsApiPath, bool Function()? hideExternalReferer, bool Function()? hideIpAddress, bool Function()? hideQueryParams, bool Function()? hideUserAgent, String Function()? initPath, bool Function()? injectIframes, String Function()? mcRootPath, String Function()? scriptPath, String Function()? trackPath, }) { return ZarazZarazConfigBaseSettings(
+ZarazZarazConfigBaseSettings copyWith({bool? autoInjectScript, ZarazZarazConfigBaseSettingsContextEnricher? Function()? contextEnricher, String? Function()? cookieDomain, bool? Function()? ecommerce, String? Function()? eventsApiPath, bool? Function()? hideExternalReferer, bool? Function()? hideIpAddress, bool? Function()? hideQueryParams, bool? Function()? hideUserAgent, String? Function()? initPath, bool? Function()? injectIframes, String? Function()? mcRootPath, String? Function()? scriptPath, String? Function()? trackPath, }) { return ZarazZarazConfigBaseSettings(
   autoInjectScript: autoInjectScript ?? this.autoInjectScript,
   contextEnricher: contextEnricher != null ? contextEnricher() : this.contextEnricher,
   cookieDomain: cookieDomain != null ? cookieDomain() : this.cookieDomain,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'sql': sql.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sql'); } 
-D1SingleQuery copyWith({List<String> Function()? params, D1Sql? sql, }) { return D1SingleQuery(
+D1SingleQuery copyWith({List<String>? Function()? params, D1Sql? sql, }) { return D1SingleQuery(
   params: params != null ? params() : this.params,
   sql: sql ?? this.sql,
 ); } 

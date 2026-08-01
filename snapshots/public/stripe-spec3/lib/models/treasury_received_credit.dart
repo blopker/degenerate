@@ -110,25 +110,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditStatus($value)'; } 
  }
 /// ReceivedCredits represent funds sent to a [FinancialAccount](https://api.stripe.com#financial_accounts) (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.
-@immutable final class TreasuryReceivedCredit {const TreasuryReceivedCredit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.reversalDetails, this.transaction, });
+@immutable final class TreasuryReceivedCredit {const TreasuryReceivedCredit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode = const Omittable.absent(), this.financialAccount = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.reversalDetails = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
 factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCredit(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String,
-  failureCode: json['failure_code'] != null ? TreasuryReceivedCreditFailureCode.fromJson(json['failure_code'] as String) : null,
-  financialAccount: json['financial_account'] as String?,
-  hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
+  failureCode: json.containsKey('failure_code') ? Omittable(json['failure_code'] != null ? TreasuryReceivedCreditFailureCode.fromJson(json['failure_code'] as String) : null) : const Omittable.absent(),
+  financialAccount: json.containsKey('financial_account') ? Omittable(json['financial_account'] as String?) : const Omittable.absent(),
+  hostedRegulatoryReceiptUrl: json.containsKey('hosted_regulatory_receipt_url') ? Omittable(json['hosted_regulatory_receipt_url'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   initiatingPaymentMethodDetails: TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>),
   linkedFlows: TreasuryReceivedCreditsResourceLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   network: TreasuryReceivedCreditNetwork.fromJson(json['network'] as String),
   object: TreasuryReceivedCreditObject.fromJson(json['object'] as String),
-  reversalDetails: json['reversal_details'] != null ? TreasuryReceivedCreditsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null,
+  reversalDetails: json.containsKey('reversal_details') ? Omittable(json['reversal_details'] != null ? TreasuryReceivedCreditsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: TreasuryReceivedCreditStatus.fromJson(json['status'] as String),
-  transaction: json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.
@@ -144,13 +144,13 @@ final String currency;
 final String description;
 
 /// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
-final TreasuryReceivedCreditFailureCode? failureCode;
+final Omittable<TreasuryReceivedCreditFailureCode?> failureCode;
 
 /// The FinancialAccount that received the funds.
-final String? financialAccount;
+final Omittable<String?> financialAccount;
 
 /// A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses.
-final String? hostedRegulatoryReceiptUrl;
+final Omittable<String?> hostedRegulatoryReceiptUrl;
 
 /// Unique identifier for the object.
 final String id;
@@ -169,31 +169,31 @@ final TreasuryReceivedCreditNetwork network;
 final TreasuryReceivedCreditObject object;
 
 /// Details describing when a ReceivedCredit may be reversed.
-final TreasuryReceivedCreditsResourceReversalDetails? reversalDetails;
+final Omittable<TreasuryReceivedCreditsResourceReversalDetails?> reversalDetails;
 
 /// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
 final TreasuryReceivedCreditStatus status;
 
 /// The Transaction associated with this object.
-final TreasuryReceivedCreditTransaction? transaction;
+final Omittable<TreasuryReceivedCreditTransaction?> transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'created': created,
   'currency': currency,
   'description': description,
-  if (failureCode != null) 'failure_code': failureCode?.toJson(),
-  'financial_account': ?financialAccount,
-  'hosted_regulatory_receipt_url': ?hostedRegulatoryReceiptUrl,
+  if (failureCode.isPresent) 'failure_code': failureCode.value?.toJson(),
+  if (financialAccount.isPresent) 'financial_account': financialAccount.value,
+  if (hostedRegulatoryReceiptUrl.isPresent) 'hosted_regulatory_receipt_url': hostedRegulatoryReceiptUrl.value,
   'id': id,
   'initiating_payment_method_details': initiatingPaymentMethodDetails.toJson(),
   'linked_flows': linkedFlows.toJson(),
   'livemode': livemode,
   'network': network.toJson(),
   'object': object.toJson(),
-  if (reversalDetails != null) 'reversal_details': reversalDetails?.toJson(),
+  if (reversalDetails.isPresent) 'reversal_details': reversalDetails.value?.toJson(),
   'status': status.toJson(),
-  if (transaction != null) 'transaction': transaction?.toJson(),
+  if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
@@ -206,23 +206,23 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('network') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryReceivedCreditTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
+TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, Omittable<TreasuryReceivedCreditFailureCode?>? failureCode, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, Omittable<TreasuryReceivedCreditsResourceReversalDetails?>? reversalDetails, TreasuryReceivedCreditStatus? status, Omittable<TreasuryReceivedCreditTransaction?>? transaction, }) { return TreasuryReceivedCredit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   description: description ?? this.description,
-  failureCode: failureCode != null ? failureCode() : this.failureCode,
-  financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
-  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl != null ? hostedRegulatoryReceiptUrl() : this.hostedRegulatoryReceiptUrl,
+  failureCode: failureCode ?? this.failureCode,
+  financialAccount: financialAccount ?? this.financialAccount,
+  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl ?? this.hostedRegulatoryReceiptUrl,
   id: id ?? this.id,
   initiatingPaymentMethodDetails: initiatingPaymentMethodDetails ?? this.initiatingPaymentMethodDetails,
   linkedFlows: linkedFlows ?? this.linkedFlows,
   livemode: livemode ?? this.livemode,
   network: network ?? this.network,
   object: object ?? this.object,
-  reversalDetails: reversalDetails != null ? reversalDetails() : this.reversalDetails,
+  reversalDetails: reversalDetails ?? this.reversalDetails,
   status: status ?? this.status,
-  transaction: transaction != null ? transaction() : this.transaction,
+  transaction: transaction ?? this.transaction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryReceivedCredit &&

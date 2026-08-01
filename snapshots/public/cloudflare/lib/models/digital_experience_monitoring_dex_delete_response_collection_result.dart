@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (dexTests != null) 'dex_tests': dexTests?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dex_tests'}.contains(key)); } 
-DigitalExperienceMonitoringDexDeleteResponseCollectionResult copyWith({List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp> Function()? dexTests}) { return DigitalExperienceMonitoringDexDeleteResponseCollectionResult(
+DigitalExperienceMonitoringDexDeleteResponseCollectionResult copyWith({List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>? Function()? dexTests}) { return DigitalExperienceMonitoringDexDeleteResponseCollectionResult(
   dexTests: dexTests != null ? dexTests() : this.dexTests,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

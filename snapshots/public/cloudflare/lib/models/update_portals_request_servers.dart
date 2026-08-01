@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedTools != null) 'updated_tools': updatedTools?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('server_id') && json['server_id'] is String; } 
-UpdatePortalsRequestServers copyWith({bool Function()? defaultDisabled, bool Function()? onBehalf, String? serverId, List<UpdatePortalsRequestServersUpdatedPrompts> Function()? updatedPrompts, List<UpdatePortalsRequestServersUpdatedTools> Function()? updatedTools, }) { return UpdatePortalsRequestServers(
+UpdatePortalsRequestServers copyWith({bool Function()? defaultDisabled, bool Function()? onBehalf, String? serverId, List<UpdatePortalsRequestServersUpdatedPrompts>? Function()? updatedPrompts, List<UpdatePortalsRequestServersUpdatedTools>? Function()? updatedTools, }) { return UpdatePortalsRequestServers(
   defaultDisabled: defaultDisabled != null ? defaultDisabled() : this.defaultDisabled,
   onBehalf: onBehalf != null ? onBehalf() : this.onBehalf,
   serverId: serverId ?? this.serverId,

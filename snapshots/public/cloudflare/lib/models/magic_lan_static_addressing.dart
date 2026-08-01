@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (virtualAddress != null) 'virtual_address': virtualAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-MagicLanStaticAddressing copyWith({MagicCidr? address, MagicLanDhcpRelay Function()? dhcpRelay, MagicLanDhcpServer Function()? dhcpServer, MagicCidr Function()? secondaryAddress, MagicCidr Function()? virtualAddress, }) { return MagicLanStaticAddressing(
+MagicLanStaticAddressing copyWith({MagicCidr? address, MagicLanDhcpRelay? Function()? dhcpRelay, MagicLanDhcpServer? Function()? dhcpServer, MagicCidr? Function()? secondaryAddress, MagicCidr? Function()? virtualAddress, }) { return MagicLanStaticAddressing(
   address: address ?? this.address,
   dhcpRelay: dhcpRelay != null ? dhcpRelay() : this.dhcpRelay,
   dhcpServer: dhcpServer != null ? dhcpServer() : this.dhcpServer,

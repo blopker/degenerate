@@ -7,12 +7,12 @@ factory PreventSelfReview.fromJson(bool json) => PreventSelfReview(json);
 bool toJson() => value;
 
 }
-@immutable final class ReposCreateOrUpdateEnvironmentRequest {const ReposCreateOrUpdateEnvironmentRequest({this.waitTimer, this.preventSelfReview, this.reviewers, this.deploymentBranchPolicy, });
+@immutable final class ReposCreateOrUpdateEnvironmentRequest {const ReposCreateOrUpdateEnvironmentRequest({this.waitTimer, this.preventSelfReview, this.reviewers = const Omittable.absent(), this.deploymentBranchPolicy, });
 
 factory ReposCreateOrUpdateEnvironmentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateEnvironmentRequest(
   waitTimer: json['wait_timer'] != null ? WaitTimer.fromJson(json['wait_timer'] as num) : null,
   preventSelfReview: json['prevent_self_review'] != null ? PreventSelfReview.fromJson(json['prevent_self_review'] as bool) : null,
-  reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(e as Map<String, dynamic>)).toList(),
+  reviewers: json.containsKey('reviewers') ? Omittable((json['reviewers'] as List<dynamic>?)?.map((e) => ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   deploymentBranchPolicy: json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null,
 ); }
 
@@ -23,29 +23,30 @@ final WaitTimer? waitTimer;
 final PreventSelfReview? preventSelfReview;
 
 /// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-final List<ReposCreateOrUpdateEnvironmentRequestReviewers>? reviewers;
+final Omittable<List<ReposCreateOrUpdateEnvironmentRequestReviewers>?> reviewers;
 
 final DeploymentBranchPolicySettings? deploymentBranchPolicy;
 
 Map<String, dynamic> toJson() { return {
   if (waitTimer != null) 'wait_timer': waitTimer?.toJson(),
   if (preventSelfReview != null) 'prevent_self_review': preventSelfReview?.toJson(),
-  if (reviewers != null) 'reviewers': reviewers?.map((e) => e.toJson()).toList(),
+  if (reviewers.isPresent) 'reviewers': reviewers.value?.map((e) => e.toJson()).toList(),
   if (deploymentBranchPolicy != null) 'deployment_branch_policy': deploymentBranchPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'wait_timer', 'prevent_self_review', 'reviewers', 'deployment_branch_policy'}.contains(key)); } 
-ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer Function()? waitTimer, PreventSelfReview Function()? preventSelfReview, List<ReposCreateOrUpdateEnvironmentRequestReviewers>? Function()? reviewers, DeploymentBranchPolicySettings Function()? deploymentBranchPolicy, }) { return ReposCreateOrUpdateEnvironmentRequest(
+ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer? Function()? waitTimer, PreventSelfReview? Function()? preventSelfReview, Omittable<List<ReposCreateOrUpdateEnvironmentRequestReviewers>?>? reviewers, DeploymentBranchPolicySettings? Function()? deploymentBranchPolicy, }) { return ReposCreateOrUpdateEnvironmentRequest(
   waitTimer: waitTimer != null ? waitTimer() : this.waitTimer,
   preventSelfReview: preventSelfReview != null ? preventSelfReview() : this.preventSelfReview,
-  reviewers: reviewers != null ? reviewers() : this.reviewers,
+  reviewers: reviewers ?? this.reviewers,
   deploymentBranchPolicy: deploymentBranchPolicy != null ? deploymentBranchPolicy() : this.deploymentBranchPolicy,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ReposCreateOrUpdateEnvironmentRequest &&
           waitTimer == other.waitTimer &&
           preventSelfReview == other.preventSelfReview &&
-          listEquals(reviewers, other.reviewers) &&
+          reviewers.isPresent == other.reviewers.isPresent &&
+          listEquals(reviewers.value, other.reviewers.value) &&
           deploymentBranchPolicy == other.deploymentBranchPolicy; } 
-@override int get hashCode { return Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers ?? const []), deploymentBranchPolicy); } 
+@override int get hashCode { return Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers.value ?? const []), deploymentBranchPolicy); } 
 @override String toString() { return 'ReposCreateOrUpdateEnvironmentRequest(waitTimer: $waitTimer, preventSelfReview: $preventSelfReview, reviewers: $reviewers, deploymentBranchPolicy: $deploymentBranchPolicy)'; } 
  }

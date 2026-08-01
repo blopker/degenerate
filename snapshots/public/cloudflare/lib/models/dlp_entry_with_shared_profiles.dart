@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'profiles': profiles.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('profiles'); } 
-DlpEntryWithSharedProfiles copyWith({DlpDatasetUploadStatus Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfiles(
+DlpEntryWithSharedProfiles copyWith({DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfiles(
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
   profiles: profiles ?? this.profiles,
 ); } 

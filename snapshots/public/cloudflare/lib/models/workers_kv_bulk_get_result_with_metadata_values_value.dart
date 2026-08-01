@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
       json.containsKey('value'); } 
-WorkersKvBulkGetResultWithMetadataValuesValue copyWith({WorkersKvExpiration Function()? expiration, WorkersKvAny? metadata, WorkersKvAny? value, }) { return WorkersKvBulkGetResultWithMetadataValuesValue(
+WorkersKvBulkGetResultWithMetadataValuesValue copyWith({WorkersKvExpiration? Function()? expiration, WorkersKvAny? metadata, WorkersKvAny? value, }) { return WorkersKvBulkGetResultWithMetadataValuesValue(
   expiration: expiration != null ? expiration() : this.expiration,
   metadata: metadata ?? this.metadata,
   value: value ?? this.value,

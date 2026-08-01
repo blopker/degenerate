@@ -71,20 +71,20 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe’s limits.
 /// 
 /// Related guide: [Forward card details to third-party API endpoints](https://docs.stripe.com/payments/forwarding).
-@immutable final class ForwardingRequest {const ForwardingRequest({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.replacements, this.metadata, this.requestContext, this.requestDetails, this.responseDetails, this.url, });
+@immutable final class ForwardingRequest {const ForwardingRequest({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.replacements, this.metadata = const Omittable.absent(), this.requestContext = const Omittable.absent(), this.requestDetails = const Omittable.absent(), this.responseDetails = const Omittable.absent(), this.url = const Omittable.absent(), });
 
 factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return ForwardingRequest(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: ForwardingRequestObject.fromJson(json['object'] as String),
   paymentMethod: json['payment_method'] as String,
   replacements: (json['replacements'] as List<dynamic>).map((e) => ForwardingRequestReplacements.fromJson(e as String)).toList(),
-  requestContext: json['request_context'] != null ? ForwardedRequestContext.fromJson(json['request_context'] as Map<String, dynamic>) : null,
-  requestDetails: json['request_details'] != null ? ForwardedRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null,
-  responseDetails: json['response_details'] != null ? ForwardedResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null,
-  url: json['url'] as String?,
+  requestContext: json.containsKey('request_context') ? Omittable(json['request_context'] != null ? ForwardedRequestContext.fromJson(json['request_context'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  requestDetails: json.containsKey('request_details') ? Omittable(json['request_details'] != null ? ForwardedRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  responseDetails: json.containsKey('response_details') ? Omittable(json['response_details'] != null ? ForwardedResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
 ); }
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
@@ -97,7 +97,7 @@ final String id;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final ForwardingRequestObject object;
@@ -109,29 +109,29 @@ final String paymentMethod;
 final List<ForwardingRequestReplacements> replacements;
 
 /// Context about the request from Stripe's servers to the destination endpoint.
-final ForwardedRequestContext? requestContext;
+final Omittable<ForwardedRequestContext?> requestContext;
 
 /// The request that was sent to the destination endpoint. We redact any sensitive fields.
-final ForwardedRequestDetails? requestDetails;
+final Omittable<ForwardedRequestDetails?> requestDetails;
 
 /// The response that the destination endpoint returned to us. We redact any sensitive fields.
-final ForwardedResponseDetails? responseDetails;
+final Omittable<ForwardedResponseDetails?> responseDetails;
 
 /// The destination URL for the forwarded request. Must be supported by the config.
-final String? url;
+final Omittable<String?> url;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
   'id': id,
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
   'payment_method': paymentMethod,
   'replacements': replacements.map((e) => e.toJson()).toList(),
-  if (requestContext != null) 'request_context': requestContext?.toJson(),
-  if (requestDetails != null) 'request_details': requestDetails?.toJson(),
-  if (responseDetails != null) 'response_details': responseDetails?.toJson(),
-  'url': ?url,
+  if (requestContext.isPresent) 'request_context': requestContext.value?.toJson(),
+  if (requestDetails.isPresent) 'request_details': requestDetails.value?.toJson(),
+  if (responseDetails.isPresent) 'response_details': responseDetails.value?.toJson(),
+  if (url.isPresent) 'url': url.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -139,18 +139,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements'); } 
-ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, ForwardingRequestObject? object, String? paymentMethod, List<ForwardingRequestReplacements>? replacements, ForwardedRequestContext? Function()? requestContext, ForwardedRequestDetails? Function()? requestDetails, ForwardedResponseDetails? Function()? responseDetails, String? Function()? url, }) { return ForwardingRequest(
+ForwardingRequest copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, ForwardingRequestObject? object, String? paymentMethod, List<ForwardingRequestReplacements>? replacements, Omittable<ForwardedRequestContext?>? requestContext, Omittable<ForwardedRequestDetails?>? requestDetails, Omittable<ForwardedResponseDetails?>? responseDetails, Omittable<String?>? url, }) { return ForwardingRequest(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   paymentMethod: paymentMethod ?? this.paymentMethod,
   replacements: replacements ?? this.replacements,
-  requestContext: requestContext != null ? requestContext() : this.requestContext,
-  requestDetails: requestDetails != null ? requestDetails() : this.requestDetails,
-  responseDetails: responseDetails != null ? responseDetails() : this.responseDetails,
-  url: url != null ? url() : this.url,
+  requestContext: requestContext ?? this.requestContext,
+  requestDetails: requestDetails ?? this.requestDetails,
+  responseDetails: responseDetails ?? this.responseDetails,
+  url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ForwardingRequest &&

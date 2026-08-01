@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'delay_days_override': ?delayDaysOverride,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay_days') && json['delay_days'] is num; } 
-BalanceSettingsResourceSettlementTiming copyWith({int? delayDays, int Function()? delayDaysOverride, }) { return BalanceSettingsResourceSettlementTiming(
+BalanceSettingsResourceSettlementTiming copyWith({int? delayDays, int? Function()? delayDaysOverride, }) { return BalanceSettingsResourceSettlementTiming(
   delayDays: delayDays ?? this.delayDays,
   delayDaysOverride: delayDaysOverride != null ? delayDaysOverride() : this.delayDaysOverride,
 ); } 

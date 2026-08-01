@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (unit != null) 'unit': unit?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'unit'}.contains(key)); } 
-CloudflarePipelinesTimestampField copyWith({CloudflarePipelinesTimestampUnit Function()? unit}) { return CloudflarePipelinesTimestampField(
+CloudflarePipelinesTimestampField copyWith({CloudflarePipelinesTimestampUnit? Function()? unit}) { return CloudflarePipelinesTimestampField(
   unit: unit != null ? unit() : this.unit,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

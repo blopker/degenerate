@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key)); } 
-ModifyThreadRequestToolResources copyWith({ModifyThreadRequestToolResourcesCodeInterpreter Function()? codeInterpreter, ModifyThreadRequestToolResourcesFileSearch Function()? fileSearch, }) { return ModifyThreadRequestToolResources(
+ModifyThreadRequestToolResources copyWith({ModifyThreadRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, ModifyThreadRequestToolResourcesFileSearch? Function()? fileSearch, }) { return ModifyThreadRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
 ); } 

@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
-  'next_page': ?nextPage,
+  'next_page': nextPage,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&

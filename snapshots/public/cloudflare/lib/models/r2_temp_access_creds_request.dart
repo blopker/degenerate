@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucke
       json.containsKey('parentAccessKeyId') && json['parentAccessKeyId'] is String &&
       json.containsKey('permission') &&
       json.containsKey('ttlSeconds') && json['ttlSeconds'] is num; } 
-R2TempAccessCredsRequest copyWith({String? bucket, List<String> Function()? objects, String? parentAccessKeyId, R2TempAccessCredsRequestPermission? permission, List<String> Function()? prefixes, double? ttlSeconds, }) { return R2TempAccessCredsRequest(
+R2TempAccessCredsRequest copyWith({String? bucket, List<String>? Function()? objects, String? parentAccessKeyId, R2TempAccessCredsRequestPermission? permission, List<String>? Function()? prefixes, double? ttlSeconds, }) { return R2TempAccessCredsRequest(
   bucket: bucket ?? this.bucket,
   objects: objects != null ? objects() : this.objects,
   parentAccessKeyId: parentAccessKeyId ?? this.parentAccessKeyId,

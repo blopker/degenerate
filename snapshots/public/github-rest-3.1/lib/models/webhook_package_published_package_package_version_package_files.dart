@@ -43,12 +43,12 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'download_url': downloadUrl.toString(),
   'id': id,
-  'md5': ?md5,
+  'md5': md5,
   'name': name,
-  'sha1': ?sha1,
-  'sha256': ?sha256,
+  'sha1': sha1,
+  'sha256': sha256,
   'size': size,
-  'state': ?state,
+  'state': state,
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_type') && json['content_type'] is String &&

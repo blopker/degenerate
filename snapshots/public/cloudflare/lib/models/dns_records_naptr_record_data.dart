@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'service': ?service,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flags', 'order', 'preference', 'regex', 'replacement', 'service'}.contains(key)); } 
-DnsRecordsNaptrRecordData copyWith({String Function()? flags, double Function()? order, double Function()? preference, String Function()? regex, String Function()? replacement, String Function()? service, }) { return DnsRecordsNaptrRecordData(
+DnsRecordsNaptrRecordData copyWith({String? Function()? flags, double? Function()? order, double? Function()? preference, String? Function()? regex, String? Function()? replacement, String? Function()? service, }) { return DnsRecordsNaptrRecordData(
   flags: flags != null ? flags() : this.flags,
   order: order != null ? order() : this.order,
   preference: preference != null ? preference() : this.preference,

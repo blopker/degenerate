@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'requireSignedURLs': ?requireSignedUrLs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'metadata', 'requireSignedURLs'}.contains(key)); } 
-ImagesImagePatchRequest copyWith({String Function()? creator, Map<String, dynamic> Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImagePatchRequest(
+ImagesImagePatchRequest copyWith({String? Function()? creator, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, }) { return ImagesImagePatchRequest(
   creator: creator != null ? creator() : this.creator,
   metadata: metadata != null ? metadata() : this.metadata,
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,

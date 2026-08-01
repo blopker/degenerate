@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'verification_session': ?verificationSession,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'expand', 'issuing_card', 'nonce', 'verification_session'}.contains(key)); } 
-PostEphemeralKeysRequest copyWith({String Function()? customer, List<String> Function()? expand, String Function()? issuingCard, String Function()? nonce, String Function()? verificationSession, }) { return PostEphemeralKeysRequest(
+PostEphemeralKeysRequest copyWith({String? Function()? customer, List<String>? Function()? expand, String? Function()? issuingCard, String? Function()? nonce, String? Function()? verificationSession, }) { return PostEphemeralKeysRequest(
   customer: customer != null ? customer() : this.customer,
   expand: expand != null ? expand() : this.expand,
   issuingCard: issuingCard != null ? issuingCard() : this.issuingCard,

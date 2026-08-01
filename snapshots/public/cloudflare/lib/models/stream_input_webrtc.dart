@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
-StreamInputWebrtc copyWith({StreamInputWebrtcUrl Function()? url}) { return StreamInputWebrtc(
+StreamInputWebrtc copyWith({StreamInputWebrtcUrl? Function()? url}) { return StreamInputWebrtc(
   url: url != null ? url() : this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (warpRouting != null) 'warp-routing': warpRouting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ingress', 'originRequest', 'warp-routing'}.contains(key)); } 
-TunnelConfig copyWith({List<TunnelIngressRule> Function()? ingress, TunnelOriginRequest Function()? originRequest, TunnelConfigWarpRouting Function()? warpRouting, }) { return TunnelConfig(
+TunnelConfig copyWith({List<TunnelIngressRule>? Function()? ingress, TunnelOriginRequest? Function()? originRequest, TunnelConfigWarpRouting? Function()? warpRouting, }) { return TunnelConfig(
   ingress: ingress != null ? ingress() : this.ingress,
   originRequest: originRequest != null ? originRequest() : this.originRequest,
   warpRouting: warpRouting != null ? warpRouting() : this.warpRouting,

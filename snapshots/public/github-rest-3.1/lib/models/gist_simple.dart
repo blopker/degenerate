@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_history.dart';import 'gist_simple_files_value.dart';import 'gist_simple_fork_of.dart';import 'gist_simple_forks.dart';import 'simple_user.dart';/// Gist Simple
-@immutable final class GistSimple {const GistSimple({this.forks, this.history, this.forkOf, this.url, this.forksUrl, this.commitsUrl, this.id, this.nodeId, this.gitPullUrl, this.gitPushUrl, this.htmlUrl, this.files, this.public, this.createdAt, this.updatedAt, this.description, this.comments, this.commentsEnabled, this.user, this.commentsUrl, this.owner, this.truncated, });
+@immutable final class GistSimple {const GistSimple({this.forks = const Omittable.absent(), this.history = const Omittable.absent(), this.forkOf = const Omittable.absent(), this.url, this.forksUrl, this.commitsUrl, this.id, this.nodeId, this.gitPullUrl, this.gitPushUrl, this.htmlUrl, this.files, this.public, this.createdAt, this.updatedAt, this.description = const Omittable.absent(), this.comments, this.commentsEnabled, this.user = const Omittable.absent(), this.commentsUrl, this.owner, this.truncated, });
 
 factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
-  forks: (json['forks'] as List<dynamic>?)?.map((e) => GistSimpleForks.fromJson(e as Map<String, dynamic>)).toList(),
-  history: (json['history'] as List<dynamic>?)?.map((e) => GistHistory.fromJson(e as Map<String, dynamic>)).toList(),
-  forkOf: json['fork_of'] != null ? GistSimpleForkOf.fromJson(json['fork_of'] as Map<String, dynamic>) : null,
+  forks: json.containsKey('forks') ? Omittable((json['forks'] as List<dynamic>?)?.map((e) => GistSimpleForks.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  history: json.containsKey('history') ? Omittable((json['history'] as List<dynamic>?)?.map((e) => GistHistory.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  forkOf: json.containsKey('fork_of') ? Omittable(json['fork_of'] != null ? GistSimpleForkOf.fromJson(json['fork_of'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: json['url'] as String?,
   forksUrl: json['forks_url'] as String?,
   commitsUrl: json['commits_url'] as String?,
@@ -19,21 +19,21 @@ factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
   public: json['public'] as bool?,
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   comments: json['comments'] != null ? (json['comments'] as num).toInt() : null,
   commentsEnabled: json['comments_enabled'] as bool?,
-  user: json['user'] as String?,
+  user: json.containsKey('user') ? Omittable(json['user'] as String?) : const Omittable.absent(),
   commentsUrl: json['comments_url'] as String?,
   owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   truncated: json['truncated'] as bool?,
 ); }
 
-final List<GistSimpleForks>? forks;
+final Omittable<List<GistSimpleForks>?> forks;
 
-final List<GistHistory>? history;
+final Omittable<List<GistHistory>?> history;
 
 /// Gist
-final GistSimpleForkOf? forkOf;
+final Omittable<GistSimpleForkOf?> forkOf;
 
 final String? url;
 
@@ -59,13 +59,13 @@ final String? createdAt;
 
 final String? updatedAt;
 
-final String? description;
+final Omittable<String?> description;
 
 final int? comments;
 
 final bool? commentsEnabled;
 
-final String? user;
+final Omittable<String?> user;
 
 final String? commentsUrl;
 
@@ -74,9 +74,9 @@ final SimpleUser? owner;
 final bool? truncated;
 
 Map<String, dynamic> toJson() { return {
-  if (forks != null) 'forks': forks?.map((e) => e.toJson()).toList(),
-  if (history != null) 'history': history?.map((e) => e.toJson()).toList(),
-  if (forkOf != null) 'fork_of': forkOf?.toJson(),
+  if (forks.isPresent) 'forks': forks.value?.map((e) => e.toJson()).toList(),
+  if (history.isPresent) 'history': history.value?.map((e) => e.toJson()).toList(),
+  if (forkOf.isPresent) 'fork_of': forkOf.value?.toJson(),
   'url': ?url,
   'forks_url': ?forksUrl,
   'commits_url': ?commitsUrl,
@@ -89,19 +89,19 @@ Map<String, dynamic> toJson() { return {
   'public': ?public,
   'created_at': ?createdAt,
   'updated_at': ?updatedAt,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'comments': ?comments,
   'comments_enabled': ?commentsEnabled,
-  'user': ?user,
+  if (user.isPresent) 'user': user.value,
   'comments_url': ?commentsUrl,
   if (owner != null) 'owner': owner?.toJson(),
   'truncated': ?truncated,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'forks', 'history', 'fork_of', 'url', 'forks_url', 'commits_url', 'id', 'node_id', 'git_pull_url', 'git_push_url', 'html_url', 'files', 'public', 'created_at', 'updated_at', 'description', 'comments', 'comments_enabled', 'user', 'comments_url', 'owner', 'truncated'}.contains(key)); } 
-GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>? Function()? history, GistSimpleForkOf? Function()? forkOf, String Function()? url, String Function()? forksUrl, String Function()? commitsUrl, String Function()? id, String Function()? nodeId, String Function()? gitPullUrl, String Function()? gitPushUrl, String Function()? htmlUrl, Map<String, GistSimpleFilesValue?> Function()? files, bool Function()? public, String Function()? createdAt, String Function()? updatedAt, String? Function()? description, int Function()? comments, bool Function()? commentsEnabled, String? Function()? user, String Function()? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, }) { return GistSimple(
-  forks: forks != null ? forks() : this.forks,
-  history: history != null ? history() : this.history,
-  forkOf: forkOf != null ? forkOf() : this.forkOf,
+GistSimple copyWith({Omittable<List<GistSimpleForks>?>? forks, Omittable<List<GistHistory>?>? history, Omittable<GistSimpleForkOf?>? forkOf, String? Function()? url, String? Function()? forksUrl, String? Function()? commitsUrl, String? Function()? id, String? Function()? nodeId, String? Function()? gitPullUrl, String? Function()? gitPushUrl, String? Function()? htmlUrl, Map<String, GistSimpleFilesValue?>? Function()? files, bool? Function()? public, String? Function()? createdAt, String? Function()? updatedAt, Omittable<String?>? description, int? Function()? comments, bool? Function()? commentsEnabled, Omittable<String?>? user, String? Function()? commentsUrl, SimpleUser? Function()? owner, bool? Function()? truncated, }) { return GistSimple(
+  forks: forks ?? this.forks,
+  history: history ?? this.history,
+  forkOf: forkOf ?? this.forkOf,
   url: url != null ? url() : this.url,
   forksUrl: forksUrl != null ? forksUrl() : this.forksUrl,
   commitsUrl: commitsUrl != null ? commitsUrl() : this.commitsUrl,
@@ -114,18 +114,20 @@ GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>
   public: public != null ? public() : this.public,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   comments: comments != null ? comments() : this.comments,
   commentsEnabled: commentsEnabled != null ? commentsEnabled() : this.commentsEnabled,
-  user: user != null ? user() : this.user,
+  user: user ?? this.user,
   commentsUrl: commentsUrl != null ? commentsUrl() : this.commentsUrl,
   owner: owner != null ? owner() : this.owner,
   truncated: truncated != null ? truncated() : this.truncated,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GistSimple &&
-          listEquals(forks, other.forks) &&
-          listEquals(history, other.history) &&
+          forks.isPresent == other.forks.isPresent &&
+          listEquals(forks.value, other.forks.value) &&
+          history.isPresent == other.history.isPresent &&
+          listEquals(history.value, other.history.value) &&
           forkOf == other.forkOf &&
           url == other.url &&
           forksUrl == other.forksUrl &&
@@ -146,6 +148,6 @@ GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>
           commentsUrl == other.commentsUrl &&
           owner == other.owner &&
           truncated == other.truncated; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(forks ?? const []), Object.hashAll(history ?? const []), forkOf, url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated]); } 
+@override int get hashCode { return Object.hashAll([Object.hashAll(forks.value ?? const []), Object.hashAll(history.value ?? const []), forkOf, url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated]); } 
 @override String toString() { return 'GistSimple(forks: $forks, history: $history, forkOf: $forkOf, url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated)'; } 
  }

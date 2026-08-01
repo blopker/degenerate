@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'color': color,
   'default': $default,
-  'description': ?description,
+  'description': description,
   'score': score,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
 }; } 
@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('default') && json['default'] is bool &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('score') && json['score'] is num; } 
-LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name, String? color, bool? $default, String? Function()? description, double? score, List<SearchResultTextMatches2> Function()? textMatches, }) { return LabelSearchResultItem(
+LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name, String? color, bool? $default, String? Function()? description, double? score, List<SearchResultTextMatches2>? Function()? textMatches, }) { return LabelSearchResultItem(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

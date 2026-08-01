@@ -23,9 +23,9 @@ final String? title;
 Map<String, dynamic> toJson() { return {
   'annotations_count': annotationsCount,
   'annotations_url': annotationsUrl.toString(),
-  'summary': ?summary,
-  'text': ?text,
-  'title': ?title,
+  'summary': summary,
+  'text': text,
+  'title': title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations_count') && json['annotations_count'] is num &&
       json.containsKey('annotations_url') && json['annotations_url'] is String &&

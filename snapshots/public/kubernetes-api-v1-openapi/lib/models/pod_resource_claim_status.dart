@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'resourceClaimName': ?resourceClaimName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PodResourceClaimStatus copyWith({String? name, String Function()? resourceClaimName, }) { return PodResourceClaimStatus(
+PodResourceClaimStatus copyWith({String? name, String? Function()? resourceClaimName, }) { return PodResourceClaimStatus(
   name: name ?? this.name,
   resourceClaimName: resourceClaimName != null ? resourceClaimName() : this.resourceClaimName,
 ); } 

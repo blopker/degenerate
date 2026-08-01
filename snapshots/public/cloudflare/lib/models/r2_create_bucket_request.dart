@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (storageClass != null) 'storageClass': storageClass?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-R2CreateBucketRequest copyWith({R2BucketLocation Function()? locationHint, R2BucketName? name, R2StorageClass Function()? storageClass, }) { return R2CreateBucketRequest(
+R2CreateBucketRequest copyWith({R2BucketLocation? Function()? locationHint, R2BucketName? name, R2StorageClass? Function()? storageClass, }) { return R2CreateBucketRequest(
   locationHint: locationHint != null ? locationHint() : this.locationHint,
   name: name ?? this.name,
   storageClass: storageClass != null ? storageClass() : this.storageClass,

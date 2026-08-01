@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_is_secret.dart';@immutable final class BuildsEnvironmentVariablesRequestValue {const BuildsEnvironmentVariablesRequestValue({required this.isSecret, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_is_secret.dart';@immutable final class BuildsEnvironmentVariablesRequestValue {const BuildsEnvironmentVariablesRequestValue({required this.isSecret, this.value = const Omittable.absent(), });
 
 factory BuildsEnvironmentVariablesRequestValue.fromJson(Map<String, dynamic> json) { return BuildsEnvironmentVariablesRequestValue(
   isSecret: BuildsIsSecret.fromJson(json['is_secret'] as bool),
-  value: json['value'] as String?,
+  value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
 ); }
 
 final BuildsIsSecret isSecret;
 
-final String? value;
+final Omittable<String?> value;
 
 Map<String, dynamic> toJson() { return {
   'is_secret': isSecret.toJson(),
-  'value': ?value,
+  if (value.isPresent) 'value': value.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_secret'); } 
-BuildsEnvironmentVariablesRequestValue copyWith({BuildsIsSecret? isSecret, String? Function()? value, }) { return BuildsEnvironmentVariablesRequestValue(
+BuildsEnvironmentVariablesRequestValue copyWith({BuildsIsSecret? isSecret, Omittable<String?>? value, }) { return BuildsEnvironmentVariablesRequestValue(
   isSecret: isSecret ?? this.isSecret,
-  value: value != null ? value() : this.value,
+  value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BuildsEnvironmentVariablesRequestValue &&

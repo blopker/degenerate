@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'reason': reason,
   'unread': unread,
   'updated_at': updatedAt,
-  'last_read_at': ?lastReadAt,
+  'last_read_at': lastReadAt,
   'url': url,
   'subscription_url': subscriptionUrl,
 }; } 

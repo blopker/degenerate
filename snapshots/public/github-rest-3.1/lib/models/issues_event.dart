@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
       json.containsKey('issue'); } 
-IssuesEvent copyWith({String? action, Issue? issue, SimpleUser Function()? assignee, List<SimpleUser> Function()? assignees, Label Function()? label, List<Label> Function()? labels, }) { return IssuesEvent(
+IssuesEvent copyWith({String? action, Issue? issue, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Label? Function()? label, List<Label>? Function()? labels, }) { return IssuesEvent(
   action: action ?? this.action,
   issue: issue ?? this.issue,
   assignee: assignee != null ? assignee() : this.assignee,

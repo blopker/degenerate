@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('certificate_details'); } 
-Certificate copyWith({CertificateObject? object, String? id, String? name, int? createdAt, CertificateCertificateDetails? certificateDetails, bool Function()? active, }) { return Certificate(
+Certificate copyWith({CertificateObject? object, String? id, String? name, int? createdAt, CertificateCertificateDetails? certificateDetails, bool? Function()? active, }) { return Certificate(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,

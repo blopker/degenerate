@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (walletProvider != null) 'wallet_provider': walletProvider?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-IssuingNetworkTokenNetworkData copyWith({IssuingNetworkTokenDevice Function()? device, IssuingNetworkTokenMastercard Function()? mastercard, IssuingNetworkTokenNetworkDataType? type, IssuingNetworkTokenVisa Function()? visa, IssuingNetworkTokenWalletProvider Function()? walletProvider, }) { return IssuingNetworkTokenNetworkData(
+IssuingNetworkTokenNetworkData copyWith({IssuingNetworkTokenDevice? Function()? device, IssuingNetworkTokenMastercard? Function()? mastercard, IssuingNetworkTokenNetworkDataType? type, IssuingNetworkTokenVisa? Function()? visa, IssuingNetworkTokenWalletProvider? Function()? walletProvider, }) { return IssuingNetworkTokenNetworkData(
   device: device != null ? device() : this.device,
   mastercard: mastercard != null ? mastercard() : this.mastercard,
   type: type ?? this.type,

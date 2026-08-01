@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'run_duration_ms': ?runDurationMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billable'); } 
-WorkflowRunUsage copyWith({WorkflowRunUsageBillable? billable, int Function()? runDurationMs, }) { return WorkflowRunUsage(
+WorkflowRunUsage copyWith({WorkflowRunUsageBillable? billable, int? Function()? runDurationMs, }) { return WorkflowRunUsage(
   billable: billable ?? this.billable,
   runDurationMs: runDurationMs != null ? runDurationMs() : this.runDurationMs,
 ); } 

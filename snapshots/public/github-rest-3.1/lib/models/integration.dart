@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'client_id': ?clientId,
   'owner': owner.toJson(),
   'name': name,
-  'description': ?description,
+  'description': description,
   'external_url': externalUrl.toString(),
   'html_url': htmlUrl.toString(),
   'created_at': createdAt.toIso8601String(),
@@ -81,7 +81,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('permissions') &&
       json.containsKey('events'); } 
-Integration copyWith({int? id, String Function()? slug, String? nodeId, String Function()? clientId, IntegrationOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, IntegrationPermissions? permissions, List<String>? events, int Function()? installationsCount, }) { return Integration(
+Integration copyWith({int? id, String? Function()? slug, String? nodeId, String? Function()? clientId, IntegrationOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, IntegrationPermissions? permissions, List<String>? events, int? Function()? installationsCount, }) { return Integration(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,

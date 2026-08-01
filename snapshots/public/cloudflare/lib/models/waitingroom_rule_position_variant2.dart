@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'before': ?before,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'before'}.contains(key)); } 
-WaitingroomRulePositionVariant2 copyWith({String Function()? before}) { return WaitingroomRulePositionVariant2(
+WaitingroomRulePositionVariant2 copyWith({String? Function()? before}) { return WaitingroomRulePositionVariant2(
   before: before != null ? before() : this.before,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CustomToolChatCompletionsCustom copyWith({String? name, String Function()? description, CustomToolChatCompletionsCustomFormat Function()? format, }) { return CustomToolChatCompletionsCustom(
+CustomToolChatCompletionsCustom copyWith({String? name, String? Function()? description, CustomToolChatCompletionsCustomFormat? Function()? format, }) { return CustomToolChatCompletionsCustom(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   format: format != null ? format() : this.format,

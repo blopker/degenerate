@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
-PaymentMethodOptionsParam46Routing copyWith({PaymentMethodOptionsParam46RoutingRequestedPriority Function()? requestedPriority}) { return PaymentMethodOptionsParam46Routing(
+PaymentMethodOptionsParam46Routing copyWith({PaymentMethodOptionsParam46RoutingRequestedPriority? Function()? requestedPriority}) { return PaymentMethodOptionsParam46Routing(
   requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -59,9 +59,9 @@ final request = ApiRequest(
       ApiMultipartField.text('include', include$.toString()),
     if (body.timestampGranularities case final timestampGranularities$?)
       ApiMultipartField.text('timestamp_granularities', timestampGranularities$.toString()),
-    if (body.stream case final stream$?)
+    if (body.stream.value case final stream$?)
       ApiMultipartField.text('stream', stream$.toString()),
-    if (body.chunkingStrategy case final chunkingStrategy$?)
+    if (body.chunkingStrategy.value case final chunkingStrategy$?)
       ApiMultipartField.text('chunking_strategy', chunkingStrategy$.toString()),
     if (body.knownSpeakerNames case final knownSpeakerNames$?)
       ApiMultipartField.text('known_speaker_names', knownSpeakerNames$.toString()),
@@ -327,9 +327,9 @@ final request = ApiRequest(
       ApiMultipartField.text('include', include$.toString()),
     if (body.timestampGranularities case final timestampGranularities$?)
       ApiMultipartField.text('timestamp_granularities', timestampGranularities$.toString()),
-    if (body.stream case final stream$?)
+    if (body.stream.value case final stream$?)
       ApiMultipartField.text('stream', stream$.toString()),
-    if (body.chunkingStrategy case final chunkingStrategy$?)
+    if (body.chunkingStrategy.value case final chunkingStrategy$?)
       ApiMultipartField.text('chunking_strategy', chunkingStrategy$.toString()),
     if (body.knownSpeakerNames case final knownSpeakerNames$?)
       ApiMultipartField.text('known_speaker_names', knownSpeakerNames$.toString()),

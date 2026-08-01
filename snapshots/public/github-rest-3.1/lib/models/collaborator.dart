@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'collaborator_permissions.dart';/// Collaborator
-@immutable final class Collaborator {const Collaborator({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.roleName, this.email, this.name, this.permissions, this.userViewType, });
+@immutable final class Collaborator {const Collaborator({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.roleName, this.email = const Omittable.absent(), this.name = const Omittable.absent(), this.permissions, this.userViewType, });
 
 factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
-  email: json['email'] as String?,
-  name: json['name'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   nodeId: json['node_id'] as String,
   avatarUrl: Uri.parse(json['avatar_url'] as String),
   gravatarId: json['gravatar_id'] as String?,
@@ -33,9 +33,9 @@ final String login;
 
 final int id;
 
-final String? email;
+final Omittable<String?> email;
 
-final String? name;
+final Omittable<String?> name;
 
 final String nodeId;
 
@@ -78,11 +78,11 @@ final String? userViewType;
 Map<String, dynamic> toJson() { return {
   'login': login,
   'id': id,
-  'email': ?email,
-  'name': ?name,
+  if (email.isPresent) 'email': email.value,
+  if (name.isPresent) 'name': name.value,
   'node_id': nodeId,
   'avatar_url': avatarUrl.toString(),
-  'gravatar_id': ?gravatarId,
+  'gravatar_id': gravatarId,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'followers_url': followersUrl.toString(),
@@ -119,11 +119,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool &&
       json.containsKey('role_name') && json['role_name'] is String; } 
-Collaborator copyWith({String? login, int? id, String? Function()? email, String? Function()? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions Function()? permissions, String? roleName, String Function()? userViewType, }) { return Collaborator(
+Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omittable<String?>? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions? Function()? permissions, String? roleName, String? Function()? userViewType, }) { return Collaborator(
   login: login ?? this.login,
   id: id ?? this.id,
-  email: email != null ? email() : this.email,
-  name: name != null ? name() : this.name,
+  email: email ?? this.email,
+  name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   avatarUrl: avatarUrl ?? this.avatarUrl,
   gravatarId: gravatarId != null ? gravatarId() : this.gravatarId,

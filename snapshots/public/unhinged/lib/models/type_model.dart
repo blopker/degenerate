@@ -162,9 +162,9 @@ final class TypeModel {
   }
 
   TypeModel copyWith({
-    TypeModelEventType Function()? eventType,
-    DateTime Function()? timestamp,
-    String Function()? details,
+    TypeModelEventType? Function()? eventType,
+    DateTime? Function()? timestamp,
+    String? Function()? details,
   }) {
     return TypeModel(
       eventType: eventType != null ? eventType() : this.eventType,

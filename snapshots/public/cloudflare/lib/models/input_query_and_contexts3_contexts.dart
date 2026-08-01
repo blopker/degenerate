@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text'}.contains(key)); } 
-InputQueryAndContexts3Contexts copyWith({String Function()? text}) { return InputQueryAndContexts3Contexts(
+InputQueryAndContexts3Contexts copyWith({String? Function()? text}) { return InputQueryAndContexts3Contexts(
   text: text != null ? text() : this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

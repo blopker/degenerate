@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repositories'); } 
-MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool Function()? lockRepositories, bool Function()? excludeMetadata, bool Function()? excludeGitData, bool Function()? excludeAttachments, bool Function()? excludeReleases, bool Function()? excludeOwnerProjects, bool Function()? orgMetadataOnly, List<MigrationsStartForOrgRequestExclude> Function()? exclude, }) { return MigrationsStartForOrgRequest(
+MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool Function()? lockRepositories, bool Function()? excludeMetadata, bool Function()? excludeGitData, bool Function()? excludeAttachments, bool Function()? excludeReleases, bool Function()? excludeOwnerProjects, bool Function()? orgMetadataOnly, List<MigrationsStartForOrgRequestExclude>? Function()? exclude, }) { return MigrationsStartForOrgRequest(
   repositories: repositories ?? this.repositories,
   lockRepositories: lockRepositories != null ? lockRepositories() : this.lockRepositories,
   excludeMetadata: excludeMetadata != null ? excludeMetadata() : this.excludeMetadata,

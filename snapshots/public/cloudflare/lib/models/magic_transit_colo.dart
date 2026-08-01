@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'name'}.contains(key)); } 
-MagicTransitColo copyWith({MagicTransitColoCity Function()? city, MagicTransitColoName Function()? name, }) { return MagicTransitColo(
+MagicTransitColo copyWith({MagicTransitColoCity? Function()? city, MagicTransitColoName? Function()? name, }) { return MagicTransitColo(
   city: city != null ? city() : this.city,
   name: name != null ? name() : this.name,
 ); } 

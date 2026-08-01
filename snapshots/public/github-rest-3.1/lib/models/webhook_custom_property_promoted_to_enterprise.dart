@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('definition'); } 
-WebhookCustomPropertyPromotedToEnterprise copyWith({WebhookCustomPropertyPromotedToEnterpriseAction? action, CustomProperty? definition, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookCustomPropertyPromotedToEnterprise(
+WebhookCustomPropertyPromotedToEnterprise copyWith({WebhookCustomPropertyPromotedToEnterpriseAction? action, CustomProperty? definition, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, SimpleUser? Function()? sender, }) { return WebhookCustomPropertyPromotedToEnterprise(
   action: action ?? this.action,
   definition: definition ?? this.definition,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

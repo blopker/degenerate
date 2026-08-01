@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (secretScanning != null) 'secret_scanning': secretScanning?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'secret_scanning'}.contains(key)); } 
-RepositoryRuleViolationErrorMetadata copyWith({RepositoryRuleViolationErrorMetadataSecretScanning Function()? secretScanning}) { return RepositoryRuleViolationErrorMetadata(
+RepositoryRuleViolationErrorMetadata copyWith({RepositoryRuleViolationErrorMetadataSecretScanning? Function()? secretScanning}) { return RepositoryRuleViolationErrorMetadata(
   secretScanning: secretScanning != null ? secretScanning() : this.secretScanning,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

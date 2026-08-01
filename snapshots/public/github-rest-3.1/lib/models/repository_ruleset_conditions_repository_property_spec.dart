@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('property_values'); } 
-RepositoryRulesetConditionsRepositoryPropertySpec copyWith({String? name, List<String>? propertyValues, RepositoryRulesetConditionsRepositoryPropertySpecSource Function()? source, }) { return RepositoryRulesetConditionsRepositoryPropertySpec(
+RepositoryRulesetConditionsRepositoryPropertySpec copyWith({String? name, List<String>? propertyValues, RepositoryRulesetConditionsRepositoryPropertySpecSource? Function()? source, }) { return RepositoryRulesetConditionsRepositoryPropertySpec(
   name: name ?? this.name,
   propertyValues: propertyValues ?? this.propertyValues,
   source: source != null ? source() : this.source,

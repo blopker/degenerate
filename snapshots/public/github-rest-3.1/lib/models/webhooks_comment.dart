@@ -97,11 +97,11 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl,
   'id': id,
   'node_id': nodeId,
-  'parent_id': ?parentId,
+  'parent_id': parentId,
   'reactions': reactions.toJson(),
   'repository_url': repositoryUrl,
   'updated_at': updatedAt,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&

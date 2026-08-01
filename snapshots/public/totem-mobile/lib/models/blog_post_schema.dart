@@ -7,51 +7,67 @@ import 'public_user_schema.dart';
 final class BlogPostSchema {
   const BlogPostSchema({
     required this.title,
-    this.author,
-    this.headerImageUrl,
-    this.contentHtml,
-    this.subtitle,
+    this.author = const Omittable.absent(),
+    this.headerImageUrl = const Omittable.absent(),
+    this.contentHtml = const Omittable.absent(),
+    this.subtitle = const Omittable.absent(),
     this.datePublished,
-    this.slug,
+    this.slug = const Omittable.absent(),
     this.publish = false,
     this.readTime = 1,
-    this.summary,
+    this.summary = const Omittable.absent(),
   });
 
   factory BlogPostSchema.fromJson(Map<String, dynamic> json) {
     return BlogPostSchema(
-      author: json['author'] != null
-          ? PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>)
-          : null,
-      headerImageUrl: json['header_image_url'] as String?,
-      contentHtml: json['content_html'] as String?,
+      author: json.containsKey('author')
+          ? Omittable(
+              json['author'] != null
+                  ? PublicUserSchema.fromJson(
+                      json['author'] as Map<String, dynamic>,
+                    )
+                  : null,
+            )
+          : const Omittable.absent(),
+      headerImageUrl: json.containsKey('header_image_url')
+          ? Omittable(json['header_image_url'] as String?)
+          : const Omittable.absent(),
+      contentHtml: json.containsKey('content_html')
+          ? Omittable(json['content_html'] as String?)
+          : const Omittable.absent(),
       title: json['title'] as String,
-      subtitle: json['subtitle'] as String?,
+      subtitle: json.containsKey('subtitle')
+          ? Omittable(json['subtitle'] as String?)
+          : const Omittable.absent(),
       datePublished: json['date_published'] != null
           ? DateTime.parse(json['date_published'] as String)
           : null,
-      slug: json['slug'] as String?,
+      slug: json.containsKey('slug')
+          ? Omittable(json['slug'] as String?)
+          : const Omittable.absent(),
       publish: json.containsKey('publish') ? json['publish'] as bool : false,
       readTime: json.containsKey('read_time')
           ? (json['read_time'] as num).toInt()
           : 1,
-      summary: json['summary'] as String?,
+      summary: json.containsKey('summary')
+          ? Omittable(json['summary'] as String?)
+          : const Omittable.absent(),
     );
   }
 
-  final PublicUserSchema? author;
+  final Omittable<PublicUserSchema?> author;
 
-  final String? headerImageUrl;
+  final Omittable<String?> headerImageUrl;
 
-  final String? contentHtml;
+  final Omittable<String?> contentHtml;
 
   final String title;
 
-  final String? subtitle;
+  final Omittable<String?> subtitle;
 
   final DateTime? datePublished;
 
-  final String? slug;
+  final Omittable<String?> slug;
 
   final bool publish;
 
@@ -59,21 +75,21 @@ final class BlogPostSchema {
   final int readTime;
 
   /// Short summary of the blog post to show in list pages. No Markdown allowed. Max 2000 characters.
-  final String? summary;
+  final Omittable<String?> summary;
 
   Map<String, dynamic> toJson() {
     return {
-      if (author != null) 'author': author?.toJson(),
-      'header_image_url': ?headerImageUrl,
-      'content_html': ?contentHtml,
+      if (author.isPresent) 'author': author.value?.toJson(),
+      if (headerImageUrl.isPresent) 'header_image_url': headerImageUrl.value,
+      if (contentHtml.isPresent) 'content_html': contentHtml.value,
       'title': title,
-      'subtitle': ?subtitle,
+      if (subtitle.isPresent) 'subtitle': subtitle.value,
       if (datePublished != null)
         'date_published': datePublished?.toIso8601String(),
-      'slug': ?slug,
+      if (slug.isPresent) 'slug': slug.value,
       'publish': publish,
       'read_time': readTime,
-      'summary': ?summary,
+      if (summary.isPresent) 'summary': summary.value,
     };
   }
 
@@ -82,32 +98,30 @@ final class BlogPostSchema {
   }
 
   BlogPostSchema copyWith({
-    PublicUserSchema? Function()? author,
-    String? Function()? headerImageUrl,
-    String? Function()? contentHtml,
+    Omittable<PublicUserSchema?>? author,
+    Omittable<String?>? headerImageUrl,
+    Omittable<String?>? contentHtml,
     String? title,
-    String? Function()? subtitle,
-    DateTime Function()? datePublished,
-    String? Function()? slug,
+    Omittable<String?>? subtitle,
+    DateTime? Function()? datePublished,
+    Omittable<String?>? slug,
     bool Function()? publish,
     int Function()? readTime,
-    String? Function()? summary,
+    Omittable<String?>? summary,
   }) {
     return BlogPostSchema(
-      author: author != null ? author() : this.author,
-      headerImageUrl: headerImageUrl != null
-          ? headerImageUrl()
-          : this.headerImageUrl,
-      contentHtml: contentHtml != null ? contentHtml() : this.contentHtml,
+      author: author ?? this.author,
+      headerImageUrl: headerImageUrl ?? this.headerImageUrl,
+      contentHtml: contentHtml ?? this.contentHtml,
       title: title ?? this.title,
-      subtitle: subtitle != null ? subtitle() : this.subtitle,
+      subtitle: subtitle ?? this.subtitle,
       datePublished: datePublished != null
           ? datePublished()
           : this.datePublished,
-      slug: slug != null ? slug() : this.slug,
+      slug: slug ?? this.slug,
       publish: publish != null ? publish() : this.publish,
       readTime: readTime != null ? readTime() : this.readTime,
-      summary: summary != null ? summary() : this.summary,
+      summary: summary ?? this.summary,
     );
   }
 

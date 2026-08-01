@@ -1,34 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_validation_status.dart';@immutable final class EmailSecurityGetMessageResponseResultValidation {const EmailSecurityGetMessageResponseResultValidation({this.comment, this.dkim, this.dmarc, this.spf, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_validation_status.dart';@immutable final class EmailSecurityGetMessageResponseResultValidation {const EmailSecurityGetMessageResponseResultValidation({this.comment = const Omittable.absent(), this.dkim = const Omittable.absent(), this.dmarc = const Omittable.absent(), this.spf = const Omittable.absent(), });
 
 factory EmailSecurityGetMessageResponseResultValidation.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageResponseResultValidation(
-  comment: json['comment'] as String?,
-  dkim: json['dkim'] != null ? EmailSecurityValidationStatus.fromJson(json['dkim'] as String) : null,
-  dmarc: json['dmarc'] != null ? EmailSecurityValidationStatus.fromJson(json['dmarc'] as String) : null,
-  spf: json['spf'] != null ? EmailSecurityValidationStatus.fromJson(json['spf'] as String) : null,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
+  dkim: json.containsKey('dkim') ? Omittable(json['dkim'] != null ? EmailSecurityValidationStatus.fromJson(json['dkim'] as String) : null) : const Omittable.absent(),
+  dmarc: json.containsKey('dmarc') ? Omittable(json['dmarc'] != null ? EmailSecurityValidationStatus.fromJson(json['dmarc'] as String) : null) : const Omittable.absent(),
+  spf: json.containsKey('spf') ? Omittable(json['spf'] != null ? EmailSecurityValidationStatus.fromJson(json['spf'] as String) : null) : const Omittable.absent(),
 ); }
 
-final String? comment;
+final Omittable<String?> comment;
 
-final EmailSecurityValidationStatus? dkim;
+final Omittable<EmailSecurityValidationStatus?> dkim;
 
-final EmailSecurityValidationStatus? dmarc;
+final Omittable<EmailSecurityValidationStatus?> dmarc;
 
-final EmailSecurityValidationStatus? spf;
+final Omittable<EmailSecurityValidationStatus?> spf;
 
 Map<String, dynamic> toJson() { return {
-  'comment': ?comment,
-  if (dkim != null) 'dkim': dkim?.toJson(),
-  if (dmarc != null) 'dmarc': dmarc?.toJson(),
-  if (spf != null) 'spf': spf?.toJson(),
+  if (comment.isPresent) 'comment': comment.value,
+  if (dkim.isPresent) 'dkim': dkim.value?.toJson(),
+  if (dmarc.isPresent) 'dmarc': dmarc.value?.toJson(),
+  if (spf.isPresent) 'spf': spf.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'dkim', 'dmarc', 'spf'}.contains(key)); } 
-EmailSecurityGetMessageResponseResultValidation copyWith({String? Function()? comment, EmailSecurityValidationStatus? Function()? dkim, EmailSecurityValidationStatus? Function()? dmarc, EmailSecurityValidationStatus? Function()? spf, }) { return EmailSecurityGetMessageResponseResultValidation(
-  comment: comment != null ? comment() : this.comment,
-  dkim: dkim != null ? dkim() : this.dkim,
-  dmarc: dmarc != null ? dmarc() : this.dmarc,
-  spf: spf != null ? spf() : this.spf,
+EmailSecurityGetMessageResponseResultValidation copyWith({Omittable<String?>? comment, Omittable<EmailSecurityValidationStatus?>? dkim, Omittable<EmailSecurityValidationStatus?>? dmarc, Omittable<EmailSecurityValidationStatus?>? spf, }) { return EmailSecurityGetMessageResponseResultValidation(
+  comment: comment ?? this.comment,
+  dkim: dkim ?? this.dkim,
+  dmarc: dmarc ?? this.dmarc,
+  spf: spf ?? this.spf,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecurityGetMessageResponseResultValidation &&

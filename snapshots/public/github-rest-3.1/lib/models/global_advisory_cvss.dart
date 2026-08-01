@@ -14,8 +14,8 @@ final String? vectorString;
 final double? score;
 
 Map<String, dynamic> toJson() { return {
-  'vector_string': ?vectorString,
-  'score': ?score,
+  'vector_string': vectorString,
+  'score': score,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && json['vector_string'] is String &&
       json.containsKey('score') && json['score'] is num; } 

@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-WafManagedRulesRuleResponseCollection copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, WafManagedRulesResultInfo Function()? resultInfo, List<WafManagedRulesRule>? result, }) { return WafManagedRulesRuleResponseCollection(
+WafManagedRulesRuleResponseCollection copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, WafManagedRulesResultInfo? Function()? resultInfo, List<WafManagedRulesRule>? result, }) { return WafManagedRulesRuleResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

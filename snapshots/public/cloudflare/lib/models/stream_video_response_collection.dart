@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-StreamVideoResponseCollection copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, List<StreamVideos> Function()? result, int Function()? range, int Function()? total, }) { return StreamVideoResponseCollection(
+StreamVideoResponseCollection copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, List<StreamVideos>? Function()? result, int? Function()? range, int? Function()? total, }) { return StreamVideoResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

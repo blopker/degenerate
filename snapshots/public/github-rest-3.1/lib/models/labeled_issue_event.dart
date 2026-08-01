@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'actor': actor.toJson(),
   'event': event,
-  'commit_id': ?commitId,
-  'commit_url': ?commitUrl,
+  'commit_id': commitId,
+  'commit_url': commitUrl,
   'created_at': createdAt,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'label': label.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&

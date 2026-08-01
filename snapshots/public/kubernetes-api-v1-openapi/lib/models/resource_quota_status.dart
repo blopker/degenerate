@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (used != null) 'used': used?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hard', 'used'}.contains(key)); } 
-ResourceQuotaStatus copyWith({Map<String, ResourceQuantity> Function()? hard, Map<String, ResourceQuantity> Function()? used, }) { return ResourceQuotaStatus(
+ResourceQuotaStatus copyWith({Map<String, ResourceQuantity>? Function()? hard, Map<String, ResourceQuantity>? Function()? used, }) { return ResourceQuotaStatus(
   hard: hard != null ? hard() : this.hard,
   used: used != null ? used() : this.used,
 ); } 

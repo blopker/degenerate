@@ -9,7 +9,7 @@ factory WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson
 final bool? from;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
+  'from': from,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is bool; } 
 WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval copyWith({bool? Function()? from}) { return WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval(

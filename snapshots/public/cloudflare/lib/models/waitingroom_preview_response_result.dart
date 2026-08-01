@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (previewUrl != null) 'preview_url': previewUrl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preview_url'}.contains(key)); } 
-WaitingroomPreviewResponseResult copyWith({WaitingroomPreviewUrl Function()? previewUrl}) { return WaitingroomPreviewResponseResult(
+WaitingroomPreviewResponseResult copyWith({WaitingroomPreviewUrl? Function()? previewUrl}) { return WaitingroomPreviewResponseResult(
   previewUrl: previewUrl != null ? previewUrl() : this.previewUrl,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

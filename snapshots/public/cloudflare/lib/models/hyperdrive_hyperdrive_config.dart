@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('origin'); } 
-HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching Function()? caching, DateTime Function()? createdOn, HyperdriveIdentifier? id, DateTime Function()? modifiedOn, HyperdriveHyperdriveMtls Function()? mtls, HyperdriveHyperdriveName? name, HyperdriveHyperdriveConfigOrigin? origin, HyperdriveHyperdriveOriginConnectionLimit Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfig(
+HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? caching, DateTime? Function()? createdOn, HyperdriveIdentifier? id, DateTime? Function()? modifiedOn, HyperdriveHyperdriveMtls? Function()? mtls, HyperdriveHyperdriveName? name, HyperdriveHyperdriveConfigOrigin? origin, HyperdriveHyperdriveOriginConnectionLimit? Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfig(
   caching: caching != null ? caching() : this.caching,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id ?? this.id,

@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('skill_id') && json['skill_id'] is String; } 
-SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, String Function()? version, }) { return SkillReferenceParam(
+SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, String? Function()? version, }) { return SkillReferenceParam(
   type: type ?? this.type,
   skillId: skillId ?? this.skillId,
   version: version != null ? version() : this.version,

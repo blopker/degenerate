@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'jwt': ?jwt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buckets', 'jwt'}.contains(key)); } 
-WorkersCreateAssetsUploadSessionResponseResult copyWith({List<List<String>> Function()? buckets, String Function()? jwt, }) { return WorkersCreateAssetsUploadSessionResponseResult(
+WorkersCreateAssetsUploadSessionResponseResult copyWith({List<List<String>>? Function()? buckets, String? Function()? jwt, }) { return WorkersCreateAssetsUploadSessionResponseResult(
   buckets: buckets != null ? buckets() : this.buckets,
   jwt: jwt != null ? jwt() : this.jwt,
 ); } 

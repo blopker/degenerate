@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'front': ?front,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'front'}.contains(key)); } 
-PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument copyWith({String Function()? back, String Function()? front, }) { return PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument(
+PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument copyWith({String? Function()? back, String? Function()? front, }) { return PostAccountsAccountPersonsPersonRequestVerificationAdditionalDocument(
   back: back != null ? back() : this.back,
   front: front != null ? front() : this.front,
 ); } 

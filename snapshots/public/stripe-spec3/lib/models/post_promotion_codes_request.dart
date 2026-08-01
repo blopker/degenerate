@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (restrictions != null) 'restrictions': restrictions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('promotion'); } 
-PostPromotionCodesRequest copyWith({bool Function()? active, String Function()? code, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, int Function()? expiresAt, int Function()? maxRedemptions, Map<String, String> Function()? metadata, PostPromotionCodesRequestPromotion? promotion, PostPromotionCodesRequestRestrictions Function()? restrictions, }) { return PostPromotionCodesRequest(
+PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()? code, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, int? Function()? expiresAt, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PostPromotionCodesRequestPromotion? promotion, PostPromotionCodesRequestRestrictions? Function()? restrictions, }) { return PostPromotionCodesRequest(
   active: active != null ? active() : this.active,
   code: code != null ? code() : this.code,
   customer: customer != null ? customer() : this.customer,

@@ -41,16 +41,16 @@ final SimpleUser? creator;
 
 Map<String, dynamic> toJson() { return {
   'url': url,
-  'avatar_url': ?avatarUrl,
+  'avatar_url': avatarUrl,
   'id': id,
   'node_id': nodeId,
   'state': state,
-  'description': ?description,
-  'target_url': ?targetUrl,
+  'description': description,
+  'target_url': targetUrl,
   'context': context,
   'created_at': createdAt,
   'updated_at': updatedAt,
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&

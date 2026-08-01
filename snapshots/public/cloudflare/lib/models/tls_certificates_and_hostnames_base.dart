@@ -105,7 +105,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('permissions') &&
       json.containsKey('port') &&
       json.containsKey('status'); } 
-TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAndHostnamesEnabled? enabled, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesSchemasIdentifier? id, DateTime? modifiedOn, TlsCertificatesAndHostnamesName? name, List<String>? permissions, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesSchemasStatus? status, TlsCertificatesAndHostnamesKeylessTunnel Function()? tunnel, }) { return TlsCertificatesAndHostnamesBase(
+TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAndHostnamesEnabled? enabled, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesSchemasIdentifier? id, DateTime? modifiedOn, TlsCertificatesAndHostnamesName? name, List<String>? permissions, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesSchemasStatus? status, TlsCertificatesAndHostnamesKeylessTunnel? Function()? tunnel, }) { return TlsCertificatesAndHostnamesBase(
   createdOn: createdOn ?? this.createdOn,
   enabled: enabled ?? this.enabled,
   host: host ?? this.host,

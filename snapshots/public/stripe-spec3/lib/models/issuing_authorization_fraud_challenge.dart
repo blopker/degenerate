@@ -82,12 +82,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFraudChallengeUndeliverableReason($value)'; } 
  }
 /// 
-@immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason, });
+@immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason = const Omittable.absent(), });
 
 factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFraudChallenge(
   channel: IssuingAuthorizationFraudChallengeChannel.fromJson(json['channel'] as String),
   status: IssuingAuthorizationFraudChallengeStatus.fromJson(json['status'] as String),
-  undeliverableReason: json['undeliverable_reason'] != null ? IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(json['undeliverable_reason'] as String) : null,
+  undeliverableReason: json.containsKey('undeliverable_reason') ? Omittable(json['undeliverable_reason'] != null ? IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(json['undeliverable_reason'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The method by which the fraud challenge was delivered to the cardholder.
@@ -97,19 +97,19 @@ final IssuingAuthorizationFraudChallengeChannel channel;
 final IssuingAuthorizationFraudChallengeStatus status;
 
 /// If the challenge is not deliverable, the reason why.
-final IssuingAuthorizationFraudChallengeUndeliverableReason? undeliverableReason;
+final Omittable<IssuingAuthorizationFraudChallengeUndeliverableReason?> undeliverableReason;
 
 Map<String, dynamic> toJson() { return {
   'channel': channel.toJson(),
   'status': status.toJson(),
-  if (undeliverableReason != null) 'undeliverable_reason': undeliverableReason?.toJson(),
+  if (undeliverableReason.isPresent) 'undeliverable_reason': undeliverableReason.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') &&
       json.containsKey('status'); } 
-IssuingAuthorizationFraudChallenge copyWith({IssuingAuthorizationFraudChallengeChannel? channel, IssuingAuthorizationFraudChallengeStatus? status, IssuingAuthorizationFraudChallengeUndeliverableReason? Function()? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
+IssuingAuthorizationFraudChallenge copyWith({IssuingAuthorizationFraudChallengeChannel? channel, IssuingAuthorizationFraudChallengeStatus? status, Omittable<IssuingAuthorizationFraudChallengeUndeliverableReason?>? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
   channel: channel ?? this.channel,
   status: status ?? this.status,
-  undeliverableReason: undeliverableReason != null ? undeliverableReason() : this.undeliverableReason,
+  undeliverableReason: undeliverableReason ?? this.undeliverableReason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorizationFraudChallenge &&

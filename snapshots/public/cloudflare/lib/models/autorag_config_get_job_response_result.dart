@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('source'); } 
-AutoragConfigGetJobResponseResult copyWith({String Function()? endReason, String Function()? endedAt, String? id, String Function()? lastSeenAt, AutoragConfigGetJobResponseResultSource? source, String Function()? startedAt, }) { return AutoragConfigGetJobResponseResult(
+AutoragConfigGetJobResponseResult copyWith({String? Function()? endReason, String? Function()? endedAt, String? id, String? Function()? lastSeenAt, AutoragConfigGetJobResponseResultSource? source, String? Function()? startedAt, }) { return AutoragConfigGetJobResponseResult(
   endReason: endReason != null ? endReason() : this.endReason,
   endedAt: endedAt != null ? endedAt() : this.endedAt,
   id: id ?? this.id,

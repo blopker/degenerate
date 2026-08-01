@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'settings'}.contains(key)); } 
-PostCustomersCustomerCashBalanceRequest copyWith({List<String> Function()? expand, PostCustomersCustomerCashBalanceRequestSettings Function()? settings, }) { return PostCustomersCustomerCashBalanceRequest(
+PostCustomersCustomerCashBalanceRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerCashBalanceRequestSettings? Function()? settings, }) { return PostCustomersCustomerCashBalanceRequest(
   expand: expand != null ? expand() : this.expand,
   settings: settings != null ? settings() : this.settings,
 ); } 

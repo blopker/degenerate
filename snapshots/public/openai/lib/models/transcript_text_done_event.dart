@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('text') && json['text'] is String; } 
-TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTextDoneEventLogprobs> Function()? logprobs, TranscriptTextUsageTokens Function()? usage, }) { return TranscriptTextDoneEvent(
+TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTextDoneEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) { return TranscriptTextDoneEvent(
   type: type ?? this.type,
   text: text ?? this.text,
   logprobs: logprobs != null ? logprobs() : this.logprobs,

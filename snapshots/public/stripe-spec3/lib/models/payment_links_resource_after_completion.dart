@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentLinksResourceAfterCompletion copyWith({PaymentLinksResourceCompletionBehaviorConfirmationPage Function()? hostedConfirmation, PaymentLinksResourceCompletionBehaviorRedirect Function()? redirect, PaymentLinksResourceAfterCompletionType? type, }) { return PaymentLinksResourceAfterCompletion(
+PaymentLinksResourceAfterCompletion copyWith({PaymentLinksResourceCompletionBehaviorConfirmationPage? Function()? hostedConfirmation, PaymentLinksResourceCompletionBehaviorRedirect? Function()? redirect, PaymentLinksResourceAfterCompletionType? type, }) { return PaymentLinksResourceAfterCompletion(
   hostedConfirmation: hostedConfirmation != null ? hostedConfirmation() : this.hostedConfirmation,
   redirect: redirect != null ? redirect() : this.redirect,
   type: type ?? this.type,

@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('value') && json['value'] is String &&
       json.containsKey('visibility'); } 
-ActionsCreateOrgVariableRequest copyWith({String? name, String? value, ActionsCreateOrgVariableRequestVisibility? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsCreateOrgVariableRequest(
+ActionsCreateOrgVariableRequest copyWith({String? name, String? value, ActionsCreateOrgVariableRequestVisibility? visibility, List<int>? Function()? selectedRepositoryIds, }) { return ActionsCreateOrgVariableRequest(
   name: name ?? this.name,
   value: value ?? this.value,
   visibility: visibility ?? this.visibility,

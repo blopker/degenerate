@@ -59,11 +59,11 @@ final SimpleUser sender;
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'alert': alert.toJson(),
-  'commit_oid': ?commitOid,
+  'commit_oid': commitOid,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
-  'ref': ?ref,
+  'ref': ref,
   'repository': repository.toJson(),
   'sender': sender.toJson(),
 }; } 
@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCodeScanningAlertReopened copyWith({WebhookCodeScanningAlertReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
+WebhookCodeScanningAlertReopened copyWith({WebhookCodeScanningAlertReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid != null ? commitOid() : this.commitOid,

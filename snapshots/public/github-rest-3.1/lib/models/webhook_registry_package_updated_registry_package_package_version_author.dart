@@ -101,7 +101,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('subscriptions_url') && json['subscriptions_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor copyWith({String? avatarUrl, String? eventsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? gravatarId, String? htmlUrl, int? id, String? login, String? nodeId, String? organizationsUrl, String? receivedEventsUrl, String? reposUrl, bool? siteAdmin, String? starredUrl, String? subscriptionsUrl, String? type, String? url, String Function()? userViewType, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor(
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor copyWith({String? avatarUrl, String? eventsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? gravatarId, String? htmlUrl, int? id, String? login, String? nodeId, String? organizationsUrl, String? receivedEventsUrl, String? reposUrl, bool? siteAdmin, String? starredUrl, String? subscriptionsUrl, String? type, String? url, String? Function()? userViewType, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   eventsUrl: eventsUrl ?? this.eventsUrl,
   followersUrl: followersUrl ?? this.followersUrl,

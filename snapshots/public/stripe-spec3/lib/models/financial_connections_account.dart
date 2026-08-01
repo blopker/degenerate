@@ -207,42 +207,42 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountSupportedPaymentMethodTypes($value)'; } 
  }
 /// A Financial Connections Account represents an account that exists outside of Stripe, to which you have been granted some degree of access.
-@immutable final class FinancialConnectionsAccount {const FinancialConnectionsAccount({required this.category, required this.created, required this.id, required this.institutionName, required this.livemode, required this.object, required this.status, required this.subcategory, required this.supportedPaymentMethodTypes, this.accountHolder, this.accountNumbers, this.balance, this.balanceRefresh, this.displayName, this.last4, this.ownership, this.ownershipRefresh, this.permissions, this.subscriptions, this.transactionRefresh, });
+@immutable final class FinancialConnectionsAccount {const FinancialConnectionsAccount({required this.category, required this.created, required this.id, required this.institutionName, required this.livemode, required this.object, required this.status, required this.subcategory, required this.supportedPaymentMethodTypes, this.accountHolder = const Omittable.absent(), this.accountNumbers = const Omittable.absent(), this.balance = const Omittable.absent(), this.balanceRefresh = const Omittable.absent(), this.displayName = const Omittable.absent(), this.last4 = const Omittable.absent(), this.ownership = const Omittable.absent(), this.ownershipRefresh = const Omittable.absent(), this.permissions = const Omittable.absent(), this.subscriptions = const Omittable.absent(), this.transactionRefresh = const Omittable.absent(), });
 
 factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccount(
-  accountHolder: json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
-  accountNumbers: (json['account_numbers'] as List<dynamic>?)?.map((e) => BankConnectionsResourceAccountNumberDetails.fromJson(e as Map<String, dynamic>)).toList(),
-  balance: json['balance'] != null ? BankConnectionsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>) : null,
-  balanceRefresh: json['balance_refresh'] != null ? BankConnectionsResourceBalanceRefresh.fromJson(json['balance_refresh'] as Map<String, dynamic>) : null,
+  accountHolder: json.containsKey('account_holder') ? Omittable(json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  accountNumbers: json.containsKey('account_numbers') ? Omittable((json['account_numbers'] as List<dynamic>?)?.map((e) => BankConnectionsResourceAccountNumberDetails.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  balance: json.containsKey('balance') ? Omittable(json['balance'] != null ? BankConnectionsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  balanceRefresh: json.containsKey('balance_refresh') ? Omittable(json['balance_refresh'] != null ? BankConnectionsResourceBalanceRefresh.fromJson(json['balance_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   category: FinancialConnectionsAccountCategory.fromJson(json['category'] as String),
   created: (json['created'] as num).toInt(),
-  displayName: json['display_name'] as String?,
+  displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   institutionName: json['institution_name'] as String,
-  last4: json['last4'] as String?,
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: FinancialConnectionsAccountObject.fromJson(json['object'] as String),
-  ownership: json['ownership'] != null ? OneOf2.parse(json['ownership'], fromA: (v) => v as String, fromB: (v) => FinancialConnectionsAccountOwnership.fromJson(v as Map<String, dynamic>),) : null,
-  ownershipRefresh: json['ownership_refresh'] != null ? BankConnectionsResourceOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null,
-  permissions: (json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList(),
+  ownership: json.containsKey('ownership') ? Omittable(json['ownership'] != null ? OneOf2.parse(json['ownership'], fromA: (v) => v as String, fromB: (v) => FinancialConnectionsAccountOwnership.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  ownershipRefresh: json.containsKey('ownership_refresh') ? Omittable(json['ownership_refresh'] != null ? BankConnectionsResourceOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  permissions: json.containsKey('permissions') ? Omittable((json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList()) : const Omittable.absent(),
   status: FinancialConnectionsAccountStatus.fromJson(json['status'] as String),
   subcategory: FinancialConnectionsAccountSubcategory.fromJson(json['subcategory'] as String),
-  subscriptions: (json['subscriptions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountSubscriptions.fromJson(e as String)).toList(),
+  subscriptions: json.containsKey('subscriptions') ? Omittable((json['subscriptions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountSubscriptions.fromJson(e as String)).toList()) : const Omittable.absent(),
   supportedPaymentMethodTypes: (json['supported_payment_method_types'] as List<dynamic>).map((e) => FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(e as String)).toList(),
-  transactionRefresh: json['transaction_refresh'] != null ? BankConnectionsResourceTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null,
+  transactionRefresh: json.containsKey('transaction_refresh') ? Omittable(json['transaction_refresh'] != null ? BankConnectionsResourceTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The account holder that this account belongs to.
-final BankConnectionsResourceAccountholder? accountHolder;
+final Omittable<BankConnectionsResourceAccountholder?> accountHolder;
 
 /// Details about the account numbers.
-final List<BankConnectionsResourceAccountNumberDetails>? accountNumbers;
+final Omittable<List<BankConnectionsResourceAccountNumberDetails>?> accountNumbers;
 
 /// The most recent information about the account's balance.
-final BankConnectionsResourceBalance? balance;
+final Omittable<BankConnectionsResourceBalance?> balance;
 
 /// The state of the most recent attempt to refresh the account balance.
-final BankConnectionsResourceBalanceRefresh? balanceRefresh;
+final Omittable<BankConnectionsResourceBalanceRefresh?> balanceRefresh;
 
 /// The type of the account. Account category is further divided in `subcategory`.
 final FinancialConnectionsAccountCategory category;
@@ -251,7 +251,7 @@ final FinancialConnectionsAccountCategory category;
 final int created;
 
 /// A human-readable name that has been assigned to this account, either by the account holder or by the institution.
-final String? displayName;
+final Omittable<String?> displayName;
 
 /// Unique identifier for the object.
 final String id;
@@ -260,7 +260,7 @@ final String id;
 final String institutionName;
 
 /// The last 4 digits of the account number. If present, this will be 4 numeric characters.
-final String? last4;
+final Omittable<String?> last4;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -269,13 +269,13 @@ final bool livemode;
 final FinancialConnectionsAccountObject object;
 
 /// The most recent information about the account's owners.
-final FinancialConnectionsAccountOwnership2? ownership;
+final Omittable<FinancialConnectionsAccountOwnership2?> ownership;
 
 /// The state of the most recent attempt to refresh the account owners.
-final BankConnectionsResourceOwnershipRefresh? ownershipRefresh;
+final Omittable<BankConnectionsResourceOwnershipRefresh?> ownershipRefresh;
 
 /// The list of permissions granted by this account.
-final List<FinancialConnectionsAccountPermissions>? permissions;
+final Omittable<List<FinancialConnectionsAccountPermissions>?> permissions;
 
 /// The status of the link to the account.
 final FinancialConnectionsAccountStatus status;
@@ -297,35 +297,35 @@ final FinancialConnectionsAccountStatus status;
 final FinancialConnectionsAccountSubcategory subcategory;
 
 /// The list of data refresh subscriptions requested on this account.
-final List<FinancialConnectionsAccountSubscriptions>? subscriptions;
+final Omittable<List<FinancialConnectionsAccountSubscriptions>?> subscriptions;
 
 /// The [PaymentMethod type](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type)(s) that can be created from this account.
 final List<FinancialConnectionsAccountSupportedPaymentMethodTypes> supportedPaymentMethodTypes;
 
 /// The state of the most recent attempt to refresh the account transactions.
-final BankConnectionsResourceTransactionRefresh? transactionRefresh;
+final Omittable<BankConnectionsResourceTransactionRefresh?> transactionRefresh;
 
 Map<String, dynamic> toJson() { return {
-  if (accountHolder != null) 'account_holder': accountHolder?.toJson(),
-  if (accountNumbers != null) 'account_numbers': accountNumbers?.map((e) => e.toJson()).toList(),
-  if (balance != null) 'balance': balance?.toJson(),
-  if (balanceRefresh != null) 'balance_refresh': balanceRefresh?.toJson(),
+  if (accountHolder.isPresent) 'account_holder': accountHolder.value?.toJson(),
+  if (accountNumbers.isPresent) 'account_numbers': accountNumbers.value?.map((e) => e.toJson()).toList(),
+  if (balance.isPresent) 'balance': balance.value?.toJson(),
+  if (balanceRefresh.isPresent) 'balance_refresh': balanceRefresh.value?.toJson(),
   'category': category.toJson(),
   'created': created,
-  'display_name': ?displayName,
+  if (displayName.isPresent) 'display_name': displayName.value,
   'id': id,
   'institution_name': institutionName,
-  'last4': ?last4,
+  if (last4.isPresent) 'last4': last4.value,
   'livemode': livemode,
   'object': object.toJson(),
-  if (ownership != null) 'ownership': ownership?.toJson(),
-  if (ownershipRefresh != null) 'ownership_refresh': ownershipRefresh?.toJson(),
-  if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
+  if (ownership.isPresent) 'ownership': ownership.value?.toJson(),
+  if (ownershipRefresh.isPresent) 'ownership_refresh': ownershipRefresh.value?.toJson(),
+  if (permissions.isPresent) 'permissions': permissions.value?.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
   'subcategory': subcategory.toJson(),
-  if (subscriptions != null) 'subscriptions': subscriptions?.map((e) => e.toJson()).toList(),
+  if (subscriptions.isPresent) 'subscriptions': subscriptions.value?.map((e) => e.toJson()).toList(),
   'supported_payment_method_types': supportedPaymentMethodTypes.map((e) => e.toJson()).toList(),
-  if (transactionRefresh != null) 'transaction_refresh': transactionRefresh?.toJson(),
+  if (transactionRefresh.isPresent) 'transaction_refresh': transactionRefresh.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') &&
       json.containsKey('created') && json['created'] is num &&
@@ -336,32 +336,33 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('status') &&
       json.containsKey('subcategory') &&
       json.containsKey('supported_payment_method_types'); } 
-FinancialConnectionsAccount copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, List<BankConnectionsResourceAccountNumberDetails>? Function()? accountNumbers, BankConnectionsResourceBalance? Function()? balance, BankConnectionsResourceBalanceRefresh? Function()? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, String? Function()? displayName, String? id, String? institutionName, String? Function()? last4, bool? livemode, FinancialConnectionsAccountObject? object, FinancialConnectionsAccountOwnership2? Function()? ownership, BankConnectionsResourceOwnershipRefresh? Function()? ownershipRefresh, List<FinancialConnectionsAccountPermissions>? Function()? permissions, FinancialConnectionsAccountStatus? status, FinancialConnectionsAccountSubcategory? subcategory, List<FinancialConnectionsAccountSubscriptions>? Function()? subscriptions, List<FinancialConnectionsAccountSupportedPaymentMethodTypes>? supportedPaymentMethodTypes, BankConnectionsResourceTransactionRefresh? Function()? transactionRefresh, }) { return FinancialConnectionsAccount(
-  accountHolder: accountHolder != null ? accountHolder() : this.accountHolder,
-  accountNumbers: accountNumbers != null ? accountNumbers() : this.accountNumbers,
-  balance: balance != null ? balance() : this.balance,
-  balanceRefresh: balanceRefresh != null ? balanceRefresh() : this.balanceRefresh,
+FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, Omittable<List<BankConnectionsResourceAccountNumberDetails>?>? accountNumbers, Omittable<BankConnectionsResourceBalance?>? balance, Omittable<BankConnectionsResourceBalanceRefresh?>? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, Omittable<String?>? displayName, String? id, String? institutionName, Omittable<String?>? last4, bool? livemode, FinancialConnectionsAccountObject? object, Omittable<FinancialConnectionsAccountOwnership2?>? ownership, Omittable<BankConnectionsResourceOwnershipRefresh?>? ownershipRefresh, Omittable<List<FinancialConnectionsAccountPermissions>?>? permissions, FinancialConnectionsAccountStatus? status, FinancialConnectionsAccountSubcategory? subcategory, Omittable<List<FinancialConnectionsAccountSubscriptions>?>? subscriptions, List<FinancialConnectionsAccountSupportedPaymentMethodTypes>? supportedPaymentMethodTypes, Omittable<BankConnectionsResourceTransactionRefresh?>? transactionRefresh, }) { return FinancialConnectionsAccount(
+  accountHolder: accountHolder ?? this.accountHolder,
+  accountNumbers: accountNumbers ?? this.accountNumbers,
+  balance: balance ?? this.balance,
+  balanceRefresh: balanceRefresh ?? this.balanceRefresh,
   category: category ?? this.category,
   created: created ?? this.created,
-  displayName: displayName != null ? displayName() : this.displayName,
+  displayName: displayName ?? this.displayName,
   id: id ?? this.id,
   institutionName: institutionName ?? this.institutionName,
-  last4: last4 != null ? last4() : this.last4,
+  last4: last4 ?? this.last4,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-  ownership: ownership != null ? ownership() : this.ownership,
-  ownershipRefresh: ownershipRefresh != null ? ownershipRefresh() : this.ownershipRefresh,
-  permissions: permissions != null ? permissions() : this.permissions,
+  ownership: ownership ?? this.ownership,
+  ownershipRefresh: ownershipRefresh ?? this.ownershipRefresh,
+  permissions: permissions ?? this.permissions,
   status: status ?? this.status,
   subcategory: subcategory ?? this.subcategory,
-  subscriptions: subscriptions != null ? subscriptions() : this.subscriptions,
+  subscriptions: subscriptions ?? this.subscriptions,
   supportedPaymentMethodTypes: supportedPaymentMethodTypes ?? this.supportedPaymentMethodTypes,
-  transactionRefresh: transactionRefresh != null ? transactionRefresh() : this.transactionRefresh,
+  transactionRefresh: transactionRefresh ?? this.transactionRefresh,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FinancialConnectionsAccount &&
           accountHolder == other.accountHolder &&
-          listEquals(accountNumbers, other.accountNumbers) &&
+          accountNumbers.isPresent == other.accountNumbers.isPresent &&
+          listEquals(accountNumbers.value, other.accountNumbers.value) &&
           balance == other.balance &&
           balanceRefresh == other.balanceRefresh &&
           category == other.category &&
@@ -374,12 +375,14 @@ FinancialConnectionsAccount copyWith({BankConnectionsResourceAccountholder? Func
           object == other.object &&
           ownership == other.ownership &&
           ownershipRefresh == other.ownershipRefresh &&
-          listEquals(permissions, other.permissions) &&
+          permissions.isPresent == other.permissions.isPresent &&
+          listEquals(permissions.value, other.permissions.value) &&
           status == other.status &&
           subcategory == other.subcategory &&
-          listEquals(subscriptions, other.subscriptions) &&
+          subscriptions.isPresent == other.subscriptions.isPresent &&
+          listEquals(subscriptions.value, other.subscriptions.value) &&
           listEquals(supportedPaymentMethodTypes, other.supportedPaymentMethodTypes) &&
           transactionRefresh == other.transactionRefresh; } 
-@override int get hashCode { return Object.hash(accountHolder, Object.hashAll(accountNumbers ?? const []), balance, balanceRefresh, category, created, displayName, id, institutionName, last4, livemode, object, ownership, ownershipRefresh, Object.hashAll(permissions ?? const []), status, subcategory, Object.hashAll(subscriptions ?? const []), Object.hashAll(supportedPaymentMethodTypes), transactionRefresh); } 
+@override int get hashCode { return Object.hash(accountHolder, Object.hashAll(accountNumbers.value ?? const []), balance, balanceRefresh, category, created, displayName, id, institutionName, last4, livemode, object, ownership, ownershipRefresh, Object.hashAll(permissions.value ?? const []), status, subcategory, Object.hashAll(subscriptions.value ?? const []), Object.hashAll(supportedPaymentMethodTypes), transactionRefresh); } 
 @override String toString() { return 'FinancialConnectionsAccount(accountHolder: $accountHolder, accountNumbers: $accountNumbers, balance: $balance, balanceRefresh: $balanceRefresh, category: $category, created: $created, displayName: $displayName, id: $id, institutionName: $institutionName, last4: $last4, livemode: $livemode, object: $object, ownership: $ownership, ownershipRefresh: $ownershipRefresh, permissions: $permissions, status: $status, subcategory: $subcategory, subscriptions: $subscriptions, supportedPaymentMethodTypes: $supportedPaymentMethodTypes, transactionRefresh: $transactionRefresh)'; } 
  }

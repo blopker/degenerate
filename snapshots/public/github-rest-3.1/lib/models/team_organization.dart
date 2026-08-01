@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_organization_plan.dart';/// Team Organization
-@immutable final class TeamOrganization {const TeamOrganization({required this.following, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, required this.login, required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.publicGists, required this.htmlUrl, required this.followers, required this.archivedAt, required this.type, required this.createdAt, required this.updatedAt, this.isVerified, this.email, this.twitterUsername, this.location, this.blog, this.totalPrivateRepos, this.ownedPrivateRepos, this.privateGists, this.diskUsage, this.company, this.billingEmail, this.plan, this.defaultRepositoryPermission, this.membersCanCreateRepositories, this.twoFactorRequirementEnabled, this.membersAllowedRepositoryCreationType, this.membersCanCreatePublicRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.membersCanCreatePrivatePages, this.membersCanForkPrivateRepositories, this.webCommitSignoffRequired, this.name, this.collaborators, });
+@immutable final class TeamOrganization {const TeamOrganization({required this.following, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, required this.login, required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.publicGists, required this.htmlUrl, required this.followers, required this.archivedAt, required this.type, required this.createdAt, required this.updatedAt, this.isVerified, this.email, this.twitterUsername = const Omittable.absent(), this.location, this.blog, this.totalPrivateRepos, this.ownedPrivateRepos, this.privateGists = const Omittable.absent(), this.diskUsage = const Omittable.absent(), this.company, this.billingEmail = const Omittable.absent(), this.plan, this.defaultRepositoryPermission = const Omittable.absent(), this.membersCanCreateRepositories = const Omittable.absent(), this.twoFactorRequirementEnabled = const Omittable.absent(), this.membersAllowedRepositoryCreationType, this.membersCanCreatePublicRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.membersCanCreatePrivatePages, this.membersCanForkPrivateRepositories = const Omittable.absent(), this.webCommitSignoffRequired, this.name, this.collaborators = const Omittable.absent(), });
 
 factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrganization(
   login: json['login'] as String,
@@ -21,7 +21,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   blog: json['blog'] != null ? Uri.parse(json['blog'] as String) : null,
   location: json['location'] as String?,
   email: json['email'] as String?,
-  twitterUsername: json['twitter_username'] as String?,
+  twitterUsername: json.containsKey('twitter_username') ? Omittable(json['twitter_username'] as String?) : const Omittable.absent(),
   isVerified: json['is_verified'] as bool?,
   hasOrganizationProjects: json['has_organization_projects'] as bool,
   hasRepositoryProjects: json['has_repository_projects'] as bool,
@@ -34,14 +34,14 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   type: json['type'] as String,
   totalPrivateRepos: json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null,
   ownedPrivateRepos: json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null,
-  privateGists: json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null,
-  diskUsage: json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null,
-  collaborators: json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null,
-  billingEmail: json['billing_email'] as String?,
+  privateGists: json.containsKey('private_gists') ? Omittable(json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null) : const Omittable.absent(),
+  diskUsage: json.containsKey('disk_usage') ? Omittable(json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null) : const Omittable.absent(),
+  collaborators: json.containsKey('collaborators') ? Omittable(json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null) : const Omittable.absent(),
+  billingEmail: json.containsKey('billing_email') ? Omittable(json['billing_email'] as String?) : const Omittable.absent(),
   plan: json['plan'] != null ? TeamOrganizationPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
-  defaultRepositoryPermission: json['default_repository_permission'] as String?,
-  membersCanCreateRepositories: json['members_can_create_repositories'] as bool?,
-  twoFactorRequirementEnabled: json['two_factor_requirement_enabled'] as bool?,
+  defaultRepositoryPermission: json.containsKey('default_repository_permission') ? Omittable(json['default_repository_permission'] as String?) : const Omittable.absent(),
+  membersCanCreateRepositories: json.containsKey('members_can_create_repositories') ? Omittable(json['members_can_create_repositories'] as bool?) : const Omittable.absent(),
+  twoFactorRequirementEnabled: json.containsKey('two_factor_requirement_enabled') ? Omittable(json['two_factor_requirement_enabled'] as bool?) : const Omittable.absent(),
   membersAllowedRepositoryCreationType: json['members_allowed_repository_creation_type'] as String?,
   membersCanCreatePublicRepositories: json['members_can_create_public_repositories'] as bool?,
   membersCanCreatePrivateRepositories: json['members_can_create_private_repositories'] as bool?,
@@ -49,7 +49,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   membersCanCreatePages: json['members_can_create_pages'] as bool?,
   membersCanCreatePublicPages: json['members_can_create_public_pages'] as bool?,
   membersCanCreatePrivatePages: json['members_can_create_private_pages'] as bool?,
-  membersCanForkPrivateRepositories: json['members_can_fork_private_repositories'] as bool?,
+  membersCanForkPrivateRepositories: json.containsKey('members_can_fork_private_repositories') ? Omittable(json['members_can_fork_private_repositories'] as bool?) : const Omittable.absent(),
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
@@ -89,7 +89,7 @@ final String? location;
 
 final String? email;
 
-final String? twitterUsername;
+final Omittable<String?> twitterUsername;
 
 final bool? isVerified;
 
@@ -115,21 +115,21 @@ final int? totalPrivateRepos;
 
 final int? ownedPrivateRepos;
 
-final int? privateGists;
+final Omittable<int?> privateGists;
 
-final int? diskUsage;
+final Omittable<int?> diskUsage;
 
-final int? collaborators;
+final Omittable<int?> collaborators;
 
-final String? billingEmail;
+final Omittable<String?> billingEmail;
 
 final TeamOrganizationPlan? plan;
 
-final String? defaultRepositoryPermission;
+final Omittable<String?> defaultRepositoryPermission;
 
-final bool? membersCanCreateRepositories;
+final Omittable<bool?> membersCanCreateRepositories;
 
-final bool? twoFactorRequirementEnabled;
+final Omittable<bool?> twoFactorRequirementEnabled;
 
 final String? membersAllowedRepositoryCreationType;
 
@@ -145,7 +145,7 @@ final bool? membersCanCreatePublicPages;
 
 final bool? membersCanCreatePrivatePages;
 
-final bool? membersCanForkPrivateRepositories;
+final Omittable<bool?> membersCanForkPrivateRepositories;
 
 final bool? webCommitSignoffRequired;
 
@@ -165,13 +165,13 @@ Map<String, dynamic> toJson() { return {
   'members_url': membersUrl,
   'public_members_url': publicMembersUrl,
   'avatar_url': avatarUrl,
-  'description': ?description,
+  'description': description,
   'name': ?name,
   'company': ?company,
   if (blog != null) 'blog': blog?.toString(),
   'location': ?location,
   'email': ?email,
-  'twitter_username': ?twitterUsername,
+  if (twitterUsername.isPresent) 'twitter_username': twitterUsername.value,
   'is_verified': ?isVerified,
   'has_organization_projects': hasOrganizationProjects,
   'has_repository_projects': hasRepositoryProjects,
@@ -184,14 +184,14 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'total_private_repos': ?totalPrivateRepos,
   'owned_private_repos': ?ownedPrivateRepos,
-  'private_gists': ?privateGists,
-  'disk_usage': ?diskUsage,
-  'collaborators': ?collaborators,
-  'billing_email': ?billingEmail,
+  if (privateGists.isPresent) 'private_gists': privateGists.value,
+  if (diskUsage.isPresent) 'disk_usage': diskUsage.value,
+  if (collaborators.isPresent) 'collaborators': collaborators.value,
+  if (billingEmail.isPresent) 'billing_email': billingEmail.value,
   if (plan != null) 'plan': plan?.toJson(),
-  'default_repository_permission': ?defaultRepositoryPermission,
-  'members_can_create_repositories': ?membersCanCreateRepositories,
-  'two_factor_requirement_enabled': ?twoFactorRequirementEnabled,
+  if (defaultRepositoryPermission.isPresent) 'default_repository_permission': defaultRepositoryPermission.value,
+  if (membersCanCreateRepositories.isPresent) 'members_can_create_repositories': membersCanCreateRepositories.value,
+  if (twoFactorRequirementEnabled.isPresent) 'two_factor_requirement_enabled': twoFactorRequirementEnabled.value,
   'members_allowed_repository_creation_type': ?membersAllowedRepositoryCreationType,
   'members_can_create_public_repositories': ?membersCanCreatePublicRepositories,
   'members_can_create_private_repositories': ?membersCanCreatePrivateRepositories,
@@ -199,10 +199,10 @@ Map<String, dynamic> toJson() { return {
   'members_can_create_pages': ?membersCanCreatePages,
   'members_can_create_public_pages': ?membersCanCreatePublicPages,
   'members_can_create_private_pages': ?membersCanCreatePrivatePages,
-  'members_can_fork_private_repositories': ?membersCanForkPrivateRepositories,
+  if (membersCanForkPrivateRepositories.isPresent) 'members_can_fork_private_repositories': membersCanForkPrivateRepositories.value,
   'web_commit_signoff_required': ?webCommitSignoffRequired,
   'updated_at': updatedAt.toIso8601String(),
-  if (archivedAt != null) 'archived_at': archivedAt?.toIso8601String(),
+  'archived_at': archivedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -227,7 +227,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('archived_at') && json['archived_at'] is String; } 
-TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String Function()? name, String Function()? company, Uri Function()? blog, String Function()? location, String Function()? email, String? Function()? twitterUsername, bool Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int Function()? totalPrivateRepos, int Function()? ownedPrivateRepos, int? Function()? privateGists, int? Function()? diskUsage, int? Function()? collaborators, String? Function()? billingEmail, TeamOrganizationPlan Function()? plan, String? Function()? defaultRepositoryPermission, bool? Function()? membersCanCreateRepositories, bool? Function()? twoFactorRequirementEnabled, String Function()? membersAllowedRepositoryCreationType, bool Function()? membersCanCreatePublicRepositories, bool Function()? membersCanCreatePrivateRepositories, bool Function()? membersCanCreateInternalRepositories, bool Function()? membersCanCreatePages, bool Function()? membersCanCreatePublicPages, bool Function()? membersCanCreatePrivatePages, bool? Function()? membersCanForkPrivateRepositories, bool Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return TeamOrganization(
+TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String? Function()? name, String? Function()? company, Uri? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? twitterUsername, bool? Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, Omittable<int?>? privateGists, Omittable<int?>? diskUsage, Omittable<int?>? collaborators, Omittable<String?>? billingEmail, TeamOrganizationPlan? Function()? plan, Omittable<String?>? defaultRepositoryPermission, Omittable<bool?>? membersCanCreateRepositories, Omittable<bool?>? twoFactorRequirementEnabled, String? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePublicRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, Omittable<bool?>? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return TeamOrganization(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -245,7 +245,7 @@ TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   blog: blog != null ? blog() : this.blog,
   location: location != null ? location() : this.location,
   email: email != null ? email() : this.email,
-  twitterUsername: twitterUsername != null ? twitterUsername() : this.twitterUsername,
+  twitterUsername: twitterUsername ?? this.twitterUsername,
   isVerified: isVerified != null ? isVerified() : this.isVerified,
   hasOrganizationProjects: hasOrganizationProjects ?? this.hasOrganizationProjects,
   hasRepositoryProjects: hasRepositoryProjects ?? this.hasRepositoryProjects,
@@ -258,14 +258,14 @@ TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   type: type ?? this.type,
   totalPrivateRepos: totalPrivateRepos != null ? totalPrivateRepos() : this.totalPrivateRepos,
   ownedPrivateRepos: ownedPrivateRepos != null ? ownedPrivateRepos() : this.ownedPrivateRepos,
-  privateGists: privateGists != null ? privateGists() : this.privateGists,
-  diskUsage: diskUsage != null ? diskUsage() : this.diskUsage,
-  collaborators: collaborators != null ? collaborators() : this.collaborators,
-  billingEmail: billingEmail != null ? billingEmail() : this.billingEmail,
+  privateGists: privateGists ?? this.privateGists,
+  diskUsage: diskUsage ?? this.diskUsage,
+  collaborators: collaborators ?? this.collaborators,
+  billingEmail: billingEmail ?? this.billingEmail,
   plan: plan != null ? plan() : this.plan,
-  defaultRepositoryPermission: defaultRepositoryPermission != null ? defaultRepositoryPermission() : this.defaultRepositoryPermission,
-  membersCanCreateRepositories: membersCanCreateRepositories != null ? membersCanCreateRepositories() : this.membersCanCreateRepositories,
-  twoFactorRequirementEnabled: twoFactorRequirementEnabled != null ? twoFactorRequirementEnabled() : this.twoFactorRequirementEnabled,
+  defaultRepositoryPermission: defaultRepositoryPermission ?? this.defaultRepositoryPermission,
+  membersCanCreateRepositories: membersCanCreateRepositories ?? this.membersCanCreateRepositories,
+  twoFactorRequirementEnabled: twoFactorRequirementEnabled ?? this.twoFactorRequirementEnabled,
   membersAllowedRepositoryCreationType: membersAllowedRepositoryCreationType != null ? membersAllowedRepositoryCreationType() : this.membersAllowedRepositoryCreationType,
   membersCanCreatePublicRepositories: membersCanCreatePublicRepositories != null ? membersCanCreatePublicRepositories() : this.membersCanCreatePublicRepositories,
   membersCanCreatePrivateRepositories: membersCanCreatePrivateRepositories != null ? membersCanCreatePrivateRepositories() : this.membersCanCreatePrivateRepositories,
@@ -273,7 +273,7 @@ TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   membersCanCreatePages: membersCanCreatePages != null ? membersCanCreatePages() : this.membersCanCreatePages,
   membersCanCreatePublicPages: membersCanCreatePublicPages != null ? membersCanCreatePublicPages() : this.membersCanCreatePublicPages,
   membersCanCreatePrivatePages: membersCanCreatePrivatePages != null ? membersCanCreatePrivatePages() : this.membersCanCreatePrivatePages,
-  membersCanForkPrivateRepositories: membersCanForkPrivateRepositories != null ? membersCanForkPrivateRepositories() : this.membersCanForkPrivateRepositories,
+  membersCanForkPrivateRepositories: membersCanForkPrivateRepositories ?? this.membersCanForkPrivateRepositories,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
   updatedAt: updatedAt ?? this.updatedAt,
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,

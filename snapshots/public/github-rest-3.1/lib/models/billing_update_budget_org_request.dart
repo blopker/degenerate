@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'budget_product_sku': ?budgetProductSku,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key)); } 
-BillingUpdateBudgetOrgRequest copyWith({int Function()? budgetAmount, bool Function()? preventFurtherUsage, BillingUpdateBudgetOrgRequestBudgetAlerting Function()? budgetAlerting, BillingUpdateBudgetOrgRequestBudgetScope Function()? budgetScope, String Function()? budgetEntityName, BillingUpdateBudgetOrgRequestBudgetType Function()? budgetType, String Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgRequest(
+BillingUpdateBudgetOrgRequest copyWith({int? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BillingUpdateBudgetOrgRequestBudgetAlerting? Function()? budgetAlerting, BillingUpdateBudgetOrgRequestBudgetScope? Function()? budgetScope, String? Function()? budgetEntityName, BillingUpdateBudgetOrgRequestBudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgRequest(
   budgetAmount: budgetAmount != null ? budgetAmount() : this.budgetAmount,
   preventFurtherUsage: preventFurtherUsage != null ? preventFurtherUsage() : this.preventFurtherUsage,
   budgetAlerting: budgetAlerting != null ? budgetAlerting() : this.budgetAlerting,

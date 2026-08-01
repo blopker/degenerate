@@ -36,7 +36,7 @@ factory WaitingroomEventDetailsTotalActiveUsers.fromJson(num json) => Waitingroo
 num toJson() => value;
 
 }
-@immutable final class WaitingroomEventDetailsResult {const WaitingroomEventDetailsResult({this.createdOn, this.customPageHtml, this.description, this.disableSessionRenewal, this.eventEndTime, this.eventStartTime, this.id, this.modifiedOn, this.name, this.newUsersPerMinute, this.prequeueStartTime, this.queueingMethod, this.sessionDuration, this.shuffleAtEventStart, this.suspended, this.totalActiveUsers, });
+@immutable final class WaitingroomEventDetailsResult {const WaitingroomEventDetailsResult({this.createdOn, this.customPageHtml, this.description, this.disableSessionRenewal, this.eventEndTime, this.eventStartTime, this.id, this.modifiedOn, this.name, this.newUsersPerMinute, this.prequeueStartTime = const Omittable.absent(), this.queueingMethod, this.sessionDuration, this.shuffleAtEventStart, this.suspended, this.totalActiveUsers, });
 
 factory WaitingroomEventDetailsResult.fromJson(Map<String, dynamic> json) { return WaitingroomEventDetailsResult(
   createdOn: json['created_on'] != null ? WaitingroomTimestamp.fromJson(json['created_on'] as String) : null,
@@ -49,7 +49,7 @@ factory WaitingroomEventDetailsResult.fromJson(Map<String, dynamic> json) { retu
   modifiedOn: json['modified_on'] != null ? WaitingroomTimestamp.fromJson(json['modified_on'] as String) : null,
   name: json['name'] != null ? WaitingroomEventName.fromJson(json['name'] as String) : null,
   newUsersPerMinute: json['new_users_per_minute'] != null ? WaitingroomEventDetailsNewUsersPerMinute.fromJson(json['new_users_per_minute'] as num) : null,
-  prequeueStartTime: json['prequeue_start_time'] != null ? WaitingroomEventPrequeueStartTime.fromJson(json['prequeue_start_time'] as String) : null,
+  prequeueStartTime: json.containsKey('prequeue_start_time') ? Omittable(json['prequeue_start_time'] != null ? WaitingroomEventPrequeueStartTime.fromJson(json['prequeue_start_time'] as String) : null) : const Omittable.absent(),
   queueingMethod: json['queueing_method'] != null ? WaitingroomEventDetailsQueueingMethod.fromJson(json['queueing_method'] as String) : null,
   sessionDuration: json['session_duration'] != null ? WaitingroomEventDetailsSessionDuration.fromJson(json['session_duration'] as num) : null,
   shuffleAtEventStart: json['shuffle_at_event_start'] != null ? WaitingroomEventShuffleAtEventStart.fromJson(json['shuffle_at_event_start'] as bool) : null,
@@ -78,7 +78,7 @@ final WaitingroomEventName? name;
 
 final WaitingroomEventDetailsNewUsersPerMinute? newUsersPerMinute;
 
-final WaitingroomEventPrequeueStartTime? prequeueStartTime;
+final Omittable<WaitingroomEventPrequeueStartTime?> prequeueStartTime;
 
 final WaitingroomEventDetailsQueueingMethod? queueingMethod;
 
@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (newUsersPerMinute != null) 'new_users_per_minute': newUsersPerMinute?.toJson(),
-  if (prequeueStartTime != null) 'prequeue_start_time': prequeueStartTime?.toJson(),
+  if (prequeueStartTime.isPresent) 'prequeue_start_time': prequeueStartTime.value?.toJson(),
   if (queueingMethod != null) 'queueing_method': queueingMethod?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   if (shuffleAtEventStart != null) 'shuffle_at_event_start': shuffleAtEventStart?.toJson(),
@@ -109,7 +109,7 @@ Map<String, dynamic> toJson() { return {
   if (totalActiveUsers != null) 'total_active_users': totalActiveUsers?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'custom_page_html', 'description', 'disable_session_renewal', 'event_end_time', 'event_start_time', 'id', 'modified_on', 'name', 'new_users_per_minute', 'prequeue_start_time', 'queueing_method', 'session_duration', 'shuffle_at_event_start', 'suspended', 'total_active_users'}.contains(key)); } 
-WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp Function()? createdOn, WaitingroomEventDetailsCustomPageHtml Function()? customPageHtml, WaitingroomEventDescription Function()? description, WaitingroomEventDetailsDisableSessionRenewal Function()? disableSessionRenewal, WaitingroomEventEndTime Function()? eventEndTime, WaitingroomEventStartTime Function()? eventStartTime, WaitingroomEventId Function()? id, WaitingroomTimestamp Function()? modifiedOn, WaitingroomEventName Function()? name, WaitingroomEventDetailsNewUsersPerMinute Function()? newUsersPerMinute, WaitingroomEventPrequeueStartTime? Function()? prequeueStartTime, WaitingroomEventDetailsQueueingMethod Function()? queueingMethod, WaitingroomEventDetailsSessionDuration Function()? sessionDuration, WaitingroomEventShuffleAtEventStart Function()? shuffleAtEventStart, WaitingroomEventSuspended Function()? suspended, WaitingroomEventDetailsTotalActiveUsers Function()? totalActiveUsers, }) { return WaitingroomEventDetailsResult(
+WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? createdOn, WaitingroomEventDetailsCustomPageHtml? Function()? customPageHtml, WaitingroomEventDescription? Function()? description, WaitingroomEventDetailsDisableSessionRenewal? Function()? disableSessionRenewal, WaitingroomEventEndTime? Function()? eventEndTime, WaitingroomEventStartTime? Function()? eventStartTime, WaitingroomEventId? Function()? id, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomEventName? Function()? name, WaitingroomEventDetailsNewUsersPerMinute? Function()? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, WaitingroomEventDetailsQueueingMethod? Function()? queueingMethod, WaitingroomEventDetailsSessionDuration? Function()? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, WaitingroomEventDetailsTotalActiveUsers? Function()? totalActiveUsers, }) { return WaitingroomEventDetailsResult(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   customPageHtml: customPageHtml != null ? customPageHtml() : this.customPageHtml,
   description: description != null ? description() : this.description,
@@ -120,7 +120,7 @@ WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp Function()? created
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   name: name != null ? name() : this.name,
   newUsersPerMinute: newUsersPerMinute != null ? newUsersPerMinute() : this.newUsersPerMinute,
-  prequeueStartTime: prequeueStartTime != null ? prequeueStartTime() : this.prequeueStartTime,
+  prequeueStartTime: prequeueStartTime ?? this.prequeueStartTime,
   queueingMethod: queueingMethod != null ? queueingMethod() : this.queueingMethod,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   shuffleAtEventStart: shuffleAtEventStart != null ? shuffleAtEventStart() : this.shuffleAtEventStart,

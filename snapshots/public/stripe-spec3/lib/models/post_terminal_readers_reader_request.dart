@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'label', 'metadata'}.contains(key)); } 
-PostTerminalReadersReaderRequest copyWith({List<String> Function()? expand, PostTerminalReadersReaderRequestLabel Function()? label, PostTerminalReadersReaderRequestMetadata Function()? metadata, }) { return PostTerminalReadersReaderRequest(
+PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, PostTerminalReadersReaderRequestLabel? Function()? label, PostTerminalReadersReaderRequestMetadata? Function()? metadata, }) { return PostTerminalReadersReaderRequest(
   expand: expand != null ? expand() : this.expand,
   label: label != null ? label() : this.label,
   metadata: metadata != null ? metadata() : this.metadata,

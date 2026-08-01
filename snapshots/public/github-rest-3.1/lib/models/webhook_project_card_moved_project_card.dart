@@ -45,16 +45,16 @@ final String updatedAt;
 final String url;
 
 Map<String, dynamic> toJson() { return {
-  'after_id': ?afterId,
+  'after_id': afterId,
   'archived': archived,
   'column_id': columnId,
   'column_url': columnUrl,
   if (contentUrl != null) 'content_url': contentUrl?.toString(),
   'created_at': createdAt,
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator?.toJson(),
   'id': id,
   'node_id': nodeId,
-  'note': ?note,
+  'note': note,
   'project_url': projectUrl,
   'updated_at': updatedAt,
   'url': url,
@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? archived, int? columnId, String? columnUrl, Uri Function()? contentUrl, String? createdAt, WebhookProjectCardMovedProjectCardCreator? Function()? creator, int? id, String? nodeId, String? Function()? note, String? projectUrl, String? updatedAt, String? url, }) { return WebhookProjectCardMovedProjectCard(
+WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? archived, int? columnId, String? columnUrl, Uri? Function()? contentUrl, String? createdAt, WebhookProjectCardMovedProjectCardCreator? Function()? creator, int? id, String? nodeId, String? Function()? note, String? projectUrl, String? updatedAt, String? url, }) { return WebhookProjectCardMovedProjectCard(
   afterId: afterId != null ? afterId() : this.afterId,
   archived: archived ?? this.archived,
   columnId: columnId ?? this.columnId,

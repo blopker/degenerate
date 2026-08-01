@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId Function()? id, Map<String, ZonesCacheTtlByStatusValueValue> Function()? value, }) { return ZonesCacheTtlByStatus(
+ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId? Function()? id, Map<String, ZonesCacheTtlByStatusValueValue>? Function()? value, }) { return ZonesCacheTtlByStatus(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

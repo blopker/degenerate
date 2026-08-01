@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flags', 'tag', 'value'}.contains(key)); } 
-DnsRecordsCaaRecordData copyWith({double Function()? flags, String Function()? tag, String Function()? value, }) { return DnsRecordsCaaRecordData(
+DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()? tag, String? Function()? value, }) { return DnsRecordsCaaRecordData(
   flags: flags != null ? flags() : this.flags,
   tag: tag != null ? tag() : this.tag,
   value: value != null ? value() : this.value,

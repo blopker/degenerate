@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessCustomPageWithoutHtml copyWith({AccessSchemasAppCount Function()? appCount, AccessTimestamp Function()? createdAt, AccessCustomPagesComponentsSchemasName? name, AccessSchemasType? type, AccessUuid Function()? uid, AccessTimestamp Function()? updatedAt, }) { return AccessCustomPageWithoutHtml(
+AccessCustomPageWithoutHtml copyWith({AccessSchemasAppCount? Function()? appCount, AccessTimestamp? Function()? createdAt, AccessCustomPagesComponentsSchemasName? name, AccessSchemasType? type, AccessUuid? Function()? uid, AccessTimestamp? Function()? updatedAt, }) { return AccessCustomPageWithoutHtml(
   appCount: appCount != null ? appCount() : this.appCount,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   name: name ?? this.name,

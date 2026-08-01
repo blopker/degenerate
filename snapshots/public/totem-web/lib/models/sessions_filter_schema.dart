@@ -12,8 +12,8 @@ final String? category;
 final String? author;
 
 Map<String, dynamic> toJson() { return {
-  'category': ?category,
-  'author': ?author,
+  'category': category,
+  'author': author,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') && json['category'] is String &&
       json.containsKey('author') && json['author'] is String; } 

@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesUnassigned copyWith({WebhookIssuesUnassignedAction? action, WebhooksUserMannequin Function()? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesUnassigned(
+WebhookIssuesUnassigned copyWith({WebhookIssuesUnassignedAction? action, WebhooksUserMannequin? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesUnassigned(
   action: action ?? this.action,
   assignee: assignee != null ? assignee() : this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

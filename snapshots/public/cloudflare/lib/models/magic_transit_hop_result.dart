@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (packetsTtl != null) 'packets_ttl': packetsTtl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'nodes', 'packets_lost', 'packets_sent', 'packets_ttl'}.contains(key)); } 
-MagicTransitHopResult copyWith({List<MagicTransitNodeResult> Function()? nodes, MagicTransitPacketsLost Function()? packetsLost, MagicTransitPacketsSent Function()? packetsSent, MagicTransitPacketsTtl Function()? packetsTtl, }) { return MagicTransitHopResult(
+MagicTransitHopResult copyWith({List<MagicTransitNodeResult>? Function()? nodes, MagicTransitPacketsLost? Function()? packetsLost, MagicTransitPacketsSent? Function()? packetsSent, MagicTransitPacketsTtl? Function()? packetsTtl, }) { return MagicTransitHopResult(
   nodes: nodes != null ? nodes() : this.nodes,
   packetsLost: packetsLost != null ? packetsLost() : this.packetsLost,
   packetsSent: packetsSent != null ? packetsSent() : this.packetsSent,

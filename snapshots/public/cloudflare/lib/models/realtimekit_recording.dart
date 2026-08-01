@@ -91,18 +91,18 @@ final RealtimekitRecordingStatus status;
 final DateTime? stoppedTime;
 
 Map<String, dynamic> toJson() { return {
-  if (audioDownloadUrl != null) 'audio_download_url': audioDownloadUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
-  if (downloadUrlExpiry != null) 'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
-  'file_size': ?fileSize,
+  'audio_download_url': audioDownloadUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
+  'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
+  'file_size': fileSize,
   'id': id,
   'invoked_time': invokedTime.toIso8601String(),
   'output_file_name': outputFileName,
   'recording_duration': ?recordingDuration,
-  'session_id': ?sessionId,
-  if (startedTime != null) 'started_time': startedTime?.toIso8601String(),
+  'session_id': sessionId,
+  'started_time': startedTime?.toIso8601String(),
   'status': status.toJson(),
-  if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
+  'stopped_time': stoppedTime?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && json['audio_download_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio
       json.containsKey('started_time') && json['started_time'] is String &&
       json.containsKey('status') &&
       json.containsKey('stopped_time') && json['stopped_time'] is String; } 
-RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, }) { return RealtimekitRecording(
+RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, }) { return RealtimekitRecording(
   audioDownloadUrl: audioDownloadUrl != null ? audioDownloadUrl() : this.audioDownloadUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   downloadUrlExpiry: downloadUrlExpiry != null ? downloadUrlExpiry() : this.downloadUrlExpiry,

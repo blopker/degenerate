@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_mandate', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
-PostInvoicesRequestPaymentSettings copyWith({PostInvoicesRequestPaymentSettingsDefaultMandate Function()? defaultMandate, PostInvoicesRequestPaymentSettingsPaymentMethodOptions Function()? paymentMethodOptions, PostInvoicesRequestPaymentSettingsPaymentMethodTypes Function()? paymentMethodTypes, }) { return PostInvoicesRequestPaymentSettings(
+PostInvoicesRequestPaymentSettings copyWith({PostInvoicesRequestPaymentSettingsDefaultMandate? Function()? defaultMandate, PostInvoicesRequestPaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, PostInvoicesRequestPaymentSettingsPaymentMethodTypes? Function()? paymentMethodTypes, }) { return PostInvoicesRequestPaymentSettings(
   defaultMandate: defaultMandate != null ? defaultMandate() : this.defaultMandate,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,

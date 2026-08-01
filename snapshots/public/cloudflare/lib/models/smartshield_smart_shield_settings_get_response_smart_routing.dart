@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'value'}.contains(key)); } 
-SmartshieldSmartShieldSettingsGetResponseSmartRouting copyWith({bool Function()? editable, String Function()? id, SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue Function()? value, }) { return SmartshieldSmartShieldSettingsGetResponseSmartRouting(
+SmartshieldSmartShieldSettingsGetResponseSmartRouting copyWith({bool? Function()? editable, String? Function()? id, SmartshieldSmartShieldSettingsGetResponseSmartRoutingValue? Function()? value, }) { return SmartshieldSmartShieldSettingsGetResponseSmartRouting(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,

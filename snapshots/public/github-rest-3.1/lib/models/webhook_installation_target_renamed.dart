@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('changes') &&
       json.containsKey('installation') &&
       json.containsKey('target_type') && json['target_type'] is String; } 
-WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccount? account, WebhookInstallationTargetRenamedAction? action, WebhookInstallationTargetRenamedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser Function()? sender, String? targetType, }) { return WebhookInstallationTargetRenamed(
+WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccount? account, WebhookInstallationTargetRenamedAction? action, WebhookInstallationTargetRenamedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, String? targetType, }) { return WebhookInstallationTargetRenamed(
   account: account ?? this.account,
   action: action ?? this.action,
   changes: changes ?? this.changes,

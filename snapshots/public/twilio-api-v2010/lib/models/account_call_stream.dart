@@ -25,56 +25,56 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StreamEnumStatus($value)'; } 
  }
-@immutable final class AccountCallStream {const AccountCallStream({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
+@immutable final class AccountCallStream {const AccountCallStream({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.callSid = const Omittable.absent(), this.name = const Omittable.absent(), this.status, this.dateUpdated = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
 factory AccountCallStream.fromJson(Map<String, dynamic> json) { return AccountCallStream(
-  sid: json['sid'] as String?,
-  accountSid: json['account_sid'] as String?,
-  callSid: json['call_sid'] as String?,
-  name: json['name'] as String?,
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? StreamEnumStatus.fromJson(json['status'] as String) : null,
-  dateUpdated: json['date_updated'] as String?,
-  uri: json['uri'] as String?,
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the Stream resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Stream resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Stream resource is associated with.
-final String? callSid;
+final Omittable<String?> callSid;
 
 /// The user-specified name of this Stream, if one was given when the Stream was created. This can be used to stop the Stream.
-final String? name;
+final Omittable<String?> name;
 
 final StreamEnumStatus? status;
 
 /// The date and time in GMT that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 Map<String, dynamic> toJson() { return {
-  'sid': ?sid,
-  'account_sid': ?accountSid,
-  'call_sid': ?callSid,
-  'name': ?name,
+  if (sid.isPresent) 'sid': sid.value,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (callSid.isPresent) 'call_sid': callSid.value,
+  if (name.isPresent) 'name': name.value,
   if (status != null) 'status': status?.toJson(),
-  'date_updated': ?dateUpdated,
-  'uri': ?uri,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (uri.isPresent) 'uri': uri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'call_sid', 'name', 'status', 'date_updated', 'uri'}.contains(key)); } 
-AccountCallStream copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? callSid, String? Function()? name, StreamEnumStatus Function()? status, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountCallStream(
-  sid: sid != null ? sid() : this.sid,
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  callSid: callSid != null ? callSid() : this.callSid,
-  name: name != null ? name() : this.name,
+AccountCallStream copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? callSid, Omittable<String?>? name, StreamEnumStatus? Function()? status, Omittable<String?>? dateUpdated, Omittable<String?>? uri, }) { return AccountCallStream(
+  sid: sid ?? this.sid,
+  accountSid: accountSid ?? this.accountSid,
+  callSid: callSid ?? this.callSid,
+  name: name ?? this.name,
   status: status != null ? status() : this.status,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  uri: uri != null ? uri() : this.uri,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  uri: uri ?? this.uri,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountCallStream &&

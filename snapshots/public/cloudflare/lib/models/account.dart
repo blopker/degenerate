@@ -47,7 +47,7 @@ final AccountType type;
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
   'id': id,
-  'name': ?name,
+  'name': name,
   'settings': settings.toJson(),
   'type': type.toJson(),
 }; } 

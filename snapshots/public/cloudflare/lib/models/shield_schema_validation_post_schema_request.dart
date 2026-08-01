@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('kind'); } 
-ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String Function()? name, ShieldSchemaValidationPostSchemaRequestValidationEnabled Function()? validationEnabled, }) { return ShieldSchemaValidationPostSchemaRequest(
+ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String? Function()? name, ShieldSchemaValidationPostSchemaRequestValidationEnabled? Function()? validationEnabled, }) { return ShieldSchemaValidationPostSchemaRequest(
   file: file ?? this.file,
   kind: kind ?? this.kind,
   name: name != null ? name() : this.name,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'pool_id': ?poolId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'pool_id'}.contains(key)); } 
-ZonesCacheRulesAegisValue copyWith({bool Function()? enabled, String Function()? poolId, }) { return ZonesCacheRulesAegisValue(
+ZonesCacheRulesAegisValue copyWith({bool? Function()? enabled, String? Function()? poolId, }) { return ZonesCacheRulesAegisValue(
   enabled: enabled != null ? enabled() : this.enabled,
   poolId: poolId != null ? poolId() : this.poolId,
 ); } 

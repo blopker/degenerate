@@ -1835,7 +1835,7 @@ Map<String, dynamic> toJson() { return {
   if (spendingLimits != null) 'spending_limits': spendingLimits?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_categories', 'allowed_merchant_countries', 'blocked_categories', 'blocked_merchant_countries', 'spending_limits'}.contains(key)); } 
-PostIssuingCardsRequestSpendingControls copyWith({List<PostIssuingCardsRequestSpendingControlsAllowedCategories> Function()? allowedCategories, List<String> Function()? allowedMerchantCountries, List<PostIssuingCardsRequestSpendingControlsBlockedCategories> Function()? blockedCategories, List<String> Function()? blockedMerchantCountries, List<PostIssuingCardsRequestSpendingControlsSpendingLimits> Function()? spendingLimits, }) { return PostIssuingCardsRequestSpendingControls(
+PostIssuingCardsRequestSpendingControls copyWith({List<PostIssuingCardsRequestSpendingControlsAllowedCategories>? Function()? allowedCategories, List<String>? Function()? allowedMerchantCountries, List<PostIssuingCardsRequestSpendingControlsBlockedCategories>? Function()? blockedCategories, List<String>? Function()? blockedMerchantCountries, List<PostIssuingCardsRequestSpendingControlsSpendingLimits>? Function()? spendingLimits, }) { return PostIssuingCardsRequestSpendingControls(
   allowedCategories: allowedCategories != null ? allowedCategories() : this.allowedCategories,
   allowedMerchantCountries: allowedMerchantCountries != null ? allowedMerchantCountries() : this.allowedMerchantCountries,
   blockedCategories: blockedCategories != null ? blockedCategories() : this.blockedCategories,

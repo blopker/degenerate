@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('nexth
       json.containsKey('prefix') &&
       json.containsKey('priority') &&
       json.containsKey('id'); } 
-MagicRouteUpdateSingleRequest copyWith({MagicDescription Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope Function()? scope, MagicWeight Function()? weight, MagicIdentifier? id, }) { return MagicRouteUpdateSingleRequest(
+MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, MagicIdentifier? id, }) { return MagicRouteUpdateSingleRequest(
   description: description != null ? description() : this.description,
   nexthop: nexthop ?? this.nexthop,
   prefix: prefix ?? this.prefix,

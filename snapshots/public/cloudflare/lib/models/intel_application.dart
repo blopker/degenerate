@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
-IntelApplication copyWith({int Function()? id, String Function()? name, }) { return IntelApplication(
+IntelApplication copyWith({int? Function()? id, String? Function()? name, }) { return IntelApplication(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 

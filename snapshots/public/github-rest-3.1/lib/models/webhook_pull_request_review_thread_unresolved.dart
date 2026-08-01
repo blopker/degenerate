@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedAction($value)'; } 
  }
-@immutable final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
+@immutable final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt = const Omittable.absent(), });
 
 factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolved(
   action: WebhookPullRequestReviewThreadUnresolvedAction.fromJson(json['action'] as String),
@@ -32,7 +32,7 @@ factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> j
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   thread: WebhookPullRequestReviewThreadUnresolvedThread.fromJson(json['thread'] as Map<String, dynamic>),
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
 ); }
 
 final WebhookPullRequestReviewThreadUnresolvedAction action;
@@ -51,7 +51,7 @@ final SimpleUser? sender;
 
 final WebhookPullRequestReviewThreadUnresolvedThread thread;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
@@ -62,13 +62,13 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
   'thread': thread.toJson(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('thread'); } 
-WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThreadUnresolvedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestReviewThreadUnresolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, WebhookPullRequestReviewThreadUnresolvedThread? thread, DateTime? Function()? updatedAt, }) { return WebhookPullRequestReviewThreadUnresolved(
+WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThreadUnresolvedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewThreadUnresolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, WebhookPullRequestReviewThreadUnresolvedThread? thread, Omittable<DateTime?>? updatedAt, }) { return WebhookPullRequestReviewThreadUnresolved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -77,7 +77,7 @@ WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThrea
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
   thread: thread ?? this.thread,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  updatedAt: updatedAt ?? this.updatedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebhookPullRequestReviewThreadUnresolved &&

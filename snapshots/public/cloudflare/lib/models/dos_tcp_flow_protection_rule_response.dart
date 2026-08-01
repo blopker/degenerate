@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DosTcpFlowProtectionRuleResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, DosTcpFlowProtectionRule Function()? result, }) { return DosTcpFlowProtectionRuleResponse(
+DosTcpFlowProtectionRuleResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, DosTcpFlowProtectionRule? Function()? result, }) { return DosTcpFlowProtectionRuleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

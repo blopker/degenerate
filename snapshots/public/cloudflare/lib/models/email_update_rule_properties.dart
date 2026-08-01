@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions') &&
       json.containsKey('matchers'); } 
-EmailUpdateRuleProperties copyWith({List<EmailRuleAction>? actions, EmailRuleEnabled Function()? enabled, List<EmailRuleMatcher>? matchers, EmailRuleName Function()? name, EmailRulePriority Function()? priority, }) { return EmailUpdateRuleProperties(
+EmailUpdateRuleProperties copyWith({List<EmailRuleAction>? actions, EmailRuleEnabled? Function()? enabled, List<EmailRuleMatcher>? matchers, EmailRuleName? Function()? name, EmailRulePriority? Function()? priority, }) { return EmailUpdateRuleProperties(
   actions: actions ?? this.actions,
   enabled: enabled != null ? enabled() : this.enabled,
   matchers: matchers ?? this.matchers,

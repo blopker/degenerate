@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_subscription_update_confirm_discount.dart';import 'portal_flows_subscription_update_confirm_item.dart';/// 
-@immutable final class PortalFlowsFlowSubscriptionUpdateConfirm {const PortalFlowsFlowSubscriptionUpdateConfirm({required this.items, required this.subscription, this.discounts, });
+@immutable final class PortalFlowsFlowSubscriptionUpdateConfirm {const PortalFlowsFlowSubscriptionUpdateConfirm({required this.items, required this.subscription, this.discounts = const Omittable.absent(), });
 
 factory PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionUpdateConfirm(
-  discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PortalFlowsSubscriptionUpdateConfirmDiscount.fromJson(e as Map<String, dynamic>)).toList(),
+  discounts: json.containsKey('discounts') ? Omittable((json['discounts'] as List<dynamic>?)?.map((e) => PortalFlowsSubscriptionUpdateConfirmDiscount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   items: (json['items'] as List<dynamic>).map((e) => PortalFlowsSubscriptionUpdateConfirmItem.fromJson(e as Map<String, dynamic>)).toList(),
   subscription: json['subscription'] as String,
 ); }
 
 /// The coupon or promotion code to apply to this subscription update.
-final List<PortalFlowsSubscriptionUpdateConfirmDiscount>? discounts;
+final Omittable<List<PortalFlowsSubscriptionUpdateConfirmDiscount>?> discounts;
 
 /// The [subscription item](https://docs.stripe.com/api/subscription_items) to be updated through this flow. Currently, only up to one may be specified and subscriptions with multiple items are not updatable.
 final List<PortalFlowsSubscriptionUpdateConfirmItem> items;
@@ -19,22 +19,23 @@ final List<PortalFlowsSubscriptionUpdateConfirmItem> items;
 final String subscription;
 
 Map<String, dynamic> toJson() { return {
-  if (discounts != null) 'discounts': discounts?.map((e) => e.toJson()).toList(),
+  if (discounts.isPresent) 'discounts': discounts.value?.map((e) => e.toJson()).toList(),
   'items': items.map((e) => e.toJson()).toList(),
   'subscription': subscription,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
-PortalFlowsFlowSubscriptionUpdateConfirm copyWith({List<PortalFlowsSubscriptionUpdateConfirmDiscount>? Function()? discounts, List<PortalFlowsSubscriptionUpdateConfirmItem>? items, String? subscription, }) { return PortalFlowsFlowSubscriptionUpdateConfirm(
-  discounts: discounts != null ? discounts() : this.discounts,
+PortalFlowsFlowSubscriptionUpdateConfirm copyWith({Omittable<List<PortalFlowsSubscriptionUpdateConfirmDiscount>?>? discounts, List<PortalFlowsSubscriptionUpdateConfirmItem>? items, String? subscription, }) { return PortalFlowsFlowSubscriptionUpdateConfirm(
+  discounts: discounts ?? this.discounts,
   items: items ?? this.items,
   subscription: subscription ?? this.subscription,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PortalFlowsFlowSubscriptionUpdateConfirm &&
-          listEquals(discounts, other.discounts) &&
+          discounts.isPresent == other.discounts.isPresent &&
+          listEquals(discounts.value, other.discounts.value) &&
           listEquals(items, other.items) &&
           subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts ?? const []), Object.hashAll(items), subscription); } 
+@override int get hashCode { return Object.hash(Object.hashAll(discounts.value ?? const []), Object.hashAll(items), subscription); } 
 @override String toString() { return 'PortalFlowsFlowSubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)'; } 
  }

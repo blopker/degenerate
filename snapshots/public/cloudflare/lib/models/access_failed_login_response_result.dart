@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expiration', 'metadata'}.contains(key)); } 
-AccessFailedLoginResponseResult copyWith({int Function()? expiration, Map<String, dynamic> Function()? metadata, }) { return AccessFailedLoginResponseResult(
+AccessFailedLoginResponseResult copyWith({int? Function()? expiration, Map<String, dynamic>? Function()? metadata, }) { return AccessFailedLoginResponseResult(
   expiration: expiration != null ? expiration() : this.expiration,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

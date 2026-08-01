@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotDotcomPullRequestsRepositoriesModels {const CopilotDotcomPullRequestsRepositoriesModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalPrSummariesCreated, this.totalEngagedUsers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotDotcomPullRequestsRepositoriesModels {const CopilotDotcomPullRequestsRepositoriesModels({this.name, this.isCustomModel, this.customModelTrainingDate = const Omittable.absent(), this.totalPrSummariesCreated, this.totalEngagedUsers, });
 
 factory CopilotDotcomPullRequestsRepositoriesModels.fromJson(Map<String, dynamic> json) { return CopilotDotcomPullRequestsRepositoriesModels(
   name: json['name'] as String?,
   isCustomModel: json['is_custom_model'] as bool?,
-  customModelTrainingDate: json['custom_model_training_date'] as String?,
+  customModelTrainingDate: json.containsKey('custom_model_training_date') ? Omittable(json['custom_model_training_date'] as String?) : const Omittable.absent(),
   totalPrSummariesCreated: json['total_pr_summaries_created'] != null ? (json['total_pr_summaries_created'] as num).toInt() : null,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
 ); }
@@ -17,7 +17,7 @@ final String? name;
 final bool? isCustomModel;
 
 /// The training date for the custom model.
-final String? customModelTrainingDate;
+final Omittable<String?> customModelTrainingDate;
 
 /// The number of pull request summaries generated using Copilot for Pull Requests in the given repository.
 final int? totalPrSummariesCreated;
@@ -28,15 +28,15 @@ final int? totalEngagedUsers;
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'is_custom_model': ?isCustomModel,
-  'custom_model_training_date': ?customModelTrainingDate,
+  if (customModelTrainingDate.isPresent) 'custom_model_training_date': customModelTrainingDate.value,
   'total_pr_summaries_created': ?totalPrSummariesCreated,
   'total_engaged_users': ?totalEngagedUsers,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_pr_summaries_created', 'total_engaged_users'}.contains(key)); } 
-CopilotDotcomPullRequestsRepositoriesModels copyWith({String Function()? name, bool Function()? isCustomModel, String? Function()? customModelTrainingDate, int Function()? totalPrSummariesCreated, int Function()? totalEngagedUsers, }) { return CopilotDotcomPullRequestsRepositoriesModels(
+CopilotDotcomPullRequestsRepositoriesModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalPrSummariesCreated, int? Function()? totalEngagedUsers, }) { return CopilotDotcomPullRequestsRepositoriesModels(
   name: name != null ? name() : this.name,
   isCustomModel: isCustomModel != null ? isCustomModel() : this.isCustomModel,
-  customModelTrainingDate: customModelTrainingDate != null ? customModelTrainingDate() : this.customModelTrainingDate,
+  customModelTrainingDate: customModelTrainingDate ?? this.customModelTrainingDate,
   totalPrSummariesCreated: totalPrSummariesCreated != null ? totalPrSummariesCreated() : this.totalPrSummariesCreated,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
 ); } 

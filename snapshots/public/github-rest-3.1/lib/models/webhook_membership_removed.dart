@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'organization': organization.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'scope': scope.toJson(),
-  if (sender != null) 'sender': sender?.toJson(),
+  'sender': sender?.toJson(),
   'team': team.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('scope') &&
       json.containsKey('sender') &&
       json.containsKey('team'); } 
-WebhookMembershipRemoved copyWith({WebhookMembershipRemovedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksUser? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks Function()? repository, WebhookMembershipRemovedScope? scope, WebhookMembershipRemovedSender? Function()? sender, WebhooksTeam? team, }) { return WebhookMembershipRemoved(
+WebhookMembershipRemoved copyWith({WebhookMembershipRemovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipRemovedScope? scope, WebhookMembershipRemovedSender? Function()? sender, WebhooksTeam? team, }) { return WebhookMembershipRemoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

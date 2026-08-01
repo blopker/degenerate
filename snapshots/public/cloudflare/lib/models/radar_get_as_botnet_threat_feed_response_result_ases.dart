@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('rank') && json['rank'] is num; } 
-RadarGetAsBotnetThreatFeedResponseResultAses copyWith({int? asn, String? country, String? name, int? rank, int Function()? rankChange, }) { return RadarGetAsBotnetThreatFeedResponseResultAses(
+RadarGetAsBotnetThreatFeedResponseResultAses copyWith({int? asn, String? country, String? name, int? rank, int? Function()? rankChange, }) { return RadarGetAsBotnetThreatFeedResponseResultAses(
   asn: asn ?? this.asn,
   country: country ?? this.country,
   name: name ?? this.name,

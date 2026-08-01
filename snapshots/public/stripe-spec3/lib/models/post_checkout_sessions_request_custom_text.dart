@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (termsOfServiceAcceptance != null) 'terms_of_service_acceptance': termsOfServiceAcceptance?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after_submit', 'shipping_address', 'submit', 'terms_of_service_acceptance'}.contains(key)); } 
-PostCheckoutSessionsRequestCustomText copyWith({PostCheckoutSessionsRequestCustomTextAfterSubmit Function()? afterSubmit, PostCheckoutSessionsRequestCustomTextShippingAddress Function()? shippingAddress, PostCheckoutSessionsRequestCustomTextSubmit Function()? submit, PostCheckoutSessionsRequestCustomTextTermsOfServiceAcceptance Function()? termsOfServiceAcceptance, }) { return PostCheckoutSessionsRequestCustomText(
+PostCheckoutSessionsRequestCustomText copyWith({PostCheckoutSessionsRequestCustomTextAfterSubmit? Function()? afterSubmit, PostCheckoutSessionsRequestCustomTextShippingAddress? Function()? shippingAddress, PostCheckoutSessionsRequestCustomTextSubmit? Function()? submit, PostCheckoutSessionsRequestCustomTextTermsOfServiceAcceptance? Function()? termsOfServiceAcceptance, }) { return PostCheckoutSessionsRequestCustomText(
   afterSubmit: afterSubmit != null ? afterSubmit() : this.afterSubmit,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
   submit: submit != null ? submit() : this.submit,

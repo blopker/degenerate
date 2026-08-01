@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-RulesetsCompressResponseRuleActionParametersAlgorithms copyWith({RulesetsCompressResponseRuleActionParametersAlgorithmsName Function()? name}) { return RulesetsCompressResponseRuleActionParametersAlgorithms(
+RulesetsCompressResponseRuleActionParametersAlgorithms copyWith({RulesetsCompressResponseRuleActionParametersAlgorithmsName? Function()? name}) { return RulesetsCompressResponseRuleActionParametersAlgorithms(
   name: name != null ? name() : this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

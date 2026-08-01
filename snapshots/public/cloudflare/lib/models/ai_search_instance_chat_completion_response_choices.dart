@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'message': message.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-AiSearchInstanceChatCompletionResponseChoices copyWith({int Function()? index, AiSearchInstanceChatCompletionResponseChoicesMessage? message, }) { return AiSearchInstanceChatCompletionResponseChoices(
+AiSearchInstanceChatCompletionResponseChoices copyWith({int? Function()? index, AiSearchInstanceChatCompletionResponseChoicesMessage? message, }) { return AiSearchInstanceChatCompletionResponseChoices(
   index: index != null ? index() : this.index,
   message: message ?? this.message,
 ); } 

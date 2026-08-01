@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'cloudflare_endpoint': ?cloudflareEndpoint,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cloudflare_endpoint'}.contains(key)); } 
-MagicGre copyWith({String Function()? cloudflareEndpoint}) { return MagicGre(
+MagicGre copyWith({String? Function()? cloudflareEndpoint}) { return MagicGre(
   cloudflareEndpoint: cloudflareEndpoint != null ? cloudflareEndpoint() : this.cloudflareEndpoint,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

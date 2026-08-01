@@ -122,7 +122,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('eventType') &&
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('scriptName') && json['scriptName'] is String; } 
-WorkersObservabilityTelemetryEvent$workersVariant1 copyWith({String Function()? durableObjectId, String Function()? entrypoint, Map<String, WorkersObservabilityTelemetryEvent$workersVariant1EventValue> Function()? event, WorkersObservabilityTelemetryEvent$workersVariant1EventType? eventType, WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel Function()? executionModel, String Function()? outcome, String? requestId, String? scriptName, WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion Function()? scriptVersion, bool Function()? truncated, }) { return WorkersObservabilityTelemetryEvent$workersVariant1(
+WorkersObservabilityTelemetryEvent$workersVariant1 copyWith({String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, WorkersObservabilityTelemetryEvent$workersVariant1EventValue>? Function()? event, WorkersObservabilityTelemetryEvent$workersVariant1EventType? eventType, WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel? Function()? executionModel, String? Function()? outcome, String? requestId, String? scriptName, WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, }) { return WorkersObservabilityTelemetryEvent$workersVariant1(
   durableObjectId: durableObjectId != null ? durableObjectId() : this.durableObjectId,
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   event: event != null ? event() : this.event,

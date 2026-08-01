@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PlatformEarningFeeSource copyWith({String Function()? charge, String Function()? payout, PlatformEarningFeeSourceType? type, }) { return PlatformEarningFeeSource(
+PlatformEarningFeeSource copyWith({String? Function()? charge, String? Function()? payout, PlatformEarningFeeSourceType? type, }) { return PlatformEarningFeeSource(
   charge: charge != null ? charge() : this.charge,
   payout: payout != null ? payout() : this.payout,
   type: type ?? this.type,

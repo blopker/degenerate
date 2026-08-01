@@ -51,69 +51,69 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsUsBankAccountAccountType($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodDetailsUsBankAccount {const PaymentMethodDetailsUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, this.paymentReference, this.routingNumber, });
+@immutable final class PaymentMethodDetailsUsBankAccount {const PaymentMethodDetailsUsBankAccount({this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.bankName = const Omittable.absent(), this.expectedDebitDate, this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.paymentReference = const Omittable.absent(), this.routingNumber = const Omittable.absent(), });
 
 factory PaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsUsBankAccount(
-  accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
-  accountType: json['account_type'] != null ? PaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
-  bankName: json['bank_name'] as String?,
+  accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] != null ? PaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null) : const Omittable.absent(),
+  accountType: json.containsKey('account_type') ? Omittable(json['account_type'] != null ? PaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   expectedDebitDate: json['expected_debit_date'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
-  paymentReference: json['payment_reference'] as String?,
-  routingNumber: json['routing_number'] as String?,
+  paymentReference: json.containsKey('payment_reference') ? Omittable(json['payment_reference'] as String?) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
 ); }
 
 /// Account holder type: individual or company.
-final PaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
+final Omittable<PaymentMethodDetailsUsBankAccountAccountHolderType?> accountHolderType;
 
 /// Account type: checkings or savings. Defaults to checking if omitted.
-final PaymentMethodDetailsUsBankAccountAccountType? accountType;
+final Omittable<PaymentMethodDetailsUsBankAccountAccountType?> accountType;
 
 /// Name of the bank associated with the bank account.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
 final String? expectedDebitDate;
 
 /// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// ID of the mandate used to make this payment.
 final PaymentMethodDetailsUsBankAccountMandate? mandate;
 
 /// Reference number to locate ACH payments with customer's bank.
-final String? paymentReference;
+final Omittable<String?> paymentReference;
 
 /// Routing number of the bank account.
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
 Map<String, dynamic> toJson() { return {
-  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
-  if (accountType != null) 'account_type': accountType?.toJson(),
-  'bank_name': ?bankName,
+  if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value?.toJson(),
+  if (accountType.isPresent) 'account_type': accountType.value?.toJson(),
+  if (bankName.isPresent) 'bank_name': bankName.value,
   'expected_debit_date': ?expectedDebitDate,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
   if (mandate != null) 'mandate': mandate?.toJson(),
-  'payment_reference': ?paymentReference,
-  'routing_number': ?routingNumber,
+  if (paymentReference.isPresent) 'payment_reference': paymentReference.value,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'payment_reference', 'routing_number'}.contains(key)); } 
-PaymentMethodDetailsUsBankAccount copyWith({PaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, PaymentMethodDetailsUsBankAccountMandate Function()? mandate, String? Function()? paymentReference, String? Function()? routingNumber, }) { return PaymentMethodDetailsUsBankAccount(
-  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
-  accountType: accountType != null ? accountType() : this.accountType,
-  bankName: bankName != null ? bankName() : this.bankName,
+PaymentMethodDetailsUsBankAccount copyWith({Omittable<PaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<PaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, String? Function()? expectedDebitDate, Omittable<String?>? fingerprint, Omittable<String?>? last4, PaymentMethodDetailsUsBankAccountMandate? Function()? mandate, Omittable<String?>? paymentReference, Omittable<String?>? routingNumber, }) { return PaymentMethodDetailsUsBankAccount(
+  accountHolderType: accountHolderType ?? this.accountHolderType,
+  accountType: accountType ?? this.accountType,
+  bankName: bankName ?? this.bankName,
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
   mandate: mandate != null ? mandate() : this.mandate,
-  paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+  paymentReference: paymentReference ?? this.paymentReference,
+  routingNumber: routingNumber ?? this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsUsBankAccount &&

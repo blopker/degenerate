@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'associated_hostnames', 'created_at', 'expires_on', 'fingerprint', 'id', 'name', 'updated_at'}.contains(key)); } 
-AccessCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, String Function()? id, AccessCertificatesComponentsSchemasName Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessCertificates(
+AccessCertificates copyWith({List<String>? Function()? associatedHostnames, AccessTimestamp? Function()? createdAt, AccessTimestamp? Function()? expiresOn, AccessFingerprint? Function()? fingerprint, String? Function()? id, AccessCertificatesComponentsSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) { return AccessCertificates(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

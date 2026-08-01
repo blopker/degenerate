@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'client_secret': ?clientSecret,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret'}.contains(key)); } 
-AccessSchemasGenericOauthConfig copyWith({String Function()? clientId, String Function()? clientSecret, }) { return AccessSchemasGenericOauthConfig(
+AccessSchemasGenericOauthConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, }) { return AccessSchemasGenericOauthConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
 ); } 

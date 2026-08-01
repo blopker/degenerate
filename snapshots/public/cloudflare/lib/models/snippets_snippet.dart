@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('snippet_name'); } 
-SnippetsSnippet copyWith({DateTime? createdOn, DateTime Function()? modifiedOn, SnippetsSnippetName? snippetName, }) { return SnippetsSnippet(
+SnippetsSnippet copyWith({DateTime? createdOn, DateTime? Function()? modifiedOn, SnippetsSnippetName? snippetName, }) { return SnippetsSnippet(
   createdOn: createdOn ?? this.createdOn,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   snippetName: snippetName ?? this.snippetName,

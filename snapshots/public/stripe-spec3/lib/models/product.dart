@@ -30,13 +30,13 @@ bool get isUnknown { return !values.contains(this); }
 /// [share a Payment Link](https://docs.stripe.com/payment-links),
 /// [accept payments with Checkout](https://docs.stripe.com/payments/accept-a-payment#create-product-prices-upfront),
 /// and more about [Products and Prices](https://docs.stripe.com/products-prices/overview)
-@immutable final class Product {const Product({required this.active, required this.created, required this.id, required this.images, required this.livemode, required this.marketingFeatures, required this.metadata, required this.name, required this.object, required this.updated, this.defaultPrice, this.description, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+@immutable final class Product {const Product({required this.active, required this.created, required this.id, required this.images, required this.livemode, required this.marketingFeatures, required this.metadata, required this.name, required this.object, required this.updated, this.defaultPrice = const Omittable.absent(), this.description = const Omittable.absent(), this.packageDimensions = const Omittable.absent(), this.shippable = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.taxCode = const Omittable.absent(), this.unitLabel = const Omittable.absent(), this.url = const Omittable.absent(), });
 
 factory Product.fromJson(Map<String, dynamic> json) { return Product(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  defaultPrice: json['default_price'] != null ? OneOf2.parse(json['default_price'], fromA: (v) => v as String, fromB: (v) => Price.fromJson(v as Map<String, dynamic>),) : null,
-  description: json['description'] as String?,
+  defaultPrice: json.containsKey('default_price') ? Omittable(json['default_price'] != null ? OneOf2.parse(json['default_price'], fromA: (v) => v as String, fromB: (v) => Price.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
   livemode: json['livemode'] as bool,
@@ -44,13 +44,13 @@ factory Product.fromJson(Map<String, dynamic> json) { return Product(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: ProductObject.fromJson(json['object'] as String),
-  packageDimensions: json['package_dimensions'] != null ? PackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
-  shippable: json['shippable'] as bool?,
-  statementDescriptor: json['statement_descriptor'] as String?,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null,
-  unitLabel: json['unit_label'] as String?,
+  packageDimensions: json.containsKey('package_dimensions') ? Omittable(json['package_dimensions'] != null ? PackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  shippable: json.containsKey('shippable') ? Omittable(json['shippable'] as bool?) : const Omittable.absent(),
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
+  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  unitLabel: json.containsKey('unit_label') ? Omittable(json['unit_label'] as String?) : const Omittable.absent(),
   updated: (json['updated'] as num).toInt(),
-  url: json['url'] as String?,
+  url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
 ); }
 
 /// Whether the product is currently available for purchase.
@@ -60,10 +60,10 @@ final bool active;
 final int created;
 
 /// The ID of the [Price](https://docs.stripe.com/api/prices) object that is the default price for this product.
-final ProductDefaultPrice? defaultPrice;
+final Omittable<ProductDefaultPrice?> defaultPrice;
 
 /// The product's description, meant to be displayable to the customer. Use this field to optionally store a long form explanation of the product being sold for your own rendering purposes.
-final String? description;
+final Omittable<String?> description;
 
 /// Unique identifier for the object.
 final String id;
@@ -87,31 +87,31 @@ final String name;
 final ProductObject object;
 
 /// The dimensions of this product for shipping purposes.
-final PackageDimensions? packageDimensions;
+final Omittable<PackageDimensions?> packageDimensions;
 
 /// Whether this product is shipped (i.e., physical goods).
-final bool? shippable;
+final Omittable<bool?> shippable;
 
 /// Extra information about a product which will appear on your customer's credit card statement. In the case that multiple products are billed at once, the first statement descriptor will be used. Only used for subscription payments.
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 /// A [tax code](https://docs.stripe.com/tax/tax-categories) ID.
-final ProductTaxCode? taxCode;
+final Omittable<ProductTaxCode?> taxCode;
 
 /// A label that represents units of this product. When set, this will be included in customers' receipts, invoices, Checkout, and the customer portal.
-final String? unitLabel;
+final Omittable<String?> unitLabel;
 
 /// Time at which the object was last updated. Measured in seconds since the Unix epoch.
 final int updated;
 
 /// A URL of a publicly-accessible webpage for this product.
-final String? url;
+final Omittable<String?> url;
 
 Map<String, dynamic> toJson() { return {
   'active': active,
   'created': created,
-  if (defaultPrice != null) 'default_price': defaultPrice?.toJson(),
-  'description': ?description,
+  if (defaultPrice.isPresent) 'default_price': defaultPrice.value?.toJson(),
+  if (description.isPresent) 'description': description.value,
   'id': id,
   'images': images,
   'livemode': livemode,
@@ -119,13 +119,13 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'name': name,
   'object': object.toJson(),
-  if (packageDimensions != null) 'package_dimensions': packageDimensions?.toJson(),
-  'shippable': ?shippable,
-  'statement_descriptor': ?statementDescriptor,
-  if (taxCode != null) 'tax_code': taxCode?.toJson(),
-  'unit_label': ?unitLabel,
+  if (packageDimensions.isPresent) 'package_dimensions': packageDimensions.value?.toJson(),
+  if (shippable.isPresent) 'shippable': shippable.value,
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
+  if (taxCode.isPresent) 'tax_code': taxCode.value?.toJson(),
+  if (unitLabel.isPresent) 'unit_label': unitLabel.value,
   'updated': updated,
-  'url': ?url,
+  if (url.isPresent) 'url': url.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created') && json['created'] is num &&
@@ -137,11 +137,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('updated') && json['updated'] is num; } 
-Product copyWith({bool? active, int? created, ProductDefaultPrice? Function()? defaultPrice, String? Function()? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, ProductObject? object, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, ProductTaxCode? Function()? taxCode, String? Function()? unitLabel, int? updated, String? Function()? url, }) { return Product(
+Product copyWith({bool? active, int? created, Omittable<ProductDefaultPrice?>? defaultPrice, Omittable<String?>? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, ProductObject? object, Omittable<PackageDimensions?>? packageDimensions, Omittable<bool?>? shippable, Omittable<String?>? statementDescriptor, Omittable<ProductTaxCode?>? taxCode, Omittable<String?>? unitLabel, int? updated, Omittable<String?>? url, }) { return Product(
   active: active ?? this.active,
   created: created ?? this.created,
-  defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,
-  description: description != null ? description() : this.description,
+  defaultPrice: defaultPrice ?? this.defaultPrice,
+  description: description ?? this.description,
   id: id ?? this.id,
   images: images ?? this.images,
   livemode: livemode ?? this.livemode,
@@ -149,13 +149,13 @@ Product copyWith({bool? active, int? created, ProductDefaultPrice? Function()? d
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
   object: object ?? this.object,
-  packageDimensions: packageDimensions != null ? packageDimensions() : this.packageDimensions,
-  shippable: shippable != null ? shippable() : this.shippable,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-  taxCode: taxCode != null ? taxCode() : this.taxCode,
-  unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
+  packageDimensions: packageDimensions ?? this.packageDimensions,
+  shippable: shippable ?? this.shippable,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
+  taxCode: taxCode ?? this.taxCode,
+  unitLabel: unitLabel ?? this.unitLabel,
   updated: updated ?? this.updated,
-  url: url != null ? url() : this.url,
+  url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Product &&

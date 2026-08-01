@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('network_settings_ids'); } 
-HostedComputeCreateNetworkConfigurationForOrgRequest copyWith({String? name, HostedComputeCreateNetworkConfigurationForOrgRequestComputeService Function()? computeService, List<String>? networkSettingsIds, }) { return HostedComputeCreateNetworkConfigurationForOrgRequest(
+HostedComputeCreateNetworkConfigurationForOrgRequest copyWith({String? name, HostedComputeCreateNetworkConfigurationForOrgRequestComputeService? Function()? computeService, List<String>? networkSettingsIds, }) { return HostedComputeCreateNetworkConfigurationForOrgRequest(
   name: name ?? this.name,
   computeService: computeService != null ? computeService() : this.computeService,
   networkSettingsIds: networkSettingsIds ?? this.networkSettingsIds,

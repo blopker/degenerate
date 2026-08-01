@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam12 copyWith({InvoicePaymentMethodOptionsParam12MandateOptions Function()? mandateOptions}) { return InvoicePaymentMethodOptionsParam12(
+InvoicePaymentMethodOptionsParam12 copyWith({InvoicePaymentMethodOptionsParam12MandateOptions? Function()? mandateOptions}) { return InvoicePaymentMethodOptionsParam12(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

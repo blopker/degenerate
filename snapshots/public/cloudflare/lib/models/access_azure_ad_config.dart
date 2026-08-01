@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'support_groups': ?supportGroups,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key)); } 
-AccessAzureAdConfig copyWith({String Function()? clientId, String Function()? clientSecret, List<String> Function()? claims, String Function()? emailClaimName, bool Function()? conditionalAccessEnabled, String Function()? directoryId, AccessAzureAdConfigPrompt Function()? prompt, bool Function()? supportGroups, }) { return AccessAzureAdConfig(
+AccessAzureAdConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, AccessAzureAdConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) { return AccessAzureAdConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,

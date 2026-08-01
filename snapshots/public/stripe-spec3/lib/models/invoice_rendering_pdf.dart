@@ -29,21 +29,21 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceRenderingPdfPageSize($value)'; } 
  }
 /// 
-@immutable final class InvoiceRenderingPdf {const InvoiceRenderingPdf({this.pageSize});
+@immutable final class InvoiceRenderingPdf {const InvoiceRenderingPdf({this.pageSize = const Omittable.absent()});
 
 factory InvoiceRenderingPdf.fromJson(Map<String, dynamic> json) { return InvoiceRenderingPdf(
-  pageSize: json['page_size'] != null ? InvoiceRenderingPdfPageSize.fromJson(json['page_size'] as String) : null,
+  pageSize: json.containsKey('page_size') ? Omittable(json['page_size'] != null ? InvoiceRenderingPdfPageSize.fromJson(json['page_size'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Page size of invoice pdf. Options include a4, letter, and auto. If set to auto, page size will be switched to a4 or letter based on customer locale.
-final InvoiceRenderingPdfPageSize? pageSize;
+final Omittable<InvoiceRenderingPdfPageSize?> pageSize;
 
 Map<String, dynamic> toJson() { return {
-  if (pageSize != null) 'page_size': pageSize?.toJson(),
+  if (pageSize.isPresent) 'page_size': pageSize.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'page_size'}.contains(key)); } 
-InvoiceRenderingPdf copyWith({InvoiceRenderingPdfPageSize? Function()? pageSize}) { return InvoiceRenderingPdf(
-  pageSize: pageSize != null ? pageSize() : this.pageSize,
+InvoiceRenderingPdf copyWith({Omittable<InvoiceRenderingPdfPageSize?>? pageSize}) { return InvoiceRenderingPdf(
+  pageSize: pageSize ?? this.pageSize,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoiceRenderingPdf &&

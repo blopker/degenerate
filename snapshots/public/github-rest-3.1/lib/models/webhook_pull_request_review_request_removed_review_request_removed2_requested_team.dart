@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent = const Omittable.absent(), });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(
   deleted: json['deleted'] as bool?,
@@ -38,7 +38,7 @@ factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam
   membersUrl: json['members_url'] as String,
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-  parent: json['parent'] != null ? WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permission: json['permission'] as String,
   privacy: WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy.fromJson(json['privacy'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
@@ -63,7 +63,7 @@ final String name;
 
 final String nodeId;
 
-final WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent? parent;
+final Omittable<WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent?> parent;
 
 /// Permission that the team will have for its repositories
 final String permission;
@@ -79,13 +79,13 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'deleted': ?deleted,
-  'description': ?description,
+  'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
   'members_url': membersUrl,
   'name': name,
   'node_id': nodeId,
-  if (parent != null) 'parent': parent?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'permission': permission,
   'privacy': privacy.toJson(),
   'repositories_url': repositoriesUrl.toString(),
@@ -103,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam copyWith({bool Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent? Function()? parent, String? permission, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(
+WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Omittable<WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent?>? parent, String? permission, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -111,7 +111,7 @@ WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam copyWit
   membersUrl: membersUrl ?? this.membersUrl,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
-  parent: parent != null ? parent() : this.parent,
+  parent: parent ?? this.parent,
   permission: permission ?? this.permission,
   privacy: privacy ?? this.privacy,
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,

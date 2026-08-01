@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'permission': ?permission,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permission'}.contains(key)); } 
-TeamsAddOrUpdateRepoPermissionsInOrgRequest copyWith({String Function()? permission}) { return TeamsAddOrUpdateRepoPermissionsInOrgRequest(
+TeamsAddOrUpdateRepoPermissionsInOrgRequest copyWith({String? Function()? permission}) { return TeamsAddOrUpdateRepoPermissionsInOrgRequest(
   permission: permission != null ? permission() : this.permission,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

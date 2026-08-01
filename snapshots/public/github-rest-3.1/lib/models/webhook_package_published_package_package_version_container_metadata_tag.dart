@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'digest', 'name'}.contains(key)); } 
-WebhookPackagePublishedPackagePackageVersionContainerMetadataTag copyWith({String Function()? digest, String Function()? name, }) { return WebhookPackagePublishedPackagePackageVersionContainerMetadataTag(
+WebhookPackagePublishedPackagePackageVersionContainerMetadataTag copyWith({String? Function()? digest, String? Function()? name, }) { return WebhookPackagePublishedPackagePackageVersionContainerMetadataTag(
   digest: digest != null ? digest() : this.digest,
   name: name != null ? name() : this.name,
 ); } 

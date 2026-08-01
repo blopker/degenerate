@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'started_at': ?startedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-MconnAdminUpgradeSlot copyWith({MconnUuid Function()? connectorId, double? id, String Function()? startedAt, }) { return MconnAdminUpgradeSlot(
+MconnAdminUpgradeSlot copyWith({MconnUuid? Function()? connectorId, double? id, String? Function()? startedAt, }) { return MconnAdminUpgradeSlot(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   id: id ?? this.id,
   startedAt: startedAt != null ? startedAt() : this.startedAt,

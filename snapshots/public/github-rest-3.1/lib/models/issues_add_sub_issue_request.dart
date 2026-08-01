@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'replace_parent': ?replaceParent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sub_issue_id') && json['sub_issue_id'] is num; } 
-IssuesAddSubIssueRequest copyWith({int? subIssueId, bool Function()? replaceParent, }) { return IssuesAddSubIssueRequest(
+IssuesAddSubIssueRequest copyWith({int? subIssueId, bool? Function()? replaceParent, }) { return IssuesAddSubIssueRequest(
   subIssueId: subIssueId ?? this.subIssueId,
   replaceParent: replaceParent != null ? replaceParent() : this.replaceParent,
 ); } 

@@ -21,25 +21,25 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEmailRuleActionBlockAction($value)'; } 
  }
-@immutable final class DlpEmailRuleActionBlock {const DlpEmailRuleActionBlock({required this.action, this.message, });
+@immutable final class DlpEmailRuleActionBlock {const DlpEmailRuleActionBlock({required this.action, this.message = const Omittable.absent(), });
 
 factory DlpEmailRuleActionBlock.fromJson(Map<String, dynamic> json) { return DlpEmailRuleActionBlock(
   action: DlpEmailRuleActionBlockAction.fromJson(json['action'] as String),
-  message: json['message'] as String?,
+  message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
 ); }
 
 final DlpEmailRuleActionBlockAction action;
 
-final String? message;
+final Omittable<String?> message;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
-  'message': ?message,
+  if (message.isPresent) 'message': message.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-DlpEmailRuleActionBlock copyWith({DlpEmailRuleActionBlockAction? action, String? Function()? message, }) { return DlpEmailRuleActionBlock(
+DlpEmailRuleActionBlock copyWith({DlpEmailRuleActionBlockAction? action, Omittable<String?>? message, }) { return DlpEmailRuleActionBlock(
   action: action ?? this.action,
-  message: message != null ? message() : this.message,
+  message: message ?? this.message,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DlpEmailRuleActionBlock &&

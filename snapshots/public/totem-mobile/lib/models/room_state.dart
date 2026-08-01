@@ -117,8 +117,8 @@ final class RoomState {
     required this.statusDetail,
     required this.talkingOrder,
     required this.keeper,
-    this.currentSpeaker,
-    this.nextSpeaker,
+    this.currentSpeaker = const Omittable.absent(),
+    this.nextSpeaker = const Omittable.absent(),
     this.bannedParticipants = const [],
   });
 
@@ -131,8 +131,12 @@ final class RoomState {
       statusDetail: RoomStateStatusDetail.fromJson(
         json['status_detail'] as Map<String, dynamic>,
       ),
-      currentSpeaker: json['current_speaker'] as String?,
-      nextSpeaker: json['next_speaker'] as String?,
+      currentSpeaker: json.containsKey('current_speaker')
+          ? Omittable(json['current_speaker'] as String?)
+          : const Omittable.absent(),
+      nextSpeaker: json.containsKey('next_speaker')
+          ? Omittable(json['next_speaker'] as String?)
+          : const Omittable.absent(),
       talkingOrder: (json['talking_order'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -155,9 +159,9 @@ final class RoomState {
 
   final RoomStateStatusDetail statusDetail;
 
-  final String? currentSpeaker;
+  final Omittable<String?> currentSpeaker;
 
-  final String? nextSpeaker;
+  final Omittable<String?> nextSpeaker;
 
   final List<String> talkingOrder;
 
@@ -172,8 +176,8 @@ final class RoomState {
       'status': status.toJson(),
       'turn_state': turnState.toJson(),
       'status_detail': statusDetail.toJson(),
-      'current_speaker': ?currentSpeaker,
-      'next_speaker': ?nextSpeaker,
+      if (currentSpeaker.isPresent) 'current_speaker': currentSpeaker.value,
+      if (nextSpeaker.isPresent) 'next_speaker': nextSpeaker.value,
       'talking_order': talkingOrder,
       'keeper': keeper,
       'banned_participants': bannedParticipants,
@@ -199,8 +203,8 @@ final class RoomState {
     RoomStatus? status,
     TurnState? turnState,
     RoomStateStatusDetail? statusDetail,
-    String? Function()? currentSpeaker,
-    String? Function()? nextSpeaker,
+    Omittable<String?>? currentSpeaker,
+    Omittable<String?>? nextSpeaker,
     List<String>? talkingOrder,
     String? keeper,
     List<String> Function()? bannedParticipants,
@@ -211,10 +215,8 @@ final class RoomState {
       status: status ?? this.status,
       turnState: turnState ?? this.turnState,
       statusDetail: statusDetail ?? this.statusDetail,
-      currentSpeaker: currentSpeaker != null
-          ? currentSpeaker()
-          : this.currentSpeaker,
-      nextSpeaker: nextSpeaker != null ? nextSpeaker() : this.nextSpeaker,
+      currentSpeaker: currentSpeaker ?? this.currentSpeaker,
+      nextSpeaker: nextSpeaker ?? this.nextSpeaker,
       talkingOrder: talkingOrder ?? this.talkingOrder,
       keeper: keeper ?? this.keeper,
       bannedParticipants: bannedParticipants != null

@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessSchemasFeatureAppProps copyWith({List<String> Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain Function()? domain, AccessAppsComponentsSchemasName Function()? name, AccessAppsComponentsSchemasSessionDuration Function()? sessionDuration, AccessComponentsSchemasType? type, }) { return AccessSchemasFeatureAppProps(
+AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessComponentsSchemasType? type, }) { return AccessSchemasFeatureAppProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   domain: domain != null ? domain() : this.domain,

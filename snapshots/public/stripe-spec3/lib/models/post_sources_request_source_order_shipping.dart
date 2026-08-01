@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'tracking_number': ?trackingNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-PostSourcesRequestSourceOrderShipping copyWith({PostSourcesRequestSourceOrderShippingAddress? address, String Function()? carrier, String Function()? name, String Function()? phone, String Function()? trackingNumber, }) { return PostSourcesRequestSourceOrderShipping(
+PostSourcesRequestSourceOrderShipping copyWith({PostSourcesRequestSourceOrderShippingAddress? address, String? Function()? carrier, String? Function()? name, String? Function()? phone, String? Function()? trackingNumber, }) { return PostSourcesRequestSourceOrderShipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,
   name: name != null ? name() : this.name,

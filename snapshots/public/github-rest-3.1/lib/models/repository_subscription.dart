@@ -29,7 +29,7 @@ final Uri repositoryUrl;
 Map<String, dynamic> toJson() { return {
   'subscribed': subscribed,
   'ignored': ignored,
-  'reason': ?reason,
+  'reason': reason,
   'created_at': createdAt.toIso8601String(),
   'url': url.toString(),
   'repository_url': repositoryUrl.toString(),

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksRelease1AssetsState($value)'; } 
  }
 /// Data related to a release.
-@immutable final class WebhooksRelease1Assets {const WebhooksRelease1Assets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader, });
+@immutable final class WebhooksRelease1Assets {const WebhooksRelease1Assets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader = const Omittable.absent(), });
 
 factory WebhooksRelease1Assets.fromJson(Map<String, dynamic> json) { return WebhooksRelease1Assets(
   browserDownloadUrl: Uri.parse(json['browser_download_url'] as String),
@@ -38,7 +38,7 @@ factory WebhooksRelease1Assets.fromJson(Map<String, dynamic> json) { return Webh
   digest: json['digest'] as String?,
   state: WebhooksRelease1AssetsState.fromJson(json['state'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  uploader: json['uploader'] != null ? WebhooksRelease1AssetsUploader.fromJson(json['uploader'] as Map<String, dynamic>) : null,
+  uploader: json.containsKey('uploader') ? Omittable(json['uploader'] != null ? WebhooksRelease1AssetsUploader.fromJson(json['uploader'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: Uri.parse(json['url'] as String),
 ); }
 
@@ -68,7 +68,7 @@ final WebhooksRelease1AssetsState state;
 
 final DateTime updatedAt;
 
-final WebhooksRelease1AssetsUploader? uploader;
+final Omittable<WebhooksRelease1AssetsUploader?> uploader;
 
 final Uri url;
 
@@ -78,14 +78,14 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'download_count': downloadCount,
   'id': id,
-  'label': ?label,
+  'label': label,
   'name': name,
   'node_id': nodeId,
   'size': size,
-  'digest': ?digest,
+  'digest': digest,
   'state': state.toJson(),
   'updated_at': updatedAt.toIso8601String(),
-  if (uploader != null) 'uploader': uploader?.toJson(),
+  if (uploader.isPresent) 'uploader': uploader.value?.toJson(),
   'url': url.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
@@ -101,7 +101,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brows
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, WebhooksRelease1AssetsState? state, DateTime? updatedAt, WebhooksRelease1AssetsUploader? Function()? uploader, Uri? url, }) { return WebhooksRelease1Assets(
+WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, WebhooksRelease1AssetsState? state, DateTime? updatedAt, Omittable<WebhooksRelease1AssetsUploader?>? uploader, Uri? url, }) { return WebhooksRelease1Assets(
   browserDownloadUrl: browserDownloadUrl ?? this.browserDownloadUrl,
   contentType: contentType ?? this.contentType,
   createdAt: createdAt ?? this.createdAt,
@@ -114,7 +114,7 @@ WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, D
   digest: digest != null ? digest() : this.digest,
   state: state ?? this.state,
   updatedAt: updatedAt ?? this.updatedAt,
-  uploader: uploader != null ? uploader() : this.uploader,
+  uploader: uploader ?? this.uploader,
   url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

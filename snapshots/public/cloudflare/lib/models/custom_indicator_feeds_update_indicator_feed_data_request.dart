@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'source'}.contains(key)); } 
-CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String Function()? source}) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
+CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String? Function()? source}) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
   source: source != null ? source() : this.source,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

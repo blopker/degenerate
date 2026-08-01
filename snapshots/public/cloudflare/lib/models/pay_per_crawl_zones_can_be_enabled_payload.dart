@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (zones != null) 'zones': zones?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'zones'}.contains(key)); } 
-PayPerCrawlZonesCanBeEnabledPayload copyWith({List<PayPerCrawlDaricZoneCanBeEnabled> Function()? zones}) { return PayPerCrawlZonesCanBeEnabledPayload(
+PayPerCrawlZonesCanBeEnabledPayload copyWith({List<PayPerCrawlDaricZoneCanBeEnabled>? Function()? zones}) { return PayPerCrawlZonesCanBeEnabledPayload(
   zones: zones != null ? zones() : this.zones,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

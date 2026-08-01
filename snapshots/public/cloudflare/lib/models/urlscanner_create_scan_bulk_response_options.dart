@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'useragent': ?useragent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'useragent'}.contains(key)); } 
-UrlscannerCreateScanBulkResponseOptions copyWith({String Function()? useragent}) { return UrlscannerCreateScanBulkResponseOptions(
+UrlscannerCreateScanBulkResponseOptions copyWith({String? Function()? useragent}) { return UrlscannerCreateScanBulkResponseOptions(
   useragent: useragent != null ? useragent() : this.useragent,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

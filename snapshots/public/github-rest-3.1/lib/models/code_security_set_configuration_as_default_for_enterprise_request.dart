@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (defaultForNewRepos != null) 'default_for_new_repos': defaultForNewRepos?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_for_new_repos'}.contains(key)); } 
-CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest copyWith({CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos Function()? defaultForNewRepos}) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
+CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest copyWith({CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos? Function()? defaultForNewRepos}) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -35,50 +35,50 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentNextActionDisplayBankTransferInstructionsType($value)'; } 
  }
 /// 
-@immutable final class PaymentIntentNextActionDisplayBankTransferInstructions {const PaymentIntentNextActionDisplayBankTransferInstructions({required this.type, this.amountRemaining, this.currency, this.financialAddresses, this.hostedInstructionsUrl, this.reference, });
+@immutable final class PaymentIntentNextActionDisplayBankTransferInstructions {const PaymentIntentNextActionDisplayBankTransferInstructions({required this.type, this.amountRemaining = const Omittable.absent(), this.currency = const Omittable.absent(), this.financialAddresses, this.hostedInstructionsUrl = const Omittable.absent(), this.reference = const Omittable.absent(), });
 
 factory PaymentIntentNextActionDisplayBankTransferInstructions.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionDisplayBankTransferInstructions(
-  amountRemaining: json['amount_remaining'] != null ? (json['amount_remaining'] as num).toInt() : null,
-  currency: json['currency'] as String?,
+  amountRemaining: json.containsKey('amount_remaining') ? Omittable(json['amount_remaining'] != null ? (json['amount_remaining'] as num).toInt() : null) : const Omittable.absent(),
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   financialAddresses: (json['financial_addresses'] as List<dynamic>?)?.map((e) => FundingInstructionsBankTransferFinancialAddress.fromJson(e as Map<String, dynamic>)).toList(),
-  hostedInstructionsUrl: json['hosted_instructions_url'] as String?,
-  reference: json['reference'] as String?,
+  hostedInstructionsUrl: json.containsKey('hosted_instructions_url') ? Omittable(json['hosted_instructions_url'] as String?) : const Omittable.absent(),
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   type: PaymentIntentNextActionDisplayBankTransferInstructionsType.fromJson(json['type'] as String),
 ); }
 
 /// The remaining amount that needs to be transferred to complete the payment.
-final int? amountRemaining;
+final Omittable<int?> amountRemaining;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
-final String? currency;
+final Omittable<String?> currency;
 
 /// A list of financial addresses that can be used to fund the customer balance
 final List<FundingInstructionsBankTransferFinancialAddress>? financialAddresses;
 
 /// A link to a hosted page that guides your customer through completing the transfer.
-final String? hostedInstructionsUrl;
+final Omittable<String?> hostedInstructionsUrl;
 
 /// A string identifying this payment. Instruct your customer to include this code in the reference or memo field of their bank transfer.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Type of bank transfer
 final PaymentIntentNextActionDisplayBankTransferInstructionsType type;
 
 Map<String, dynamic> toJson() { return {
-  'amount_remaining': ?amountRemaining,
-  'currency': ?currency,
+  if (amountRemaining.isPresent) 'amount_remaining': amountRemaining.value,
+  if (currency.isPresent) 'currency': currency.value,
   if (financialAddresses != null) 'financial_addresses': financialAddresses?.map((e) => e.toJson()).toList(),
-  'hosted_instructions_url': ?hostedInstructionsUrl,
-  'reference': ?reference,
+  if (hostedInstructionsUrl.isPresent) 'hosted_instructions_url': hostedInstructionsUrl.value,
+  if (reference.isPresent) 'reference': reference.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()? amountRemaining, String? Function()? currency, List<FundingInstructionsBankTransferFinancialAddress> Function()? financialAddresses, String? Function()? hostedInstructionsUrl, String? Function()? reference, PaymentIntentNextActionDisplayBankTransferInstructionsType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(
-  amountRemaining: amountRemaining != null ? amountRemaining() : this.amountRemaining,
-  currency: currency != null ? currency() : this.currency,
+PaymentIntentNextActionDisplayBankTransferInstructions copyWith({Omittable<int?>? amountRemaining, Omittable<String?>? currency, List<FundingInstructionsBankTransferFinancialAddress>? Function()? financialAddresses, Omittable<String?>? hostedInstructionsUrl, Omittable<String?>? reference, PaymentIntentNextActionDisplayBankTransferInstructionsType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(
+  amountRemaining: amountRemaining ?? this.amountRemaining,
+  currency: currency ?? this.currency,
   financialAddresses: financialAddresses != null ? financialAddresses() : this.financialAddresses,
-  hostedInstructionsUrl: hostedInstructionsUrl != null ? hostedInstructionsUrl() : this.hostedInstructionsUrl,
-  reference: reference != null ? reference() : this.reference,
+  hostedInstructionsUrl: hostedInstructionsUrl ?? this.hostedInstructionsUrl,
+  reference: reference ?? this.reference,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

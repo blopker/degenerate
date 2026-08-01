@@ -24,7 +24,7 @@ final SmartshieldResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection36 copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, List<dynamic>? Function()? result, bool? success, SmartshieldResultInfo Function()? resultInfo, }) { return ResponseCollection36(
+ResponseCollection36 copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, List<dynamic>? Function()? result, bool? success, SmartshieldResultInfo? Function()? resultInfo, }) { return ResponseCollection36(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

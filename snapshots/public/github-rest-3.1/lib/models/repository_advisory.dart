@@ -176,32 +176,32 @@ final SimpleRepository? privateFork;
 
 Map<String, dynamic> toJson() { return {
   'ghsa_id': ghsaId,
-  'cve_id': ?cveId,
+  'cve_id': cveId,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'summary': summary,
-  'description': ?description,
-  if (severity != null) 'severity': severity?.toJson(),
-  if (author != null) 'author': author?.toJson(),
-  if (publisher != null) 'publisher': publisher?.toJson(),
+  'description': description,
+  'severity': severity?.toJson(),
+  'author': author?.toJson(),
+  'publisher': publisher?.toJson(),
   'identifiers': identifiers.map((e) => e.toJson()).toList(),
   'state': state.toJson(),
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (publishedAt != null) 'published_at': publishedAt?.toIso8601String(),
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
-  if (withdrawnAt != null) 'withdrawn_at': withdrawnAt?.toIso8601String(),
-  if (submission != null) 'submission': submission?.toJson(),
-  if (vulnerabilities != null) 'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
-  if (cvss != null) 'cvss': cvss?.toJson(),
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
+  'published_at': publishedAt?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
+  'withdrawn_at': withdrawnAt?.toIso8601String(),
+  'submission': submission?.toJson(),
+  'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
+  'cvss': cvss?.toJson(),
   if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
-  if (cwes != null) 'cwes': cwes?.map((e) => e.toJson()).toList(),
-  'cwe_ids': ?cweIds,
-  if (credits != null) 'credits': credits?.map((e) => e.toJson()).toList(),
-  if (creditsDetailed != null) 'credits_detailed': creditsDetailed?.map((e) => e.toJson()).toList(),
-  if (collaboratingUsers != null) 'collaborating_users': collaboratingUsers?.map((e) => e.toJson()).toList(),
-  if (collaboratingTeams != null) 'collaborating_teams': collaboratingTeams?.map((e) => e.toJson()).toList(),
-  if (privateFork != null) 'private_fork': privateFork?.toJson(),
+  'cwes': cwes?.map((e) => e.toJson()).toList(),
+  'cwe_ids': cweIds,
+  'credits': credits?.map((e) => e.toJson()).toList(),
+  'credits_detailed': creditsDetailed?.map((e) => e.toJson()).toList(),
+  'collaborating_users': collaboratingUsers?.map((e) => e.toJson()).toList(),
+  'collaborating_teams': collaboratingTeams?.map((e) => e.toJson()).toList(),
+  'private_fork': privateFork?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && json['cve_id'] is String &&
@@ -229,7 +229,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('collaborating_users') &&
       json.containsKey('collaborating_teams') &&
       json.containsKey('private_fork'); } 
-RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, RepositoryAdvisorySeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<RepositoryAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, RepositoryAdvisorySubmission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, RepositoryAdvisoryCvss? Function()? cvss, CvssSeverities Function()? cvssSeverities, List<RepositoryAdvisoryCwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
+RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, RepositoryAdvisorySeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<RepositoryAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, RepositoryAdvisorySubmission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, RepositoryAdvisoryCvss? Function()? cvss, CvssSeverities? Function()? cvssSeverities, List<RepositoryAdvisoryCwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,

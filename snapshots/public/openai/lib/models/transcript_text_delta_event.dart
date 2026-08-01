@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('delta') && json['delta'] is String; } 
-TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, String Function()? segmentId, }) { return TranscriptTextDeltaEvent(
+TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) { return TranscriptTextDeltaEvent(
   type: type ?? this.type,
   delta: delta ?? this.delta,
   logprobs: logprobs != null ? logprobs() : this.logprobs,

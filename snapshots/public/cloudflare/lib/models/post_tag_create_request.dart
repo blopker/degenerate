@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-PostTagCreateRequest copyWith({String Function()? activeDuration, String Function()? actorCategory, List<String> Function()? aliasGroupNames, List<String> Function()? aliasGroupNamesInternal, double Function()? analyticPriority, String Function()? attributionConfidence, String Function()? attributionOrganization, String Function()? categoryUuid, List<String> Function()? externalReferenceLinks, String Function()? internalDescription, String Function()? motive, String Function()? opsecLevel, String Function()? originCountryIso, double Function()? priority, String Function()? sophisticationLevel, String? value, }) { return PostTagCreateRequest(
+PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? value, }) { return PostTagCreateRequest(
   activeDuration: activeDuration != null ? activeDuration() : this.activeDuration,
   actorCategory: actorCategory != null ? actorCategory() : this.actorCategory,
   aliasGroupNames: aliasGroupNames != null ? aliasGroupNames() : this.aliasGroupNames,

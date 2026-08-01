@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('level') &&
       json.containsKey('message') && json['message'] is String; } 
-FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? createdAt, FineTuningJobEventLevel? level, String? message, FineTuningJobEventType Function()? type, Map<String, dynamic> Function()? data, }) { return FineTuningJobEvent(
+FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? createdAt, FineTuningJobEventLevel? level, String? message, FineTuningJobEventType? Function()? type, Map<String, dynamic>? Function()? data, }) { return FineTuningJobEvent(
   object: object ?? this.object,
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,

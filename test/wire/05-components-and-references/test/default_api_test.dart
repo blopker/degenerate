@@ -50,7 +50,7 @@ void main() {
 
   group('createUser', () {
     test('sends POST /users with JSON body', () async {
-      const user = User(id: 'u1', email: 'a@b.com');
+      const user = User(id: 'u1', email: 'a@b.com', nickname: 'bo');
       await api.createUser(body: user);
 
       expect(client.lastRequest!.method, equals('POST'));
@@ -63,6 +63,16 @@ void main() {
       final sentBody = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
       expect(sentBody['id'], equals('u1'));
       expect(sentBody['email'], equals('a@b.com'));
+      expect(sentBody['nickname'], equals('bo'));
+    });
+
+    test('required nullable field is sent as explicit null', () async {
+      const user = User(id: 'u1', email: 'a@b.com', nickname: null);
+      await api.createUser(body: user);
+
+      final sentBody = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      expect(sentBody.containsKey('nickname'), isTrue);
+      expect(sentBody['nickname'], isNull);
     });
   });
 
@@ -118,25 +128,26 @@ void main() {
 
   group('User model', () {
     test('roundtrips through JSON', () {
-      const user = User(id: 'u1', email: 'test@example.com');
+      const user = User(id: 'u1', email: 'test@example.com', nickname: null);
       final json = user.toJson();
       final restored = User.fromJson(json);
 
       expect(restored.id, equals('u1'));
       expect(restored.email, equals('test@example.com'));
+      expect(restored.nickname, isNull);
     });
 
     test('equality', () {
-      const a = User(id: 'u1', email: 'a@b.com');
-      const b = User(id: 'u1', email: 'a@b.com');
-      const c = User(id: 'u2', email: 'a@b.com');
+      const a = User(id: 'u1', email: 'a@b.com', nickname: null);
+      const b = User(id: 'u1', email: 'a@b.com', nickname: null);
+      const c = User(id: 'u2', email: 'a@b.com', nickname: null);
 
       expect(a, equals(b));
       expect(a, isNot(equals(c)));
     });
 
     test('copyWith', () {
-      const user = User(id: 'u1', email: 'old@example.com');
+      const user = User(id: 'u1', email: 'old@example.com', nickname: null);
       final updated = user.copyWith(email: 'new@example.com');
 
       expect(updated.id, equals('u1'));

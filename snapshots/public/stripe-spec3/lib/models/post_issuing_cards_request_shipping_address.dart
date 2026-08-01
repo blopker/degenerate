@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('city'
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('line1') && json['line1'] is String &&
       json.containsKey('postal_code') && json['postal_code'] is String; } 
-PostIssuingCardsRequestShippingAddress copyWith({String? city, String? country, String? line1, String Function()? line2, String? postalCode, String Function()? state, }) { return PostIssuingCardsRequestShippingAddress(
+PostIssuingCardsRequestShippingAddress copyWith({String? city, String? country, String? line1, String? Function()? line2, String? postalCode, String? Function()? state, }) { return PostIssuingCardsRequestShippingAddress(
   city: city ?? this.city,
   country: country ?? this.country,
   line1: line1 ?? this.line1,

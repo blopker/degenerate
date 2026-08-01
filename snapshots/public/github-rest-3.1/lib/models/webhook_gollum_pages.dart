@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'page_name': pageName,
   'sha': sha,
-  'summary': ?summary,
+  'summary': summary,
   'title': title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&

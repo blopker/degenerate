@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'path': path,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-ServiceAccountTokenProjection copyWith({String Function()? audience, int Function()? expirationSeconds, String? path, }) { return ServiceAccountTokenProjection(
+ServiceAccountTokenProjection copyWith({String? Function()? audience, int? Function()? expirationSeconds, String? path, }) { return ServiceAccountTokenProjection(
   audience: audience != null ? audience() : this.audience,
   expirationSeconds: expirationSeconds != null ? expirationSeconds() : this.expirationSeconds,
   path: path ?? this.path,

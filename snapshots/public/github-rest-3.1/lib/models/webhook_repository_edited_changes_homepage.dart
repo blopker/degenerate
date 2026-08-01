@@ -9,7 +9,7 @@ factory WebhookRepositoryEditedChangesHomepage.fromJson(Map<String, dynamic> jso
 final String? from;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
+  'from': from,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
 WebhookRepositoryEditedChangesHomepage copyWith({String? Function()? from}) { return WebhookRepositoryEditedChangesHomepage(

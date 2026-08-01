@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateTrustedDomainResponseResult {const EmailSecurityUpdateTrustedDomainResponseResult({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.createdAt, required this.id, required this.lastModified, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateTrustedDomainResponseResult {const EmailSecurityUpdateTrustedDomainResponseResult({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityUpdateTrustedDomainResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateTrustedDomainResponseResult(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRecent: json['is_recent'] as bool,
   isRegex: json['is_regex'] as bool,
   isSimilarity: json['is_similarity'] as bool,
@@ -13,7 +13,7 @@ factory EmailSecurityUpdateTrustedDomainResponseResult.fromJson(Map<String, dyna
   lastModified: DateTime.parse(json['last_modified'] as String),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Select to prevent recently registered domains from triggering a
 /// Suspicious or Malicious disposition.
@@ -36,7 +36,7 @@ final int id;
 final DateTime lastModified;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_recent': isRecent,
   'is_regex': isRegex,
   'is_similarity': isSimilarity,
@@ -52,8 +52,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityUpdateTrustedDomainResponseResult copyWith({String? Function()? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, DateTime? createdAt, int? id, DateTime? lastModified, }) { return EmailSecurityUpdateTrustedDomainResponseResult(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityUpdateTrustedDomainResponseResult copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, DateTime? createdAt, int? id, DateTime? lastModified, }) { return EmailSecurityUpdateTrustedDomainResponseResult(
+  comments: comments ?? this.comments,
   isRecent: isRecent ?? this.isRecent,
   isRegex: isRegex ?? this.isRegex,
   isSimilarity: isSimilarity ?? this.isSimilarity,

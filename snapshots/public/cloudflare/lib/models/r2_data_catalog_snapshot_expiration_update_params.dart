@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_snapshot_age', 'min_snapshots_to_keep', 'state'}.contains(key)); } 
-R2DataCatalogSnapshotExpirationUpdateParams copyWith({String Function()? maxSnapshotAge, int Function()? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState Function()? state, }) { return R2DataCatalogSnapshotExpirationUpdateParams(
+R2DataCatalogSnapshotExpirationUpdateParams copyWith({String? Function()? maxSnapshotAge, int? Function()? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? Function()? state, }) { return R2DataCatalogSnapshotExpirationUpdateParams(
   maxSnapshotAge: maxSnapshotAge != null ? maxSnapshotAge() : this.maxSnapshotAge,
   minSnapshotsToKeep: minSnapshotsToKeep != null ? minSnapshotsToKeep() : this.minSnapshotsToKeep,
   state: state != null ? state() : this.state,

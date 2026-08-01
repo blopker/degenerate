@@ -154,13 +154,13 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'after': ?after,
+  'after': after,
   'app': app.toJson(),
-  'before': ?before,
+  'before': before,
   'check_runs_url': checkRunsUrl.toString(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'conclusion': conclusion?.toJson(),
   'created_at': createdAt.toIso8601String(),
-  'head_branch': ?headBranch,
+  'head_branch': headBranch,
   'head_commit': headCommit.toJson(),
   'head_sha': headSha,
   'id': id,
@@ -169,7 +169,7 @@ Map<String, dynamic> toJson() { return {
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   'rerequestable': ?rerequestable,
   'runs_rerequestable': ?runsRerequestable,
-  if (status != null) 'status': status?.toJson(),
+  'status': status?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
 }; } 
@@ -189,7 +189,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteCompletedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteCompletedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, WebhookCheckSuiteCompletedCheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<WebhookCheckSuiteCompletedCheckSuitePullRequests>? pullRequests, bool Function()? rerequestable, bool Function()? runsRerequestable, WebhookCheckSuiteCompletedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteCompletedCheckSuite(
+WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteCompletedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteCompletedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, WebhookCheckSuiteCompletedCheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<WebhookCheckSuiteCompletedCheckSuitePullRequests>? pullRequests, bool? Function()? rerequestable, bool? Function()? runsRerequestable, WebhookCheckSuiteCompletedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteCompletedCheckSuite(
   after: after != null ? after() : this.after,
   app: app ?? this.app,
   before: before != null ? before() : this.before,

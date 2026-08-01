@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('condition') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String; } 
-R2BucketLockRule copyWith({R2BucketLockRuleCondition? condition, bool? enabled, String? id, String Function()? prefix, }) { return R2BucketLockRule(
+R2BucketLockRule copyWith({R2BucketLockRuleCondition? condition, bool? enabled, String? id, String? Function()? prefix, }) { return R2BucketLockRule(
   condition: condition ?? this.condition,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,

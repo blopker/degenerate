@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('parent_issue_repo') &&
       json.containsKey('sub_issue_id') && json['sub_issue_id'] is num &&
       json.containsKey('sub_issue'); } 
-WebhookSubIssuesParentIssueAdded copyWith({WebhookSubIssuesParentIssueAddedAction? action, double? parentIssueId, Issue? parentIssue, Repository? parentIssueRepo, double? subIssueId, Issue? subIssue, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser Function()? sender, }) { return WebhookSubIssuesParentIssueAdded(
+WebhookSubIssuesParentIssueAdded copyWith({WebhookSubIssuesParentIssueAddedAction? action, double? parentIssueId, Issue? parentIssue, Repository? parentIssueRepo, double? subIssueId, Issue? subIssue, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookSubIssuesParentIssueAdded(
   action: action ?? this.action,
   parentIssueId: parentIssueId ?? this.parentIssueId,
   parentIssue: parentIssue ?? this.parentIssue,

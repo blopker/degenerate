@@ -32,27 +32,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardFraudWarningType($value)'; } 
  }
 /// 
-@immutable final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt, this.type, });
+@immutable final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt = const Omittable.absent(), this.type = const Omittable.absent(), });
 
 factory IssuingCardFraudWarning.fromJson(Map<String, dynamic> json) { return IssuingCardFraudWarning(
-  startedAt: json['started_at'] != null ? (json['started_at'] as num).toInt() : null,
-  type: json['type'] != null ? IssuingCardFraudWarningType.fromJson(json['type'] as String) : null,
+  startedAt: json.containsKey('started_at') ? Omittable(json['started_at'] != null ? (json['started_at'] as num).toInt() : null) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssuingCardFraudWarningType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Timestamp of the most recent fraud warning.
-final int? startedAt;
+final Omittable<int?> startedAt;
 
 /// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
-final IssuingCardFraudWarningType? type;
+final Omittable<IssuingCardFraudWarningType?> type;
 
 Map<String, dynamic> toJson() { return {
-  'started_at': ?startedAt,
-  if (type != null) 'type': type?.toJson(),
+  if (startedAt.isPresent) 'started_at': startedAt.value,
+  if (type.isPresent) 'type': type.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'started_at', 'type'}.contains(key)); } 
-IssuingCardFraudWarning copyWith({int? Function()? startedAt, IssuingCardFraudWarningType? Function()? type, }) { return IssuingCardFraudWarning(
-  startedAt: startedAt != null ? startedAt() : this.startedAt,
-  type: type != null ? type() : this.type,
+IssuingCardFraudWarning copyWith({Omittable<int?>? startedAt, Omittable<IssuingCardFraudWarningType?>? type, }) { return IssuingCardFraudWarning(
+  startedAt: startedAt ?? this.startedAt,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingCardFraudWarning &&

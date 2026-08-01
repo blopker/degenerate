@@ -78,9 +78,9 @@ Map<String, dynamic> toJson() { return {
   'content': content,
   'sha': sha,
   'url': url.toString(),
-  if (gitUrl != null) 'git_url': gitUrl?.toString(),
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
+  'git_url': gitUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
   'target': ?target,
   'submodule_git_url': ?submoduleGitUrl,
@@ -97,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('_links'); } 
-ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentFileLinks? links, String Function()? target, String Function()? submoduleGitUrl, }) { return ContentFile(
+ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentFileLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ContentFile(
   type: type ?? this.type,
   encoding: encoding ?? this.encoding,
   size: size ?? this.size,

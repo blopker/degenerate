@@ -29,13 +29,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserRoleAssignmentAssignment($value)'; } 
  }
 /// The Relationship a User has with a role.
-@immutable final class UserRoleAssignment {const UserRoleAssignment({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.assignment, this.inheritedFrom, this.name, this.email, this.starredAt, this.userViewType, });
+@immutable final class UserRoleAssignment {const UserRoleAssignment({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.assignment, this.inheritedFrom, this.name = const Omittable.absent(), this.email = const Omittable.absent(), this.starredAt, this.userViewType, });
 
 factory UserRoleAssignment.fromJson(Map<String, dynamic> json) { return UserRoleAssignment(
   assignment: json['assignment'] != null ? UserRoleAssignmentAssignment.fromJson(json['assignment'] as String) : null,
   inheritedFrom: (json['inherited_from'] as List<dynamic>?)?.map((e) => TeamSimple.fromJson(e as Map<String, dynamic>)).toList(),
-  name: json['name'] as String?,
-  email: json['email'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -64,9 +64,9 @@ final UserRoleAssignmentAssignment? assignment;
 /// Team the user has gotten the role through
 final List<TeamSimple>? inheritedFrom;
 
-final String? name;
+final Omittable<String?> name;
 
-final String? email;
+final Omittable<String?> email;
 
 final String login;
 
@@ -111,13 +111,13 @@ final String? userViewType;
 Map<String, dynamic> toJson() { return {
   if (assignment != null) 'assignment': assignment?.toJson(),
   if (inheritedFrom != null) 'inherited_from': inheritedFrom?.map((e) => e.toJson()).toList(),
-  'name': ?name,
-  'email': ?email,
+  if (name.isPresent) 'name': name.value,
+  if (email.isPresent) 'email': email.value,
   'login': login,
   'id': id,
   'node_id': nodeId,
   'avatar_url': avatarUrl.toString(),
-  'gravatar_id': ?gravatarId,
+  'gravatar_id': gravatarId,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'followers_url': followersUrl.toString(),
@@ -152,11 +152,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool; } 
-UserRoleAssignment copyWith({UserRoleAssignmentAssignment Function()? assignment, List<TeamSimple> Function()? inheritedFrom, String? Function()? name, String? Function()? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String Function()? starredAt, String Function()? userViewType, }) { return UserRoleAssignment(
+UserRoleAssignment copyWith({UserRoleAssignmentAssignment? Function()? assignment, List<TeamSimple>? Function()? inheritedFrom, Omittable<String?>? name, Omittable<String?>? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? starredAt, String? Function()? userViewType, }) { return UserRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   inheritedFrom: inheritedFrom != null ? inheritedFrom() : this.inheritedFrom,
-  name: name != null ? name() : this.name,
-  email: email != null ? email() : this.email,
+  name: name ?? this.name,
+  email: email ?? this.email,
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

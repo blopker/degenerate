@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'email': email,
   'primary': primary,
   'verified': verified,
-  'visibility': ?visibility,
+  'visibility': visibility,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
       json.containsKey('primary') && json['primary'] is bool &&

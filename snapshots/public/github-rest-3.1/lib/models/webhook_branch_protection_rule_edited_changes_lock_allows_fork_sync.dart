@@ -9,7 +9,7 @@ factory WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync.fromJson(Map<
 final bool? from;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
+  'from': from,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is bool; } 
 WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync copyWith({bool? Function()? from}) { return WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync(

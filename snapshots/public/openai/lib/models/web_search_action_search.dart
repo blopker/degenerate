@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('query') && json['query'] is String; } 
-WebSearchActionSearch copyWith({WebSearchActionSearchType? type, String? query, List<String> Function()? queries, List<WebSearchActionSearchSources> Function()? sources, }) { return WebSearchActionSearch(
+WebSearchActionSearch copyWith({WebSearchActionSearchType? type, String? query, List<String>? Function()? queries, List<WebSearchActionSearchSources>? Function()? sources, }) { return WebSearchActionSearch(
   type: type ?? this.type,
   query: query ?? this.query,
   queries: queries != null ? queries() : this.queries,

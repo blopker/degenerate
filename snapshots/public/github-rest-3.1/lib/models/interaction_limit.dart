@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (expiry != null) 'expiry': expiry?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('limit'); } 
-InteractionLimit copyWith({InteractionGroup? limit, InteractionExpiry Function()? expiry, }) { return InteractionLimit(
+InteractionLimit copyWith({InteractionGroup? limit, InteractionExpiry? Function()? expiry, }) { return InteractionLimit(
   limit: limit ?? this.limit,
   expiry: expiry != null ? expiry() : this.expiry,
 ); } 

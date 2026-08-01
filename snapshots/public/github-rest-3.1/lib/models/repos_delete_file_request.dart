@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
       json.containsKey('sha') && json['sha'] is String; } 
-ReposDeleteFileRequest copyWith({String? message, String? sha, String Function()? branch, ReposDeleteFileRequestCommitter Function()? committer, ReposDeleteFileRequestAuthor Function()? author, }) { return ReposDeleteFileRequest(
+ReposDeleteFileRequest copyWith({String? message, String? sha, String? Function()? branch, ReposDeleteFileRequestCommitter? Function()? committer, ReposDeleteFileRequestAuthor? Function()? author, }) { return ReposDeleteFileRequest(
   message: message ?? this.message,
   sha: sha ?? this.sha,
   branch: branch != null ? branch() : this.branch,

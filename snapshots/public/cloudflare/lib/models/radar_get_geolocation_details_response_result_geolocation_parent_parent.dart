@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('geoId
       json.containsKey('longitude') && json['longitude'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-RadarGetGeolocationDetailsResponseResultGeolocationParentParent copyWith({String Function()? code, String? geoId, String? latitude, String? longitude, String? name, RadarGetGeolocationDetailsResponseResultGeolocationParentParentType? type, }) { return RadarGetGeolocationDetailsResponseResultGeolocationParentParent(
+RadarGetGeolocationDetailsResponseResultGeolocationParentParent copyWith({String? Function()? code, String? geoId, String? latitude, String? longitude, String? name, RadarGetGeolocationDetailsResponseResultGeolocationParentParentType? type, }) { return RadarGetGeolocationDetailsResponseResultGeolocationParentParent(
   code: code != null ? code() : this.code,
   geoId: geoId ?? this.geoId,
   latitude: latitude ?? this.latitude,

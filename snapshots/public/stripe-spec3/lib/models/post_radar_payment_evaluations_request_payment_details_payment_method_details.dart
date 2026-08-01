@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'payment_method': paymentMethod,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_method') && json['payment_method'] is String; } 
-PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails Function()? billingDetails, String? paymentMethod, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails(
+PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetailsBillingDetails? Function()? billingDetails, String? paymentMethod, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsPaymentMethodDetails(
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   paymentMethod: paymentMethod ?? this.paymentMethod,
 ); } 

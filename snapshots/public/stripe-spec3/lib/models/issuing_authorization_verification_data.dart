@@ -113,16 +113,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationVerificationDataExpiryCheck($value)'; } 
  }
 /// 
-@immutable final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVerificationData({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.expiryCheck, this.authenticationExemption, this.postalCode, this.threeDSecure, });
+@immutable final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVerificationData({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.expiryCheck, this.authenticationExemption = const Omittable.absent(), this.postalCode = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), });
 
 factory IssuingAuthorizationVerificationData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationVerificationData(
   addressLine1Check: IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String),
   addressPostalCodeCheck: IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
-  authenticationExemption: json['authentication_exemption'] != null ? IssuingAuthorizationAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
+  authenticationExemption: json.containsKey('authentication_exemption') ? Omittable(json['authentication_exemption'] != null ? IssuingAuthorizationAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cvcCheck: IssuingAuthorizationVerificationDataCvcCheck.fromJson(json['cvc_check'] as String),
   expiryCheck: IssuingAuthorizationVerificationDataExpiryCheck.fromJson(json['expiry_check'] as String),
-  postalCode: json['postal_code'] as String?,
-  threeDSecure: json['three_d_secure'] != null ? IssuingAuthorizationThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  postalCode: json.containsKey('postal_code') ? Omittable(json['postal_code'] as String?) : const Omittable.absent(),
+  threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? IssuingAuthorizationThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
@@ -132,7 +132,7 @@ final IssuingAuthorizationVerificationDataAddressLine1Check addressLine1Check;
 final IssuingAuthorizationVerificationDataAddressPostalCodeCheck addressPostalCodeCheck;
 
 /// The exemption applied to this authorization.
-final IssuingAuthorizationAuthenticationExemption? authenticationExemption;
+final Omittable<IssuingAuthorizationAuthenticationExemption?> authenticationExemption;
 
 /// Whether the cardholder provided a CVC and if it matched Stripe’s record.
 final IssuingAuthorizationVerificationDataCvcCheck cvcCheck;
@@ -141,32 +141,32 @@ final IssuingAuthorizationVerificationDataCvcCheck cvcCheck;
 final IssuingAuthorizationVerificationDataExpiryCheck expiryCheck;
 
 /// The postal code submitted as part of the authorization used for postal code verification.
-final String? postalCode;
+final Omittable<String?> postalCode;
 
 /// 3D Secure details.
-final IssuingAuthorizationThreeDSecure? threeDSecure;
+final Omittable<IssuingAuthorizationThreeDSecure?> threeDSecure;
 
 Map<String, dynamic> toJson() { return {
   'address_line1_check': addressLine1Check.toJson(),
   'address_postal_code_check': addressPostalCodeCheck.toJson(),
-  if (authenticationExemption != null) 'authentication_exemption': authenticationExemption?.toJson(),
+  if (authenticationExemption.isPresent) 'authentication_exemption': authenticationExemption.value?.toJson(),
   'cvc_check': cvcCheck.toJson(),
   'expiry_check': expiryCheck.toJson(),
-  'postal_code': ?postalCode,
-  if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
+  if (postalCode.isPresent) 'postal_code': postalCode.value,
+  if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address_line1_check') &&
       json.containsKey('address_postal_code_check') &&
       json.containsKey('cvc_check') &&
       json.containsKey('expiry_check'); } 
-IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, IssuingAuthorizationAuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, IssuingAuthorizationVerificationDataExpiryCheck? expiryCheck, String? Function()? postalCode, IssuingAuthorizationThreeDSecure? Function()? threeDSecure, }) { return IssuingAuthorizationVerificationData(
+IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, Omittable<IssuingAuthorizationAuthenticationExemption?>? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, IssuingAuthorizationVerificationDataExpiryCheck? expiryCheck, Omittable<String?>? postalCode, Omittable<IssuingAuthorizationThreeDSecure?>? threeDSecure, }) { return IssuingAuthorizationVerificationData(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
-  authenticationExemption: authenticationExemption != null ? authenticationExemption() : this.authenticationExemption,
+  authenticationExemption: authenticationExemption ?? this.authenticationExemption,
   cvcCheck: cvcCheck ?? this.cvcCheck,
   expiryCheck: expiryCheck ?? this.expiryCheck,
-  postalCode: postalCode != null ? postalCode() : this.postalCode,
-  threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
+  postalCode: postalCode ?? this.postalCode,
+  threeDSecure: threeDSecure ?? this.threeDSecure,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorizationVerificationData &&

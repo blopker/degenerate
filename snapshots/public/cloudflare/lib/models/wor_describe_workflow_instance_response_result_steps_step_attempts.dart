@@ -18,10 +18,10 @@ final DateTime start;
 final bool? success;
 
 Map<String, dynamic> toJson() { return {
-  if (end != null) 'end': end?.toIso8601String(),
-  if (error != null) 'error': error?.toJson(),
+  'end': end?.toIso8601String(),
+  'error': error?.toJson(),
   'start': start.toIso8601String(),
-  'success': ?success,
+  'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is String &&
       json.containsKey('error') &&

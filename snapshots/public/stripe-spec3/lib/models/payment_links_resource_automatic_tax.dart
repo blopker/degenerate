@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// 
-@immutable final class PaymentLinksResourceAutomaticTax {const PaymentLinksResourceAutomaticTax({required this.enabled, this.liability, });
+@immutable final class PaymentLinksResourceAutomaticTax {const PaymentLinksResourceAutomaticTax({required this.enabled, this.liability = const Omittable.absent(), });
 
 factory PaymentLinksResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null,
+  liability: json.containsKey('liability') ? Omittable(json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// If `true`, tax will be calculated automatically using the customer's location.
 final bool enabled;
 
 /// The account that's liable for tax. If set, the business address and tax registrations required to perform the tax calculation are loaded from this account. The tax transaction is returned in the report of the connected account.
-final ConnectAccountReference? liability;
+final Omittable<ConnectAccountReference?> liability;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
-  if (liability != null) 'liability': liability?.toJson(),
+  if (liability.isPresent) 'liability': liability.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentLinksResourceAutomaticTax copyWith({bool? enabled, ConnectAccountReference? Function()? liability, }) { return PaymentLinksResourceAutomaticTax(
+PaymentLinksResourceAutomaticTax copyWith({bool? enabled, Omittable<ConnectAccountReference?>? liability, }) { return PaymentLinksResourceAutomaticTax(
   enabled: enabled ?? this.enabled,
-  liability: liability != null ? liability() : this.liability,
+  liability: liability ?? this.liability,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentLinksResourceAutomaticTax &&

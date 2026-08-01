@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'warnings': ?warnings,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ackCount', 'retryCount', 'warnings'}.contains(key)); } 
-QueuesAckMessagesResponseResult copyWith({double Function()? ackCount, double Function()? retryCount, List<String> Function()? warnings, }) { return QueuesAckMessagesResponseResult(
+QueuesAckMessagesResponseResult copyWith({double? Function()? ackCount, double? Function()? retryCount, List<String>? Function()? warnings, }) { return QueuesAckMessagesResponseResult(
   ackCount: ackCount != null ? ackCount() : this.ackCount,
   retryCount: retryCount != null ? retryCount() : this.retryCount,
   warnings: warnings != null ? warnings() : this.warnings,

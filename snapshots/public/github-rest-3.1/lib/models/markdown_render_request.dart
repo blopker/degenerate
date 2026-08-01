@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'context': ?context,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode Function()? mode, String Function()? context, }) { return MarkdownRenderRequest(
+MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode Function()? mode, String? Function()? context, }) { return MarkdownRenderRequest(
   text: text ?? this.text,
   mode: mode != null ? mode() : this.mode,
   context: context != null ? context() : this.context,

@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_me
       json.containsKey('asn_cone_size') && json['asn_cone_size'] is num &&
       json.containsKey('irr_sources') &&
       json.containsKey('name') && json['name'] is String; } 
-RadarGetAsnsAsSetResponseResultAsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstreamsCount, int? asnConeSize, int Function()? hierarchicalAsn, int Function()? inferredAsn, List<String>? irrSources, String? name, int Function()? peeringdbAsn, }) { return RadarGetAsnsAsSetResponseResultAsSets(
+RadarGetAsnsAsSetResponseResultAsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstreamsCount, int? asnConeSize, int? Function()? hierarchicalAsn, int? Function()? inferredAsn, List<String>? irrSources, String? name, int? Function()? peeringdbAsn, }) { return RadarGetAsnsAsSetResponseResultAsSets(
   asMembersCount: asMembersCount ?? this.asMembersCount,
   asSetMembersCount: asSetMembersCount ?? this.asSetMembersCount,
   asSetUpstreamsCount: asSetUpstreamsCount ?? this.asSetUpstreamsCount,

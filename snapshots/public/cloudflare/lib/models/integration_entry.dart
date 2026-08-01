@@ -21,14 +21,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IntegrationEntryType($value)'; } 
  }
-@immutable final class IntegrationEntry {const IntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, this.profileId, });
+@immutable final class IntegrationEntry {const IntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, this.profileId = const Omittable.absent(), });
 
 factory IntegrationEntry.fromJson(Map<String, dynamic> json) { return IntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   name: json['name'] as String,
-  profileId: json['profile_id'] as String?,
+  profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: IntegrationEntryType.fromJson(json['type'] as String),
 ); }
@@ -41,7 +41,7 @@ final String id;
 
 final String name;
 
-final String? profileId;
+final Omittable<String?> profileId;
 
 final DateTime updatedAt;
 
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   'id': id,
   'name': name,
-  'profile_id': ?profileId,
+  if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
 }; } 
@@ -62,12 +62,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('type'); } 
-IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, IntegrationEntryType? type, }) { return IntegrationEntry(
+IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, IntegrationEntryType? type, }) { return IntegrationEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
-  profileId: profileId != null ? profileId() : this.profileId,
+  profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 

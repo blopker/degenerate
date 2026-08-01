@@ -167,12 +167,12 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'status': status.toJson(),
   'step_details': stepDetails.toJson(),
-  if (lastError != null) 'last_error': lastError?.toJson(),
-  'expired_at': ?expiredAt,
-  'cancelled_at': ?cancelledAt,
-  'failed_at': ?failedAt,
-  'completed_at': ?completedAt,
-  'metadata': ?metadata,
+  'last_error': lastError?.toJson(),
+  'expired_at': expiredAt,
+  'cancelled_at': cancelledAt,
+  'failed_at': failedAt,
+  'completed_at': completedAt,
+  'metadata': metadata,
   'usage': usage.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&

@@ -73,10 +73,10 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'body': ?body,
+  'body': body,
   'columns_url': columnsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator?.toJson(),
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,

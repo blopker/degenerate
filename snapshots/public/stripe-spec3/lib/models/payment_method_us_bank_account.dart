@@ -51,69 +51,69 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodUsBankAccountAccountType($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodUsBankAccount {const PaymentMethodUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.financialConnectionsAccount, this.fingerprint, this.last4, this.networks, this.routingNumber, this.statusDetails, });
+@immutable final class PaymentMethodUsBankAccount {const PaymentMethodUsBankAccount({this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.bankName = const Omittable.absent(), this.financialConnectionsAccount = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.networks = const Omittable.absent(), this.routingNumber = const Omittable.absent(), this.statusDetails = const Omittable.absent(), });
 
 factory PaymentMethodUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccount(
-  accountHolderType: json['account_holder_type'] != null ? PaymentMethodUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
-  accountType: json['account_type'] != null ? PaymentMethodUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
-  bankName: json['bank_name'] as String?,
-  financialConnectionsAccount: json['financial_connections_account'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
-  networks: json['networks'] != null ? UsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
-  routingNumber: json['routing_number'] as String?,
-  statusDetails: json['status_details'] != null ? PaymentMethodUsBankAccountStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
+  accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] != null ? PaymentMethodUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null) : const Omittable.absent(),
+  accountType: json.containsKey('account_type') ? Omittable(json['account_type'] != null ? PaymentMethodUsBankAccountAccountType.fromJson(json['account_type'] as String) : null) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  financialConnectionsAccount: json.containsKey('financial_connections_account') ? Omittable(json['financial_connections_account'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  networks: json.containsKey('networks') ? Omittable(json['networks'] != null ? UsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
+  statusDetails: json.containsKey('status_details') ? Omittable(json['status_details'] != null ? PaymentMethodUsBankAccountStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Account holder type: individual or company.
-final PaymentMethodUsBankAccountAccountHolderType? accountHolderType;
+final Omittable<PaymentMethodUsBankAccountAccountHolderType?> accountHolderType;
 
 /// Account type: checkings or savings. Defaults to checking if omitted.
-final PaymentMethodUsBankAccountAccountType? accountType;
+final Omittable<PaymentMethodUsBankAccountAccountType?> accountType;
 
 /// The name of the bank.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// The ID of the Financial Connections Account used to create the payment method.
-final String? financialConnectionsAccount;
+final Omittable<String?> financialConnectionsAccount;
 
 /// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// Contains information about US bank account networks that can be used.
-final UsBankAccountNetworks? networks;
+final Omittable<UsBankAccountNetworks?> networks;
 
 /// Routing number of the bank account.
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
 /// Contains information about the future reusability of this PaymentMethod.
-final PaymentMethodUsBankAccountStatusDetails? statusDetails;
+final Omittable<PaymentMethodUsBankAccountStatusDetails?> statusDetails;
 
 Map<String, dynamic> toJson() { return {
-  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
-  if (accountType != null) 'account_type': accountType?.toJson(),
-  'bank_name': ?bankName,
-  'financial_connections_account': ?financialConnectionsAccount,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
-  if (networks != null) 'networks': networks?.toJson(),
-  'routing_number': ?routingNumber,
-  if (statusDetails != null) 'status_details': statusDetails?.toJson(),
+  if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value?.toJson(),
+  if (accountType.isPresent) 'account_type': accountType.value?.toJson(),
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (financialConnectionsAccount.isPresent) 'financial_connections_account': financialConnectionsAccount.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (networks.isPresent) 'networks': networks.value?.toJson(),
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
+  if (statusDetails.isPresent) 'status_details': statusDetails.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'financial_connections_account', 'fingerprint', 'last4', 'networks', 'routing_number', 'status_details'}.contains(key)); } 
-PaymentMethodUsBankAccount copyWith({PaymentMethodUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? financialConnectionsAccount, String? Function()? fingerprint, String? Function()? last4, UsBankAccountNetworks? Function()? networks, String? Function()? routingNumber, PaymentMethodUsBankAccountStatusDetails? Function()? statusDetails, }) { return PaymentMethodUsBankAccount(
-  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
-  accountType: accountType != null ? accountType() : this.accountType,
-  bankName: bankName != null ? bankName() : this.bankName,
-  financialConnectionsAccount: financialConnectionsAccount != null ? financialConnectionsAccount() : this.financialConnectionsAccount,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
-  networks: networks != null ? networks() : this.networks,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-  statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
+PaymentMethodUsBankAccount copyWith({Omittable<PaymentMethodUsBankAccountAccountHolderType?>? accountHolderType, Omittable<PaymentMethodUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, Omittable<String?>? financialConnectionsAccount, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<UsBankAccountNetworks?>? networks, Omittable<String?>? routingNumber, Omittable<PaymentMethodUsBankAccountStatusDetails?>? statusDetails, }) { return PaymentMethodUsBankAccount(
+  accountHolderType: accountHolderType ?? this.accountHolderType,
+  accountType: accountType ?? this.accountType,
+  bankName: bankName ?? this.bankName,
+  financialConnectionsAccount: financialConnectionsAccount ?? this.financialConnectionsAccount,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
+  networks: networks ?? this.networks,
+  routingNumber: routingNumber ?? this.routingNumber,
+  statusDetails: statusDetails ?? this.statusDetails,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodUsBankAccount &&

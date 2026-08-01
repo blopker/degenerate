@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingTransactionFuelData {const IssuingTransactionFuelData({required this.type, required this.unit, required this.unitCostDecimal, this.industryProductCode, this.quantityDecimal, });
+@immutable final class IssuingTransactionFuelData {const IssuingTransactionFuelData({required this.type, required this.unit, required this.unitCostDecimal, this.industryProductCode = const Omittable.absent(), this.quantityDecimal = const Omittable.absent(), });
 
 factory IssuingTransactionFuelData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFuelData(
-  industryProductCode: json['industry_product_code'] as String?,
-  quantityDecimal: json['quantity_decimal'] as String?,
+  industryProductCode: json.containsKey('industry_product_code') ? Omittable(json['industry_product_code'] as String?) : const Omittable.absent(),
+  quantityDecimal: json.containsKey('quantity_decimal') ? Omittable(json['quantity_decimal'] as String?) : const Omittable.absent(),
   type: json['type'] as String,
   unit: json['unit'] as String,
   unitCostDecimal: json['unit_cost_decimal'] as String,
 ); }
 
 /// [Conexxus Payment System Product Code](https://www.conexxus.org/conexxus-payment-system-product-codes) identifying the primary fuel product purchased.
-final String? industryProductCode;
+final Omittable<String?> industryProductCode;
 
 /// The quantity of `unit`s of fuel that was dispensed, represented as a decimal string with at most 12 decimal places.
-final String? quantityDecimal;
+final Omittable<String?> quantityDecimal;
 
 /// The type of fuel that was purchased. One of `diesel`, `unleaded_plus`, `unleaded_regular`, `unleaded_super`, or `other`.
 final String type;
@@ -27,8 +27,8 @@ final String unit;
 final String unitCostDecimal;
 
 Map<String, dynamic> toJson() { return {
-  'industry_product_code': ?industryProductCode,
-  'quantity_decimal': ?quantityDecimal,
+  if (industryProductCode.isPresent) 'industry_product_code': industryProductCode.value,
+  if (quantityDecimal.isPresent) 'quantity_decimal': quantityDecimal.value,
   'type': type,
   'unit': unit,
   'unit_cost_decimal': unitCostDecimal,
@@ -36,9 +36,9 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('unit') && json['unit'] is String &&
       json.containsKey('unit_cost_decimal') && json['unit_cost_decimal'] is String; } 
-IssuingTransactionFuelData copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, String? type, String? unit, String? unitCostDecimal, }) { return IssuingTransactionFuelData(
-  industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
-  quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
+IssuingTransactionFuelData copyWith({Omittable<String?>? industryProductCode, Omittable<String?>? quantityDecimal, String? type, String? unit, String? unitCostDecimal, }) { return IssuingTransactionFuelData(
+  industryProductCode: industryProductCode ?? this.industryProductCode,
+  quantityDecimal: quantityDecimal ?? this.quantityDecimal,
   type: type ?? this.type,
   unit: unit ?? this.unit,
   unitCostDecimal: unitCostDecimal ?? this.unitCostDecimal,

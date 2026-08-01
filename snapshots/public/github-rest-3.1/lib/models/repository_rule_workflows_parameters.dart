@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'workflows': workflows.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('workflows'); } 
-RepositoryRuleWorkflowsParameters copyWith({bool Function()? doNotEnforceOnCreate, List<RepositoryRuleParamsWorkflowFileReference>? workflows, }) { return RepositoryRuleWorkflowsParameters(
+RepositoryRuleWorkflowsParameters copyWith({bool? Function()? doNotEnforceOnCreate, List<RepositoryRuleParamsWorkflowFileReference>? workflows, }) { return RepositoryRuleWorkflowsParameters(
   doNotEnforceOnCreate: doNotEnforceOnCreate != null ? doNotEnforceOnCreate() : this.doNotEnforceOnCreate,
   workflows: workflows ?? this.workflows,
 ); } 

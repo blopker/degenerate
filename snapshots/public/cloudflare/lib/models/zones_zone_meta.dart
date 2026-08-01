@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'step': ?step,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cdn_only', 'custom_certificate_quota', 'dns_only', 'foundation_dns', 'page_rule_quota', 'phishing_detected', 'step'}.contains(key)); } 
-ZonesZoneMeta copyWith({bool Function()? cdnOnly, int Function()? customCertificateQuota, bool Function()? dnsOnly, bool Function()? foundationDns, int Function()? pageRuleQuota, bool Function()? phishingDetected, int Function()? step, }) { return ZonesZoneMeta(
+ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertificateQuota, bool? Function()? dnsOnly, bool? Function()? foundationDns, int? Function()? pageRuleQuota, bool? Function()? phishingDetected, int? Function()? step, }) { return ZonesZoneMeta(
   cdnOnly: cdnOnly != null ? cdnOnly() : this.cdnOnly,
   customCertificateQuota: customCertificateQuota != null ? customCertificateQuota() : this.customCertificateQuota,
   dnsOnly: dnsOnly != null ? dnsOnly() : this.dnsOnly,

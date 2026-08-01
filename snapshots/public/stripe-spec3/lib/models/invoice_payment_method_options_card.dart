@@ -29,26 +29,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
 /// 
-@immutable final class InvoicePaymentMethodOptionsCard {const InvoicePaymentMethodOptionsCard({this.installments, this.requestThreeDSecure, });
+@immutable final class InvoicePaymentMethodOptionsCard {const InvoicePaymentMethodOptionsCard({this.installments, this.requestThreeDSecure = const Omittable.absent(), });
 
 factory InvoicePaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCard(
   installments: json['installments'] != null ? InvoiceInstallmentsCard.fromJson(json['installments'] as Map<String, dynamic>) : null,
-  requestThreeDSecure: json['request_three_d_secure'] != null ? InvoicePaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
+  requestThreeDSecure: json.containsKey('request_three_d_secure') ? Omittable(json['request_three_d_secure'] != null ? InvoicePaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null) : const Omittable.absent(),
 ); }
 
 final InvoiceInstallmentsCard? installments;
 
 /// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-final InvoicePaymentMethodOptionsCardRequestThreeDSecure? requestThreeDSecure;
+final Omittable<InvoicePaymentMethodOptionsCardRequestThreeDSecure?> requestThreeDSecure;
 
 Map<String, dynamic> toJson() { return {
   if (installments != null) 'installments': installments?.toJson(),
-  if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
+  if (requestThreeDSecure.isPresent) 'request_three_d_secure': requestThreeDSecure.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'installments', 'request_three_d_secure'}.contains(key)); } 
-InvoicePaymentMethodOptionsCard copyWith({InvoiceInstallmentsCard Function()? installments, InvoicePaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsCard(
+InvoicePaymentMethodOptionsCard copyWith({InvoiceInstallmentsCard? Function()? installments, Omittable<InvoicePaymentMethodOptionsCardRequestThreeDSecure?>? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsCard(
   installments: installments != null ? installments() : this.installments,
-  requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
+  requestThreeDSecure: requestThreeDSecure ?? this.requestThreeDSecure,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicePaymentMethodOptionsCard &&

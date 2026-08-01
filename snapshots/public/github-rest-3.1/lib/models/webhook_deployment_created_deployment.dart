@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_created_deployment_creator.dart';import 'webhook_deployment_created_deployment_payload.dart';import 'webhook_deployment_created_deployment_performed_via_github_app.dart';/// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
-@immutable final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp, this.productionEnvironment, this.transientEnvironment, });
+@immutable final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp = const Omittable.absent(), this.productionEnvironment, this.transientEnvironment, });
 
 factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedDeployment(
   createdAt: json['created_at'] as String,
@@ -12,7 +12,7 @@ factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) {
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
   payload: OneOf2.parse(json['payload'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
-  performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,
   repositoryUrl: Uri.parse(json['repository_url'] as String),
@@ -41,7 +41,7 @@ final String originalEnvironment;
 final WebhookDeploymentCreatedDeploymentPayload payload;
 
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-final WebhookDeploymentCreatedDeploymentPerformedViaGithubApp? performedViaGithubApp;
+final Omittable<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?> performedViaGithubApp;
 
 final bool? productionEnvironment;
 
@@ -63,14 +63,14 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
-  if (creator != null) 'creator': creator?.toJson(),
-  'description': ?description,
+  'creator': creator?.toJson(),
+  'description': description,
   'environment': environment,
   'id': id,
   'node_id': nodeId,
   'original_environment': originalEnvironment,
   'payload': payload.toJson(),
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   'production_environment': ?productionEnvironment,
   'ref': ref,
   'repository_url': repositoryUrl.toString(),
@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('task') && json['task'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymentCreatedDeploymentCreator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, WebhookDeploymentCreatedDeploymentPayload? payload, WebhookDeploymentCreatedDeploymentPerformedViaGithubApp? Function()? performedViaGithubApp, bool Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentCreatedDeployment(
+WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymentCreatedDeploymentCreator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, WebhookDeploymentCreatedDeploymentPayload? payload, Omittable<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>? performedViaGithubApp, bool? Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool? Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentCreatedDeployment(
   createdAt: createdAt ?? this.createdAt,
   creator: creator != null ? creator() : this.creator,
   description: description != null ? description() : this.description,
@@ -105,7 +105,7 @@ WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymen
   nodeId: nodeId ?? this.nodeId,
   originalEnvironment: originalEnvironment ?? this.originalEnvironment,
   payload: payload ?? this.payload,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
   ref: ref ?? this.ref,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,

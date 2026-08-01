@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (requireAll != null) 'requireAll': requireAll?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'checkDisks', 'requireAll'}.contains(key)); } 
-TeamsDevicesDiskEncryptionInputRequest copyWith({List<String> Function()? checkDisks, TeamsDevicesRequireAll Function()? requireAll, }) { return TeamsDevicesDiskEncryptionInputRequest(
+TeamsDevicesDiskEncryptionInputRequest copyWith({List<String>? Function()? checkDisks, TeamsDevicesRequireAll? Function()? requireAll, }) { return TeamsDevicesDiskEncryptionInputRequest(
   checkDisks: checkDisks != null ? checkDisks() : this.checkDisks,
   requireAll: requireAll != null ? requireAll() : this.requireAll,
 ); } 

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'fieldPath': fieldPath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('fieldPath') && json['fieldPath'] is String; } 
-ObjectFieldSelector copyWith({String Function()? apiVersion, String? fieldPath, }) { return ObjectFieldSelector(
+ObjectFieldSelector copyWith({String? Function()? apiVersion, String? fieldPath, }) { return ObjectFieldSelector(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldPath: fieldPath ?? this.fieldPath,
 ); } 

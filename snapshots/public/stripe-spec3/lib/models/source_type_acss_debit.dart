@@ -1,64 +1,64 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAcssDebit {const SourceTypeAcssDebit({this.bankAddressCity, this.bankAddressLine1, this.bankAddressLine2, this.bankAddressPostalCode, this.bankName, this.category, this.country, this.fingerprint, this.last4, this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAcssDebit {const SourceTypeAcssDebit({this.bankAddressCity = const Omittable.absent(), this.bankAddressLine1 = const Omittable.absent(), this.bankAddressLine2 = const Omittable.absent(), this.bankAddressPostalCode = const Omittable.absent(), this.bankName = const Omittable.absent(), this.category = const Omittable.absent(), this.country = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.routingNumber = const Omittable.absent(), });
 
 factory SourceTypeAcssDebit.fromJson(Map<String, dynamic> json) { return SourceTypeAcssDebit(
-  bankAddressCity: json['bank_address_city'] as String?,
-  bankAddressLine1: json['bank_address_line_1'] as String?,
-  bankAddressLine2: json['bank_address_line_2'] as String?,
-  bankAddressPostalCode: json['bank_address_postal_code'] as String?,
-  bankName: json['bank_name'] as String?,
-  category: json['category'] as String?,
-  country: json['country'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
-  routingNumber: json['routing_number'] as String?,
+  bankAddressCity: json.containsKey('bank_address_city') ? Omittable(json['bank_address_city'] as String?) : const Omittable.absent(),
+  bankAddressLine1: json.containsKey('bank_address_line_1') ? Omittable(json['bank_address_line_1'] as String?) : const Omittable.absent(),
+  bankAddressLine2: json.containsKey('bank_address_line_2') ? Omittable(json['bank_address_line_2'] as String?) : const Omittable.absent(),
+  bankAddressPostalCode: json.containsKey('bank_address_postal_code') ? Omittable(json['bank_address_postal_code'] as String?) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  category: json.containsKey('category') ? Omittable(json['category'] as String?) : const Omittable.absent(),
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
 ); }
 
-final String? bankAddressCity;
+final Omittable<String?> bankAddressCity;
 
-final String? bankAddressLine1;
+final Omittable<String?> bankAddressLine1;
 
-final String? bankAddressLine2;
+final Omittable<String?> bankAddressLine2;
 
-final String? bankAddressPostalCode;
+final Omittable<String?> bankAddressPostalCode;
 
-final String? bankName;
+final Omittable<String?> bankName;
 
-final String? category;
+final Omittable<String?> category;
 
-final String? country;
+final Omittable<String?> country;
 
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
-final String? last4;
+final Omittable<String?> last4;
 
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
 Map<String, dynamic> toJson() { return {
-  'bank_address_city': ?bankAddressCity,
-  'bank_address_line_1': ?bankAddressLine1,
-  'bank_address_line_2': ?bankAddressLine2,
-  'bank_address_postal_code': ?bankAddressPostalCode,
-  'bank_name': ?bankName,
-  'category': ?category,
-  'country': ?country,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
-  'routing_number': ?routingNumber,
+  if (bankAddressCity.isPresent) 'bank_address_city': bankAddressCity.value,
+  if (bankAddressLine1.isPresent) 'bank_address_line_1': bankAddressLine1.value,
+  if (bankAddressLine2.isPresent) 'bank_address_line_2': bankAddressLine2.value,
+  if (bankAddressPostalCode.isPresent) 'bank_address_postal_code': bankAddressPostalCode.value,
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (category.isPresent) 'category': category.value,
+  if (country.isPresent) 'country': country.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_address_city', 'bank_address_line_1', 'bank_address_line_2', 'bank_address_postal_code', 'bank_name', 'category', 'country', 'fingerprint', 'last4', 'routing_number'}.contains(key)); } 
-SourceTypeAcssDebit copyWith({String? Function()? bankAddressCity, String? Function()? bankAddressLine1, String? Function()? bankAddressLine2, String? Function()? bankAddressPostalCode, String? Function()? bankName, String? Function()? category, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, }) { return SourceTypeAcssDebit(
-  bankAddressCity: bankAddressCity != null ? bankAddressCity() : this.bankAddressCity,
-  bankAddressLine1: bankAddressLine1 != null ? bankAddressLine1() : this.bankAddressLine1,
-  bankAddressLine2: bankAddressLine2 != null ? bankAddressLine2() : this.bankAddressLine2,
-  bankAddressPostalCode: bankAddressPostalCode != null ? bankAddressPostalCode() : this.bankAddressPostalCode,
-  bankName: bankName != null ? bankName() : this.bankName,
-  category: category != null ? category() : this.category,
-  country: country != null ? country() : this.country,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+SourceTypeAcssDebit copyWith({Omittable<String?>? bankAddressCity, Omittable<String?>? bankAddressLine1, Omittable<String?>? bankAddressLine2, Omittable<String?>? bankAddressPostalCode, Omittable<String?>? bankName, Omittable<String?>? category, Omittable<String?>? country, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? routingNumber, }) { return SourceTypeAcssDebit(
+  bankAddressCity: bankAddressCity ?? this.bankAddressCity,
+  bankAddressLine1: bankAddressLine1 ?? this.bankAddressLine1,
+  bankAddressLine2: bankAddressLine2 ?? this.bankAddressLine2,
+  bankAddressPostalCode: bankAddressPostalCode ?? this.bankAddressPostalCode,
+  bankName: bankName ?? this.bankName,
+  category: category ?? this.category,
+  country: country ?? this.country,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
+  routingNumber: routingNumber ?? this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SourceTypeAcssDebit &&

@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-IntelComponentsSchemasSingleResponse copyWith({List<IntelSchemasMessages2>? errors, List<IntelSchemasMessages2>? messages, bool? success, IntelSchemasResultInfo Function()? resultInfo, IntelPassiveDnsByIp Function()? result, }) { return IntelComponentsSchemasSingleResponse(
+IntelComponentsSchemasSingleResponse copyWith({List<IntelSchemasMessages2>? errors, List<IntelSchemasMessages2>? messages, bool? success, IntelSchemasResultInfo? Function()? resultInfo, IntelPassiveDnsByIp? Function()? result, }) { return IntelComponentsSchemasSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

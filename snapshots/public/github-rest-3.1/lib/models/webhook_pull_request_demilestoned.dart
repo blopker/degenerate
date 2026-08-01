@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository'); } 
-WebhookPullRequestDemilestoned copyWith({WebhookPullRequestDemilestonedAction? action, EnterpriseWebhooks Function()? enterprise, Milestone Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestDemilestoned(
+WebhookPullRequestDemilestoned copyWith({WebhookPullRequestDemilestonedAction? action, EnterpriseWebhooks? Function()? enterprise, Milestone? Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookPullRequestDemilestoned(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   milestone: milestone != null ? milestone() : this.milestone,

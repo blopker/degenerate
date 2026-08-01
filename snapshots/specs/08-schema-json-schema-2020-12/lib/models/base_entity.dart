@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-BaseEntity copyWith({String? id, DateTime Function()? createdAt, }) { return BaseEntity(
+BaseEntity copyWith({String? id, DateTime? Function()? createdAt, }) { return BaseEntity(
   id: id ?? this.id,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
 ); } 

@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('card_payments') &&
       json.containsKey('dashboard') &&
       json.containsKey('payments'); } 
-AccountSettings copyWith({AccountBacsDebitPaymentsSettings Function()? bacsDebitPayments, AccountBrandingSettings? branding, AccountCardIssuingSettings Function()? cardIssuing, AccountCardPaymentsSettings? cardPayments, AccountDashboardSettings? dashboard, AccountInvoicesSettings Function()? invoices, AccountPaymentsSettings? payments, AccountPayoutSettings Function()? payouts, AccountSepaDebitPaymentsSettings Function()? sepaDebitPayments, AccountTreasurySettings Function()? treasury, }) { return AccountSettings(
+AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebitPayments, AccountBrandingSettings? branding, AccountCardIssuingSettings? Function()? cardIssuing, AccountCardPaymentsSettings? cardPayments, AccountDashboardSettings? dashboard, AccountInvoicesSettings? Function()? invoices, AccountPaymentsSettings? payments, AccountPayoutSettings? Function()? payouts, AccountSepaDebitPaymentsSettings? Function()? sepaDebitPayments, AccountTreasurySettings? Function()? treasury, }) { return AccountSettings(
   bacsDebitPayments: bacsDebitPayments != null ? bacsDebitPayments() : this.bacsDebitPayments,
   branding: branding ?? this.branding,
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,

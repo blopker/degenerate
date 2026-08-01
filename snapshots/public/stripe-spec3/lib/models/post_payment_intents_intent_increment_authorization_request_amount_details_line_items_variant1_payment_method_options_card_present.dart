@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'commodity_code': ?commodityCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commodity_code'}.contains(key)); } 
-PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent copyWith({String Function()? commodityCode}) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent(
+PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent copyWith({String? Function()? commodityCode}) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent(
   commodityCode: commodityCode != null ? commodityCode() : this.commodityCode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

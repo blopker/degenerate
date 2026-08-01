@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('groupVersion') && json['groupVersion'] is String &&
       json.containsKey('resources'); } 
-ResourceList copyWith({String Function()? apiVersion, String? groupVersion, String Function()? kind, List<Resource>? resources, }) { return ResourceList(
+ResourceList copyWith({String? Function()? apiVersion, String? groupVersion, String? Function()? kind, List<Resource>? resources, }) { return ResourceList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   groupVersion: groupVersion ?? this.groupVersion,
   kind: kind != null ? kind() : this.kind,

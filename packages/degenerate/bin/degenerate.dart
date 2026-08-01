@@ -79,6 +79,18 @@ ArgParser buildParser() {
           'instead of the full response envelope.',
       valueHelp: 'field',
     )
+    ..addOption(
+      'omittable',
+      allowed: ['nullable', 'all', 'off'],
+      defaultsTo: 'nullable',
+      help:
+          'How optional model fields distinguish "omitted" from "set to\n'
+          'null" (JSON Merge Patch). nullable: wrap optional nullable\n'
+          'fields in Omittable<T> (default). all: wrap every optional\n'
+          'field, for servers accepting null-clears the spec does not\n'
+          'declare. off: plain T? fields; null serializes as omitted.',
+      valueHelp: 'mode',
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
     ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
@@ -147,6 +159,11 @@ Future<void> main(List<String> arguments) async {
       workspace: workspace,
       stdinContent: stdinContent,
       unwrapFields: results.multiOption('unwrap-fields'),
+      omittable: switch (results.option('omittable')) {
+        'off' => OmittableMode.off,
+        'all' => OmittableMode.all,
+        _ => OmittableMode.nullableOnly,
+      },
     );
 
     final generator = Generator(config);

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (storageRecords != null) 'storage_records': storageRecords?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'storage_records'}.contains(key)); } 
-OrgsListArtifactStorageRecordsResponse copyWith({int Function()? totalCount, List<OrgsListArtifactStorageRecordsResponseStorageRecords> Function()? storageRecords, }) { return OrgsListArtifactStorageRecordsResponse(
+OrgsListArtifactStorageRecordsResponse copyWith({int? Function()? totalCount, List<OrgsListArtifactStorageRecordsResponseStorageRecords>? Function()? storageRecords, }) { return OrgsListArtifactStorageRecordsResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   storageRecords: storageRecords != null ? storageRecords() : this.storageRecords,
 ); } 

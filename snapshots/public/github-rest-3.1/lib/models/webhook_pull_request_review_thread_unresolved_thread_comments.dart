@@ -240,24 +240,24 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'id': id,
   'in_reply_to_id': ?inReplyToId,
-  'line': ?line,
+  'line': line,
   'node_id': nodeId,
   'original_commit_id': originalCommitId,
   'original_line': originalLine,
   'original_position': originalPosition,
-  'original_start_line': ?originalStartLine,
+  'original_start_line': originalStartLine,
   'path': path,
-  'position': ?position,
-  'pull_request_review_id': ?pullRequestReviewId,
+  'position': position,
+  'pull_request_review_id': pullRequestReviewId,
   'pull_request_url': pullRequestUrl.toString(),
   'reactions': reactions.toJson(),
   'side': side.toJson(),
-  'start_line': ?startLine,
-  if (startSide != null) 'start_side': startSide?.toJson(),
+  'start_line': startLine,
+  'start_side': startSide?.toJson(),
   if (subjectType != null) 'subject_type': subjectType?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&
@@ -284,7 +284,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookPullRequestReviewThreadUnresolvedThreadComments copyWith({WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks? links, WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhookPullRequestReviewThreadUnresolvedThreadCommentsReactions? reactions, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide? side, int? Function()? startLine, WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide? Function()? startSide, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType Function()? subjectType, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? Function()? user, }) { return WebhookPullRequestReviewThreadUnresolvedThreadComments(
+WebhookPullRequestReviewThreadUnresolvedThreadComments copyWith({WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks? links, WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhookPullRequestReviewThreadUnresolvedThreadCommentsReactions? reactions, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide? side, int? Function()? startLine, WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide? Function()? startSide, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? Function()? user, }) { return WebhookPullRequestReviewThreadUnresolvedThreadComments(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,

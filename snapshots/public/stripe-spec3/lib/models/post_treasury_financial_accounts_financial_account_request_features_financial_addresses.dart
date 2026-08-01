@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (aba != null) 'aba': aba?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aba'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddresses copyWith({PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba Function()? aba}) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddresses(
+PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddresses copyWith({PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba? Function()? aba}) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddresses(
   aba: aba != null ? aba() : this.aba,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

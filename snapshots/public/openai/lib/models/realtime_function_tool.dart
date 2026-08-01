@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'parameters': ?parameters,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'name', 'description', 'parameters'}.contains(key)); } 
-RealtimeFunctionTool copyWith({RealtimeFunctionToolType Function()? type, String Function()? name, String Function()? description, Map<String, dynamic> Function()? parameters, }) { return RealtimeFunctionTool(
+RealtimeFunctionTool copyWith({RealtimeFunctionToolType? Function()? type, String? Function()? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, }) { return RealtimeFunctionTool(
   type: type != null ? type() : this.type,
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,

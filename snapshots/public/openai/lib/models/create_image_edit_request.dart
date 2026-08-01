@@ -163,23 +163,23 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageEditRequestQuality($value)'; } 
  }
-@immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model, this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity, this.stream = false, this.partialImages, this.quality = CreateImageEditRequestQuality.auto, });
+@immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model = const Omittable.absent(), this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat = const Omittable.absent(), this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity = const Omittable.absent(), this.stream = false, this.partialImages = const Omittable.absent(), this.quality = CreateImageEditRequestQuality.auto, });
 
 factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return CreateImageEditRequest(
   image: OneOf2.parse(json['image'], fromA: (v) => base64Decode(v as String), fromB: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(),),
   prompt: json['prompt'] as String,
   mask: json['mask'] != null ? base64Decode(json['mask'] as String) : null,
   background: json.containsKey('background') ? json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null : CreateImageEditRequestBackground.auto,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageEditRequestModelVariant2.fromJson(v as String),) : null,
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageEditRequestModelVariant2.fromJson(v as String),) : null) : const Omittable.absent(),
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
   size: json.containsKey('size') ? json['size'] != null ? CreateImageEditRequestSize.fromJson(json['size'] as String) : null : CreateImageEditRequestSize.$1024x1024,
-  responseFormat: json['response_format'] != null ? CreateImageEditRequestResponseFormat.fromJson(json['response_format'] as String) : null,
+  responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? CreateImageEditRequestResponseFormat.fromJson(json['response_format'] as String) : null) : const Omittable.absent(),
   outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? CreateImageEditRequestOutputFormat.fromJson(json['output_format'] as String) : null : CreateImageEditRequestOutputFormat.png,
   outputCompression: json.containsKey('output_compression') ? json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null : 100,
   user: json['user'] as String?,
-  inputFidelity: json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null,
+  inputFidelity: json.containsKey('input_fidelity') ? Omittable(json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null) : const Omittable.absent(),
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
-  partialImages: json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null,
+  partialImages: json.containsKey('partial_images') ? Omittable(json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null) : const Omittable.absent(),
   quality: json.containsKey('quality') ? json['quality'] != null ? CreateImageEditRequestQuality.fromJson(json['quality'] as String) : null : CreateImageEditRequestQuality.auto,
 ); }
 
@@ -211,7 +211,7 @@ final Uint8List? mask;
 final CreateImageEditRequestBackground? background;
 
 /// The model to use for image generation. Defaults to `gpt-image-1.5`.
-final CreateImageEditRequestModel? model;
+final Omittable<CreateImageEditRequestModel?> model;
 
 /// The number of images to generate. Must be between 1 and 10.
 final int? n;
@@ -220,7 +220,7 @@ final int? n;
 final CreateImageEditRequestSize? size;
 
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
-final CreateImageEditRequestResponseFormat? responseFormat;
+final Omittable<CreateImageEditRequestResponseFormat?> responseFormat;
 
 /// The format in which the generated images are returned. This parameter is
 /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
@@ -238,14 +238,14 @@ final int? outputCompression;
 /// 
 final String? user;
 
-final InputFidelity? inputFidelity;
+final Omittable<InputFidelity?> inputFidelity;
 
 /// Edit the image in streaming mode. Defaults to `false`. See the
 /// [Image generation guide](/docs/guides/image-generation) for more information.
 /// 
 final bool? stream;
 
-final PartialImages? partialImages;
+final Omittable<PartialImages?> partialImages;
 
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
@@ -256,35 +256,35 @@ Map<String, dynamic> toJson() { return {
   'prompt': prompt,
   'mask': ?mask,
   if (background != null) 'background': background?.toJson(),
-  if (model != null) 'model': model?.toJson(),
+  if (model.isPresent) 'model': model.value?.toJson(),
   'n': ?n,
   if (size != null) 'size': size?.toJson(),
-  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
   if (outputFormat != null) 'output_format': outputFormat?.toJson(),
   'output_compression': ?outputCompression,
   'user': ?user,
-  if (inputFidelity != null) 'input_fidelity': inputFidelity?.toJson(),
+  if (inputFidelity.isPresent) 'input_fidelity': inputFidelity.value?.toJson(),
   'stream': ?stream,
-  if (partialImages != null) 'partial_images': partialImages?.toJson(),
+  if (partialImages.isPresent) 'partial_images': partialImages.value?.toJson(),
   if (quality != null) 'quality': quality?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List Function()? mask, CreateImageEditRequestBackground? Function()? background, CreateImageEditRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestSize? Function()? size, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, String Function()? user, InputFidelity? Function()? inputFidelity, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageEditRequestQuality? Function()? quality, }) { return CreateImageEditRequest(
+CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, CreateImageEditRequestBackground? Function()? background, Omittable<CreateImageEditRequestModel?>? model, int? Function()? n, CreateImageEditRequestSize? Function()? size, Omittable<CreateImageEditRequestResponseFormat?>? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, String? Function()? user, Omittable<InputFidelity?>? inputFidelity, bool? Function()? stream, Omittable<PartialImages?>? partialImages, CreateImageEditRequestQuality? Function()? quality, }) { return CreateImageEditRequest(
   image: image ?? this.image,
   prompt: prompt ?? this.prompt,
   mask: mask != null ? mask() : this.mask,
   background: background != null ? background() : this.background,
-  model: model != null ? model() : this.model,
+  model: model ?? this.model,
   n: n != null ? n() : this.n,
   size: size != null ? size() : this.size,
-  responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
+  responseFormat: responseFormat ?? this.responseFormat,
   outputFormat: outputFormat != null ? outputFormat() : this.outputFormat,
   outputCompression: outputCompression != null ? outputCompression() : this.outputCompression,
   user: user != null ? user() : this.user,
-  inputFidelity: inputFidelity != null ? inputFidelity() : this.inputFidelity,
+  inputFidelity: inputFidelity ?? this.inputFidelity,
   stream: stream != null ? stream() : this.stream,
-  partialImages: partialImages != null ? partialImages() : this.partialImages,
+  partialImages: partialImages ?? this.partialImages,
   quality: quality != null ? quality() : this.quality,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

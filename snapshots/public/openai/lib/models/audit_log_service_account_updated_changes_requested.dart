@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'role': ?role,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-AuditLogServiceAccountUpdatedChangesRequested copyWith({String Function()? role}) { return AuditLogServiceAccountUpdatedChangesRequested(
+AuditLogServiceAccountUpdatedChangesRequested copyWith({String? Function()? role}) { return AuditLogServiceAccountUpdatedChangesRequested(
   role: role != null ? role() : this.role,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

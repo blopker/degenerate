@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions
 /// represent when funds are moved into or out of this balance. This includes funding by the customer, allocation
 /// to payments, and refunds to the customer.
-@immutable final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.netAmount, required this.object, required this.type, this.adjustedForOverdraft, this.appliedToPayment, this.customerAccount, this.funded, this.refundedFromPayment, this.transferredToBalance, this.unappliedFromPayment, });
+@immutable final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.netAmount, required this.object, required this.type, this.adjustedForOverdraft, this.appliedToPayment, this.customerAccount = const Omittable.absent(), this.funded, this.refundedFromPayment, this.transferredToBalance, this.unappliedFromPayment, });
 
 factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerCashBalanceTransaction(
   adjustedForOverdraft: json['adjusted_for_overdraft'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(json['adjusted_for_overdraft'] as Map<String, dynamic>) : null,
@@ -80,7 +80,7 @@ factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { ret
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   endingBalance: (json['ending_balance'] as num).toInt(),
   funded: json['funded'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction.fromJson(json['funded'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
@@ -107,7 +107,7 @@ final String currency;
 final CustomerCashBalanceTransactionCustomer customer;
 
 /// The ID of an Account representing a customer whose available cash balance changed as a result of this transaction.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The total available cash balance for the specified currency after this transaction was applied. Represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int endingBalance;
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
   'created': created,
   'currency': currency,
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'ending_balance': endingBalance,
   if (funded != null) 'funded': funded?.toJson(),
   'id': id,
@@ -162,13 +162,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('net_amount') && json['net_amount'] is num &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction Function()? appliedToPayment, int? created, String? currency, CustomerCashBalanceTransactionCustomer? customer, String? Function()? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction Function()? unappliedFromPayment, }) { return CustomerCashBalanceTransaction(
+CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction? Function()? appliedToPayment, int? created, String? currency, CustomerCashBalanceTransactionCustomer? customer, Omittable<String?>? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction? Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction? Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance? Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? Function()? unappliedFromPayment, }) { return CustomerCashBalanceTransaction(
   adjustedForOverdraft: adjustedForOverdraft != null ? adjustedForOverdraft() : this.adjustedForOverdraft,
   appliedToPayment: appliedToPayment != null ? appliedToPayment() : this.appliedToPayment,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   endingBalance: endingBalance ?? this.endingBalance,
   funded: funded != null ? funded() : this.funded,
   id: id ?? this.id,

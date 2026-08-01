@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (zone != null) 'zone': zone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'action', 'actor', 'id', 'raw', 'resource', 'zone'}.contains(key)); } 
-AaaAuditLogs2 copyWith({AaaAuditLogs2Account Function()? account, AaaAuditLogs2Action Function()? action, AaaAuditLogs2Actor Function()? actor, AaaSchemasIdentifier Function()? id, AaaAuditLogs2Raw Function()? raw, AaaAuditLogs2Resource Function()? resource, AaaAuditLogs2Zone Function()? zone, }) { return AaaAuditLogs2(
+AaaAuditLogs2 copyWith({AaaAuditLogs2Account? Function()? account, AaaAuditLogs2Action? Function()? action, AaaAuditLogs2Actor? Function()? actor, AaaSchemasIdentifier? Function()? id, AaaAuditLogs2Raw? Function()? raw, AaaAuditLogs2Resource? Function()? resource, AaaAuditLogs2Zone? Function()? zone, }) { return AaaAuditLogs2(
   account: account != null ? account() : this.account,
   action: action != null ? action() : this.action,
   actor: actor != null ? actor() : this.actor,

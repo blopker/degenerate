@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-TlsCertificatesAndHostnamesSslUniversalSettingsResponse copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesUniversal Function()? result, }) { return TlsCertificatesAndHostnamesSslUniversalSettingsResponse(
+TlsCertificatesAndHostnamesSslUniversalSettingsResponse copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesUniversal? Function()? result, }) { return TlsCertificatesAndHostnamesSslUniversalSettingsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

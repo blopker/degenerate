@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (perPage != null) 'per_page': perPage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'issues', 'page', 'per_page'}.contains(key)); } 
-GetSecurityCenterIssuesResponseResultVariant1 copyWith({SecurityCenterCount Function()? count, List<SecurityCenterIssue> Function()? issues, SecurityCenterPage Function()? page, SecurityCenterPerPage Function()? perPage, }) { return GetSecurityCenterIssuesResponseResultVariant1(
+GetSecurityCenterIssuesResponseResultVariant1 copyWith({SecurityCenterCount? Function()? count, List<SecurityCenterIssue>? Function()? issues, SecurityCenterPage? Function()? page, SecurityCenterPerPage? Function()? perPage, }) { return GetSecurityCenterIssuesResponseResultVariant1(
   count: count != null ? count() : this.count,
   issues: issues != null ? issues() : this.issues,
   page: page != null ? page() : this.page,

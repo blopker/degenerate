@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'line': ?line,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
-ReposCreateCommitCommentRequest copyWith({String? body, String Function()? path, int Function()? position, int Function()? line, }) { return ReposCreateCommitCommentRequest(
+ReposCreateCommitCommentRequest copyWith({String? body, String? Function()? path, int? Function()? position, int? Function()? line, }) { return ReposCreateCommitCommentRequest(
   body: body ?? this.body,
   path: path != null ? path() : this.path,
   position: position != null ? position() : this.position,

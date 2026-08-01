@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'documentation_url', 'status', 'metadata'}.contains(key)); } 
-RepositoryRuleViolationError copyWith({String Function()? message, String Function()? documentationUrl, String Function()? status, RepositoryRuleViolationErrorMetadata Function()? metadata, }) { return RepositoryRuleViolationError(
+RepositoryRuleViolationError copyWith({String? Function()? message, String? Function()? documentationUrl, String? Function()? status, RepositoryRuleViolationErrorMetadata? Function()? metadata, }) { return RepositoryRuleViolationError(
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   status: status != null ? status() : this.status,

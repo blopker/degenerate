@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('podGroup') && json['podGroup'] is String; } 
-WorkloadReference copyWith({String? name, String? podGroup, String Function()? podGroupReplicaKey, }) { return WorkloadReference(
+WorkloadReference copyWith({String? name, String? podGroup, String? Function()? podGroupReplicaKey, }) { return WorkloadReference(
   name: name ?? this.name,
   podGroup: podGroup ?? this.podGroup,
   podGroupReplicaKey: podGroupReplicaKey != null ? podGroupReplicaKey() : this.podGroupReplicaKey,

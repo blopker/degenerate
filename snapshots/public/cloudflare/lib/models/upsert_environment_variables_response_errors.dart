@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message'}.contains(key)); } 
-UpsertEnvironmentVariablesResponseErrors copyWith({int Function()? code, String Function()? message, }) { return UpsertEnvironmentVariablesResponseErrors(
+UpsertEnvironmentVariablesResponseErrors copyWith({int? Function()? code, String? Function()? message, }) { return UpsertEnvironmentVariablesResponseErrors(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
 ); } 

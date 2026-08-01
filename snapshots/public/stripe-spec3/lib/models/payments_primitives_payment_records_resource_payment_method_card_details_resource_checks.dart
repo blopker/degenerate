@@ -94,33 +94,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck($value)'; } 
  }
 /// 
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks({this.addressLine1Check, this.addressPostalCodeCheck, this.cvcCheck, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks({this.addressLine1Check = const Omittable.absent(), this.addressPostalCodeCheck = const Omittable.absent(), this.cvcCheck = const Omittable.absent(), });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
-  addressLine1Check: json['address_line1_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(json['address_line1_check'] as String) : null,
-  addressPostalCodeCheck: json['address_postal_code_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String) : null,
-  cvcCheck: json['cvc_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck.fromJson(json['cvc_check'] as String) : null,
+  addressLine1Check: json.containsKey('address_line1_check') ? Omittable(json['address_line1_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(json['address_line1_check'] as String) : null) : const Omittable.absent(),
+  addressPostalCodeCheck: json.containsKey('address_postal_code_check') ? Omittable(json['address_postal_code_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String) : null) : const Omittable.absent(),
+  cvcCheck: json.containsKey('cvc_check') ? Omittable(json['cvc_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck.fromJson(json['cvc_check'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// If you provide a value for `address.line1`, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check? addressLine1Check;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check?> addressLine1Check;
 
 /// If you provide a address postal code, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck? addressPostalCodeCheck;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck?> addressPostalCodeCheck;
 
 /// If you provide a CVC, the check results is one of `pass`, `fail`, `unavailable`, or `unchecked`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck? cvcCheck;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck?> cvcCheck;
 
 Map<String, dynamic> toJson() { return {
-  if (addressLine1Check != null) 'address_line1_check': addressLine1Check?.toJson(),
-  if (addressPostalCodeCheck != null) 'address_postal_code_check': addressPostalCodeCheck?.toJson(),
-  if (cvcCheck != null) 'cvc_check': cvcCheck?.toJson(),
+  if (addressLine1Check.isPresent) 'address_line1_check': addressLine1Check.value?.toJson(),
+  if (addressPostalCodeCheck.isPresent) 'address_postal_code_check': addressPostalCodeCheck.value?.toJson(),
+  if (cvcCheck.isPresent) 'cvc_check': cvcCheck.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'cvc_check'}.contains(key)); } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check? Function()? addressLine1Check, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck? Function()? addressPostalCodeCheck, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck? Function()? cvcCheck, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
-  addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
-  addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,
-  cvcCheck: cvcCheck != null ? cvcCheck() : this.cvcCheck,
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks copyWith({Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check?>? addressLine1Check, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck?>? addressPostalCodeCheck, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck?>? cvcCheck, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
+  addressLine1Check: addressLine1Check ?? this.addressLine1Check,
+  addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
+  cvcCheck: cvcCheck ?? this.cvcCheck,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks &&

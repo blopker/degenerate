@@ -25,26 +25,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsBankAccountNetworksSupported($value)'; } 
  }
 /// 
-@immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred, });
+@immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred = const Omittable.absent(), });
 
 factory UsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return UsBankAccountNetworks(
-  preferred: json['preferred'] as String?,
+  preferred: json.containsKey('preferred') ? Omittable(json['preferred'] as String?) : const Omittable.absent(),
   supported: (json['supported'] as List<dynamic>).map((e) => UsBankAccountNetworksSupported.fromJson(e as String)).toList(),
 ); }
 
 /// The preferred network.
-final String? preferred;
+final Omittable<String?> preferred;
 
 /// All supported networks.
 final List<UsBankAccountNetworksSupported> supported;
 
 Map<String, dynamic> toJson() { return {
-  'preferred': ?preferred,
+  if (preferred.isPresent) 'preferred': preferred.value,
   'supported': supported.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported'); } 
-UsBankAccountNetworks copyWith({String? Function()? preferred, List<UsBankAccountNetworksSupported>? supported, }) { return UsBankAccountNetworks(
-  preferred: preferred != null ? preferred() : this.preferred,
+UsBankAccountNetworks copyWith({Omittable<String?>? preferred, List<UsBankAccountNetworksSupported>? supported, }) { return UsBankAccountNetworks(
+  preferred: preferred ?? this.preferred,
   supported: supported ?? this.supported,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

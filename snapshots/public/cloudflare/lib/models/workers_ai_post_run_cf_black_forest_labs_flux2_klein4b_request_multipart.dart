@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'contentType': ?contentType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'contentType'}.contains(key)); } 
-WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart copyWith({Map<String, dynamic> Function()? body, String Function()? contentType, }) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart(
+WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart copyWith({Map<String, dynamic>? Function()? body, String? Function()? contentType, }) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequestMultipart(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

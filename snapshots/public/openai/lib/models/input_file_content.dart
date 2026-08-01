@@ -25,11 +25,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileInputDetail($value)'; } 
  }
 /// A file input to the model.
-@immutable final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
+@immutable final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId = const Omittable.absent(), this.filename, this.fileData, this.fileUrl, this.detail, });
 
 factory InputFileContent.fromJson(Map<String, dynamic> json) { return InputFileContent(
   type: json['type'] as String,
-  fileId: json['file_id'] as String?,
+  fileId: json.containsKey('file_id') ? Omittable(json['file_id'] as String?) : const Omittable.absent(),
   filename: json['filename'] as String?,
   fileData: json['file_data'] as String?,
   fileUrl: json['file_url'] as String?,
@@ -40,7 +40,7 @@ factory InputFileContent.fromJson(Map<String, dynamic> json) { return InputFileC
 final String type;
 
 /// The ID of the file to be sent to the model.
-final String? fileId;
+final Omittable<String?> fileId;
 
 /// The name of the file to be sent to the model.
 final String? filename;
@@ -57,16 +57,16 @@ final FileInputDetail? detail;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'file_id': ?fileId,
+  if (fileId.isPresent) 'file_id': fileId.value,
   'filename': ?filename,
   'file_data': ?fileData,
   'file_url': ?fileUrl,
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-InputFileContent copyWith({String? type, String? Function()? fileId, String Function()? filename, String Function()? fileData, String Function()? fileUrl, FileInputDetail Function()? detail, }) { return InputFileContent(
+InputFileContent copyWith({String? type, Omittable<String?>? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputFileContent(
   type: type ?? this.type,
-  fileId: fileId != null ? fileId() : this.fileId,
+  fileId: fileId ?? this.fileId,
   filename: filename != null ? filename() : this.filename,
   fileData: fileData != null ? fileData() : this.fileData,
   fileUrl: fileUrl != null ? fileUrl() : this.fileUrl,

@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsPaymentRecordOxxo {const PaymentMethodDetailsPaymentRecordOxxo({this.number});
+@immutable final class PaymentMethodDetailsPaymentRecordOxxo {const PaymentMethodDetailsPaymentRecordOxxo({this.number = const Omittable.absent()});
 
 factory PaymentMethodDetailsPaymentRecordOxxo.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordOxxo(
-  number: json['number'] as String?,
+  number: json.containsKey('number') ? Omittable(json['number'] as String?) : const Omittable.absent(),
 ); }
 
 /// OXXO reference number
-final String? number;
+final Omittable<String?> number;
 
 Map<String, dynamic> toJson() { return {
-  'number': ?number,
+  if (number.isPresent) 'number': number.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number'}.contains(key)); } 
-PaymentMethodDetailsPaymentRecordOxxo copyWith({String? Function()? number}) { return PaymentMethodDetailsPaymentRecordOxxo(
-  number: number != null ? number() : this.number,
+PaymentMethodDetailsPaymentRecordOxxo copyWith({Omittable<String?>? number}) { return PaymentMethodDetailsPaymentRecordOxxo(
+  number: number ?? this.number,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordOxxo &&

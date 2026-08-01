@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('clippedFromVideoUID') &&
       json.containsKey('endTimeSeconds') &&
       json.containsKey('startTimeSeconds'); } 
-StreamVideoClipStandard copyWith({List<String> Function()? allowedOrigins, StreamClippedFromVideoUid? clippedFromVideoUid, StreamCreator Function()? creator, StreamEndTimeSeconds? endTimeSeconds, StreamMaxDurationSeconds Function()? maxDurationSeconds, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamStartTimeSeconds? startTimeSeconds, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2 Function()? watermark, }) { return StreamVideoClipStandard(
+StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, StreamClippedFromVideoUid? clippedFromVideoUid, StreamCreator? Function()? creator, StreamEndTimeSeconds? endTimeSeconds, StreamMaxDurationSeconds? Function()? maxDurationSeconds, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamStartTimeSeconds? startTimeSeconds, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2? Function()? watermark, }) { return StreamVideoClipStandard(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   clippedFromVideoUid: clippedFromVideoUid ?? this.clippedFromVideoUid,
   creator: creator != null ? creator() : this.creator,

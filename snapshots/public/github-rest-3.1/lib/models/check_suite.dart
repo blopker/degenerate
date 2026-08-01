@@ -156,18 +156,18 @@ final bool? runsRerequestable;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
-  'head_branch': ?headBranch,
+  'head_branch': headBranch,
   'head_sha': headSha,
-  if (status != null) 'status': status?.toJson(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
-  'url': ?url,
-  'before': ?before,
-  'after': ?after,
-  if (pullRequests != null) 'pull_requests': pullRequests?.map((e) => e.toJson()).toList(),
-  if (app != null) 'app': app?.toJson(),
+  'status': status?.toJson(),
+  'conclusion': conclusion?.toJson(),
+  'url': url,
+  'before': before,
+  'after': after,
+  'pull_requests': pullRequests?.map((e) => e.toJson()).toList(),
+  'app': app?.toJson(),
   'repository': repository.toJson(),
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'head_commit': headCommit.toJson(),
   'latest_check_runs_count': latestCheckRunsCount,
   'check_runs_url': checkRunsUrl,
@@ -191,7 +191,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('head_commit') &&
       json.containsKey('latest_check_runs_count') && json['latest_check_runs_count'] is num &&
       json.containsKey('check_runs_url') && json['check_runs_url'] is String; } 
-CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, String? headSha, CheckSuiteStatus? Function()? status, CheckSuiteConclusion? Function()? conclusion, String? Function()? url, String? Function()? before, String? Function()? after, List<PullRequestMinimal>? Function()? pullRequests, Integration? Function()? app, MinimalRepository? repository, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, SimpleCommit? headCommit, int? latestCheckRunsCount, String? checkRunsUrl, bool Function()? rerequestable, bool Function()? runsRerequestable, }) { return CheckSuite(
+CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, String? headSha, CheckSuiteStatus? Function()? status, CheckSuiteConclusion? Function()? conclusion, String? Function()? url, String? Function()? before, String? Function()? after, List<PullRequestMinimal>? Function()? pullRequests, Integration? Function()? app, MinimalRepository? repository, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, SimpleCommit? headCommit, int? latestCheckRunsCount, String? checkRunsUrl, bool? Function()? rerequestable, bool? Function()? runsRerequestable, }) { return CheckSuite(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   headBranch: headBranch != null ? headBranch() : this.headBranch,

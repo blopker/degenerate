@@ -29,25 +29,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCodeScanningAlertCreatedAlertState($value)'; } 
  }
 /// The code scanning alert involved in the event.
-@immutable final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlertCreatedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.dismissedComment, this.fixedAt, this.instancesUrl, this.mostRecentInstance, this.updatedAt, this.dismissalApprovedBy, this.assignees, });
+@immutable final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlertCreatedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.instancesUrl, this.mostRecentInstance = const Omittable.absent(), this.updatedAt = const Omittable.absent(), this.dismissalApprovedBy = const Omittable.absent(), this.assignees, });
 
 factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlert(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   dismissedAt: json['dismissed_at'],
   dismissedBy: json['dismissed_by'],
-  dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
+  dismissedComment: json.containsKey('dismissed_comment') ? Omittable(json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null) : const Omittable.absent(),
   dismissedReason: json['dismissed_reason'],
-  fixedAt: json['fixed_at'],
+  fixedAt: json.containsKey('fixed_at') ? Omittable(json['fixed_at']) : const Omittable.absent(),
   htmlUrl: Uri.parse(json['html_url'] as String),
   instancesUrl: json['instances_url'] as String?,
-  mostRecentInstance: json['most_recent_instance'] != null ? WebhookCodeScanningAlertCreatedAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
+  mostRecentInstance: json.containsKey('most_recent_instance') ? Omittable(json['most_recent_instance'] != null ? WebhookCodeScanningAlertCreatedAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertCreatedAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   state: json['state'] != null ? WebhookCodeScanningAlertCreatedAlertState.fromJson(json['state'] as String) : null,
   tool: json['tool'] != null ? WebhookCodeScanningAlertCreatedAlertTool.fromJson(json['tool'] as Map<String, dynamic>) : null,
-  updatedAt: json['updated_at'] as String?,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] as String?) : const Omittable.absent(),
   url: Uri.parse(json['url'] as String),
-  dismissalApprovedBy: json['dismissal_approved_by'],
+  dismissalApprovedBy: json.containsKey('dismissal_approved_by') ? Omittable(json['dismissal_approved_by']) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -60,20 +60,20 @@ final dynamic dismissedAt;
 final dynamic dismissedBy;
 
 /// The dismissal comment associated with the dismissal of the alert.
-final CodeScanningAlertDismissedComment? dismissedComment;
+final Omittable<CodeScanningAlertDismissedComment?> dismissedComment;
 
 /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
 final dynamic dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final dynamic fixedAt;
+final Omittable<dynamic> fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
 
 final String? instancesUrl;
 
-final WebhookCodeScanningAlertCreatedAlertMostRecentInstance? mostRecentInstance;
+final Omittable<WebhookCodeScanningAlertCreatedAlertMostRecentInstance?> mostRecentInstance;
 
 /// The code scanning alert number.
 final int number;
@@ -85,31 +85,31 @@ final WebhookCodeScanningAlertCreatedAlertState? state;
 
 final WebhookCodeScanningAlertCreatedAlertTool? tool;
 
-final String? updatedAt;
+final Omittable<String?> updatedAt;
 
 final Uri url;
 
-final dynamic dismissalApprovedBy;
+final Omittable<dynamic> dismissalApprovedBy;
 
 final List<SimpleUser>? assignees;
 
 Map<String, dynamic> toJson() { return {
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  'dismissed_at': ?dismissedAt,
-  'dismissed_by': ?dismissedBy,
-  if (dismissedComment != null) 'dismissed_comment': dismissedComment?.toJson(),
-  'dismissed_reason': ?dismissedReason,
-  'fixed_at': ?fixedAt,
+  'created_at': createdAt?.toIso8601String(),
+  'dismissed_at': dismissedAt,
+  'dismissed_by': dismissedBy,
+  if (dismissedComment.isPresent) 'dismissed_comment': dismissedComment.value?.toJson(),
+  'dismissed_reason': dismissedReason,
+  if (fixedAt.isPresent) 'fixed_at': fixedAt.value,
   'html_url': htmlUrl.toString(),
   'instances_url': ?instancesUrl,
-  if (mostRecentInstance != null) 'most_recent_instance': mostRecentInstance?.toJson(),
+  if (mostRecentInstance.isPresent) 'most_recent_instance': mostRecentInstance.value?.toJson(),
   'number': number,
   'rule': rule.toJson(),
-  if (state != null) 'state': state?.toJson(),
-  if (tool != null) 'tool': tool?.toJson(),
-  'updated_at': ?updatedAt,
+  'state': state?.toJson(),
+  'tool': tool?.toJson(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value,
   'url': url.toString(),
-  'dismissal_approved_by': ?dismissalApprovedBy,
+  if (dismissalApprovedBy.isPresent) 'dismissal_approved_by': dismissalApprovedBy.value,
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
@@ -122,23 +122,23 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertCreatedAlert copyWith({DateTime? Function()? createdAt, dynamic Function()? dismissedAt, dynamic Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, dynamic Function()? dismissedReason, dynamic Function()? fixedAt, Uri? htmlUrl, String Function()? instancesUrl, WebhookCodeScanningAlertCreatedAlertMostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertCreatedAlertRule? rule, WebhookCodeScanningAlertCreatedAlertState? Function()? state, WebhookCodeScanningAlertCreatedAlertTool? Function()? tool, String? Function()? updatedAt, Uri? url, dynamic Function()? dismissalApprovedBy, List<SimpleUser> Function()? assignees, }) { return WebhookCodeScanningAlertCreatedAlert(
+WebhookCodeScanningAlertCreatedAlert copyWith({DateTime? Function()? createdAt, dynamic Function()? dismissedAt, dynamic Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, dynamic Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, String? Function()? instancesUrl, Omittable<WebhookCodeScanningAlertCreatedAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertCreatedAlertRule? rule, WebhookCodeScanningAlertCreatedAlertState? Function()? state, WebhookCodeScanningAlertCreatedAlertTool? Function()? tool, Omittable<String?>? updatedAt, Uri? url, Omittable<dynamic>? dismissalApprovedBy, List<SimpleUser>? Function()? assignees, }) { return WebhookCodeScanningAlertCreatedAlert(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
   dismissedBy: dismissedBy != null ? dismissedBy() : this.dismissedBy,
-  dismissedComment: dismissedComment != null ? dismissedComment() : this.dismissedComment,
+  dismissedComment: dismissedComment ?? this.dismissedComment,
   dismissedReason: dismissedReason != null ? dismissedReason() : this.dismissedReason,
-  fixedAt: fixedAt != null ? fixedAt() : this.fixedAt,
+  fixedAt: fixedAt ?? this.fixedAt,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   instancesUrl: instancesUrl != null ? instancesUrl() : this.instancesUrl,
-  mostRecentInstance: mostRecentInstance != null ? mostRecentInstance() : this.mostRecentInstance,
+  mostRecentInstance: mostRecentInstance ?? this.mostRecentInstance,
   number: number ?? this.number,
   rule: rule ?? this.rule,
   state: state != null ? state() : this.state,
   tool: tool != null ? tool() : this.tool,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-  dismissalApprovedBy: dismissalApprovedBy != null ? dismissalApprovedBy() : this.dismissalApprovedBy,
+  dismissalApprovedBy: dismissalApprovedBy ?? this.dismissalApprovedBy,
   assignees: assignees != null ? assignees() : this.assignees,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

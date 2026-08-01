@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (current != null) 'current': current?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed', 'current'}.contains(key)); } 
-ImagesImagesStatsCount copyWith({ImagesImagesStatsAllowed Function()? allowed, ImagesImagesStatsCurrent Function()? current, }) { return ImagesImagesStatsCount(
+ImagesImagesStatsCount copyWith({ImagesImagesStatsAllowed? Function()? allowed, ImagesImagesStatsCurrent? Function()? current, }) { return ImagesImagesStatsCount(
   allowed: allowed != null ? allowed() : this.allowed,
   current: current != null ? current() : this.current,
 ); } 

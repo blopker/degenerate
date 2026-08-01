@@ -21,29 +21,29 @@ factory UnitPrice.fromJson(num json) => UnitPrice(json.toDouble());
 num toJson() => value;
 
 }
-@immutable final class ComponentValue {const ComponentValue({this.$default, this.name, this.unitPrice, });
+@immutable final class ComponentValue {const ComponentValue({this.$default, this.name = const Omittable.absent(), this.unitPrice, });
 
 factory ComponentValue.fromJson(Map<String, dynamic> json) { return ComponentValue(
   $default: json['default'] != null ? Default.fromJson(json['default'] as num) : null,
-  name: json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as dynamic) : null,
+  name: json.containsKey('name') ? Omittable(json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as dynamic) : null) : const Omittable.absent(),
   unitPrice: json['unit_price'] != null ? UnitPrice.fromJson(json['unit_price'] as num) : null,
 ); }
 
 final Default? $default;
 
-final ComponentsSchemasName? name;
+final Omittable<ComponentsSchemasName?> name;
 
 final UnitPrice? unitPrice;
 
 Map<String, dynamic> toJson() { return {
   if ($default != null) 'default': $default?.toJson(),
-  if (name != null) 'name': name?.toJson(),
+  if (name.isPresent) 'name': name.value?.toJson(),
   if (unitPrice != null) 'unit_price': unitPrice?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'name', 'unit_price'}.contains(key)); } 
-ComponentValue copyWith({Default Function()? $default, ComponentsSchemasName? Function()? name, UnitPrice Function()? unitPrice, }) { return ComponentValue(
+ComponentValue copyWith({Default? Function()? $default, Omittable<ComponentsSchemasName?>? name, UnitPrice? Function()? unitPrice, }) { return ComponentValue(
   $default: $default != null ? $default() : this.$default,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

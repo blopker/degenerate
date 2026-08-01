@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (pem != null) 'pem': pem?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'id', 'jwk', 'pem'}.contains(key)); } 
-StreamKeys copyWith({StreamSigningKeyCreated Function()? created, StreamSchemasIdentifier Function()? id, StreamJwk Function()? jwk, StreamPem Function()? pem, }) { return StreamKeys(
+StreamKeys copyWith({StreamSigningKeyCreated? Function()? created, StreamSchemasIdentifier? Function()? id, StreamJwk? Function()? jwk, StreamPem? Function()? pem, }) { return StreamKeys(
   created: created != null ? created() : this.created,
   id: id != null ? id() : this.id,
   jwk: jwk != null ? jwk() : this.jwk,

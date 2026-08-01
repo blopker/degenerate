@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Timeline Comment Event
-@immutable final class TimelineCommentEvent {const TimelineCommentEvent({required this.event, required this.actor, required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, required this.authorAssociation, this.body, this.bodyText, this.bodyHtml, this.performedViaGithubApp, this.reactions, this.pin, });
+@immutable final class TimelineCommentEvent {const TimelineCommentEvent({required this.event, required this.actor, required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, required this.authorAssociation, this.body, this.bodyText, this.bodyHtml, this.performedViaGithubApp = const Omittable.absent(), this.reactions, this.pin = const Omittable.absent(), });
 
 factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) { return TimelineCommentEvent(
   event: json['event'] as String,
@@ -18,9 +18,9 @@ factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) { return Timeli
   updatedAt: DateTime.parse(json['updated_at'] as String),
   issueUrl: Uri.parse(json['issue_url'] as String),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
+  pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final String event;
@@ -55,11 +55,11 @@ final Uri issueUrl;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-final Integration? performedViaGithubApp;
+final Omittable<Integration?> performedViaGithubApp;
 
 final ReactionRollup? reactions;
 
-final PinnedIssueComment? pin;
+final Omittable<PinnedIssueComment?> pin;
 
 Map<String, dynamic> toJson() { return {
   'event': event,
@@ -76,9 +76,9 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'issue_url': issueUrl.toString(),
   'author_association': authorAssociation.toJson(),
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
-  if (pin != null) 'pin': pin?.toJson(),
+  if (pin.isPresent) 'pin': pin.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] is String &&
       json.containsKey('actor') &&
@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('issue_url') && json['issue_url'] is String &&
       json.containsKey('author_association'); } 
-TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String? nodeId, Uri? url, String Function()? body, String Function()? bodyText, String Function()? bodyHtml, Uri? htmlUrl, SimpleUser? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup Function()? reactions, PinnedIssueComment? Function()? pin, }) { return TimelineCommentEvent(
+TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) { return TimelineCommentEvent(
   event: event ?? this.event,
   actor: actor ?? this.actor,
   id: id ?? this.id,
@@ -106,9 +106,9 @@ TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String
   updatedAt: updatedAt ?? this.updatedAt,
   issueUrl: issueUrl ?? this.issueUrl,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   reactions: reactions != null ? reactions() : this.reactions,
-  pin: pin != null ? pin() : this.pin,
+  pin: pin ?? this.pin,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TimelineCommentEvent &&

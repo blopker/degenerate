@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-Department copyWith({int? id, String? name, Employee Function()? head, List<Employee> Function()? members, }) { return Department(
+Department copyWith({int? id, String? name, Employee? Function()? head, List<Employee>? Function()? members, }) { return Department(
   id: id ?? this.id,
   name: name ?? this.name,
   head: head != null ? head() : this.head,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (nsSet != null) 'ns_set': nsSet?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ns_name'); } 
-DnsCustomNameserversCustomNsInput copyWith({DnsCustomNameserversNsName? nsName, DnsCustomNameserversNsSet Function()? nsSet, }) { return DnsCustomNameserversCustomNsInput(
+DnsCustomNameserversCustomNsInput copyWith({DnsCustomNameserversNsName? nsName, DnsCustomNameserversNsSet? Function()? nsSet, }) { return DnsCustomNameserversCustomNsInput(
   nsName: nsName ?? this.nsName,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
 ); } 

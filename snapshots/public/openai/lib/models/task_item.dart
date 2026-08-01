@@ -67,8 +67,8 @@ Map<String, dynamic> toJson() { return {
   'thread_id': threadId,
   'type': type,
   'task_type': taskType.toJson(),
-  'heading': ?heading,
-  'summary': ?summary,
+  'heading': heading,
+  'summary': summary,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&

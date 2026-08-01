@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') &&
       json.containsKey('modified_on') &&
       json.containsKey('script_name'); } 
-WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, bool Function()? environmentIsDefault, String Function()? environmentName, WorkersIdentifier? id, WorkersModifiedOn? modifiedOn, WorkersScriptName? scriptName, String Function()? serviceName, }) { return WorkerScriptSearchWorkersResponseResult(
+WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, bool? Function()? environmentIsDefault, String? Function()? environmentName, WorkersIdentifier? id, WorkersModifiedOn? modifiedOn, WorkersScriptName? scriptName, String? Function()? serviceName, }) { return WorkerScriptSearchWorkersResponseResult(
   createdOn: createdOn ?? this.createdOn,
   environmentIsDefault: environmentIsDefault != null ? environmentIsDefault() : this.environmentIsDefault,
   environmentName: environmentName != null ? environmentName() : this.environmentName,

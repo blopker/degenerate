@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('image') &&
       json.containsKey('size') && json['size'] is String &&
       json.containsKey('runner_group_id') && json['runner_group_id'] is num; } 
-ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int Function()? maximumRunners, bool Function()? enableStaticIp, bool Function()? imageGen, }) { return ActionsCreateHostedRunnerForOrgRequest(
+ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, bool Function()? imageGen, }) { return ActionsCreateHostedRunnerForOrgRequest(
   name: name ?? this.name,
   image: image ?? this.image,
   size: size ?? this.size,

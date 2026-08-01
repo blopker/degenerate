@@ -96,11 +96,11 @@ Map<String, dynamic> toJson() { return {
   'joinable': joinable,
   'ended': ended,
   'rsvp_url': rsvpUrl,
-  'join_url': ?joinUrl,
+  'join_url': joinUrl,
   'subscribe_url': subscribeUrl,
   'cal_link': calLink,
-  'subscribed': ?subscribed,
-  'user_timezone': ?userTimezone,
+  'subscribed': subscribed,
+  'user_timezone': userTimezone,
   'meeting_provider': meetingProvider.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&

@@ -40,7 +40,7 @@ final class ListModel {
   ListModel copyWith({
     List<$3Incident>? items,
     int? size,
-    Uri Function()? next,
+    Uri? Function()? next,
   }) {
     return ListModel(
       items: items ?? this.items,

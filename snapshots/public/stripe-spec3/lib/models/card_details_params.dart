@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('number') && json['number'] is String; } 
-CardDetailsParams copyWith({String Function()? cvc, int? expMonth, int? expYear, CardDetailsParamsNetworks Function()? networks, String? number, }) { return CardDetailsParams(
+CardDetailsParams copyWith({String? Function()? cvc, int? expMonth, int? expYear, CardDetailsParamsNetworks? Function()? networks, String? number, }) { return CardDetailsParams(
   cvc: cvc != null ? cvc() : this.cvc,
   expMonth: expMonth ?? this.expMonth,
   expYear: expYear ?? this.expYear,

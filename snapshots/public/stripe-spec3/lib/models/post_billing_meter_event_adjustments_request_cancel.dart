@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'identifier': ?identifier,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'identifier'}.contains(key)); } 
-PostBillingMeterEventAdjustmentsRequestCancel copyWith({String Function()? identifier}) { return PostBillingMeterEventAdjustmentsRequestCancel(
+PostBillingMeterEventAdjustmentsRequestCancel copyWith({String? Function()? identifier}) { return PostBillingMeterEventAdjustmentsRequestCancel(
   identifier: identifier != null ? identifier() : this.identifier,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

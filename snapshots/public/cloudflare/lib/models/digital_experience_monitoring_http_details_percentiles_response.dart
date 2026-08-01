@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (serverResponseTimeMs != null) 'serverResponseTimeMs': serverResponseTimeMs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dnsResponseTimeMs', 'resourceFetchTimeMs', 'serverResponseTimeMs'}.contains(key)); } 
-DigitalExperienceMonitoringHttpDetailsPercentilesResponse copyWith({DigitalExperienceMonitoringPercentiles Function()? dnsResponseTimeMs, DigitalExperienceMonitoringPercentiles Function()? resourceFetchTimeMs, DigitalExperienceMonitoringPercentiles Function()? serverResponseTimeMs, }) { return DigitalExperienceMonitoringHttpDetailsPercentilesResponse(
+DigitalExperienceMonitoringHttpDetailsPercentilesResponse copyWith({DigitalExperienceMonitoringPercentiles? Function()? dnsResponseTimeMs, DigitalExperienceMonitoringPercentiles? Function()? resourceFetchTimeMs, DigitalExperienceMonitoringPercentiles? Function()? serverResponseTimeMs, }) { return DigitalExperienceMonitoringHttpDetailsPercentilesResponse(
   dnsResponseTimeMs: dnsResponseTimeMs != null ? dnsResponseTimeMs() : this.dnsResponseTimeMs,
   resourceFetchTimeMs: resourceFetchTimeMs != null ? resourceFetchTimeMs() : this.resourceFetchTimeMs,
   serverResponseTimeMs: serverResponseTimeMs != null ? serverResponseTimeMs() : this.serverResponseTimeMs,

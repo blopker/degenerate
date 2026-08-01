@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'truncate_inputs': truncateInputs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts'); } 
-InputQueryAndContexts copyWith({List<InputQueryAndContextsContexts>? contexts, String Function()? query, bool Function()? truncateInputs, }) { return InputQueryAndContexts(
+InputQueryAndContexts copyWith({List<InputQueryAndContextsContexts>? contexts, String? Function()? query, bool Function()? truncateInputs, }) { return InputQueryAndContexts(
   contexts: contexts ?? this.contexts,
   query: query != null ? query() : this.query,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,

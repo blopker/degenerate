@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'viewer_seconds': ?viewerSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'livestream_id', 'started_time', 'stopped_time', 'updated_at', 'viewer_seconds'}.contains(key)); } 
-LivestreamsLivestreamSessionIdResponseData copyWith({DateTime Function()? createdAt, String Function()? errMessage, String Function()? id, int Function()? ingestSeconds, String Function()? livestreamId, String Function()? startedTime, String Function()? stoppedTime, String Function()? updatedAt, int Function()? viewerSeconds, }) { return LivestreamsLivestreamSessionIdResponseData(
+LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, int? Function()? ingestSeconds, String? Function()? livestreamId, String? Function()? startedTime, String? Function()? stoppedTime, String? Function()? updatedAt, int? Function()? viewerSeconds, }) { return LivestreamsLivestreamSessionIdResponseData(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errMessage: errMessage != null ? errMessage() : this.errMessage,
   id: id != null ? id() : this.id,

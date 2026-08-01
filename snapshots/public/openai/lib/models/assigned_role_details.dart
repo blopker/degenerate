@@ -56,12 +56,12 @@ Map<String, dynamic> toJson() { return {
   'permissions': permissions,
   'resource_type': resourceType,
   'predefined_role': predefinedRole,
-  'description': ?description,
-  'created_at': ?createdAt,
-  'updated_at': ?updatedAt,
-  'created_by': ?createdBy,
-  'created_by_user_obj': ?createdByUserObj,
-  'metadata': ?metadata,
+  'description': description,
+  'created_at': createdAt,
+  'updated_at': updatedAt,
+  'created_by': createdBy,
+  'created_by_user_obj': createdByUserObj,
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&

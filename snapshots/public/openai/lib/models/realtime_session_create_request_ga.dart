@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeSessionCreateRequestGaInclude($value)'; } 
  }
 /// Realtime session object configuration.
-@immutable final class RealtimeSessionCreateRequestGa {const RealtimeSessionCreateRequestGa({required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing, this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateRequestGa {const RealtimeSessionCreateRequestGa({required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
 
 factory RealtimeSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGa(
   type: RealtimeSessionCreateRequestGaType.fromJson(json['type'] as String),
@@ -78,7 +78,7 @@ factory RealtimeSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { ret
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeSessionCreateRequestGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateRequestGaInclude.fromJson(e as String)).toList(),
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => Auto.fromJson(v as String), fromB: (v) => TracingConfiguration3.fromJson(v as Map<String, dynamic>),) : null,
+  tracing: json.containsKey('tracing') ? Omittable(json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => Auto.fromJson(v as String), fromB: (v) => TracingConfiguration3.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RealtimeFunctionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => McpTool.fromJson(v as Map<String, dynamic>),)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateRequestGaMaxOutputTokensVariant2.fromJson(v as String),) : null,
@@ -122,7 +122,7 @@ final List<RealtimeSessionCreateRequestGaInclude>? include;
 /// `auto` will create a trace for the session with default values for the
 /// workflow name, group id, and metadata.
 /// 
-final RealtimeSessionCreateRequestGaTracing? tracing;
+final Omittable<RealtimeSessionCreateRequestGaTracing?> tracing;
 
 /// Tools available to the model.
 final List<RealtimeSessionCreateRequestGaTools>? tools;
@@ -150,7 +150,7 @@ Map<String, dynamic> toJson() { return {
   'instructions': ?instructions,
   if (audio != null) 'audio': audio?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
-  if (tracing != null) 'tracing': tracing?.toJson(),
+  if (tracing.isPresent) 'tracing': tracing.value?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
@@ -158,14 +158,14 @@ Map<String, dynamic> toJson() { return {
   if (prompt != null) 'prompt': prompt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? type, List<RealtimeSessionCreateRequestGaOutputModalities> Function()? outputModalities, RealtimeSessionCreateRequestGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateRequestGaAudio Function()? audio, List<RealtimeSessionCreateRequestGaInclude> Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeSessionCreateRequestGaTools> Function()? tools, RealtimeSessionCreateRequestGaToolChoice Function()? toolChoice, RealtimeSessionCreateRequestGaMaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateRequestGa(
+RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? type, List<RealtimeSessionCreateRequestGaOutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateRequestGaAudio? Function()? audio, List<RealtimeSessionCreateRequestGaInclude>? Function()? include, Omittable<RealtimeSessionCreateRequestGaTracing?>? tracing, List<RealtimeSessionCreateRequestGaTools>? Function()? tools, RealtimeSessionCreateRequestGaToolChoice? Function()? toolChoice, RealtimeSessionCreateRequestGaMaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequestGa(
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   model: model != null ? model() : this.model,
   instructions: instructions != null ? instructions() : this.instructions,
   audio: audio != null ? audio() : this.audio,
   include: include != null ? include() : this.include,
-  tracing: tracing != null ? tracing() : this.tracing,
+  tracing: tracing ?? this.tracing,
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,

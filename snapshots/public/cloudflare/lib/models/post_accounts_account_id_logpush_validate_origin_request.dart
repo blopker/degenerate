@@ -10,7 +10,7 @@ factory PostAccountsAccountIdLogpushValidateOriginRequest.fromJson(Map<String, d
 final LogpushLogpullOptions? logpullOptions;
 
 Map<String, dynamic> toJson() { return {
-  if (logpullOptions != null) 'logpull_options': logpullOptions?.toJson(),
+  'logpull_options': logpullOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('logpull_options'); } 
 PostAccountsAccountIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Function()? logpullOptions}) { return PostAccountsAccountIdLogpushValidateOriginRequest(

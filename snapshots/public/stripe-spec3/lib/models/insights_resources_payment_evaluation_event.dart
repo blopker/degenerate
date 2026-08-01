@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('occurred_at') && json['occurred_at'] is num &&
       json.containsKey('type'); } 
-InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvaluationDisputeOpened Function()? disputeOpened, InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived Function()? earlyFraudWarningReceived, int? occurredAt, InsightsResourcesPaymentEvaluationRefunded Function()? refunded, InsightsResourcesPaymentEvaluationEventType? type, InsightsResourcesPaymentEvaluationUserInterventionRaised Function()? userInterventionRaised, InsightsResourcesPaymentEvaluationUserInterventionResolved Function()? userInterventionResolved, }) { return InsightsResourcesPaymentEvaluationEvent(
+InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvaluationDisputeOpened? Function()? disputeOpened, InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived? Function()? earlyFraudWarningReceived, int? occurredAt, InsightsResourcesPaymentEvaluationRefunded? Function()? refunded, InsightsResourcesPaymentEvaluationEventType? type, InsightsResourcesPaymentEvaluationUserInterventionRaised? Function()? userInterventionRaised, InsightsResourcesPaymentEvaluationUserInterventionResolved? Function()? userInterventionResolved, }) { return InsightsResourcesPaymentEvaluationEvent(
   disputeOpened: disputeOpened != null ? disputeOpened() : this.disputeOpened,
   earlyFraudWarningReceived: earlyFraudWarningReceived != null ? earlyFraudWarningReceived() : this.earlyFraudWarningReceived,
   occurredAt: occurredAt ?? this.occurredAt,

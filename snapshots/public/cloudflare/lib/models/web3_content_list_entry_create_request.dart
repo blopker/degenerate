@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
       json.containsKey('type'); } 
-Web3ContentListEntryCreateRequest copyWith({Web3ContentListEntryContent? content, Web3ContentListEntryDescription Function()? description, Web3ContentListEntryType? type, }) { return Web3ContentListEntryCreateRequest(
+Web3ContentListEntryCreateRequest copyWith({Web3ContentListEntryContent? content, Web3ContentListEntryDescription? Function()? description, Web3ContentListEntryType? type, }) { return Web3ContentListEntryCreateRequest(
   content: content ?? this.content,
   description: description != null ? description() : this.description,
   type: type ?? this.type,

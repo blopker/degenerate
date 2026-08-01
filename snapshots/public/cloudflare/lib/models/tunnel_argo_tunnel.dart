@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conne
       json.containsKey('created_at') &&
       json.containsKey('id') &&
       json.containsKey('name'); } 
-TunnelArgoTunnel copyWith({List<TunnelConnection>? connections, TunnelCreatedAt? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId? id, TunnelTunnelName? name, }) { return TunnelArgoTunnel(
+TunnelArgoTunnel copyWith({List<TunnelConnection>? connections, TunnelCreatedAt? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelTunnelId? id, TunnelTunnelName? name, }) { return TunnelArgoTunnel(
   connections: connections ?? this.connections,
   createdAt: createdAt ?? this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,

@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentsEnumTokenType($value)'; } 
  }
-@immutable final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter, this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });
+@immutable final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter = const Omittable.absent(), this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });
 
 factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) { return CreatePaymentsRequest(
   idempotencyKey: json['IdempotencyKey'] as String,
@@ -92,7 +92,7 @@ factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) { return Creat
   description: json['Description'] as String?,
   input: json['Input'] as String?,
   minPostalCodeLength: json['MinPostalCodeLength'] != null ? (json['MinPostalCodeLength'] as num).toInt() : null,
-  parameter: json['Parameter'],
+  parameter: json.containsKey('Parameter') ? Omittable(json['Parameter']) : const Omittable.absent(),
   paymentConnector: json['PaymentConnector'] as String?,
   paymentMethod: json['PaymentMethod'] != null ? PaymentsEnumPaymentMethod.fromJson(json['PaymentMethod'] as String) : null,
   postalCode: json['PostalCode'] as bool?,
@@ -127,7 +127,7 @@ final String? input;
 final int? minPostalCodeLength;
 
 /// A single-level JSON object used to pass custom parameters to payment processors. (Required for ACH payments). The information that has to be included here depends on the `<Pay>` Connector. [Read more](https://www.twilio.com/console/voice/pay-connectors).
-final dynamic parameter;
+final Omittable<dynamic> parameter;
 
 /// This is the unique name corresponding to the Pay Connector installed in the Twilio Add-ons. Learn more about [`<Pay>` Connectors](https://www.twilio.com/console/voice/pay-connectors). The default value is `Default`.
 final String? paymentConnector;
@@ -159,7 +159,7 @@ Map<String, dynamic> toJson() { return {
   'Description': ?description,
   'Input': ?input,
   'MinPostalCodeLength': ?minPostalCodeLength,
-  'Parameter': ?parameter,
+  if (parameter.isPresent) 'Parameter': parameter.value,
   'PaymentConnector': ?paymentConnector,
   if (paymentMethod != null) 'PaymentMethod': paymentMethod?.toJson(),
   'PostalCode': ?postalCode,
@@ -170,7 +170,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
       json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType Function()? bankAccountType, double Function()? chargeAmount, String Function()? currency, String Function()? description, String Function()? input, int Function()? minPostalCodeLength, dynamic Function()? parameter, String Function()? paymentConnector, PaymentsEnumPaymentMethod Function()? paymentMethod, bool Function()? postalCode, bool Function()? securityCode, int Function()? timeout, PaymentsEnumTokenType Function()? tokenType, String Function()? validCardTypes, }) { return CreatePaymentsRequest(
+CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType? Function()? bankAccountType, double? Function()? chargeAmount, String? Function()? currency, String? Function()? description, String? Function()? input, int? Function()? minPostalCodeLength, Omittable<dynamic>? parameter, String? Function()? paymentConnector, PaymentsEnumPaymentMethod? Function()? paymentMethod, bool? Function()? postalCode, bool? Function()? securityCode, int? Function()? timeout, PaymentsEnumTokenType? Function()? tokenType, String? Function()? validCardTypes, }) { return CreatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   bankAccountType: bankAccountType != null ? bankAccountType() : this.bankAccountType,
@@ -179,7 +179,7 @@ CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
   description: description != null ? description() : this.description,
   input: input != null ? input() : this.input,
   minPostalCodeLength: minPostalCodeLength != null ? minPostalCodeLength() : this.minPostalCodeLength,
-  parameter: parameter != null ? parameter() : this.parameter,
+  parameter: parameter ?? this.parameter,
   paymentConnector: paymentConnector != null ? paymentConnector() : this.paymentConnector,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   postalCode: postalCode != null ? postalCode() : this.postalCode,

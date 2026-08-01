@@ -31,12 +31,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateCommitStatusRequestState($value)'; } 
  }
-@immutable final class ReposCreateCommitStatusRequest {const ReposCreateCommitStatusRequest({required this.state, this.targetUrl, this.description, this.context = 'default', });
+@immutable final class ReposCreateCommitStatusRequest {const ReposCreateCommitStatusRequest({required this.state, this.targetUrl = const Omittable.absent(), this.description = const Omittable.absent(), this.context = 'default', });
 
 factory ReposCreateCommitStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateCommitStatusRequest(
   state: ReposCreateCommitStatusRequestState.fromJson(json['state'] as String),
-  targetUrl: json['target_url'] as String?,
-  description: json['description'] as String?,
+  targetUrl: json.containsKey('target_url') ? Omittable(json['target_url'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   context: json.containsKey('context') ? json['context'] as String : 'default',
 ); }
 
@@ -46,25 +46,25 @@ final ReposCreateCommitStatusRequestState state;
 /// The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status.
 /// For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:
 /// `http://ci.example.com/user/repo/build/sha`
-final String? targetUrl;
+final Omittable<String?> targetUrl;
 
 /// A short description of the status.
-final String? description;
+final Omittable<String?> description;
 
 /// A string label to differentiate this status from the status of other systems. This field is case-insensitive.
 final String context;
 
 Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
-  'target_url': ?targetUrl,
-  'description': ?description,
+  if (targetUrl.isPresent) 'target_url': targetUrl.value,
+  if (description.isPresent) 'description': description.value,
   'context': context,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateCommitStatusRequest copyWith({ReposCreateCommitStatusRequestState? state, String? Function()? targetUrl, String? Function()? description, String Function()? context, }) { return ReposCreateCommitStatusRequest(
+ReposCreateCommitStatusRequest copyWith({ReposCreateCommitStatusRequestState? state, Omittable<String?>? targetUrl, Omittable<String?>? description, String Function()? context, }) { return ReposCreateCommitStatusRequest(
   state: state ?? this.state,
-  targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
-  description: description != null ? description() : this.description,
+  targetUrl: targetUrl ?? this.targetUrl,
+  description: description ?? this.description,
   context: context != null ? context() : this.context,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

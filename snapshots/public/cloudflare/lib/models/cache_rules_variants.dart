@@ -23,27 +23,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesVariantsId($value)'; } 
  }
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
-@immutable final class CacheRulesVariants {const CacheRulesVariants({required this.id, this.modifiedOn, });
+@immutable final class CacheRulesVariants {const CacheRulesVariants({required this.id, this.modifiedOn = const Omittable.absent(), });
 
 factory CacheRulesVariants.fromJson(Map<String, dynamic> json) { return CacheRulesVariants(
   id: CacheRulesVariantsId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// ID of the zone setting.
 final CacheRulesVariantsId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesVariants copyWith({CacheRulesVariantsId? id, DateTime? Function()? modifiedOn, }) { return CacheRulesVariants(
+CacheRulesVariants copyWith({CacheRulesVariantsId? id, Omittable<DateTime?>? modifiedOn, }) { return CacheRulesVariants(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CacheRulesVariants &&

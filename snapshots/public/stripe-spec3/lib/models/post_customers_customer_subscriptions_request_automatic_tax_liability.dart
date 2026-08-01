@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability copyWith({String Function()? account, PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiabilityType? type, }) { return PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability(
+PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability copyWith({String? Function()? account, PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiabilityType? type, }) { return PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
 ); } 

@@ -64,13 +64,13 @@ final class MobileSpaceDetailSchema {
     return {
       'slug': slug,
       'title': title,
-      'image_link': ?imageLink,
+      'image_link': imageLink,
       'short_description': shortDescription,
       'content': content,
       'author': author.toJson(),
-      'category': ?category,
+      'category': category,
       'subscribers': subscribers,
-      'recurring': ?recurring,
+      'recurring': recurring,
       'price': price,
       'next_events': nextEvents.map((e) => e.toJson()).toList(),
     };

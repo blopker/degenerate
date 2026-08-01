@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'caller', 'reason'}.contains(key)); } 
-RealtimekitStopReason copyWith({RealtimekitStopReasonCaller Function()? caller, RealtimekitStopReasonReason Function()? reason, }) { return RealtimekitStopReason(
+RealtimekitStopReason copyWith({RealtimekitStopReasonCaller? Function()? caller, RealtimekitStopReasonReason? Function()? reason, }) { return RealtimekitStopReason(
   caller: caller != null ? caller() : this.caller,
   reason: reason != null ? reason() : this.reason,
 ); } 

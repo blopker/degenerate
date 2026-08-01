@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (document != null) 'document': document?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
-PostIdentityVerificationSessionsRequestOptions copyWith({PostIdentityVerificationSessionsRequestOptionsDocument Function()? document}) { return PostIdentityVerificationSessionsRequestOptions(
+PostIdentityVerificationSessionsRequestOptions copyWith({PostIdentityVerificationSessionsRequestOptionsDocument? Function()? document}) { return PostIdentityVerificationSessionsRequestOptions(
   document: document != null ? document() : this.document,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

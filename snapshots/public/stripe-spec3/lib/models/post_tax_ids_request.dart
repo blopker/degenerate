@@ -384,7 +384,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
-PostTaxIdsRequest copyWith({List<String> Function()? expand, PostTaxIdsRequestOwner Function()? owner, PostTaxIdsRequestType? type, String? value, }) { return PostTaxIdsRequest(
+PostTaxIdsRequest copyWith({List<String>? Function()? expand, PostTaxIdsRequestOwner? Function()? owner, PostTaxIdsRequestType? type, String? value, }) { return PostTaxIdsRequest(
   expand: expand != null ? expand() : this.expand,
   owner: owner != null ? owner() : this.owner,
   type: type ?? this.type,

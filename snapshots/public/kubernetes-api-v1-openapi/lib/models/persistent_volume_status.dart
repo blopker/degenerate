@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lastPhaseTransitionTime', 'message', 'phase', 'reason'}.contains(key)); } 
-PersistentVolumeStatus copyWith({Time Function()? lastPhaseTransitionTime, String Function()? message, String Function()? phase, String Function()? reason, }) { return PersistentVolumeStatus(
+PersistentVolumeStatus copyWith({Time? Function()? lastPhaseTransitionTime, String? Function()? message, String? Function()? phase, String? Function()? reason, }) { return PersistentVolumeStatus(
   lastPhaseTransitionTime: lastPhaseTransitionTime != null ? lastPhaseTransitionTime() : this.lastPhaseTransitionTime,
   message: message != null ? message() : this.message,
   phase: phase != null ? phase() : this.phase,

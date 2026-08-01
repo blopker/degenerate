@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'unit_cost_decimal': ?unitCostDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel copyWith({String Function()? industryProductCode, String Function()? quantityDecimal, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType Function()? type, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit Function()? unit, String Function()? unitCostDecimal, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType? Function()? type, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
   industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
   quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
   type: type != null ? type() : this.type,

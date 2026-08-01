@@ -125,141 +125,141 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountApplicationVoiceMethod($value)'; } 
  }
-@immutable final class AccountApplication {const AccountApplication({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.messageStatusCallback, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsStatusCallback, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.uri, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.publicApplicationConnectEnabled, });
+@immutable final class AccountApplication {const AccountApplication({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.messageStatusCallback = const Omittable.absent(), this.sid = const Omittable.absent(), this.smsFallbackMethod = const Omittable.absent(), this.smsFallbackUrl = const Omittable.absent(), this.smsMethod = const Omittable.absent(), this.smsStatusCallback = const Omittable.absent(), this.smsUrl = const Omittable.absent(), this.statusCallback = const Omittable.absent(), this.statusCallbackMethod = const Omittable.absent(), this.uri = const Omittable.absent(), this.voiceCallerIdLookup = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.publicApplicationConnectEnabled = const Omittable.absent(), });
 
 factory AccountApplication.fromJson(Map<String, dynamic> json) { return AccountApplication(
-  accountSid: json['account_sid'] as String?,
-  apiVersion: json['api_version'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  friendlyName: json['friendly_name'] as String?,
-  messageStatusCallback: json['message_status_callback'] != null ? Uri.parse(json['message_status_callback'] as String) : null,
-  sid: json['sid'] as String?,
-  smsFallbackMethod: json['sms_fallback_method'] != null ? AccountApplicationSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null,
-  smsFallbackUrl: json['sms_fallback_url'] != null ? Uri.parse(json['sms_fallback_url'] as String) : null,
-  smsMethod: json['sms_method'] != null ? AccountApplicationSmsMethod.fromJson(json['sms_method'] as String) : null,
-  smsStatusCallback: json['sms_status_callback'] != null ? Uri.parse(json['sms_status_callback'] as String) : null,
-  smsUrl: json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null,
-  statusCallback: json['status_callback'] != null ? Uri.parse(json['status_callback'] as String) : null,
-  statusCallbackMethod: json['status_callback_method'] != null ? AccountApplicationStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null,
-  uri: json['uri'] as String?,
-  voiceCallerIdLookup: json['voice_caller_id_lookup'] as bool?,
-  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountApplicationVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
-  voiceFallbackUrl: json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null,
-  voiceMethod: json['voice_method'] != null ? AccountApplicationVoiceMethod.fromJson(json['voice_method'] as String) : null,
-  voiceUrl: json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null,
-  publicApplicationConnectEnabled: json['public_application_connect_enabled'] as bool?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
+  messageStatusCallback: json.containsKey('message_status_callback') ? Omittable(json['message_status_callback'] != null ? Uri.parse(json['message_status_callback'] as String) : null) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  smsFallbackMethod: json.containsKey('sms_fallback_method') ? Omittable(json['sms_fallback_method'] != null ? AccountApplicationSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null) : const Omittable.absent(),
+  smsFallbackUrl: json.containsKey('sms_fallback_url') ? Omittable(json['sms_fallback_url'] != null ? Uri.parse(json['sms_fallback_url'] as String) : null) : const Omittable.absent(),
+  smsMethod: json.containsKey('sms_method') ? Omittable(json['sms_method'] != null ? AccountApplicationSmsMethod.fromJson(json['sms_method'] as String) : null) : const Omittable.absent(),
+  smsStatusCallback: json.containsKey('sms_status_callback') ? Omittable(json['sms_status_callback'] != null ? Uri.parse(json['sms_status_callback'] as String) : null) : const Omittable.absent(),
+  smsUrl: json.containsKey('sms_url') ? Omittable(json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null) : const Omittable.absent(),
+  statusCallback: json.containsKey('status_callback') ? Omittable(json['status_callback'] != null ? Uri.parse(json['status_callback'] as String) : null) : const Omittable.absent(),
+  statusCallbackMethod: json.containsKey('status_callback_method') ? Omittable(json['status_callback_method'] != null ? AccountApplicationStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
+  voiceCallerIdLookup: json.containsKey('voice_caller_id_lookup') ? Omittable(json['voice_caller_id_lookup'] as bool?) : const Omittable.absent(),
+  voiceFallbackMethod: json.containsKey('voice_fallback_method') ? Omittable(json['voice_fallback_method'] != null ? AccountApplicationVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null) : const Omittable.absent(),
+  voiceFallbackUrl: json.containsKey('voice_fallback_url') ? Omittable(json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null) : const Omittable.absent(),
+  voiceMethod: json.containsKey('voice_method') ? Omittable(json['voice_method'] != null ? AccountApplicationVoiceMethod.fromJson(json['voice_method'] as String) : null) : const Omittable.absent(),
+  voiceUrl: json.containsKey('voice_url') ? Omittable(json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null) : const Omittable.absent(),
+  publicApplicationConnectEnabled: json.containsKey('public_application_connect_enabled') ? Omittable(json['public_application_connect_enabled'] as bool?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Application resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The API version used to start a new TwiML session.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The string that you assigned to describe the resource.
-final String? friendlyName;
+final Omittable<String?> friendlyName;
 
 /// The URL we call using a POST method to send message status information to your application.
-final Uri? messageStatusCallback;
+final Omittable<Uri?> messageStatusCallback;
 
 /// The unique string that that we created to identify the Application resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-final AccountApplicationSmsFallbackMethod? smsFallbackMethod;
+final Omittable<AccountApplicationSmsFallbackMethod?> smsFallbackMethod;
 
 /// The URL that we call when an error occurs while retrieving or executing the TwiML from `sms_url`.
-final Uri? smsFallbackUrl;
+final Omittable<Uri?> smsFallbackUrl;
 
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-final AccountApplicationSmsMethod? smsMethod;
+final Omittable<AccountApplicationSmsMethod?> smsMethod;
 
 /// The URL we call using a POST method to send status information to your application about SMS messages that refer to the application.
-final Uri? smsStatusCallback;
+final Omittable<Uri?> smsStatusCallback;
 
 /// The URL we call when the phone number receives an incoming SMS message.
-final Uri? smsUrl;
+final Omittable<Uri?> smsUrl;
 
 /// The URL we call using the `status_callback_method` to send status information to your application.
-final Uri? statusCallback;
+final Omittable<Uri?> statusCallback;
 
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-final AccountApplicationStatusCallbackMethod? statusCallbackMethod;
+final Omittable<AccountApplicationStatusCallbackMethod?> statusCallbackMethod;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// Whether we look up the caller's caller-ID name from the CNAM database (additional charges apply). Can be: `true` or `false`.
-final bool? voiceCallerIdLookup;
+final Omittable<bool?> voiceCallerIdLookup;
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final AccountApplicationVoiceFallbackMethod? voiceFallbackMethod;
+final Omittable<AccountApplicationVoiceFallbackMethod?> voiceFallbackMethod;
 
 /// The URL that we call when an error occurs retrieving or executing the TwiML requested by `url`.
-final Uri? voiceFallbackUrl;
+final Omittable<Uri?> voiceFallbackUrl;
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final AccountApplicationVoiceMethod? voiceMethod;
+final Omittable<AccountApplicationVoiceMethod?> voiceMethod;
 
 /// The URL we call when the phone number assigned to this application receives a call.
-final Uri? voiceUrl;
+final Omittable<Uri?> voiceUrl;
 
 /// Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`.
-final bool? publicApplicationConnectEnabled;
+final Omittable<bool?> publicApplicationConnectEnabled;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'api_version': ?apiVersion,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'friendly_name': ?friendlyName,
-  if (messageStatusCallback != null) 'message_status_callback': messageStatusCallback?.toString(),
-  'sid': ?sid,
-  if (smsFallbackMethod != null) 'sms_fallback_method': smsFallbackMethod?.toJson(),
-  if (smsFallbackUrl != null) 'sms_fallback_url': smsFallbackUrl?.toString(),
-  if (smsMethod != null) 'sms_method': smsMethod?.toJson(),
-  if (smsStatusCallback != null) 'sms_status_callback': smsStatusCallback?.toString(),
-  if (smsUrl != null) 'sms_url': smsUrl?.toString(),
-  if (statusCallback != null) 'status_callback': statusCallback?.toString(),
-  if (statusCallbackMethod != null) 'status_callback_method': statusCallbackMethod?.toJson(),
-  'uri': ?uri,
-  'voice_caller_id_lookup': ?voiceCallerIdLookup,
-  if (voiceFallbackMethod != null) 'voice_fallback_method': voiceFallbackMethod?.toJson(),
-  if (voiceFallbackUrl != null) 'voice_fallback_url': voiceFallbackUrl?.toString(),
-  if (voiceMethod != null) 'voice_method': voiceMethod?.toJson(),
-  if (voiceUrl != null) 'voice_url': voiceUrl?.toString(),
-  'public_application_connect_enabled': ?publicApplicationConnectEnabled,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
+  if (messageStatusCallback.isPresent) 'message_status_callback': messageStatusCallback.value?.toString(),
+  if (sid.isPresent) 'sid': sid.value,
+  if (smsFallbackMethod.isPresent) 'sms_fallback_method': smsFallbackMethod.value?.toJson(),
+  if (smsFallbackUrl.isPresent) 'sms_fallback_url': smsFallbackUrl.value?.toString(),
+  if (smsMethod.isPresent) 'sms_method': smsMethod.value?.toJson(),
+  if (smsStatusCallback.isPresent) 'sms_status_callback': smsStatusCallback.value?.toString(),
+  if (smsUrl.isPresent) 'sms_url': smsUrl.value?.toString(),
+  if (statusCallback.isPresent) 'status_callback': statusCallback.value?.toString(),
+  if (statusCallbackMethod.isPresent) 'status_callback_method': statusCallbackMethod.value?.toJson(),
+  if (uri.isPresent) 'uri': uri.value,
+  if (voiceCallerIdLookup.isPresent) 'voice_caller_id_lookup': voiceCallerIdLookup.value,
+  if (voiceFallbackMethod.isPresent) 'voice_fallback_method': voiceFallbackMethod.value?.toJson(),
+  if (voiceFallbackUrl.isPresent) 'voice_fallback_url': voiceFallbackUrl.value?.toString(),
+  if (voiceMethod.isPresent) 'voice_method': voiceMethod.value?.toJson(),
+  if (voiceUrl.isPresent) 'voice_url': voiceUrl.value?.toString(),
+  if (publicApplicationConnectEnabled.isPresent) 'public_application_connect_enabled': publicApplicationConnectEnabled.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'message_status_callback', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_status_callback', 'sms_url', 'status_callback', 'status_callback_method', 'uri', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'public_application_connect_enabled'}.contains(key)); } 
-AccountApplication copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, Uri? Function()? messageStatusCallback, String? Function()? sid, AccountApplicationSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountApplicationSmsMethod? Function()? smsMethod, Uri? Function()? smsStatusCallback, Uri? Function()? smsUrl, Uri? Function()? statusCallback, AccountApplicationStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? uri, bool? Function()? voiceCallerIdLookup, AccountApplicationVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountApplicationVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, bool? Function()? publicApplicationConnectEnabled, }) { return AccountApplication(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-  messageStatusCallback: messageStatusCallback != null ? messageStatusCallback() : this.messageStatusCallback,
-  sid: sid != null ? sid() : this.sid,
-  smsFallbackMethod: smsFallbackMethod != null ? smsFallbackMethod() : this.smsFallbackMethod,
-  smsFallbackUrl: smsFallbackUrl != null ? smsFallbackUrl() : this.smsFallbackUrl,
-  smsMethod: smsMethod != null ? smsMethod() : this.smsMethod,
-  smsStatusCallback: smsStatusCallback != null ? smsStatusCallback() : this.smsStatusCallback,
-  smsUrl: smsUrl != null ? smsUrl() : this.smsUrl,
-  statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
-  statusCallbackMethod: statusCallbackMethod != null ? statusCallbackMethod() : this.statusCallbackMethod,
-  uri: uri != null ? uri() : this.uri,
-  voiceCallerIdLookup: voiceCallerIdLookup != null ? voiceCallerIdLookup() : this.voiceCallerIdLookup,
-  voiceFallbackMethod: voiceFallbackMethod != null ? voiceFallbackMethod() : this.voiceFallbackMethod,
-  voiceFallbackUrl: voiceFallbackUrl != null ? voiceFallbackUrl() : this.voiceFallbackUrl,
-  voiceMethod: voiceMethod != null ? voiceMethod() : this.voiceMethod,
-  voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,
-  publicApplicationConnectEnabled: publicApplicationConnectEnabled != null ? publicApplicationConnectEnabled() : this.publicApplicationConnectEnabled,
+AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<Uri?>? messageStatusCallback, Omittable<String?>? sid, Omittable<AccountApplicationSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountApplicationSmsMethod?>? smsMethod, Omittable<Uri?>? smsStatusCallback, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountApplicationStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? uri, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountApplicationVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountApplicationVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, Omittable<bool?>? publicApplicationConnectEnabled, }) { return AccountApplication(
+  accountSid: accountSid ?? this.accountSid,
+  apiVersion: apiVersion ?? this.apiVersion,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  friendlyName: friendlyName ?? this.friendlyName,
+  messageStatusCallback: messageStatusCallback ?? this.messageStatusCallback,
+  sid: sid ?? this.sid,
+  smsFallbackMethod: smsFallbackMethod ?? this.smsFallbackMethod,
+  smsFallbackUrl: smsFallbackUrl ?? this.smsFallbackUrl,
+  smsMethod: smsMethod ?? this.smsMethod,
+  smsStatusCallback: smsStatusCallback ?? this.smsStatusCallback,
+  smsUrl: smsUrl ?? this.smsUrl,
+  statusCallback: statusCallback ?? this.statusCallback,
+  statusCallbackMethod: statusCallbackMethod ?? this.statusCallbackMethod,
+  uri: uri ?? this.uri,
+  voiceCallerIdLookup: voiceCallerIdLookup ?? this.voiceCallerIdLookup,
+  voiceFallbackMethod: voiceFallbackMethod ?? this.voiceFallbackMethod,
+  voiceFallbackUrl: voiceFallbackUrl ?? this.voiceFallbackUrl,
+  voiceMethod: voiceMethod ?? this.voiceMethod,
+  voiceUrl: voiceUrl ?? this.voiceUrl,
+  publicApplicationConnectEnabled: publicApplicationConnectEnabled ?? this.publicApplicationConnectEnabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountApplication &&

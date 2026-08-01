@@ -80,34 +80,34 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationRequestReason($value)'; } 
  }
 /// 
-@immutable final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({required this.amount, required this.approved, required this.created, required this.currency, required this.merchantAmount, required this.merchantCurrency, required this.reason, this.amountDetails, this.authorizationCode, this.networkRiskScore, this.reasonMessage, this.requestedAt, });
+@immutable final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({required this.amount, required this.approved, required this.created, required this.currency, required this.merchantAmount, required this.merchantCurrency, required this.reason, this.amountDetails = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.networkRiskScore = const Omittable.absent(), this.reasonMessage = const Omittable.absent(), this.requestedAt = const Omittable.absent(), });
 
 factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   approved: json['approved'] as bool,
-  authorizationCode: json['authorization_code'] as String?,
+  authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
-  networkRiskScore: json['network_risk_score'] != null ? (json['network_risk_score'] as num).toInt() : null,
+  networkRiskScore: json.containsKey('network_risk_score') ? Omittable(json['network_risk_score'] != null ? (json['network_risk_score'] as num).toInt() : null) : const Omittable.absent(),
   reason: IssuingAuthorizationRequestReason.fromJson(json['reason'] as String),
-  reasonMessage: json['reason_message'] as String?,
-  requestedAt: json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null,
+  reasonMessage: json.containsKey('reason_message') ? Omittable(json['reason_message'] as String?) : const Omittable.absent(),
+  requestedAt: json.containsKey('requested_at') ? Omittable(json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The `pending_request.amount` at the time of the request, presented in your card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Stripe held this amount from your account to fund the authorization if the request was approved.
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingAuthorizationAmountDetails? amountDetails;
+final Omittable<IssuingAuthorizationAmountDetails?> amountDetails;
 
 /// Whether this request was approved.
 final bool approved;
 
 /// A code created by Stripe which is shared with the merchant to validate the authorization. This field will be populated if the authorization message was approved. The code typically starts with the letter "S", followed by a six-digit number. For example, "S498162". Please note that the code is not guaranteed to be unique across authorizations.
-final String? authorizationCode;
+final Omittable<String?> authorizationCode;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -122,30 +122,30 @@ final int merchantAmount;
 final String merchantCurrency;
 
 /// The card network's estimate of the likelihood that an authorization is fraudulent. Takes on values between 1 and 99.
-final int? networkRiskScore;
+final Omittable<int?> networkRiskScore;
 
 /// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
 final IssuingAuthorizationRequestReason reason;
 
 /// If the `request_history.reason` is `webhook_error` because the direct webhook response is invalid (for example, parsing errors or missing parameters), we surface a more detailed error message via this field.
-final String? reasonMessage;
+final Omittable<String?> reasonMessage;
 
 /// Time when the card network received an authorization request from the acquirer in UTC. Referred to by networks as transmission time.
-final int? requestedAt;
+final Omittable<int?> requestedAt;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
+  if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   'approved': approved,
-  'authorization_code': ?authorizationCode,
+  if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
   'created': created,
   'currency': currency,
   'merchant_amount': merchantAmount,
   'merchant_currency': merchantCurrency,
-  'network_risk_score': ?networkRiskScore,
+  if (networkRiskScore.isPresent) 'network_risk_score': networkRiskScore.value,
   'reason': reason.toJson(),
-  'reason_message': ?reasonMessage,
-  'requested_at': ?requestedAt,
+  if (reasonMessage.isPresent) 'reason_message': reasonMessage.value,
+  if (requestedAt.isPresent) 'requested_at': requestedAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('approved') && json['approved'] is bool &&
@@ -154,19 +154,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('merchant_amount') && json['merchant_amount'] is num &&
       json.containsKey('merchant_currency') && json['merchant_currency'] is String &&
       json.containsKey('reason'); } 
-IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, String? Function()? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, IssuingAuthorizationRequestReason? reason, String? Function()? reasonMessage, int? Function()? requestedAt, }) { return IssuingAuthorizationRequest(
+IssuingAuthorizationRequest copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, bool? approved, Omittable<String?>? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, Omittable<int?>? networkRiskScore, IssuingAuthorizationRequestReason? reason, Omittable<String?>? reasonMessage, Omittable<int?>? requestedAt, }) { return IssuingAuthorizationRequest(
   amount: amount ?? this.amount,
-  amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
+  amountDetails: amountDetails ?? this.amountDetails,
   approved: approved ?? this.approved,
-  authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
+  authorizationCode: authorizationCode ?? this.authorizationCode,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   merchantAmount: merchantAmount ?? this.merchantAmount,
   merchantCurrency: merchantCurrency ?? this.merchantCurrency,
-  networkRiskScore: networkRiskScore != null ? networkRiskScore() : this.networkRiskScore,
+  networkRiskScore: networkRiskScore ?? this.networkRiskScore,
   reason: reason ?? this.reason,
-  reasonMessage: reasonMessage != null ? reasonMessage() : this.reasonMessage,
-  requestedAt: requestedAt != null ? requestedAt() : this.requestedAt,
+  reasonMessage: reasonMessage ?? this.reasonMessage,
+  requestedAt: requestedAt ?? this.requestedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorizationRequest &&

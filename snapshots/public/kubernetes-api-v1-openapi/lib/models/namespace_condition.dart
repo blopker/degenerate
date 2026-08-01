@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-NamespaceCondition copyWith({Time Function()? lastTransitionTime, String Function()? message, String Function()? reason, String? status, String? type, }) { return NamespaceCondition(
+NamespaceCondition copyWith({Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) { return NamespaceCondition(
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,

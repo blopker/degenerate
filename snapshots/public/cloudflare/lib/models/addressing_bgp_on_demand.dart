@@ -21,33 +21,33 @@ factory AddressingSchemasOnDemandLocked.fromJson(bool json) => AddressingSchemas
 bool toJson() => value;
 
 }
-@immutable final class AddressingBgpOnDemand {const AddressingBgpOnDemand({this.advertised, this.advertisedModifiedAt, this.onDemandEnabled, this.onDemandLocked, });
+@immutable final class AddressingBgpOnDemand {const AddressingBgpOnDemand({this.advertised = const Omittable.absent(), this.advertisedModifiedAt = const Omittable.absent(), this.onDemandEnabled, this.onDemandLocked, });
 
 factory AddressingBgpOnDemand.fromJson(Map<String, dynamic> json) { return AddressingBgpOnDemand(
-  advertised: json['advertised'] != null ? AddressingSchemasAdvertised.fromJson(json['advertised'] as bool) : null,
-  advertisedModifiedAt: json['advertised_modified_at'] != null ? AddressingModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null,
+  advertised: json.containsKey('advertised') ? Omittable(json['advertised'] != null ? AddressingSchemasAdvertised.fromJson(json['advertised'] as bool) : null) : const Omittable.absent(),
+  advertisedModifiedAt: json.containsKey('advertised_modified_at') ? Omittable(json['advertised_modified_at'] != null ? AddressingModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null) : const Omittable.absent(),
   onDemandEnabled: json['on_demand_enabled'] != null ? AddressingSchemasOnDemandEnabled.fromJson(json['on_demand_enabled'] as bool) : null,
   onDemandLocked: json['on_demand_locked'] != null ? AddressingSchemasOnDemandLocked.fromJson(json['on_demand_locked'] as bool) : null,
 ); }
 
-final AddressingSchemasAdvertised? advertised;
+final Omittable<AddressingSchemasAdvertised?> advertised;
 
-final AddressingModifiedAtNullable? advertisedModifiedAt;
+final Omittable<AddressingModifiedAtNullable?> advertisedModifiedAt;
 
 final AddressingSchemasOnDemandEnabled? onDemandEnabled;
 
 final AddressingSchemasOnDemandLocked? onDemandLocked;
 
 Map<String, dynamic> toJson() { return {
-  if (advertised != null) 'advertised': advertised?.toJson(),
-  if (advertisedModifiedAt != null) 'advertised_modified_at': advertisedModifiedAt?.toJson(),
+  if (advertised.isPresent) 'advertised': advertised.value?.toJson(),
+  if (advertisedModifiedAt.isPresent) 'advertised_modified_at': advertisedModifiedAt.value?.toJson(),
   if (onDemandEnabled != null) 'on_demand_enabled': onDemandEnabled?.toJson(),
   if (onDemandLocked != null) 'on_demand_locked': onDemandLocked?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised', 'advertised_modified_at', 'on_demand_enabled', 'on_demand_locked'}.contains(key)); } 
-AddressingBgpOnDemand copyWith({AddressingSchemasAdvertised? Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, AddressingSchemasOnDemandEnabled Function()? onDemandEnabled, AddressingSchemasOnDemandLocked Function()? onDemandLocked, }) { return AddressingBgpOnDemand(
-  advertised: advertised != null ? advertised() : this.advertised,
-  advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,
+AddressingBgpOnDemand copyWith({Omittable<AddressingSchemasAdvertised?>? advertised, Omittable<AddressingModifiedAtNullable?>? advertisedModifiedAt, AddressingSchemasOnDemandEnabled? Function()? onDemandEnabled, AddressingSchemasOnDemandLocked? Function()? onDemandLocked, }) { return AddressingBgpOnDemand(
+  advertised: advertised ?? this.advertised,
+  advertisedModifiedAt: advertisedModifiedAt ?? this.advertisedModifiedAt,
   onDemandEnabled: onDemandEnabled != null ? onDemandEnabled() : this.onDemandEnabled,
   onDemandLocked: onDemandLocked != null ? onDemandLocked() : this.onDemandLocked,
 ); } 

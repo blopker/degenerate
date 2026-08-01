@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure', 'three_d_secure'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsCard copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardMandateOptions Function()? mandateOptions, PostSetupIntentsIntentRequestPaymentMethodOptionsCardNetwork Function()? network, PostSetupIntentsIntentRequestPaymentMethodOptionsCardRequestThreeDSecure Function()? requestThreeDSecure, PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecure Function()? threeDSecure, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCard(
+PostSetupIntentsIntentRequestPaymentMethodOptionsCard copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, PostSetupIntentsIntentRequestPaymentMethodOptionsCardNetwork? Function()? network, PostSetupIntentsIntentRequestPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecure? Function()? threeDSecure, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,

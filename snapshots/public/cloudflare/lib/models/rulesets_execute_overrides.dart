@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (sensitivityLevel != null) 'sensitivity_level': sensitivityLevel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'categories', 'enabled', 'rules', 'sensitivity_level'}.contains(key)); } 
-RulesetsExecuteOverrides copyWith({RulesetsRuleAction Function()? action, List<RulesetsExecuteCategoryOverrides2> Function()? categories, RulesetsRuleEnabled Function()? enabled, List<RulesetsExecuteRuleOverrides2> Function()? rules, RulesetsExecuteSensitivityLevel Function()? sensitivityLevel, }) { return RulesetsExecuteOverrides(
+RulesetsExecuteOverrides copyWith({RulesetsRuleAction? Function()? action, List<RulesetsExecuteCategoryOverrides2>? Function()? categories, RulesetsRuleEnabled? Function()? enabled, List<RulesetsExecuteRuleOverrides2>? Function()? rules, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) { return RulesetsExecuteOverrides(
   action: action != null ? action() : this.action,
   categories: categories != null ? categories() : this.categories,
   enabled: enabled != null ? enabled() : this.enabled,

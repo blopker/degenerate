@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') 
       json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on'); } 
-ListsListItemIpFull copyWith({ListsItemIp? ip, ListsItemComment Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsListItemIpFull(
+ListsListItemIpFull copyWith({ListsItemIp? ip, ListsItemComment? Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsListItemIpFull(
   ip: ip ?? this.ip,
   comment: comment != null ? comment() : this.comment,
   createdOn: createdOn ?? this.createdOn,

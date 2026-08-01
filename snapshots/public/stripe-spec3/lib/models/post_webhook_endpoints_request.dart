@@ -1209,7 +1209,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_events') &&
       json.containsKey('url') && json['url'] is String; } 
-PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion Function()? apiVersion, bool Function()? connect, PostWebhookEndpointsRequestDescription Function()? description, List<PostWebhookEndpointsRequestEnabledEvents>? enabledEvents, List<String> Function()? expand, PostWebhookEndpointsRequestMetadata Function()? metadata, String? url, }) { return PostWebhookEndpointsRequest(
+PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Function()? apiVersion, bool? Function()? connect, PostWebhookEndpointsRequestDescription? Function()? description, List<PostWebhookEndpointsRequestEnabledEvents>? enabledEvents, List<String>? Function()? expand, PostWebhookEndpointsRequestMetadata? Function()? metadata, String? url, }) { return PostWebhookEndpointsRequest(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   connect: connect != null ? connect() : this.connect,
   description: description != null ? description() : this.description,

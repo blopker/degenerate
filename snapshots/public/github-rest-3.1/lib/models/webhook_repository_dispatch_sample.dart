@@ -34,7 +34,7 @@ final SimpleUser sender;
 Map<String, dynamic> toJson() { return {
   'action': action,
   'branch': branch,
-  'client_payload': ?clientPayload,
+  'client_payload': clientPayload,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('installation') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<String, dynamic>? Function()? clientPayload, EnterpriseWebhooks Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryDispatchSample(
+WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<String, dynamic>? Function()? clientPayload, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryDispatchSample(
   action: action ?? this.action,
   branch: branch ?? this.branch,
   clientPayload: clientPayload != null ? clientPayload() : this.clientPayload,

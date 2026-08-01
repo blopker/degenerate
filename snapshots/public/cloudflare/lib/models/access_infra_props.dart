@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_criteria') &&
       json.containsKey('type'); } 
-AccessInfraProps copyWith({List<AccessTargetCriteriaInfraApp>? targetCriteria, AccessAppsComponentsSchemasName Function()? name, AccessType? type, }) { return AccessInfraProps(
+AccessInfraProps copyWith({List<AccessTargetCriteriaInfraApp>? targetCriteria, AccessAppsComponentsSchemasName? Function()? name, AccessType? type, }) { return AccessInfraProps(
   targetCriteria: targetCriteria ?? this.targetCriteria,
   name: name != null ? name() : this.name,
   type: type ?? this.type,

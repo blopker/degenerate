@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheLevel copyWith({ZonesCacheLevelId Function()? id, ZonesCacheLevelValue2 Function()? value, }) { return ZonesCacheLevel(
+ZonesCacheLevel copyWith({ZonesCacheLevelId? Function()? id, ZonesCacheLevelValue2? Function()? value, }) { return ZonesCacheLevel(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

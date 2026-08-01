@@ -34,85 +34,85 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConferenceEnumReasonConferenceEnded($value)'; } 
  }
-@immutable final class AccountConference {const AccountConference({this.accountSid, this.dateCreated, this.dateUpdated, this.apiVersion, this.friendlyName, this.region, this.sid, this.status, this.uri, this.subresourceUris, this.reasonConferenceEnded, this.callSidEndingConference, });
+@immutable final class AccountConference {const AccountConference({this.accountSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.region = const Omittable.absent(), this.sid = const Omittable.absent(), this.status, this.uri = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.reasonConferenceEnded, this.callSidEndingConference = const Omittable.absent(), });
 
 factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountConference(
-  accountSid: json['account_sid'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  apiVersion: json['api_version'] as String?,
-  friendlyName: json['friendly_name'] as String?,
-  region: json['region'] as String?,
-  sid: json['sid'] as String?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
+  region: json.containsKey('region') ? Omittable(json['region'] as String?) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? ConferenceEnumStatus.fromJson(json['status'] as String) : null,
-  uri: json['uri'] as String?,
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
   reasonConferenceEnded: json['reason_conference_ended'] != null ? ConferenceEnumReasonConferenceEnded.fromJson(json['reason_conference_ended'] as String) : null,
-  callSidEndingConference: json['call_sid_ending_conference'] as String?,
+  callSidEndingConference: json.containsKey('call_sid_ending_conference') ? Omittable(json['call_sid_ending_conference'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Conference resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The date and time in UTC that this resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in UTC that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The API version used to create this conference.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// A string that you assigned to describe this conference room. Maximum length is 128 characters.
-final String? friendlyName;
+final Omittable<String?> friendlyName;
 
 /// A string that represents the Twilio Region where the conference audio was mixed. May be `us1`, `us2`, `ie1`,  `de1`, `sg1`, `br1`, `au1`, and `jp1`. Basic conference audio will always be mixed in `us1`. Global Conference audio will be mixed nearest to the majority of participants.
-final String? region;
+final Omittable<String?> region;
 
 /// The unique, Twilio-provided string used to identify this Conference resource.
-final String? sid;
+final Omittable<String?> sid;
 
 final ConferenceEnumStatus? status;
 
 /// The URI of this resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// A list of related resources identified by their URIs relative to `https://api.twilio.com`.
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 final ConferenceEnumReasonConferenceEnded? reasonConferenceEnded;
 
 /// The call SID that caused the conference to end.
-final String? callSidEndingConference;
+final Omittable<String?> callSidEndingConference;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'api_version': ?apiVersion,
-  'friendly_name': ?friendlyName,
-  'region': ?region,
-  'sid': ?sid,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
+  if (region.isPresent) 'region': region.value,
+  if (sid.isPresent) 'sid': sid.value,
   if (status != null) 'status': status?.toJson(),
-  'uri': ?uri,
-  'subresource_uris': ?subresourceUris,
+  if (uri.isPresent) 'uri': uri.value,
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
   if (reasonConferenceEnded != null) 'reason_conference_ended': reasonConferenceEnded?.toJson(),
-  'call_sid_ending_conference': ?callSidEndingConference,
+  if (callSidEndingConference.isPresent) 'call_sid_ending_conference': callSidEndingConference.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'api_version', 'friendly_name', 'region', 'sid', 'status', 'uri', 'subresource_uris', 'reason_conference_ended', 'call_sid_ending_conference'}.contains(key)); } 
-AccountConference copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? region, String? Function()? sid, ConferenceEnumStatus Function()? status, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, ConferenceEnumReasonConferenceEnded Function()? reasonConferenceEnded, String? Function()? callSidEndingConference, }) { return AccountConference(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-  region: region != null ? region() : this.region,
-  sid: sid != null ? sid() : this.sid,
+AccountConference copyWith({Omittable<String?>? accountSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? apiVersion, Omittable<String?>? friendlyName, Omittable<String?>? region, Omittable<String?>? sid, ConferenceEnumStatus? Function()? status, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, ConferenceEnumReasonConferenceEnded? Function()? reasonConferenceEnded, Omittable<String?>? callSidEndingConference, }) { return AccountConference(
+  accountSid: accountSid ?? this.accountSid,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  apiVersion: apiVersion ?? this.apiVersion,
+  friendlyName: friendlyName ?? this.friendlyName,
+  region: region ?? this.region,
+  sid: sid ?? this.sid,
   status: status != null ? status() : this.status,
-  uri: uri != null ? uri() : this.uri,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+  uri: uri ?? this.uri,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
   reasonConferenceEnded: reasonConferenceEnded != null ? reasonConferenceEnded() : this.reasonConferenceEnded,
-  callSidEndingConference: callSidEndingConference != null ? callSidEndingConference() : this.callSidEndingConference,
+  callSidEndingConference: callSidEndingConference ?? this.callSidEndingConference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountConference &&

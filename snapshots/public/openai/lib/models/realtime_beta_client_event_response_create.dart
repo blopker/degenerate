@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (response != null) 'response': response?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeBetaClientEventResponseCreate copyWith({String Function()? eventId, RealtimeBetaClientEventResponseCreateType? type, RealtimeBetaResponseCreateParams Function()? response, }) { return RealtimeBetaClientEventResponseCreate(
+RealtimeBetaClientEventResponseCreate copyWith({String? Function()? eventId, RealtimeBetaClientEventResponseCreateType? type, RealtimeBetaResponseCreateParams? Function()? response, }) { return RealtimeBetaClientEventResponseCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   response: response != null ? response() : this.response,

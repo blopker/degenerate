@@ -26,12 +26,12 @@ final bool? enforceTwofactor;
 final bool? useAccountCustomNsByDefault;
 
 Map<String, dynamic> toJson() { return {
-  'abuse_contact_email': ?abuseContactEmail,
-  if (accessApprovalExpiry != null) 'access_approval_expiry': accessApprovalExpiry?.toIso8601String(),
-  'api_access_enabled': ?apiAccessEnabled,
-  'default_nameservers': ?defaultNameservers,
-  'enforce_twofactor': ?enforceTwofactor,
-  'use_account_custom_ns_by_default': ?useAccountCustomNsByDefault,
+  'abuse_contact_email': abuseContactEmail,
+  'access_approval_expiry': accessApprovalExpiry?.toIso8601String(),
+  'api_access_enabled': apiAccessEnabled,
+  'default_nameservers': defaultNameservers,
+  'enforce_twofactor': enforceTwofactor,
+  'use_account_custom_ns_by_default': useAccountCustomNsByDefault,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('abuse_contact_email') && json['abuse_contact_email'] is String &&
       json.containsKey('access_approval_expiry') && json['access_approval_expiry'] is String &&

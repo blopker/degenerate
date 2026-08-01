@@ -10,7 +10,7 @@ factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dyna
 final dynamic status;
 
 Map<String, dynamic> toJson() { return {
-  'status': ?status,
+  'status': status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
 UserSAccountMembershipsUpdateMembershipRequest copyWith({dynamic Function()? status}) { return UserSAccountMembershipsUpdateMembershipRequest(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_client_default.dart';import 'zero_trust_gateway_dns_destination_ips_id_write.dart';import 'zero_trust_gateway_ecs_support.dart';import 'zero_trust_gateway_endpoints.dart';import 'zero_trust_gateway_ipv4_network.dart';import 'zero_trust_gateway_schemas_name.dart';@immutable final class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest {const ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest({required this.name, this.clientDefault, this.dnsDestinationIpsId, this.ecsSupport, this.endpoints, this.networks, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_client_default.dart';import 'zero_trust_gateway_dns_destination_ips_id_write.dart';import 'zero_trust_gateway_ecs_support.dart';import 'zero_trust_gateway_endpoints.dart';import 'zero_trust_gateway_ipv4_network.dart';import 'zero_trust_gateway_schemas_name.dart';@immutable final class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest {const ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest({required this.name, this.clientDefault, this.dnsDestinationIpsId, this.ecsSupport, this.endpoints, this.networks = const Omittable.absent(), });
 
 factory ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest(
   clientDefault: json['client_default'] != null ? ZeroTrustGatewayClientDefault.fromJson(json['client_default'] as bool) : null,
@@ -8,7 +8,7 @@ factory ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest.fromJson(
   ecsSupport: json['ecs_support'] != null ? ZeroTrustGatewayEcsSupport.fromJson(json['ecs_support'] as bool) : null,
   endpoints: json['endpoints'] != null ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>) : null,
   name: ZeroTrustGatewaySchemasName.fromJson(json['name'] as String),
-  networks: (json['networks'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayIpv4Network.fromJson(e as Map<String, dynamic>)).toList(),
+  networks: json.containsKey('networks') ? Omittable((json['networks'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayIpv4Network.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 /// Indicate whether this location is the default location.
@@ -26,7 +26,7 @@ final ZeroTrustGatewayEndpoints? endpoints;
 final ZeroTrustGatewaySchemasName name;
 
 /// Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
-final List<ZeroTrustGatewayIpv4Network>? networks;
+final Omittable<List<ZeroTrustGatewayIpv4Network>?> networks;
 
 Map<String, dynamic> toJson() { return {
   if (clientDefault != null) 'client_default': clientDefault?.toJson(),
@@ -34,16 +34,16 @@ Map<String, dynamic> toJson() { return {
   if (ecsSupport != null) 'ecs_support': ecsSupport?.toJson(),
   if (endpoints != null) 'endpoints': endpoints?.toJson(),
   'name': name.toJson(),
-  if (networks != null) 'networks': networks?.map((e) => e.toJson()).toList(),
+  if (networks.isPresent) 'networks': networks.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest copyWith({ZeroTrustGatewayClientDefault Function()? clientDefault, ZeroTrustGatewayDnsDestinationIpsIdWrite Function()? dnsDestinationIpsId, ZeroTrustGatewayEcsSupport Function()? ecsSupport, ZeroTrustGatewayEndpoints Function()? endpoints, ZeroTrustGatewaySchemasName? name, List<ZeroTrustGatewayIpv4Network>? Function()? networks, }) { return ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest(
+ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest copyWith({ZeroTrustGatewayClientDefault? Function()? clientDefault, ZeroTrustGatewayDnsDestinationIpsIdWrite? Function()? dnsDestinationIpsId, ZeroTrustGatewayEcsSupport? Function()? ecsSupport, ZeroTrustGatewayEndpoints? Function()? endpoints, ZeroTrustGatewaySchemasName? name, Omittable<List<ZeroTrustGatewayIpv4Network>?>? networks, }) { return ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest(
   clientDefault: clientDefault != null ? clientDefault() : this.clientDefault,
   dnsDestinationIpsId: dnsDestinationIpsId != null ? dnsDestinationIpsId() : this.dnsDestinationIpsId,
   ecsSupport: ecsSupport != null ? ecsSupport() : this.ecsSupport,
   endpoints: endpoints != null ? endpoints() : this.endpoints,
   name: name ?? this.name,
-  networks: networks != null ? networks() : this.networks,
+  networks: networks ?? this.networks,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest &&
@@ -52,7 +52,8 @@ ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest copyWith({ZeroTru
           ecsSupport == other.ecsSupport &&
           endpoints == other.endpoints &&
           name == other.name &&
-          listEquals(networks, other.networks); } 
-@override int get hashCode { return Object.hash(clientDefault, dnsDestinationIpsId, ecsSupport, endpoints, name, Object.hashAll(networks ?? const [])); } 
+          networks.isPresent == other.networks.isPresent &&
+          listEquals(networks.value, other.networks.value); } 
+@override int get hashCode { return Object.hash(clientDefault, dnsDestinationIpsId, ecsSupport, endpoints, name, Object.hashAll(networks.value ?? const [])); } 
 @override String toString() { return 'ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest(clientDefault: $clientDefault, dnsDestinationIpsId: $dnsDestinationIpsId, ecsSupport: $ecsSupport, endpoints: $endpoints, name: $name, networks: $networks)'; } 
  }

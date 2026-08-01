@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Issue a credit note to adjust an invoice's amount after the invoice is finalized.
 /// 
 /// Related guide: [Credit notes](https://docs.stripe.com/billing/invoices/credit-notes)
-@immutable final class CreditNote {const CreditNote({required this.number, required this.amountShipping, required this.created, required this.currency, required this.customer, required this.invoice, required this.discountAmount, required this.discountAmounts, required this.id, required this.amount, required this.lines, required this.livemode, required this.prePaymentAmount, required this.object, required this.pdf, required this.postPaymentAmount, required this.type, required this.total, required this.refunds, required this.subtotal, required this.status, required this.pretaxCreditAmounts, this.voidedAt, this.reason, this.outOfBandAmount, this.shippingCost, this.metadata, this.memo, this.subtotalExcludingTax, this.effectiveAt, this.totalExcludingTax, this.totalTaxes, this.customerBalanceTransaction, this.customerAccount, });
+@immutable final class CreditNote {const CreditNote({required this.number, required this.amountShipping, required this.created, required this.currency, required this.customer, required this.invoice, required this.discountAmount, required this.discountAmounts, required this.id, required this.amount, required this.lines, required this.livemode, required this.prePaymentAmount, required this.object, required this.pdf, required this.postPaymentAmount, required this.type, required this.total, required this.refunds, required this.subtotal, required this.status, required this.pretaxCreditAmounts, this.voidedAt = const Omittable.absent(), this.reason = const Omittable.absent(), this.outOfBandAmount = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.metadata = const Omittable.absent(), this.memo = const Omittable.absent(), this.subtotalExcludingTax = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.totalExcludingTax = const Omittable.absent(), this.totalTaxes = const Omittable.absent(), this.customerBalanceTransaction = const Omittable.absent(), this.customerAccount = const Omittable.absent(), });
 
 factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   amount: (json['amount'] as num).toInt(),
@@ -117,35 +117,35 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
-  customerBalanceTransaction: json['customer_balance_transaction'] != null ? OneOf2.parse(json['customer_balance_transaction'], fromA: (v) => v as String, fromB: (v) => CustomerBalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  customerBalanceTransaction: json.containsKey('customer_balance_transaction') ? Omittable(json['customer_balance_transaction'] != null ? OneOf2.parse(json['customer_balance_transaction'], fromA: (v) => v as String, fromB: (v) => CustomerBalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   discountAmount: (json['discount_amount'] as num).toInt(),
   discountAmounts: (json['discount_amounts'] as List<dynamic>).map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
+  effectiveAt: json.containsKey('effective_at') ? Omittable(json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   invoice: OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),),
   lines: CreditNoteLines.fromJson(json['lines'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
-  memo: json['memo'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  memo: json.containsKey('memo') ? Omittable(json['memo'] as String?) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   number: json['number'] as String,
   object: CreditNoteObject.fromJson(json['object'] as String),
-  outOfBandAmount: json['out_of_band_amount'] != null ? (json['out_of_band_amount'] as num).toInt() : null,
+  outOfBandAmount: json.containsKey('out_of_band_amount') ? Omittable(json['out_of_band_amount'] != null ? (json['out_of_band_amount'] as num).toInt() : null) : const Omittable.absent(),
   pdf: json['pdf'] as String,
   postPaymentAmount: (json['post_payment_amount'] as num).toInt(),
   prePaymentAmount: (json['pre_payment_amount'] as num).toInt(),
   pretaxCreditAmounts: (json['pretax_credit_amounts'] as List<dynamic>).map((e) => CreditNotesPretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  reason: json['reason'] != null ? CreditNoteReason.fromJson(json['reason'] as String) : null,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] != null ? CreditNoteReason.fromJson(json['reason'] as String) : null) : const Omittable.absent(),
   refunds: (json['refunds'] as List<dynamic>).map((e) => CreditNoteRefund.fromJson(e as Map<String, dynamic>)).toList(),
-  shippingCost: json['shipping_cost'] != null ? InvoicesResourceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shippingCost: json.containsKey('shipping_cost') ? Omittable(json['shipping_cost'] != null ? InvoicesResourceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: CreditNoteStatus.fromJson(json['status'] as String),
   subtotal: (json['subtotal'] as num).toInt(),
-  subtotalExcludingTax: json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null,
+  subtotalExcludingTax: json.containsKey('subtotal_excluding_tax') ? Omittable(json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null) : const Omittable.absent(),
   total: (json['total'] as num).toInt(),
-  totalExcludingTax: json['total_excluding_tax'] != null ? (json['total_excluding_tax'] as num).toInt() : null,
-  totalTaxes: (json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList(),
+  totalExcludingTax: json.containsKey('total_excluding_tax') ? Omittable(json['total_excluding_tax'] != null ? (json['total_excluding_tax'] as num).toInt() : null) : const Omittable.absent(),
+  totalTaxes: json.containsKey('total_taxes') ? Omittable((json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   type: CreditNoteType.fromJson(json['type'] as String),
-  voidedAt: json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null,
+  voidedAt: json.containsKey('voided_at') ? Omittable(json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note, including tax.
@@ -164,10 +164,10 @@ final String currency;
 final CreditNoteCustomer customer;
 
 /// ID of the account representing the customer.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Customer balance transaction related to this credit note.
-final CreditNoteCustomerBalanceTransaction? customerBalanceTransaction;
+final Omittable<CreditNoteCustomerBalanceTransaction?> customerBalanceTransaction;
 
 /// The integer amount in cents (or local equivalent) representing the total amount of discount that was credited.
 final int discountAmount;
@@ -176,7 +176,7 @@ final int discountAmount;
 final List<DiscountsResourceDiscountAmount> discountAmounts;
 
 /// The date when this credit note is in effect. Same as `created` unless overwritten. When defined, this value replaces the system-generated 'Date of issue' printed on the credit note PDF.
-final int? effectiveAt;
+final Omittable<int?> effectiveAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -191,10 +191,10 @@ final CreditNoteLines lines;
 final bool livemode;
 
 /// Customer-facing text that appears on the credit note PDF.
-final String? memo;
+final Omittable<String?> memo;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// A unique number that identifies this particular credit note and appears on the PDF of the credit note and its associated invoice.
 final String number;
@@ -203,7 +203,7 @@ final String number;
 final CreditNoteObject object;
 
 /// Amount that was credited outside of Stripe.
-final int? outOfBandAmount;
+final Omittable<int?> outOfBandAmount;
 
 /// The link to download the PDF of the credit note.
 final String pdf;
@@ -218,13 +218,13 @@ final int prePaymentAmount;
 final List<CreditNotesPretaxCreditAmount> pretaxCreditAmounts;
 
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
-final CreditNoteReason? reason;
+final Omittable<CreditNoteReason?> reason;
 
 /// Refunds related to this credit note.
 final List<CreditNoteRefund> refunds;
 
 /// The details of the cost of shipping, including the ShippingRate applied to the invoice.
-final InvoicesResourceShippingCost? shippingCost;
+final Omittable<InvoicesResourceShippingCost?> shippingCost;
 
 /// Status of this credit note, one of `issued` or `void`. Learn more about [voiding credit notes](https://docs.stripe.com/billing/invoices/credit-notes#voiding).
 final CreditNoteStatus status;
@@ -233,22 +233,22 @@ final CreditNoteStatus status;
 final int subtotal;
 
 /// The integer amount in cents (or local equivalent) representing the amount of the credit note, excluding all tax and invoice level discounts.
-final int? subtotalExcludingTax;
+final Omittable<int?> subtotalExcludingTax;
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note, including tax and all discount.
 final int total;
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note, excluding tax, but including discounts.
-final int? totalExcludingTax;
+final Omittable<int?> totalExcludingTax;
 
 /// The aggregate tax information for all line items.
-final List<BillingBillResourceInvoicingTaxesTax>? totalTaxes;
+final Omittable<List<BillingBillResourceInvoicingTaxesTax>?> totalTaxes;
 
 /// Type of this credit note, one of `pre_payment` or `post_payment`. A `pre_payment` credit note means it was issued when the invoice was open. A `post_payment` credit note means it was issued when the invoice was paid.
 final CreditNoteType type;
 
 /// The time that the credit note was voided.
-final int? voidedAt;
+final Omittable<int?> voidedAt;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -256,35 +256,35 @@ Map<String, dynamic> toJson() { return {
   'created': created,
   'currency': currency,
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
-  if (customerBalanceTransaction != null) 'customer_balance_transaction': customerBalanceTransaction?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (customerBalanceTransaction.isPresent) 'customer_balance_transaction': customerBalanceTransaction.value?.toJson(),
   'discount_amount': discountAmount,
   'discount_amounts': discountAmounts.map((e) => e.toJson()).toList(),
-  'effective_at': ?effectiveAt,
+  if (effectiveAt.isPresent) 'effective_at': effectiveAt.value,
   'id': id,
   'invoice': invoice.toJson(),
   'lines': lines.toJson(),
   'livemode': livemode,
-  'memo': ?memo,
-  'metadata': ?metadata,
+  if (memo.isPresent) 'memo': memo.value,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'number': number,
   'object': object.toJson(),
-  'out_of_band_amount': ?outOfBandAmount,
+  if (outOfBandAmount.isPresent) 'out_of_band_amount': outOfBandAmount.value,
   'pdf': pdf,
   'post_payment_amount': postPaymentAmount,
   'pre_payment_amount': prePaymentAmount,
   'pretax_credit_amounts': pretaxCreditAmounts.map((e) => e.toJson()).toList(),
-  if (reason != null) 'reason': reason?.toJson(),
+  if (reason.isPresent) 'reason': reason.value?.toJson(),
   'refunds': refunds.map((e) => e.toJson()).toList(),
-  if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
+  if (shippingCost.isPresent) 'shipping_cost': shippingCost.value?.toJson(),
   'status': status.toJson(),
   'subtotal': subtotal,
-  'subtotal_excluding_tax': ?subtotalExcludingTax,
+  if (subtotalExcludingTax.isPresent) 'subtotal_excluding_tax': subtotalExcludingTax.value,
   'total': total,
-  'total_excluding_tax': ?totalExcludingTax,
-  if (totalTaxes != null) 'total_taxes': totalTaxes?.map((e) => e.toJson()).toList(),
+  if (totalExcludingTax.isPresent) 'total_excluding_tax': totalExcludingTax.value,
+  if (totalTaxes.isPresent) 'total_taxes': totalTaxes.value?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
-  'voided_at': ?voidedAt,
+  if (voidedAt.isPresent) 'voided_at': voidedAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_shipping') && json['amount_shipping'] is num &&
@@ -308,41 +308,41 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num &&
       json.containsKey('type'); } 
-CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, CreditNoteCustomer? customer, String? Function()? customerAccount, CreditNoteCustomerBalanceTransaction? Function()? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, int? Function()? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, String? Function()? memo, Map<String, String>? Function()? metadata, String? number, CreditNoteObject? object, int? Function()? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, CreditNoteReason? Function()? reason, List<CreditNoteRefund>? refunds, InvoicesResourceShippingCost? Function()? shippingCost, CreditNoteStatus? status, int? subtotal, int? Function()? subtotalExcludingTax, int? total, int? Function()? totalExcludingTax, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, CreditNoteType? type, int? Function()? voidedAt, }) { return CreditNote(
+CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, CreditNoteCustomer? customer, Omittable<String?>? customerAccount, Omittable<CreditNoteCustomerBalanceTransaction?>? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, Omittable<int?>? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, Omittable<String?>? memo, Omittable<Map<String,String>?>? metadata, String? number, CreditNoteObject? object, Omittable<int?>? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<CreditNoteReason?>? reason, List<CreditNoteRefund>? refunds, Omittable<InvoicesResourceShippingCost?>? shippingCost, CreditNoteStatus? status, int? subtotal, Omittable<int?>? subtotalExcludingTax, int? total, Omittable<int?>? totalExcludingTax, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, CreditNoteType? type, Omittable<int?>? voidedAt, }) { return CreditNote(
   amount: amount ?? this.amount,
   amountShipping: amountShipping ?? this.amountShipping,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  customerBalanceTransaction: customerBalanceTransaction != null ? customerBalanceTransaction() : this.customerBalanceTransaction,
+  customerAccount: customerAccount ?? this.customerAccount,
+  customerBalanceTransaction: customerBalanceTransaction ?? this.customerBalanceTransaction,
   discountAmount: discountAmount ?? this.discountAmount,
   discountAmounts: discountAmounts ?? this.discountAmounts,
-  effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,
+  effectiveAt: effectiveAt ?? this.effectiveAt,
   id: id ?? this.id,
   invoice: invoice ?? this.invoice,
   lines: lines ?? this.lines,
   livemode: livemode ?? this.livemode,
-  memo: memo != null ? memo() : this.memo,
-  metadata: metadata != null ? metadata() : this.metadata,
+  memo: memo ?? this.memo,
+  metadata: metadata ?? this.metadata,
   number: number ?? this.number,
   object: object ?? this.object,
-  outOfBandAmount: outOfBandAmount != null ? outOfBandAmount() : this.outOfBandAmount,
+  outOfBandAmount: outOfBandAmount ?? this.outOfBandAmount,
   pdf: pdf ?? this.pdf,
   postPaymentAmount: postPaymentAmount ?? this.postPaymentAmount,
   prePaymentAmount: prePaymentAmount ?? this.prePaymentAmount,
   pretaxCreditAmounts: pretaxCreditAmounts ?? this.pretaxCreditAmounts,
-  reason: reason != null ? reason() : this.reason,
+  reason: reason ?? this.reason,
   refunds: refunds ?? this.refunds,
-  shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
+  shippingCost: shippingCost ?? this.shippingCost,
   status: status ?? this.status,
   subtotal: subtotal ?? this.subtotal,
-  subtotalExcludingTax: subtotalExcludingTax != null ? subtotalExcludingTax() : this.subtotalExcludingTax,
+  subtotalExcludingTax: subtotalExcludingTax ?? this.subtotalExcludingTax,
   total: total ?? this.total,
-  totalExcludingTax: totalExcludingTax != null ? totalExcludingTax() : this.totalExcludingTax,
-  totalTaxes: totalTaxes != null ? totalTaxes() : this.totalTaxes,
+  totalExcludingTax: totalExcludingTax ?? this.totalExcludingTax,
+  totalTaxes: totalTaxes ?? this.totalTaxes,
   type: type ?? this.type,
-  voidedAt: voidedAt != null ? voidedAt() : this.voidedAt,
+  voidedAt: voidedAt ?? this.voidedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreditNote &&
@@ -377,9 +377,10 @@ CreditNote copyWith({int? amount, int? amountShipping, int? created, String? cur
           subtotalExcludingTax == other.subtotalExcludingTax &&
           total == other.total &&
           totalExcludingTax == other.totalExcludingTax &&
-          listEquals(totalTaxes, other.totalTaxes) &&
+          totalTaxes.isPresent == other.totalTaxes.isPresent &&
+          listEquals(totalTaxes.value, other.totalTaxes.value) &&
           type == other.type &&
           voidedAt == other.voidedAt; } 
-@override int get hashCode { return Object.hashAll([amount, amountShipping, created, currency, customer, customerAccount, customerBalanceTransaction, discountAmount, Object.hashAll(discountAmounts), effectiveAt, id, invoice, lines, livemode, memo, metadata, number, object, outOfBandAmount, pdf, postPaymentAmount, prePaymentAmount, Object.hashAll(pretaxCreditAmounts), reason, Object.hashAll(refunds), shippingCost, status, subtotal, subtotalExcludingTax, total, totalExcludingTax, Object.hashAll(totalTaxes ?? const []), type, voidedAt]); } 
+@override int get hashCode { return Object.hashAll([amount, amountShipping, created, currency, customer, customerAccount, customerBalanceTransaction, discountAmount, Object.hashAll(discountAmounts), effectiveAt, id, invoice, lines, livemode, memo, metadata, number, object, outOfBandAmount, pdf, postPaymentAmount, prePaymentAmount, Object.hashAll(pretaxCreditAmounts), reason, Object.hashAll(refunds), shippingCost, status, subtotal, subtotalExcludingTax, total, totalExcludingTax, Object.hashAll(totalTaxes.value ?? const []), type, voidedAt]); } 
 @override String toString() { return 'CreditNote(amount: $amount, amountShipping: $amountShipping, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerBalanceTransaction: $customerBalanceTransaction, discountAmount: $discountAmount, discountAmounts: $discountAmounts, effectiveAt: $effectiveAt, id: $id, invoice: $invoice, lines: $lines, livemode: $livemode, memo: $memo, metadata: $metadata, number: $number, object: $object, outOfBandAmount: $outOfBandAmount, pdf: $pdf, postPaymentAmount: $postPaymentAmount, prePaymentAmount: $prePaymentAmount, pretaxCreditAmounts: $pretaxCreditAmounts, reason: $reason, refunds: $refunds, shippingCost: $shippingCost, status: $status, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, total: $total, totalExcludingTax: $totalExcludingTax, totalTaxes: $totalTaxes, type: $type, voidedAt: $voidedAt)'; } 
  }

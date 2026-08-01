@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('height') && json['height'] is num &&
       json.containsKey('width') && json['width'] is num; } 
-BrapiPostScrapeRequestVariant2Viewport copyWith({double Function()? deviceScaleFactor, bool Function()? hasTouch, double? height, bool Function()? isLandscape, bool Function()? isMobile, double? width, }) { return BrapiPostScrapeRequestVariant2Viewport(
+BrapiPostScrapeRequestVariant2Viewport copyWith({double? Function()? deviceScaleFactor, bool? Function()? hasTouch, double? height, bool? Function()? isLandscape, bool? Function()? isMobile, double? width, }) { return BrapiPostScrapeRequestVariant2Viewport(
   deviceScaleFactor: deviceScaleFactor != null ? deviceScaleFactor() : this.deviceScaleFactor,
   hasTouch: hasTouch != null ? hasTouch() : this.hasTouch,
   height: height ?? this.height,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'type'}.contains(key)); } 
-ZonesZoneOwner copyWith({ZonesIdentifier Function()? id, String Function()? name, String Function()? type, }) { return ZonesZoneOwner(
+ZonesZoneOwner copyWith({ZonesIdentifier? Function()? id, String? Function()? name, String? Function()? type, }) { return ZonesZoneOwner(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,

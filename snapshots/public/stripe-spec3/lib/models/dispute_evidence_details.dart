@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_enhanced_eligibility.dart';/// 
-@immutable final class DisputeEvidenceDetails {const DisputeEvidenceDetails({required this.enhancedEligibility, required this.hasEvidence, required this.pastDue, required this.submissionCount, this.dueBy, });
+@immutable final class DisputeEvidenceDetails {const DisputeEvidenceDetails({required this.enhancedEligibility, required this.hasEvidence, required this.pastDue, required this.submissionCount, this.dueBy = const Omittable.absent(), });
 
 factory DisputeEvidenceDetails.fromJson(Map<String, dynamic> json) { return DisputeEvidenceDetails(
-  dueBy: json['due_by'] != null ? (json['due_by'] as num).toInt() : null,
+  dueBy: json.containsKey('due_by') ? Omittable(json['due_by'] != null ? (json['due_by'] as num).toInt() : null) : const Omittable.absent(),
   enhancedEligibility: DisputeEnhancedEligibility.fromJson(json['enhanced_eligibility'] as Map<String, dynamic>),
   hasEvidence: json['has_evidence'] as bool,
   pastDue: json['past_due'] as bool,
@@ -12,7 +12,7 @@ factory DisputeEvidenceDetails.fromJson(Map<String, dynamic> json) { return Disp
 ); }
 
 /// Date by which evidence must be submitted in order to successfully challenge dispute. Will be 0 if the customer's bank or credit card company doesn't allow a response for this particular dispute.
-final int? dueBy;
+final Omittable<int?> dueBy;
 
 final DisputeEnhancedEligibility enhancedEligibility;
 
@@ -26,7 +26,7 @@ final bool pastDue;
 final int submissionCount;
 
 Map<String, dynamic> toJson() { return {
-  'due_by': ?dueBy,
+  if (dueBy.isPresent) 'due_by': dueBy.value,
   'enhanced_eligibility': enhancedEligibility.toJson(),
   'has_evidence': hasEvidence,
   'past_due': pastDue,
@@ -36,8 +36,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enhan
       json.containsKey('has_evidence') && json['has_evidence'] is bool &&
       json.containsKey('past_due') && json['past_due'] is bool &&
       json.containsKey('submission_count') && json['submission_count'] is num; } 
-DisputeEvidenceDetails copyWith({int? Function()? dueBy, DisputeEnhancedEligibility? enhancedEligibility, bool? hasEvidence, bool? pastDue, int? submissionCount, }) { return DisputeEvidenceDetails(
-  dueBy: dueBy != null ? dueBy() : this.dueBy,
+DisputeEvidenceDetails copyWith({Omittable<int?>? dueBy, DisputeEnhancedEligibility? enhancedEligibility, bool? hasEvidence, bool? pastDue, int? submissionCount, }) { return DisputeEvidenceDetails(
+  dueBy: dueBy ?? this.dueBy,
   enhancedEligibility: enhancedEligibility ?? this.enhancedEligibility,
   hasEvidence: hasEvidence ?? this.hasEvidence,
   pastDue: pastDue ?? this.pastDue,

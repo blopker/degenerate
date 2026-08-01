@@ -58,12 +58,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch($value)'; } 
  }
 /// 
-@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions({this.filters, this.permissions, this.prefetch, });
+@immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions({this.filters, this.permissions, this.prefetch = const Omittable.absent(), });
 
 factory InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(
   filters: json['filters'] != null ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions.fromJson(e as String)).toList(),
-  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch.fromJson(e as String)).toList(),
+  prefetch: json.containsKey('prefetch') ? Omittable((json['prefetch'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch.fromJson(e as String)).toList()) : const Omittable.absent(),
 ); }
 
 final InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters? filters;
@@ -72,24 +72,25 @@ final InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters? filte
 final List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions>? permissions;
 
 /// Data features requested to be retrieved upon account creation.
-final List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch>? prefetch;
+final Omittable<List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch>?> prefetch;
 
 Map<String, dynamic> toJson() { return {
   if (filters != null) 'filters': filters?.toJson(),
   if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
-  if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
+  if (prefetch.isPresent) 'prefetch': prefetch.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch'}.contains(key)); } 
-InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters Function()? filters, List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions> Function()? permissions, List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch>? Function()? prefetch, }) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(
+InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters? Function()? filters, List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPermissions>? Function()? permissions, Omittable<List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsPrefetch>?>? prefetch, }) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
-  prefetch: prefetch != null ? prefetch() : this.prefetch,
+  prefetch: prefetch ?? this.prefetch,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
-          listEquals(prefetch, other.prefetch); } 
-@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const [])); } 
+          prefetch.isPresent == other.prefetch.isPresent &&
+          listEquals(prefetch.value, other.prefetch.value); } 
+@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch.value ?? const [])); } 
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(filters: $filters, permissions: $permissions, prefetch: $prefetch)'; } 
  }

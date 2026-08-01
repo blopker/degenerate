@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulesetCurrentUserCanBypass($value)'; } 
  }
 /// A set of rules to apply when specified conditions are met.
-@immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions, this.rules, this.createdAt, this.updatedAt, });
+@immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions = const Omittable.absent(), this.rules, this.createdAt, this.updatedAt, });
 
 factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return RepositoryRuleset(
   id: (json['id'] as num).toInt(),
@@ -105,7 +105,7 @@ factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return Repositor
   currentUserCanBypass: json['current_user_can_bypass'] != null ? RepositoryRulesetCurrentUserCanBypass.fromJson(json['current_user_can_bypass'] as String) : null,
   nodeId: json['node_id'] as String?,
   links: json['_links'] != null ? RepositoryRulesetLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
-  conditions: json['conditions'] != null ? OneOf2.parse(json['conditions'], fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => OneOf3.parse(v, fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),),) : null,
+  conditions: json.containsKey('conditions') ? Omittable(json['conditions'] != null ? OneOf2.parse(json['conditions'], fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => OneOf3.parse(v, fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),),) : null) : const Omittable.absent(),
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
@@ -140,7 +140,7 @@ final String? nodeId;
 
 final RepositoryRulesetLinks? links;
 
-final RepositoryRulesetConditions2? conditions;
+final Omittable<RepositoryRulesetConditions2?> conditions;
 
 final List<RepositoryRule>? rules;
 
@@ -159,7 +159,7 @@ Map<String, dynamic> toJson() { return {
   if (currentUserCanBypass != null) 'current_user_can_bypass': currentUserCanBypass?.toJson(),
   'node_id': ?nodeId,
   if (links != null) '_links': links?.toJson(),
-  if (conditions != null) 'conditions': conditions?.toJson(),
+  if (conditions.isPresent) 'conditions': conditions.value?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
@@ -168,7 +168,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('enforcement'); } 
-RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget Function()? target, RepositoryRulesetSourceType Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, RepositoryRulesetCurrentUserCanBypass Function()? currentUserCanBypass, String Function()? nodeId, RepositoryRulesetLinks Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule> Function()? rules, DateTime Function()? createdAt, DateTime Function()? updatedAt, }) { return RepositoryRuleset(
+RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetCurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, Omittable<RepositoryRulesetConditions2?>? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return RepositoryRuleset(
   id: id ?? this.id,
   name: name ?? this.name,
   target: target != null ? target() : this.target,
@@ -179,7 +179,7 @@ RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget Funct
   currentUserCanBypass: currentUserCanBypass != null ? currentUserCanBypass() : this.currentUserCanBypass,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   links: links != null ? links() : this.links,
-  conditions: conditions != null ? conditions() : this.conditions,
+  conditions: conditions ?? this.conditions,
   rules: rules != null ? rules() : this.rules,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

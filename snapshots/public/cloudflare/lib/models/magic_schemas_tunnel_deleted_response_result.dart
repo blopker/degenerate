@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (deletedIpsecTunnel != null) 'deleted_ipsec_tunnel': deletedIpsecTunnel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted', 'deleted_ipsec_tunnel'}.contains(key)); } 
-MagicSchemasTunnelDeletedResponseResult copyWith({bool Function()? deleted, MagicIpsecTunnel Function()? deletedIpsecTunnel, }) { return MagicSchemasTunnelDeletedResponseResult(
+MagicSchemasTunnelDeletedResponseResult copyWith({bool? Function()? deleted, MagicIpsecTunnel? Function()? deletedIpsecTunnel, }) { return MagicSchemasTunnelDeletedResponseResult(
   deleted: deleted != null ? deleted() : this.deleted,
   deletedIpsecTunnel: deletedIpsecTunnel != null ? deletedIpsecTunnel() : this.deletedIpsecTunnel,
 ); } 

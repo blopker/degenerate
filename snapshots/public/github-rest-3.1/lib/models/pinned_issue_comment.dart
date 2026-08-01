@@ -14,7 +14,7 @@ final SimpleUser? pinnedBy;
 
 Map<String, dynamic> toJson() { return {
   'pinned_at': pinnedAt.toIso8601String(),
-  if (pinnedBy != null) 'pinned_by': pinnedBy?.toJson(),
+  'pinned_by': pinnedBy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pinned_at') && json['pinned_at'] is String &&
       json.containsKey('pinned_by'); } 

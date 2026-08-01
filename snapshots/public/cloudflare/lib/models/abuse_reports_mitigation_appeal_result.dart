@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result_info') &&
       json.containsKey('success') && json['success'] is bool; } 
-AbuseReportsMitigationAppealResult copyWith({List<AbuseReportsMessage> Function()? errors, List<AbuseReportsMessage> Function()? messages, List<AbuseReportsMitigationListItem> Function()? result, AbuseReportsMitigationAppealResultResultInfo? resultInfo, bool? success, }) { return AbuseReportsMitigationAppealResult(
+AbuseReportsMitigationAppealResult copyWith({List<AbuseReportsMessage>? Function()? errors, List<AbuseReportsMessage>? Function()? messages, List<AbuseReportsMitigationListItem>? Function()? result, AbuseReportsMitigationAppealResultResultInfo? resultInfo, bool? success, }) { return AbuseReportsMitigationAppealResult(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,

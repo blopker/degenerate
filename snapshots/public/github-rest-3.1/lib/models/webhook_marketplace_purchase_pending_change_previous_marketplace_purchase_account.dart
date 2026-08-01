@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'login': login,
   'node_id': nodeId,
-  'organization_billing_email': ?organizationBillingEmail,
+  'organization_billing_email': organizationBillingEmail,
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&

@@ -21,9 +21,9 @@ final int annotationsCount;
 final Uri annotationsUrl;
 
 Map<String, dynamic> toJson() { return {
-  'title': ?title,
-  'summary': ?summary,
-  'text': ?text,
+  'title': title,
+  'summary': summary,
+  'text': text,
   'annotations_count': annotationsCount,
   'annotations_url': annotationsUrl.toString(),
 }; } 

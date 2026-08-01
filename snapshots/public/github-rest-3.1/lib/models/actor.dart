@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'login': login,
   'display_login': ?displayLogin,
-  'gravatar_id': ?gravatarId,
+  'gravatar_id': gravatarId,
   'url': url.toString(),
   'avatar_url': avatarUrl.toString(),
 }; } 
@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('gravatar_id') && json['gravatar_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String; } 
-Actor copyWith({int? id, String? login, String Function()? displayLogin, String? Function()? gravatarId, Uri? url, Uri? avatarUrl, }) { return Actor(
+Actor copyWith({int? id, String? login, String? Function()? displayLogin, String? Function()? gravatarId, Uri? url, Uri? avatarUrl, }) { return Actor(
   id: id ?? this.id,
   login: login ?? this.login,
   displayLogin: displayLogin != null ? displayLogin() : this.displayLogin,

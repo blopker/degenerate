@@ -33,26 +33,26 @@ bool get isUnknown { return !values.contains(this); }
 /// This tool searches the web for relevant results to use in a response.
 /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
 /// 
-@immutable final class CreateChatCompletionRequestWebSearchOptions {const CreateChatCompletionRequestWebSearchOptions({this.userLocation, this.searchContextSize, });
+@immutable final class CreateChatCompletionRequestWebSearchOptions {const CreateChatCompletionRequestWebSearchOptions({this.userLocation = const Omittable.absent(), this.searchContextSize, });
 
 factory CreateChatCompletionRequestWebSearchOptions.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestWebSearchOptions(
-  userLocation: json['user_location'] != null ? CreateChatCompletionRequestWebSearchOptionsUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
+  userLocation: json.containsKey('user_location') ? Omittable(json['user_location'] != null ? CreateChatCompletionRequestWebSearchOptionsUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   searchContextSize: json['search_context_size'] != null ? WebSearchContextSize.fromJson(json['search_context_size'] as String) : null,
 ); }
 
 /// Approximate location parameters for the search.
 /// 
-final CreateChatCompletionRequestWebSearchOptionsUserLocation? userLocation;
+final Omittable<CreateChatCompletionRequestWebSearchOptionsUserLocation?> userLocation;
 
 final WebSearchContextSize? searchContextSize;
 
 Map<String, dynamic> toJson() { return {
-  if (userLocation != null) 'user_location': userLocation?.toJson(),
+  if (userLocation.isPresent) 'user_location': userLocation.value?.toJson(),
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_location', 'search_context_size'}.contains(key)); } 
-CreateChatCompletionRequestWebSearchOptions copyWith({CreateChatCompletionRequestWebSearchOptionsUserLocation? Function()? userLocation, WebSearchContextSize Function()? searchContextSize, }) { return CreateChatCompletionRequestWebSearchOptions(
-  userLocation: userLocation != null ? userLocation() : this.userLocation,
+CreateChatCompletionRequestWebSearchOptions copyWith({Omittable<CreateChatCompletionRequestWebSearchOptionsUserLocation?>? userLocation, WebSearchContextSize? Function()? searchContextSize, }) { return CreateChatCompletionRequestWebSearchOptions(
+  userLocation: userLocation ?? this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

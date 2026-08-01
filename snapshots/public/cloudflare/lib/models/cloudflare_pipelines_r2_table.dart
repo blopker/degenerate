@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is String &&
       json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('credentials'); } 
-CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TableCredentials? credentials, CloudflarePipelinesR2TableFileNaming Function()? fileNaming, String Function()? jurisdiction, CloudflarePipelinesR2TablePartitioning Function()? partitioning, String Function()? path, CloudflarePipelinesR2TableRollingPolicy Function()? rollingPolicy, }) { return CloudflarePipelinesR2Table(
+CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TableCredentials? credentials, CloudflarePipelinesR2TableFileNaming? Function()? fileNaming, String? Function()? jurisdiction, CloudflarePipelinesR2TablePartitioning? Function()? partitioning, String? Function()? path, CloudflarePipelinesR2TableRollingPolicy? Function()? rollingPolicy, }) { return CloudflarePipelinesR2Table(
   accountId: accountId ?? this.accountId,
   bucket: bucket ?? this.bucket,
   credentials: credentials ?? this.credentials,

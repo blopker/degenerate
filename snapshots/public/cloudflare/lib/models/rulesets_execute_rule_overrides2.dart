@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (sensitivityLevel != null) 'sensitivity_level': sensitivityLevel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-RulesetsExecuteRuleOverrides2 copyWith({RulesetsRuleAction Function()? action, RulesetsRuleEnabled Function()? enabled, RulesetsRuleId? id, int Function()? scoreThreshold, RulesetsExecuteSensitivityLevel Function()? sensitivityLevel, }) { return RulesetsExecuteRuleOverrides2(
+RulesetsExecuteRuleOverrides2 copyWith({RulesetsRuleAction? Function()? action, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleId? id, int? Function()? scoreThreshold, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) { return RulesetsExecuteRuleOverrides2(
   action: action != null ? action() : this.action,
   enabled: enabled != null ? enabled() : this.enabled,
   id: id ?? this.id,

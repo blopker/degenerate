@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('repository_id') && json['repository_id'] is num &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-DiscussionCategory copyWith({DateTime? createdAt, String? description, String? emoji, int? id, bool? isAnswerable, String? name, String Function()? nodeId, int? repositoryId, String? slug, String? updatedAt, }) { return DiscussionCategory(
+DiscussionCategory copyWith({DateTime? createdAt, String? description, String? emoji, int? id, bool? isAnswerable, String? name, String? Function()? nodeId, int? repositoryId, String? slug, String? updatedAt, }) { return DiscussionCategory(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   emoji: emoji ?? this.emoji,

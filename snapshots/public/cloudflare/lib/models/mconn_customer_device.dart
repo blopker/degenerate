@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'serial_number': ?serialNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-MconnCustomerDevice copyWith({MconnUuid? id, String Function()? serialNumber, }) { return MconnCustomerDevice(
+MconnCustomerDevice copyWith({MconnUuid? id, String? Function()? serialNumber, }) { return MconnCustomerDevice(
   id: id ?? this.id,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
 ); } 

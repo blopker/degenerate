@@ -32,13 +32,13 @@ final DateTime? createdAt;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'type': ?type,
+  'type': type,
   'actor': actor.toJson(),
   'repo': repo.toJson(),
   if (org != null) 'org': org?.toJson(),
   'payload': payload.toJson(),
   'public': public,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'created_at': createdAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('payload') &&
       json.containsKey('public') && json['public'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String; } 
-Event copyWith({String? id, String? Function()? type, Actor? actor, EventRepo? repo, Actor Function()? org, EventPayload? payload, bool? public, DateTime? Function()? createdAt, }) { return Event(
+Event copyWith({String? id, String? Function()? type, Actor? actor, EventRepo? repo, Actor? Function()? org, EventPayload? payload, bool? public, DateTime? Function()? createdAt, }) { return Event(
   id: id ?? this.id,
   type: type != null ? type() : this.type,
   actor: actor ?? this.actor,

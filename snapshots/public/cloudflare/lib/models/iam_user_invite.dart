@@ -28,7 +28,7 @@ factory IamSchemasExpiresOn.fromJson(String json) => IamSchemasExpiresOn(DateTim
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class IamUserInvite {const IamUserInvite({required this.invitedMemberId, required this.organizationId, this.expiresOn, this.id, this.invitedBy, this.invitedMemberEmail, this.invitedOn, this.organizationIsEnforcingTwofactor, this.organizationName, this.roles, this.status, });
+@immutable final class IamUserInvite {const IamUserInvite({required this.invitedMemberId, required this.organizationId, this.expiresOn, this.id, this.invitedBy, this.invitedMemberEmail, this.invitedOn, this.organizationIsEnforcingTwofactor, this.organizationName, this.roles, this.status = const Omittable.absent(), });
 
 factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite(
   expiresOn: json['expires_on'] != null ? IamSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,
@@ -41,7 +41,7 @@ factory IamUserInvite.fromJson(Map<String, dynamic> json) { return IamUserInvite
   organizationIsEnforcingTwofactor: json['organization_is_enforcing_twofactor'] as bool?,
   organizationName: json['organization_name'] as String?,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  status: json['status'],
+  status: json.containsKey('status') ? Omittable(json['status']) : const Omittable.absent(),
 ); }
 
 /// When the invite is no longer active.
@@ -74,24 +74,24 @@ final String? organizationName;
 final List<String>? roles;
 
 /// Current status of the invitation.
-final dynamic status;
+final Omittable<dynamic> status;
 
 Map<String, dynamic> toJson() { return {
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (invitedBy != null) 'invited_by': invitedBy?.toJson(),
   if (invitedMemberEmail != null) 'invited_member_email': invitedMemberEmail?.toJson(),
-  'invited_member_id': ?invitedMemberId,
+  'invited_member_id': invitedMemberId,
   if (invitedOn != null) 'invited_on': invitedOn?.toJson(),
   'organization_id': organizationId,
   'organization_is_enforcing_twofactor': ?organizationIsEnforcingTwofactor,
   'organization_name': ?organizationName,
   'roles': ?roles,
-  'status': ?status,
+  if (status.isPresent) 'status': status.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invited_member_id') && json['invited_member_id'] is String &&
       json.containsKey('organization_id') && json['organization_id'] is String; } 
-IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComponentsSchemasIdentifier Function()? id, IamInvitedBy Function()? invitedBy, IamInvitedMemberEmail Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn Function()? invitedOn, String? organizationId, bool Function()? organizationIsEnforcingTwofactor, String Function()? organizationName, List<String> Function()? roles, dynamic Function()? status, }) { return IamUserInvite(
+IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteComponentsSchemasIdentifier? Function()? id, IamInvitedBy? Function()? invitedBy, IamInvitedMemberEmail? Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn? Function()? invitedOn, String? organizationId, bool? Function()? organizationIsEnforcingTwofactor, String? Function()? organizationName, List<String>? Function()? roles, Omittable<dynamic>? status, }) { return IamUserInvite(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,
   invitedBy: invitedBy != null ? invitedBy() : this.invitedBy,
@@ -102,7 +102,7 @@ IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComp
   organizationIsEnforcingTwofactor: organizationIsEnforcingTwofactor != null ? organizationIsEnforcingTwofactor() : this.organizationIsEnforcingTwofactor,
   organizationName: organizationName != null ? organizationName() : this.organizationName,
   roles: roles != null ? roles() : this.roles,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IamUserInvite &&

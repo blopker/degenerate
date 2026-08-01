@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type'}.contains(key)); } 
-RulesetVersionActor copyWith({int Function()? id, String Function()? type, }) { return RulesetVersionActor(
+RulesetVersionActor copyWith({int? Function()? id, String? Function()? type, }) { return RulesetVersionActor(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
 ); } 

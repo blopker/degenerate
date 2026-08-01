@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'script', 'type'}.contains(key)); } 
-MqWorkerProducer copyWith({String Function()? script, MqWorkerProducerType Function()? type, }) { return MqWorkerProducer(
+MqWorkerProducer copyWith({String? Function()? script, MqWorkerProducerType? Function()? type, }) { return MqWorkerProducer(
   script: script != null ? script() : this.script,
   type: type != null ? type() : this.type,
 ); } 

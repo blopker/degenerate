@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (routes != null) 'routes': routes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'routes'}.contains(key)); } 
-MagicRoutesCollectionResponseResult copyWith({List<MagicRoute> Function()? routes}) { return MagicRoutesCollectionResponseResult(
+MagicRoutesCollectionResponseResult copyWith({List<MagicRoute>? Function()? routes}) { return MagicRoutesCollectionResponseResult(
   routes: routes != null ? routes() : this.routes,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

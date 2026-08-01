@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
-RumSchemasMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, RumSchemasMessages2Source Function()? source, }) { return RumSchemasMessages2(
+RumSchemasMessages2 copyWith({int? code, String? Function()? documentationUrl, String? message, RumSchemasMessages2Source? Function()? source, }) { return RumSchemasMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,

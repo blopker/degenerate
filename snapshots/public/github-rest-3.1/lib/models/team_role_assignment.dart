@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'name': name,
   'slug': slug,
-  'description': ?description,
+  'description': description,
   'privacy': ?privacy,
   'notification_setting': ?notificationSetting,
   'permission': permission,
@@ -132,7 +132,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'members_url': membersUrl,
   'repositories_url': repositoriesUrl.toString(),
-  if (parent != null) 'parent': parent?.toJson(),
+  'parent': parent?.toJson(),
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
@@ -149,7 +149,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('parent') &&
       json.containsKey('type'); } 
-TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamRoleAssignmentPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamRoleAssignmentType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamRoleAssignment(
+TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment? Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamRoleAssignmentPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamRoleAssignmentType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

@@ -27,8 +27,8 @@ final Uri? htmlUrl;
 Map<String, dynamic> toJson() { return {
   'key': key,
   'name': name,
-  if (url != null) 'url': url?.toString(),
-  'spdx_id': ?spdxId,
+  'url': url?.toString(),
+  'spdx_id': spdxId,
   'node_id': nodeId,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
 }; } 
@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('spdx_id') && json['spdx_id'] is String &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-LicenseSimple copyWith({String? key, String? name, Uri? Function()? url, String? Function()? spdxId, String? nodeId, Uri Function()? htmlUrl, }) { return LicenseSimple(
+LicenseSimple copyWith({String? key, String? name, Uri? Function()? url, String? Function()? spdxId, String? nodeId, Uri? Function()? htmlUrl, }) { return LicenseSimple(
   key: key ?? this.key,
   name: name ?? this.name,
   url: url != null ? url() : this.url,

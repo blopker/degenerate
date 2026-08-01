@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
       json.containsKey('role') && json['role'] is String; } 
-ChatCompletionRequestDeveloperMessage copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? role, String Function()? name, }) { return ChatCompletionRequestDeveloperMessage(
+ChatCompletionRequestDeveloperMessage copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? role, String? Function()? name, }) { return ChatCompletionRequestDeveloperMessage(
   content: content ?? this.content,
   role: role ?? this.role,
   name: name != null ? name() : this.name,

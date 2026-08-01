@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'errors', 'origin', 'status', 'updated_at'}.contains(key)); } 
-TlsCertificatesAndHostnamesFallbackorigin copyWith({TlsCertificatesAndHostnamesSchemasCreatedAt Function()? createdAt, List<String> Function()? errors, TlsCertificatesAndHostnamesOrigin Function()? origin, TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesUpdatedAt Function()? updatedAt, }) { return TlsCertificatesAndHostnamesFallbackorigin(
+TlsCertificatesAndHostnamesFallbackorigin copyWith({TlsCertificatesAndHostnamesSchemasCreatedAt? Function()? createdAt, List<String>? Function()? errors, TlsCertificatesAndHostnamesOrigin? Function()? origin, TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesUpdatedAt? Function()? updatedAt, }) { return TlsCertificatesAndHostnamesFallbackorigin(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errors: errors != null ? errors() : this.errors,
   origin: origin != null ? origin() : this.origin,

@@ -31,17 +31,17 @@ bool get isUnknown { return !values.contains(this); }
 /// A `user` scoped secret is accessible by the app backend and one specific Dashboard user. Use the `user` scope for per-user secrets like per-user OAuth tokens, where different users might have different permissions.
 /// 
 /// Related guide: [Store data between page reloads](https://docs.stripe.com/stripe-apps/store-auth-data-custom-objects)
-@immutable final class AppsSecret {const AppsSecret({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.scope, this.deleted, this.expiresAt, this.payload, });
+@immutable final class AppsSecret {const AppsSecret({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.scope, this.deleted, this.expiresAt = const Omittable.absent(), this.payload = const Omittable.absent(), });
 
 factory AppsSecret.fromJson(Map<String, dynamic> json) { return AppsSecret(
   created: (json['created'] as num).toInt(),
   deleted: json['deleted'] as bool?,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   name: json['name'] as String,
   object: AppsSecretObject.fromJson(json['object'] as String),
-  payload: json['payload'] as String?,
+  payload: json.containsKey('payload') ? Omittable(json['payload'] as String?) : const Omittable.absent(),
   scope: SecretServiceResourceScope.fromJson(json['scope'] as Map<String, dynamic>),
 ); }
 
@@ -52,7 +52,7 @@ final int created;
 final bool? deleted;
 
 /// The Unix timestamp for the expiry time of the secret, after which the secret deletes.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -67,19 +67,19 @@ final String name;
 final AppsSecretObject object;
 
 /// The plaintext secret value to be stored.
-final String? payload;
+final Omittable<String?> payload;
 
 final SecretServiceResourceScope scope;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
   'deleted': ?deleted,
-  'expires_at': ?expiresAt,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
   'livemode': livemode,
   'name': name,
   'object': object.toJson(),
-  'payload': ?payload,
+  if (payload.isPresent) 'payload': payload.value,
   'scope': scope.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
@@ -88,15 +88,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('scope'); } 
-AppsSecret copyWith({int? created, bool Function()? deleted, int? Function()? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, String? Function()? payload, SecretServiceResourceScope? scope, }) { return AppsSecret(
+AppsSecret copyWith({int? created, bool? Function()? deleted, Omittable<int?>? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, Omittable<String?>? payload, SecretServiceResourceScope? scope, }) { return AppsSecret(
   created: created ?? this.created,
   deleted: deleted != null ? deleted() : this.deleted,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   name: name ?? this.name,
   object: object ?? this.object,
-  payload: payload != null ? payload() : this.payload,
+  payload: payload ?? this.payload,
   scope: scope ?? this.scope,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

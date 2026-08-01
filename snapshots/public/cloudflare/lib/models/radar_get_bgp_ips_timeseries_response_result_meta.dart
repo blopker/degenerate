@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggIn
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
       json.containsKey('units'); } 
-RadarGetBgpIpsTimeseriesResponseResultMeta copyWith({RadarGetBgpIpsTimeseriesResponseResultMetaAggInterval? aggInterval, RadarGetBgpIpsTimeseriesResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetBgpIpsTimeseriesResponseResultMetaDateRange>? dateRange, RadarGetBgpIpsTimeseriesResponseResultMetaDelay Function()? delay, DateTime? lastUpdated, RadarGetBgpIpsTimeseriesResponseResultMetaNormalization? normalization, List<RadarGetBgpIpsTimeseriesResponseResultMetaUnits>? units, }) { return RadarGetBgpIpsTimeseriesResponseResultMeta(
+RadarGetBgpIpsTimeseriesResponseResultMeta copyWith({RadarGetBgpIpsTimeseriesResponseResultMetaAggInterval? aggInterval, RadarGetBgpIpsTimeseriesResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetBgpIpsTimeseriesResponseResultMetaDateRange>? dateRange, RadarGetBgpIpsTimeseriesResponseResultMetaDelay? Function()? delay, DateTime? lastUpdated, RadarGetBgpIpsTimeseriesResponseResultMetaNormalization? normalization, List<RadarGetBgpIpsTimeseriesResponseResultMetaUnits>? units, }) { return RadarGetBgpIpsTimeseriesResponseResultMeta(
   aggInterval: aggInterval ?? this.aggInterval,
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,

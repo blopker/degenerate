@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-TelemetryQueryRequestParametersOrderBy copyWith({TelemetryQueryRequestParametersOrderByOrder Function()? order, String? value, }) { return TelemetryQueryRequestParametersOrderBy(
+TelemetryQueryRequestParametersOrderBy copyWith({TelemetryQueryRequestParametersOrderByOrder? Function()? order, String? value, }) { return TelemetryQueryRequestParametersOrderBy(
   order: order != null ? order() : this.order,
   value: value ?? this.value,
 ); } 

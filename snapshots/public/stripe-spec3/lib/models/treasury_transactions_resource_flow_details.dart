@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal Function()? creditReversal, TreasuryDebitReversal Function()? debitReversal, TreasuryInboundTransfer Function()? inboundTransfer, IssuingAuthorization Function()? issuingAuthorization, TreasuryOutboundPayment Function()? outboundPayment, TreasuryOutboundTransfer Function()? outboundTransfer, TreasuryReceivedCredit Function()? receivedCredit, TreasuryReceivedDebit Function()? receivedDebit, TreasuryTransactionsResourceFlowDetailsType? type, }) { return TreasuryTransactionsResourceFlowDetails(
+TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal? Function()? creditReversal, TreasuryDebitReversal? Function()? debitReversal, TreasuryInboundTransfer? Function()? inboundTransfer, IssuingAuthorization? Function()? issuingAuthorization, TreasuryOutboundPayment? Function()? outboundPayment, TreasuryOutboundTransfer? Function()? outboundTransfer, TreasuryReceivedCredit? Function()? receivedCredit, TreasuryReceivedDebit? Function()? receivedDebit, TreasuryTransactionsResourceFlowDetailsType? type, }) { return TreasuryTransactionsResourceFlowDetails(
   creditReversal: creditReversal != null ? creditReversal() : this.creditReversal,
   debitReversal: debitReversal != null ? debitReversal() : this.debitReversal,
   inboundTransfer: inboundTransfer != null ? inboundTransfer() : this.inboundTransfer,

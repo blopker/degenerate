@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, AssistantToolsFileSearchFileSearch Function()? fileSearch, }) { return AssistantToolsFileSearch(
+AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, AssistantToolsFileSearchFileSearch? Function()? fileSearch, }) { return AssistantToolsFileSearch(
   type: type ?? this.type,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
 ); } 

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (outcome != null) 'Outcome': outcome?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Outcome'}.contains(key)); } 
-CreateMessageFeedbackRequest copyWith({MessageFeedbackEnumOutcome Function()? outcome}) { return CreateMessageFeedbackRequest(
+CreateMessageFeedbackRequest copyWith({MessageFeedbackEnumOutcome? Function()? outcome}) { return CreateMessageFeedbackRequest(
   outcome: outcome != null ? outcome() : this.outcome,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

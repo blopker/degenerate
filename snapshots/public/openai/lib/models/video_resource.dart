@@ -117,13 +117,13 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'progress': progress,
   'created_at': createdAt,
-  'completed_at': ?completedAt,
-  'expires_at': ?expiresAt,
-  'prompt': ?prompt,
+  'completed_at': completedAt,
+  'expires_at': expiresAt,
+  'prompt': prompt,
   'size': size.toJson(),
   'seconds': seconds,
-  'remixed_from_video_id': ?remixedFromVideoId,
-  if (error != null) 'error': error?.toJson(),
+  'remixed_from_video_id': remixedFromVideoId,
+  'error': error?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&

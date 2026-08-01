@@ -24,24 +24,24 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentReviewRequestedReviewersType($value)'; } 
  }
-@immutable final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer, this.type, });
+@immutable final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer = const Omittable.absent(), this.type, });
 
 factory WebhookDeploymentReviewRequestedReviewers.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedReviewers(
-  reviewer: json['reviewer'] != null ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
+  reviewer: json.containsKey('reviewer') ? Omittable(json['reviewer'] != null ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json['type'] != null ? WebhookDeploymentReviewRequestedReviewersType.fromJson(json['type'] as String) : null,
 ); }
 
-final WebhookDeploymentReviewRequestedReviewersReviewer? reviewer;
+final Omittable<WebhookDeploymentReviewRequestedReviewersReviewer?> reviewer;
 
 final WebhookDeploymentReviewRequestedReviewersType? type;
 
 Map<String, dynamic> toJson() { return {
-  if (reviewer != null) 'reviewer': reviewer?.toJson(),
+  if (reviewer.isPresent) 'reviewer': reviewer.value?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewer', 'type'}.contains(key)); } 
-WebhookDeploymentReviewRequestedReviewers copyWith({WebhookDeploymentReviewRequestedReviewersReviewer? Function()? reviewer, WebhookDeploymentReviewRequestedReviewersType Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
-  reviewer: reviewer != null ? reviewer() : this.reviewer,
+WebhookDeploymentReviewRequestedReviewers copyWith({Omittable<WebhookDeploymentReviewRequestedReviewersReviewer?>? reviewer, WebhookDeploymentReviewRequestedReviewersType? Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
+  reviewer: reviewer ?? this.reviewer,
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

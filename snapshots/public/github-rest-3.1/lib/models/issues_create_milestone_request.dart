@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneRequestState Function()? state, String Function()? description, DateTime Function()? dueOn, }) { return IssuesCreateMilestoneRequest(
+IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneRequestState Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) { return IssuesCreateMilestoneRequest(
   title: title ?? this.title,
   state: state != null ? state() : this.state,
   description: description != null ? description() : this.description,

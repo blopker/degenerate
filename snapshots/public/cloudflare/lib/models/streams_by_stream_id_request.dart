@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (workerBinding != null) 'worker_binding': workerBinding?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'http', 'worker_binding'}.contains(key)); } 
-StreamsByStreamIdRequest copyWith({StreamsByStreamIdRequestHttp Function()? http, StreamsByStreamIdRequestWorkerBinding Function()? workerBinding, }) { return StreamsByStreamIdRequest(
+StreamsByStreamIdRequest copyWith({StreamsByStreamIdRequestHttp? Function()? http, StreamsByStreamIdRequestWorkerBinding? Function()? workerBinding, }) { return StreamsByStreamIdRequest(
   http: http != null ? http() : this.http,
   workerBinding: workerBinding != null ? workerBinding() : this.workerBinding,
 ); } 

@@ -11,6 +11,7 @@ class ModelEmitter {
   const ModelEmitter(
     this.model, {
     this.typeRegistry = const {},
+    this.omittable = OmittableMode.nullableOnly,
   });
 
   /// The object IR to emit.
@@ -18,6 +19,12 @@ class ModelEmitter {
 
   /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
+
+  /// How optional fields represent "omitted" vs "set to null".
+  final OmittableMode omittable;
+
+  /// Whether [f] is emitted as an `Omittable<...>` presence-wrapped field.
+  bool _isOmittable(IrField f) => isOmittableField(f, omittable);
 
   /// Field name for the overflow map, avoiding collisions with fixed fields.
   String get _overflowFieldName {
@@ -64,16 +71,27 @@ class ModelEmitter {
     return model.description!.docComment;
   }
 
+  /// `Omittable<T?>` reference for a wrapped field. The inner type is always
+  /// nullable so `Omittable(null)` (explicit null on the wire) is legal even
+  /// in `all` mode where the spec type itself isn't nullable.
+  Reference _omittableRef(IrField f) => TypeReference(
+    (b) => b
+      ..symbol = 'Omittable'
+      ..types.add(irTypeToReference(f.type, forceNullable: true)),
+  );
+
   Iterable<Field> _buildFields() {
     final fields = model.fields.map(
       (f) => Field(
         (b) => b
           ..name = f.name
           ..modifier = FieldModifier.final$
-          ..type = irTypeToReference(
-            f.type,
-            forceNullable: !f.isRequired && !_hasDefault(f),
-          )
+          ..type = _isOmittable(f)
+              ? _omittableRef(f)
+              : irTypeToReference(
+                  f.type,
+                  forceNullable: !f.isRequired && !_hasDefault(f),
+                )
           ..docs.addAll(
             f.description != null ? f.description!.docComment : [],
           ),
@@ -99,7 +117,9 @@ class ModelEmitter {
           ..named = true
           ..toThis = true
           ..required = f.isRequired && !_hasDefault(f)
-          ..defaultTo = _defaultCode(f),
+          ..defaultTo = _isOmittable(f)
+              ? const Code('const Omittable.absent()')
+              : _defaultCode(f),
       );
     }).toList();
     // Sort required named parameters before optional ones.
@@ -143,6 +163,11 @@ class ModelEmitter {
             isOptional: isOptional,
             typeRegistry: typeRegistry,
           );
+          if (_isOmittable(f)) {
+            // Key presence decides absent vs present; a present null decodes
+            // to Omittable(null), preserving the three wire states.
+            return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? Omittable($code) : const Omittable.absent(),';
+          }
           if (!f.isRequired && _hasDefault(f)) {
             // Optional with default: use null-safe extraction or skip entirely.
             // The constructor default handles missing values.
@@ -208,6 +233,21 @@ class ModelEmitter {
           final key = f.originalName.literal;
 
           final value = buildToJsonCode(f.type, f.name);
+          if (_isOmittable(f)) {
+            // Absent fields are dropped; present fields serialize their
+            // value, including an explicit null.
+            final valueExpr = buildToJsonCode(
+              f.type,
+              '${f.name}.value',
+              nullable: true,
+            );
+            return '  if (${f.name}.isPresent) $key: $valueExpr,';
+          }
+          // A required field must always be present on the wire, even when
+          // its value is null (nullable: true) — the key carries meaning.
+          if (f.isRequired && f.type.isNullable) {
+            return '  $key: ${_toJsonValueNullable(f)},';
+          }
           // Only use null check if the Dart field type is actually nullable.
           // Fields with defaults are non-nullable even if not required.
           final isNullableInDart =
@@ -353,11 +393,32 @@ class ModelEmitter {
 
   Method _buildCopyWith() {
     final params = model.fields.map((f) {
+      if (_isOmittable(f)) {
+        // The wrapper already distinguishes "not passed" (null) from
+        // "set to absent/null/value", so no thunk is needed.
+        return Parameter(
+          (p) => p
+            ..name = f.name
+            ..named = true
+            ..type = TypeReference(
+              (b) => b
+                ..symbol = 'Omittable'
+                ..types.add(irTypeToReference(f.type, forceNullable: true))
+                ..isNullable = true,
+            ),
+        );
+      }
       final isOptional = !f.isRequired;
       final isNullable = isOptional || f.type.isNullable;
       if (isNullable) {
-        // Thunk pattern for nullable fields
-        final typeStr = _dartTypeName(f.type);
+        // Thunk pattern for nullable fields. The thunk's return type matches
+        // the FIELD's Dart nullability (optionality without a default makes
+        // the field nullable), so `copyWith(x: () => null)` can unset any
+        // field that can hold null.
+        final fieldIsNullable =
+            (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+        final base = irTypeName(f.type);
+        final typeStr = fieldIsNullable && base != 'dynamic' ? '$base?' : base;
         return Parameter(
           (p) => p
             ..name = f.name
@@ -375,6 +436,9 @@ class ModelEmitter {
 
     final assignments = model.fields
         .map((f) {
+          if (_isOmittable(f)) {
+            return '  ${f.name}: ${f.name} ?? this.${f.name},';
+          }
           final isOptional = !f.isRequired;
           final isNullable = isOptional || f.type.isNullable;
           if (isNullable) {
@@ -410,19 +474,16 @@ class ModelEmitter {
     );
   }
 
-  String _dartTypeName(IrType type) {
-    final base = irTypeName(type);
-    // dynamic is already nullable — never append '?'.
-    if (base == 'dynamic') return base;
-    return type.isNullable ? '$base?' : base;
-  }
-
   Method _buildEquals() {
     final comparisons = model.fields
         .map((f) {
           // Use 'this.' prefix when field name shadows the 'other' parameter.
           final self = f.name == 'other' ? 'this.${f.name}' : f.name;
           if (isListType(f.type)) {
+            if (_isOmittable(f)) {
+              return '$self.isPresent == other.${f.name}.isPresent &&\n'
+                  '          listEquals($self.value, other.${f.name}.value)';
+            }
             return 'listEquals($self, other.${f.name})';
           }
           return '$self == other.${f.name}';
@@ -448,6 +509,11 @@ class ModelEmitter {
   Method _buildHashCode() {
     final fieldExprs = model.fields.map((f) {
       if (isListType(f.type)) {
+        if (_isOmittable(f)) {
+          // Absent and present-null collide here; equality still separates
+          // them via isPresent.
+          return 'Object.hashAll(${f.name}.value ?? const [])';
+        }
         final isNullable =
             (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
         if (isNullable) {
@@ -501,63 +567,7 @@ class ModelEmitter {
     );
   }
 
-  bool _hasDefault(IrField f) => _defaultCode(f) != null;
+  bool _hasDefault(IrField f) => hasUsableDartDefault(f);
 
-  Code? _defaultCode(IrField f) {
-    if (f.defaultValue == null) return null;
-    final v = f.defaultValue;
-    // Don't use empty map/object defaults for object-typed fields -
-    // they don't make sense as Dart defaults (const {} is Map, not the object).
-    if (v is Map && v.isEmpty && _isObjectLikeType(f.type)) return null;
-    // For enum-typed fields, emit the enum constant instead of a raw string.
-    if (v is String && f.type is IrEnum) {
-      final enumType = f.type as IrEnum;
-      final enumName = enumType.name;
-      final dartValue = enumValueName(v);
-      return Code('$enumName.$dartValue');
-    }
-    if (v is String) {
-      // Only emit string default if the field type is actually a String
-      if (f.type is IrPrimitive) {
-        final kind = (f.type as IrPrimitive).kind;
-        if (kind == PrimitiveKind.string) {
-          return Code(dartStringLiteral(v));
-        }
-        if (kind == PrimitiveKind.dynamic_) {
-          return null;
-        }
-        // Non-string primitive with string default → skip
-        return null;
-      }
-      // Non-primitive type with string default (e.g., IrTypeRef to enum,
-      // IrList) → skip
-      return null;
-    }
-    if (v is bool) {
-      if (f.type is! IrPrimitive ||
-          (f.type as IrPrimitive).kind != PrimitiveKind.bool) {
-        return null; // Type mismatch
-      }
-      return Code('$v');
-    }
-    if (v is num) {
-      if (f.type is! IrPrimitive) return null; // Type mismatch
-      final kind = (f.type as IrPrimitive).kind;
-      if (kind == PrimitiveKind.int) return Code('${v.toInt()}');
-      if (kind == PrimitiveKind.double) return Code('${v.toDouble()}');
-      return Code('$v');
-    }
-    if (v is List && v.isEmpty) return const Code('const []');
-    if (v is Map && v.isEmpty) return const Code('const {}');
-    return null;
-  }
-
-  bool _isObjectLikeType(IrType type) => switch (type) {
-    IrObject() ||
-    IrTypeRef() ||
-    IrDiscriminatedUnion() ||
-    IrUntaggedUnion() ||
-    IrAnyOf() => true,
-    _ => false,
-  };
+  Code? _defaultCode(IrField f) => defaultFieldCode(f);
 }

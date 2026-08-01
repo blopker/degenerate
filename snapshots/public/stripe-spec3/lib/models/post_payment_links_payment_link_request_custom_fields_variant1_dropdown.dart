@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'options': options.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
-PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown copyWith({String Function()? defaultValue, List<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions>? options, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown(
+PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown copyWith({String? Function()? defaultValue, List<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions>? options, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   options: options ?? this.options,
 ); } 

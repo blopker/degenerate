@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('rule_enabled') && json['rule_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user_email') && json['user_email'] is String; } 
-PatchEventQueryUpdateResponse copyWith({int? accountId, bool? alertEnabled, bool? alertRollupEnabled, String? createdAt, int? id, String? name, String? queryJson, bool? ruleEnabled, String Function()? ruleScope, String? updatedAt, String? userEmail, }) { return PatchEventQueryUpdateResponse(
+PatchEventQueryUpdateResponse copyWith({int? accountId, bool? alertEnabled, bool? alertRollupEnabled, String? createdAt, int? id, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, String? updatedAt, String? userEmail, }) { return PatchEventQueryUpdateResponse(
   accountId: accountId ?? this.accountId,
   alertEnabled: alertEnabled ?? this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled ?? this.alertRollupEnabled,

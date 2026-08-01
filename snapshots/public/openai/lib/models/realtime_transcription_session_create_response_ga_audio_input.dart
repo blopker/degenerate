@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'transcription', 'noise_reduction', 'turn_detection'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateResponseGaAudioInput copyWith({RealtimeAudioFormats Function()? format, AudioTranscription Function()? transcription, RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction Function()? noiseReduction, RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponseGaAudioInput(
+RealtimeTranscriptionSessionCreateResponseGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction? Function()? noiseReduction, RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection? Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponseGaAudioInput(
   format: format != null ? format() : this.format,
   transcription: transcription != null ? transcription() : this.transcription,
   noiseReduction: noiseReduction != null ? noiseReduction() : this.noiseReduction,

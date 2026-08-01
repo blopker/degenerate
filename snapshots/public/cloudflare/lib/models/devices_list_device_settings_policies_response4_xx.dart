@@ -24,7 +24,7 @@ final TeamsDevicesResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-DevicesListDeviceSettingsPoliciesResponse4Xx copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, TeamsDevicesResultInfo Function()? resultInfo, }) { return DevicesListDeviceSettingsPoliciesResponse4Xx(
+DevicesListDeviceSettingsPoliciesResponse4Xx copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, TeamsDevicesResultInfo? Function()? resultInfo, }) { return DevicesListDeviceSettingsPoliciesResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

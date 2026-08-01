@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_details') &&
       json.containsKey('payment_details'); } 
-PostRadarPaymentEvaluationsRequest copyWith({PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails Function()? clientDeviceMetadataDetails, PostRadarPaymentEvaluationsRequestCustomerDetails? customerDetails, List<String> Function()? expand, Map<String, String> Function()? metadata, PostRadarPaymentEvaluationsRequestPaymentDetails? paymentDetails, }) { return PostRadarPaymentEvaluationsRequest(
+PostRadarPaymentEvaluationsRequest copyWith({PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails? Function()? clientDeviceMetadataDetails, PostRadarPaymentEvaluationsRequestCustomerDetails? customerDetails, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostRadarPaymentEvaluationsRequestPaymentDetails? paymentDetails, }) { return PostRadarPaymentEvaluationsRequest(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   customerDetails: customerDetails ?? this.customerDetails,
   expand: expand != null ? expand() : this.expand,

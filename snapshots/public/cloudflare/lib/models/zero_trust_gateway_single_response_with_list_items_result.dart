@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'description', 'id', 'items', 'name', 'type', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewaySingleResponseWithListItemsResult copyWith({ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayDescription Function()? description, ZeroTrustGatewaySchemasUuid Function()? id, List<ZeroTrustGatewayItems2> Function()? items, ZeroTrustGatewayName Function()? name, ZeroTrustGatewaySchemasType Function()? type, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewaySingleResponseWithListItemsResult(
+ZeroTrustGatewaySingleResponseWithListItemsResult copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDescription? Function()? description, ZeroTrustGatewaySchemasUuid? Function()? id, List<ZeroTrustGatewayItems2>? Function()? items, ZeroTrustGatewayName? Function()? name, ZeroTrustGatewaySchemasType? Function()? type, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewaySingleResponseWithListItemsResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

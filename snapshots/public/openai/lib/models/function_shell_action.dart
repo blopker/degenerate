@@ -19,8 +19,8 @@ final int? maxOutputLength;
 
 Map<String, dynamic> toJson() { return {
   'commands': commands,
-  'timeout_ms': ?timeoutMs,
-  'max_output_length': ?maxOutputLength,
+  'timeout_ms': timeoutMs,
+  'max_output_length': maxOutputLength,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('commands') &&
       json.containsKey('timeout_ms') && json['timeout_ms'] is num &&

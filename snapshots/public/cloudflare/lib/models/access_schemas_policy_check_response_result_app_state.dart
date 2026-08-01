@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_uid', 'aud', 'hostname', 'name', 'policies', 'status'}.contains(key)); } 
-AccessSchemasPolicyCheckResponseResultAppState copyWith({AccessUuid Function()? appUid, String Function()? aud, String Function()? hostname, String Function()? name, List<dynamic> Function()? policies, String Function()? status, }) { return AccessSchemasPolicyCheckResponseResultAppState(
+AccessSchemasPolicyCheckResponseResultAppState copyWith({AccessUuid? Function()? appUid, String? Function()? aud, String? Function()? hostname, String? Function()? name, List<dynamic>? Function()? policies, String? Function()? status, }) { return AccessSchemasPolicyCheckResponseResultAppState(
   appUid: appUid != null ? appUid() : this.appUid,
   aud: aud != null ? aud() : this.aud,
   hostname: hostname != null ? hostname() : this.hostname,

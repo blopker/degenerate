@@ -57,34 +57,34 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LogpushOutputOptionsTimestampFormat($value)'; } 
  }
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.
-@immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228, this.batchPrefix, this.batchSuffix, this.fieldDelimiter, this.fieldNames, this.outputType, this.recordDelimiter, this.recordPrefix, this.recordSuffix, this.recordTemplate, this.sampleRate, this.timestampFormat, });
+@immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228 = const Omittable.absent(), this.batchPrefix = const Omittable.absent(), this.batchSuffix = const Omittable.absent(), this.fieldDelimiter = const Omittable.absent(), this.fieldNames, this.outputType, this.recordDelimiter = const Omittable.absent(), this.recordPrefix = const Omittable.absent(), this.recordSuffix = const Omittable.absent(), this.recordTemplate = const Omittable.absent(), this.sampleRate = const Omittable.absent(), this.timestampFormat, });
 
 factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return LogpushOutputOptions(
-  cve202144228: json['CVE-2021-44228'] as bool?,
-  batchPrefix: json['batch_prefix'] as String?,
-  batchSuffix: json['batch_suffix'] as String?,
-  fieldDelimiter: json['field_delimiter'] as String?,
+  cve202144228: json.containsKey('CVE-2021-44228') ? Omittable(json['CVE-2021-44228'] as bool?) : const Omittable.absent(),
+  batchPrefix: json.containsKey('batch_prefix') ? Omittable(json['batch_prefix'] as String?) : const Omittable.absent(),
+  batchSuffix: json.containsKey('batch_suffix') ? Omittable(json['batch_suffix'] as String?) : const Omittable.absent(),
+  fieldDelimiter: json.containsKey('field_delimiter') ? Omittable(json['field_delimiter'] as String?) : const Omittable.absent(),
   fieldNames: (json['field_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   outputType: json['output_type'] != null ? LogpushOutputOptionsOutputType.fromJson(json['output_type'] as String) : null,
-  recordDelimiter: json['record_delimiter'] as String?,
-  recordPrefix: json['record_prefix'] as String?,
-  recordSuffix: json['record_suffix'] as String?,
-  recordTemplate: json['record_template'] as String?,
-  sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
+  recordDelimiter: json.containsKey('record_delimiter') ? Omittable(json['record_delimiter'] as String?) : const Omittable.absent(),
+  recordPrefix: json.containsKey('record_prefix') ? Omittable(json['record_prefix'] as String?) : const Omittable.absent(),
+  recordSuffix: json.containsKey('record_suffix') ? Omittable(json['record_suffix'] as String?) : const Omittable.absent(),
+  recordTemplate: json.containsKey('record_template') ? Omittable(json['record_template'] as String?) : const Omittable.absent(),
+  sampleRate: json.containsKey('sample_rate') ? Omittable(json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null) : const Omittable.absent(),
   timestampFormat: json['timestamp_format'] != null ? LogpushOutputOptionsTimestampFormat.fromJson(json['timestamp_format'] as String) : null,
 ); }
 
 /// If set to true, will cause all occurrences of `${` in the generated files to be replaced with `x{`.
-final bool? cve202144228;
+final Omittable<bool?> cve202144228;
 
 /// String to be prepended before each batch.
-final String? batchPrefix;
+final Omittable<String?> batchPrefix;
 
 /// String to be appended after each batch.
-final String? batchSuffix;
+final Omittable<String?> batchSuffix;
 
 /// String to join fields. This field be ignored when `record_template` is set.
-final String? fieldDelimiter;
+final Omittable<String?> fieldDelimiter;
 
 /// List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.
 final List<String>? fieldNames;
@@ -93,50 +93,50 @@ final List<String>? fieldNames;
 final LogpushOutputOptionsOutputType? outputType;
 
 /// String to be inserted in-between the records as separator.
-final String? recordDelimiter;
+final Omittable<String?> recordDelimiter;
 
 /// String to be prepended before each record.
-final String? recordPrefix;
+final Omittable<String?> recordPrefix;
 
 /// String to be appended after each record.
-final String? recordSuffix;
+final Omittable<String?> recordSuffix;
 
 /// String to use as template for each record instead of the default json key value mapping. All fields used in the template must be present in `field_names` as well, otherwise they will end up as null. Format as a Go `text/template` without any standard functions, like conditionals, loops, sub-templates, etc.
-final String? recordTemplate;
+final Omittable<String?> recordTemplate;
 
 /// Floating number to specify sampling rate. Sampling is applied on top of filtering, and regardless of the current `sample_interval` of the data.
-final double? sampleRate;
+final Omittable<double?> sampleRate;
 
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
 final LogpushOutputOptionsTimestampFormat? timestampFormat;
 
 Map<String, dynamic> toJson() { return {
-  'CVE-2021-44228': ?cve202144228,
-  'batch_prefix': ?batchPrefix,
-  'batch_suffix': ?batchSuffix,
-  'field_delimiter': ?fieldDelimiter,
+  if (cve202144228.isPresent) 'CVE-2021-44228': cve202144228.value,
+  if (batchPrefix.isPresent) 'batch_prefix': batchPrefix.value,
+  if (batchSuffix.isPresent) 'batch_suffix': batchSuffix.value,
+  if (fieldDelimiter.isPresent) 'field_delimiter': fieldDelimiter.value,
   'field_names': ?fieldNames,
   if (outputType != null) 'output_type': outputType?.toJson(),
-  'record_delimiter': ?recordDelimiter,
-  'record_prefix': ?recordPrefix,
-  'record_suffix': ?recordSuffix,
-  'record_template': ?recordTemplate,
-  'sample_rate': ?sampleRate,
+  if (recordDelimiter.isPresent) 'record_delimiter': recordDelimiter.value,
+  if (recordPrefix.isPresent) 'record_prefix': recordPrefix.value,
+  if (recordSuffix.isPresent) 'record_suffix': recordSuffix.value,
+  if (recordTemplate.isPresent) 'record_template': recordTemplate.value,
+  if (sampleRate.isPresent) 'sample_rate': sampleRate.value,
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key)); } 
-LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function()? batchPrefix, String? Function()? batchSuffix, String? Function()? fieldDelimiter, List<String> Function()? fieldNames, LogpushOutputOptionsOutputType Function()? outputType, String? Function()? recordDelimiter, String? Function()? recordPrefix, String? Function()? recordSuffix, String? Function()? recordTemplate, double? Function()? sampleRate, LogpushOutputOptionsTimestampFormat Function()? timestampFormat, }) { return LogpushOutputOptions(
-  cve202144228: cve202144228 != null ? cve202144228() : this.cve202144228,
-  batchPrefix: batchPrefix != null ? batchPrefix() : this.batchPrefix,
-  batchSuffix: batchSuffix != null ? batchSuffix() : this.batchSuffix,
-  fieldDelimiter: fieldDelimiter != null ? fieldDelimiter() : this.fieldDelimiter,
+LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?>? batchPrefix, Omittable<String?>? batchSuffix, Omittable<String?>? fieldDelimiter, List<String>? Function()? fieldNames, LogpushOutputOptionsOutputType? Function()? outputType, Omittable<String?>? recordDelimiter, Omittable<String?>? recordPrefix, Omittable<String?>? recordSuffix, Omittable<String?>? recordTemplate, Omittable<double?>? sampleRate, LogpushOutputOptionsTimestampFormat? Function()? timestampFormat, }) { return LogpushOutputOptions(
+  cve202144228: cve202144228 ?? this.cve202144228,
+  batchPrefix: batchPrefix ?? this.batchPrefix,
+  batchSuffix: batchSuffix ?? this.batchSuffix,
+  fieldDelimiter: fieldDelimiter ?? this.fieldDelimiter,
   fieldNames: fieldNames != null ? fieldNames() : this.fieldNames,
   outputType: outputType != null ? outputType() : this.outputType,
-  recordDelimiter: recordDelimiter != null ? recordDelimiter() : this.recordDelimiter,
-  recordPrefix: recordPrefix != null ? recordPrefix() : this.recordPrefix,
-  recordSuffix: recordSuffix != null ? recordSuffix() : this.recordSuffix,
-  recordTemplate: recordTemplate != null ? recordTemplate() : this.recordTemplate,
-  sampleRate: sampleRate != null ? sampleRate() : this.sampleRate,
+  recordDelimiter: recordDelimiter ?? this.recordDelimiter,
+  recordPrefix: recordPrefix ?? this.recordPrefix,
+  recordSuffix: recordSuffix ?? this.recordSuffix,
+  recordTemplate: recordTemplate ?? this.recordTemplate,
+  sampleRate: sampleRate ?? this.sampleRate,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (privacyLevel != null) 'privacy_level': privacyLevel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'privacy_level'}.contains(key)); } 
-WebhookSponsorshipEditedChanges copyWith({WebhookSponsorshipEditedChangesPrivacyLevel Function()? privacyLevel}) { return WebhookSponsorshipEditedChanges(
+WebhookSponsorshipEditedChanges copyWith({WebhookSponsorshipEditedChangesPrivacyLevel? Function()? privacyLevel}) { return WebhookSponsorshipEditedChanges(
   privacyLevel: privacyLevel != null ? privacyLevel() : this.privacyLevel,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

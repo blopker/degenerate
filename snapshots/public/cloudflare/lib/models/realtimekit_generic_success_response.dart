@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-RealtimekitGenericSuccessResponse copyWith({Map<String, dynamic> Function()? data, bool? success, }) { return RealtimekitGenericSuccessResponse(
+RealtimekitGenericSuccessResponse copyWith({Map<String, dynamic>? Function()? data, bool? success, }) { return RealtimekitGenericSuccessResponse(
   data: data != null ? data() : this.data,
   success: success ?? this.success,
 ); } 

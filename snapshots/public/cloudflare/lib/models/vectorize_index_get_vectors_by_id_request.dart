@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (ids != null) 'ids': ids?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ids'}.contains(key)); } 
-VectorizeIndexGetVectorsByIdRequest copyWith({List<VectorizeVectorIdentifier> Function()? ids}) { return VectorizeIndexGetVectorsByIdRequest(
+VectorizeIndexGetVectorsByIdRequest copyWith({List<VectorizeVectorIdentifier>? Function()? ids}) { return VectorizeIndexGetVectorsByIdRequest(
   ids: ids != null ? ids() : this.ids,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

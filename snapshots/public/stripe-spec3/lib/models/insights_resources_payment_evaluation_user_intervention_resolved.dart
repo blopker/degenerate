@@ -29,27 +29,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)'; } 
  }
 /// User Intervention Resolved Event details attached to this payment evaluation
-@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome, });
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome = const Omittable.absent(), });
 
 factory InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: json['key'] as String,
-  outcome: json['outcome'] != null ? InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(json['outcome'] as String) : null,
+  outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(json['outcome'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Unique ID of this intervention. Use this to provide the result.
 final String key;
 
 /// Result of the intervention if it has been completed.
-final InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome? outcome;
+final Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?> outcome;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
-  if (outcome != null) 'outcome': outcome?.toJson(),
+  if (outcome.isPresent) 'outcome': outcome.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome? Function()? outcome, }) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
+InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?>? outcome, }) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: key ?? this.key,
-  outcome: outcome != null ? outcome() : this.outcome,
+  outcome: outcome ?? this.outcome,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationUserInterventionResolved &&

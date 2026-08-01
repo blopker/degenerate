@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_type.dart';@immutable final class AccessWarpProps {const AccessWarpProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_type.dart';@immutable final class AccessWarpProps {const AccessWarpProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, });
 
 factory AccessWarpProps.fromJson(Map<String, dynamic> json) { return AccessWarpProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -8,8 +8,8 @@ factory AccessWarpProps.fromJson(Map<String, dynamic> json) { return AccessWarpP
   customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
   customNonIdentityDenyUrl: json['custom_non_identity_deny_url'] != null ? AccessCustomNonIdentityDenyUrl.fromJson(json['custom_non_identity_deny_url'] as String) : null,
   customPages: (json['custom_pages'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  domain: json['domain'],
-  name: json['name'],
+  domain: json.containsKey('domain') ? Omittable(json['domain']) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name']) : const Omittable.absent(),
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessType.fromJson(json['type'] as String),
 ); }
@@ -29,9 +29,9 @@ final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
 /// The custom pages that will be displayed when applicable for this application
 final List<String>? customPages;
 
-final dynamic domain;
+final Omittable<dynamic> domain;
 
-final dynamic name;
+final Omittable<dynamic> name;
 
 /// The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
 final AccessSchemasSessionDuration? sessionDuration;
@@ -45,20 +45,20 @@ Map<String, dynamic> toJson() { return {
   if (customDenyUrl != null) 'custom_deny_url': customDenyUrl?.toJson(),
   if (customNonIdentityDenyUrl != null) 'custom_non_identity_deny_url': customNonIdentityDenyUrl?.toJson(),
   'custom_pages': ?customPages,
-  'domain': ?domain,
-  'name': ?name,
+  if (domain.isPresent) 'domain': domain.value,
+  if (name.isPresent) 'name': name.value,
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessWarpProps copyWith({List<String> Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, AccessCustomDenyUrl Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl Function()? customNonIdentityDenyUrl, List<String> Function()? customPages, dynamic Function()? domain, dynamic Function()? name, AccessSchemasSessionDuration Function()? sessionDuration, AccessType? type, }) { return AccessWarpProps(
+AccessWarpProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, }) { return AccessWarpProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   customDenyUrl: customDenyUrl != null ? customDenyUrl() : this.customDenyUrl,
   customNonIdentityDenyUrl: customNonIdentityDenyUrl != null ? customNonIdentityDenyUrl() : this.customNonIdentityDenyUrl,
   customPages: customPages != null ? customPages() : this.customPages,
-  domain: domain != null ? domain() : this.domain,
-  name: name != null ? name() : this.name,
+  domain: domain ?? this.domain,
+  name: name ?? this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
 ); } 

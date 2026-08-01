@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'proration_date': ?prorationDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clear_usage', 'payment_behavior', 'proration_behavior', 'proration_date'}.contains(key)); } 
-DeleteSubscriptionItemsItemRequest copyWith({bool Function()? clearUsage, DeleteSubscriptionItemsItemRequestPaymentBehavior Function()? paymentBehavior, DeleteSubscriptionItemsItemRequestProrationBehavior Function()? prorationBehavior, int Function()? prorationDate, }) { return DeleteSubscriptionItemsItemRequest(
+DeleteSubscriptionItemsItemRequest copyWith({bool? Function()? clearUsage, DeleteSubscriptionItemsItemRequestPaymentBehavior? Function()? paymentBehavior, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, }) { return DeleteSubscriptionItemsItemRequest(
   clearUsage: clearUsage != null ? clearUsage() : this.clearUsage,
   paymentBehavior: paymentBehavior != null ? paymentBehavior() : this.paymentBehavior,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,

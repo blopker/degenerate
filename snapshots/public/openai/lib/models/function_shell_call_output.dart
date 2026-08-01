@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'call_id': callId,
   'status': status.toJson(),
   'output': output.map((e) => e.toJson()).toList(),
-  'max_output_length': ?maxOutputLength,
+  'max_output_length': maxOutputLength,
   'created_by': ?createdBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('status') &&
       json.containsKey('output') &&
       json.containsKey('max_output_length') && json['max_output_length'] is num; } 
-FunctionShellCallOutput copyWith({String? type, String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String Function()? createdBy, }) { return FunctionShellCallOutput(
+FunctionShellCallOutput copyWith({String? type, String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return FunctionShellCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

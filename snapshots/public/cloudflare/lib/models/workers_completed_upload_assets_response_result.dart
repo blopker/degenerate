@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'jwt': ?jwt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'jwt'}.contains(key)); } 
-WorkersCompletedUploadAssetsResponseResult copyWith({String Function()? jwt}) { return WorkersCompletedUploadAssetsResponseResult(
+WorkersCompletedUploadAssetsResponseResult copyWith({String? Function()? jwt}) { return WorkersCompletedUploadAssetsResponseResult(
   jwt: jwt != null ? jwt() : this.jwt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

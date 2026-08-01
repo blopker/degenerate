@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'base_tree': ?baseTree,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tree'); } 
-GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String Function()? baseTree, }) { return GitCreateTreeRequest(
+GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String? Function()? baseTree, }) { return GitCreateTreeRequest(
   tree: tree ?? this.tree,
   baseTree: baseTree != null ? baseTree() : this.baseTree,
 ); } 

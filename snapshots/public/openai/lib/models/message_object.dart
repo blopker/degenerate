@@ -142,15 +142,15 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'thread_id': threadId,
   'status': status.toJson(),
-  if (incompleteDetails != null) 'incomplete_details': incompleteDetails?.toJson(),
-  'completed_at': ?completedAt,
-  'incomplete_at': ?incompleteAt,
+  'incomplete_details': incompleteDetails?.toJson(),
+  'completed_at': completedAt,
+  'incomplete_at': incompleteAt,
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
-  'assistant_id': ?assistantId,
-  'run_id': ?runId,
-  if (attachments != null) 'attachments': attachments?.map((e) => e.toJson()).toList(),
-  'metadata': ?metadata,
+  'assistant_id': assistantId,
+  'run_id': runId,
+  'attachments': attachments?.map((e) => e.toJson()).toList(),
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&

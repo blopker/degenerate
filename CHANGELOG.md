@@ -2,6 +2,25 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## Unreleased
+
+**Omittable fields: generated models now distinguish "omitted" from "set to null" (JSON Merge Patch support).**
+
+### Breaking changes
+
+- **Optional nullable fields are now `Omittable<T?>`** (#21): an optional field whose spec type is nullable (`nullable: true` / `type: [T, 'null']`) has three legal wire states — absent, explicit null, value — which a plain `T?` cannot express. Those fields now generate as `Omittable<T?>` (new in `degenerate_runtime`), defaulting to `Omittable.absent()`:
+  - Construct with `Omittable(value)`; clear with `Omittable(null)`; omit by leaving the parameter out.
+  - Read with `field.value` / `field.isPresent`; `fromJson`/`toJson` round-trip all three states exactly.
+  - `copyWith` takes the `Omittable` directly for these fields instead of a thunk.
+  - Migration: `model.field` → `model.field.value`, `copyWith(field: () => v)` → `copyWith(field: Omittable(v))`. Or pass `--omittable=off` to restore the previous plain-`T?` output (Dart `null` serializes as omitted).
+  - `--omittable=all` additionally wraps optional *non-nullable* fields, for servers that accept null-clears the spec doesn't declare.
+  - Generated code now requires the matching `degenerate_runtime` version (which adds `Omittable`).
+  - Known limitation: fields declared directly on sealed discriminated-union variants and `anyOf` classes keep the previous `T?` omit-null behavior; nested regular models inside them get omittable fields as usual.
+
+### Bug fixes
+
+- **Required nullable fields always serialize their key** (#21): a field that is both `required` and nullable (`nullable: true` / `type: [T, 'null']`) dropped its key from `toJson()` when the value was null. A required field must always be present on the wire, so it now serializes as an explicit `"field": null`.
+
 ## 0.4.2
 
 **Bug fixes for enum parameter serialization, generated security helpers, and union parsing; `anyOf` + `discriminator` support.**

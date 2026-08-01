@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'model'}.contains(key)); } 
-AutoragConfigAiSearchRequestReranking copyWith({bool Function()? enabled, AutoragConfigAiSearchRequestRerankingModel Function()? model, }) { return AutoragConfigAiSearchRequestReranking(
+AutoragConfigAiSearchRequestReranking copyWith({bool Function()? enabled, AutoragConfigAiSearchRequestRerankingModel? Function()? model, }) { return AutoragConfigAiSearchRequestReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,
 ); } 

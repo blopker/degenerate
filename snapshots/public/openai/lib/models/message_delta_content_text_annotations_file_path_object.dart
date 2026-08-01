@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-MessageDeltaContentTextAnnotationsFilePathObject copyWith({int? index, MessageDeltaContentTextAnnotationsFilePathObjectType? type, String Function()? text, MessageDeltaContentTextAnnotationsFilePathObjectFilePath Function()? filePath, int Function()? startIndex, int Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFilePathObject(
+MessageDeltaContentTextAnnotationsFilePathObject copyWith({int? index, MessageDeltaContentTextAnnotationsFilePathObjectType? type, String? Function()? text, MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Function()? filePath, int? Function()? startIndex, int? Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFilePathObject(
   index: index ?? this.index,
   type: type ?? this.type,
   text: text != null ? text() : this.text,

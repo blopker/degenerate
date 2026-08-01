@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('type'); } 
-ZeroTrustListsCreateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription Function()? description, List<ZeroTrustGatewayItemsInput2> Function()? items, ZeroTrustGatewayName? name, ZeroTrustGatewaySchemasType? type, }) { return ZeroTrustListsCreateZeroTrustListRequest(
+ZeroTrustListsCreateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription? Function()? description, List<ZeroTrustGatewayItemsInput2>? Function()? items, ZeroTrustGatewayName? name, ZeroTrustGatewaySchemasType? type, }) { return ZeroTrustListsCreateZeroTrustListRequest(
   description: description != null ? description() : this.description,
   items: items != null ? items() : this.items,
   name: name ?? this.name,

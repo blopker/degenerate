@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'queueId', 'queueName', 'rules'}.contains(key)); } 
-R2QueuesConfig copyWith({String Function()? queueId, String Function()? queueName, List<R2QueuesConfigRules> Function()? rules, }) { return R2QueuesConfig(
+R2QueuesConfig copyWith({String? Function()? queueId, String? Function()? queueName, List<R2QueuesConfigRules>? Function()? rules, }) { return R2QueuesConfig(
   queueId: queueId != null ? queueId() : this.queueId,
   queueName: queueName != null ? queueName() : this.queueName,
   rules: rules != null ? rules() : this.rules,

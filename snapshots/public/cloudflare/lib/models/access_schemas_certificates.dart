@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'public_key': ?publicKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'public_key'}.contains(key)); } 
-AccessSchemasCertificates copyWith({String Function()? id, String Function()? publicKey, }) { return AccessSchemasCertificates(
+AccessSchemasCertificates copyWith({String? Function()? id, String? Function()? publicKey, }) { return AccessSchemasCertificates(
   id: id != null ? id() : this.id,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
 ); } 

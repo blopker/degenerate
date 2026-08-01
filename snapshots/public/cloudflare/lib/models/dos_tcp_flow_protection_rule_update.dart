@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'rate_sensitivity': ?rateSensitivity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'burst_sensitivity', 'mode', 'rate_sensitivity'}.contains(key)); } 
-DosTcpFlowProtectionRuleUpdate copyWith({String Function()? burstSensitivity, String Function()? mode, String Function()? rateSensitivity, }) { return DosTcpFlowProtectionRuleUpdate(
+DosTcpFlowProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, String? Function()? mode, String? Function()? rateSensitivity, }) { return DosTcpFlowProtectionRuleUpdate(
   burstSensitivity: burstSensitivity != null ? burstSensitivity() : this.burstSensitivity,
   mode: mode != null ? mode() : this.mode,
   rateSensitivity: rateSensitivity != null ? rateSensitivity() : this.rateSensitivity,

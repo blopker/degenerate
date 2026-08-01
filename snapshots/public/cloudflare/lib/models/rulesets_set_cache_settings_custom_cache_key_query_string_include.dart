@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'list': ?list,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'list'}.contains(key)); } 
-RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude copyWith({bool Function()? all, List<String> Function()? list, }) { return RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude(
+RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude copyWith({bool? Function()? all, List<String>? Function()? list, }) { return RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude(
   all: all != null ? all() : this.all,
   list: list != null ? list() : this.list,
 ); } 

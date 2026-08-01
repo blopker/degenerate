@@ -33,13 +33,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityUpdateDomainRequestRegions($value)'; } 
  }
-@immutable final class EmailSecurityUpdateDomainRequest {const EmailSecurityUpdateDomainRequest({required this.ipRestrictions, this.allowedDeliveryModes, this.domain, this.dropDispositions, this.folder, this.integrationId, this.lookbackHops, this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.transport, });
+@immutable final class EmailSecurityUpdateDomainRequest {const EmailSecurityUpdateDomainRequest({required this.ipRestrictions, this.allowedDeliveryModes, this.domain, this.dropDispositions, this.folder = const Omittable.absent(), this.integrationId, this.lookbackHops, this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.transport, });
 
 factory EmailSecurityUpdateDomainRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainRequest(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>?)?.map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
   domain: json['domain'] as String?,
   dropDispositions: (json['drop_dispositions'] as List<dynamic>?)?.map((e) => e == null ? null : EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
-  folder: json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null,
+  folder: json.containsKey('folder') ? Omittable(json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null) : const Omittable.absent(),
   integrationId: json['integration_id'] as String?,
   ipRestrictions: (json['ip_restrictions'] as List<dynamic>).map((e) => e as String).toList(),
   lookbackHops: json['lookback_hops'] != null ? (json['lookback_hops'] as num).toInt() : null,
@@ -55,7 +55,7 @@ final String? domain;
 
 final List<EmailSecurityDispositionLabel?>? dropDispositions;
 
-final EmailSecurityScannableFolder? folder;
+final Omittable<EmailSecurityScannableFolder?> folder;
 
 final String? integrationId;
 
@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (allowedDeliveryModes != null) 'allowed_delivery_modes': allowedDeliveryModes?.map((e) => e.toJson()).toList(),
   'domain': ?domain,
   if (dropDispositions != null) 'drop_dispositions': dropDispositions?.map((e) => e?.toJson()).toList(),
-  if (folder != null) 'folder': folder?.toJson(),
+  if (folder.isPresent) 'folder': folder.value?.toJson(),
   'integration_id': ?integrationId,
   'ip_restrictions': ipRestrictions,
   'lookback_hops': ?lookbackHops,
@@ -85,11 +85,11 @@ Map<String, dynamic> toJson() { return {
   'transport': ?transport,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_restrictions'); } 
-EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode> Function()? allowedDeliveryModes, String Function()? domain, List<EmailSecurityDispositionLabel?> Function()? dropDispositions, EmailSecurityScannableFolder? Function()? folder, String Function()? integrationId, List<String>? ipRestrictions, int Function()? lookbackHops, List<EmailSecurityUpdateDomainRequestRegions> Function()? regions, bool Function()? requireTlsInbound, bool Function()? requireTlsOutbound, String Function()? transport, }) { return EmailSecurityUpdateDomainRequest(
+EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Function()? allowedDeliveryModes, String? Function()? domain, List<EmailSecurityDispositionLabel?>? Function()? dropDispositions, Omittable<EmailSecurityScannableFolder?>? folder, String? Function()? integrationId, List<String>? ipRestrictions, int? Function()? lookbackHops, List<EmailSecurityUpdateDomainRequestRegions>? Function()? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, String? Function()? transport, }) { return EmailSecurityUpdateDomainRequest(
   allowedDeliveryModes: allowedDeliveryModes != null ? allowedDeliveryModes() : this.allowedDeliveryModes,
   domain: domain != null ? domain() : this.domain,
   dropDispositions: dropDispositions != null ? dropDispositions() : this.dropDispositions,
-  folder: folder != null ? folder() : this.folder,
+  folder: folder ?? this.folder,
   integrationId: integrationId != null ? integrationId() : this.integrationId,
   ipRestrictions: ipRestrictions ?? this.ipRestrictions,
   lookbackHops: lookbackHops != null ? lookbackHops() : this.lookbackHops,

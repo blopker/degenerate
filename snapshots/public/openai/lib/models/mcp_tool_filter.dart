@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'read_only': ?readOnly,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tool_names', 'read_only'}.contains(key)); } 
-McpToolFilter copyWith({List<String> Function()? toolNames, bool Function()? readOnly, }) { return McpToolFilter(
+McpToolFilter copyWith({List<String>? Function()? toolNames, bool? Function()? readOnly, }) { return McpToolFilter(
   toolNames: toolNames != null ? toolNames() : this.toolNames,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 

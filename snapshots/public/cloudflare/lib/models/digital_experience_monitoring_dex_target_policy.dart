@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DigitalExperienceMonitoringDexTargetPolicy copyWith({bool Function()? $default, DigitalExperienceMonitoringUuid? id, String Function()? name, }) { return DigitalExperienceMonitoringDexTargetPolicy(
+DigitalExperienceMonitoringDexTargetPolicy copyWith({bool? Function()? $default, DigitalExperienceMonitoringUuid? id, String? Function()? name, }) { return DigitalExperienceMonitoringDexTargetPolicy(
   $default: $default != null ? $default() : this.$default,
   id: id ?? this.id,
   name: name != null ? name() : this.name,

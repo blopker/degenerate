@@ -55,13 +55,13 @@ Map<String, dynamic> toJson() { return {
   'invalid_variable_error': invalidVariableError,
   'other_error': otherError,
   'python_grader_server_error': pythonGraderServerError,
-  'python_grader_server_error_type': ?pythonGraderServerErrorType,
+  'python_grader_server_error_type': pythonGraderServerErrorType,
   'python_grader_runtime_error': pythonGraderRuntimeError,
-  'python_grader_runtime_error_details': ?pythonGraderRuntimeErrorDetails,
+  'python_grader_runtime_error_details': pythonGraderRuntimeErrorDetails,
   'model_grader_server_error': modelGraderServerError,
   'model_grader_refusal_error': modelGraderRefusalError,
   'model_grader_parse_error': modelGraderParseError,
-  'model_grader_server_error_details': ?modelGraderServerErrorDetails,
+  'model_grader_server_error_details': modelGraderServerErrorDetails,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('formula_parse_error') && json['formula_parse_error'] is bool &&
       json.containsKey('sample_parse_error') && json['sample_parse_error'] is bool &&

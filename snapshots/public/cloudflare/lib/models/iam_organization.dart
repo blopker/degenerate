@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'permissions', 'roles', 'status'}.contains(key)); } 
-IamOrganization copyWith({IamCommonComponentsSchemasIdentifier Function()? id, IamSchemasName Function()? name, List<String> Function()? permissions, List<String> Function()? roles, IamComponentsSchemasStatus Function()? status, }) { return IamOrganization(
+IamOrganization copyWith({IamCommonComponentsSchemasIdentifier? Function()? id, IamSchemasName? Function()? name, List<String>? Function()? permissions, List<String>? Function()? roles, IamComponentsSchemasStatus? Function()? status, }) { return IamOrganization(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   permissions: permissions != null ? permissions() : this.permissions,

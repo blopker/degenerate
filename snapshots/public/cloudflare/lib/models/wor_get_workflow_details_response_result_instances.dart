@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'waitingForPause': ?waitingForPause,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'complete', 'errored', 'paused', 'queued', 'running', 'terminated', 'waiting', 'waitingForPause'}.contains(key)); } 
-WorGetWorkflowDetailsResponseResultInstances copyWith({double Function()? complete, double Function()? errored, double Function()? paused, double Function()? queued, double Function()? running, double Function()? terminated, double Function()? waiting, double Function()? waitingForPause, }) { return WorGetWorkflowDetailsResponseResultInstances(
+WorGetWorkflowDetailsResponseResultInstances copyWith({double? Function()? complete, double? Function()? errored, double? Function()? paused, double? Function()? queued, double? Function()? running, double? Function()? terminated, double? Function()? waiting, double? Function()? waitingForPause, }) { return WorGetWorkflowDetailsResponseResultInstances(
   complete: complete != null ? complete() : this.complete,
   errored: errored != null ? errored() : this.errored,
   paused: paused != null ? paused() : this.paused,

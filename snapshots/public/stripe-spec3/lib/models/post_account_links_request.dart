@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
       json.containsKey('type'); } 
-PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollect Function()? collect, PostAccountLinksRequestCollectionOptions Function()? collectionOptions, List<String> Function()? expand, String Function()? refreshUrl, String Function()? returnUrl, PostAccountLinksRequestType? type, }) { return PostAccountLinksRequest(
+PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollect? Function()? collect, PostAccountLinksRequestCollectionOptions? Function()? collectionOptions, List<String>? Function()? expand, String? Function()? refreshUrl, String? Function()? returnUrl, PostAccountLinksRequestType? type, }) { return PostAccountLinksRequest(
   account: account ?? this.account,
   collect: collect != null ? collect() : this.collect,
   collectionOptions: collectionOptions != null ? collectionOptions() : this.collectionOptions,

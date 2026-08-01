@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('badge_url') && json['badge_url'] is String; } 
-Workflow copyWith({int? id, String? nodeId, String? name, String? path, WorkflowState? state, DateTime? createdAt, DateTime? updatedAt, String? url, String? htmlUrl, String? badgeUrl, DateTime Function()? deletedAt, }) { return Workflow(
+Workflow copyWith({int? id, String? nodeId, String? name, String? path, WorkflowState? state, DateTime? createdAt, DateTime? updatedAt, String? url, String? htmlUrl, String? badgeUrl, DateTime? Function()? deletedAt, }) { return Workflow(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

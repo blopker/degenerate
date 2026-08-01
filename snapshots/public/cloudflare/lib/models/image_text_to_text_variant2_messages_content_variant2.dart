@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ImageTextToTextVariant2MessagesContentVariant2 copyWith({ImageTextToTextVariant2MessagesContentVariant2ImageUrl Function()? imageUrl, String Function()? text, String? type, }) { return ImageTextToTextVariant2MessagesContentVariant2(
+ImageTextToTextVariant2MessagesContentVariant2 copyWith({ImageTextToTextVariant2MessagesContentVariant2ImageUrl? Function()? imageUrl, String? Function()? text, String? type, }) { return ImageTextToTextVariant2MessagesContentVariant2(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   text: text != null ? text() : this.text,
   type: type ?? this.type,

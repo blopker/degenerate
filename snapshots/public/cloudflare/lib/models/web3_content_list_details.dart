@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (action != null) 'action': action?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action'}.contains(key)); } 
-Web3ContentListDetails copyWith({Web3ContentListAction Function()? action}) { return Web3ContentListDetails(
+Web3ContentListDetails copyWith({Web3ContentListAction? Function()? action}) { return Web3ContentListDetails(
   action: action != null ? action() : this.action,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

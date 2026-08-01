@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 
-RealtimeBetaClientEventConversationItemTruncate copyWith({String Function()? eventId, RealtimeBetaClientEventConversationItemTruncateType? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeBetaClientEventConversationItemTruncate(
+RealtimeBetaClientEventConversationItemTruncate copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemTruncateType? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeBetaClientEventConversationItemTruncate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

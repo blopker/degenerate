@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('layout'); } 
-ProjectsCreateViewForOrgRequest copyWith({String? name, ProjectsCreateViewForOrgRequestLayout? layout, String Function()? filter, List<int> Function()? visibleFields, }) { return ProjectsCreateViewForOrgRequest(
+ProjectsCreateViewForOrgRequest copyWith({String? name, ProjectsCreateViewForOrgRequestLayout? layout, String? Function()? filter, List<int>? Function()? visibleFields, }) { return ProjectsCreateViewForOrgRequest(
   name: name ?? this.name,
   layout: layout ?? this.layout,
   filter: filter != null ? filter() : this.filter,

@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'yearly_price_in_cents': yearlyPriceInCents,
   'price_model': priceModel.toJson(),
   'has_free_trial': hasFreeTrial,
-  'unit_name': ?unitName,
+  'unit_name': unitName,
   'state': state,
   'bullets': bullets,
 }; } 

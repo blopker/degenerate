@@ -13,7 +13,7 @@ final String? devcontainerPath;
 
 Map<String, dynamic> toJson() { return {
   'location': location,
-  'devcontainer_path': ?devcontainerPath,
+  'devcontainer_path': devcontainerPath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('location') && json['location'] is String &&
       json.containsKey('devcontainer_path') && json['devcontainer_path'] is String; } 

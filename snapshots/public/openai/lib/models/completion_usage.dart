@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('completion_tokens') && json['completion_tokens'] is num &&
       json.containsKey('prompt_tokens') && json['prompt_tokens'] is num &&
       json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, CompletionUsageCompletionTokensDetails Function()? completionTokensDetails, CompletionUsagePromptTokensDetails Function()? promptTokensDetails, }) { return CompletionUsage(
+CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, CompletionUsageCompletionTokensDetails? Function()? completionTokensDetails, CompletionUsagePromptTokensDetails? Function()? promptTokensDetails, }) { return CompletionUsage(
   completionTokens: completionTokens ?? this.completionTokens,
   promptTokens: promptTokens ?? this.promptTokens,
   totalTokens: totalTokens ?? this.totalTokens,

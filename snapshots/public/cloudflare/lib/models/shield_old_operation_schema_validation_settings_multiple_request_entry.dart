@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_operation_mitigation_action.dart';/// Operation ID to mitigation action mappings
-@immutable final class ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry {const ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry({this.mitigationAction});
+@immutable final class ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry {const ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry({this.mitigationAction = const Omittable.absent()});
 
 factory ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry.fromJson(Map<String, dynamic> json) { return ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry(
-  mitigationAction: json['mitigation_action'] != null ? ShieldOldOperationMitigationAction.fromJson(json['mitigation_action'] as String) : null,
+  mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldOldOperationMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// When set, this applies a mitigation action to this operation
@@ -14,14 +14,14 @@ factory ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry.fromJson(
 ///   - `none` will skip mitigation for this operation
 ///   - `null` indicates that no operation level mitigation is in place, see Zone Level Schema Validation Settings for mitigation action that will be applied
 /// 
-final ShieldOldOperationMitigationAction? mitigationAction;
+final Omittable<ShieldOldOperationMitigationAction?> mitigationAction;
 
 Map<String, dynamic> toJson() { return {
-  if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
+  if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry copyWith({ShieldOldOperationMitigationAction? Function()? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry(
-  mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
+ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry copyWith({Omittable<ShieldOldOperationMitigationAction?>? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry(
+  mitigationAction: mitigationAction ?? this.mitigationAction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry &&

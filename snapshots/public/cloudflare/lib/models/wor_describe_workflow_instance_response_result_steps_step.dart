@@ -53,11 +53,11 @@ final WorDescribeWorkflowInstanceResponseResultStepsStepType type;
 Map<String, dynamic> toJson() { return {
   'attempts': attempts.map((e) => e.toJson()).toList(),
   'config': config.toJson(),
-  if (end != null) 'end': end?.toIso8601String(),
+  'end': end?.toIso8601String(),
   'name': name,
   'output': output,
   'start': start.toIso8601String(),
-  'success': ?success,
+  'success': success,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('attempts') &&

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object', 'data'}.contains(key)); } 
-BatchErrors copyWith({String Function()? object, List<BatchErrorsData> Function()? data, }) { return BatchErrors(
+BatchErrors copyWith({String? Function()? object, List<BatchErrorsData>? Function()? data, }) { return BatchErrors(
   object: object != null ? object() : this.object,
   data: data != null ? data() : this.data,
 ); } 

@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (label != null) 'label': label?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'label'}.contains(key)); } 
-TlsCertificatesAndHostnamesGeoRestrictions copyWith({TlsCertificatesAndHostnamesGeoRestrictionsLabel Function()? label}) { return TlsCertificatesAndHostnamesGeoRestrictions(
+TlsCertificatesAndHostnamesGeoRestrictions copyWith({TlsCertificatesAndHostnamesGeoRestrictionsLabel? Function()? label}) { return TlsCertificatesAndHostnamesGeoRestrictions(
   label: label != null ? label() : this.label,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorDeleteWorkflowResponse copyWith({List<WorDeleteWorkflowResponseErrors>? errors, List<WorDeleteWorkflowResponseMessages>? messages, WorDeleteWorkflowResponseResult? result, WorDeleteWorkflowResponseResultInfo Function()? resultInfo, bool? success, }) { return WorDeleteWorkflowResponse(
+WorDeleteWorkflowResponse copyWith({List<WorDeleteWorkflowResponseErrors>? errors, List<WorDeleteWorkflowResponseMessages>? messages, WorDeleteWorkflowResponseResult? result, WorDeleteWorkflowResponseResultInfo? Function()? resultInfo, bool? success, }) { return WorDeleteWorkflowResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('language') && json['language'] is String &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('text') && json['text'] is String; } 
-CreateTranscriptionResponseVerboseJson copyWith({String? language, double? duration, String? text, List<TranscriptionWord> Function()? words, List<TranscriptionSegment> Function()? segments, TranscriptTextUsageDuration Function()? usage, }) { return CreateTranscriptionResponseVerboseJson(
+CreateTranscriptionResponseVerboseJson copyWith({String? language, double? duration, String? text, List<TranscriptionWord>? Function()? words, List<TranscriptionSegment>? Function()? segments, TranscriptTextUsageDuration? Function()? usage, }) { return CreateTranscriptionResponseVerboseJson(
   language: language ?? this.language,
   duration: duration ?? this.duration,
   text: text ?? this.text,

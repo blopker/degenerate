@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('input
       json.containsKey('total_tokens') && json['total_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('input_tokens_details'); } 
-ImageGenUsage copyWith({int? inputTokens, int? totalTokens, int? outputTokens, ImageGenOutputTokensDetails Function()? outputTokensDetails, ImageGenInputUsageDetails? inputTokensDetails, }) { return ImageGenUsage(
+ImageGenUsage copyWith({int? inputTokens, int? totalTokens, int? outputTokens, ImageGenOutputTokensDetails? Function()? outputTokensDetails, ImageGenInputUsageDetails? inputTokensDetails, }) { return ImageGenUsage(
   inputTokens: inputTokens ?? this.inputTokens,
   totalTokens: totalTokens ?? this.totalTokens,
   outputTokens: outputTokens ?? this.outputTokens,

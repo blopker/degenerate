@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'upload_path': ?uploadPath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'tag', 'upload_path'}.contains(key)); } 
-Logo copyWith({int Function()? id, String Function()? tag, String Function()? uploadPath, }) { return Logo(
+Logo copyWith({int? Function()? id, String? Function()? tag, String? Function()? uploadPath, }) { return Logo(
   id: id != null ? id() : this.id,
   tag: tag != null ? tag() : this.tag,
   uploadPath: uploadPath != null ? uploadPath() : this.uploadPath,

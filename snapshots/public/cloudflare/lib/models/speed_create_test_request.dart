@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (region != null) 'region': region?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'region'}.contains(key)); } 
-SpeedCreateTestRequest copyWith({ObservatoryRegion Function()? region}) { return SpeedCreateTestRequest(
+SpeedCreateTestRequest copyWith({ObservatoryRegion? Function()? region}) { return SpeedCreateTestRequest(
   region: region != null ? region() : this.region,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

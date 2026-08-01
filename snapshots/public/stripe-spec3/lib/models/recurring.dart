@@ -57,12 +57,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RecurringUsageType($value)'; } 
  }
 /// 
-@immutable final class Recurring {const Recurring({required this.interval, required this.intervalCount, required this.usageType, this.meter, });
+@immutable final class Recurring {const Recurring({required this.interval, required this.intervalCount, required this.usageType, this.meter = const Omittable.absent(), });
 
 factory Recurring.fromJson(Map<String, dynamic> json) { return Recurring(
   interval: RecurringInterval.fromJson(json['interval'] as String),
   intervalCount: (json['interval_count'] as num).toInt(),
-  meter: json['meter'] as String?,
+  meter: json.containsKey('meter') ? Omittable(json['meter'] as String?) : const Omittable.absent(),
   usageType: RecurringUsageType.fromJson(json['usage_type'] as String),
 ); }
 
@@ -73,7 +73,7 @@ final RecurringInterval interval;
 final int intervalCount;
 
 /// The meter tracking the usage of a metered price
-final String? meter;
+final Omittable<String?> meter;
 
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 final RecurringUsageType usageType;
@@ -81,16 +81,16 @@ final RecurringUsageType usageType;
 Map<String, dynamic> toJson() { return {
   'interval': interval.toJson(),
   'interval_count': intervalCount,
-  'meter': ?meter,
+  if (meter.isPresent) 'meter': meter.value,
   'usage_type': usageType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
       json.containsKey('interval_count') && json['interval_count'] is num &&
       json.containsKey('usage_type'); } 
-Recurring copyWith({RecurringInterval? interval, int? intervalCount, String? Function()? meter, RecurringUsageType? usageType, }) { return Recurring(
+Recurring copyWith({RecurringInterval? interval, int? intervalCount, Omittable<String?>? meter, RecurringUsageType? usageType, }) { return Recurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount ?? this.intervalCount,
-  meter: meter != null ? meter() : this.meter,
+  meter: meter ?? this.meter,
   usageType: usageType ?? this.usageType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

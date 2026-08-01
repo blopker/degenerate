@@ -17,7 +17,7 @@ factory IamScopeObject.fromJson(Map<String, dynamic> json) { return IamScopeObje
 final IamScopeObjectKey? key;
 
 Map<String, dynamic> toJson() { return {
-  if (key != null) 'key': key?.toJson(),
+  'key': key?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
 IamScopeObject copyWith({IamScopeObjectKey? Function()? key}) { return IamScopeObject(

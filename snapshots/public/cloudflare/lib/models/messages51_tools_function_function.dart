@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolsFunctionFunction {const Messages51ToolsFunctionFunction({required this.name, this.description, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolsFunctionFunction {const Messages51ToolsFunctionFunction({required this.name, this.description, this.parameters, this.strict = const Omittable.absent(), });
 
 factory Messages51ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Messages51ToolsFunctionFunction(
   description: json['description'] as String?,
   name: json['name'] as String,
   parameters: json['parameters'] as Map<String, dynamic>?,
-  strict: json['strict'] as bool?,
+  strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
 ); }
 
 /// A description of what the function does.
@@ -18,20 +18,20 @@ final String name;
 /// The parameters the function accepts, described as a JSON Schema object.
 final Map<String,dynamic>? parameters;
 
-final bool? strict;
+final Omittable<bool?> strict;
 
 Map<String, dynamic> toJson() { return {
   'description': ?description,
   'name': name,
   'parameters': ?parameters,
-  'strict': ?strict,
+  if (strict.isPresent) 'strict': strict.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Messages51ToolsFunctionFunction copyWith({String Function()? description, String? name, Map<String, dynamic> Function()? parameters, bool? Function()? strict, }) { return Messages51ToolsFunctionFunction(
+Messages51ToolsFunctionFunction copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, Omittable<bool?>? strict, }) { return Messages51ToolsFunctionFunction(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,
-  strict: strict != null ? strict() : this.strict,
+  strict: strict ?? this.strict,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Messages51ToolsFunctionFunction &&

@@ -30,12 +30,12 @@ final String status;
 final String updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'conclusion': ?conclusion,
+  'conclusion': conclusion,
   'created_at': createdAt,
   'environment': environment,
   'html_url': htmlUrl,
   'id': id,
-  'name': ?name,
+  'name': name,
   'status': status,
   'updated_at': updatedAt,
 }; } 

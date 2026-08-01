@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('total_details'); } 
-QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, QuotesResourceUpfrontLineItems Function()? lineItems, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceUpfront(
+QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, QuotesResourceUpfrontLineItems? Function()? lineItems, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceUpfront(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   lineItems: lineItems != null ? lineItems() : this.lineItems,

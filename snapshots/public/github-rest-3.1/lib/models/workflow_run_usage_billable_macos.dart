@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_ms') && json['total_ms'] is num &&
       json.containsKey('jobs') && json['jobs'] is num; } 
-WorkflowRunUsageBillableMacos copyWith({int? totalMs, int? jobs, List<WorkflowRunUsageBillableMacosJobRuns> Function()? jobRuns, }) { return WorkflowRunUsageBillableMacos(
+WorkflowRunUsageBillableMacos copyWith({int? totalMs, int? jobs, List<WorkflowRunUsageBillableMacosJobRuns>? Function()? jobRuns, }) { return WorkflowRunUsageBillableMacos(
   totalMs: totalMs ?? this.totalMs,
   jobs: jobs ?? this.jobs,
   jobRuns: jobRuns != null ? jobRuns() : this.jobRuns,

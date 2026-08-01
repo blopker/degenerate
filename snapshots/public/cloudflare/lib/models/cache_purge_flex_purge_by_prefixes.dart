@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'prefixes': ?prefixes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'prefixes'}.contains(key)); } 
-CachePurgeFlexPurgeByPrefixes copyWith({List<String> Function()? prefixes}) { return CachePurgeFlexPurgeByPrefixes(
+CachePurgeFlexPurgeByPrefixes copyWith({List<String>? Function()? prefixes}) { return CachePurgeFlexPurgeByPrefixes(
   prefixes: prefixes != null ? prefixes() : this.prefixes,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

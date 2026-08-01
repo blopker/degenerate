@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'monthly_price_in_cents': monthlyPriceInCents,
   'name': name,
   'price_model': priceModel.toJson(),
-  'unit_name': ?unitName,
+  'unit_name': unitName,
   'yearly_price_in_cents': yearlyPriceInCents,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bullets') &&

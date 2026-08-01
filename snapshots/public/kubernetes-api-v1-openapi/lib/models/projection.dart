@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items'}.contains(key)); } 
-Projection copyWith({List<VolumeFile> Function()? items}) { return Projection(
+Projection copyWith({List<VolumeFile>? Function()? items}) { return Projection(
   items: items != null ? items() : this.items,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

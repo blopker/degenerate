@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
       json.containsKey('filename') && json['filename'] is String; } 
-BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool Function()? isBase64, String Function()? replace, }) { return BuildsBuildSeedRepoInputFile(
+BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool Function()? isBase64, String? Function()? replace, }) { return BuildsBuildSeedRepoInputFile(
   content: content ?? this.content,
   filename: filename ?? this.filename,
   isBase64: isBase64 != null ? isBase64() : this.isBase64,

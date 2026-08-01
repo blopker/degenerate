@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (pageInfo != null) 'page_info': pageInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attestations_subject_digests', 'page_info'}.contains(key)); } 
-UsersListAttestationsBulkResponse copyWith({Map<String, List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>?> Function()? attestationsSubjectDigests, UsersListAttestationsBulkResponsePageInfo Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
+UsersListAttestationsBulkResponse copyWith({Map<String, List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>?>? Function()? attestationsSubjectDigests, UsersListAttestationsBulkResponsePageInfo? Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
   attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
   pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
 ); } 

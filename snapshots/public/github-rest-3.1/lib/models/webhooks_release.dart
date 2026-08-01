@@ -80,26 +80,26 @@ final Uri? zipballUrl;
 Map<String, dynamic> toJson() { return {
   'assets': assets.map((e) => e.toJson()).toList(),
   'assets_url': assetsUrl.toString(),
-  if (author != null) 'author': author?.toJson(),
-  'body': ?body,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'author': author?.toJson(),
+  'body': body,
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   if (discussionUrl != null) 'discussion_url': discussionUrl?.toString(),
   'draft': draft,
   'html_url': htmlUrl.toString(),
   'id': id,
   'immutable': immutable,
-  'name': ?name,
+  'name': name,
   'node_id': nodeId,
   'prerelease': prerelease,
-  if (publishedAt != null) 'published_at': publishedAt?.toIso8601String(),
+  'published_at': publishedAt?.toIso8601String(),
   if (reactions != null) 'reactions': reactions?.toJson(),
   'tag_name': tagName,
-  if (tarballUrl != null) 'tarball_url': tarballUrl?.toString(),
+  'tarball_url': tarballUrl?.toString(),
   'target_commitish': targetCommitish,
   'upload_url': uploadUrl,
   'url': url.toString(),
-  if (zipballUrl != null) 'zipball_url': zipballUrl?.toString(),
+  'zipball_url': zipballUrl?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('assets') &&
       json.containsKey('assets_url') && json['assets_url'] is String &&
@@ -121,7 +121,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asset
       json.containsKey('upload_url') && json['upload_url'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('zipball_url') && json['zipball_url'] is String; } 
-WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksReleaseAuthor? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, WebhooksReleaseReactions Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
+WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksReleaseAuthor? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, WebhooksReleaseReactions? Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
   assets: assets ?? this.assets,
   assetsUrl: assetsUrl ?? this.assetsUrl,
   author: author != null ? author() : this.author,

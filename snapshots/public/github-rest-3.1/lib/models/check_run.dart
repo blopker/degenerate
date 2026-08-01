@@ -145,18 +145,18 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'head_sha': headSha,
   'node_id': nodeId,
-  'external_id': ?externalId,
+  'external_id': externalId,
   'url': url,
-  'html_url': ?htmlUrl,
-  'details_url': ?detailsUrl,
+  'html_url': htmlUrl,
+  'details_url': detailsUrl,
   'status': status.toJson(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
-  if (startedAt != null) 'started_at': startedAt?.toIso8601String(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
+  'conclusion': conclusion?.toJson(),
+  'started_at': startedAt?.toIso8601String(),
+  'completed_at': completedAt?.toIso8601String(),
   'output': output.toJson(),
   'name': name,
-  if (checkSuite != null) 'check_suite': checkSuite?.toJson(),
-  if (app != null) 'app': app?.toJson(),
+  'check_suite': checkSuite?.toJson(),
+  'app': app?.toJson(),
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   if (deployment != null) 'deployment': deployment?.toJson(),
 }; } 
@@ -176,7 +176,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('check_suite') &&
       json.containsKey('app') &&
       json.containsKey('pull_requests'); } 
-CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, CheckRunOutput? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple Function()? deployment, }) { return CheckRun(
+CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, CheckRunOutput? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple? Function()? deployment, }) { return CheckRun(
   id: id ?? this.id,
   headSha: headSha ?? this.headSha,
   nodeId: nodeId ?? this.nodeId,

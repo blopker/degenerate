@@ -114,11 +114,11 @@ final class SessionDetailSchema {
       'joinable': joinable,
       'ended': ended,
       'rsvp_url': rsvpUrl,
-      'join_url': ?joinUrl,
+      'join_url': joinUrl,
       'subscribe_url': subscribeUrl,
       'cal_link': calLink,
-      'subscribed': ?subscribed,
-      'user_timezone': ?userTimezone,
+      'subscribed': subscribed,
+      'user_timezone': userTimezone,
       'meeting_provider': meetingProvider.toJson(),
     };
   }

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('monitors'); } 
-CephFsVolumeSource copyWith({List<String>? monitors, String Function()? path, bool Function()? readOnly, String Function()? secretFile, LocalObjectReference Function()? secretRef, String Function()? user, }) { return CephFsVolumeSource(
+CephFsVolumeSource copyWith({List<String>? monitors, String? Function()? path, bool? Function()? readOnly, String? Function()? secretFile, LocalObjectReference? Function()? secretRef, String? Function()? user, }) { return CephFsVolumeSource(
   monitors: monitors ?? this.monitors,
   path: path != null ? path() : this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

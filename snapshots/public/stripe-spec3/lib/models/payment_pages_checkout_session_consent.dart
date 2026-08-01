@@ -49,28 +49,28 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionConsentTermsOfService($value)'; } 
  }
 /// 
-@immutable final class PaymentPagesCheckoutSessionConsent {const PaymentPagesCheckoutSessionConsent({this.promotions, this.termsOfService, });
+@immutable final class PaymentPagesCheckoutSessionConsent {const PaymentPagesCheckoutSessionConsent({this.promotions = const Omittable.absent(), this.termsOfService = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionConsent.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsent(
-  promotions: json['promotions'] != null ? PaymentPagesCheckoutSessionConsentPromotions.fromJson(json['promotions'] as String) : null,
-  termsOfService: json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentTermsOfService.fromJson(json['terms_of_service'] as String) : null,
+  promotions: json.containsKey('promotions') ? Omittable(json['promotions'] != null ? PaymentPagesCheckoutSessionConsentPromotions.fromJson(json['promotions'] as String) : null) : const Omittable.absent(),
+  termsOfService: json.containsKey('terms_of_service') ? Omittable(json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentTermsOfService.fromJson(json['terms_of_service'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// If `opt_in`, the customer consents to receiving promotional communications
 /// from the merchant about this Checkout Session.
-final PaymentPagesCheckoutSessionConsentPromotions? promotions;
+final Omittable<PaymentPagesCheckoutSessionConsentPromotions?> promotions;
 
 /// If `accepted`, the customer in this Checkout Session has agreed to the merchant's terms of service.
-final PaymentPagesCheckoutSessionConsentTermsOfService? termsOfService;
+final Omittable<PaymentPagesCheckoutSessionConsentTermsOfService?> termsOfService;
 
 Map<String, dynamic> toJson() { return {
-  if (promotions != null) 'promotions': promotions?.toJson(),
-  if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
+  if (promotions.isPresent) 'promotions': promotions.value?.toJson(),
+  if (termsOfService.isPresent) 'terms_of_service': termsOfService.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'promotions', 'terms_of_service'}.contains(key)); } 
-PaymentPagesCheckoutSessionConsent copyWith({PaymentPagesCheckoutSessionConsentPromotions? Function()? promotions, PaymentPagesCheckoutSessionConsentTermsOfService? Function()? termsOfService, }) { return PaymentPagesCheckoutSessionConsent(
-  promotions: promotions != null ? promotions() : this.promotions,
-  termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,
+PaymentPagesCheckoutSessionConsent copyWith({Omittable<PaymentPagesCheckoutSessionConsentPromotions?>? promotions, Omittable<PaymentPagesCheckoutSessionConsentTermsOfService?>? termsOfService, }) { return PaymentPagesCheckoutSessionConsent(
+  promotions: promotions ?? this.promotions,
+  termsOfService: termsOfService ?? this.termsOfService,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentPagesCheckoutSessionConsent &&

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'requested': ?requested,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostAccountsRequestCapabilitiesSepaBankTransferPayments copyWith({bool Function()? requested}) { return PostAccountsRequestCapabilitiesSepaBankTransferPayments(
+PostAccountsRequestCapabilitiesSepaBankTransferPayments copyWith({bool? Function()? requested}) { return PostAccountsRequestCapabilitiesSepaBankTransferPayments(
   requested: requested != null ? requested() : this.requested,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

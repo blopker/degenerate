@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'sample': ?sample,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('item'); } 
-EvalJsonlFileContentSourceContent copyWith({Map<String,dynamic>? item, Map<String, dynamic> Function()? sample, }) { return EvalJsonlFileContentSourceContent(
+EvalJsonlFileContentSourceContent copyWith({Map<String,dynamic>? item, Map<String, dynamic>? Function()? sample, }) { return EvalJsonlFileContentSourceContent(
   item: item ?? this.item,
   sample: sample != null ? sample() : this.sample,
 ); } 

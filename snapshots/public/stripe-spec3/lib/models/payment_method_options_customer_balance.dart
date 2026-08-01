@@ -51,18 +51,18 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCustomerBalanceSetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsCustomerBalance {const PaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsCustomerBalance {const PaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalance(
   bankTransfer: json['bank_transfer'] != null ? PaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
-  fundingType: json['funding_type'] != null ? PaymentMethodOptionsCustomerBalanceFundingType.fromJson(json['funding_type'] as String) : null,
+  fundingType: json.containsKey('funding_type') ? Omittable(json['funding_type'] != null ? PaymentMethodOptionsCustomerBalanceFundingType.fromJson(json['funding_type'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 final PaymentMethodOptionsCustomerBalanceBankTransfer? bankTransfer;
 
 /// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
-final PaymentMethodOptionsCustomerBalanceFundingType? fundingType;
+final Omittable<PaymentMethodOptionsCustomerBalanceFundingType?> fundingType;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -75,13 +75,13 @@ final PaymentMethodOptionsCustomerBalanceSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
-  if (fundingType != null) 'funding_type': fundingType?.toJson(),
+  if (fundingType.isPresent) 'funding_type': fundingType.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsCustomerBalance copyWith({PaymentMethodOptionsCustomerBalanceBankTransfer Function()? bankTransfer, PaymentMethodOptionsCustomerBalanceFundingType? Function()? fundingType, PaymentMethodOptionsCustomerBalanceSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsCustomerBalance(
+PaymentMethodOptionsCustomerBalance copyWith({PaymentMethodOptionsCustomerBalanceBankTransfer? Function()? bankTransfer, Omittable<PaymentMethodOptionsCustomerBalanceFundingType?>? fundingType, PaymentMethodOptionsCustomerBalanceSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsCustomerBalance(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
-  fundingType: fundingType != null ? fundingType() : this.fundingType,
+  fundingType: fundingType ?? this.fundingType,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

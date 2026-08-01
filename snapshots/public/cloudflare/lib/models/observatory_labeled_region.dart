@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'label', 'value'}.contains(key)); } 
-ObservatoryLabeledRegion copyWith({String Function()? label, ObservatoryRegion Function()? value, }) { return ObservatoryLabeledRegion(
+ObservatoryLabeledRegion copyWith({String? Function()? label, ObservatoryRegion? Function()? value, }) { return ObservatoryLabeledRegion(
   label: label != null ? label() : this.label,
   value: value != null ? value() : this.value,
 ); } 

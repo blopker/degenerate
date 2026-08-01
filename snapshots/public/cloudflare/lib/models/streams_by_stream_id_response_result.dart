@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is num &&
       json.containsKey('worker_binding'); } 
-StreamsByStreamIdResponseResult copyWith({DateTime? createdAt, Uri Function()? endpoint, CloudflarePipelinesFormat Function()? format, StreamsByStreamIdResponseResultHttp? http, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema Function()? schema, int? version, StreamsByStreamIdResponseResultWorkerBinding? workerBinding, }) { return StreamsByStreamIdResponseResult(
+StreamsByStreamIdResponseResult copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, StreamsByStreamIdResponseResultHttp? http, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, int? version, StreamsByStreamIdResponseResultWorkerBinding? workerBinding, }) { return StreamsByStreamIdResponseResult(
   createdAt: createdAt ?? this.createdAt,
   endpoint: endpoint != null ? endpoint() : this.endpoint,
   format: format != null ? format() : this.format,

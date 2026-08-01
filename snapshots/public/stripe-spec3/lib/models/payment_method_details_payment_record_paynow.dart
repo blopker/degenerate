@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsPaymentRecordPaynow {const PaymentMethodDetailsPaymentRecordPaynow({this.location, this.reader, this.reference, });
+@immutable final class PaymentMethodDetailsPaymentRecordPaynow {const PaymentMethodDetailsPaymentRecordPaynow({this.location, this.reader, this.reference = const Omittable.absent(), });
 
 factory PaymentMethodDetailsPaymentRecordPaynow.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordPaynow(
   location: json['location'] as String?,
   reader: json['reader'] as String?,
-  reference: json['reference'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
 ); }
 
 /// ID of the [location](https://docs.stripe.com/api/terminal/locations) that this transaction's reader is assigned to.
@@ -16,18 +16,18 @@ final String? location;
 final String? reader;
 
 /// Reference number associated with this PayNow payment
-final String? reference;
+final Omittable<String?> reference;
 
 Map<String, dynamic> toJson() { return {
   'location': ?location,
   'reader': ?reader,
-  'reference': ?reference,
+  if (reference.isPresent) 'reference': reference.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'reference'}.contains(key)); } 
-PaymentMethodDetailsPaymentRecordPaynow copyWith({String Function()? location, String Function()? reader, String? Function()? reference, }) { return PaymentMethodDetailsPaymentRecordPaynow(
+PaymentMethodDetailsPaymentRecordPaynow copyWith({String? Function()? location, String? Function()? reader, Omittable<String?>? reference, }) { return PaymentMethodDetailsPaymentRecordPaynow(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,
-  reference: reference != null ? reference() : this.reference,
+  reference: reference ?? this.reference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordPaynow &&

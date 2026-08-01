@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'stopover_allowed': ?stopoverAllowed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arrival_airport_code', 'carrier', 'departure_airport_code', 'flight_number', 'service_class', 'stopover_allowed'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFlightSegments copyWith({String Function()? arrivalAirportCode, String Function()? carrier, String Function()? departureAirportCode, String Function()? flightNumber, String Function()? serviceClass, bool Function()? stopoverAllowed, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFlightSegments(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFlightSegments copyWith({String? Function()? arrivalAirportCode, String? Function()? carrier, String? Function()? departureAirportCode, String? Function()? flightNumber, String? Function()? serviceClass, bool? Function()? stopoverAllowed, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFlightSegments(
   arrivalAirportCode: arrivalAirportCode != null ? arrivalAirportCode() : this.arrivalAirportCode,
   carrier: carrier != null ? carrier() : this.carrier,
   departureAirportCode: departureAirportCode != null ? departureAirportCode() : this.departureAirportCode,

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'source_port': ?sourcePort,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination_address', 'destination_port', 'protocol', 'source_address', 'source_port'}.contains(key)); } 
-MagicVisibilityPcapsPcapsFilter copyWith({String Function()? destinationAddress, double Function()? destinationPort, double Function()? protocol, String Function()? sourceAddress, double Function()? sourcePort, }) { return MagicVisibilityPcapsPcapsFilter(
+MagicVisibilityPcapsPcapsFilter copyWith({String? Function()? destinationAddress, double? Function()? destinationPort, double? Function()? protocol, String? Function()? sourceAddress, double? Function()? sourcePort, }) { return MagicVisibilityPcapsPcapsFilter(
   destinationAddress: destinationAddress != null ? destinationAddress() : this.destinationAddress,
   destinationPort: destinationPort != null ? destinationPort() : this.destinationPort,
   protocol: protocol != null ? protocol() : this.protocol,

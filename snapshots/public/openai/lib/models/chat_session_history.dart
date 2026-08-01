@@ -16,7 +16,7 @@ final int? recentThreads;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
-  'recent_threads': ?recentThreads,
+  'recent_threads': recentThreads,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('recent_threads') && json['recent_threads'] is num; } 

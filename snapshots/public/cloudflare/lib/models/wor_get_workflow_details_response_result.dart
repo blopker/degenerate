@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toIso8601String(),
   'name': name,
   'script_name': scriptName,
-  if (triggeredOn != null) 'triggered_on': triggeredOn?.toIso8601String(),
+  'triggered_on': triggeredOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&

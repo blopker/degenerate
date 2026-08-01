@@ -20,8 +20,8 @@ final String? summary;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'heading': ?heading,
-  'summary': ?summary,
+  'heading': heading,
+  'summary': summary,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('heading') && json['heading'] is String &&

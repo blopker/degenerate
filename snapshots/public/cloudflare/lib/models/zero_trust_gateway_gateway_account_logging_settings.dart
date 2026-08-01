@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (settingsByRuleType != null) 'settings_by_rule_type': settingsByRuleType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'redact_pii', 'settings_by_rule_type'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountLoggingSettings copyWith({bool Function()? redactPii, ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType Function()? settingsByRuleType, }) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
+ZeroTrustGatewayGatewayAccountLoggingSettings copyWith({bool Function()? redactPii, ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? Function()? settingsByRuleType, }) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
   redactPii: redactPii != null ? redactPii() : this.redactPii,
   settingsByRuleType: settingsByRuleType != null ? settingsByRuleType() : this.settingsByRuleType,
 ); } 

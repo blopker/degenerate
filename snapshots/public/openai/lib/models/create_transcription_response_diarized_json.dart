@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('task'
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('segments'); } 
-CreateTranscriptionResponseDiarizedJson copyWith({CreateTranscriptionResponseDiarizedJsonTask? task, double? duration, String? text, List<TranscriptionDiarizedSegment>? segments, CreateTranscriptionResponseDiarizedJsonUsage Function()? usage, }) { return CreateTranscriptionResponseDiarizedJson(
+CreateTranscriptionResponseDiarizedJson copyWith({CreateTranscriptionResponseDiarizedJsonTask? task, double? duration, String? text, List<TranscriptionDiarizedSegment>? segments, CreateTranscriptionResponseDiarizedJsonUsage? Function()? usage, }) { return CreateTranscriptionResponseDiarizedJson(
   task: task ?? this.task,
   duration: duration ?? this.duration,
   text: text ?? this.text,

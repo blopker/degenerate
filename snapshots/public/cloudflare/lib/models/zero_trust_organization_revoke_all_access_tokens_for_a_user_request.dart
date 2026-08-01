@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'warp_session_reauth': ?warpSessionReauth,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String; } 
-ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest copyWith({bool Function()? devices, String? email, String Function()? userUid, bool Function()? warpSessionReauth, }) { return ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
+ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest copyWith({bool? Function()? devices, String? email, String? Function()? userUid, bool? Function()? warpSessionReauth, }) { return ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
   devices: devices != null ? devices() : this.devices,
   email: email ?? this.email,
   userUid: userUid != null ? userUid() : this.userUid,

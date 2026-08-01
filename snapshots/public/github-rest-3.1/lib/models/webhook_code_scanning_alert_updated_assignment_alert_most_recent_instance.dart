@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('analy
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('state'); } 
-WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance copyWith({String? analysisKey, String Function()? category, List<String> Function()? classifications, String Function()? commitSha, String? environment, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation Function()? location, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceMessage Function()? message, String? ref, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState? state, }) { return WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance(
+WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance copyWith({String? analysisKey, String? Function()? category, List<String>? Function()? classifications, String? Function()? commitSha, String? environment, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceLocation? Function()? location, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceMessage? Function()? message, String? ref, WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState? state, }) { return WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance(
   analysisKey: analysisKey ?? this.analysisKey,
   category: category != null ? category() : this.category,
   classifications: classifications != null ? classifications() : this.classifications,

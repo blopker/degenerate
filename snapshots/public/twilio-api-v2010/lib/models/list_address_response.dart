@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_address.dart';@immutable final class ListAddressResponse {const ListAddressResponse({this.addresses, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_address.dart';@immutable final class ListAddressResponse {const ListAddressResponse({this.addresses, this.end, this.firstPageUri, this.nextPageUri = const Omittable.absent(), this.page, this.pageSize, this.previousPageUri = const Omittable.absent(), this.start, this.uri, });
 
 factory ListAddressResponse.fromJson(Map<String, dynamic> json) { return ListAddressResponse(
   addresses: (json['addresses'] as List<dynamic>?)?.map((e) => AccountAddress.fromJson(e as Map<String, dynamic>)).toList(),
   end: json['end'] != null ? (json['end'] as num).toInt() : null,
   firstPageUri: json['first_page_uri'] != null ? Uri.parse(json['first_page_uri'] as String) : null,
-  nextPageUri: json['next_page_uri'] != null ? Uri.parse(json['next_page_uri'] as String) : null,
+  nextPageUri: json.containsKey('next_page_uri') ? Omittable(json['next_page_uri'] != null ? Uri.parse(json['next_page_uri'] as String) : null) : const Omittable.absent(),
   page: json['page'] != null ? (json['page'] as num).toInt() : null,
   pageSize: json['page_size'] != null ? (json['page_size'] as num).toInt() : null,
-  previousPageUri: json['previous_page_uri'] != null ? Uri.parse(json['previous_page_uri'] as String) : null,
+  previousPageUri: json.containsKey('previous_page_uri') ? Omittable(json['previous_page_uri'] != null ? Uri.parse(json['previous_page_uri'] as String) : null) : const Omittable.absent(),
   start: json['start'] != null ? (json['start'] as num).toInt() : null,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
 ); }
@@ -20,13 +20,13 @@ final int? end;
 
 final Uri? firstPageUri;
 
-final Uri? nextPageUri;
+final Omittable<Uri?> nextPageUri;
 
 final int? page;
 
 final int? pageSize;
 
-final Uri? previousPageUri;
+final Omittable<Uri?> previousPageUri;
 
 final int? start;
 
@@ -36,22 +36,22 @@ Map<String, dynamic> toJson() { return {
   if (addresses != null) 'addresses': addresses?.map((e) => e.toJson()).toList(),
   'end': ?end,
   if (firstPageUri != null) 'first_page_uri': firstPageUri?.toString(),
-  if (nextPageUri != null) 'next_page_uri': nextPageUri?.toString(),
+  if (nextPageUri.isPresent) 'next_page_uri': nextPageUri.value?.toString(),
   'page': ?page,
   'page_size': ?pageSize,
-  if (previousPageUri != null) 'previous_page_uri': previousPageUri?.toString(),
+  if (previousPageUri.isPresent) 'previous_page_uri': previousPageUri.value?.toString(),
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'addresses', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
-ListAddressResponse copyWith({List<AccountAddress> Function()? addresses, int Function()? end, Uri Function()? firstPageUri, Uri? Function()? nextPageUri, int Function()? page, int Function()? pageSize, Uri? Function()? previousPageUri, int Function()? start, Uri Function()? uri, }) { return ListAddressResponse(
+ListAddressResponse copyWith({List<AccountAddress>? Function()? addresses, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) { return ListAddressResponse(
   addresses: addresses != null ? addresses() : this.addresses,
   end: end != null ? end() : this.end,
   firstPageUri: firstPageUri != null ? firstPageUri() : this.firstPageUri,
-  nextPageUri: nextPageUri != null ? nextPageUri() : this.nextPageUri,
+  nextPageUri: nextPageUri ?? this.nextPageUri,
   page: page != null ? page() : this.page,
   pageSize: pageSize != null ? pageSize() : this.pageSize,
-  previousPageUri: previousPageUri != null ? previousPageUri() : this.previousPageUri,
+  previousPageUri: previousPageUri ?? this.previousPageUri,
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
 ); } 

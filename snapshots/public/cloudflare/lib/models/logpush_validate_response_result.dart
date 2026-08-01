@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'valid': ?valid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'valid'}.contains(key)); } 
-LogpushValidateResponseResult copyWith({String Function()? message, bool Function()? valid, }) { return LogpushValidateResponseResult(
+LogpushValidateResponseResult copyWith({String? Function()? message, bool? Function()? valid, }) { return LogpushValidateResponseResult(
   message: message != null ? message() : this.message,
   valid: valid != null ? valid() : this.valid,
 ); } 

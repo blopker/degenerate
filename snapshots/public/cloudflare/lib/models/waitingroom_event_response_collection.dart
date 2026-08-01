@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-WaitingroomEventResponseCollection copyWith({List<WaitingroomMessages2>? errors, List<WaitingroomMessages2>? messages, bool? success, WaitingroomEventResponseCollectionResultInfo Function()? resultInfo, List<WaitingroomEventResult> Function()? result, }) { return WaitingroomEventResponseCollection(
+WaitingroomEventResponseCollection copyWith({List<WaitingroomMessages2>? errors, List<WaitingroomMessages2>? messages, bool? success, WaitingroomEventResponseCollectionResultInfo? Function()? resultInfo, List<WaitingroomEventResult>? Function()? result, }) { return WaitingroomEventResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

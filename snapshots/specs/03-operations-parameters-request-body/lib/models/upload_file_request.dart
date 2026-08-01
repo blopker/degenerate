@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('description') && json['description'] is String; } 
-UploadFileRequest copyWith({Uint8List? file, String? description, String Function()? tags, }) { return UploadFileRequest(
+UploadFileRequest copyWith({Uint8List? file, String? description, String? Function()? tags, }) { return UploadFileRequest(
   file: file ?? this.file,
   description: description ?? this.description,
   tags: tags != null ? tags() : this.tags,

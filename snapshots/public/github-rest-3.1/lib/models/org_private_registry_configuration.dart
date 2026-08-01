@@ -93,13 +93,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgPrivateRegistryConfigurationVisibility($value)'; } 
  }
 /// Private registry configuration for an organization
-@immutable final class OrgPrivateRegistryConfiguration {const OrgPrivateRegistryConfiguration({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username, this.replacesBase = false, });
+@immutable final class OrgPrivateRegistryConfiguration {const OrgPrivateRegistryConfiguration({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username = const Omittable.absent(), this.replacesBase = false, });
 
 factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) { return OrgPrivateRegistryConfiguration(
   name: json['name'] as String,
   registryType: OrgPrivateRegistryConfigurationRegistryType.fromJson(json['registry_type'] as String),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-  username: json['username'] as String?,
+  username: json.containsKey('username') ? Omittable(json['username'] as String?) : const Omittable.absent(),
   replacesBase: json.containsKey('replaces_base') ? json['replaces_base'] as bool : false,
   visibility: OrgPrivateRegistryConfigurationVisibility.fromJson(json['visibility'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -116,7 +116,7 @@ final OrgPrivateRegistryConfigurationRegistryType registryType;
 final Uri? url;
 
 /// The username to use when authenticating with the private registry.
-final String? username;
+final Omittable<String?> username;
 
 /// Whether this private registry replaces the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When `true`, Dependabot will only use this registry and will not fall back to the public registry. When `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
 final bool replacesBase;
@@ -132,7 +132,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'registry_type': registryType.toJson(),
   if (url != null) 'url': url?.toString(),
-  'username': ?username,
+  if (username.isPresent) 'username': username.value,
   'replaces_base': replacesBase,
   'visibility': visibility.toJson(),
   'created_at': createdAt.toIso8601String(),
@@ -143,11 +143,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfigurationRegistryType? registryType, Uri Function()? url, String? Function()? username, bool Function()? replacesBase, OrgPrivateRegistryConfigurationVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
+OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfigurationRegistryType? registryType, Uri? Function()? url, Omittable<String?>? username, bool Function()? replacesBase, OrgPrivateRegistryConfigurationVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
   name: name ?? this.name,
   registryType: registryType ?? this.registryType,
   url: url != null ? url() : this.url,
-  username: username != null ? username() : this.username,
+  username: username ?? this.username,
   replacesBase: replacesBase != null ? replacesBase() : this.replacesBase,
   visibility: visibility ?? this.visibility,
   createdAt: createdAt ?? this.createdAt,

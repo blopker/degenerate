@@ -136,12 +136,12 @@ bool get isUnknown { return !values.contains(this); }
 /// For example, you might have a single "gold" product that has plans for $10/month, $100/year, €9/month, and €90/year.
 /// 
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription) and more about [products and prices](https://docs.stripe.com/products-prices/overview).
-@immutable final class Plan {const Plan({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.interval, required this.intervalCount, required this.livemode, required this.object, required this.usageType, this.amount, this.amountDecimal, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, });
+@immutable final class Plan {const Plan({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.interval, required this.intervalCount, required this.livemode, required this.object, required this.usageType, this.amount = const Omittable.absent(), this.amountDecimal = const Omittable.absent(), this.metadata = const Omittable.absent(), this.meter = const Omittable.absent(), this.nickname = const Omittable.absent(), this.product = const Omittable.absent(), this.tiers, this.tiersMode = const Omittable.absent(), this.transformUsage = const Omittable.absent(), this.trialPeriodDays = const Omittable.absent(), });
 
 factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   active: json['active'] as bool,
-  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountDecimal: json['amount_decimal'] as String?,
+  amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
+  amountDecimal: json.containsKey('amount_decimal') ? Omittable(json['amount_decimal'] as String?) : const Omittable.absent(),
   billingScheme: PlanBillingScheme.fromJson(json['billing_scheme'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -149,15 +149,15 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   interval: PlanInterval.fromJson(json['interval'] as String),
   intervalCount: (json['interval_count'] as num).toInt(),
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  meter: json['meter'] as String?,
-  nickname: json['nickname'] as String?,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  meter: json.containsKey('meter') ? Omittable(json['meter'] as String?) : const Omittable.absent(),
+  nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: PlanObject.fromJson(json['object'] as String),
-  product: json['product'] != null ? OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),) : null,
+  product: json.containsKey('product') ? Omittable(json['product'] != null ? OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PlanTier.fromJson(e as Map<String, dynamic>)).toList(),
-  tiersMode: json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformUsage: json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
-  trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
+  tiersMode: json.containsKey('tiers_mode') ? Omittable(json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null) : const Omittable.absent(),
+  transformUsage: json.containsKey('transform_usage') ? Omittable(json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  trialPeriodDays: json.containsKey('trial_period_days') ? Omittable(json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null) : const Omittable.absent(),
   usageType: PlanUsageType.fromJson(json['usage_type'] as String),
 ); }
 
@@ -165,10 +165,10 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
 final bool active;
 
 /// The unit amount in cents (or local equivalent) to be charged, represented as a whole integer if possible. Only set if `billing_scheme=per_unit`.
-final int? amount;
+final Omittable<int?> amount;
 
 /// The unit amount in cents (or local equivalent) to be charged, represented as a decimal string with at most 12 decimal places. Only set if `billing_scheme=per_unit`.
-final String? amountDecimal;
+final Omittable<String?> amountDecimal;
 
 /// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 final PlanBillingScheme billingScheme;
@@ -192,39 +192,39 @@ final int intervalCount;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// The meter tracking the usage of a metered price
-final String? meter;
+final Omittable<String?> meter;
 
 /// A brief description of the plan, hidden from customers.
-final String? nickname;
+final Omittable<String?> nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final PlanObject object;
 
 /// The product whose pricing this plan determines.
-final PlanProduct? product;
+final Omittable<PlanProduct?> product;
 
 /// Each element represents a pricing tier. This parameter requires `billing_scheme` to be set to `tiered`. See also the documentation for `billing_scheme`.
 final List<PlanTier>? tiers;
 
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-final PlanTiersMode? tiersMode;
+final Omittable<PlanTiersMode?> tiersMode;
 
 /// Apply a transformation to the reported usage or set quantity before computing the amount billed. Cannot be combined with `tiers`.
-final TransformUsage? transformUsage;
+final Omittable<TransformUsage?> transformUsage;
 
 /// Default number of trial days when subscribing a customer to this plan using [`trial_from_plan=true`](https://docs.stripe.com/api#create_subscription-trial_from_plan).
-final int? trialPeriodDays;
+final Omittable<int?> trialPeriodDays;
 
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 final PlanUsageType usageType;
 
 Map<String, dynamic> toJson() { return {
   'active': active,
-  'amount': ?amount,
-  'amount_decimal': ?amountDecimal,
+  if (amount.isPresent) 'amount': amount.value,
+  if (amountDecimal.isPresent) 'amount_decimal': amountDecimal.value,
   'billing_scheme': billingScheme.toJson(),
   'created': created,
   'currency': currency,
@@ -232,15 +232,15 @@ Map<String, dynamic> toJson() { return {
   'interval': interval.toJson(),
   'interval_count': intervalCount,
   'livemode': livemode,
-  'metadata': ?metadata,
-  'meter': ?meter,
-  'nickname': ?nickname,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (meter.isPresent) 'meter': meter.value,
+  if (nickname.isPresent) 'nickname': nickname.value,
   'object': object.toJson(),
-  if (product != null) 'product': product?.toJson(),
+  if (product.isPresent) 'product': product.value?.toJson(),
   if (tiers != null) 'tiers': tiers?.map((e) => e.toJson()).toList(),
-  if (tiersMode != null) 'tiers_mode': tiersMode?.toJson(),
-  if (transformUsage != null) 'transform_usage': transformUsage?.toJson(),
-  'trial_period_days': ?trialPeriodDays,
+  if (tiersMode.isPresent) 'tiers_mode': tiersMode.value?.toJson(),
+  if (transformUsage.isPresent) 'transform_usage': transformUsage.value?.toJson(),
+  if (trialPeriodDays.isPresent) 'trial_period_days': trialPeriodDays.value,
   'usage_type': usageType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
@@ -253,10 +253,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('usage_type'); } 
-Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, PlanObject? object, PlanProduct? Function()? product, List<PlanTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, PlanUsageType? usageType, }) { return Plan(
+Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? meter, Omittable<String?>? nickname, PlanObject? object, Omittable<PlanProduct?>? product, List<PlanTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformUsage?>? transformUsage, Omittable<int?>? trialPeriodDays, PlanUsageType? usageType, }) { return Plan(
   active: active ?? this.active,
-  amount: amount != null ? amount() : this.amount,
-  amountDecimal: amountDecimal != null ? amountDecimal() : this.amountDecimal,
+  amount: amount ?? this.amount,
+  amountDecimal: amountDecimal ?? this.amountDecimal,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -264,15 +264,15 @@ Plan copyWith({bool? active, int? Function()? amount, String? Function()? amount
   interval: interval ?? this.interval,
   intervalCount: intervalCount ?? this.intervalCount,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
-  meter: meter != null ? meter() : this.meter,
-  nickname: nickname != null ? nickname() : this.nickname,
+  metadata: metadata ?? this.metadata,
+  meter: meter ?? this.meter,
+  nickname: nickname ?? this.nickname,
   object: object ?? this.object,
-  product: product != null ? product() : this.product,
+  product: product ?? this.product,
   tiers: tiers != null ? tiers() : this.tiers,
-  tiersMode: tiersMode != null ? tiersMode() : this.tiersMode,
-  transformUsage: transformUsage != null ? transformUsage() : this.transformUsage,
-  trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
+  tiersMode: tiersMode ?? this.tiersMode,
+  transformUsage: transformUsage ?? this.transformUsage,
+  trialPeriodDays: trialPeriodDays ?? this.trialPeriodDays,
   usageType: usageType ?? this.usageType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

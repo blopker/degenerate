@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityLink {const EmailSecurityLink({required this.href, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityLink {const EmailSecurityLink({required this.href, this.text = const Omittable.absent(), });
 
 factory EmailSecurityLink.fromJson(Map<String, dynamic> json) { return EmailSecurityLink(
   href: json['href'] as String,
-  text: json['text'] as String?,
+  text: json.containsKey('text') ? Omittable(json['text'] as String?) : const Omittable.absent(),
 ); }
 
 final String href;
 
-final String? text;
+final Omittable<String?> text;
 
 Map<String, dynamic> toJson() { return {
   'href': href,
-  'text': ?text,
+  if (text.isPresent) 'text': text.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-EmailSecurityLink copyWith({String? href, String? Function()? text, }) { return EmailSecurityLink(
+EmailSecurityLink copyWith({String? href, Omittable<String?>? text, }) { return EmailSecurityLink(
   href: href ?? this.href,
-  text: text != null ? text() : this.text,
+  text: text ?? this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecurityLink &&

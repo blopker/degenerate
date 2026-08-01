@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('bank_code') && json['bank_code'] is String &&
       json.containsKey('branch_code') && json['branch_code'] is String &&
       json.containsKey('suffix') && json['suffix'] is String; } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount copyWith({String Function()? accountHolderName, String? accountNumber, String? bankCode, String? branchCode, String Function()? reference, String? suffix, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount(
+PostSetupIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount copyWith({String? Function()? accountHolderName, String? accountNumber, String? bankCode, String? branchCode, String? Function()? reference, String? suffix, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountNumber: accountNumber ?? this.accountNumber,
   bankCode: bankCode ?? this.bankCode,

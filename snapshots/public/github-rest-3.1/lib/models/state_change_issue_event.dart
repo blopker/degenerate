@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// State Change Issue Event
-@immutable final class StateChangeIssueEvent {const StateChangeIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.stateReason, });
+@immutable final class StateChangeIssueEvent {const StateChangeIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.stateReason = const Omittable.absent(), });
 
 factory StateChangeIssueEvent.fromJson(Map<String, dynamic> json) { return StateChangeIssueEvent(
   id: (json['id'] as num).toInt(),
@@ -13,7 +13,7 @@ factory StateChangeIssueEvent.fromJson(Map<String, dynamic> json) { return State
   commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
-  stateReason: json['state_reason'] as String?,
+  stateReason: json.containsKey('state_reason') ? Omittable(json['state_reason'] as String?) : const Omittable.absent(),
 ); }
 
 final int id;
@@ -34,7 +34,7 @@ final String createdAt;
 
 final Integration? performedViaGithubApp;
 
-final String? stateReason;
+final Omittable<String?> stateReason;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -42,11 +42,11 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'actor': actor.toJson(),
   'event': event,
-  'commit_id': ?commitId,
-  'commit_url': ?commitUrl,
+  'commit_id': commitId,
+  'commit_url': commitUrl,
   'created_at': createdAt,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
-  'state_reason': ?stateReason,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (stateReason.isPresent) 'state_reason': stateReason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_url') && json['commit_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app'); } 
-StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, String? Function()? stateReason, }) { return StateChangeIssueEvent(
+StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, Omittable<String?>? stateReason, }) { return StateChangeIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -67,7 +67,7 @@ StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser
   commitUrl: commitUrl != null ? commitUrl() : this.commitUrl,
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
-  stateReason: stateReason != null ? stateReason() : this.stateReason,
+  stateReason: stateReason ?? this.stateReason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is StateChangeIssueEvent &&

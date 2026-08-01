@@ -26,21 +26,21 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCardPresentRoutingRequestedPriority($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsCardPresentRouting {const PaymentMethodOptionsCardPresentRouting({this.requestedPriority});
+@immutable final class PaymentMethodOptionsCardPresentRouting {const PaymentMethodOptionsCardPresentRouting({this.requestedPriority = const Omittable.absent()});
 
 factory PaymentMethodOptionsCardPresentRouting.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardPresentRouting(
-  requestedPriority: json['requested_priority'] != null ? PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null,
+  requestedPriority: json.containsKey('requested_priority') ? Omittable(json['requested_priority'] != null ? PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Requested routing priority
-final PaymentMethodOptionsCardPresentRoutingRequestedPriority? requestedPriority;
+final Omittable<PaymentMethodOptionsCardPresentRoutingRequestedPriority?> requestedPriority;
 
 Map<String, dynamic> toJson() { return {
-  if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
+  if (requestedPriority.isPresent) 'requested_priority': requestedPriority.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
-PaymentMethodOptionsCardPresentRouting copyWith({PaymentMethodOptionsCardPresentRoutingRequestedPriority? Function()? requestedPriority}) { return PaymentMethodOptionsCardPresentRouting(
-  requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
+PaymentMethodOptionsCardPresentRouting copyWith({Omittable<PaymentMethodOptionsCardPresentRoutingRequestedPriority?>? requestedPriority}) { return PaymentMethodOptionsCardPresentRouting(
+  requestedPriority: requestedPriority ?? this.requestedPriority,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodOptionsCardPresentRouting &&

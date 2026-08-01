@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (zoneTag != null) 'zone_tag': zoneTag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_install', 'enabled', 'host', 'lite', 'zone_tag'}.contains(key)); } 
-RumUpdateSiteRequest copyWith({RumAutoInstall Function()? autoInstall, RumEnabled Function()? enabled, RumHost Function()? host, RumLite Function()? lite, RumZoneTag Function()? zoneTag, }) { return RumUpdateSiteRequest(
+RumUpdateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumEnabled? Function()? enabled, RumHost? Function()? host, RumLite? Function()? lite, RumZoneTag? Function()? zoneTag, }) { return RumUpdateSiteRequest(
   autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
   enabled: enabled != null ? enabled() : this.enabled,
   host: host != null ? host() : this.host,

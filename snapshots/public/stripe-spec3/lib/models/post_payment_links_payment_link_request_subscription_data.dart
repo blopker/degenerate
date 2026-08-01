@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invoice_settings', 'metadata', 'trial_period_days', 'trial_settings'}.contains(key)); } 
-PostPaymentLinksPaymentLinkRequestSubscriptionData copyWith({PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings Function()? invoiceSettings, PostPaymentLinksPaymentLinkRequestSubscriptionDataMetadata Function()? metadata, PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialPeriodDays Function()? trialPeriodDays, PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings Function()? trialSettings, }) { return PostPaymentLinksPaymentLinkRequestSubscriptionData(
+PostPaymentLinksPaymentLinkRequestSubscriptionData copyWith({PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings? Function()? invoiceSettings, PostPaymentLinksPaymentLinkRequestSubscriptionDataMetadata? Function()? metadata, PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialPeriodDays? Function()? trialPeriodDays, PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings? Function()? trialSettings, }) { return PostPaymentLinksPaymentLinkRequestSubscriptionData(
   invoiceSettings: invoiceSettings != null ? invoiceSettings() : this.invoiceSettings,
   metadata: metadata != null ? metadata() : this.metadata,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,

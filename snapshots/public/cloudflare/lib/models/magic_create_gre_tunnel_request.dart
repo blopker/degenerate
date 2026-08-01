@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud
       json.containsKey('customer_gre_endpoint') &&
       json.containsKey('interface_address') &&
       json.containsKey('name'); } 
-MagicCreateGreTunnelRequest copyWith({MagicAutomaticReturnRouting Function()? automaticReturnRouting, MagicBgpConfig Function()? bgp, MagicCloudflareGreEndpoint? cloudflareGreEndpoint, MagicCustomerGreEndpoint? customerGreEndpoint, MagicSchemasDescription Function()? description, MagicTunnelHealthCheck Function()? healthCheck, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6 Function()? interfaceAddress6, MagicMtu Function()? mtu, MagicGreTunnelName? name, MagicTtl Function()? ttl, }) { return MagicCreateGreTunnelRequest(
+MagicCreateGreTunnelRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicBgpConfig? Function()? bgp, MagicCloudflareGreEndpoint? cloudflareGreEndpoint, MagicCustomerGreEndpoint? customerGreEndpoint, MagicSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicMtu? Function()? mtu, MagicGreTunnelName? name, MagicTtl? Function()? ttl, }) { return MagicCreateGreTunnelRequest(
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   bgp: bgp != null ? bgp() : this.bgp,
   cloudflareGreEndpoint: cloudflareGreEndpoint ?? this.cloudflareGreEndpoint,

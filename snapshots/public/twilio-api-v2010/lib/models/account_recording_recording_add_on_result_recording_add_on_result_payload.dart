@@ -1,80 +1,80 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload {const AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload({this.sid, this.addOnResultSid, this.accountSid, this.label, this.addOnSid, this.addOnConfigurationSid, this.contentType, this.dateCreated, this.dateUpdated, this.referenceSid, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload {const AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload({this.sid = const Omittable.absent(), this.addOnResultSid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.label = const Omittable.absent(), this.addOnSid = const Omittable.absent(), this.addOnConfigurationSid = const Omittable.absent(), this.contentType = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.referenceSid = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
 factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
-  sid: json['sid'] as String?,
-  addOnResultSid: json['add_on_result_sid'] as String?,
-  accountSid: json['account_sid'] as String?,
-  label: json['label'] as String?,
-  addOnSid: json['add_on_sid'] as String?,
-  addOnConfigurationSid: json['add_on_configuration_sid'] as String?,
-  contentType: json['content_type'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  referenceSid: json['reference_sid'] as String?,
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  addOnResultSid: json.containsKey('add_on_result_sid') ? Omittable(json['add_on_result_sid'] as String?) : const Omittable.absent(),
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  label: json.containsKey('label') ? Omittable(json['label'] as String?) : const Omittable.absent(),
+  addOnSid: json.containsKey('add_on_sid') ? Omittable(json['add_on_sid'] as String?) : const Omittable.absent(),
+  addOnConfigurationSid: json.containsKey('add_on_configuration_sid') ? Omittable(json['add_on_configuration_sid'] as String?) : const Omittable.absent(),
+  contentType: json.containsKey('content_type') ? Omittable(json['content_type'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  referenceSid: json.containsKey('reference_sid') ? Omittable(json['reference_sid'] as String?) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 /// The unique string that that we created to identify the Recording AddOnResult Payload resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The SID of the AddOnResult to which the payload belongs.
-final String? addOnResultSid;
+final Omittable<String?> addOnResultSid;
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording AddOnResult Payload resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The string provided by the vendor that describes the payload.
-final String? label;
+final Omittable<String?> label;
 
 /// The SID of the Add-on to which the result belongs.
-final String? addOnSid;
+final Omittable<String?> addOnSid;
 
 /// The SID of the Add-on configuration.
-final String? addOnConfigurationSid;
+final Omittable<String?> addOnConfigurationSid;
 
 /// The MIME type of the payload.
-final String? contentType;
+final Omittable<String?> contentType;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The SID of the recording to which the AddOnResult resource that contains the payload belongs.
-final String? referenceSid;
+final Omittable<String?> referenceSid;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 Map<String, dynamic> toJson() { return {
-  'sid': ?sid,
-  'add_on_result_sid': ?addOnResultSid,
-  'account_sid': ?accountSid,
-  'label': ?label,
-  'add_on_sid': ?addOnSid,
-  'add_on_configuration_sid': ?addOnConfigurationSid,
-  'content_type': ?contentType,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'reference_sid': ?referenceSid,
-  'subresource_uris': ?subresourceUris,
+  if (sid.isPresent) 'sid': sid.value,
+  if (addOnResultSid.isPresent) 'add_on_result_sid': addOnResultSid.value,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (label.isPresent) 'label': label.value,
+  if (addOnSid.isPresent) 'add_on_sid': addOnSid.value,
+  if (addOnConfigurationSid.isPresent) 'add_on_configuration_sid': addOnConfigurationSid.value,
+  if (contentType.isPresent) 'content_type': contentType.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (referenceSid.isPresent) 'reference_sid': referenceSid.value,
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'add_on_result_sid', 'account_sid', 'label', 'add_on_sid', 'add_on_configuration_sid', 'content_type', 'date_created', 'date_updated', 'reference_sid', 'subresource_uris'}.contains(key)); } 
-AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({String? Function()? sid, String? Function()? addOnResultSid, String? Function()? accountSid, String? Function()? label, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? contentType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? referenceSid, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
-  sid: sid != null ? sid() : this.sid,
-  addOnResultSid: addOnResultSid != null ? addOnResultSid() : this.addOnResultSid,
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  label: label != null ? label() : this.label,
-  addOnSid: addOnSid != null ? addOnSid() : this.addOnSid,
-  addOnConfigurationSid: addOnConfigurationSid != null ? addOnConfigurationSid() : this.addOnConfigurationSid,
-  contentType: contentType != null ? contentType() : this.contentType,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  referenceSid: referenceSid != null ? referenceSid() : this.referenceSid,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({Omittable<String?>? sid, Omittable<String?>? addOnResultSid, Omittable<String?>? accountSid, Omittable<String?>? label, Omittable<String?>? addOnSid, Omittable<String?>? addOnConfigurationSid, Omittable<String?>? contentType, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? referenceSid, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
+  sid: sid ?? this.sid,
+  addOnResultSid: addOnResultSid ?? this.addOnResultSid,
+  accountSid: accountSid ?? this.accountSid,
+  label: label ?? this.label,
+  addOnSid: addOnSid ?? this.addOnSid,
+  addOnConfigurationSid: addOnConfigurationSid ?? this.addOnConfigurationSid,
+  contentType: contentType ?? this.contentType,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  referenceSid: referenceSid ?? this.referenceSid,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload &&

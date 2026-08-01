@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (environments != null) 'environments': environments?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'environments'}.contains(key)); } 
-ReposGetAllEnvironmentsResponse copyWith({int Function()? totalCount, List<Environment> Function()? environments, }) { return ReposGetAllEnvironmentsResponse(
+ReposGetAllEnvironmentsResponse copyWith({int? Function()? totalCount, List<Environment>? Function()? environments, }) { return ReposGetAllEnvironmentsResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   environments: environments != null ? environments() : this.environments,
 ); } 

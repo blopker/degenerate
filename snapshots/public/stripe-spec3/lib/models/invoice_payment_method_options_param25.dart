@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'installments', 'request_three_d_secure'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam25 copyWith({InvoicePaymentMethodOptionsParam25Installments Function()? installments, InvoicePaymentMethodOptionsParam25RequestThreeDSecure Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsParam25(
+InvoicePaymentMethodOptionsParam25 copyWith({InvoicePaymentMethodOptionsParam25Installments? Function()? installments, InvoicePaymentMethodOptionsParam25RequestThreeDSecure? Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsParam25(
   installments: installments != null ? installments() : this.installments,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
 ); } 

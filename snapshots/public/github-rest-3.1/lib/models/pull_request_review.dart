@@ -52,14 +52,14 @@ final AuthorAssociation authorAssociation;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   'body': body,
   'state': state,
   'html_url': htmlUrl.toString(),
   'pull_request_url': pullRequestUrl.toString(),
   '_links': links.toJson(),
   if (submittedAt != null) 'submitted_at': submittedAt?.toIso8601String(),
-  'commit_id': ?commitId,
+  'commit_id': commitId,
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
   'author_association': authorAssociation.toJson(),
@@ -74,7 +74,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('author_association'); } 
-PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime Function()? submittedAt, String? Function()? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return PullRequestReview(
+PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, String? Function()? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return PullRequestReview(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   user: user != null ? user() : this.user,

@@ -85,16 +85,16 @@ final WorDescribeWorkflowInstanceResponseResultTrigger trigger;
 final String versionId;
 
 Map<String, dynamic> toJson() { return {
-  if (end != null) 'end': end?.toIso8601String(),
-  if (error != null) 'error': error?.toJson(),
+  'end': end?.toIso8601String(),
+  'error': error?.toJson(),
   'output': output,
   'params': params,
   'queued': queued.toIso8601String(),
-  if (start != null) 'start': start?.toIso8601String(),
+  'start': start?.toIso8601String(),
   'status': status.toJson(),
   'step_count': stepCount,
   'steps': steps.map((e) => e.toJson()).toList(),
-  'success': ?success,
+  'success': success,
   'trigger': trigger.toJson(),
   'versionId': versionId,
 }; } 

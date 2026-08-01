@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'labeled_runners': ?labeledRunners,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labeled_runners'}.contains(key)); } 
-CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions copyWith({bool Function()? labeledRunners}) { return CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions(
+CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions copyWith({bool? Function()? labeledRunners}) { return CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions(
   labeledRunners: labeledRunners != null ? labeledRunners() : this.labeledRunners,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

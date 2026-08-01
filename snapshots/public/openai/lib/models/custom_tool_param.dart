@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-CustomToolParam copyWith({String? type, String? name, String Function()? description, CustomToolParamFormat Function()? format, bool Function()? deferLoading, }) { return CustomToolParam(
+CustomToolParam copyWith({String? type, String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return CustomToolParam(
   type: type ?? this.type,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

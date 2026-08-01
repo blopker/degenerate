@@ -21,7 +21,7 @@ final IamScopeKey? key;
 final List<IamScopeObject> objects;
 
 Map<String, dynamic> toJson() { return {
-  if (key != null) 'key': key?.toJson(),
+  'key': key?.toJson(),
   'objects': objects.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&

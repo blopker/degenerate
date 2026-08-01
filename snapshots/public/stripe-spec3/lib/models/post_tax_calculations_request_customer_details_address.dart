@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
-PostTaxCalculationsRequestCustomerDetailsAddress copyWith({PostTaxCalculationsRequestCustomerDetailsAddressCity Function()? city, String? country, PostTaxCalculationsRequestCustomerDetailsAddressLine1 Function()? line1, PostTaxCalculationsRequestCustomerDetailsAddressLine2 Function()? line2, PostTaxCalculationsRequestCustomerDetailsAddressPostalCode Function()? postalCode, PostTaxCalculationsRequestCustomerDetailsAddressState Function()? state, }) { return PostTaxCalculationsRequestCustomerDetailsAddress(
+PostTaxCalculationsRequestCustomerDetailsAddress copyWith({PostTaxCalculationsRequestCustomerDetailsAddressCity? Function()? city, String? country, PostTaxCalculationsRequestCustomerDetailsAddressLine1? Function()? line1, PostTaxCalculationsRequestCustomerDetailsAddressLine2? Function()? line2, PostTaxCalculationsRequestCustomerDetailsAddressPostalCode? Function()? postalCode, PostTaxCalculationsRequestCustomerDetailsAddressState? Function()? state, }) { return PostTaxCalculationsRequestCustomerDetailsAddress(
   city: city != null ? city() : this.city,
   country: country ?? this.country,
   line1: line1 != null ? line1() : this.line1,

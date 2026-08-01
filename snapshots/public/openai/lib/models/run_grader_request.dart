@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader') &&
       json.containsKey('model_sample') && json['model_sample'] is String; } 
-RunGraderRequest copyWith({RunGraderRequestGrader? grader, Map<String, dynamic> Function()? item, String? modelSample, }) { return RunGraderRequest(
+RunGraderRequest copyWith({RunGraderRequestGrader? grader, Map<String, dynamic>? Function()? item, String? modelSample, }) { return RunGraderRequest(
   grader: grader ?? this.grader,
   item: item != null ? item() : this.item,
   modelSample: modelSample ?? this.modelSample,

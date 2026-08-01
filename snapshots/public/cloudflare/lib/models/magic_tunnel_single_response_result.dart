@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (greTunnel != null) 'gre_tunnel': greTunnel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gre_tunnel'}.contains(key)); } 
-MagicTunnelSingleResponseResult copyWith({MagicGreTunnel Function()? greTunnel}) { return MagicTunnelSingleResponseResult(
+MagicTunnelSingleResponseResult copyWith({MagicGreTunnel? Function()? greTunnel}) { return MagicTunnelSingleResponseResult(
   greTunnel: greTunnel != null ? greTunnel() : this.greTunnel,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

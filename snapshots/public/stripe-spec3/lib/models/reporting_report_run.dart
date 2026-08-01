@@ -30,19 +30,19 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Note that certain report types can only be run based on your live-mode data (not test-mode
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
-@immutable final class ReportingReportRun {const ReportingReportRun({required this.created, required this.id, required this.livemode, required this.object, required this.parameters, required this.reportType, required this.status, this.error, this.result, this.succeededAt, });
+@immutable final class ReportingReportRun {const ReportingReportRun({required this.created, required this.id, required this.livemode, required this.object, required this.parameters, required this.reportType, required this.status, this.error = const Omittable.absent(), this.result = const Omittable.absent(), this.succeededAt = const Omittable.absent(), });
 
 factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return ReportingReportRun(
   created: (json['created'] as num).toInt(),
-  error: json['error'] as String?,
+  error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ReportingReportRunObject.fromJson(json['object'] as String),
   parameters: FinancialReportingFinanceReportRunRunParameters.fromJson(json['parameters'] as Map<String, dynamic>),
   reportType: json['report_type'] as String,
-  result: json['result'] != null ? File.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json.containsKey('result') ? Omittable(json['result'] != null ? File.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: json['status'] as String,
-  succeededAt: json['succeeded_at'] != null ? (json['succeeded_at'] as num).toInt() : null,
+  succeededAt: json.containsKey('succeeded_at') ? Omittable(json['succeeded_at'] != null ? (json['succeeded_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
@@ -50,7 +50,7 @@ final int created;
 
 /// If something should go wrong during the run, a message about the failure (populated when
 ///  `status=failed`).
-final String? error;
+final Omittable<String?> error;
 
 /// Unique identifier for the object.
 final String id;
@@ -68,7 +68,7 @@ final String reportType;
 
 /// The file object representing the result of the report run (populated when
 ///  `status=succeeded`).
-final File? result;
+final Omittable<File?> result;
 
 /// Status of this report run. This will be `pending` when the run is initially created.
 ///  When the run finishes, this will be set to `succeeded` and the `result` field will be populated.
@@ -77,19 +77,19 @@ final String status;
 
 /// Timestamp at which this run successfully finished (populated when
 ///  `status=succeeded`). Measured in seconds since the Unix epoch.
-final int? succeededAt;
+final Omittable<int?> succeededAt;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
-  'error': ?error,
+  if (error.isPresent) 'error': error.value,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
   'parameters': parameters.toJson(),
   'report_type': reportType,
-  if (result != null) 'result': result?.toJson(),
+  if (result.isPresent) 'result': result.value?.toJson(),
   'status': status,
-  'succeeded_at': ?succeededAt,
+  if (succeededAt.isPresent) 'succeeded_at': succeededAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -98,17 +98,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('parameters') &&
       json.containsKey('report_type') && json['report_type'] is String &&
       json.containsKey('status') && json['status'] is String; } 
-ReportingReportRun copyWith({int? created, String? Function()? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, File? Function()? result, String? status, int? Function()? succeededAt, }) { return ReportingReportRun(
+ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, Omittable<File?>? result, String? status, Omittable<int?>? succeededAt, }) { return ReportingReportRun(
   created: created ?? this.created,
-  error: error != null ? error() : this.error,
+  error: error ?? this.error,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   parameters: parameters ?? this.parameters,
   reportType: reportType ?? this.reportType,
-  result: result != null ? result() : this.result,
+  result: result ?? this.result,
   status: status ?? this.status,
-  succeededAt: succeededAt != null ? succeededAt() : this.succeededAt,
+  succeededAt: succeededAt ?? this.succeededAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ReportingReportRun &&

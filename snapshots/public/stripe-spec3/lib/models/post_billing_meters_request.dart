@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_aggregation') &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('event_name') && json['event_name'] is String; } 
-PostBillingMetersRequest copyWith({PostBillingMetersRequestCustomerMapping Function()? customerMapping, PostBillingMetersRequestDefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow Function()? eventTimeWindow, List<String> Function()? expand, PostBillingMetersRequestValueSettings Function()? valueSettings, }) { return PostBillingMetersRequest(
+PostBillingMetersRequest copyWith({PostBillingMetersRequestCustomerMapping? Function()? customerMapping, PostBillingMetersRequestDefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow? Function()? eventTimeWindow, List<String>? Function()? expand, PostBillingMetersRequestValueSettings? Function()? valueSettings, }) { return PostBillingMetersRequest(
   customerMapping: customerMapping != null ? customerMapping() : this.customerMapping,
   defaultAggregation: defaultAggregation ?? this.defaultAggregation,
   displayName: displayName ?? this.displayName,

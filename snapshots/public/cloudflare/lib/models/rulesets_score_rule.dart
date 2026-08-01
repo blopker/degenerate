@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';import 'rulesets_score_rule_action_parameters.dart';@immutable final class RulesetsScoreRule {const RulesetsScoreRule({required this.lastUpdated, required this.version, this.action, this.actionParameters, this.categories, this.description, this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';import 'rulesets_score_rule_action_parameters.dart';@immutable final class RulesetsScoreRule {const RulesetsScoreRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
 factory RulesetsScoreRule.fromJson(Map<String, dynamic> json) { return RulesetsScoreRule(
-  action: json['action'],
+  action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
   actionParameters: json['action_parameters'] != null ? RulesetsScoreRuleActionParameters.fromJson(json['action_parameters'] as Map<String, dynamic>) : null,
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
-  description: json['description'],
+  description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
   exposedCredentialCheck: json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null,
   expression: json['expression'] as String?,
@@ -18,14 +18,14 @@ factory RulesetsScoreRule.fromJson(Map<String, dynamic> json) { return RulesetsS
   version: json['version'] as String,
 ); }
 
-final dynamic action;
+final Omittable<dynamic> action;
 
 final RulesetsScoreRuleActionParameters? actionParameters;
 
 /// The categories of the rule.
 final List<RulesetsRuleCategory>? categories;
 
-final dynamic description;
+final Omittable<dynamic> description;
 
 /// Whether the rule should be executed.
 final RulesetsRuleEnabled? enabled;
@@ -52,10 +52,10 @@ final String? ref;
 final String version;
 
 Map<String, dynamic> toJson() { return {
-  'action': ?action,
+  if (action.isPresent) 'action': action.value,
   if (actionParameters != null) 'action_parameters': actionParameters?.toJson(),
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (exposedCredentialCheck != null) 'exposed_credential_check': exposedCredentialCheck?.toJson(),
   'expression': ?expression,
@@ -68,11 +68,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-RulesetsScoreRule copyWith({dynamic Function()? action, RulesetsScoreRuleActionParameters Function()? actionParameters, List<RulesetsRuleCategory> Function()? categories, dynamic Function()? description, RulesetsRuleEnabled Function()? enabled, RulesetsRuleExposedCredentialCheck Function()? exposedCredentialCheck, String Function()? expression, RulesetsRuleId Function()? id, DateTime? lastUpdated, RulesetsRuleLogging Function()? logging, RulesetsRuleRatelimit Function()? ratelimit, String Function()? ref, String? version, }) { return RulesetsScoreRule(
-  action: action != null ? action() : this.action,
+RulesetsScoreRule copyWith({Omittable<dynamic>? action, RulesetsScoreRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsScoreRule(
+  action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   exposedCredentialCheck: exposedCredentialCheck != null ? exposedCredentialCheck() : this.exposedCredentialCheck,
   expression: expression != null ? expression() : this.expression,

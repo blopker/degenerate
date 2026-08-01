@@ -143,16 +143,16 @@ Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
   if (address2 != null) 'address2': address2?.toJson(),
   'city': city.toJson(),
-  if (country != null) 'country': country?.toJson(),
+  'country': country?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (fax != null) 'fax': fax?.toJson(),
-  if (firstName != null) 'first_name': firstName?.toJson(),
+  'first_name': firstName?.toJson(),
   if (id != null) 'id': id?.toJson(),
-  if (lastName != null) 'last_name': lastName?.toJson(),
+  'last_name': lastName?.toJson(),
   'organization': organization.toJson(),
-  if (phone != null) 'phone': phone?.toJson(),
+  'phone': phone?.toJson(),
   'state': state.toJson(),
-  if (zip != null) 'zip': zip?.toJson(),
+  'zip': zip?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('city') &&
@@ -163,7 +163,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('phone') &&
       json.containsKey('state') &&
       json.containsKey('zip'); } 
-ContactProperties copyWith({Address? address, Address2 Function()? address2, City? city, Country? Function()? country, Email Function()? email, Fax Function()? fax, FirstName? Function()? firstName, ContactIdentifier Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) { return ContactProperties(
+ContactProperties copyWith({Address? address, Address2? Function()? address2, City? city, Country? Function()? country, Email? Function()? email, Fax? Function()? fax, FirstName? Function()? firstName, ContactIdentifier? Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) { return ContactProperties(
   address: address ?? this.address,
   address2: address2 != null ? address2() : this.address2,
   city: city ?? this.city,

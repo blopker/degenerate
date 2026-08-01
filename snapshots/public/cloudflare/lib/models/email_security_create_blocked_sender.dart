@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSender(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 final bool isRegex;
 
@@ -18,16 +18,16 @@ final String pattern;
 final EmailSecurityPatternType? patternType;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type'); } 
-EmailSecurityCreateBlockedSender copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityCreateBlockedSender(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityCreateBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityCreateBlockedSender(
+  comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,

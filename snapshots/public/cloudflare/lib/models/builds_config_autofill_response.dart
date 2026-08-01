@@ -33,40 +33,40 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BuildsPackageManager($value)'; } 
  }
-@immutable final class BuildsConfigAutofillResponse {const BuildsConfigAutofillResponse({this.configFile, this.defaultWorkerName, this.envWorkerNames, this.packageManager, this.scripts, });
+@immutable final class BuildsConfigAutofillResponse {const BuildsConfigAutofillResponse({this.configFile = const Omittable.absent(), this.defaultWorkerName = const Omittable.absent(), this.envWorkerNames = const Omittable.absent(), this.packageManager = const Omittable.absent(), this.scripts = const Omittable.absent(), });
 
 factory BuildsConfigAutofillResponse.fromJson(Map<String, dynamic> json) { return BuildsConfigAutofillResponse(
-  configFile: json['config_file'] as String?,
-  defaultWorkerName: json['default_worker_name'] as String?,
-  envWorkerNames: (json['env_worker_names'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  packageManager: json['package_manager'] != null ? BuildsPackageManager.fromJson(json['package_manager'] as String) : null,
-  scripts: (json['scripts'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  configFile: json.containsKey('config_file') ? Omittable(json['config_file'] as String?) : const Omittable.absent(),
+  defaultWorkerName: json.containsKey('default_worker_name') ? Omittable(json['default_worker_name'] as String?) : const Omittable.absent(),
+  envWorkerNames: json.containsKey('env_worker_names') ? Omittable((json['env_worker_names'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  packageManager: json.containsKey('package_manager') ? Omittable(json['package_manager'] != null ? BuildsPackageManager.fromJson(json['package_manager'] as String) : null) : const Omittable.absent(),
+  scripts: json.containsKey('scripts') ? Omittable((json['scripts'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
-final String? configFile;
+final Omittable<String?> configFile;
 
-final String? defaultWorkerName;
+final Omittable<String?> defaultWorkerName;
 
-final Map<String,String>? envWorkerNames;
+final Omittable<Map<String,String>?> envWorkerNames;
 
-final BuildsPackageManager? packageManager;
+final Omittable<BuildsPackageManager?> packageManager;
 
-final Map<String,String>? scripts;
+final Omittable<Map<String,String>?> scripts;
 
 Map<String, dynamic> toJson() { return {
-  'config_file': ?configFile,
-  'default_worker_name': ?defaultWorkerName,
-  'env_worker_names': ?envWorkerNames,
-  if (packageManager != null) 'package_manager': packageManager?.toJson(),
-  'scripts': ?scripts,
+  if (configFile.isPresent) 'config_file': configFile.value,
+  if (defaultWorkerName.isPresent) 'default_worker_name': defaultWorkerName.value,
+  if (envWorkerNames.isPresent) 'env_worker_names': envWorkerNames.value,
+  if (packageManager.isPresent) 'package_manager': packageManager.value?.toJson(),
+  if (scripts.isPresent) 'scripts': scripts.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config_file', 'default_worker_name', 'env_worker_names', 'package_manager', 'scripts'}.contains(key)); } 
-BuildsConfigAutofillResponse copyWith({String? Function()? configFile, String? Function()? defaultWorkerName, Map<String, String>? Function()? envWorkerNames, BuildsPackageManager? Function()? packageManager, Map<String, String>? Function()? scripts, }) { return BuildsConfigAutofillResponse(
-  configFile: configFile != null ? configFile() : this.configFile,
-  defaultWorkerName: defaultWorkerName != null ? defaultWorkerName() : this.defaultWorkerName,
-  envWorkerNames: envWorkerNames != null ? envWorkerNames() : this.envWorkerNames,
-  packageManager: packageManager != null ? packageManager() : this.packageManager,
-  scripts: scripts != null ? scripts() : this.scripts,
+BuildsConfigAutofillResponse copyWith({Omittable<String?>? configFile, Omittable<String?>? defaultWorkerName, Omittable<Map<String,String>?>? envWorkerNames, Omittable<BuildsPackageManager?>? packageManager, Omittable<Map<String,String>?>? scripts, }) { return BuildsConfigAutofillResponse(
+  configFile: configFile ?? this.configFile,
+  defaultWorkerName: defaultWorkerName ?? this.defaultWorkerName,
+  envWorkerNames: envWorkerNames ?? this.envWorkerNames,
+  packageManager: packageManager ?? this.packageManager,
+  scripts: scripts ?? this.scripts,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BuildsConfigAutofillResponse &&

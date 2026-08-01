@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frequency', 'region', 'url'}.contains(key)); } 
-ObservatorySchedule copyWith({ObservatoryScheduleFrequency Function()? frequency, ObservatoryRegion Function()? region, ObservatoryUrl Function()? url, }) { return ObservatorySchedule(
+ObservatorySchedule copyWith({ObservatoryScheduleFrequency? Function()? frequency, ObservatoryRegion? Function()? region, ObservatoryUrl? Function()? url, }) { return ObservatorySchedule(
   frequency: frequency != null ? frequency() : this.frequency,
   region: region != null ? region() : this.region,
   url: url != null ? url() : this.url,

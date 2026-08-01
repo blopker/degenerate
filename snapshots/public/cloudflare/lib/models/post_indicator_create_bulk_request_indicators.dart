@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String &&
       json.containsKey('value') && json['value'] is String; } 
-PostIndicatorCreateBulkRequestIndicators copyWith({bool Function()? autoCreateType, String? indicatorType, List<PostIndicatorCreateBulkRequestIndicatorsRelatedEvents> Function()? relatedEvents, List<PostIndicatorCreateBulkRequestIndicatorsTags> Function()? tags, String? value, }) { return PostIndicatorCreateBulkRequestIndicators(
+PostIndicatorCreateBulkRequestIndicators copyWith({bool? Function()? autoCreateType, String? indicatorType, List<PostIndicatorCreateBulkRequestIndicatorsRelatedEvents>? Function()? relatedEvents, List<PostIndicatorCreateBulkRequestIndicatorsTags>? Function()? tags, String? value, }) { return PostIndicatorCreateBulkRequestIndicators(
   autoCreateType: autoCreateType != null ? autoCreateType() : this.autoCreateType,
   indicatorType: indicatorType ?? this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,

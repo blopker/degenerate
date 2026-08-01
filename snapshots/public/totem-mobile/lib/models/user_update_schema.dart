@@ -6,51 +6,67 @@ import 'profile_avatar_type_enum.dart';
 @immutable
 final class UserUpdateSchema {
   const UserUpdateSchema({
-    this.name,
-    this.email,
-    this.timezone,
-    this.newsletterConsent,
-    this.profileAvatarType,
-    this.profileAvatarSeed,
+    this.name = const Omittable.absent(),
+    this.email = const Omittable.absent(),
+    this.timezone = const Omittable.absent(),
+    this.newsletterConsent = const Omittable.absent(),
+    this.profileAvatarType = const Omittable.absent(),
+    this.profileAvatarSeed = const Omittable.absent(),
   });
 
   factory UserUpdateSchema.fromJson(Map<String, dynamic> json) {
     return UserUpdateSchema(
-      name: json['name'] as String?,
-      email: json['email'] as String?,
-      timezone: json['timezone'] as String?,
-      newsletterConsent: json['newsletter_consent'] as bool?,
-      profileAvatarType: json['profile_avatar_type'] != null
-          ? ProfileAvatarTypeEnum.fromJson(
-              json['profile_avatar_type'] as String,
+      name: json.containsKey('name')
+          ? Omittable(json['name'] as String?)
+          : const Omittable.absent(),
+      email: json.containsKey('email')
+          ? Omittable(json['email'] as String?)
+          : const Omittable.absent(),
+      timezone: json.containsKey('timezone')
+          ? Omittable(json['timezone'] as String?)
+          : const Omittable.absent(),
+      newsletterConsent: json.containsKey('newsletter_consent')
+          ? Omittable(json['newsletter_consent'] as bool?)
+          : const Omittable.absent(),
+      profileAvatarType: json.containsKey('profile_avatar_type')
+          ? Omittable(
+              json['profile_avatar_type'] != null
+                  ? ProfileAvatarTypeEnum.fromJson(
+                      json['profile_avatar_type'] as String,
+                    )
+                  : null,
             )
-          : null,
-      profileAvatarSeed: json['profile_avatar_seed'] as String?,
+          : const Omittable.absent(),
+      profileAvatarSeed: json.containsKey('profile_avatar_seed')
+          ? Omittable(json['profile_avatar_seed'] as String?)
+          : const Omittable.absent(),
     );
   }
 
-  final String? name;
+  final Omittable<String?> name;
 
-  final String? email;
+  final Omittable<String?> email;
 
-  final String? timezone;
+  final Omittable<String?> timezone;
 
-  final bool? newsletterConsent;
+  final Omittable<bool?> newsletterConsent;
 
-  final ProfileAvatarTypeEnum? profileAvatarType;
+  final Omittable<ProfileAvatarTypeEnum?> profileAvatarType;
 
   /// Should be a random UUID
-  final String? profileAvatarSeed;
+  final Omittable<String?> profileAvatarSeed;
 
   Map<String, dynamic> toJson() {
     return {
-      'name': ?name,
-      'email': ?email,
-      'timezone': ?timezone,
-      'newsletter_consent': ?newsletterConsent,
-      if (profileAvatarType != null)
-        'profile_avatar_type': profileAvatarType?.toJson(),
-      'profile_avatar_seed': ?profileAvatarSeed,
+      if (name.isPresent) 'name': name.value,
+      if (email.isPresent) 'email': email.value,
+      if (timezone.isPresent) 'timezone': timezone.value,
+      if (newsletterConsent.isPresent)
+        'newsletter_consent': newsletterConsent.value,
+      if (profileAvatarType.isPresent)
+        'profile_avatar_type': profileAvatarType.value?.toJson(),
+      if (profileAvatarSeed.isPresent)
+        'profile_avatar_seed': profileAvatarSeed.value,
     };
   }
 
@@ -68,26 +84,20 @@ final class UserUpdateSchema {
   }
 
   UserUpdateSchema copyWith({
-    String? Function()? name,
-    String? Function()? email,
-    String? Function()? timezone,
-    bool? Function()? newsletterConsent,
-    ProfileAvatarTypeEnum? Function()? profileAvatarType,
-    String? Function()? profileAvatarSeed,
+    Omittable<String?>? name,
+    Omittable<String?>? email,
+    Omittable<String?>? timezone,
+    Omittable<bool?>? newsletterConsent,
+    Omittable<ProfileAvatarTypeEnum?>? profileAvatarType,
+    Omittable<String?>? profileAvatarSeed,
   }) {
     return UserUpdateSchema(
-      name: name != null ? name() : this.name,
-      email: email != null ? email() : this.email,
-      timezone: timezone != null ? timezone() : this.timezone,
-      newsletterConsent: newsletterConsent != null
-          ? newsletterConsent()
-          : this.newsletterConsent,
-      profileAvatarType: profileAvatarType != null
-          ? profileAvatarType()
-          : this.profileAvatarType,
-      profileAvatarSeed: profileAvatarSeed != null
-          ? profileAvatarSeed()
-          : this.profileAvatarSeed,
+      name: name ?? this.name,
+      email: email ?? this.email,
+      timezone: timezone ?? this.timezone,
+      newsletterConsent: newsletterConsent ?? this.newsletterConsent,
+      profileAvatarType: profileAvatarType ?? this.profileAvatarType,
+      profileAvatarSeed: profileAvatarSeed ?? this.profileAvatarSeed,
     );
   }
 

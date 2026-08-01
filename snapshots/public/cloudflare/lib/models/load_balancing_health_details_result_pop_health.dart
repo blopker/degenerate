@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'healthy', 'origins'}.contains(key)); } 
-LoadBalancingHealthDetailsResultPopHealth copyWith({bool Function()? healthy, List<LoadBalancingOriginHealth> Function()? origins, }) { return LoadBalancingHealthDetailsResultPopHealth(
+LoadBalancingHealthDetailsResultPopHealth copyWith({bool? Function()? healthy, List<LoadBalancingOriginHealth>? Function()? origins, }) { return LoadBalancingHealthDetailsResultPopHealth(
   healthy: healthy != null ? healthy() : this.healthy,
   origins: origins != null ? origins() : this.origins,
 ); } 

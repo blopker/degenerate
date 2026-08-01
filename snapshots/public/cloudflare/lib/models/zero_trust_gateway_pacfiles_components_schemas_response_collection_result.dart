@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'description', 'id', 'name', 'slug', 'updated_at', 'url'}.contains(key)); } 
-ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayPacfilesComponentsSchemasDescription Function()? description, ZeroTrustGatewayComponentsSchemasUuid Function()? id, ZeroTrustGatewayPacfilesComponentsSchemasName Function()? name, ZeroTrustGatewaySlug Function()? slug, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, ZeroTrustGatewayUrl Function()? url, }) { return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
+ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayPacfilesComponentsSchemasDescription? Function()? description, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayPacfilesComponentsSchemasName? Function()? name, ZeroTrustGatewaySlug? Function()? slug, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayUrl? Function()? url, }) { return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

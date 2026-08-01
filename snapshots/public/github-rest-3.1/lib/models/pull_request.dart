@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullRequestState($value)'; } 
  }
 /// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
-@immutable final class PullRequest {const PullRequest({required this.title, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.url, required this.user, required this.body, required this.labels, required this.milestone, required this.deletions, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.additions, required this.commits, required this.maintainerCanModify, required this.head, required this.changedFiles, required this.links, required this.authorAssociation, required this.autoMerge, required this.reviewComments, required this.merged, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.base, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason, this.rebaseable, });
+@immutable final class PullRequest {const PullRequest({required this.title, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.url, required this.user, required this.body, required this.labels, required this.milestone, required this.deletions, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.additions, required this.commits, required this.maintainerCanModify, required this.head, required this.changedFiles, required this.links, required this.authorAssociation, required this.autoMerge, required this.reviewComments, required this.merged, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.base, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason = const Omittable.absent(), this.rebaseable = const Omittable.absent(), });
 
 factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   url: Uri.parse(json['url'] as String),
@@ -49,7 +49,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   body: json['body'] as String?,
   labels: (json['labels'] as List<dynamic>).map((e) => PullRequestLabels.fromJson(e as Map<String, dynamic>)).toList(),
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
-  activeLockReason: json['active_lock_reason'] as String?,
+  activeLockReason: json.containsKey('active_lock_reason') ? Omittable(json['active_lock_reason'] as String?) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
@@ -67,7 +67,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   draft: json['draft'] as bool?,
   merged: json['merged'] as bool,
   mergeable: json['mergeable'] as bool?,
-  rebaseable: json['rebaseable'] as bool?,
+  rebaseable: json.containsKey('rebaseable') ? Omittable(json['rebaseable'] as bool?) : const Omittable.absent(),
   mergeableState: json['mergeable_state'] as String,
   mergedBy: json['merged_by'] != null ? SimpleUser.fromJson(json['merged_by'] as Map<String, dynamic>) : null,
   comments: (json['comments'] as num).toInt(),
@@ -122,7 +122,7 @@ final List<PullRequestLabels> labels;
 
 final Milestone? milestone;
 
-final String? activeLockReason;
+final Omittable<String?> activeLockReason;
 
 final DateTime createdAt;
 
@@ -160,7 +160,7 @@ final bool merged;
 
 final bool? mergeable;
 
-final bool? rebaseable;
+final Omittable<bool?> rebaseable;
 
 final String mergeableState;
 
@@ -199,16 +199,16 @@ Map<String, dynamic> toJson() { return {
   'locked': locked,
   'title': title,
   'user': user.toJson(),
-  'body': ?body,
+  'body': body,
   'labels': labels.map((e) => e.toJson()).toList(),
-  if (milestone != null) 'milestone': milestone?.toJson(),
-  'active_lock_reason': ?activeLockReason,
+  'milestone': milestone?.toJson(),
+  if (activeLockReason.isPresent) 'active_lock_reason': activeLockReason.value,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
-  if (mergedAt != null) 'merged_at': mergedAt?.toIso8601String(),
-  'merge_commit_sha': ?mergeCommitSha,
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  'closed_at': closedAt?.toIso8601String(),
+  'merged_at': mergedAt?.toIso8601String(),
+  'merge_commit_sha': mergeCommitSha,
+  'assignee': assignee?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   if (requestedReviewers != null) 'requested_reviewers': requestedReviewers?.map((e) => e.toJson()).toList(),
   if (requestedTeams != null) 'requested_teams': requestedTeams?.map((e) => e.toJson()).toList(),
@@ -219,10 +219,10 @@ Map<String, dynamic> toJson() { return {
   'auto_merge': autoMerge.toJson(),
   'draft': ?draft,
   'merged': merged,
-  'mergeable': ?mergeable,
-  'rebaseable': ?rebaseable,
+  'mergeable': mergeable,
+  if (rebaseable.isPresent) 'rebaseable': rebaseable.value,
   'mergeable_state': mergeableState,
-  if (mergedBy != null) 'merged_by': mergedBy?.toJson(),
+  'merged_by': mergedBy?.toJson(),
   'comments': comments,
   'review_comments': reviewComments,
   'maintainer_can_modify': maintainerCanModify,
@@ -273,7 +273,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
       json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<TeamSimple> Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, bool? merged, bool? Function()? mergeable, bool? Function()? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
+PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -294,7 +294,7 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
   body: body != null ? body() : this.body,
   labels: labels ?? this.labels,
   milestone: milestone != null ? milestone() : this.milestone,
-  activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
+  activeLockReason: activeLockReason ?? this.activeLockReason,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   closedAt: closedAt != null ? closedAt() : this.closedAt,
@@ -312,7 +312,7 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
   draft: draft != null ? draft() : this.draft,
   merged: merged ?? this.merged,
   mergeable: mergeable != null ? mergeable() : this.mergeable,
-  rebaseable: rebaseable != null ? rebaseable() : this.rebaseable,
+  rebaseable: rebaseable ?? this.rebaseable,
   mergeableState: mergeableState ?? this.mergeableState,
   mergedBy: mergedBy != null ? mergedBy() : this.mergedBy,
   comments: comments ?? this.comments,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// 
-@immutable final class PersonFutureRequirements {const PersonFutureRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives, });
+@immutable final class PersonFutureRequirements {const PersonFutureRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives = const Omittable.absent(), });
 
 factory PersonFutureRequirements.fromJson(Map<String, dynamic> json) { return PersonFutureRequirements(
-  alternatives: (json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList(),
+  alternatives: json.containsKey('alternatives') ? Omittable((json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   currentlyDue: (json['currently_due'] as List<dynamic>).map((e) => e as String).toList(),
   errors: (json['errors'] as List<dynamic>).map((e) => AccountRequirementsError.fromJson(e as Map<String, dynamic>)).toList(),
   eventuallyDue: (json['eventually_due'] as List<dynamic>).map((e) => e as String).toList(),
@@ -13,7 +13,7 @@ factory PersonFutureRequirements.fromJson(Map<String, dynamic> json) { return Pe
 ); }
 
 /// Fields that are due and can be resolved by providing the corresponding alternative fields instead. Many alternatives can list the same `original_fields_due`, and any of these alternatives can serve as a pathway for attempting to resolve the fields again. Re-providing `original_fields_due` also serves as a pathway for attempting to resolve the fields again.
-final List<AccountRequirementsAlternative>? alternatives;
+final Omittable<List<AccountRequirementsAlternative>?> alternatives;
 
 /// Fields that need to be resolved to keep the person's account enabled. If not resolved by the account's `future_requirements[current_deadline]`, these fields will transition to the main `requirements` hash, and may immediately become `past_due`, but the account may also be given a grace period depending on the account's enablement state prior to transition.
 final List<String> currentlyDue;
@@ -31,7 +31,7 @@ final List<String> pastDue;
 final List<String> pendingVerification;
 
 Map<String, dynamic> toJson() { return {
-  if (alternatives != null) 'alternatives': alternatives?.map((e) => e.toJson()).toList(),
+  if (alternatives.isPresent) 'alternatives': alternatives.value?.map((e) => e.toJson()).toList(),
   'currently_due': currentlyDue,
   'errors': errors.map((e) => e.toJson()).toList(),
   'eventually_due': eventuallyDue,
@@ -43,8 +43,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
       json.containsKey('eventually_due') &&
       json.containsKey('past_due') &&
       json.containsKey('pending_verification'); } 
-PersonFutureRequirements copyWith({List<AccountRequirementsAlternative>? Function()? alternatives, List<String>? currentlyDue, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) { return PersonFutureRequirements(
-  alternatives: alternatives != null ? alternatives() : this.alternatives,
+PersonFutureRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, List<String>? currentlyDue, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) { return PersonFutureRequirements(
+  alternatives: alternatives ?? this.alternatives,
   currentlyDue: currentlyDue ?? this.currentlyDue,
   errors: errors ?? this.errors,
   eventuallyDue: eventuallyDue ?? this.eventuallyDue,
@@ -53,12 +53,13 @@ PersonFutureRequirements copyWith({List<AccountRequirementsAlternative>? Functio
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PersonFutureRequirements &&
-          listEquals(alternatives, other.alternatives) &&
+          alternatives.isPresent == other.alternatives.isPresent &&
+          listEquals(alternatives.value, other.alternatives.value) &&
           listEquals(currentlyDue, other.currentlyDue) &&
           listEquals(errors, other.errors) &&
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
           listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives ?? const []), Object.hashAll(currentlyDue), Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(alternatives.value ?? const []), Object.hashAll(currentlyDue), Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
 @override String toString() { return 'PersonFutureRequirements(alternatives: $alternatives, currentlyDue: $currentlyDue, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
  }

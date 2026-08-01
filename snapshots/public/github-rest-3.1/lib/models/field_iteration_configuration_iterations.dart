@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'duration': ?duration,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'start_date', 'duration'}.contains(key)); } 
-FieldIterationConfigurationIterations copyWith({String Function()? title, String Function()? startDate, int Function()? duration, }) { return FieldIterationConfigurationIterations(
+FieldIterationConfigurationIterations copyWith({String? Function()? title, String? Function()? startDate, int? Function()? duration, }) { return FieldIterationConfigurationIterations(
   title: title != null ? title() : this.title,
   startDate: startDate != null ? startDate() : this.startDate,
   duration: duration != null ? duration() : this.duration,

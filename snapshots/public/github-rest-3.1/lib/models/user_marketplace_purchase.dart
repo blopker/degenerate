@@ -32,11 +32,11 @@ final MarketplaceListingPlan plan;
 
 Map<String, dynamic> toJson() { return {
   'billing_cycle': billingCycle,
-  if (nextBillingDate != null) 'next_billing_date': nextBillingDate?.toIso8601String(),
-  'unit_count': ?unitCount,
+  'next_billing_date': nextBillingDate?.toIso8601String(),
+  'unit_count': unitCount,
   'on_free_trial': onFreeTrial,
-  if (freeTrialEndsOn != null) 'free_trial_ends_on': freeTrialEndsOn?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'free_trial_ends_on': freeTrialEndsOn?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'account': account.toJson(),
   'plan': plan.toJson(),
 }; } 

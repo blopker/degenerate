@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';@immutable final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';@immutable final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description = const Omittable.absent(), this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
 
 factory WafManagedRulesGroup.fromJson(Map<String, dynamic> json) { return WafManagedRulesGroup(
-  description: json['description'] != null ? WafManagedRulesDescription.fromJson(json['description'] as String) : null,
+  description: json.containsKey('description') ? Omittable(json['description'] != null ? WafManagedRulesDescription.fromJson(json['description'] as String) : null) : const Omittable.absent(),
   id: json['id'] != null ? WafManagedRulesComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   modifiedRulesCount: json['modified_rules_count'] != null ? WafManagedRulesModifiedRulesCount.fromJson(json['modified_rules_count'] as num) : null,
   name: json['name'] != null ? WafManagedRulesName.fromJson(json['name'] as String) : null,
@@ -12,7 +12,7 @@ factory WafManagedRulesGroup.fromJson(Map<String, dynamic> json) { return WafMan
 ); }
 
 /// Defines an informative summary of what the rule group does.
-final WafManagedRulesDescription? description;
+final Omittable<WafManagedRulesDescription?> description;
 
 /// Defines the unique identifier of the rule group.
 final WafManagedRulesComponentsSchemasIdentifier? id;
@@ -26,7 +26,7 @@ final WafManagedRulesIdentifier? packageId;
 final WafManagedRulesRulesCount? rulesCount;
 
 Map<String, dynamic> toJson() { return {
-  if (description != null) 'description': description?.toJson(),
+  if (description.isPresent) 'description': description.value?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (modifiedRulesCount != null) 'modified_rules_count': modifiedRulesCount?.toJson(),
   if (name != null) 'name': name?.toJson(),
@@ -34,8 +34,8 @@ Map<String, dynamic> toJson() { return {
   if (rulesCount != null) 'rules_count': rulesCount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'modified_rules_count', 'name', 'package_id', 'rules_count'}.contains(key)); } 
-WafManagedRulesGroup copyWith({WafManagedRulesDescription? Function()? description, WafManagedRulesComponentsSchemasIdentifier Function()? id, WafManagedRulesModifiedRulesCount Function()? modifiedRulesCount, WafManagedRulesName Function()? name, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesRulesCount Function()? rulesCount, }) { return WafManagedRulesGroup(
-  description: description != null ? description() : this.description,
+WafManagedRulesGroup copyWith({Omittable<WafManagedRulesDescription?>? description, WafManagedRulesComponentsSchemasIdentifier? Function()? id, WafManagedRulesModifiedRulesCount? Function()? modifiedRulesCount, WafManagedRulesName? Function()? name, WafManagedRulesIdentifier? Function()? packageId, WafManagedRulesRulesCount? Function()? rulesCount, }) { return WafManagedRulesGroup(
+  description: description ?? this.description,
   id: id != null ? id() : this.id,
   modifiedRulesCount: modifiedRulesCount != null ? modifiedRulesCount() : this.modifiedRulesCount,
   name: name != null ? name() : this.name,

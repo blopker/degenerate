@@ -90,53 +90,53 @@ bool get isUnknown { return !values.contains(this); }
 /// A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.
 /// 
 /// Related guide: [Subscription schedules](https://docs.stripe.com/billing/subscriptions/subscription-schedules)
-@immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application, this.canceledAt, this.completedAt, this.currentPhase, this.customerAccount, this.metadata, this.releasedAt, this.releasedSubscription, this.subscription, this.testClock, });
+@immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.completedAt = const Omittable.absent(), this.currentPhase = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.metadata = const Omittable.absent(), this.releasedAt = const Omittable.absent(), this.releasedSubscription = const Omittable.absent(), this.subscription = const Omittable.absent(), this.testClock = const Omittable.absent(), });
 
 factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
-  canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
-  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  currentPhase: json['current_phase'] != null ? SubscriptionScheduleCurrentPhase.fromJson(json['current_phase'] as Map<String, dynamic>) : null,
+  currentPhase: json.containsKey('current_phase') ? Omittable(json['current_phase'] != null ? SubscriptionScheduleCurrentPhase.fromJson(json['current_phase'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   defaultSettings: SubscriptionSchedulesResourceDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>),
   endBehavior: SubscriptionScheduleEndBehavior.fromJson(json['end_behavior'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: SubscriptionScheduleObject.fromJson(json['object'] as String),
   phases: (json['phases'] as List<dynamic>).map((e) => SubscriptionSchedulePhaseConfiguration.fromJson(e as Map<String, dynamic>)).toList(),
-  releasedAt: json['released_at'] != null ? (json['released_at'] as num).toInt() : null,
-  releasedSubscription: json['released_subscription'] as String?,
+  releasedAt: json.containsKey('released_at') ? Omittable(json['released_at'] != null ? (json['released_at'] as num).toInt() : null) : const Omittable.absent(),
+  releasedSubscription: json.containsKey('released_subscription') ? Omittable(json['released_subscription'] as String?) : const Omittable.absent(),
   status: SubscriptionScheduleStatus.fromJson(json['status'] as String),
-  subscription: json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null,
-  testClock: json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null,
+  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
 ); }
 
 /// ID of the Connect Application that created the schedule.
-final SubscriptionScheduleApplication? application;
+final Omittable<SubscriptionScheduleApplication?> application;
 
 final SubscriptionsResourceBillingMode billingMode;
 
 /// Time at which the subscription schedule was canceled. Measured in seconds since the Unix epoch.
-final int? canceledAt;
+final Omittable<int?> canceledAt;
 
 /// Time at which the subscription schedule was completed. Measured in seconds since the Unix epoch.
-final int? completedAt;
+final Omittable<int?> completedAt;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// Object representing the start and end dates for the current phase of the subscription schedule, if it is `active`.
-final SubscriptionScheduleCurrentPhase? currentPhase;
+final Omittable<SubscriptionScheduleCurrentPhase?> currentPhase;
 
 /// ID of the customer who owns the subscription schedule.
 final SubscriptionScheduleCustomer customer;
 
 /// ID of the account who owns the subscription schedule.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 final SubscriptionSchedulesResourceDefaultSettings defaultSettings;
 
@@ -150,7 +150,7 @@ final String id;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final SubscriptionScheduleObject object;
@@ -159,41 +159,41 @@ final SubscriptionScheduleObject object;
 final List<SubscriptionSchedulePhaseConfiguration> phases;
 
 /// Time at which the subscription schedule was released. Measured in seconds since the Unix epoch.
-final int? releasedAt;
+final Omittable<int?> releasedAt;
 
 /// ID of the subscription once managed by the subscription schedule (if it is released).
-final String? releasedSubscription;
+final Omittable<String?> releasedSubscription;
 
 /// The present status of the subscription schedule. Possible values are `not_started`, `active`, `completed`, `released`, and `canceled`. You can read more about the different states in our [behavior guide](https://docs.stripe.com/billing/subscriptions/subscription-schedules).
 final SubscriptionScheduleStatus status;
 
 /// ID of the subscription managed by the subscription schedule.
-final SubscriptionScheduleSubscription? subscription;
+final Omittable<SubscriptionScheduleSubscription?> subscription;
 
 /// ID of the test clock this subscription schedule belongs to.
-final SubscriptionScheduleTestClock? testClock;
+final Omittable<SubscriptionScheduleTestClock?> testClock;
 
 Map<String, dynamic> toJson() { return {
-  if (application != null) 'application': application?.toJson(),
+  if (application.isPresent) 'application': application.value?.toJson(),
   'billing_mode': billingMode.toJson(),
-  'canceled_at': ?canceledAt,
-  'completed_at': ?completedAt,
+  if (canceledAt.isPresent) 'canceled_at': canceledAt.value,
+  if (completedAt.isPresent) 'completed_at': completedAt.value,
   'created': created,
-  if (currentPhase != null) 'current_phase': currentPhase?.toJson(),
+  if (currentPhase.isPresent) 'current_phase': currentPhase.value?.toJson(),
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'default_settings': defaultSettings.toJson(),
   'end_behavior': endBehavior.toJson(),
   'id': id,
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
   'phases': phases.map((e) => e.toJson()).toList(),
-  'released_at': ?releasedAt,
-  'released_subscription': ?releasedSubscription,
+  if (releasedAt.isPresent) 'released_at': releasedAt.value,
+  if (releasedSubscription.isPresent) 'released_subscription': releasedSubscription.value,
   'status': status.toJson(),
-  if (subscription != null) 'subscription': subscription?.toJson(),
-  if (testClock != null) 'test_clock': testClock?.toJson(),
+  if (subscription.isPresent) 'subscription': subscription.value?.toJson(),
+  if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_mode') &&
       json.containsKey('created') && json['created'] is num &&
@@ -205,27 +205,27 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('phases') &&
       json.containsKey('status'); } 
-SubscriptionSchedule copyWith({SubscriptionScheduleApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, SubscriptionScheduleCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, SubscriptionScheduleSubscription? Function()? subscription, SubscriptionScheduleTestClock? Function()? testClock, }) { return SubscriptionSchedule(
-  application: application != null ? application() : this.application,
+SubscriptionSchedule copyWith({Omittable<SubscriptionScheduleApplication?>? application, SubscriptionsResourceBillingMode? billingMode, Omittable<int?>? canceledAt, Omittable<int?>? completedAt, int? created, Omittable<SubscriptionScheduleCurrentPhase?>? currentPhase, SubscriptionScheduleCustomer? customer, Omittable<String?>? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, Omittable<int?>? releasedAt, Omittable<String?>? releasedSubscription, SubscriptionScheduleStatus? status, Omittable<SubscriptionScheduleSubscription?>? subscription, Omittable<SubscriptionScheduleTestClock?>? testClock, }) { return SubscriptionSchedule(
+  application: application ?? this.application,
   billingMode: billingMode ?? this.billingMode,
-  canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  canceledAt: canceledAt ?? this.canceledAt,
+  completedAt: completedAt ?? this.completedAt,
   created: created ?? this.created,
-  currentPhase: currentPhase != null ? currentPhase() : this.currentPhase,
+  currentPhase: currentPhase ?? this.currentPhase,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   defaultSettings: defaultSettings ?? this.defaultSettings,
   endBehavior: endBehavior ?? this.endBehavior,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   phases: phases ?? this.phases,
-  releasedAt: releasedAt != null ? releasedAt() : this.releasedAt,
-  releasedSubscription: releasedSubscription != null ? releasedSubscription() : this.releasedSubscription,
+  releasedAt: releasedAt ?? this.releasedAt,
+  releasedSubscription: releasedSubscription ?? this.releasedSubscription,
   status: status ?? this.status,
-  subscription: subscription != null ? subscription() : this.subscription,
-  testClock: testClock != null ? testClock() : this.testClock,
+  subscription: subscription ?? this.subscription,
+  testClock: testClock ?? this.testClock,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SubscriptionSchedule &&

@@ -24,7 +24,7 @@ final ResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-UserSubscriptionGetUserSubscriptionsResponse4Xx copyWith({List<Messages5>? errors, List<Messages5>? messages, Map<String, dynamic>? Function()? result, bool? success, ResultInfo Function()? resultInfo, }) { return UserSubscriptionGetUserSubscriptionsResponse4Xx(
+UserSubscriptionGetUserSubscriptionsResponse4Xx copyWith({List<Messages5>? errors, List<Messages5>? messages, Map<String, dynamic>? Function()? result, bool? success, ResultInfo? Function()? resultInfo, }) { return UserSubscriptionGetUserSubscriptionsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingTransactionFleetNonFuelPriceData {const IssuingTransactionFleetNonFuelPriceData({this.grossAmountDecimal});
+@immutable final class IssuingTransactionFleetNonFuelPriceData {const IssuingTransactionFleetNonFuelPriceData({this.grossAmountDecimal = const Omittable.absent()});
 
 factory IssuingTransactionFleetNonFuelPriceData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetNonFuelPriceData(
-  grossAmountDecimal: json['gross_amount_decimal'] as String?,
+  grossAmountDecimal: json.containsKey('gross_amount_decimal') ? Omittable(json['gross_amount_decimal'] as String?) : const Omittable.absent(),
 ); }
 
 /// Gross non-fuel amount that should equal the sum of the line items, inclusive of taxes.
-final String? grossAmountDecimal;
+final Omittable<String?> grossAmountDecimal;
 
 Map<String, dynamic> toJson() { return {
-  'gross_amount_decimal': ?grossAmountDecimal,
+  if (grossAmountDecimal.isPresent) 'gross_amount_decimal': grossAmountDecimal.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gross_amount_decimal'}.contains(key)); } 
-IssuingTransactionFleetNonFuelPriceData copyWith({String? Function()? grossAmountDecimal}) { return IssuingTransactionFleetNonFuelPriceData(
-  grossAmountDecimal: grossAmountDecimal != null ? grossAmountDecimal() : this.grossAmountDecimal,
+IssuingTransactionFleetNonFuelPriceData copyWith({Omittable<String?>? grossAmountDecimal}) { return IssuingTransactionFleetNonFuelPriceData(
+  grossAmountDecimal: grossAmountDecimal ?? this.grossAmountDecimal,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingTransactionFleetNonFuelPriceData &&

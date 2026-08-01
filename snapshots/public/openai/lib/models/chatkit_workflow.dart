@@ -24,8 +24,8 @@ final ChatkitWorkflowTracing tracing;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'version': ?version,
-  'state_variables': ?stateVariables,
+  'version': version,
+  'state_variables': stateVariables,
   'tracing': tracing.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'rate_limited_request_count': ?rateLimitedRequestCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timestamp', 'total_request_count', 'rate_limited_request_count'}.contains(key)); } 
-InsightsTimeStats2 copyWith({String Function()? timestamp, int Function()? totalRequestCount, int Function()? rateLimitedRequestCount, }) { return InsightsTimeStats2(
+InsightsTimeStats2 copyWith({String? Function()? timestamp, int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, }) { return InsightsTimeStats2(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   totalRequestCount: totalRequestCount != null ? totalRequestCount() : this.totalRequestCount,
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reaction_rollup.dart';import 'release_asset.dart';import 'simple_user.dart';@immutable final class ReleaseEventRelease {const ReleaseEventRelease({required this.url, required this.htmlUrl, required this.assetsUrl, required this.uploadUrl, required this.tarballUrl, required this.zipballUrl, required this.id, required this.nodeId, required this.tagName, required this.targetCommitish, required this.name, required this.draft, required this.prerelease, required this.createdAt, required this.publishedAt, required this.author, required this.assets, this.body, this.immutable, this.updatedAt, this.bodyHtml, this.bodyText, this.mentionsCount, this.discussionUrl, this.reactions, this.isShortDescriptionHtmlTruncated, this.shortDescriptionHtml, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reaction_rollup.dart';import 'release_asset.dart';import 'simple_user.dart';@immutable final class ReleaseEventRelease {const ReleaseEventRelease({required this.url, required this.htmlUrl, required this.assetsUrl, required this.uploadUrl, required this.tarballUrl, required this.zipballUrl, required this.id, required this.nodeId, required this.tagName, required this.targetCommitish, required this.name, required this.draft, required this.prerelease, required this.createdAt, required this.publishedAt, required this.author, required this.assets, this.body = const Omittable.absent(), this.immutable, this.updatedAt = const Omittable.absent(), this.bodyHtml, this.bodyText, this.mentionsCount, this.discussionUrl, this.reactions, this.isShortDescriptionHtmlTruncated, this.shortDescriptionHtml, });
 
 factory ReleaseEventRelease.fromJson(Map<String, dynamic> json) { return ReleaseEventRelease(
   url: Uri.parse(json['url'] as String),
@@ -14,13 +14,13 @@ factory ReleaseEventRelease.fromJson(Map<String, dynamic> json) { return Release
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String,
   name: json['name'] as String?,
-  body: json['body'] as String?,
+  body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
   draft: json['draft'] as bool,
   prerelease: json['prerelease'] as bool,
   immutable: json['immutable'] as bool?,
   createdAt: DateTime.parse(json['created_at'] as String),
   publishedAt: json['published_at'] != null ? DateTime.parse(json['published_at'] as String) : null,
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   author: SimpleUser.fromJson(json['author'] as Map<String, dynamic>),
   assets: (json['assets'] as List<dynamic>).map((e) => ReleaseAsset.fromJson(e as Map<String, dynamic>)).toList(),
   bodyHtml: json['body_html'] as String?,
@@ -56,7 +56,7 @@ final String targetCommitish;
 
 final String? name;
 
-final String? body;
+final Omittable<String?> body;
 
 /// true to create a draft (unpublished) release, false to create a published one.
 final bool draft;
@@ -71,7 +71,7 @@ final DateTime createdAt;
 
 final DateTime? publishedAt;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 final SimpleUser author;
 
@@ -97,20 +97,20 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'assets_url': assetsUrl.toString(),
   'upload_url': uploadUrl,
-  if (tarballUrl != null) 'tarball_url': tarballUrl?.toString(),
-  if (zipballUrl != null) 'zipball_url': zipballUrl?.toString(),
+  'tarball_url': tarballUrl?.toString(),
+  'zipball_url': zipballUrl?.toString(),
   'id': id,
   'node_id': nodeId,
   'tag_name': tagName,
   'target_commitish': targetCommitish,
-  'name': ?name,
-  'body': ?body,
+  'name': name,
+  if (body.isPresent) 'body': body.value,
   'draft': draft,
   'prerelease': prerelease,
   'immutable': ?immutable,
   'created_at': createdAt.toIso8601String(),
-  if (publishedAt != null) 'published_at': publishedAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'published_at': publishedAt?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   'author': author.toJson(),
   'assets': assets.map((e) => e.toJson()).toList(),
   'body_html': ?bodyHtml,
@@ -138,7 +138,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('author') &&
       json.containsKey('assets'); } 
-ReleaseEventRelease copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, String? Function()? body, bool? draft, bool? prerelease, bool Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, DateTime? Function()? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String Function()? bodyHtml, String Function()? bodyText, int Function()? mentionsCount, Uri Function()? discussionUrl, ReactionRollup Function()? reactions, bool Function()? isShortDescriptionHtmlTruncated, String Function()? shortDescriptionHtml, }) { return ReleaseEventRelease(
+ReleaseEventRelease copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, Omittable<String?>? body, bool? draft, bool? prerelease, bool? Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, Omittable<DateTime?>? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String? Function()? bodyHtml, String? Function()? bodyText, int? Function()? mentionsCount, Uri? Function()? discussionUrl, ReactionRollup? Function()? reactions, bool? Function()? isShortDescriptionHtmlTruncated, String? Function()? shortDescriptionHtml, }) { return ReleaseEventRelease(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   assetsUrl: assetsUrl ?? this.assetsUrl,
@@ -150,13 +150,13 @@ ReleaseEventRelease copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? up
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish ?? this.targetCommitish,
   name: name != null ? name() : this.name,
-  body: body != null ? body() : this.body,
+  body: body ?? this.body,
   draft: draft ?? this.draft,
   prerelease: prerelease ?? this.prerelease,
   immutable: immutable != null ? immutable() : this.immutable,
   createdAt: createdAt ?? this.createdAt,
   publishedAt: publishedAt != null ? publishedAt() : this.publishedAt,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  updatedAt: updatedAt ?? this.updatedAt,
   author: author ?? this.author,
   assets: assets ?? this.assets,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,

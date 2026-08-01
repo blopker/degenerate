@@ -64,7 +64,7 @@ final CodeScanningAutofixStartedAt startedAt;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
-  if (description != null) 'description': description?.toJson(),
+  'description': description?.toJson(),
   'started_at': startedAt.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&

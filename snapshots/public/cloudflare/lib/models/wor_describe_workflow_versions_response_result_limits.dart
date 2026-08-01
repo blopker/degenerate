@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'steps': ?steps,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'steps'}.contains(key)); } 
-WorDescribeWorkflowVersionsResponseResultLimits copyWith({int Function()? steps}) { return WorDescribeWorkflowVersionsResponseResultLimits(
+WorDescribeWorkflowVersionsResponseResultLimits copyWith({int? Function()? steps}) { return WorDescribeWorkflowVersionsResponseResultLimits(
   steps: steps != null ? steps() : this.steps,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

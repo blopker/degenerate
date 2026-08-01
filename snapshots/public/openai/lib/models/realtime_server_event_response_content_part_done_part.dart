@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'transcript': ?transcript,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'audio', 'transcript'}.contains(key)); } 
-RealtimeServerEventResponseContentPartDonePart copyWith({RealtimeServerEventResponseContentPartDonePartType Function()? type, String Function()? text, String Function()? audio, String Function()? transcript, }) { return RealtimeServerEventResponseContentPartDonePart(
+RealtimeServerEventResponseContentPartDonePart copyWith({RealtimeServerEventResponseContentPartDonePartType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? transcript, }) { return RealtimeServerEventResponseContentPartDonePart(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   audio: audio != null ? audio() : this.audio,

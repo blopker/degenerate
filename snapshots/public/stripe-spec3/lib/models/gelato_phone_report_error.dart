@@ -26,27 +26,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoPhoneReportErrorCode($value)'; } 
  }
 /// 
-@immutable final class GelatoPhoneReportError {const GelatoPhoneReportError({this.code, this.reason, });
+@immutable final class GelatoPhoneReportError {const GelatoPhoneReportError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
 factory GelatoPhoneReportError.fromJson(Map<String, dynamic> json) { return GelatoPhoneReportError(
-  code: json['code'] != null ? GelatoPhoneReportErrorCode.fromJson(json['code'] as String) : null,
-  reason: json['reason'] as String?,
+  code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoPhoneReportErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
 ); }
 
 /// A short machine-readable string giving the reason for the verification failure.
-final GelatoPhoneReportErrorCode? code;
+final Omittable<GelatoPhoneReportErrorCode?> code;
 
 /// A human-readable message giving the reason for the failure. These messages can be shown to your users.
-final String? reason;
+final Omittable<String?> reason;
 
 Map<String, dynamic> toJson() { return {
-  if (code != null) 'code': code?.toJson(),
-  'reason': ?reason,
+  if (code.isPresent) 'code': code.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
-GelatoPhoneReportError copyWith({GelatoPhoneReportErrorCode? Function()? code, String? Function()? reason, }) { return GelatoPhoneReportError(
-  code: code != null ? code() : this.code,
-  reason: reason != null ? reason() : this.reason,
+GelatoPhoneReportError copyWith({Omittable<GelatoPhoneReportErrorCode?>? code, Omittable<String?>? reason, }) { return GelatoPhoneReportError(
+  code: code ?? this.code,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GelatoPhoneReportError &&

@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType($value)'; } 
  }
 /// Money Movement details attached to this payment.
-@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({required this.moneyMovementType, this.card, });
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({required this.moneyMovementType, this.card = const Omittable.absent(), });
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
-  card: json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  card: json.containsKey('card') ? Omittable(json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(json['card'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   moneyMovementType: InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(json['money_movement_type'] as String),
 ); }
 
 /// Describes card money movement details for the payment evaluation.
-final InsightsResourcesPaymentEvaluationMoneyMovementCard? card;
+final Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCard?> card;
 
 /// Describes the type of money movement. Currently only `card` is supported.
 final InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType moneyMovementType;
 
 Map<String, dynamic> toJson() { return {
-  if (card != null) 'card': card?.toJson(),
+  if (card.isPresent) 'card': card.value?.toJson(),
   'money_movement_type': moneyMovementType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
-InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({InsightsResourcesPaymentEvaluationMoneyMovementCard? Function()? card, InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
-  card: card != null ? card() : this.card,
+InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCard?>? card, InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
+  card: card ?? this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

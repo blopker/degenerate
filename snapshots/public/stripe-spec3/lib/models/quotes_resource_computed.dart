@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_recurring.dart';import 'quotes_resource_upfront.dart';/// 
-@immutable final class QuotesResourceComputed {const QuotesResourceComputed({required this.upfront, this.recurring, });
+@immutable final class QuotesResourceComputed {const QuotesResourceComputed({required this.upfront, this.recurring = const Omittable.absent(), });
 
 factory QuotesResourceComputed.fromJson(Map<String, dynamic> json) { return QuotesResourceComputed(
-  recurring: json['recurring'] != null ? QuotesResourceRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
+  recurring: json.containsKey('recurring') ? Omittable(json['recurring'] != null ? QuotesResourceRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   upfront: QuotesResourceUpfront.fromJson(json['upfront'] as Map<String, dynamic>),
 ); }
 
 /// The definitive totals and line items the customer will be charged on a recurring basis. Takes into account the line items with recurring prices and discounts with `duration=forever` coupons only. Defaults to `null` if no inputted line items with recurring prices.
-final QuotesResourceRecurring? recurring;
+final Omittable<QuotesResourceRecurring?> recurring;
 
 final QuotesResourceUpfront upfront;
 
 Map<String, dynamic> toJson() { return {
-  if (recurring != null) 'recurring': recurring?.toJson(),
+  if (recurring.isPresent) 'recurring': recurring.value?.toJson(),
   'upfront': upfront.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('upfront'); } 
-QuotesResourceComputed copyWith({QuotesResourceRecurring? Function()? recurring, QuotesResourceUpfront? upfront, }) { return QuotesResourceComputed(
-  recurring: recurring != null ? recurring() : this.recurring,
+QuotesResourceComputed copyWith({Omittable<QuotesResourceRecurring?>? recurring, QuotesResourceUpfront? upfront, }) { return QuotesResourceComputed(
+  recurring: recurring ?? this.recurring,
   upfront: upfront ?? this.upfront,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

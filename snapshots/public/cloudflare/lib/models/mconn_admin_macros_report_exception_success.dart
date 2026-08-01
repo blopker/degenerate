@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-MconnAdminMacrosReportExceptionSuccess copyWith({List<MconnCodedMessage> Function()? errors, List<MconnCodedMessage> Function()? messages, bool? success, MconnAdminMacrosReportExceptionResult? result, }) { return MconnAdminMacrosReportExceptionSuccess(
+MconnAdminMacrosReportExceptionSuccess copyWith({List<MconnCodedMessage>? Function()? errors, List<MconnCodedMessage>? Function()? messages, bool? success, MconnAdminMacrosReportExceptionResult? result, }) { return MconnAdminMacrosReportExceptionSuccess(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,

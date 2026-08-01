@@ -89,7 +89,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookBatchCompleted copyWith({int? createdAt, String? id, WebhookBatchCompletedData? data, WebhookBatchCompletedObject Function()? object, WebhookBatchCompletedType? type, }) { return WebhookBatchCompleted(
+WebhookBatchCompleted copyWith({int? createdAt, String? id, WebhookBatchCompletedData? data, WebhookBatchCompletedObject? Function()? object, WebhookBatchCompletedType? type, }) { return WebhookBatchCompleted(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

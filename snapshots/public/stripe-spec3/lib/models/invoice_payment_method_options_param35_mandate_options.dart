@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (purpose != null) 'purpose': purpose?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'purpose'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam35MandateOptions copyWith({int Function()? amount, InvoicePaymentMethodOptionsParam35MandateOptionsPurpose Function()? purpose, }) { return InvoicePaymentMethodOptionsParam35MandateOptions(
+InvoicePaymentMethodOptionsParam35MandateOptions copyWith({int? Function()? amount, InvoicePaymentMethodOptionsParam35MandateOptionsPurpose? Function()? purpose, }) { return InvoicePaymentMethodOptionsParam35MandateOptions(
   amount: amount != null ? amount() : this.amount,
   purpose: purpose != null ? purpose() : this.purpose,
 ); } 

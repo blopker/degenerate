@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'field': field,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('field') && json['field'] is String; } 
-AiSearchDeleteInstancesResponseResultRetrievalOptionsBoostBy copyWith({AiSearchDeleteInstancesResponseResultRetrievalOptionsBoostByDirection Function()? direction, String? field, }) { return AiSearchDeleteInstancesResponseResultRetrievalOptionsBoostBy(
+AiSearchDeleteInstancesResponseResultRetrievalOptionsBoostBy copyWith({AiSearchDeleteInstancesResponseResultRetrievalOptionsBoostByDirection? Function()? direction, String? field, }) { return AiSearchDeleteInstancesResponseResultRetrievalOptionsBoostBy(
   direction: direction != null ? direction() : this.direction,
   field: field ?? this.field,
 ); } 

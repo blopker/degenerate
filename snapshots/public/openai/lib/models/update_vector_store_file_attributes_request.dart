@@ -9,7 +9,7 @@ factory UpdateVectorStoreFileAttributesRequest.fromJson(Map<String, dynamic> jso
 final Map<String,dynamic>? attributes;
 
 Map<String, dynamic> toJson() { return {
-  'attributes': ?attributes,
+  'attributes': attributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('attributes'); } 
 UpdateVectorStoreFileAttributesRequest copyWith({Map<String, dynamic>? Function()? attributes}) { return UpdateVectorStoreFileAttributesRequest(

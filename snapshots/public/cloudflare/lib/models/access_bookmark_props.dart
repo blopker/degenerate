@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_launcher_visible', 'domain', 'logo_url', 'name', 'tags', 'type'}.contains(key)); } 
-AccessBookmarkProps copyWith({AccessAppLauncherVisible Function()? appLauncherVisible, String Function()? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, List<String> Function()? tags, AccessType Function()? type, }) { return AccessBookmarkProps(
+AccessBookmarkProps copyWith({AccessAppLauncherVisible? Function()? appLauncherVisible, String? Function()? domain, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, List<String>? Function()? tags, AccessType? Function()? type, }) { return AccessBookmarkProps(
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   domain: domain != null ? domain() : this.domain,
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,

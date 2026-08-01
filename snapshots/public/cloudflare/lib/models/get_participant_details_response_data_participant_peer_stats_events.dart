@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timestamp', 'type'}.contains(key)); } 
-GetParticipantDetailsResponseDataParticipantPeerStatsEvents copyWith({String Function()? timestamp, String Function()? type, }) { return GetParticipantDetailsResponseDataParticipantPeerStatsEvents(
+GetParticipantDetailsResponseDataParticipantPeerStatsEvents copyWith({String? Function()? timestamp, String? Function()? type, }) { return GetParticipantDetailsResponseDataParticipantPeerStatsEvents(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type != null ? type() : this.type,
 ); } 

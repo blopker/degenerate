@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip'); } 
-ListsListItemIpComment copyWith({ListsItemIp? ip, ListsItemComment Function()? comment, }) { return ListsListItemIpComment(
+ListsListItemIpComment copyWith({ListsItemIp? ip, ListsItemComment? Function()? comment, }) { return ListsListItemIpComment(
   ip: ip ?? this.ip,
   comment: comment != null ? comment() : this.comment,
 ); } 

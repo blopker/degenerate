@@ -31,11 +31,11 @@ final String updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'commit': ?commit,
+  'commit': commit,
   'created_at': createdAt,
   'duration': duration,
   'error': error.toJson(),
-  if (pusher != null) 'pusher': pusher?.toJson(),
+  'pusher': pusher?.toJson(),
   'status': status,
   'updated_at': updatedAt,
   'url': url.toString(),

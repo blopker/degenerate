@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
 /// on an enterprise account or an organization that's part of an enterprise account. For more information,
 /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-@immutable final class EnterpriseWebhooks {const EnterpriseWebhooks({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description, this.websiteUrl, });
+@immutable final class EnterpriseWebhooks {const EnterpriseWebhooks({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description = const Omittable.absent(), this.websiteUrl = const Omittable.absent(), });
 
 factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) { return EnterpriseWebhooks(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: Uri.parse(json['html_url'] as String),
-  websiteUrl: json['website_url'] != null ? Uri.parse(json['website_url'] as String) : null,
+  websiteUrl: json.containsKey('website_url') ? Omittable(json['website_url'] != null ? Uri.parse(json['website_url'] as String) : null) : const Omittable.absent(),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -19,12 +19,12 @@ factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) { return Enterpri
 ); }
 
 /// A short description of the enterprise.
-final String? description;
+final Omittable<String?> description;
 
 final Uri htmlUrl;
 
 /// The enterprise's website URL.
-final Uri? websiteUrl;
+final Omittable<Uri?> websiteUrl;
 
 /// Unique identifier of the enterprise
 final int id;
@@ -44,15 +44,15 @@ final DateTime? updatedAt;
 final Uri avatarUrl;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'html_url': htmlUrl.toString(),
-  if (websiteUrl != null) 'website_url': websiteUrl?.toString(),
+  if (websiteUrl.isPresent) 'website_url': websiteUrl.value?.toString(),
   'id': id,
   'node_id': nodeId,
   'name': name,
   'slug': slug,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'avatar_url': avatarUrl.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&
@@ -63,10 +63,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String; } 
-EnterpriseWebhooks copyWith({String? Function()? description, Uri? htmlUrl, Uri? Function()? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) { return EnterpriseWebhooks(
-  description: description != null ? description() : this.description,
+EnterpriseWebhooks copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Uri?>? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) { return EnterpriseWebhooks(
+  description: description ?? this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
-  websiteUrl: websiteUrl != null ? websiteUrl() : this.websiteUrl,
+  websiteUrl: websiteUrl ?? this.websiteUrl,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

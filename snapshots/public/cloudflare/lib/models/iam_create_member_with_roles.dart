@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') &&
       json.containsKey('roles'); } 
-IamCreateMemberWithRoles copyWith({IamEmail? email, List<IamRoleComponentsSchemasIdentifier>? roles, IamMemberInvitationStatus Function()? status, }) { return IamCreateMemberWithRoles(
+IamCreateMemberWithRoles copyWith({IamEmail? email, List<IamRoleComponentsSchemasIdentifier>? roles, IamMemberInvitationStatus? Function()? status, }) { return IamCreateMemberWithRoles(
   email: email ?? this.email,
   roles: roles ?? this.roles,
   status: status != null ? status() : this.status,

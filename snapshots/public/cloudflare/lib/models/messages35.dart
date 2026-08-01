@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages35 copyWith({double Function()? frequencyPenalty, List<Messages35Functions> Function()? functions, Map<String, dynamic> Function()? guidedJson, int Function()? maxTokens, List<Messages35Messages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages35Tools> Function()? tools, int Function()? topK, double Function()? topP, }) { return Messages35(
+Messages35 copyWith({double? Function()? frequencyPenalty, List<Messages35Functions>? Function()? functions, Map<String, dynamic>? Function()? guidedJson, int Function()? maxTokens, List<Messages35Messages>? messages, double? Function()? presencePenalty, bool Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages35Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages35(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,

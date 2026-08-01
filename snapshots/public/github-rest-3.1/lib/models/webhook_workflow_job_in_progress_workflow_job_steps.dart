@@ -54,11 +54,11 @@ final String? startedAt;
 final WebhookWorkflowJobInProgressWorkflowJobStepsStatus status;
 
 Map<String, dynamic> toJson() { return {
-  'completed_at': ?completedAt,
-  'conclusion': ?conclusion,
+  'completed_at': completedAt,
+  'conclusion': conclusion,
   'name': name,
   'number': number,
-  'started_at': ?startedAt,
+  'started_at': startedAt,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && json['completed_at'] is String &&

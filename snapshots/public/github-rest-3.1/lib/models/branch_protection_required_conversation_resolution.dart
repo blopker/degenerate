@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-BranchProtectionRequiredConversationResolution copyWith({bool Function()? enabled}) { return BranchProtectionRequiredConversationResolution(
+BranchProtectionRequiredConversationResolution copyWith({bool? Function()? enabled}) { return BranchProtectionRequiredConversationResolution(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

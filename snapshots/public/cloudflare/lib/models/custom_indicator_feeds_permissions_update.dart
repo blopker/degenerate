@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'success'}.contains(key)); } 
-CustomIndicatorFeedsPermissionsUpdate copyWith({bool Function()? success}) { return CustomIndicatorFeedsPermissionsUpdate(
+CustomIndicatorFeedsPermissionsUpdate copyWith({bool? Function()? success}) { return CustomIndicatorFeedsPermissionsUpdate(
   success: success != null ? success() : this.success,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

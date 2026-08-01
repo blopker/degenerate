@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('layers') &&
       json.containsKey('meeting_id') && json['meeting_id'] is String; } 
-StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfigLayer>? layers, double Function()? maxSeconds, String? meetingId, }) { return StartTrackRecordingForAMeetingRequest(
+StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfigLayer>? layers, double? Function()? maxSeconds, String? meetingId, }) { return StartTrackRecordingForAMeetingRequest(
   layers: layers ?? this.layers,
   maxSeconds: maxSeconds != null ? maxSeconds() : this.maxSeconds,
   meetingId: meetingId ?? this.meetingId,

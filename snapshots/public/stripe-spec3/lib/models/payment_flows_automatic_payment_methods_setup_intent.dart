@@ -28,11 +28,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects($value)'; } 
  }
 /// 
-@immutable final class PaymentFlowsAutomaticPaymentMethodsSetupIntent {const PaymentFlowsAutomaticPaymentMethodsSetupIntent({this.allowRedirects, this.enabled, });
+@immutable final class PaymentFlowsAutomaticPaymentMethodsSetupIntent {const PaymentFlowsAutomaticPaymentMethodsSetupIntent({this.allowRedirects, this.enabled = const Omittable.absent(), });
 
 factory PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(Map<String, dynamic> json) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
   allowRedirects: json['allow_redirects'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects.fromJson(json['allow_redirects'] as String) : null,
-  enabled: json['enabled'] as bool?,
+  enabled: json.containsKey('enabled') ? Omittable(json['enabled'] as bool?) : const Omittable.absent(),
 ); }
 
 /// Controls whether this SetupIntent will accept redirect-based payment methods.
@@ -41,16 +41,16 @@ factory PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(Map<String, dyna
 final PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects? allowRedirects;
 
 /// Automatically calculates compatible payment methods
-final bool? enabled;
+final Omittable<bool?> enabled;
 
 Map<String, dynamic> toJson() { return {
   if (allowRedirects != null) 'allow_redirects': allowRedirects?.toJson(),
-  'enabled': ?enabled,
+  if (enabled.isPresent) 'enabled': enabled.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redirects', 'enabled'}.contains(key)); } 
-PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects Function()? allowRedirects, bool? Function()? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
+PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects? Function()? allowRedirects, Omittable<bool?>? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
-  enabled: enabled != null ? enabled() : this.enabled,
+  enabled: enabled ?? this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentFlowsAutomaticPaymentMethodsSetupIntent &&

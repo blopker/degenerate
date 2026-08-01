@@ -1,51 +1,51 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class Address {const Address({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+@immutable final class Address {const Address({this.city = const Omittable.absent(), this.country = const Omittable.absent(), this.line1 = const Omittable.absent(), this.line2 = const Omittable.absent(), this.postalCode = const Omittable.absent(), this.state = const Omittable.absent(), });
 
 factory Address.fromJson(Map<String, dynamic> json) { return Address(
-  city: json['city'] as String?,
-  country: json['country'] as String?,
-  line1: json['line1'] as String?,
-  line2: json['line2'] as String?,
-  postalCode: json['postal_code'] as String?,
-  state: json['state'] as String?,
+  city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  line1: json.containsKey('line1') ? Omittable(json['line1'] as String?) : const Omittable.absent(),
+  line2: json.containsKey('line2') ? Omittable(json['line2'] as String?) : const Omittable.absent(),
+  postalCode: json.containsKey('postal_code') ? Omittable(json['postal_code'] as String?) : const Omittable.absent(),
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
 ); }
 
 /// City, district, suburb, town, or village.
-final String? city;
+final Omittable<String?> city;
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
-final String? country;
+final Omittable<String?> country;
 
 /// Address line 1, such as the street, PO Box, or company name.
-final String? line1;
+final Omittable<String?> line1;
 
 /// Address line 2, such as the apartment, suite, unit, or building.
-final String? line2;
+final Omittable<String?> line2;
 
 /// ZIP or postal code.
-final String? postalCode;
+final Omittable<String?> postalCode;
 
 /// State, county, province, or region ([ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)).
-final String? state;
+final Omittable<String?> state;
 
 Map<String, dynamic> toJson() { return {
-  'city': ?city,
-  'country': ?country,
-  'line1': ?line1,
-  'line2': ?line2,
-  'postal_code': ?postalCode,
-  'state': ?state,
+  if (city.isPresent) 'city': city.value,
+  if (country.isPresent) 'country': country.value,
+  if (line1.isPresent) 'line1': line1.value,
+  if (line2.isPresent) 'line2': line2.value,
+  if (postalCode.isPresent) 'postal_code': postalCode.value,
+  if (state.isPresent) 'state': state.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key)); } 
-Address copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, }) { return Address(
-  city: city != null ? city() : this.city,
-  country: country != null ? country() : this.country,
-  line1: line1 != null ? line1() : this.line1,
-  line2: line2 != null ? line2() : this.line2,
-  postalCode: postalCode != null ? postalCode() : this.postalCode,
-  state: state != null ? state() : this.state,
+Address copyWith({Omittable<String?>? city, Omittable<String?>? country, Omittable<String?>? line1, Omittable<String?>? line2, Omittable<String?>? postalCode, Omittable<String?>? state, }) { return Address(
+  city: city ?? this.city,
+  country: country ?? this.country,
+  line1: line1 ?? this.line1,
+  line2: line2 ?? this.line2,
+  postalCode: postalCode ?? this.postalCode,
+  state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Address &&

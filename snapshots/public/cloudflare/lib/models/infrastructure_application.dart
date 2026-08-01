@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('target_criteria'); } 
-InfrastructureApplication copyWith({AccessAppsComponentsSchemasName Function()? name, AccessType? type, List<AccessTargetCriteriaInfraApp>? targetCriteria, List<AccessInfraPolicyReq> Function()? policies, }) { return InfrastructureApplication(
+InfrastructureApplication copyWith({AccessAppsComponentsSchemasName? Function()? name, AccessType? type, List<AccessTargetCriteriaInfraApp>? targetCriteria, List<AccessInfraPolicyReq>? Function()? policies, }) { return InfrastructureApplication(
   name: name != null ? name() : this.name,
   type: type ?? this.type,
   targetCriteria: targetCriteria ?? this.targetCriteria,

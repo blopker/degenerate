@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-CardGeneratedFromPaymentMethodDetails copyWith({PaymentMethodDetailsCardPresent Function()? cardPresent, String? type, }) { return CardGeneratedFromPaymentMethodDetails(
+CardGeneratedFromPaymentMethodDetails copyWith({PaymentMethodDetailsCardPresent? Function()? cardPresent, String? type, }) { return CardGeneratedFromPaymentMethodDetails(
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,
   type: type ?? this.type,
 ); } 

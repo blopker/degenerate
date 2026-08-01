@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('has_conflict') && json['has_conflict'] is bool &&
       json.containsKey('id'); } 
-RulesetsManagedTransform copyWith({List<RulesetsManagedTransformId> Function()? conflictsWith, bool? enabled, bool? hasConflict, RulesetsManagedTransformId? id, }) { return RulesetsManagedTransform(
+RulesetsManagedTransform copyWith({List<RulesetsManagedTransformId>? Function()? conflictsWith, bool? enabled, bool? hasConflict, RulesetsManagedTransformId? id, }) { return RulesetsManagedTransform(
   conflictsWith: conflictsWith != null ? conflictsWith() : this.conflictsWith,
   enabled: enabled ?? this.enabled,
   hasConflict: hasConflict ?? this.hasConflict,

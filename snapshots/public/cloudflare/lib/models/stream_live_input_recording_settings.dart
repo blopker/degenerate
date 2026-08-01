@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (timeoutSeconds != null) 'timeoutSeconds': timeoutSeconds?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowedOrigins', 'hideLiveViewerCount', 'mode', 'requireSignedURLs', 'timeoutSeconds'}.contains(key)); } 
-StreamLiveInputRecordingSettings copyWith({List<String> Function()? allowedOrigins, StreamLiveInputRecordingHideLiveViewerCount Function()? hideLiveViewerCount, StreamLiveInputRecordingMode Function()? mode, StreamLiveInputRecordingRequireSignedUrLs Function()? requireSignedUrLs, StreamLiveInputRecordingTimeoutSeconds Function()? timeoutSeconds, }) { return StreamLiveInputRecordingSettings(
+StreamLiveInputRecordingSettings copyWith({List<String>? Function()? allowedOrigins, StreamLiveInputRecordingHideLiveViewerCount? Function()? hideLiveViewerCount, StreamLiveInputRecordingMode? Function()? mode, StreamLiveInputRecordingRequireSignedUrLs? Function()? requireSignedUrLs, StreamLiveInputRecordingTimeoutSeconds? Function()? timeoutSeconds, }) { return StreamLiveInputRecordingSettings(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   hideLiveViewerCount: hideLiveViewerCount != null ? hideLiveViewerCount() : this.hideLiveViewerCount,
   mode: mode != null ? mode() : this.mode,

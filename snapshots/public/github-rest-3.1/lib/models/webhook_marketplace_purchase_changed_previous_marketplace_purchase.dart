@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_account.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_plan.dart';@immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.onFreeTrial, required this.plan, required this.unitCount, this.nextBillingDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_account.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase_plan.dart';@immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.onFreeTrial, required this.plan, required this.unitCount, this.nextBillingDate = const Omittable.absent(), });
 
 factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
   account: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
   freeTrialEndsOn: json['free_trial_ends_on'] as String?,
-  nextBillingDate: json['next_billing_date'] as String?,
+  nextBillingDate: json.containsKey('next_billing_date') ? Omittable(json['next_billing_date'] as String?) : const Omittable.absent(),
   onFreeTrial: json['on_free_trial'] as bool?,
   plan: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
   unitCount: (json['unit_count'] as num).toInt(),
@@ -18,7 +18,7 @@ final String billingCycle;
 
 final String? freeTrialEndsOn;
 
-final String? nextBillingDate;
+final Omittable<String?> nextBillingDate;
 
 final bool? onFreeTrial;
 
@@ -29,9 +29,9 @@ final int unitCount;
 Map<String, dynamic> toJson() { return {
   'account': account.toJson(),
   'billing_cycle': billingCycle,
-  'free_trial_ends_on': ?freeTrialEndsOn,
-  'next_billing_date': ?nextBillingDate,
-  'on_free_trial': ?onFreeTrial,
+  'free_trial_ends_on': freeTrialEndsOn,
+  if (nextBillingDate.isPresent) 'next_billing_date': nextBillingDate.value,
+  'on_free_trial': onFreeTrial,
   'plan': plan.toJson(),
   'unit_count': unitCount,
 }; } 
@@ -41,11 +41,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
       json.containsKey('unit_count') && json['unit_count'] is num; } 
-WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase copyWith({WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount? account, String? billingCycle, String? Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? Function()? onFreeTrial, WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
+WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase copyWith({WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount? account, String? billingCycle, String? Function()? freeTrialEndsOn, Omittable<String?>? nextBillingDate, bool? Function()? onFreeTrial, WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
   account: account ?? this.account,
   billingCycle: billingCycle ?? this.billingCycle,
   freeTrialEndsOn: freeTrialEndsOn != null ? freeTrialEndsOn() : this.freeTrialEndsOn,
-  nextBillingDate: nextBillingDate != null ? nextBillingDate() : this.nextBillingDate,
+  nextBillingDate: nextBillingDate ?? this.nextBillingDate,
   onFreeTrial: onFreeTrial != null ? onFreeTrial() : this.onFreeTrial,
   plan: plan ?? this.plan,
   unitCount: unitCount ?? this.unitCount,

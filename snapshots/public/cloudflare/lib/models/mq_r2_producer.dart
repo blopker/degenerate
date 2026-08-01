@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket_name', 'type'}.contains(key)); } 
-MqR2Producer copyWith({String Function()? bucketName, MqR2ProducerType Function()? type, }) { return MqR2Producer(
+MqR2Producer copyWith({String? Function()? bucketName, MqR2ProducerType? Function()? type, }) { return MqR2Producer(
   bucketName: bucketName != null ? bucketName() : this.bucketName,
   type: type != null ? type() : this.type,
 ); } 

@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('scheme') &&
       json.containsKey('token_url') && json['token_url'] is String; } 
-AccessScimConfigAuthenticationOauth2 copyWith({String? authorizationUrl, String? clientId, String? clientSecret, AccessScimConfigAuthenticationOauth2Scheme? scheme, List<String> Function()? scopes, String? tokenUrl, }) { return AccessScimConfigAuthenticationOauth2(
+AccessScimConfigAuthenticationOauth2 copyWith({String? authorizationUrl, String? clientId, String? clientSecret, AccessScimConfigAuthenticationOauth2Scheme? scheme, List<String>? Function()? scopes, String? tokenUrl, }) { return AccessScimConfigAuthenticationOauth2(
   authorizationUrl: authorizationUrl ?? this.authorizationUrl,
   clientId: clientId ?? this.clientId,
   clientSecret: clientSecret ?? this.clientSecret,

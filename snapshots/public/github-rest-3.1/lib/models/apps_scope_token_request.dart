@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_token') && json['access_token'] is String; } 
-AppsScopeTokenRequest copyWith({String? accessToken, String Function()? target, int Function()? targetId, List<String> Function()? repositories, List<int> Function()? repositoryIds, AppPermissions Function()? permissions, }) { return AppsScopeTokenRequest(
+AppsScopeTokenRequest copyWith({String? accessToken, String? Function()? target, int? Function()? targetId, List<String>? Function()? repositories, List<int>? Function()? repositoryIds, AppPermissions? Function()? permissions, }) { return AppsScopeTokenRequest(
   accessToken: accessToken ?? this.accessToken,
   target: target != null ? target() : this.target,
   targetId: targetId != null ? targetId() : this.targetId,

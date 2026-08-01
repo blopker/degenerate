@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodConfiguration != null) 'payment_method_configuration': paymentMethodConfiguration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate copyWith({bool? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration Function()? paymentMethodConfiguration, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate(
+PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate copyWith({bool? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration? Function()? paymentMethodConfiguration, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate(
   enabled: enabled ?? this.enabled,
   paymentMethodConfiguration: paymentMethodConfiguration != null ? paymentMethodConfiguration() : this.paymentMethodConfiguration,
 ); } 

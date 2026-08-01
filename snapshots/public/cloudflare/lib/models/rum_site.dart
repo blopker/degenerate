@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (snippet != null) 'snippet': snippet?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_install', 'created', 'rules', 'ruleset', 'site_tag', 'site_token', 'snippet'}.contains(key)); } 
-RumSite copyWith({RumAutoInstall Function()? autoInstall, RumTimestamp Function()? created, List<RumRule> Function()? rules, RumRuleset Function()? ruleset, RumSiteTag Function()? siteTag, RumSiteToken Function()? siteToken, RumSnippet Function()? snippet, }) { return RumSite(
+RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Function()? created, List<RumRule>? Function()? rules, RumRuleset? Function()? ruleset, RumSiteTag? Function()? siteTag, RumSiteToken? Function()? siteToken, RumSnippet? Function()? snippet, }) { return RumSite(
   autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
   created: created != null ? created() : this.created,
   rules: rules != null ? rules() : this.rules,

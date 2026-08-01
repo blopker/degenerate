@@ -1,54 +1,54 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAchCreditTransfer {const SourceTypeAchCreditTransfer({this.accountNumber, this.bankName, this.fingerprint, this.refundAccountHolderName, this.refundAccountHolderType, this.refundRoutingNumber, this.routingNumber, this.swiftCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAchCreditTransfer {const SourceTypeAchCreditTransfer({this.accountNumber = const Omittable.absent(), this.bankName = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.refundAccountHolderName = const Omittable.absent(), this.refundAccountHolderType = const Omittable.absent(), this.refundRoutingNumber = const Omittable.absent(), this.routingNumber = const Omittable.absent(), this.swiftCode = const Omittable.absent(), });
 
 factory SourceTypeAchCreditTransfer.fromJson(Map<String, dynamic> json) { return SourceTypeAchCreditTransfer(
-  accountNumber: json['account_number'] as String?,
-  bankName: json['bank_name'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  refundAccountHolderName: json['refund_account_holder_name'] as String?,
-  refundAccountHolderType: json['refund_account_holder_type'] as String?,
-  refundRoutingNumber: json['refund_routing_number'] as String?,
-  routingNumber: json['routing_number'] as String?,
-  swiftCode: json['swift_code'] as String?,
+  accountNumber: json.containsKey('account_number') ? Omittable(json['account_number'] as String?) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  refundAccountHolderName: json.containsKey('refund_account_holder_name') ? Omittable(json['refund_account_holder_name'] as String?) : const Omittable.absent(),
+  refundAccountHolderType: json.containsKey('refund_account_holder_type') ? Omittable(json['refund_account_holder_type'] as String?) : const Omittable.absent(),
+  refundRoutingNumber: json.containsKey('refund_routing_number') ? Omittable(json['refund_routing_number'] as String?) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
+  swiftCode: json.containsKey('swift_code') ? Omittable(json['swift_code'] as String?) : const Omittable.absent(),
 ); }
 
-final String? accountNumber;
+final Omittable<String?> accountNumber;
 
-final String? bankName;
+final Omittable<String?> bankName;
 
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
-final String? refundAccountHolderName;
+final Omittable<String?> refundAccountHolderName;
 
-final String? refundAccountHolderType;
+final Omittable<String?> refundAccountHolderType;
 
-final String? refundRoutingNumber;
+final Omittable<String?> refundRoutingNumber;
 
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
-final String? swiftCode;
+final Omittable<String?> swiftCode;
 
 Map<String, dynamic> toJson() { return {
-  'account_number': ?accountNumber,
-  'bank_name': ?bankName,
-  'fingerprint': ?fingerprint,
-  'refund_account_holder_name': ?refundAccountHolderName,
-  'refund_account_holder_type': ?refundAccountHolderType,
-  'refund_routing_number': ?refundRoutingNumber,
-  'routing_number': ?routingNumber,
-  'swift_code': ?swiftCode,
+  if (accountNumber.isPresent) 'account_number': accountNumber.value,
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (refundAccountHolderName.isPresent) 'refund_account_holder_name': refundAccountHolderName.value,
+  if (refundAccountHolderType.isPresent) 'refund_account_holder_type': refundAccountHolderType.value,
+  if (refundRoutingNumber.isPresent) 'refund_routing_number': refundRoutingNumber.value,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
+  if (swiftCode.isPresent) 'swift_code': swiftCode.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number', 'bank_name', 'fingerprint', 'refund_account_holder_name', 'refund_account_holder_type', 'refund_routing_number', 'routing_number', 'swift_code'}.contains(key)); } 
-SourceTypeAchCreditTransfer copyWith({String? Function()? accountNumber, String? Function()? bankName, String? Function()? fingerprint, String? Function()? refundAccountHolderName, String? Function()? refundAccountHolderType, String? Function()? refundRoutingNumber, String? Function()? routingNumber, String? Function()? swiftCode, }) { return SourceTypeAchCreditTransfer(
-  accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
-  bankName: bankName != null ? bankName() : this.bankName,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  refundAccountHolderName: refundAccountHolderName != null ? refundAccountHolderName() : this.refundAccountHolderName,
-  refundAccountHolderType: refundAccountHolderType != null ? refundAccountHolderType() : this.refundAccountHolderType,
-  refundRoutingNumber: refundRoutingNumber != null ? refundRoutingNumber() : this.refundRoutingNumber,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-  swiftCode: swiftCode != null ? swiftCode() : this.swiftCode,
+SourceTypeAchCreditTransfer copyWith({Omittable<String?>? accountNumber, Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? refundAccountHolderName, Omittable<String?>? refundAccountHolderType, Omittable<String?>? refundRoutingNumber, Omittable<String?>? routingNumber, Omittable<String?>? swiftCode, }) { return SourceTypeAchCreditTransfer(
+  accountNumber: accountNumber ?? this.accountNumber,
+  bankName: bankName ?? this.bankName,
+  fingerprint: fingerprint ?? this.fingerprint,
+  refundAccountHolderName: refundAccountHolderName ?? this.refundAccountHolderName,
+  refundAccountHolderType: refundAccountHolderType ?? this.refundAccountHolderType,
+  refundRoutingNumber: refundRoutingNumber ?? this.refundRoutingNumber,
+  routingNumber: routingNumber ?? this.routingNumber,
+  swiftCode: swiftCode ?? this.swiftCode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SourceTypeAchCreditTransfer &&

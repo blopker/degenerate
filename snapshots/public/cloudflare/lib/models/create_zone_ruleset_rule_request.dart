@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (position != null) 'position': position?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position'}.contains(key)); } 
-CreateZoneRulesetRuleRequest copyWith({CreateZoneRulesetRuleRequestPosition Function()? position}) { return CreateZoneRulesetRuleRequest(
+CreateZoneRulesetRuleRequest copyWith({CreateZoneRulesetRuleRequestPosition? Function()? position}) { return CreateZoneRulesetRuleRequest(
   position: position != null ? position() : this.position,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

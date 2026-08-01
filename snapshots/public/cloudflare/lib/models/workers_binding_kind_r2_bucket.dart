@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket_name') && json['bucket_name'] is String &&
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindR2Bucket copyWith({String? bucketName, WorkersBindingKindR2BucketJurisdiction Function()? jurisdiction, WorkersBindingName? name, String? type, }) { return WorkersBindingKindR2Bucket(
+WorkersBindingKindR2Bucket copyWith({String? bucketName, WorkersBindingKindR2BucketJurisdiction? Function()? jurisdiction, WorkersBindingName? name, String? type, }) { return WorkersBindingKindR2Bucket(
   bucketName: bucketName ?? this.bucketName,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   name: name ?? this.name,

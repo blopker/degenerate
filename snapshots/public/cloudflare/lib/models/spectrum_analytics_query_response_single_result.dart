@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('query') &&
       json.containsKey('rows') && json['rows'] is num &&
       json.containsKey('totals'); } 
-SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColumn>? data, double? dataLag, Map<String,double>? max, Map<String,double>? min, SpectrumAnalyticsQuery? query, double? rows, List<List<SpectrumAnalyticsTimestamp>> Function()? timeIntervals, Map<String,double>? totals, }) { return SpectrumAnalyticsQueryResponseSingleResult(
+SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColumn>? data, double? dataLag, Map<String,double>? max, Map<String,double>? min, SpectrumAnalyticsQuery? query, double? rows, List<List<SpectrumAnalyticsTimestamp>>? Function()? timeIntervals, Map<String,double>? totals, }) { return SpectrumAnalyticsQueryResponseSingleResult(
   data: data ?? this.data,
   dataLag: dataLag ?? this.dataLag,
   max: max ?? this.max,

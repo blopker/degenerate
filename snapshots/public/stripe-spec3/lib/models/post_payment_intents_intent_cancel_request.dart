@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'expand'}.contains(key)); } 
-PostPaymentIntentsIntentCancelRequest copyWith({PostPaymentIntentsIntentCancelRequestCancellationReason Function()? cancellationReason, List<String> Function()? expand, }) { return PostPaymentIntentsIntentCancelRequest(
+PostPaymentIntentsIntentCancelRequest copyWith({PostPaymentIntentsIntentCancelRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, }) { return PostPaymentIntentsIntentCancelRequest(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,
 ); } 

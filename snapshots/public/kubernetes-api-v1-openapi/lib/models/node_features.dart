@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'supplementalGroupsPolicy': ?supplementalGroupsPolicy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'supplementalGroupsPolicy'}.contains(key)); } 
-NodeFeatures copyWith({bool Function()? supplementalGroupsPolicy}) { return NodeFeatures(
+NodeFeatures copyWith({bool? Function()? supplementalGroupsPolicy}) { return NodeFeatures(
   supplementalGroupsPolicy: supplementalGroupsPolicy != null ? supplementalGroupsPolicy() : this.supplementalGroupsPolicy,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

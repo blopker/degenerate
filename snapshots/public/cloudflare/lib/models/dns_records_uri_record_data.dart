@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'weight': ?weight,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'weight'}.contains(key)); } 
-DnsRecordsUriRecordData copyWith({String Function()? target, double Function()? weight, }) { return DnsRecordsUriRecordData(
+DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()? weight, }) { return DnsRecordsUriRecordData(
   target: target != null ? target() : this.target,
   weight: weight != null ? weight() : this.weight,
 ); } 

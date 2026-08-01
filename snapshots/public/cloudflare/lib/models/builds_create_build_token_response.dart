@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (ownerType != null) 'owner_type': ownerType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_token_name', 'build_token_uuid', 'cloudflare_token_id', 'owner_type'}.contains(key)); } 
-BuildsCreateBuildTokenResponse copyWith({BuildsBuildTokenName Function()? buildTokenName, BuildsBuildTokenUuid Function()? buildTokenUuid, BuildsCloudflareTokenId Function()? cloudflareTokenId, BuildsOwnerType Function()? ownerType, }) { return BuildsCreateBuildTokenResponse(
+BuildsCreateBuildTokenResponse copyWith({BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsCloudflareTokenId? Function()? cloudflareTokenId, BuildsOwnerType? Function()? ownerType, }) { return BuildsCreateBuildTokenResponse(
   buildTokenName: buildTokenName != null ? buildTokenName() : this.buildTokenName,
   buildTokenUuid: buildTokenUuid != null ? buildTokenUuid() : this.buildTokenUuid,
   cloudflareTokenId: cloudflareTokenId != null ? cloudflareTokenId() : this.cloudflareTokenId,

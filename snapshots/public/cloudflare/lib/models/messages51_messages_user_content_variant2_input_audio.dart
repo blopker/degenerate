@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'format'}.contains(key)); } 
-Messages51MessagesUserContentVariant2InputAudio copyWith({String Function()? data, Messages51MessagesUserContentVariant2InputAudioFormat Function()? format, }) { return Messages51MessagesUserContentVariant2InputAudio(
+Messages51MessagesUserContentVariant2InputAudio copyWith({String? Function()? data, Messages51MessagesUserContentVariant2InputAudioFormat? Function()? format, }) { return Messages51MessagesUserContentVariant2InputAudio(
   data: data != null ? data() : this.data,
   format: format != null ? format() : this.format,
 ); } 

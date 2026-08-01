@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (until != null) 'until': until?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bandwidth', 'pageviews', 'requests', 'since', 'threats', 'uniques', 'until'}.contains(key)); } 
-Timeseries2 copyWith({Bandwidth2 Function()? bandwidth, Pageviews Function()? pageviews, Requests Function()? requests, Since Function()? since, Threats Function()? threats, Uniques Function()? uniques, Until Function()? until, }) { return Timeseries2(
+Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? pageviews, Requests? Function()? requests, Since? Function()? since, Threats? Function()? threats, Uniques? Function()? uniques, Until? Function()? until, }) { return Timeseries2(
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   pageviews: pageviews != null ? pageviews() : this.pageviews,
   requests: requests != null ? requests() : this.requests,

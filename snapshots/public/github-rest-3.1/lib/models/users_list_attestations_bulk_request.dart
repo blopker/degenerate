@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'predicate_type': ?predicateType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subject_digests'); } 
-UsersListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String Function()? predicateType, }) { return UsersListAttestationsBulkRequest(
+UsersListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String? Function()? predicateType, }) { return UsersListAttestationsBulkRequest(
   subjectDigests: subjectDigests ?? this.subjectDigests,
   predicateType: predicateType != null ? predicateType() : this.predicateType,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (forwardingSettings != null) 'forwarding_settings': forwardingSettings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'forwarding_settings'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountCloseRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings Function()? forwardingSettings, }) { return PostTreasuryFinancialAccountsFinancialAccountCloseRequest(
+PostTreasuryFinancialAccountsFinancialAccountCloseRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountCloseRequestForwardingSettings? Function()? forwardingSettings, }) { return PostTreasuryFinancialAccountsFinancialAccountCloseRequest(
   expand: expand != null ? expand() : this.expand,
   forwardingSettings: forwardingSettings != null ? forwardingSettings() : this.forwardingSettings,
 ); } 

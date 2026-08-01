@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'minimum_file_size': ?minimumFileSize,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('eligible') && json['eligible'] is bool; } 
-RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int Function()? minimumFileSize, }) { return RulesetsSetCacheSettingsCacheReserve(
+RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int? Function()? minimumFileSize, }) { return RulesetsSetCacheSettingsCacheReserve(
   eligible: eligible ?? this.eligible,
   minimumFileSize: minimumFileSize != null ? minimumFileSize() : this.minimumFileSize,
 ); } 

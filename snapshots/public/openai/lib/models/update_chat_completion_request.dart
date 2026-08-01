@@ -16,7 +16,7 @@ factory UpdateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
 final Map<String,String>? metadata;
 
 Map<String, dynamic> toJson() { return {
-  'metadata': ?metadata,
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
 UpdateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata}) { return UpdateChatCompletionRequest(

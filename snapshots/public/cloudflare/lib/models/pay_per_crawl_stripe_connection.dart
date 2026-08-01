@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'stripe_account_id': ?stripeAccountId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connect_status', 'stripe_account_id'}.contains(key)); } 
-PayPerCrawlStripeConnection copyWith({String Function()? connectStatus, String Function()? stripeAccountId, }) { return PayPerCrawlStripeConnection(
+PayPerCrawlStripeConnection copyWith({String? Function()? connectStatus, String? Function()? stripeAccountId, }) { return PayPerCrawlStripeConnection(
   connectStatus: connectStatus != null ? connectStatus() : this.connectStatus,
   stripeAccountId: stripeAccountId != null ? stripeAccountId() : this.stripeAccountId,
 ); } 

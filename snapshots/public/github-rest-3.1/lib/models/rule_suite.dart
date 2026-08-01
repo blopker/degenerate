@@ -60,12 +60,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RuleSuiteEvaluationResult($value)'; } 
  }
 /// Response
-@immutable final class RuleSuite {const RuleSuite({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, this.ruleEvaluations, });
+@immutable final class RuleSuite {const RuleSuite({this.id, this.actorId = const Omittable.absent(), this.actorName = const Omittable.absent(), this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult = const Omittable.absent(), this.ruleEvaluations, });
 
 factory RuleSuite.fromJson(Map<String, dynamic> json) { return RuleSuite(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  actorId: json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null,
-  actorName: json['actor_name'] as String?,
+  actorId: json.containsKey('actor_id') ? Omittable(json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null) : const Omittable.absent(),
+  actorName: json.containsKey('actor_name') ? Omittable(json['actor_name'] as String?) : const Omittable.absent(),
   beforeSha: json['before_sha'] as String?,
   afterSha: json['after_sha'] as String?,
   ref: json['ref'] as String?,
@@ -73,7 +73,7 @@ factory RuleSuite.fromJson(Map<String, dynamic> json) { return RuleSuite(
   repositoryName: json['repository_name'] as String?,
   pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
   result: json['result'] != null ? RuleSuiteResult.fromJson(json['result'] as String) : null,
-  evaluationResult: json['evaluation_result'] != null ? RuleSuiteEvaluationResult.fromJson(json['evaluation_result'] as String) : null,
+  evaluationResult: json.containsKey('evaluation_result') ? Omittable(json['evaluation_result'] != null ? RuleSuiteEvaluationResult.fromJson(json['evaluation_result'] as String) : null) : const Omittable.absent(),
   ruleEvaluations: (json['rule_evaluations'] as List<dynamic>?)?.map((e) => RuleSuiteRuleEvaluations.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -81,10 +81,10 @@ factory RuleSuite.fromJson(Map<String, dynamic> json) { return RuleSuite(
 final int? id;
 
 /// The number that identifies the user.
-final int? actorId;
+final Omittable<int?> actorId;
 
 /// The handle for the GitHub user account.
-final String? actorName;
+final Omittable<String?> actorName;
 
 /// The previous commit SHA of the ref.
 final String? beforeSha;
@@ -107,15 +107,15 @@ final DateTime? pushedAt;
 final RuleSuiteResult? result;
 
 /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
-final RuleSuiteEvaluationResult? evaluationResult;
+final Omittable<RuleSuiteEvaluationResult?> evaluationResult;
 
 /// Details on the evaluated rules.
 final List<RuleSuiteRuleEvaluations>? ruleEvaluations;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
-  'actor_id': ?actorId,
-  'actor_name': ?actorName,
+  if (actorId.isPresent) 'actor_id': actorId.value,
+  if (actorName.isPresent) 'actor_name': actorName.value,
   'before_sha': ?beforeSha,
   'after_sha': ?afterSha,
   'ref': ?ref,
@@ -123,14 +123,14 @@ Map<String, dynamic> toJson() { return {
   'repository_name': ?repositoryName,
   if (pushedAt != null) 'pushed_at': pushedAt?.toIso8601String(),
   if (result != null) 'result': result?.toJson(),
-  if (evaluationResult != null) 'evaluation_result': evaluationResult?.toJson(),
+  if (evaluationResult.isPresent) 'evaluation_result': evaluationResult.value?.toJson(),
   if (ruleEvaluations != null) 'rule_evaluations': ruleEvaluations?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'actor_id', 'actor_name', 'before_sha', 'after_sha', 'ref', 'repository_id', 'repository_name', 'pushed_at', 'result', 'evaluation_result', 'rule_evaluations'}.contains(key)); } 
-RuleSuite copyWith({int Function()? id, int? Function()? actorId, String? Function()? actorName, String Function()? beforeSha, String Function()? afterSha, String Function()? ref, int Function()? repositoryId, String Function()? repositoryName, DateTime Function()? pushedAt, RuleSuiteResult Function()? result, RuleSuiteEvaluationResult? Function()? evaluationResult, List<RuleSuiteRuleEvaluations> Function()? ruleEvaluations, }) { return RuleSuite(
+RuleSuite copyWith({int? Function()? id, Omittable<int?>? actorId, Omittable<String?>? actorName, String? Function()? beforeSha, String? Function()? afterSha, String? Function()? ref, int? Function()? repositoryId, String? Function()? repositoryName, DateTime? Function()? pushedAt, RuleSuiteResult? Function()? result, Omittable<RuleSuiteEvaluationResult?>? evaluationResult, List<RuleSuiteRuleEvaluations>? Function()? ruleEvaluations, }) { return RuleSuite(
   id: id != null ? id() : this.id,
-  actorId: actorId != null ? actorId() : this.actorId,
-  actorName: actorName != null ? actorName() : this.actorName,
+  actorId: actorId ?? this.actorId,
+  actorName: actorName ?? this.actorName,
   beforeSha: beforeSha != null ? beforeSha() : this.beforeSha,
   afterSha: afterSha != null ? afterSha() : this.afterSha,
   ref: ref != null ? ref() : this.ref,
@@ -138,7 +138,7 @@ RuleSuite copyWith({int Function()? id, int? Function()? actorId, String? Functi
   repositoryName: repositoryName != null ? repositoryName() : this.repositoryName,
   pushedAt: pushedAt != null ? pushedAt() : this.pushedAt,
   result: result != null ? result() : this.result,
-  evaluationResult: evaluationResult != null ? evaluationResult() : this.evaluationResult,
+  evaluationResult: evaluationResult ?? this.evaluationResult,
   ruleEvaluations: ruleEvaluations != null ? ruleEvaluations() : this.ruleEvaluations,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

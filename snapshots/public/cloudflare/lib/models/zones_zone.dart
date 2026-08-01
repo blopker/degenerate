@@ -139,7 +139,7 @@ final String? verificationKey;
 
 Map<String, dynamic> toJson() { return {
   'account': account.toJson(),
-  if (activatedOn != null) 'activated_on': activatedOn?.toIso8601String(),
+  'activated_on': activatedOn?.toIso8601String(),
   'cname_suffix': ?cnameSuffix,
   'created_on': createdOn.toIso8601String(),
   'development_mode': developmentMode,
@@ -148,9 +148,9 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toIso8601String(),
   'name': name,
   'name_servers': nameServers,
-  'original_dnshost': ?originalDnshost,
-  'original_name_servers': ?originalNameServers,
-  'original_registrar': ?originalRegistrar,
+  'original_dnshost': originalDnshost,
+  'original_name_servers': originalNameServers,
+  'original_registrar': originalRegistrar,
   'owner': owner.toJson(),
   if (paused != null) 'paused': paused?.toJson(),
   'permissions': ?permissions,
@@ -176,7 +176,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('original_registrar') && json['original_registrar'] is String &&
       json.containsKey('owner') &&
       json.containsKey('plan'); } 
-ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused Function()? paused, List<String> Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus Function()? status, ZonesZoneTenant Function()? tenant, ZonesZoneTenantUnit Function()? tenantUnit, ZonesType Function()? type, List<String> Function()? vanityNameServers, String Function()? verificationKey, }) { return ZonesZone(
+ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String> Function()? vanityNameServers, String? Function()? verificationKey, }) { return ZonesZone(
   account: account ?? this.account,
   activatedOn: activatedOn != null ? activatedOn() : this.activatedOn,
   cnameSuffix: cnameSuffix != null ? cnameSuffix() : this.cnameSuffix,

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceApplePay Function()? applePay, String Function()? dynamicLast4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceGooglePay Function()? googlePay, String? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceApplePay? Function()? applePay, String? Function()? dynamicLast4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceGooglePay? Function()? googlePay, String? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(
   applePay: applePay != null ? applePay() : this.applePay,
   dynamicLast4: dynamicLast4 != null ? dynamicLast4() : this.dynamicLast4,
   googlePay: googlePay != null ? googlePay() : this.googlePay,

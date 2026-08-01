@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (updateMode != null) 'update_mode': updateMode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'policy', 'update_mode'}.contains(key)); } 
-McnUpdateCatalogSyncRequest copyWith({String Function()? description, String Function()? name, String Function()? policy, McnCatalogSyncUpdateMode Function()? updateMode, }) { return McnUpdateCatalogSyncRequest(
+McnUpdateCatalogSyncRequest copyWith({String? Function()? description, String? Function()? name, String? Function()? policy, McnCatalogSyncUpdateMode? Function()? updateMode, }) { return McnUpdateCatalogSyncRequest(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
   policy: policy != null ? policy() : this.policy,

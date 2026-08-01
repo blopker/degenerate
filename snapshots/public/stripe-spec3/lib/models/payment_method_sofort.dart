@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodSofort {const PaymentMethodSofort({this.country});
+@immutable final class PaymentMethodSofort {const PaymentMethodSofort({this.country = const Omittable.absent()});
 
 factory PaymentMethodSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodSofort(
-  country: json['country'] as String?,
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
 ); }
 
 /// Two-letter ISO code representing the country the bank account is located in.
-final String? country;
+final Omittable<String?> country;
 
 Map<String, dynamic> toJson() { return {
-  'country': ?country,
+  if (country.isPresent) 'country': country.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country'}.contains(key)); } 
-PaymentMethodSofort copyWith({String? Function()? country}) { return PaymentMethodSofort(
-  country: country != null ? country() : this.country,
+PaymentMethodSofort copyWith({Omittable<String?>? country}) { return PaymentMethodSofort(
+  country: country ?? this.country,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodSofort &&

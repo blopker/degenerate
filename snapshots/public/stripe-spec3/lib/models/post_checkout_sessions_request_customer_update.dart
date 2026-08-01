@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'name', 'shipping'}.contains(key)); } 
-PostCheckoutSessionsRequestCustomerUpdate copyWith({PostCheckoutSessionsRequestCustomerUpdateAddress Function()? address, PostCheckoutSessionsRequestCustomerUpdateName Function()? name, PostCheckoutSessionsRequestCustomerUpdateShipping Function()? shipping, }) { return PostCheckoutSessionsRequestCustomerUpdate(
+PostCheckoutSessionsRequestCustomerUpdate copyWith({PostCheckoutSessionsRequestCustomerUpdateAddress? Function()? address, PostCheckoutSessionsRequestCustomerUpdateName? Function()? name, PostCheckoutSessionsRequestCustomerUpdateShipping? Function()? shipping, }) { return PostCheckoutSessionsRequestCustomerUpdate(
   address: address != null ? address() : this.address,
   name: name != null ? name() : this.name,
   shipping: shipping != null ? shipping() : this.shipping,

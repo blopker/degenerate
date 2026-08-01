@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'refund_management': ?refundManagement,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination_on_behalf_of_charge_management', 'dispute_management', 'refund_management'}.contains(key)); } 
-PostAccountSessionsRequestComponentsPaymentDisputesFeatures copyWith({bool Function()? destinationOnBehalfOfChargeManagement, bool Function()? disputeManagement, bool Function()? refundManagement, }) { return PostAccountSessionsRequestComponentsPaymentDisputesFeatures(
+PostAccountSessionsRequestComponentsPaymentDisputesFeatures copyWith({bool? Function()? destinationOnBehalfOfChargeManagement, bool? Function()? disputeManagement, bool? Function()? refundManagement, }) { return PostAccountSessionsRequestComponentsPaymentDisputesFeatures(
   destinationOnBehalfOfChargeManagement: destinationOnBehalfOfChargeManagement != null ? destinationOnBehalfOfChargeManagement() : this.destinationOnBehalfOfChargeManagement,
   disputeManagement: disputeManagement != null ? disputeManagement() : this.disputeManagement,
   refundManagement: refundManagement != null ? refundManagement() : this.refundManagement,

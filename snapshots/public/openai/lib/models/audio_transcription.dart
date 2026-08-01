@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'prompt': ?prompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'language', 'prompt'}.contains(key)); } 
-AudioTranscription copyWith({AudioTranscriptionModel Function()? model, String Function()? language, String Function()? prompt, }) { return AudioTranscription(
+AudioTranscription copyWith({AudioTranscriptionModel? Function()? model, String? Function()? language, String? Function()? prompt, }) { return AudioTranscription(
   model: model != null ? model() : this.model,
   language: language != null ? language() : this.language,
   prompt: prompt != null ? prompt() : this.prompt,

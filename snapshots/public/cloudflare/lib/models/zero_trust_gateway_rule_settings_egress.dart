@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'ipv6': ?ipv6,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4', 'ipv4_fallback', 'ipv6'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsEgress copyWith({String Function()? ipv4, String Function()? ipv4Fallback, String Function()? ipv6, }) { return ZeroTrustGatewayRuleSettingsEgress(
+ZeroTrustGatewayRuleSettingsEgress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, String? Function()? ipv6, }) { return ZeroTrustGatewayRuleSettingsEgress(
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv4Fallback: ipv4Fallback != null ? ipv4Fallback() : this.ipv4Fallback,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,

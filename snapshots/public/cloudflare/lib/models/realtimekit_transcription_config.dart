@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'profanity_filter': profanityFilter,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'keywords', 'language', 'profanity_filter'}.contains(key)); } 
-RealtimekitTranscriptionConfig copyWith({List<String> Function()? keywords, RealtimekitTranscriptionConfigLanguage Function()? language, bool Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
+RealtimekitTranscriptionConfig copyWith({List<String>? Function()? keywords, RealtimekitTranscriptionConfigLanguage Function()? language, bool Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
   keywords: keywords != null ? keywords() : this.keywords,
   language: language != null ? language() : this.language,
   profanityFilter: profanityFilter != null ? profanityFilter() : this.profanityFilter,

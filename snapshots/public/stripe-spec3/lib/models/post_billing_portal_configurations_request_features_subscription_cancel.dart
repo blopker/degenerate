@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel copyWith({PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason Function()? cancellationReason, bool? enabled, PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode Function()? mode, PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior Function()? prorationBehavior, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel(
+PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel copyWith({PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason? Function()? cancellationReason, bool? enabled, PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode? Function()? mode, PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior? Function()? prorationBehavior, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   enabled: enabled ?? this.enabled,
   mode: mode != null ? mode() : this.mode,

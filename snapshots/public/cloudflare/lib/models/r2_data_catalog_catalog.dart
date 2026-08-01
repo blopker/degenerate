@@ -26,13 +26,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2DataCatalogCatalogStatus($value)'; } 
  }
 /// Contains R2 Data Catalog information.
-@immutable final class R2DataCatalogCatalog {const R2DataCatalogCatalog({required this.bucket, required this.id, required this.name, required this.status, this.credentialStatus, this.maintenanceConfig, });
+@immutable final class R2DataCatalogCatalog {const R2DataCatalogCatalog({required this.bucket, required this.id, required this.name, required this.status, this.credentialStatus = const Omittable.absent(), this.maintenanceConfig = const Omittable.absent(), });
 
 factory R2DataCatalogCatalog.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalog(
   bucket: json['bucket'] as String,
-  credentialStatus: json['credential_status'] != null ? R2DataCatalogCredentialStatus.fromJson(json['credential_status'] as String) : null,
+  credentialStatus: json.containsKey('credential_status') ? Omittable(json['credential_status'] != null ? R2DataCatalogCredentialStatus.fromJson(json['credential_status'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
-  maintenanceConfig: json['maintenance_config'] != null ? R2DataCatalogCatalogMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>) : null,
+  maintenanceConfig: json.containsKey('maintenance_config') ? Omittable(json['maintenance_config'] != null ? R2DataCatalogCatalogMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   name: json['name'] as String,
   status: R2DataCatalogCatalogStatus.fromJson(json['status'] as String),
 ); }
@@ -41,13 +41,13 @@ factory R2DataCatalogCatalog.fromJson(Map<String, dynamic> json) { return R2Data
 final String bucket;
 
 /// Shows the credential configuration status.
-final R2DataCatalogCredentialStatus? credentialStatus;
+final Omittable<R2DataCatalogCredentialStatus?> credentialStatus;
 
 /// Use this to uniquely identify the catalog.
 final String id;
 
 /// Configures maintenance for the catalog.
-final R2DataCatalogCatalogMaintenanceConfig? maintenanceConfig;
+final Omittable<R2DataCatalogCatalogMaintenanceConfig?> maintenanceConfig;
 
 /// Specifies the catalog name (generated from account and bucket name).
 final String name;
@@ -56,9 +56,9 @@ final R2DataCatalogCatalogStatus status;
 
 Map<String, dynamic> toJson() { return {
   'bucket': bucket,
-  if (credentialStatus != null) 'credential_status': credentialStatus?.toJson(),
+  if (credentialStatus.isPresent) 'credential_status': credentialStatus.value?.toJson(),
   'id': id,
-  if (maintenanceConfig != null) 'maintenance_config': maintenanceConfig?.toJson(),
+  if (maintenanceConfig.isPresent) 'maintenance_config': maintenanceConfig.value?.toJson(),
   'name': name,
   'status': status.toJson(),
 }; } 
@@ -66,11 +66,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucke
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('status'); } 
-R2DataCatalogCatalog copyWith({String? bucket, R2DataCatalogCredentialStatus? Function()? credentialStatus, String? id, R2DataCatalogCatalogMaintenanceConfig? Function()? maintenanceConfig, String? name, R2DataCatalogCatalogStatus? status, }) { return R2DataCatalogCatalog(
+R2DataCatalogCatalog copyWith({String? bucket, Omittable<R2DataCatalogCredentialStatus?>? credentialStatus, String? id, Omittable<R2DataCatalogCatalogMaintenanceConfig?>? maintenanceConfig, String? name, R2DataCatalogCatalogStatus? status, }) { return R2DataCatalogCatalog(
   bucket: bucket ?? this.bucket,
-  credentialStatus: credentialStatus != null ? credentialStatus() : this.credentialStatus,
+  credentialStatus: credentialStatus ?? this.credentialStatus,
   id: id ?? this.id,
-  maintenanceConfig: maintenanceConfig != null ? maintenanceConfig() : this.maintenanceConfig,
+  maintenanceConfig: maintenanceConfig ?? this.maintenanceConfig,
   name: name ?? this.name,
   status: status ?? this.status,
 ); } 

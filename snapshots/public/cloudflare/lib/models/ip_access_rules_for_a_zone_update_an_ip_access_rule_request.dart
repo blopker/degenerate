@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (notes != null) 'notes': notes?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode', 'notes'}.contains(key)); } 
-IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest copyWith({FirewallSchemasMode Function()? mode, FirewallNotes Function()? notes, }) { return IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest(
+IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest copyWith({FirewallSchemasMode? Function()? mode, FirewallNotes? Function()? notes, }) { return IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest(
   mode: mode != null ? mode() : this.mode,
   notes: notes != null ? notes() : this.notes,
 ); } 

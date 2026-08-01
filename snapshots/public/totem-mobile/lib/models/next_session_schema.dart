@@ -68,7 +68,7 @@ final class NextSessionSchema {
       'slug': slug,
       'start': start.toIso8601String(),
       'link': link,
-      'title': ?title,
+      'title': title,
       'seats_left': seatsLeft,
       'duration': duration,
       'meeting_provider': meetingProvider.toJson(),

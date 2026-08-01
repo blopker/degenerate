@@ -12,8 +12,8 @@ final ProfileAvatarTypeEnum? avatarType;
 final bool? updateAvatarSeed;
 
 Map<String, dynamic> toJson() { return {
-  if (avatarType != null) 'avatar_type': avatarType?.toJson(),
-  'update_avatar_seed': ?updateAvatarSeed,
+  'avatar_type': avatarType?.toJson(),
+  'update_avatar_seed': updateAvatarSeed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_type') &&
       json.containsKey('update_avatar_seed') && json['update_avatar_seed'] is bool; } 

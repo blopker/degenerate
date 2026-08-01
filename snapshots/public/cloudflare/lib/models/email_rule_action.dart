@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EmailRuleAction copyWith({EmailRuleActionType? type, List<String> Function()? value, }) { return EmailRuleAction(
+EmailRuleAction copyWith({EmailRuleActionType? type, List<String>? Function()? value, }) { return EmailRuleAction(
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 

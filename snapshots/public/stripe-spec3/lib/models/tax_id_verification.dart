@@ -32,33 +32,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxIdVerificationStatus($value)'; } 
  }
 /// 
-@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress, this.verifiedName, });
+@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
 factory TaxIdVerification.fromJson(Map<String, dynamic> json) { return TaxIdVerification(
   status: TaxIdVerificationStatus.fromJson(json['status'] as String),
-  verifiedAddress: json['verified_address'] as String?,
-  verifiedName: json['verified_name'] as String?,
+  verifiedAddress: json.containsKey('verified_address') ? Omittable(json['verified_address'] as String?) : const Omittable.absent(),
+  verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
 ); }
 
 /// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
 final TaxIdVerificationStatus status;
 
 /// Verified address.
-final String? verifiedAddress;
+final Omittable<String?> verifiedAddress;
 
 /// Verified name.
-final String? verifiedName;
+final Omittable<String?> verifiedName;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
-  'verified_address': ?verifiedAddress,
-  'verified_name': ?verifiedName,
+  if (verifiedAddress.isPresent) 'verified_address': verifiedAddress.value,
+  if (verifiedName.isPresent) 'verified_name': verifiedName.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()? verifiedAddress, String? Function()? verifiedName, }) { return TaxIdVerification(
+TaxIdVerification copyWith({TaxIdVerificationStatus? status, Omittable<String?>? verifiedAddress, Omittable<String?>? verifiedName, }) { return TaxIdVerification(
   status: status ?? this.status,
-  verifiedAddress: verifiedAddress != null ? verifiedAddress() : this.verifiedAddress,
-  verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
+  verifiedAddress: verifiedAddress ?? this.verifiedAddress,
+  verifiedName: verifiedName ?? this.verifiedName,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TaxIdVerification &&

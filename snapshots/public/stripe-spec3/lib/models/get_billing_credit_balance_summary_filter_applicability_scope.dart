@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (prices != null) 'prices': prices?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price_type', 'prices'}.contains(key)); } 
-GetBillingCreditBalanceSummaryFilterApplicabilityScope copyWith({GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType Function()? priceType, List<GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices> Function()? prices, }) { return GetBillingCreditBalanceSummaryFilterApplicabilityScope(
+GetBillingCreditBalanceSummaryFilterApplicabilityScope copyWith({GetBillingCreditBalanceSummaryFilterApplicabilityScopePriceType? Function()? priceType, List<GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices>? Function()? prices, }) { return GetBillingCreditBalanceSummaryFilterApplicabilityScope(
   priceType: priceType != null ? priceType() : this.priceType,
   prices: prices != null ? prices() : this.prices,
 ); } 

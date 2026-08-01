@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (changes != null) 'changes': changes?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'changes'}.contains(key)); } 
-WebhookRepositoryRulesetEditedChangesConditionsUpdated copyWith({RepositoryRulesetConditions Function()? condition, WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges Function()? changes, }) { return WebhookRepositoryRulesetEditedChangesConditionsUpdated(
+WebhookRepositoryRulesetEditedChangesConditionsUpdated copyWith({RepositoryRulesetConditions? Function()? condition, WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges? Function()? changes, }) { return WebhookRepositoryRulesetEditedChangesConditionsUpdated(
   condition: condition != null ? condition() : this.condition,
   changes: changes != null ? changes() : this.changes,
 ); } 

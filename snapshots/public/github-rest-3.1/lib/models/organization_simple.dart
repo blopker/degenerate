@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'members_url': membersUrl,
   'public_members_url': publicMembersUrl,
   'avatar_url': avatarUrl,
-  'description': ?description,
+  'description': description,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&

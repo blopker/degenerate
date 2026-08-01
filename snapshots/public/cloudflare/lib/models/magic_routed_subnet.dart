@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('next_hop') &&
       json.containsKey('prefix'); } 
-MagicRoutedSubnet copyWith({MagicNat Function()? nat, MagicIpAddress? nextHop, MagicCidr? prefix, }) { return MagicRoutedSubnet(
+MagicRoutedSubnet copyWith({MagicNat? Function()? nat, MagicIpAddress? nextHop, MagicCidr? prefix, }) { return MagicRoutedSubnet(
   nat: nat != null ? nat() : this.nat,
   nextHop: nextHop ?? this.nextHop,
   prefix: prefix ?? this.prefix,

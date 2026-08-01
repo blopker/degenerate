@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentIntentProcessing copyWith({PaymentIntentCardProcessing Function()? card, PaymentIntentProcessingType? type, }) { return PaymentIntentProcessing(
+PaymentIntentProcessing copyWith({PaymentIntentCardProcessing? Function()? card, PaymentIntentProcessingType? type, }) { return PaymentIntentProcessing(
   card: card != null ? card() : this.card,
   type: type ?? this.type,
 ); } 

@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('redirects') && json['redirects'] is num &&
       json.containsKey('requests') && json['requests'] is num &&
       json.containsKey('size') && json['size'] is num; } 
-UrlscannerGetScanResponse2StatsIpStats copyWith({UrlscannerGetScanResponse2StatsIpStatsAsn? asn, double Function()? count, List<String>? countries, List<String>? domains, double? encodedSize, UrlscannerGetScanResponse2StatsIpStatsGeoip? geoip, double? index, String? ip, bool? ipv6, double? redirects, double? requests, double? size, }) { return UrlscannerGetScanResponse2StatsIpStats(
+UrlscannerGetScanResponse2StatsIpStats copyWith({UrlscannerGetScanResponse2StatsIpStatsAsn? asn, double? Function()? count, List<String>? countries, List<String>? domains, double? encodedSize, UrlscannerGetScanResponse2StatsIpStatsGeoip? geoip, double? index, String? ip, bool? ipv6, double? redirects, double? requests, double? size, }) { return UrlscannerGetScanResponse2StatsIpStats(
   asn: asn ?? this.asn,
   count: count != null ? count() : this.count,
   countries: countries ?? this.countries,

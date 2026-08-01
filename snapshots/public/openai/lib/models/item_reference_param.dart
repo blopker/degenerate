@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ItemReferenceParamType($value)'; } 
  }
 /// An internal identifier for an item to reference.
-@immutable final class ItemReferenceParam {const ItemReferenceParam({required this.id, this.type, });
+@immutable final class ItemReferenceParam {const ItemReferenceParam({required this.id, this.type = const Omittable.absent(), });
 
 factory ItemReferenceParam.fromJson(Map<String, dynamic> json) { return ItemReferenceParam(
-  type: json['type'] != null ? ItemReferenceParamType.fromJson(json['type'] as String) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? ItemReferenceParamType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
 ); }
 
 /// The type of item to reference. Always `item_reference`.
-final ItemReferenceParamType? type;
+final Omittable<ItemReferenceParamType?> type;
 
 /// The ID of the item to reference.
 final String id;
 
 Map<String, dynamic> toJson() { return {
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
   'id': id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-ItemReferenceParam copyWith({ItemReferenceParamType? Function()? type, String? id, }) { return ItemReferenceParam(
-  type: type != null ? type() : this.type,
+ItemReferenceParam copyWith({Omittable<ItemReferenceParamType?>? type, String? id, }) { return ItemReferenceParam(
+  type: type ?? this.type,
   id: id ?? this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

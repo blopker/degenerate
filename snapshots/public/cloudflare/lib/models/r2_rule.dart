@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'suffix': ?suffix,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions'); } 
-R2Rule copyWith({List<R2R2Action>? actions, String Function()? description, String Function()? prefix, String Function()? suffix, }) { return R2Rule(
+R2Rule copyWith({List<R2R2Action>? actions, String? Function()? description, String? Function()? prefix, String? Function()? suffix, }) { return R2Rule(
   actions: actions ?? this.actions,
   description: description != null ? description() : this.description,
   prefix: prefix != null ? prefix() : this.prefix,

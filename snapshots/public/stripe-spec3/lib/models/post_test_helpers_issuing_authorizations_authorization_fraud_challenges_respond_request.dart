@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('confirmed') && json['confirmed'] is bool; } 
-PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest copyWith({bool? confirmed, List<String> Function()? expand, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest(
+PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest copyWith({bool? confirmed, List<String>? Function()? expand, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest(
   confirmed: confirmed ?? this.confirmed,
   expand: expand != null ? expand() : this.expand,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'unsuccessful_keys': ?unsuccessfulKeys,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'successful_key_count', 'unsuccessful_keys'}.contains(key)); } 
-WorkersKvBulkResult copyWith({double Function()? successfulKeyCount, List<String> Function()? unsuccessfulKeys, }) { return WorkersKvBulkResult(
+WorkersKvBulkResult copyWith({double? Function()? successfulKeyCount, List<String>? Function()? unsuccessfulKeys, }) { return WorkersKvBulkResult(
   successfulKeyCount: successfulKeyCount != null ? successfulKeyCount() : this.successfulKeyCount,
   unsuccessfulKeys: unsuccessfulKeys != null ? unsuccessfulKeys() : this.unsuccessfulKeys,
 ); } 

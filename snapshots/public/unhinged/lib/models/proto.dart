@@ -58,10 +58,10 @@ final class Proto {
   }
 
   Proto copyWith({
-    New Function()? constructor,
+    New? Function()? constructor,
     String Function()? $toString,
-    int Function()? valueOf,
-    Proto Function()? prototype,
+    int? Function()? valueOf,
+    Proto? Function()? prototype,
   }) {
     return Proto(
       constructor: constructor != null ? constructor() : this.constructor,

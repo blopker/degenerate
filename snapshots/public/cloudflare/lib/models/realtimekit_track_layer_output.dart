@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'storage_config', 'type'}.contains(key)); } 
-RealtimekitTrackLayerOutput copyWith({RealtimekitStorageConfig Function()? storageConfig, RealtimekitTrackLayerOutputType Function()? type, }) { return RealtimekitTrackLayerOutput(
+RealtimekitTrackLayerOutput copyWith({RealtimekitStorageConfig? Function()? storageConfig, RealtimekitTrackLayerOutputType Function()? type, }) { return RealtimekitTrackLayerOutput(
   storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
   type: type != null ? type() : this.type,
 ); } 

@@ -100,7 +100,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewCommentDeletedPullRequestState($value)'; } 
  }
-@immutable final class WebhookPullRequestReviewCommentDeletedPullRequest {const WebhookPullRequestReviewCommentDeletedPullRequest({required this.createdAt, required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.url, required this.base, required this.body, required this.closedAt, required this.commentsUrl, required this.commitsUrl, required this.links, required this.diffUrl, required this.updatedAt, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.mergeCommitSha, required this.mergedAt, required this.milestone, required this.user, required this.number, required this.patchUrl, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, required this.reviewCommentsUrl, required this.state, required this.statusesUrl, required this.title, required this.nodeId, this.autoMerge, this.draft, });
+@immutable final class WebhookPullRequestReviewCommentDeletedPullRequest {const WebhookPullRequestReviewCommentDeletedPullRequest({required this.createdAt, required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.url, required this.base, required this.body, required this.closedAt, required this.commentsUrl, required this.commitsUrl, required this.links, required this.diffUrl, required this.updatedAt, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.mergeCommitSha, required this.mergedAt, required this.milestone, required this.user, required this.number, required this.patchUrl, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, required this.reviewCommentsUrl, required this.state, required this.statusesUrl, required this.title, required this.nodeId, this.autoMerge = const Omittable.absent(), this.draft, });
 
 factory WebhookPullRequestReviewCommentDeletedPullRequest.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentDeletedPullRequest(
   links: WebhookPullRequestReviewCommentDeletedPullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
@@ -108,7 +108,7 @@ factory WebhookPullRequestReviewCommentDeletedPullRequest.fromJson(Map<String, d
   assignee: json['assignee'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhookPullRequestReviewCommentDeletedPullRequestAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: WebhookPullRequestReviewCommentDeletedPullRequestAuthorAssociation.fromJson(json['author_association'] as String),
-  autoMerge: json['auto_merge'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
+  autoMerge: json.containsKey('auto_merge') ? Omittable(json['auto_merge'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   base: WebhookPullRequestReviewCommentDeletedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>),
   body: json['body'] as String?,
   closedAt: json['closed_at'] as String?,
@@ -153,7 +153,7 @@ final List<WebhookPullRequestReviewCommentDeletedPullRequestAssignees?> assignee
 final WebhookPullRequestReviewCommentDeletedPullRequestAuthorAssociation authorAssociation;
 
 /// The status of auto merging a pull request.
-final WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge? autoMerge;
+final Omittable<WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge?> autoMerge;
 
 final WebhookPullRequestReviewCommentDeletedPullRequestBase base;
 
@@ -218,14 +218,14 @@ final WebhookPullRequestReviewCommentDeletedPullRequestUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
-  if (activeLockReason != null) 'active_lock_reason': activeLockReason?.toJson(),
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  'active_lock_reason': activeLockReason?.toJson(),
+  'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
-  if (autoMerge != null) 'auto_merge': autoMerge?.toJson(),
+  if (autoMerge.isPresent) 'auto_merge': autoMerge.value?.toJson(),
   'base': base.toJson(),
-  'body': ?body,
-  'closed_at': ?closedAt,
+  'body': body,
+  'closed_at': closedAt,
   'comments_url': commentsUrl.toString(),
   'commits_url': commitsUrl.toString(),
   'created_at': createdAt,
@@ -237,9 +237,9 @@ Map<String, dynamic> toJson() { return {
   'issue_url': issueUrl.toString(),
   'labels': labels.map((e) => e.toJson()).toList(),
   'locked': locked,
-  'merge_commit_sha': ?mergeCommitSha,
-  'merged_at': ?mergedAt,
-  if (milestone != null) 'milestone': milestone?.toJson(),
+  'merge_commit_sha': mergeCommitSha,
+  'merged_at': mergedAt,
+  'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
   'patch_url': patchUrl.toString(),
@@ -252,7 +252,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt,
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
@@ -288,13 +288,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookPullRequestReviewCommentDeletedPullRequest copyWith({WebhookPullRequestReviewCommentDeletedPullRequestLinks? links, WebhookPullRequestReviewCommentDeletedPullRequestActiveLockReason? Function()? activeLockReason, WebhookPullRequestReviewCommentDeletedPullRequestAssignee? Function()? assignee, List<WebhookPullRequestReviewCommentDeletedPullRequestAssignees?>? assignees, WebhookPullRequestReviewCommentDeletedPullRequestAuthorAssociation? authorAssociation, WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge? Function()? autoMerge, WebhookPullRequestReviewCommentDeletedPullRequestBase? base, String? Function()? body, String? Function()? closedAt, Uri? commentsUrl, Uri? commitsUrl, String? createdAt, Uri? diffUrl, bool Function()? draft, WebhookPullRequestReviewCommentDeletedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhookPullRequestReviewCommentDeletedPullRequestLabels>? labels, bool? locked, String? Function()? mergeCommitSha, String? Function()? mergedAt, WebhookPullRequestReviewCommentDeletedPullRequestMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, List<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewers>? requestedReviewers, List<WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeams>? requestedTeams, String? reviewCommentUrl, Uri? reviewCommentsUrl, WebhookPullRequestReviewCommentDeletedPullRequestState? state, Uri? statusesUrl, String? title, String? updatedAt, Uri? url, WebhookPullRequestReviewCommentDeletedPullRequestUser? Function()? user, }) { return WebhookPullRequestReviewCommentDeletedPullRequest(
+WebhookPullRequestReviewCommentDeletedPullRequest copyWith({WebhookPullRequestReviewCommentDeletedPullRequestLinks? links, WebhookPullRequestReviewCommentDeletedPullRequestActiveLockReason? Function()? activeLockReason, WebhookPullRequestReviewCommentDeletedPullRequestAssignee? Function()? assignee, List<WebhookPullRequestReviewCommentDeletedPullRequestAssignees?>? assignees, WebhookPullRequestReviewCommentDeletedPullRequestAuthorAssociation? authorAssociation, Omittable<WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge?>? autoMerge, WebhookPullRequestReviewCommentDeletedPullRequestBase? base, String? Function()? body, String? Function()? closedAt, Uri? commentsUrl, Uri? commitsUrl, String? createdAt, Uri? diffUrl, bool? Function()? draft, WebhookPullRequestReviewCommentDeletedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhookPullRequestReviewCommentDeletedPullRequestLabels>? labels, bool? locked, String? Function()? mergeCommitSha, String? Function()? mergedAt, WebhookPullRequestReviewCommentDeletedPullRequestMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, List<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewers>? requestedReviewers, List<WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeams>? requestedTeams, String? reviewCommentUrl, Uri? reviewCommentsUrl, WebhookPullRequestReviewCommentDeletedPullRequestState? state, Uri? statusesUrl, String? title, String? updatedAt, Uri? url, WebhookPullRequestReviewCommentDeletedPullRequestUser? Function()? user, }) { return WebhookPullRequestReviewCommentDeletedPullRequest(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees ?? this.assignees,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-  autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
+  autoMerge: autoMerge ?? this.autoMerge,
   base: base ?? this.base,
   body: body != null ? body() : this.body,
   closedAt: closedAt != null ? closedAt() : this.closedAt,

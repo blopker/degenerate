@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'region', 'scheduleFrequency', 'tests', 'url'}.contains(key)); } 
-ObservatoryPagesResponseCollectionResult copyWith({ObservatoryLabeledRegion Function()? region, ObservatoryScheduleFrequency Function()? scheduleFrequency, List<ObservatoryPageTest> Function()? tests, ObservatoryUrl Function()? url, }) { return ObservatoryPagesResponseCollectionResult(
+ObservatoryPagesResponseCollectionResult copyWith({ObservatoryLabeledRegion? Function()? region, ObservatoryScheduleFrequency? Function()? scheduleFrequency, List<ObservatoryPageTest>? Function()? tests, ObservatoryUrl? Function()? url, }) { return ObservatoryPagesResponseCollectionResult(
   region: region != null ? region() : this.region,
   scheduleFrequency: scheduleFrequency != null ? scheduleFrequency() : this.scheduleFrequency,
   tests: tests != null ? tests() : this.tests,

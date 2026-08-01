@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'rate_limited_request_count': ?rateLimitedRequestCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_request_count', 'rate_limited_request_count'}.contains(key)); } 
-InsightsSummaryStats copyWith({int Function()? totalRequestCount, int Function()? rateLimitedRequestCount, }) { return InsightsSummaryStats(
+InsightsSummaryStats copyWith({int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, }) { return InsightsSummaryStats(
   totalRequestCount: totalRequestCount != null ? totalRequestCount() : this.totalRequestCount,
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,
 ); } 

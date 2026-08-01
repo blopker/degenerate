@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret') && json['secret'] is String &&
       json.containsKey('secret_id') && json['secret_id'] is String; } 
-AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, String? providerSlug, double Function()? rateLimit, double Function()? rateLimitPeriod, String? secret, String? secretId, }) { return AigConfigCreateProvidersRequest(
+AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, String? providerSlug, double? Function()? rateLimit, double Function()? rateLimitPeriod, String? secret, String? secretId, }) { return AigConfigCreateProvidersRequest(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   providerSlug: providerSlug ?? this.providerSlug,

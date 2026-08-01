@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (size != null) 'size': size?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-CreateVideoBody copyWith({VideoModel Function()? model, String? prompt, Uint8List Function()? inputReference, ImageRefParam2 Function()? imageReference, VideoSeconds Function()? seconds, VideoSize Function()? size, }) { return CreateVideoBody(
+CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8List? Function()? inputReference, ImageRefParam2? Function()? imageReference, VideoSeconds? Function()? seconds, VideoSize? Function()? size, }) { return CreateVideoBody(
   model: model != null ? model() : this.model,
   prompt: prompt ?? this.prompt,
   inputReference: inputReference != null ? inputReference() : this.inputReference,

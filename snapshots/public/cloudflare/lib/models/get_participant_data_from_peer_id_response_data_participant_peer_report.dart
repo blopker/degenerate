@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (quality != null) 'quality': quality?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'quality'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReport copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata Function()? metadata, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality Function()? quality, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReport(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReport copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata? Function()? metadata, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality? Function()? quality, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReport(
   metadata: metadata != null ? metadata() : this.metadata,
   quality: quality != null ? quality() : this.quality,
 ); } 

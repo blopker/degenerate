@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'events', 'active', 'name'}.contains(key)); } 
-OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig Function()? config, List<String> Function()? events, bool Function()? active, String Function()? name, }) { return OrgsUpdateWebhookRequest(
+OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig? Function()? config, List<String>? Function()? events, bool Function()? active, String? Function()? name, }) { return OrgsUpdateWebhookRequest(
   config: config != null ? config() : this.config,
   events: events != null ? events() : this.events,
   active: active != null ? active() : this.active,

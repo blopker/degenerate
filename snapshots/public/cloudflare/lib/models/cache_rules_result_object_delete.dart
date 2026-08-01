@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('editable') &&
       json.containsKey('id'); } 
-CacheRulesResultObjectDelete copyWith({CacheRulesEditable? editable, CacheRulesSettingId? id, CacheRulesModifiedOn Function()? modifiedOn, }) { return CacheRulesResultObjectDelete(
+CacheRulesResultObjectDelete copyWith({CacheRulesEditable? editable, CacheRulesSettingId? id, CacheRulesModifiedOn? Function()? modifiedOn, }) { return CacheRulesResultObjectDelete(
   editable: editable ?? this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

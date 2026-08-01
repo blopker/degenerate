@@ -23,27 +23,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesOriginPostQuantumEncryptionId($value)'; } 
  }
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
-@immutable final class CacheRulesOriginPostQuantumEncryption {const CacheRulesOriginPostQuantumEncryption({required this.id, this.modifiedOn, });
+@immutable final class CacheRulesOriginPostQuantumEncryption {const CacheRulesOriginPostQuantumEncryption({required this.id, this.modifiedOn = const Omittable.absent(), });
 
 factory CacheRulesOriginPostQuantumEncryption.fromJson(Map<String, dynamic> json) { return CacheRulesOriginPostQuantumEncryption(
   id: CacheRulesOriginPostQuantumEncryptionId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Value of the zone setting.
 final CacheRulesOriginPostQuantumEncryptionId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesOriginPostQuantumEncryption copyWith({CacheRulesOriginPostQuantumEncryptionId? id, DateTime? Function()? modifiedOn, }) { return CacheRulesOriginPostQuantumEncryption(
+CacheRulesOriginPostQuantumEncryption copyWith({CacheRulesOriginPostQuantumEncryptionId? id, Omittable<DateTime?>? modifiedOn, }) { return CacheRulesOriginPostQuantumEncryption(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CacheRulesOriginPostQuantumEncryption &&

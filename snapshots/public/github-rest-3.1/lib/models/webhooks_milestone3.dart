@@ -83,12 +83,12 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
-  if (creator != null) 'creator': creator?.toJson(),
-  'description': ?description,
-  if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
+  'creator': creator?.toJson(),
+  'description': description,
+  'due_on': dueOn?.toIso8601String(),
   'html_url': htmlUrl.toString(),
   'id': id,
   'labels_url': labelsUrl.toString(),

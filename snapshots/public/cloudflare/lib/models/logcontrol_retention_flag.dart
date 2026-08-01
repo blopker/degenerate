@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (flag != null) 'flag': flag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flag'}.contains(key)); } 
-LogcontrolRetentionFlag copyWith({LogcontrolFlag Function()? flag}) { return LogcontrolRetentionFlag(
+LogcontrolRetentionFlag copyWith({LogcontrolFlag? Function()? flag}) { return LogcontrolRetentionFlag(
   flag: flag != null ? flag() : this.flag,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

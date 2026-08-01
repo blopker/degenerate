@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'profile_id': profileId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_id') && json['profile_id'] is String; } 
-DlpNewPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate> Function()? entries, bool Function()? ocrEnabled, String? profileId, }) { return DlpNewPredefinedProfile(
+DlpNewPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate>? Function()? entries, bool Function()? ocrEnabled, String? profileId, }) { return DlpNewPredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

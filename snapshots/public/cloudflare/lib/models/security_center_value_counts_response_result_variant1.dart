@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'value'}.contains(key)); } 
-SecurityCenterValueCountsResponseResultVariant1 copyWith({int Function()? count, String Function()? value, }) { return SecurityCenterValueCountsResponseResultVariant1(
+SecurityCenterValueCountsResponseResultVariant1 copyWith({int? Function()? count, String? Function()? value, }) { return SecurityCenterValueCountsResponseResultVariant1(
   count: count != null ? count() : this.count,
   value: value != null ? value() : this.value,
 ); } 

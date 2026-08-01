@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsCreateArtifactStorageRecordResponseStorageRecords {const OrgsCreateArtifactStorageRecordResponseStorageRecords({this.id, this.name, this.digest, this.artifactUrl, this.registryUrl, this.repository, this.status, this.createdAt, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsCreateArtifactStorageRecordResponseStorageRecords {const OrgsCreateArtifactStorageRecordResponseStorageRecords({this.id, this.name, this.digest, this.artifactUrl = const Omittable.absent(), this.registryUrl, this.repository = const Omittable.absent(), this.status, this.createdAt, this.updatedAt, });
 
 factory OrgsCreateArtifactStorageRecordResponseStorageRecords.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordResponseStorageRecords(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   name: json['name'] as String?,
   digest: json['digest'] as String?,
-  artifactUrl: json['artifact_url'] as String?,
+  artifactUrl: json.containsKey('artifact_url') ? Omittable(json['artifact_url'] as String?) : const Omittable.absent(),
   registryUrl: json['registry_url'] as String?,
-  repository: json['repository'] as String?,
+  repository: json.containsKey('repository') ? Omittable(json['repository'] as String?) : const Omittable.absent(),
   status: json['status'] as String?,
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
@@ -20,11 +20,11 @@ final String? name;
 
 final String? digest;
 
-final String? artifactUrl;
+final Omittable<String?> artifactUrl;
 
 final String? registryUrl;
 
-final String? repository;
+final Omittable<String?> repository;
 
 final String? status;
 
@@ -36,21 +36,21 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'name': ?name,
   'digest': ?digest,
-  'artifact_url': ?artifactUrl,
+  if (artifactUrl.isPresent) 'artifact_url': artifactUrl.value,
   'registry_url': ?registryUrl,
-  'repository': ?repository,
+  if (repository.isPresent) 'repository': repository.value,
   'status': ?status,
   'created_at': ?createdAt,
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'digest', 'artifact_url', 'registry_url', 'repository', 'status', 'created_at', 'updated_at'}.contains(key)); } 
-OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int Function()? id, String Function()? name, String Function()? digest, String? Function()? artifactUrl, String Function()? registryUrl, String? Function()? repository, String Function()? status, String Function()? createdAt, String Function()? updatedAt, }) { return OrgsCreateArtifactStorageRecordResponseStorageRecords(
+OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()? id, String? Function()? name, String? Function()? digest, Omittable<String?>? artifactUrl, String? Function()? registryUrl, Omittable<String?>? repository, String? Function()? status, String? Function()? createdAt, String? Function()? updatedAt, }) { return OrgsCreateArtifactStorageRecordResponseStorageRecords(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   digest: digest != null ? digest() : this.digest,
-  artifactUrl: artifactUrl != null ? artifactUrl() : this.artifactUrl,
+  artifactUrl: artifactUrl ?? this.artifactUrl,
   registryUrl: registryUrl != null ? registryUrl() : this.registryUrl,
-  repository: repository != null ? repository() : this.repository,
+  repository: repository ?? this.repository,
   status: status != null ? status() : this.status,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

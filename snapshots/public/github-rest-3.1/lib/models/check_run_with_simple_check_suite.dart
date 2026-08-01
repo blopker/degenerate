@@ -149,8 +149,8 @@ final String url;
 Map<String, dynamic> toJson() { return {
   'app': app.toJson(),
   'check_suite': checkSuite.toJson(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'completed_at': completedAt?.toIso8601String(),
+  'conclusion': conclusion?.toJson(),
   if (deployment != null) 'deployment': deployment?.toJson(),
   'details_url': detailsUrl,
   'external_id': externalId,
@@ -181,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app')
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String; } 
-CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
+CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
   app: app ?? this.app,
   checkSuite: checkSuite ?? this.checkSuite,
   completedAt: completedAt != null ? completedAt() : this.completedAt,

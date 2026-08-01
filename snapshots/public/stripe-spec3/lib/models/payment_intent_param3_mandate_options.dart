@@ -126,7 +126,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('start_date') && json['start_date'] is num; } 
-PaymentIntentParam3MandateOptions copyWith({int? amount, PaymentIntentParam3MandateOptionsAmountType? amountType, String Function()? description, int Function()? endDate, PaymentIntentParam3MandateOptionsInterval? interval, int Function()? intervalCount, String? reference, int? startDate, List<PaymentIntentParam3MandateOptionsSupportedTypes> Function()? supportedTypes, }) { return PaymentIntentParam3MandateOptions(
+PaymentIntentParam3MandateOptions copyWith({int? amount, PaymentIntentParam3MandateOptionsAmountType? amountType, String? Function()? description, int? Function()? endDate, PaymentIntentParam3MandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<PaymentIntentParam3MandateOptionsSupportedTypes>? Function()? supportedTypes, }) { return PaymentIntentParam3MandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   description: description != null ? description() : this.description,

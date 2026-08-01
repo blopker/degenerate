@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kubeletConfigKey') && json['kubeletConfigKey'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('namespace') && json['namespace'] is String; } 
-ConfigMapNodeConfigSource copyWith({String? kubeletConfigKey, String? name, String? namespace, String Function()? resourceVersion, String Function()? uid, }) { return ConfigMapNodeConfigSource(
+ConfigMapNodeConfigSource copyWith({String? kubeletConfigKey, String? name, String? namespace, String? Function()? resourceVersion, String? Function()? uid, }) { return ConfigMapNodeConfigSource(
   kubeletConfigKey: kubeletConfigKey ?? this.kubeletConfigKey,
   name: name ?? this.name,
   namespace: namespace ?? this.namespace,

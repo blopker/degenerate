@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'include_subdomains': ?includeSubdomains,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hold', 'hold_after', 'include_subdomains'}.contains(key)); } 
-Zones0HoldDeleteResponseResult copyWith({bool Function()? hold, String Function()? holdAfter, String Function()? includeSubdomains, }) { return Zones0HoldDeleteResponseResult(
+Zones0HoldDeleteResponseResult copyWith({bool? Function()? hold, String? Function()? holdAfter, String? Function()? includeSubdomains, }) { return Zones0HoldDeleteResponseResult(
   hold: hold != null ? hold() : this.hold,
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,

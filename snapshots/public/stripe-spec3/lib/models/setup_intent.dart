@@ -297,40 +297,40 @@ bool get isUnknown { return !values.contains(this); }
 /// By using SetupIntents, you can reduce friction for your customers, even as regulations change over time.
 /// 
 /// Related guide: [Setup Intents API](https://docs.stripe.com/payments/setup-intents)
-@immutable final class SetupIntent {const SetupIntent({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethodTypes, required this.status, required this.usage, this.application, this.attachToSelf, this.automaticPaymentMethods, this.cancellationReason, this.clientSecret, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.flowDirections, this.lastSetupError, this.latestAttempt, this.mandate, this.metadata, this.nextAction, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, this.singleUseMandate, });
+@immutable final class SetupIntent {const SetupIntent({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethodTypes, required this.status, required this.usage, this.application = const Omittable.absent(), this.attachToSelf, this.automaticPaymentMethods = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.excludedPaymentMethodTypes = const Omittable.absent(), this.flowDirections = const Omittable.absent(), this.lastSetupError = const Omittable.absent(), this.latestAttempt = const Omittable.absent(), this.mandate = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextAction = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.paymentMethod = const Omittable.absent(), this.paymentMethodConfigurationDetails = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.singleUseMandate = const Omittable.absent(), });
 
 factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
-  application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   attachToSelf: json['attach_to_self'] as bool?,
-  automaticPaymentMethods: json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
-  cancellationReason: json['cancellation_reason'] != null ? SetupIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
-  clientSecret: json['client_secret'] as String?,
+  automaticPaymentMethods: json.containsKey('automatic_payment_methods') ? Omittable(json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? SetupIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
+  clientSecret: json.containsKey('client_secret') ? Omittable(json['client_secret'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
-  description: json['description'] as String?,
-  excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => SetupIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
-  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupIntentFlowDirections.fromJson(e as String)).toList(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  excludedPaymentMethodTypes: json.containsKey('excluded_payment_method_types') ? Omittable((json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => SetupIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList()) : const Omittable.absent(),
+  flowDirections: json.containsKey('flow_directions') ? Omittable((json['flow_directions'] as List<dynamic>?)?.map((e) => SetupIntentFlowDirections.fromJson(e as String)).toList()) : const Omittable.absent(),
   id: json['id'] as String,
-  lastSetupError: json['last_setup_error'] != null ? Errors.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null,
-  latestAttempt: json['latest_attempt'] != null ? OneOf2.parse(json['latest_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null,
+  lastSetupError: json.containsKey('last_setup_error') ? Omittable(json['last_setup_error'] != null ? Errors.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  latestAttempt: json.containsKey('latest_attempt') ? Omittable(json['latest_attempt'] != null ? OneOf2.parse(json['latest_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
-  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextAction: json['next_action'] != null ? SetupIntentNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null,
+  mandate: json.containsKey('mandate') ? Omittable(json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  nextAction: json.containsKey('next_action') ? Omittable(json['next_action'] != null ? SetupIntentNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: SetupIntentObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  paymentMethod: json['payment_method'] != null ? OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
-  paymentMethodOptions: json['payment_method_options'] != null ? SetupIntentPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentMethod: json.containsKey('payment_method') ? Omittable(json['payment_method'] != null ? OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentMethodConfigurationDetails: json.containsKey('payment_method_configuration_details') ? Omittable(json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  paymentMethodOptions: json.containsKey('payment_method_options') ? Omittable(json['payment_method_options'] != null ? SetupIntentPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>).map((e) => e as String).toList(),
-  singleUseMandate: json['single_use_mandate'] != null ? OneOf2.parse(json['single_use_mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
+  singleUseMandate: json.containsKey('single_use_mandate') ? Omittable(json['single_use_mandate'] != null ? OneOf2.parse(json['single_use_mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   status: SetupIntentStatus.fromJson(json['status'] as String),
   usage: json['usage'] as String,
 ); }
 
 /// ID of the Connect application that created the SetupIntent.
-final SetupIntentApplication? application;
+final Omittable<SetupIntentApplication?> application;
 
 /// If present, the SetupIntent's payment method will be attached to the in-context Stripe Account.
 /// 
@@ -338,15 +338,15 @@ final SetupIntentApplication? application;
 final bool? attachToSelf;
 
 /// Settings for dynamic payment methods compatible with this Setup Intent
-final PaymentFlowsAutomaticPaymentMethodsSetupIntent? automaticPaymentMethods;
+final Omittable<PaymentFlowsAutomaticPaymentMethodsSetupIntent?> automaticPaymentMethods;
 
 /// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
-final SetupIntentCancellationReason? cancellationReason;
+final Omittable<SetupIntentCancellationReason?> cancellationReason;
 
 /// The client secret of this SetupIntent. Used for client-side retrieval using a publishable key.
 /// 
 /// The client secret can be used to complete payment setup from your frontend. It should not be stored, logged, or exposed to anyone other than the customer. Make sure that you have TLS enabled on any page that includes the client secret.
-final String? clientSecret;
+final Omittable<String?> clientSecret;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -354,65 +354,65 @@ final int created;
 /// ID of the Customer this SetupIntent belongs to, if one exists.
 /// 
 /// If present, the SetupIntent's payment method will be attached to the Customer on successful setup. Payment methods attached to other Customers cannot be used with this SetupIntent.
-final SetupIntentCustomer? customer;
+final Omittable<SetupIntentCustomer?> customer;
 
 /// ID of the Account this SetupIntent belongs to, if one exists.
 /// 
 /// If present, the SetupIntent's payment method will be attached to the Account on successful setup. Payment methods attached to other Accounts cannot be used with this SetupIntent.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// Payment method types that are excluded from this SetupIntent.
-final List<SetupIntentExcludedPaymentMethodTypes>? excludedPaymentMethodTypes;
+final Omittable<List<SetupIntentExcludedPaymentMethodTypes>?> excludedPaymentMethodTypes;
 
 /// Indicates the directions of money movement for which this payment method is intended to be used.
 /// 
 /// Include `inbound` if you intend to use the payment method as the origin to pull funds from. Include `outbound` if you intend to use the payment method as the destination to send funds to. You can include both if you intend to use the payment method for both purposes.
-final List<SetupIntentFlowDirections>? flowDirections;
+final Omittable<List<SetupIntentFlowDirections>?> flowDirections;
 
 /// Unique identifier for the object.
 final String id;
 
 /// The error encountered in the previous SetupIntent confirmation.
-final Errors? lastSetupError;
+final Omittable<Errors?> lastSetupError;
 
 /// The most recent SetupAttempt for this SetupIntent.
-final SetupIntentLatestAttempt? latestAttempt;
+final Omittable<SetupIntentLatestAttempt?> latestAttempt;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
 
 /// ID of the multi use Mandate generated by the SetupIntent.
-final SetupIntentMandate? mandate;
+final Omittable<SetupIntentMandate?> mandate;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// If present, this property tells you what actions you need to take in order for your customer to continue payment setup.
-final SetupIntentNextAction? nextAction;
+final Omittable<SetupIntentNextAction?> nextAction;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final SetupIntentObject object;
 
 /// The account (if any) for which the setup is intended.
-final SetupIntentOnBehalfOf? onBehalfOf;
+final Omittable<SetupIntentOnBehalfOf?> onBehalfOf;
 
 /// ID of the payment method used with this SetupIntent. If the payment method is `card_present` and isn't a digital wallet, then the [generated_card](https://docs.stripe.com/api/setup_attempts/object#setup_attempt_object-payment_method_details-card_present-generated_card) associated with the `latest_attempt` is attached to the Customer instead.
-final SetupIntentPaymentMethod? paymentMethod;
+final Omittable<SetupIntentPaymentMethod?> paymentMethod;
 
 /// Information about the [payment method configuration](https://docs.stripe.com/api/payment_method_configurations) used for this Setup Intent.
-final PaymentMethodConfigBizPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
+final Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?> paymentMethodConfigurationDetails;
 
 /// Payment method-specific configuration for this SetupIntent.
-final SetupIntentPaymentMethodOptions? paymentMethodOptions;
+final Omittable<SetupIntentPaymentMethodOptions?> paymentMethodOptions;
 
 /// The list of payment method types (e.g. card) that this SetupIntent is allowed to set up. A list of valid payment method types can be found [here](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type).
 final List<String> paymentMethodTypes;
 
 /// ID of the single_use Mandate generated by the SetupIntent.
-final SetupIntentSingleUseMandate? singleUseMandate;
+final Omittable<SetupIntentSingleUseMandate?> singleUseMandate;
 
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
 final SetupIntentStatus status;
@@ -423,31 +423,31 @@ final SetupIntentStatus status;
 final String usage;
 
 Map<String, dynamic> toJson() { return {
-  if (application != null) 'application': application?.toJson(),
+  if (application.isPresent) 'application': application.value?.toJson(),
   'attach_to_self': ?attachToSelf,
-  if (automaticPaymentMethods != null) 'automatic_payment_methods': automaticPaymentMethods?.toJson(),
-  if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
-  'client_secret': ?clientSecret,
+  if (automaticPaymentMethods.isPresent) 'automatic_payment_methods': automaticPaymentMethods.value?.toJson(),
+  if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value?.toJson(),
+  if (clientSecret.isPresent) 'client_secret': clientSecret.value,
   'created': created,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
-  'description': ?description,
-  if (excludedPaymentMethodTypes != null) 'excluded_payment_method_types': excludedPaymentMethodTypes?.map((e) => e.toJson()).toList(),
-  if (flowDirections != null) 'flow_directions': flowDirections?.map((e) => e.toJson()).toList(),
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (description.isPresent) 'description': description.value,
+  if (excludedPaymentMethodTypes.isPresent) 'excluded_payment_method_types': excludedPaymentMethodTypes.value?.map((e) => e.toJson()).toList(),
+  if (flowDirections.isPresent) 'flow_directions': flowDirections.value?.map((e) => e.toJson()).toList(),
   'id': id,
-  if (lastSetupError != null) 'last_setup_error': lastSetupError?.toJson(),
-  if (latestAttempt != null) 'latest_attempt': latestAttempt?.toJson(),
+  if (lastSetupError.isPresent) 'last_setup_error': lastSetupError.value?.toJson(),
+  if (latestAttempt.isPresent) 'latest_attempt': latestAttempt.value?.toJson(),
   'livemode': livemode,
-  if (mandate != null) 'mandate': mandate?.toJson(),
-  'metadata': ?metadata,
-  if (nextAction != null) 'next_action': nextAction?.toJson(),
+  if (mandate.isPresent) 'mandate': mandate.value?.toJson(),
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (nextAction.isPresent) 'next_action': nextAction.value?.toJson(),
   'object': object.toJson(),
-  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
-  if (paymentMethod != null) 'payment_method': paymentMethod?.toJson(),
-  if (paymentMethodConfigurationDetails != null) 'payment_method_configuration_details': paymentMethodConfigurationDetails?.toJson(),
-  if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value?.toJson(),
+  if (paymentMethod.isPresent) 'payment_method': paymentMethod.value?.toJson(),
+  if (paymentMethodConfigurationDetails.isPresent) 'payment_method_configuration_details': paymentMethodConfigurationDetails.value?.toJson(),
+  if (paymentMethodOptions.isPresent) 'payment_method_options': paymentMethodOptions.value?.toJson(),
   'payment_method_types': paymentMethodTypes,
-  if (singleUseMandate != null) 'single_use_mandate': singleUseMandate?.toJson(),
+  if (singleUseMandate.isPresent) 'single_use_mandate': singleUseMandate.value?.toJson(),
   'status': status.toJson(),
   'usage': usage,
 }; } 
@@ -458,32 +458,32 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('payment_method_types') &&
       json.containsKey('status') &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupIntent copyWith({SetupIntentApplication? Function()? application, bool Function()? attachToSelf, PaymentFlowsAutomaticPaymentMethodsSetupIntent? Function()? automaticPaymentMethods, SetupIntentCancellationReason? Function()? cancellationReason, String? Function()? clientSecret, int? created, SetupIntentCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<SetupIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<SetupIntentFlowDirections>? Function()? flowDirections, String? id, Errors? Function()? lastSetupError, SetupIntentLatestAttempt? Function()? latestAttempt, bool? livemode, SetupIntentMandate? Function()? mandate, Map<String, String>? Function()? metadata, SetupIntentNextAction? Function()? nextAction, SetupIntentObject? object, SetupIntentOnBehalfOf? Function()? onBehalfOf, SetupIntentPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, SetupIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, SetupIntentSingleUseMandate? Function()? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
-  application: application != null ? application() : this.application,
+SetupIntent copyWith({Omittable<SetupIntentApplication?>? application, bool? Function()? attachToSelf, Omittable<PaymentFlowsAutomaticPaymentMethodsSetupIntent?>? automaticPaymentMethods, Omittable<SetupIntentCancellationReason?>? cancellationReason, Omittable<String?>? clientSecret, int? created, Omittable<SetupIntentCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, Omittable<List<SetupIntentExcludedPaymentMethodTypes>?>? excludedPaymentMethodTypes, Omittable<List<SetupIntentFlowDirections>?>? flowDirections, String? id, Omittable<Errors?>? lastSetupError, Omittable<SetupIntentLatestAttempt?>? latestAttempt, bool? livemode, Omittable<SetupIntentMandate?>? mandate, Omittable<Map<String,String>?>? metadata, Omittable<SetupIntentNextAction?>? nextAction, SetupIntentObject? object, Omittable<SetupIntentOnBehalfOf?>? onBehalfOf, Omittable<SetupIntentPaymentMethod?>? paymentMethod, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<SetupIntentPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, Omittable<SetupIntentSingleUseMandate?>? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
+  application: application ?? this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
-  automaticPaymentMethods: automaticPaymentMethods != null ? automaticPaymentMethods() : this.automaticPaymentMethods,
-  cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
-  clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
+  automaticPaymentMethods: automaticPaymentMethods ?? this.automaticPaymentMethods,
+  cancellationReason: cancellationReason ?? this.cancellationReason,
+  clientSecret: clientSecret ?? this.clientSecret,
   created: created ?? this.created,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  description: description != null ? description() : this.description,
-  excludedPaymentMethodTypes: excludedPaymentMethodTypes != null ? excludedPaymentMethodTypes() : this.excludedPaymentMethodTypes,
-  flowDirections: flowDirections != null ? flowDirections() : this.flowDirections,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
+  description: description ?? this.description,
+  excludedPaymentMethodTypes: excludedPaymentMethodTypes ?? this.excludedPaymentMethodTypes,
+  flowDirections: flowDirections ?? this.flowDirections,
   id: id ?? this.id,
-  lastSetupError: lastSetupError != null ? lastSetupError() : this.lastSetupError,
-  latestAttempt: latestAttempt != null ? latestAttempt() : this.latestAttempt,
+  lastSetupError: lastSetupError ?? this.lastSetupError,
+  latestAttempt: latestAttempt ?? this.latestAttempt,
   livemode: livemode ?? this.livemode,
-  mandate: mandate != null ? mandate() : this.mandate,
-  metadata: metadata != null ? metadata() : this.metadata,
-  nextAction: nextAction != null ? nextAction() : this.nextAction,
+  mandate: mandate ?? this.mandate,
+  metadata: metadata ?? this.metadata,
+  nextAction: nextAction ?? this.nextAction,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
-  paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
-  paymentMethodConfigurationDetails: paymentMethodConfigurationDetails != null ? paymentMethodConfigurationDetails() : this.paymentMethodConfigurationDetails,
-  paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
+  paymentMethod: paymentMethod ?? this.paymentMethod,
+  paymentMethodConfigurationDetails: paymentMethodConfigurationDetails ?? this.paymentMethodConfigurationDetails,
+  paymentMethodOptions: paymentMethodOptions ?? this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes ?? this.paymentMethodTypes,
-  singleUseMandate: singleUseMandate != null ? singleUseMandate() : this.singleUseMandate,
+  singleUseMandate: singleUseMandate ?? this.singleUseMandate,
   status: status ?? this.status,
   usage: usage ?? this.usage,
 ); } 
@@ -498,8 +498,10 @@ SetupIntent copyWith({SetupIntentApplication? Function()? application, bool Func
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           description == other.description &&
-          listEquals(excludedPaymentMethodTypes, other.excludedPaymentMethodTypes) &&
-          listEquals(flowDirections, other.flowDirections) &&
+          excludedPaymentMethodTypes.isPresent == other.excludedPaymentMethodTypes.isPresent &&
+          listEquals(excludedPaymentMethodTypes.value, other.excludedPaymentMethodTypes.value) &&
+          flowDirections.isPresent == other.flowDirections.isPresent &&
+          listEquals(flowDirections.value, other.flowDirections.value) &&
           id == other.id &&
           lastSetupError == other.lastSetupError &&
           latestAttempt == other.latestAttempt &&
@@ -516,6 +518,6 @@ SetupIntent copyWith({SetupIntentApplication? Function()? application, bool Func
           singleUseMandate == other.singleUseMandate &&
           status == other.status &&
           usage == other.usage; } 
-@override int get hashCode { return Object.hashAll([application, attachToSelf, automaticPaymentMethods, cancellationReason, clientSecret, created, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(flowDirections ?? const []), id, lastSetupError, latestAttempt, livemode, mandate, metadata, nextAction, object, onBehalfOf, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), singleUseMandate, status, usage]); } 
+@override int get hashCode { return Object.hashAll([application, attachToSelf, automaticPaymentMethods, cancellationReason, clientSecret, created, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes.value ?? const []), Object.hashAll(flowDirections.value ?? const []), id, lastSetupError, latestAttempt, livemode, mandate, metadata, nextAction, object, onBehalfOf, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), singleUseMandate, status, usage]); } 
 @override String toString() { return 'SetupIntent(application: $application, attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, cancellationReason: $cancellationReason, clientSecret: $clientSecret, created: $created, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, flowDirections: $flowDirections, id: $id, lastSetupError: $lastSetupError, latestAttempt: $latestAttempt, livemode: $livemode, mandate: $mandate, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, singleUseMandate: $singleUseMandate, status: $status, usage: $usage)'; } 
  }

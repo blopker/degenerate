@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (tunnelSecret != null) 'tunnel_secret': tunnelSecret?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-CloudflareTunnelCreateACloudflareTunnelRequest copyWith({TunnelConfigSrc Function()? configSrc, TunnelTunnelName? name, TunnelTunnelSecret Function()? tunnelSecret, }) { return CloudflareTunnelCreateACloudflareTunnelRequest(
+CloudflareTunnelCreateACloudflareTunnelRequest copyWith({TunnelConfigSrc? Function()? configSrc, TunnelTunnelName? name, TunnelTunnelSecret? Function()? tunnelSecret, }) { return CloudflareTunnelCreateACloudflareTunnelRequest(
   configSrc: configSrc != null ? configSrc() : this.configSrc,
   name: name ?? this.name,
   tunnelSecret: tunnelSecret != null ? tunnelSecret() : this.tunnelSecret,

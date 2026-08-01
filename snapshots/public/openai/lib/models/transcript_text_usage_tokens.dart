@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-TranscriptTextUsageTokens copyWith({TranscriptTextUsageTokensType? type, int? inputTokens, TranscriptTextUsageTokensInputTokenDetails Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return TranscriptTextUsageTokens(
+TranscriptTextUsageTokens copyWith({TranscriptTextUsageTokensType? type, int? inputTokens, TranscriptTextUsageTokensInputTokenDetails? Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return TranscriptTextUsageTokens(
   type: type ?? this.type,
   inputTokens: inputTokens ?? this.inputTokens,
   inputTokenDetails: inputTokenDetails != null ? inputTokenDetails() : this.inputTokenDetails,

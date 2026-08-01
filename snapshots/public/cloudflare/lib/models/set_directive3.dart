@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operation') &&
       json.containsKey('value') && json['value'] is num; } 
-SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, int? value, }) { return SetDirective3(
+SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, int? value, }) { return SetDirective3(
   cloudflareOnly: cloudflareOnly != null ? cloudflareOnly() : this.cloudflareOnly,
   operation: operation ?? this.operation,
   value: value ?? this.value,

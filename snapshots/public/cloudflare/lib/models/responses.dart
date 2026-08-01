@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (reasoning != null) 'reasoning': reasoning?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-Responses copyWith({ResponsesInput? input, ResponsesReasoning Function()? reasoning, }) { return Responses(
+Responses copyWith({ResponsesInput? input, ResponsesReasoning? Function()? reasoning, }) { return Responses(
   input: input ?? this.input,
   reasoning: reasoning != null ? reasoning() : this.reasoning,
 ); } 

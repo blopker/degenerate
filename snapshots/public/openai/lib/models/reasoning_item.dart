@@ -35,12 +35,12 @@ bool get isUnknown { return !values.contains(this); }
 /// for subsequent turns of a conversation if you are manually
 /// [managing context](/docs/guides/conversation-state).
 /// 
-@immutable final class ReasoningItem {const ReasoningItem({required this.type, required this.id, required this.summary, this.encryptedContent, this.content, this.status, });
+@immutable final class ReasoningItem {const ReasoningItem({required this.type, required this.id, required this.summary, this.encryptedContent = const Omittable.absent(), this.content, this.status, });
 
 factory ReasoningItem.fromJson(Map<String, dynamic> json) { return ReasoningItem(
   type: json['type'] as String,
   id: json['id'] as String,
-  encryptedContent: json['encrypted_content'] as String?,
+  encryptedContent: json.containsKey('encrypted_content') ? Omittable(json['encrypted_content'] as String?) : const Omittable.absent(),
   summary: (json['summary'] as List<dynamic>).map((e) => SummaryTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   content: (json['content'] as List<dynamic>?)?.map((e) => ReasoningTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'] != null ? ReasoningItemStatus.fromJson(json['status'] as String) : null,
@@ -57,7 +57,7 @@ final String id;
 /// The encrypted content of the reasoning item - populated when a response is
 /// generated with `reasoning.encrypted_content` in the `include` parameter.
 /// 
-final String? encryptedContent;
+final Omittable<String?> encryptedContent;
 
 /// Reasoning summary content.
 /// 
@@ -75,7 +75,7 @@ final ReasoningItemStatus? status;
 Map<String, dynamic> toJson() { return {
   'type': type,
   'id': id,
-  'encrypted_content': ?encryptedContent,
+  if (encryptedContent.isPresent) 'encrypted_content': encryptedContent.value,
   'summary': summary.map((e) => e.toJson()).toList(),
   if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.toJson(),
@@ -83,10 +83,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('summary'); } 
-ReasoningItem copyWith({String? type, String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ReasoningItemStatus Function()? status, }) { return ReasoningItem(
+ReasoningItem copyWith({String? type, String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ReasoningItemStatus? Function()? status, }) { return ReasoningItem(
   type: type ?? this.type,
   id: id ?? this.id,
-  encryptedContent: encryptedContent != null ? encryptedContent() : this.encryptedContent,
+  encryptedContent: encryptedContent ?? this.encryptedContent,
   summary: summary ?? this.summary,
   content: content != null ? content() : this.content,
   status: status != null ? status() : this.status,

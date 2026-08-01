@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'redacted_value': redactedValue,
   'value': ?value,
   'created_at': createdAt,
-  'last_used_at': ?lastUsedAt,
+  'last_used_at': lastUsedAt,
   'owner': owner.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] is String &&
@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('last_used_at') && json['last_used_at'] is num &&
       json.containsKey('owner'); } 
-Key copyWith({String? object, String? id, String? name, String? redactedValue, String Function()? value, int? createdAt, int? Function()? lastUsedAt, KeyOwner? owner, }) { return Key(
+Key copyWith({String? object, String? id, String? name, String? redactedValue, String? Function()? value, int? createdAt, int? Function()? lastUsedAt, KeyOwner? owner, }) { return Key(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,

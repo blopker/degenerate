@@ -53,38 +53,38 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputImageContentParamAutoParamType($value)'; } 
  }
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
-@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = InputImageContentParamAutoParamType.inputImage, this.imageUrl, this.fileId, this.detail, });
+@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = InputImageContentParamAutoParamType.inputImage, this.imageUrl = const Omittable.absent(), this.fileId = const Omittable.absent(), this.detail = const Omittable.absent(), });
 
 factory InputImageContentParamAutoParam.fromJson(Map<String, dynamic> json) { return InputImageContentParamAutoParam(
   type: InputImageContentParamAutoParamType.fromJson(json['type'] as String),
-  imageUrl: json['image_url'] as String?,
-  fileId: json['file_id'] as String?,
-  detail: json['detail'] != null ? DetailEnum.fromJson(json['detail'] as String) : null,
+  imageUrl: json.containsKey('image_url') ? Omittable(json['image_url'] as String?) : const Omittable.absent(),
+  fileId: json.containsKey('file_id') ? Omittable(json['file_id'] as String?) : const Omittable.absent(),
+  detail: json.containsKey('detail') ? Omittable(json['detail'] != null ? DetailEnum.fromJson(json['detail'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The type of the input item. Always `input_image`.
 final InputImageContentParamAutoParamType type;
 
 /// The URL of the image to be sent to the model. A fully qualified URL or base64 encoded image in a data URL.
-final String? imageUrl;
+final Omittable<String?> imageUrl;
 
 /// The ID of the file to be sent to the model.
-final String? fileId;
+final Omittable<String?> fileId;
 
-final DetailEnum? detail;
+final Omittable<DetailEnum?> detail;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'image_url': ?imageUrl,
-  'file_id': ?fileId,
-  if (detail != null) 'detail': detail?.toJson(),
+  if (imageUrl.isPresent) 'image_url': imageUrl.value,
+  if (fileId.isPresent) 'file_id': fileId.value,
+  if (detail.isPresent) 'detail': detail.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InputImageContentParamAutoParam copyWith({InputImageContentParamAutoParamType? type, String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return InputImageContentParamAutoParam(
+InputImageContentParamAutoParam copyWith({InputImageContentParamAutoParamType? type, Omittable<String?>? imageUrl, Omittable<String?>? fileId, Omittable<DetailEnum?>? detail, }) { return InputImageContentParamAutoParam(
   type: type ?? this.type,
-  imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
-  fileId: fileId != null ? fileId() : this.fileId,
-  detail: detail != null ? detail() : this.detail,
+  imageUrl: imageUrl ?? this.imageUrl,
+  fileId: fileId ?? this.fileId,
+  detail: detail ?? this.detail,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InputImageContentParamAutoParam &&

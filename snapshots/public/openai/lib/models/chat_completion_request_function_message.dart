@@ -19,7 +19,7 @@ final String name;
 
 Map<String, dynamic> toJson() { return {
   'role': role,
-  'content': ?content,
+  'content': content,
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] is String &&

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('network'); } 
-ZeroTrustNetworksSubnetCreateWarpRequest copyWith({TunnelSubnetComment Function()? comment, TunnelSubnetIsDefaultNetwork Function()? isDefaultNetwork, TunnelSubnetName? name, TunnelSubnetIpNetwork? network, }) { return ZeroTrustNetworksSubnetCreateWarpRequest(
+ZeroTrustNetworksSubnetCreateWarpRequest copyWith({TunnelSubnetComment? Function()? comment, TunnelSubnetIsDefaultNetwork? Function()? isDefaultNetwork, TunnelSubnetName? name, TunnelSubnetIpNetwork? network, }) { return ZeroTrustNetworksSubnetCreateWarpRequest(
   comment: comment != null ? comment() : this.comment,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
   name: name ?? this.name,

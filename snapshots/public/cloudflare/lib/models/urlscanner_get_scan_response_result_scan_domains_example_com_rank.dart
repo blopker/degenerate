@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-UrlscannerGetScanResponseResultScanDomainsExampleComRank copyWith({String? bucket, String? name, int Function()? rank, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComRank(
+UrlscannerGetScanResponseResultScanDomainsExampleComRank copyWith({String? bucket, String? name, int? Function()? rank, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComRank(
   bucket: bucket ?? this.bucket,
   name: name ?? this.name,
   rank: rank != null ? rank() : this.rank,

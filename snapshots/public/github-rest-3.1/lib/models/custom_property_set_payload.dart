@@ -63,15 +63,15 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomPropertySetPayloadValuesEditableBy($value)'; } 
  }
 /// Custom property set payload
-@immutable final class CustomPropertySetPayload {const CustomPropertySetPayload({required this.valueType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
+@immutable final class CustomPropertySetPayload {const CustomPropertySetPayload({required this.valueType, this.$required, this.defaultValue = const Omittable.absent(), this.description = const Omittable.absent(), this.allowedValues = const Omittable.absent(), this.valuesEditableBy = const Omittable.absent(), this.requireExplicitValues, });
 
 factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) { return CustomPropertySetPayload(
   valueType: CustomPropertySetPayloadValueType.fromJson(json['value_type'] as String),
   $required: json['required'] as bool?,
-  defaultValue: json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
-  description: json['description'] as String?,
-  allowedValues: (json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  valuesEditableBy: json['values_editable_by'] != null ? CustomPropertySetPayloadValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,
+  defaultValue: json.containsKey('default_value') ? Omittable(json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  allowedValues: json.containsKey('allowed_values') ? Omittable((json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
+  valuesEditableBy: json.containsKey('values_editable_by') ? Omittable(json['values_editable_by'] != null ? CustomPropertySetPayloadValuesEditableBy.fromJson(json['values_editable_by'] as String) : null) : const Omittable.absent(),
   requireExplicitValues: json['require_explicit_values'] as bool?,
 ); }
 
@@ -82,17 +82,17 @@ final CustomPropertySetPayloadValueType valueType;
 final bool? $required;
 
 /// Default value of the property
-final CustomPropertySetPayloadDefaultValue? defaultValue;
+final Omittable<CustomPropertySetPayloadDefaultValue?> defaultValue;
 
 /// Short description of the property
-final String? description;
+final Omittable<String?> description;
 
 /// An ordered list of the allowed values of the property.
 /// The property can have up to 200 allowed values.
-final List<String>? allowedValues;
+final Omittable<List<String>?> allowedValues;
 
 /// Who can edit the values of the property
-final CustomPropertySetPayloadValuesEditableBy? valuesEditableBy;
+final Omittable<CustomPropertySetPayloadValuesEditableBy?> valuesEditableBy;
 
 /// Whether setting properties values is mandatory
 final bool? requireExplicitValues;
@@ -100,20 +100,20 @@ final bool? requireExplicitValues;
 Map<String, dynamic> toJson() { return {
   'value_type': valueType.toJson(),
   'required': ?$required,
-  if (defaultValue != null) 'default_value': defaultValue?.toJson(),
-  'description': ?description,
-  'allowed_values': ?allowedValues,
-  if (valuesEditableBy != null) 'values_editable_by': valuesEditableBy?.toJson(),
+  if (defaultValue.isPresent) 'default_value': defaultValue.value?.toJson(),
+  if (description.isPresent) 'description': description.value,
+  if (allowedValues.isPresent) 'allowed_values': allowedValues.value,
+  if (valuesEditableBy.isPresent) 'values_editable_by': valuesEditableBy.value?.toJson(),
   'require_explicit_values': ?requireExplicitValues,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value_type'); } 
-CustomPropertySetPayload copyWith({CustomPropertySetPayloadValueType? valueType, bool Function()? $required, CustomPropertySetPayloadDefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, CustomPropertySetPayloadValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
+CustomPropertySetPayload copyWith({CustomPropertySetPayloadValueType? valueType, bool? Function()? $required, Omittable<CustomPropertySetPayloadDefaultValue?>? defaultValue, Omittable<String?>? description, Omittable<List<String>?>? allowedValues, Omittable<CustomPropertySetPayloadValuesEditableBy?>? valuesEditableBy, bool? Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
   valueType: valueType ?? this.valueType,
   $required: $required != null ? $required() : this.$required,
-  defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
-  description: description != null ? description() : this.description,
-  allowedValues: allowedValues != null ? allowedValues() : this.allowedValues,
-  valuesEditableBy: valuesEditableBy != null ? valuesEditableBy() : this.valuesEditableBy,
+  defaultValue: defaultValue ?? this.defaultValue,
+  description: description ?? this.description,
+  allowedValues: allowedValues ?? this.allowedValues,
+  valuesEditableBy: valuesEditableBy ?? this.valuesEditableBy,
   requireExplicitValues: requireExplicitValues != null ? requireExplicitValues() : this.requireExplicitValues,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -122,9 +122,10 @@ CustomPropertySetPayload copyWith({CustomPropertySetPayloadValueType? valueType,
           $required == other.$required &&
           defaultValue == other.defaultValue &&
           description == other.description &&
-          listEquals(allowedValues, other.allowedValues) &&
+          allowedValues.isPresent == other.allowedValues.isPresent &&
+          listEquals(allowedValues.value, other.allowedValues.value) &&
           valuesEditableBy == other.valuesEditableBy &&
           requireExplicitValues == other.requireExplicitValues; } 
-@override int get hashCode { return Object.hash(valueType, $required, defaultValue, description, Object.hashAll(allowedValues ?? const []), valuesEditableBy, requireExplicitValues); } 
+@override int get hashCode { return Object.hash(valueType, $required, defaultValue, description, Object.hashAll(allowedValues.value ?? const []), valuesEditableBy, requireExplicitValues); } 
 @override String toString() { return 'CustomPropertySetPayload(valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)'; } 
  }

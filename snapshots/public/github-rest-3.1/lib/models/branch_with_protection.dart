@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('protected') && json['protected'] is bool &&
       json.containsKey('protection') &&
       json.containsKey('protection_url') && json['protection_url'] is String; } 
-BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectionLinks? links, bool? protected, BranchProtection? protection, Uri? protectionUrl, String Function()? pattern, int Function()? requiredApprovingReviewCount, }) { return BranchWithProtection(
+BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectionLinks? links, bool? protected, BranchProtection? protection, Uri? protectionUrl, String? Function()? pattern, int? Function()? requiredApprovingReviewCount, }) { return BranchWithProtection(
   name: name ?? this.name,
   commit: commit ?? this.commit,
   links: links ?? this.links,

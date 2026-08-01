@@ -26,7 +26,7 @@ final String workflowId;
 Map<String, dynamic> toJson() { return {
   'class_name': className,
   'created_on': createdOn.toIso8601String(),
-  'dag': ?dag,
+  'dag': dag,
   'id': id,
   'modified_on': modifiedOn.toIso8601String(),
   'workflow_id': workflowId,

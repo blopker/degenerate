@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'expected_at', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-NotReceived2 copyWith({NotReceived2AdditionalDocumentation Function()? additionalDocumentation, NotReceived2ExpectedAt Function()? expectedAt, NotReceived2Explanation Function()? explanation, NotReceived2ProductDescription Function()? productDescription, NotReceived2ProductType Function()? productType, }) { return NotReceived2(
+NotReceived2 copyWith({NotReceived2AdditionalDocumentation? Function()? additionalDocumentation, NotReceived2ExpectedAt? Function()? expectedAt, NotReceived2Explanation? Function()? explanation, NotReceived2ProductDescription? Function()? productDescription, NotReceived2ProductType? Function()? productType, }) { return NotReceived2(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   expectedAt: expectedAt != null ? expectedAt() : this.expectedAt,
   explanation: explanation != null ? explanation() : this.explanation,

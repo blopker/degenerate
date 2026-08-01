@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('excludeRules') &&
       json.containsKey('loadRules') &&
       json.containsKey('name') && json['name'] is String; } 
-ZarazZarazConfigBodyTriggersValue copyWith({String Function()? description, List<ZarazZarazConfigBodyTriggersValueExcludeRules>? excludeRules, List<ZarazZarazConfigBodyTriggersValueLoadRules>? loadRules, String? name, ZarazZarazConfigBodyTriggersValueSystem Function()? system, }) { return ZarazZarazConfigBodyTriggersValue(
+ZarazZarazConfigBodyTriggersValue copyWith({String? Function()? description, List<ZarazZarazConfigBodyTriggersValueExcludeRules>? excludeRules, List<ZarazZarazConfigBodyTriggersValueLoadRules>? loadRules, String? name, ZarazZarazConfigBodyTriggersValueSystem? Function()? system, }) { return ZarazZarazConfigBodyTriggersValue(
   description: description != null ? description() : this.description,
   excludeRules: excludeRules ?? this.excludeRules,
   loadRules: loadRules ?? this.loadRules,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'key_tag': ?keyTag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'digest', 'digest_type', 'key_tag'}.contains(key)); } 
-DnsRecordsDsRecordData copyWith({double Function()? algorithm, String Function()? digest, double Function()? digestType, double Function()? keyTag, }) { return DnsRecordsDsRecordData(
+DnsRecordsDsRecordData copyWith({double? Function()? algorithm, String? Function()? digest, double? Function()? digestType, double? Function()? keyTag, }) { return DnsRecordsDsRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   digest: digest != null ? digest() : this.digest,
   digestType: digestType != null ? digestType() : this.digestType,

@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateGatewayRequestWorkersAiBillingMode($value)'; } 
  }
-@immutable final class AigConfigCreateGatewayRequest {const AigConfigCreateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.id, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, this.workersAiBillingMode = AigConfigCreateGatewayRequestWorkersAiBillingMode.postpaid, this.zdr, });
+@immutable final class AigConfigCreateGatewayRequest {const AigConfigCreateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.id, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.workersAiBillingMode = AigConfigCreateGatewayRequestWorkersAiBillingMode.postpaid, this.zdr, });
 
 factory AigConfigCreateGatewayRequest.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayRequest(
   authentication: json['authentication'] as bool?,
@@ -81,10 +81,10 @@ factory AigConfigCreateGatewayRequest.fromJson(Map<String, dynamic> json) { retu
   cacheTtl: json['cache_ttl'] != null ? (json['cache_ttl'] as num).toInt() : null,
   collectLogs: json['collect_logs'] as bool,
   id: json['id'] as String,
-  logManagement: json['log_management'] != null ? (json['log_management'] as num).toInt() : null,
-  logManagementStrategy: json['log_management_strategy'] != null ? AigConfigCreateGatewayRequestLogManagementStrategy.fromJson(json['log_management_strategy'] as String) : null,
+  logManagement: json.containsKey('log_management') ? Omittable(json['log_management'] != null ? (json['log_management'] as num).toInt() : null) : const Omittable.absent(),
+  logManagementStrategy: json.containsKey('log_management_strategy') ? Omittable(json['log_management_strategy'] != null ? AigConfigCreateGatewayRequestLogManagementStrategy.fromJson(json['log_management_strategy'] as String) : null) : const Omittable.absent(),
   logpush: json['logpush'] as bool?,
-  logpushPublicKey: json['logpush_public_key'] as String?,
+  logpushPublicKey: json.containsKey('logpush_public_key') ? Omittable(json['logpush_public_key'] as String?) : const Omittable.absent(),
   rateLimitingInterval: json['rate_limiting_interval'] != null ? (json['rate_limiting_interval'] as num).toInt() : null,
   rateLimitingLimit: json['rate_limiting_limit'] != null ? (json['rate_limiting_limit'] as num).toInt() : null,
   rateLimitingTechnique: AigConfigCreateGatewayRequestRateLimitingTechnique.fromJson(json['rate_limiting_technique'] as String),
@@ -103,13 +103,13 @@ final bool collectLogs;
 /// gateway id
 final String id;
 
-final int? logManagement;
+final Omittable<int?> logManagement;
 
-final AigConfigCreateGatewayRequestLogManagementStrategy? logManagementStrategy;
+final Omittable<AigConfigCreateGatewayRequestLogManagementStrategy?> logManagementStrategy;
 
 final bool? logpush;
 
-final String? logpushPublicKey;
+final Omittable<String?> logpushPublicKey;
 
 final int? rateLimitingInterval;
 
@@ -125,15 +125,15 @@ final bool? zdr;
 Map<String, dynamic> toJson() { return {
   'authentication': ?authentication,
   'cache_invalidate_on_update': cacheInvalidateOnUpdate,
-  'cache_ttl': ?cacheTtl,
+  'cache_ttl': cacheTtl,
   'collect_logs': collectLogs,
   'id': id,
-  'log_management': ?logManagement,
-  if (logManagementStrategy != null) 'log_management_strategy': logManagementStrategy?.toJson(),
+  if (logManagement.isPresent) 'log_management': logManagement.value,
+  if (logManagementStrategy.isPresent) 'log_management_strategy': logManagementStrategy.value?.toJson(),
   'logpush': ?logpush,
-  'logpush_public_key': ?logpushPublicKey,
-  'rate_limiting_interval': ?rateLimitingInterval,
-  'rate_limiting_limit': ?rateLimitingLimit,
+  if (logpushPublicKey.isPresent) 'logpush_public_key': logpushPublicKey.value,
+  'rate_limiting_interval': rateLimitingInterval,
+  'rate_limiting_limit': rateLimitingLimit,
   'rate_limiting_technique': rateLimitingTechnique.toJson(),
   'workers_ai_billing_mode': workersAiBillingMode.toJson(),
   'zdr': ?zdr,
@@ -145,16 +145,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('rate_limiting_interval') && json['rate_limiting_interval'] is num &&
       json.containsKey('rate_limiting_limit') && json['rate_limiting_limit'] is num &&
       json.containsKey('rate_limiting_technique'); } 
-AigConfigCreateGatewayRequest copyWith({bool Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, int? Function()? logManagement, AigConfigCreateGatewayRequestLogManagementStrategy? Function()? logManagementStrategy, bool Function()? logpush, String? Function()? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, AigConfigCreateGatewayRequestRateLimitingTechnique? rateLimitingTechnique, AigConfigCreateGatewayRequestWorkersAiBillingMode Function()? workersAiBillingMode, bool Function()? zdr, }) { return AigConfigCreateGatewayRequest(
+AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, Omittable<int?>? logManagement, Omittable<AigConfigCreateGatewayRequestLogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, AigConfigCreateGatewayRequestRateLimitingTechnique? rateLimitingTechnique, AigConfigCreateGatewayRequestWorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayRequest(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,
   cacheTtl: cacheTtl != null ? cacheTtl() : this.cacheTtl,
   collectLogs: collectLogs ?? this.collectLogs,
   id: id ?? this.id,
-  logManagement: logManagement != null ? logManagement() : this.logManagement,
-  logManagementStrategy: logManagementStrategy != null ? logManagementStrategy() : this.logManagementStrategy,
+  logManagement: logManagement ?? this.logManagement,
+  logManagementStrategy: logManagementStrategy ?? this.logManagementStrategy,
   logpush: logpush != null ? logpush() : this.logpush,
-  logpushPublicKey: logpushPublicKey != null ? logpushPublicKey() : this.logpushPublicKey,
+  logpushPublicKey: logpushPublicKey ?? this.logpushPublicKey,
   rateLimitingInterval: rateLimitingInterval != null ? rateLimitingInterval() : this.rateLimitingInterval,
   rateLimitingLimit: rateLimitingLimit != null ? rateLimitingLimit() : this.rateLimitingLimit,
   rateLimitingTechnique: rateLimitingTechnique ?? this.rateLimitingTechnique,

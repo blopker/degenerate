@@ -34,23 +34,23 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction($value)'; } 
  }
 /// Operation ID to mitigation action mappings
-@immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValue {const SchemaValidationBulkEditPerOperationSettingsRequestValue({this.mitigationAction});
+@immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValue {const SchemaValidationBulkEditPerOperationSettingsRequestValue({this.mitigationAction = const Omittable.absent()});
 
 factory SchemaValidationBulkEditPerOperationSettingsRequestValue.fromJson(Map<String, dynamic> json) { return SchemaValidationBulkEditPerOperationSettingsRequestValue(
-  mitigationAction: json['mitigation_action'] != null ? SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(json['mitigation_action'] as String) : null,
+  mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Mitigation actions are as follows:
 /// * `log` - log request when request does not conform to schema * `block` - deny access to the site when request does not conform to schema * `none` - skip running schema validation * null - clears any existing per-operation setting
 /// 
-final SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction? mitigationAction;
+final Omittable<SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction?> mitigationAction;
 
 Map<String, dynamic> toJson() { return {
-  if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
+  if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-SchemaValidationBulkEditPerOperationSettingsRequestValue copyWith({SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction? Function()? mitigationAction}) { return SchemaValidationBulkEditPerOperationSettingsRequestValue(
-  mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
+SchemaValidationBulkEditPerOperationSettingsRequestValue copyWith({Omittable<SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction?>? mitigationAction}) { return SchemaValidationBulkEditPerOperationSettingsRequestValue(
+  mitigationAction: mitigationAction ?? this.mitigationAction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SchemaValidationBulkEditPerOperationSettingsRequestValue &&

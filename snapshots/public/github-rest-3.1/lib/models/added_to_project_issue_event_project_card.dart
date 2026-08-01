@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('project_id') && json['project_id'] is num &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('column_name') && json['column_name'] is String; } 
-AddedToProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId, Uri? projectUrl, String? columnName, String Function()? previousColumnName, }) { return AddedToProjectIssueEventProjectCard(
+AddedToProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId, Uri? projectUrl, String? columnName, String? Function()? previousColumnName, }) { return AddedToProjectIssueEventProjectCard(
   id: id ?? this.id,
   url: url ?? this.url,
   projectId: projectId ?? this.projectId,

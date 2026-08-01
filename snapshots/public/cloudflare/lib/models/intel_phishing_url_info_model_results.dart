@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'model_score': ?modelScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model_name', 'model_score'}.contains(key)); } 
-IntelPhishingUrlInfoModelResults copyWith({String Function()? modelName, double Function()? modelScore, }) { return IntelPhishingUrlInfoModelResults(
+IntelPhishingUrlInfoModelResults copyWith({String? Function()? modelName, double? Function()? modelScore, }) { return IntelPhishingUrlInfoModelResults(
   modelName: modelName != null ? modelName() : this.modelName,
   modelScore: modelScore != null ? modelScore() : this.modelScore,
 ); } 

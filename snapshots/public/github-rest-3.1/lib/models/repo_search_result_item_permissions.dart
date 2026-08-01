@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin') && json['admin'] is bool &&
       json.containsKey('push') && json['push'] is bool &&
       json.containsKey('pull') && json['pull'] is bool; } 
-RepoSearchResultItemPermissions copyWith({bool? admin, bool Function()? maintain, bool? push, bool Function()? triage, bool? pull, }) { return RepoSearchResultItemPermissions(
+RepoSearchResultItemPermissions copyWith({bool? admin, bool? Function()? maintain, bool? push, bool? Function()? triage, bool? pull, }) { return RepoSearchResultItemPermissions(
   admin: admin ?? this.admin,
   maintain: maintain != null ? maintain() : this.maintain,
   push: push ?? this.push,

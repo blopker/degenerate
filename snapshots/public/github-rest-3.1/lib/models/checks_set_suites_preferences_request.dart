@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (autoTriggerChecks != null) 'auto_trigger_checks': autoTriggerChecks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_trigger_checks'}.contains(key)); } 
-ChecksSetSuitesPreferencesRequest copyWith({List<ChecksSetSuitesPreferencesRequestAutoTriggerChecks> Function()? autoTriggerChecks}) { return ChecksSetSuitesPreferencesRequest(
+ChecksSetSuitesPreferencesRequest copyWith({List<ChecksSetSuitesPreferencesRequestAutoTriggerChecks>? Function()? autoTriggerChecks}) { return ChecksSetSuitesPreferencesRequest(
   autoTriggerChecks: autoTriggerChecks != null ? autoTriggerChecks() : this.autoTriggerChecks,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

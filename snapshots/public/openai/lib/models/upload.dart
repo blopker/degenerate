@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The Upload object can accept byte chunks in the form of Parts.
 /// 
-@immutable final class Upload {const Upload({required this.id, required this.createdAt, required this.filename, required this.bytes, required this.purpose, required this.status, required this.expiresAt, this.object, this.file, });
+@immutable final class Upload {const Upload({required this.id, required this.createdAt, required this.filename, required this.bytes, required this.purpose, required this.status, required this.expiresAt, this.object, this.file = const Omittable.absent(), });
 
 factory Upload.fromJson(Map<String, dynamic> json) { return Upload(
   id: json['id'] as String,
@@ -66,7 +66,7 @@ factory Upload.fromJson(Map<String, dynamic> json) { return Upload(
   status: UploadStatus.fromJson(json['status'] as String),
   expiresAt: (json['expires_at'] as num).toInt(),
   object: json['object'] != null ? UploadObject.fromJson(json['object'] as String) : null,
-  file: json['file'] != null ? OpenAiFile.fromJson(json['file'] as Map<String, dynamic>) : null,
+  file: json.containsKey('file') ? Omittable(json['file'] != null ? OpenAiFile.fromJson(json['file'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The Upload unique identifier, which can be referenced in API endpoints.
@@ -94,7 +94,7 @@ final int expiresAt;
 final UploadObject? object;
 
 /// The ready File object after the Upload is completed.
-final OpenAiFile? file;
+final Omittable<OpenAiFile?> file;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'expires_at': expiresAt,
   if (object != null) 'object': object?.toJson(),
-  if (file != null) 'file': file?.toJson(),
+  if (file.isPresent) 'file': file.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
@@ -114,7 +114,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('purpose') && json['purpose'] is String &&
       json.containsKey('status') &&
       json.containsKey('expires_at') && json['expires_at'] is num; } 
-Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, String? purpose, UploadStatus? status, int? expiresAt, UploadObject Function()? object, OpenAiFile? Function()? file, }) { return Upload(
+Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, String? purpose, UploadStatus? status, int? expiresAt, UploadObject? Function()? object, Omittable<OpenAiFile?>? file, }) { return Upload(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   filename: filename ?? this.filename,
@@ -123,7 +123,7 @@ Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, Strin
   status: status ?? this.status,
   expiresAt: expiresAt ?? this.expiresAt,
   object: object != null ? object() : this.object,
-  file: file != null ? file() : this.file,
+  file: file ?? this.file,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Upload &&

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (ttl != null) 'ttl': ttl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl'}.contains(key)); } 
-DnsRecordsDnsRecordSharedFields copyWith({DnsRecordsComment Function()? comment, DnsRecordsName Function()? name, DnsRecordsProxied Function()? proxied, DnsRecordsSettings Function()? settings, List<String> Function()? tags, DnsRecordsTtl Function()? ttl, }) { return DnsRecordsDnsRecordSharedFields(
+DnsRecordsDnsRecordSharedFields copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, }) { return DnsRecordsDnsRecordSharedFields(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,

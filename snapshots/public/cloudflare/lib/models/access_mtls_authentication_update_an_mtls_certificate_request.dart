@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('associated_hostnames'); } 
-AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest copyWith({List<String>? associatedHostnames, AccessCertificatesComponentsSchemasName Function()? name, }) { return AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
+AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest copyWith({List<String>? associatedHostnames, AccessCertificatesComponentsSchemasName? Function()? name, }) { return AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
   associatedHostnames: associatedHostnames ?? this.associatedHostnames,
   name: name != null ? name() : this.name,
 ); } 

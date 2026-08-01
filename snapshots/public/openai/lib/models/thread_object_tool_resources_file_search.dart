@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'vector_store_ids': ?vectorStoreIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'vector_store_ids'}.contains(key)); } 
-ThreadObjectToolResourcesFileSearch copyWith({List<String> Function()? vectorStoreIds}) { return ThreadObjectToolResourcesFileSearch(
+ThreadObjectToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) { return ThreadObjectToolResourcesFileSearch(
   vectorStoreIds: vectorStoreIds != null ? vectorStoreIds() : this.vectorStoreIds,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

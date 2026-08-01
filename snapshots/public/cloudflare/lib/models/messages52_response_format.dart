@@ -24,24 +24,24 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages52ResponseFormatType($value)'; } 
  }
-@immutable final class Messages52ResponseFormat {const Messages52ResponseFormat({this.jsonSchema, this.type, });
+@immutable final class Messages52ResponseFormat {const Messages52ResponseFormat({this.jsonSchema = const Omittable.absent(), this.type, });
 
 factory Messages52ResponseFormat.fromJson(Map<String, dynamic> json) { return Messages52ResponseFormat(
-  jsonSchema: json['json_schema'],
+  jsonSchema: json.containsKey('json_schema') ? Omittable(json['json_schema']) : const Omittable.absent(),
   type: json['type'] != null ? Messages52ResponseFormatType.fromJson(json['type'] as String) : null,
 ); }
 
-final dynamic jsonSchema;
+final Omittable<dynamic> jsonSchema;
 
 final Messages52ResponseFormatType? type;
 
 Map<String, dynamic> toJson() { return {
-  'json_schema': ?jsonSchema,
+  if (jsonSchema.isPresent) 'json_schema': jsonSchema.value,
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json_schema', 'type'}.contains(key)); } 
-Messages52ResponseFormat copyWith({dynamic Function()? jsonSchema, Messages52ResponseFormatType Function()? type, }) { return Messages52ResponseFormat(
-  jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
+Messages52ResponseFormat copyWith({Omittable<dynamic>? jsonSchema, Messages52ResponseFormatType? Function()? type, }) { return Messages52ResponseFormat(
+  jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'before_id': ?beforeId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sub_issue_id') && json['sub_issue_id'] is num; } 
-IssuesReprioritizeSubIssueRequest copyWith({int? subIssueId, int Function()? afterId, int Function()? beforeId, }) { return IssuesReprioritizeSubIssueRequest(
+IssuesReprioritizeSubIssueRequest copyWith({int? subIssueId, int? Function()? afterId, int? Function()? beforeId, }) { return IssuesReprioritizeSubIssueRequest(
   subIssueId: subIssueId ?? this.subIssueId,
   afterId: afterId != null ? afterId() : this.afterId,
   beforeId: beforeId != null ? beforeId() : this.beforeId,

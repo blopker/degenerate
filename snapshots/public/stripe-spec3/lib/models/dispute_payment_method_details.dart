@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-DisputePaymentMethodDetails copyWith({DisputePaymentMethodDetailsAmazonPay Function()? amazonPay, DisputePaymentMethodDetailsCard Function()? card, DisputePaymentMethodDetailsKlarna Function()? klarna, DisputePaymentMethodDetailsPaypal Function()? paypal, DisputePaymentMethodDetailsType? type, }) { return DisputePaymentMethodDetails(
+DisputePaymentMethodDetails copyWith({DisputePaymentMethodDetailsAmazonPay? Function()? amazonPay, DisputePaymentMethodDetailsCard? Function()? card, DisputePaymentMethodDetailsKlarna? Function()? klarna, DisputePaymentMethodDetailsPaypal? Function()? paypal, DisputePaymentMethodDetailsType? type, }) { return DisputePaymentMethodDetails(
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
   card: card != null ? card() : this.card,
   klarna: klarna != null ? klarna() : this.klarna,

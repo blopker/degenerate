@@ -15,7 +15,7 @@ final String? version;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'version': ?version,
+  'version': version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is String; } 

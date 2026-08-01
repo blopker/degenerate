@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'hls': ?hls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dash', 'hls'}.contains(key)); } 
-StreamPlayback copyWith({String Function()? dash, String Function()? hls, }) { return StreamPlayback(
+StreamPlayback copyWith({String? Function()? dash, String? Function()? hls, }) { return StreamPlayback(
   dash: dash != null ? dash() : this.dash,
   hls: hls != null ? hls() : this.hls,
 ); } 

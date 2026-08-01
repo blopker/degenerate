@@ -22,11 +22,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheRulesCacheReserveClearResponseValueResultId($value)'; } 
  }
-@immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.id, required this.startTs, required this.state, this.modifiedOn, this.endTs, });
+@immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.id, required this.startTs, required this.state, this.modifiedOn = const Omittable.absent(), this.endTs, });
 
 factory CacheRulesCacheReserveClearResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesCacheReserveClearResponseValueResult(
   id: CacheRulesCacheReserveClearResponseValueResultId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   endTs: json['end_ts'] != null ? CacheRulesCacheReserveClearEndTs.fromJson(json['end_ts'] as String) : null,
   startTs: CacheRulesCacheReserveClearStartTs.fromJson(json['start_ts'] as String),
   state: CacheRulesCacheReserveClearState.fromJson(json['state'] as String),
@@ -36,7 +36,7 @@ factory CacheRulesCacheReserveClearResponseValueResult.fromJson(Map<String, dyna
 final CacheRulesCacheReserveClearResponseValueResultId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 /// The time that the latest Cache Reserve Clear operation completed.
 final CacheRulesCacheReserveClearEndTs? endTs;
@@ -47,7 +47,7 @@ final CacheRulesCacheReserveClearState state;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (endTs != null) 'end_ts': endTs?.toJson(),
   'start_ts': startTs.toJson(),
   'state': state.toJson(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('start_ts') &&
       json.containsKey('state'); } 
-CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveClearResponseValueResultId? id, DateTime? Function()? modifiedOn, CacheRulesCacheReserveClearEndTs Function()? endTs, CacheRulesCacheReserveClearStartTs? startTs, CacheRulesCacheReserveClearState? state, }) { return CacheRulesCacheReserveClearResponseValueResult(
+CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveClearResponseValueResultId? id, Omittable<DateTime?>? modifiedOn, CacheRulesCacheReserveClearEndTs? Function()? endTs, CacheRulesCacheReserveClearStartTs? startTs, CacheRulesCacheReserveClearState? state, }) { return CacheRulesCacheReserveClearResponseValueResult(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   endTs: endTs != null ? endTs() : this.endTs,
   startTs: startTs ?? this.startTs,
   state: state ?? this.state,

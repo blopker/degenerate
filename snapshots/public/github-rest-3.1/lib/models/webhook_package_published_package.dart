@@ -43,18 +43,18 @@ final WebhookPackagePublishedPackageRegistry? registry;
 final String? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'created_at': ?createdAt,
-  'description': ?description,
+  'created_at': createdAt,
+  'description': description,
   'ecosystem': ecosystem,
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,
   'namespace': namespace,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner?.toJson(),
   'package_type': packageType,
-  if (packageVersion != null) 'package_version': packageVersion?.toJson(),
-  if (registry != null) 'registry': registry?.toJson(),
-  'updated_at': ?updatedAt,
+  'package_version': packageVersion?.toJson(),
+  'registry': registry?.toJson(),
+  'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&

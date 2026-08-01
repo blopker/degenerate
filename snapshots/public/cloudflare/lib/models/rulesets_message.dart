@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RulesetsMessage copyWith({int Function()? code, String? message, RulesetsMessageSource Function()? source, }) { return RulesetsMessage(
+RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessageSource? Function()? source, }) { return RulesetsMessage(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
   source: source != null ? source() : this.source,

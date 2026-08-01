@@ -180,7 +180,7 @@ Map<String, dynamic> toJson() { return {
   if (subscriptions != null) 'subscriptions': subscriptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'on_demand', 'preferred_locale', 'subscriptions'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna copyWith({String Function()? currency, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand Function()? onDemand, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale Function()? preferredLocale, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions Function()? subscriptions, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
+PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna copyWith({String? Function()? currency, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand? Function()? onDemand, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale? Function()? preferredLocale, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions? Function()? subscriptions, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
   currency: currency != null ? currency() : this.currency,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

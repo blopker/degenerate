@@ -12,7 +12,7 @@ final dynamic status;
 final Map<String,dynamic> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
-  'status': ?status,
+  'status': status,
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 

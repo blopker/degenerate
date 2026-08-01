@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (network != null) 'network': network?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network'}.contains(key)); } 
-PaymentMethodOptionsParam112 copyWith({PaymentMethodOptionsParam112Network Function()? network}) { return PaymentMethodOptionsParam112(
+PaymentMethodOptionsParam112 copyWith({PaymentMethodOptionsParam112Network? Function()? network}) { return PaymentMethodOptionsParam112(
   network: network != null ? network() : this.network,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

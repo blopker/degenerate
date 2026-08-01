@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (volumeClaimTemplate != null) 'volumeClaimTemplate': volumeClaimTemplate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'volumeClaimTemplate'}.contains(key)); } 
-EphemeralVolumeSource copyWith({PersistentVolumeClaimTemplate Function()? volumeClaimTemplate}) { return EphemeralVolumeSource(
+EphemeralVolumeSource copyWith({PersistentVolumeClaimTemplate? Function()? volumeClaimTemplate}) { return EphemeralVolumeSource(
   volumeClaimTemplate: volumeClaimTemplate != null ? volumeClaimTemplate() : this.volumeClaimTemplate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

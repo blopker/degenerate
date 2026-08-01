@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_operation_mitigation_action.dart';@immutable final class ShieldOldOperationSchemaValidationSettingsModifyRequest {const ShieldOldOperationSchemaValidationSettingsModifyRequest({this.mitigationAction});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_operation_mitigation_action.dart';@immutable final class ShieldOldOperationSchemaValidationSettingsModifyRequest {const ShieldOldOperationSchemaValidationSettingsModifyRequest({this.mitigationAction = const Omittable.absent()});
 
 factory ShieldOldOperationSchemaValidationSettingsModifyRequest.fromJson(Map<String, dynamic> json) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
-  mitigationAction: json['mitigation_action'] != null ? ShieldOldOperationMitigationAction.fromJson(json['mitigation_action'] as String) : null,
+  mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldOldOperationMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// When set, this applies a mitigation action to this operation
@@ -13,14 +13,14 @@ factory ShieldOldOperationSchemaValidationSettingsModifyRequest.fromJson(Map<Str
 ///   - `none` will skip mitigation for this operation
 ///   - `null` indicates that no operation level mitigation is in place, see Zone Level Schema Validation Settings for mitigation action that will be applied
 /// 
-final ShieldOldOperationMitigationAction? mitigationAction;
+final Omittable<ShieldOldOperationMitigationAction?> mitigationAction;
 
 Map<String, dynamic> toJson() { return {
-  if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
+  if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({ShieldOldOperationMitigationAction? Function()? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
-  mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
+ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({Omittable<ShieldOldOperationMitigationAction?>? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
+  mitigationAction: mitigationAction ?? this.mitigationAction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldOldOperationSchemaValidationSettingsModifyRequest &&

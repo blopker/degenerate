@@ -379,7 +379,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
-PostCustomersCustomerTaxIdsRequest copyWith({List<String> Function()? expand, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) { return PostCustomersCustomerTaxIdsRequest(
+PostCustomersCustomerTaxIdsRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) { return PostCustomersCustomerTaxIdsRequest(
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,
   value: value ?? this.value,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'MaxSize': ?maxSize,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('FriendlyName') && json['FriendlyName'] is String; } 
-CreateQueueRequest copyWith({String? friendlyName, int Function()? maxSize, }) { return CreateQueueRequest(
+CreateQueueRequest copyWith({String? friendlyName, int? Function()? maxSize, }) { return CreateQueueRequest(
   friendlyName: friendlyName ?? this.friendlyName,
   maxSize: maxSize != null ? maxSize() : this.maxSize,
 ); } 

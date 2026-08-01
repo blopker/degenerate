@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('conditions') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String; } 
-R2LifecycleRule copyWith({R2LifecycleRuleAbortMultipartUploadsTransition Function()? abortMultipartUploadsTransition, R2LifecycleRuleConditions? conditions, R2LifecycleRuleDeleteObjectsTransition Function()? deleteObjectsTransition, bool? enabled, String? id, List<R2LifecycleStorageTransition> Function()? storageClassTransitions, }) { return R2LifecycleRule(
+R2LifecycleRule copyWith({R2LifecycleRuleAbortMultipartUploadsTransition? Function()? abortMultipartUploadsTransition, R2LifecycleRuleConditions? conditions, R2LifecycleRuleDeleteObjectsTransition? Function()? deleteObjectsTransition, bool? enabled, String? id, List<R2LifecycleStorageTransition>? Function()? storageClassTransitions, }) { return R2LifecycleRule(
   abortMultipartUploadsTransition: abortMultipartUploadsTransition != null ? abortMultipartUploadsTransition() : this.abortMultipartUploadsTransition,
   conditions: conditions ?? this.conditions,
   deleteObjectsTransition: deleteObjectsTransition != null ? deleteObjectsTransition() : this.deleteObjectsTransition,

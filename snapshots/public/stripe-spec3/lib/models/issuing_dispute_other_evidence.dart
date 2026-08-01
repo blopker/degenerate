@@ -26,39 +26,39 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeOtherEvidenceProductType($value)'; } 
  }
 /// 
-@immutable final class IssuingDisputeOtherEvidence {const IssuingDisputeOtherEvidence({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
+@immutable final class IssuingDisputeOtherEvidence {const IssuingDisputeOtherEvidence({this.additionalDocumentation = const Omittable.absent(), this.explanation = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.productType = const Omittable.absent(), });
 
 factory IssuingDisputeOtherEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeOtherEvidence(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-  explanation: json['explanation'] as String?,
-  productDescription: json['product_description'] as String?,
-  productType: json['product_type'] != null ? IssuingDisputeOtherEvidenceProductType.fromJson(json['product_type'] as String) : null,
+  additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  explanation: json.containsKey('explanation') ? Omittable(json['explanation'] as String?) : const Omittable.absent(),
+  productDescription: json.containsKey('product_description') ? Omittable(json['product_description'] as String?) : const Omittable.absent(),
+  productType: json.containsKey('product_type') ? Omittable(json['product_type'] != null ? IssuingDisputeOtherEvidenceProductType.fromJson(json['product_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
-final IssuingDisputeOtherEvidenceAdditionalDocumentation? additionalDocumentation;
+final Omittable<IssuingDisputeOtherEvidenceAdditionalDocumentation?> additionalDocumentation;
 
 /// Explanation of why the cardholder is disputing this transaction.
-final String? explanation;
+final Omittable<String?> explanation;
 
 /// Description of the merchandise or service that was purchased.
-final String? productDescription;
+final Omittable<String?> productDescription;
 
 /// Whether the product was a merchandise or service.
-final IssuingDisputeOtherEvidenceProductType? productType;
+final Omittable<IssuingDisputeOtherEvidenceProductType?> productType;
 
 Map<String, dynamic> toJson() { return {
-  if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
-  'explanation': ?explanation,
-  'product_description': ?productDescription,
-  if (productType != null) 'product_type': productType?.toJson(),
+  if (additionalDocumentation.isPresent) 'additional_documentation': additionalDocumentation.value?.toJson(),
+  if (explanation.isPresent) 'explanation': explanation.value,
+  if (productDescription.isPresent) 'product_description': productDescription.value,
+  if (productType.isPresent) 'product_type': productType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-IssuingDisputeOtherEvidence copyWith({IssuingDisputeOtherEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, String? Function()? productDescription, IssuingDisputeOtherEvidenceProductType? Function()? productType, }) { return IssuingDisputeOtherEvidence(
-  additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
-  explanation: explanation != null ? explanation() : this.explanation,
-  productDescription: productDescription != null ? productDescription() : this.productDescription,
-  productType: productType != null ? productType() : this.productType,
+IssuingDisputeOtherEvidence copyWith({Omittable<IssuingDisputeOtherEvidenceAdditionalDocumentation?>? additionalDocumentation, Omittable<String?>? explanation, Omittable<String?>? productDescription, Omittable<IssuingDisputeOtherEvidenceProductType?>? productType, }) { return IssuingDisputeOtherEvidence(
+  additionalDocumentation: additionalDocumentation ?? this.additionalDocumentation,
+  explanation: explanation ?? this.explanation,
+  productDescription: productDescription ?? this.productDescription,
+  productType: productType ?? this.productType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingDisputeOtherEvidence &&

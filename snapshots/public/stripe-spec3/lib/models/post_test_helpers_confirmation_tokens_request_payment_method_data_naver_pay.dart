@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (funding != null) 'funding': funding?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding'}.contains(key)); } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding Function()? funding}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding? Function()? funding}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay(
   funding: funding != null ? funding() : this.funding,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

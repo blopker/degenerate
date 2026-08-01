@@ -121,7 +121,7 @@ final String? originalWork;
 final AbuseReportsPhishingReportOwnerNotification ownerNotification;
 
 Map<String, dynamic> toJson() { return {
-  'act': ?act,
+  'act': act,
   'comments': ?comments,
   'company': ?company,
   'email': email,
@@ -145,7 +145,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('host_notification') &&
       json.containsKey('justification') && json['justification'] is String &&
       json.containsKey('owner_notification'); } 
-AbuseReportsPhishingReport copyWith({dynamic Function()? act, String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, AbuseReportsPhishingReportHostNotification? hostNotification, String? justification, String Function()? originalWork, AbuseReportsPhishingReportOwnerNotification? ownerNotification, }) { return AbuseReportsPhishingReport(
+AbuseReportsPhishingReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsPhishingReportHostNotification? hostNotification, String? justification, String? Function()? originalWork, AbuseReportsPhishingReportOwnerNotification? ownerNotification, }) { return AbuseReportsPhishingReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,

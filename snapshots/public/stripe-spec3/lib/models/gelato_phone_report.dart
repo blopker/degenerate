@@ -26,32 +26,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoPhoneReportStatus($value)'; } 
  }
 /// Result from a phone check
-@immutable final class GelatoPhoneReport {const GelatoPhoneReport({required this.status, this.error, this.phone, });
+@immutable final class GelatoPhoneReport {const GelatoPhoneReport({required this.status, this.error = const Omittable.absent(), this.phone = const Omittable.absent(), });
 
 factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) { return GelatoPhoneReport(
-  error: json['error'] != null ? GelatoPhoneReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
-  phone: json['phone'] as String?,
+  error: json.containsKey('error') ? Omittable(json['error'] != null ? GelatoPhoneReportError.fromJson(json['error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
   status: GelatoPhoneReportStatus.fromJson(json['status'] as String),
 ); }
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoPhoneReportError? error;
+final Omittable<GelatoPhoneReportError?> error;
 
 /// Phone to be verified.
-final String? phone;
+final Omittable<String?> phone;
 
 /// Status of this `phone` check.
 final GelatoPhoneReportStatus status;
 
 Map<String, dynamic> toJson() { return {
-  if (error != null) 'error': error?.toJson(),
-  'phone': ?phone,
+  if (error.isPresent) 'error': error.value?.toJson(),
+  if (phone.isPresent) 'phone': phone.value,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoPhoneReport copyWith({GelatoPhoneReportError? Function()? error, String? Function()? phone, GelatoPhoneReportStatus? status, }) { return GelatoPhoneReport(
-  error: error != null ? error() : this.error,
-  phone: phone != null ? phone() : this.phone,
+GelatoPhoneReport copyWith({Omittable<GelatoPhoneReportError?>? error, Omittable<String?>? phone, GelatoPhoneReportStatus? status, }) { return GelatoPhoneReport(
+  error: error ?? this.error,
+  phone: phone ?? this.phone,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

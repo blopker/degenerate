@@ -81,15 +81,15 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'name': name,
-  'label': ?label,
+  'label': label,
   'state': state.toJson(),
   'content_type': contentType,
   'size': size,
-  'digest': ?digest,
+  'digest': digest,
   'download_count': downloadCount,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (uploader != null) 'uploader': uploader?.toJson(),
+  'uploader': uploader?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('browser_download_url') && json['browser_download_url'] is String &&

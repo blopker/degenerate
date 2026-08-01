@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceAccount != null) 'service_account': serviceAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type', 'user', 'service_account'}.contains(key)); } 
-Key2 copyWith({String Function()? id, Key2Type Function()? type, AuditLogActorUser Function()? user, AuditLogActorServiceAccount Function()? serviceAccount, }) { return Key2(
+Key2 copyWith({String? Function()? id, Key2Type? Function()? type, AuditLogActorUser? Function()? user, AuditLogActorServiceAccount? Function()? serviceAccount, }) { return Key2(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   user: user != null ? user() : this.user,

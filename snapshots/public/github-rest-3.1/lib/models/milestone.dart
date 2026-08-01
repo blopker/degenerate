@@ -91,14 +91,14 @@ Map<String, dynamic> toJson() { return {
   'number': number,
   'state': state.toJson(),
   'title': title,
-  'description': ?description,
-  if (creator != null) 'creator': creator?.toJson(),
+  'description': description,
+  'creator': creator?.toJson(),
   'open_issues': openIssues,
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
-  if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
+  'due_on': dueOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&

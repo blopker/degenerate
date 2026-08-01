@@ -9,7 +9,7 @@ factory WebhookPageBuildBuildError.fromJson(Map<String, dynamic> json) { return 
 final String? message;
 
 Map<String, dynamic> toJson() { return {
-  'message': ?message,
+  'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
 WebhookPageBuildBuildError copyWith({String? Function()? message}) { return WebhookPageBuildBuildError(

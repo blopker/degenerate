@@ -32,7 +32,7 @@ final Uri url;
 Map<String, dynamic> toJson() { return {
   'color': color,
   'default': $default,
-  'description': ?description,
+  'description': description,
   'id': id,
   'name': name,
   'node_id': nodeId,

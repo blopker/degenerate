@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('number') && json['number'] is String; } 
-CustomerPaymentSourceCard copyWith({String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? cvc, int? expMonth, int? expYear, Map<String, String> Function()? metadata, String Function()? name, String? number, CustomerPaymentSourceCardObject Function()? object, }) { return CustomerPaymentSourceCard(
+CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? cvc, int? expMonth, int? expYear, Map<String, String>? Function()? metadata, String? Function()? name, String? number, CustomerPaymentSourceCardObject? Function()? object, }) { return CustomerPaymentSourceCard(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,

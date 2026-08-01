@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('status') && json['status'] is String; } 
-ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int Function()? lastActiveAt, ContainerResourceExpiresAfter Function()? expiresAfter, ContainerResourceMemoryLimit Function()? memoryLimit, ContainerResourceNetworkPolicy Function()? networkPolicy, }) { return ContainerResource(
+ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int? Function()? lastActiveAt, ContainerResourceExpiresAfter? Function()? expiresAfter, ContainerResourceMemoryLimit? Function()? memoryLimit, ContainerResourceNetworkPolicy? Function()? networkPolicy, }) { return ContainerResource(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,

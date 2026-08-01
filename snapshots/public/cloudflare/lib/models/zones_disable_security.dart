@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ZonesDisableSecurity copyWith({ZonesDisableSecurityId Function()? id}) { return ZonesDisableSecurity(
+ZonesDisableSecurity copyWith({ZonesDisableSecurityId? Function()? id}) { return ZonesDisableSecurity(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

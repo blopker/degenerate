@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'url': url,
   'name': name,
-  'description': ?description,
+  'description': description,
   'color': color,
   'default': $default,
 }; } 

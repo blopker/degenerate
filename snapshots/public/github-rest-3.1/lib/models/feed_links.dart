@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timeline') &&
       json.containsKey('user'); } 
-FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType Function()? securityAdvisories, LinkWithType Function()? currentUser, LinkWithType Function()? currentUserPublic, LinkWithType Function()? currentUserActor, LinkWithType Function()? currentUserOrganization, List<LinkWithType> Function()? currentUserOrganizations, LinkWithType Function()? repositoryDiscussions, LinkWithType Function()? repositoryDiscussionsCategory, }) { return FeedLinks(
+FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Function()? securityAdvisories, LinkWithType? Function()? currentUser, LinkWithType? Function()? currentUserPublic, LinkWithType? Function()? currentUserActor, LinkWithType? Function()? currentUserOrganization, List<LinkWithType>? Function()? currentUserOrganizations, LinkWithType? Function()? repositoryDiscussions, LinkWithType? Function()? repositoryDiscussionsCategory, }) { return FeedLinks(
   timeline: timeline ?? this.timeline,
   user: user ?? this.user,
   securityAdvisories: securityAdvisories != null ? securityAdvisories() : this.securityAdvisories,

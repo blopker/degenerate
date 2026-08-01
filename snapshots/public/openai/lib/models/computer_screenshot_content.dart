@@ -46,8 +46,8 @@ final ImageDetail detail;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'image_url': ?imageUrl,
-  'file_id': ?fileId,
+  'image_url': imageUrl,
+  'file_id': fileId,
   'detail': detail.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&

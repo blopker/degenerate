@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-DnsRecordsForAZoneDeleteDnsRecordResponse4XxResult copyWith({DnsRecordsIdentifier Function()? id}) { return DnsRecordsForAZoneDeleteDnsRecordResponse4XxResult(
+DnsRecordsForAZoneDeleteDnsRecordResponse4XxResult copyWith({DnsRecordsIdentifier? Function()? id}) { return DnsRecordsForAZoneDeleteDnsRecordResponse4XxResult(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

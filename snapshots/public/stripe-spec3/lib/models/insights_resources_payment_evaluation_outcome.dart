@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InsightsResourcesPaymentEvaluationOutcome copyWith({InsightsResourcesPaymentEvaluationMerchantBlocked Function()? merchantBlocked, String Function()? paymentIntentId, InsightsResourcesPaymentEvaluationRejected Function()? rejected, InsightsResourcesPaymentEvaluationSucceeded Function()? succeeded, InsightsResourcesPaymentEvaluationOutcomeType? type, }) { return InsightsResourcesPaymentEvaluationOutcome(
+InsightsResourcesPaymentEvaluationOutcome copyWith({InsightsResourcesPaymentEvaluationMerchantBlocked? Function()? merchantBlocked, String? Function()? paymentIntentId, InsightsResourcesPaymentEvaluationRejected? Function()? rejected, InsightsResourcesPaymentEvaluationSucceeded? Function()? succeeded, InsightsResourcesPaymentEvaluationOutcomeType? type, }) { return InsightsResourcesPaymentEvaluationOutcome(
   merchantBlocked: merchantBlocked != null ? merchantBlocked() : this.merchantBlocked,
   paymentIntentId: paymentIntentId != null ? paymentIntentId() : this.paymentIntentId,
   rejected: rejected != null ? rejected() : this.rejected,

@@ -87,8 +87,8 @@ Map<String, dynamic> toJson() { return {
   'token_id': tokenId,
   'token_name': tokenName,
   'token_expired': tokenExpired,
-  'token_expires_at': ?tokenExpiresAt,
-  'token_last_used_at': ?tokenLastUsedAt,
+  'token_expires_at': tokenExpiresAt,
+  'token_last_used_at': tokenLastUsedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&

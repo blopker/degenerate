@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'max_cache_size_gb': ?maxCacheSizeGb,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_cache_size_gb'}.contains(key)); } 
-ActionsCacheStorageLimitForRepository copyWith({int Function()? maxCacheSizeGb}) { return ActionsCacheStorageLimitForRepository(
+ActionsCacheStorageLimitForRepository copyWith({int? Function()? maxCacheSizeGb}) { return ActionsCacheStorageLimitForRepository(
   maxCacheSizeGb: maxCacheSizeGb != null ? maxCacheSizeGb() : this.maxCacheSizeGb,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

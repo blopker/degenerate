@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   if (timings != null) 'timings': timings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'changed_db', 'changes', 'duration', 'last_row_id', 'rows_read', 'rows_written', 'served_by_colo', 'served_by_primary', 'served_by_region', 'size_after', 'timings'}.contains(key)); } 
-D1QueryMeta copyWith({bool Function()? changedDb, double Function()? changes, double Function()? duration, double Function()? lastRowId, double Function()? rowsRead, double Function()? rowsWritten, D1ServedByColo Function()? servedByColo, bool Function()? servedByPrimary, D1ServedByRegion Function()? servedByRegion, double Function()? sizeAfter, D1QueryMetaTimings Function()? timings, }) { return D1QueryMeta(
+D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, double? Function()? duration, double? Function()? lastRowId, double? Function()? rowsRead, double? Function()? rowsWritten, D1ServedByColo? Function()? servedByColo, bool? Function()? servedByPrimary, D1ServedByRegion? Function()? servedByRegion, double? Function()? sizeAfter, D1QueryMetaTimings? Function()? timings, }) { return D1QueryMeta(
   changedDb: changedDb != null ? changedDb() : this.changedDb,
   changes: changes != null ? changes() : this.changes,
   duration: duration != null ? duration() : this.duration,

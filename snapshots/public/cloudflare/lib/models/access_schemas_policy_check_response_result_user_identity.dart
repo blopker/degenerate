@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'version': ?version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'device_sessions', 'email', 'geo', 'iat', 'id', 'is_gateway', 'is_warp', 'name', 'user_uuid', 'version'}.contains(key)); } 
-AccessSchemasPolicyCheckResponseResultUserIdentity copyWith({String Function()? accountId, Map<String, dynamic> Function()? deviceSessions, String Function()? email, AccessSchemasPolicyCheckResponseResultUserIdentityGeo Function()? geo, int Function()? iat, String Function()? id, bool Function()? isGateway, bool Function()? isWarp, String Function()? name, AccessUuid Function()? userUuid, int Function()? version, }) { return AccessSchemasPolicyCheckResponseResultUserIdentity(
+AccessSchemasPolicyCheckResponseResultUserIdentity copyWith({String? Function()? accountId, Map<String, dynamic>? Function()? deviceSessions, String? Function()? email, AccessSchemasPolicyCheckResponseResultUserIdentityGeo? Function()? geo, int? Function()? iat, String? Function()? id, bool? Function()? isGateway, bool? Function()? isWarp, String? Function()? name, AccessUuid? Function()? userUuid, int? Function()? version, }) { return AccessSchemasPolicyCheckResponseResultUserIdentity(
   accountId: accountId != null ? accountId() : this.accountId,
   deviceSessions: deviceSessions != null ? deviceSessions() : this.deviceSessions,
   email: email != null ? email() : this.email,

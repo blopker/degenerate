@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'client_payload': ?clientPayload,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_type') && json['event_type'] is String; } 
-ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, dynamic> Function()? clientPayload, }) { return ReposCreateDispatchEventRequest(
+ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, dynamic>? Function()? clientPayload, }) { return ReposCreateDispatchEventRequest(
   eventType: eventType ?? this.eventType,
   clientPayload: clientPayload != null ? clientPayload() : this.clientPayload,
 ); } 

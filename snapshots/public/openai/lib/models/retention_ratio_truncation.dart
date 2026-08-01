@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('retention_ratio') && json['retention_ratio'] is num; } 
-RetentionRatioTruncation copyWith({RetentionRatioTruncationType? type, double? retentionRatio, RetentionRatioTruncationTokenLimits Function()? tokenLimits, }) { return RetentionRatioTruncation(
+RetentionRatioTruncation copyWith({RetentionRatioTruncationType? type, double? retentionRatio, RetentionRatioTruncationTokenLimits? Function()? tokenLimits, }) { return RetentionRatioTruncation(
   type: type ?? this.type,
   retentionRatio: retentionRatio ?? this.retentionRatio,
   tokenLimits: tokenLimits != null ? tokenLimits() : this.tokenLimits,

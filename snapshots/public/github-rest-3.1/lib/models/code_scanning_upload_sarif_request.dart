@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_sha') &&
       json.containsKey('ref') &&
       json.containsKey('sarif'); } 
-CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSha, CodeScanningRefFull? ref, CodeScanningAnalysisSarifFile? sarif, Uri Function()? checkoutUri, DateTime Function()? startedAt, String Function()? toolName, bool Function()? validate, }) { return CodeScanningUploadSarifRequest(
+CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSha, CodeScanningRefFull? ref, CodeScanningAnalysisSarifFile? sarif, Uri? Function()? checkoutUri, DateTime? Function()? startedAt, String? Function()? toolName, bool? Function()? validate, }) { return CodeScanningUploadSarifRequest(
   commitSha: commitSha ?? this.commitSha,
   ref: ref ?? this.ref,
   sarif: sarif ?? this.sarif,

@@ -25,11 +25,11 @@ bool get isUnknown { return !values.contains(this); }
 /// Source mandate notifications should be created when a notification related to
 /// a source mandate must be sent to the payer. They will trigger a webhook or
 /// deliver an email to the customer.
-@immutable final class SourceMandateNotification {const SourceMandateNotification({required this.created, required this.id, required this.livemode, required this.object, required this.reason, required this.source, required this.status, required this.type, this.acssDebit, this.amount, this.bacsDebit, this.sepaDebit, });
+@immutable final class SourceMandateNotification {const SourceMandateNotification({required this.created, required this.id, required this.livemode, required this.object, required this.reason, required this.source, required this.status, required this.type, this.acssDebit, this.amount = const Omittable.absent(), this.bacsDebit, this.sepaDebit, });
 
 factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return SourceMandateNotification(
   acssDebit: json['acss_debit'] != null ? SourceMandateNotificationAcssDebitData.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
-  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   bacsDebit: json['bacs_debit'] != null ? SourceMandateNotificationBacsDebitData.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
@@ -45,7 +45,7 @@ factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return S
 final SourceMandateNotificationAcssDebitData? acssDebit;
 
 /// A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the amount associated with the mandate notification. The amount is expressed in the currency of the underlying source. Required if the notification type is `debit_initiated`.
-final int? amount;
+final Omittable<int?> amount;
 
 final SourceMandateNotificationBacsDebitData? bacsDebit;
 
@@ -76,7 +76,7 @@ final String type;
 
 Map<String, dynamic> toJson() { return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
-  'amount': ?amount,
+  if (amount.isPresent) 'amount': amount.value,
   if (bacsDebit != null) 'bacs_debit': bacsDebit?.toJson(),
   'created': created,
   'id': id,
@@ -96,9 +96,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('source') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData Function()? acssDebit, int? Function()? amount, SourceMandateNotificationBacsDebitData Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
+SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, Omittable<int?>? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
-  amount: amount != null ? amount() : this.amount,
+  amount: amount ?? this.amount,
   bacsDebit: bacsDebit != null ? bacsDebit() : this.bacsDebit,
   created: created ?? this.created,
   id: id ?? this.id,
