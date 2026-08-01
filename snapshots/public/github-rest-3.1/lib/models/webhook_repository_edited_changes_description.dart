@@ -11,7 +11,7 @@ final String? from;
 Map<String, dynamic> toJson() { return {
   'from': from,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && (json['from'] == null || json['from'] is String); } 
 WebhookRepositoryEditedChangesDescription copyWith({String? Function()? from}) { return WebhookRepositoryEditedChangesDescription(
   from: from != null ? from() : this.from,
 ); } 

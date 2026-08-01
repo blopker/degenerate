@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'patch': ?patch,
   'previous_filename': ?previousFilename,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && (json['sha'] == null || json['sha'] is String) &&
       json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('status') &&
       json.containsKey('additions') && json['additions'] is num &&

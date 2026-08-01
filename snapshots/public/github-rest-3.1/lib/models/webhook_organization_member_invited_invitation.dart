@@ -57,13 +57,13 @@ Map<String, dynamic> toJson() { return {
   'invitation_source': ?invitationSource,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('email') && json['email'] is String &&
-      json.containsKey('failed_at') && json['failed_at'] is String &&
-      json.containsKey('failed_reason') && json['failed_reason'] is String &&
+      json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
+      json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is String) &&
+      json.containsKey('failed_reason') && (json['failed_reason'] == null || json['failed_reason'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('invitation_teams_url') && json['invitation_teams_url'] is String &&
       json.containsKey('inviter') &&
-      json.containsKey('login') && json['login'] is String &&
+      json.containsKey('login') && (json['login'] == null || json['login'] is String) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('role') && json['role'] is String &&
       json.containsKey('team_count') && json['team_count'] is num; } 

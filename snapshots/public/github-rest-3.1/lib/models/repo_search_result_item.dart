@@ -407,17 +407,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('pushed_at') && json['pushed_at'] is String &&
-      json.containsKey('homepage') && json['homepage'] is String &&
+      json.containsKey('homepage') && (json['homepage'] == null || json['homepage'] is String) &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('stargazers_count') && json['stargazers_count'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num &&
-      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('language') && (json['language'] == null || json['language'] is String) &&
       json.containsKey('forks_count') && json['forks_count'] is num &&
       json.containsKey('open_issues_count') && json['open_issues_count'] is num &&
       json.containsKey('default_branch') && json['default_branch'] is String &&
@@ -465,7 +465,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('forks') && json['forks'] is num &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('watchers') && json['watchers'] is num &&
-      json.containsKey('mirror_url') && json['mirror_url'] is String &&
+      json.containsKey('mirror_url') && (json['mirror_url'] == null || json['mirror_url'] is String) &&
       json.containsKey('has_issues') && json['has_issues'] is bool &&
       json.containsKey('has_projects') && json['has_projects'] is bool &&
       json.containsKey('has_pages') && json['has_pages'] is bool &&

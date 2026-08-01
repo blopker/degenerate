@@ -119,14 +119,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('owner') &&
       json.containsKey('creator') &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('public') && json['public'] is bool &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('number') && json['number'] is num &&
-      json.containsKey('short_description') && json['short_description'] is String &&
-      json.containsKey('deleted_at') && json['deleted_at'] is String &&
+      json.containsKey('short_description') && (json['short_description'] == null || json['short_description'] is String) &&
+      json.containsKey('deleted_at') && (json['deleted_at'] == null || json['deleted_at'] is String) &&
       json.containsKey('deleted_by'); } 
 Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, ProjectsState? Function()? state, Omittable<StatusUpdate?>? latestStatusUpdate, bool? Function()? isTemplate, }) { return Projects(
   id: id ?? this.id,

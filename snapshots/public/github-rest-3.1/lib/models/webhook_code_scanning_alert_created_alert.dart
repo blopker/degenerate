@@ -112,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   if (dismissalApprovedBy.isPresent) 'dismissal_approved_by': dismissalApprovedBy.value,
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('dismissed_at') &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&

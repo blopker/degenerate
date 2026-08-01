@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
   'withdrawn_at': withdrawnAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
-      json.containsKey('cve_id') && json['cve_id'] is String &&
+      json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('vulnerabilities') &&
@@ -124,7 +124,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('references') &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
 DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,

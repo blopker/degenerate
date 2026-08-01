@@ -17,7 +17,7 @@ ImageFile copyWith({Uint8List? Function()? image}) { return ImageFile(
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ImageFile &&
-          image == other.image; } 
-@override int get hashCode { return image.hashCode; } 
+          listEquals(image, other.image); } 
+@override int get hashCode { return Object.hashAll(image ?? const []).hashCode; } 
 @override String toString() { return 'ImageFile(image: $image)'; } 
  }

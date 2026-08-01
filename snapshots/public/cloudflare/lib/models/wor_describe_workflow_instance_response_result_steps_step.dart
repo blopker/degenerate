@@ -62,11 +62,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('attempts') &&
       json.containsKey('config') &&
-      json.containsKey('end') && json['end'] is String &&
+      json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('output') &&
       json.containsKey('start') && json['start'] is String &&
-      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
       json.containsKey('type'); } 
 WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWorkflowInstanceResponseResultStepsStepAttempts>? attempts, WorDescribeWorkflowInstanceResponseResultStepsStepConfig? config, DateTime? Function()? end, String? name, Map<String,dynamic>? output, DateTime? start, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultStepsStepType? type, }) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
   attempts: attempts ?? this.attempts,

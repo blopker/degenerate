@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('param') && json['param'] is String; } 
+      json.containsKey('param') && (json['param'] == null || json['param'] is String); } 
 FineTuningJobError copyWith({String? code, String? message, String? Function()? param, }) { return FineTuningJobError(
   code: code ?? this.code,
   message: message ?? this.message,

@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('call_id') && json['call_id'] is String &&
+      json.containsKey('call_id') && (json['call_id'] == null || json['call_id'] is String) &&
       json.containsKey('execution') &&
       json.containsKey('tools') &&
       json.containsKey('status'); } 

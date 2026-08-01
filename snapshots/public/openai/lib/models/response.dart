@@ -348,8 +348,8 @@ Map<String, dynamic> toJson() { return {
   if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
-      json.containsKey('temperature') && json['temperature'] is num &&
-      json.containsKey('top_p') && json['top_p'] is num &&
+      json.containsKey('temperature') && (json['temperature'] == null || json['temperature'] is num) &&
+      json.containsKey('top_p') && (json['top_p'] == null || json['top_p'] is num) &&
       json.containsKey('model') &&
       json.containsKey('tools') &&
       json.containsKey('tool_choice') &&

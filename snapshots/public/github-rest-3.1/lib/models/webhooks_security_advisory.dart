@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss'
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('vulnerabilities') &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
 WebhooksSecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, List<WebhooksSecurityAdvisoryCwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<WebhooksSecurityAdvisoryReferences>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? Function()? withdrawnAt, }) { return WebhooksSecurityAdvisory(
   cvss: cvss ?? this.cvss,
   cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,

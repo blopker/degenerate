@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (completedAt.isPresent) 'completed_at': completedAt.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
-      json.containsKey('conclusion') && json['conclusion'] is String &&
+      json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('number') && json['number'] is num; } 
 JobSteps copyWith({JobStepsStatus? status, String? Function()? conclusion, String? name, int? number, Omittable<DateTime?>? startedAt, Omittable<DateTime?>? completedAt, }) { return JobSteps(

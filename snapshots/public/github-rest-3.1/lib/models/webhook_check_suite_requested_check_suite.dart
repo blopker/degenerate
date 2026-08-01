@@ -167,13 +167,13 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && json['after'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && (json['after'] == null || json['after'] is String) &&
       json.containsKey('app') &&
-      json.containsKey('before') && json['before'] is String &&
+      json.containsKey('before') && (json['before'] == null || json['before'] is String) &&
       json.containsKey('check_runs_url') && json['check_runs_url'] is String &&
       json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_commit') &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('id') && json['id'] is num &&

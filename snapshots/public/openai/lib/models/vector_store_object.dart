@@ -124,7 +124,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('usage_bytes') && json['usage_bytes'] is num &&
       json.containsKey('file_counts') &&
       json.containsKey('status') &&
-      json.containsKey('last_active_at') && json['last_active_at'] is num &&
+      json.containsKey('last_active_at') && (json['last_active_at'] == null || json['last_active_at'] is num) &&
       json.containsKey('metadata'); } 
 VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, VectorStoreObjectFileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter? Function()? expiresAfter, Omittable<int?>? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) { return VectorStoreObject(
   id: id ?? this.id,

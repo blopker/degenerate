@@ -60,8 +60,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('avatar_url') && json['avatar_url'] is String; } 
 EnterpriseWebhooks copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Uri?>? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) { return EnterpriseWebhooks(
   description: description ?? this.description,

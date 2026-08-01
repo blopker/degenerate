@@ -211,12 +211,12 @@ Map<String, dynamic> toJson() { return {
   if (subjectType != null) 'subject_type': subjectType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
-      json.containsKey('pull_request_review_id') && json['pull_request_review_id'] is num &&
+      json.containsKey('pull_request_review_id') && (json['pull_request_review_id'] == null || json['pull_request_review_id'] is num) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('diff_hunk') && json['diff_hunk'] is String &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('position') && json['position'] is num &&
+      json.containsKey('position') && (json['position'] == null || json['position'] is num) &&
       json.containsKey('original_position') && json['original_position'] is num &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('original_commit_id') && json['original_commit_id'] is String &&

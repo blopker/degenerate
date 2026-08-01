@@ -41,12 +41,12 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('type') && json['type'] is String &&
+      json.containsKey('type') && (json['type'] == null || json['type'] is String) &&
       json.containsKey('actor') &&
       json.containsKey('repo') &&
       json.containsKey('payload') &&
       json.containsKey('public') && json['public'] is bool &&
-      json.containsKey('created_at') && json['created_at'] is String; } 
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String); } 
 Event copyWith({String? id, String? Function()? type, Actor? actor, EventRepo? repo, Actor? Function()? org, EventPayload? payload, bool? public, DateTime? Function()? createdAt, }) { return Event(
   id: id ?? this.id,
   type: type != null ? type() : this.type,

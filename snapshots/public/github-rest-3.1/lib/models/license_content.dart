@@ -65,9 +65,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('git_url') && json['git_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('content') && json['content'] is String &&
       json.containsKey('encoding') && json['encoding'] is String &&

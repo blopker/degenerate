@@ -403,7 +403,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_url') && json['archive_url'] is String &&

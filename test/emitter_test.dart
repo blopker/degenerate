@@ -236,6 +236,20 @@ void main() {
         expect(source, isNot(contains('if (ts != null)')));
       });
 
+      test('canParse accepts explicit null for nullable required fields', () {
+        expect(
+          source,
+          contains(
+            "json.containsKey('gravatar_id') && "
+            "(json['gravatar_id'] == null || json['gravatar_id'] is String)",
+          ),
+        );
+        expect(
+          source,
+          contains("(json['ts'] == null || json['ts'] is String)"),
+        );
+      });
+
       test('is valid Dart', () {
         expect(() => _formatOrFail(source), returnsNormally);
       });
@@ -4450,6 +4464,51 @@ void main() {
       test('is valid Dart', () {
         expect(() => _formatOrFail(source), returnsNormally);
       });
+    });
+  });
+
+  group('ModelEmitter - bytes value equality', () {
+    late String source;
+
+    setUpAll(() {
+      const model = IrObject(
+        'Blob',
+        [
+          IrField(
+            'image',
+            SpecString('image'),
+            IrPrimitive(PrimitiveKind.bytes),
+            isRequired: true,
+          ),
+          IrField(
+            'thumb',
+            SpecString('thumb'),
+            IrPrimitive(PrimitiveKind.bytes, isNullable: true),
+          ),
+        ],
+        requiredFields: ['image'],
+      );
+      final specs = const ModelEmitter(model).emit();
+      source = emitRaw(Library((b) => b..body.addAll(specs)));
+    });
+
+    test('bytes compared by content, not identity', () {
+      expect(source, contains('listEquals(image, other.image)'));
+      expect(source, isNot(contains('image == other.image')));
+    });
+
+    test('wrapped bytes compared through presence and content', () {
+      expect(source, contains('thumb.isPresent == other.thumb.isPresent'));
+      expect(source, contains('listEquals(thumb.value, other.thumb.value)'));
+    });
+
+    test('hashCode hashes content', () {
+      expect(source, contains('Object.hashAll(image)'));
+      expect(source, contains('Object.hashAll(thumb.value ?? const [])'));
+    });
+
+    test('is valid Dart', () {
+      expect(() => _formatOrFail(source), returnsNormally);
     });
   });
 

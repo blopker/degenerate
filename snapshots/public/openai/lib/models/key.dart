@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('redacted_value') && json['redacted_value'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('last_used_at') && json['last_used_at'] is num &&
+      json.containsKey('last_used_at') && (json['last_used_at'] == null || json['last_used_at'] is num) &&
       json.containsKey('owner'); } 
 Key copyWith({String? object, String? id, String? name, String? redactedValue, String? Function()? value, int? createdAt, int? Function()? lastUsedAt, KeyOwner? owner, }) { return Key(
   object: object ?? this.object,

@@ -204,21 +204,21 @@ Map<String, dynamic> toJson() { return {
   'private_fork': privateFork?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
-      json.containsKey('cve_id') && json['cve_id'] is String &&
+      json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('summary') && json['summary'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('severity') &&
       json.containsKey('author') &&
       json.containsKey('publisher') &&
       json.containsKey('identifiers') &&
       json.containsKey('state') &&
-      json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('published_at') && json['published_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String &&
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
+      json.containsKey('published_at') && (json['published_at'] == null || json['published_at'] is String) &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String) &&
       json.containsKey('submission') &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('cvss') &&

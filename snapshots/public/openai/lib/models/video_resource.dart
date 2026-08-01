@@ -131,12 +131,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('progress') && json['progress'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('completed_at') && json['completed_at'] is num &&
-      json.containsKey('expires_at') && json['expires_at'] is num &&
-      json.containsKey('prompt') && json['prompt'] is String &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is num) &&
+      json.containsKey('prompt') && (json['prompt'] == null || json['prompt'] is String) &&
       json.containsKey('size') &&
       json.containsKey('seconds') && json['seconds'] is String &&
-      json.containsKey('remixed_from_video_id') && json['remixed_from_video_id'] is String &&
+      json.containsKey('remixed_from_video_id') && (json['remixed_from_video_id'] == null || json['remixed_from_video_id'] is String) &&
       json.containsKey('error'); } 
 VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? model, VideoStatus? status, int? progress, int? createdAt, int? Function()? completedAt, int? Function()? expiresAt, String? Function()? prompt, VideoSize? size, String? seconds, String? Function()? remixedFromVideoId, Error2? Function()? error, }) { return VideoResource(
   id: id ?? this.id,

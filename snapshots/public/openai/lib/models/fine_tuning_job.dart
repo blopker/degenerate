@@ -164,17 +164,17 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('error') &&
-      json.containsKey('fine_tuned_model') && json['fine_tuned_model'] is String &&
-      json.containsKey('finished_at') && json['finished_at'] is num &&
+      json.containsKey('fine_tuned_model') && (json['fine_tuned_model'] == null || json['fine_tuned_model'] is String) &&
+      json.containsKey('finished_at') && (json['finished_at'] == null || json['finished_at'] is num) &&
       json.containsKey('hyperparameters') &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object') &&
       json.containsKey('organization_id') && json['organization_id'] is String &&
       json.containsKey('result_files') &&
       json.containsKey('status') &&
-      json.containsKey('trained_tokens') && json['trained_tokens'] is num &&
+      json.containsKey('trained_tokens') && (json['trained_tokens'] == null || json['trained_tokens'] is num) &&
       json.containsKey('training_file') && json['training_file'] is String &&
-      json.containsKey('validation_file') && json['validation_file'] is String &&
+      json.containsKey('validation_file') && (json['validation_file'] == null || json['validation_file'] is String) &&
       json.containsKey('seed') && json['seed'] is num; } 
 FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, Omittable<List<FineTuningIntegration>?>? integrations, int? seed, Omittable<int?>? estimatedFinish, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) { return FineTuningJob(
   id: id ?? this.id,

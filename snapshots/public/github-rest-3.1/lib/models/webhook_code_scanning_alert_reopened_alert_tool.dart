@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'version': version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
+      json.containsKey('version') && (json['version'] == null || json['version'] is String); } 
 WebhookCodeScanningAlertReopenedAlertTool copyWith({Omittable<String?>? guid, String? name, String? Function()? version, }) { return WebhookCodeScanningAlertReopenedAlertTool(
   guid: guid ?? this.guid,
   name: name ?? this.name,

@@ -79,8 +79,8 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   if (contentParts.isPresent) 'content_parts': contentParts.value?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
-      json.containsKey('refusal') && json['refusal'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
+      json.containsKey('refusal') && (json['refusal'] == null || json['refusal'] is String) &&
       json.containsKey('role') &&
       json.containsKey('id') && json['id'] is String; } 
 ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionMessageListDataAnnotations>? Function()? annotations, ChatCompletionMessageListDataRole? role, ChatCompletionMessageListDataFunctionCall? Function()? functionCall, Omittable<ChatCompletionMessageListDataAudio?>? audio, String? id, Omittable<List<ChatCompletionMessageListDataContentParts2>?>? contentParts, }) { return ChatCompletionMessageListData(

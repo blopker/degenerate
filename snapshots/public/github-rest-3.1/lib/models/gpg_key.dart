@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'raw_key': rawKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('primary_key_id') && json['primary_key_id'] is num &&
+      json.containsKey('primary_key_id') && (json['primary_key_id'] == null || json['primary_key_id'] is num) &&
       json.containsKey('key_id') && json['key_id'] is String &&
       json.containsKey('public_key') && json['public_key'] is String &&
       json.containsKey('emails') &&
@@ -79,9 +79,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('can_encrypt_storage') && json['can_encrypt_storage'] is bool &&
       json.containsKey('can_certify') && json['can_certify'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String) &&
       json.containsKey('revoked') && json['revoked'] is bool &&
-      json.containsKey('raw_key') && json['raw_key'] is String; } 
+      json.containsKey('raw_key') && (json['raw_key'] == null || json['raw_key'] is String); } 
 GpgKey copyWith({int? id, Omittable<String?>? name, int? Function()? primaryKeyId, String? keyId, String? publicKey, List<GpgKeyEmails>? emails, List<GpgKeySubkeys>? subkeys, bool? canSign, bool? canEncryptComms, bool? canEncryptStorage, bool? canCertify, DateTime? createdAt, DateTime? Function()? expiresAt, bool? revoked, String? Function()? rawKey, }) { return GpgKey(
   id: id ?? this.id,
   name: name ?? this.name,

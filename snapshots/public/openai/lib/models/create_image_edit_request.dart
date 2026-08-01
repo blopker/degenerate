@@ -291,7 +291,7 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
       other is CreateImageEditRequest &&
           image == other.image &&
           prompt == other.prompt &&
-          mask == other.mask &&
+          listEquals(mask, other.mask) &&
           background == other.background &&
           model == other.model &&
           n == other.n &&
@@ -304,6 +304,6 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
           stream == other.stream &&
           partialImages == other.partialImages &&
           quality == other.quality; } 
-@override int get hashCode { return Object.hash(image, prompt, mask, background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality); } 
+@override int get hashCode { return Object.hash(image, prompt, Object.hashAll(mask ?? const []), background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality); } 
 @override String toString() { return 'CreateImageEditRequest(image: $image, prompt: $prompt, mask: $mask, background: $background, model: $model, n: $n, size: $size, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, user: $user, inputFidelity: $inputFidelity, stream: $stream, partialImages: $partialImages, quality: $quality)'; } 
  }

@@ -11,7 +11,7 @@ final String? message;
 Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && (json['message'] == null || json['message'] is String); } 
 WebhookPageBuildBuildError copyWith({String? Function()? message}) { return WebhookPageBuildBuildError(
   message: message != null ? message() : this.message,
 ); } 

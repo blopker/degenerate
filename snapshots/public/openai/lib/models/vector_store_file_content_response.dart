@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next_page') && json['next_page'] is String; } 
+      json.containsKey('next_page') && (json['next_page'] == null || json['next_page'] is String); } 
 VectorStoreFileContentResponse copyWith({VectorStoreFileContentResponseObject? object, List<VectorStoreFileContentResponseData>? data, bool? hasMore, String? Function()? nextPage, }) { return VectorStoreFileContentResponse(
   object: object ?? this.object,
   data: data ?? this.data,

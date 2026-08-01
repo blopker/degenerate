@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('spdx_id') && json['spdx_id'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && (json['url'] == null || json['url'] is String); } 
 WebhookPullRequestReviewEditedPullRequestHeadRepoLicense copyWith({String? key, String? name, String? nodeId, String? spdxId, Uri? Function()? url, }) { return WebhookPullRequestReviewEditedPullRequestHeadRepoLicense(
   key: key ?? this.key,
   name: name ?? this.name,

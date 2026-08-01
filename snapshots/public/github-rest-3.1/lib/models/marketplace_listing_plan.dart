@@ -97,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('yearly_price_in_cents') && json['yearly_price_in_cents'] is num &&
       json.containsKey('price_model') &&
       json.containsKey('has_free_trial') && json['has_free_trial'] is bool &&
-      json.containsKey('unit_name') && json['unit_name'] is String &&
+      json.containsKey('unit_name') && (json['unit_name'] == null || json['unit_name'] is String) &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('bullets'); } 
 MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, MarketplaceListingPlanPriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) { return MarketplaceListingPlan(

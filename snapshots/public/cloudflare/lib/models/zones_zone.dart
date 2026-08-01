@@ -163,7 +163,7 @@ Map<String, dynamic> toJson() { return {
   'verification_key': ?verificationKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
-      json.containsKey('activated_on') && json['activated_on'] is String &&
+      json.containsKey('activated_on') && (json['activated_on'] == null || json['activated_on'] is String) &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('development_mode') && json['development_mode'] is num &&
       json.containsKey('id') &&
@@ -171,9 +171,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('name_servers') &&
-      json.containsKey('original_dnshost') && json['original_dnshost'] is String &&
+      json.containsKey('original_dnshost') && (json['original_dnshost'] == null || json['original_dnshost'] is String) &&
       json.containsKey('original_name_servers') &&
-      json.containsKey('original_registrar') && json['original_registrar'] is String &&
+      json.containsKey('original_registrar') && (json['original_registrar'] == null || json['original_registrar'] is String) &&
       json.containsKey('owner') &&
       json.containsKey('plan'); } 
 ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String> Function()? vanityNameServers, String? Function()? verificationKey, }) { return ZonesZone(

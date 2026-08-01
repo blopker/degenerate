@@ -189,7 +189,7 @@ CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequest
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateTranscriptionRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           model == other.model &&
           language == other.language &&
           prompt == other.prompt &&
@@ -201,6 +201,6 @@ CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequest
           chunkingStrategy == other.chunkingStrategy &&
           listEquals(knownSpeakerNames, other.knownSpeakerNames) &&
           listEquals(knownSpeakerReferences, other.knownSpeakerReferences); } 
-@override int get hashCode { return Object.hash(file, model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const [])); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file), model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const [])); } 
 @override String toString() { return 'CreateTranscriptionRequest(file: $file, model: $model, language: $language, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature, include: $include, timestampGranularities: $timestampGranularities, stream: $stream, chunkingStrategy: $chunkingStrategy, knownSpeakerNames: $knownSpeakerNames, knownSpeakerReferences: $knownSpeakerReferences)'; } 
  }

@@ -51,13 +51,13 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('context') && json['context'] is String &&
-      json.containsKey('target_url') && json['target_url'] is String &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String &&
+      json.containsKey('target_url') && (json['target_url'] == null || json['target_url'] is String) &&
+      json.containsKey('avatar_url') && (json['avatar_url'] == null || json['avatar_url'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 

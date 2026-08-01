@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bulle
       json.containsKey('monthly_price_in_cents') && json['monthly_price_in_cents'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('price_model') &&
-      json.containsKey('unit_name') && json['unit_name'] is String &&
+      json.containsKey('unit_name') && (json['unit_name'] == null || json['unit_name'] is String) &&
       json.containsKey('yearly_price_in_cents') && json['yearly_price_in_cents'] is num; } 
 WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? description, bool? hasFreeTrial, int? id, int? monthlyPriceInCents, String? name, WebhooksMarketplacePurchasePlanPriceModel? priceModel, String? Function()? unitName, int? yearlyPriceInCents, }) { return WebhooksMarketplacePurchasePlan(
   bullets: bullets ?? this.bullets,

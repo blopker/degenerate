@@ -113,7 +113,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String &&
-      json.containsKey('output') && json['output'] is String; } 
+      json.containsKey('output') && (json['output'] == null || json['output'] is String); } 
 ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ClientToolCallItem(
   id: id ?? this.id,
   object: object ?? this.object,

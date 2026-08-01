@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
-      json.containsKey('first_id') && json['first_id'] is String &&
-      json.containsKey('last_id') && json['last_id'] is String &&
+      json.containsKey('first_id') && (json['first_id'] == null || json['first_id'] is String) &&
+      json.containsKey('last_id') && (json['last_id'] == null || json['last_id'] is String) &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
 VideoListResource copyWith({VideoListResourceObject? object, List<VideoResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return VideoListResource(
   object: object ?? this.object,

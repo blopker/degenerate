@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
   ...additionalProperties,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
       json.containsKey('role'); } 
 AiSearchInstanceSearchRequestMessages copyWith({String? Function()? content, AiSearchInstanceSearchRequestMessagesRole? role, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceSearchRequestMessages(
   content: content != null ? content() : this.content,

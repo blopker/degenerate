@@ -34,12 +34,12 @@ final class UpdateCurrentUserImageRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         other is UpdateCurrentUserImageRequest &&
-            profileImage == other.profileImage;
+            listEquals(profileImage, other.profileImage);
   }
 
   @override
   int get hashCode {
-    return profileImage.hashCode;
+    return Object.hashAll(profileImage).hashCode;
   }
 
   @override

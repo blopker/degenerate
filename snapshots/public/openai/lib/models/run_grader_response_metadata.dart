@@ -40,8 +40,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('errors') &&
       json.containsKey('execution_time') && json['execution_time'] is num &&
       json.containsKey('scores') &&
-      json.containsKey('token_usage') && json['token_usage'] is num &&
-      json.containsKey('sampled_model_name') && json['sampled_model_name'] is String; } 
+      json.containsKey('token_usage') && (json['token_usage'] == null || json['token_usage'] is num) &&
+      json.containsKey('sampled_model_name') && (json['sampled_model_name'] == null || json['sampled_model_name'] is String); } 
 RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderResponseMetadataErrors? errors, double? executionTime, Map<String,dynamic>? scores, int? Function()? tokenUsage, String? Function()? sampledModelName, }) { return RunGraderResponseMetadata(
   name: name ?? this.name,
   type: type ?? this.type,

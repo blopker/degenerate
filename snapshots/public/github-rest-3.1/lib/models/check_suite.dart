@@ -176,18 +176,18 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('status') &&
       json.containsKey('conclusion') &&
-      json.containsKey('url') && json['url'] is String &&
-      json.containsKey('before') && json['before'] is String &&
-      json.containsKey('after') && json['after'] is String &&
+      json.containsKey('url') && (json['url'] == null || json['url'] is String) &&
+      json.containsKey('before') && (json['before'] == null || json['before'] is String) &&
+      json.containsKey('after') && (json['after'] == null || json['after'] is String) &&
       json.containsKey('pull_requests') &&
       json.containsKey('app') &&
       json.containsKey('repository') &&
-      json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('head_commit') &&
       json.containsKey('latest_check_runs_count') && json['latest_check_runs_count'] is num &&
       json.containsKey('check_runs_url') && json['check_runs_url'] is String; } 

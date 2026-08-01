@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String &&
-      json.containsKey('gravatar_id') && json['gravatar_id'] is String &&
+      json.containsKey('gravatar_id') && (json['gravatar_id'] == null || json['gravatar_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String; } 
 Actor copyWith({int? id, String? login, String? Function()? displayLogin, String? Function()? gravatarId, Uri? url, Uri? avatarUrl, }) { return Actor(

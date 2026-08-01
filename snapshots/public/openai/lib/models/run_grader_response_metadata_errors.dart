@@ -70,13 +70,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('formu
       json.containsKey('invalid_variable_error') && json['invalid_variable_error'] is bool &&
       json.containsKey('other_error') && json['other_error'] is bool &&
       json.containsKey('python_grader_server_error') && json['python_grader_server_error'] is bool &&
-      json.containsKey('python_grader_server_error_type') && json['python_grader_server_error_type'] is String &&
+      json.containsKey('python_grader_server_error_type') && (json['python_grader_server_error_type'] == null || json['python_grader_server_error_type'] is String) &&
       json.containsKey('python_grader_runtime_error') && json['python_grader_runtime_error'] is bool &&
-      json.containsKey('python_grader_runtime_error_details') && json['python_grader_runtime_error_details'] is String &&
+      json.containsKey('python_grader_runtime_error_details') && (json['python_grader_runtime_error_details'] == null || json['python_grader_runtime_error_details'] is String) &&
       json.containsKey('model_grader_server_error') && json['model_grader_server_error'] is bool &&
       json.containsKey('model_grader_refusal_error') && json['model_grader_refusal_error'] is bool &&
       json.containsKey('model_grader_parse_error') && json['model_grader_parse_error'] is bool &&
-      json.containsKey('model_grader_server_error_details') && json['model_grader_server_error_details'] is String; } 
+      json.containsKey('model_grader_server_error_details') && (json['model_grader_server_error_details'] == null || json['model_grader_server_error_details'] is String); } 
 RunGraderResponseMetadataErrors copyWith({bool? formulaParseError, bool? sampleParseError, bool? truncatedObservationError, bool? unresponsiveRewardError, bool? invalidVariableError, bool? otherError, bool? pythonGraderServerError, String? Function()? pythonGraderServerErrorType, bool? pythonGraderRuntimeError, String? Function()? pythonGraderRuntimeErrorDetails, bool? modelGraderServerError, bool? modelGraderRefusalError, bool? modelGraderParseError, String? Function()? modelGraderServerErrorDetails, }) { return RunGraderResponseMetadataErrors(
   formulaParseError: formulaParseError ?? this.formulaParseError,
   sampleParseError: sampleParseError ?? this.sampleParseError,

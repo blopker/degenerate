@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_registrations') && json['active_registrations'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
+      json.containsKey('last_seen_at') && (json['last_seen_at'] == null || json['last_seen_at'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
 TeamsDevicesPhysicalDevice copyWith({int? activeRegistrations, Omittable<String?>? clientVersion, String? createdAt, Omittable<String?>? deletedAt, Omittable<String?>? deviceType, Omittable<String?>? hardwareId, String? id, String? Function()? lastSeenAt, Omittable<TeamsDevicesRegistrationDetails?>? lastSeenRegistration, Omittable<TeamsDevicesUser?>? lastSeenUser, Omittable<String?>? macAddress, Omittable<String?>? manufacturer, Omittable<String?>? model, String? name, Omittable<String?>? osVersion, Omittable<String?>? osVersionExtra, Omittable<String?>? publicIp, Omittable<String?>? serialNumber, String? updatedAt, }) { return TeamsDevicesPhysicalDevice(

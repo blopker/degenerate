@@ -122,19 +122,19 @@ PagesDeploymentCreateDeploymentRequest copyWith({Uint8List? Function()? headers,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PagesDeploymentCreateDeploymentRequest &&
-          headers == other.headers &&
-          redirects == other.redirects &&
-          routesJson == other.routesJson &&
-          workerBundle == other.workerBundle &&
-          workerJs == other.workerJs &&
+          listEquals(headers, other.headers) &&
+          listEquals(redirects, other.redirects) &&
+          listEquals(routesJson, other.routesJson) &&
+          listEquals(workerBundle, other.workerBundle) &&
+          listEquals(workerJs, other.workerJs) &&
           branch == other.branch &&
           commitDirty == other.commitDirty &&
           commitHash == other.commitHash &&
           commitMessage == other.commitMessage &&
-          functionsFilepathRoutingConfigJson == other.functionsFilepathRoutingConfigJson &&
+          listEquals(functionsFilepathRoutingConfigJson, other.functionsFilepathRoutingConfigJson) &&
           manifest == other.manifest &&
           pagesBuildOutputDir == other.pagesBuildOutputDir &&
           wranglerConfigHash == other.wranglerConfigHash; } 
-@override int get hashCode { return Object.hash(headers, redirects, routesJson, workerBundle, workerJs, branch, commitDirty, commitHash, commitMessage, functionsFilepathRoutingConfigJson, manifest, pagesBuildOutputDir, wranglerConfigHash); } 
+@override int get hashCode { return Object.hash(Object.hashAll(headers ?? const []), Object.hashAll(redirects ?? const []), Object.hashAll(routesJson ?? const []), Object.hashAll(workerBundle ?? const []), Object.hashAll(workerJs ?? const []), branch, commitDirty, commitHash, commitMessage, Object.hashAll(functionsFilepathRoutingConfigJson ?? const []), manifest, pagesBuildOutputDir, wranglerConfigHash); } 
 @override String toString() { return 'PagesDeploymentCreateDeploymentRequest(headers: $headers, redirects: $redirects, routesJson: $routesJson, workerBundle: $workerBundle, workerJs: $workerJs, branch: $branch, commitDirty: $commitDirty, commitHash: $commitHash, commitMessage: $commitMessage, functionsFilepathRoutingConfigJson: $functionsFilepathRoutingConfigJson, manifest: $manifest, pagesBuildOutputDir: $pagesBuildOutputDir, wranglerConfigHash: $wranglerConfigHash)'; } 
  }

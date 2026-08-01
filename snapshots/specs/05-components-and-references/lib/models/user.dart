@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('email') && json['email'] is String &&
-      json.containsKey('nickname') && json['nickname'] is String; } 
+      json.containsKey('nickname') && (json['nickname'] == null || json['nickname'] is String); } 
 User copyWith({String? id, String? email, String? Function()? nickname, }) { return User(
   id: id ?? this.id,
   email: email ?? this.email,

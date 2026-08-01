@@ -90,7 +90,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('owner') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('external_url') && json['external_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('permissions') &&
       json.containsKey('events') &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
-      json.containsKey('webhook_secret') && json['webhook_secret'] is String &&
+      json.containsKey('webhook_secret') && (json['webhook_secret'] == null || json['webhook_secret'] is String) &&
       json.containsKey('pem') && json['pem'] is String; } 
 AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int? Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, Map<String, dynamic>? additionalProperties, }) { return AppsCreateFromManifestResponse(
   id: id ?? this.id,

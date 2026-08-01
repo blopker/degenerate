@@ -257,12 +257,12 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('environment_id') && json['environment_id'] is String &&
+      json.containsKey('environment_id') && (json['environment_id'] == null || json['environment_id'] is String) &&
       json.containsKey('owner') &&
       json.containsKey('billable_owner') &&
       json.containsKey('repository') &&
       json.containsKey('machine') &&
-      json.containsKey('prebuild') && json['prebuild'] is bool &&
+      json.containsKey('prebuild') && (json['prebuild'] == null || json['prebuild'] is bool) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('last_used_at') && json['last_used_at'] is String &&
@@ -270,12 +270,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('git_status') &&
       json.containsKey('location') &&
-      json.containsKey('idle_timeout_minutes') && json['idle_timeout_minutes'] is num &&
+      json.containsKey('idle_timeout_minutes') && (json['idle_timeout_minutes'] == null || json['idle_timeout_minutes'] is num) &&
       json.containsKey('web_url') && json['web_url'] is String &&
       json.containsKey('machines_url') && json['machines_url'] is String &&
       json.containsKey('start_url') && json['start_url'] is String &&
       json.containsKey('stop_url') && json['stop_url'] is String &&
-      json.containsKey('pulls_url') && json['pulls_url'] is String &&
+      json.containsKey('pulls_url') && (json['pulls_url'] == null || json['pulls_url'] is String) &&
       json.containsKey('recent_folders'); } 
 CodespaceWithFullRepository copyWith({int? id, String? name, Omittable<String?>? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, FullRepository? repository, CodespaceMachine? Function()? machine, Omittable<String?>? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceWithFullRepositoryState? state, Uri? url, CodespaceWithFullRepositoryGitStatus? gitStatus, CodespaceWithFullRepositoryLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Omittable<Uri?>? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, CodespaceWithFullRepositoryRuntimeConstraints? Function()? runtimeConstraints, Omittable<bool?>? pendingOperation, Omittable<String?>? pendingOperationDisabledReason, Omittable<String?>? idleTimeoutNotice, Omittable<int?>? retentionPeriodMinutes, Omittable<DateTime?>? retentionExpiresAt, }) { return CodespaceWithFullRepository(
   id: id ?? this.id,

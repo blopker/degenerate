@@ -26,7 +26,7 @@ CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Functio
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateContainerFileBody &&
           fileId == other.fileId &&
-          file == other.file; } 
-@override int get hashCode { return Object.hash(fileId, file); } 
+          listEquals(file, other.file); } 
+@override int get hashCode { return Object.hash(fileId, Object.hashAll(file ?? const [])); } 
 @override String toString() { return 'CreateContainerFileBody(fileId: $fileId, file: $file)'; } 
  }

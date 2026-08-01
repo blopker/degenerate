@@ -19,8 +19,8 @@ Map<String, dynamic> toJson() { return {
   'html': html?.toString(),
   'self': self.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && json['git'] is String &&
-      json.containsKey('html') && json['html'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && (json['git'] == null || json['git'] is String) &&
+      json.containsKey('html') && (json['html'] == null || json['html'] is String) &&
       json.containsKey('self') && json['self'] is String; } 
 ContentDirectory2Links copyWith({Uri? Function()? git, Uri? Function()? html, Uri? self, }) { return ContentDirectory2Links(
   git: git != null ? git() : this.git,

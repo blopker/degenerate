@@ -167,13 +167,13 @@ Map<String, dynamic> toJson() { return {
   'zdr': ?zdr,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
-      json.containsKey('cache_ttl') && json['cache_ttl'] is num &&
+      json.containsKey('cache_ttl') && (json['cache_ttl'] == null || json['cache_ttl'] is num) &&
       json.containsKey('collect_logs') && json['collect_logs'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('rate_limiting_interval') && json['rate_limiting_interval'] is num &&
-      json.containsKey('rate_limiting_limit') && json['rate_limiting_limit'] is num &&
+      json.containsKey('rate_limiting_interval') && (json['rate_limiting_interval'] == null || json['rate_limiting_interval'] is num) &&
+      json.containsKey('rate_limiting_limit') && (json['rate_limiting_limit'] == null || json['rate_limiting_limit'] is num) &&
       json.containsKey('rate_limiting_technique'); } 
 AigConfigUpdateGatewayResponseResult copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, DateTime? createdAt, AigConfigUpdateGatewayResponseResultDlp? Function()? dlp, String? id, bool? Function()? isDefault, Omittable<int?>? logManagement, Omittable<AigConfigUpdateGatewayResponseResultLogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, DateTime? modifiedAt, Omittable<List<AigConfigUpdateGatewayResponseResultOtel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, AigConfigUpdateGatewayResponseResultRateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<AigConfigUpdateGatewayResponseResultStripe?>? stripe, AigConfigUpdateGatewayResponseResultWorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigUpdateGatewayResponseResult(
   authentication: authentication != null ? authentication() : this.authentication,

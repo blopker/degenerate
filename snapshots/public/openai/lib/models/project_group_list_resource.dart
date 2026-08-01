@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next') && json['next'] is String; } 
+      json.containsKey('next') && (json['next'] == null || json['next'] is String); } 
 ProjectGroupListResource copyWith({ProjectGroupListResourceObject? object, List<ProjectGroup>? data, bool? hasMore, String? Function()? next, }) { return ProjectGroupListResource(
   object: object ?? this.object,
   data: data ?? this.data,

@@ -53,14 +53,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('image_link') && json['image_link'] is String &&
+      json.containsKey('image_link') && (json['image_link'] == null || json['image_link'] is String) &&
       json.containsKey('short_description') && json['short_description'] is String &&
       json.containsKey('content') && json['content'] is String &&
       json.containsKey('author') &&
       json.containsKey('next_event') &&
-      json.containsKey('category') && json['category'] is String &&
+      json.containsKey('category') && (json['category'] == null || json['category'] is String) &&
       json.containsKey('subscribers') && json['subscribers'] is num &&
-      json.containsKey('recurring') && json['recurring'] is String &&
+      json.containsKey('recurring') && (json['recurring'] == null || json['recurring'] is String) &&
       json.containsKey('price') && json['price'] is num; } 
 SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? imageLink, String? shortDescription, String? content, PublicUserSchema? author, NextSessionSchema? Function()? nextEvent, String? Function()? category, int? subscribers, String? Function()? recurring, int? price, }) { return SpaceDetailSchema(
   slug: slug ?? this.slug,

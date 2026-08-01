@@ -125,17 +125,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('assets_url') && json['assets_url'] is String &&
       json.containsKey('upload_url') && json['upload_url'] is String &&
-      json.containsKey('tarball_url') && json['tarball_url'] is String &&
-      json.containsKey('zipball_url') && json['zipball_url'] is String &&
+      json.containsKey('tarball_url') && (json['tarball_url'] == null || json['tarball_url'] is String) &&
+      json.containsKey('zipball_url') && (json['zipball_url'] == null || json['zipball_url'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('tag_name') && json['tag_name'] is String &&
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('draft') && json['draft'] is bool &&
       json.containsKey('prerelease') && json['prerelease'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('published_at') && json['published_at'] is String &&
+      json.containsKey('published_at') && (json['published_at'] == null || json['published_at'] is String) &&
       json.containsKey('author') &&
       json.containsKey('assets'); } 
 ReleaseEventRelease copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, Omittable<String?>? body, bool? draft, bool? prerelease, bool? Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, Omittable<DateTime?>? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String? Function()? bodyHtml, String? Function()? bodyText, int? Function()? mentionsCount, Uri? Function()? discussionUrl, ReactionRollup? Function()? reactions, bool? Function()? isShortDescriptionHtmlTruncated, String? Function()? shortDescriptionHtml, }) { return ReleaseEventRelease(

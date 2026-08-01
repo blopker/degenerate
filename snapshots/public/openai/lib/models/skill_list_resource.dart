@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
-      json.containsKey('first_id') && json['first_id'] is String &&
-      json.containsKey('last_id') && json['last_id'] is String &&
+      json.containsKey('first_id') && (json['first_id'] == null || json['first_id'] is String) &&
+      json.containsKey('last_id') && (json['last_id'] == null || json['last_id'] is String) &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
 SkillListResource copyWith({SkillListResourceObject? object, List<SkillResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return SkillListResource(
   object: object ?? this.object,

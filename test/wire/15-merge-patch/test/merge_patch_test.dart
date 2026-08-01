@@ -170,6 +170,16 @@ void main() {
       expect(fields2.map((f) => f.name), equals(['image']));
     });
 
+    test('byte-identical requests are equal', () {
+      final a = UploadAvatarRequest(image: Uint8List.fromList([1, 2, 3]));
+      final b = UploadAvatarRequest(image: Uint8List.fromList([1, 2, 3]));
+      final c = UploadAvatarRequest(image: Uint8List.fromList([9]));
+
+      expect(a, equals(b));
+      expect(a.hashCode, equals(b.hashCode));
+      expect(a, isNot(equals(c)));
+    });
+
     test('present caption is sent', () async {
       client.nextResponse = ApiResponse(statusCode: 204, body: '');
       await api.uploadAvatar(

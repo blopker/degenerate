@@ -105,14 +105,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&
-      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('submitted_at') && json['submitted_at'] is String &&
+      json.containsKey('submitted_at') && (json['submitted_at'] == null || json['submitted_at'] is String) &&
       json.containsKey('user'); } 
 WebhooksReview copyWith({WebhooksReviewLinks? links, WebhooksReviewAuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, String? state, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, WebhooksReviewUser? Function()? user, }) { return WebhooksReview(
   links: links ?? this.links,

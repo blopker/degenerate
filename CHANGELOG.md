@@ -20,6 +20,8 @@ Important user-facing changes only. For full details see commit log.
 ### Bug fixes
 
 - **Required nullable fields always serialize their key** (#21): a field that is both `required` and nullable (`nullable: true` / `type: [T, 'null']`) dropped its key from `toJson()` when the value was null. A required field must always be present on the wire, so it now serializes as an explicit `"field": null`.
+- **`canParse` accepts explicit null for required nullable fields**: a payload like `{"mode": null}` failed `canParse` even when the spec declares `mode` required and nullable; the generated type check now tolerates null for nullable types.
+- **Binary fields compare by content**: `Uint8List` (`format: binary`/`byte`) fields used identity `==`/`hashCode`, so byte-identical models compared unequal. They now use `listEquals`/`Object.hashAll` like list fields.
 
 ## 0.4.2
 

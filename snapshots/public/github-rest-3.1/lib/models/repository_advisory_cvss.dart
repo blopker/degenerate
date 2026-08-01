@@ -17,8 +17,8 @@ Map<String, dynamic> toJson() { return {
   'vector_string': vectorString,
   'score': score,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && json['vector_string'] is String &&
-      json.containsKey('score') && json['score'] is num; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String) &&
+      json.containsKey('score') && (json['score'] == null || json['score'] is num); } 
 RepositoryAdvisoryCvss copyWith({String? Function()? vectorString, double? Function()? score, }) { return RepositoryAdvisoryCvss(
   vectorString: vectorString != null ? vectorString() : this.vectorString,
   score: score != null ? score() : this.score,

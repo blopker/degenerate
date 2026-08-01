@@ -218,10 +218,10 @@ Map<String, dynamic> toJson() { return {
   'user': user?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && json['active_lock_reason'] is String &&
-      json.containsKey('answer_chosen_at') && json['answer_chosen_at'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
+      json.containsKey('answer_chosen_at') && (json['answer_chosen_at'] == null || json['answer_chosen_at'] is String) &&
       json.containsKey('answer_chosen_by') &&
-      json.containsKey('answer_html_url') && json['answer_html_url'] is String &&
+      json.containsKey('answer_html_url') && (json['answer_html_url'] == null || json['answer_html_url'] is String) &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('category') &&
       json.containsKey('comments') && json['comments'] is num &&

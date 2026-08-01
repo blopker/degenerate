@@ -27,9 +27,9 @@ Map<String, dynamic> toJson() { return {
   'annotations_count': annotationsCount,
   'annotations_url': annotationsUrl.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String &&
-      json.containsKey('summary') && json['summary'] is String &&
-      json.containsKey('text') && json['text'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && (json['title'] == null || json['title'] is String) &&
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String) &&
+      json.containsKey('text') && (json['text'] == null || json['text'] is String) &&
       json.containsKey('annotations_count') && json['annotations_count'] is num &&
       json.containsKey('annotations_url') && json['annotations_url'] is String; } 
 CheckRunOutput copyWith({String? Function()? title, String? Function()? summary, String? Function()? text, int? annotationsCount, Uri? annotationsUrl, }) { return CheckRunOutput(

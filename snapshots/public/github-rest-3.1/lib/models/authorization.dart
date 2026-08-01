@@ -73,15 +73,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('scopes') &&
       json.containsKey('token') && json['token'] is String &&
-      json.containsKey('token_last_eight') && json['token_last_eight'] is String &&
-      json.containsKey('hashed_token') && json['hashed_token'] is String &&
+      json.containsKey('token_last_eight') && (json['token_last_eight'] == null || json['token_last_eight'] is String) &&
+      json.containsKey('hashed_token') && (json['hashed_token'] == null || json['hashed_token'] is String) &&
       json.containsKey('app') &&
-      json.containsKey('note') && json['note'] is String &&
-      json.containsKey('note_url') && json['note_url'] is String &&
+      json.containsKey('note') && (json['note'] == null || json['note'] is String) &&
+      json.containsKey('note_url') && (json['note_url'] == null || json['note_url'] is String) &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('fingerprint') && json['fingerprint'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String; } 
+      json.containsKey('fingerprint') && (json['fingerprint'] == null || json['fingerprint'] is String) &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String); } 
 Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, String? token, String? Function()? tokenLastEight, String? Function()? hashedToken, AuthorizationApp? app, String? Function()? note, Uri? Function()? noteUrl, DateTime? updatedAt, DateTime? createdAt, String? Function()? fingerprint, Omittable<SimpleUser?>? user, Omittable<ScopedInstallation?>? installation, DateTime? Function()? expiresAt, }) { return Authorization(
   id: id ?? this.id,
   url: url ?? this.url,

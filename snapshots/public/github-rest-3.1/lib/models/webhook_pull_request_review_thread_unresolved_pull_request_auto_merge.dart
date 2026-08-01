@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'enabled_by': enabledBy?.toJson(),
   'merge_method': mergeMethod.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_message') && json['commit_message'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_message') && (json['commit_message'] == null || json['commit_message'] is String) &&
       json.containsKey('commit_title') && json['commit_title'] is String &&
       json.containsKey('enabled_by') &&
       json.containsKey('merge_method'); } 

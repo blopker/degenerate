@@ -102,12 +102,12 @@ CreateImageVariationRequest copyWith({Uint8List? image, Omittable<CreateImageVar
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateImageVariationRequest &&
-          image == other.image &&
+          listEquals(image, other.image) &&
           model == other.model &&
           n == other.n &&
           responseFormat == other.responseFormat &&
           size == other.size &&
           user == other.user; } 
-@override int get hashCode { return Object.hash(image, model, n, responseFormat, size, user); } 
+@override int get hashCode { return Object.hash(Object.hashAll(image), model, n, responseFormat, size, user); } 
 @override String toString() { return 'CreateImageVariationRequest(image: $image, model: $model, n: $n, responseFormat: $responseFormat, size: $size, user: $user)'; } 
  }

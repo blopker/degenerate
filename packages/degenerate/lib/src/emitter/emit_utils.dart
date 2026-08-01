@@ -537,7 +537,12 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
 }
 
 /// Check whether an [IrType] represents a list (used for equality checks).
-bool isListType(IrType type) => type is IrList;
+/// Whether a field of this type is a Dart `List` at runtime — `IrList`, or
+/// bytes (`Uint8List` implements `List<int>`). These need `listEquals` /
+/// `Object.hashAll` for value equality instead of `==`/`hashCode`.
+bool isListType(IrType type) =>
+    type is IrList ||
+    (type is IrPrimitive && type.kind == PrimitiveKind.bytes);
 
 // ─── OneOf helpers ──────────────────────────────────────
 

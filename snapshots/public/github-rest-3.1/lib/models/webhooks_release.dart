@@ -104,23 +104,23 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('assets') &&
       json.containsKey('assets_url') && json['assets_url'] is String &&
       json.containsKey('author') &&
-      json.containsKey('body') && json['body'] is String &&
-      json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('draft') && json['draft'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('immutable') && json['immutable'] is bool &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('prerelease') && json['prerelease'] is bool &&
-      json.containsKey('published_at') && json['published_at'] is String &&
+      json.containsKey('published_at') && (json['published_at'] == null || json['published_at'] is String) &&
       json.containsKey('tag_name') && json['tag_name'] is String &&
-      json.containsKey('tarball_url') && json['tarball_url'] is String &&
+      json.containsKey('tarball_url') && (json['tarball_url'] == null || json['tarball_url'] is String) &&
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
       json.containsKey('upload_url') && json['upload_url'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('zipball_url') && json['zipball_url'] is String; } 
+      json.containsKey('zipball_url') && (json['zipball_url'] == null || json['zipball_url'] is String); } 
 WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksReleaseAuthor? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, WebhooksReleaseReactions? Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
   assets: assets ?? this.assets,
   assetsUrl: assetsUrl ?? this.assetsUrl,

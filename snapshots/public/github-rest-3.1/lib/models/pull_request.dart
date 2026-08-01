@@ -248,14 +248,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('locked') && json['locked'] is bool &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('user') &&
-      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('labels') &&
       json.containsKey('milestone') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
-      json.containsKey('merged_at') && json['merged_at'] is String &&
-      json.containsKey('merge_commit_sha') && json['merge_commit_sha'] is String &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+      json.containsKey('merged_at') && (json['merged_at'] == null || json['merged_at'] is String) &&
+      json.containsKey('merge_commit_sha') && (json['merge_commit_sha'] == null || json['merge_commit_sha'] is String) &&
       json.containsKey('assignee') &&
       json.containsKey('head') &&
       json.containsKey('base') &&
@@ -263,7 +263,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('author_association') &&
       json.containsKey('auto_merge') &&
       json.containsKey('merged') && json['merged'] is bool &&
-      json.containsKey('mergeable') && json['mergeable'] is bool &&
+      json.containsKey('mergeable') && (json['mergeable'] == null || json['mergeable'] is bool) &&
       json.containsKey('mergeable_state') && json['mergeable_state'] is String &&
       json.containsKey('merged_by') &&
       json.containsKey('comments') && json['comments'] is num &&

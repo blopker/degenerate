@@ -387,7 +387,7 @@ final class New {
             $class == other.$class &&
             listEquals($import, other.$import) &&
             $return == other.$return &&
-            $void == other.$void &&
+            listEquals($void, other.$void) &&
             package == other.package;
   }
 
@@ -409,7 +409,7 @@ final class New {
       $class,
       Object.hashAll($import ?? const []),
       $return,
-      $void,
+      Object.hashAll($void ?? const []),
       package,
     );
   }

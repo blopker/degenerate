@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('search_query') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next_page') && json['next_page'] is String; } 
+      json.containsKey('next_page') && (json['next_page'] == null || json['next_page'] is String); } 
 VectorStoreSearchResultsPage copyWith({VectorStoreSearchResultsPageObject? object, List<String>? searchQuery, List<VectorStoreSearchResultItem>? data, bool? hasMore, String? Function()? nextPage, }) { return VectorStoreSearchResultsPage(
   object: object ?? this.object,
   searchQuery: searchQuery ?? this.searchQuery,

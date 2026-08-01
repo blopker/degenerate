@@ -172,11 +172,11 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'user': user.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && json['active_lock_reason'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
       json.containsKey('assignees') &&
       json.containsKey('author_association') && json['author_association'] is String &&
-      json.containsKey('body') && json['body'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('comments_url') && json['comments_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&

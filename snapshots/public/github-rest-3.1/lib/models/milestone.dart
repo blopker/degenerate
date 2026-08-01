@@ -108,14 +108,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('state') &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('creator') &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('closed_issues') && json['closed_issues'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
-      json.containsKey('due_on') && json['due_on'] is String; } 
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+      json.containsKey('due_on') && (json['due_on'] == null || json['due_on'] is String); } 
 Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, MilestoneState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) { return Milestone(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,

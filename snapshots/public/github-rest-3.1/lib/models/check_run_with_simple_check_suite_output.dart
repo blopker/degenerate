@@ -29,9 +29,9 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations_count') && json['annotations_count'] is num &&
       json.containsKey('annotations_url') && json['annotations_url'] is String &&
-      json.containsKey('summary') && json['summary'] is String &&
-      json.containsKey('text') && json['text'] is String &&
-      json.containsKey('title') && json['title'] is String; } 
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String) &&
+      json.containsKey('text') && (json['text'] == null || json['text'] is String) &&
+      json.containsKey('title') && (json['title'] == null || json['title'] is String); } 
 CheckRunWithSimpleCheckSuiteOutput copyWith({int? annotationsCount, Uri? annotationsUrl, String? Function()? summary, String? Function()? text, String? Function()? title, }) { return CheckRunWithSimpleCheckSuiteOutput(
   annotationsCount: annotationsCount ?? this.annotationsCount,
   annotationsUrl: annotationsUrl ?? this.annotationsUrl,

@@ -185,10 +185,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('step_details') &&
       json.containsKey('last_error') &&
-      json.containsKey('expired_at') && json['expired_at'] is num &&
-      json.containsKey('cancelled_at') && json['cancelled_at'] is num &&
-      json.containsKey('failed_at') && json['failed_at'] is num &&
-      json.containsKey('completed_at') && json['completed_at'] is num &&
+      json.containsKey('expired_at') && (json['expired_at'] == null || json['expired_at'] is num) &&
+      json.containsKey('cancelled_at') && (json['cancelled_at'] == null || json['cancelled_at'] is num) &&
+      json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is num) &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
       json.containsKey('metadata') &&
       json.containsKey('usage'); } 
 RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? usage, }) { return RunStepObject(

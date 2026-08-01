@@ -604,7 +604,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_url') && json['archive_url'] is String &&
@@ -645,11 +645,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
       json.containsKey('clone_url') && json['clone_url'] is String &&
-      json.containsKey('mirror_url') && json['mirror_url'] is String &&
+      json.containsKey('mirror_url') && (json['mirror_url'] == null || json['mirror_url'] is String) &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
       json.containsKey('svn_url') && json['svn_url'] is String &&
-      json.containsKey('homepage') && json['homepage'] is String &&
-      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('homepage') && (json['homepage'] == null || json['homepage'] is String) &&
+      json.containsKey('language') && (json['language'] == null || json['language'] is String) &&
       json.containsKey('forks_count') && json['forks_count'] is num &&
       json.containsKey('stargazers_count') && json['stargazers_count'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num &&

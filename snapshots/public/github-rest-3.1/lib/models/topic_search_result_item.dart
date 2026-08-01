@@ -73,11 +73,11 @@ Map<String, dynamic> toJson() { return {
   if (aliases.isPresent) 'aliases': aliases.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('short_description') && json['short_description'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('created_by') && json['created_by'] is String &&
-      json.containsKey('released') && json['released'] is String &&
+      json.containsKey('display_name') && (json['display_name'] == null || json['display_name'] is String) &&
+      json.containsKey('short_description') && (json['short_description'] == null || json['short_description'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('created_by') && (json['created_by'] == null || json['created_by'] is String) &&
+      json.containsKey('released') && (json['released'] == null || json['released'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('featured') && json['featured'] is bool &&

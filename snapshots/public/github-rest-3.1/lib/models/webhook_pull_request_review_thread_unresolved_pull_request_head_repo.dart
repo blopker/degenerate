@@ -469,7 +469,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('created_at') &&
       json.containsKey('default_branch') && json['default_branch'] is String &&
       json.containsKey('deployments_url') && json['deployments_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('downloads_url') && json['downloads_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('fork') && json['fork'] is bool &&
@@ -487,7 +487,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('has_projects') && json['has_projects'] is bool &&
       json.containsKey('has_wiki') && json['has_wiki'] is bool &&
       json.containsKey('has_discussions') && json['has_discussions'] is bool &&
-      json.containsKey('homepage') && json['homepage'] is String &&
+      json.containsKey('homepage') && (json['homepage'] == null || json['homepage'] is String) &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -496,12 +496,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('issues_url') && json['issues_url'] is String &&
       json.containsKey('keys_url') && json['keys_url'] is String &&
       json.containsKey('labels_url') && json['labels_url'] is String &&
-      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('language') && (json['language'] == null || json['language'] is String) &&
       json.containsKey('languages_url') && json['languages_url'] is String &&
       json.containsKey('license') &&
       json.containsKey('merges_url') && json['merges_url'] is String &&
       json.containsKey('milestones_url') && json['milestones_url'] is String &&
-      json.containsKey('mirror_url') && json['mirror_url'] is String &&
+      json.containsKey('mirror_url') && (json['mirror_url'] == null || json['mirror_url'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('notifications_url') && json['notifications_url'] is String &&

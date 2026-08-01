@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('settings') &&
       json.containsKey('type'); } 
 Account copyWith({DateTime? createdOn, String? id, String? Function()? name, AccountSettings? settings, AccountType? type, }) { return Account(

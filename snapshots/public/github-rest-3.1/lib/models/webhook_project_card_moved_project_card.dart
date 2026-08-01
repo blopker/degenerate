@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
   'url': url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_id') && json['after_id'] is num &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_id') && (json['after_id'] == null || json['after_id'] is num) &&
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('column_id') && json['column_id'] is num &&
       json.containsKey('column_url') && json['column_url'] is String &&
@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('creator') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('note') && json['note'] is String &&
+      json.containsKey('note') && (json['note'] == null || json['note'] is String) &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 

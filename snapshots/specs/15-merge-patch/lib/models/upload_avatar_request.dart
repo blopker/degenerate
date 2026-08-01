@@ -22,8 +22,8 @@ UploadAvatarRequest copyWith({Uint8List? image, Omittable<String?>? caption, }) 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UploadAvatarRequest &&
-          image == other.image &&
+          listEquals(image, other.image) &&
           caption == other.caption; } 
-@override int get hashCode { return Object.hash(image, caption); } 
+@override int get hashCode { return Object.hash(Object.hashAll(image), caption); } 
 @override String toString() { return 'UploadAvatarRequest(image: $image, caption: $caption)'; } 
  }

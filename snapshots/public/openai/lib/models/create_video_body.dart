@@ -78,10 +78,10 @@ CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8Li
       other is CreateVideoBody &&
           model == other.model &&
           prompt == other.prompt &&
-          inputReference == other.inputReference &&
+          listEquals(inputReference, other.inputReference) &&
           imageReference == other.imageReference &&
           seconds == other.seconds &&
           size == other.size; } 
-@override int get hashCode { return Object.hash(model, prompt, inputReference, imageReference, seconds, size); } 
+@override int get hashCode { return Object.hash(model, prompt, Object.hashAll(inputReference ?? const []), imageReference, seconds, size); } 
 @override String toString() { return 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)'; } 
  }

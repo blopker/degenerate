@@ -87,9 +87,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('git_url') && json['git_url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
+      json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('_links'); } 
 ContentDirectory2 copyWith({ContentDirectory2Type? type, int? size, String? name, String? path, String? Function()? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectory2Links? links, }) { return ContentDirectory2(
   type: type ?? this.type,

@@ -67,9 +67,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_download_url') && json['archive_download_url'] is String &&
       json.containsKey('expired') && json['expired'] is bool &&
-      json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
 Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, String? url, String? archiveDownloadUrl, bool? expired, DateTime? Function()? createdAt, DateTime? Function()? expiresAt, DateTime? Function()? updatedAt, Omittable<String?>? digest, Omittable<ArtifactWorkflowRun?>? workflowRun, }) { return Artifact(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

@@ -27,10 +27,10 @@ Map<String, dynamic> toJson() { return {
   'patch_url': patchUrl?.toString(),
   'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('diff_url') && json['diff_url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('patch_url') && json['patch_url'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('diff_url') && (json['diff_url'] == null || json['diff_url'] is String) &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('patch_url') && (json['patch_url'] == null || json['patch_url'] is String) &&
+      json.containsKey('url') && (json['url'] == null || json['url'] is String); } 
 IssueSearchResultItemPullRequest copyWith({Omittable<DateTime?>? mergedAt, Uri? Function()? diffUrl, Uri? Function()? htmlUrl, Uri? Function()? patchUrl, Uri? Function()? url, }) { return IssueSearchResultItemPullRequest(
   mergedAt: mergedAt ?? this.mergedAt,
   diffUrl: diffUrl != null ? diffUrl() : this.diffUrl,

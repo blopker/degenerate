@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
   'timestamp': timestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientToAppRttMs') && json['clientToAppRttMs'] is num &&
-      json.containsKey('clientToCfEgressRttMs') && json['clientToCfEgressRttMs'] is num &&
-      json.containsKey('clientToCfIngressRttMs') && json['clientToCfIngressRttMs'] is num &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientToAppRttMs') && (json['clientToAppRttMs'] == null || json['clientToAppRttMs'] is num) &&
+      json.containsKey('clientToCfEgressRttMs') && (json['clientToCfEgressRttMs'] == null || json['clientToCfEgressRttMs'] is num) &&
+      json.containsKey('clientToCfIngressRttMs') && (json['clientToCfIngressRttMs'] == null || json['clientToCfIngressRttMs'] is num) &&
       json.containsKey('id') &&
       json.containsKey('timestamp') && json['timestamp'] is String; } 
 DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots copyWith({int? Function()? clientToAppRttMs, int? Function()? clientToCfEgressRttMs, int? Function()? clientToCfIngressRttMs, Omittable<int?>? clientToIspRttMs, DigitalExperienceMonitoringUuid? id, String? timestamp, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots(

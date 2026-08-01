@@ -215,7 +215,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('has_organization_projects') && json['has_organization_projects'] is bool &&
       json.containsKey('has_repository_projects') && json['has_repository_projects'] is bool &&
       json.containsKey('public_repos') && json['public_repos'] is num &&
@@ -226,7 +226,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('archived_at') && json['archived_at'] is String; } 
+      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String); } 
 TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String? Function()? name, String? Function()? company, Uri? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? twitterUsername, bool? Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, Omittable<int?>? privateGists, Omittable<int?>? diskUsage, Omittable<int?>? collaborators, Omittable<String?>? billingEmail, TeamOrganizationPlan? Function()? plan, Omittable<String?>? defaultRepositoryPermission, Omittable<bool?>? membersCanCreateRepositories, Omittable<bool?>? twoFactorRequirementEnabled, String? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePublicRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, Omittable<bool?>? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return TeamOrganization(
   login: login ?? this.login,
   id: id ?? this.id,

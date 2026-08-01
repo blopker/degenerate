@@ -167,7 +167,7 @@ Map<String, dynamic> toJson() { return {
   'repository_url': repositoryUrl.toString(),
   'svn_root': ?svnRoot,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs') && json['vcs'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs') && (json['vcs'] == null || json['vcs'] is String) &&
       json.containsKey('vcs_url') && json['vcs_url'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String &&

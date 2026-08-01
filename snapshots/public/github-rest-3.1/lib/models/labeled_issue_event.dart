@@ -53,8 +53,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('label'); } 

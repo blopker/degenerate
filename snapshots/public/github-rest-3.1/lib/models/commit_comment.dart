@@ -70,9 +70,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('body') && json['body'] is String &&
-      json.containsKey('path') && json['path'] is String &&
-      json.containsKey('position') && json['position'] is num &&
-      json.containsKey('line') && json['line'] is num &&
+      json.containsKey('path') && (json['path'] == null || json['path'] is String) &&
+      json.containsKey('position') && (json['position'] == null || json['position'] is num) &&
+      json.containsKey('line') && (json['line'] == null || json['line'] is num) &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&

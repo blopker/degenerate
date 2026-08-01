@@ -62,10 +62,10 @@ ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldSchemaValidationPostSchemaRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           kind == other.kind &&
           name == other.name &&
           validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return Object.hash(file, kind, name, validationEnabled); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file), kind, name, validationEnabled); } 
 @override String toString() { return 'ShieldSchemaValidationPostSchemaRequest(file: $file, kind: $kind, name: $name, validationEnabled: $validationEnabled)'; } 
  }

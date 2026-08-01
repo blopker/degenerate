@@ -100,12 +100,12 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('closed_at') && json['closed_at'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('closed_issues') && json['closed_issues'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('due_on') && json['due_on'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('due_on') && (json['due_on'] == null || json['due_on'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('labels_url') && json['labels_url'] is String &&

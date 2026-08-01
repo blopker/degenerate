@@ -89,9 +89,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('status_code') && json['status_code'] is num &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('action') && json['action'] is String &&
-      json.containsKey('installation_id') && json['installation_id'] is num &&
-      json.containsKey('repository_id') && json['repository_id'] is num &&
+      json.containsKey('action') && (json['action'] == null || json['action'] is String) &&
+      json.containsKey('installation_id') && (json['installation_id'] == null || json['installation_id'] is num) &&
+      json.containsKey('repository_id') && (json['repository_id'] == null || json['repository_id'] is num) &&
       json.containsKey('request') &&
       json.containsKey('response'); } 
 HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, Omittable<DateTime?>? throttledAt, String? Function()? url, HookDeliveryRequest? request, HookDeliveryResponse? response, }) { return HookDelivery(

@@ -133,8 +133,8 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run_url') && json['check_run_url'] is String &&
-      json.containsKey('completed_at') && json['completed_at'] is String &&
-      json.containsKey('conclusion') && json['conclusion'] is String &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
+      json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -145,13 +145,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('run_attempt') && json['run_attempt'] is num &&
       json.containsKey('run_id') && json['run_id'] is num &&
       json.containsKey('run_url') && json['run_url'] is String &&
-      json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
-      json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
-      json.containsKey('runner_id') && json['runner_id'] is num &&
-      json.containsKey('runner_name') && json['runner_name'] is String &&
+      json.containsKey('runner_group_id') && (json['runner_group_id'] == null || json['runner_group_id'] is num) &&
+      json.containsKey('runner_group_name') && (json['runner_group_name'] == null || json['runner_group_name'] is String) &&
+      json.containsKey('runner_id') && (json['runner_id'] == null || json['runner_id'] is num) &&
+      json.containsKey('runner_name') && (json['runner_name'] == null || json['runner_name'] is String) &&
       json.containsKey('started_at') && json['started_at'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
-      json.containsKey('workflow_name') && json['workflow_name'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
+      json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
       json.containsKey('status') &&
       json.containsKey('steps') &&
       json.containsKey('url') && json['url'] is String; } 

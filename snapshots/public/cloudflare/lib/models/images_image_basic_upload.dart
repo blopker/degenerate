@@ -49,11 +49,11 @@ ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Functio
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ImagesImageBasicUpload &&
           creator == other.creator &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           id == other.id &&
           metadata == other.metadata &&
           requireSignedUrLs == other.requireSignedUrLs &&
           url == other.url; } 
-@override int get hashCode { return Object.hash(creator, file, id, metadata, requireSignedUrLs, url); } 
+@override int get hashCode { return Object.hash(creator, Object.hashAll(file ?? const []), id, metadata, requireSignedUrLs, url); } 
 @override String toString() { return 'ImagesImageBasicUpload(creator: $creator, file: $file, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs, url: $url)'; } 
  }

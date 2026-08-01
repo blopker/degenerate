@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String &&
-      json.containsKey('output') && json['output'] is String; } 
+      json.containsKey('output') && (json['output'] == null || json['output'] is String); } 
 RunStepDetailsToolCallsFunctionObjectFunction copyWith({String? name, String? arguments, String? Function()? output, }) { return RunStepDetailsToolCallsFunctionObjectFunction(
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,

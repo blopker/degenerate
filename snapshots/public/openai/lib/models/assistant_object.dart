@@ -106,10 +106,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('instructions') && json['instructions'] is String &&
+      json.containsKey('instructions') && (json['instructions'] == null || json['instructions'] is String) &&
       json.containsKey('tools') &&
       json.containsKey('metadata'); } 
 AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, Omittable<AssistantObjectToolResources?>? toolResources, Map<String, String>? Function()? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return AssistantObject(

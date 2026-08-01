@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'url': url.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && json['completed_at'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
       json.containsKey('details_url') && json['details_url'] is String &&
       json.containsKey('external_id') && json['external_id'] is String &&

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'update_avatar_seed': updateAvatarSeed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_type') &&
-      json.containsKey('update_avatar_seed') && json['update_avatar_seed'] is bool; } 
+      json.containsKey('update_avatar_seed') && (json['update_avatar_seed'] == null || json['update_avatar_seed'] is bool); } 
 AvatarUpdate copyWith({ProfileAvatarTypeEnum? Function()? avatarType, bool? Function()? updateAvatarSeed, }) { return AvatarUpdate(
   avatarType: avatarType != null ? avatarType() : this.avatarType,
   updateAvatarSeed: updateAvatarSeed != null ? updateAvatarSeed() : this.updateAvatarSeed,

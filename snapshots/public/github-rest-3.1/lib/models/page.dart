@@ -158,7 +158,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('status') &&
-      json.containsKey('cname') && json['cname'] is String &&
+      json.containsKey('cname') && (json['cname'] == null || json['cname'] is String) &&
       json.containsKey('custom_404') && json['custom_404'] is bool &&
       json.containsKey('public') && json['public'] is bool; } 
 Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, Omittable<PageProtectedDomainState?>? protectedDomainState, Omittable<DateTime?>? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, Omittable<PageBuildType?>? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) { return Page(

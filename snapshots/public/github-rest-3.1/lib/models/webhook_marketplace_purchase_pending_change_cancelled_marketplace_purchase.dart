@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
       json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
       json.containsKey('free_trial_ends_on') &&
-      json.containsKey('next_billing_date') && json['next_billing_date'] is String &&
+      json.containsKey('next_billing_date') && (json['next_billing_date'] == null || json['next_billing_date'] is String) &&
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
       json.containsKey('unit_count') && json['unit_count'] is num; } 

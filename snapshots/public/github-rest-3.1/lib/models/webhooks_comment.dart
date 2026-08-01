@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('parent_id') && json['parent_id'] is num &&
+      json.containsKey('parent_id') && (json['parent_id'] == null || json['parent_id'] is num) &&
       json.containsKey('reactions') &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&

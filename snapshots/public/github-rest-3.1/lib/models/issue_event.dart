@@ -102,8 +102,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String; } 
 IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, DateTime? createdAt, Omittable<Issue?>? issue, IssueEventLabel? Function()? label, Omittable<SimpleUser?>? assignee, Omittable<SimpleUser?>? assigner, Omittable<SimpleUser?>? reviewRequester, Omittable<SimpleUser?>? requestedReviewer, Team? Function()? requestedTeam, IssueEventDismissedReview? Function()? dismissedReview, IssueEventMilestone? Function()? milestone, IssueEventProjectCard? Function()? projectCard, IssueEventRename? Function()? rename, AuthorAssociation? Function()? authorAssociation, Omittable<String?>? lockReason, Omittable<Integration?>? performedViaGithubApp, }) { return IssueEvent(
   id: id ?? this.id,

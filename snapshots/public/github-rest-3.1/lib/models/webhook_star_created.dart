@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('starred_at') && json['starred_at'] is String; } 
+      json.containsKey('starred_at') && (json['starred_at'] == null || json['starred_at'] is String); } 
 WebhookStarCreated copyWith({WebhookStarCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? Function()? starredAt, }) { return WebhookStarCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

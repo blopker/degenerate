@@ -69,8 +69,8 @@ Map<String, dynamic> toJson() { return {
   if (functionCall != null) 'function_call': functionCall?.toJson(),
   if (audio.isPresent) 'audio': audio.value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
-      json.containsKey('refusal') && json['refusal'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
+      json.containsKey('refusal') && (json['refusal'] == null || json['refusal'] is String) &&
       json.containsKey('role'); } 
 ChatCompletionResponseMessage copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations>? Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall? Function()? functionCall, Omittable<ChatCompletionResponseMessageAudio?>? audio, }) { return ChatCompletionResponseMessage(
   content: content != null ? content() : this.content,

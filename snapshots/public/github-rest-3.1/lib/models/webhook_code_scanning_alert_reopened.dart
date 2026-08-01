@@ -69,8 +69,8 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('alert') &&
-      json.containsKey('commit_oid') && json['commit_oid'] is String &&
-      json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('commit_oid') && (json['commit_oid'] == null || json['commit_oid'] is String) &&
+      json.containsKey('ref') && (json['ref'] == null || json['ref'] is String) &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
 WebhookCodeScanningAlertReopened copyWith({WebhookCodeScanningAlertReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(

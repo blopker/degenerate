@@ -136,7 +136,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('submitted') && json['submitted'] is num &&
       json.containsKey('passing') && json['passing'] is num &&
       json.containsKey('language') && json['language'] is String &&
-      json.containsKey('deadline') && json['deadline'] is String &&
+      json.containsKey('deadline') && (json['deadline'] == null || json['deadline'] is String) &&
       json.containsKey('classroom'); } 
 SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, SimpleClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, Omittable<int?>? maxTeams, Omittable<int?>? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) { return SimpleClassroomAssignment(
   id: id ?? this.id,

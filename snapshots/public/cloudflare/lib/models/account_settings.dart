@@ -33,12 +33,12 @@ Map<String, dynamic> toJson() { return {
   'enforce_twofactor': enforceTwofactor,
   'use_account_custom_ns_by_default': useAccountCustomNsByDefault,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('abuse_contact_email') && json['abuse_contact_email'] is String &&
-      json.containsKey('access_approval_expiry') && json['access_approval_expiry'] is String &&
-      json.containsKey('api_access_enabled') && json['api_access_enabled'] is bool &&
-      json.containsKey('default_nameservers') && json['default_nameservers'] is String &&
-      json.containsKey('enforce_twofactor') && json['enforce_twofactor'] is bool &&
-      json.containsKey('use_account_custom_ns_by_default') && json['use_account_custom_ns_by_default'] is bool; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('abuse_contact_email') && (json['abuse_contact_email'] == null || json['abuse_contact_email'] is String) &&
+      json.containsKey('access_approval_expiry') && (json['access_approval_expiry'] == null || json['access_approval_expiry'] is String) &&
+      json.containsKey('api_access_enabled') && (json['api_access_enabled'] == null || json['api_access_enabled'] is bool) &&
+      json.containsKey('default_nameservers') && (json['default_nameservers'] == null || json['default_nameservers'] is String) &&
+      json.containsKey('enforce_twofactor') && (json['enforce_twofactor'] == null || json['enforce_twofactor'] is bool) &&
+      json.containsKey('use_account_custom_ns_by_default') && (json['use_account_custom_ns_by_default'] == null || json['use_account_custom_ns_by_default'] is bool); } 
 AccountSettings copyWith({String? Function()? abuseContactEmail, DateTime? Function()? accessApprovalExpiry, bool? Function()? apiAccessEnabled, String? Function()? defaultNameservers, bool? Function()? enforceTwofactor, bool? Function()? useAccountCustomNsByDefault, }) { return AccountSettings(
   abuseContactEmail: abuseContactEmail != null ? abuseContactEmail() : this.abuseContactEmail,
   accessApprovalExpiry: accessApprovalExpiry != null ? accessApprovalExpiry() : this.accessApprovalExpiry,

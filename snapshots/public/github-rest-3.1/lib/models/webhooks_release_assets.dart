@@ -93,11 +93,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brows
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_count') && json['download_count'] is num &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('label') && json['label'] is String &&
+      json.containsKey('label') && (json['label'] == null || json['label'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('size') && json['size'] is num &&
-      json.containsKey('digest') && json['digest'] is String &&
+      json.containsKey('digest') && (json['digest'] == null || json['digest'] is String) &&
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 

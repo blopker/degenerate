@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'model': model,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tool_choice') &&
-      json.containsKey('model') && json['model'] is String; } 
+      json.containsKey('model') && (json['model'] == null || json['model'] is String); } 
 InferenceOptions copyWith({ToolChoice? Function()? toolChoice, String? Function()? model, }) { return InferenceOptions(
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   model: model != null ? model() : this.model,

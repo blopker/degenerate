@@ -163,14 +163,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('external_id') && json['external_id'] is String &&
+      json.containsKey('external_id') && (json['external_id'] == null || json['external_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('details_url') && json['details_url'] is String &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('details_url') && (json['details_url'] == null || json['details_url'] is String) &&
       json.containsKey('status') &&
       json.containsKey('conclusion') &&
-      json.containsKey('started_at') && json['started_at'] is String &&
-      json.containsKey('completed_at') && json['completed_at'] is String &&
+      json.containsKey('started_at') && (json['started_at'] == null || json['started_at'] is String) &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('output') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('check_suite') &&

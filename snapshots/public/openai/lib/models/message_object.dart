@@ -158,12 +158,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('thread_id') && json['thread_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('incomplete_details') &&
-      json.containsKey('completed_at') && json['completed_at'] is num &&
-      json.containsKey('incomplete_at') && json['incomplete_at'] is num &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
+      json.containsKey('incomplete_at') && (json['incomplete_at'] == null || json['incomplete_at'] is num) &&
       json.containsKey('role') &&
       json.containsKey('content') &&
-      json.containsKey('assistant_id') && json['assistant_id'] is String &&
-      json.containsKey('run_id') && json['run_id'] is String &&
+      json.containsKey('assistant_id') && (json['assistant_id'] == null || json['assistant_id'] is String) &&
+      json.containsKey('run_id') && (json['run_id'] == null || json['run_id'] is String) &&
       json.containsKey('attachments') &&
       json.containsKey('metadata'); } 
 MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt, String? threadId, MessageObjectStatus? status, MessageObjectIncompleteDetails? Function()? incompleteDetails, int? Function()? completedAt, int? Function()? incompleteAt, MessageObjectRole? role, List<MessageObjectContent>? content, String? Function()? assistantId, String? Function()? runId, List<MessageObjectAttachments2>? Function()? attachments, Map<String, String>? Function()? metadata, }) { return MessageObject(

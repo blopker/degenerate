@@ -156,8 +156,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('startInclusive') && json['startInclusive'] is String &&
       json.containsKey('state') &&
       json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
-      json.containsKey('submittableCertCount') && json['submittableCertCount'] is String &&
-      json.containsKey('submittedCertCount') && json['submittedCertCount'] is String &&
+      json.containsKey('submittableCertCount') && (json['submittableCertCount'] == null || json['submittableCertCount'] is String) &&
+      json.containsKey('submittedCertCount') && (json['submittedCertCount'] == null || json['submittedCertCount'] is String) &&
       json.containsKey('url') && json['url'] is String; } 
 RadarGetCertificateLogDetailsResponseResultCertificateLog copyWith({RadarGetCertificateLogDetailsResponseResultCertificateLog2? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, RadarGetCertificateLogDetailsResponseResultCertificateLogPerformance? Function()? performance, List<RadarGetCertificateLogDetailsResponseResultCertificateLogRelated>? related, String? slug, DateTime? startInclusive, RadarGetCertificateLogDetailsResponseResultCertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) { return RadarGetCertificateLogDetailsResponseResultCertificateLog(
   api: api ?? this.api,

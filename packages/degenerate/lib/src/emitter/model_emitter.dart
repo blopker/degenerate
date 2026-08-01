@@ -333,11 +333,13 @@ class ModelEmitter {
         .map((f) {
           final keyCheck =
               'json.containsKey(${f.originalName.literal})';
-          final typeCheck = _canParseTypeCheck(
-            f.type,
-            'json[${f.originalName.literal}]',
-          );
+          final accessor = 'json[${f.originalName.literal}]';
+          final typeCheck = _canParseTypeCheck(f.type, accessor);
           if (typeCheck != null) {
+            // A nullable required field legally carries an explicit null.
+            if (f.type.isNullable) {
+              return '$keyCheck && ($accessor == null || $typeCheck)';
+            }
             return '$keyCheck && $typeCheck';
           }
           return keyCheck;

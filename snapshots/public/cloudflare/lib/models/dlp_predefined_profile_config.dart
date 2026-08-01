@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'open_access': ?openAccess,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
-      json.containsKey('confidence_threshold') && json['confidence_threshold'] is String &&
+      json.containsKey('confidence_threshold') && (json['confidence_threshold'] == null || json['confidence_threshold'] is String) &&
       json.containsKey('enabled_entries') &&
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&

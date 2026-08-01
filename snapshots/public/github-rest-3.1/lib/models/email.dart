@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
       json.containsKey('primary') && json['primary'] is bool &&
       json.containsKey('verified') && json['verified'] is bool &&
-      json.containsKey('visibility') && json['visibility'] is String; } 
+      json.containsKey('visibility') && (json['visibility'] == null || json['visibility'] is String); } 
 Email copyWith({String? email, bool? primary, bool? verified, String? Function()? visibility, }) { return Email(
   email: email ?? this.email,
   primary: primary ?? this.primary,

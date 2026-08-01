@@ -133,10 +133,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('events') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('single_file_name') && json['single_file_name'] is String &&
+      json.containsKey('single_file_name') && (json['single_file_name'] == null || json['single_file_name'] is String) &&
       json.containsKey('app_slug') && json['app_slug'] is String &&
       json.containsKey('suspended_by') &&
-      json.containsKey('suspended_at') && json['suspended_at'] is String; } 
+      json.containsKey('suspended_at') && (json['suspended_at'] == null || json['suspended_at'] is String); } 
 Installation copyWith({int? id, InstallationAccount? Function()? account, InstallationRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String? Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, Omittable<String?>? contactEmail, }) { return Installation(
   id: id ?? this.id,
   account: account != null ? account() : this.account,

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
   'mode': mode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') && json['mode'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') && (json['mode'] == null || json['mode'] is String); } 
 UserPatch copyWith({Omittable<String?>? displayName, Omittable<List<String>?>? tags, Omittable<Address?>? address, String? Function()? email, String? Function()? mode, }) { return UserPatch(
   displayName: displayName ?? this.displayName,
   tags: tags ?? this.tags,

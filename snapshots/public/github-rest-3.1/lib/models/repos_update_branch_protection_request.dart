@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'allow_fork_syncing': allowForkSyncing,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_status_checks') &&
-      json.containsKey('enforce_admins') && json['enforce_admins'] is bool &&
+      json.containsKey('enforce_admins') && (json['enforce_admins'] == null || json['enforce_admins'] is bool) &&
       json.containsKey('required_pull_request_reviews') &&
       json.containsKey('restrictions'); } 
 ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestRestrictions? Function()? restrictions, bool? Function()? requiredLinearHistory, Omittable<bool?>? allowForcePushes, bool? Function()? allowDeletions, bool? Function()? blockCreations, bool? Function()? requiredConversationResolution, bool Function()? lockBranch, bool Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(

@@ -205,7 +205,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('contents_url') && json['contents_url'] is String &&
       json.containsKey('contributors_url') && json['contributors_url'] is String &&
       json.containsKey('deployments_url') && json['deployments_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('downloads_url') && json['downloads_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('fork') && json['fork'] is bool &&
@@ -225,7 +225,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('languages_url') && json['languages_url'] is String &&
       json.containsKey('merges_url') && json['merges_url'] is String &&
       json.containsKey('milestones_url') && json['milestones_url'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('notifications_url') && json['notifications_url'] is String &&
       json.containsKey('owner') &&

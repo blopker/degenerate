@@ -19,9 +19,9 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('status') && json['status'] is String &&
-      json.containsKey('message') && json['message'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && (json['code'] == null || json['code'] is num) &&
+      json.containsKey('status') && (json['status'] == null || json['status'] is String) &&
+      json.containsKey('message') && (json['message'] == null || json['message'] is String); } 
 HookResponse copyWith({int? Function()? code, String? Function()? status, String? Function()? message, }) { return HookResponse(
   code: code != null ? code() : this.code,
   status: status != null ? status() : this.status,

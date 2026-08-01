@@ -82,10 +82,10 @@ Map<String, dynamic> toJson() { return {
   'workflow_id': workflowId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
-      json.containsKey('ended_on') && json['ended_on'] is String &&
+      json.containsKey('ended_on') && (json['ended_on'] == null || json['ended_on'] is String) &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
-      json.containsKey('started_on') && json['started_on'] is String &&
+      json.containsKey('started_on') && (json['started_on'] == null || json['started_on'] is String) &&
       json.containsKey('status') &&
       json.containsKey('version_id') && json['version_id'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is String; } 

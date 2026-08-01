@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'vector_string': vectorString,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num &&
-      json.containsKey('vector_string') && json['vector_string'] is String; } 
+      json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String); } 
 WebhooksSecurityAdvisoryCvss copyWith({double? score, String? Function()? vectorString, }) { return WebhooksSecurityAdvisoryCvss(
   score: score ?? this.score,
   vectorString: vectorString != null ? vectorString() : this.vectorString,

@@ -172,7 +172,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('gravatar_id') && json['gravatar_id'] is String &&
+      json.containsKey('gravatar_id') && (json['gravatar_id'] == null || json['gravatar_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('followers_url') && json['followers_url'] is String &&
@@ -186,13 +186,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool &&
-      json.containsKey('name') && json['name'] is String &&
-      json.containsKey('company') && json['company'] is String &&
-      json.containsKey('blog') && json['blog'] is String &&
-      json.containsKey('location') && json['location'] is String &&
-      json.containsKey('email') && json['email'] is String &&
-      json.containsKey('hireable') && json['hireable'] is bool &&
-      json.containsKey('bio') && json['bio'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
+      json.containsKey('company') && (json['company'] == null || json['company'] is String) &&
+      json.containsKey('blog') && (json['blog'] == null || json['blog'] is String) &&
+      json.containsKey('location') && (json['location'] == null || json['location'] is String) &&
+      json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
+      json.containsKey('hireable') && (json['hireable'] == null || json['hireable'] is bool) &&
+      json.containsKey('bio') && (json['bio'] == null || json['bio'] is String) &&
       json.containsKey('public_repos') && json['public_repos'] is num &&
       json.containsKey('public_gists') && json['public_gists'] is num &&
       json.containsKey('followers') && json['followers'] is num &&

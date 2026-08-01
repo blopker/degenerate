@@ -41,11 +41,11 @@ Map<String, dynamic> toJson() { return {
   'plan': plan.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
-      json.containsKey('next_billing_date') && json['next_billing_date'] is String &&
-      json.containsKey('unit_count') && json['unit_count'] is num &&
+      json.containsKey('next_billing_date') && (json['next_billing_date'] == null || json['next_billing_date'] is String) &&
+      json.containsKey('unit_count') && (json['unit_count'] == null || json['unit_count'] is num) &&
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
-      json.containsKey('free_trial_ends_on') && json['free_trial_ends_on'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('free_trial_ends_on') && (json['free_trial_ends_on'] == null || json['free_trial_ends_on'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('account') &&
       json.containsKey('plan'); } 
 UserMarketplacePurchase copyWith({String? billingCycle, DateTime? Function()? nextBillingDate, int? Function()? unitCount, bool? onFreeTrial, DateTime? Function()? freeTrialEndsOn, DateTime? Function()? updatedAt, MarketplaceAccount? account, MarketplaceListingPlan? plan, }) { return UserMarketplacePurchase(

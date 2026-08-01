@@ -22,8 +22,8 @@ WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List? Function()? file, Strin
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersAiUploadFinetuneAssetRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           fileName == other.fileName; } 
-@override int get hashCode { return Object.hash(file, fileName); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file ?? const []), fileName); } 
 @override String toString() { return 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)'; } 
  }

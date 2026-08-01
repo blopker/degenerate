@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('mime_type') && json['mime_type'] is String &&
-      json.containsKey('preview_url') && json['preview_url'] is String; } 
+      json.containsKey('preview_url') && (json['preview_url'] == null || json['preview_url'] is String); } 
 Attachment copyWith({AttachmentType? type, String? id, String? name, String? mimeType, String? Function()? previewUrl, }) { return Attachment(
   type: type ?? this.type,
   id: id ?? this.id,

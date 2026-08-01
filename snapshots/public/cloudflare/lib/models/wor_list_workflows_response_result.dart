@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('script_name') && json['script_name'] is String &&
-      json.containsKey('triggered_on') && json['triggered_on'] is String; } 
+      json.containsKey('triggered_on') && (json['triggered_on'] == null || json['triggered_on'] is String); } 
 WorListWorkflowsResponseResult copyWith({String? className, DateTime? createdOn, String? id, WorListWorkflowsResponseResultInstances? instances, DateTime? modifiedOn, String? name, String? scriptName, DateTime? Function()? triggeredOn, }) { return WorListWorkflowsResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,

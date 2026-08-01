@@ -88,7 +88,7 @@ final class NextSessionSchema {
         json.containsKey('link') &&
         json['link'] is String &&
         json.containsKey('title') &&
-        json['title'] is String &&
+        (json['title'] == null || json['title'] is String) &&
         json.containsKey('seats_left') &&
         json['seats_left'] is num &&
         json.containsKey('duration') &&

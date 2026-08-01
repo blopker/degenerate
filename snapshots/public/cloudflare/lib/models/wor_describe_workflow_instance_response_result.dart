@@ -98,16 +98,16 @@ Map<String, dynamic> toJson() { return {
   'trigger': trigger.toJson(),
   'versionId': versionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('error') &&
       json.containsKey('output') &&
       json.containsKey('params') &&
       json.containsKey('queued') && json['queued'] is String &&
-      json.containsKey('start') && json['start'] is String &&
+      json.containsKey('start') && (json['start'] == null || json['start'] is String) &&
       json.containsKey('status') &&
       json.containsKey('step_count') && json['step_count'] is num &&
       json.containsKey('steps') &&
-      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
       json.containsKey('trigger') &&
       json.containsKey('versionId') && json['versionId'] is String; } 
 WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, WorDescribeWorkflowInstanceResponseResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorDescribeWorkflowInstanceResponseResultStatus? status, int? stepCount, List<WorDescribeWorkflowInstanceResponseResultSteps>? steps, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultTrigger? trigger, String? versionId, }) { return WorDescribeWorkflowInstanceResponseResult(

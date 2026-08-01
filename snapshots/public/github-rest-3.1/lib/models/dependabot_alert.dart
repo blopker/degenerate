@@ -169,7 +169,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_at') &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
-      json.containsKey('dismissed_comment') && json['dismissed_comment'] is String &&
+      json.containsKey('dismissed_comment') && (json['dismissed_comment'] == null || json['dismissed_comment'] is String) &&
       json.containsKey('fixed_at'); } 
 DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, DependabotAlertDismissalRequestSimple? Function()? dismissalRequest, List<SimpleUser>? Function()? assignees, }) { return DependabotAlert(
   number: number ?? this.number,

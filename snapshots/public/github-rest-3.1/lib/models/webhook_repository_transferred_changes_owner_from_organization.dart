@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
       json.containsKey('id') && json['id'] is num &&

@@ -230,7 +230,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('conclusion') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_commit') &&
       json.containsKey('head_repository') &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
@@ -238,10 +238,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('jobs_url') && json['jobs_url'] is String &&
       json.containsKey('logs_url') && json['logs_url'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('previous_attempt_url') && json['previous_attempt_url'] is String &&
+      json.containsKey('previous_attempt_url') && (json['previous_attempt_url'] == null || json['previous_attempt_url'] is String) &&
       json.containsKey('pull_requests') &&
       json.containsKey('repository') &&
       json.containsKey('rerun_url') && json['rerun_url'] is String &&

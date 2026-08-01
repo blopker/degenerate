@@ -93,9 +93,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('content') && json['content'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('git_url') && json['git_url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
+      json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('_links'); } 
 ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentFileLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ContentFile(
   type: type ?? this.type,

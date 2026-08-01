@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('organization_billing_email') && json['organization_billing_email'] is String &&
+      json.containsKey('organization_billing_email') && (json['organization_billing_email'] == null || json['organization_billing_email'] is String) &&
       json.containsKey('type') && json['type'] is String; } 
 WebhooksMarketplacePurchaseAccount copyWith({int? id, String? login, String? nodeId, String? Function()? organizationBillingEmail, String? type, }) { return WebhooksMarketplacePurchaseAccount(
   id: id ?? this.id,

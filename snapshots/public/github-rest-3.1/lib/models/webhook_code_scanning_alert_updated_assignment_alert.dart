@@ -135,7 +135,7 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('dismissed_at') && json['dismissed_at'] is String &&
+      json.containsKey('dismissed_at') && (json['dismissed_at'] == null || json['dismissed_at'] is String) &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
       json.containsKey('html_url') && json['html_url'] is String &&

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'app_id': appId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String &&
-      json.containsKey('app_id') && json['app_id'] is num; } 
+      json.containsKey('app_id') && (json['app_id'] == null || json['app_id'] is num); } 
 StatusCheckPolicyChecks copyWith({String? context, int? Function()? appId, }) { return StatusCheckPolicyChecks(
   context: context ?? this.context,
   appId: appId != null ? appId() : this.appId,

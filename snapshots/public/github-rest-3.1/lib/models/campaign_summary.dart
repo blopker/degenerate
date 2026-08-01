@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('managers') &&
       json.containsKey('ends_at') && json['ends_at'] is String &&
       json.containsKey('state') &&
-      json.containsKey('contact_link') && json['contact_link'] is String; } 
+      json.containsKey('contact_link') && (json['contact_link'] == null || json['contact_link'] is String); } 
 CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt, String? Function()? name, String? description, List<SimpleUser>? managers, List<Team>? Function()? teamManagers, DateTime? Function()? publishedAt, DateTime? endsAt, Omittable<DateTime?>? closedAt, CampaignState? state, Uri? Function()? contactLink, CampaignSummaryAlertStats? Function()? alertStats, }) { return CampaignSummary(
   number: number ?? this.number,
   createdAt: createdAt ?? this.createdAt,

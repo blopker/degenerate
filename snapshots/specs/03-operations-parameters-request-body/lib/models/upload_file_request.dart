@@ -28,9 +28,9 @@ UploadFileRequest copyWith({Uint8List? file, String? description, String? Functi
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UploadFileRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           description == other.description &&
           tags == other.tags; } 
-@override int get hashCode { return Object.hash(file, description, tags); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file), description, tags); } 
 @override String toString() { return 'UploadFileRequest(file: $file, description: $description, tags: $tags)'; } 
  }

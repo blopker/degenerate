@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String; } 
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String); } 
 CodeOfConduct copyWith({String? key, String? name, Uri? url, String? Function()? body, Uri? Function()? htmlUrl, }) { return CodeOfConduct(
   key: key ?? this.key,
   name: name ?? this.name,

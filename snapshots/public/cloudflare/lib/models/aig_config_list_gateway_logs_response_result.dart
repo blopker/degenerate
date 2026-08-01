@@ -91,8 +91,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('provider') && json['provider'] is String &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('tokens_in') && json['tokens_in'] is num &&
-      json.containsKey('tokens_out') && json['tokens_out'] is num; } 
+      json.containsKey('tokens_in') && (json['tokens_in'] == null || json['tokens_in'] is num) &&
+      json.containsKey('tokens_out') && (json['tokens_out'] == null || json['tokens_out'] is num); } 
 AigConfigListGatewayLogsResponseResult copyWith({bool? cached, double? Function()? cost, DateTime? createdAt, bool? Function()? customCost, int? duration, String? id, String? Function()? metadata, String? model, String? Function()? modelType, String? path, String? provider, String? Function()? requestContentType, String? Function()? requestType, String? Function()? responseContentType, int? Function()? statusCode, int? Function()? step, bool? success, int? Function()? tokensIn, int? Function()? tokensOut, }) { return AigConfigListGatewayLogsResponseResult(
   cached: cached ?? this.cached,
   cost: cost != null ? cost() : this.cost,

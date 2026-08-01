@@ -267,19 +267,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('diff_hunk') && json['diff_hunk'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('line') && json['line'] is num &&
+      json.containsKey('line') && (json['line'] == null || json['line'] is num) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('original_commit_id') && json['original_commit_id'] is String &&
-      json.containsKey('original_line') && json['original_line'] is num &&
+      json.containsKey('original_line') && (json['original_line'] == null || json['original_line'] is num) &&
       json.containsKey('original_position') && json['original_position'] is num &&
-      json.containsKey('original_start_line') && json['original_start_line'] is num &&
+      json.containsKey('original_start_line') && (json['original_start_line'] == null || json['original_start_line'] is num) &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('position') && json['position'] is num &&
-      json.containsKey('pull_request_review_id') && json['pull_request_review_id'] is num &&
+      json.containsKey('position') && (json['position'] == null || json['position'] is num) &&
+      json.containsKey('pull_request_review_id') && (json['pull_request_review_id'] == null || json['pull_request_review_id'] is num) &&
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('reactions') &&
       json.containsKey('side') &&
-      json.containsKey('start_line') && json['start_line'] is num &&
+      json.containsKey('start_line') && (json['start_line'] == null || json['start_line'] is num) &&
       json.containsKey('start_side') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&

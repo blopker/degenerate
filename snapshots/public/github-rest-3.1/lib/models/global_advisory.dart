@@ -181,22 +181,22 @@ Map<String, dynamic> toJson() { return {
   'credits': credits?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
-      json.containsKey('cve_id') && json['cve_id'] is String &&
+      json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('repository_advisory_url') && json['repository_advisory_url'] is String &&
+      json.containsKey('repository_advisory_url') && (json['repository_advisory_url'] == null || json['repository_advisory_url'] is String) &&
       json.containsKey('summary') && json['summary'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('type') &&
       json.containsKey('severity') &&
-      json.containsKey('source_code_location') && json['source_code_location'] is String &&
+      json.containsKey('source_code_location') && (json['source_code_location'] == null || json['source_code_location'] is String) &&
       json.containsKey('identifiers') &&
       json.containsKey('references') &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('github_reviewed_at') && json['github_reviewed_at'] is String &&
-      json.containsKey('nvd_published_at') && json['nvd_published_at'] is String &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String &&
+      json.containsKey('github_reviewed_at') && (json['github_reviewed_at'] == null || json['github_reviewed_at'] is String) &&
+      json.containsKey('nvd_published_at') && (json['nvd_published_at'] == null || json['nvd_published_at'] is String) &&
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String) &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&

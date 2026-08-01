@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool); } 
 WorDeleteWorkflowResponseResult copyWith({WorDeleteWorkflowResponseResultStatus? status, bool? Function()? success, }) { return WorDeleteWorkflowResponseResult(
   status: status ?? this.status,
   success: success != null ? success() : this.success,

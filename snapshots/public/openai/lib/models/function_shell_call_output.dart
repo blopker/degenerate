@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('output') &&
-      json.containsKey('max_output_length') && json['max_output_length'] is num; } 
+      json.containsKey('max_output_length') && (json['max_output_length'] == null || json['max_output_length'] is num); } 
 FunctionShellCallOutput copyWith({String? type, String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return FunctionShellCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,

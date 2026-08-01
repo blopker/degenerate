@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
+      json.containsKey('description') && (json['description'] == null || json['description'] is String); } 
 IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, Omittable<IssueTypeColor?>? color, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? isEnabled, }) { return IssueType(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

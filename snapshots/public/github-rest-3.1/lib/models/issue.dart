@@ -228,7 +228,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('milestone') &&
       json.containsKey('locked') && json['locked'] is bool &&
       json.containsKey('comments') && json['comments'] is num &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
 Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? number, String? state, Omittable<IssueStateReason?>? stateReason, String? title, Omittable<String?>? body, SimpleUser? Function()? user, List<IssueLabels>? labels, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Milestone? Function()? milestone, bool? locked, Omittable<String?>? activeLockReason, int? comments, IssuePullRequest? Function()? pullRequest, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, bool? Function()? draft, Omittable<SimpleUser?>? closedBy, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, IssueType? Function()? type, Repository? Function()? repository, Omittable<Integration?>? performedViaGithubApp, AuthorAssociation? Function()? authorAssociation, ReactionRollup? Function()? reactions, SubIssuesSummary? Function()? subIssuesSummary, Omittable<Uri?>? parentIssueUrl, Omittable<IssueComment?>? pinnedComment, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, }) { return Issue(

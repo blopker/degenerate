@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('title') && json['title'] is String &&
+      json.containsKey('title') && (json['title'] == null || json['title'] is String) &&
       json.containsKey('status') &&
       json.containsKey('user') && json['user'] is String; } 
 ThreadResource copyWith({String? id, ThreadResourceObject? object, int? createdAt, String? Function()? title, ThreadResourceStatus? status, String? user, }) { return ThreadResource(

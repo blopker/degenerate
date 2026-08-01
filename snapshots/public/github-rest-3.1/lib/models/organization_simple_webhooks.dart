@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
+      json.containsKey('description') && (json['description'] == null || json['description'] is String); } 
 OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, }) { return OrganizationSimpleWebhooks(
   login: login ?? this.login,
   id: id ?? this.id,

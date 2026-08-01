@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('created_on') && json['created_on'] is String; } 
+      json.containsKey('created_on') && (json['created_on'] == null || json['created_on'] is String); } 
 NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationComputeService? Function()? computeService, List<String>? Function()? networkSettingsIds, List<String>? Function()? failoverNetworkSettingsIds, bool? Function()? failoverNetworkEnabled, DateTime? Function()? createdOn, }) { return NetworkConfiguration(
   id: id ?? this.id,
   name: name ?? this.name,

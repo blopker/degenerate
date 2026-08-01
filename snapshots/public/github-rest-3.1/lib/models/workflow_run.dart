@@ -175,13 +175,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('run_number') && json['run_number'] is num &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('status') && json['status'] is String &&
-      json.containsKey('conclusion') && json['conclusion'] is String &&
+      json.containsKey('status') && (json['status'] == null || json['status'] is String) &&
+      json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&

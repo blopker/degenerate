@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'tracing': tracing.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('version') && json['version'] is String &&
+      json.containsKey('version') && (json['version'] == null || json['version'] is String) &&
       json.containsKey('state_variables') &&
       json.containsKey('tracing'); } 
 ChatkitWorkflow copyWith({String? id, String? Function()? version, Map<String, dynamic>? Function()? stateVariables, ChatkitWorkflowTracing? tracing, }) { return ChatkitWorkflow(

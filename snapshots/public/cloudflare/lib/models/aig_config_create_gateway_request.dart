@@ -139,11 +139,11 @@ Map<String, dynamic> toJson() { return {
   'zdr': ?zdr,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
-      json.containsKey('cache_ttl') && json['cache_ttl'] is num &&
+      json.containsKey('cache_ttl') && (json['cache_ttl'] == null || json['cache_ttl'] is num) &&
       json.containsKey('collect_logs') && json['collect_logs'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('rate_limiting_interval') && json['rate_limiting_interval'] is num &&
-      json.containsKey('rate_limiting_limit') && json['rate_limiting_limit'] is num &&
+      json.containsKey('rate_limiting_interval') && (json['rate_limiting_interval'] == null || json['rate_limiting_interval'] is num) &&
+      json.containsKey('rate_limiting_limit') && (json['rate_limiting_limit'] == null || json['rate_limiting_limit'] is num) &&
       json.containsKey('rate_limiting_technique'); } 
 AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, Omittable<int?>? logManagement, Omittable<AigConfigCreateGatewayRequestLogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, AigConfigCreateGatewayRequestRateLimitingTechnique? rateLimitingTechnique, AigConfigCreateGatewayRequestWorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayRequest(
   authentication: authentication != null ? authentication() : this.authentication,

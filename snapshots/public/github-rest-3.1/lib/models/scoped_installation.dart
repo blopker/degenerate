@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('permissions') &&
       json.containsKey('repository_selection') &&
-      json.containsKey('single_file_name') && json['single_file_name'] is String &&
+      json.containsKey('single_file_name') && (json['single_file_name'] == null || json['single_file_name'] is String) &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('account'); } 
 ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepositorySelection? repositorySelection, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(

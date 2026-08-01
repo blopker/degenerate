@@ -38,8 +38,8 @@ Map<String, dynamic> toJson() { return {
   'web_analytics_tag': webAnalyticsTag,
   'web_analytics_token': webAnalyticsToken,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('web_analytics_tag') && json['web_analytics_tag'] is String &&
-      json.containsKey('web_analytics_token') && json['web_analytics_token'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('web_analytics_tag') && (json['web_analytics_tag'] == null || json['web_analytics_tag'] is String) &&
+      json.containsKey('web_analytics_token') && (json['web_analytics_token'] == null || json['web_analytics_token'] is String); } 
 PagesBuildConfig copyWith({Omittable<bool?>? buildCaching, Omittable<String?>? buildCommand, Omittable<String?>? destinationDir, Omittable<String?>? rootDir, String? Function()? webAnalyticsTag, String? Function()? webAnalyticsToken, }) { return PagesBuildConfig(
   buildCaching: buildCaching ?? this.buildCaching,
   buildCommand: buildCommand ?? this.buildCommand,
